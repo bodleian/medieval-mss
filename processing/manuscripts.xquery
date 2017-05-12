@@ -174,6 +174,7 @@ declare function local:languageValue($lang)
     case "ara-Latn-x-lx" return "Arabic"
     case "br" return "French"
     case "ca" return "Catalan"
+    case "cop" return "Coptic"
     case "cs" return "Czech"
     case "cu" return "Church Slavonic"
     case "cy" return "Welsh"
