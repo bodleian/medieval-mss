@@ -179,6 +179,8 @@ declare function local:languageValue($lang)
     case "cy" return "Welsh"
     case "de" return "German"
     case "dlm" return "Dalmatian"
+    case "egy-Egyd" return "Egyptian in Demotic script"
+    case "egy-Egyh" return "Egyptian in Hieratic script"
     case "el" return "Greek"
     case "en" return "English"
     case "eng" return "English"
@@ -191,6 +193,7 @@ declare function local:languageValue($lang)
     case "gd" return "Gaelic"
     case "ger" return "German"
     case "grc" return "Greek"
+    case "he" return "Hebrew"
     case "hr" return "Croatian"
     case "hu" return "Hungarian"
     case "is" return "Icelandic"
@@ -211,10 +214,17 @@ declare function local:languageValue($lang)
 
 declare function local:mainLang($doc)
 {
-    let $mainLang := distinct-values($doc//tei:textLang[@mainLang]/string())
+    let $mainLang := distinct-values($doc//tei:textLang/@mainLang)
     for $lang in $mainLang
     return <field name="ms_lang_sm">{ normalize-space(local:languageValue($lang)) }</field>
     
+};
+
+declare function local:otherLangs($doc)
+{
+    let $otherLangs := tokenize(string-join(distinct-values($doc//tei:textLang/@otherLangs), " "), "\s")
+    for $lang in $otherLangs
+    return <field name="ms_lang_sm">{ normalize-space(local:languageValue($lang))}</field>
 };
 
 declare function local:origin($doc)
@@ -253,6 +263,7 @@ return <doc>
     { local:persnames($x//tei:sourceDesc) }
     { local:deconotes($x//tei:sourceDesc) }
     { local:mainLang($x//tei:sourceDesc) }
+    { local:otherLangs($x//tei:sourceDesc) }
     { local:origin($x//tei:sourceDesc) }
     { local:centuries($x) }
     { local:when($x) }
