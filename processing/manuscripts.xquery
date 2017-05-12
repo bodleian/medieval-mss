@@ -146,12 +146,12 @@ declare function local:when($doc)
 declare function local:materialValue($material)
 {
     switch ($material)
-        case "perg" return "parchment"
-        case "chart" return "paper"
-        case "papyrus" return "papyrus"
-        case "mixed" return "mixed"
-        case "unknown" return "unknown"
-        default return "other"
+        case "perg" return "Parchment"
+        case "chart" return "Paper"
+        case "papyrus" return "Papyrus"
+        case "mixed" return "Mixed"
+        case "unknown" return "Unknown"
+        default return "Other"
 };
 
 declare function local:materials($contents)
@@ -246,7 +246,7 @@ return <doc>
     <field name="ms_country_s">{ $x//tei:msDesc/tei:msIdentifier/tei:country/text() }</field>
     <field name="ms_region_s">{ $x//tei:msDesc/tei:msIdentifier/tei:region/text() }</field>
     <field name="ms_settlement_s">{ $x//tei:msDesc/tei:msIdentifier/tei:settlement/text() }</field>
-    <field name="ms_institution_s">{ $x//tei:msDesc/tei:msIdentifier/tei:institution/text() }</field>
+    <field name="ms_institution_s">{ $x//tei:msDesc/tei:msIdentifier/tei:repository/text() }</field>
     <field name="ms_repository_s">{ $x//tei:msDesc/tei:msIdentifier/tei:repository/text() }</field>
     <field name="ms_shelfmark_s">{ $x//tei:msDesc/tei:msIdentifier/tei:idno[@type="shelfmark"]/text() }</field>
     <field name="ms_shelfmark_sort">{ $x//tei:msDesc/tei:msIdentifier/tei:idno[@type="shelfmark"]/text() }</field>
