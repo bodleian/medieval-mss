@@ -217,6 +217,13 @@ declare function local:mainLang($doc)
     
 };
 
+declare function local:origin($doc)
+{
+    let $origins := distinct-values($doc//tei:origPlace/tei:country/text())
+    for $origin in $origins
+    return <field name="ms_origin_sm">{ fn:normalize-space($origin) }</field>
+};
+
 <add>
 {
 for $x in collection('../collections?select=*.xml;recurse=yes')
@@ -246,6 +253,7 @@ return <doc>
     { local:persnames($x//tei:sourceDesc) }
     { local:deconotes($x//tei:sourceDesc) }
     { local:mainLang($x//tei:sourceDesc) }
+    { local:origin($x//tei:sourceDesc) }
     { local:centuries($x) }
     { local:when($x) }
 </doc>
