@@ -122,7 +122,7 @@ declare function local:formatCentury($dateEarliest, $dateLatest)
 
 declare function local:centuries($doc)
 {
-    let $dates := $doc//tei:origin//tei:date
+    let $dates := $doc//tei:origin//tei:origDate
     for $date in $dates
         let $dateEarliest := $date/@notBefore/data()
         let $dateLatest := $date/@notAfter/data()
@@ -134,7 +134,7 @@ declare function local:centuries($doc)
 
 declare function local:when($doc)
 {
-    let $dates := $doc//tei:origin//tei:date
+    let $dates := $doc//tei:origin//tei:origDate
     for $date in $dates
         let $dateWhen := $date/@when/data()
         return if (fn:starts-with($dateWhen, "-")) then
