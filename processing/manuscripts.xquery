@@ -203,6 +203,7 @@ declare function local:languageValue($lang)
     case "kw" return "Cornish"
     case "la" return "Latin"
     case "lat" return "Latin"
+    case "nah" return "Nahuatl"
     case "nl" return "Dutch/Flemish"
     case "pro" return "French"
     case "pt" return "Portugese"
@@ -210,6 +211,7 @@ declare function local:languageValue($lang)
     case "rus" return "Russian"
     case "sco" return "Scots"
     case "spa" return "Spanish"
+    case "syc" return "Syriac"
     default return $lang
 };
 
