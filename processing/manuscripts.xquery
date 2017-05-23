@@ -237,6 +237,22 @@ declare function local:origin($doc)
     return <field name="ms_origin_sm">{ fn:normalize-space($origin) }</field>
 };
 
+declare function local:form($doc)
+{
+    let $forms := distinct-values($doc//tei:objectDesc/@form)
+    for $form in $forms
+    return <field name="ms_form_sm">{ fn:normalize-space($form) }</field>
+};
+
+(: Create a fairly generic field for dumping text content from the MSS record to allow for fulltext searching of the MSS :)
+(: Stored multiple but not indexed since it's not used for retrieval. This field will automatically get copied into
+    the fulltext index on Solr. :)
+declare function local:textcontent($content)
+{
+    let $text := $content/text()
+    return <field name="ms_textcontent_smni">{ $text }</field>
+};
+
 <add>
 {
 for $x in collection('../collections?select=*.xml;recurse=yes')
@@ -254,7 +270,7 @@ return <doc>
     <field name="ms_shelfmark_s">{ $x//tei:msDesc/tei:msIdentifier/tei:idno[@type="shelfmark"]/text() }</field>
     <field name="ms_shelfmark_sort">{ $x//tei:msDesc/tei:msIdentifier/tei:idno[@type="shelfmark"]/text() }</field>
     <field name="ms_altid_s">{ $x//tei:sourceDesc/tei:msDesc/tei:msIdentifier/tei:altIdentifier[@type="internal"]/tei:idno/text() }</field>
-    <field name="ms_form_s">{ $x//tei:sourceDesc/tei:msDesc/tei:physDesc/tei:objectDesc/string(@form) }</field>
+    (:{ local:form($x) }:)
     { local:dateEarliest($x) }
     { local:dateLatest($x) }
     <field name="ms_date_stmt_s">{ $x//tei:history/tei:origin/tei:date/text() }</field>
@@ -270,6 +286,9 @@ return <doc>
     { local:origin($x//tei:sourceDesc) }
     { local:centuries($x) }
     { local:when($x) }
+    { local:textcontent($x//tei:incipit) }
+    { local:textcontent($x//tei:explicit) }
+    { local:textcontent($x//tei:note) }
 </doc>
 }
 </add>
