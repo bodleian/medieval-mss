@@ -270,7 +270,6 @@ return <doc>
     <field name="ms_shelfmark_s">{ $x//tei:msDesc/tei:msIdentifier/tei:idno[@type="shelfmark"]/text() }</field>
     <field name="ms_shelfmark_sort">{ $x//tei:msDesc/tei:msIdentifier/tei:idno[@type="shelfmark"]/text() }</field>
     <field name="ms_altid_s">{ $x//tei:sourceDesc/tei:msDesc/tei:msIdentifier/tei:altIdentifier[@type="internal"]/tei:idno/text() }</field>
-    (:{ local:form($x) }:)
     { local:dateEarliest($x) }
     { local:dateLatest($x) }
     <field name="ms_date_stmt_s">{ $x//tei:history/tei:origin/tei:date/text() }</field>
@@ -289,6 +288,9 @@ return <doc>
     { local:textcontent($x//tei:incipit) }
     { local:textcontent($x//tei:explicit) }
     { local:textcontent($x//tei:note) }
+    { local:textcontent($x//tei:decoNote) }
+    { local:textcontent($x//tei:additions) }
+    { local:textcontent($x//tei:provenance) }
 </doc>
 }
 </add>
