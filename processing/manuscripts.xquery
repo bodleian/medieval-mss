@@ -249,7 +249,7 @@ declare function local:form($doc)
     the fulltext index on Solr. :)
 declare function local:textcontent($content)
 {
-    let $text := $content/text()
+    let $text := $content/data()
     return <field name="ms_textcontent_smni">{ $text }</field>
 };
 
