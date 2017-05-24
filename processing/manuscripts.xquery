@@ -22,7 +22,7 @@ declare function local:corpnames($contents)
 
 declare function local:persnames($contents)
 {
-    for $item in distinct-values($contents//tei:name[@type="person"]/tei:persName/text())
+    for $item in distinct-values($contents//tei:persName/text())
     return <field name="ms_persnames_sm">{ normalize-space($item) }</field>
 };
 
