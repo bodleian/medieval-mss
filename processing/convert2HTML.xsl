@@ -19,7 +19,7 @@
   -->
   <xsl:variable name="path">
     <xsl:value-of
-      select="concat('file:///home/jamesc/git/medieval-mss/collections/?select=', $files,';on-error=warning;recurse=',$recurse)"/>
+      select="concat('../collections/?select=', $files,';on-error=warning;recurse=',$recurse)"/>
   </xsl:variable>
 
   <!-- the main collection of all the documents we are dealing with -->
@@ -67,7 +67,7 @@
 
       <!-- Create the output file name hard coded to my dev machine-->
       <xsl:variable name="outputFilename"
-        select="concat('file:///home/jamesc/git/medieval-mss/processing/html/', 
+        select="concat('./html/',
       $folder, '/', $msID, '.html')"/>
       <!-- create output file -->
       <xsl:result-document href="{$outputFilename}" method="xml" indent="yes">
@@ -134,7 +134,7 @@
   <!-- Templates for titleStmt titles and normal titles, author, editors, and related content -->
   <xsl:template match="titleStmt/title">
     <li class="title">
-      <span class="label">Title: </span>
+      <span class="tei-label">Title: </span>
       <xsl:apply-templates/>
       <xsl:if test="@type">(<xsl:value-of select="@type"/>)</xsl:if>
     </li>
@@ -273,7 +273,7 @@
 <!-- editions -->
   <xsl:template match="editionStmt/edition">
     <li class="title">
-      <span class="label">Edition: </span>
+      <span class="tei-label">Edition: </span>
       <xsl:apply-templates/>
       <xsl:if test="@type">(<xsl:value-of select="@type"/>)</xsl:if>
     </li>
@@ -300,7 +300,7 @@
   </xsl:template>
   <xsl:template match="revisionDesc//change">
     <li class="change">
-      <span class="label">Change: </span>
+      <span class="tei-label">Change: </span>
       <xsl:if test="@when">
         <span class="date"><xsl:value-of select="@when"/> -- </span>
       </xsl:if>
@@ -423,7 +423,7 @@
         </xsl:when>
         <xsl:when test="name()='head'">
           <p class="msHead">
-            <span class="label">Summary:</span>
+            <span class="tei-label">Summary:</span>
             <xsl:apply-templates/>
           </p>
         </xsl:when>
@@ -441,14 +441,14 @@
 <!-- if Origin make it a paragraph -->
       <xsl:if test="origin">
         <p class="origin">
-          <span class="label">Origin: </span>
+          <span class="tei-label">Origin: </span>
           <xsl:apply-templates select="origin"/>
         </p>
       </xsl:if>
       
       <xsl:if test="provenance or acquisition">
         <p class="provenance">
-          <span class="label">Provenance and Acquisition: </span>
+          <span class="tei-label">Provenance and Acquisition: </span>
           <xsl:apply-templates select="provenance | acquisition"/>
         </p>
       </xsl:if>
@@ -508,7 +508,7 @@
 
   <xsl:template match="msIdentifier/*">
     <li class="{name()}">
-      <span class="label">
+      <span class="tei-label">
         <xsl:choose>
           <xsl:when test="name()='country'">Country: </xsl:when>
           <xsl:when test="name()='institution'">Institution: </xsl:when>
@@ -541,7 +541,7 @@
   
   <xsl:template match="msContents/summary">
     <p class="msSummary">
-      <span class="label">Summary of Contents: </span>
+      <span class="tei-label">Summary of Contents: </span>
       <xsl:apply-templates/>
     </p>
   </xsl:template>
@@ -562,7 +562,7 @@
   <xsl:template match="msContents/msItem" priority="10">
     <div class="msItem" id="{@xml:id}">
       <xsl:if test="@n">
-        <span class="label">
+        <span class="tei-label">
           <xsl:value-of select="@n"/>
         </span>
       </xsl:if>
@@ -575,7 +575,7 @@
   <xsl:template match="msItem/msItem">
     <li class="nestedmsItem" id="{@xml:id}">
       <xsl:if test="@n">
-        <span class="label">
+        <span class="tei-label">
           <xsl:value-of select="@n"/>
         </span>
       </xsl:if>
@@ -623,7 +623,7 @@
   </xsl:template>
   <xsl:template match="msItem/note">
     <li class="{name()}">
-      <span class="label">Note: </span>
+      <span class="tei-label">Note: </span>
       <xsl:apply-templates/>
     </li>
   </xsl:template>
@@ -632,7 +632,7 @@
   </xsl:template>
   <xsl:template match="msItem/incipit | msItem/explicit">
     <li class="{name()}">
-      <span class="label">(<xsl:value-of select="name()"/>)</span>
+      <span class="tei-label">(<xsl:value-of select="name()"/>)</span>
       <xsl:if test="@defective='true'">
         <span class="defective">||</span>
       </xsl:if>
@@ -644,7 +644,7 @@
   </xsl:template>
   <xsl:template match="msItem/rubric">
     <li class="{name()}">
-      <span class="label">(<xsl:value-of select="name()"/>)</span>
+      <span class="tei-label">(<xsl:value-of select="name()"/>)</span>
       <span>
         <xsl:if test="not(@rend='roman')">
           <xsl:attribute name="class">italic</xsl:attribute>
@@ -655,7 +655,7 @@
   </xsl:template>
   <xsl:template match="msItem/finalRubric">
     <li class="{name()}">
-      <span class="label">(final rubric)</span>
+      <span class="tei-label">(final rubric)</span>
       <span>
         <xsl:if test="not(@rend='roman')">
           <xsl:attribute name="class">italic</xsl:attribute>
@@ -666,7 +666,7 @@
   </xsl:template>
   <xsl:template match="msItem/colophon">
     <li class="{name()}">
-      <span class="label">(colophon)</span>
+      <span class="tei-label">(colophon)</span>
       <span>
         <xsl:if test="not(@rend='roman')">
           <xsl:attribute name="class">italic</xsl:attribute>
@@ -677,7 +677,7 @@
   </xsl:template>
   <xsl:template match="msItem/filiation">
     <li class="{name()}">
-      <span class="label">(filiation)</span>
+      <span class="tei-label">(filiation)</span>
       <xsl:apply-templates/>
     </li>
   </xsl:template>
@@ -714,19 +714,19 @@
   </xsl:template>
   <xsl:template match="accMat">
     <li class="accMat">
-      <span class="label">Accompanying Material: </span>
+      <span class="tei-label">Accompanying Material: </span>
       <xsl:apply-templates/>
     </li>
   </xsl:template>
   <xsl:template match="additions">
     <li class="additions">
-      <span class="label">Additions: </span>
+      <span class="tei-label">Additions: </span>
       <xsl:apply-templates/>
     </li>
   </xsl:template>
   <xsl:template match="bindingDesc">
     <li class="bindingDesc">
-      <span class="label">Binding: </span>
+      <span class="tei-label">Binding: </span>
       <xsl:apply-templates/>
     </li>
   </xsl:template>
@@ -742,13 +742,13 @@
   </xsl:template>
   <xsl:template match="decoDesc">
     <li class="decoDesc">
-      <span class="label">Decoration: </span>
+      <span class="tei-label">Decoration: </span>
       <xsl:apply-templates/>
     </li>
   </xsl:template>
   <xsl:template match="handDesc">
     <li class="handDesc">
-      <span class="label">Hand(s): </span>
+      <span class="tei-label">Hand(s): </span>
       <xsl:apply-templates/>
     </li>
   </xsl:template>
@@ -787,31 +787,31 @@
   </xsl:template>
   <xsl:template match="musicNotation">
     <li class="musicNotation">
-      <span class="label">Musical Notation: </span>
+      <span class="tei-label">Musical Notation: </span>
       <xsl:apply-templates/>
     </li>
   </xsl:template>
   <xsl:template match="typeDesc">
     <li class="typeDesc">
-      <span class="label">Type(s): </span>
+      <span class="tei-label">Type(s): </span>
       <xsl:apply-templates/>
     </li>
   </xsl:template>
   <xsl:template match="sealDesc">
     <li class="sealDesc">
-      <span class="label">Seal(s): </span>
+      <span class="tei-label">Seal(s): </span>
       <xsl:apply-templates/>
     </li>
   </xsl:template>
   <xsl:template match="scriptDesc">
     <li class="">
-      <span class="label">Script(s): </span>
+      <span class="tei-label">Script(s): </span>
       <xsl:apply-templates/>
     </li>
   </xsl:template>
   <xsl:template match="objectDesc">
     <li class="objectDesc">
-      <span class="label">Format: </span>
+      <span class="tei-label">Format: </span>
       <xsl:if test="@form">
         <span class="form">
           <xsl:value-of select="@form"/>
@@ -831,28 +831,28 @@
   </xsl:template>
   <xsl:template match="layoutDesc">
     <li class="layoutDesc">
-      <span class="label">Layout: </span>
+      <span class="tei-label">Layout: </span>
       <xsl:apply-templates/>
     </li>
   </xsl:template>
   <xsl:template match="layoutDesc/*">
     <p class="{name()}">
       <xsl:if test="@columns">
-        <span class="label">Columns: </span>
+        <span class="tei-label">Columns: </span>
         <span class="columns">
           <xsl:value-of select="@columns"/>
         </span>
         <br/>
       </xsl:if>
       <xsl:if test="@ruledLine">
-        <span class="label">Ruled Lines: </span>
+        <span class="tei-label">Ruled Lines: </span>
         <span class="ruledLines">
           <xsl:value-of select="@ruledLines"/>
         </span>
         <br/>
       </xsl:if>
       <xsl:if test="@writtenLines">
-        <span class="label">Written Lines: </span>
+        <span class="tei-label">Written Lines: </span>
         <span class="writtenLines">
           <xsl:value-of select="@writtenLines"/>
         </span>
@@ -863,9 +863,9 @@
   </xsl:template>
   <xsl:template match="supportDesc">
     <li class="supportDesc">
-      <span class="label">Support: </span>
+      <span class="tei-label">Support: </span>
       <xsl:if test="@material">
-        <span class="label">Material: </span>
+        <span class="tei-label">Material: </span>
         <span class="material">
           <xsl:value-of select="@material"/>
         </span>
@@ -907,32 +907,32 @@
   <!--  collation condition foliation support -->
   <xsl:template match="collation">
     <p class="{name()}">
-      <span class="label">Collation: </span>
+      <span class="tei-label">Collation: </span>
       <xsl:apply-templates/>
     </p>
   </xsl:template>
   <xsl:template match="condition">
     <p class="{name()}">
-      <span class="label">Condition: </span>
+      <span class="tei-label">Condition: </span>
       <xsl:apply-templates/>
     </p>
   </xsl:template>
   <xsl:template match="foliation">
     <p class="{name()}">
-      <span class="label">Foliation: </span>
+      <span class="tei-label">Foliation: </span>
       <xsl:apply-templates/>
     </p>
   </xsl:template>
   <xsl:template match="support">
     <p class="{name()}">
-      <span class="label">Material Support: </span>
+      <span class="tei-label">Material Support: </span>
       <xsl:apply-templates/>
     </p>
   </xsl:template>
 
 <!-- secFol, locus, extent -->
   <xsl:template match="secFol">
-    <span class="label">Secundo Folio: </span>
+    <span class="tei-label">Secundo Folio: </span>
     <span class="{name()}">
       <xsl:apply-templates/>
     </span>
@@ -944,7 +944,7 @@
     </span>
   </xsl:template>
   <xsl:template match="extent">
-    <span class="label">Extent: </span>
+    <span class="tei-label">Extent: </span>
     <span class="{name()}">
       <xsl:apply-templates/>
     </span>
@@ -953,7 +953,7 @@
 
 <!-- deal with dimensions -->
   <xsl:template match="dimensions">
-    <span class="label">Dimensions<xsl:if test="@type"> (<xsl:value-of select="@type"/>)</xsl:if>: </span>
+    <span class="tei-label">Dimensions<xsl:if test="@type"> (<xsl:value-of select="@type"/>)</xsl:if>: </span>
     <span class="{name()}">
       <xsl:choose>
         <xsl:when test="height and width">
@@ -1003,7 +1003,7 @@
   </xsl:template>
   <xsl:template match="watermark">
     <span class="{name()}">
-      <span class="label">Watermark: </span>
+      <span class="tei-label">Watermark: </span>
       <xsl:apply-templates/>
     </span>
   </xsl:template>
@@ -1045,7 +1045,7 @@
 <!-- Things inside additional -->
   <xsl:template match="additional/listBibl">
     <li class="listBibl">
-      <span class="label">Bibliography</span>
+      <span class="tei-label">Bibliography</span>
       <ul class="listBibl">
         <xsl:apply-templates/>
       </ul>
