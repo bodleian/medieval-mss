@@ -9,7 +9,7 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
     for $person in $people
         (:let $viaf := $authors[normalize-space(.) = normalize-space($distinct-authors)][1]/@ref:)
         let $id := $person/@xml:id/string()
-        let $name := $person//tei:persName[@type='display']/text()
+        let $name := fn:normalize-space($person//tei:persName[@type='display']/string())
 
         let $mss1 := $collection//tei:msDesc[.//tei:persName[@key = $id]]
         let $mss2 := $collection//tei:msDesc[.//tei:author[@key = $id]]
