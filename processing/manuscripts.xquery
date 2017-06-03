@@ -1,5 +1,6 @@
 import module namespace functx = "http://www.functx.com" at "functx.xq";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
+declare namespace html="http://www.w3.org/1999/xhtml";
 
 declare function local:authors($contents)
 {
@@ -249,18 +250,26 @@ declare function local:form($doc)
     the fulltext index on Solr. :)
 declare function local:textcontent($content)
 {
-    let $text := $content/data()
-    return <field name="ms_textcontent_smni">{ $text }</field>
+    let $text := $content/text()
+    return if (empty($text)) then
+        ()
+    else
+        <field name="ms_textcontent_smni">{ fn:normalize-space(fn:string-join($text, " ")) }</field>
 };
 
 <add>
 {
-for $x in collection('../collections?select=*.xml;recurse=yes')
+for $x in collection('../collections/?select=*.xml;recurse=yes')
+    let $filepath := fn:tokenize(fn:base-uri($x), '/')
+    let $htmlfile := concat($filepath[count($filepath) - 1], "/", $filepath[count($filepath)])
+    let $htmldoc := doc(concat("html/", replace($htmlfile, ".xml", ".html")))
+    let $htmlcontent := fn:normalize-space(fn:serialize($htmldoc))
+
 return <doc>
     <field name="type">manuscript</field>
     <field name="pk">{ concat('manuscript_', $x//tei:sourceDesc/tei:msDesc/@xml:id/data()) }</field>
     <field name="id">{ concat('manuscript_', $x//tei:sourceDesc/tei:msDesc/@xml:id/data()) }</field>
-    <field name="title">{ $x//tei:titleStmt/tei:title[not(@*)]/text() }</field>
+    <field name="title">{ $x//tei:msDesc/tei:msIdentifier/tei:idno[@type="shelfmark"]/text() }</field>
     <field name="ms_collection_s">{ $x//tei:titleStmt/tei:title[@type="collection"]/text() }</field>
     <field name="ms_country_s">{ $x//tei:msDesc/tei:msIdentifier/tei:country/text() }</field>
     <field name="ms_region_s">{ $x//tei:msDesc/tei:msIdentifier/tei:region/text() }</field>
@@ -291,6 +300,7 @@ return <doc>
     { local:textcontent($x//tei:decoNote) }
     { local:textcontent($x//tei:additions) }
     { local:textcontent($x//tei:provenance) }
+    <field name="ms_display_txt">{ $htmlcontent }</field>
 </doc>
 }
 </add>

@@ -1,16 +1,19 @@
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 
 <add>
-    {
-    let $x := collection('../collections?select=*.xml;recurse=yes')
-    let $authors := $x//tei:author/@ref
+{
+    let $doc := doc("../persons.xml")
+    let $collection := collection('../collections?select=*.xml;recurse=yes')
+    let $people := $doc//tei:person
 
-    for $distinct-author in distinct-values($authors)
+    for $person in $people
         (:let $viaf := $authors[normalize-space(.) = normalize-space($distinct-authors)][1]/@ref:)
-        let $id := concat("person_", fn:tokenize($distinct-author, "/")[last()])
-        let $authnodes := $x//tei:msDesc[.//tei:author[@ref = $distinct-author]]
-        let $name := normalize-space(distinct-values($x//tei:author[@ref = $distinct-author]//tei:persName/data())[1])
-        let $mss := $authnodes//tei:idno[@type = 'shelfmark']
+        let $id := $person/@xml:id/string()
+        let $name := $person//tei:persName[@type='display']/text()
+
+        let $mss1 := $collection//tei:msDesc[.//tei:persName[@key = $id]]
+        let $mss2 := $collection//tei:msDesc[.//tei:author[@key = $id]]
+        let $mss := ($mss1, $mss2)
 
         return <doc>
             <field name="type">person</field>
@@ -18,8 +21,11 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
             <field name="id">{ $id }</field>
             <field name="title">{ $name }</field>
             { for $ms in $mss
-                return <field name="manuscripts_sm">{ data($ms) }</field>
+                let $msid := $ms//string(@xml:id)
+                let $url := concat("/catalog/manuscript_", $msid[1])
+                let $linktext := $ms//tei:idno[@type = "shelfmark"]/text()
+                return <field name="link_manuscripts_smni">{ concat($url, "|", $linktext[1]) }</field>
             }
         </doc>
-    }
+}
 </add>
