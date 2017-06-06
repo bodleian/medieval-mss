@@ -386,7 +386,7 @@
     <!-- Just a warning template if an msDesc doesn't have an @xml:id -->
     <xsl:template match="msDesc">
         <xsl:message>No msDesc ID on
-            <xsl:value-of select="//sourceDesc/msDesc[1]/@xml:id"/>
+            <xsl:value-of select="$doc//sourceDesc/msDesc[1]/@xml:id"/>
         </xsl:message>
         <div class="msDesc">
             <xsl:if test="@xml:lang">
@@ -607,7 +607,7 @@
     <xsl:template match="msContents/textLang">
         <p class="ContentsTextLang">
             <!-- this on the other hand does need a label, if it is to appear at all -->
-            <span class="tei-label">Language(s):</span>
+            <span class="tei-label">Language(s): </span>
             <xsl:apply-templates/>
         </p>
     </xsl:template>
