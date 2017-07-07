@@ -26,6 +26,7 @@ declare function local:authors($authors)
             <field name="type">work</field>
             <field name="pk">{ $workid }</field>
             <field name="title">{ $distinct-title }</field>
+            <field name="wk_title_s">{ $distinct-title }</field>
             { local:authors($authors) }
             { for $ms in $mss
                 return <field name="manuscripts_sm">{ data($ms) }</field>

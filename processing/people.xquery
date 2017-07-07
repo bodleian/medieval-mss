@@ -20,6 +20,7 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
             <field name="pk">{ $id }</field>
             <field name="id">{ $id }</field>
             <field name="title">{ $name }</field>
+            <field name="pp_name_s">{ $name }</field>
             { for $ms in $mss
                 let $msid := $ms//string(@xml:id)
                 let $url := concat("/catalog/manuscript_", $msid[1])
