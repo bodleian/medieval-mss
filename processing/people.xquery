@@ -9,11 +9,13 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
     for $person in $people
         (:let $viaf := $authors[normalize-space(.) = normalize-space($distinct-authors)][1]/@ref:)
         let $id := $person/@xml:id/string()
-        let $name := fn:normalize-space($person//tei:persName[@type='display']/string())
+        let $name := fn:normalize-space($person//tei:persName[@type='display'][1]/string())
 
         let $mss1 := $collection//tei:msDesc[.//tei:persName[@key = $id]]
         let $mss2 := $collection//tei:msDesc[.//tei:author[@key = $id]]
         let $mss := ($mss1, $mss2)
+
+        let $variants := $person/tei:persName[@type="variant"]
 
         return <doc>
             <field name="type">person</field>
@@ -21,6 +23,10 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
             <field name="id">{ $id }</field>
             <field name="title">{ $name }</field>
             <field name="pp_name_s">{ $name }</field>
+            { for $variant in $variants
+                let $vname := fn:normalize-space($variant/string())
+                return <field name="pp_variant_sm">{ $vname }</field>
+            }
             { for $ms in $mss
                 let $msid := $ms//string(@xml:id)
                 let $url := concat("/catalog/manuscript_", $msid[1])
