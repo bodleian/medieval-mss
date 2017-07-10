@@ -11,8 +11,8 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
         let $id := $person/@xml:id/string()
         let $name := fn:normalize-space($person//tei:persName[@type='display'][1]/string())
 
-        let $mss1 := $collection//tei:msDesc[.//tei:persName[@key = $id]]
-        let $mss2 := $collection//tei:msDesc[.//tei:author[@key = $id]]
+        let $mss1 := $collection//tei:TEI[.//tei:persName[@key = $id]]
+        let $mss2 := $collection//tei:TEI[.//tei:author[@key = $id]]
         let $mss := ($mss1, $mss2)
 
         let $variants := $person/tei:persName[@type="variant"]
@@ -36,8 +36,8 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
                     return <field name="link_external_smni">{ concat($linktarget, "|", $linktext)}</field>
             }
             { for $ms in $mss
-                let $msid := $ms//string(@xml:id)
-                let $url := concat("/catalog/manuscript_", $msid[1])
+                let $msid := $ms/string(@xml:id)
+                let $url := concat("/catalog/", $msid[1])
                 let $linktext := $ms//tei:idno[@type = "shelfmark"]/text()
                 return <field name="link_manuscripts_smni">{ concat($url, "|", $linktext[1]) }</field>
             }

@@ -9,8 +9,8 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
     for $place in $places
         let $placeid := $place/string(@xml:id)
         let $variants := $place/tei:placeName[@type="variant"]
-        let $mss1 := $collection//tei:msDesc[.//tei:history//tei:country[@key = $placeid]]
-        let $mss2 := $collection//tei:msDesc[.//tei:history//tei:settlement[@key = $placeid]]
+        let $mss1 := $collection//tei:TEI[.//tei:history//tei:country[@key = $placeid]]
+        let $mss2 := $collection//tei:TEI[.//tei:history//tei:settlement[@key = $placeid]]
         let $mss := ($mss1, $mss2)
 
         let $noteitems := $place/tei:note[@type="links"]//tei:item
@@ -34,8 +34,8 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
                 return <field name="link_external_smni">{ concat($linktarget, "|", $linktext)}</field>
             }
             { for $ms in $mss
-                let $msid := $ms//string(@xml:id)
-                let $url := concat("/catalog/manuscript_", $msid[1])
+                let $msid := $ms/string(@xml:id)
+                let $url := concat("/catalog/", $msid[1])
                 let $linktext := $ms//tei:idno[@type = "shelfmark"]/text()
                 (: Concat the URL and shelfmark; these will get split to create a link in the display. :)
                 return (

@@ -8,7 +8,7 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
 
     for $org in $orgs
         let $orgid := $org/string(@xml:id)
-        let $mss := $collection//tei:msDesc[.//tei:orgName[@key = $orgid]]
+        let $mss := $collection//tei:TEI[.//tei:orgName[@key = $orgid]]
         let $variants := $org/tei:orgName[@type="variant"]
 
         let $notelinks := $org/tei:note[@type="links"]//tei:item
@@ -33,8 +33,8 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
                     return <field name="link_external_smni">{ concat($linktarget, "|", $linktext)}</field>
             }
             { for $ms in $mss
-                let $msid := $ms//string(@xml:id)
-                let $url := concat("/catalog/manuscript_", $msid[1])
+                let $msid := $ms/string(@xml:id)
+                let $url := concat("/catalog/", $msid[1])
                 let $linktext := $ms//tei:idno[@type = "shelfmark"]/text()
 
                 return (
