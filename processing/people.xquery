@@ -16,6 +16,7 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
         let $mss := ($mss1, $mss2)
 
         let $variants := $person/tei:persName[@type="variant"]
+        let $notelinks := $person/tei:note[@type="links"]//tei:item
 
         return <doc>
             <field name="type">person</field>
@@ -27,12 +28,20 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
                 let $vname := fn:normalize-space($variant/string())
                 return <field name="pp_variant_sm">{ $vname }</field>
             }
+            { for $link in $notelinks
+
+                let $linktarget := $link//tei:ref/string(@target)
+                let $linktext := $link//tei:ref/fn:normalize-space(tei:title/string())
+                return <field name="link_external_smni">{ concat($linktarget, "|", $linktext)}</field>
+
+            }
             { for $ms in $mss
                 let $msid := $ms//string(@xml:id)
                 let $url := concat("/catalog/manuscript_", $msid[1])
                 let $linktext := $ms//tei:idno[@type = "shelfmark"]/text()
                 return <field name="link_manuscripts_smni">{ concat($url, "|", $linktext[1]) }</field>
             }
+
         </doc>
 }
 </add>
