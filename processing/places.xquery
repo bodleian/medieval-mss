@@ -13,6 +13,8 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
         let $mss2 := $collection//tei:msDesc[.//tei:history//tei:settlement[@key = $placeid]]
         let $mss := ($mss1, $mss2)
 
+        let $noteitems := $place/tei:note[@type="links"]//tei:item
+
         return <doc>
             <field name="type">place</field>
             <field name="title">{ $place/tei:placeName[@type="index"]/text() }</field>
@@ -23,6 +25,13 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
             { for $variant in $variants
                 let $vname := fn:normalize-space($variant/string())
                 return <field name="pl_variant_sm">{ $vname }</field>
+            }
+            { for $item in $noteitems
+                let $refs := $item//tei:ref
+                for $ref in $refs
+                let $linktarget := $ref/string(@target)
+                let $linktext := $ref/fn:normalize-space(tei:title/string())
+                return <field name="link_external_smni">{ concat($linktarget, "|", $linktext)}</field>
             }
             { for $ms in $mss
                 let $msid := $ms//string(@xml:id)

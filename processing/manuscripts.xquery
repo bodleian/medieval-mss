@@ -267,8 +267,8 @@ for $x in collection('../collections/?select=*.xml;recurse=yes')
 
 return <doc>
     <field name="type">manuscript</field>
-    <field name="pk">{ concat('manuscript_', $x//tei:sourceDesc/tei:msDesc/@xml:id/data()) }</field>
-    <field name="id">{ concat('manuscript_', $x//tei:sourceDesc/tei:msDesc/@xml:id/data()) }</field>
+    <field name="pk">{ $x//tei:TEI/@xml:id/data() }</field>
+    <field name="id">{ $x//tei:TEI/@xml:id/data() }</field>
     <field name="title">{ $x//tei:msDesc/tei:msIdentifier/tei:idno[@type="shelfmark"]/text() }</field>
     <field name="ms_collection_s">{ $x//tei:titleStmt/tei:title[@type="collection"]/text() }</field>
     <field name="ms_country_s">{ $x//tei:msDesc/tei:msIdentifier/tei:country/text() }</field>
