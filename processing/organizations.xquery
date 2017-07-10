@@ -23,10 +23,12 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
                 let $vname := fn:normalize-space($variant/string())
                 return <field name="pl_variant_sm">{ $vname }</field>
             }
-            { for $link in $notelinks
-                let $linktarget := $link//tei:ref/string(@target)
-                let $linktext := $link//tei:ref/fn:normalize-space(tei:title/string())
-                return <field name="link_external_smni">{ concat($linktarget, "|", $linktext)}</field>
+            { for $item in $notelinks
+                let $refs := $item//tei:ref
+                for $ref in $refs
+                    let $linktarget := $ref/string(@target)
+                    let $linktext := $ref/fn:normalize-space(tei:title/string())
+                    return <field name="link_external_smni">{ concat($linktarget, "|", $linktext)}</field>
             }
             { for $ms in $mss
                 let $msid := $ms//string(@xml:id)
