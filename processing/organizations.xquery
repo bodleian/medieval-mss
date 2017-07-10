@@ -13,7 +13,9 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
 
         let $notelinks := $org/tei:note[@type="links"]//tei:item
 
-        (: Organizations are indexed as places so that we do not need another section to display them. :)
+        (:
+            Organizations are indexed as places so that we do not need another section to display them.
+        :)
         return <doc>
             <field name="type">place</field>
             <field name="title">{ fn:normalize-space($org/tei:orgName[@type="display"][1]/string()) }</field>
