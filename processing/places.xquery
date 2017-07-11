@@ -12,7 +12,8 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
         let $variants := $place/tei:placeName[@type="variant"]
         let $mss1 := $collection//tei:TEI[.//tei:history//tei:country[@key = $placeid]]
         let $mss2 := $collection//tei:TEI[.//tei:history//tei:settlement[@key = $placeid]]
-        let $mss := ($mss1, $mss2)
+        let $mss3 := $collection//tei:TEI[.//tei:placeName[@key = $placeid]]
+        let $mss := ($mss1, $mss2, $mss3)
 
         let $noteitems := $place/tei:note[@type="links"]//tei:item
         let $placename := $place/tei:placeName[@type="index"]/text()
