@@ -1,3 +1,4 @@
+import module namespace functx = "http://www.functx.com" at "functx.xq";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 
 <add>
@@ -14,13 +15,18 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
         let $mss := ($mss1, $mss2)
 
         let $noteitems := $place/tei:note[@type="links"]//tei:item
+        let $placename := $place/tei:placeName[@type="index"]/text()
 
         return <doc>
             <field name="type">place</field>
-            <field name="title">{ $place/tei:placeName[@type="index"]/text() }</field>
-            <field name="pk">{ $placeid }</field>
+            <field name="title">{ $placename }</field>
+            <field name="alpha_title">
+                { functx:capitalize-first(substring(replace($placename, '[^\p{L}|\p{N}]+', ''), 1, 1))}
+            </field>
+
+        <field name="pk">{ $placeid }</field>
             <field name="id">{ $placeid }</field>
-            <field name="pl_name_s">{ $place/tei:placeName[@type="index"]/text() }</field>
+            <field name="pl_name_s">{ $placename }</field>
             <field name="pl_type_s">{ $place/string(@type) }</field>
             { for $variant in $variants
                 let $vname := fn:normalize-space($variant/string())

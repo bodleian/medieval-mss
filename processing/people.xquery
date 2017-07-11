@@ -37,6 +37,9 @@ declare function local:personRole($role)
             <field name="pk">{ $id }</field>
             <field name="id">{ $id }</field>
             <field name="title">{ $name }</field>
+            <field name="alpha_title">
+                { functx:capitalize-first(substring(replace($name, '[^\p{L}|\p{N}]+', ''), 1, 1))}
+            </field>
             <field name="pp_name_s">{ $name }</field>
             { for $role in $roles
                 return <field name="pp_roles_sm">{ local:personRole($role) }</field>

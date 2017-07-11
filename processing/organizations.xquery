@@ -1,3 +1,4 @@
+import module namespace functx = "http://www.functx.com" at "functx.xq";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 
 <add>
@@ -8,6 +9,7 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
 
     for $org in $orgs
         let $orgid := $org/string(@xml:id)
+        let $orgname := fn:normalize-space($org/tei:orgName[@type="display"][1]/string())
         let $mss := $collection//tei:TEI[.//tei:orgName[@key = $orgid]]
         let $variants := $org/tei:orgName[@type="variant"]
 
@@ -18,7 +20,10 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
         :)
         return <doc>
             <field name="type">place</field>
-            <field name="title">{ fn:normalize-space($org/tei:orgName[@type="display"][1]/string()) }</field>
+            <field name="title">{ $orgname }</field>
+            <field name="alpha_title">
+                { functx:capitalize-first(substring(replace($orgname, '[^\p{L}|\p{N}]+', ''), 1, 1))}
+            </field>
             <field name="id">{ $orgid }</field>
             <field name="pk">{ $orgid }</field>
             { for $variant in $variants
