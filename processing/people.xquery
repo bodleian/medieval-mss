@@ -1,4 +1,17 @@
+import module namespace functx = "http://www.functx.com" at "functx.xq";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
+
+declare function local:personRole($role)
+{
+    (:  Most of the roles just need to be capitalized. These are the exceptions. :)
+    switch($role)
+        case "formerOwner" return "Owner or signer"
+        case "signer" return "Owner or signer"
+        case "commissioner" return "Commissioner, dedicatee, or patron"
+        case "dedicatee" return "Commissioner, dedicatee, or patron"
+        case "patron" return "Commissioner, dedicatee, or patron"
+        default return functx:capitalize-first($role)
+};
 
 <add>
 {
@@ -10,6 +23,7 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
         (:let $viaf := $authors[normalize-space(.) = normalize-space($distinct-authors)][1]/@ref:)
         let $id := $person/@xml:id/string()
         let $name := fn:normalize-space($person//tei:persName[@type='display'][1]/string())
+        let $roles := fn:distinct-values($collection//tei:persName[@key = $id]/@role/string())
 
         let $mss1 := $collection//tei:TEI[.//tei:persName[@key = $id]]
         let $mss2 := $collection//tei:TEI[.//tei:author[@key = $id]]
@@ -24,6 +38,9 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
             <field name="id">{ $id }</field>
             <field name="title">{ $name }</field>
             <field name="pp_name_s">{ $name }</field>
+            { for $role in $roles
+                return <field name="pp_roles_sm">{ local:personRole($role) }</field>
+            }
             { for $variant in $variants
                 let $vname := fn:normalize-space($variant/string())
                 return <field name="pp_variant_sm">{ $vname }</field>
