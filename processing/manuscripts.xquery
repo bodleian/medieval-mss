@@ -256,7 +256,7 @@ declare function local:countryValue($place)
         case "place_7006669" return "Serbia"
         case "place_1000097" return "Sweden"
         case "place_1000140" return "Syria"
-        case "" return "[UNKNOWN]"
+        case "" return "[MISSING]"
         default return $place
 };
 
