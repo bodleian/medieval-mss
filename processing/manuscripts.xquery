@@ -213,6 +213,7 @@ declare function local:languageValue($lang)
     case "sco" return "Scots"
     case "spa" return "Spanish"
     case "syc" return "Syriac"
+    case "zxx" return "No Linguistic Content"
     default return $lang
 };
 
