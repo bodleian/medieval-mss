@@ -1,56 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns="http://www.w3.org/1999/xhtml" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:tei="http://www.tei-c.org/ns/1.0" xpath-default-namespace="http://www.tei-c.org/ns/1.0"
+<xsl:stylesheet xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:tei="http://www.tei-c.org/ns/1.0"
+                xpath-default-namespace="http://www.tei-c.org/ns/1.0"
                 xmlns:jc="http://james.blushingbunny.net/ns.html"
                 xmlns:html="http://www.w3.org/1999/xhtml"
                 exclude-result-prefixes="tei jc html" version="2.0">
-
     <!--
-    Created by Dr James Cummings james@blushingbunny.net
-    2017-05 for output of Bodley TEI msDescs as HTML to
-    be sucked into the frontend platform
+        Created by Dr James Cummings james@blushingbunny.net
+        2017-05 for output of Bodley TEI msDescs as HTML to
+        be sucked into the frontend platform.
     -->
-
     <!-- Set up the collection of files to be converted -->
     <!-- files and recurse parameters defaulting to '*.xml' and 'no' respectively -->
     <xsl:param name="files" select="'*.xml'"/>
     <xsl:param name="recurse" select="'yes'"/>
-    <xsl:output omit-xml-declaration="yes" indent="yes"/>
-
-    <!-- path hard-coded to location on my desktop
+    <!-- <xsl:strip-space elements="*" />
+    <xsl:output omit-xml-declaration="yes" method="xml" indent="yes"/> -->
+    <!--
       Make sure all XML files are ones you want to include
     -->
     <xsl:variable name="path">
-        <xsl:value-of
-                select="concat('../collections/?select=', $files,';on-error=warning;recurse=',$recurse)"/>
+        <xsl:value-of select="concat('../collections/?select=', $files,';on-error=warning;recurse=',$recurse)"/>
     </xsl:variable>
 
     <!-- the main collection of all the documents we are dealing with -->
     <xsl:variable name="doc" select="collection($path)"/>
-
 
     <!-- In case there are existing schema associations, let's get rid of those -->
     <xsl:template match="processing-instruction()"/>
 
     <!-- Named template which we call that starts off the whole thing-->
     <xsl:template name="main">
+
         <!-- For each item in the collection -->
         <xsl:for-each select="$doc">
+
             <!-- Might as well sort them by current file name -->
             <xsl:sort select="tokenize(base-uri(), '/')[last()-1]"/>
             <xsl:sort select="tokenize(base-uri(), '/')[last()]"/>
+
             <!-- Get the baseURI -->
             <xsl:variable name="baseURI">
                 <xsl:value-of select="base-uri()"/>
             </xsl:variable>
+
             <!-- Get the file name from that -->
             <xsl:variable name="filename">
                 <xsl:value-of select="tokenize($baseURI, '/')[last()]"/>
             </xsl:variable>
+
             <!-- get the folder from that -->
             <xsl:variable name="folder">
                 <xsl:value-of select="tokenize($baseURI, '/')[last()-1]"/>
             </xsl:variable>
+
             <!-- Get the @xml:id from the first msDesc inside the sourceDesc
               (won't work if msDesc elsewhere but stops problem with nested msDesc)
             -->
@@ -58,32 +62,27 @@
                 <xsl:value-of select="//sourceDesc/msDesc[1]/@xml:id"/>
             </xsl:variable>
 
-            <!-- This is just a debugging message so I see the msIDs whiz by on the screen
-              in case of any errors
-            -->
+            <!-- This is just a debugging message so I see the msIDs whiz by on the screen in case of any errors -->
             <xsl:message>
                 <!--
-                Folder: <xsl:value-of select="$folder"/>
-                Old Filename:<xsl:value-of select="$filename"/>-->
+                    Folder: <xsl:value-of select="$folder"/>
+                    Old Filename:<xsl:value-of select="$filename"/>
+                -->
                 <xsl:value-of select="$msID"/>
             </xsl:message>
 
             <!-- Create the output file name hard coded to my dev machine-->
-            <xsl:variable name="outputFilename"
-                          select="concat('./html/', $folder, '/', $msID, '.html')"/>
+            <xsl:variable name="outputFilename" select="concat('./html/', $folder, '/', $msID, '.html')"/>
+
             <!-- create output file -->
             <xsl:result-document href="{$outputFilename}" method="xml" indent="yes">
-                <!-- I was asked for just <div> elements but provided full html... can remove if necessary here -->
-                <!-- <html>
-                  <head>
-                    <title>
-                      <xsl:value-of select="//msDesc/msIdentifier/idno[@type='shelfmark']"/>
-                    </title>
-                  </head>
-                  <body> -->
-                <!-- Create content div with the id of the manuscript -->
-                <div class="content tei-body" id="{//sourceDesc/msDesc[1]/@xml:id}">
+
+                <!-- Create content div with the id of the manuscript. Wrap it in an extra root div so that
+                    we can ignore the namespace attribute that XSLT puts on it automatically. -->
+                <div>
+                <div class="content tei-body" id="{//TEI/@xml:id}">
                     <!-- titleStmt div with the two titles in -->
+
                     <!-- For tolkien, Blacklight will take care of displaying the title and collection -->
                     <!-- <div class="titleStmt" id="titleStmt">
                       <h1 class="mainTitle">
@@ -111,7 +110,6 @@
                             select="/TEI/teiHeader/fileDesc/publicationStmt/availability/licence"/></p>
                       </xsl:if>
                     </div> -->
-
                     <!-- And some edition and responsibility statements -->
                     <!-- <div class="respStmt" id="respStmt">
                       <h3>Description Edition and Responsibilities</h3>
@@ -122,21 +120,13 @@
                         <xsl:apply-templates select="/TEI/teiHeader/revisionDesc"/>
                       </ul>
                     </div> -->
-
-                    <!-- And a comment in a footer, just for the fun of it. -->
-                    <div class="footer">
-                        <xsl:comment>HTML fragments generated by Dr James Cummings,
-                            <xsl:value-of select="current-date()"/>
-                        </xsl:comment>
-                    </div>
                 </div>
-                <!-- </body>
-              </html> -->
+                </div>
             </xsl:result-document>
         </xsl:for-each>
     </xsl:template>
 
-   <!-- Templates for titleStmt titles and normal titles, author, editors, and related content -->
+    <!-- Templates for titleStmt titles and normal titles, author, editors, and related content -->
     <xsl:template match="titleStmt/title">
         <li class="title">
             <span class="tei-label">Title:</span>
@@ -145,31 +135,26 @@
             </xsl:if>
         </li>
     </xsl:template>
-    
+
     <!-- new: default title should be in italic -->
     <xsl:template match="title">
         <span class="{name()} italic">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
-    
-    <!-- modified: other titles in roman (simple rule for now: any title with @rend) -->
-    <xsl:template match="title[@rend]">
-        <span class="{name()}">
-            <xsl:apply-templates/>
-        </span>
-    </xsl:template>
-    
+
     <!-- <xsl:template match="author|editor">
         <span class="{name()}">
             <xsl:apply-templates/>
         </span>
     </xsl:template> -->
+
     <xsl:template match="series">
         <span class="{name()}">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
+
     <xsl:template match="citedRange">
         <span class="{name()}">
             <xsl:apply-templates/>
@@ -182,6 +167,7 @@
             <xsl:apply-templates/>
         </span>
     </xsl:template>
+
     <xsl:template match="date">
         <span class="{name()}">
             <xsl:if test="@when">
@@ -192,16 +178,19 @@
             <xsl:apply-templates/>
         </span>
     </xsl:template>
+
     <xsl:template match="add|del">
         <span class="{name()}">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
+
     <xsl:template match="note">
         <span class="{name()}">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
+
     <xsl:template match="foreign">
         <!-- modified to add @rend to the class -->
         <span class="{name()} {@rend}">
@@ -213,12 +202,12 @@
             <xsl:apply-templates/>
         </span>
     </xsl:template>
+
     <xsl:template match="sic">
         <span class="{name()}">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
-
 
     <xsl:template match="supplied">
         <span class="supplied">&lt;<xsl:apply-templates/>&gt;
@@ -262,15 +251,13 @@
         </span>
     </xsl:template>
 
-
     <xsl:template match="gap">
         <xsl:choose>
             <xsl:when test="not(@*)">
                 <span class="gap">…</span>
             </xsl:when>
             <xsl:when test="@unit='chars' and number(@quantity)">
-                <xsl:variable name="possibleDots"
-                >
+                <xsl:variable name="possibleDots">
                     .....................................................................................................................
                 </xsl:variable>
                 <span class="gap">
@@ -278,8 +265,7 @@
                 </span>
             </xsl:when>
             <xsl:when test="@unit='chars' and number(@extent)">
-                <xsl:variable name="possibleDots"
-                >
+                <xsl:variable name="possibleDots">
                     .....................................................................................................................
                 </xsl:variable>
                 <span class="gap">
@@ -297,11 +283,10 @@
         </span>
     </xsl:template>
 
-
     <!-- editions -->
     <xsl:template match="editionStmt/edition">
         <li class="title">
-            <span class="tei-label">Edition:</span>
+            <span class="tei-label">Edition: </span>
             <xsl:apply-templates/>
             <xsl:if test="@type">(<xsl:value-of select="@type"/>)
             </xsl:if>
@@ -316,11 +301,13 @@
             </xsl:if>
         </li>
     </xsl:template>
+
     <xsl:template match="resp">
         <span class="{name()}">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
+
     <xsl:template match="revisionDesc">
         <li class="revisionDesc">
             <ul class="revisionDesc">
@@ -328,9 +315,10 @@
             </ul>
         </li>
     </xsl:template>
+
     <xsl:template match="revisionDesc//change">
         <li class="change">
-            <span class="tei-label">Change:</span>
+            <span class="tei-label">Change: </span>
             <xsl:if test="@when">
                 <span class="date">
                     <xsl:value-of select="@when"/> --
@@ -346,6 +334,7 @@
             <xsl:apply-templates/>
         </a>
     </xsl:template>
+
     <xsl:template match="ref" priority="5">
         <span class="{name()}">
             <xsl:apply-templates/>
@@ -367,18 +356,15 @@
         <br/>
     </xsl:template>
 
-
     <!-- Main msDesc template and processing starts here -->
     <xsl:template match="msDesc[@xml:id]">
-        <div class="msDesc" id="{concat(@xml:id, '-msDesc', count(preceding::msDesc)+1)}">
+        <div class="msDesc" id="{concat(@xml:id, '-msDesc', count(preceding::msDesc) + 1)}">
             <xsl:if test="@xml:lang">
                 <xsl:attribute name="lang">
                     <xsl:value-of select="@xml:lang"/>
                 </xsl:attribute>
             </xsl:if>
-            <!-- <h2 class="msDesc-heading2">
-              <xsl:value-of select="msIdentifier/idno[@type='shelfmark']"/>
-            </h2> -->
+
             <xsl:apply-templates/>
         </div>
     </xsl:template>
@@ -388,18 +374,24 @@
         <xsl:message>No msDesc ID on
             <xsl:value-of select="$doc//sourceDesc/msDesc[1]/@xml:id"/>
         </xsl:message>
+
         <div class="msDesc">
             <xsl:if test="@xml:lang">
                 <xsl:attribute name="lang">
                     <xsl:value-of select="@xml:lang"/>
                 </xsl:attribute>
             </xsl:if>
+
             <h2 class="msDesc-heading2">
                 <xsl:value-of select="msIdentifier/idno[@type='shelfmark']"/>
             </h2>
+
             <xsl:apply-templates/>
         </div>
     </xsl:template>
+
+    <!-- skip output of msIdentifier block for now - AH -->
+    <xsl:template match="msDesc/msIdentifier" />
 
     <!-- Paragraphs -->
     <xsl:template match="p">
@@ -410,129 +402,131 @@
 
     <!-- Default rule for head see msPart head below.-->
     <xsl:template match="head">
-        <span class="{name()}">
+        <h4 class="{name()}">
             <xsl:apply-templates/>
-        </span>
+        </h4>
     </xsl:template>
 
     <!-- Main Sections inside msDesc-->
-    <xsl:template match="msDesc/msIdentifier|msDesc/head|msPart/head|msContents|physDesc|additional|msPart|msFrag">
-        <div class="{name()}">
-            <h3 class="msDesc-heading3">
-                <xsl:choose>
-                    <!-- this heading may not be necessary,and is repeated on the following line in display -->
-                    <xsl:when test="name()='head'">Summary</xsl:when>
-                    
-                    <xsl:when test="name()='msContents'">Contents</xsl:when>
-                    <xsl:when test="name()='physDesc'">Physical Description</xsl:when>
-                    <xsl:when test="name()='additional'">Additional Metadata</xsl:when>
-                    <!-- <xsl:when test="name()='msIdentifier'">Manuscript Identifier</xsl:when> -->
-                    <xsl:when test="name()='msPart'">
-                        
-                        <xsl:value-of select=".//idno[1]"/>
-                    </xsl:when>
-                    <xsl:when test="name()='msFrag'">
-                        <xsl:value-of select=".//idno[1]"/>
-                    </xsl:when>
-                </xsl:choose>
-            </h3>
-            <xsl:choose>
-                <xsl:when test="name()='physDesc'">
-                    <div class="physDesc">
-                        <xsl:apply-templates/>
-                    </div>
-                </xsl:when>
-                <xsl:when test="name()='additional'">
-                    <div class="additional">
-                        <xsl:apply-templates/>
-                    </div>
-                </xsl:when>
-                <xsl:when test="name()='msPart' or name()='msFrag'">
-                    <div class="{name()}">
-                        <xsl:apply-templates/>
-                    </div>
-                </xsl:when>
-                <xsl:when test="name()='head'">
-                    <!-- make the head more visible h not div  -->
-                    <h4 class="msHead">
-                        <!-- label not needed -->
-                        <!--<span class="tei-label">Summary: </span>-->
-                        
-                        
-                        <xsl:apply-templates/>
-                    </h4>
-                </xsl:when>
-                <xsl:when test="name()='msIdentifier'"/>
-                
-                <!-- don't think this should all be commented out, some of the information we need -->
-                 <!--<xsl:when test="name()='msIdentifier'">
-                  <div class="msIdentifier">
+    <xsl:template match="msDesc/head|msPart/head|msContents|physDesc|additional|msPart|msFrag">
+        <!--<h3 class="msDesc-heading3">-->
+            <!--<xsl:choose>-->
+                <!--&lt;!&ndash; this heading may not be necessary,and is repeated on the following line in display &ndash;&gt;-->
+                <!--<xsl:when test="name()='head'">Summary</xsl:when>-->
+                <!--<xsl:when test="name()='msContents'">Contents</xsl:when>-->
+                <!--<xsl:when test="name()='physDesc'">Physical Description</xsl:when>-->
+                <!--<xsl:when test="name()='additional'">Additional Metadata</xsl:when>-->
+                <!--&lt;!&ndash; <xsl:when test="name()='msIdentifier'">Manuscript Identifier</xsl:when> &ndash;&gt;-->
+                <!--<xsl:when test="name()='msPart'">-->
+                    <!--<xsl:value-of select=".//idno[1]"/>-->
+                <!--</xsl:when>-->
+                <!--<xsl:when test="name()='msFrag'">-->
+                    <!--<xsl:value-of select=".//idno[1]"/>-->
+                <!--</xsl:when>-->
+            <!--</xsl:choose>-->
+        <!--</h3>-->
+        <xsl:choose>
+            <xsl:when test="name()='msContents'">
+                <h3>Contents</h3>
+                <div class="msContents">
+                    <xsl:apply-templates />
+                </div>
+            </xsl:when>
+            <xsl:when test="name()='physDesc'">
+                <h3>Physical Description</h3>
+                <div class="physDesc">
                     <xsl:apply-templates/>
-                  </div>
-                </xsl:when> -->
-                <xsl:otherwise>
+                </div>
+            </xsl:when>
+            <xsl:when test="name()='additional'">
+                <div class="additional">
                     <xsl:apply-templates/>
-                </xsl:otherwise>
-            </xsl:choose>
-        </div>
-        <hr/>
+                </div>
+            </xsl:when>
+            <xsl:when test="name()='msPart' or name()='msFrag'">
+                <div class="{name()}">
+                    <xsl:apply-templates/>
+                </div>
+            </xsl:when>
+            <xsl:when test="name()='head'">
+                <!-- make the head more visible h not div  -->
+                <h4 class="msHead">
+                    <!-- label not needed -->
+                    <!--<span class="tei-label">Summary: </span>-->
+                    <xsl:apply-templates/>
+                </h4>
+            </xsl:when>
+            <xsl:when test="name()='msIdentifier'">
+                <xsl:apply-templates/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:apply-templates/>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
 
     <!-- special case history -->
     <xsl:template match="history">
+        <h3 class="msDesc-heading3">History</h3>
+        <!-- if Origin make it a paragraph -->
         <div class="{name()}">
-            <h3 class="msDesc-heading3">History</h3>
-            <!-- if Origin make it a paragraph -->
             <xsl:if test="origin">
                 <div class="origin">
                     <span class="tei-label">Origin: </span>
                     <xsl:apply-templates select="origin"/>
                 </div>
             </xsl:if>
-
             <xsl:if test="provenance or acquisition">
                 <div class="provenance">
-                    <span class="tei-label">Provenance and Acquisition: </span>
+                    <h4>Provenance and Acquisition</h4>
                     <xsl:apply-templates select="provenance | acquisition"/>
                 </div>
             </xsl:if>
         </div>
     </xsl:template>
+
     <!-- inside history -->
     <xsl:template match="origin">
         <xsl:apply-templates/>
     </xsl:template>
+
     <xsl:template match="origin/origDate">
         <span class="{name()}">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
+
     <xsl:template match="origin/origPlace">
         <!-- modified: added logic for separator before or after depending on other elements -->
-        <xsl:if test="preceding-sibling::origDate"><xsl:text>; </xsl:text></xsl:if>
+        <xsl:if test="preceding-sibling::origDate">
+            <xsl:text>; </xsl:text>
+        </xsl:if>
         <span class="{name()}">
             <xsl:apply-templates/>
         </span>
-        <xsl:if test="following-sibling::origDate"><xsl:text>; </xsl:text></xsl:if>
+        <xsl:if test="following-sibling::origDate">
+            <xsl:text>; </xsl:text>
+        </xsl:if>
     </xsl:template>
+
     <xsl:template match="origin/p|provenance/p|acquisition/p">
         <!-- modified. want to keep it as a paragraph -->
         <p class="{concat(name(), '-p')}">
             <xsl:apply-templates/>
         </p>
     </xsl:template>
+
     <xsl:template match="provenance|acquisition">
         <!-- modified. p not span -->
         <p class="{name()}">
             <xsl:apply-templates/>
         </p>
     </xsl:template>
+
     <xsl:template match="origPlace">
-        
         <span class="{name()}">
             <xsl:apply-templates/>
         </span>
-        
     </xsl:template>
 
     <!-- quotations - should I be putting in quotation marks? -->
@@ -544,52 +538,15 @@
 
     <!-- msIdentifier -->
     <xsl:template match="msIdentifier">
-        <ul class="msIdentifier">
-            <xsl:apply-templates/>
-        </ul>
+        <xsl:apply-templates/>
     </xsl:template>
 
-    <xsl:template match="msIdentifier/*">
-        <li class="{name()}">
-            <span class="tei-label">
-                <xsl:choose>
-                    <!-- most of the following is not needed -->
-                    <!--<xsl:when test="name()='country'">Country:</xsl:when>
-                    <xsl:when test="name()='institution'">Institution:</xsl:when>
-                    <xsl:when test="name()='msName'">Manuscript Name:</xsl:when>
-                    <xsl:when test="name()='region'">Region:</xsl:when>
-                    <xsl:when test="name()='repository'">Repository:</xsl:when>
-                    <xsl:when test="name()='settlement'">Settlement:</xsl:when>-->
-                    
-                    <!--<xsl:when test="name()='altIdentifier' or name()='idno'">-->
-                    <!-- don't want altIdentifier as it already appears as a heading -->
-                    
-                    
-                    <!-- but we do want other kinds of idno -->
-                    <xsl:when test="name()='idno'">
-                    <xsl:choose>
-                            <!--<xsl:when test="idno/@type='shelfmark' or @type='shelfmark'">ShelfMark:</xsl:when>-->
-                            <xsl:when test="idno/@type='SCN' or @type='SCN'">Summary Catalogue no.:</xsl:when>
-                            <xsl:when test="@type='TM' or idno/@type='TM'">Trismegistos no.:</xsl:when>
-                            <xsl:when test="@type='PR'">Papyrological Reference:</xsl:when>
-                            <xsl:when test="@type='diktyon'">Diktyon no.:</xsl:when>
-                            <xsl:when test="@type='LDAB'">LDAB no.:</xsl:when>
-                        </xsl:choose>
-                    </xsl:when>
-                </xsl:choose>
-            </span>
-            <xsl:apply-templates/>
-        </li>
-    </xsl:template>
-
-<!-- don't display altIdentifier for msParts, the identifier already appears as a heading -->
-    <xsl:template match="altIdentifier/idno"/>
-        <!--<xsl:apply-templates/>
+    <!-- don't display altIdentifier for msParts, the identifier already appears as a heading -->
+    <xsl:template match="altIdentifier/idno" />
+    <!--<xsl:apply-templates/>
     </xsl:template>-->
 
-
     <!-- Things in msContents -->
-
     <xsl:template match="msContents/summary">
         <!-- h instead of p -->
         <h4 class="msSummary">
@@ -598,6 +555,7 @@
             <xsl:apply-templates/>
         </h4>
     </xsl:template>
+
     <xsl:template match="msContents/summary/p">
         <span class="summary-p">
             <xsl:apply-templates/>
@@ -612,49 +570,38 @@
         </p>
     </xsl:template>
 
-
     <!-- msItem -->
-    
-   <!-- <xsl:template match="msContents/msItem" priority="10">
-        <div class="msItem" id="{@xml:id}">
-            
-            <hr />
-            <!-\- add -\-><xsl:apply-templates select="locus"/>
-            <h4 class="tei-title">
-                <!-\- add -\-><xsl:apply-templates select="author"/>
-                <xsl:choose>
-                    <xsl:when test="title">
-                        <!-\- modify -\-><xsl:apply-templates select="title[1]"/>
-                        <!-\-<xsl:value-of select="normalize-space(title[1])"/>-\->
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <!-\- this creates duplication with later <note>. need to change? -\->
-                        [<xsl:value-of select="normalize-space(string-join(note/string(), ' '))"/>]
-                    </xsl:otherwise>
-                </xsl:choose>
-            </h4>
-            <div>
-                <xsl:apply-templates select="* except (locus, author, title[1])"/>
-            </div>
-        </div>
-    </xsl:template>
-    -->
-    
-    
-    <!-- what happens if we just apply templates? -->
+    <!-- <xsl:template match="msContents/msItem" priority="10">
+         <div class="msItem" id="{@xml:id}">
+             <hr />
+             <!-\- add -\-><xsl:apply-templates select="locus"/>
+             <h4 class="tei-title">
+                 <!-\- add -\-><xsl:apply-templates select="author"/>
+                 <xsl:choose>
+                     <xsl:when test="title">
+                         <!-\- modify -\-><xsl:apply-templates select="title[1]"/>
+                         <!-\-<xsl:value-of select="normalize-space(title[1])"/>-\->
+                     </xsl:when>
+                     <xsl:otherwise>
+                         <!-\- this creates duplication with later <note>. need to change? -\->
+                         [<xsl:value-of select="normalize-space(string-join(note/string(), ' '))"/>]
+                     </xsl:otherwise>
+                 </xsl:choose>
+             </h4>
+             <div>
+                 <xsl:apply-templates select="* except (locus, author, title[1])"/>
+             </div>
+         </div>
+     </xsl:template>
+     -->
 
+    <!-- what happens if we just apply templates? -->
     <xsl:template match="msContents/msItem" priority="10">
         <div class="msItem" id="{@xml:id}">
-            
-            <hr />
-            
             <xsl:apply-templates/>
-          
         </div>
     </xsl:template>
 
-
-    
     <!-- nested msItem -->
     <!-- check what happens with multiple levels of nesting? -->
     <!-- modified to match main treatment of msItem above-->
@@ -671,7 +618,6 @@
             <div class="msItemList">
                 <xsl:apply-templates select="* except (locus, author, title[1], note[1][starts-with(., '(') and preceding-sibling::title])"/>
             </div>-->
-            
             <!-- again let's try just applying templates -->
             <xsl:apply-templates/>
         </div>
@@ -682,18 +628,20 @@
     <!-- need to apply templates, sometimes titles contain names for example or formatting  -->
     <!-- standard titles should be in italic -->
     <xsl:template match="msItem/title[not(@rend) and not(@type)]">
-        <span class="tei-title italic"><xsl:apply-templates/></span>
-        <xsl:if
-            test="following-sibling::note[1][not(starts-with(., '('))][not(starts-with(., '[A-Z]'))][not(following-sibling::lb[1])]">
+        <span class="tei-title italic">
+            <xsl:apply-templates/>
+        </span>
+        <xsl:if test="following-sibling::note[1][not(starts-with(., '('))][not(starts-with(., '[A-Z]'))][not(following-sibling::lb[1])]">
             <xsl:text>, </xsl:text>
         </xsl:if>
     </xsl:template>
-    
+
     <!-- others should be roman -->
     <xsl:template match="msItem/title[@rend or @type]">
-        <span class="tei-title"><xsl:apply-templates/></span>
-        <xsl:if
-            test="following-sibling::note[1][not(starts-with(., '('))][not(starts-with(., '[A-Z]'))][not(following-sibling::lb[1])]">
+        <span class="tei-title">
+            <xsl:apply-templates/>
+        </span>
+        <xsl:if test="following-sibling::note[1][not(starts-with(., '('))][not(starts-with(., '[A-Z]'))][not(following-sibling::lb[1])]">
             <xsl:text>, </xsl:text>
         </xsl:if>
     </xsl:template>
@@ -701,8 +649,6 @@
     <xsl:template match="msItem/author | msItem/docAuthor">
         <!-- changed from div to span -->
         <span class="author">
-            <!-- modified: don't need label -->
-           <!-- <span class="tei-label">Author: </span>-->
             <xsl:choose>
                 <xsl:when test="@key">
                     <a href="/catalog/{@key}">
@@ -718,8 +664,12 @@
                 </xsl:otherwise>
             </xsl:choose>
         </span>
-        <xsl:if test="following-sibling::author"><xsl:text> &amp; </xsl:text></xsl:if>
-        <xsl:if test="following-sibling::title"><xsl:text>, </xsl:text></xsl:if>
+        <xsl:if test="following-sibling::author">
+            <xsl:text> &amp; </xsl:text>
+        </xsl:if>
+        <xsl:if test="following-sibling::title">
+            <xsl:text>, </xsl:text>
+        </xsl:if>
     </xsl:template>
     <xsl:template match="msItem/editor">
         <span class="editor">
@@ -739,7 +689,7 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
-    
+
     <!-- title has been moved above - AH -->
     <!-- <xsl:template match="msItem/title">
       <span class="title">
@@ -750,7 +700,7 @@
         </xsl:if>
       </span>
     </xsl:template> -->
-    
+
     <!-- new. First note after title, if in ()  should be span not div to follow title.  -->
     <xsl:template match="msItem/note[starts-with(., '(')]">
         <xsl:text> </xsl:text>
@@ -760,76 +710,78 @@
             <xsl:apply-templates/>
         </span>
     </xsl:template>
-    
+
     <xsl:template match="msItem/note[not(starts-with(., '('))]">
-        <div class="{name()}">
+        <p class="{name()}">
             <!-- modified: label not needed -->
             <!--<span class="tei-label">Note: </span>-->
             <xsl:apply-templates/>
-        </div>
+        </p>
     </xsl:template>
+
     <xsl:template match="msItem/quote">
-        <blockquote class="{name()}">"<xsl:apply-templates/>"</blockquote>
+        <blockquote class="{name()}">"<xsl:apply-templates/>"
+        </blockquote>
     </xsl:template>
+
     <xsl:template match="msItem/incipit | msItem/explicit">
         <div class="{name()}">
             <span class="tei-label">
-                <xsl:if test="name() = 'incipit'">
-                    Incipit:
-                </xsl:if>
-                <xsl:if test="name() = 'explicit'">
-                    Explicit:
-                </xsl:if>
+                <xsl:if test="name() = 'incipit'">Incipit: </xsl:if>
+                <xsl:if test="name() = 'explicit'">Explicit: </xsl:if>
             </span>
             <xsl:if test="@defective='true'">
                 <span class="defective">||</span>
             </xsl:if>
             <xsl:if test="@type">
-                <span class="type">(<xsl:value-of select="@type"/>)</span>
+                <span class="type">(<xsl:value-of select="@type"/>)
+                </span>
             </xsl:if>
             <xsl:apply-templates/>
         </div>
     </xsl:template>
+
     <xsl:template match="msItem/rubric">
         <div class="{name()}">
             <span class="tei-label">Rubric: </span>
-            
             <!-- can we have this and the following <xsl:if> back? there is a difference inthe records between italic and not italic rubrics etc. -->
-            
             <!--<xsl:if test="not(@rend='roman')">-->
-                <!--<xsl:attribute name="class">tei-italic</xsl:attribute>-->
+            <!--<xsl:attribute name="class">tei-italic</xsl:attribute>-->
             <!--</xsl:if>-->
             <xsl:apply-templates/>
         </div>
     </xsl:template>
+
     <xsl:template match="msItem/finalRubric">
         <div class="{name()}">
             <span class="tei-label">Final rubric: </span>
             <!--<xsl:if test="not(@rend='roman')">-->
-                <!--<xsl:attribute name="class">tei-italic</xsl:attribute>-->
+            <!--<xsl:attribute name="class">tei-italic</xsl:attribute>-->
             <!--</xsl:if>-->
             <xsl:apply-templates/>
         </div>
     </xsl:template>
+
     <xsl:template match="msItem/colophon">
         <div class="{name()}">
             <span class="tei-label">Colophon: </span>
-            
             <!--<xsl:if test="not(@rend='roman')">-->
-                <!--<xsl:attribute name="class">tei-italic</xsl:attribute>-->
+            <!--<xsl:attribute name="class">tei-italic</xsl:attribute>-->
             <!--</xsl:if>-->
             <xsl:apply-templates/>
         </div>
     </xsl:template>
+
     <xsl:template match="msItem/filiation">
         <div class="{name()}">
-            <span class="tei-label">Filiation: </span>
+            <span class="tei-label">Filiation:</span>
             <xsl:apply-templates/>
         </div>
     </xsl:template>
+
     <xsl:template match="msItem/textLang">
         <div class="{name()}">
-            <span class="tei-label">Language(s): </span>
+            <span class="tei-label">Language(s):</span>
             <xsl:apply-templates/>
         </div>
     </xsl:template>
@@ -837,12 +789,15 @@
     <xsl:template match="msItem/locus">
         <div class="{name()}">
             <!-- optional? if the item is numbered, we should display the number -->
-            <xsl:if test="parent::msItem[@n]"><span class="item-number"><xsl:value-of select="parent::msItem/@n"/>. </span></xsl:if>
-            
+            <xsl:if test="parent::msItem[@n]">
+                <span class="item-number"><xsl:value-of select="parent::msItem/@n"/>.
+                </span>
+            </xsl:if>
             <!--<span class="tei-label">Locus: </span>-->
             <xsl:apply-templates/>
         </div>
     </xsl:template>
+
     <!-- fallback for msItem children -->
     <!-- <xsl:template match="msItem/*" priority="-10">
       <span class="{name()}">
@@ -850,86 +805,90 @@
       </span>
     </xsl:template> -->
 
-
     <!-- Things inside physDesc -->
-
     <xsl:template match="physDesc/p">
-        <span class="physDesc-p">
-            <xsl:apply-templates/>
-        </span>
-    </xsl:template>
-    <xsl:template match="accMat">
-        <div class="accMat">
-            <span class="tei-label">Accompanying Material: </span>
+        <div class="physDesc-p">
             <xsl:apply-templates/>
         </div>
     </xsl:template>
+
+    <xsl:template match="accMat">
+        <div class="{name()}">
+            <h4>Accompanying Material</h4>
+            <p>
+                <xsl:apply-templates/>
+            </p>
+        </div>
+    </xsl:template>
+
     <xsl:template match="additions">
         <div class="additions">
             <span class="tei-label">Additions: </span>
             <xsl:apply-templates/>
         </div>
     </xsl:template>
+
     <xsl:template match="bindingDesc">
-        <div class="bindingDesc">
-            <span class="tei-label">Binding: </span>
+        <div class="{name()}">
+            <h4>Binding</h4>
             <xsl:apply-templates/>
         </div>
     </xsl:template>
+
     <xsl:template match="binding">
         <xsl:apply-templates/>
     </xsl:template>
+
     <xsl:template match="binding/p|collation/p|foliation/p">
-        <span class="{concat(parent::node()/name(), '-p')}">
+        <p class="{concat(parent::node()/name(), '-p')}">
             <xsl:apply-templates/>
-        </span>
+        </p>
     </xsl:template>
+
     <xsl:template match="decoDesc">
-        <div class="decoDesc">
-            <span class="tei-label">Decoration: </span>
-            <!-- modified. Don't just get the value here, or any names, etc. inside will be lost. -->
+        <div class="{name()}">
+            <h4>Decoration</h4>
             <xsl:apply-templates/>
-            <!--<xsl:choose>
-                
-                <xsl:when test="decoNote/p">
-                    <xsl:value-of select="normalize-space(string-join(decoNote/p/text(), ' '))"/>
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:value-of select="normalize-space(string-join(decoNote/text(), ' '))"/>
-                </xsl:otherwise>
-            </xsl:choose>-->
         </div>
     </xsl:template>
+
     <xsl:template match="handDesc">
         <div class="handDesc">
-            <span class="tei-label">Hand(s): </span>
+            <h4>Hand(s)</h4>
             <xsl:apply-templates/>
         </div>
     </xsl:template>
+
     <xsl:template match="decoDesc/*|handDesc/*">
-        <span class="{name()}">
+        <p class="{name()}">
             <xsl:apply-templates/>
-        </span>
+        </p>
     </xsl:template>
+
     <xsl:template match="decoNote|handNote" priority="20">
-        <xsl:apply-templates />
-    </xsl:template>
-    <xsl:template match="decoDesc/p|handDesc/p|decoNote/p|handNote/p" priority="10">
-        <!-- modified: want span not div or paragraphing goes wrong -->
-        <span class="{concat(parent::node()/name(), '-p')}">
+        <p class="{name()}">
             <xsl:apply-templates/>
-        </span>
+        </p>
     </xsl:template>
+
+    <xsl:template match="decoDesc/p|handDesc/p|decoNote/p|handNote/p" priority="10">
+        <p class="{concat(parent::node()/name(), '-p')}">
+            <xsl:apply-templates/>
+        </p>
+    </xsl:template>
+
     <xsl:template match="decoNote//list|handNote//list|support//list" priority="10">
         <div class="{concat(parent::node()/name(), '-list')}">
             <xsl:apply-templates/>
         </div>
     </xsl:template>
+
     <xsl:template match="decoNote/list/item|handNote/list/item|support//item" priority="10">
         <span class="{name()}">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
+
     <!-- where all the text inside a decoNote (e.g. not nested children) = ' Decoration' get rid of it -->
     <xsl:template match="decoNote/text()[normalize-space(.) = 'Decoration']"/>
     <xsl:template match="decoNote/list/head|decoNote/list/label|handNote/list/head|handnote/list/label" priority="10">
@@ -937,35 +896,40 @@
             <xsl:apply-templates/>
         </span>
     </xsl:template>
+
     <xsl:template match="musicNotation">
         <div class="musicNotation">
-            <span class="tei-label">Musical Notation:</span>
+            <span class="tei-label">Musical Notation: </span>
             <xsl:apply-templates/>
         </div>
     </xsl:template>
+
     <xsl:template match="typeDesc">
         <div class="typeDesc">
             <span class="tei-label">Type(s): </span>
             <xsl:apply-templates/>
         </div>
     </xsl:template>
+
     <xsl:template match="sealDesc">
-        <div class="sealDesc">
-            <span class="tei-label">Seal(s): </span>
-            <xsl:apply-templates/>
-        </div>
+        <span class="tei-label">Seal(s): </span>
+        <xsl:apply-templates/>
     </xsl:template>
+
     <xsl:template match="scriptDesc">
-        <div class="">
-            <span class="tei-label">Script(s): </span>
+        <h4>Script(s)</h4>
+        <div class="scriptDesc">
             <xsl:apply-templates/>
         </div>
     </xsl:template>
+
     <xsl:template match="objectDesc">
         <div class="objectDesc">
-            <span class="tei-label">Format: </span>
             <xsl:if test="@form">
-                <xsl:value-of select="@form"/>
+                <div class="form">
+                    <span class="tei-label">Form: </span>
+                    <xsl:value-of select="@form"/>
+                </div>
             </xsl:if>
             <xsl:choose>
                 <xsl:when test="p|ab">
@@ -977,14 +941,15 @@
             </xsl:choose>
         </div>
     </xsl:template>
+
     <xsl:template match="layoutDesc">
-        <div class="layoutDesc">
-            <h4 class="tei-label">Layout</h4>
+        <div class="{name()}">
+            <h4>Layout</h4>
             <xsl:apply-templates/>
         </div>
     </xsl:template>
-    <xsl:template match="layoutDesc/*">
-        <div class="{name()}">
+
+    <xsl:template match="layoutDesc/layout">
             <!-- modified: do not display attribute values -->
             <!--<xsl:if test="@columns">
                 <div class="layout-columns">
@@ -1004,46 +969,13 @@
                     <xsl:value-of select="@writtenLines"/>
                 </div>
             </xsl:if>-->
+        <p>
             <xsl:apply-templates/>
-        </div>
+        </p>
     </xsl:template>
+
     <xsl:template match="supportDesc">
-        <!-- <div class="supportDesc"> -->
-        <!-- <span class="tei-label">Support: </span> -->
-        <xsl:if test="@material">
-            <div class="material">
-                <span class="tei-label">Material: </span>
-              
-             
-             <!-- modified. see following comment.  -->
-              <xsl:apply-templates/>
-              
-                
-                <!-- this is unnecessary. It removes text in <support> and prevents further templates in <supportDesc> from being applied. Just retain the text that is there. MLH. -->
-                <!--  <xsl:variable name="material" select="@material" /> 
-                    <xsl:choose>
-                    <xsl:when test="$material = 'perg'">
-                        Parchment
-                    </xsl:when>
-                    <xsl:when test="$material = 'chart'">
-                        Paper
-                    </xsl:when>
-                    <xsl:when test="$material = 'papyrus'">
-                        Papyrus
-                    </xsl:when>
-                    <xsl:when test="$material = 'mixed'">
-                        Mixed
-                    </xsl:when>
-                    <xsl:when test="$material = 'unknown'">
-                        Unknown
-                    </xsl:when>
-                    <xsl:otherwise>
-                        Other
-                    </xsl:otherwise>
-                </xsl:choose>-->
-            </div>
-        </xsl:if>
-        <!-- </div> -->
+        <xsl:apply-templates/>
     </xsl:template>
 
     <!-- misc phrase-level elements used inside physDesc -->
@@ -1052,11 +984,13 @@
             <xsl:apply-templates/>
         </span>
     </xsl:template>
+
     <xsl:template match="measure">
         <span class="{name()}">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
+
     <xsl:template match="num">
         <span class="{name()}">
             <xsl:apply-templates/>
@@ -1069,6 +1003,7 @@
             <xsl:apply-templates/>
         </p>
     </xsl:template>
+
     <xsl:template match="seal/p">
         <span class="seal-p">
             <xsl:apply-templates/>
@@ -1078,58 +1013,61 @@
     <!--  collation condition foliation support -->
     <xsl:template match="collation">
         <div class="{name()}">
-            <span class="tei-label">Collation: </span>
-            <xsl:apply-templates/>
+            <h4>Collation</h4>
+            <p>
+                <xsl:apply-templates/>
+            </p>
         </div>
     </xsl:template>
-    <xsl:template match="condition">
-        <div class="{name()}">
-            <span class="tei-label">Condition: </span>
-            <xsl:apply-templates/>
-        </div>
-    </xsl:template>
-    <xsl:template match="foliation">
-        <div class="{name()}">
-            <span class="tei-label">Foliation: </span>
-            <xsl:apply-templates/>
-        </div>
-    </xsl:template>
-    <!-- this is handled with supportDesc@material - AH -->
-    <!-- <xsl:template match="support">
-        <div class="{name()}">
-            <h5 class="tei-label">Material Support</h5>
-            <xsl:apply-templates/>
-        </div>
-    </xsl:template> -->
 
+    <xsl:template match="condition">
+        <span class="tei-label">Condition: </span>
+        <xsl:apply-templates/>
+    </xsl:template>
+
+    <xsl:template match="foliation">
+        <span class="tei-label">Foliation: </span>
+        <xsl:apply-templates/>
+    </xsl:template>
+
+    <!-- this is handled with supportDesc@material - AH -->
+    <xsl:template match="support">
+        <div class="{name()}">
+            <span class="tei-label">Support: </span>
+            <xsl:apply-templates/>
+        </div>
+    </xsl:template>
     <!-- secFol, locus, extent -->
     <xsl:template match="secFol">
-        <div class="{name()}">
-            <span class="tei-label">Secundo Folio: </span>
+        <div class="{ name() }">
+            <span class="tei-label italic">Secundo Folio: </span>
             <xsl:apply-templates/>
             <!-- would be useful to insert a space at end ? (due to there often being a following <locus>) -->
-            
         </div>
     </xsl:template>
-    
+
     <!-- locus outside of msitem should not be a div since it always appears in continuous text  -->
     <xsl:template match="locus">
         <span class="{name()}">
-            
             <xsl:apply-templates/>
         </span>
     </xsl:template>
-    
+
     <xsl:template match="extent">
         <div class="{name()}">
             <!-- the label "extent" should only be displayed (1) if there is text (not just whitespace) after, giving the extent (2) if there is <measure> directly afterwards -->
-            
             <xsl:choose>
-                <xsl:when test="child::text()[1][matches(., '[a-z]')]"><span class="tei-label">Extent: </span>
-            <xsl:apply-templates/></xsl:when>
-                <xsl:when test="child::measure[1]"><span class="tei-label">Extent: </span>
-                    <xsl:apply-templates/></xsl:when>
-                <xsl:otherwise><xsl:apply-templates/></xsl:otherwise>
+                <xsl:when test="child::text()[1][matches(., '[a-z]')]">
+                    <span class="tei-label">Extent: </span>
+                    <xsl:apply-templates/>
+                </xsl:when>
+                <xsl:when test="child::measure[1]">
+                    <span class="tei-label">Extent: </span>
+                    <xsl:apply-templates/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:apply-templates/>
+                </xsl:otherwise>
             </xsl:choose>
         </div>
     </xsl:template>
@@ -1137,12 +1075,10 @@
     <!-- deal with dimensions -->
     <xsl:template match="dimensions">
         <div class="{name()}">
-            <span class="tei-label">Dimensions <xsl:if test="@type">(<xsl:value-of select="@type"/>)</xsl:if>:</span>
+            <span class="tei-label">Dimensions<xsl:if test="@type"><xsl:text> </xsl:text>(<xsl:value-of select="@type"/>)</xsl:if>:<xsl:text> </xsl:text></span>
             <xsl:choose>
                 <xsl:when test="height and width">
-                    <span class="height">
-                        <xsl:value-of select="height"/>×<xsl:value-of select="width"/>
-                    </span>
+                    <span class="height"><xsl:value-of select="height"/></span>×<span class="width"><xsl:value-of select="width"/></span>
                     <xsl:choose>
                         <xsl:when test="@unit">
                             <xsl:value-of select="@unit"/>.
@@ -1161,37 +1097,26 @@
             </xsl:choose>
         </div>
     </xsl:template>
+
     <xsl:template match="height|width">
         <span class="{name()}">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
-
     <!-- formula, catchwords, signatures, watermarks  -->
     <xsl:template match="formula">
         <div class="formula">
             <!-- modified: label not wanted -->
-           <!-- <span class="tei-label">Formula: </span>-->
+            <!-- <span class="tei-label">Formula: </span>-->
             <xsl:apply-templates/>
         </div>
     </xsl:template>
-
-    <xsl:template match="catchwords | signatures">
+    <xsl:template match="catchwords | signatures | watermark | listBibl">
         <!-- changed from div to span since the whole text of <collation> is usually written as a continuous paragraph -->
-        <span class="{name()}">
-            <!-- modified: label not wanted -->
-           <!-- <span class="tei-label">Catchwords: </span>-->
-            <xsl:apply-templates/>
-        </span>
-    </xsl:template>
-    <xsl:template match="watermark">
         <div class="{name()}">
-            <!-- modified: label not needed (check) -->
-            <!--<span class="tei-label">Watermark: </span>-->
             <xsl:apply-templates/>
         </div>
     </xsl:template>
-
     <!-- hi used for ad hoc formatting -->
     <xsl:template match="hi">
         <span>
@@ -1202,19 +1127,13 @@
         </span>
     </xsl:template>
 
-    <xsl:template match="listBibl">
-        <div class="listBibl">
-            <xsl:apply-templates/>
-        </div>
-    </xsl:template>
-
-    <xsl:template match="list/item|listBibl/bibl">
+    <xsl:template match="list/item | listBibl/bibl | bibl">
         <div class="{name()}">
             <!--  modified to create live links in the catalogue references  -->
             <xsl:choose>
                 <xsl:when test="@facs">
                     <!-- this path will need to be updated for final version -->
-                    <xsl:variable name="facs-url" select="concat('http://tolkien-prd.bodleian.ox.ac.uk/images/ms/', substring(@facs, 1, 3), '/', @facs)"></xsl:variable>
+                    <xsl:variable name="facs-url" select="concat('https://medieval.bodleian.ox.ac.uk/images/ms/', substring(@facs, 1, 3), '/', @facs)" />
                     <a href="{$facs-url}">
                         <xsl:apply-templates/>
                     </a>
@@ -1226,36 +1145,16 @@
         </div>
     </xsl:template>
 
-    <xsl:template match="bibl">
-        <div class="{name()}">
-            <!-- *** modified as above  *** -->
-            <xsl:choose>
-                <xsl:when test="@facs">
-                    <!-- this path will need to be updated for final version -->
-                    <xsl:variable name="facs-url" select="concat('http://tolkien-prd.bodleian.ox.ac.uk/images/ms/', substring(@facs, 1, 3), '/', @facs)"></xsl:variable>
-                    <a href="{$facs-url}">
-                        <xsl:apply-templates/>
-                    </a>
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:apply-templates/>
-                </xsl:otherwise>
-            </xsl:choose>
-        </div>
-    </xsl:template>
-
-    <xsl:template match="note//bibl|p//bibl|title//bibl|physDesc//bibl">
-        <!-- check. should this really be a div?  -->
+    <xsl:template match="note//bibl | p//bibl | title//bibl | physDesc//bibl">
         <div class="{name()}">
             <xsl:apply-templates/>
         </div>
     </xsl:template>
 
-
     <!-- Things inside additional -->
     <xsl:template match="additional/listBibl">
+        <h5 class="tei-label">Bibliography</h5>
         <div class="listBibl">
-            <h5 class="tei-label">Bibliography</h5>
             <ul class="listBibl">
                 <xsl:apply-templates/>
             </ul>
@@ -1276,36 +1175,28 @@
             </xsl:choose>
         </div>
     </xsl:template>
-    
-    
 
     <xsl:template match="additional/adminInfo">
         <div class="adminInfo">
             <xsl:apply-templates/>
         </div>
     </xsl:template>
-    
-    
 
     <xsl:template match="adminInfo/*">
-        <div class="{name()}">
-            <xsl:apply-templates/>
-        </div>
+        <xsl:apply-templates/>
     </xsl:template>
-    
-   
 
     <xsl:template match="source">
         <div>
             <xsl:if test="text()[1]">
                 <!-- modified from div to span. Don't want to make leading text a block necessarily. -->
-                <span>
-                    <xsl:apply-templates select="text()[1]"/>
-                </span>
+                <xsl:apply-templates select="text()[1]"/>
             </xsl:if>
+
             <xsl:apply-templates select="*"/>
         </div>
     </xsl:template>
+
     <xsl:template match="source/*">
         <div class="{name()}">
             <xsl:apply-templates/>
@@ -1317,8 +1208,9 @@
             <xsl:apply-templates/>
         </div>
     </xsl:template>
+
     <!-- names and places -->
-    <xsl:template match="persName|author|placeName|orgName|name|country|settlement|district|region">
+    <xsl:template match="persName | author | placeName | orgName | name | country | settlement | district | region | repository | idno">
         <span class="{name()}">
             <xsl:choose>
                 <xsl:when test="@key">
@@ -1333,41 +1225,29 @@
         </span>
     </xsl:template>
 
-    <xsl:template match="heraldry">
+    <xsl:template match="heraldry | label | list/head | seg">
         <span class="{name()}">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
+
     <xsl:template match="label">
         <span class="{name()}">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
+
     <xsl:template match="list">
         <ul class="{name()}">
             <xsl:apply-templates/>
         </ul>
     </xsl:template>
-    <xsl:template match="list/head">
-        <span class="{name()}">
-            <xsl:apply-templates/>
-        </span>
-    </xsl:template>
-
-    <xsl:template match="seg">
-        <span class="{name()}">
-            <xsl:apply-templates/>
-        </span>
-    </xsl:template>
-
 
     <!-- catch all fallback: this is there to warn me of elements I don't have templates for and should never fire otherwise-->
-    <!-- <xsl:template match="*" priority="-100">
+    <xsl:template match="*" priority="-100">
       <xsl:message>No template for: <xsl:value-of select="name()"/></xsl:message>
       <span class="{name()}">
         <xsl:apply-templates select="@*|node()"/>
       </span>
-    </xsl:template> -->
-
-
+    </xsl:template>
 </xsl:stylesheet>
