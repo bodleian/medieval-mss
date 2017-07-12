@@ -306,13 +306,14 @@ for $x in collection('../collections/?select=*.xml;recurse=yes')
     let $filepath := fn:tokenize(fn:base-uri($x), '/')
     let $htmlfile := concat($filepath[count($filepath) - 1], "/", $filepath[count($filepath)])
     let $htmldoc := doc(concat("html/", replace($htmlfile, ".xml", ".html")))
-    let $htmlcontent := fn:normalize-space(fn:serialize($htmldoc))
+    let $msid := $x//tei:TEI/@xml:id/data()
     let $title := $x//tei:msDesc/tei:msIdentifier/tei:idno[@type="shelfmark"]/text()
+    let $htmlcontent := fn:normalize-space(fn:serialize($htmldoc//div[@id = $msid]))
 
 return <doc>
     <field name="type">manuscript</field>
-    <field name="pk">{ $x//tei:TEI/@xml:id/data() }</field>
-    <field name="id">{ $x//tei:TEI/@xml:id/data() }</field>
+    <field name="pk">{ $msid }</field>
+    <field name="id">{ $msid }</field>
     <field name="title">{ $title }</field>
     <field name="ms_collection_s">{ $x//tei:titleStmt/tei:title[@type="collection"]/text() }</field>
     <field name="ms_settlement_s">{ $x//tei:msDesc/tei:msIdentifier/tei:settlement/text() }</field>
