@@ -444,17 +444,15 @@
                 </div>
             </xsl:when>
             <xsl:when test="name()='msPart' or name()='msFrag'">
+                <xsl:variable name="pos" select="count(preceding-sibling::msPart) + 1" />
                 <div class="{name()}">
+                    <h3>Manuscript Part <xsl:value-of select="$pos" /></h3>
                     <xsl:apply-templates/>
                 </div>
             </xsl:when>
             <xsl:when test="name()='head'">
                 <!-- make the head more visible h not div  -->
-                <h4 class="msHead">
-                    <!-- label not needed -->
-                    <!--<span class="tei-label">Summary: </span>-->
-                    <xsl:apply-templates/>
-                </h4>
+                <h4 class="msHead"><xsl:apply-templates/></h4>
             </xsl:when>
             <xsl:when test="name()='msIdentifier'">
                 <xsl:apply-templates/>
@@ -542,7 +540,7 @@
     </xsl:template>
 
     <!-- don't display altIdentifier for msParts, the identifier already appears as a heading -->
-    <xsl:template match="altIdentifier/idno" />
+    <xsl:template match="msPart//altIdentifier" />
     <!--<xsl:apply-templates/>
     </xsl:template>-->
 
@@ -646,31 +644,25 @@
         </xsl:if>
     </xsl:template>
 
-    <xsl:template match="msItem/author | msItem/docAuthor">
-        <!-- changed from div to span -->
-        <span class="author">
-            <xsl:choose>
-                <xsl:when test="@key">
-                    <a href="/catalog/{@key}">
-                        <!-- modified -->
-                        <xsl:apply-templates/>
-                        <!--<xsl:value-of select="normalize-space(string-join(text(), ', '))"/>-->
-                    </a>
-                </xsl:when>
-                <xsl:otherwise>
-                    <!-- modified -->
-                    <xsl:apply-templates/>
-                    <!--<xsl:value-of select="normalize-space(string-join(text(), ', '))"/>-->
-                </xsl:otherwise>
-            </xsl:choose>
-        </span>
-        <xsl:if test="following-sibling::author">
-            <xsl:text> &amp; </xsl:text>
-        </xsl:if>
-        <xsl:if test="following-sibling::title">
-            <xsl:text>, </xsl:text>
-        </xsl:if>
-    </xsl:template>
+    <!--<xsl:template match="msItem/author | msItem/docAuthor">-->
+        <!--<span class="author">-->
+            <!--<xsl:apply-templates /><xsl:if test="following-sibling::*[1]/name()='author'"><xsl:text>; </xsl:text></xsl:if><xsl:if test="following-sibling::*[1]/name()='title'"><xsl:text>. </xsl:text></xsl:if>-->
+            <!--&lt;!&ndash;<xsl:choose>&ndash;&gt;-->
+                <!--<xsl:when test="@key">-->
+                    <!--<a href="/catalog/{@key}">-->
+                        <!--&lt;!&ndash; modified &ndash;&gt;-->
+                        <!--<xsl:apply-templates /><xsl:if test="following-sibling::*[1]/name()='author'"><xsl:text>; </xsl:text></xsl:if><xsl:if test="following-sibling::*[1]/name()='title'"><xsl:text>. </xsl:text></xsl:if>-->
+                        <!--&lt;!&ndash;<xsl:value-of select="normalize-space(string-join(text(), ', '))"/>&ndash;&gt;-->
+                    <!--</a>-->
+                <!--</xsl:when>-->
+                <!--<xsl:otherwise>-->
+                    <!--&lt;!&ndash; modified &ndash;&gt;-->
+                    <!--<xsl:apply-templates /><xsl:if test="following-sibling::*[1]/name()='author'"><xsl:text>; </xsl:text></xsl:if><xsl:if test="following-sibling::*[1]/name()='title'"><xsl:text>. </xsl:text></xsl:if>-->
+                    <!--&lt;!&ndash;<xsl:value-of select="normalize-space(string-join(text(), ', '))"/>&ndash;&gt;-->
+                <!--</xsl:otherwise>-->
+            <!--</xsl:choose>-->
+        <!--</span>-->
+    <!--</xsl:template>-->
     <xsl:template match="msItem/editor">
         <span class="editor">
             <xsl:value-of select="normalize-space(string-join(text(), ' (editor)'))"/>
@@ -781,7 +773,7 @@
 
     <xsl:template match="msItem/textLang">
         <div class="{name()}">
-            <span class="tei-label">Language(s):</span>
+            <span class="tei-label">Language(s): </span>
             <xsl:apply-templates/>
         </div>
     </xsl:template>
@@ -1072,8 +1064,8 @@
         </div>
     </xsl:template>
 
-    <!-- deal with dimensions -->
-    <xsl:template match="dimensions">
+    <!-- deal with dimensions in the extent -->
+    <xsl:template match="extent/dimensions">
         <div class="{name()}">
             <span class="tei-label">Dimensions<xsl:if test="@type"><xsl:text> </xsl:text>(<xsl:value-of select="@type"/>)</xsl:if>:<xsl:text> </xsl:text></span>
             <xsl:choose>
@@ -1096,6 +1088,29 @@
                 </xsl:otherwise>
             </xsl:choose>
         </div>
+    </xsl:template>
+
+    <!-- deal with dimensions elsewhere -->
+    <xsl:template match="dimensions">
+        <xsl:choose>
+            <xsl:when test="height and width">
+                <span class="height"><xsl:value-of select="height"/></span>×<span class="width"><xsl:value-of select="width"/></span>
+                <xsl:choose>
+                    <xsl:when test="@unit">
+                        <xsl:value-of select="@unit"/>.
+                    </xsl:when>
+                    <xsl:when test="height/@unit">
+                        <xsl:value-of select="height/@unit"/>.
+                    </xsl:when>
+                    <xsl:when test="width/@unit">
+                        <xsl:value-of select="width/@unit"/>.
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:apply-templates/>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
 
     <xsl:template match="height|width">
@@ -1222,7 +1237,7 @@
                     <xsl:apply-templates/>
                 </xsl:otherwise>
             </xsl:choose>
-        </span>
+        </span><xsl:if test="following-sibling::*[1]/name()='author'"><xsl:text>; </xsl:text></xsl:if><xsl:if test="following-sibling::*[1]/name()='title'"><xsl:text>. </xsl:text></xsl:if>
     </xsl:template>
 
     <xsl:template match="heraldry | label | list/head | seg">
