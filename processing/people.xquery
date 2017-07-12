@@ -42,7 +42,9 @@ declare function local:personRole($role)
             </field>
             <field name="pp_name_s">{ $name }</field>
             { for $role in $roles
-                return <field name="pp_roles_sm">{ local:personRole($role) }</field>
+                let $theseroles := fn:tokenize($role, ' ')
+                for $thisrole in $theseroles
+                    return <field name="pp_roles_sm">{ local:personRole($thisrole) }</field>
             }
             { for $variant in $variants
                 let $vname := fn:normalize-space($variant/string())
