@@ -1,6 +1,6 @@
 ## Bodleian Libraries Catalogue of Western Manuscripts
 
-This repository contains the TEI data that represents the Bodleian Library's [Catalogue of Western Manuscripts](https://western.bodleian.ox.ac.uk).
+This repository contains the TEI data that represents the Bodleian Library's [Catalogue of Medieval Manuscripts](https://medieval.bodleian.ox.ac.uk).
 
 It also contains several scripts and tools for processing this data into a Solr instance for use with our
 Blacklight search service.
