@@ -24,6 +24,7 @@ declare function local:personRole($role)
         let $id := $person/@xml:id/string()
         let $name := fn:normalize-space($person//tei:persName[@type='display'][1]/string())
         let $roles := fn:distinct-values($collection//tei:persName[@key = $id]/@role/string())
+        let $authors := fn:distinct-values($collection//tei:author[@key = $id]/name())
 
         let $mss1 := $collection//tei:TEI[.//tei:persName[@key = $id]]
         let $mss2 := $collection//tei:TEI[.//tei:author[@key = $id]]
@@ -41,6 +42,14 @@ declare function local:personRole($role)
                 { functx:capitalize-first(substring(replace($name, '[^\p{L}|\p{N}]+', ''), 1, 1))}
             </field>
             <field name="pp_name_s">{ $name }</field>
+            { for $auth in $authors
+                (:
+                    We don't actually need the value of the tag, we just need to loop over it. It should actually
+                    always be 1, since we're taking the element name and then "distinct-values"ing it.
+                    TODO: optimize when there is time.
+                :)
+                return <field name="pp_roles_sm">Author</field>
+            }
             { for $role in $roles
                 let $theseroles := fn:tokenize($role, ' ')
                 for $thisrole in $theseroles
