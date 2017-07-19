@@ -86,6 +86,9 @@ declare function local:languageValue($lang)
             <field name="id">{ $id }</field>
             <field name="title">{ $title }</field>
             <field name="wk_title_s">{ $title }</field>
+            <field name="alpha_title">
+                { functx:capitalize-first(substring(replace($title, '[^\p{L}|\p{N}]+', ''), 1, 1))}
+            </field>
             <field name="wk_lang_sm">{ local:languageValue($lang) }</field>
             { for $subj in $subjects
                 return <field name="wk_subjects_sm">{ $subj }</field>
