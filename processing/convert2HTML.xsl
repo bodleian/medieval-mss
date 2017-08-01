@@ -210,8 +210,7 @@
     </xsl:template>
 
     <xsl:template match="supplied">
-        <span class="supplied">&lt;<xsl:apply-templates/>&gt;
-        </span>
+        <span class="supplied">[<xsl:apply-templates/>]</span>
     </xsl:template>
 
     <xsl:template match="choice">
@@ -439,6 +438,7 @@
                 </div>
             </xsl:when>
             <xsl:when test="name()='additional'">
+                <h3>Record Sources</h3>
                 <div class="additional">
                     <xsl:apply-templates/>
                 </div>
@@ -446,7 +446,7 @@
             <xsl:when test="name()='msPart' or name()='msFrag'">
                 <xsl:variable name="pos" select="count(preceding-sibling::msPart) + 1" />
                 <div class="{name()}">
-                    <h3>Manuscript Part <xsl:value-of select="$pos" /></h3>
+                    <h2>Manuscript Part <xsl:value-of select="$pos" /></h2>
                     <xsl:apply-templates/>
                 </div>
             </xsl:when>
@@ -629,9 +629,9 @@
         <span class="tei-title italic">
             <xsl:apply-templates/>
         </span>
-        <xsl:if test="following-sibling::note[1][not(starts-with(., '('))][not(starts-with(., '[A-Z]'))][not(following-sibling::lb[1])]">
-            <xsl:text>, </xsl:text>
-        </xsl:if>
+        <!--<xsl:if test="following-sibling::note[1][not(starts-with(., '('))][not(starts-with(., '[A-Z]'))][not(following-sibling::lb[1])]">-->
+            <!--<xsl:text>, </xsl:text>-->
+        <!--</xsl:if>-->
     </xsl:template>
 
     <!-- others should be roman -->
@@ -668,7 +668,7 @@
             <xsl:value-of select="normalize-space(string-join(text(), ' (editor)'))"/>
         </span>
     </xsl:template>
-    <xsl:template match="msItem/bibl">
+    <xsl:template match="msItem//bibl | physDesc//bibl | history//bibl">
         <xsl:choose>
             <xsl:when test="@type='bible' or @type='commentedOn' or @type='commentary' or @type='related'"/>
             <xsl:otherwise>
@@ -1031,8 +1031,10 @@
     </xsl:template>
 
     <xsl:template match="foliation">
-        <span class="tei-label">Foliation: </span>
-        <xsl:apply-templates/>
+        <div class="{name()}">
+            <span class="tei-label">Foliation: </span>
+            <xsl:apply-templates/>
+        </div>
     </xsl:template>
 
     <!-- this is handled with supportDesc@material - AH -->
@@ -1155,7 +1157,7 @@
         </span>
     </xsl:template>
 
-    <xsl:template match="list/item | listBibl/bibl | bibl">
+    <xsl:template match="list/item | listBibl/bibl">
         <div class="{name()}">
             <!--  modified to create live links in the catalogue references  -->
             <xsl:choose>
@@ -1173,11 +1175,11 @@
         </div>
     </xsl:template>
 
-    <xsl:template match="note//bibl | p//bibl | title//bibl | physDesc//bibl">
-        <div class="{name()}">
-            <xsl:apply-templates/>
-        </div>
-    </xsl:template>
+    <!--<xsl:template match="note//bibl | p//bibl | title//bibl | physDesc//bibl">-->
+        <!--<div class="{name()}">-->
+            <!--<xsl:apply-templates/>-->
+        <!--</div>-->
+    <!--</xsl:template>-->
 
     <!-- Things inside additional -->
     <xsl:template match="additional/listBibl">
@@ -1238,7 +1240,7 @@
     </xsl:template>
 
     <!-- names and places -->
-    <xsl:template match="persName | author | placeName | orgName | name | country | settlement | district | region | repository | idno">
+    <xsl:template match="persName | placeName | orgName | name | country | settlement | district | region | repository | idno">
         <span class="{name()}">
             <xsl:choose>
                 <xsl:when test="@key">
@@ -1250,7 +1252,23 @@
                     <xsl:apply-templates/>
                 </xsl:otherwise>
             </xsl:choose>
-        </span><xsl:if test="following-sibling::*[1]/name()='author'"><xsl:text>; </xsl:text></xsl:if><xsl:if test="following-sibling::*[1]/name()='title'"><xsl:text>. </xsl:text></xsl:if>
+        </span>
+    </xsl:template>
+
+    <xsl:template match="author">
+        <span class="{name()}">
+            <xsl:choose>
+                <xsl:when test="normalize-space(.)=''" />
+                <xsl:when test="@key">
+                    <a href="/catalog/{@key}">
+                        <xsl:apply-templates/>
+                    </a>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:apply-templates/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </span><xsl:if test="following-sibling::*[1]/name()='author'"><xsl:text>; </xsl:text></xsl:if><xsl:if test="following-sibling::*[1]/name()='title'"><xsl:text>, </xsl:text></xsl:if>
     </xsl:template>
 
     <xsl:template match="heraldry | label | list/head | seg">
