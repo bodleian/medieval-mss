@@ -389,8 +389,25 @@
         </div>
     </xsl:template>
 
-    <!-- skip output of msIdentifier block for now - AH -->
-    <xsl:template match="msDesc/msIdentifier" />
+    <!-- skip output of msIdentifier block with subtype for now - AH -->
+    <xsl:template match="msIdentifier/altIdentifier/idno/@subtype" />
+    <xsl:template match="msIdentifier/institution | msIdentifier/region | msIdentifier/country | msIdentifier/settlement | msIdentifier/repository | msIdentifier/idno[@type='shelfmark']" />
+
+
+    <!-- altidentifier/idno is all we want from this section, and not if subtype="alt" -->
+    <xsl:template match="msDesc/msIdentifier/altIdentifier">
+        <div class="msIdentifier">
+            <xsl:choose>
+                <!--<xsl:when test="idno/@type='shelfmark' or @type='shelfmark'">ShelfMark:</xsl:when>-->
+                <!-- spaces after ':' added 26.6 -->
+                <xsl:when test="idno[not(@subtype)]/@type='SCN'">Summary Catalogue no.: <xsl:apply-templates/></xsl:when>
+                <xsl:when test="idno[not(@subtype)]/@type='TM' or idno/@type='TM'">Trismegistos no.: <xsl:apply-templates/></xsl:when>
+                <xsl:when test="idno[not(@subtype)]/@type='PR'">Papyrological Reference: <xsl:apply-templates/></xsl:when>
+                <xsl:when test="idno[not(@subtype)]/@type='diktyon'">Diktyon no.: <xsl:apply-templates/></xsl:when>
+                <xsl:when test="idno[not(@subtype)]/@type='LDAB'">LDAB no.: <xsl:apply-templates/></xsl:when>
+            </xsl:choose>
+        </div>
+    </xsl:template>
 
     <!-- Paragraphs -->
     <xsl:template match="p">
@@ -1019,9 +1036,9 @@
     <xsl:template match="collation">
         <div class="{name()}">
             <h4>Collation</h4>
-            <p>
+            <div class="collation">
                 <xsl:apply-templates/>
-            </p>
+            </div>
         </div>
     </xsl:template>
 
