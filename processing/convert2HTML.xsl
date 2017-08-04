@@ -1160,9 +1160,9 @@
     </xsl:template>
     <xsl:template match="catchwords | signatures | watermark | listBibl">
         <!-- changed from div to span since the whole text of <collation> is usually written as a continuous paragraph -->
-        <div class="{name()}">
+        <span class="{name()}">
             <xsl:apply-templates/>
-        </div>
+        </span>
     </xsl:template>
     <!-- hi used for ad hoc formatting -->
     <xsl:template match="hi">
