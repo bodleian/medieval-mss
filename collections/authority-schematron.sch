@@ -24,4 +24,18 @@
             <assert test="count(tei:placeName[@type='index']) = 1">One placeName element only must have @type=index</assert>
         </rule>
     </pattern>
+    
+    
+    <pattern>
+        <rule context="tei:text/tei:body/tei:listBibl/tei:bibl">
+            <assert test="matches(@xml:id, 'work_\d+')">The bibl element must have an xml:id attribute matching the pattern 'work_[digits]'</assert>
+            <assert test="count(tei:title[@type='uniform']) = 1">One title element only must have @type=uniform</assert>
+            <assert test="tei:textLang[@mainLang]">Works should have language(s) specified in a textLang element which must have an attribute @mainLang</assert>
+            
+        </rule>
+        <rule context="tei:text/tei:body/tei:listBibl/tei:bibl[not(tei:author)]">
+            <assert test="tei:note[@type='subject']">Works without an author should have one or more subject headings</assert>
+        </rule>
+    </pattern>
+    
 </schema>
