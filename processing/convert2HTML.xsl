@@ -1043,8 +1043,13 @@
     </xsl:template>
 
     <xsl:template match="condition">
-        <span class="tei-label">Condition: </span>
-        <xsl:apply-templates/>
+        <div>
+            <h4>Condition</h4>
+            <div class="condition">
+                <xsl:apply-templates/>
+            </div>
+        </div>
+
     </xsl:template>
 
     <xsl:template match="foliation">
