@@ -1205,7 +1205,7 @@
 
     <!-- Things inside additional -->
     <xsl:template match="additional/listBibl">
-        <h3 class="tei-label">Bibliography</h3>
+        <h3 class="msDesc-heading3">Bibliography</h3>
         <div class="listBibl">
             <ul class="listBibl">
                 <xsl:apply-templates/>
