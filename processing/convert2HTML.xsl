@@ -1239,21 +1239,24 @@
     </xsl:template>
 
     <xsl:template match="source">
-        <div>
-            <xsl:if test="text()[1]">
-                <!-- modified from div to span. Don't want to make leading text a block necessarily. -->
-                <xsl:apply-templates select="text()[1]"/>
-            </xsl:if>
-
-            <xsl:apply-templates select="*"/>
-        </div>
-    </xsl:template>
-
-    <xsl:template match="source/*">
+        
         <div class="{name()}">
+           <!-- <xsl:if test="text()[1]">
+                <!-\- modified from div to span. Don't want to make leading text a block necessarily. -\->
+                <xsl:apply-templates select="text()[1]"/>
+            </xsl:if>-->
+
             <xsl:apply-templates/>
         </div>
     </xsl:template>
+
+    <!--<xsl:template match="source/*">
+        <xsl:apply-templates/>
+        <!-\- the following creates (1) div for titles in source (which we don't want) (2) div for listBibl in source (which we do want). that is also handled at l. 1260, though (need to change priority there?) -\->
+        <!-\-<div class="{name()}">
+            <xsl:apply-templates/>
+        </div>-\->
+    </xsl:template>-->
 
     <xsl:template match="source/listBibl" priority="10">
         <div class="{name()}">
