@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-java -cp "saxon/saxon9he.jar"  net.sf.saxon.Transform -it:main -xsl:convert2HTML.xsl
+java -Xmx1G -Xms1G -cp "saxon/saxon9he.jar"  net.sf.saxon.Transform -it:main -xsl:convert2HTML.xsl
 
 echo "Prettifying output"
 #find ./html/ -name "*.html" -type f -exec xmllint --output '{}' --format '{}' \;
