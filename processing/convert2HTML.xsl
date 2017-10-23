@@ -390,12 +390,14 @@
     </xsl:template>
 
     <!-- skip output of msIdentifier block with subtype for now - AH -->
-    <xsl:template match="msIdentifier/altIdentifier/idno/@subtype" />
+    <!-- was: <xsl:template match="msIdentifier/altIdentifier/idno/@subtype" /> 23.10 -->
+    <xsl:template match="msIdentifier/altIdentifier/idno[@subtype]" />
     <xsl:template match="msIdentifier/institution | msIdentifier/region | msIdentifier/country | msIdentifier/settlement | msIdentifier/repository | msIdentifier/idno[@type='shelfmark']" />
 
 
     <!-- altidentifier/idno is all we want from this section, and not if subtype="alt" -->
-    <xsl:template match="msDesc/msIdentifier/altIdentifier">
+    <!-- altidentifier with subtype alt should not be matched, otherwise we get an empty div which interferes with display [e.g. http://medieval-qa.bodleian.ox.ac.uk/catalog/manuscript_4968] -->
+    <xsl:template match="msDesc/msIdentifier/altIdentifier[child::idno[not(@subtype)]]">
         <div class="msIdentifier">
             <xsl:choose>
                 <!--<xsl:when test="idno/@type='shelfmark' or @type='shelfmark'">ShelfMark:</xsl:when>-->
