@@ -278,7 +278,8 @@
     </xsl:template>
 
     <xsl:template match="expan | ex">
-        <span class="expan">(<xsl:apply-templates/>)
+        <!-- was: class = expan, changed 6.11.17 to better match TEI guidelines. ex=parts of words. -->
+        <span class="ex">(<xsl:apply-templates/>)
         </span>
     </xsl:template>
 
@@ -1216,8 +1217,9 @@
     </xsl:template>
 
     <xsl:template match="additional/surrogates">
+        <h3 class="msDesc-heading3">Digital Images</h3>
         <div class="surrogates">
-            <xsl:choose>
+            <!--<xsl:choose>
                 <xsl:when test="bibl/@facs">
                     <a href="{bibl/@facs}">
                         <xsl:apply-templates/>
@@ -1226,9 +1228,13 @@
                 <xsl:otherwise>
                     <xsl:apply-templates/>
                 </xsl:otherwise>
-            </xsl:choose>
+            </xsl:choose>-->
+            <xsl:apply-templates/>
         </div>
     </xsl:template>
+    
+    <!-- new 6.11.17 -->
+    <xsl:template match="surrogates//bibl/@*"/>
 
     <xsl:template match="additional/adminInfo">
         <div class="adminInfo">
