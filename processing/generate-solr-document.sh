@@ -6,8 +6,8 @@
 # $3 = Solr `type` (for deleting only one type of record)
 # $4 = Solr address for indexing
 
-#echo "Generating Solr XML document"
-#java -Xmx1G -Xms1G -cp "saxon/saxon9he.jar" net.sf.saxon.Query -q:$1 | xmllint --format - > $2
+echo "Generating Solr XML document"
+java -Xmx1G -Xms1G -cp "saxon/saxon9he.jar" net.sf.saxon.Query -q:$1 | xmllint --format - > $2
 
 # Emptying for both place and organization will result in only one of them being indexed; if we're indexing
 # organizations, then, skip the empty step.
