@@ -318,7 +318,7 @@ return <doc>
     <field name="title">{ $title }</field>
     <field name="ms_collection_s">{ $x//tei:titleStmt/tei:title[@type="collection"]/text() }</field>
     <field name="ms_settlement_s">{ $x//tei:msDesc/tei:msIdentifier/tei:settlement/text() }</field>
-    <field name="ms_institution_s">{ $x//tei:msDesc/tei:msIdentifier/tei:repository/text() }</field>
+    <field name="ms_institution_s">{ $x//tei:msDesc/tei:msIdentifier/tei:institution/text() }</field>
     <field name="ms_repository_s">{ $x//tei:msDesc/tei:msIdentifier/tei:repository/text() }</field>
     <field name="ms_shelfmark_s">{ $x//tei:msDesc/tei:msIdentifier/tei:idno[@type="shelfmark"]/text() }</field>
     <field name="ms_shelfmark_sort">{ $x//tei:msDesc/tei:msIdentifier/tei:idno[@type="shelfmark"]/text() }</field>
