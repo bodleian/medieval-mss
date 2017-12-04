@@ -303,9 +303,9 @@ declare function local:textcontent($content)
 <add>
 {
 for $x in collection('../collections/?select=*.xml;recurse=yes')
-    let $filepath := fn:tokenize(fn:base-uri($x), '/')
-    let $htmlfile := concat($filepath[count($filepath) - 1], "/", $filepath[count($filepath)])
-    let $htmldoc := doc(concat("html/", replace($htmlfile, ".xml", ".html")))
+    let $subfolder := fn:tokenize(fn:base-uri($x), '/')[last() - 1]
+    let $htmlfile := concat($x//tei:sourceDesc/tei:msDesc[1]/@xml:id/data(), '.html')
+    let $htmldoc := doc(concat("html/", $subfolder, '/', $htmlfile))
     let $msid := $x//tei:TEI/@xml:id/data()
     let $htmlcontent := $htmldoc//html:div[@id = $msid]
     let $title := $x//tei:msDesc/tei:msIdentifier/tei:idno[@type="shelfmark"]/text()
