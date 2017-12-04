@@ -1,6 +1,16 @@
 import module namespace functx = "http://www.functx.com" at "functx.xq";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 declare namespace html="http://www.w3.org/1999/xhtml";
+declare option saxon:output "indent=yes";
+declare variable $disablelogging as xs:boolean external := false();
+
+declare function local:logging($level, $msg, $values)
+{
+    if (not($disablelogging)) then
+        (: Trick XQuery into doing trace() to output message to STDERR but not insert it into the XML :)
+        substring(trace('', concat(upper-case($level), '	', $msg, '	', string-join($values, '	'), '	')), 0, 0)
+    else ()
+};
 
 declare function local:authors($contents)
 {
@@ -11,7 +21,11 @@ declare function local:authors($contents)
 declare function local:works($contents)
 {
     for $item in distinct-values(fn:data($contents/tei:msItem/tei:title))
-    return <field name="ms_works_sm">{ normalize-space($item) }</field>
+    let $titletext := normalize-space($item)
+    return
+        if (string-length($titletext) > 0) then
+            <field name="ms_works_sm">{ $titletext }</field>
+        else ()   
 };
 
 
@@ -293,7 +307,7 @@ declare function local:form($doc)
     the fulltext index on Solr. :)
 declare function local:textcontent($content)
 {
-    let $text := $content/text()
+    let $text := $content//text()
     return if (empty($text)) then
         ()
     else
@@ -318,7 +332,12 @@ return <doc>
     <field name="title">{ $title }</field>
     <field name="ms_collection_s">{ $x//tei:titleStmt/tei:title[@type="collection"]/text() }</field>
     <field name="ms_settlement_s">{ $x//tei:msDesc/tei:msIdentifier/tei:settlement/text() }</field>
-    <field name="ms_institution_s">{ $x//tei:msDesc/tei:msIdentifier/tei:institution/text() }</field>
+    {
+        if (string-length($x//tei:msDesc/tei:msIdentifier/tei:institution/text()) > 0) then
+            <field name="ms_institution_s">{ $x//tei:msDesc/tei:msIdentifier/tei:institution/text() }</field>
+        else
+            local:logging('info', 'Manuscript lacks institution', ($msid, $title))
+    }
     <field name="ms_repository_s">{ $x//tei:msDesc/tei:msIdentifier/tei:repository/text() }</field>
     <field name="ms_shelfmark_s">{ $x//tei:msDesc/tei:msIdentifier/tei:idno[@type="shelfmark"]/text() }</field>
     <field name="ms_shelfmark_sort">{ $x//tei:msDesc/tei:msIdentifier/tei:idno[@type="shelfmark"]/text() }</field>

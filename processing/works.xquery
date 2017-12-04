@@ -1,6 +1,15 @@
 import module namespace functx = "http://www.functx.com" at "functx.xq";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
+declare option saxon:output "indent=yes";
+declare variable $disablelogging as xs:boolean external := false();
 
+declare function local:logging($level, $msg, $values)
+{
+    if (not($disablelogging)) then
+        (: Trick XQuery into doing trace() to output message to STDERR but not insert it into the XML :)
+        substring(trace('', concat(upper-case($level), '	', $msg, '	', string-join($values, '	'), '	')), 0, 0)
+    else ()
+};
 
 declare function local:authors($authors)
 {
@@ -72,7 +81,7 @@ declare function local:languageValue($lang)
     let $doc := doc("../works.xml")
     let $collection := collection("../collections?select=*.xml;recurse=yes")
     let $works := $doc//tei:listBibl/tei:bibl[@xml:id]
-
+   
     for $work in $works
         let $id := $work/@xml:id/string()
         let $title := fn:normalize-space($work//tei:title[@type="uniform"][1]/string())
@@ -80,7 +89,8 @@ declare function local:languageValue($lang)
         let $lang := $work/tei:textLang/string(@mainLang)
         let $subjects := fn:distinct-values($work/tei:note[@type = "subject"]/string())
 
-        return <doc>
+        return if (count($mss) > 0) then
+        <doc>
             <field name="type">work</field>
             <field name="pk">{ $id }</field>
             <field name="id">{ $id }</field>
@@ -100,5 +110,26 @@ declare function local:languageValue($lang)
                 return <field name="link_manuscripts_smni">{ concat($url, "|", $linktext[1]) }</field>
                 }
         </doc>
+        else
+            (
+            local:logging('info', 'Skipping work in works.xml but not in any manuscript', ($id, $title))
+            )
 }
+
+{
+    let $controlledworkids := doc("../works.xml")//tei:listBibl/tei:bibl/@xml:id/string()
+    let $allworks := collection("../collections?select=*.xml;recurse=yes")//tei:TEI//tei:title
+    let $allworksids := distinct-values($allworks/@key/string())
+    for $workid in $allworksids
+        return if (not($controlledworkids[. = $workid])) then
+            local:logging('warn', 'Work in manuscripts not in works.xml: will create broken link', ($workid, normalize-space(string-join($allworks[@key = $workid][1]/text(), ''))))
+        else 
+            ()
+}
+
+{
+    let $allmsitems := collection("../collections?select=*.xml;recurse=yes")//tei:TEI//tei:msItem/tei:title
+    return if (count($allmsitems[not(@key)]) > 0) then local:logging('info', concat(count($allmsitems[not(@key)]), ' msItems found in manuscripts which lack @key attributes'), ()) else ()
+}
+
 </add>
