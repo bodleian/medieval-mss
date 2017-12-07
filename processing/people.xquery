@@ -36,9 +36,9 @@ declare function local:personRole($role)
         let $isauthor := boolean($collection//tei:author[@key = $id])
         (: TODO: Experiment, either uncomment or delete: let $issubject := boolean($collection//tei:msItem/tei:title//tei:persName[not(@role) and @key = $id]) :)
 
-        let $mss1 := $collection//tei:TEI[.//tei:persName[@key = $id]]
-        let $mss2 := $collection//tei:TEI[.//tei:author[@key = $id]]
-        let $mss := ($mss1, $mss2)
+        let $mss1 := $collection//tei:TEI[.//(tei:persName)[@key = $id]]/concat('/catalog/', string(@xml:id), '|', (./tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:msDesc/tei:msIdentifier/tei:idno[@type = "shelfmark"])[1]/text())
+        let $mss2 := $collection//tei:TEI[.//(tei:author)[@key = $id]]/concat('/catalog/', string(@xml:id), '|', (./tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:msDesc/tei:msIdentifier/tei:idno[@type = "shelfmark"])[1]/text())
+        let $mss := distinct-values(($mss1, $mss2))
 
         let $variants := $person/tei:persName[@type="variant"]
         let $noteitems := $person/tei:note[@type="links"]//tei:item
@@ -77,11 +77,8 @@ declare function local:personRole($role)
                     return <field name="link_external_smni">{ concat($linktarget, "|", $linktext)}</field>
             }
             { for $ms in $mss
-                let $msid := $ms/string(@xml:id)
-                let $url := concat("/catalog/", $msid[1])
-                let $linktext := $ms//tei:idno[@type = "shelfmark"]/text()
-                order by $msid
-                return <field name="link_manuscripts_smni">{ concat($url, "|", $linktext[1]) }</field>
+                order by $ms
+                return <field name="link_manuscripts_smni">{ $ms }</field>
             }
         </doc>
         else
