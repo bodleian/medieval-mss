@@ -64,6 +64,7 @@ if [ $warnings -gt 0 ] || [ $infos -gt 0 ]; then
 fi
 
 if [ ! "$5" == "noindex" ]; then
+
     # Emptying index on Solr. Doing so for both place and organization will result in only one of them 
     # being indexed; so if we're indexing organizations, then, skip the empty step.
     if [ ! $1 == "organizations.xquery" ]; then
@@ -87,6 +88,7 @@ if [ ! "$5" == "noindex" ]; then
         fi
     fi
 else
+    echo "Reindexing skipped in $5 mode."
     exit 0;
 fi
 
