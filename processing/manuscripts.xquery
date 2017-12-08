@@ -52,8 +52,8 @@ declare function local:deconotes($contents)
 
 declare function local:dateEarliest($doc)
 {
-    let $dateEarliest := $doc//tei:msPart/tei:history/tei:origin/tei:date[@notBefore]/string(@notBefore)
-    return if (empty($doc//tei:msPart/tei:history/tei:origin/tei:date[@notBefore])) then
+    let $dateEarliest := $doc//tei:msPart/tei:history/tei:origin/tei:origDate[string(number(@notBefore)) != 'NaN']/@notBefore
+    return if (empty($dateEarliest)) then
         ()
     else
         <field name="ms_date_earliest_i">{ min($dateEarliest) }</field>
@@ -61,8 +61,8 @@ declare function local:dateEarliest($doc)
 
 declare function local:dateLatest($doc)
 {
-    let $dateLatest := $doc//tei:msPart/tei:history/tei:origin/tei:date[@notAfter]/string(@notAfter)
-    return if (empty($doc//tei:msPart/tei:history/tei:origin/tei:date[@notAfter])) then
+    let $dateLatest := $doc//tei:msPart/tei:history/tei:origin/tei:origDate[string(number(@notAfter)) != 'NaN']/@notAfter
+    return if (empty($dateLatest)) then
         ()
     else
         <field name="ms_date_latest_i">{ max($dateLatest) }</field>
@@ -112,27 +112,41 @@ declare function local:formatCenturyBCE($dateEarliest, $dateLatest)
 
 declare function local:formatCentury($dateEarliest, $dateLatest)
 {
-    (:
-        The value of -10000 is an integer that is unlikely to occur in the corpus, (since we're only
-         ever taking the first two digits) so it essentially stands for 'null' (but we don't like nulls in our XML,
-         do we precious?)
-    :)
-    let $earliestCentury := xs:integer(functx:if-empty(substring($dateEarliest, 1, 2), -10000))
-    let $latestCentury := xs:integer(functx:if-empty(substring($dateLatest, 1, 2), -10000))
+    (: This only works if years have been catalogued as four digits, e.g. "0605" for the 605 AD :)
+    (: -10000 below stands in place of null :)
+    
+    let $earliestCentury := xs:integer(functx:if-empty(substring($dateEarliest, 1, 2), -10000)) + 1
+    let $latestCentury := xs:integer(functx:if-empty(substring($dateLatest, 1, 2), -10000)) + 1
     let $latestDecade := functx:if-empty(substring($dateLatest, 3, 2), "-10000")
-    (: If they're the same century, and that century is not -10,000, then return one of them :)
 
-    return if ($earliestCentury = -10000 or $latestCentury = -10000) then
+    return if ($earliestCentury lt 0 and $latestCentury lt 0) then
         ()
-    else if ($earliestCentury = $latestCentury and $earliestCentury != -10000) then
-        <field name="ms_date_sm">{ $earliestCentury + 1 }{ local:ordinal(($earliestCentury + 1)) } Century</field>
-    else if ($earliestCentury != $latestCentury and $latestDecade = "00") then
-        <field name="ms_date_sm">{ $earliestCentury + 1 }{ local:ordinal(($earliestCentury + 1)) } Century</field>
-    else if ($earliestCentury != $latestCentury and $latestDecade != "00") then
-        (<field name="ms_date_sm">{ $earliestCentury + 1 }{ local:ordinal(($earliestCentury + 1)) } Century</field>,
-        <field name="ms_date_sm">{ $latestCentury + 1 }{ local:ordinal(($latestCentury + 1)) } Century</field>)
+    else if ($earliestCentury = $latestCentury) then
+        (: Same century, return only one :)
+        <field name="ms_date_sm">{ $earliestCentury }{ local:ordinal($earliestCentury) } Century</field>
+    else if ($earliestCentury gt 0 and $latestDecade = "00" and $latestCentury - $earliestCentury = 1) then
+        (: Date range ends at the turn of the same century, so effectively same century :)
+        <field name="ms_date_sm">{ $earliestCentury }{ local:ordinal($earliestCentury) } Century</field>
+    else if ($earliestCentury gt 0 and $latestCentury gt 0 and $latestDecade != "00") then
+        (: Two separate centuries. Possibly not contiguous but we can't loop thru because sometimes 
+           a manuscript was created in the 14th and then something added in the 16th :)
+        (<field name="ms_date_sm">{ $earliestCentury }{ local:ordinal($earliestCentury) } Century</field>,
+        <field name="ms_date_sm">{ $latestCentury }{ local:ordinal($latestCentury) } Century</field>)
+    else if ($earliestCentury gt 0 and $latestCentury gt 0 and $latestDecade = "00") then
+        (: Date range ends at the turn of a later century :)
+        (<field name="ms_date_sm">{ $earliestCentury }{ local:ordinal($earliestCentury) } Century</field>,
+        <field name="ms_date_sm">{ $latestCentury - 1 }{ local:ordinal(($latestCentury - 1)) } Century</field>)
+    else if ($latestCentury lt 0) then
+        (: Either only earliest date is known, or latest date is unreadable. Best we can do is return earlest century only. :)
+        <field name="ms_date_sm">{ $earliestCentury }{ local:ordinal($earliestCentury) } Century</field>
+    else if ($latestCentury gt 0 and $latestDecade != "00") then
+        (: Either only latest date is known, or earliest date is unreadable. Best we can do it return latest century only :)
+        <field name="ms_date_sm">{ $latestCentury }{ local:ordinal($latestCentury) } Century</field>
+    else if ($latestCentury gt 0 and $latestDecade = "00") then
+        (: All we know is creation was before the turn of a century. Best we can do is return the one just ended :)
+        <field name="ms_date_sm">{ $latestCentury - 1 }{ local:ordinal(($latestCentury - 1)) } Century</field>
     else
-        ()
+        (local:logging('info', 'Unreadable date range', concat('notBefore:', $dateEarliest, ' notAfter:', $dateLatest)))
 };
 
 declare function local:centuries($doc)
@@ -324,6 +338,14 @@ for $x in collection('../collections/?select=*.xml;recurse=yes')
     let $htmlcontent := $htmldoc//html:div[@id = $msid]
     let $title := $x//tei:msDesc/tei:msIdentifier/tei:idno[@type="shelfmark"]/text()
     let $htmlcontent := fn:normalize-space(fn:serialize($htmlcontent))
+  
+(:
+The following three date fields have been removed from the doc output below
+Reinstate them if advanced search on precise dates is developed
+local:dateEarliest($x)
+local:dateLatest($x)
+<field name="ms_date_stmt_s"> $x//tei:history/tei:origin/tei:origDate/text() </field>
+:)
 
 return <doc>
     <field name="type">manuscript</field>
@@ -342,9 +364,6 @@ return <doc>
     <field name="ms_shelfmark_s">{ $x//tei:msDesc/tei:msIdentifier/tei:idno[@type="shelfmark"]/text() }</field>
     <field name="ms_shelfmark_sort">{ $x//tei:msDesc/tei:msIdentifier/tei:idno[@type="shelfmark"]/text() }</field>
     <field name="ms_altid_s">{ $x//tei:sourceDesc/tei:msDesc/tei:msIdentifier/tei:altIdentifier[@type="internal"]/tei:idno/text() }</field>
-    { local:dateEarliest($x) }
-    { local:dateLatest($x) }
-    <field name="ms_date_stmt_s">{ $x//tei:history/tei:origin/tei:date/text() }</field>
     <field name="filename_sni">{ fn:base-uri($x) }</field>
     { local:works($x//tei:msContents) }
     { local:authors($x//tei:msContents) }
@@ -366,4 +385,6 @@ return <doc>
     <field name="ms_display_txt">{ $htmlcontent }</field>
 </doc>
 }
+
+
 </add>
