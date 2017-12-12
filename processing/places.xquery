@@ -23,7 +23,8 @@ declare function local:logging($level, $msg, $values)
         let $mss1 := $collection//tei:TEI[.//tei:history//tei:country[@key = $placeid]]
         let $mss2 := $collection//tei:TEI[.//tei:history//tei:settlement[@key = $placeid]]
         let $mss3 := $collection//tei:TEI[.//tei:placeName[@key = $placeid]]
-        let $mss := ($mss1, $mss2, $mss3)
+        let $mss4 := $collection//tei:TEI[.//tei:history//tei:region[@key = $placeid]]
+        let $mss := ($mss1, $mss2, $mss3, $mss4)
 
         let $noteitems := $place/tei:note[@type="links"]//tei:item
         let $placename := $place/tei:placeName[@type="index"]/text()
