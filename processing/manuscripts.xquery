@@ -77,99 +77,79 @@ declare function local:ordinal($num)
     default return "th"
 };
 
-declare function local:formatCenturyBCE($dateEarliest, $dateLatest)
+declare function local:formatCentury($centuryNum)
 {
-    (:
-        BCE dates need to be calculated in reverse.
-    :)
-    (:
-        - Cast to abs, add 1
-        - Ceiling it
-        - Take value
-        - Take first two digits
-        - If original starts with "-" append "BC"
-
-        -200 => 200 => 201 => ceil() => 300 => 3rd C.
-        -199 => 199 => 200 => ceil() => 200 => 2nd C.
-
-    :)
-
-    let $absDateEarliest := fn:abs(functx:if-empty($dateEarliest, -1000000))
-    let $absDateLatest := fn:abs(functx:if-empty($dateLatest, -1000000))
-
-    let $ceilEarliestCentury := fn:ceiling($absDateEarliest div 100)
-    let $ceilLatestCentury := fn:ceiling($absDateLatest div 100)
-
-    return if ($ceilEarliestCentury = $ceilLatestCentury and fn:starts-with($dateEarliest, "-") and $ceilEarliestCentury != 10000) then
-        <field name="ms_date_sm">{ $ceilEarliestCentury }{ local:ordinal($ceilEarliestCentury) } Century BCE</field>
-    else if (fn:starts-with($dateEarliest, "-") and fn:starts-with($dateLatest, "-") and $ceilEarliestCentury != 10000) then
-        (<field name="ms_date_sm">{ $ceilEarliestCentury }{ local:ordinal($ceilEarliestCentury) } Century BCE</field>,
-        <field name="ms_date_sm">{ $ceilLatestCentury }{ local:ordinal($ceilLatestCentury) } Century BCE</field>)
+    (: Converts century in number form (negative integers for BCE, positive integers for CE) into human-readable form :)
+    if ($centuryNum gt 0) then
+        concat($centuryNum, local:ordinal($centuryNum), ' Century')
     else
-        ()
-
+        concat(abs($centuryNum), local:ordinal(abs($centuryNum)), ' Century BCE')
 };
 
-declare function local:formatCentury($dateEarliest, $dateLatest)
+declare function local:findCenturies($earliestYear, $latestYear)
 {
-    (: This only works if years have been catalogued as four digits, e.g. "0605" for the 605 AD :)
-    (: -10000 below stands in place of null :)
-    
-    let $earliestCentury := xs:integer(functx:if-empty(substring($dateEarliest, 1, 2), -10000)) + 1
-    let $latestCentury := xs:integer(functx:if-empty(substring($dateLatest, 1, 2), -10000)) + 1
-    let $latestDecade := functx:if-empty(substring($dateLatest, 3, 2), "-10000")
+    (: Converts a year range (or single year) into a sequence of century names :)
 
-    return if ($earliestCentury lt 0 and $latestCentury lt 0) then
-        ()
-    else if ($earliestCentury = $latestCentury) then
-        (: Same century, return only one :)
-        <field name="ms_date_sm">{ $earliestCentury }{ local:ordinal($earliestCentury) } Century</field>
-    else if ($earliestCentury gt 0 and $latestDecade = "00" and $latestCentury - $earliestCentury = 1) then
-        (: Date range ends at the turn of the same century, so effectively same century :)
-        <field name="ms_date_sm">{ $earliestCentury }{ local:ordinal($earliestCentury) } Century</field>
-    else if ($earliestCentury gt 0 and $latestCentury gt 0 and $latestDecade != "00") then
-        (: Two separate centuries. Possibly not contiguous but we can't loop thru because sometimes 
-           a manuscript was created in the 14th and then something added in the 16th :)
-        (<field name="ms_date_sm">{ $earliestCentury }{ local:ordinal($earliestCentury) } Century</field>,
-        <field name="ms_date_sm">{ $latestCentury }{ local:ordinal($latestCentury) } Century</field>)
-    else if ($earliestCentury gt 0 and $latestCentury gt 0 and $latestDecade = "00") then
-        (: Date range ends at the turn of a later century :)
-        (<field name="ms_date_sm">{ $earliestCentury }{ local:ordinal($earliestCentury) } Century</field>,
-        <field name="ms_date_sm">{ $latestCentury - 1 }{ local:ordinal(($latestCentury - 1)) } Century</field>)
-    else if ($latestCentury lt 0) then
-        (: Either only earliest date is known, or latest date is unreadable. Best we can do is return earlest century only. :)
-        <field name="ms_date_sm">{ $earliestCentury }{ local:ordinal($earliestCentury) } Century</field>
-    else if ($latestCentury gt 0 and $latestDecade != "00") then
-        (: Either only latest date is known, or earliest date is unreadable. Best we can do it return latest century only :)
-        <field name="ms_date_sm">{ $latestCentury }{ local:ordinal($latestCentury) } Century</field>
-    else if ($latestCentury gt 0 and $latestDecade = "00") then
-        (: All we know is creation was before the turn of a century. Best we can do is return the one just ended :)
-        <field name="ms_date_sm">{ $latestCentury - 1 }{ local:ordinal(($latestCentury - 1)) } Century</field>
-    else
-        (local:logging('info', 'Unreadable date range', concat('notBefore:', $dateEarliest, ' notAfter:', $dateLatest)))
+    (: Zero below stands for null, as there is no Year 0 :)
+    let $ey := number(functx:if-empty($earliestYear, 0))
+    let $ly := number(functx:if-empty($latestYear, 0))
+    
+    let $earliestIsTurnOfCentury := ends-with($earliestYear, '00')
+    let $latestIsTurnOfCentury := ends-with($latestYear, '00')
+    
+    (: Convert years to centuries. Special cases required for turn-of-the-century years, e.g. 1500 AD is treated 
+       as 16th century if at the start of a range, or the only known year, but as 15th if at the end of a range; 
+       while 200 BC is treated as 3rd century BCE if at the end of a range but as 2nd BCE at the start. :)
+    let $earliestCentury := (
+        if ($ey gt 0 and $earliestIsTurnOfCentury) then 
+            ($ey div 100) + 1
+        else if ($ey lt 0) then
+            floor($ey div 100)
+        else 
+            ceiling($ey div 100)
+        )      
+    let $latestCentury := (
+        if ($ly lt 0 and $latestIsTurnOfCentury) then 
+            ($ly div 100) - 1
+        else if ($ly lt 0) then
+            floor($ly div 100)
+        else 
+            ceiling($ly div 100)
+        )
+
+    return    
+        if ($ey gt $ly and $ly ne 0) then
+            local:logging('info', 'Date range not valid so will not be added to century filter', concat($earliestYear, '-', $latestYear))
+            
+        else if ($earliestCentury ne 0 and $latestCentury ne 0) then
+            (: A date range, something like "After 1400 and before 1650", so fill in all the possible centuries between :)
+            for $century in (-10,-9,-8,-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21)
+                return
+                    if ($century ge $earliestCentury and $century le $latestCentury) then
+                        local:formatCentury($century)
+                    else
+                        ()
+         else
+            (: Only a single date, either a precise year or an open-ended range like "Before 1500" or "After 1066", so just output the known century :)
+            local:formatCentury(($earliestCentury, $latestCentury)[. ne 0])
 };
 
 declare function local:centuries($doc)
 {
     let $dates := $doc//tei:origin//tei:origDate
-    for $date in $dates
-        let $dateEarliest := $date/@notBefore/data()
-        let $dateLatest := $date/@notAfter/data()
-        return if (fn:starts-with($dateEarliest, "-")) then
-            local:formatCenturyBCE($dateEarliest, $dateLatest)
-        else
-            local:formatCentury($dateEarliest, $dateLatest)
-};
-
-declare function local:when($doc)
-{
-    let $dates := $doc//tei:origin//tei:origDate
-    for $date in $dates
-        let $dateWhen := $date/@when/data()
-        return if (fn:starts-with($dateWhen, "-")) then
-            local:formatCenturyBCE($dateWhen, $dateWhen)
-        else
-            local:formatCentury($dateWhen, $dateWhen)
+    let $centuries := (
+        for $date in $dates
+            return
+            if ($date[@when]) then 
+                local:findCenturies($date/@when/data(), '')
+            else if ($date[@notBefore] or $date[@notAfter]) then
+                local:findCenturies($date/@notBefore/data(), $date/@notAfter/data())
+            else
+                ()
+        )
+    for $century in distinct-values($centuries)
+        order by $century
+        return if (string-length($century) gt 0) then <field name="ms_date_sm">{ $century }</field> else ()
 };
 
 declare function local:materialValue($material)
@@ -375,7 +355,6 @@ return <doc>
     { local:otherLangs($x//tei:sourceDesc) }
     { local:origin($x//tei:sourceDesc) }
     { local:centuries($x) }
-    { local:when($x) }
     { local:textcontent($x//tei:incipit) }
     { local:textcontent($x//tei:explicit) }
     { local:textcontent($x//tei:note) }
