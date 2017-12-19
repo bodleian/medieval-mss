@@ -22,7 +22,12 @@ declare option saxon:output "indent=yes";
             <field name="id">{ $id }</field>
             <field name="title">{ $title }</field>
             <field name="wk_title_s">{ $title }</field>
-            <field name="alpha_title">{ bod:alphabetizeTitle($title) }</field>
+            <field name="alpha_title">{ 
+                if (contains($title, ':')) then
+                    bod:alphabetize($title)
+                else
+                    bod:alphabetizeTitle($title)
+            }</field>
             { bod:languages($work/tei:textLang, 'wk_lang_sm') }
             { for $subj in $subjects
                 return <field name="wk_subjects_sm">{ $subj }</field>
