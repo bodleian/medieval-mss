@@ -1,15 +1,6 @@
-import module namespace functx = "http://www.functx.com" at "functx.xq";
+import module namespace bod = "http://www.bodleian.ox.ac.uk/bdlss" at "https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc2solr.xquery";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 declare option saxon:output "indent=yes";
-declare variable $disablelogging as xs:boolean external := false();
-
-declare function local:logging($level, $msg, $values)
-{
-    if (not($disablelogging)) then
-        (: Trick XQuery into doing trace() to output message to STDERR but not insert it into the XML :)
-        substring(trace('', concat(upper-case($level), '	', $msg, '	', string-join($values, '	'), '	')), 0, 0)
-    else ()
-};
 
 <add>
 {
@@ -33,23 +24,21 @@ declare function local:logging($level, $msg, $values)
         <doc>
             <field name="type">place</field>
             <field name="title">{ $placename }</field>
-            <field name="alpha_title">
-                { functx:capitalize-first(substring(replace($placename, '[^\p{L}|\p{N}]+', ''), 1, 1))}
-            </field>
+            <field name="alpha_title">{  bod:alphabetize($placename) }</field>
 
         <field name="pk">{ $placeid }</field>
             <field name="id">{ $placeid }</field>
             <field name="pl_name_s">{ $placename }</field>
             <field name="pl_type_s">{ $place/string(@type) }</field>
             { for $variant in $variants
-                let $vname := fn:normalize-space($variant/string())
+                let $vname := normalize-space($variant/string())
                 return <field name="pl_variant_sm">{ $vname }</field>
             }
             { for $item in $noteitems
                 let $refs := $item//tei:ref
                 for $ref in $refs
                 let $linktarget := $ref/string(@target)
-                let $linktext := $ref/fn:normalize-space(tei:title/string())
+                let $linktext := $ref/normalize-space(tei:title/string())
                 return <field name="link_external_smni">{ concat($linktarget, "|", $linktext)}</field>
             }
             { for $ms in $mss
@@ -64,7 +53,7 @@ declare function local:logging($level, $msg, $values)
         </doc>
         else
             (
-            local:logging('info', 'Skipping place in places.xml but not in any manuscript', ($placeid, $placename))
+            bod:logging('info', 'Skipping place in places.xml but not in any manuscript', ($placeid, $placename))
             )
 }
 
@@ -74,14 +63,14 @@ declare function local:logging($level, $msg, $values)
     let $allplaceids := distinct-values($allplaces/@key/string())
     for $placeid in $allplaceids
         return if (not($controlledplaceids[. = $placeid])) then
-            local:logging('warn', 'Place in manuscripts not in places.xml: will create broken link', ($placeid, normalize-space(string-join($allplaces[@key = $placeid][1]/text(), ''))))
+            bod:logging('warn', 'Place in manuscripts not in places.xml: will create broken link', ($placeid, normalize-space(string-join($allplaces[@key = $placeid][1]/text(), ''))))
         else 
             ()
 }
 
 {
     let $allplaces := collection("../collections?select=*.xml;recurse=yes")//tei:TEI//((tei:country|tei:settlement)[ancestor::tei:history]|tei:placeName)
-    return if (count($allplaces[not(@key)]) > 0) then local:logging('info', concat(count(distinct-values($allplaces[not(@key)]/text()[1])), ' places found in manuscripts which lack @key attributes'), ()) else ()
+    return if (count($allplaces[not(@key)]) > 0) then bod:logging('info', concat(count(distinct-values($allplaces[not(@key)]/text()[1])), ' places found in manuscripts which lack @key attributes'), ()) else ()
 }
 
 </add>
