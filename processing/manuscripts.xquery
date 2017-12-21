@@ -81,7 +81,7 @@ declare function local:origin($doc, $solrfield)
             <field name="type">manuscript</field>
             <field name="pk">{ $msid }</field>
             <field name="id">{ $msid }</field>
-            { bod:one2one($x//tei:msDesc/tei:msIdentifier/tei:idno[@type="shelfmark"], 'title') }
+            { bod:one2one($x//tei:msDesc/tei:msIdentifier/tei:idno[@type="shelfmark"], 'title', 'error') }
             { bod:one2one($x//tei:titleStmt/tei:title[@type="collection"], 'ms_collection_s') }
             { bod:one2one($x//tei:msDesc/tei:msIdentifier/tei:settlement, 'ms_settlement_s') }
             { bod:one2one($x//tei:msDesc/tei:msIdentifier/tei:institution, 'ms_institution_s') }
