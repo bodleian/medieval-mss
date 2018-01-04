@@ -58,7 +58,7 @@ declare option saxon:output "indent=yes";
 }
 
 {
-    let $controlledplaceids := doc("../places.xml")//tei:place/@xml:id/string()
+    let $controlledplaceids := distinct-values(doc("../places.xml")//tei:place/@xml:id/string())
     let $allplaces := collection("../collections?select=*.xml;recurse=yes")//tei:TEI//((tei:country|tei:settlement)[ancestor::tei:history]|tei:placeName)
     let $allplaceids := distinct-values($allplaces/@key/string())
     for $placeid in $allplaceids

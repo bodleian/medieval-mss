@@ -62,11 +62,10 @@ declare option saxon:output "indent=yes";
             (
             bod:logging('info', 'Skipping organization in places.xml but not in any manuscript', ($orgid, $orgname))
             )
-
 }
 
 {
-    let $controlledorgids := doc("../places.xml")//tei:org/@xml:id/string()
+    let $controlledorgids := distinct-values(doc("../places.xml")//tei:org/@xml:id/string())
     let $allorgs := collection("../collections?select=*.xml;recurse=yes")//tei:orgName
     let $allorgids := distinct-values($allorgs/@key/string())
     for $orgid in $allorgids

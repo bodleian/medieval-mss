@@ -46,7 +46,7 @@ declare option saxon:output "indent=yes";
 }
 
 {
-    let $controlledworkids := doc("../works.xml")//tei:listBibl/tei:bibl/@xml:id/string()
+    let $controlledworkids := distinct-values(doc("../works.xml")//tei:listBibl/tei:bibl/@xml:id/string())
     let $allworks := collection("../collections?select=*.xml;recurse=yes")//tei:TEI//tei:title
     let $allworksids := distinct-values($allworks/@key/string())
     for $workid in $allworksids

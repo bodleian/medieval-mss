@@ -65,7 +65,7 @@ declare option saxon:output "indent=yes";
 }
 
 {
-    let $controlledpeopleids := doc("../persons.xml")//tei:person/@xml:id/string()
+    let $controlledpeopleids := distinct-values(doc("../persons.xml")//tei:person/@xml:id/string())
     let $allpeople := collection("../collections?select=*.xml;recurse=yes")//tei:TEI//(tei:persName|tei:author)
     let $allpeopleids := distinct-values($allpeople/@key/string())
     for $personid in $allpeopleids

@@ -30,7 +30,7 @@ echo "Processing TEI files in collections folder using $1 on $(date +"%Y-%m-%d %
 
 # Run XQuery to build Solr XML index files
 echo "Generating Solr XML file containing $3 records..."
-java -Xmx1G -Xms1G -cp "saxon/saxon9he.jar" net.sf.saxon.Query -q:$1 1> solr/$2 2>> $LOGFILE
+java -Xmx1G -Xms1G -cp "saxon/saxon9he.jar" net.sf.saxon.Query -xi:on -q:$1 1> solr/$2 2>> $LOGFILE
 if [ $? -gt 0 ]; then
     echo "XQuery failed. Re-indexing of $3 records cancelled. Please raise an issue on GitHub, attaching $LOGFILE"
     exit 1;
