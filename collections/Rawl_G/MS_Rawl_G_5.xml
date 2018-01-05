@@ -4,17 +4,26 @@
          <titleStmt>
             <title>MS. Rawl. G. 5</title>
             <title type="collection">MSS. Rawl. G. (Rawlinson G)</title>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1966">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1895">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+            </respStmt>
             <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <resp when="2017">Encoding and markup</resp>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -50,7 +59,15 @@
                </msIdentifier>
                <msContents>
                   <msItem xml:id="MS_Rawl_G_5-item1" n="1" class="#biblia">
-                     <title rend="roman" key="work_10455">Bible</title>
+                     <title rend="roman" key="work_10455" resp="#PA">Bible</title>
+                     <note>Followed by:</note>
+                     <msItem resp="#VD">  
+                        <title type="desc" key="work_16033">Epistle and Gospel list</title>
+                        <note>Temporale (fol. 479), ending with the dedication; sanctorale
+                           (fol. 480vb); common of the dedication [sic] and the saints (fol. 482rb); votive masses
+                           for each day of the week (fol. 482va), for various intentions, and the dead (fol. 482vb);
+                           feast and octave of the dedication [sic]. Incipits and explicits.</note>
+                     </msItem>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -58,32 +75,53 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                     </supportDesc>
+                        <extent resp="#SC"> 523 leaves <dimensions type="leaf" unit="mm" resp="#VD">
+                           <height>159</height>
+                           <width>100</width>
+                        </dimensions>
+                           <dimensions type="written" unit="mm" resp="#VD">
+                              <height>103</height>
+                              <width>90</width>
+                           </dimensions>
+                        </extent>
+                       
+                     </supportDesc> <layoutDesc resp="#VD">
+                           <layout columns="2" writtenLines="48">2 col. of 48 lines</layout>
+                        </layoutDesc>
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote>Decoration<p>Good historiated and other initials. (P&amp;A i. 537)</p>
+                  <decoDesc resp="#PA">
+                     <decoNote>Good historiated and other initials. (P&amp;A i. 537)
                      </decoNote>
                   </decoDesc>
                </physDesc>
                <history>
-                  <origin>
+                  <origin resp="#PA">
                      <origDate calendar="Gregorian" notAfter="1275" notBefore="1250">13th century, third quarter</origDate>
                      <origPlace>
                         <country key="place_1000070">French</country>
                      </origPlace>
                   </origin>
+                  <provenance resp="#SC">'<persName role="formerOwner" key="person_2768">W.M.</persName>' on the binding.</provenance>
+                  <provenance resp="#PA #SC">In England in the 16th century: signed by '<persName role="signer" key="person_2761">William Bosworth</persName>', '<persName role="signer" key="person_2762">William Mutle</persName>' (?), '<persName  role="signer" key="person_2763">George Trauers</persName>', '<persName role="signer" key="person_2764">William Tailor</persName>'.</provenance>
+                  <provenance resp="#SC">'<persName role="signer" key="person_2765">Auncelus Nappe</persName>', 16th cent.</provenance>
+                  <provenance resp="#SC">'<persName role="signer" key="person_2766">Joannes Berneis de Lightwood</persName>', 17th cent.</provenance>
+                  <provenance resp="#SC">'<persName role="signer" key="person_2767">Rees ap Owen</persName>', 17th cent.</provenance>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
-                            
+                        <source>S. J. P. Van Dijk, <title>Handlist of the Latin Liturgical Manuscripts in the Bodleian Library Oxford : Vol. 1: Mass Books</title> (typescript, 1957); Pächt and Alexander (see Bibliography). Previously described in the Summary Catalogue.
                             <listBibl>
                               <bibl type="SC" facs="aas0356.gif">Summary Catalogue, Vol. 3, p.  341</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
+                  <listBibl type="WRAPPER">
+                     <listBibl>
+                        <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, I (1966), no. 537</bibl>
+                     </listBibl>
+                  </listBibl>
                </additional>
             </msDesc>
          </sourceDesc>
