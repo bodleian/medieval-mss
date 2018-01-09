@@ -4,18 +4,25 @@
          <titleStmt>
             <title>MS. Add. A. 197</title>
             <title type="collection">MSS. Add. (Additional) A</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-	<persName>Matthew Holford</persName>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1905">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2017">Encoding and markup</resp>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -51,32 +58,62 @@
                </msIdentifier>
                <msContents>
                   <msItem xml:id="MS_Add_A_197-item1" n="1" class="#liturgica">
-                     <rubric>Ecclesiastica Officia</rubric>
-                     <title type="desc" key="work_11031">Cistercian
-              consuetudinary</title>
+                     <locus>(fol. 1)</locus>
+                     
+                     <title type="desc" key="work_11031">Liber usuum (Cistercian
+              consuetudinary)</title><note>(part 1)</note><rubric>Ecclesiastica Officia</rubric>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  <msItem>
+                     <locus>(fol. 102)</locus>
+                     <title>Carta caritatis</title><note>(part 1)</note>
+                     <note>With the prologue, Antiquam abbacie cisterciensis.</note>
+                  </msItem>
                </msContents>
-               <physDesc>
+               <physDesc resp="#DD">
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>i + 105 fols.
+                            <dimensions unit="mm" type="leaf">
+                               <height>240</height>
+                               <width quantity="163">c. 163</width>
+                            </dimensions>
+                           <dimensions unit="mm" type="written">
+                              <height max="188" min="170">c. 170-88</height>
+                              <width min="110" max="115">110-15</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
                   </objectDesc>
+                  <decoDesc><decoNote resp="#DD">Coloured initials, rubrics.</decoNote>
+                     <decoNote resp="#VD">Some flourished initials (fols. 8<hi rend="su">v</hi>, 13<hi rend="su">v</hi>, 21, 22<hi rend="su">v</hi>, 56<hi rend="su">v</hi>, 73, 79<hi rend="su">v</hi>, etc.)</decoNote></decoDesc>
+                  <bindingDesc resp="#DD">
+                     <binding notAfter="1400" notBefore="1300">
+                        <p>Blind-stamped white whittawed leather over boards, 14th cent. (?), rebacked.</p>
+                     </binding>
+                  </bindingDesc>
+                  
+                  <accMat><list>
+                     <item resp="#SC">Fol. 1, fly-leaf from a late 12th-century Latin theological commentary.</item>
+                     <item resp="#VD">Fol.105, from a 12th-century missal or sacramentary, contains some votive masses.</item></list></accMat>
                </physDesc>
                <history>
-                  <origin>
+                  <origin resp="#DD">
                      <origDate calendar="Gregorian" notAfter="1218" notBefore="1203" cert="high">1203 × 1218</origDate>
                      <origPlace>
-                        <country key="place_1000080">Italian</country>, near <settlement key="place_7005851">Como</settlement> (?)
+                        <country key="place_1000080">Italian</country>
                         <!--ORIGINAL: Italian, nr. Como-->
                      </origPlace>
                   </origin>
+                  <provenance resp="#DD">The feast of St Barnabas, ordered 'cum duabus missis' in 1203, appears in the hand of the original scribe. The feast of SS John and Paul, raised in 1218, was added on fol. 30. Cf. J.-M. Canivez, <title>Statuta capitulorum generalium ordinis cisterciensis</title> I (1933) 284, 485.</provenance>
+                  <provenance resp="#SC">Cistercian abbey of <orgName role="formerOwner" key="org_240561051">Acquafredda</orgName>, Lenno, Como, 15th cent. (fol. 1)</provenance>
+                  <acquisition resp="#SC">Bought at the <persName role="formerOwner" key="person_238406190">William Bragge</persName> sale (Sotheby's, 10 Nov. 1880), lot. 1359, for £3 10s.</acquisition><!-- Sothebys 10 Nov 1880? -->
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
+                        <source>Adapted (2017) from A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts</title>; S. J. P. Van Dijk, <title>Handlist of the Latin Liturgical Manuscripts in the Bodleian Library Oxford : Vol. 3: Rituals and Directories</title> (typescript, 1957); and the Summary Catalogue (1905).
                             <listBibl>
                               <bibl type="SC" facs="aam0611.gif">Summary Catalogue, Vol. 5, p.  576</bibl>
                            </listBibl>
