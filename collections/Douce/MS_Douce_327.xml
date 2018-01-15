@@ -4,17 +4,26 @@
          <titleStmt>
             <title>MS. Douce 327</title>
             <title type="collection">MSS. Douce</title>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1966">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+            </respStmt>
             <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <resp when="2017">Encoding and markup</resp>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -49,9 +58,23 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem xml:id="MS_Douce_327-item1" n="1" class="#biblia">
+                  <msItem xml:id="MS_Douce_327-item1" n="1" resp="#PA">
                      <title rend="roman" key="work_10455">Bible</title>
                      <note>(second part: end of Maccabees to Apocalypse)</note>
+                     <note>Followed by:</note>
+                     <msItem resp="#VD">
+                        <title type="desc" key="work_16033">Epistle and Gospel list, Use of Sarum</title>
+                        <note>Added, early 15th century. Temporale (fol. 103<hi rend="super">v</hi>), mutilated at the beginning; sanctorale
+                           (fol. 105); common of the saints (fol. 105<hi rend="super">vc</hi>); votive masses (fol. 106<hi
+                              rend="super">ra</hi>); order of the lessons at matins of the dead (fol. 106<hi
+                                 rend="super">rc</hi>). A contemporary hand marked the liturgical gospels in the
+                           margins (fols. 4ff., 8ff., 15, 18<hi rend="super">v</hi>, 21<hi rend="super">v</hi>, etc.)
+                           and sometimes the epistles (fols. 75<hi rend="super">v</hi>, 76<hi rend="super">v</hi>,
+                           79<hi rend="super">v</hi>, 85); another (?) hand added some pericopes in the
+                           Epistles of St. Paul (fols. 48<hi rend="super">v</hi>ff., 53<hi rend="super">v</hi>ff.,
+                           58<hi rend="super">v</hi>ff., 61<hi rend="super">v</hi>ff., 63<hi rend="super"
+                              >v</hi>ff.; see 97 ff.).</note>
+                     </msItem>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -59,36 +82,58 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                     </supportDesc>
+                        <extent resp="#VD"> 106 + ii fol.<dimensions type="leaf" unit="mm">
+                           <height>288</height>
+                           <width>185</width>
+                        </dimensions>
+                          
+                        </extent>
+                       
+                     </supportDesc> <layoutDesc resp="#VD">
+                           <layout columns="2" writtenLines="52">2 col. of 52 lines, <dimensions type="written" unit="mm">
+                              <height>188</height>
+                              <width>115</width>
+                           </dimensions></layout>
+                        <layout>List in 3 col. of 52 lines, <dimensions type="written" unit="mm">
+                           <height>260</height>
+                           <width>160</width>
+                        </dimensions></layout>
+                        </layoutDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>Decoration<p>Good borders, historiated and other initials. Fol. 1 has 16
+                     <decoNote resp="#PA">Good borders, historiated and other initials. Fol. 1 has 16
             initials cut from an Old Testament, probably that belonging with this MS.,
-            pasted on it. (P&amp;A i. 556)</p>
-                     </decoNote>
+            pasted on it. (P&amp;A i. 556)</decoNote>
+                     <decoNote resp="#VD">Illuminated initials at the beginning of each
+                        prologue, Gospel and Epistle.</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1300" notBefore="1290">13th century, end</origDate>
+                     <origDate calendar="Gregorian" notAfter="1300" notBefore="1290" resp="#PA">13th century, end;</origDate> <origDate notAfter="1410" notBefore="1400" resp="#VD">list added, early (?) 15th century</origDate>
                      <origPlace>
-                        <country key="place_1000070">French</country>
-                     </origPlace>
+                        <country key="place_1000070" resp="#PA">French</country>; list added in <country key="place_7002445" resp="#VD">England</country> (?)</origPlace>
                   </origin>
+                  <provenance when="1694" resp="#SC">'<persName role="formerOwner" key="person_2785">John Corbett pictor</persName>, Ejus liber Anno Domini Deus MDCXIV'.</provenance>
+                  <provenance when="1746" resp="#SC">'Ex libris Caesaris De Missy: Londini: Anno Domini M. DCC. XLVI. Codex G.': <persName role="formerOwner" key="person_14643360">César de Missy (1703-1775)</persName>.</provenance>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
-                            
-                            
+                        <source>S. J. P. Van Dijk, <title>Handlist of the Latin Liturgical Manuscripts in the Bodleian Library Oxford : Vol. 1: Mass Books</title> (typescript, 1957); Pächt and Alexander (see Bibliography). Previously described in the Summary Catalogue.  
                             <listBibl>
                               <bibl type="SC" facs="aaz0615.gif">Summary Catalogue, vol. 4, p. 596</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
+                  <listBibl type="WRAPPER">
+                  <listBibl>
+                     <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, I (1966), no. 556</bibl>
+                  </listBibl>
+               </listBibl>
                </additional>
+               
             </msDesc>
          </sourceDesc>
       </fileDesc>       
