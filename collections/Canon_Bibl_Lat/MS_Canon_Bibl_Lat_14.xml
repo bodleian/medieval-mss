@@ -4,17 +4,26 @@
          <titleStmt>
             <title>MS. Canon. Bibl. Lat. 14</title>
             <title type="collection">MSS. Canon. Bibl. Lat. (Canonici Latin Biblical)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2017">Encoding and markup</resp>
+               <persName>Matthew Holford</persName>
+            </respStmt>
+            <respStmt xml:id="Q">
+               <resp when="1854">Cataloguer</resp>
+               <persName>H. O. Coxe</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -49,43 +58,63 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem xml:id="MS_Canon_Bibl_Lat_14-item1" n="1" class="#biblia">
+                  <msItem xml:id="MS_Canon_Bibl_Lat_14-item1" n="1" class="#biblia" resp="#PA">
                      <title rend="roman" key="work_13443">New Testament</title>
-                     <note>part II, Acts - Apocalypyse</note>
-                     <note>(part I is MS. Canon. Bibl. Lat. 13)</note>
+                     <note>Part II, Acts - Apocalypyse. Part I is MS. Canon. Bibl. Lat. 13.</note>
+                     <note>Added, 14th century:</note>
+                     <msItem resp="#VD">
+                        <title type="desc" key="work_16033">Epistle and Gospel list</title>
+                        <note>Temporale (fol. 33<hi rend="super">v</hi>,
+                           116), part of the sanctorale (fol. 129<hi rend="super">v</hi>). Mostly gospels; incipits
+                           only.</note>
+                     </msItem>
                      <textLang mainLang="la">Latin</textLang>
-                     <bibl type="bible">
-                        <title rend="roman">Bible, New Testament</title>
-                     </bibl>
+                  </msItem>
+                  <msItem resp="#Q #MLH">
+                     <author key="person_4944345">Hugh of Fouilloy</author>
+                     <title key="work_2169">De claustro anime</title>
+                     <note>Extracts; added in a later hand.</note>
                   </msItem>
                </msContents>
                <physDesc>
-                  <objectDesc form="codex">
+                  <objectDesc form="codex" resp="#VD">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent> i + 130 + 2 fol.<dimensions type="leaf" unit="mm">
+                           <height>152</height>
+                           <width>110</width>
+                        </dimensions>
+                           <dimensions type="written" unit="mm">
+                              <height>98</height>
+                              <width>69</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc>
+                           <layout columns="2" writtenLines="28">2 col. of 28 lines</layout>
+                        </layoutDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>Decoration<p>Fine miniatures. Good painted and fleuronnée initials. (P&amp;A
-				ii. 82, pl. VII)</p>
-                     </decoNote>
+                     <decoNote resp="#PA">Fine miniatures. Good painted and fleuronnée initials. (P&amp;A
+				ii. 82, pl. VII)</decoNote>
+                     <decoNote resp="#VD">Elaborate capitals in red and blue (1, 35v, 48, 60v, 80, etc.); illuminated initials and coloured figures of
+                        the apostles from fol.104 onwards.</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
-                  <origin>
+                  <origin resp="#PA">
                      <origDate calendar="Gregorian" notAfter="1300" notBefore="1250">13th century, second half</origDate>
                      <origPlace>
                         <country key="place_1000080">Italian</country>, <region>North-east</region>
                         <!--ORIGINAL: Italian, North-east-->
                      </origPlace>
                   </origin>
+                  <!-- check Canonici provenance -->
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Quarto Catalogue (H. O. Coxe,  <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854) and supplementary sources. 
-                            
-                            
+                        <source>S. J. P. Van Dijk, <title>Handlist of the Latin Liturgical Manuscripts in the Bodleian Library Oxford : Vol. 1: Mass Books</title> (typescript, 1957) (fols. 28-34); Pächt and Alexander (see Bibliography).  Previously described in the Quarto Catalogue (H. O. Coxe,  <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854). 
                             <listBibl>
                               <bibl type="QUARTO" facs="abz0134.gif">Quarto Catalogue, col. 255</bibl>
                               <bibl type="SC" facs="aaz0343.gif">Summary Catalogue, vol. 4, p. 324</bibl>
@@ -93,6 +122,11 @@
                         </source>
                      </recordHist>
                   </adminInfo>
+                  <listBibl type="WRAPPER">
+                     <listBibl>
+                        <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, II (1970), no. 82</bibl>
+                     </listBibl>
+                  </listBibl>
                </additional>
             </msDesc>
          </sourceDesc>

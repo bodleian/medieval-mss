@@ -4,17 +4,26 @@
          <titleStmt>
             <title>MS. Canon. Bibl. Lat. 44b</title>
             <title type="collection">MSS. Canon. Bibl. Lat. (Canonici Latin Biblical)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2017">Encoding and markup</resp>
+               <persName>Matthew Holford</persName>
+            </respStmt>
+            <respStmt xml:id="Q">
+               <resp when="1854">Cataloguer</resp>
+               <persName>H. O. Coxe</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -49,24 +58,47 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem xml:id="MS_Canon_Bibl_Lat_44b-item1" n="1" class="#biblia">
+                  <msItem xml:id="MS_Canon_Bibl_Lat_44b-item1" n="1" class="#biblia" resp="#Q">
                      <title rend="roman" key="work_10455">Bible</title>
+                     <note>Psalter omitted.</note>
+                     <note>Added by contemporary hand:</note>
+                     <msItem resp="#VD">
+                        <locus>(fol. 452)</locus>
+                        <title type="desc" key="work_16033">Epistle and Gospel list, Use of Rome</title>  
+                        <note>Sanctorale and temporale. Incipits only.</note>
+                     </msItem>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
                <physDesc>
-                  <objectDesc form="codex">
+                  <objectDesc form="codex" resp="#VD">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent> ii + 492 (494) + ii fol.<dimensions type="leaf" unit="mm">
+                           <height>230</height>
+                           <width>165</width>
+                        </dimensions>
+                          
+                        </extent>
+                       
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2">2 col., written space <dimensions type="written" unit="mm">
+                           <height>147</height>
+                           <width>102</width>
+                        </dimensions></layout>
+                        <layout columns="4">List in 4 col., written space <dimensions type="written" unit="mm">
+                           <height max="198" min="180">180-98</height>
+                           <width>130</width>
+                        </dimensions></layout>
+                        </layoutDesc>
+                     
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote>Decoration<p>One fine historiated initial, other initials. (P&amp;A ii. 93, pl.
-				VIII)</p>
-                     </decoNote>
+                  <decoDesc resp="#PA">
+                     <decoNote>One fine historiated initial, other initials. (P&amp;A ii. 93, pl. VIII)</decoNote>
                   </decoDesc>
                </physDesc>
-               <history>
+               <history resp="#PA">
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1300" notBefore="1290">13th century, end</origDate>
                      <origPlace>
@@ -74,11 +106,12 @@
                         <!--ORIGINAL: Italian, North-->
                      </origPlace>
                   </origin>
+                  <provenance when="1772" resp="#PA"><placeName key="place_7003297">Treviso</placeName>, unidentified library: 'Ex bibliotheca ... servorum ... de Tarvisio, 1772', fol. 491, erasure.</provenance>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Quarto Catalogue (H. O. Coxe,  <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854) and supplementary sources. 
+                        <source>S. J. P. Van Dijk, <title>Handlist of the Latin Liturgical Manuscripts in the Bodleian Library Oxford : Vol. 1: Mass Books</title> (typescript, 1957) (fols. 28-34); Pächt and Alexander (see Bibliography).  Previously described in the Quarto Catalogue (H. O. Coxe,  <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854). 
                             
                             
                             <listBibl>
@@ -88,6 +121,11 @@
                         </source>
                      </recordHist>
                   </adminInfo>
+                  <listBibl type="WRAPPER">
+                     <listBibl>
+                        <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, II (1970), no. 93</bibl>
+                     </listBibl>
+                  </listBibl>
                </additional>
             </msDesc>
          </sourceDesc>

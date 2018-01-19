@@ -4,17 +4,30 @@
          <titleStmt>
             <title>MS. Add. B. 54</title>
             <title type="collection">MSS. Add. (Additional) B</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1905">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            <respStmt xml:id="ES">
+               <resp when="2000">Cataloguer</resp>
+               <persName>Elizabeth Solopova</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2018">Encoding and markup</resp>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -48,78 +61,80 @@
                      <idno type="SCN">24723</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <msContents resp="#SC">  <textLang mainLang="la">Latin</textLang>
                   <msItem xml:id="MS_Add_B_54-item1" n="1">
+                     <locus>(fol. 2)</locus>
                      <author key="person_100227522">
                         Horace
                      </author>
                      <title key="work_2097">Odes</title>
-                     <textLang mainLang="la">Latin</textLang>
+                     <note>In four books, fols. 24, 38, 63.</note>
+                   
                   </msItem>
                   <msItem xml:id="MS_Add_B_54-item2" n="2">
+                     <locus>(fol. 77)</locus>
                      <author key="person_100227522">
                         Horace
                      </author>
                      <title key="work_2092">Carmen saeculare</title>
-                     <textLang mainLang="la">Latin</textLang>
                   </msItem>
                   <msItem xml:id="MS_Add_B_54-item3" n="3">
+                     <locus>(fol. 79)</locus>
                      <author key="person_100227522">
                         Horace
                      </author>
                      <title key="work_2096">Epodes</title>
-                     <textLang mainLang="la">Latin</textLang>
+                     <note>Followed by:</note>
+                     <msItem>
+                        <title>Life of Horace</title>
+                        <incipit>Horatius Q. Flaccus libertino praecone patre natus</incipit>
+                     </msItem>
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>ii + 98 fols.
+                        <dimensions unit="mm" type="leaf">
+                           <height>160</height>
+                           <width>105</width>
+                        </dimensions>
+                           <dimensions unit="mm" type="written">
+                              <height>105</height>
+                              <width max="65" min="60">60-5</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="1" writtenLines="21">1 col., 21 lines.</layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <handDesc>
+                     <handNote resp="#PA">Humanistic script.</handNote> 
+                     <handNote resp="#DD">Fol. 95: 'Librum hunc <persName role="scribe" key="person_754">Laurentius Petrini filius et Ballanteae</persName> domus suis manibus scripsit. Anno Mo ccccliiij'.</handNote>
+                  </handDesc>
                   <decoDesc>
-                     <decoNote>
-                        <p>Fine borders, initials. Written in humanistic script by
-            <persName role="scribe" key="person_754">Laurentius, son of Petrinus Bellanti.</persName> (P&amp;A ii. 264, pl. XXIV)</p>
-                        <list type="gloss">
-                           <head>fol. 2r</head>
-                           <label>Type</label>
-                           <item>
-                              <seg type="genreform">initial M</seg>
-                           </item>
-                           <label>Subject</label>
-                           <item>
-                              <seg type="subject">Gold initial with white-stem decoration on
-                  multicoloured ground.</seg>
-                           </item>
-                           <label>Type</label>
-                           <item>
-                              <seg type="genreform">border, upper, right and lower
-                  margins</seg>
-                           </item>
-                           <label>Subject</label>
-                           <item>
-                              <seg type="subject">White-stem decoration on multicoloured ground. In
-                  lower margin two winged putti support the coat of arms of Bellanti of
-                  Siena.</seg>
-                           </item>
-                        </list>
-                     </decoNote>
+                     <decoNote resp="#PA">Fine borders, initials.  (P&amp;A ii. 264, pl. XXIV)</decoNote>
+                     <decoNote resp="#DD">Coloured initials, gold headings.</decoNote>
+                        <decoNote resp="#ES">Fol. 2r: initial M: gold initial with white-stem decoration on multicoloured ground.</decoNote>
+                     <decoNote resp="#ES">Fol. 2r: border, upper, right and lower margins: white-stem decoration on multicoloured ground. In lower margin two winged putti support the coat of arms of Bellanti of Siena.</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
-                  <origin>
+                  <origin resp="#DD">
                      <origDate calendar="Gregorian" when="1454" cert="high">1454</origDate>
                      <origPlace>
                         <country key="place_1000080">Italian</country>, <settlement key="place_7011179">Siena</settlement> (?)
                         <!--ORIGINAL: Italian, Siena-->
                      </origPlace>
                   </origin>
+                  <provenance><persName role="formerOwner" key="person_100162294">Celso Cittadini, 1553-1627</persName>: 'Emi ego Celsus Cittadinus a Fabio Paulinio librorum ueterum uenditore die xx Januarij 1603 iulios duodec.', fol. 95.</provenance><!-- index Fabio? check -->
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
+                        <source>Adapted (2018) from A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts</title>; Pächt and Alexander (see Bibliography); and the Summary Catalogue (1905). Additional description of decoration by Elizabeth Solopova, c. 2000.
                             <listBibl>
                               <bibl type="SC" facs="aam0088.gif">Summary Catalogue, Vol. 5, p.  53</bibl>
                            </listBibl>
@@ -128,6 +143,7 @@
                   </adminInfo>
                   <listBibl type="WRAPPER"><listBibl>
                      <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 16</bibl>
+                     <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, II (1970), no. 264</bibl>
                   </listBibl></listBibl>
                </additional>
             </msDesc>
