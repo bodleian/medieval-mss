@@ -4,9 +4,26 @@
          <titleStmt>
             <title>MS. Add. C. 188</title>
             <title type="collection">MSS. Add. (Additional) C</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1905">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2018">Encoding and markup</resp>
+               <persName>Matthew Holford</persName>
+            </respStmt>
+            <respStmt xml:id="ES">
+               <resp when="2000">Cataloguer</resp>
+               <persName>Elizabeth Solopova</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -48,53 +65,74 @@
                      <idno type="SCN">29277</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <msContents resp="#SC">
                   <textLang mainLang="la">Latin</textLang>
                   <msItem xml:id="MS_Add_C_188-item1" n="1" class="#legalia">
-                     <title type="desc" key="work_14712">Statutes and legal documents</title>
+                     <locus>(fol. iii verso)</locus>
+                     <title type="desc" key="work_14746">Statutes of England</title>
+                     <note>Beginning with Magna Carta and ending with 'Interpretacio Sok &amp; Sak', preceded by a list of contents for the whole volume.</note>
                      
                   </msItem>
                   <msItem n="2">
+                     <locus>(fol. 66)</locus>
+                     <title type="desc" key="work_12597">Legal treatises</title>
+                     <rubric>Incipiunt Summe</rubric>
+                     <note>Beginning with 'Fet asauer' and ending with 'Exceptiones contra Brevia'.</note>
+                     <!-- not fully described in SC -->
+                  </msItem>
+                  <msItem n="3">
+                     <locus>(fol. 134)</locus>
                      <title type="desc" key="work_14289">Register of writs</title>
+                     <note>Lastest writ (the final one) dated 1297, the first dated 2 June 1294.</note>
                   </msItem>
                </msContents>
-               <physDesc>
+               <physDesc resp="#DD">
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent><measure resp="#SC">vii + 225 leaves</measure>
+                           <dimensions unit="mm" type="leaf">
+                              <height>255</height>
+                              <width>165</width>
+                           </dimensions>
+                           <dimensions unit="mm" type="written">
+                              <height max="195" min="190">190-5</height>
+                              <width min="110" max="115">110-15</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="1" writtenLines="33 34">1 col., 33-34 lines.</layout>
+                     </layoutDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>
-                        <p>Miniatures (marginal sketches). Good penwork initials. (P&amp;A
-            iii. 515)</p>
-                        <list type="gloss">
-                           <head>fol. 220r</head>
-                           <label>Type</label>
-                           <item>
-                              <seg type="genreform">drawing, lower margin</seg>
-                           </item>
-                           <label>Subject</label>
-                           <item>
-                              <seg type="subject">A bird and two half-figures of a man and a
-                  woman.</seg>
-                           </item>
-                        </list>
-                     </decoNote>
+                     <decoNote resp="#PA">Miniatures (marginal sketches). Good penwork initials. (P&amp;A iii. 515)</decoNote>
+                     <decoNote resp="#DD">Coloured initials, rubrics.</decoNote>
+                        <decoNote resp="#ES">fol. 220r: drawing, lower margin, a bird and two half-figures of a man and a woman.</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
-                  <origin>
-                     <origDate calendar="Gregorian" notBefore="1290" notAfter="1310">c. 1300 (after 1297)</origDate>
+                  <origin resp="#DD #PA">
+                     <origDate calendar="Gregorian" notBefore="1290" notAfter="1310" cert="high">13th century, late - 14th century, early (fols. 132-220, after 1297)</origDate>
                      <origPlace>
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
+                  <provenance resp="#DD">'<persName role="signer" key="person_2808">Ludwell</persName>', 15th cent., fol. iii.</provenance>
+                  <provenance resp="#DD">'<persName role="signer">Johannes Toller</persName>', early 16th cent., fol. 221.</provenance>
+                  <provenance resp="#DD">'Sum domini <persName role="formerOwner">Alexandri Hoch</persName>', 16th cent., fol. 222v.</provenance>
+                  <provenance resp="#SC"><persName role="formerOwner" key="person_27099070">Sir Edward Coke</persName>.</provenance>
+                  <provenance resp="#SC">'<persName role="formerOwner">Thome Aston</persName>', 16th cent., second half, fol. iii.</provenance>
+                  <provenance resp="#SC"><persName role="formerOwner">Lord Aston (d. 1678?)</persName>.</provenance>
+                  <provenance resp="#SC"><persName key="person_66816439">Sir Simon Degge (d. 1703)</persName>.</provenance>
+                  <provenance resp="#SC">His great-grandson <persName role="formerOwner" key="person_2809">Simon Degge M.D. (d. 1729)</persName> (who wrote in the volume on 5 April 1723).</provenance>
+                  <!-- https://www.british-history.ac.uk/magna-britannia/vol5/cxii-clii 'Simon Degge, M. D., great-grandson of Sir Simon, died in 1729, leaving an only daughter married to Hay' -->
+                  <provenance resp="#SC"><persName role="formerOwner" key="person_7470435">A. J. Horwood</persName>; lot. 1325 in his sale, 12 June 1883, purchased for the Library.</provenance>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
+                        <source>Adapted (2018) from A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts</title>, Pächt and Alexander, and the Summary Catalogue (1905). Additional description of decoration by Elizabeth Solopova, c. 2000.
                             <listBibl>
                               <bibl type="SC" facs="aam0634.gif">Summary Catalogue, Vol. 5, p.  599</bibl>
                            </listBibl>
@@ -103,6 +141,7 @@
                   </adminInfo>
                   <listBibl type="WRAPPER"><listBibl>
                      <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 22</bibl>
+                     <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, III (1973), no. 515</bibl> 
                   </listBibl></listBibl>
                </additional>
             </msDesc>
