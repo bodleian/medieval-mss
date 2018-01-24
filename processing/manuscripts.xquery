@@ -99,12 +99,6 @@ declare function local:origin($doc, $solrfield)
             { bod:languages($x//tei:sourceDesc//tei:textLang, 'ms_lang_sm') }
             { local:origin($x//tei:sourceDesc//tei:origPlace/tei:country, 'ms_origin_sm') }
             { bod:centuries($x//tei:origin//tei:origDate, 'ms_date_sm') }
-            { bod:many2one($x//tei:incipit, 'ms_textcontent_smni') }
-            { bod:many2one($x//tei:explicit, 'ms_textcontent_smni') }
-            { bod:many2one($x//tei:note, 'ms_textcontent_smni') }
-            { bod:many2one($x//tei:decoNote, 'ms_textcontent_smni') }
-            { bod:many2one($x//tei:additions, 'ms_textcontent_smni') }
-            { bod:many2one($x//tei:provenance, 'ms_textcontent_smni') }
             { bod:indexHTML($htmldoc, 'ms_textcontent_tni') }
             { bod:displayHTML($htmldoc, 'display') }
         </doc>
