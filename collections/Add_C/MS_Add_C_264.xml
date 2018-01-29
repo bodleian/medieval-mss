@@ -5,17 +5,26 @@
          <titleStmt>
             <title>MS. Add. C. 264</title>
             <title type="collection">MSS. Add. (Additional) C</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1905">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2018">Encoding and markup</resp>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -49,8 +58,9 @@
                      <idno type="SCN">29438</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <msContents resp="#SC">
                   <msItem xml:id="MS_Add_C_264-item1" n="1">
+                     <locus>(fol. 1)</locus>
                      <author key="person_23497389">
                         L. Annaeus Seneca (the elder)
                      </author>
@@ -58,13 +68,21 @@
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                   <msItem xml:id="MS_Add_C_264-item2" n="2">
+                     <locus>(fol. 62)</locus>
                      <author key="person_90637919">
                         L. Annaeus Seneca (the younger)
                      </author>
                      <title key="work_2905">De Beneficiis</title>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  <msItem>
+                     <locus>(fol. 106)</locus>
+                     <title type="desc">Religious poem</title>
+                     <incipit>Dio te salui piena de humilitade</incipit>
+                     <textLang mainLang="it">Italian</textLang>
+                  </msItem>
                   <msItem xml:id="MS_Add_C_264-item3" n="3">
+                     <locus>(fol. 107)</locus>
                      <author key="person_2581859">
                         Ps.-Aristotle
                      </author>
@@ -74,32 +92,48 @@
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
-               <physDesc>
+               <physDesc resp="#DD">
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
+                        <extent resp="#SC"> ii + 128 leaves
+                           <dimensions unit="mm" type="leaf" resp="#DD">
+                              <height>300</height>
+                              <width>220</width>
+                           </dimensions>
+                           <dimensions unit="mm" type="written" resp="#DD">
+                              <height max="205" min="200">200-5</height>
+                              <width>110</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="1" writtenLines="28">1 col., 28 lines.</layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <handDesc>
+                     <handNote>Fol. 58: 'Per <persName role="scribe" key="person_933">Paulum Johannis de Mannasseis de Interamna</persName> [probably Terni, Umbria] scriptus florentie existentem officialem officialem <sic/> maiorem magnifice Artis lane florentine Sub annis dominj Millesimo iiij<hi rend="super">c</hi> xxv et xxvj videlicet per annum.' To fol. 121v of the volume is partly in the same hand, undated; the writer's name appears in an initial on fol. 107 and he wrote the final section, fols. 107-18v.</handNote>
+                  </handDesc>
                   <decoDesc>
-                     <decoNote>
-                        <p>Initial. Written by <persName role="scribe" key="person_933">Paulus Johannes de Mannasseis de Interamna</persName>,
-            fol. 58. (P&amp;A ii. 215)</p>
-                     </decoNote>
+                     <decoNote resp="#PA">Initial. (P&amp;A ii. 215)</decoNote>
+                     <decoNote>Coloured initials.</decoNote>
                   </decoDesc>
+                  <accMat resp="#SC">Fols. 122-7 are six parchment leaves containing parts of bailiff's accounts in Latin, connected with a large estate at <placeName>Gonessa</placeName>, near Foligno, drawn up by Angelus cancellarius in the 15th century.</accMat>
                </physDesc>
                <history>
-                  <origin>
+                  <origin resp="#DD">
                      <origDate calendar="Gregorian" notAfter="1426" notBefore="1425" cert="high">1425-26 [in part: fols. 1-60]</origDate>
                      <origPlace>
                         <country key="place_1000080">Italian</country>, <settlement key="place_7000457">Florence</settlement>
                         <!--ORIGINAL: Italian, Florence-->
                      </origPlace>
                   </origin>
+                  <acquisition resp="#SC">Bought from <persName role="formerOwner" key="person_2818">Ernest Power of Liverpool</persName> in 1884 for £3 3s.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
+                        <source>Adapted (2018) from A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts</title>, Pächt and Alexander, and the Summary Catalogue (1905). 
                             <listBibl>
                               <bibl type="SC" facs="aam0658.gif">Summary Catalogue, Vol. 5, p.  623</bibl>
                            </listBibl>
@@ -108,6 +142,7 @@
                   </adminInfo>
                   <listBibl type="WRAPPER"><listBibl>
                      <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 26</bibl>
+                     <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, II (1970), no. 215</bibl>
                   </listBibl></listBibl>
                </additional>
             </msDesc>

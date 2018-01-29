@@ -5,17 +5,21 @@
          <titleStmt>
             <title>MS. Add. C. 192</title>
             <title type="collection">MSS. Add. (Additional) C</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1905">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2018">Encoding and markup</resp>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -49,21 +53,43 @@
                      <idno type="SCN">29278</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <msContents resp="#DD">
                   <msItem xml:id="MS_Add_C_192-item1" n="1">
                      <author key="person_27071645">
                         Silius Italicus
                      </author>
                      <title key="work_4532">Punica</title>
+                     <colophon><locus>(fol. 203)</locus> Explicit liber xvij secundi belli punici ... scriptus et completus per me <persName role="scribe" key="person_304914672">comedium bartolomei de coritho</persName> [Cortona] Sub anno domini M.cccc.lx die xiiij<hi rend="super">a</hi>.maij etc.</colophon>
+                     <note>A note written on fol. 203 in 1753 gives the name Nicomedes de Venutis as the alias of Comedius. For another MS. written by him see <title>Colophons de mss.</title> i., no. 2791.</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
-               <physDesc>
+               <physDesc resp="#DD">
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
+                        <extent> 217 fols.
+                           <dimensions unit="mm" type="leaf">
+                              <height>325</height>
+                              <width>240</width>
+                           </dimensions>
+                           <dimensions unit="mm" type="written">
+                              <height max="235" min="230">230-5</height>
+                              <width min="90" max="100">90-100</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="1" writtenLines="30">1 col., 30 lines.</layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <decoDesc><decoNote>Spaces left for initials and rubrics.</decoNote></decoDesc>
+                  <bindingDesc>
+                     <binding notAfter="1500" notBefore="1400">
+                        <p>Blind-stamped leather over boards, 15th century.</p>
+                     </binding>
+                  </bindingDesc>
+                  <accMat resp="#SC">Two small fragments of a 14th cent. Latin MS. attached to fol. 215.</accMat>
                </physDesc>
                <history>
                   <origin>
@@ -73,11 +99,14 @@
                         <!--ORIGINAL: Italian, Cortona-->
                      </origPlace>
                   </origin>
+                  <provenance resp="#SC">According to a note written in 1753 on fol. 203, this MS. was then 'in Bibliotheca <persName role="formerOwner" key="person_2813">equ. Marcelli et Fratrum de Venutis</persName>' at Cortona.</provenance>
+                  <provenance resp="#SC">According to another note on fol. 203, written by Benvenuto Giuseppe de Venutti, son of Marcello, the MS. came to his father from <persName role="formerOwner" key="person_2815">Giovanni Girolamo Severini</persName> (?), and to him from the priest <persName role="formerOwner" key="person_2816">Pier Antonio Santucci</persName>, who found it at <placeName key="place_7000457">Florence</placeName>.</provenance>
+                  <acquisition resp="#SC">Bought at Rome from the signore <persName role="formerOwner" key="person_2814">Guiseppa Venuti</persName> for £5 in April 1883.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
+                        <source>Adapted (2018) from A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts</title>, and the Summary Catalogue (1905).
                             <listBibl>
                               <bibl type="SC" facs="aam0634.gif">Summary Catalogue, Vol. 5, p.  599</bibl>
                               <bibl type="SC" facs="aam0635.gif">Summary Catalogue, Vol. 5, p.  600</bibl>
