@@ -5,17 +5,26 @@
          <titleStmt>
             <title>MS. Canon. Bibl. Lat. 43</title>
             <title type="collection">MSS. Canon. Bibl. Lat. (Canonici Latin Biblical)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1966">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2017">Encoding and markup</resp>
+               <persName>Matthew Holford</persName>
+            </respStmt>
+            <respStmt xml:id="Q">
+               <resp when="1854">Cataloguer</resp>
+               <persName>H. O. Coxe</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -49,36 +58,62 @@
                      <idno type="SCN">18935</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <msContents resp="#VD">
                   <msItem xml:id="MS_Canon_Bibl_Lat_43-item1" n="1" class="#liturgica">
-                     <title type="desc" key="work_12069">Gospel lectionary</title>
+                     <title type="desc" key="work_12069">Gospel lectionary, Benedictine use</title>
+                     <note>Temporale (fol. 1), beginning with Christmas eve and ending with votive masses during
+                        the week after the Dominica proxima to Christmas (fol. 86); sanctorale (fol. 87),
+                        beginning with St. Sylvester; common of the saints and the dedication (fol. 99);
+                        votive masses (fol. 107<hi rend="super">v</hi>) and masses for the dead (fol. 113), in some
+                     cases with the epistle as well. Contemporary additions: super analogium, ad
+                     bened. palmarum, in die [ad] collationem sancti Iohannis baptiste (fol. 115, see 90);
+                     several additions in the sanctorale.</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
                <physDesc>
-                  <objectDesc form="codex">
+                  <objectDesc form="codex" resp="#VD">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent> i + 115 + 1 fol.<dimensions type="leaf" unit="mm">
+                           <height>255</height>
+                           <width>165</width>
+                        </dimensions>
+                           <dimensions type="written" unit="mm">
+                              <height>195</height>
+                              <width>120</width>
+                           </dimensions>
+                        </extent>
+                      
                      </supportDesc>
+                     
+                     <layoutDesc>
+                           <layout columns="1" writtenLines="27">27 lines</layout>
+                        </layoutDesc>
                   </objectDesc>
+                  <musicNotation>
+                     <p>Occasional neums above the text; the genealogies of Christ (fol. 5: St. Luke, 94<hi rend="super">v</hi>: St. Matthew) with notation; in all passions (fol. 30) the parts are indicated by a, c and t. </p>
+                  </musicNotation>
                   <decoDesc>
-                     <decoNote>Decoration<p>Initial. (P&amp;A i. 47)</p>
-                     </decoNote>
+                     <decoNote resp="#PA">Initial. (P&amp;A i. 47)</decoNote>
+                     <decoNote resp="#VD">Plain red initials, except for one on the titlepage (fol. 1).</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
-                  <origin>
+                  <origin resp="#PA">
                      <origDate calendar="Gregorian" notAfter="1100" notBefore="1090">11th century, end</origDate>
                      <origPlace>
                         <country key="place_7000084">German</country>, <region>South</region>
                         <!--ORIGINAL: German, South-->
                      </origPlace>
                   </origin>
+                  <provenance resp="#VD">Van Dijk, noting that the sanctorale is identical to that of the Epistle &amp; Gospel Book,
+                     MS. Canon. liturg. 324, suggested an origin in <placeName key="place_7005178">Hirsau</placeName>.</provenance>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Quarto Catalogue (H. O. Coxe,  <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854) and supplementary sources. 
+                        <source>S. J. P. Van Dijk, <title>Handlist of the Latin Liturgical Manuscripts in the Bodleian Library Oxford : Vol. 1: Mass Books</title> (typescript, 1957); Pächt and Alexander (see Bibliography); previously described in the Quarto Catalogue (H. O. Coxe,  <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854). 
                             
                             
                             <listBibl>
@@ -88,6 +123,9 @@
                         </source>
                      </recordHist>
                   </adminInfo>
+                  <listBibl type="WRAPPER"><listBibl>
+                     <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, I (1966), no. 47</bibl>
+                  </listBibl></listBibl>
                </additional>
             </msDesc>
          </sourceDesc>

@@ -5,17 +5,30 @@
          <titleStmt>
             <title>MS. Lat. liturg. f. 5</title>
             <title type="collection">MSS. Lat. liturg. (Latin liturgical)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2017">Encoding and markup</resp>
+               <persName>Matthew Holford</persName>
+            </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1905">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -49,35 +62,65 @@
                      <idno type="SCN">29744</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <msContents resp="#VD">
                   <msItem xml:id="MS_Lat_liturg_f_5-item1" n="1">
                      <title key="work_12066">Gospel lectionary (St.Margaret's Gospels)</title>
+                     <note>Private collection of some liturgical pericopes from the four gospels (fols. 4, 14, 22,
+                        31), including the passions (fols. 7, 15, 24, 32<hi rend="super">v</hi>). </note>
+                     <note resp="DD">Hexameter poem added fol. 2, late 11th cent.</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
-               <physDesc>
+               <physDesc resp="#DD #VD">
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                     </supportDesc>
+                        <extent> i + 36 + 1 fol.<dimensions type="leaf" unit="mm">
+                           <height>172</height>
+                           <width>111</width>
+                        </dimensions>
+                           <dimensions type="written" unit="mm">
+                              <height>148</height>
+                              <width max="80" min="75">75/80</width>
+                           </dimensions>
+                        </extent>
+                     </supportDesc> 
+                     <layoutDesc>
+                           <layout columns="1" writtenLines="30">30 lines</layout>
+                        </layoutDesc>
                   </objectDesc>
+                  <musicNotation>
+                     <p>The Genealogy
+                        of Christ according to St. Matthew (fol. 4) with musical notation.</p>
+                  </musicNotation>
                   <decoDesc>
-                     <decoNote>Fine miniatures, borders, initials. (P&amp;A iii. 44, pl. V)
+                     <decoNote resp="#PA">Fine miniatures, borders, initials. (P&amp;A iii. 44, pl. V)
                      </decoNote>
+                     <decoNote>Each set of gospels
+                        is preceded by a full-page miniature of the evangelist and an illuminated title.</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
-                  <origin>
-                     <origDate calendar="Gregorian" notAfter="1050" notBefore="1025">11th century, second quarter</origDate>
+                  <origin resp="#DD">
+                     <origDate calendar="Gregorian" notAfter="1050" notBefore="1025">Before 1093; probably 11th century, second quarter</origDate>
                      <origPlace>
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
+                  <provenance resp="#DD"><persName role="formerOwner" key="person_50314778">Margaret, queen of Scotland (d. 1093)</persName> (poem on fol. 2).</provenance>
+                  <provenance resp="#DD #MLH"><orgName role="formerOwner" key="org_144679410">Durham Cathedral Priory</orgName>. Reginald of Coldingham records the gift by Queen Margaret to Durham of a gospel-book; probably the same gospel-book described in an inventory of 1383 (see <title>Bodleian Quarterly Record</title> iv.202-3).</provenance>
+                  <provenance resp="#DD">'<persName role="formerOwner">Liber Ihois</persName> this ys bouke', 16th cent., fol. 20v.</provenance>
+                  <provenance resp="#DD">'<persName role="formerOwner">Claytoun Sudlaw</persName>', 16th cent., fol. 38v.</provenance>
+                  <provenance resp="#DD">'<persName role="formerOwner" key="person_7488414">John Stowe</persName>', fol. 38v, probably the antiquary (?1525-1605).</provenance>
+                  <provenance resp="#SC"><persName role="formerOwner" key="person_49112785">William Howard, 1563-1640</persName>: 'William Howard', fol. 3</provenance>
+                  <provenance resp="#SC"><persName role="formerOwner" key="person_2819">Fane Edge</persName>, vicar of Nedging, Suffolk: 'Fane Edge, 1716', fol. 3; inherited from his mother, Catherine Fane.</provenance> <!-- https://genius.bodleian.ox.ac.uk/exhibits/browse/st-margarets-gospel-lectionary/ -->
+                  <provenance resp="#SC"><orgName role="formerOwner" key="org_142">Brent Ely parish library</orgName>: 'Brentely Library', 'L. i. 30', 18th cent., fol. 3</provenance>
+                 
+                  <acquisition resp="#SC">Sold by the library as part of the William Brice sale, Sotheby's, 26 July 1887, lot 104, for £6.</acquisition><!-- but not a Brice ms. -->
                </history>
                <additional><adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
-                            
+                        <source>S. J. P. Van Dijk, <title>Handlist of the Latin Liturgical Manuscripts in the Bodleian Library Oxford : Vol. 1: Mass Books</title> (typescript, 1957); Watson; Pächt and Alexander (see Bibliography); previously described in the Summary Catalogue.
                             
                             <listBibl>
                               <bibl type="SC" facs="aam0718.gif">Summary Catalogue, vol. 5, p. 683</bibl>
@@ -85,7 +128,12 @@
                            </listBibl>
                         </source>
                      </recordHist>
-                  </adminInfo><listBibl type="WRAPPER"><listBibl type="INTERNET"><head>Online resources:</head><bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/2433"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl></listBibl></listBibl></additional>
+                  </adminInfo><listBibl type="WRAPPER">
+                     <listBibl>
+                        <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 549</bibl>
+                        <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, III (1973), no. 44</bibl>
+                     </listBibl>
+                     <listBibl type="INTERNET"><head>Online resources:</head><bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/2433"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl></listBibl></listBibl></additional>
             </msDesc>
          </sourceDesc>
       </fileDesc>       
