@@ -5,17 +5,26 @@
          <titleStmt>
             <title>MS. Canon. Bibl. Lat. 29</title>
             <title type="collection">MSS. Canon. Bibl. Lat. (Canonici Latin Biblical)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2018">Encoding and markup</resp>
+               <persName>Matthew Holford</persName>
+            </respStmt>
+            <respStmt xml:id="Q">
+               <resp when="1854">Cataloguer</resp>
+               <persName>H. O. Coxe</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -49,35 +58,61 @@
                      <idno type="SCN">18921</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <msContents resp="#VD">
                   <msItem xml:id="MS_Canon_Bibl_Lat_29-item1" n="1" class="#liturgica">
                      <title type="desc" key="work_12069">Gospel Lectionary</title>
+                     <note>Combined temporale and sanctorale (fol. 1), with the weeks after Easter and Pentecost
+                        at the end, viz. after the feast of St. Andrew (fol. 116<hi rend="super">v</hi>); common
+                        of the dedication (fol. 161) and of the saints (fol. 161<hi rend="super">v</hi>); votive
+                        masses (fol. 173) and masses for the dead (fol. 176). In the
+                        passions (fol. 59<hi rend="super">v</hi>) the parts are indicated by c, 1, io and +.</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
-               <physDesc>
+               <physDesc resp="#VD">
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                     </supportDesc>
+                        <extent> 1 + 2 + 179 + 1 + i fol.<dimensions type="leaf" unit="mm">
+                           <height>305</height>
+                           <width>220</width>
+                        </dimensions>
+                           <dimensions type="written" unit="mm">
+                              <height>210</height>
+                              <width>125</width>
+                           </dimensions>
+                        </extent>
+                       
+                     </supportDesc> <layoutDesc>
+                           <layout columns="1" writtenLines="20">20 lines</layout>
+                        </layoutDesc>
                   </objectDesc>
+                  <musicNotation>
+                     <p>Some square notation of staves of 4 red lines added in the margins (fols. 66-7, 84,
+                        87).</p>
+                     <p>14th cent. addition: Kyrie, Sanctus
+                        and Agnus dei with square notation on staves of 4 lines (2 black, 1 yellow, 1
+                        red).</p>
+                  </musicNotation>
                   <decoDesc>
-                     <decoNote>Decoration<p>Fine drawings added in pen and with a point, fol. 179, 15th
-				century, beginning. (P&amp;A ii. 766)</p>
-                     </decoNote>
+                     <decoNote resp="#PA">Fine drawings added in pen and with a point, fol. 179, 15th
+				century, beginning. (P&amp;A ii. 766)</decoNote>
+                     <decoNote>Red capitals, sometimes with a design (fols. 1, 6, 90<hi rend="super">v</hi>)</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
-                  <origin>
-                     <origDate calendar="Gregorian" notAfter="1410" notBefore="1332">1332; 15th century, beginning (decoration)</origDate>
+                  <origin resp="#PA">
+                     <origDate calendar="Gregorian" notAfter="1410" notBefore="1332">1332;</origDate> <origDate type="additions" notAfter="1410" notBefore="1400">added decoration, 15th century, beginning</origDate>
                      <origPlace cert="low">
                         <country key="place_1000080">Italian</country>, <settlement key="place_7005025">Bergamo</settlement> (?)<!--ORIGINAL: Italian, Bergamo (?)--></origPlace>
                   </origin>
+                  <provenance resp="#PA #VD"><orgName role="formerOwner" key="org_143">Bergamo, Franciscan convent of St Leonard</orgName>: fol.179<hi rend="su">v</hi> (del.): 'Iste evangeliarius est ..... sancti
+                     Leonardi de Pergamo et fuit factum mcccxxxij'.</provenance>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Quarto Catalogue (H. O. Coxe,  <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854) and supplementary sources. 
+                        <source>Adapted (2018) from S. J. P. Van Dijk, <title>Handlist of the Latin Liturgical Manuscripts in the Bodleian Library Oxford : Vol. 1: Mass Books</title> (typescript, 1957); Pächt and Alexander (see Bibliography); and the Quarto Catalogue (H. O. Coxe,  <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854). 
                             
                             
                             <listBibl>
@@ -88,6 +123,9 @@
                         </source>
                      </recordHist>
                   </adminInfo>
+                  <listBibl type="WRAPPER"><listBibl>
+                     <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, II (1970), no. 766</bibl>
+                  </listBibl></listBibl>
                </additional>
             </msDesc>
          </sourceDesc>

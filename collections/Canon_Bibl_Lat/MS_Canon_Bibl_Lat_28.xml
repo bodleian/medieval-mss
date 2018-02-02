@@ -5,17 +5,30 @@
          <titleStmt>
             <title>MS. Canon. Bibl. Lat. 28</title>
             <title type="collection">MSS. Canon. Bibl. Lat. (Canonici Latin Biblical)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2018">Encoding and markup</resp>
+               <persName>Matthew Holford</persName>
+            </respStmt>
+            <respStmt xml:id="Q">
+               <resp when="1854">Cataloguer</resp>
+               <persName>H. O. Coxe</persName>
+            </respStmt>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -49,39 +62,63 @@
                      <idno type="SCN">18920</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <msContents resp="#VD">
                   <msItem xml:id="MS_Canon_Bibl_Lat_28-item1" n="1" class="#liturgica">
                      <title type="desc" key="work_12069">Gospel Lectionary</title>
+                     <note>Use of Rome. Temporale (fol. 1); sanctorale (fol. 70); common of the saints and the dedication (fol. 79);
+                        votive masses (fol. 88<hi rend="super">v</hi>).</note>
                      <note>Companion volume to MS. Canon. Bibl. Lat. 27</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
-               <physDesc>
+               <physDesc resp="#DD">
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                     </supportDesc>
+                        <extent> 1 + 90 + 1 fol.<dimensions type="leaf" unit="mm">
+                           <height>330</height>
+                           <width>235</width>
+                        </dimensions>
+                           <dimensions type="written" unit="mm">
+                              <height>255</height>
+                              <width>60</width>
+                           </dimensions>
+                        </extent>
+                        
+                     </supportDesc><layoutDesc>
+                           <layout columns="2" writtenLines="26">2 col. of 26 lines</layout>
+                        </layoutDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>Decoration<p>Fine borders, historiated initials. Written by <persName role="scribe" key="person_635">Johannes Incontrus
+                     <decoNote resp="#PA">Fine borders, historiated initials. Written by <persName role="scribe" key="person_635">Johannes Incontrus
                         of Volterra, chaplain of S. Pietro Maggiore, Florence</persName>, fol. 90. (P&amp;A ii.
-				310, pl. XXVIII)</p>
+				310, pl. XXVIII)
                      </decoNote>
+                     <decoNote>Illuminated initials (one historiated), coloured initials, rubrics.</decoNote>
                   </decoDesc>
+                  <bindingDesc>
+                     <binding notAfter="1600" notBefore="1500">
+                        <p>Blind-stamped leather over boards, 16th century.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
-               <history>
+               <history resp="#DD">
                   <origin>
-                     <origDate calendar="Gregorian" when="1478">1478</origDate>
+                     <origDate calendar="Gregorian" when="1478" cert="high">1478</origDate>
                      <origPlace>
                         <country key="place_1000080">Italian</country>, <settlement key="place_7000457">Florence</settlement>
                         <!--ORIGINAL: Italian, Florence-->
                      </origPlace>
                   </origin>
+                  <provenance>Fol.90: 'Ego iohannes incontrus Volaterranus Capellanus sancti petri maioris de
+                     florentia transcripsi hoc opus propriis manibus ac laborem meum dono dedi ob
+                     salutem anime mee redemptionem <add>que</add> peccatorum meorum die vero .xv<hi rend="super">a</hi>. agusti. Mcccclxxviij<hi
+                        rend="super">o</hi>'</provenance>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Quarto Catalogue (H. O. Coxe,  <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854) and supplementary sources. 
+                        <source>Adapted (2018) from S. J. P. Van Dijk, <title>Handlist of the Latin Liturgical Manuscripts in the Bodleian Library Oxford : Vol. 1: Mass Books</title> (typescript, 1957), Pächt and Alexander, Watson (see Bibliography), and the Quarto Catalogue (H. O. Coxe,  <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854) and supplementary sources. 
                             
                             
                             <listBibl>
@@ -91,6 +128,10 @@
                         </source>
                      </recordHist>
                   </adminInfo>
+                  <listBibl type="WRAPPER"><listBibl>
+                     <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 144</bibl>
+                     <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, II (1970), no. 310</bibl>
+                  </listBibl></listBibl>
                </additional>
             </msDesc>
          </sourceDesc>
