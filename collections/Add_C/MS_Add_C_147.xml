@@ -5,17 +5,26 @@
          <titleStmt>
             <title>MS. Add. C. 147</title>
             <title type="collection">MSS. Add. (Additional) C</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2017">Encoding and markup</resp>
+               <persName>Matthew Holford</persName>
+            </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1905">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -49,45 +58,61 @@
                      <idno type="SCN">24715</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <msContents resp="#VD">
                   <msItem xml:id="MS_Add_C_147-item1" n="1" class="#liturgica">
                      <title type="desc" key="work_11718">Epistolary</title>
+                     <note>Benedictine Use. Temporale (fol. 1); sanctorale (fol. 14), the dedication is between 18 and 28 Oct. (fol. 32);
+                        additions: epistle of the dead (fol. 34<hi rend="super">v</hi>); chapter, antiphon ad
+                        magnificat and collect of the two St. Prospers of Bologna (fol. 36).</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
-               <physDesc>
+               <physDesc resp="#VD">
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                     </supportDesc>
+                        <extent> ii + 36 + ii fol.<dimensions type="leaf" unit="mm">
+                           <height>265</height>
+                           <width>190</width>
+                        </dimensions>
+                           <dimensions type="written" unit="mm">
+                              <height>160</height>
+                              <width>110</width>
+                           </dimensions>
+                        </extent>
+                     </supportDesc> 
+                     <layoutDesc>
+                           <layout columns="1" writtenLines="20">20 lines</layout>
+                        </layoutDesc>
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote>
-                        <p>Fine initials. Fine penwork borders, initials. (P&amp;A ii. 662,
-            pl. LXIV)</p>
-                     </decoNote>
+                  <decoDesc resp="#PA">
+                     <decoNote>Fine initials. Fine penwork borders, initials. (P&amp;A ii. 662, pl. LXIV)</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
-                  <origin>
+                  <origin resp="#PA">
                      <origDate calendar="Gregorian" notAfter="1460" notBefore="1440">15th century, middle</origDate>
                      <origPlace>
                         <country key="place_1000080">Italian</country>, <settlement key="place_7004847">Bologna</settlement>
                         <!--ORIGINAL: Italian, Bologna-->
                      </origPlace>
                   </origin>
+                  <provenance resp="#PA">Written for the Benedictine abbey of <orgName role="formerOwner" key="org_144">St Proclus</orgName> at Bologna (congregation of S Giustina) (liturgical evidence)</provenance>
+                  <provenance resp="#PA"><persName role="formerOwner" key="person_19743305">Guglielmo Libri</persName> sale, Sotheby's, 30 March 1859, no. 342.</provenance>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
+                        <source>Adapted (2018) from S. J. P. Van Dijk, <title>Handlist of the Latin Liturgical Manuscripts in the Bodleian Library Oxford : Vol. 1: Mass Books</title> (typescript, 1957); Pächt and Alexander (see Bibliography); and the Summary Catalogue (1905).
                             <listBibl>
                               <bibl type="SC" facs="aam0085.gif">Summary Catalogue, Vol. 5, p.  50</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
-                  
+                  <listBibl type="WRAPPER"><listBibl>
+                     <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, II (1970), no. 662</bibl>
+                  </listBibl></listBibl>
                </additional>
             </msDesc>
          </sourceDesc>
