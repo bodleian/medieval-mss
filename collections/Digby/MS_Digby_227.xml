@@ -5,19 +5,34 @@
          <titleStmt>
             <title>MS. Digby 227</title>
             <title type="collection">MSS. Digby</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="Q1">
+               <resp when="1888">Cataloguer</resp>
+               <persName>W. D. Macray</persName>
+            </respStmt>
+            <respStmt xml:id="Q2">
+               <resp when="1999">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2018">Encoding and markup</resp>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH
-                                        project (enrich@oucs.ox.ac.uk;
-                                        http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -53,36 +68,68 @@
                </msIdentifier>
                <msContents>
                   <msItem xml:id="MS_Digby_227-item1" n="1" class="#liturgica">
-						               <title type="desc" key="work_13357">Missal, Benedictine use</title>
+						               <title type="desc" key="work_13357">Missal ('The Abingdon Missal')</title>
                      
-                     <note>('The Abingdon Missal', pars aestiualis)</note>
+                     <note>Benedictine Use, summer part. The winter part is Oxford, Trinity College, MS. 75.</note>
+                     <note>Prayers of preparation Cum induit se abbas vestimentis episcopalibus (fol. 1);
+                        blessing of holy water (fol. 4<hi rend="su">v</hi>); kalendar with obits (fol. 7);
+                        temporale, beginning (fol. 13) with Easter Sunday; Gloria, Credo with their
+                        intonations; prefaces on music, canon (fol. 114); sanctorale, beginning (fol. 123) with
+                        the Annunciation of the Virgin; common of the saints (fol. 207<hi rend="su">v</hi>);
+                        votive masses (fol. 237). No rubrics.</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
-               <physDesc>
+               <physDesc resp="#VD">
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent> 2 + 270 + 2 fol.<dimensions type="leaf" unit="mm">
+                           <height>355</height>
+                           <width>243</width>
+                        </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="1" writtenLines="15 22">22 (canon 15) lines, written space <dimensions type="written" unit="mm">
+                           <height>232</height>
+                           <width>145</width>
+                        </dimensions></layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <musicNotation>
+                     <p>Square notation on 7 staves of
+                        4 red lines.</p>
+                  </musicNotation>
                   <decoDesc>
-                     <decoNote>
-                        <p>Fine miniature, border, historiated and other initials. By <persName role="artist" key="person_96012549">William Abell</persName>.
-						(P&amp;A iii. 1065, pl. XCIX-C)</p>
-                     </decoNote>
+                     <decoNote resp="#VD">Fine miniature, border, historiated and other initials. By <persName role="artist" key="person_96012549">William Abell</persName>.
+						(P&amp;A iii. 1065, pl. XCIX-C)</decoNote>
+                     <decoNote>Illuminated initials and coloured borders on fol.13, 33<hi rend="su"
+                        >v</hi>, (missing after fol.42), 105<hi rend="su">v</hi>, 111<hi rend="su"
+                           >v</hi>, 113<hi rend="su">v</hi>, 114, 129<hi rend="su">v</hi>, 146<hi
+                              rend="su">v</hi>, 172<hi rend="su">v</hi>, 188, 201<hi rend="su">v</hi>, 237
+                        (after 262 missing); a full-page crucifixion within borders at the beginning of
+                        the Canon (113<hi rend="su">v</hi>).</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
-                  <origin>
-                     <origDate calendar="Gregorian" when="1461">1461</origDate>
+                  <origin resp="#DD">
+                     <origDate calendar="Gregorian" when="1461" cert="high">1461</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">English</country>, <settlement key="place_7011944">Abingdon</settlement> (?)
                      </origPlace>
                   </origin>
+                  <provenance resp="#DD">Fol. 270v: 'Scriptori
+                     merita mater pia redde Maria | Annis millenus quadringenus tibi notus | <supplied>E</supplied>t
+                     sexagenus primus tunc ecce repletus.</provenance>
+                  <provenance resp="#DD">Fol. 11v, 'Dedicacio ecclesie Abendone'.</provenance>
+                  <provenance resp="#PA">Arms of <orgName role="formerOwner" key="org_141158386">Abingdon Abbey</orgName> and its abbot William Ashenden, fol. 113v.</provenance>
+                  <provenance><persName key="person_25374986" role="formerOwner">Thomas Allen</persName>, Digby/Allen inventory number A. 5.</provenance>
+                  <provenance><persName role="formerOwner" key="person_49357645">Kenelm Digby</persName>; presented by him to the Bodleian in 1634.</provenance>
                </history>
                <additional><adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Quarto Catalogue (W. D. Macray, <title>Bodleian Library Quarto Catalogues IX: Digby Manuscripts</title>, repr. with addenda by R. W. Hunt and A. G. Watson, 1999) and supplementary sources. 
+                        <source>Adapted (2018) from S. J. P. Van Dijk, <title>Handlist of the Latin Liturgical Manuscripts in the Bodleian Library Oxford</title>  Vol. 1: Mass Books; Watson; Pächt and Alexander; and the Quarto Catalogue (W. D. Macray, <title>Bodleian Library Quarto Catalogues IX: Digby Manuscripts</title>, repr. with addenda by R. W. Hunt and A. G. Watson, 1999) and supplementary sources. 
                         
                         <listBibl>
                               <bibl type="QUARTO" facs="abw0128.gif">Quarto Catalogue, col. 238</bibl>
@@ -91,7 +138,12 @@
                            </listBibl>
                         </source>
                      </recordHist>
-                  </adminInfo><listBibl type="WRAPPER"><listBibl type="INTERNET"><head>Online resources:</head><bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/246"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl></listBibl></listBibl></additional>
+                  </adminInfo><listBibl type="WRAPPER">
+                     <listBibl>
+                        <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 430</bibl>
+                        <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, III (1973), no. 1065</bibl>
+                     </listBibl>
+                     <listBibl type="INTERNET"><head>Online resources:</head><bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/246"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl></listBibl></listBibl></additional>
             </msDesc>
          </sourceDesc>
       </fileDesc>       

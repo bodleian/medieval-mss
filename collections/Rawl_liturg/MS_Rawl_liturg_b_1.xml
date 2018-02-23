@@ -5,17 +5,30 @@
          <titleStmt>
             <title>MS. Rawl. liturg. b. 1</title>
             <title type="collection">MSS. Rawl. liturg. (Rawlinson liturgical)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2018">Encoding and markup</resp>
+               <persName>Matthew Holford</persName>
+            </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1895">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            <respStmt xml:id="ES">
+               <resp when="2000">Cataloguer</resp>
+               <persName>Elizabeth Solopova</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -49,49 +62,79 @@
                      <idno type="SCN">15850</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <msContents resp="#VD">
                   <msItem xml:id="MS_Rawl_liturg_b_1-item1" n="1" class="#liturgica">
 						               <title type="desc" key="work_13376">Missal, Use of <orgName key="org_258918407">Whitby Abbey, Yorks</orgName>.</title>
-                     
+                     <note>Additions: Summe sacerdos (fol. 1), masses of the Visitation of the Virgin and St.
+                        Barbara. Kalendar (fol. 4); epistles and gospels for the Wednesdays in Advent, rubric
+                        for the Credo (fol. 11), private prayers before mass (fol. 11<hi rend="su">v</hi>);
+                        additional mass of St. William of York; temporale (fol. 12) with the order of the
+                        mass after the vigil of Pentecost (fol. 118<hi rend="su">v</hi>) with Communicantes,
+                        intonations of the Gloria, prefaces on music and canon (fol. 128); Istud evangelium
+                        compositum fuit per Iohannem [papam] xxii (fol. 183: gospel and prayer of the
+                        passion); blessing of holy water (fol. 184); addition of the mass of St. Ann; proser
+                        without music (fol. 186); sanctorale (fol. 202), beginning with St. Thomas of Canterbury
+                        (28 Dec.); common of the saints (fol. 250); votive masses (fol. 269), incomplete. No
+                        rubrics.</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
-               <physDesc>
+               <physDesc resp="#VD">
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent> 1 + 1 + 281 + 1 + i fol., 2 leaves wanting after fol. 127. <dimensions type="leaf" unit="mm">
+                           <height>374</height>
+                           <width>255</width>
+                        </dimensions>
+                           <dimensions type="written" unit="mm">
+                              <height>255</height>
+                              <width>177</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2" writtenLines="21 31">2 columns of 31 lines (canon 21)</layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <musicNotation>
+                     <p>Square notation mostly in
+                        2 col. of 7 staves of 4 red lines.</p>
+                  </musicNotation>
                   <decoDesc>
-                     <decoNote>Decoration<p>Fine borders, initials. (P&amp;A iii. 724, pl. LXXII)</p>
-                        <p>Initials on gold background and borders, made of gold, blue and
+                     <decoNote resp="#PA">Fine borders, initials. (P&amp;A iii. 724, pl. LXXII)</decoNote>
+                        <decoNote resp="#ES">Initials on gold background and borders, made of gold, blue and
             pink bars, decorated with interlace, sprays of foliage and flowers, masks,
             grotesques and gold disks on fols. 12r, 19v, 101r, 114v, 121v, 128r, 130v,
             131r, 132v, 140v, 142r, 186r, 191v, 202r, 205v, 219r, 221r, 230v, 233r, 235r,
-            238v, 243v, 245r, 245v, 248r and 269r.</p>
-                        <p>Red and blue penwork initials decorated with contrasting purple
-            and red penwork.</p>
-                     </decoNote>
+            238v, 243v, 245r, 245v, 248r and 269r.</decoNote>
+                        <decoNote resp="#ES">Red and blue penwork initials decorated with contrasting purple
+            and red penwork.</decoNote>
                   </decoDesc>
+                  <accMat resp="#SC">Fol. 282 is a fragment of a Latin logical treatise, 15th century.</accMat>
                </physDesc>
                <history>
-                  <origin>
+                  <origin resp="#PA">
                      <origDate calendar="Gregorian" notAfter="1400" notBefore="1390">14th century, end</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">English</country>, <orgName key="org_258918407" role="formerOwner">Whitby Abbey, Yorks</orgName>
                      </origPlace>
                   </origin>
+                  <provenance><persName role="formerOwner" key="person_47563478">Richard Rawlinson</persName>; bequeathed by him to the Bodleian.</provenance><!-- possibly via Nicholas-Jean Foucault (cf. S.C. III.181) but this needs further investigation. Not in cat. of abbe de Rothelin http://gallica.bnf.fr/ark:/12148/bpt6k6531139r -->
                </history>
                <additional><adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
-                            
+                        <source>Adapted (2018) from S. J. P. Van Dijk, <title>Handlist of the Latin Liturgical Manuscripts in the Bodleian Library Oxford</title>  Vol. 1: Mass Books; Pächt and Alexander; and the Summary Catalogue (1895); with additional description of decoration by Elizabeth Solopova, c. 2000. 
                             <listBibl>
                               <bibl type="SC" facs="aas0533.gif">Summary Catalogue, Vol. 3, p.  518</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
-                  </adminInfo><listBibl type="WRAPPER"><listBibl type="INTERNET"><head>Online resources:</head><bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5686"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl></listBibl></listBibl></additional>
+                  </adminInfo><listBibl type="WRAPPER">
+                     <listBibl>
+                        <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, III (1973), no. 724</bibl>
+                     </listBibl>
+                     <listBibl type="INTERNET"><head>Online resources:</head><bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5686"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl></listBibl></listBibl></additional>
             </msDesc>
          </sourceDesc>
       </fileDesc>       
