@@ -5,17 +5,27 @@
          <titleStmt>
             <title>MS. Lat. liturg. d. 8</title>
             <title type="collection">MSS. Lat. liturg. (Latin liturgical)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1966">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2018">Encoding and markup</resp>
+               <persName>Matthew Holford</persName>
+            </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1924">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -49,25 +59,64 @@
                      <idno type="SCN">33196</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <msContents resp="#VD">
                   <msItem xml:id="MS_Lat_liturg_d_8-item1" n="1" class="#liturgica">
-						               <title type="desc" key="work_13355">Missal.</title>
-                     
+						               <title type="desc" key="work_13355">Missal</title>
+                     <note>Local use.</note>
+                     <note>Kalendar (fol. 2); prayer Summe sacerdos (fol. 8); prayers for the taking of the vestment
+                        (fol. 9<hi rend="super">v</hi>); benedictio ararum (fol. 10); marriage service (fol. 10);
+                        missa in quadragesima super populum (fol. 11); missa devotissima quinque plagarum
+                        facta a S. Iohanne evangelista … (fol. 12: Humiliavit), prayers of votive masses of
+                        the Virgin and St. Raphael (fol. 13); temporale (fol. 16), at the end of which the mass of
+                        the dedication (fol. 208), prefaces on music with Communicantes, etc. (fol. 209<hi
+                           rend="super">v</hi>) and canon (fol. 217); sanctorale (fol. 221), beginning with St.
+                        Stephen; common of the saints (fol. 296<hi rend="super">v</hi>); after the mass in
+                        dedications altaris sancti Petri (fol. 311), votive masses of the week etc. (fol. 314<hi
+                           rend="super">v</hi>); table de missis beati Gregorii pape sicut continetur in
+                        libro grisologorum (fol. 332: introduction with the date 1378); additions. Only a few
+                        rubrics.</note>
+                     <note>A curiously cut tag on fol. 110 (see 231).</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
-               <physDesc>
+               <physDesc resp="#VD">
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent> 2 + 334 (338) + 2 fol.<dimensions type="leaf" unit="mm">
+                           <height>274</height>
+                           <width>202</width>
+                        </dimensions>
+                           <dimensions type="written" unit="mm">
+                              <height>196</height>
+                              <width>130</width>
+                           </dimensions>
+                        </extent>
+                        <foliation>A
+                           contemporary (?) foliation begins at fol. 109<hi rend="super">b</hi> (lxxxxvij) and
+                           starts again with i at the sanctorale.</foliation>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2" writtenLines="32">2 col. of 32 lines</layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <musicNotation>
+                     <p>Heavy square notation on 11 staves of 4 red lines.</p>
+                  </musicNotation>
                   <decoDesc>
-                     <decoNote>Fine borders, initials. (P&amp;A i. 651, pl. LI)
-                     </decoNote>
+                     <decoNote resp="#PA">Fine borders, initials. (P&amp;A i. 651, pl. LI)</decoNote>
+                     <decoNote>Some large gold and
+                        coloured initials with borders (fols. 16, 26<hi rend="super">v</hi>, 126<hi rend="super"
+                           >v</hi>, 144, 149, 158, 216<hi rend="super">v</hi>, 217, 221, etc.). Rubrics in
+                        black and red underlined.</decoNote>
                   </decoDesc>
+                  <bindingDesc resp="#SC">
+                     <binding>
+                        <p>Red morocco doublé with elaborate gold ornament by <orgName role="binder" key="org_175619750">J. Zaehnsdorf</orgName>.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
-               <history>
+               <history resp="#PA">
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1410" notBefore="1400">15th century, beginning</origDate>
                      <origPlace>
@@ -75,13 +124,18 @@
                         <!--ORIGINAL: French, South-->
                      </origPlace>
                   </origin>
+                  <provenance resp="#PA #VD">Written for the cathedral church of <orgName role="formerOwner" key="org_124309014">St Peter at Maguelonne</orgName> near Montpellier (dedication in the kalendar, 13 April; addition, fol. 1v, 'Missale Magalonense').</provenance>
+                  <provenance resp="#SC #MLH">'Gratianus Granierus Vicar. huius loci Podiobonensis', late 16th century (?); apparently Puéchabon, dép. Hérault (cf. <title>Dictionnaire Topographique de Département de L'Hérault</title> (1856), pp. 155-6), where Gratian Granier was vicar c. 1598-1652.</provenance>
+                  <!-- source: http://thierryforne.pagesperso-orange.fr/database1/pag103.html : not verified --><!-- check: E. Bougette, Histoire de Puéchabon (not in oxford)  -->
+                  <provenance resp="#SC">Given by one Granier to his nephew in 1655 (?).</provenance>
+                  <provenance resp="#SC"><persName role="formerOwner" key="person_316003889">Henry White J.P.</persName> (bookplate, removed); his sale at Sotheby's, 21 April 1902, lot. 1511.</provenance><!-- annotation in Richard Hunt's copy of S.C. -->
+                  <acquisition resp="#SC">Bought from Maggs on 27 Feb. 1903 (cat. 193, no. 730).</acquisition>
+                  
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
-                            
-                            
+                        <source>Adapted (2018) from S. J. P. Van Dijk, <title>Handlist of the Latin Liturgical Manuscripts in the Bodleian Library Oxford</title>  Vol. 1: Mass Books, Pächt and Alexander, and the Summary Catalogue (1924). 
                             <listBibl>
                               <bibl type="SC" facs="abj0272.gif">Summary Catalogue, vol. 6, p. 234</bibl>
                               <bibl type="SC" facs="abj0273.gif">Summary Catalogue, vol. 6, p. 235</bibl>
