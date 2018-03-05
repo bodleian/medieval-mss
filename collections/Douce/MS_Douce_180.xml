@@ -5,17 +5,26 @@
          <titleStmt>
             <title>MS. Douce 180</title>
             <title type="collection">MSS. Douce</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2017">Encoding and markup</resp>
+               <persName>Matthew Holford</persName>
+            </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            <respStmt xml:id="DL">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. de la Mare</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -51,47 +60,81 @@
                </msIdentifier>
                <msContents>
                   <msItem xml:id="MS_Douce_180-item1" n="1" class="#biblia #commentarii">
-                     <title type="desc" key="work_10234">Apocalypse with commentaries</title>
-                     <bibl type="bible">
-                        <title rend="roman">Bible, Apocalypse</title>
+                     <locus>(fols. 1-12v)</locus>
+                     <title type="desc" key="work_10225">Apocalypse with anonymous commentary (French prose apocalypse)</title>
+                     <incipit type="prologue">Seint pol la postle dist ki tuz ceus ki uoilent piement uiuere</incipit>
+                     <incipit type="text"><locus>(fol. 2ra)</locus> <supplied>J</supplied>eo iohan uostre frere e parcener en tribulaciun</incipit>
+                     <!-- the prologue is said to be adapted from Gilbert de la Porree (Dean and Boulton; for text see http://sermones.net/_postille/index.php - but this has not been verified -->
+                     
+                     <incipit type="commentary"><supplied>P</supplied>ar seint iohan sunt signifie li bon prelat de seinte iglise</incipit>
+                     <note>Dean &amp; Boulton, no. 475</note>
+                     <note>Incomplete; text missing after fol. 3, fol. 6, fol. 9.</note>
+                     <note>Prologue, unprinted (?); for main text, cf. <title>L'apocalypse en français au XIIIe siècle (Bibl. nat., fr. 403)</title>, ed. L. Delisle et P. Meyer (1901), pp. 1-8 (line 2 from bottom, 'de luxure. Les', end of fol. 3v), 17 (line 2 'deu ciel fu', beginning of fol. 4r)-27 (line 6 from bottom, 'essi un', end of fol. 6v), 61 (line 3, 'se sunt amendez', beginning of fol. 7r)-73 (line 14, 'il be[vrunt]', end of fol. 9v), 80 (line 15, 'eus une autre', beginning of fol. 10r)-92 (ll. 12-13 from bottom, 'revendra', end of fol. 12v). Differing sometimes from the edition in the way that text and gloss are grouped, e.g. the text and gloss for xvi.1-4, 9-11, xvii.2-3 are here grouped together.</note>
+                     <textLang mainLang="fr">French</textLang>
+                  </msItem>
+                  <msItem xml:id="MS_Douce_180-item2" n="2" class="#biblia #commentarii">
+                     <locus>(fols. 13r-61r)</locus>
+                     <title type="desc" key="work_10227">Apocalypse with extracts from the commentary of Berengaudus</title>
+                     <note>Cf. <title>PL</title> 17. 765–970</note>
+                     <bibl type="commentary">
+                        <author key="person_110145542406196640685">Berengaudus</author>
+                        <title key="work_1007">Commentary on Apocalypse</title>
                      </bibl>
-                     <bibl type="commentedOn">
-                        <title rend="roman">Bible, Apocalypse</title>
-                     </bibl>
-                     <textLang mainLang="la" otherLangs="fr">Latin and French</textLang>
+                     
+                     <textLang mainLang="la" otherLangs="fr">Latin (inscriptions for some miniatures in Anglo-Norman)</textLang>
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>
+                           <dimensions unit="mm" type="leaf">
+                              <height quantity="312">c. 312</height>
+                              <width>216</width>
+                           </dimensions>
+                          
+                        </extent>
+                        <collation>Missing two folios after fol. 3, two folios after fol. 9, probably a quire of 8 after fol. 6, a quire of eight after fol. 12, and single leaves after fols. 17, 18, 39, 61, 63 (end of text).</collation>
                      </supportDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>Decoration<p>Important miniatures (in various stages of competion, partly
+                     <decoNote>Important miniatures (in various stages of competion, partly
             drawings). Fine border, historiated initial, fol. 1, by a different artist,
-            before 1272. (P&amp;A iii. 469, pl. XLIII-XLV)</p>
-                     </decoNote>
+            before 1272. (P&amp;A iii. 469, pl. XLIII-XLV)</decoNote>
+                     <!-- Morgan no. 153 identifies 3 artists: pp. 1-74; 75-90; 91-7 --><!-- from the same workshop as Paris, BnF, MS. lat. 10474, but the artist have not been found elsewhere than these 2 mss. -->
                   </decoDesc>
+                  <bindingDesc>
+                     <binding notAfter="1590" notBefore="1580">
+                        <p>Gold-stamped leather over pasteboard, English, 1580s.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1300" notBefore="1270">before 1272 - 13th century, end </origDate>
+                     <origDate calendar="Gregorian" notAfter="1300" notBefore="1270">13th century, third quarter (1254 × 1272)</origDate>
                      <origPlace cert="low">
                         <country key="place_7002445">English</country>, <settlement key="place_7018905">Westminster</settlement> (?)<!--ORIGINAL: English, Westminster (?)--></origPlace>
                   </origin>
+                  <provenance>Two production units (fols. 1-12, 13-61), but with the same ruling and possibly the same scribe.</provenance>
+                  <provenance>Fol. 1, historiated initial, kneeling figures identifiable from their arms as <persName role="formerOwner" key="person_13101431">Edward I of England</persName> (before his accession, 1272), and <persName role="formerOwner" key="person_35262846">Eleanor of Castile</persName>; they married in 1254.</provenance>
+                  <provenance><persName role="formerOwner" key="person_2854">William Wilson</persName>, F.S.A., of the Minories, his sale, Christie's, 31 Jan.-1 Feb. 1833, lot 56 on 1 Feb.; bought by Thorpe for £53. 11s.</provenance>
+                  <provenance>Purchased from Thorpe by <persName  key="person_69848690" role="formerOwner">Douce</persName>, Feb. 1833.</provenance>
+                  <acquisition>Bequeathed by Douce to the Bodleian.</acquisition>
                </history>
                <additional><adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
-                            
+                        <source>Adapted (2018) from <title>The Douce Legacy</title> (1984), no. 65; Pächt and Alexander (see Bibliography);  and the Summary Catalogue (1897).
                             
                             <listBibl>
                               <bibl type="SC" facs="aaz0565.gif">Summary Catalogue, vol. 4, p. 546</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
-                  </adminInfo><surrogates><bibl type="digital-fascimile" subtype="full"><ref target="https://digital.bodleian.ox.ac.uk/inquire/p/d665d40d-1871-4f3e-ac38-c707117523e3"><title>Digital Bodleian</title> <note>(full digital facsimile)</note></ref></bibl></surrogates><listBibl type="WRAPPER"><listBibl type="INTERNET"><head>Online resources:</head><bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/40258"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title></ref></bibl></listBibl></listBibl></additional>
+               </adminInfo><surrogates><bibl type="digital-fascimile" subtype="full"><ref target="https://digital.bodleian.ox.ac.uk/inquire/p/d8f4f265-b851-48a8-b324-4fc871f68657"><title>Digital Bodleian</title> <note>(full digital facsimile)</note></ref></bibl></surrogates>
+                  <listBibl type="WRAPPER">
+                     <listBibl><bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, III (1973), no. 469</bibl></listBibl>
+                     <listBibl type="INTERNET"><head>Online resources:</head><bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/40258"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title></ref></bibl></listBibl></listBibl></additional>
             </msDesc>
          </sourceDesc>
       </fileDesc>       
