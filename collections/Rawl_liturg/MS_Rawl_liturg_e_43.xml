@@ -5,17 +5,26 @@
          <titleStmt>
             <title>MS. Rawl. liturg. e. 43</title>
             <title type="collection">MSS. Rawl. liturg. (Rawlinson liturgical)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2018">Encoding and markup</resp>
+               <persName>Matthew Holford</persName>
+            </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1895">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -49,43 +58,64 @@
                      <idno type="SCN">15591</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <msContents resp="#VD">
                   <msItem xml:id="MS_Rawl_liturg_e_43-item1" n="1" class="#liturgica">
 						               <title type="desc" key="work_13372">Missal, Use of Sarum</title>
-                     
+                     <note>Sanctorale (fol. 1); proses of St. Andrew and St. Nicholas (fol. 80); prefaces and canon
+                        (fol. 81); common of the saints (fol. 88) and votive masses (fol. 126).</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
-               <physDesc>
+               <physDesc resp="#VD">
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent> i + 159 (161) + 2 + i fol.<dimensions type="leaf" unit="mm">
+                           <height>215</height>
+                           <width>147</width>
+                        </dimensions>
+                           <dimensions type="written" unit="mm">
+                              <height>145</height>
+                              <width>95</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
-                  </objectDesc>
+                     <layoutDesc>
+                           <layout columns="2" writtenLines="30">2 col. of 30 lines</layout>
+                        </layoutDesc>
+                  </objectDesc> <musicNotation>
+                           <p>Square notation on the feast of the Purification (fol. 10), 2 col. of 10 red staves of 4 lines.</p>
+                        </musicNotation>
                   <decoDesc>
-                     <decoNote>Decoration<p>Good borders, initials. (P&amp;A iii. 728)</p>
-                     </decoNote>
+                     <decoNote resp="#PA">Good borders, initials. (P&amp;A iii. 728)</decoNote>
+                     <decoNote>Illuminated capitals and borders on fols. 1, 11<hi rend="super"
+                        >v</hi>, 46<hi rend="super">v</hi>.</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
-                  <origin>
+                  <origin resp="#PA">
                      <origDate calendar="Gregorian" notAfter="1400" notBefore="1390">14th century, end</origDate>
                      <origPlace>
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
+                  <provenance notBefore="1731" notAfter="1735" resp="#SC"><persName role="formerOwner" key="person_29543710">Thomas Hearne, 1678-1735</persName>: inscribed by him, 1731.</provenance>
+                  <provenance resp="#SC">Bequeathed by Hearne to <persName role="formerOwner" key="person_2773">William Bedford</persName>.</provenance>
+                  <provenance resp="#SC">Purchased from Bedford's widow by <persName role="formerOwner" key="person_47563478">Richard Rawlinson, 1690-1755</persName>, probably in 1748, and bequeathed by him to Bodleian.</provenance>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
-                            
+                        <source>Adapted (2018) from S. J. P. Van Dijk, <title>Handlist of the Latin Liturgical Manuscripts in the Bodleian Library Oxford</title>  Vol. 1: Mass Books; Pächt and Alexander; and the Summary Catalogue.
                             <listBibl>
                               <bibl type="SC" facs="aas0457.gif">Summary Catalogue, Vol. 3, p.  442</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
+                  <listBibl type="WRAPPER"><listBibl>
+                     <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, III (1973), no. 728</bibl>
+                  </listBibl></listBibl>
                </additional>
             </msDesc>
          </sourceDesc>
