@@ -52,12 +52,14 @@ declare function local:origin($doc, $solrfield)
 
 declare function local:buildSummary($x as document-node()) as xs:string
 {
+    (: Retrieve various pieces of information, from which the summary will be constructed :)
     let $head := normalize-space(string-join($x//tei:msDesc/tei:head//text(), ''))
     let $authors := distinct-values($x//tei:msItem/tei:author/normalize-space())
-    let $worktitles := distinct-values($x//tei:msItem/tei:title[1]/normalize-space())
+    let $worktitles := distinct-values(for $t in $x//tei:msItem/tei:title[1]/normalize-space() return if (ends-with($t, '.')) then substring($t, 1, string-length($t)-1) else $t)
     let $datesoforigin := distinct-values($x//tei:origin//tei:origDate/normalize-space())
     let $placesoforigin := distinct-values($x//tei:origin//tei:origPlace/normalize-space())
-        
+
+    (: The main part of the summary is the head element, or the summary, or a list of authors, or a list of titles, in that order of preference :)
     let $summary1 := if ($head) then
                             bod:shortenToNearestWord($head, 128)
                         else if ($x//tei:msPart) then
@@ -78,20 +80,22 @@ declare function local:buildSummary($x as document-node()) as xs:string
                             'Untitled works or fragments'
                         else
                             'Untitled work or fragment'
-    let $summary2 := if (count($datesoforigin) eq 0) then 
-                            () 
-                        else if (every $date in $datesoforigin satisfies contains($summary1, $date)) then
-                            ()                            
+                            
+    (: Also include the date, unless already in the first page of the summary :)
+    let $summary2 := if ($head or count($datesoforigin) eq 0 or (every $date in $datesoforigin satisfies contains($summary1, $date))) then
+                            ()
                         else if (count($datesoforigin) eq 1) then 
                             $datesoforigin
                         else 'Multiple dates'
-    let $summary3 := if (count($placesoforigin) eq 0) then 
+                        
+    (: Also include the place, unless already in the first page of the summary :)
+    let $summary3 := if ($head or count($placesoforigin) eq 0 or (every $place in $placesoforigin satisfies contains($summary1, $place))) then
                             ()
-                        else if (every $place in $placesoforigin satisfies contains($summary1, $place)) then
-                            () 
                         else if (count($placesoforigin) eq 1) then 
-                            $placesoforigin 
+                            $placesoforigin
                         else 'Multiple places of origin'
+                        
+    (: Stitch them all together :)
     return string-join(($summary1, string-join(($summary2, $summary3), '; '))[string-length(.) gt 0], ' — ')
 };
 
