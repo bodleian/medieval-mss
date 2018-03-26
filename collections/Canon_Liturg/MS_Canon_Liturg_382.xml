@@ -5,17 +5,26 @@
          <titleStmt>
             <title>MS. Canon. Liturg. 382</title>
             <title type="collection">MSS. Canon. Liturg. (Canonici Liturgical)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1966">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2018">Encoding and markup</resp>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -49,45 +58,77 @@
                      <idno type="SCN">19464</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <msContents resp="#VD">
                   <msItem xml:id="MS_Canon_Liturg_382-item1" n="1" class="#liturgica">
                      <title type="desc" key="work_13366">Missal, Use of Rome</title>
+                     <note>Calendar (fol. 1); intonations of Kyrie, Gloria, Ite missa est, etc. (fol. 7); Gloria and
+                        Credo (fol. 8); temporale (fol. 9) with general rubrics (fol. 117) and order of the mass
+                        (fol. 117<hi rend="superscript">v</hi>: Indutus planeta); sanctorale (fol. 185) with masses of
+                        St. Felicitas (fol. 212<hi rend="superscript">v</hi>) and the Three Patriarchs (fol. 227<hi
+                           rend="superscript">v</hi>); common of the saints and the dedication (fol. 234); votive
+                        masses (fol. 257); blessing of holy water (fol. 279) and other blessings.</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
-               <physDesc>
+               <physDesc resp="#VD">
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                     </supportDesc>
+                        <extent> i + 280 + i fol.<dimensions type="leaf" unit="mm">
+                           <height>350</height>
+                           <width>257</width>
+                        </dimensions>
+                           <dimensions type="written" unit="mm">
+                              <height>215</height>
+                              <width>160</width>
+                           </dimensions>
+                        </extent>
+                     </supportDesc> 
+                     <layoutDesc>
+                           <layout columns="2" writtenLines="30">2 col. of 30 lines, 20 mm. between the columns.</layout>
+                        </layoutDesc>
                   </objectDesc>
+                  <musicNotation>
+                     <p>Square notation on 8 long staves of 4 red lines.</p>
+                  </musicNotation>
                   <decoDesc>
-                     <decoNote>Decoration<p>Fine miniatures, historiated borders and initials. Fine penwork
-            initials. (P&amp;A ii. 168, pl. XV)</p>
-                     </decoNote>
+                     <decoNote resp="#PA">Fine miniatures, historiated borders and initials. Fine penwork
+            initials. (P&amp;A ii. 168, pl. XV)</decoNote>
+                     <decoNote>Coloured
+                        and historiated initials, borders and marginal miniatures (fols. 9, 17<hi rend="superscript">v</hi>, 23, 137, 148, 213, 217<hi rend="superscript">v</hi>, 222); a full-page
+                        crucifixion on a gold ground and within borders (fol. 132<hi rend="superscript">v</hi>).</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
-                  <origin>
+                  <origin resp="#PA">
                      <origDate calendar="Gregorian" notAfter="1360" notBefore="1340">14th century, middle</origDate>
                      <origPlace>
                         <country key="place_1000080">Italian</country>, <settlement key="place_7000457">Florence</settlement>
                         <!--ORIGINAL: Italian, Florence-->
                      </origPlace>
                   </origin>
+                  <provenance resp="#PA #VD"><orgName role="formerOwner" key="org_123598658">Benedictine abbey of S. Felicita, Florence</orgName>: translation of S.
+                     Felicita added in red to calendar (25 September). In the sanctorale her mass is
+                     embellished with borders, etc.</provenance>
+                  <provenance resp="#PA"></provenance>
+                  <provenance resp="#SC"><persName role="formerOwner" key="person_2384880">Matteo Luigi Canonici</persName>.</provenance>
+                  <provenance resp="#SC"><persName role="formerOwner" key="person_446">Giuseppe Canonici</persName>.</provenance>
+                  <acquisition resp="#SC">Purchased by the Bodleian in 1817.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
-                            
-                            
+                        <source>Adapted (2018) from S. J. P. Van Dijk, <title>Handlist of the Latin Liturgical Manuscripts in the Bodleian Library Oxford</title> (typescript) Vol. 1: Mass Books; Pächt and Alexander; and the Summary Catalogue. 
+                           
                             <listBibl>
                               <bibl type="SC" facs="aaz0414.gif">Summary Catalogue, vol. 4, p. 395</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
+                  <listBibl type="WRAPPER"><listBibl>
+                     <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, II (1966), no. 168</bibl>
+                  </listBibl></listBibl>
                </additional>
             </msDesc>
          </sourceDesc>
