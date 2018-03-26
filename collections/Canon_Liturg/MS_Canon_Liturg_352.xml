@@ -5,17 +5,26 @@
          <titleStmt>
             <title>MS. Canon. Liturg. 352</title>
             <title type="collection">MSS. Canon. Liturg. (Canonici Liturgical)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1966">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2018">Encoding and markup</resp>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -49,38 +58,68 @@
                      <idno type="SCN">19438</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <msContents resp="#VD">
                   <msItem xml:id="MS_Canon_Liturg_352-item1" n="1" class="#liturgica">
                      <title type="desc" key="work_13366">Missal, Use of Rome</title>
+                     <note>Prayer Summe sacerdos (fol. 1); ordo qualiter episcopus debet se preparare ad
+                        celebrandum missam secundum consuetudinem romane [curie] (fol. 3); kalendar (fol. 5);
+                        temporale (fol. 11) with general rubrics (fol. 135<hi rend="superscript">v</hi>) and order of the
+                        mass (fol. 136<hi rend="superscript">v</hi>: Paratus sacerdos); sanctorale (fol. 204<hi rend="superscript"
+                           >v</hi>); common of the saints and the dedication (fol. 265); votive masses
+                        (fol. 291); mass of the Translation of Sts. Fortunatus and Cassian (fol. 314); blessing of
+                        holy water (fol. 314<hi rend="superscript">v</hi>); Gloria and Credo with intonations
+                        (fol. 317).</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
-               <physDesc>
+               <physDesc resp="#VD">
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent> i + 2 + 316 + 2 + i fol.<dimensions type="leaf" unit="mm">
+                           <height>289</height>
+                           <width>207</width>
+                        </dimensions>
+                           <dimensions type="written" unit="mm">
+                              <height>173</height>
+                              <width>125</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2" writtenLines="26">2 col. of 26 lines</layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <musicNotation>
+                     <p>Square notation on staves of 3-6 red lines.</p>
+                  </musicNotation>
                   <decoDesc>
-                     <decoNote>Decoration<p>Fine miniatures, historiated borders and initials. By two hands,
-            the second from fol. 214 (P&amp;A ii. 170, pl. XVI)</p>
+                     <decoNote resp="#PA">Fine miniatures, historiated borders and initials. By two hands,
+            the second from fol. 214 (P&amp;A ii. 170, pl. XVI)
                      </decoNote>
+                     <decoNote>Gold and coloured initials;
+                        border with grotesques; a full-page crucifixion (fol. 144<hi rend="superscript">v</hi>).</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
-                  <origin>
+                  <origin resp="#PA">
                      <origDate calendar="Gregorian" notAfter="1375" notBefore="1350">14th century, third quarter</origDate>
                      <origPlace>
                         <country key="place_1000080">Italian</country>, <settlement key="place_7005062">Todi</settlement>
                         <!--ORIGINAL: Italian, Todi-->
                      </origPlace>
                   </origin>
+                  <provenance resp="#VD #PA">Made for use at Todi: liturgical evidence in the calendar (23 February, 25 May, 19
+                     August, 1 September, 14 October, 30 November).</provenance>
+                  <provenance resp="#VD #PA">Arms of <orgName key="org_142884282" role="formerOwner">Monte Oliveto Maggiore</orgName>, fols. 10<hi rend="superscript">v</hi>, 144<hi rend="superscript">v</hi>, 205 (or six rounded hillocks conjoined sable, one two, three, between two trees
+                     proper).</provenance>
+                  <provenance resp="#VD">In the upper
+                     margin of fol.1: Missale quartumdecimum 14 (15th cent.).</provenance>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
-                            
+                        <source>Adapted (2018) from S. J. P. Van Dijk, <title>Handlist of the Latin Liturgical Manuscripts in the Bodleian Library Oxford</title> (typescript) Vol. 1: Mass Books; Pächt and Alexander; and the Summary Catalogue. 
                             
                             <listBibl>
                               <bibl type="SC" facs="aaz0408.gif">Summary Catalogue, vol. 4, p. 389</bibl>
@@ -88,6 +127,9 @@
                         </source>
                      </recordHist>
                   </adminInfo>
+                  <listBibl type="WRAPPER"><listBibl>
+                     <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, II (1966), no. 170</bibl>
+                  </listBibl></listBibl>
                </additional>
             </msDesc>
          </sourceDesc>
