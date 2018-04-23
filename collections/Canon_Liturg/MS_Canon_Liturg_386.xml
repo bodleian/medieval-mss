@@ -5,17 +5,26 @@
          <titleStmt>
             <title>MS. Canon. Liturg. 386</title>
             <title type="collection">MSS. Canon. Liturg. (Canonici Liturgical)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2018">Encoding and markup</resp>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -49,38 +58,61 @@
                      <idno type="SCN">19468</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <msContents resp="#VD">
                   <msItem xml:id="MS_Canon_Liturg_386-item1" n="1" class="#liturgica">
                      <title type="desc" key="work_13366">Missal, Use of Rome</title>
+                     <note>Calendar (fol. 1); temporale (fol. 7), with general rubrics (fol. 125<hi rend="superscript">v</hi>) and
+                        prefaces on music (fol. 127); sanctorale (fol. 198); common of the saints and the
+                        dedication (fol. 256); votive masses (fol. 275<hi rend="superscript">v</hi>); marriage mass (fol. 307<hi
+                           rend="superscript">v</hi>); blessing of holy water (fol. 309) and other blessings.</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
-               <physDesc>
+               <physDesc resp="#VD">
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent> ii + 310 + ii fol.<dimensions type="leaf" unit="mm">
+                           <height>389</height>
+                           <width>288</width>
+                        </dimensions>
+                           <dimensions type="written" unit="mm">
+                              <height>240</height>
+                              <width>174</width>
+                           </dimensions>
+                        </extent>
+                        <condition>All
+                           parts badly damaged. Many leaves missing or damaged by
+                           cuttings of initials and miniatures.</condition>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2" writtenLines="24">2 col. of 24 lines.</layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <musicNotation>
+                     <p>Square notation on 8 staves of 4 red lines.</p>
+                  </musicNotation>
                   <decoDesc>
-                     <decoNote>Decoration<p>Fine borders, historiated and other initials (badly mutilated), by the <persName role="artist" key="person_61460479">Master of the Vatican Theophylact/of the Della Rovere missals</persName>. 
-            Fine penwork borders. (P&amp;A ii. 362, pl. XXXIV)</p>
+                     <decoNote resp="#PA">Fine borders, historiated and other initials (badly mutilated), by the <persName role="artist" key="person_61460479">Master of the Vatican Theophylact/of the Della Rovere missals</persName>. 
+            Fine penwork borders. (P&amp;A ii. 362, pl. XXXIV)
                      </decoNote>
                   </decoDesc>
                </physDesc>
                <history>
-                  <origin>
+                  <origin resp="#PA">
                      <origDate calendar="Gregorian" notAfter="1500" notBefore="1490">15th century, end</origDate>
                      <origPlace>
                         <country key="place_1000080">Italian</country>, <settlement key="place_7000874">Rome</settlement>
                         <!--ORIGINAL: Italian, Rome-->
                      </origPlace>
                   </origin>
+                  <provenance resp="#VD">Perhaps written for use in the diocese of Siena: liturgical evidence in the calendar (15 May, 12 October, 30 October, 1
+                     December, 3 December), although none of the patron saints of the city itself (St. Ansanus, St. Victor) are in red.</provenance>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
-                            
+                        <source>Adapted (2018) from S. J. P. Van Dijk, <title>Handlist of the Latin Liturgical Manuscripts in the Bodleian Library Oxford</title> (typescript) Vol. 1: Mass Books; Pächt and Alexander; and the Summary Catalogue. 
                             
                             <listBibl>
                               <bibl type="SC" facs="aaz0415.gif">Summary Catalogue, vol. 4, p. 396</bibl>
@@ -88,6 +120,9 @@
                         </source>
                      </recordHist>
                   </adminInfo>
+                  <listBibl type="WRAPPER"><listBibl>
+                     <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, II (1970), no. 362</bibl>
+                  </listBibl></listBibl>
                </additional>
             </msDesc>
          </sourceDesc>

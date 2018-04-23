@@ -5,17 +5,26 @@
          <titleStmt>
             <title>MS. Canon. Liturg. 384</title>
             <title type="collection">MSS. Canon. Liturg. (Canonici Liturgical)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2018">Encoding and markup</resp>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -49,38 +58,66 @@
                      <idno type="SCN">19466</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <msContents resp="#VD">
                   <msItem xml:id="MS_Canon_Liturg_384-item1" n="1" class="#liturgica">
                      <title type="desc" key="work_13366">Missal, Use of Rome</title>
+                     <note>Calendar (fol. 1); temporale (fol. 7) with general rubrics (fol. 131) and the order of the mass
+                        (fol. 131<hi rend="superscript">v</hi>: Paratus sacerdos); sanctorale (fol. 196); common of the
+                        saints and the dedication (fol. 251); votive masses (fol. 277); mass of the dead with the
+                        sequences Dies irae and Homo natus in hoc mundo (fol. 294); masses of the
+                        Transfiguration (fol. 299) and St. Augustine (fol. 300); some blessings added (fol. 301<hi
+                           rend="superscript">v</hi>). Intonations of Gloria etc. after the prefaces (fol. 142).</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
-               <physDesc>
+               <physDesc resp="#VD">
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent> i + 2 + 301 + 1 + i fol.<dimensions type="leaf" unit="mm">
+                           <height>392</height>
+                           <width>280</width>
+                        </dimensions>
+                           <dimensions type="written" unit="mm">
+                              <height>237</height>
+                              <width>172</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2" writtenLines="32">2 col. of 32 lines.</layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <musicNotation>
+                     <p>Square notation on 8 staves of 3 red lines.</p>
+                  </musicNotation>
                   <decoDesc>
-                     <decoNote>Decoration<p>Good miniature, historiated and other borders and initials.
-            (P&amp;A ii. 529, pl. L)</p>
-                     </decoNote>
+                     <decoNote resp="#PA">Good miniature, historiated and other borders and initials. By the same hand as MS. Canon. Liturg. 273, Vienna Nat. Bibl. Cod. s.n. 3783, and Padua Basilica Sant'Antonio MS. N. 88, cf. also Vienna Nat. Bibl. Cod. 593, written by Orabonus of Vicenza in 1454.  (P&amp;A ii. 529, pl. L)</decoNote>
+                     <decoNote> Many coloured initials, some
+                        with coloured borders. Full-page borders at the beginning (fol. 7), a full-page
+                           crucifixion at the beginning of the canon (fol. 143<hi rend="superscript">v</hi>).</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
-                  <origin>
+                  <origin resp="#PA">
                      <origDate calendar="Gregorian" notAfter="1475" notBefore="1450">15th century, third quarter</origDate>
                      <origPlace>
                         <country key="place_1000080">Italian</country>, <region key="place_7002997">Veneto</region>
                         <!--ORIGINAL: Italian, Veneto-->
                      </origPlace>
                   </origin>
+                  <provenance resp="#VD">The missal was written for a religious house of an Order the members of which are
+                     represented several times (205, 218<hi rend="superscript">v</hi>, 247 and 160, 163,
+                     209<hi rend="superscript">v</hi>, 221<hi rend="superscript">v</hi>, 223, 238, 293). Their
+                     habit, scapular and half-length mantle with hood are white. The stiff collar of
+                     the habit is close-fitting, the scapular caught at the waist.</provenance>
+                  <provenance resp="#VD">St. Felix in the litany (fol. 128)
+                     and St. Florian in the kalendar (4 May), perhaps suggesting <placeName key="place_7003204">Vicenza</placeName>.</provenance>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
-                            
+                        <source>Adapted (2018) from S. J. P. Van Dijk, <title>Handlist of the Latin Liturgical Manuscripts in the Bodleian Library Oxford</title> (typescript) Vol. 1: Mass Books; Pächt and Alexander; and the Summary Catalogue. 
                             
                             <listBibl>
                               <bibl type="SC" facs="aaz0415.gif">Summary Catalogue, vol. 4, p. 396</bibl>
@@ -88,6 +125,9 @@
                         </source>
                      </recordHist>
                   </adminInfo>
+                  <listBibl type="WRAPPER"><listBibl>
+                     <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, II (1970), no. 529</bibl>
+                  </listBibl></listBibl>
                </additional>
             </msDesc>
          </sourceDesc>
