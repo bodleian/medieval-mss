@@ -5,10 +5,26 @@
          <titleStmt>
             <title>MS. Lat. liturg. e. 13</title>
             <title type="collection">MSS. Lat. liturg. (Latin liturgical)</title>
-            <respStmt>
+            <respStmt xml:id="GF">
                <resp>Cataloguer</resp>
                <persName>Bodleian library staff</persName>
+            </respStmt>
+            <respStmt xml:id="PK">
+               <resp>Cataloguer</resp>
                <persName>Peter Kidd</persName>
+            </respStmt>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2018">Encoding, markup, corrections and additions</resp>
+               <persName>Matthew Holford</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1966">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -38,7 +54,7 @@
             <idno type="catalogue">Western</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc xml:id="MS_Lat_liturg_e_13" xml:lang="en">
+            <msDesc xml:id="MS_Lat_liturg_e_13" xml:lang="en" resp="#GF">
                <msIdentifier>
                   <country>United Kingdom</country>
                   <region type="county">Oxfordshire</region>
@@ -52,9 +68,9 @@
                </msIdentifier>
                <msContents>
                   <msItem xml:id="MS_Lat_liturg_e_13-item1" n="1" class="#liturgica">
-						               <title type="desc" key="work_13353">Missal (portable votive missal of a Benedictine nunnery)</title>
+						               <title type="desc" key="work_13353" resp="#VD">Portable votive missal, Use of Rome (Benedictine)</title>
                      
-                     <textLang mainLang="la">Latin</textLang>
+                     
                      <msItem xml:id="MS_Lat_liturg_e_13-item1-item1">
                         <locus>(fol.4v)</locus>
                         <rubric>Casus contingentes in missa</rubric>
@@ -63,14 +79,15 @@
                      </msItem>
                      <msItem xml:id="MS_Lat_liturg_e_13-item1-item2">
                         <locus>(fol.8)</locus>
-                        <rubric>Sequuntur questiones alie cum responsionibus earum magistri Johannis Gerson cancellarius [sic] Parisiensis</rubric>
+                        <rubric>Sequuntur questiones alie cum responsionibus earum magistri <persName role="author" key="person_100160310">Johannis Gerson</persName> cancellarius [sic] Parisiensis</rubric>
                         <incipit>Queritur utrum quis non habens specialem missam</incipit> 
                         <explicit>vel comburatur</explicit> 
+                        <!-- check: extract from his Quaestiones aliae? -->
                      </msItem>
                      <msItem xml:id="MS_Lat_liturg_e_13-item1-item3">
                         <locus>(fol.10)</locus>
                         <note>Ordinary of the mass</note>
-                        <note>including the ritual for the distribution of holy communion  (fol.14v), and the intonations and prefaces with musical notation (fol.16)</note>
+                        <note resp="#VD #GF">Including general rubrics (fol. 10), collects for the taking of the vestments, the ritual for the distribution of holy communion (fol.14v), and the intonations and prefaces with musical notation (fol.16). Fol. 32v, order of votive masses during the week 'quando alia specialis non habetur'.</note>
                      </msItem>
                      <msItem xml:id="MS_Lat_liturg_e_13-item1-item4">
                         <locus>(fol.34)</locus>
@@ -105,7 +122,10 @@
                         <note>Collects and other prayers for Sunday masses throughout the year.</note>
                        
                      </msItem>
-                     
+                     <msItem>
+                        <note>The votive mass of the patron saints (fol. 31v) is from the common of more martyrs.</note>
+                     </msItem>
+                     <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
                <physDesc>
@@ -128,30 +148,29 @@
                         </collation>
                      </supportDesc>
                      <layoutDesc>
-                        <layout writtenLines="27 30">mostly 27–30 long lines, or seven staves</layout>
-                        <layout writtenLines="19"> 19 long lines in the canon</layout>
+                        <layout columns="1" writtenLines="27 30">Mostly 27–30 long lines, or seven staves.</layout>
+                        <layout columns="1" writtenLines="19"> 19 long lines in the canon.</layout>
                      </layoutDesc>
                   </objectDesc>
-                  <musicNotation>
-                     <p>Staves of four red lines</p>
+                  <musicNotation resp="#VD">
+                     <p>Gothic notation on four staves of four red lines.</p>
                   </musicNotation>
                   <decoDesc>
-                     <decoNote>
-                        <p>Fine miniature of the Crucifixion, pasted on to fol.33v. Probably an early work of <persName role="artist" key="person_282801165">Ulrich Schreier</persName>, c. 1460-70. (P&amp;A
-                        i. 157, pl. XI). Plain red and blue initials</p>
-                     </decoNote>
+                     <decoNote resp="#PA">Fine miniature of the Crucifixion, pasted on to fol.33v. Probably an early work of <persName role="artist" key="person_282801165">Ulrich Schreier</persName>, c. 1460-70. (P&amp;A
+                        i. 157, pl. XI).</decoNote>
+                     <decoNote>Plain red and blue initials.</decoNote>
                   </decoDesc>
                   <bindingDesc>
                      <binding contemporary="true">
                         <p>Original binding of blind-stamped pink morocco
-                           over boards, with metal clasps (one missing) and bosses</p>
+                           over boards, with metal clasps (one missing) and bosses.</p>
                      </binding>
                   </bindingDesc>
-                  <accMat>Fol.2, 3, 88 and 89 are from a 14th cent. gradual without music.</accMat>
+                  <accMat>Fol. 2, 3, 88 and 89 are from a 14th cent. gradual without music.</accMat>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notBefore="1460" notAfter="1503">between 1495 and 1503 (main text); c. 1460-70 (inserted miniature)</origDate>
+                     <origDate calendar="Gregorian" notBefore="1495" notAfter="1503" cert="high">between 1495 and 1503 (main text)</origDate>; <origDate> c. 1460-70 (inserted miniature)</origDate>
                      <origPlace>
                         <country key="place_1000062">Austrian</country>, <settlement key="place_7003256">Salzburg</settlement>
                         <!--ORIGINAL: German/Austrian, Salzberg-->
@@ -159,18 +178,22 @@
                   </origin>
                   <provenance>Written for a
                      Benedictine nunnery in the diocese of Salzburg. On fol.42v and 43 there are prayers for pope <persName key="person_2501524">Alexander VI, 1492–1503</persName> and <persName key="person_28139443">Leonhardus [von Keutschach], bp. of Salsburg, 1495–1519</persName>, for ‘abbatiasam nostram’ and ‘abbatem nostrum’.</provenance>
+                  <provenance resp="#MLH">Not noticed in Watson, <title>Dated and datable manuscripts in Oxford libraries</title>.</provenance>
                   <provenance>
-                     <persName role="formerOwner" key="person_1002"><!-- not found -->Rev. N. W. Gresley</persName>
+                     <persName role="formerOwner" key="person_1002"><!-- not found -->Rev. N. W. Gresley.</persName>
                   </provenance>
-                  <provenance>Given to the Bodleian by <persName role="formerOwner" key="person_71362913">F. Madan</persName> in
-              1917</provenance>
+                  <provenance>Bequeathed by him to <persName role="formerOwner" key="person_71362913">F. Madan</persName>.</provenance>
+                  <provenance when="1917">Given by Madan to the Bodleian in 1917.</provenance>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Typescript description by Bodleian staff, revised by Peter Kidd, late 1990s</source>
+                        <source>Typescript description by Bodleian staff, revised by Peter Kidd, late 1990s; previously described in S. J. P. Van Dijk, <title>Handlist of the Latin Liturgical Manuscripts in the Bodleian Library Oxford</title> (typescript, 1957) Vol. 1: Mass Books, and Pächt and Alexander.</source>
                      </recordHist>
                   </adminInfo>
+                  <listBibl type="WRAPPER"><listBibl>
+                     <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, I (1966), no. 157</bibl>
+                  </listBibl></listBibl>
                </additional>
             </msDesc>
          </sourceDesc>
