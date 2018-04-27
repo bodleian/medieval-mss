@@ -55,45 +55,49 @@ declare function local:buildSummary($x as document-node()) as xs:string
     (: Retrieve various pieces of information, from which the summary will be constructed :)
     let $head := normalize-space(string-join($x//tei:msDesc/tei:head//text(), ''))
     let $authors := distinct-values($x//tei:msItem/tei:author/normalize-space())
+    let $numauthors := count($authors)
     let $worktitles := distinct-values(for $t in $x//tei:msItem/tei:title[1]/normalize-space() return if (ends-with($t, '.')) then substring($t, 1, string-length($t)-1) else $t)
     let $datesoforigin := distinct-values($x//tei:origin//tei:origDate/normalize-space())
     let $placesoforigin := distinct-values($x//tei:origin//tei:origPlace/normalize-space())
 
     (: The main part of the summary is the head element, or the summary, or a list of authors, or a list of titles, in that order of preference :)
-    let $summary1 := if ($head) then
-                            bod:shortenToNearestWord($head, 128)
-                        else if ($x//tei:msPart) then
-                            'Composite manuscript'
-                        else if ($x//tei:msContents/tei:summary) then
-                            bod:shortenToNearestWord(normalize-space(string-join($x//tei:msContents/tei:summary//text(), '')), 128)
-                        else if (count($authors) gt 0) then
-                            if (count($authors) gt 2) then 
-                                concat(string-join(subsequence($authors, 1, 2), ', '), ', etc.')
-                            else
-                                string-join($authors, ', ')
-                        else if (count($worktitles) gt 0) then
-                            if (count($worktitles) gt 2) then 
-                                concat(string-join(subsequence($worktitles, 1, 2), ', '), ', etc.')
-                            else
-                                string-join($worktitles, ', ')
-                        else if (count($x//tei:msItem) gt 1) then
-                            'Untitled works or fragments'
-                        else
-                            'Untitled work or fragment'
+    let $summary1 := 
+        if ($head) then
+            bod:shortenToNearestWord($head, 128)
+        else if ($x//tei:msPart) then
+            'Composite manuscript'
+        else if ($x//tei:msContents/tei:summary) then
+            bod:shortenToNearestWord(normalize-space(string-join($x//tei:msContents/tei:summary//text(), '')), 128)
+        else if ($numauthors gt 0) then
+            if ($numauthors gt 2 or $x//tei:msItem[not(tei:author)]) then 
+                concat(string-join(subsequence($authors, 1, 2), ', '), ', etc.')
+            else
+                string-join($authors, ', ')
+        else if (count($worktitles) gt 0) then
+            if (count($worktitles) gt 2) then 
+                concat(string-join(subsequence($worktitles, 1, 2), ', '), ', etc.')
+            else
+                string-join($worktitles, ', ')
+        else if (count($x//tei:msItem) gt 1) then
+            'Untitled works or fragments'
+        else
+            'Untitled work or fragment'
                             
-    (: Also include the date, unless already in the first page of the summary :)
-    let $summary2 := if ($head or count($datesoforigin) eq 0 or (every $date in $datesoforigin satisfies contains($summary1, $date))) then
-                            ()
-                        else if (count($datesoforigin) eq 1) then 
-                            $datesoforigin
-                        else 'Multiple dates'
+    (: Also include the date, unless already in the first part of the summary :)
+    let $summary2 := 
+        if ($head or count($datesoforigin) eq 0 or (every $date in $datesoforigin satisfies contains($summary1, $date))) then
+            ()
+        else if (count($datesoforigin) eq 1) then 
+            $datesoforigin
+        else 'Multiple dates'
                         
-    (: Also include the place, unless already in the first page of the summary :)
-    let $summary3 := if ($head or count($placesoforigin) eq 0 or (every $place in $placesoforigin satisfies contains($summary1, $place))) then
-                            ()
-                        else if (count($placesoforigin) eq 1) then 
-                            $placesoforigin
-                        else 'Multiple places of origin'
+    (: Also include the place, unless already in the first part of the summary :)
+    let $summary3 := 
+        if ($head or count($placesoforigin) eq 0 or (every $place in $placesoforigin satisfies contains($summary1, $place))) then
+            ()
+        else if (count($placesoforigin) eq 1) then 
+            $placesoforigin
+        else 'Multiple places of origin'
                         
     (: Stitch them all together :)
     return string-join(($summary1, string-join(($summary2, $summary3), '; '))[string-length(.) gt 0], ' — ')
