@@ -172,18 +172,35 @@ declare function local:extractPhysicalFields($physdesc as element(tei:physDesc)?
         case 'mixed' return <material><uri>http://vocab.getty.edu/aat/300404821</uri><label>Mixed</label></material>
         default return ()
     ,
-    for $dimension in $physdesc//tei:dimensions[@unit and @type]
+    for $dimension in $physdesc//tei:extent/tei:dimensions[@unit and @type]
         let $units := $dimension/@unit/data()
         let $type := $dimension/@type/data()
         return
         <dimensions>
             {
             for $dim in $dimension/(tei:width|tei:height)
+                let $values := 
+                    if ($dim/@min or $dim/@max) then ($dim/@min/data(), $dim/@max/data()) 
+                    else if ($dim/@atLeast or $dim/@atMost/data()) then ($dim/@atLeast/data(), $dim/@atMost/data())
+                    else if ($dim/@quantity) then ($dim/@quantity/data(), $dim/@quantity/data())
+                    else if (not($dim/*) and matches($dim/text(), '^\s*[\d\.]+\s*$')) then (normalize-space($dim/text()), normalize-space($dim/text()))
+                    else ()
                 return
-                if ($dim/self::tei:width) then
-                    <width type="{ $type }" units="{ $units }">{ normalize-space(string-join($dim//text(), '')) }</width>
-                else
-                    <height type="{ $type }" units="{ $units }">{ normalize-space(string-join($dim//text(), '')) }</height>
+                element { name($dim) } {
+                    (
+                    attribute type { $type },
+                    attribute units { ($dim/@unit, $units)[1] },
+                    if (count($values) eq 2) then
+                        (
+                        <min>{ $values[1] }</min>, 
+                        <max>{ $values[2] }</max>
+                        )
+                    else if (count($values) eq 1) then
+                        <min>{ $values[1] }</min>
+                    else
+                        <label>{ normalize-space(string-join($dim/text())) }</label>
+                    )
+                }
             }        
         </dimensions>
     ,
@@ -320,7 +337,7 @@ declare function local:listPeoplePlacesEtc($msorpartoritem as element()) as elem
 {
     (
     (: Places :)
-    for $placename in $msorpartoritem//(tei:placeName|tei:country|tei:region|tei:settlement)[@key]
+    for $placename in $msorpartoritem//(tei:placeName|tei:country|tei:region|tei:settlement)[@key and not(ancestor::tei:msIdentifier or ancestor::tei:publicationStmt)]
         let $contexts := (for $ancest in $placename/ancestor::* return if (name($ancest) = ('title','author','origin','provenance','acquisition','physDesc','bibl')) then lower-case(name($ancest)) else ())
         return if ($placename/ancestor::*[@xml:id][1]/@xml:id = $msorpartoritem/@xml:id) then
             <place>
@@ -333,7 +350,7 @@ declare function local:listPeoplePlacesEtc($msorpartoritem as element()) as elem
             ()
     ,
     (: Organizations :)
-    for $orgname in $msorpartoritem//tei:orgName[@key]
+    for $orgname in $msorpartoritem//tei:orgName[@key and not(ancestor::tei:msIdentifier or ancestor::tei:publicationStmt)]
         let $contexts := (for $ancest in $orgname/ancestor::* return if (name($ancest) = ('title','author','origin','provenance','acquisition','physDesc','bibl')) then lower-case(name($ancest)) else ())
         return if ($orgname/ancestor::*[@xml:id][1]/@xml:id = $msorpartoritem/@xml:id) then
             <org>
@@ -346,7 +363,7 @@ declare function local:listPeoplePlacesEtc($msorpartoritem as element()) as elem
             ()
     ,
     (: People mentioned but who are not authors :)
-    for $otherperson in $msorpartoritem//tei:persName[not(ancestor::tei:author) and not(@role = 'author')][@key]
+    for $otherperson in $msorpartoritem//tei:persName[not(ancestor::tei:author) and not(@role = 'author')][@key and not(ancestor::tei:msIdentifier or ancestor::tei:publicationStmt)]
         let $contexts := (for $ancest in $otherperson/ancestor::* return if (name($ancest) = ('title','author','origin','provenance','acquisition','physDesc','bibl')) then lower-case(name($ancest)) else ())
         return if ($otherperson/ancestor::*[@xml:id][1]/@xml:id = $msorpartoritem/@xml:id) then
             <person>
@@ -365,7 +382,9 @@ processing-instruction xml-model {'href="simplified4oxlod.xsd" type="application
     {
     for $manuscript at $pos in collection('../../collections/?select=*.xml;recurse=yes')/tei:TEI
     
-        return if ($pos mod 200 = 0) then   (: This creates a pseudo-random sample, change to return if (true()) then to get everything :)
+        return if (true()) then
+        (: To process everything, change above line to: return if (true()) then :)
+        (: To get a small random-ish sample, use: return if ($pos mod 200 = 0) then :)
         
             <manuscript>
             
