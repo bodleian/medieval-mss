@@ -186,21 +186,13 @@ declare function local:extractPhysicalFields($physdesc as element(tei:physDesc)?
                     else if (not($dim/*) and matches($dim/text(), '^\s*[\d\.]+\s*$')) then (normalize-space($dim/text()), normalize-space($dim/text()))
                     else ()
                 return
-                element { name($dim) } {
-                    (
-                    attribute type { $type },
-                    attribute units { ($dim/@unit, $units)[1] },
-                    if (count($values) eq 2) then
-                        (
-                        <min>{ $values[1] }</min>, 
-                        <max>{ $values[2] }</max>
-                        )
-                    else if (count($values) eq 1) then
-                        <min>{ $values[1] }</min>
-                    else
-                        <label>{ normalize-space(string-join($dim/text())) }</label>
-                    )
-                }
+                for $value at $pos in $values
+                    return
+                    <dimension>
+                        <type>{ concat(if ($pos eq 1) then 'min' else 'max', ' ', name($dim), ' ', $type) }</type>
+                        <value>{ $value }</value>
+                        <unit>{ ($dim/@unit, $units)[1] }</unit>
+                    </dimension>
             }        
         </dimensions>
     ,
@@ -343,10 +335,10 @@ declare function local:listPeoplePlacesEtc($msorpartoritem as element()) as elem
         let $contexts := ($contexts, if ($placename/ancestor::tei:provenance) then concat('provenance', (count($placename/ancestor::tei:provenance/preceding-sibling::tei:provenance) + 1)) else ())
         return if ($placename/ancestor::*[@xml:id][1]/@xml:id = $msorpartoritem/@xml:id) then
             <place>
-                { if ($placename/@role) then attribute role { $placename/@role/data() } else () }
                 { if (count($contexts) gt 0) then attribute context { string-join($contexts, ' ') } else () }
                 <uri>{ $website }/catalog/{ $placename/@key/data() }</uri>
                 <label>{ normalize-space(string-join($placename//text(), '')) }</label>
+                { for $role in tokenize($placename/@role, ' ') return <role>{ $role }</role> }
             </place>
         else
             ()
@@ -357,10 +349,10 @@ declare function local:listPeoplePlacesEtc($msorpartoritem as element()) as elem
         let $contexts := ($contexts, if ($orgname/ancestor::tei:provenance) then concat('provenance', (count($orgname/ancestor::tei:provenance/preceding-sibling::tei:provenance) + 1)) else ())
         return if ($orgname/ancestor::*[@xml:id][1]/@xml:id = $msorpartoritem/@xml:id) then
             <org>
-                { if ($orgname/@role) then attribute role { $orgname/@role/data() } else () }
                 { if (count($contexts) gt 0) then attribute context { string-join($contexts, ' ') } else () }
                 <uri>{ $website }/catalog/{ $orgname/@key/data() }</uri>
                 <label>{ normalize-space(string-join($orgname//text(), '')) }</label>
+                { for $role in tokenize($orgname/@role, ' ') return <role>{ $role }</role> }
             </org>
         else
             ()
@@ -371,10 +363,10 @@ declare function local:listPeoplePlacesEtc($msorpartoritem as element()) as elem
         let $contexts := ($contexts, if ($otherperson/ancestor::tei:provenance) then concat('provenance', (count($otherperson/ancestor::tei:provenance/preceding-sibling::tei:provenance) + 1)) else ())
         return if ($otherperson/ancestor::*[@xml:id][1]/@xml:id = $msorpartoritem/@xml:id) then
             <person>
-                { if ($otherperson/@role) then attribute role { $otherperson/@role/data() } else () }
                 { if (count($contexts) gt 0) then attribute context { string-join($contexts, ' ') } else () }
                 <uri>{ $website }/catalog/{ $otherperson/@key/data() }</uri>
                 <label>{ normalize-space(string-join($otherperson//text(), '')) }</label>
+                { for $role in tokenize($otherperson/@role, ' ') return <role>{ $role }</role> }
             </person>
         else
             ()
