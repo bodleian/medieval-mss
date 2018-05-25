@@ -134,14 +134,20 @@ declare function local:listItems($manuscript as element(tei:TEI), $mscontent as 
                 <label>{ normalize-space(string-join($msItem/tei:title[@key = $workid]//text(), '')) }</label>
             </title>
             {
+            ()
+            (: Commented out because in medieval-mss authors are also recorded in the works.xml local authority file
+               which is being mapped separately in 3M. If this script is adapted for other catalogues (e.g. Fihrist) that won't work.
             for $author in ($msItem/tei:author|$msItem/*/tei:persName[@role='author'])[@key]
                 return
                 <author>
                     <uri>{ $website }/catalog/{ $author/@key/data() }</uri>
                     <label>{ normalize-space(string-join($author//text(), '')) }</label>
                 </author>
+            :)
             }
             {
+            ()
+            (: Commented out because in medieval-mss languages are also recorded in the works.xml local authority file.
             for $lang in distinct-values(tokenize(string-join(($msItem//tei:textLang/@mainLang/data(), $msItem//tei:textLang/@otherLangs/data()), ' '), ' '))
                 let $langLabelAndUri := local:languageCodeLookup($lang)
                 return
@@ -152,9 +158,10 @@ declare function local:listItems($manuscript as element(tei:TEI), $mscontent as 
                     </language>
                 else
                     ()
+            :)
             }
             {
-            local:listPeoplePlacesEtc($msItem)
+            local:listPlacesOrgsPeople($msItem)
             }
         </item>
 };
@@ -175,26 +182,22 @@ declare function local:extractPhysicalFields($physdesc as element(tei:physDesc)?
     for $dimension in $physdesc//tei:extent/tei:dimensions[@unit and @type]
         let $units := $dimension/@unit/data()
         let $type := $dimension/@type/data()
-        return
-        <dimensions>
-            {
-            for $dim in $dimension/(tei:width|tei:height)
-                let $values := 
-                    if ($dim/@min or $dim/@max) then ($dim/@min/data(), $dim/@max/data()) 
-                    else if ($dim/@atLeast or $dim/@atMost/data()) then ($dim/@atLeast/data(), $dim/@atMost/data())
-                    else if ($dim/@quantity) then ($dim/@quantity/data(), $dim/@quantity/data())
-                    else if (not($dim/*) and matches($dim/text(), '^\s*[\d\.]+\s*$')) then (normalize-space($dim/text()), normalize-space($dim/text()))
-                    else ()
+        
+        for $dim in $dimension/(tei:width|tei:height)
+            let $values := 
+                if ($dim/@min or $dim/@max) then ($dim/@min/data(), $dim/@max/data()) 
+                else if ($dim/@atLeast or $dim/@atMost/data()) then ($dim/@atLeast/data(), $dim/@atMost/data())
+                else if ($dim/@quantity) then ($dim/@quantity/data(), $dim/@quantity/data())
+                else if (not($dim/*) and matches($dim/text(), '^\s*[\d\.]+\s*$')) then (normalize-space($dim/text()), normalize-space($dim/text()))
+                else ()
+            return
+            for $value at $pos in $values
                 return
-                for $value at $pos in $values
-                    return
-                    <dimension>
-                        <type>{ concat(if ($pos eq 1) then 'min' else 'max', ' ', name($dim), ' ', $type) }</type>
-                        <value>{ $value }</value>
-                        <unit>{ ($dim/@unit, $units)[1] }</unit>
-                    </dimension>
-            }        
-        </dimensions>
+                <dimension>
+                    <type>{ concat(if ($pos eq 1) then 'min' else 'max', ' ', name($dim), ' ', $type) }</type>
+                    <value>{ $value }</value>
+                    <unit>{ ($dim/@unit, $units)[1] }</unit>
+                </dimension>
     ,
     for $layout in $physdesc//tei:layout[@columns or @ruledLines or @writtenLines]
         return
@@ -269,34 +272,6 @@ declare function local:extractDates($history as element(tei:history)?) as elemen
     else
         ()
     ,
-    (: Provenance dates :)
-    for $provenance at $pos in $history/tei:provenance
-        let $begindates := (
-            for $date in ($provenance//tei:date/(@when|@notBefore|@from)/data(), $provenance/(@when|@notBefore|@from)/data())
-                return
-                local:dateConversion(normalize-space($date), true())
-        )
-        let $enddates := (
-            for $date in ($provenance//tei:date/(@when|@notAfter|@to)/data(), $provenance/(@when|@notAfter|@from)/data())
-                return
-                local:dateConversion(normalize-space($date), false())
-        )
-        return if (count($begindates) gt 0 and count($enddates) gt 0) then
-            <date context="provenance{ $pos }">
-                <from>{ min($begindates) }</from>
-                <to>{ max($enddates) }</to>
-            </date>
-        else if (count($begindates) gt 0) then
-            <date context="provenance{ $pos }">
-                <from>{ min($begindates) }</from>
-            </date>
-        else if (count($enddates) gt 0) then
-            <date context="provenance{ $pos }">
-                <to>{ max($enddates) }</to>
-            </date>
-        else
-            ()
-    ,
     (: Acquisition dates :)
     let $begindates := (
         for $date in ($history/tei:acquisition//tei:date/(@when|@notBefore|@from)/data(), $history/tei:acquisition/(@when|@notBefore|@from)/data())
@@ -326,16 +301,17 @@ declare function local:extractDates($history as element(tei:history)?) as elemen
     )
 };
 
-declare function local:listPeoplePlacesEtc($msorpartoritem as element()) as element()*
+declare function local:listPlacesOrgsPeople($container as element()) as element()*
 {
     (
     (: Places :)
-    for $placename in $msorpartoritem//(tei:placeName|tei:country|tei:region|tei:settlement)[@key and not(ancestor::tei:msIdentifier or ancestor::tei:publicationStmt)]
-        let $contexts := (for $ancest in $placename/ancestor::* return if (name($ancest) = ('title','author','origin','acquisition','physDesc','bibl')) then lower-case(name($ancest)) else ())
-        let $contexts := ($contexts, if ($placename/ancestor::tei:provenance) then concat('provenance', (count($placename/ancestor::tei:provenance/preceding-sibling::tei:provenance) + 1)) else ())
-        return if ($placename/ancestor::*[@xml:id][1]/@xml:id = $msorpartoritem/@xml:id) then
+    for $placename in $container//(tei:placeName|tei:country|tei:region|tei:settlement)[@key and not(@cert = 'low') and not(ancestor::tei:msIdentifier or ancestor::tei:publicationStmt)]
+        let $contexts := (for $ancest in $placename/ancestor::* return if (name($ancest) = ('title','author','origin','provenance','acquisition','physDesc','bibl')) then lower-case(name($ancest)) else ())
+        return 
+        if ($container/self::tei:provenance or (not($contexts = 'provenance') and ($placename/ancestor::*[@xml:id])[last()]/@xml:id = $container/@xml:id)) then
             <place>
-                { if (count($contexts) gt 0) then attribute context { string-join($contexts, ' ') } else () }
+                { $placename/@cert }
+                { if (count($contexts) gt 0 and not($container/self::tei:provenance)) then attribute context { string-join($contexts, ' ') } else () }
                 <uri>{ $website }/catalog/{ $placename/@key/data() }</uri>
                 <label>{ normalize-space(string-join($placename//text(), '')) }</label>
                 { for $role in tokenize($placename/@role, ' ') return <role>{ $role }</role> }
@@ -344,12 +320,13 @@ declare function local:listPeoplePlacesEtc($msorpartoritem as element()) as elem
             ()
     ,
     (: Organizations :)
-    for $orgname in $msorpartoritem//tei:orgName[@key and not(ancestor::tei:msIdentifier or ancestor::tei:publicationStmt)]
-        let $contexts := (for $ancest in $orgname/ancestor::* return if (name($ancest) = ('title','author','origin','acquisition','physDesc','bibl')) then lower-case(name($ancest)) else ())
-        let $contexts := ($contexts, if ($orgname/ancestor::tei:provenance) then concat('provenance', (count($orgname/ancestor::tei:provenance/preceding-sibling::tei:provenance) + 1)) else ())
-        return if ($orgname/ancestor::*[@xml:id][1]/@xml:id = $msorpartoritem/@xml:id) then
+    for $orgname in $container//tei:orgName[@key and not(@cert = 'low') and not(ancestor::tei:msIdentifier or ancestor::tei:publicationStmt)]
+        let $contexts := (for $ancest in $orgname/ancestor::* return if (name($ancest) = ('title','author','origin','provenance','acquisition','physDesc','bibl')) then lower-case(name($ancest)) else ())
+        return
+        if ($container/self::tei:provenance or (not($contexts = 'provenance') and ($orgname/ancestor::*[@xml:id])[last()]/@xml:id = $container/@xml:id)) then
             <org>
-                { if (count($contexts) gt 0) then attribute context { string-join($contexts, ' ') } else () }
+                { $orgname/@cert }
+                { if (count($contexts) gt 0 and not($container/self::tei:provenance)) then attribute context { string-join($contexts, ' ') } else () }
                 <uri>{ $website }/catalog/{ $orgname/@key/data() }</uri>
                 <label>{ normalize-space(string-join($orgname//text(), '')) }</label>
                 { for $role in tokenize($orgname/@role, ' ') return <role>{ $role }</role> }
@@ -358,19 +335,59 @@ declare function local:listPeoplePlacesEtc($msorpartoritem as element()) as elem
             ()
     ,
     (: People mentioned but who are not authors :)
-    for $otherperson in $msorpartoritem//tei:persName[not(ancestor::tei:author) and not(@role = 'author')][@key and not(ancestor::tei:msIdentifier or ancestor::tei:publicationStmt)]
-        let $contexts := (for $ancest in $otherperson/ancestor::* return if (name($ancest) = ('title','author','origin','acquisition','physDesc','bibl')) then lower-case(name($ancest)) else ())
-        let $contexts := ($contexts, if ($otherperson/ancestor::tei:provenance) then concat('provenance', (count($otherperson/ancestor::tei:provenance/preceding-sibling::tei:provenance) + 1)) else ())
-        return if ($otherperson/ancestor::*[@xml:id][1]/@xml:id = $msorpartoritem/@xml:id) then
-            <person>
-                { if (count($contexts) gt 0) then attribute context { string-join($contexts, ' ') } else () }
-                <uri>{ $website }/catalog/{ $otherperson/@key/data() }</uri>
-                <label>{ normalize-space(string-join($otherperson//text(), '')) }</label>
-                { for $role in tokenize($otherperson/@role, ' ') return <role>{ $role }</role> }
-            </person>
+    for $otherperson in $container//tei:persName[not(ancestor::tei:author) and not(@role = 'author')][@key and not(@cert = 'low') and not(ancestor::tei:msIdentifier or ancestor::tei:publicationStmt)]
+        let $contexts := (for $ancest in $otherperson/ancestor::* return if (name($ancest) = ('title','author','origin','provenance','acquisition','physDesc','bibl')) then lower-case(name($ancest)) else ())
+        return
+        if ($container/self::tei:provenance or (not($contexts = 'provenance') and ($otherperson/ancestor::*[@xml:id])[last()]/@xml:id = $container/@xml:id)) then
+                <person>
+                    { $otherperson/@cert }
+                    { if (count($contexts) gt 0 and not($container/self::tei:provenance)) then attribute context { string-join($contexts, ' ') } else () }
+                    <uri>{ $website }/catalog/{ $otherperson/@key/data() }</uri>
+                    <label>{ normalize-space(string-join($otherperson//text(), '')) }</label>
+                    { for $role in tokenize($otherperson/@role, ' ') return <role>{ $role }</role> }
+                </person>
         else
             ()
     )
+};
+
+declare function local:listProvenances($msorpart as element()) as element()*
+{
+    for $provenance in $msorpart/tei:history/tei:provenance
+        let $isinscription := starts-with(normalize-space($provenance), "'")    (: This is missing maybe half of all inscriptions :)
+        return
+        element {if ($isinscription) then 'inscription' else 'provenance'} {
+        
+            (: Provenance dates :)
+            let $begindates := (
+                for $date in ($provenance//tei:date/(@when|@notBefore|@from)/data(), $provenance/(@when|@notBefore|@from)/data())
+                    return
+                    local:dateConversion(normalize-space($date), true())
+            )
+            let $enddates := (
+                for $date in ($provenance//tei:date/(@when|@notAfter|@to)/data(), $provenance/(@when|@notAfter|@from)/data())
+                    return
+                    local:dateConversion(normalize-space($date), false())
+            )
+            return if (count($begindates) gt 0 and count($enddates) gt 0) then
+                <date>
+                    <from>{ min($begindates) }</from>
+                    <to>{ max($enddates) }</to>
+                </date>
+            else if (count($begindates) gt 0) then
+                <date>
+                    <from>{ min($begindates) }</from>
+                </date>
+            else if (count($enddates) gt 0) then
+                <date>
+                    <to>{ max($enddates) }</to>
+                </date>
+            else
+                ()
+            ,
+            (: Provenance people - mostly former owners :)
+            local:listPlacesOrgsPeople($provenance)
+        }
 };
 
 processing-instruction xml-model {'href="simplified4oxlod.xsd" type="application/xml" schamtypens="http://www.w3.org/2001/XMLSchema"'},
@@ -378,7 +395,7 @@ processing-instruction xml-model {'href="simplified4oxlod.xsd" type="application
     {
     for $manuscript at $pos in collection('../../collections/?select=*.xml;recurse=yes')/tei:TEI
     
-        return if (true()) then
+        return if ($pos mod 200 = 0) then
         (: To process everything, change above line to: return if (true()) then :)
         (: To get a small random-ish sample, use: return if ($pos mod 200 = 0) then :)
         
@@ -400,7 +417,8 @@ processing-instruction xml-model {'href="simplified4oxlod.xsd" type="application
                             <label>{ $mscontent/parent::tei:msPart/tei:msIdentifier[1]/tei:altIdentifier[1]/tei:idno[1]/text() }</label>
                             { local:extractPhysicalFields($mscontent/parent::tei:msPart/tei:physDesc) }
                             { local:extractDates($mscontent/parent::tei:msPart/tei:history) }
-                            { local:listPeoplePlacesEtc($mscontent/parent::tei:msPart) }
+                            { local:listPlacesOrgsPeople($mscontent/parent::tei:msPart) }
+                            { local:listProvenances($mscontent/parent::tei:msPart) }
                             { local:listItems($manuscript, $mscontent) }
                         </part>
                     else if ($mscontent/parent::tei:msDesc) then
@@ -408,7 +426,8 @@ processing-instruction xml-model {'href="simplified4oxlod.xsd" type="application
                         (
                         local:extractPhysicalFields($mscontent/parent::tei:msDesc/tei:physDesc),
                         local:extractDates($mscontent/parent::tei:msDesc/tei:history),
-                        local:listPeoplePlacesEtc($mscontent/parent::tei:msDesc),
+                        local:listPlacesOrgsPeople($mscontent/parent::tei:msDesc),
+                        local:listProvenances($mscontent/parent::tei:msDesc),
                         local:listItems($manuscript, $mscontent)
                         )
                     else
