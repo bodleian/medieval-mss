@@ -353,11 +353,14 @@ declare function local:listPlacesOrgsPeople($container as element()) as element(
 
 declare function local:listProvenances($msorpart as element()) as element()*
 {
-    for $provenance in $msorpart/tei:history/tei:provenance
-        let $isinscription := starts-with(normalize-space($provenance), "'")    (: This is missing maybe half of all inscriptions :)
+    for $provenance in $msorpart/tei:history/tei:provenance[.//text()]
+        let $id := concat($provenance/ancestor::tei:TEI/@xml:id/data(), '_prov', count($provenance/preceding::tei:provenance)+1)
+        let $isinscription := matches(normalize-space($provenance), "^\s*['‘]")    (: This is missing maybe half of all inscriptions :)
         return
         element {if ($isinscription) then 'inscription' else 'provenance'} {
-        
+            
+            attribute { 'xml:id' } { $id }
+            ,
             (: Provenance dates :)
             let $begindates := (
                 for $date in ($provenance//tei:date/(@when|@notBefore|@from)/data(), $provenance/(@when|@notBefore|@from)/data())
@@ -387,6 +390,8 @@ declare function local:listProvenances($msorpart as element()) as element()*
             ,
             (: Provenance people - mostly former owners :)
             local:listPlacesOrgsPeople($provenance)
+            ,
+            <text>{ normalize-space(string-join($provenance//text(), '')) }</text>
         }
 };
 
