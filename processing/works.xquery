@@ -36,8 +36,8 @@ declare variable $allinstances :=
         let $title := if ($work/tei:title[@type='uniform']) then normalize-space($work/tei:title[@type='uniform'][1]/string()) else normalize-space($work/tei:title[1]/string())
         let $variants := for $v in $work/tei:title[not(@type='uniform')] return normalize-space($v/string())
         let $extrefs := for $r in $work/tei:note[@type='links']//tei:item/tei:ref return concat($r/@target/data(), '|', normalize-space($r/tei:title/string()))
-        let $bibrefs := for $b in $work/tei:bibl return normalize-space($b/string())
-        let $notes := for $n in $work/tei:note[not(@type=('links','shelfmark','language','subject'))] return normalize-space($n/string())
+        let $bibrefs := for $b in $work/tei:bibl return bod:italicizeTitles($b)
+        let $notes := for $n in $work/tei:note[not(@type=('links','shelfmark','language','subject'))] return bod:italicizeTitles($n)
         let $subjects := distinct-values($work/tei:note[@type='subject']/string())
         let $lang := $work/tei:textLang
         
