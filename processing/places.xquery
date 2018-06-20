@@ -117,7 +117,7 @@ declare variable $allinstances :=
                         return
                         <field name="link_related_smni">{ $link }</field>
                     else
-                        ()
+                        bod:logging('info', 'Cannot create see-also link', ($id, $relatedid))
                 }
                 {
                 for $link in $links2instances
@@ -131,16 +131,16 @@ declare variable $allinstances :=
             </doc>
         else
             if ($placeororg/self::tei:org) then
-                bod:logging('info', 'Skipping organization in places.xml but not in any manuscript', ($id, $name))
+                bod:logging('info', 'Skipping org in places.xml as no matching key attribute found', ($id, $name))
             else
-                bod:logging('info', 'Skipping place in places.xml but not in any manuscript', ($id, $name))
+                bod:logging('info', 'Skipping place in places.xml as no matching key attribute found', ($id, $name))
 }
 
 {
     (: Log instances that haven't (yet) been added to the authority file :)
     for $id in distinct-values($allinstances/@k/data())
         return if (not(some $e in $authorityentries/@xml:id/data() satisfies $e eq $id)) then
-            bod:logging('warn', 'Place or org in msDesc with key not in places.xml: will create broken link', ($id, $allinstances[@k = $id]/n/text()))
+            bod:logging('warn', 'Place or org with key attribute not in places.xml: will create broken link', ($id, $allinstances[@k = $id]/n/text()))
         else
             ()
 }
@@ -149,6 +149,6 @@ declare variable $allinstances :=
     (: Log instances that don't (yet) have a key attribute :)
     for $i in distinct-values($allinstances[not(@k)]/n/text())
         order by $i
-        return bod:logging('info', 'Place or org in msDesc without key', $i)
+        return bod:logging('info', 'Place or org in without key attribute', $i)
 }
 </add>

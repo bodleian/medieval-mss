@@ -100,7 +100,7 @@ declare variable $allinstances :=
                         return
                         <field name="link_related_smni">{ $link }</field>
                     else
-                        ()
+                        bod:logging('info', 'Cannot create see-also link', ($id, $relatedid))
                 }
                 {
                 for $link in $links2instances
@@ -110,7 +110,7 @@ declare variable $allinstances :=
             </doc>
         else
             (
-            bod:logging('info', 'Skipping work in works.xml with no corresponding msItem', ($id, $title))
+            bod:logging('info', 'Skipping work in works.xml as no matching key attribute found', ($id, $title))
             )
 }
 
@@ -118,7 +118,7 @@ declare variable $allinstances :=
     (: Log instances that haven't (yet) been added to the authority file :)
     for $id in distinct-values($allinstances/@k/data())
         return if (not(some $e in $authorityentries/@xml:id/data() satisfies $e eq $id)) then
-            bod:logging('warn', 'title with key not in works.xml: will create broken link', ($id, $allinstances[@k = $id]/n/text()))
+            bod:logging('warn', 'Title with key attribute not in works.xml: will create broken link', ($id, $allinstances[@k = $id]/n/text()))
         else
             ()
 }
@@ -127,6 +127,6 @@ declare variable $allinstances :=
     (: Log instances that don't (yet) have a key attribute :)
     for $i in distinct-values($allinstances[not(@k) and child::p]/n/text())
         order by $i
-        return bod:logging('info', 'titles without key', $i)
+        return bod:logging('info', 'Title without key attribute', $i)
 }
 </add>
