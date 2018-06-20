@@ -80,11 +80,13 @@ declare variable $allinstances :=
                 {
                 for $g in $geolocs
                     let $coords := tokenize(translate($g/text(), ' ', ''), ',')
-                    let $n := $coords[1]
-                    let $e := $coords[2]
+                    let $lat := number($coords[1])
+                    let $long := number($coords[2])
                     return
-                    if ($n and $e) then
-                        <field name="link_geo_smni">https://tools.wmflabs.org/geohack/geohack.php?params={ $n }_N_{ $e }_E|{ $g/text() }</field>
+                    if (string($lat) ne 'NaN' and string($long) ne 'NaN') then
+                        let $dmscoords := string-join(bod:latLongDecimal2DMS($lat, $long), ', ')
+                        return
+                        <field name="link_geo_smni">https://tools.wmflabs.org/geohack/geohack.php?params={ $lat }_N_{ $long }_E|{ $dmscoords }</field>
                     else
                         ()
                 }
