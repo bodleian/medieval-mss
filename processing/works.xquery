@@ -62,9 +62,18 @@ declare variable $allinstances :=
                     }
                 </field>
                 {
-                for $variant in distinct-values(($variants, $instances/n/text()))
+                for $variant in distinct-values($variants)
                     order by $variant
                     return <field name="wk_variant_sm">{ $variant }</field>
+                }
+                {
+                let $lcvariants := for $variant in ($title, $variants) return lower-case($variant)
+                for $instancevariant in distinct-values($instances/n/text())
+                    order by $instancevariant
+                    return if (not(lower-case($instancevariant) = $lcvariants)) then
+                        <field name="wk_variant_sm">{ $instancevariant }</field>
+                    else
+                        ()
                 }
                 {
                 for $extref in $extrefs
