@@ -26,7 +26,7 @@ declare variable $allinstances :=
         let $id := $person/@xml:id/data()
         let $name := if ($person/tei:persName[@type='display']) then normalize-space($person/tei:persName[@type='display'][1]/string()) else normalize-space($person/tei:persName[1]/string())
         let $variants := for $v in $person/tei:persName[not(@type='display')] return normalize-space($v/string())
-        let $extrefs := for $r in $person/tei:note[@type='links']//tei:item/tei:ref return concat($r/@target/data(), '|', normalize-space($r/tei:title/string()))
+        let $extrefs := for $r in $person/tei:note[@type='links']//tei:item/tei:ref return concat($r/@target/data(), '|', bod:lookupAuthorityName(normalize-space($r/tei:title/string())))
         let $bibrefs := for $b in $person/tei:bibl return bod:italicizeTitles($b)
         let $notes := for $n in $person/tei:note[not(@type='links')] return bod:italicizeTitles($n)
         
