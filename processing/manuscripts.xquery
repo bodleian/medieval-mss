@@ -115,7 +115,7 @@ declare function local:buildSummary($x as document-node()) as xs:string
                     { bod:one2one($x//tei:msDesc/tei:msIdentifier/tei:idno[@type='shelfmark'], 'title', 'error') }
                     { bod:one2one($x//tei:titleStmt/tei:title[@type='collection'], 'ms_collection_s') }
                     { bod:one2one($x//tei:msDesc/tei:msIdentifier/tei:settlement, 'ms_settlement_s') }
-                    { bod:one2one($x//tei:msDesc/tei:msIdentifier/tei:institution, 'ms_institution_s') }
+                    { bod:one2one($x//tei:msDesc/tei:msIdentifier/tei:institution, 'institution_sm') }
                     { bod:many2one($x//tei:msDesc/tei:msIdentifier/tei:repository, 'ms_repository_s') }
                     { bod:one2one($x//tei:msDesc/tei:msIdentifier/tei:idno[@type="shelfmark"], 'ms_shelfmark_s') }
                     { bod:one2one($x//tei:msDesc/tei:msIdentifier/tei:idno[@type="shelfmark"], 'ms_shelfmark_sort') }
