@@ -119,6 +119,7 @@ declare function local:buildSummary($x as document-node()) as xs:string
                     <field name="filename_s">{ substring-after(base-uri($x), 'collections/') }</field>
                     { bod:materials($x//tei:msDesc//tei:physDesc//tei:supportDesc[@material], 'ms_materials_sm') }
                     { bod:trueIfExists($x//tei:sourceDesc//tei:decoDesc/tei:decoNote, 'ms_deconote_b') }
+                    { bod:digitized($x//tei:sourceDesc//tei:surrogates/tei:bibl, 'ms_digitized_s') }
                     { bod:languages($x//tei:sourceDesc//tei:textLang, 'lang_sm') }
                     { local:origin($x//tei:sourceDesc//tei:origPlace/tei:country/string(@key), 'ms_origin_sm') }
                     { bod:centuries($x//tei:origin//tei:origDate, 'ms_date_sm') }
