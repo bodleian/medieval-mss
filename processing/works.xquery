@@ -55,7 +55,6 @@ declare variable $allinstances :=
                 <field name="pk">{ $id }</field>
                 <field name="id">{ $id }</field>
                 <field name="title">{ $title }</field>
-                <field name="wk_title_s">{ $title }</field>
                 <field name="alpha_title">
                     { 
                     if (contains($title, ':')) then

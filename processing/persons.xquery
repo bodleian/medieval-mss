@@ -46,7 +46,6 @@ declare variable $allinstances :=
                 <field name="id">{ $id }</field>
                 <field name="title">{ $name }</field>
                 <field name="alpha_title">{  bod:alphabetize($name) }</field>
-                <field name="pp_name_s">{ $name }</field>
                 {
                 for $role in $roles
                     order by $role

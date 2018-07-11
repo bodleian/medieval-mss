@@ -58,7 +58,6 @@ declare variable $allinstances :=
                 <field name="id">{ $id }</field>
                 <field name="title">{ $name }</field>
                 <field name="alpha_title">{  bod:alphabetize($name) }</field>
-                <field name="pl_name_s">{ $name }</field>
                 {
                 if ($placeororg/self::tei:place) then
                     if ($placeororg/@type) then 
