@@ -8,7 +8,7 @@
     exclude-result-prefixes="tei html xs"
     version="2.0">
     
-    <xsl:import href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc2html.xsl"/>
+    <xsl:import href="lib/msdesc2html.xsl"/>
 
     <!-- Only set this variable if you want full URLs hardcoded into the HTML
          on the web site (previewManuscript.xsl overrides this to do so when previewing.) -->
