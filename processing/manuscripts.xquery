@@ -82,16 +82,19 @@ declare function local:buildSummary($x as document-node()) as xs:string
     return if (count($msids) ne count(distinct-values($msids))) then
         let $duplicateids := distinct-values(for $msid in $msids return if (count($msids[. eq $msid]) gt 1) then $msid else '')
         return bod:logging('error', 'There are multiple manuscripts with the same xml:id in their root TEI elements', $duplicateids)
+        
     else
         for $x in $collection
         
             let $msid := $x//tei:TEI/@xml:id/string()
-            return 
+            order by $msid
+            return
+            
             if (string-length($msid) ne 0) then
             
                 let $subfolders := string-join(tokenize(substring-after(base-uri($x), 'collections/'), '/')[position() lt last()], '/')
                 let $htmlfilename := concat($msid, '.html')
-                let $htmldoc := doc(concat("html/", $subfolders, '/', $htmlfilename))
+                let $htmldoc := doc(concat('html/', $subfolders, '/', $htmlfilename))
         
                 (:
                     Guide to Solr field naming conventions:
@@ -108,8 +111,8 @@ declare function local:buildSummary($x as document-node()) as xs:string
                     <field name="type">manuscript</field>
                     <field name="pk">{ $msid }</field>
                     <field name="id">{ $msid }</field>
-                    { bod:one2one($x//tei:msDesc/tei:msIdentifier/tei:idno[@type="shelfmark"], 'title', 'error') }
-                    { bod:one2one($x//tei:titleStmt/tei:title[@type="collection"], 'ms_collection_s') }
+                    { bod:one2one($x//tei:msDesc/tei:msIdentifier/tei:idno[@type='shelfmark'], 'title', 'error') }
+                    { bod:one2one($x//tei:titleStmt/tei:title[@type='collection'], 'ms_collection_s') }
                     { bod:one2one($x//tei:msDesc/tei:msIdentifier/tei:settlement, 'ms_settlement_s') }
                     { bod:one2one($x//tei:msDesc/tei:msIdentifier/tei:institution, 'ms_institution_s') }
                     { bod:many2one($x//tei:msDesc/tei:msIdentifier/tei:repository, 'ms_repository_s') }
@@ -132,7 +135,4 @@ declare function local:buildSummary($x as document-node()) as xs:string
             else
                 bod:logging('warn', 'Cannot process manuscript without @xml:id for root TEI element', base-uri($x))
 }
-
 </add>
-
-
