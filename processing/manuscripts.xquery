@@ -126,7 +126,7 @@ declare function local:buildSummary($x as document-node()) as xs:string
                     { bod:languages($x//tei:sourceDesc//tei:textLang, 'ms_lang_sm') }
                     { local:origin($x//tei:sourceDesc//tei:origPlace/tei:country/string(@key), 'ms_origin_sm') }
                     { bod:centuries($x//tei:origin//tei:origDate, 'ms_date_sm') }
-                    { bod:string2one(local:buildSummary($x), 'ms_summary_sni') }
+                    { bod:string2one(local:buildSummary($x), 'ms_summary_s') }
                     { bod:indexHTML($htmldoc, 'ms_textcontent_tni') }
                     { bod:displayHTML($htmldoc, 'display') }
                 </doc>
