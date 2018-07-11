@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Command arguments
-# $1 = xQuery file
+# $1 = XQuery file
 # $2 = Output file
 # $3 = Solr `type` (for deleting only one type of record)
 # $4 = Solr address for indexing
@@ -16,13 +16,18 @@ if [ $# -lt 4 ]; then
     exit 1;
 fi
 
-# Change directory to the location of this script
-cd "${0%/*}"
+if [[ ! "`pwd`" == *-mss/processing ]]; then
+    echo "This script must be run from the processing folder"
+    exit 1;
+fi
+
+if [ ! -d "lib" ]; then 
+    echo "Missing processing/lib subfolder"
+    exit 1;
+fi
 
 # Create subfolder to keep generated files out of GitHub
-if [ ! -d "solr" ]; then
-    mkdir solr
-fi
+if [ ! -d "solr" ]; then mkdir solr; fi
 
 # Start log file
 LOGFILE="solr/$3.log"
@@ -91,8 +96,6 @@ if [ ! "$5" == "noindex" ]; then
         fi
     fi
 else
-    echo "Re-indexing skipped in $5 mode."
+    echo "Sending of $3 records to Solr skipped in $5 mode."
     exit 0;
 fi
-
-
