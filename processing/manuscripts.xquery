@@ -116,7 +116,7 @@ declare function local:buildSummary($x as document-node()) as xs:string
                     { bod:one2one($x//tei:msDesc/tei:msIdentifier/tei:idno[@type="shelfmark"], 'ms_shelfmark_s') }
                     { bod:one2one($x//tei:msDesc/tei:msIdentifier/tei:idno[@type="shelfmark"], 'ms_shelfmark_sort') }
                     { bod:many2one($x//tei:sourceDesc/tei:msDesc/tei:msIdentifier/tei:altIdentifier[@type="internal"]/tei:idno, 'ms_altid_s') }
-                    <field name="filename_sni">{ base-uri($x) }</field>
+                    <field name="filename_sni">{ substring-after(base-uri($x), 'collections/') }</field>
                     { bod:materials($x//tei:msDesc//tei:physDesc//tei:supportDesc[@material], 'ms_materials_sm') }
                     { bod:trueIfExists($x//tei:sourceDesc//tei:decoDesc/tei:decoNote, 'ms_deconote_b') }
                     { bod:languages($x//tei:sourceDesc//tei:textLang, 'lang_sm') }
