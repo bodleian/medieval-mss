@@ -48,8 +48,8 @@ declare variable $allinstances :=
         let $notes := for $note in $person/tei:note[not(@type='links')] return bod:italicizeTitles($note)
         
         (: Get info in all the instances in the manuscript description files :)
-        let $roles := distinct-values($instances/r/text())
         let $instances := $allinstances[key = $id]
+        let $roles := for $role in distinct-values($instances/role/text()) return bod:personRoleLookup($role)
 
         (: Output a Solr doc element :)
         return if (count($instances) gt 0) then
@@ -62,7 +62,7 @@ declare variable $allinstances :=
                 {
                 for $role in $roles
                     order by $role
-                    return <field name="roles_sm">{ bod:personRoleLookup($role) }</field>
+                    return <field name="roles_sm">{ $role }</field>
                 }
                 {
                 for $variant in distinct-values($variants)
