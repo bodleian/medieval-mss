@@ -12,6 +12,7 @@ declare variable $allinstances :=
         let $shelfmark := ($roottei/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:msDesc/tei:msIdentifier/tei:idno[@type = "shelfmark"])[1]/text()
         return
         <instance>
+            { attribute of { if ($instance/self::tei:orgName) then 'org' else 'place' } }
             { for $key in tokenize($instance/@key, ' ') return <key>{ $key }</key> }
             <name>{ normalize-space($instance/string()) }</name>
             <link>{ concat(
@@ -152,25 +153,28 @@ declare variable $allinstances :=
                 }
             </doc>
         else
-            if ($placeororg/self::tei:org) then
-                bod:logging('info', 'Skipping org in places.xml as no matching key attribute found', ($id, $name))
-            else
-                bod:logging('info', 'Skipping place in places.xml as no matching key attribute found', ($id, $name))
+            bod:logging('info', 'Skipping authority file entry not referenced in any manuscripts', ($id, $name))
 }
 
 {
-    (: Log instances that haven't (yet) been added to the authority file :)
-    for $id in distinct-values($allinstances/@k/data())
-        return if (not(some $e in $authorityentries/@xml:id/data() satisfies $e eq $id)) then
-            bod:logging('warn', 'Place or org with key attribute not in places.xml: will create broken link', ($id, $allinstances[@k = $id]/n/text()))
+    (: Log instances with key attributes not in the authority file :)
+    for $key in distinct-values($allinstances/key)
+        return if (not(some $entryid in $authorityentries/@xml:id/data() satisfies $entryid eq $key)) then
+            bod:logging('warn', 'Key attribute in manuscripts not found in authority file: will create broken link', ($key, $allinstances[key = $key]/name))
         else
             ()
 }
 
 {
-    (: Log instances that don't (yet) have a key attribute :)
-    for $i in distinct-values($allinstances[not(@k)]/n/text())
-        order by $i
-        return bod:logging('info', 'Place or org in without key attribute', $i)
+    (: Log instances without key attributes :)
+    (
+    for $instancename in distinct-values($allinstances[@of='place' and not(key)]/name)
+        order by $instancename
+        return bod:logging('info', 'Place name in manuscripts without key attribute', $instancename)
+    ,
+    for $instancename in distinct-values($allinstances[@of='org' and not(key)]/name)
+        order by $instancename
+        return bod:logging('info', 'Organization name in manuscripts without key attribute', $instancename)
+    )
 }
 </add>

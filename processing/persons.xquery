@@ -115,24 +115,23 @@ declare variable $allinstances :=
             </doc>
         else
             (
-            bod:logging('info', 'Skipping person in persons.xml as no matching key attribute found', ($id, $name))
+            bod:logging('info', 'Skipping authority file entry not referenced in any manuscripts', ($id, $name))
             )
 }
 
 {
-    (: Log instances that haven't (yet) been added to the authority file :)
-    for $id in distinct-values($allinstances/@k/data())
-        return if (not(some $e in $authorityentries/@xml:id/data() satisfies $e eq $id)) then
-            bod:logging('warn', 'Person with key attribute not in persons.xml: will create broken link', ($id, $allinstances[@k = $id]/n/text()))
+    (: Log instances with key attributes not in the authority file :)
+    for $key in distinct-values($allinstances/key)
+        return if (not(some $entryid in $authorityentries/@xml:id/data() satisfies $entryid eq $key)) then
+            bod:logging('warn', 'Key attribute in manuscripts not found in authority file: will create broken link', ($key, $allinstances[@k = $key]/name))
         else
             ()
 }
 
 {
-    (: Log instances that don't (yet) have a key attribute :)
-    for $i in distinct-values($allinstances[not(@k)]/n/text())
-        order by $i
-        return bod:logging('info', 'Person without key attribute', $i)
+    (: Log instances without key attributes :)
+    for $instancename in distinct-values($allinstances[not(key)]/name)
+        order by $instancename
+        return bod:logging('info', 'Person in manuscripts without key attribute', $instancename)
 }
-
 </add>

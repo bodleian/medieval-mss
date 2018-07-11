@@ -27,7 +27,7 @@ declare variable $allinstances :=
                             ''
                     )
             }</link>
-            { if ($instance/parent::tei:msItem/@xml:id) then <workid>{ $instance/parent::tei:msItem/@xml:id }</workid> else () }
+            { for $workid in $instance/parent::tei:msItem/@xml:id return <workid>{ $workid }</workid> }
             <shelfmark>{ $shelfmark }</shelfmark>
         </instance>;
 
@@ -125,23 +125,23 @@ declare variable $allinstances :=
             </doc>
         else
             (
-            bod:logging('info', 'Skipping work in works.xml as no matching key attribute found', ($id, $title))
+            bod:logging('info', 'Skipping authority file entry not referenced in any manuscripts', ($id, $title))
             )
 }
 
 {
-    (: Log instances that haven't (yet) been added to the authority file :)
-    for $id in distinct-values($allinstances/@k/data())
-        return if (not(some $e in $authorityentries/@xml:id/data() satisfies $e eq $id)) then
-            bod:logging('warn', 'Title with key attribute not in works.xml: will create broken link', ($id, $allinstances[@k = $id]/n/text()))
+    (: Log instances with key attributes not in the authority file :)
+    for $key in distinct-values($allinstances/key)
+        return if (not(some $entryid in $authorityentries/@xml:id/data() satisfies $entryid eq $key)) then
+            bod:logging('warn', 'Key attribute in manuscripts not found in authority file: will create broken link', ($key, $allinstances[key = $key]/title))
         else
             ()
 }
 
 {
-    (: Log instances that don't (yet) have a key attribute :)
-    for $i in distinct-values($allinstances[not(@k) and child::p]/n/text())
-        order by $i
-        return bod:logging('info', 'Title without key attribute', $i)
+    (: Log instances without key attributes :)
+    for $instancetitle in distinct-values($allinstances[not(key) and child::workid]/title)
+        order by $instancetitle
+        return bod:logging('info', 'Work title in manuscripts without key attribute', $instancetitle)
 }
 </add>
