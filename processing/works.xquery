@@ -94,7 +94,7 @@ declare variable $allinstances :=
                     return <field name="note_smni">{ $note }</field>
                 }
                 {
-                bod:languages($work/tei:textLang, 'wk_lang_sm')
+                bod:languages($work/tei:textLang, 'lang_sm')
                 }
                 {
                 for $subject in $subjects

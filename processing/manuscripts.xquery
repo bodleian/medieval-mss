@@ -123,7 +123,7 @@ declare function local:buildSummary($x as document-node()) as xs:string
                     { bod:many2many($x//tei:sourceDesc//tei:name[@type="corporate"]/tei:persName, 'ms_corpnames_sm') }
                     { bod:many2many($x//tei:sourceDesc//tei:persName, 'ms_persnames_sm') }
                     { bod:trueIfExists($x//tei:sourceDesc//tei:decoDesc/tei:decoNote, 'ms_deconote_b') }
-                    { bod:languages($x//tei:sourceDesc//tei:textLang, 'ms_lang_sm') }
+                    { bod:languages($x//tei:sourceDesc//tei:textLang, 'lang_sm') }
                     { local:origin($x//tei:sourceDesc//tei:origPlace/tei:country/string(@key), 'ms_origin_sm') }
                     { bod:centuries($x//tei:origin//tei:origDate, 'ms_date_sm') }
                     { bod:string2one(local:buildSummary($x), 'ms_summary_s') }
