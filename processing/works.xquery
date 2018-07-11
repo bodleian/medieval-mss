@@ -5,26 +5,31 @@ declare option saxon:output "indent=yes";
 (: Read authority file :)
 declare variable $authorityentries := doc("../works.xml")/tei:TEI/tei:text/tei:body/tei:listBibl/tei:bibl[@xml:id];
 
-(: Find instances in manuscript description files, building in-memory data structure :)
+(: Find instances in manuscript description files, building in-memory data structure, to avoid having to search across all files for each authority file entry :)
 declare variable $allinstances :=
-    for $title in collection('../collections?select=*.xml;recurse=yes')//tei:title
-        let $roottei := $title/ancestor::tei:TEI
+    for $instance in collection('../collections?select=*.xml;recurse=yes')//tei:title
+        let $roottei := $instance/ancestor::tei:TEI
+        let $shelfmark := ($roottei/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:msDesc/tei:msIdentifier/tei:idno[@type = "shelfmark"])[1]/text()
         return
-        if ($title/@key) then
-            for $key in tokenize($title/@key, ' ')
-                (: A small number have multiple space-separated keys, e.g. when this instance is two books of the bible which in the authority file are listed separately :)
-                return
-                <i>
-                    { attribute {'k'} { $key } }
-                    <n>{ normalize-space($title/string()) }</n>
-                    <l>{ concat('/catalog/', $roottei/@xml:id/data(), '|', ($roottei/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:msDesc/tei:msIdentifier/tei:idno[@type = "shelfmark"])[1]/text()) }</l>
-                </i>
-        else
-            <i>
-                <n>{ normalize-space($title/string()) }</n>
-                <l>{ concat('/catalog/', $roottei/@xml:id/data(), '|', ($roottei/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:msDesc/tei:msIdentifier/tei:idno[@type = "shelfmark"])[1]/text()) }</l>
-                { if ($title/parent::tei:msItem/@xml:id) then <p>{ $title/parent::tei:msItem/@xml:id }</p> else () }
-            </i>;
+        <instance>
+            { for $key in tokenize($instance/@key, ' ') return <key>{ $key }</key> }
+            <title>{ normalize-space($instance/string()) }</title>
+            <link>{ concat(
+                        '/catalog/', 
+                        $roottei/@xml:id/data(), 
+                        '|', 
+                        $shelfmark,
+                        if ($roottei//tei:sourceDesc//tei:surrogates/tei:bibl[@type=('digital-fascimile','digital-facsimile') and @subtype='full']) then
+                            ' (Digital images online)'
+                        else if ($roottei//tei:sourceDesc//tei:surrogates/tei:bibl[@type=('digital-fascimile','digital-facsimile') and @subtype='partial']) then
+                            ' (Selected pages online)'
+                        else
+                            ''
+                    )
+            }</link>
+            { if ($instance/parent::tei:msItem/@xml:id) then <workid>{ $instance/parent::tei:msItem/@xml:id }</workid> else () }
+            <shelfmark>{ $shelfmark }</shelfmark>
+        </instance>;
 
 <add>
 {
@@ -45,8 +50,7 @@ declare variable $allinstances :=
         let $lang := $work/tei:textLang
         
         (: Get info in all the instances in the manuscript description files :)
-        let $instances := $allinstances[@k = $id]
-        let $links2instances := distinct-values($instances/l/text())
+        let $instances := $allinstances[key = $id]
 
         (: Output a Solr doc element :)
         return if (count($instances) gt 0) then
@@ -70,7 +74,7 @@ declare variable $allinstances :=
                 }
                 {
                 let $lcvariants := for $variant in ($title, $variants) return lower-case($variant)
-                for $instancevariant in distinct-values($instances/n/text())
+                for $instancevariant in distinct-values($instances/title/text())
                     order by $instancevariant
                     return if (not(lower-case($instancevariant) = $lcvariants)) then
                         <field name="wk_variant_sm">{ $instancevariant }</field>
@@ -106,7 +110,7 @@ declare variable $allinstances :=
                     let $url := concat("/catalog/", $relatedid)
                     let $linktext := ($authorityentries[@xml:id = $relatedid]/tei:title[@type = 'uniform'][1])[1]
                     return
-                    if (exists($linktext) and $allinstances[@k = $relatedid]) then
+                    if (exists($linktext) and $allinstances[key = $relatedid]) then
                         let $link := concat($url, "|", $linktext/string())
                         return
                         <field name="link_related_smni">{ $link }</field>

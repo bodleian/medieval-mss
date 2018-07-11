@@ -2,23 +2,35 @@ import module namespace bod = "http://www.bodleian.ox.ac.uk/bdlss" at "lib/msdes
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 declare option saxon:output "indent=yes";
 
-(: TODO: Review the usefulness of: pl_type_s, pl_manuscripts_sm, pl_name_s :)
-
 (: Read authority file :)
 declare variable $authorityentries := doc("../places.xml")/tei:TEI/tei:text/tei:body/(tei:listPlace/tei:place|tei:listOrg/tei:org)[@xml:id];
 
-(: Find instances in manuscript description files, building in-memory data structure :)
+(: Find instances in manuscript description files, building in-memory data structure, to avoid having to search across all files for each authority file entry :)
 declare variable $allinstances :=
-    for $i in collection('../collections?select=*.xml;recurse=yes')//tei:msDesc//(tei:placeName|tei:country|tei:settlement|tei:region|tei:orgName)
-        let $t := $i/ancestor::tei:TEI
+    for $instance in collection('../collections?select=*.xml;recurse=yes')//tei:msDesc//(tei:placeName|tei:country|tei:settlement|tei:region|tei:orgName)
+        let $roottei := $instance/ancestor::tei:TEI
+        let $shelfmark := ($roottei/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:msDesc/tei:msIdentifier/tei:idno[@type = "shelfmark"])[1]/text()
         return
-        <i>
-            { if ($i/@key) then attribute {'k'} { $i/@key/data() } else () }
-            <n>{ normalize-space($i/string()) }</n>
-            <l>{ concat('/catalog/', $t/@xml:id/data(), '|', ($t/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:msDesc/tei:msIdentifier/tei:idno[@type = "shelfmark"])[1]/text()) }</l>
-            { for $r in tokenize($i/@role/data(), ' ') return <r>{ $r }</r> }
-            { if (not($i/self::tei:placeName or $i/self::tei:orgName)) then <t>{ local-name($i) }</t> else () }
-        </i>;
+        <instance>
+            { for $key in tokenize($instance/@key, ' ') return <key>{ $key }</key> }
+            <name>{ normalize-space($instance/string()) }</name>
+            <link>{ concat(
+                        '/catalog/', 
+                        $roottei/@xml:id/data(), 
+                        '|', 
+                        $shelfmark,
+                        if ($roottei//tei:sourceDesc//tei:surrogates/tei:bibl[@type=('digital-fascimile','digital-facsimile') and @subtype='full']) then
+                            ' (Digital images online)'
+                        else if ($roottei//tei:sourceDesc//tei:surrogates/tei:bibl[@type=('digital-fascimile','digital-facsimile') and @subtype='partial']) then
+                            ' (Selected pages online)'
+                        else
+                            ''
+                    )
+            }</link>
+            { for $role in tokenize($instance/@role/data(), ' ') return <role>{ $role }</role> }
+            { if (not($instance/self::tei:placeName or $instance/self::tei:orgName)) then <type>{ local-name($instance) }</type> else () }
+            <shelfmark>{ $shelfmark }</shelfmark>
+        </instance>;
 
 <add>
 {
@@ -46,9 +58,8 @@ declare variable $allinstances :=
         let $geolocs := $placeororg/tei:location/tei:geo[matches(text(), '^\s*\-?[\d\.]+\s*,\s*\-?[\d\.]+\s*$')]
         
         (: Get info in all the instances in the manuscript description files :)
-        let $instances := $allinstances[@k = $id]
-        let $links2instances := distinct-values($instances/l/text())
         let $roles := distinct-values(($instances/r/text(), $instances/t/text(), $placeororg/@type/data()))
+        let $instances := $allinstances[key = $id]
         
         (: Output a Solr doc element :)
         return if (count($instances) gt 0) then
@@ -63,9 +74,9 @@ declare variable $allinstances :=
                     if ($placeororg/@type) then 
                         <field name="pl_type_s">{ $placeororg/@type/data() }</field> 
                     else
-                        for $t in distinct-values($instances/t/text())
+                        for $type in distinct-values($instances/type/text())
                             return
-                            <field name="pl_type_s">{ $t }</field>
+                            <field name="pl_type_s">{ $type }</field>
                 else
                     ()
                 }
@@ -81,7 +92,7 @@ declare variable $allinstances :=
                 }
                 {
                 let $lcvariants := for $variant in ($name, $variants) return lower-case($variant)
-                for $instancevariant in distinct-values($instances/n/text())
+                for $instancevariant in distinct-values($instances/name/text())
                     order by $instancevariant
                     return if (not(lower-case($instancevariant) = $lcvariants)) then
                         <field name="pl_variant_sm">{ $instancevariant }</field>
@@ -89,8 +100,8 @@ declare variable $allinstances :=
                         ()
                 }
                 {
-                for $g in $geolocs
-                    let $coords := tokenize(translate($g/text(), ' ', ''), ',')
+                for $geoloc in $geolocs
+                    let $coords := tokenize(translate($geoloc/text(), ' ', ''), ',')
                     let $lat := number($coords[1])
                     let $long := number($coords[2])
                     return
@@ -123,7 +134,7 @@ declare variable $allinstances :=
                     let $url := concat("/catalog/", $relatedid)
                     let $linktext := ($authorityentries[@xml:id = $relatedid]/(tei:placeName|tei:orgName)[@type = 'display'][1])[1]
                     return
-                    if (exists($linktext) and $allinstances[@k = $relatedid]) then
+                    if (exists($linktext) and $allinstances[key = $relatedid]) then
                         let $link := concat($url, "|", $linktext/string())
                         return
                         <field name="link_related_smni">{ $link }</field>

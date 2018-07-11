@@ -5,17 +5,31 @@ declare option saxon:output "indent=yes";
 (: Read authority file :)
 declare variable $authorityentries := doc("../persons.xml")/tei:TEI/tei:text/tei:body/tei:listPerson/tei:person[@xml:id];
 
-(: Find instances in manuscript description files, building in-memory data structure :)
+(: Find instances in manuscript description files, building in-memory data structure, to avoid having to search across all files for each authority file entry :)
 declare variable $allinstances :=
-    for $i in collection('../collections?select=*.xml;recurse=yes')//tei:msDesc//(tei:persName|tei:author)
-        let $t := $i/ancestor::tei:TEI
+    for $instance in collection('../collections?select=*.xml;recurse=yes')//tei:msDesc//(tei:persName|tei:author)
+        let $roottei := $instance/ancestor::tei:TEI
+        let $shelfmark := ($roottei/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:msDesc/tei:msIdentifier/tei:idno[@type = "shelfmark"])[1]/text()
         return
-        <i>
-            { if ($i/@key) then attribute {'k'} { $i/@key/data() } else () }
-            <n>{ normalize-space($i/string()) }</n>
-            <l>{ concat('/catalog/', $t/@xml:id/data(), '|', ($t/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:msDesc/tei:msIdentifier/tei:idno[@type = "shelfmark"])[1]/text()) }</l>
-            { for $r in if ($i//self::tei:author) then ('author') else tokenize($i/@role/data(), ' ') return <r>{ $r }</r> }
-        </i>;
+        <instance>
+            { for $key in tokenize($instance/@key, ' ') return <key>{ $key }</key> }
+            <name>{ normalize-space($instance/string()) }</name>
+            <link>{ concat(
+                        '/catalog/', 
+                        $roottei/@xml:id/data(), 
+                        '|', 
+                        $shelfmark,
+                        if ($roottei//tei:sourceDesc//tei:surrogates/tei:bibl[@type=('digital-fascimile','digital-facsimile') and @subtype='full']) then
+                            ' (Digital images online)'
+                        else if ($roottei//tei:sourceDesc//tei:surrogates/tei:bibl[@type=('digital-fascimile','digital-facsimile') and @subtype='partial']) then
+                            ' (Selected pages online)'
+                        else
+                            ''
+                    )
+            }</link>
+            { for $role in if ($instance//self::tei:author) then ('author') else tokenize($instance/@role/data(), ' ') return <role>{ $role }</role> }
+            <shelfmark>{ $shelfmark }</shelfmark>
+        </instance>;
 
 <add>
 {
@@ -28,15 +42,14 @@ declare variable $allinstances :=
         (: Get info in authority entry :)
         let $id := $person/@xml:id/data()
         let $name := if ($person/tei:persName[@type='display']) then normalize-space($person/tei:persName[@type='display'][1]/string()) else normalize-space($person/tei:persName[1]/string())
-        let $variants := for $v in $person/tei:persName[not(@type='display')] return normalize-space($v/string())
-        let $extrefs := for $r in $person/tei:note[@type='links']//tei:item/tei:ref return concat($r/@target/data(), '|', bod:lookupAuthorityName(normalize-space($r/tei:title/string())))
-        let $bibrefs := for $b in $person/tei:bibl return bod:italicizeTitles($b)
-        let $notes := for $n in $person/tei:note[not(@type='links')] return bod:italicizeTitles($n)
+        let $variants := for $variant in $person/tei:persName[not(@type='display')] return normalize-space($variant/string())
+        let $extrefs := for $ref in $person/tei:note[@type='links']//tei:item/tei:ref return concat($ref/@target/data(), '|', bod:lookupAuthorityName(normalize-space($ref/tei:title/string())))
+        let $bibrefs := for $bibl in $person/tei:bibl return bod:italicizeTitles($bibl)
+        let $notes := for $note in $person/tei:note[not(@type='links')] return bod:italicizeTitles($note)
         
         (: Get info in all the instances in the manuscript description files :)
-        let $instances := $allinstances[@k = $id]
-        let $links2instances := distinct-values($instances/l/text())
         let $roles := distinct-values($instances/r/text())
+        let $instances := $allinstances[key = $id]
 
         (: Output a Solr doc element :)
         return if (count($instances) gt 0) then
@@ -58,7 +71,7 @@ declare variable $allinstances :=
                 }
                 {
                 let $lcvariants := for $variant in ($name, $variants) return lower-case($variant)
-                for $instancevariant in distinct-values($instances/n/text())
+                for $instancevariant in distinct-values($instances/name/text())
                     order by $instancevariant
                     return if (not(lower-case($instancevariant) = $lcvariants)) then
                         <field name="pp_variant_sm">{ $instancevariant }</field>
@@ -87,7 +100,7 @@ declare variable $allinstances :=
                     let $url := concat("/catalog/", $relatedid)
                     let $linktext := ($authorityentries[@xml:id = $relatedid]/tei:persName[@type = 'display'][1])[1]
                     return
-                    if (exists($linktext) and $allinstances[@k = $relatedid]) then
+                    if (exists($linktext) and $allinstances[key = $relatedid]) then
                         let $link := concat($url, "|", $linktext/string())
                         return
                         <field name="link_related_smni">{ $link }</field>
