@@ -106,6 +106,9 @@ declare function local:buildSummary($x as document-node()) as xs:string
 <add>
 {
     let $collection := collection('../collections/?select=*.xml;recurse=yes')
+    comment{concat(' Indexing started at ', current-dateTime(), ' using files in ', substring-before(substring-after(base-uri($collection[1]), 'file:'), 'collections/'), ' ')}
+}
+{
     let $msids := $collection/tei:TEI/@xml:id/data()
     return if (count($msids) ne count(distinct-values($msids))) then
         let $duplicateids := distinct-values(for $msid in $msids return if (count($msids[. eq $msid]) gt 1) then $msid else '')
