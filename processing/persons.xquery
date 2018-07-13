@@ -108,9 +108,16 @@ declare variable $allinstances :=
                         bod:logging('info', 'Cannot create see-also link', ($id, $relatedid))
                 }
                 {
-                for $link in $links2instances
+                for $shelfmark in distinct-values($instances/shelfmark/text())
+                    order by $shelfmark
+                    return
+                    <field name="shelfmarks">{ $shelfmark }</field>
+                }
+                {
+                for $link in distinct-values($instances/link/text())
                     order by $link
-                    return <field name="link_manuscripts_smni">{ $link }</field>
+                    return
+                    <field name="link_manuscripts_smni">{ $link }</field>
                 }
             </doc>
         else
