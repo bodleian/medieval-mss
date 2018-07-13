@@ -2,8 +2,8 @@
 
 # Command arguments
 # $1 = Optional mode:
-#           Append 'force' to disable checking for data issues and push to Solr without prompting
-#           Append 'noindex' to generate the files and do the checking but not push to Solr
+#           'force' to disable checking for data issues and push to Solr without prompting
+#           'noindex' to generate the files and do the checking but not push to Solr
 
 SERVER="solr01-qa.bodleian.ox.ac.uk"
 
@@ -17,15 +17,20 @@ fi
 # set up for development and testing. This is in lieu of writing a custom resolver 
 # or using the dreaded Git submodules
 if [ ! -L "lib" ]; then
-    if [ -d "lib" ]; then 
-        # The lib folder is a real folder, so delete it
-        rm -rf lib;
+    if [ -d "lib" ]; then
+        ageoflibdir=$((($(date +%s) - $(date -r lib +%s)) / 3600))
+        if [ $ageofsolrdir -ge 1 ]; then
+            # The lib folder is a real folder, and more than an hour old, so delete it
+            rm -rf lib;
+        fi
     fi
-    # Retrieve a fresh copy
-    git clone -q --depth 1 https://github.com/bodleian/consolidated-tei-schema.git lib
-    if [ $? -gt 0 ]; then
-        echo "Cannot download library files from GitHub. Check your network connection."
-        exit 1
+    if [ ! -e "lib" ]; then
+        # Retrieve a fresh copy
+        git clone -q --depth 1 https://github.com/bodleian/consolidated-tei-schema.git lib
+        if [ $? -gt 0 ]; then
+            echo "Cannot download library files from GitHub. Check your network connection."
+            exit 1
+        fi
     fi
 fi
 
