@@ -39,7 +39,7 @@ else
     if [ ! -L "lib" ]; then
         if [ -d "lib" ]; then
             ageoflibdir=$((($(date +%s) - $(date -r lib +%s)) / 3600))
-            if [ $ageofsolrdir -ge 1 ]; then
+            if [ $ageoflibdir -ge 1 ]; then
                 # The lib folder is a real folder, and more than an hour old, so delete it
                 rm -rf lib;
             fi
