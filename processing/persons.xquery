@@ -5,11 +5,15 @@ declare option saxon:output "indent=yes";
 (: Read authority file :)
 declare variable $authorityentries := doc("../persons.xml")/tei:TEI/tei:text/tei:body/tei:listPerson/tei:person[@xml:id];
 
+(: Read works authority file to be able to link from authors to their works :)
+declare variable $workauthority := doc("../works.xml")/tei:TEI/tei:text/tei:body/tei:listBibl/tei:bibl[@xml:id];
+
 (: Find instances in manuscript description files, building in-memory data structure, to avoid having to search across all files for each authority file entry :)
 declare variable $allinstances :=
     for $instance in collection('../collections?select=*.xml;recurse=yes')//tei:msDesc//(tei:persName|tei:author)
         let $roottei := $instance/ancestor::tei:TEI
         let $shelfmark := ($roottei/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:msDesc/tei:msIdentifier/tei:idno[@type = "shelfmark"])[1]/text()
+        let $roles := if ($instance/self::tei:author) then ('author') else tokenize($instance/@role/data(), ' ')
         return
         <instance>
             { for $key in tokenize($instance/@key, ' ') return <key>{ $key }</key> }
@@ -27,7 +31,14 @@ declare variable $allinstances :=
                             ''
                     )
             }</link>
-            { for $role in if ($instance//self::tei:author) then ('author') else tokenize($instance/@role/data(), ' ') return <role>{ $role }</role> }
+            { for $role in $roles return <role>{ $role }</role> }
+            {
+            if (some $role in $roles satisfies $role eq 'author' and not($instance/parent::tei:bibl)) then 
+                for $workid in distinct-values($instance/ancestor::tei:msItem[1]/tei:title/@key/tokenize(data(), ' '))
+                    return <work>{ $workid }</work> 
+            else
+                () 
+            }
             <shelfmark>{ $shelfmark }</shelfmark>
         </instance>;
 
@@ -99,6 +110,7 @@ declare variable $allinstances :=
                 for $relatedid in distinct-values($relatedids)
                     let $url := concat("/catalog/", $relatedid)
                     let $linktext := ($authorityentries[@xml:id = $relatedid]/tei:persName[@type = 'display'][1])[1]
+                    order by $relatedid
                     return
                     if (exists($linktext) and $allinstances[key = $relatedid]) then
                         let $link := concat($url, "|", $linktext/string())
@@ -106,6 +118,19 @@ declare variable $allinstances :=
                         <field name="link_related_smni">{ $link }</field>
                     else
                         bod:logging('info', 'Cannot create see-also link', ($id, $relatedid))
+                }
+                {
+                for $workid in distinct-values($instances/work/text())
+                    let $url := concat("/catalog/", $workid)
+                    let $linktext := ($workauthority[@xml:id = $workid]/tei:title[@type = 'uniform'][1])[1]
+                    order by $workid
+                    return
+                    if (exists($linktext)) then
+                        let $link := concat($url, "|", $linktext/string())
+                        return
+                        <field name="link_works_smni">{ $link }</field>
+                    else
+                        bod:logging('info', 'Cannot create link from author to work', ($id, $workid))
                 }
                 {
                 for $shelfmark in distinct-values($instances/shelfmark/text())
