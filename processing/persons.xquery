@@ -120,7 +120,7 @@ declare variable $allinstances :=
                         bod:logging('info', 'Cannot create see-also link', ($id, $relatedid))
                 }
                 {
-                for $workid in distinct-values($instances/work/text())
+                for $workid in distinct-values(($instances/work/text(), $workauthority[tei:author[not(@role)]/@key = $id]/@xml:id))
                     let $url := concat("/catalog/", $workid)
                     let $linktext := ($workauthority[@xml:id = $workid]/tei:title[@type = 'uniform'][1])[1]
                     order by $workid
