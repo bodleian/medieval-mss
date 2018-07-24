@@ -17,9 +17,13 @@
     <!-- Any templates added below will override the templates in the shared
          imported stylesheet, allowing customization of manuscript display for each catalogue. -->
 
-
-
-
+    <xsl:template match="msDesc/msIdentifier/altIdentifier[@type='former']">
+        <!-- TODO: Move this template to msdesc2html.xsl? -->
+        <p>
+            <xsl:text>Former shelfmark: </xsl:text>
+            <xsl:apply-templates/>
+        </p>
+    </xsl:template>
 
 
 
