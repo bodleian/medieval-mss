@@ -30,6 +30,10 @@ declare variable $allinstances :=
                             ''
                     )
             }</link>
+            {
+            for $authorid in ($instance/ancestor::tei:msItem[tei:author][1]/tei:author[@key], $instance/parent::*/(tei:author|tei:persName[@role='author'])/@key/data())
+                return <author>{ $authorid }</author>
+            }
             { for $workid in $instance/parent::tei:msItem/@xml:id return <workid>{ $workid }</workid> }
             <shelfmark>{ $shelfmark }</shelfmark>
         </instance>;
