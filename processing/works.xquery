@@ -5,6 +5,9 @@ declare option saxon:output "indent=yes";
 (: Read authority file :)
 declare variable $authorityentries := doc("../works.xml")/tei:TEI/tei:text/tei:body/tei:listBibl/tei:bibl[@xml:id];
 
+(: Read persons authority file to be able to link from works to their authors :)
+declare variable $personauthority := doc("../persons.xml")/tei:TEI/tei:text/tei:body/tei:listPerson/tei:person[@xml:id];
+
 (: Find instances in manuscript description files, building in-memory data structure, to avoid having to search across all files for each authority file entry :)
 declare variable $allinstances :=
     for $instance in collection('../collections?select=*.xml;recurse=yes')//tei:title
@@ -122,6 +125,19 @@ declare variable $allinstances :=
                     order by $shelfmark
                     return
                     <field name="shelfmarks">{ $shelfmark }</field>
+                }
+                {
+                for $authorid in distinct-values(($instances/author/text(), $work/tei:author[not(@role)]/@key/data()))
+                    let $url := concat("/catalog/", $authorid)
+                    let $linktext := ($personauthority[@xml:id = $authorid]/tei:persName[@type = 'display'][1])[1]
+                    order by $authorid
+                    return
+                    if (exists($linktext)) then
+                        let $link := concat($url, "|", normalize-space($linktext/string()))
+                        return
+                        <field name="link_author_smni">{ $link }</field>
+                    else
+                        bod:logging('info', 'Cannot create link from work to author', ($id, $authorid))
                 }
                 {
                 for $link in distinct-values($instances/link/text())
