@@ -113,7 +113,7 @@ declare variable $allinstances :=
                     order by $relatedid
                     return
                     if (exists($linktext) and $allinstances[key = $relatedid]) then
-                        let $link := concat($url, "|", $linktext/string())
+                        let $link := concat($url, "|", normalize-space($linktext/string()))
                         return
                         <field name="link_related_smni">{ $link }</field>
                     else
@@ -126,7 +126,7 @@ declare variable $allinstances :=
                     order by $workid
                     return
                     if (exists($linktext)) then
-                        let $link := concat($url, "|", $linktext/string())
+                        let $link := concat($url, "|", normalize-space($linktext/string()))
                         return
                         <field name="link_works_smni">{ $link }</field>
                     else

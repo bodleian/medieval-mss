@@ -114,7 +114,7 @@ declare variable $allinstances :=
                     let $linktext := ($authorityentries[@xml:id = $relatedid]/tei:title[@type = 'uniform'][1])[1]
                     return
                     if (exists($linktext) and $allinstances[key = $relatedid]) then
-                        let $link := concat($url, "|", $linktext/string())
+                        let $link := concat($url, "|", normalize-space($linktext/string()))
                         return
                         <field name="link_related_smni">{ $link }</field>
                     else
