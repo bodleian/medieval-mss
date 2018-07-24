@@ -10,6 +10,8 @@ declare variable $allinstances :=
     for $instance in collection('../collections?select=*.xml;recurse=yes')//tei:msDesc//(tei:placeName|tei:country|tei:settlement|tei:region|tei:orgName)[not(ancestor::tei:msIdentifier)]
         let $roottei := $instance/ancestor::tei:TEI
         let $shelfmark := ($roottei/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:msDesc/tei:msIdentifier/tei:idno[@type = "shelfmark"])[1]/text()
+        let $datesoforigin := distinct-values($roottei//tei:origin//tei:origDate/normalize-space())
+        let $placesoforigin := distinct-values($roottei//tei:origin//tei:origPlace/normalize-space())
         return
         <instance>
             { attribute of { if ($instance/self::tei:orgName) then 'org' else 'place' } }
@@ -26,6 +28,8 @@ declare variable $allinstances :=
                             ' (Selected pages online)'
                         else
                             ''
+                        ,'|',
+                        if ($roottei//tei:msPart) then 'Composite manuscript' else string-join(($datesoforigin, $placesoforigin), '; ')
                     )
             }</link>
             { for $role in tokenize($instance/@role/data(), ' ') return <role>{ $role }</role> }

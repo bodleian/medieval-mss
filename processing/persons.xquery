@@ -14,6 +14,8 @@ declare variable $allinstances :=
         let $roottei := $instance/ancestor::tei:TEI
         let $shelfmark := ($roottei/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:msDesc/tei:msIdentifier/tei:idno[@type = "shelfmark"])[1]/text()
         let $roles := if ($instance/self::tei:author) then ('author') else tokenize($instance/@role/data(), ' ')
+        let $datesoforigin := distinct-values($roottei//tei:origin//tei:origDate/normalize-space())
+        let $placesoforigin := distinct-values($roottei//tei:origin//tei:origPlace/normalize-space())
         return
         <instance>
             { for $key in tokenize($instance/@key, ' ') return <key>{ $key }</key> }
@@ -29,6 +31,8 @@ declare variable $allinstances :=
                             ' (Selected pages online)'
                         else
                             ''
+                        ,'|',
+                        if ($roottei//tei:msPart) then 'Composite manuscript' else string-join(($datesoforigin, $placesoforigin), '; ')
                     )
             }</link>
             { for $role in $roles return <role>{ $role }</role> }
