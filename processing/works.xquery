@@ -20,7 +20,7 @@ declare variable $allinstances :=
                         '|', 
                         $shelfmark,
                         if ($roottei//tei:sourceDesc//tei:surrogates/tei:bibl[@type=('digital-fascimile','digital-facsimile') and @subtype='full']) then
-                            ' (Digital images online)'
+                            ' (Digital facsimile online)'
                         else if ($roottei//tei:sourceDesc//tei:surrogates/tei:bibl[@type=('digital-fascimile','digital-facsimile') and @subtype='partial']) then
                             ' (Selected pages online)'
                         else
