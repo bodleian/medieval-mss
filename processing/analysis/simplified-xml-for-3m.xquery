@@ -117,7 +117,7 @@ declare function local:dateConversion($datestring as xs:string, $begin as xs:boo
         else
             xs:dateTime(concat($year, '-12-31', 'T23:59:59'))
     else
-        (local:logging('error', 'Unrecognized date format', $datestring), ())[2]
+        (local:logging('error', 'Unreadable date format', $datestring), ())[2]
 };
 
 declare function local:listItems($manuscript as element(tei:TEI), $mscontent as element(tei:msContents)) as element()*
@@ -146,8 +146,6 @@ declare function local:listItems($manuscript as element(tei:TEI), $mscontent as 
             :)
             }
             {
-            ()
-            (: Commented out because in medieval-mss languages are also recorded in the works.xml local authority file.
             for $lang in distinct-values(tokenize(string-join(($msItem//tei:textLang/@mainLang/data(), $msItem//tei:textLang/@otherLangs/data()), ' '), ' '))
                 let $langLabelAndUri := local:languageCodeLookup($lang)
                 return
@@ -158,7 +156,6 @@ declare function local:listItems($manuscript as element(tei:TEI), $mscontent as 
                     </language>
                 else
                     ()
-            :)
             }
             {
             local:listPlacesOrgsPeople($msItem)
@@ -400,10 +397,11 @@ processing-instruction xml-model {'href="simplified4oxlod.xsd" type="application
     {
     for $manuscript at $pos in collection('../../collections/?select=*.xml;recurse=yes')/tei:TEI
     
-        return if ($pos mod 200 = 0) then
-        (: To process everything, change above line to: return if (true()) then :)
-        (: To get a small random-ish sample, use: return if ($pos mod 200 = 0) then :)
-        
+        return if (true()) then
+        (: 
+        To process everything, change above line to: return if (true()) then
+        To get a small random-ish sample, use: return if ($pos mod 200 = 0) then 
+        :)
             <manuscript>
             
                 <uri>{ $website }/catalog/{ $manuscript/@xml:id/data() }</uri>
