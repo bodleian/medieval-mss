@@ -20,6 +20,10 @@
                <persName>Otto Pächt</persName>
                <persName>J. J. G. Alexander</persName>
             </respStmt>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
@@ -60,7 +64,7 @@
                      <idno type="SCN">2054</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <msContents resp="#SC">
                   <msItem xml:id="MS_Bodl_218-item1" n="1">
                      <author key="person_61539765">
                         Bede
@@ -68,7 +72,7 @@
                      <title key="work_952">Commentary on Luke</title>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
-                  <msItem xml:id="MS_Bodl_218-item2" n="2">
+                  <msItem xml:id="MS_Bodl_218-item2" n="2" resp="#VD">
                      <locus>(fol. 165v)</locus>
                      <title type="desc">Preface for the Mass</title>
                      <note>Added in southern (?) England in the 11th century (?): preface for the mass of the Assumption (Qui mortis
@@ -78,7 +82,7 @@
                         preface.</note>
                   </msItem>
                </msContents>
-               <physDesc>
+               <physDesc resp="#VD">
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
@@ -90,25 +94,25 @@
                         </extent>
                      </supportDesc>
                   </objectDesc>
-                  <handDesc>
+                  <handDesc resp="#SC">
                      <handNote>Carolingian minuscule, with insular corrections and additions.</handNote>
                   </handDesc>
                   <musicNotation>
                      <p>Adiastematic and half diastematic Canterbury neums, fol. 165v</p>
                   </musicNotation>
-                  <decoDesc>
+                  <decoDesc resp="#PA">
                      <decoNote>Marginal drawings in pen and with a pencil (parly erased) added c. 1000 to a Tours MS. of
                   9th century, beginning (P&amp;A iii. 32, pl. III).
                      </decoNote>
                   </decoDesc>
-                  <bindingDesc>
+                  <bindingDesc resp="#SC">
                      <binding notAfter="1550" notBefore="1500">
                         <p>Balck velvet with brass clasp-fittings (clasps and side-bosses gone); title label on parchment on the front cover.</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
                <history>
-                  <origin>
+                  <origin resp="#PA">
                      <origDate calendar="Gregorian" notAfter="0810" notBefore="0800">9th century, beginning (main ms.) </origDate>
                      <origDate calendar="Gregorian" notAfter="1010" notBefore="0990">c. 1000 (added drawings)</origDate>
                      <origPlace>
@@ -117,10 +121,10 @@
                      <origPlace> 
                         <country key="place_7002445">English</country> (added drawings)<!--ORIGINAL: French, Tours, English--></origPlace>
                   </origin>
-                  <provenance>Corrections and additions in English hands, 9th and 11th centuries.</provenance>
-                  <provenance notAfter="1547" notBefore="1491">Royal binding for <persName role="formerOwner" key="person_172419710">Henry VIII</persName>.</provenance>
-                  <provenance notBefore="1532" notAfter="1604"><persName role="formerOwner" key="person_76469410">Charles Howard, earl of Nottigham</persName> (d. 1624): possibly confiscated by his father, <persName role="formerOwner" key="person_28246381">William Howard (d. 1573)</persName>, from <persName role="formerOwner" key="person_224758718">Thomas Copley (1532-84)</persName> of Gatton, Surrey, and perhaps obtained by Copley from the royal library at Nonsuch (Carley in <title>Books and Collectors 1200-1700</title> (1997)).</provenance>
-                  <acquisition when="1604">Presented by him in 1604.</acquisition>
+                  <provenance resp="#PA">Corrections and additions in English hands, 9th and 11th centuries.</provenance>
+                  <provenance notAfter="1547" notBefore="1491" resp="#PA">Royal binding for <persName role="formerOwner" key="person_172419710">Henry VIII</persName>.</provenance>
+                  <provenance notBefore="1532" notAfter="1604" resp="#SC #MLH"><persName role="formerOwner" key="person_76469410">Charles Howard, earl of Nottigham</persName> (d. 1624): possibly confiscated by his father, <persName role="formerOwner" key="person_28246381">William Howard (d. 1573)</persName>, from <persName role="formerOwner" key="person_224758718">Thomas Copley (1532-84)</persName> of Gatton, Surrey, and perhaps obtained by Copley from the royal library at Nonsuch (Carley in <title>Books and Collectors 1200-1700</title> (1997)).</provenance>
+                  <acquisition when="1604" resp="#SC">Presented by him in 1604.</acquisition>
                </history>
                <additional>
                   <adminInfo>
@@ -141,7 +145,9 @@
          </sourceDesc>
       </fileDesc>       
       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
+      <revisionDesc>     
+         <change when="2018-07-27" who="#MLH">Revised to incorporate information from van Dijk and additional information frmo SC and P&amp;A.</change>
+         <change when="2017-07-01">First online publication of summary description.</change>
 
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
