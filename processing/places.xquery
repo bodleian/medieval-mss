@@ -138,6 +138,7 @@ declare variable $allinstances :=
                 for $relatedid in distinct-values($relatedids)
                     let $url := concat("/catalog/", $relatedid)
                     let $linktext := ($authorityentries[@xml:id = $relatedid]/(tei:placeName|tei:orgName)[@type = 'display'][1])[1]
+                    order by $linktext
                     return
                     if (exists($linktext) and $allinstances[key = $relatedid]) then
                         let $link := concat($url, "|", normalize-space($linktext/string()))

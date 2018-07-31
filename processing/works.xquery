@@ -120,6 +120,7 @@ declare variable $allinstances :=
                 for $relatedid in distinct-values($relatedids)
                     let $url := concat("/catalog/", $relatedid)
                     let $linktext := ($authorityentries[@xml:id = $relatedid]/tei:title[@type = 'uniform'][1])[1]
+                    order by $linktext
                     return
                     if (exists($linktext) and $allinstances[key = $relatedid]) then
                         let $link := concat($url, "|", normalize-space($linktext/string()))
@@ -138,7 +139,7 @@ declare variable $allinstances :=
                 for $authorid in distinct-values(($instances/author/text(), $work/tei:author[not(@role)]/@key/data()))
                     let $url := concat("/catalog/", $authorid)
                     let $linktext := ($personauthority[@xml:id = $authorid]/tei:persName[@type = 'display'][1])[1]
-                    order by $authorid
+                    order by $linktext
                     return
                     if (exists($linktext)) then
                         let $link := concat($url, "|", normalize-space($linktext/string()))
