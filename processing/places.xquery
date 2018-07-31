@@ -42,6 +42,14 @@ declare variable $allinstances :=
     comment{concat(' Indexing started at ', current-dateTime(), ' using authority file at ', substring-after(base-uri($authorityentries[1]), 'file:'), ' ')}
 }
 {
+    (: Log instances with key attributes not in the authority file :)
+    for $key in distinct-values($allinstances/key)
+        return if (not(some $entryid in $authorityentries/@xml:id/data() satisfies $entryid eq $key)) then
+            bod:logging('warn', 'Key attribute not found in authority file: will create broken link', ($key, $allinstances[key = $key]/name))
+        else
+            ()
+}
+{
     (: Loop thru each place or organization entry in the authority file :)
     for $placeororg in $authorityentries
     
@@ -161,28 +169,18 @@ declare variable $allinstances :=
                 }
             </doc>
         else
-            bod:logging('info', 'Skipping authority file entry not referenced in any manuscripts', ($id, $name))
+            bod:logging('info', 'Skipping unused authority file entry', ($id, $name))
 }
-
-{
-    (: Log instances with key attributes not in the authority file :)
-    for $key in distinct-values($allinstances/key)
-        return if (not(some $entryid in $authorityentries/@xml:id/data() satisfies $entryid eq $key)) then
-            bod:logging('warn', 'Key attribute in manuscripts not found in authority file: will create broken link', ($key, $allinstances[key = $key]/name))
-        else
-            ()
-}
-
 {
     (: Log instances without key attributes :)
     (
     for $instancename in distinct-values($allinstances[@of='place' and not(key)]/name)
         order by $instancename
-        return bod:logging('info', 'Place name in manuscripts without key attribute', $instancename)
+        return bod:logging('info', 'Place name without key attribute', $instancename)
     ,
     for $instancename in distinct-values($allinstances[@of='org' and not(key)]/name)
         order by $instancename
-        return bod:logging('info', 'Organization name in manuscripts without key attribute', $instancename)
+        return bod:logging('info', 'Organization name without key attribute', $instancename)
     )
 }
 </add>

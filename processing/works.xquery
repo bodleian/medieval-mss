@@ -47,6 +47,14 @@ declare variable $allinstances :=
     comment{concat(' Indexing started at ', current-dateTime(), ' using authority file at ', substring-after(base-uri($authorityentries[1]), 'file:'), ' ')}
 }
 {
+    (: Log instances with key attributes not in the authority file :)
+    for $key in distinct-values($allinstances/key)
+        return if (not(some $entryid in $authorityentries/@xml:id/data() satisfies $entryid eq $key)) then
+            bod:logging('warn', 'Key attribute not found in authority file: will create broken link', ($key, $allinstances[key = $key]/title))
+        else
+            ()
+}
+{
     (: Loop thru each entry in the authority file :)
     for $work in $authorityentries
 
@@ -157,23 +165,13 @@ declare variable $allinstances :=
             </doc>
         else
             (
-            bod:logging('info', 'Skipping authority file entry not referenced in any manuscripts', ($id, $title))
+            bod:logging('info', 'Skipping unused authority file entry', ($id, $title))
             )
 }
-
-{
-    (: Log instances with key attributes not in the authority file :)
-    for $key in distinct-values($allinstances/key)
-        return if (not(some $entryid in $authorityentries/@xml:id/data() satisfies $entryid eq $key)) then
-            bod:logging('warn', 'Key attribute in manuscripts not found in authority file: will create broken link', ($key, $allinstances[key = $key]/title))
-        else
-            ()
-}
-
 {
     (: Log instances without key attributes :)
     for $instancetitle in distinct-values($allinstances[not(key) and child::workid]/title)
         order by $instancetitle
-        return bod:logging('info', 'Work title in manuscripts without key attribute', $instancetitle)
+        return bod:logging('info', 'Work title without key attribute', $instancetitle)
 }
 </add>
