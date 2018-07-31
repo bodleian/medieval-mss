@@ -137,7 +137,7 @@ declare variable $allinstances :=
                         bod:logging('info', 'Cannot create link from author to work', ($id, $workid))
                 }
                 {
-                for $shelfmark in distinct-values($instances/shelfmark/text())
+                for $shelfmark in bod:shelfmarkVariants(distinct-values($instances/shelfmark/text()))
                     order by $shelfmark
                     return
                     <field name="shelfmarks">{ $shelfmark }</field>
