@@ -101,6 +101,6 @@ if [ ! "$5" == "noindex" ]; then
         fi
     fi
 else
-    echo "Sending of $3 records to Solr skipped in $5 mode."
+    echo "Processing $3 records finished. Sending to Solr skipped in $5 mode."
     exit 0;
 fi
