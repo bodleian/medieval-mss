@@ -6,7 +6,8 @@ declare option saxon:output "indent=yes";
 declare variable $authorityentries := doc("../persons.xml")/tei:TEI/tei:text/tei:body/tei:listPerson/tei:person[@xml:id];
 
 (: Read works authority file to be able to link from authors to their works :)
-declare variable $workauthority := doc("../works.xml")/tei:TEI/tei:text/tei:body/tei:listBibl/tei:bibl[@xml:id];
+declare variable $worksauthority := doc("../works.xml")/tei:TEI/tei:text/tei:body/tei:listBibl/tei:bibl[@xml:id];
+declare variable $authorsinworksauthority := true();
 
 (: Find instances in manuscript description files, building in-memory data structure, to avoid having to search across all files for each authority file entry :)
 declare variable $allinstances :=
@@ -37,7 +38,7 @@ declare variable $allinstances :=
             }</link>
             { for $role in $roles return <role>{ $role }</role> }
             {
-            if (some $role in $roles satisfies $role eq 'author' and not($instance/parent::tei:bibl)) then 
+            if (some $role in $roles satisfies $role eq 'author' and not($authorsinworksauthority) and not($instance/parent::tei:bibl)) then 
                 for $workid in distinct-values($instance/ancestor::tei:msItem[1]/tei:title/@key/tokenize(data(), ' '))
                     return <work>{ $workid }</work> 
             else
@@ -73,6 +74,7 @@ declare variable $allinstances :=
         (: Get info in all the instances in the manuscript description files :)
         let $instances := $allinstances[key = $id]
         let $roles := for $role in distinct-values($instances/role/text()) return bod:personRoleLookup($role)
+        let $isauthor := some $role in $instances/role/text() satisfies $role eq 'author'
 
         (: Output a Solr doc element :)
         return if (count($instances) gt 0) then
@@ -137,18 +139,35 @@ declare variable $allinstances :=
                         bod:logging('info', 'Cannot create see-also link', ($id, $relatedid))
                 }
                 {
-                for $workid in distinct-values(($instances/work/text(), $workauthority[tei:author[not(@role)]/@key = $id]/@xml:id))
-                    let $url := concat("/catalog/", $workid)
-                    let $linktext := ($workauthority[@xml:id = $workid]/tei:title[@type = 'uniform'][1])[1]
-                    order by $linktext
-                    return
-                    if (exists($linktext)) then
-                        let $link := concat($url, "|", normalize-space($linktext/string()))
                 (: Links to works by this person (if they're an author) :)
+                if ($isauthor) then 
+                    let $workids :=
+                        if ($authorsinworksauthority)
+                            then distinct-values($worksauthority[tei:author[not(@role='translator')]/@key = $id]/@xml:id)
+                            else distinct-values(($instances/work/text(), $worksauthority[tei:author[not(@role)]/@key = $id]/@xml:id))
+                    return 
+                    (
+                    for $workid in $workids
+                        let $url := concat("/catalog/", $workid)
+                        let $linktext := ($worksauthority[@xml:id = $workid]/tei:title[@type = 'uniform'][1])[1]
+                        order by $linktext
                         return
-                        <field name="link_works_smni">{ $link }</field>
+                        if (exists($linktext)) then
+                            let $link := concat($url, "|", normalize-space($linktext/string()))
+                            return
+                            <field name="link_works_smni">{ $link }</field>
+                        else
+                            bod:logging('info', 'Cannot create link from author to work', ($id, $workid))
+                    ,
+                    if ($authorsinworksauthority) then
+                        for $worknotinauthority in $instances/work[not(text() = $workids)]/text()
+                            order by $worknotinauthority
+                            return <field name="foobar">{ $worknotinauthority }</field>
                     else
-                        bod:logging('info', 'Cannot create link from author to work', ($id, $workid))
+                        ()
+                    )
+                else
+                    ()
                 }
                 {
                 (: Shelfmarks (indexed in special non-tokenized field) :)

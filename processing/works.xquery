@@ -4,6 +4,7 @@ declare option saxon:output "indent=yes";
 
 (: Read authority file :)
 declare variable $authorityentries := doc("../works.xml")/tei:TEI/tei:text/tei:body/tei:listBibl/tei:bibl[@xml:id];
+declare variable $authorsinworksauthority := true();
 
 (: Read persons authority file to be able to link from works to 
    their authors (not necessary if the works authority has authors in it) :)
@@ -37,8 +38,9 @@ declare variable $allinstances :=
                     )
             }</link>
             {
-            for $authorid in ($instance/ancestor::tei:msItem[tei:author][1]/tei:author[@key], $instance/parent::*/(tei:author|tei:persName[@role='author'])/@key/data())
-                return <author>{ $authorid }</author>
+            if ($authorsinworksauthority) then () else 
+                for $authorid in ($instance/ancestor::tei:msItem[tei:author][1]/tei:author[@key], $instance/parent::*/(tei:author|tei:persName[@role='author'])/@key/data())
+                    return <author>{ $authorid }</author>
             }
             { for $workid in $instance/parent::tei:msItem/@xml:id return <workid>{ $workid }</workid> }
             <shelfmark>{ $shelfmark }</shelfmark>
@@ -146,8 +148,12 @@ declare variable $allinstances :=
                         bod:logging('info', 'Cannot create see-also link', ($id, $relatedid))
                 }
                 {
-                for $authorid in distinct-values(($instances/author/text(), $work/tei:author[not(@role)]/@key/data()))
                 (: Links to the author(s) of the work :)
+                let $authorids := 
+                    if ($authorsinworksauthority)
+                        then distinct-values($work/tei:author[not(@role)]/@key/data())
+                        else distinct-values(($instances/author/text(), $work/tei:author[not(@role)]/@key/data()))
+                for $authorid in $authorids
                     let $url := concat("/catalog/", $authorid)
                     let $linktext := ($personauthority[@xml:id = $authorid]/tei:persName[@type = 'display'][1])[1]
                     order by $linktext
