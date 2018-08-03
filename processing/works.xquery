@@ -146,12 +146,6 @@ declare variable $allinstances :=
                         bod:logging('info', 'Cannot create see-also link', ($id, $relatedid))
                 }
                 {
-                for $shelfmark in bod:shelfmarkVariants(distinct-values($instances/shelfmark/text()))
-                    order by $shelfmark
-                    return
-                    <field name="shelfmarks">{ $shelfmark }</field>
-                }
-                {
                 for $authorid in distinct-values(($instances/author/text(), $work/tei:author[not(@role)]/@key/data()))
                 (: Links to the author(s) of the work :)
                     let $url := concat("/catalog/", $authorid)
@@ -167,6 +161,12 @@ declare variable $allinstances :=
                 }
                 {
                 (: Shelfmarks (indexed in special non-tokenized field) :)
+                for $shelfmark in bod:shelfmarkVariants(distinct-values($instances/shelfmark/text()))
+                    order by $shelfmark
+                    return
+                    <field name="shelfmarks">{ $shelfmark }</field>
+                }
+                {
                 (: Links to manuscripts containing the work :)
                 for $link in distinct-values($instances/link/text())
                     order by tokenize($link, '\|')[2]
