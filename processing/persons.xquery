@@ -83,11 +83,13 @@ declare variable $allinstances :=
                 <field name="title">{ $name }</field>
                 <field name="alpha_title">{  bod:alphabetize($name) }</field>
                 {
+                (: Roles (e.g. author, translator, scribe, former owner, etc) :)
                 for $role in $roles
                     order by $role
                     return <field name="roles_sm">{ $role }</field>
                 }
                 {
+                (: Alternative names :)
                 for $variant in distinct-values($variants)
                     order by $variant
                     return <field name="pp_variant_sm">{ $variant }</field>
@@ -102,16 +104,19 @@ declare variable $allinstances :=
                         ()
                 }
                 {
+                (: Links to external authorities and other web sites :)
                 for $extref in $extrefs
                     order by $extref
                     return <field name="link_external_smni">{ $extref }</field>
                 }
                 {
+                (: Bibliographic references about the person :)
                 for $bibref in $bibrefs
                     order by $bibref
                     return <field name="bibref_smni">{ $bibref }</field>
                 }
                 {
+                (: Notes about the person :)
                 for $note in $notes
                     order by $note
                     return <field name="note_smni">{ $note }</field>
@@ -139,18 +144,21 @@ declare variable $allinstances :=
                     return
                     if (exists($linktext)) then
                         let $link := concat($url, "|", normalize-space($linktext/string()))
+                (: Links to works by this person (if they're an author) :)
                         return
                         <field name="link_works_smni">{ $link }</field>
                     else
                         bod:logging('info', 'Cannot create link from author to work', ($id, $workid))
                 }
                 {
+                (: Shelfmarks (indexed in special non-tokenized field) :)
                 for $shelfmark in bod:shelfmarkVariants(distinct-values($instances/shelfmark/text()))
                     order by $shelfmark
                     return
                     <field name="shelfmarks">{ $shelfmark }</field>
                 }
                 {
+                (: Links to manuscripts containing mentions of the person :)
                 for $link in distinct-values($instances/link/text())
                     order by tokenize($link, '\|')[2]
                     return

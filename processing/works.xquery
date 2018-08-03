@@ -5,10 +5,12 @@ declare option saxon:output "indent=yes";
 (: Read authority file :)
 declare variable $authorityentries := doc("../works.xml")/tei:TEI/tei:text/tei:body/tei:listBibl/tei:bibl[@xml:id];
 
-(: Read persons authority file to be able to link from works to their authors :)
+(: Read persons authority file to be able to link from works to 
+   their authors (not necessary if the works authority has authors in it) :)
 declare variable $personauthority := doc("../persons.xml")/tei:TEI/tei:text/tei:body/tei:listPerson/tei:person[@xml:id];
 
-(: Find instances in manuscript description files, building in-memory data structure, to avoid having to search across all files for each authority file entry :)
+(: Find instances in manuscript description files, building in-memory data 
+   structure, to avoid having to search across all files for each authority file entry :)
 declare variable $allinstances :=
     for $instance in collection('../collections?select=*.xml;recurse=yes')//tei:title
         let $roottei := $instance/ancestor::tei:TEI
@@ -87,6 +89,7 @@ declare variable $allinstances :=
                     }
                 </field>
                 {
+                (: Alternative titles :)
                 for $variant in distinct-values($variants)
                     order by $variant
                     return <field name="wk_variant_sm">{ $variant }</field>
@@ -101,24 +104,29 @@ declare variable $allinstances :=
                         ()
                 }
                 {
+                (: Links to external authorities and other web sites :)
                 for $extref in $extrefs
                     order by $extref
                     return <field name="link_external_smni">{ $extref }</field>
                 }
                 {
+                (: Bibliographic references about the work :)
                 for $bibref in $bibrefs
                     order by $bibref
                     return <field name="bibref_smni">{ $bibref }</field>
                 }
                 {
+                (: Notes about the work :)
                 for $note in $notes
                     order by $note
                     return <field name="note_smni">{ $note }</field>
                 }
                 {
+                (: Languages (in the authority file - so far only Medieval does this) :)
                 bod:languages($work/tei:textLang, 'lang_sm')
                 }
                 {
+                (: Subjects (Medieval only) :)
                 for $subject in $subjects
                     return <field name="wk_subjects_sm">{ normalize-space($subject) }</field>
                 }
@@ -145,6 +153,7 @@ declare variable $allinstances :=
                 }
                 {
                 for $authorid in distinct-values(($instances/author/text(), $work/tei:author[not(@role)]/@key/data()))
+                (: Links to the author(s) of the work :)
                     let $url := concat("/catalog/", $authorid)
                     let $linktext := ($personauthority[@xml:id = $authorid]/tei:persName[@type = 'display'][1])[1]
                     order by $linktext
@@ -157,6 +166,8 @@ declare variable $allinstances :=
                         bod:logging('info', 'Cannot create link from work to author', ($id, $authorid))
                 }
                 {
+                (: Shelfmarks (indexed in special non-tokenized field) :)
+                (: Links to manuscripts containing the work :)
                 for $link in distinct-values($instances/link/text())
                     order by tokenize($link, '\|')[2]
                     return

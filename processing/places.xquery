@@ -94,11 +94,13 @@ declare variable $allinstances :=
                     ()
                 }
                 {
+                (: Roles (typically for organizations such as monasteries that were former owners) :)
                 for $role in $roles
                     order by $role
                     return <field name="roles_sm">{ $role }</field>
                 }
                 {
+                (: Alternative names :)
                 for $variant in distinct-values($variants)
                     order by $variant
                     return <field name="pl_variant_sm">{ $variant }</field>
@@ -113,6 +115,7 @@ declare variable $allinstances :=
                         ()
                 }
                 {
+                (: Co-ordinates (displayed as links to the same page Wikipedia uses to offer choice of mapping web sites :)
                 for $geoloc in $geolocs
                     let $coords := tokenize(translate($geoloc/text(), ' ', ''), ',')
                     let $lat := number($coords[1])
@@ -126,16 +129,19 @@ declare variable $allinstances :=
                         ()
                 }
                 {
+                (: Links to external authorities and other web sites :)
                 for $extref in $extrefs
                     order by $extref
                     return <field name="link_external_smni">{ $extref }</field>
                 }
                 {
+                (: Bibliographic references about the place or organization :)
                 for $bibref in $bibrefs
                     order by $bibref
                     return <field name="bibref_smni">{ $bibref }</field>
                 }
                 {
+                (: Notes about the place or organization :)
                 for $note in $notes
                     order by $note
                     return <field name="note_smni">{ $note }</field>
@@ -156,12 +162,14 @@ declare variable $allinstances :=
                         bod:logging('info', 'Cannot create see-also link', ($id, $relatedid))
                 }
                 {
+                (: Shelfmarks (indexed in special non-tokenized field) :)
                 for $shelfmark in bod:shelfmarkVariants(distinct-values($instances/shelfmark/text()))
                     order by $shelfmark
                     return
                     <field name="shelfmarks">{ $shelfmark }</field>
                 }
                 {
+                (: Links to manuscripts containing mentions of the place or organization :)
                 for $link in distinct-values($instances/link/text())
                     order by tokenize($link, '\|')[2]
                     return
