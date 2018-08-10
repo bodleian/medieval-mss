@@ -38,11 +38,15 @@ declare variable $allinstances :=
             }</link>
             { for $role in $roles return <role>{ $role }</role> }
             {
-            if (some $role in $roles satisfies $role eq 'author' and not($authorsinworksauthority) and not($instance/parent::tei:bibl)) then 
-                for $workid in distinct-values($instance/ancestor::tei:msItem[1]/tei:title/@key/tokenize(data(), ' '))
-                    return <work>{ $workid }</work> 
-            else
-                () 
+            if ($authorsinworksauthority) then () else
+                if (some $role in $roles satisfies $role = ('author','aut') and not($instance/parent::tei:bibl)) then 
+                    for $workid in distinct-values($instance/ancestor::tei:msItem[tei:title/@key][1]/tei:title/@key/tokenize(data(), ' '))
+                        return <authored>{ $workid }</authored>
+                else if (some $role in $roles satisfies $role = ('translator','trl') and not($instance/parent::tei:bibl)) then 
+                    for $workid in distinct-values($instance/ancestor::tei:msItem[tei:title/@key][1]/tei:title/@key/tokenize(data(), ' '))
+                        return <translated>{ $workid }</translated>
+                else
+                    ()
             }
             <shelfmark>{ $shelfmark }</shelfmark>
         </instance>;
@@ -74,7 +78,8 @@ declare variable $allinstances :=
         (: Get info in all the instances in the manuscript description files :)
         let $instances := $allinstances[key = $id]
         let $roles := for $role in distinct-values($instances/role/text()) return bod:personRoleLookup($role)
-        let $isauthor := some $role in $instances/role/text() satisfies $role eq 'author'
+        let $isauthor := some $role in $instances/role/text() satisfies $role = ('author','aut')
+        let $istranslator := some $role in $instances/role/text() satisfies $role = ('translator','trl')
 
         (: Output a Solr doc element :)
         return if (count($instances) gt 0) then
@@ -142,11 +147,9 @@ declare variable $allinstances :=
                 (: Links to works by this person (if they're an author) :)
                 if ($isauthor) then 
                     let $workids :=
-                        if ($authorsinworksauthority)
-                            then distinct-values($worksauthority[tei:author[not(@role='translator')]/@key = $id]/@xml:id)
-                            else distinct-values(($instances/work/text(), $worksauthority[tei:author[not(@role)]/@key = $id]/@xml:id))
+                        if ($authorsinworksauthority) then distinct-values($worksauthority[tei:author[not(@role)]/@key = $id]/@xml:id)
+                        else distinct-values(($instances/authored/text(), $worksauthority[tei:author[not(@role)]/@key = $id]/@xml:id))
                     return 
-                    (
                     for $workid in $workids
                         let $url := concat("/catalog/", $workid)
                         let $linktext := ($worksauthority[@xml:id = $workid]/tei:title[@type = 'uniform'][1])[1]
@@ -158,14 +161,28 @@ declare variable $allinstances :=
                             <field name="link_works_smni">{ $link }</field>
                         else
                             bod:logging('info', 'Cannot create link from author to work', ($id, $workid))
-                    ,
-                    if ($authorsinworksauthority) then
-                        for $worknotinauthority in $instances/work[not(text() = $workids)]/text()
-                            order by $worknotinauthority
-                            return <field name="foobar">{ $worknotinauthority }</field>
-                    else
-                        ()
-                    )
+                else
+                    ()
+                }
+                {
+                (: Links to works translated by this person (if any) :)
+                if ($istranslator) then 
+                    let $workids :=
+                        if ($authorsinworksauthority)
+                            then distinct-values($worksauthority[tei:author[@role='translator']/@key = $id]/@xml:id)
+                            else distinct-values(($instances/translated/text(), $worksauthority[tei:author[@role='translator']/@key = $id]/@xml:id))
+                    return 
+                    for $workid in $workids
+                        let $url := concat("/catalog/", $workid)
+                        let $linktext := ($worksauthority[@xml:id = $workid]/tei:title[@type = 'uniform'][1])[1]
+                        order by $linktext
+                        return
+                        if (exists($linktext)) then
+                            let $link := concat($url, "|", normalize-space($linktext/string()))
+                            return
+                            <field name="link_translations_smni">{ $link }</field>
+                        else
+                            bod:logging('info', 'Cannot create link from translator to work', ($id, $workid))
                 else
                     ()
                 }

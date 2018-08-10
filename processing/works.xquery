@@ -39,10 +39,13 @@ declare variable $allinstances :=
             }</link>
             {
             if ($authorsinworksauthority) then () else 
-                for $authorid in ($instance/ancestor::tei:msItem[tei:author][1]/tei:author[@key], $instance/parent::*/(tei:author|tei:persName[@role='author'])/@key/data())
+                for $authorid in ($instance/ancestor::tei:msItem[tei:author][1]/tei:author/@key/data(), $instance/parent::*/(tei:author|tei:persName[@role=('author','aut')])/@key/data())
                     return <author>{ $authorid }</author>
+                ,
+                for $translatorid in $instance/parent::*/tei:persName[@role=('translator','trl')]/@key/data()
+                    return <translator>{ $translatorid }</translator>
             }
-            { for $workid in $instance/parent::tei:msItem/@xml:id return <workid>{ $workid }</workid> }
+            { for $instanceid in $instance/parent::tei:msItem/@xml:id return <instanceid>{ $instanceid }</instanceid> }
             <shelfmark>{ $shelfmark }</shelfmark>
         </instance>;
 
@@ -148,11 +151,10 @@ declare variable $allinstances :=
                         bod:logging('info', 'Cannot create see-also link', ($id, $relatedid))
                 }
                 {
-                (: Links to the author(s) of the work :)
+                (: Links to the authors of the work :)
                 let $authorids := 
-                    if ($authorsinworksauthority)
-                        then distinct-values($work/tei:author[not(@role)]/@key/data())
-                        else distinct-values(($instances/author/text(), $work/tei:author[not(@role)]/@key/data()))
+                    if ($authorsinworksauthority) then distinct-values($work/tei:author[not(@role)]/@key/data())
+                    else distinct-values(($instances/author/text(), $work/tei:author[not(@role)]/@key/data()))
                 for $authorid in $authorids
                     let $url := concat("/catalog/", $authorid)
                     let $linktext := ($personauthority[@xml:id = $authorid]/tei:persName[@type = 'display'][1])[1]
@@ -164,6 +166,23 @@ declare variable $allinstances :=
                         <field name="link_author_smni">{ $link }</field>
                     else
                         bod:logging('info', 'Cannot create link from work to author', ($id, $authorid))
+                }
+                {
+                (: Links to the translators of the work :)
+                let $translatorids := 
+                    if ($authorsinworksauthority) then distinct-values($work/tei:author[@role=('translator','trl')]/@key/data())
+                    else distinct-values(($instances/translator/text(), $work/tei:author[@role=('translator','trl')]/@key/data()))
+                for $translatorid in $translatorids
+                    let $url := concat("/catalog/", $translatorid)
+                    let $linktext := ($personauthority[@xml:id = $translatorid]/tei:persName[@type = 'display'][1])[1]
+                    order by $linktext
+                    return
+                    if (exists($linktext)) then
+                        let $link := concat($url, "|", normalize-space($linktext/string()))
+                        return
+                        <field name="link_translator_smni">{ $link }</field>
+                    else
+                        bod:logging('info', 'Cannot create link from work to translator', ($id, $translatorid))
                 }
                 {
                 (: Shelfmarks (indexed in special non-tokenized field) :)
@@ -187,7 +206,7 @@ declare variable $allinstances :=
 }
 {
     (: Log instances without key attributes :)
-    for $instancetitle in distinct-values($allinstances[not(key) and child::workid]/title)
+    for $instancetitle in distinct-values($allinstances[not(key) and instanceid]/title)
         order by $instancetitle
         return bod:logging('info', 'Work title without key attribute', $instancetitle)
 }
