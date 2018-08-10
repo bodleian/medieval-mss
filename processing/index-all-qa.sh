@@ -45,6 +45,11 @@ if [ "$1" == "force" ] || [ "$1" == "noindex" ]; then
 
     echo "Rebuilding index files two at a time..."
     printf "manuscript\nwork\nperson\nplace" | xargs -I {} -P 2 ./generate-solr-document.sh "{}s.xquery" "{}s_index.xml" {} $SERVER $1
+    if [ $? -gt 0 ]; then
+        echo
+        echo "WARNING: One or more index files was not completed. The web site will not be fully updated. Check the log files in the solr subfolder."
+        exit 1;
+    fi
 
 else
 
