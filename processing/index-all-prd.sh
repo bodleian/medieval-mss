@@ -22,7 +22,7 @@ if [ "$1" == "reuse" ]; then
             read -p "Are you sure you want to send these to the production Solr server?? [Yes|No] " answer
             case $answer in
                 [Yy]|YES|Yes|yes ) break;;
-                [Nn]|NO|No|no ) echo "Abandoning"; exit 0;;
+                [Nn]|NO|No|no ) echo "Abandoning re-indexing. The production server has not been updated."; exit 0;;
                 * ) echo;;
             esac
         done
