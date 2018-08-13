@@ -5,17 +5,22 @@
          <titleStmt>
             <title>MS. Rawl. poet. 225</title>
             <title type="collection">MSS. Rawl. poet. (Rawlinson poetry) </title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1895">Cataloguer</resp>
+               <persName>F. Madan</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2018">Encoding and markup</resp>
+               <resp when="2018">Updates and corrections</resp>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -51,13 +56,21 @@
                </msIdentifier>
                <msContents>
                   <msItem xml:id="MS_Rawl_poet_225-item1" n="1" class="#vitae_sanctorum">
-                     <title key="work_14671">South English Legendary
+                     <title key="work_14671" resp="#MLH">South English Legendary
               </title>
-                     <note>(imperfect)</note>
-                     <textLang mainLang="en">English</textLang>
+                     <note resp="#MLH">Imperfect. Also including other saints' lives, some versions unique to this MS.: see M. Görlach, <title>Textual tradition of the South English Legendary</title>, 109-111, for detailed description and attempted reconstruction.</note>
+                     <msItem resp="#VD">
+                        <note>After the Life of Gregory (IMEV 209) on fols. 105br-114v follows (fol. 115v):</note>
+                        <title type="desc">Votive mass for the triennale of St Gregory</title>
+                        <note>The collect Deus qui es
+                           summa nostre redemptionis, secr. Omnipotens et misericors deus .... postc. Deus
+                           cuius misericordie non est numerus … Introduction in English verse, possibly
+                           belonging to the preceding Life of St. Gregory</note>
+                     </msItem>
+                     <textLang mainLang="en" otherLangs="la">English (with a little Latin, fol. 115v)</textLang>
                   </msItem>
                </msContents>
-               <physDesc>
+               <physDesc resp="#SC">
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
@@ -65,8 +78,8 @@
                   </objectDesc>
                </physDesc>
                <history>
-                  <origin>
-                     <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
+                  <origin resp="#MLH">
+                     <origDate calendar="Gregorian" notAfter="1500" notBefore="1450">15th century, second half (Görlach)</origDate>
                      <origPlace>
                         <country key="place_7002445">English</country>
                      </origPlace>
@@ -75,7 +88,7 @@
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
+                        <source>Description adapted (2018) from the Summary Catalogue and (fol. 115v) from S. J. P. Van Dijk, <title>Handlist of the Latin Liturgical Manuscripts in the Bodleian Library Oxford</title> (typescript, 1957) Vol. 1: Mass Books, p. 207. 
                             
                             <listBibl>
                               <bibl type="SC" facs="aas0349.gif">Summary Catalogue, Vol. 3, p.  334</bibl>
@@ -87,7 +100,9 @@
             </msDesc>
          </sourceDesc>
       </fileDesc>       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
+      <revisionDesc>         
+         <change when="2018-07-24" who="#MLH">Description revised to include information from van Dijk and ref. to Görlach.</change>
+         <change when="2017-07-01">First online publication.</change>
 
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>

@@ -5,17 +5,21 @@
          <titleStmt>
             <title>MS. Canon. Bibl. Lat. 2</title>
             <title type="collection">MSS. Canon. Bibl. Lat. (Canonici Latin Biblical)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
+            <respStmt xml:id="Q">
+               <resp when="1854">Cataloguer</resp>
+               <persName>H. O. Coxe</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2018">Encoding and markup</resp>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -49,31 +53,83 @@
                      <idno type="SCN">18894</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <msContents resp="#Q">
                   <msItem xml:id="MS_Canon_Bibl_Lat_2-item1" n="1" class="#biblia">
                      <title rend="roman" key="work_13443">New Testament</title>
                      <textLang mainLang="la">Latin</textLang>
-                     <bibl type="bible">
-                        <title rend="roman">Bible, New Testament</title>
-                     </bibl>
+                     <msItem n="1">
+                        <locus>(fol. 3)</locus>
+                        <note>Gospels</note>
+                     </msItem>
+                     <msItem n="2">
+                        <locus>(fol. 79)</locus>
+                        <note>Apocalypse</note>
+                     </msItem>
+                     <msItem n="3">
+                        <locus>(fol. 88v)</locus>
+                        <note>Acts</note>
+                     </msItem>
+                     <msItem n="4">
+                        <locus>(fol. 108v)</locus>
+                        <note>Catholic Epistles</note>
+                     </msItem>
+                     <msItem n="5">
+                        <locus>(fol. 121v)</locus>
+                        <note>Epistles of Paul</note>
+                     </msItem>
+                  </msItem>
+                  <msItem n="6">
+                     <locus>(fol. 155)</locus>
+                     <title>Salomonis proverbiae</title>
+                  </msItem>
+                  <msItem n="7">
+                     <locus>(fol. 157)</locus>
+                     <author key="person_8914108">Ps.-Theotimus</author>
+                     <title key="work_4128">Life and Passion of St Margaret</title>
+                     <msItem>
+                        <note>Followed (fol. 162v) by four prayers for her mass, written by the same hand.</note>
+                     </msItem>
+                  </msItem>
+                  <msItem n="8">
+                     <locus>(fol. 163)</locus>
+                     <title type="desc">Office of the Cross</title>
+                     <note>Fragmentary.</note>
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent> iii + 163 (162) + i fol.<dimensions type="leaf" unit="mm">
+                           <height>225</height>
+                           <width>130</width>
+                        </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="1" writtenLines="32">Passion in 32 lines, written space  <dimensions type="written" unit="mm">
+                           <height>155</height>
+                           <width>85</width>
+                        </dimensions></layout>
+                     </layoutDesc>
                   </objectDesc>
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1300" notBefore="1200">13th century</origDate>
+                     <origPlace><country key="place_1000080">Italy</country></origPlace>
                   </origin>
+                  <provenance>  On the fly leaf (fol. 1) accounts of the year 1325 mentioning: Manfredus
+                     massarius vetus; Otholinus novus massarius; Orlanus sindicus fratalis; Martinus
+                     condam Michaelis veteris; ducatus Dacie imposite occasione palis ibi omnibus
+                     colectoribus deputatis; Martinus riconetus.</provenance>
                </history>
+               
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Quarto Catalogue (H. O. Coxe,  <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854) and supplementary sources. 
+                        <source>Description adapted (2018) from 
+                           S. J. P. Van Dijk, <title>Handlist of the Latin Liturgical Manuscripts in the Bodleian Library Oxford</title> (typescript, 1957) Vol. 1: Mass Books, p. 206, and the Quarto Catalogue (H. O. Coxe,  <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854). 
                             
                             
                             <listBibl>
@@ -87,7 +143,9 @@
             </msDesc>
          </sourceDesc>
       </fileDesc>       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
+      <revisionDesc>         
+         <change when="2018-07-24" who="#MLH">Description revised to include information from van Dijk and all information in Quarto.</change>
+         <change when="2017-07-01">First online publication.</change>
 
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>

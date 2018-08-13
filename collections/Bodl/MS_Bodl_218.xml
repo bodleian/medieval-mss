@@ -5,9 +5,24 @@
          <titleStmt>
             <title>MS. Bodl. 218</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2018">Encoding and markup</resp>
+               <resp when="2018">Catalogue updates and corrections</resp>
+               <persName>Matthew Holford</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -49,45 +64,72 @@
                      <idno type="SCN">2054</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <msContents resp="#SC">
                   <msItem xml:id="MS_Bodl_218-item1" n="1">
                      <author key="person_61539765">
-                        
                         Bede
-                     
                      </author>
                      <title key="work_952">Commentary on Luke</title>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  <msItem xml:id="MS_Bodl_218-item2" n="2" resp="#VD">
+                     <locus>(fol. 165v)</locus>
+                     <title type="desc">Preface for the Mass</title>
+                     <note>Added in southern (?) England in the 11th century (?): preface for the mass of the Assumption (Qui mortis
+                        imperium sua gloriosa nece); troped Ite missa est (Ite perhennis concives
+                        patriae); responsory in honour of St. Scholastica (Virgineo honore es ornata);
+                        Ite missa est and Benedicamus. All with musical notation, except for the
+                        preface.</note>
+                  </msItem>
                </msContents>
-               <physDesc>
+               <physDesc resp="#VD">
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>
+                           <dimensions unit="mm" type="leaf">
+                              <height>325</height>
+                              <width>260</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote>Marginal drawings in pen and with a pencil (parly erased) added to a Tours MS. of
+                  <handDesc resp="#SC">
+                     <handNote>Carolingian minuscule, with insular corrections and additions.</handNote>
+                  </handDesc>
+                  <musicNotation>
+                     <p>Adiastematic and half diastematic Canterbury neums, fol. 165v</p>
+                  </musicNotation>
+                  <decoDesc resp="#PA">
+                     <decoNote>Marginal drawings in pen and with a pencil (parly erased) added c. 1000 to a Tours MS. of
                   9th century, beginning (P&amp;A iii. 32, pl. III).
                      </decoNote>
                   </decoDesc>
+                  <bindingDesc resp="#SC">
+                     <binding notAfter="1550" notBefore="1500">
+                        <p>Balck velvet with brass clasp-fittings (clasps and side-bosses gone); title label on parchment on the front cover.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
-                  <origin>
+                  <origin resp="#PA">
                      <origDate calendar="Gregorian" notAfter="0810" notBefore="0800">9th century, beginning (main ms.) </origDate>
-                     <origDate calendar="Gregorian" when="1000" cert="medium">c. 1000 (added drawings)</origDate>
+                     <origDate calendar="Gregorian" notAfter="1010" notBefore="0990">c. 1000 (added drawings)</origDate>
                      <origPlace>
                         <country key="place_1000070">French</country>, <settlement key="place_7008323">Tours</settlement>
                      </origPlace>
                      <origPlace> 
                         <country key="place_7002445">English</country> (added drawings)<!--ORIGINAL: French, Tours, English--></origPlace>
                   </origin>
+                  <provenance resp="#PA">Corrections and additions in English hands, 9th and 11th centuries.</provenance>
+                  <provenance notAfter="1547" notBefore="1491" resp="#PA">Royal binding for <persName role="formerOwner" key="person_172419710">Henry VIII</persName>.</provenance>
+                  <provenance notBefore="1532" notAfter="1604" resp="#SC #MLH"><persName role="formerOwner" key="person_76469410">Charles Howard, earl of Nottigham</persName> (d. 1624): possibly confiscated by his father, <persName role="formerOwner" key="person_28246381">William Howard (d. 1573)</persName>, from <persName role="formerOwner" key="person_224758718">Thomas Copley (1532-84)</persName> of Gatton, Surrey, and perhaps obtained by Copley from the royal library at Nonsuch (Carley in <title>Books and Collectors 1200-1700</title> (1997)).</provenance>
+                  <acquisition when="1604" resp="#SC">Presented by him in 1604.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
-                            
+                        <source>Description adapted (2018) from Pächt and Alexander, the Summary Catalogue, and (for fol. 165v) S. J. P. Van Dijk, <title>Handlist of the Latin Liturgical Manuscripts in the Bodleian Library Oxford</title> (typescript, 1957) Vol. 1: Mass Books, p. 210.
                             
                             <listBibl>
                               <bibl type="SC" facs="aap0207.gif">Summary Catalogue, vol. 2, part 1, p. 186</bibl>
@@ -95,12 +137,17 @@
                         </source>
                      </recordHist>
                   </adminInfo>
+                  <listBibl type="WRAPPER"><listBibl>
+                     <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, III (1973), no. 32</bibl>
+                  </listBibl></listBibl>
                </additional>
             </msDesc>
          </sourceDesc>
       </fileDesc>       
       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
+      <revisionDesc>     
+         <change when="2018-07-27" who="#MLH">Revised to incorporate information from van Dijk and additional information frmo SC and P&amp;A.</change>
+         <change when="2017-07-01">First online publication of summary description.</change>
 
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
