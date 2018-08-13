@@ -1,75 +1,46 @@
-import module namespace bod = "http://www.bodleian.ox.ac.uk/bdlss" at "https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc2solr.xquery";
+import module namespace bod = "http://www.bodleian.ox.ac.uk/bdlss" at "lib/msdesc2solr.xquery";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 declare option saxon:output "indent=yes";
 
-declare function local:origin($doc, $solrfield)
+declare variable $collection := collection('../collections/?select=*.xml;recurse=yes');
+declare variable $countryauthorities := doc('../places.xml')/tei:TEI/tei:text/tei:body/tei:listPlace/tei:place[@xml:id and @type='country'];
+
+declare function local:origin($keys as xs:string*, $solrfield as xs:string) as element()*
 {
     (: Lookup place keys, which are specific to medieval-mss :)
-    (: TODO: Replace this with lookup to places.xml authority file? :)
-    for $origin in distinct-values($doc/string(@key))
-        let $place := 
-        switch($origin)
-            case "place_7002445" return "England"
-            case "place_1000080" return "Italy"
-            case "place_7014986" return "Egypt (ancient)"
-            case "place_1000070" return "France"
-            case "place_7000084" return "Germany"
-            case "place_7024407" return "Byzantine Empire"
-            case "place_7024097" return "Flanders"
-            case "place_7016845" return "Netherlands"
-            case "place_1000095" return "Spain"
-            case "place_1000078" return "Ireland"
-            case "place_1006894" return "Cyprus"
-            case "place_1000062" return "Austria"
-            case "place_8697461" return "Greece"
-            case "place_7012056" return "Crete"
-            case "place_1000003" return "Europe"
-            case "place_7004540" return "Palestine"
-            case "place_7006366" return "Poland"
-            case "place_7011731" return "Switzerland"
-            case "place_1000077" return "Iceland"
-            case "place_7002443" return "Wales"
-            case "place_1000090" return "Portugal"
-            case "place_7002435" return "Russia"
-            case "place_7015451" return "Dalmatia"
-            case "place_7005560" return "Mexico"
-            case "place_7002444" return "Scotland"
-            case "place_7006470" return "Bohemia"
-            case "place_1000063" return "Belgium"
-            case "place_7006413" return "Bulgaria"
-            case "place_7030216" return "Catalonia"
-            case "place_7006278" return "Hungary"
-            case "place_7029439" return "Low Countries"
-            case "place_7003514" return "Luxemburg"
-            case "place_7009155" return "Moldavia"
-            case "place_7006669" return "Serbia"
-            case "place_1000097" return "Sweden"
-            case "place_1000140" return "Syria"
-            case "" return "[MISSING]"
-            default return normalize-space($origin)
-        return <field name="{ $solrfield }">{ $place }</field>
+    if (count($keys) gt 0) then 
+        let $countries := $countryauthorities[@xml:id = $keys]
+        return if (count($countries) gt 0) then
+            for $country in $countries
+                let $name := $country/tei:placeName[@type = 'index'][1]/text()
+                order by $name
+                return <field name="{ $solrfield }">{ $name }</field>
+        else
+            <field name="{ $solrfield }">[MISSING]</field>
+    else
+        ()
 };
 
-declare function local:buildSummary($x as document-node()) as xs:string
+declare function local:buildSummary($ms as document-node()) as xs:string
 {
     (: Retrieve various pieces of information, from which the summary will be constructed :)
-    let $head := normalize-space(string-join($x//tei:msDesc/tei:head//text(), ''))
-    let $authors := distinct-values($x//tei:msItem/tei:author/normalize-space())
+    let $head := normalize-space(string-join($ms//tei:msDesc/tei:head//text(), ''))
+    let $authors := distinct-values($ms//tei:msItem/tei:author/normalize-space())
     let $numauthors := count($authors)
-    let $worktitles := distinct-values(for $t in $x//tei:msItem/tei:title[1]/normalize-space() return if (ends-with($t, '.')) then substring($t, 1, string-length($t)-1) else $t)
-    let $datesoforigin := distinct-values($x//tei:origin//tei:origDate/normalize-space())
-    let $placesoforigin := distinct-values($x//tei:origin//tei:origPlace/normalize-space())
+    let $worktitles := distinct-values(for $t in $ms//tei:msItem/tei:title[1]/normalize-space() return if (ends-with($t, '.')) then substring($t, 1, string-length($t)-1) else $t)
+    let $datesoforigin := distinct-values($ms//tei:origin//tei:origDate/normalize-space())
+    let $placesoforigin := distinct-values($ms//tei:origin//tei:origPlace/normalize-space())
 
     (: The main part of the summary is the head element, or the summary, or a list of authors, or a list of titles, in that order of preference :)
     let $summary1 := 
         if ($head) then
             bod:shortenToNearestWord($head, 128)
-        else if ($x//tei:msPart) then
+        else if ($ms//tei:msPart) then
             'Composite manuscript'
-        else if ($x//tei:msContents/tei:summary) then
-            bod:shortenToNearestWord(normalize-space(string-join($x//tei:msContents/tei:summary//text(), '')), 128)
+        else if ($ms//tei:msContents/tei:summary) then
+            bod:shortenToNearestWord(normalize-space(string-join($ms//tei:msContents/tei:summary//text(), '')), 128)
         else if ($numauthors gt 0) then
-            if ($numauthors gt 2 or $x//tei:msItem[not(tei:author)]) then 
+            if ($numauthors gt 2 or $ms//tei:msItem[not(tei:author)]) then 
                 concat(string-join(subsequence($authors, 1, 2), ', '), ', etc.')
             else
                 string-join($authors, ', ')
@@ -78,7 +49,7 @@ declare function local:buildSummary($x as document-node()) as xs:string
                 concat(string-join(subsequence($worktitles, 1, 2), ', '), ', etc.')
             else
                 string-join($worktitles, ', ')
-        else if (count($x//tei:msItem) gt 1) then
+        else if (count($ms//tei:msItem) gt 1) then
             'Untitled works or fragments'
         else
             'Untitled work or fragment'
@@ -105,22 +76,25 @@ declare function local:buildSummary($x as document-node()) as xs:string
 
 <add>
 {
-    let $collection := collection('../collections/?select=*.xml;recurse=yes')
+    comment{concat(' Indexing started at ', current-dateTime(), ' using files in ', substring-before(substring-after(base-uri($collection[1]), 'file:'), 'collections/'), ' ')}
+}
+{
     let $msids := $collection/tei:TEI/@xml:id/data()
     return if (count($msids) ne count(distinct-values($msids))) then
         let $duplicateids := distinct-values(for $msid in $msids return if (count($msids[. eq $msid]) gt 1) then $msid else '')
         return bod:logging('error', 'There are multiple manuscripts with the same xml:id in their root TEI elements', $duplicateids)
+        
     else
-        for $x in $collection
-        
-            let $msid := $x//tei:TEI/@xml:id/string()
-            return 
+        for $ms in $collection
+            let $msid := $ms/tei:TEI/@xml:id/string()
+            order by $msid
+            return
             if (string-length($msid) ne 0) then
-            
-                let $subfolders := string-join(tokenize(substring-after(base-uri($x), 'collections/'), '/')[position() lt last()], '/')
+                let $mainshelfmark := ($ms/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:msDesc/tei:msIdentifier/tei:idno[@type='shelfmark'])[1]
+                let $allshelfmarks := $ms//tei:msIdentifier//tei:idno[(@type, parent::tei:altIdentifier/@type)=('shelfmark','part','former')]
+                let $subfolders := string-join(tokenize(substring-after(base-uri($ms), 'collections/'), '/')[position() lt last()], '/')
                 let $htmlfilename := concat($msid, '.html')
-                let $htmldoc := doc(concat("html/", $subfolders, '/', $htmlfilename))
-        
+                let $htmldoc := doc(concat('html/', $subfolders, '/', $htmlfilename))
                 (:
                     Guide to Solr field naming conventions:
                         ms_ = manuscript index field
@@ -131,38 +105,34 @@ declare function local:buildSummary($x as document-node()) as xs:string
                         _?m = multiple field (typically facets)
                         *ni = not indexed (except _tni fields which are copied to the fulltext index)
                 :)
-            
                 return <doc>
                     <field name="type">manuscript</field>
                     <field name="pk">{ $msid }</field>
                     <field name="id">{ $msid }</field>
-                    { bod:one2one($x//tei:msDesc/tei:msIdentifier/tei:idno[@type="shelfmark"], 'title', 'error') }
-                    { bod:one2one($x//tei:titleStmt/tei:title[@type="collection"], 'ms_collection_s') }
-                    { bod:one2one($x//tei:msDesc/tei:msIdentifier/tei:settlement, 'ms_settlement_s') }
-                    { bod:one2one($x//tei:msDesc/tei:msIdentifier/tei:institution, 'ms_institution_s') }
-                    { bod:many2one($x//tei:msDesc/tei:msIdentifier/tei:repository, 'ms_repository_s') }
-                    { bod:one2one($x//tei:msDesc/tei:msIdentifier/tei:idno[@type="shelfmark"], 'ms_shelfmark_s') }
-                    { bod:one2one($x//tei:msDesc/tei:msIdentifier/tei:idno[@type="shelfmark"], 'ms_shelfmark_sort') }
-                    { bod:many2one($x//tei:sourceDesc/tei:msDesc/tei:msIdentifier/tei:altIdentifier[@type="internal"]/tei:idno, 'ms_altid_s') }
-                    <field name="filename_sni">{ base-uri($x) }</field>
-                    { bod:many2many($x//tei:msContents/tei:msItem/tei:title, 'ms_works_sm') }
-                    { bod:many2many($x//tei:msContents/tei:msItem/tei:author/tei:persName, 'ms_authors_sm') }
-                    { bod:materials($x//tei:msDesc//tei:physDesc//tei:supportDesc[@material], 'ms_materials_sm') }
-                    { bod:many2many($x//tei:sourceDesc//tei:name[@type="corporate"]/tei:persName, 'ms_corpnames_sm') }
-                    { bod:many2many($x//tei:sourceDesc//tei:persName, 'ms_persnames_sm') }
-                    { bod:trueIfExists($x//tei:sourceDesc//tei:decoDesc/tei:decoNote, 'ms_deconote_b') }
-                    { bod:languages($x//tei:sourceDesc//tei:textLang, 'ms_lang_sm') }
-                    { local:origin($x//tei:sourceDesc//tei:origPlace/tei:country, 'ms_origin_sm') }
-                    { bod:centuries($x//tei:origin//tei:origDate, 'ms_date_sm') }
-                    { bod:string2one(local:buildSummary($x), 'ms_summary_sni') }
+                    { bod:one2one($mainshelfmark, 'title', 'error') }
+                    { bod:one2one($ms//tei:titleStmt/tei:title[@type='collection'], 'ms_collection_s') }
+                    { bod:one2one($ms//tei:msDesc/tei:msIdentifier/tei:settlement, 'ms_settlement_s') }
+                    { bod:one2one($ms//tei:msDesc/tei:msIdentifier/tei:institution, 'institution_sm') }
+                    { bod:many2one($ms//tei:msDesc/tei:msIdentifier/tei:repository, 'ms_repository_s') }
+                    { bod:strings2many(bod:shelfmarkVariants($allshelfmarks), 'shelfmarks') (: Non-tokenized field :) }
+                    { bod:many2many($allshelfmarks, 'ms_shelfmarks_sm') (: Tokenized field :) }
+                    { bod:one2one($mainshelfmark, 'ms_shelfmark_sort') }
+                    { bod:many2many($ms//tei:msIdentifier/tei:altIdentifier[@type='internal']/tei:idno[not(starts-with(text(), 'Not in'))], 'ms_altid_sm') }
+                    { bod:many2many($ms//tei:msIdentifier/tei:altIdentifier[@type='external']/tei:idno, 'ms_extid_sm') }
+                    { bod:many2one($ms//tei:msIdentifier/tei:msName, 'ms_name_sm') }
+                    <field name="filename_s">{ substring-after(base-uri($ms), 'collections/') }</field>
+                    { bod:materials($ms//tei:msDesc//tei:physDesc//tei:supportDesc[@material], 'ms_materials_sm') }
+                    { bod:trueIfExists($ms//tei:sourceDesc//tei:decoDesc/tei:decoNote, 'ms_deconote_b') }
+                    { bod:digitized($ms//tei:sourceDesc//tei:surrogates/tei:bibl, 'ms_digitized_s') }
+                    { bod:languages($ms//tei:sourceDesc//tei:textLang, 'lang_sm') }
+                    { local:origin($ms//tei:sourceDesc//tei:origPlace/tei:country/string(@key), 'ms_origin_sm') }
+                    { bod:centuries($ms//tei:origin//tei:origDate, 'ms_date_sm') }
+                    { bod:string2one(local:buildSummary($ms), 'ms_summary_s') }
                     { bod:indexHTML($htmldoc, 'ms_textcontent_tni') }
                     { bod:displayHTML($htmldoc, 'display') }
                 </doc>
 
             else
-                bod:logging('warn', 'Cannot process manuscript without @xml:id for root TEI element', base-uri($x))
+                bod:logging('warn', 'Cannot process manuscript without @xml:id for root TEI element', base-uri($ms))
 }
-
 </add>
-
-

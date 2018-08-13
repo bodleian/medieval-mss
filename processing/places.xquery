@@ -1,76 +1,194 @@
-import module namespace bod = "http://www.bodleian.ox.ac.uk/bdlss" at "https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc2solr.xquery";
+import module namespace bod = "http://www.bodleian.ox.ac.uk/bdlss" at "lib/msdesc2solr.xquery";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 declare option saxon:output "indent=yes";
 
+(: Read authority file :)
+declare variable $authorityentries := doc("../places.xml")/tei:TEI/tei:text/tei:body/(tei:listPlace/tei:place|tei:listOrg/tei:org)[@xml:id];
+
+(: Find instances in manuscript description files, building in-memory data structure, to avoid having to search across all files for each authority file entry :)
+declare variable $allinstances :=
+    for $instance in collection('../collections?select=*.xml;recurse=yes')//tei:msDesc//(tei:placeName|tei:country|tei:settlement|tei:region|tei:orgName)[not(ancestor::tei:msIdentifier)]
+        let $roottei := $instance/ancestor::tei:TEI
+        let $shelfmark := ($roottei/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:msDesc/tei:msIdentifier/tei:idno[@type = "shelfmark"])[1]/text()
+        let $datesoforigin := distinct-values($roottei//tei:origin//tei:origDate/normalize-space())
+        let $placesoforigin := distinct-values($roottei//tei:origin//tei:origPlace/normalize-space())
+        return
+        <instance>
+            { attribute of { if ($instance/self::tei:orgName) then 'org' else 'place' } }
+            { for $key in tokenize($instance/@key, ' ') return <key>{ $key }</key> }
+            <name>{ normalize-space($instance/string()) }</name>
+            <link>{ concat(
+                        '/catalog/', 
+                        $roottei/@xml:id/data(), 
+                        '|', 
+                        $shelfmark,
+                        if ($roottei//tei:sourceDesc//tei:surrogates/tei:bibl[@type=('digital-fascimile','digital-facsimile') and @subtype='full']) then
+                            ' (Digital facsimile online)'
+                        else if ($roottei//tei:sourceDesc//tei:surrogates/tei:bibl[@type=('digital-fascimile','digital-facsimile') and @subtype='partial']) then
+                            ' (Selected pages online)'
+                        else
+                            ''
+                        ,'|',
+                        if ($roottei//tei:msPart) then 'Composite manuscript' else string-join(($datesoforigin, $placesoforigin), '; ')
+                    )
+            }</link>
+            { for $role in tokenize($instance/@role/data(), ' ') return <role>{ $role }</role> }
+            { if (not($instance/self::tei:placeName or $instance/self::tei:orgName)) then <type>{ local-name($instance) }</type> else () }
+            <shelfmark>{ $shelfmark }</shelfmark>
+        </instance>;
+
 <add>
 {
-    let $doc := doc("../places.xml")
-    let $collection := collection("../collections/?select=*.xml;recurse=yes")
-    let $places := $doc//tei:place
-
-    for $place in $places
-        let $placeid := $place/string(@xml:id)
-        let $variants := $place/tei:placeName[@type="variant"]
-        let $mss1 := $collection//tei:TEI[.//tei:history//tei:country[@key = $placeid]]
-        let $mss2 := $collection//tei:TEI[.//tei:history//tei:settlement[@key = $placeid]]
-        let $mss3 := $collection//tei:TEI[.//tei:placeName[@key = $placeid]]
-        let $mss4 := $collection//tei:TEI[.//tei:history//tei:region[@key = $placeid]]
-        let $mss := ($mss1, $mss2, $mss3, $mss4)
-
-        let $noteitems := $place/tei:note[@type="links"]//tei:item
-        let $placename := $place/tei:placeName[@type="index"]/text()
-
-        return if (count($mss) > 0) then
-        <doc>
-            <field name="type">place</field>
-            <field name="title">{ $placename }</field>
-            <field name="alpha_title">{  bod:alphabetize($placename) }</field>
-
-        <field name="pk">{ $placeid }</field>
-            <field name="id">{ $placeid }</field>
-            <field name="pl_name_s">{ $placename }</field>
-            <field name="pl_type_s">{ $place/string(@type) }</field>
-            { for $variant in $variants
-                let $vname := normalize-space($variant/string())
-                return <field name="pl_variant_sm">{ $vname }</field>
-            }
-            { for $item in $noteitems
-                let $refs := $item//tei:ref
-                for $ref in $refs
-                let $linktarget := $ref/string(@target)
-                let $linktext := $ref/normalize-space(tei:title/string())
-                return <field name="link_external_smni">{ concat($linktarget, "|", $linktext)}</field>
-            }
-            { for $ms in $mss
-                let $msid := $ms/string(@xml:id)
-                let $url := concat("/catalog/", $msid[1])
-                let $linktext := $ms//tei:idno[@type = "shelfmark"]/text()
-                (: Concat the URL and shelfmark; these will get split to create a link in the display. :)
-                return (
-                    <field name="link_manuscripts_smni">{ concat($url, "|", $linktext[1]) }</field>,
-                    <field name="pl_manuscripts_sm">{ $ms//tei:idno[@type = "shelfmark"]/data() }</field>)
-            }
-        </doc>
-        else
-            (
-            bod:logging('info', 'Skipping place in places.xml but not in any manuscript', ($placeid, $placename))
-            )
+    comment{concat(' Indexing started at ', current-dateTime(), ' using authority file at ', substring-after(base-uri($authorityentries[1]), 'file:'), ' ')}
 }
-
 {
-    let $controlledplaceids := distinct-values(doc("../places.xml")//tei:place/@xml:id/string())
-    let $allplaces := collection("../collections?select=*.xml;recurse=yes")//tei:TEI//((tei:country|tei:settlement)[ancestor::tei:history]|tei:placeName)
-    let $allplaceids := distinct-values($allplaces/@key/string())
-    for $placeid in $allplaceids
-        return if (not($controlledplaceids[. = $placeid])) then
-            bod:logging('warn', 'Place in manuscripts not in places.xml: will create broken link', ($placeid, normalize-space(string-join($allplaces[@key = $placeid][1]/text(), ''))))
-        else 
+    (: Log instances with key attributes not in the authority file :)
+    for $key in distinct-values($allinstances/key)
+        return if (not(some $entryid in $authorityentries/@xml:id/data() satisfies $entryid eq $key)) then
+            bod:logging('warn', 'Key attribute not found in authority file: will create broken link', ($key, $allinstances[key = $key]/name))
+        else
             ()
 }
-
 {
-    let $allplaces := collection("../collections?select=*.xml;recurse=yes")//tei:TEI//((tei:country|tei:settlement)[ancestor::tei:history]|tei:placeName)
-    return if (count($allplaces[not(@key)]) > 0) then bod:logging('info', concat(count(distinct-values($allplaces[not(@key)]/text()[1])), ' places found in manuscripts which lack @key attributes'), ()) else ()
+    (: Loop thru each place or organization entry in the authority file :)
+    for $placeororg in $authorityentries
+    
+        (: Get info in authority entry :)
+        let $id := $placeororg/@xml:id/data()
+        let $name := 
+            if ($placeororg/self::tei:org) then
+                if ($placeororg/tei:orgName[@type='display']) then normalize-space($placeororg/tei:orgName[@type='display'][1]/string()) else normalize-space($placeororg/tei:orgName[1]/string())
+            else
+                if ($placeororg/tei:placeName[@type='index']) then normalize-space($placeororg/tei:placeName[@type='index'][1]/string()) else normalize-space($placeororg/tei:placeName[1]/string())
+        let $variants := 
+            if ($placeororg/self::tei:org) then
+                for $v in $placeororg/tei:orgName[not(@type='display')] return normalize-space($v/string())
+            else
+                for $v in $placeororg/tei:placeName[not(@type='index')] return normalize-space($v/string())
+        let $extrefs := for $r in $placeororg/tei:note[@type="links"]//tei:item/tei:ref return concat($r/@target/data(), '|', bod:lookupAuthorityName(normalize-space($r/tei:title/string())))
+        let $bibrefs := for $b in $placeororg/tei:bibl return bod:italicizeTitles($b)
+        let $notes := for $n in $placeororg/tei:note[not(@type="links")] return bod:italicizeTitles($n)
+        let $geolocs := $placeororg/tei:location/tei:geo[matches(text(), '^\s*\-?[\d\.]+\s*,\s*\-?[\d\.]+\s*$')]
+        
+        (: Get info in all the instances in the manuscript description files :)
+        let $instances := $allinstances[key = $id]
+        let $roles := for $role in distinct-values($instances/role/text()) return bod:personRoleLookup($role)
+        
+        (: Output a Solr doc element :)
+        return if (count($instances) gt 0) then
+            <doc>
+                <field name="type">place</field>
+                <field name="pk">{ $id }</field>
+                <field name="id">{ $id }</field>
+                <field name="title">{ $name }</field>
+                <field name="alpha_title">{  bod:alphabetize($name) }</field>
+                {
+                if ($placeororg/self::tei:place) then
+                    if ($placeororg/@type) then 
+                        <field name="pl_type_s">{ $placeororg/@type/data() }</field> 
+                    else
+                        for $type in distinct-values($instances/type/text())
+                            return
+                            <field name="pl_type_s">{ $type }</field>
+                else
+                    ()
+                }
+                {
+                (: Roles (typically for organizations such as monasteries that were former owners) :)
+                for $role in $roles
+                    order by $role
+                    return <field name="roles_sm">{ $role }</field>
+                }
+                {
+                (: Alternative names :)
+                for $variant in distinct-values($variants)
+                    order by $variant
+                    return <field name="pl_variant_sm">{ $variant }</field>
+                }
+                {
+                let $lcvariants := for $variant in ($name, $variants) return lower-case($variant)
+                for $instancevariant in distinct-values($instances/name/text())
+                    order by $instancevariant
+                    return if (not(lower-case($instancevariant) = $lcvariants)) then
+                        <field name="pl_variant_sm">{ $instancevariant }</field>
+                    else
+                        ()
+                }
+                {
+                (: Co-ordinates (displayed as links to the same page Wikipedia uses to offer choice of mapping web sites :)
+                for $geoloc in $geolocs
+                    let $coords := tokenize(translate($geoloc/text(), ' ', ''), ',')
+                    let $lat := number($coords[1])
+                    let $long := number($coords[2])
+                    return
+                    if (string($lat) ne 'NaN' and string($long) ne 'NaN') then
+                        let $dmscoords := string-join(bod:latLongDecimal2DMS($lat, $long), ', ')
+                        return
+                        <field name="link_geo_smni">https://tools.wmflabs.org/geohack/geohack.php?params={ $lat }_N_{ $long }_E|{ $dmscoords }</field>
+                    else
+                        ()
+                }
+                {
+                (: Links to external authorities and other web sites :)
+                for $extref in $extrefs
+                    order by $extref
+                    return <field name="link_external_smni">{ $extref }</field>
+                }
+                {
+                (: Bibliographic references about the place or organization :)
+                for $bibref in $bibrefs
+                    order by $bibref
+                    return <field name="bibref_smni">{ $bibref }</field>
+                }
+                {
+                (: Notes about the place or organization :)
+                for $note in $notes
+                    order by $note
+                    return <field name="note_smni">{ $note }</field>
+                }
+                {
+                (: See also links to other entries in the same authority file :)
+                let $relatedids := tokenize(translate(string-join(($placeororg/@corresp, $placeororg/@sameAs), ' '), '#', ''), ' ')
+                for $relatedid in distinct-values($relatedids)
+                    let $url := concat("/catalog/", $relatedid)
+                    let $linktext := ($authorityentries[@xml:id = $relatedid]/(tei:placeName|tei:orgName)[@type = 'display'][1])[1]
+                    order by $linktext
+                    return
+                    if (exists($linktext) and $allinstances[key = $relatedid]) then
+                        let $link := concat($url, "|", normalize-space($linktext/string()))
+                        return
+                        <field name="link_related_smni">{ $link }</field>
+                    else
+                        bod:logging('info', 'Cannot create see-also link', ($id, $relatedid))
+                }
+                {
+                (: Shelfmarks (indexed in special non-tokenized field) :)
+                for $shelfmark in bod:shelfmarkVariants(distinct-values($instances/shelfmark/text()))
+                    order by $shelfmark
+                    return
+                    <field name="shelfmarks">{ $shelfmark }</field>
+                }
+                {
+                (: Links to manuscripts containing mentions of the place or organization :)
+                for $link in distinct-values($instances/link/text())
+                    order by tokenize($link, '\|')[2]
+                    return
+                    <field name="link_manuscripts_smni">{ $link }</field>
+                }
+            </doc>
+        else
+            bod:logging('info', 'Skipping unused authority file entry', ($id, $name))
 }
-
+{
+    (: Log instances without key attributes :)
+    (
+    for $instancename in distinct-values($allinstances[@of='place' and not(key)]/name)
+        order by $instancename
+        return bod:logging('info', 'Place name without key attribute', $instancename)
+    ,
+    for $instancename in distinct-values($allinstances[@of='org' and not(key)]/name)
+        order by $instancename
+        return bod:logging('info', 'Organization name without key attribute', $instancename)
+    )
+}
 </add>
