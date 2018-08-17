@@ -22,7 +22,7 @@
         <html>
             <head>
                 <style type="text/css">
-                    <xsl:value-of select="unparsed-text('preview.css')"/>
+                    <xsl:value-of select="string-join(tokenize(unparsed-text('preview.css', 'utf-8'), '&#xD;'))"/>
                 </style>
             </head>
             <body style="padding:2em ! important;">
