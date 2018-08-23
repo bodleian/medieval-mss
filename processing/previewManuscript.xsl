@@ -20,11 +20,11 @@
 
     <xsl:template match="/">
         <html>
-            <head>
+           <!-- <head>
                 <style type="text/css">
                     <xsl:value-of select="string-join(tokenize(unparsed-text('preview.css', 'utf-8'), '&#xD;'))"/>
                 </style>
-            </head>
+            </head>-->
             <body style="padding:2em ! important;">
                 <h1 itemprop="name">
                     <xsl:value-of select="//tei:msDesc/tei:msIdentifier/tei:idno[@type='shelfmark']/text()"/>
