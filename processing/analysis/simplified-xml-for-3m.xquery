@@ -392,7 +392,14 @@ declare function local:listProvenances($msorpart as element()) as element()*
         }
 };
 
-processing-instruction xml-model {'href="simplified4oxlod.xsd" type="application/xml" schamtypens="http://www.w3.org/2001/XMLSchema"'},
+declare function local:listDigitizedCopies($surrogates as element(tei:surrogates)*) as element()*
+{
+    for $ref in $surrogates//tei:bibl[@type=('digital-fascimile','digital-facsimile')]/tei:ref
+        return
+        <digitalimages>{ $ref/@target/data() }</digitalimages>
+};
+
+processing-instruction xml-model {'href="https://raw.githubusercontent.com/bodleian/medieval-mss/master/processing/analysis/simplified4oxlod.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"'},
 <manuscripts>
     {
     for $manuscript at $pos in collection('../../collections/?select=*.xml;recurse=yes')/tei:TEI
@@ -422,6 +429,7 @@ processing-instruction xml-model {'href="simplified4oxlod.xsd" type="application
                             { local:extractDates($mscontent/parent::tei:msPart/tei:history) }
                             { local:listPlacesOrgsPeople($mscontent/parent::tei:msPart) }
                             { local:listProvenances($mscontent/parent::tei:msPart) }
+                            { local:listDigitizedCopies($mscontent/parent::tei:msPart/tei:additional/tei:surrogates) }
                             { local:listItems($manuscript, $mscontent) }
                         </part>
                     else if ($mscontent/parent::tei:msDesc) then
@@ -431,6 +439,7 @@ processing-instruction xml-model {'href="simplified4oxlod.xsd" type="application
                         local:extractDates($mscontent/parent::tei:msDesc/tei:history),
                         local:listPlacesOrgsPeople($mscontent/parent::tei:msDesc),
                         local:listProvenances($mscontent/parent::tei:msDesc),
+                        local:listDigitizedCopies($mscontent/parent::tei:msDesc/tei:additional/tei:surrogates),
                         local:listItems($manuscript, $mscontent)
                         )
                     else
