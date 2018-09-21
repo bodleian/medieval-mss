@@ -83,7 +83,7 @@ if [ ! "$5" == "noindex" ]; then
 
     # Emptying index on Solr
     echo "Emptying Solr of $3 records..."
-    curl -fsS "http://${4}:8983/solr/medieval-mss/update?stream.body=<delete><query>type:${3}</query></delete>&commit=true" 1>> $LOGFILE 2>> $LOGFILE
+    curl -X POST -fsS "http://${4}:8983/solr/medieval-mss/update?commit=true" --data-binary "<delete><query>type:${3}</query></delete>" -H "Content-Type: text/xml" 1>> $LOGFILE 2>> $LOGFILE
 
     if [ $? -gt 0 ]; then
         echo "Emptying Solr failed. Try again later. If problem persists, please raise an issue on GitHub, attaching $LOGFILE."
