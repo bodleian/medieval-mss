@@ -5,10 +5,20 @@
          <titleStmt>
             <title>MS. Bodl. 38</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
             </respStmt>
+           <respStmt xml:id="SC">
+              <resp when="1895">Cataloguer</resp>
+              <persName>Falconer Madan</persName>
+           </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2018">Encoding and markup</resp>
+               <resp when="2018">Catalogue updates and corrections</resp>
+               <persName>Matthew Holford</persName>
+            </respStmt>
+           
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
@@ -51,12 +61,34 @@
                </msIdentifier>
                <physDesc>
                   <p n="composite">Composite: four parts</p>
+                  <objectDesc>
+                     <supportDesc material="perg">
+                        <extent> 2 + 72 + 2 fol. <dimensions type="leaf" unit="mm">
+                           <height>110</height>
+                           <width>70</width>
+                        </dimensions>
+                        </extent>
+                     </supportDesc>
+                  </objectDesc>
                </physDesc>
+               <history resp="#SC">
+                  <provenance>A Fleury provenance for the whole volume (as well as for part 2 only) has been suggested but is regarded as doubtful by M. Mostert (<bibl><title>The library of Fleury</title> (1989), BF913-BF916</bibl>).</provenance>
+                  <provenance notAfter="1603">‘<persName role="formerOwner" key="person_59445430">Petri Danielis Aurel.</persName>’ (d. 1603)</provenance>
+                  <provenance notAfter="1614"><persName role="formerOwner" key="person_42155666">Paul Petau</persName> (d. 1614): his pressmark ‘G (?) 30’ on fol. 1 (<bibl>G. Constable in <title>Consuetudines Benedictinae Variae</title>, Corpus Consuetudinum Monasticarum 6 (1975)</bibl>, ex inf. E. Pellegrin, p. 3).</provenance>
+                  <provenance notBefore="1610" notAfter="1672">His son, <persName role="formerOwner" key="person_89119765">Alexandre Petau</persName> (d. 1672): listed in the catalogue of his manuscripts, Leiden, Voss. lat. Q. 76, and in B. Montfaucon, <title>Bibliotheca</title> (1739) (as ‘1441‘: I.68 (Prudentius), 91 (Maximianus) (Constable, ex inf. E. Pellegrin, as above).</provenance>
+                  <provenance notBefore="1620" notAfter="1681"><persName role="formerOwner" key="person_95302161">Nicolas Heinsius</persName> (d. 1681); no. 5 in the sale catalogue of his books.</provenance>
+                  <provenance notBefore="1683" notAfter="1697">Bought at the Heinsius sale (1683) by <persName role="formerOwner" key="person_237497">Edward Bernard</persName> (d. 1697)</provenance>
+                  <acquisition when="1698">Bought by the Bodleian from his widow in 1698.</acquisition>
+               </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
-                            
+                        <source>Description adapted (2018) from published works cited in the description and from the following sources:
+                           <listBibl>
+                             
+                              <bibl>S. J. P. Van Dijk, <title>Handlist of the Latin Liturgical Manuscripts in the Bodleian Library Oxford</title>  Vol. 1: Mass Books (typescript, 1957), p. 116 [part 2, esp. fols. 16-19]</bibl>
+                              <bibl><title>Summary Catalogue</title> III (1895)</bibl>
+                           </listBibl>
                             
                             <listBibl>
                               <bibl type="SC" facs="aas0030.gif">Summary Catalogue, vol. 3, p. 15</bibl>
@@ -66,25 +98,38 @@
                      </recordHist>
                   </adminInfo>
                </additional>
-               <msPart xml:id="MS_Bodl_38-part1">
+               <msPart xml:id="MS_Bodl_38-part1" resp="#SC">
                   <msIdentifier>
                      <altIdentifier type="partial">
                         <idno type="part">MS. Bodl. 38 - Part 1</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
+                     <textLang mainLang="la">Latin</textLang>
                      <msItem xml:id="MS_Bodl_38-part1-item1" n="1">
-                        <author key="person_88034428">
-                           
-                           Maximianus
-                        
-                        </author>
+                        <locus>(fol. 1)</locus>
+                        <author key="person_88034428">Maximianus</author>
                         <title key="work_3155">Elegiae</title>
-                        <textLang mainLang="la">Latin</textLang>
                      </msItem>
                      <msItem xml:id="MS_Bodl_38-part1-item2" n="2" class="#versus">
+                        <locus>(fol. 13)</locus>
                         <title type="desc" key="work_13886">Poems</title>
-                        <textLang mainLang="la">Latin</textLang>
+                        <msItem>
+                           <incipit>Premia tot forme</incipit>
+                           <note>Twenty elegiac lines.</note>
+                        </msItem>
+                        <msItem>
+                           <incipit>Lux oculis lux bbanda</incipit>
+                           <note>Eighteen elegiac lines.</note>
+                        </msItem>
+                        <msItem>
+                           <incipit>Quisquis ad excelsi</incipit>
+                           <note>Twenty-three hexameters.</note>
+                        </msItem>
+                        <msItem>
+                           <incipit>Quod micat ornatum</incipit>
+                           <note>Twenty-three elegiac lines, vv. 2-36 on a later leaf in the hand of Petrus Daniel, who adds collations of the other poems with a different manuscript.</note>
+                        </msItem>
                      </msItem>
                   </msContents>
                   <physDesc>
@@ -101,34 +146,93 @@
                      </origin>
                   </history>
                </msPart>
-               <msPart xml:id="MS_Bodl_38-part2">
+               <msPart xml:id="MS_Bodl_38-part2" resp="#VD">
                   <msIdentifier>
                      <altIdentifier type="partial">
                         <idno type="part">MS. Bodl. 38 - Part 2</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
+                     <textLang mainLang="la">Latin</textLang>
                      <msItem xml:id="MS_Bodl_38-part2-item1" n="1" class="#liturgica">
-                        <title type="desc" key="work_10220">Antiphons</title>
-                        <textLang mainLang="la">Latin</textLang>
+                        <locus>(fol. 16-19)</locus>
+                        <msItem>
+                           <locus>(fol. 16)</locus>
+                           <note>Introit trope on the Os iusti</note>
+                           <incipit>Alle voce celsa</incipit>
+                         </msItem>
+                        <msItem>
+                           <note>Prose on (?) the Alleluia Eripe me</note>
+                           <incipit>Laude voceque</incipit>
+                        </msItem>
+                     <msItem>
+                        <locus>(fol. 17)</locus>
+                        <note>Proses</note>
+                        <msItem>
+                           <incipit>Eripe in te fidentem </incipit>
+                        </msItem>
+                        <msItem>
+                           <incipit>Sancti spiritus gratia</incipit> 
+                           <note>St. Benedict</note>
+                        </msItem>
                      </msItem>
-                     <msItem xml:id="MS_Bodl_38-part2-item2" n="2" class="#miscellanea">
-                        <title type="desc" key="work_13340">Miscellaneous texts</title>
-                        <textLang mainLang="la">Latin</textLang>
+                    
+                    
+                     <msItem>
+                        <locus>(fol. 18)</locus>
+                        <note>Opening words of the R. Sancti immaculata and V. Beata et virgo et gloriosa</note>
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 18v)</locus>
+                        <note>R. Hodie Maria virgo, V. Simeon iustus, for the Purification of the Virgin.</note>
+                     </msItem>
+                        <msItem>
+                           <locus>(fol. 19)</locus>
+                           <note>Ant. Preclarus
+                              dies ortus est of St. Nazarius, priest and martyr.</note>
+                        </msItem>
+                        
+                     </msItem>
+                     <msItem xml:id="MS_Bodl_38-part2-item2" n="2" class="#miscellanea" resp="#SC">
+                        <locus>(fols. 19v-23v)</locus>
+                        <title type="desc" key="work_16211">Star time table</title>
+                        <incipit>In Natale Domini cum Geminos quasi super dormitorium iacentes uideris et signum Orionis super Capellam Omnium Sanctorum</incipit>
+                        <note resp="#MLH"><bibl>Pr. G. Constable, ‘Horologium stellare monasticum’, in <title>Consuetudines Benedictinae Variae</title>, Corpus Consuetudinum Monasticarum 6 (1975), pp. 1-18.</bibl></note>
+                     </msItem>
+                     <msItem xml:id="MS_Bodl_38-part2-item3" n="3" class="#miscellanea" resp="#SC">
+                        <locus>(fol. 24)</locus>
+                        <rubric>Versus de Albuino</rubric>
+                        <incipit>Veni frater albuine</incipit>
+                        <note resp="#MLH"><bibl>Pr. B. Bischoff, <title>Mittelalterliche Studien</title> II, p. 74.</bibl></note>
+                     </msItem>
+                     <msItem xml:id="MS_Bodl_38-part2-item4" n="4" class="#miscellanea" resp="#SC">
+                        <locus>(fol. 25)</locus>
+                        <title type="desc" key="work_11864">Form of exorcism</title>
                      </msItem>
                   </msContents>
                   <physDesc>
                      <objectDesc form="codex">
                         <supportDesc material="perg">
                            <support>parchment</support>
+                          
                         </supportDesc>
+                        <layoutDesc>
+                              <layout columns="1" writtenLines="10">Fols. 16-19: 10 lines, written space <dimensions unit="mm" type="written">
+                                 <height>70</height>
+                                 <width>50</width>
+                              </dimensions></layout>
+                           </layoutDesc>
                      </objectDesc>
+                     <musicNotation>
+                        <p>French adiastematic non-rhythmical neums</p>
+                     </musicNotation>
                   </physDesc>
                   <history>
                      <origin>
                         <origDate calendar="Gregorian" notAfter="1100" notBefore="1000">11th century</origDate>
-                        
+                        <origPlace><country key="place_1000070">France</country></origPlace>
                      </origin>
+                     <provenance>From an unidentified Benedictine monastery in north-central France: <orgName role="formerOwner" cert="low" key="org_159896141">Fleury</orgName> and <orgName role="formerOwner" cert="low" key="org_173532247">S. Aignan, Orléans</orgName>, have been suggested but there are difficulties with both (see Constable, as cited art. 2 above).</provenance>
                   </history>
                </msPart>
                <msPart xml:id="MS_Bodl_38-part3">
@@ -138,16 +242,18 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
+                     <textLang mainLang="la">Latin</textLang>
                      <msItem xml:id="MS_Bodl_38-part3-item1" n="1">
-                        <author key="person_100218964">
-                           
-                           Boethius
-                        
-                        </author>
+                        <locus>(fol. 30)</locus>
+                        <author key="person_100218964">Boethius</author>
                         <title key="work_1121">De consolatione philosophiae</title>
-                        <note>(poetical parts only,
-                           incomplete)</note>
-                        <textLang mainLang="la">Latin</textLang>
+                        <note>Books 1-2, poetical parts only; incomplete, lacking I.3.9 (Emicat) - II.2.5 (retrahat manum) due to loss of some leaves.</note>
+                     </msItem>
+                     <msItem xml:id="MS_Bodl_38-part3-item2" n="2" class="#versus">
+                        <locus>(fol. 56v)</locus>
+                        <title type="desc" key="work_13886">Poem</title>
+                        <incipit>Foebus abierat subtractis cursibus</incipit>
+                        <note>Rhythmical poem of twenty-five lines.</note>
                      </msItem>
                   </msContents>
                   <physDesc>
@@ -171,19 +277,21 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
+                     <textLang mainLang="la">Latin</textLang>
                      <msItem xml:id="MS_Bodl_38-part4-item1" n="1">
-                        <author key="person_100010336">
-                           
-                           Prudentius
-                        
-                        </author>
+                        <locus>(fol. 58)</locus>
+                        <author key="person_100010336">Prudentius</author>
                         <title key="work_3814">Psychomachia</title>
-                        <textLang mainLang="la">Latin</textLang>
+                        <note>Lacking lines 56, 88-9, 120-247; mutilated in lines 57-87, 90-117.</note>
                      </msItem>
                      <msItem xml:id="MS_Bodl_38-part4-item2" n="2" class="#versus">
-                        <title type="desc" key="work_13835">Poem</title>
-                        <note>(hexameters)</note>
-                        <textLang mainLang="la">Latin</textLang>
+                        <title type="desc" key="work_13886">Poem</title>
+                        <incipit>O Dee cunctiparens</incipit>
+                        <note>Thirty hexameters.</note>
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 72)</locus>
+                        <title type="desc">Arithmetical computation</title>
                      </msItem>
                   </msContents>
                   <physDesc>
@@ -204,7 +312,9 @@
          </sourceDesc>
       </fileDesc>       
       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
+      <revisionDesc>        
+         <change when="2018-10-02" who="#MLH">Description revised from published sources to include information from van Dijk and fuller account of textual content and provenance.</change>
+         <change when="2017-07-01">First online publication.</change>
 
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
