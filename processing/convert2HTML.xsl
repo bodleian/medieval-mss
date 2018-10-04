@@ -16,6 +16,12 @@
 
     <!-- Any templates added below will override the templates in the shared
          imported stylesheet, allowing customization of manuscript display for each catalogue. -->
+    
+    <xsl:template name="SubItems">
+        <!-- For Medieval, notes are sometimes used between items to give context, so this overrides the 
+             default in msdesc2html.xsl, which re-orders child elements of msItem for the sake of neatness. -->
+        <xsl:apply-templates/>
+    </xsl:template>
 
     <xsl:template match="msDesc/msIdentifier/altIdentifier[@type='former']">
         <!-- TODO: Move this template to msdesc2html.xsl? -->
