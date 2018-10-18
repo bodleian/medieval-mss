@@ -23,7 +23,7 @@ declare function local:origin($keys as xs:string*, $solrfield as xs:string) as e
 
 declare function local:buildSummaries($ms as document-node()) as xs:string*
 {
-    if ($ms//tei:msDesc/(tei:head|tei:history/tei:origin|tei:msContents/tei:summary)) then
+    if ($ms//tei:msDesc/(tei:head|tei:history/tei:origin|tei:msContents/tei:summary) or not($ms//tei:msPart/(tei:head|tei:history/tei:origin|tei:msContents/tei:summary))) then
         local:buildSummary($ms//tei:msDesc[1])
     else
         (
