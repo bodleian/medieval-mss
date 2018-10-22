@@ -21,26 +21,47 @@ declare function local:origin($keys as xs:string*, $solrfield as xs:string) as e
         ()
 };
 
-declare function local:buildSummary($ms as document-node()) as xs:string
+declare function local:buildSummaries($ms as document-node()) as xs:string*
+{
+    if ($ms//tei:msDesc/(tei:head|tei:history/tei:origin|tei:msContents/tei:summary) or not($ms//tei:msPart/(tei:head|tei:history/tei:origin|tei:msContents/tei:summary))) then
+        local:buildSummary($ms//tei:msDesc[1])
+    else
+        (
+        for $part in $ms//tei:msPart[count(preceding::tei:msPart) lt 10]
+            return
+            local:buildSummary($part)
+        ,
+        if (count($ms//tei:msPart) gt 10) then
+            let $moreparts := count($ms//tei:msPart) - 10
+            return if ($moreparts le 5) then
+                for $part in $ms//tei:msPart[count(preceding::tei:msPart) ge 10]
+                    return
+                    local:buildSummary($part)
+            else
+                concat('[', $moreparts, ' more parts', ']')
+        else
+            ()
+        )
+};
+
+declare function local:buildSummary($msdescorpart as element()) as xs:string
 {
     (: Retrieve various pieces of information, from which the summary will be constructed :)
-    let $head := normalize-space(string-join($ms//tei:msDesc/tei:head//text(), ''))
-    let $authors := distinct-values($ms//tei:msItem/tei:author/normalize-space())
+    let $head := normalize-space(string-join($msdescorpart/tei:head//text(), ''))
+    let $authors := distinct-values($msdescorpart//tei:msItem/tei:author/normalize-space())
     let $numauthors := count($authors)
-    let $worktitles := distinct-values(for $t in $ms//tei:msItem/tei:title[1]/normalize-space() return if (ends-with($t, '.')) then substring($t, 1, string-length($t)-1) else $t)
-    let $datesoforigin := distinct-values($ms//tei:origin//tei:origDate/normalize-space())
-    let $placesoforigin := distinct-values($ms//tei:origin//tei:origPlace/normalize-space())
+    let $worktitles := distinct-values(for $t in $msdescorpart//tei:msItem/tei:title[1]/normalize-space() return if (ends-with($t, '.')) then substring($t, 1, string-length($t)-1) else $t)
+    let $datesoforigin := distinct-values($msdescorpart/tei:history/tei:origin//tei:origDate/normalize-space())
+    let $placesoforigin := distinct-values($msdescorpart/tei:history/tei:origin//tei:origPlace/normalize-space())
 
     (: The main part of the summary is the head element, or the summary, or a list of authors, or a list of titles, in that order of preference :)
     let $summary1 := 
         if ($head) then
             bod:shortenToNearestWord($head, 128)
-        else if ($ms//tei:msPart) then
-            'Composite manuscript'
-        else if ($ms//tei:msContents/tei:summary) then
-            bod:shortenToNearestWord(normalize-space(string-join($ms//tei:msContents/tei:summary//text(), '')), 128)
+        else if ($msdescorpart//tei:msContents/tei:summary) then
+            bod:shortenToNearestWord(normalize-space(string-join($msdescorpart//tei:msContents/tei:summary//text(), '')), 128)
         else if ($numauthors gt 0) then
-            if ($numauthors gt 2 or $ms//tei:msItem[not(tei:author)]) then 
+            if ($numauthors gt 2 or $msdescorpart//tei:msItem[not(tei:author)]) then 
                 concat(string-join(subsequence($authors, 1, 2), ', '), ', etc.')
             else
                 string-join($authors, ', ')
@@ -49,7 +70,7 @@ declare function local:buildSummary($ms as document-node()) as xs:string
                 concat(string-join(subsequence($worktitles, 1, 2), ', '), ', etc.')
             else
                 string-join($worktitles, ', ')
-        else if (count($ms//tei:msItem) gt 1) then
+        else if (count($msdescorpart//tei:msItem) gt 1) then
             'Untitled works or fragments'
         else
             'Untitled work or fragment'
@@ -126,7 +147,8 @@ declare function local:buildSummary($ms as document-node()) as xs:string
                     { bod:languages($ms//tei:sourceDesc//tei:textLang, 'lang_sm') }
                     { local:origin($ms//tei:sourceDesc//tei:origPlace/tei:country/string(@key), 'ms_origin_sm') }
                     { bod:centuries($ms//tei:origin//tei:origDate, 'ms_date_sm') }
-                    { bod:string2one(local:buildSummary($ms), 'ms_summary_s') }
+                    { bod:string2one(local:buildSummary($ms//tei:msDesc[1]), 'ms_summary_s') }
+                    { bod:strings2many(local:buildSummaries($ms), 'ms_summary_sm') }
                     { bod:indexHTML($htmldoc, 'ms_textcontent_tni') }
                     { bod:displayHTML($htmldoc, 'display') }
                 </doc>
