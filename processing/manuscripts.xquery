@@ -9,12 +9,16 @@ declare function local:origin($keys as xs:string*, $solrfield as xs:string) as e
 {
     (: Lookup place keys, which are specific to medieval-mss :)
     if (count($keys) gt 0) then 
-        let $countries := $countryauthorities[@xml:id = $keys]
+        let $countries := $countryauthorities[@xml:id = distinct-values($keys)]
         return if (count($countries) gt 0) then
+            (
             for $country in $countries
                 let $name := $country/tei:placeName[@type = 'index'][1]/text()
                 order by $name
                 return <field name="{ $solrfield }">{ $name }</field>
+            ,
+            if (count($countries) gt 1) then <field name="{ $solrfield }">Multiple Origins</field> else ()
+            )
         else
             <field name="{ $solrfield }">[MISSING]</field>
     else
