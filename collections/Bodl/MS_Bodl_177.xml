@@ -5,17 +5,28 @@
          <titleStmt>
             <title>MS. Bodl. 177</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>H. H. E. Craster</persName>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2018">Encoding and markup</resp>
+               <resp>Updates and corrections</resp>
+               <persName>Matthew Holford</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -50,13 +61,33 @@
                   </altIdentifier>
                </msIdentifier>
                <physDesc>
-                  <p n="composite">Composite: four parts</p>
-                  
+                  <p n="composite">Composite: four parts, all written in the last quarter of the fourteenth century, with added decoration, 15th century, second half.</p>
+                  <objectDesc form="codex" resp="#PA">
+                     <supportDesc material="perg">
+                        <extent>v + 73 fols.</extent>
+                     </supportDesc>
+                  </objectDesc>
+                  <decoDesc>
+                     <decoNote resp="#PA">Good initials (alphabet). Diagrams. Added to a MS. of 14th century. (P&amp;A iii. 1143, pl. CVI)</decoNote>
+                  </decoDesc>
+                  <accMat resp="#SC">Parts of two leaves from a thirteenth-century (?) manuscript of Latin sermons are in the binding.</accMat>
                </physDesc>
+               <history>
+                  <origin resp="#PA #SC">
+                     <origDate calendar="Gregorian" notBefore="1375" notAfter="1500">14th century, last quarter;</origDate><origDate notAfter="1500" notBefore="1450">decoration added 15th century, second half</origDate>
+                  </origin>
+                  <provenance resp="#SC">Fol. 37, ‘<persName role="formerOwner" key="person_2950">Thomas <unclear>Aynow</unclear></persName>’, 15th century.</provenance>
+                  <acquisition when="1607" resp="#SC">Presented by <persName role="donor">Sir Richard Worseley</persName>, 1607.</acquisition>
+               </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
+                        <source>Description adapted (2018) from the following sources: 
+                           <listBibl>
+                              <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 70 [part 2]</bibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, III (1973), no. 1143 [decoration]</bibl>
+                              <bibl>Summary Catalogue (1922) [contents, history, provenance]</bibl>
+                           </listBibl>      
                             
                             
                             <listBibl>
@@ -67,9 +98,6 @@
                      </recordHist>
                   </adminInfo>
                   <listBibl type="WRAPPER">
-                     <listBibl>
-                        <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 70 (fols. 22-32 = part 2)</bibl>
-                     </listBibl>
                      
                         <listBibl type="INTERNET">
                            <head>Online resources:</head>
@@ -78,31 +106,38 @@
                      
                   </listBibl>
                </additional>
-               <msPart xml:id="MS_Bodl_177-part1">
+               <msPart xml:id="MS_Bodl_177-part1" resp="#SC">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Bodl. 177 - Part 1</idno>
+                        <idno type="part">MS. Bodl. 177 - Part 1 (fols. 1-22)</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Bodl_177-part1-item1" n="1">
+                     <msItem>
+                        <locus>(fol. 1)</locus>
+                        <title type="desc">Sphere of life and death</title>
+                        <rubric>Spera Pictagore</rubric>
+                        <rubric>Spera Apulegii &amp; Platonici</rubric>
+                        <note resp="#SC #MLH">Cf. TK 1315D, 1522K, etc. With a short explanation:</note>
+                        <incipit>Racio spere ... Pictagore quam Apellogus exarauit</incipit>
+                     </msItem>
+                     <msItem xml:id="MS_Bodl_177-part1-item3" n="2">
                         <author key="person_2267">
-                           
                            Johannes Viennensis
-                        <!-- not in VIAF. In Mirabile -->
                         </author>
                         <title key="work_2531">Speculum elementorum</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                      <msItem xml:id="MS_Bodl_177-part1-item2" n="2" class="#alchimia">
                         <title type="desc" key="work_10139">Alchemical notes and recipes</title>
+                        <note>Partly attributed to ‘magister Dominicus Hispanus’.</note><!-- not identified; not indexed for now; check -->
                         <textLang mainLang="la" otherLangs="en">Latin and English</textLang>
                      </msItem>
                   </msContents>
                   <physDesc>
                      <objectDesc form="codex">
-                        <supportDesc material="perg">
-                           <support>parchment</support>
+                        <supportDesc material="mixed">
+                           <support>parchment (one folio is paper, see Provenance)</support>
                         </supportDesc>
                      </objectDesc>
                     
@@ -113,23 +148,43 @@
                            <country key="place_7002445">English</country>
                         </origPlace>
                         <origDate calendar="Gregorian" notBefore="1375" notAfter="1500">14th century, last quarter</origDate> 
-                        
                      </origin>
+                     <provenance>Fols. 2-21 are fols. 69-76, 78-84, 58, 57, 68, 67, 86 of an older volume; fol. ‘84’ is paper.</provenance>
+                     <provenance>Fol. 21, ‘Memorandum quod Anna mater vxoris mei sepulta fuit die Jouis penultimo die Aprilis anno regni regis Henrici vj<hi rend="superscript">ti</hi> xxiij<hi rend="superscript">o</hi>. Et obiit die Mercurii.’</provenance>
                   </history>
                </msPart>
-               <msPart xml:id="MS_Bodl_177-part2">
+               <msPart xml:id="MS_Bodl_177-part2" resp="#DD">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Bodl. 177 - Part 2</idno>
+                        <idno type="part">MS. Bodl. 177 - Part 2 (fols. 22-32)</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
+                     <textLang mainLang="la">Latin</textLang>
                      <msItem xml:id="MS_Bodl_177-part2-item1" n="1" class="#astrologia_astronomia">
-                        <title type="desc" key="work_10396">Astronomical tables</title>
-                        <textLang mainLang="la">Latin</textLang>
+                        <locus>(fol. 22)</locus>
+                        <title type="desc" key="work_10396">Table of eclipses of the sun and moon, 1384-1462</title><!-- indexed as astronomical tables: check? -->
                      </msItem>
-                     <msItem xml:id="MS_Bodl_177-part2-item2" n="2" class="#scientifica">
+                     <msItem>
+                        <locus>(fol. 27v)</locus>
+                        <rubric>Tabula principalis <persName role="author"  key="person_11566602">Gerlandi</persName></rubric>
+                        <!-- check indexing and identification -->
+                        <note>No years are filled in, but comparison with the table in MS. Digby 190, fol. 75v, shows that the table covers the years 1042-1572. In the fourth line of the column for the years beginning with 1380 the space for 1384 has a small line at the top of the ‘a’ suggesting that the next eclipses expected are those of 1384.</note>
+                     </msItem>
+                     <msItem xml:id="MS_Bodl_177-part2-item2" n="2" class="#scientifica" resp="#SC">
+                        <locus>(fol. 29)</locus>
                         <title type="desc" key="work_14518">Scientific treatises</title>
+                        <msItem>
+                           <rubric>12 Experimenta naturalia de corio serpentis translata a Johanne Paulino ab arabico in Latinum</rubric>
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 30, 31, 32)</locus>
+                           <rubric>Capitulum de 16 herbis</rubric>
+                           <rubric>de lapidibus</rubric>
+                           <rubric>de animalibus</rubric>
+                           <note>Imperfect at end.</note>
+                        </msItem>
+                        
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                   </msContents>
@@ -137,8 +192,20 @@
                      <objectDesc form="codex">
                         <supportDesc material="perg">
                            <support>parchment</support>
+                           <extent>
+                              <dimensions unit="mm" type="leaf">
+                                 <height>265</height>
+                                 <width>185</width>
+                              </dimensions>
+                           </extent>
                         </supportDesc>
+                        <layoutDesc>
+                           <layout columns="1">1 col. of variable size.</layout>
+                        </layoutDesc>
                      </objectDesc>
+                     <decoDesc>
+                        <decoNote>Coloured tables and initials, rubrics.</decoNote>
+                     </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
@@ -149,7 +216,7 @@
                      </origin>
                   </history>
                </msPart>
-               <msPart xml:id="MS_Bodl_177-part3">
+               <msPart xml:id="MS_Bodl_177-part3" resp="#SC">
                   <msIdentifier>
                      <altIdentifier type="partial">
                         <idno type="part">MS. Bodl. 177 - Part 3</idno>
@@ -159,14 +226,50 @@
                      <msItem xml:id="MS_Bodl_177-part3-item1" n="1" class="#medica">
                         <title type="desc" key="work_13232">Medical
                            treatises</title>
+                        <msItem>
+                           <locus>(fol. 33)</locus>
+                           <rubric>Tracatus vrinarum</rubric>
+                           <incipit>In tractatu vrinarum primum quid vrina sit videndum</incipit>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 34v)</locus>
+                           <rubric>Liber pulsuum</rubric>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 38)</locus>
+                           <rubric>Modus iudicandi urinas</rubric>
+                           <note>‘Secundum galterum’.</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 38v)</locus>
+                           <rubric>Liber vrinarum Egidij cum commento</rubric>
+                           <note>The text of the poem is not given.</note>
+                        </msItem>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Bodl_177-part3-item2" n="2" class="#astrologia_astronomia #prognostica">
-                        <title type="desc" key="work_10317">Astrological and chiromantic treatises</title>
+                     <msItem xml:id="MS_Bodl_177-part3-item2" n="2">
+                        <title type="desc" key="work_14987">Treatise on chiromancy</title>
+                        <incipit>Si linea vite sit grossa</incipit>
+                        <incipit>Ad sciendum artem chiromanticam</incipit>
+                        <note resp="#MLH">Cf. TK 60J, 1108J, 1453K (?)</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Bodl_177-part3-item3" n="3" class="#mathematica">
-                        <title type="desc" key="work_10277">Arithmetical treatises</title>
+                     <msItem n="3"  xml:id="MS_Bodl_177-part3-item3">
+                        <locus>(fol. 42)</locus>
+                        <title type="desc" key="work_10342">Astrological treatise</title>
+                        <incipit>Qui fuerit natus in signo Aquarij</incipit>
+                     </msItem>
+                     <msItem xml:id="MS_Bodl_177-part3-item4" n="4" class="#mathematica">
+                        <locus>(fol. 45)</locus>
+                        <author key="person_84975906">Johannes de Sacro Bosco</author>
+                        <title key="work_2590">Algorismus</title>
+                        <note>Ends imperfect in ch. 4 (here ch. 5). Each chapter followed by the corresponding passage of <persName role="author" key="person_2583890">Alexander de Villa Dei</persName>, <title key="work_409">Algorismus</title>.</note>
+                        <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     <msItem xml:id="MS_Bodl_177-part3-item5" n="5" class="#astrologia_astronomia #prognostica">
+                        <locus>(fol. 46v)</locus>
+                        <title type="desc" key="work_14987">Treatise on chiromancy</title>
+                        <incipit>Chiromancia est sciencia cognoscendi</incipit>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                   </msContents>
@@ -177,51 +280,74 @@
                         </supportDesc>
                      </objectDesc>
                      <decoDesc>
-                        <decoNote>Good initials (alphabet). Diagrams. Added to a MS. of 14th century. (P&amp;A iii. 1143, pl. CVI)</decoNote>
+                        <decoNote>Drawings of alchemical instruments (furnaces, pots, etc.) on fols. 51v-52v.</decoNote>
                      </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notBefore="1375" notAfter="1500">14th century, last quarter;</origDate><origDate notAfter="1500" notBefore="1450">decoration added 15th century, second half</origDate>
+                        <origDate calendar="Gregorian" notBefore="1375" notAfter="1500">14th century, last quarter;</origDate>
                         <origPlace>
                            <country key="place_7002445">English</country>
                         </origPlace>
                      </origin>
                   </history>
                </msPart>
-               <msPart xml:id="MS_Bodl_177-part4">
+               <msPart xml:id="MS_Bodl_177-part4" resp="#SC">
                   <msIdentifier>
                      <altIdentifier type="partial">
                         <idno type="part">MS. Bodl. 177 - Part 4</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Bodl_177-part4-item1" n="1">
-                        <author key="person_2184">
-                           
-                           Ps.-Roger
-                           Bacon
-                        <!-- not in VIAF -->
-                        </author>
-                        <title key="work_4112">Speculum secretorum</title>
+                     <msItem xml:id="MS_Bodl_177-part4-item1"  n="1">
+                        <locus>(fol. 53)</locus>
+                        <title type="desc" key="work_10143">Alchemical recipes</title>
+                        <incipit>Aqua Tartari sic fit</incipit>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Bodl_177-part4-item2" n="2" class="#alchimia">
-                        <title type="desc" key="work_10152">Alchemical texts</title>
-                        <textLang mainLang="la" otherLangs="en">Latin and English</textLang>
+                     <msItem xml:id="MS_Bodl_177-part4-item2" n="2">
+                        <locus>(fol. 54v)</locus>
+                        <author key="person_2184">Ps.-Roger Bacon</author>
+                        <title key="work_4112">Speculum secretorum</title>
+                        <incipit>In nomine Domini ... Ad instruccionem multorum circa hanc artem</incipit>
+                        <textLang mainLang="la">Latin</textLang>
                      </msItem>
                      <msItem xml:id="MS_Bodl_177-part4-item3" n="3">
-                        <author key="person_22530463">
-                           
-                           Petrus de S. Audomaro
-                        
-                        </author>
+                        <locus>(fol. 56)</locus>
+                        <author key="person_2167">‘Geber’</author>
+                        <title key="work_6060">Liber triginta uerborum</title>
+                        <rubric>Liber de 30 verbis</rubric>
+                        <incipit>Iam tu scis qui adquiris</incipit>
+                     </msItem>
+                      <msItem xml:id="MS_Bodl_177-part4-item4" n="4">
+                         <locus>(fol. 57v)</locus>
+                        <author key="person_22530463">Petrus de S. Audomaro</author>
                         <title key="work_3626">Nouus quadrans
                            correctus</title>
-                        <note>(revision of Profatius Iudaeus, <hi rend="italic">Nouus
-                           quadrans</hi>)</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
+                     <msItem xml:id="MS_Bodl_177-part4-item5" n="5">
+                        <locus>(fol. 61v)</locus>
+                        <title type="desc" key="work_13951">Devotion</title>
+                        <note>With Latin prayer referring to SS. Cyricus and Julitta.</note>
+                        <textLang mainLang="la" otherLangs="en">Latin and English</textLang>
+                     </msItem>
+                     <msItem xml:id="MS_Bodl_177-part4-item6" n="6">
+                        <locus>(fol. 63v)</locus>
+                        <title type="desc" key="work_15018">Short treatise on the interpretation of dreams</title>
+                        <incipit>Danielam prophetam cum esset</incipit>
+                        <!-- not in TK -->
+                     </msItem>
+                     <msItem n="7" xml:id="MS_Bodl_177-part4-item7">
+                        <locus>(fol. 64v)</locus>
+                        <title type="desc" key="work_14950">Short text on arithmetic</title>
+                        <incipit>Ars metrica docet de numero per se</incipit>
+                        <!-- not in TK -->
+                     </msItem>
+                   
+                     <msItem xml:id="MS_Bodl_177-part4-item8" n="8">
+                       <title type="desc" key="work_10396">Astronomical tables</title>
+                    </msItem>
                   </msContents>
                   <physDesc>
                      <objectDesc form="codex">
@@ -232,7 +358,7 @@
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notBefore="1375" notAfter="1500">14th century, last quarter; decoration added 15th century, second half</origDate>
+                        <origDate calendar="Gregorian" notBefore="1375" notAfter="1500">14th century, last quarter</origDate>
                         <origPlace>
                            <country key="place_7002445">English</country>
                         </origPlace>
@@ -243,7 +369,9 @@
          </sourceDesc>
       </fileDesc>       
       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
+      <revisionDesc>       
+         <change who="#MLH" when="2018-10-29">Revised to incorporate all information in Watson, P&amp;A, and SC.</change>
+         <change when="2017-07-01">First online publication.</change>
 
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
