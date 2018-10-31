@@ -5,16 +5,16 @@
          <titleStmt>
             <title>MS. Add. A. 173</title>
             <title type="collection">MSS. Add. (Additional) A</title>
-            <respStmt>
+            <respStmt xml:id="VD">
                <resp when="1957">Cataloguer</resp>
                <persName>S. J. P. van Dijk</persName>
             </respStmt>
-            <respStmt>
+            <respStmt xml:id="PA">
                <resp when="1966">Cataloguer</resp>
                <persName>Otto Pächt</persName>
                <persName>J. J. G. Alexander</persName>
             </respStmt>
-            <respStmt>
+            <respStmt xml:id="MLH">
                <resp when="2017">Encoding and markup</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
@@ -58,7 +58,7 @@
                      <idno type="SCN">24761</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <msContents resp="#VD">
                   <textLang mainLang="la">Latin</textLang>
                   <msItem xml:id="MS_Add_A_173-item1" n="1" class="#liturgica">
                      <title type="desc" key="work_14469">Gregorian fused Sacramentary</title>
@@ -78,8 +78,8 @@
                         <note>Orationes matutinales seu vespertinales.</note>
                      </msItem>
                      <msItem n="5">
-                        <note>Alia oratio ad baptizandum infirmum (40v: Medellam …);
-                           oratio aquae ad baptizandum, etc. (40v, 43).</note>
+                        <note>Alia oratio ad baptizandum infirmum (fol. 40v: Medellam …);
+                           oratio aquae ad baptizandum, etc. (fols. 40v, 43).</note>
                      </msItem>
                      <msItem n="6">
                         <locus>(fol. 43)</locus>
@@ -103,7 +103,7 @@
                      <note>Not written for a monastic community. Some local indications may be found in the series of collects on fol. 2v.</note>
                   </msItem>
                </msContents>
-               <physDesc>
+               <physDesc resp="#VD">
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
@@ -124,7 +124,7 @@
                   </objectDesc>
                   
                   <decoDesc>
-                     <decoNote>Simple pen initials. (P&amp;A i. 423)</decoNote>
+                     <decoNote resp="#PA">Simple pen initials. (P&amp;A i. 423)</decoNote>
                      <decoNote>Titles and some rubric in red, often entirely rubbed out, others in black (fol. 41)</decoNote>
                   </decoDesc>
                </physDesc>
@@ -135,29 +135,32 @@
                         <country key="place_1000070">French</country>
                      </origPlace>
                   </origin>
-                  <provenance notAfter="1800" notBefore="1700">Belonged in the 18th century to the Benedictine monastery of <orgName role="formerOwner" key="org_239220402">Luxeuil</orgName></provenance>
-                  <provenance><persName role="formerOwner" key="person_19743305">Guglielmo Libri</persName>, his sale 2 April 1859, no. 891</provenance>
+                  <provenance notAfter="1800" notBefore="1700" resp="#PA">Belonged in the 18th century to the Benedictine monastery of <orgName role="formerOwner" key="org_239220402">Luxeuil</orgName></provenance>
+                  <provenance resp="#PA"><persName role="formerOwner" key="person_19743305">Guglielmo Libri</persName>, his sale 2 April 1859, no. 891</provenance>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>S. J. P. Van Dijk, <title>Handlist of the Latin Liturgical Manuscripts in the Bodleian Library Oxford : Vol. 1: Mass Books</title> (typescript, 1957), upated (date, provenance) from Pächt and Alexander (see Bibliography). Previously described in the Summary Catalogue.
+                        <source>Adapted (2017) from the following sources.
+                           <listBibl>
+                              <bibl>S. J. P. Van Dijk, <title>Handlist of the Latin Liturgical Manuscripts in the Bodleian Library Oxford : Vol. 1: Mass Books</title> (typescript, 1957), pp. 9-10 [contents, physical description]</bibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, I (1966), no. 423 [origin, provenance]</bibl>
+                           </listBibl>
+                            Previously described in the Summary Catalogue.
                             <listBibl>
                               <bibl type="SC" facs="aam0100.gif">Summary Catalogue, Vol. 5, p.  65</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
-                  <listBibl type="WRAPPER">
-                     <listBibl>
-                        <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, I (1966), no. 423</bibl>
-                     </listBibl>
-                  </listBibl>
+                
                </additional>
             </msDesc>
          </sourceDesc>
       </fileDesc>       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
+      <revisionDesc>      
+         <change when="2018-01-01" who="#MLH">Description revised based on printed descriptions listed in the record.</change>
+         <change when="2017-07-01">First online publication.</change>
 
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
