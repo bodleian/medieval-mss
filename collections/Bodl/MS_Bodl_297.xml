@@ -5,17 +5,28 @@
          <titleStmt>
             <title>MS. Bodl. 297</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>H. H. E. Craster</persName>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2018">Encoding and markup</resp>
+               <resp>Updates and corrections</resp>
+               <persName>Matthew Holford</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -49,54 +60,81 @@
                      <idno type="SCN">2468</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <msContents resp="#MLH">
                   <msItem xml:id="MS_Bodl_297-item1" n="1" class="#historica">
-                     <title type="desc" key="work_10968">Chronicle of <placeName key="place_7002445">England</placeName> to 1131</title>
-                     <note>(compiled from '<persName role="author" key="person_60701845">Florence of Worcester</persName>' with interpolation and additions relating to <placeName key="place_7010914">Bury St. Edmunds</placeName>)</note>
-                     <textLang mainLang="la">Latin</textLang>
+                     <author key="person_268353466">John of Worcester</author>
+                     <title key="work_6064">Chronicle</title>
+                     <note>As ed. R. R. Darlington and P. McGurk (Oxford Medieval Texts). Formerly attributed to '<persName role="author" key="person_60701845">Florence of Worcester</persName>', and forming a continuation to the <title key="work_6065">Chronicon</title> of <persName role="author" key="person_44184295">Marianus Scotus</persName>.</note>
+                     <msItem><note>Preceded by lists and tables of Roman consuls, popes, English bishops and archbishops, genealogies of Anglo-Saxon royal dynasties (itemized in Darlington and McGurk, II, pp. xlvi-l), as in Oxford, Corpus Christi College, MS. 157, from which the present manuscript was copied.</note></msItem>
+                     <msItem><note>Substantial contemporary marginal additions, and interpolations in the text, drawing on a range of sources (including extracts from <persName role="author" key="person_12442856">Eadmer</persName>, <title key="work_6067">Historia Novorum</title>), some relating to <orgName key="org_150107857">Bury St. Edmunds Abbey</orgName>: printed and discussed in Darlington and McGurk, II, appendix B, and III, appendix B. Additions on pp. 281-2 (<persName role="author" key="person_218622867">Cuthbert</persName>'s <title key="work_1341">Epistola de obitu Bedae</title>, including Bede's Death Song) and pp. 328-9 (Bury charter) include Old English.</note></msItem>
+                     <msItem><note>Followed (p. 423b) by extracts from the <title key="work_6066">Chronicle</title> of <persName role="author" key="person_263753678">Jocelyn of Brakelond</persName>, added early thirteenth century (pr. Darlington and McGurk, III, pp. 323-6).</note></msItem>
+                     <textLang mainLang="la" otherLangs="en">Latin including a very little Old English</textLang>
                   </msItem>
                </msContents>
-               <physDesc>
+               <physDesc resp="#DD #MLH">
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>426 pages
+                        <dimensions unit="mm" type="leaf">
+                           <height>376</height>
+                           <width>285</width>
+                        </dimensions></extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2" writtenLines="42">1-10 cols. (typically 2), 42 lines, written space <dimensions unit="mm" type="written">
+                           <height>285</height>
+                           <width max="210" min="200">200-10</width>
+                        </dimensions></layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <handDesc>
+                     <handNote>Two main scribes (pp. 1-344, pp. 345-423a), with marginal and interlinear additions by several others (Darlington and McGurk, II, p. lii).</handNote>
+                  </handDesc>
                   <decoDesc>
-                     <decoNote>Fine miniature (unfinished drawing, retouched), good initials. (P&amp;A iii. 167,
-                  pl. XVII)
-                     </decoNote>
+                     <decoNote resp="#PA">Fine miniature (unfinished drawing, retouched), good initials. (P&amp;A iii. 167, pl. XVII)</decoNote>
+                     <decoNote>Coloured initials, rubrics.</decoNote>
                   </decoDesc>
+                  <accMat resp="#SC">In the binding are (1) a leaf of an early-fourteenth-century canon law manuscript; (2) fragments of a thirteenth-century treatise on roman law; (3) a fragment of a fourteenth-century gradual.</accMat>
                </physDesc>
                <history>
-                  <origin>
-                     <origDate calendar="Gregorian" notAfter="1173" notBefore="1100" cert="high">before 1173 (1131 × 1134 (?))</origDate>
+                  <origin resp="#MLH">
+                     <origDate calendar="Gregorian" notAfter="1173" notBefore="1100" cert="high">1133 × 1143 (?)</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>, <settlement key="place_7010914">Bury St. Edmunds</settlement>
+                        <country key="place_7002445">English</country>, <settlement key="place_7010914">Bury St. Edmunds</settlement>, <orgName key="org_150107857">Benedictine abbey</orgName>
                         <!--ORIGINAL: English, Bury St. Edmunds-->
                      </origPlace>
                   </origin>
+                  <provenance resp="#MLH">Written at Bury St. Edmunds, as evidenced by the interpolations and additions, probably between 1133 and 1143 (Darlington and McGurk, II, p. liii).</provenance>
+                  <provenance notAfter="1200" notBefore="1133" resp="#DD"><orgName key="org_150107857">Bury St. Edmunds</orgName> ex libris, 12th century, p. 1: ‘Liber Sancti Ædmundi regis et m<supplied>artyris</supplied>’.</provenance>
+                  <provenance notBefore="1350" notAfter="1400"><orgName key="org_150107857" resp="#DD">Bury St. Edmunds</orgName> ex libris, 14th century, second half, p. 1: ‘C. 53’</provenance>
+                  <provenance resp="#DD">Marginalia by <persName role="formerOwner" key="person_65071134">Sir John Prise, 1502?-1555</persName>.</provenance>
+                  <acquisition when="1608" resp="#SC">Given to the Bodleian by <persName role="donor" key="person_78700418">George Broome, esq. of Holton</persName> (p. i), probably in 1608.</acquisition>
                </history>
                <additional><adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
-                            
-                            
+                        <source>Description adapted (2018) from the following sources, and from published literature cited in the description: 
+                           <listBibl>
+                              <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 75 [physical description, origin, provenance]</bibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, III (1973), no. 167 [decoration]</bibl>
+                              <bibl>Summary Catalogue (1922) [contents, binding leaves, acquisition]</bibl>
+                           </listBibl>     
                             <listBibl>
                               <bibl type="SC" facs="aap0404.gif">Summary Catalogue, vol. 2, part 1, p. 383</bibl>
                               <bibl type="SC" facs="aap0405.gif">Summary Catalogue, vol. 2, part 1, p. 384</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
-                  </adminInfo><listBibl type="WRAPPER"><listBibl>
-                        <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 75</bibl>
-                     </listBibl><listBibl type="INTERNET"><head>Online resources:</head><!--Existing bibliography in place: check sorting of entries--><bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/812"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl><bibl><ref target="https://www.le.ac.uk/english/em1060to1220/mss/EM.Ox.Bodl.297.htm"><title>The Production and Use of English Manuscripts 1060 to 1220</title></ref></bibl></listBibl></listBibl></additional>
+                  </adminInfo><listBibl type="WRAPPER">
+                     <listBibl type="INTERNET"><head>Online resources:</head>
+                        <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/812"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl><bibl><ref target="https://www.le.ac.uk/english/em1060to1220/mss/EM.Ox.Bodl.297.htm"><title>The Production and Use of English Manuscripts 1060 to 1220</title></ref></bibl></listBibl></listBibl></additional>
             </msDesc>
          </sourceDesc>
       </fileDesc>       
       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
+      <revisionDesc>          
+         <change who="#MLH" when="2018-11-12">Revised to incorporate all information in Watson, P&amp;A, and SC, updated with reference to the description and edition by Darlington and McGurk.</change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

@@ -5,17 +5,28 @@
          <titleStmt>
             <title>MS. Bodl. 339</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>H. H. E. Craster</persName>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2018">Encoding and markup</resp>
+               <resp>Updates and corrections</resp>
+               <persName>Matthew Holford</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1966">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -49,43 +60,75 @@
                      <idno type="SCN">2400</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <msContents resp="#SC">
+                  <textLang mainLang="la">Latin</textLang>
                   <msItem xml:id="MS_Bodl_339-item1" n="1">
-                     <author key="person_47495827">
-                        
-                        Evrart de Tremaugon
-                     
-                     </author>
+                     <author key="person_47495827">Evrart de Tremaugon</author>
                      <title key="work_1521">Somnium Viridarii</title>
-                     <textLang mainLang="la">Latin</textLang>
+                  </msItem>
+                  <msItem>
+                     <locus>(p. 237</locus>
+                     <title type="desc">Quaestio on the power of a general council</title>
+                     <rubric>Questio . Vtrum generale Concilium ... habeat potestatem a pape potestate distinctam</rubric>
+                     <incipit>Quamuis ut ait beatus Thomas</incipit>
+                     <note>Fourteen conclusiones.</note>
+                  </msItem>
+                  <msItem>
+                     <locus>(p. 235)</locus>
+                     <colophon resp="#SC #DD">Explicit iste liber scriptor sit crimine liber | Qui me scribebat .Jo. barbe nomen habebat | Et scriptus fueram cum scribebatur in anno .|Mille. quater centum. necnon triginta nouemque | in sexta feria post ascensum quoque <sic>xpristi</sic></colophon>
                   </msItem>
                </msContents>
-               <physDesc>
+               <physDesc resp="#DD">
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>viii + 292 + 1 pages
+                        <dimensions unit="mm" type="leaf">
+                           <height>308</height>
+                           <width>220</width>
+                        </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2" writtenLines="48">2 cols., 48 lines, column space <dimensions unit="mm" type="column">
+                           <height>215</height>
+                           <width>67</width>
+                        </dimensions></layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <handDesc>
+                     <handNote>Written by
+                  <persName role="scribe" key="person_606">Jo. Barbe (Baert, Baerts)</persName>, who also wrote MS. Rawl. G. 48, Magdalen College MS. Lat. 191, and New College MS. 219.</handNote>
+                  </handDesc>
                   <decoDesc>
-                     <decoNote>Good miniatures, borders, initials. Iconography the same as MS. Bodley 338. Written by
-                  <persName role="scribe" key="person_606">Jo. Barbe (Baert)</persName>. (P&amp;A i. 668)
+                     <decoNote resp="#PA">Good miniatures, borders, initials. Iconography the same as MS. Bodley 338.  (P&amp;A i. 668)
                      </decoNote>
+                     <decoNote>Illuminiated miniatures, borders, initials, coat of arms; coloured initials, rubrics.</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
-                  <origin>
-                     <origDate calendar="Gregorian" when="1439">1439</origDate>
+                  <origin resp="#DD">
+                     <origDate calendar="Gregorian" when="1439" cert="high">1439</origDate>
                      <origPlace>
                         <country key="place_1000080">Italy</country>, <settlement key="place_7000457">Florence</settlement>
                         <!--ORIGINAL: Italy, Florence-->
                      </origPlace>
                   </origin>
+                  <provenance resp="#DD">Arms of <persName role="formerOwner" key="person_2959">Andrew Holes (d. 1470)</persName>, p. 3 (<heraldry>quarterly 1 and 4 argent two piles sable, 2 and 3 argent a lion rampant azure</heraldry>).</provenance>
+                  <provenance resp="#DD">Fol. iv verso: ‘<persName key="person_2960" role="formerOwner">Clericus Forratus de Catis</persName>’, early 16th century.</provenance>
+                  <provenance resp="#DD">‘Liber <persName role="formerOwner" key="person_2961">Joannis Whithell</persName> in artibus bauch. lauren.’, ‘Joannis Whithell his booke’, 16th century, second half.</provenance>
+                  <provenance resp="#DD">‘Liber <persName role="formerOwner" key="person_2962">Gulielmi White</persName> presbiteri et in legibus bacc.’, 16th century, second half.</provenance>
+                  <provenance resp="#DD">‘<persName role="formerOwner" key="person_2963">John Greaves</persName>’, late 16th/early 17th century.</provenance>
+                  <acquisition resp="#SC">Acquired about 1618-20 (<bibl><title>Summary Catalogue</title> I, p. 103</bibl>).</acquisition>
                </history>
                <additional><adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
-                            
-                            
+                        <source>Description adapted (2018) from the following sources: 
+                           <listBibl>
+                              <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 78 [physical description, origin, provenance]</bibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, I (1966), no. 668 [decoration]</bibl>
+                              <bibl>Summary Catalogue (1922) [contents, acquisition]</bibl>
+                           </listBibl>     
                             <listBibl>
                               <bibl type="SC" facs="aap0370.gif">Summary Catalogue, vol. 2, part 1, p. 349</bibl>
                            </listBibl>
@@ -96,8 +139,9 @@
          </sourceDesc>
       </fileDesc>       
       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
+      <revisionDesc>          
+         <change who="#MLH" when="2018-11-12">Revised to incorporate all information in Watson, P&amp;A, and SC.</change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

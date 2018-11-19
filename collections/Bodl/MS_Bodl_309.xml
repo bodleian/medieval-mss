@@ -5,17 +5,22 @@
          <titleStmt>
             <title>MS. Bodl. 309</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1895">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2018">Encoding and markup</resp>
+               <resp>Updates and corrections</resp>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -50,32 +55,64 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  <textLang mainLang="la">Latin</textLang>
                   <msItem xml:id="MS_Bodl_309-item1" n="1">
-                     <author key="person_61539765">
-                        
-                        Bede
-                     
-                     </author>
+                     <locus>(fol. 3v)</locus>
+                     <author key="person_61539765">Bede</author>
                      <title key="work_966">De ratione temporum</title>
-                     <textLang mainLang="la">Latin</textLang>
                   </msItem>
                   <msItem xml:id="MS_Bodl_309-item2" n="2" class="#computistica">
-                     <title type="desc" key="work_14916">Treatises and notes on calendar</title>
-                     <textLang mainLang="la">Latin</textLang>
+                     <locus>(fol. 62)</locus>
+                     <title type="desc" key="work_14916">Treatises and notes on calendar, including:</title>
+                     <msItem>
+                        <locus>(fols. 62r-73v)</locus>
+                        <author key="person_209749583">Ps-Bede</author>
+                        <title key="work_6068">Compotus hibernicus siue De ratione temporum</title>
+                        <note>(CPL 2312; Lapidge &amp; Sharpe 323)</note>
+                        <rubric><note>(in capitals)</note> Incipivnt sententie sancti agvstini et isidori in lavde conpoti</rubric>
+                        <incipit>Augustinus dixit . De quattuor diuisiones scripture . Quattuor necessaria sunt in ęcclesia </incipit>
+                        <incipit>Diuisiones temporis quot sunt? M<ex>agister</ex> XIIII. id est athomus</incipit>
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 80v)</locus>
+                        <rubric>de Pascha</rubric>
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 82v)</locus>
+                        <rubric>de Sollennitatibus</rubric>
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 84)</locus>
+                        <rubric>Epistolae de ratione Paschae</rubric>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 90v-93v)</locus>
+                        <author>Ps.-Anatolius</author>
+                        <title>De ratione Paschae</title>
+                        <note>(Lapidge &amp; Sharpe 320)</note>
+                     </msItem>
                   </msItem>
                   <msItem xml:id="MS_Bodl_309-item3" n="3" class="#historica">
-                     <title type="desc" key="work_12248">Historical notes 734-1075, with additions to 1346</title>
-                     <textLang mainLang="la">Latin</textLang>
+                     <locus>(fol. 111)</locus>
+                     <title type="desc" key="work_12248">List of years, B.C. 152 to A.D. 1421, with historical notes mostly relating to Vendôme, 734-1075, continued to 1346.</title>
+                     <note></note>
                   </msItem>
                   <msItem xml:id="MS_Bodl_309-item4" n="4">
-                     <author key="person_100218964">
-                        
-                        Boethius
-                     
-                     </author>
-                     <title key="work_1127">Arithmetica</title>
-                     <textLang mainLang="la">Latin</textLang>
+                     <locus>(fol. 143)</locus>
+                     <title type="desc">A calendar for the year, with explanations; dedication of Holy Trinity, Vendôme, 31 May.</title>
                   </msItem>
+                  <msItem xml:id="MS_Bodl_309-item5" n="5">
+                     <locus>(fol. 147)</locus>
+                     <title type="desc">Genealogy of the Kings of France, from Pharamundus to Philip I (1060-1108), continued to Philip II (1180-1223)</title>
+                  </msItem>
+                  <msItem xml:id="MS_Bodl_309-item6" n="6">
+                     <locus>(fol. 149)</locus>
+                     <author key="person_100218964">Boethius</author>
+                     <title key="work_1127">Arithmetica</title>
+                     <note>Lacking bk. i, cc. 1-16, part of i.17, and ii.27 onwards.</note>
+                  </msItem>
+                  <msItem><note><title type="desc" key="work_14916">Miscellaneous notes, tables, and extracts, chiefly concerned with the calendar</title>, occur at fols. 2v, 61v, 101, 132, 165.</note>
+                  <note>Fol. 165v, Easter Tables 1064-1095.</note></msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
@@ -86,19 +123,25 @@
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" when="1075" cert="high">c. 1075</origDate>; <origDate notAfter="1345" notBefore="1076">additions to 1346</origDate>
+                     <origDate calendar="Gregorian" when="1075" cert="high">c. 1075</origDate>; <origDate notAfter="1345" notBefore="1076" type="additions">additions to 1346</origDate>
                      <origPlace>
-                        <country key="place_1000070">French</country>, <settlement key="place_7008329">Vendome</settlement>
-                        <!--ORIGINAL: French, Vendome-->
+                        <country key="place_1000070">French</country>, <settlement key="place_7008329">Vendôme</settlement>, <orgName key="org_146618633">Benedictine abbey of the Holy Trinity</orgName>
                      </origPlace>
                   </origin>
+                  <provenance from="1075" to="1346">Annals, fols. 111-131v written by the original scribe up to and including 1075 (fol. 127). Additions made at the abbey of the <orgName role="formerOwner" key="org_146618633">Holy Trinity</orgName> to 1346.</provenance>
+                  <provenance notAfter="1635">Still at the <orgName role="formerOwner" key="org_146618633">abbey</orgName> in the early seventeenth century when partly transcribed by A. Duchesne before 1635 (<bibl>R. Graham, ‘The annals of the monastery of the Holy Trinity at Vendôme’, <title>EHR</title> 13 (1898), 695</bibl>).</provenance>
+                  <provenance><persName role="formerOwner" key="person_237497">Edward Bernard (1638-97)</persName>.</provenance>
+                  <acquisition when="1698">Purchased from Bernard's widow for the Bodleian in 1698.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
-                            
-                            
+                        <source>Description adapted (2018) from the following sources, and from published literature cited in the description: 
+                           <listBibl>
+                              <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 76 [physical description, origin, provenance]</bibl>
+                              <bibl>Summary Catalogue (1895) [contents, acquisition]</bibl>
+                           </listBibl>     
+                           
                             <listBibl>
                               <bibl type="SC" facs="aas0028.gif">Summary Catalogue, vol. 3, p. 13</bibl>
                            </listBibl>
@@ -110,8 +153,9 @@
          </sourceDesc>
       </fileDesc>       
       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
+      <revisionDesc>          
+         <change who="#MLH" when="2018-11-12">Revised to incorporate all information in Watson and SC.</change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

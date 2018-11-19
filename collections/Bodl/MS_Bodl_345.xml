@@ -5,17 +5,28 @@
          <titleStmt>
             <title>MS. Bodl. 345</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>H. H. E. Craster</persName>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2018">Encoding and markup</resp>
+               <resp>Updates and corrections</resp>
+               <persName>Matthew Holford</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -49,67 +60,72 @@
                      <idno type="SCN">2411</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <msContents resp="#SC">
+                  <textLang mainLang="la">Latin</textLang>
                   <msItem xml:id="MS_Bodl_345-item1" n="1">
-                     <author key="person_9865788">
-                        
-                        Hugh of St. Victor
-                     
-                     </author>
+                     <locus>(fol. 1)</locus>
+                     <author key="person_9865788">Hugh of St. Victor</author>
                      <title key="work_2134">Homilies on Ecclesiastes</title>
-                     <textLang mainLang="la">Latin</textLang>
                   </msItem>
                   <msItem xml:id="MS_Bodl_345-item2" n="2">
-                     <author key="person_9865788">
-                        
-                        Hugh of St. Victor
-                     
-                     </author>
+                     <locus>(fol. 48)</locus>
+                     <author key="person_9865788">Hugh of St. Victor</author>
                      <title key="work_2128">Adnotationes elucidatoriae in Threnos</title>
-                     <textLang mainLang="la">Latin</textLang>
                   </msItem>
                   <msItem xml:id="MS_Bodl_345-item3" n="3">
-                     <author key="person_9865788">
-                        
-                        Hugh of St. Victor
-                     
-                     </author>
+                     <locus>(fol. 69)</locus>
+                     <author key="person_9865788">Hugh of St. Victor</author>
                      <title key="work_2130">Commentary on Ps.-Dionysius, Hierarchia caelestis</title>
-                     <textLang mainLang="la">Latin</textLang>
                   </msItem>
                   <msItem xml:id="MS_Bodl_345-item4" n="4">
-                     <author key="person_9865788">
-                        
-                        Hugh of St. Victor
-                     
-                     </author>
+                     <locus>(fol. 93)</locus>
+                     <author key="person_9865788">Hugh of St. Victor</author>
                      <title key="work_2131">De archa Noe</title>
-                     <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
-               <physDesc>
+               <physDesc resp="#DD">
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>ii + 121 fols.
+                           <dimensions unit="mm" type="leaf">
+                              <height>325</height>
+                              <width>227</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2" writtenLines="47 48">2 cols., 47-48 lines, column space <dimensions unit="mm" type="column">
+                           <height>235</height>
+                           <width>75</width>
+                        </dimensions></layout>
+                     </layoutDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>Fine penwork initials. (P&amp;A iii. 1315, pl. CXIX)
-                     </decoNote>
+                     <decoNote resp="#PA">Fine penwork initials. (P&amp;A iii. 1315, pl. CXIX)</decoNote>
+                     <decoNote>Coloured initials, rubrics.</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
-                  <origin>
-                     <origDate calendar="Gregorian" notAfter="1170" notBefore="1100">before 1170</origDate>
+                  <origin resp="#DD">
+                     <origDate calendar="Gregorian" notAfter="1170" notBefore="1164" cert="high">Before 1170 (1164 × 1170?)</origDate>
                      <origPlace>
-                        <country key="place_1000070">French</country>
+                        <country key="place_1000070">French</country>, <settlement key="place_7008038" cert="medium">Paris</settlement> (?)
                      </origPlace>
                   </origin>
+                  <provenance notAfter="1170" resp="#DD">Fol. iii verso ‘S.T.’, i.e. Sanctus Thomas, indicating the gift to Christ Church, Canterbury, by <persName role="formerOwner donor" key="person_100187947">Thomas Becket</persName> (d. 1170). Presumably made for him in France during his exile 1164-1170.</provenance>
+                  <provenance notAfter="1331" resp="#DD"><orgName role="formerOwner" key="org_158353196">Christ Church, Canterbury</orgName>: identifiable as no. 808 in Prior Eastry's catalogue (before 1331) (<bibl>James, <title>Ancient Libraries</title>, p. 83</bibl>).</provenance>
+                  <provenance when="1508" resp="#SC"><orgName role="formerOwner" key="org_158353196">Christ Church, Canterbury</orgName>: identifiable as no. 193 in the list of books repaired in 1508 (<bibl>James, <title>Ancient Libraries</title>, p. 159</bibl>).</provenance>
+                  <acquisition when="1616" resp="#SC">Given by <persName role="donor" key="person_67932423">Abraham</persName>, <persName role="donor" key="person_2919">Isaac</persName>, and <persName role="donor" key="person_2920">Jacob Colfe</persName> in 1616.</acquisition>
                </history>
                <additional><adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
-                            
+                        <source>Description adapted (2018) from the following sources: 
+                           <listBibl>
+                              <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 77 [physical description, origin, provenance]</bibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, III (1973), no. 1315 [decoration]</bibl>
+                              <bibl>Summary Catalogue (1922) [contents, provenance, acquisition]</bibl>
+                           </listBibl>     
                             
                             <listBibl>
                               <bibl type="SC" facs="aap0375.gif">Summary Catalogue, vol. 2, part 1, p. 354</bibl>
@@ -122,8 +138,9 @@
          </sourceDesc>
       </fileDesc>       
       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
+      <revisionDesc>          
+         <change who="#MLH" when="2018-11-12">Revised to incorporate all information in Watson, P&amp;A, and SC.</change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>
