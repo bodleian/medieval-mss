@@ -5,17 +5,28 @@
          <titleStmt>
             <title>MS. Bodl. 418</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>H. H. E. Craster</persName>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2018">Encoding and markup</resp>
+               <resp>Updates and corrections</resp>
+               <persName>Matthew Holford</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -49,52 +60,62 @@
                      <idno type="SCN">2317</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <msContents resp="#DD">
                   <msItem xml:id="MS_Bodl_418-item1" n="1">
-                     <author key="person_191026298">
-                        
-                        Franciscus de Mayronis
-                     
-                     </author>
-                     <title key="work_1568">Commentary on Peter Lombard, Sententiae</title>
-                     <bibl type="commentedOn">
-                        <author key="person_51797933">
-                           Peter Lombard
-                        </author>
-                        <title>Sententiae</title>
-                     </bibl>
+                     <author key="person_191026298">Franciscus de Mayronis</author>
+                     <title key="work_1568">In primum librum sententiarum</title>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
-               <physDesc>
+               <physDesc resp="#DD">
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>i + 157 fols.
+                        <dimensions unit="mm" type="leaf">
+                           <height>295</height>
+                           <width>207</width>
+                        </dimensions></extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout>2 cols., c. 58-70 lines, column space <dimensions unit="mm" type="column">
+                           <height>210</height>
+                           <width>60</width>
+                        </dimensions></layout>
+                     </layoutDesc>
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote>Good initials. Written by <persName role="scribe" key="person_651">
+                  <handDesc>
+                     <handNote>Written by <persName role="scribe" key="person_651">
                            Johannes Steenhusen
-                        </persName> in Montpellier in 1440, fol. 157v,
-                  but the initials added later. (P&amp;A ii. 743)
-                     </decoNote>
+                        </persName>.</handNote>
+                  </handDesc>
+                  <decoDesc>
+                     <decoNote resp="#PA">Good initials. Written in Montpellier in 1440, fol. 157v, but the initials added later. (P&amp;A ii. 743)</decoNote>
                   </decoDesc>
+                  <accMat>Fols. i, 160 are fly-leaves from a 15th-century Latin manuscript of canon law.</accMat>
                </physDesc>
                <history>
-                  <origin>
-                     <origDate calendar="Gregorian" notAfter="1475" notBefore="1440">1440 - c. 1475</origDate>
+                  <origin resp="#PA #DD">
+                     <origDate calendar="Gregorian" when="1440" cert="high">1440</origDate>, <origDate type="additions" notBefore="1470" notAfter="1480">added decoration c. 1475</origDate>
                      <origPlace cert="low">
                         <country key="place_1000070">French</country>, <settlement key="place_7009369">Montpellier</settlement> (script)</origPlace>
                      <origPlace>
                         <country key="place_1000080">Italian</country>, <region>Lombardy</region> (?) (decoration)</origPlace>
-                     <!--MULTIPLE PLACES OF ORIGIN-->
                   </origin>
+                  <provenance notBefore="1440">Fol. 157v: ‘explicit reportacio ... per manus Johannis steenhusen in montepessulano in ordine uel conuentu minorum pro fratre <persName key="person_2967">matheo de ficecko</persName> ordinis fratrum minorum. Anno domini Millesimo quadringentesimo quadragesimo <sic>altra</sic> die post conuersionem sancti pauli etc.’</provenance>
+                  <provenance notAfter="1475">Fol. 160 (flyleaf): ‘Iste liber est mei magistri <persName key="person_2968">francisci de careto</persName> ordinis minorum Asignatum fratri Francisco <add>de Sax<ex>el</ex>lo</add> dissipullo meo sibi Asignatum pro sui studi<damage><gap/></damage> papie [Pavia] incoati anno domini MoCCCColxxv die die vero decima quarta madij.’</provenance>
+                  <provenance notBefore="1475">Fol. 157v: ‘iste liber est ad vsum fratris <persName key="person_2969">franciscj de saxello</persName> ordinis minorum prouincie Janue [Genoa] et conuentus cultismilij [Cortemilia] Asignatum sibi per magistrum franciscum de Careto euisdem conuentus ac prouincie cuius anima requiescat in pace et hoc anno domini 1475. papie.’</provenance>
+                  <acquisition when="1603">Presented by <persName role="donor" key="person_2966">Sir Richard Fermor of Somerton</persName> in 1603.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
-                            
+                        <source>Description adapted (2018) from the following sources: 
+                           <listBibl>
+                              <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 85 [contents, physical description, origin, provenance]</bibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, II (1970), no. 743 [decoration]</bibl>
+                              <bibl>Summary Catalogue (1922) [flyleaves, acquisition]</bibl>
+                           </listBibl>      
                             
                             <listBibl>
                               <bibl type="SC" facs="aap0326.gif">Summary Catalogue, vol. 2, part 1, p. 305</bibl>
