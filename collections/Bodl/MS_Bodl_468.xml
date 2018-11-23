@@ -5,17 +5,23 @@
          <titleStmt>
             <title>MS. Bodl. 468</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>H. H. E. Craster</persName>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2018">Encoding and markup</resp>
+               <resp>Updates and corrections</resp>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -50,53 +56,68 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  <textLang mainLang="la">Latin</textLang>
                   <msItem xml:id="MS_Bodl_468-item1" n="1">
-                     <author key="person_34569102">
-                        
-                        Hervaeus Natalis
-                     
-                     </author>
+                     <locus>(fol. 1)</locus>
+                     <author key="person_34569102">Hervaeus Natalis</author>
                      <title key="work_2036">Tractatus de uerbo</title>
-                     <textLang mainLang="la">Latin</textLang>
                   </msItem>
                   <msItem xml:id="MS_Bodl_468-item2" n="2">
-                     <author key="person_34569102">
-                        
-                        Hervaeus Natalis
-                     
-                     </author>
+                     <locus>(fol. 7)</locus>
+                     <author key="person_34569102">Hervaeus Natalis</author>
                      <title key="work_2035">Quodlibet</title>
-                     <note>1-4</note>
-                     <textLang mainLang="la">Latin</textLang>
+                     <note>1-4: 2, fol. 24v, 3, fol. 85v, 4, fol. 110v.</note>
                   </msItem>
                   <msItem xml:id="MS_Bodl_468-item3" n="3">
-                     <author key="person_34569102">
-                        
-                        Hervaeus Natalis
-                     
-                     </author>
+                     <locus>(fol. 140)</locus>
+                     <author key="person_34569102">Hervaeus Natalis</author>
                      <title key="work_2034">De materia caeli</title>
-                     <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>i + 165 fols.
+                        <dimensions unit="mm" type="leaf">
+                           <height>288</height>
+                           <width>210</width>
+                        </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout>2 cols., 55 lines, column space <dimensions unit="mm" type="column">
+                           <height>215</height>
+                           <width max="75" min="70">70-5</width>
+                        </dimensions></layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <decoDesc>
+                     <decoNote>Spaces left for initials.</decoNote>
+                  </decoDesc>
+                  <bindingDesc>
+                     <binding notAfter="1600" notBefore="1400">
+                        <p>Blind-ruled whittawed leather binding over boards, 15or or 16th century, rebacked.</p>
+                     </binding>
+                  </bindingDesc>
+
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" when="1455">1455</origDate>
-                     <origPlace cert="low">
-                        <country key="place_7016845">Netherlands</country> (?)</origPlace>
+                     <origDate calendar="Gregorian" when="1455" cert="high">1455</origDate>
                   </origin>
+                  <provenance>‘Expliciunt questiones de celo ... quas ... scripsit frater <persName role="scribe" key="person_2972">Johannes bouts</persName> <note>[or bonts]</note> et finiunt Anno dominj millesimo quadringentesimo lvo in crastino apostolorum beatorum Simonis et Jude ... ’ (fol. 162).</provenance>
+                  <provenance><orgName role="formerOwner" key="org_2142145857037522921207">Windsor, collegiate chapel of St George</orgName>.</provenance>
+                  <acquisition when="1612">Presented by the dean and canons in 1612.</acquisition>
                </history>
                <additional><adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
-                            
+                        <source>Description adapted (2018) from the following sources: 
+                           <listBibl>
+                              <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 92 [physical description, origin, provenance]</bibl>
+                              
+                              <bibl>Summary Catalogue (1922) [contents, acquisition]</bibl></listBibl>
+                           
                             
                             <listBibl>
                               <bibl type="SC" facs="aap0413.gif">Summary Catalogue, vol. 2, part 1, p. 392</bibl>
@@ -109,7 +130,9 @@
          </sourceDesc>
       </fileDesc>       
       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
+      <revisionDesc>         
+         <change who="#MLH" when="2018-11-23">Revised to incorporate all information in Watson and SC.</change>
+         <change when="2017-07-01">First online publication.</change>
 
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
