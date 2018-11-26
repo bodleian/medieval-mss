@@ -6,17 +6,28 @@
          <titleStmt>
             <title>MS. Bodl. 426</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>H. H. E. Craster</persName>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2018">Encoding and markup</resp>
+               <resp>Updates and corrections</resp>
+               <persName>Matthew Holford</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -51,13 +62,27 @@
                   </altIdentifier>
                </msIdentifier>
                <physDesc>
-                  <p n="composite">Composite: fols. 1-118 || fols. 119-261</p>
+                  <p n="composite" resp="#SC">Two separate manuscripts (fols. 1-118, fols. 119-261) probably bound together for Sir Walter Cope.</p>
+                  <bindingDesc resp="#SC">
+                     <binding notAfter="1600" notBefore="1575">
+                        <p>Stamped leather, <placeName key="place_7002445">English</placeName>, late 16th century.</p>
+                     </binding>
+                  </bindingDesc>
+                  <accMat>Fol. i is a marginal fragment containing a thirteenth-century note on a philosophical (?) treatise.</accMat>
                </physDesc>
+               <history>
+                  <acquisition>Presented by <persName role="donor" key="person_2677">Sir Walter Cope</persName> in 1602.</acquisition>
+               </history>
                <additional><adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
-                            
-                            
+                        <source>Description adapted (2018) from the following sources: 
+                           <listBibl>
+                              <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 88 [part 1: physical description, origin, provenance]</bibl>
+                              <bibl>Summary Catalogue (1922) [parts 1 and 2: contents, acquisition, binding]</bibl></listBibl>
+                           
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, III (1973), nos. 6 [part 1: decoration], 950 [part 2: decoration, dating, provenance]</bibl>
+                           
+                           
                             <listBibl>
                               <bibl type="SC" facs="aap0333.gif">Summary Catalogue, vol. 2, part 1, p. 312</bibl>
                            </listBibl>
@@ -72,36 +97,53 @@
                         <idno type="part">MS. Bodl. 426 - Part 1</idno>
                      </altIdentifier>
                   </msIdentifier>
-                  <msContents>
+                  <msContents resp="#SC">
                      <msItem xml:id="MS_Bodl_426-part1-item1" n="1">
-                        <author key="person_22480843">
-                           
-                           Philippus Presbyter
-                        
-                        </author>
+                        <locus>(fol. 1)</locus>
+                        <author key="person_22480843">Philippus Presbyter</author>
                         <title key="work_3643">Commentary on Job</title>
-                        <bibl type="commentedOn">
-                           <title>Bible, Job</title>
-                        </bibl>
+                        <rubric>Incipit liber commentarii Philippi praesbiteri ad Nectarium episcopum in libris sancti Iob</rubric>
+                        <rubric>Praefatio Philippi ad <supplied>Nect</supplied>tarium</rubric>
+                        <incipit>Adhortante immo potius compellente</incipit>
+                        <rubric>prologus Philippi in <sic>sanctum</sic></rubric>
+                        <incipit>Sanctus Iob uir summae patientiae</incipit>
+                        <incipit>Uir erat in terra Chur nomine Iob. Cui dubium quod terra illa</incipit>
+                        <bibl>CPL 643; bks. 1-2 only.</bibl>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                   </msContents>
-                  <physDesc>
+                  <physDesc resp="#DD">
                      <objectDesc form="codex">
                         <supportDesc material="perg">
                            <support>parchment</support>
+                           <extent>
+                              <dimensions unit="mm" type="leaf">
+                                 <height>295</height>
+                                 <width>220</width>
+                              </dimensions>
+                           </extent>
                         </supportDesc>
+                        <layoutDesc>
+                           <layout>1 col., 31 lines, written space <dimensions unit="mm" type="written">
+                              <height>240</height>
+                              <width max="175" min="170">170-5</width>
+                           </dimensions></layout>
+                        </layoutDesc>
                      </objectDesc>
                      <decoDesc>
-                        <decoNote>Fine initials. Modified Irish script. (P&amp;A iii. 6, pl. I)</decoNote>
+                        <decoNote resp="#PA">Fine initials. Modified Irish script. (P&amp;A iii. 6, pl. I)</decoNote>
+                        <decoNote>Coloured initials, rubrics.</decoNote>
                      </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="0850" notBefore="0825">9th century, second quarter</origDate>
+                        <origDate calendar="Gregorian" notAfter="0850" notBefore="0840">c. 840-850</origDate>
                         <origPlace cert="low">
                            <country key="place_7002445">English</country>, <region>Wessex</region> (?)<!--ORIGINAL: English, Wessex (?)--></origPlace>
                      </origin>
+                     <provenance resp="#DD">The scribe also wrote charters of Æthelwulf, king of Wessex, dated 838 and 847 (BL MSS Cotton Augustus II. 20, II. 37, and VIII. 36, Sawyer nos. 1438, 298).</provenance>
+                     <provenance resp="#DD" notBefore="1290" notAfter="1310"><orgName role="formerOwner" key="org_165174766">St Augustine's Abbey, Canterbury</orgName>: ‘Di.III.G<hi rend="superscript">a</hi> IIII Liber sancti augustini Cantuariensis’, late 13th-early 14th century, fol. iv verso.</provenance>
+                     <provenance resp="#DD" notAfter="1500" notBefore="1475"><orgName role="formerOwner" key="org_165174766">St Augustine's Abbey, Canterbury</orgName>: BA1.137 in the late-fifteenth century catalogue (ed. Barker-Benfield, I, 419).</provenance>
                   </history>
                </msPart>
                <msPart xml:id="MS_Bodl_426-part2">
@@ -110,69 +152,57 @@
                         <idno type="part">MS. Bodl. 426 - Part 2</idno>
                      </altIdentifier>
                   </msIdentifier>
-                  <msContents>
+                  <msContents resp="#SC">
+                     <textLang mainLang="la">Latin</textLang>
                      <msItem xml:id="MS_Bodl_426-part2-item1" n="1">
-                        <author key="person_24572572">
-                           
-                           Peter of Blois
-                        
-                        </author>
+                        <locus>(fol. 119)</locus>
+                        <author key="person_24572572">Peter of Blois</author>
                         <title key="work_3525">Epistolae</title>
-                        <textLang mainLang="la">Latin</textLang>
+                        <note>143 letters.</note>
                      </msItem>
                      <msItem xml:id="MS_Bodl_426-part2-item2" n="2">
-                        <author key="person_24572572">
-                           
-                           Peter of Blois
-                        
-                        </author>
+                        <locus>(fol. 240)</locus>
+                        <author key="person_24572572">Peter of Blois</author>
                         <title key="work_3519">Compendium in Iob</title>
-                        <textLang mainLang="la">Latin</textLang>
                      </msItem>
                      <msItem xml:id="MS_Bodl_426-part2-item3" n="3">
-                        <author key="person_24572572">
-                           
-                           Peter of Blois
-                        
-                        </author>
+                        <locus>(fol. 251)</locus>
+                        <author key="person_24572572">Peter of Blois</author>
                         <title key="work_3523">De transfiguratione domini</title>
-                        <textLang mainLang="la">Latin</textLang>
                      </msItem>
                      <msItem xml:id="MS_Bodl_426-part2-item4" n="4">
-                        <author key="person_2305">
-                           
-                           Ps.-Peter of Blois
-                        <!-- not in VIAF -->
-                        </author>
+                        <locus>(fol. 254v)</locus>
+                        <author key="person_2305">Ps.-Peter of Blois</author>
                         <title key="work_4084">De XII utilitatibus tribulationis</title>
-                        <textLang mainLang="la">Latin</textLang>
                      </msItem>
                   </msContents>
-                  <physDesc>
+                  <physDesc resp="#SC">
                      <objectDesc form="codex">
                         <supportDesc material="perg">
                            <support>parchment</support>
                         </supportDesc>
                      </objectDesc>
                      <decoDesc>
-                        <decoNote>Penwork border, initials. (P&amp;A iii. 950)</decoNote>
+                        <decoNote resp="#PA">Penwork border, initials. (P&amp;A iii. 950)</decoNote>
                      </decoDesc>
                   </physDesc>
                   <history>
-                     <origin>
+                     <origin resp="#PA">
                         <origDate calendar="Gregorian" notAfter="1450" notBefore="1400">15th century, first half</origDate>
                         <origPlace>
                            <country key="place_7002445">English</country>
                         </origPlace>
                      </origin>
+                     <provenance resp="#PA" notBefore="1400" notAfter="1500">Arms of <orgName role="formerOwner" key="org_150107857">Bury St. Edmunds</orgName> abbey, and initials of <persName role="formerOwner" key="person_2974">William Babington</persName>, abbot 1446-1453.</provenance>
                   </history>
                </msPart>
             </msDesc>
          </sourceDesc>
       </fileDesc>       
       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
+      <revisionDesc>        
+         <change who="#MLH" when="2018-11-23">Revised to incorporate all information in Watson, P&amp;A, and SC.</change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>
