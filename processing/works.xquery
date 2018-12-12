@@ -71,6 +71,7 @@ declare variable $allinstances :=
         let $variants := for $v in $work/tei:title[not(@type='uniform')] return normalize-space($v/string())
         let $extrefs := for $r in $work/tei:note[@type='links']//tei:item/tei:ref return concat($r/@target/data(), '|', bod:lookupAuthorityName(normalize-space($r/tei:title/string())))
         let $bibrefs := for $b in $work/tei:bibl return bod:italicizeTitles($b)
+        let $repertories := for $n in $work/tei:bibl[@type='repertory'] return normalize-space($n/string())
         let $notes := for $n in $work/tei:note[not(@type=('links','shelfmark','language','subject'))] return bod:italicizeTitles($n)
         let $subjects := distinct-values($work/tei:note[@type='subject']/string())
         let $lang := $work/tei:textLang
@@ -119,6 +120,11 @@ declare variable $allinstances :=
                 for $bibref in $bibrefs
                     order by $bibref
                     return <field name="bibref_smni">{ $bibref }</field>
+                }
+                {
+                for $repertory in $repertories
+                    order by $repertory
+                    return <field name="repertory_sm">{ $repertory }</field>
                 }
                 {
                 (: Notes about the work :)
