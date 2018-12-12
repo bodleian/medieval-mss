@@ -151,7 +151,6 @@ declare function local:buildSummary($msdescorpart as element()) as xs:string
                     { bod:languages($ms//tei:sourceDesc//tei:textLang, 'lang_sm') }
                     { local:origin($ms//tei:sourceDesc//tei:origPlace/tei:country/string(@key), 'ms_origin_sm') }
                     { bod:centuries($ms//tei:origin//tei:origDate, 'ms_date_sm') }
-                    { bod:string2one(local:buildSummary($ms//tei:msDesc[1]), 'ms_summary_s') }
                     { bod:strings2many(local:buildSummaries($ms), 'ms_summary_sm') }
                     { bod:indexHTML($htmldoc, 'ms_textcontent_tni') }
                     { bod:displayHTML($htmldoc, 'display') }
