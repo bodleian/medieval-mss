@@ -56,6 +56,10 @@
             <xsl:text>, </xsl:text>
         </xsl:if>
     </xsl:template>
-
-
+    
+    
+    <xsl:template match="lb">
+        <xsl:text> | </xsl:text>
+    </xsl:template>
+    
 </xsl:stylesheet>
