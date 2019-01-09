@@ -72,7 +72,7 @@ declare variable $allinstances :=
         
         (: Get info in all the instances in the manuscript description files :)
         let $instances := $allinstances[key = $id]
-        let $roles := for $role in distinct-values($instances/role/text()) return bod:personRoleLookup($role)
+        let $roles := distinct-values(for $role in distinct-values($instances/role/text()) return bod:personRoleLookup($role))
         
         (: Output a Solr doc element :)
         return if (count($instances) gt 0) then

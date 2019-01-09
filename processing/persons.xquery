@@ -14,7 +14,7 @@ declare variable $allinstances :=
     for $instance in collection('../collections?select=*.xml;recurse=yes')//tei:msDesc//(tei:persName|tei:author)
         let $roottei := $instance/ancestor::tei:TEI
         let $shelfmark := ($roottei/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:msDesc/tei:msIdentifier/tei:idno[@type = "shelfmark"])[1]/text()
-        let $roles := if ($instance/self::tei:author) then ('author') else tokenize($instance/@role/data(), ' ')
+        let $roles := if ($instance/self::tei:author) then ('aut') else tokenize($instance/@role/data(), ' ')
         let $datesoforigin := distinct-values($roottei//tei:origin//tei:origDate/normalize-space())
         let $placesoforigin := distinct-values($roottei//tei:origin//tei:origPlace/normalize-space())
         return
@@ -77,7 +77,7 @@ declare variable $allinstances :=
         
         (: Get info in all the instances in the manuscript description files :)
         let $instances := $allinstances[key = $id]
-        let $roles := for $role in distinct-values($instances/role/text()) return bod:personRoleLookup($role)
+        let $roles := distinct-values(for $role in distinct-values($instances/role/text()) return bod:personRoleLookup($role))
         let $isauthor := some $role in $instances/role/text() satisfies $role = ('author','aut')
         let $istranslator := some $role in $instances/role/text() satisfies $role = ('translator','trl')
 
