@@ -1,6 +1,8 @@
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 declare option saxon:output "indent=yes";
 
+declare variable $chunk as xs:integer external;
+
 declare variable $website := 'https://medieval.bodleian.ox.ac.uk';
 
 declare function local:logging($level as xs:string, $msg as xs:string, $values)
@@ -341,7 +343,7 @@ declare function local:listPlacesOrgsPeople($container as element()) as element(
                     { if (count($contexts) gt 0 and not($container/self::tei:provenance)) then attribute context { string-join($contexts, ' ') } else () }
                     <uri>{ $website }/catalog/{ $otherperson/@key/data() }</uri>
                     <label>{ normalize-space(string-join($otherperson//text(), '')) }</label>
-                    { for $role in tokenize($otherperson/@role, ' ') return <role>{ $role }</role> }
+                    { for $role in tokenize($otherperson/@role, ' ')[not(. = 'author')] return <role>{ $role }</role> }
                 </person>
         else
             ()
@@ -352,7 +354,7 @@ declare function local:listProvenances($msorpart as element()) as element()*
 {
     for $provenance in $msorpart/tei:history/tei:provenance[.//text()]
         let $id := concat($provenance/ancestor::tei:TEI/@xml:id/data(), '_prov', count($provenance/preceding::tei:provenance)+1)
-        let $isinscription := matches(normalize-space($provenance), "^\s*['‘]")    (: This is missing maybe half of all inscriptions :)
+        let $isinscription as xs:boolean := boolean(matches(normalize-space($provenance), "^\s*['‘]") or $provenance/tei:q)     (: This isn't a very good way to detect inscriptions, but is all we've got :)
         return
         element {if ($isinscription) then 'inscription' else 'provenance'} {
             
@@ -404,7 +406,7 @@ processing-instruction xml-model {'href="https://raw.githubusercontent.com/bodle
     {
     for $manuscript at $pos in collection('../../collections/?select=*.xml;recurse=yes')/tei:TEI
     
-        return if (true()) then
+        return if ($pos mod 20 = $chunk) then
         (: 
         To process everything, change above line to: return if (true()) then
         To get a small random-ish sample, use: return if ($pos mod 200 = 0) then 
