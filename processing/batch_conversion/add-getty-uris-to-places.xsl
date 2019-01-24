@@ -31,21 +31,68 @@
             <xsl:copy-of select="@*"/>
             <xsl:apply-templates/>
             <xsl:text>    </xsl:text>
-            <note type="links">
-                <list type="links">
-                    <item>
-                        <ref>
-                            <xsl:attribute name="target">
-                                <xsl:text>http://vocab.getty.edu/tgn/</xsl:text>
-                                <xsl:value-of select="substring-after(@xml:id, 'place_')"/>
-                            </xsl:attribute>
-                            <title>TGN</title>
-                        </ref>
-                    </item>
-                </list>
-            </note>
+            <xsl:if test="not(note[@type='links'])">
+                <note type="links">
+                    <list type="links">
+                        <item>
+                            <ref>
+                                <xsl:attribute name="target">
+                                    <xsl:text>http://vocab.getty.edu/tgn/</xsl:text>
+                                    <xsl:value-of select="substring-after(@xml:id, 'place_')"/>
+                                </xsl:attribute>
+                                <title>TGN</title>
+                            </ref>
+                        </item>
+                    </list>
+                </note>
+            </xsl:if>
             <xsl:value-of select="$newline"/>
             <xsl:text>                </xsl:text>
+        </xsl:copy>
+    </xsl:template>
+    
+    <!-- Ditto for VIAF-sourced orgs -->
+    <xsl:template match="//listOrg[@type='VIAF']/org[@xml:id]">
+        <xsl:copy>
+            <xsl:copy-of select="@*"/>
+            <xsl:apply-templates/>
+            <xsl:text>    </xsl:text>
+            <xsl:if test="not(note[@type='links'])">
+                <note type="links">
+                    <list type="links">
+                        <item>
+                            <ref>
+                                <xsl:attribute name="target">
+                                    <xsl:text>http://vocab.getty.edu/tgn/</xsl:text>
+                                    <xsl:value-of select="substring-after(@xml:id, 'place_')"/>
+                                </xsl:attribute>
+                                <title>TGN</title>
+                            </ref>
+                        </item>
+                    </list>
+                </note>
+                <xsl:value-of select="$newline"/>
+                <xsl:text>                </xsl:text>
+            </xsl:if>
+        </xsl:copy>
+    </xsl:template>
+    
+    <xsl:template match="//listOrg[@type='VIAF']/org[@xml:id]/note[@type='links']/list[not(item/ref[contains(@target, 'viaf.org')])]">
+        <xsl:copy>
+            <xsl:copy-of select="@*"/>
+            <xsl:apply-templates/>
+            <xsl:text>    </xsl:text>
+            <item>
+                <ref>
+                    <xsl:attribute name="target">
+                        <xsl:text>https://viaf.org/viaf/</xsl:text>
+                        <xsl:value-of select="substring-after(ancestor::org[1]/@xml:id, 'org_')"/>
+                    </xsl:attribute>
+                    <title>VIAF</title>
+                </ref>
+            </item>
+            <xsl:value-of select="$newline"/>
+            <xsl:text>                    </xsl:text>
         </xsl:copy>
     </xsl:template>
     
