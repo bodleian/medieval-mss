@@ -67,7 +67,7 @@ declare variable $allinstances :=
                 for $v in $placeororg/tei:placeName[not(@type='index')] return normalize-space($v/string())
         let $extrefs := for $r in $placeororg/tei:note[@type="links"]//tei:item/tei:ref return concat($r/@target/data(), '|', bod:lookupAuthorityName(normalize-space($r/tei:title/string())))
         let $bibrefs := for $b in $placeororg/tei:bibl return bod:italicizeTitles($b)
-        let $notes := for $n in $placeororg/tei:note[not(@type="links")] return bod:italicizeTitles($n)
+        let $notes := for $n in ($placeororg/tei:note[not(@type="links")], $placeororg/ancestor::tei:listPlace/tei:head/tei:note, $placeororg/ancestor::tei:listOrg/tei:head/tei:note) return bod:italicizeTitles($n)
         let $geolocs := $placeororg/tei:location/tei:geo[matches(text(), '^\s*\-?[\d\.]+\s*,\s*\-?[\d\.]+\s*$')]
         
         (: Get info in all the instances in the manuscript description files :)
