@@ -6,16 +6,21 @@
          <titleStmt>
             <title>MS. Add. C. 153</title>
             <title type="collection">MSS. Add. (Additional) C</title>
-            <respStmt>
+            <respStmt xml:id="VD">
                <resp when="1957">Cataloguer</resp>
                <persName>S. J. P. van Dijk</persName>
             </respStmt>
-            <respStmt>
+            <respStmt xml:id="PA">
                <resp when="1970">Cataloguer</resp>
                <persName>Otto Pächt</persName>
                <persName>J. J. G. Alexander</persName>
             </respStmt>
-            <respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
                <resp when="2017">Encoding and markup</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
@@ -56,21 +61,23 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem xml:id="MS_Add_C_153-item1" n="1" class="#biblia">
+                  <textLang mainLang="la">Latin</textLang>
+                  <msItem xml:id="MS_Add_C_153-item1" n="1" class="#biblia" resp="#SC">
                      <title type="desc" key="work_12098">Gospels</title>
-                     <note>The four Gospels (1, 49v, 85, 131), followed by:</note>
-                     <msItem>
+                     <note>The four Gospels (fols. 1, 49v, 85, 131)</note>
+                     <note>With prefaces and chapter lists; imperfect before the text of Matthew.</note></msItem>
+                     <msItem resp="#VD">
+                        <locus>(fol. 160)</locus>
                         <title type="desc" key="work_16032">Capitulare evangeliorum (Benedictine Use?)</title>
                         <note>Combined temporale and sanctorale, beginning with
                         Christmas (160v); Febr. (162), March (162v), Lent (163), Eastertide (165), April
                         (165), May (165v) Pentecost and June (166v), July (167v), August (168v), Sept.
                         (169v), Oct. (170), Nov. (170v), All Saints (171), Advent (171v); votive Masses
                         (171v: de diversis causis) and masses of the dead (172v).</note></msItem>
-                     <textLang mainLang="la">Latin</textLang>
                      
-                  </msItem>
+                     
                </msContents>
-               <physDesc>
+               <physDesc resp="#VD">
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
@@ -88,30 +95,35 @@
                         <layout columns="1" writtenLines="29">Capitulare list in 29 lines</layout>
                      </layoutDesc>
                   </objectDesc>
-                  <decoDesc>
+                  <decoDesc resp="#PA">
                      <decoNote>Fine initials, related to Paris, Bibl. nat. MS. Lat. 264. (P&amp;A i. 265, pl. XVIII)</decoNote>
                   </decoDesc>
-                  <bindingDesc>
+                  <bindingDesc resp="#SC">
                      <binding notAfter="1600"><!-- assumed to be pre 1600; check -->
                         <p>Black velvet on boards.</p>
                      </binding>
                   </bindingDesc>
-                  <accMat>Endleaves: fol. i, Tobit x.11-xi.18, with gloss, 13th century; fols. ii-iv, fragments of translations from Aristotle, printed at Louvain c. 1476 by Conrad de Braem.</accMat>
+                  <accMat resp="#SC">Endleaves: fol. i, Tobit x.11-xi.18, with gloss, 13th century; fols. ii-iv, fragments of translations from Aristotle, printed at Louvain c. 1476 by Conrad de Braem.</accMat><!-- check: indexing -->
                </physDesc>
                <history>
-                  <origin>
+                  <origin resp="#PA">
                      <origDate calendar="Gregorian" notAfter="0950" notBefore="0900">10th century, first half</origDate>
                      <origPlace cert="low">
                         <country key="place_7024097">Flemish</country> or <country key="place_1000070">French</country>
                      </origPlace>
                   </origin>
-                  <provenance>Possibly from <orgName key="org_125070864" role="fmo" cert="unknown">Aulne-sur-Sambre</orgName> (cf. MS. Add. C. 152)</provenance>
+                  <provenance resp="#SC">Possibly from <orgName key="org_125070864" role="fmo" cert="unknown">Aulne-sur-Sambre</orgName> (cf. MS. Add. C. 152)</provenance>
                   <acquisition resp="#SC">Purchased by the Bodleian in 1843.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>S. J. P. Van Dijk, <title>Handlist of the Latin Liturgical Manuscripts in the Bodleian Library Oxford : Vol. 1: Mass Books</title> (typescript, 1957); updated (date) from Pächt and Alexander (see Bibliography). Previously described in the Summary Catalogue.  
+                        <source>
+                           Description adapted (2018) from the following sources:
+                           <bibl>S. J. P. Van Dijk, <title>Handlist of the Latin Liturgical Manuscripts in the Bodleian Library Oxford : Vol. 1: Mass Books</title> (typescript, 1957), p. 23 [contents (fol. 160), physical description]</bibl>
+                           <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, I (1966), no. 265 [decoration, origin]</bibl>
+                           <bibl>Summary Catalogue (1922) [contents, ‘accompanying material’, binding, provenance]</bibl>.  
+                             
                             <listBibl>
                               <bibl type="SC" facs="aam0499.gif">Summary Catalogue, Vol. 5, p.  464</bibl>
                               <bibl type="SC" facs="aam0500.gif">Summary Catalogue, Vol. 5, p.  465</bibl>
@@ -119,17 +131,14 @@
                         </source>
                      </recordHist>
                   </adminInfo>
-                  <surrogates><bibl type="digital-facsimile" subtype="partial"><ref target="https://digital.bodleian.ox.ac.uk/inquire/p/40c05b27-4785-4faa-97a9-73870fcbc2df"><title>Digital Bodleian</title></ref> <note>(2 images from 35mm slides)</note></bibl></surrogates><listBibl type="WRAPPER">
-                     <listBibl>
-                        <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, I (1966), no. 265</bibl>
-                     </listBibl>
-                  </listBibl>
+                  <surrogates><bibl type="digital-facsimile" subtype="partial"><ref target="https://digital.bodleian.ox.ac.uk/inquire/p/40c05b27-4785-4faa-97a9-73870fcbc2df"><title>Digital Bodleian</title></ref> <note>(2 images from 35mm slides)</note></bibl></surrogates>
                </additional>
             </msDesc>
          </sourceDesc>
       </fileDesc>       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
+      <revisionDesc>        
+         <change when="2019-01-28">Description revised in light of van Dijk, P&amp;A, and SC.</change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>
