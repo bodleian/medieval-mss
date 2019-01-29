@@ -57,9 +57,16 @@
         </xsl:if>
     </xsl:template>
     
-    
+    <!-- This is Medieval notation, do not move this to msdesc2html.xsl -->
     <xsl:template match="lb">
         <xsl:text>|</xsl:text>
+    </xsl:template>
+    
+    <!-- This is an override of the template in msdesc2html.xsl, which outputs a div. Maybe the choice should be based on context? -->
+    <xsl:template match="formula">
+        <span class="formula">
+            <xsl:apply-templates/>
+        </span>
     </xsl:template>
     
 </xsl:stylesheet>
