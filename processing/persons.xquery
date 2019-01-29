@@ -3,7 +3,7 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
 declare option saxon:output "indent=yes";
 
 (: Read authority file :)
-declare variable $authorityentries := doc("../persons.xml")/tei:TEI/tei:text/tei:body/tei:listPerson/tei:person[@xml:id];
+declare variable $authorityentries := doc("../persons.xml")/tei:TEI/tei:text/tei:body//tei:listPerson/tei:person[@xml:id];
 
 (: Read works authority file to be able to link from authors to their works :)
 declare variable $worksauthority := doc("../works.xml")/tei:TEI/tei:text/tei:body/tei:listBibl/tei:bibl[@xml:id];
@@ -73,7 +73,7 @@ declare variable $allinstances :=
         let $variants := for $variant in $person/tei:persName[not(@type='display')] return normalize-space($variant/string())
         let $extrefs := for $ref in $person/tei:note[@type='links']//tei:item/tei:ref return concat($ref/@target/data(), '|', bod:lookupAuthorityName(normalize-space($ref/tei:title/string())))
         let $bibrefs := for $bibl in $person/tei:bibl return bod:italicizeTitles($bibl)
-        let $notes := for $note in $person/tei:note[not(@type='links')] return bod:italicizeTitles($note)
+        let $notes := for $note in ($person/tei:note[not(@type='links')], $person/ancestor::tei:listPerson/tei:head/tei:note) return bod:italicizeTitles($note)
         
         (: Get info in all the instances in the manuscript description files :)
         let $instances := $allinstances[key = $id]

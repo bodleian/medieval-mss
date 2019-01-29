@@ -3,7 +3,7 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
 declare option saxon:output "indent=yes";
 
 (: Read authority file :)
-declare variable $authorityentries := doc("../places.xml")/tei:TEI/tei:text/tei:body/(tei:listPlace/tei:place|tei:listOrg/tei:org)[@xml:id];
+declare variable $authorityentries := doc("../places.xml")/tei:TEI/tei:text/tei:body//(tei:listPlace/tei:place|tei:listOrg/tei:org)[@xml:id];
 
 (: Find instances in manuscript description files, building in-memory data structure, to avoid having to search across all files for each authority file entry :)
 declare variable $allinstances :=

@@ -3,7 +3,7 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
 declare option saxon:output "indent=yes";
 
 declare variable $collection := collection('../collections/?select=*.xml;recurse=yes');
-declare variable $countryauthorities := doc('../places.xml')/tei:TEI/tei:text/tei:body/tei:listPlace/tei:place[@xml:id and @type='country'];
+declare variable $countryauthorities := doc('../places.xml')/tei:TEI/tei:text/tei:body//tei:listPlace/tei:place[@xml:id and @type='country'];
 
 declare function local:origin($keys as xs:string*, $solrfield as xs:string) as element()*
 {

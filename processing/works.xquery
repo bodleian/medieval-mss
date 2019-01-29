@@ -3,7 +3,7 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
 declare option saxon:output "indent=yes";
 
 (: Read authority file :)
-declare variable $authorityentries := doc("../works.xml")/tei:TEI/tei:text/tei:body/tei:listBibl/tei:bibl[@xml:id];
+declare variable $authorityentries := doc("../works.xml")/tei:TEI/tei:text/tei:body//tei:listBibl/tei:bibl[@xml:id];
 declare variable $authorsinworksauthority := true();
 
 (: Read persons authority file to be able to link from works to 
