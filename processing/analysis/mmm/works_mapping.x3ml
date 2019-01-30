@@ -6,7 +6,7 @@
             <source_info>
                 <source_schema type="" version=""/>
                 <namespaces>
-                    <namespace prefix="" uri=""/>
+                    <namespace prefix="tei" uri="http://www.tei-c.org/ns/1.0"/>
                 </namespaces>
             </source_info>
             <source_collection/>
@@ -68,8 +68,7 @@
                             <arg name="identifier" type="xpath">@xml:id</arg>
                         </instance_generator>
                         <label_generator name="Literal">
-                            <arg name="text" type="xpath">title[@type="uniform"]/descendant-or-self::text()[normalize-space()]</arg>
-                            <arg name="language" type="constant">und</arg>
+                            <arg name="text" type="xpath">title[@type="uniform"]/normalize-space(string())</arg>
                         </label_generator>
                     </entity>
                 </target_node>
@@ -96,8 +95,7 @@
                                 <arg name="component" type="constant">appellation</arg>
                             </instance_generator>
                             <label_generator name="Literal">
-                                <arg name="text" type="xpath">descendant-or-self::text()[normalize-space()]</arg>
-                                <arg name="language" type="constant">und</arg>
+                                <arg name="text" type="xpath">normalize-space(string())</arg>
                             </label_generator>
                         </entity>
                     </target_node>
@@ -135,8 +133,7 @@
                                 <arg name="counter" type="xpathPosition"/>
                             </instance_generator>
                             <label_generator name="Literal">
-                                <arg name="text" type="xpath">descendant-or-self::text()[normalize-space()]</arg>
-                                <arg name="language" type="constant">und</arg>
+                                <arg name="text" type="xpath">normalize-space(string())</arg>
                             </label_generator>
                         </entity>
                     </target_node>
@@ -183,7 +180,6 @@
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">@mainLang</arg>
-                                <arg name="language" type="constant">und</arg>
                             </label_generator>
                         </entity>
                     </target_node>
@@ -203,7 +199,7 @@
                                 <arg name="component" type="constant">work-conception</arg>
                             </instance_generator>
                             <label_generator name="Literal">
-                                <arg name="text" type="xpath">concat('Work conception of ', string-join(../title[@type="uniform"]/descendant-or-self::text()[normalize-space()],''))</arg>
+                                <arg name="text" type="xpath">concat('Work conception of ', string-join(../title[@type="uniform"]/normalize-space(string()),''))</arg>
                                 <arg name="language" type="constant">en</arg>
                             </label_generator>
                         </entity>
@@ -220,7 +216,6 @@
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">text()</arg>
-                                <arg name="language" type="constant">und</arg>
                             </label_generator>
                         </entity>
                     </target_node>

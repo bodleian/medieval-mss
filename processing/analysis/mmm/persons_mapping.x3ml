@@ -6,7 +6,7 @@
             <source_info>
                 <source_schema type="" version=""/>
                 <namespaces>
-                    <namespace prefix="" uri=""/>
+                    <namespace prefix="tei" uri="http://www.tei-c.org/ns/1.0"/>
                 </namespaces>
             </source_info>
             <source_collection/>
@@ -68,8 +68,7 @@
                             <arg name="identifier" type="xpath">@xml:id</arg>
                         </instance_generator>
                         <label_generator name="Literal">
-                            <arg name="text" type="xpath">persName[@type="display"]/descendant-or-self::text()[normalize-space()]</arg>
-                            <arg name="language" type="constant">und</arg>
+                            <arg name="text" type="xpath">persName[@type="display"]/normalize-space(string())</arg>
                         </label_generator>
                     </entity>
                 </target_node>
@@ -96,8 +95,7 @@
                                 <arg name="component" type="constant">appellation</arg>
                             </instance_generator>
                             <label_generator name="Literal">
-                                <arg name="text" type="xpath">descendant-or-self::text()[normalize-space()]</arg>
-                                <arg name="language" type="constant">und</arg>
+                                <arg name="text" type="xpath">normalize-space(string())</arg>
                             </label_generator>
                         </entity>
                     </target_node>
@@ -135,8 +133,7 @@
                                 <arg name="counter" type="xpathPosition"/>
                             </instance_generator>
                             <label_generator name="Literal">
-                                <arg name="text" type="xpath">descendant-or-self::text()[normalize-space()]</arg>
-                                <arg name="language" type="constant">und</arg>
+                                <arg name="text" type="xpath">normalize-space(string())</arg>
                             </label_generator>
                         </entity>
                     </target_node>
@@ -169,7 +166,6 @@
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">text()</arg>
-                                <arg name="language" type="constant">und</arg>
                             </label_generator>
                         </entity>
                     </target_node>
@@ -210,7 +206,7 @@
                                 <arg name="component" type="constant">birth</arg>
                             </instance_generator>
                             <label_generator name="Literal">
-                                <arg name="text" type="xpath">concat('Birth of ', string-join(../../persName[@type="display"]/descendant-or-self::text()[normalize-space()], ""))</arg>
+                                <arg name="text" type="xpath">concat('Birth of ', string-join(../../persName[@type="display"]/normalize-space(string()), ""))</arg>
                                 <arg name="language" type="constant">en</arg>
                             </label_generator>
                         </entity>
@@ -222,7 +218,7 @@
                                 <arg name="component" type="constant">birth-time-span</arg>
                             </instance_generator>
                             <label_generator name="Literal">
-                                <arg name="text" type="xpath">concat('Time-span of birth of ', string-join(../../persName[@type="display"]/descendant-or-self::text()[normalize-space()], ""))</arg>
+                                <arg name="text" type="xpath">concat('Time-span of birth of ', string-join(../../persName[@type="display"]/normalize-space(string()), ""))</arg>
                                 <arg name="language" type="constant">en</arg>
                             </label_generator>
                         </entity>
@@ -288,7 +284,7 @@
                                 <arg name="component" type="constant">death</arg>
                             </instance_generator>
                             <label_generator name="Literal">
-                                <arg name="text" type="xpath">concat('Death of ', string-join(../../persName[@type="display"]/descendant-or-self::text()[normalize-space()], ""))</arg>
+                                <arg name="text" type="xpath">concat('Death of ', string-join(../../persName[@type="display"]/normalize-space(string()), ""))</arg>
                                 <arg name="language" type="constant">en</arg>
                             </label_generator>
                         </entity>
@@ -300,7 +296,7 @@
                                 <arg name="component" type="constant">death-time-span</arg>
                             </instance_generator>
                             <label_generator name="Literal">
-                                <arg name="text" type="xpath">concat('Time-span of death of ', string-join(../../persName[@type="display"]/descendant-or-self::text()[normalize-space()], ""))</arg>
+                                <arg name="text" type="xpath">concat('Time-span of death of ', string-join(../../persName[@type="display"]/normalize-space(string()), ""))</arg>
                                 <arg name="language" type="constant">en</arg>
                             </label_generator>
                         </entity>
