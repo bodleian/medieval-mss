@@ -1,7 +1,9 @@
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 declare option saxon:output "indent=yes";
 
+declare variable $collectionsfolder as xs:string external;
 declare variable $chunk as xs:integer external;
+declare variable $numchunks as xs:integer external;
 
 declare variable $website := 'https://medieval.bodleian.ox.ac.uk';
 
@@ -83,11 +85,12 @@ declare function local:languageCodeLookup($lang as xs:string) as xs:string*
     case 'gd' return ('Gaelic', 'http://vocab.getty.edu/aat/300388323')
     case 'fy' return ('Frisian', 'http://vocab.getty.edu/aat/300388308')
     case 'dlm' return ('Dalmatian', 'http://vocab.getty.edu/aat/300388199')
+    case 'cai' return ('Central American Indian', 'http://vocab.getty.edu/aat/300388079')
     case 'zxx' return ()
     default return (local:logging('error', 'Unrecognized language code', $lang), ())[2]
 };
 
-declare function local:dateConversion($datestring as xs:string, $begin as xs:boolean) as xs:dateTime*
+declare function local:dateConversion($datestring as xs:string, $begin as xs:boolean)
 {
     let $isbce := starts-with($datestring, '-')
     let $datestring := if ($isbce) then substring($datestring, 2) else $datestring
@@ -126,7 +129,7 @@ declare function local:listItems($manuscript as element(tei:TEI), $mscontent as 
 {
     for $msItem in $mscontent//tei:msItem[tei:title/@key]
         (: This flattens all works (msItem) into one list. In the TEI, there can be a hierarchy of works-within-works. :)
-        let $itemid := $msItem/@xml:id/data()
+        let $itemid := ($msItem/@xml:id/data(), generate-id($msItem))[1]
         let $workid := ($msItem/tei:title/@key)[1]/data()
         return
         <item>
@@ -240,7 +243,7 @@ declare function local:extractPhysicalFields($physdesc as element(tei:physDesc)?
 
 declare function local:extractDates($history as element(tei:history)?) as element()*
 {
-    (: Simply dates to a single range for each type. This means losing some detail 
+    (: Simplify dates to a single range for each type. This means losing some detail 
        (e.g. text written in one century, illustrations in the next.) but that would
        be difficult to model in 3M anyway. :)
     (
@@ -401,31 +404,31 @@ declare function local:listDigitizedCopies($surrogates as element(tei:surrogates
         <digitalimages>{ $ref/@target/data() }</digitalimages>
 };
 
-processing-instruction xml-model {'href="https://raw.githubusercontent.com/bodleian/medieval-mss/master/processing/analysis/simplified4oxlod.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"'},
 <manuscripts>
     {
-    for $manuscript at $pos in collection('../../collections/?select=*.xml;recurse=yes')/tei:TEI
+    for $manuscript at $pos in collection(concat($collectionsfolder, '/?select=*.xml;recurse=yes'))/tei:TEI
     
-        return if ($pos mod 20 = $chunk) then
-        (: 
-        To process everything, change above line to: return if (true()) then
-        To get a small random-ish sample, use: return if ($pos mod 200 = 0) then 
-        :)
+        return if ($pos mod $numchunks = $chunk) then
+        
             <manuscript>
             
                 <uri>{ $website }/catalog/{ $manuscript/@xml:id/data() }</uri>
                 <classmark>{ $manuscript/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:msDesc/tei:msIdentifier/tei:idno[1]/text() }</classmark>
                 <collection>{ $manuscript/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title[@type="collection"]/text() }</collection>
                 <repository>{ $manuscript/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:msDesc/tei:msIdentifier/tei:repository/text() }</repository>
-                <institution>{ $manuscript/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:msDesc/tei:msIdentifier/tei:institution/text() }</institution>
-                
+                {
+                if ($manuscript/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:msDesc/tei:msIdentifier/tei:institution) then
+                    <institution>{ $manuscript/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:msDesc/tei:msIdentifier/tei:institution/text() }</institution>
+                else
+                    ()
+                }
                 {
                 (: All manuscripts have at least one msContents element, but in multi-part manuscripts each is a child of an msPart :)
                 for $mscontent in $manuscript//tei:msContents
                     return
                     if ($mscontent/parent::tei:msPart) then
                         <part>
-                            <uri>{ $website }/catalog/{ $manuscript/@xml:id/data() }#{ $mscontent/parent::tei:msPart/@xml:id/data() }</uri>
+                            <uri>{ $website }/catalog/{ $manuscript/@xml:id/data() }#{ ($mscontent/parent::tei:msPart/@xml:id/data(), generate-id($mscontent/parent::tei:msPart))[1] }</uri>
                             <label>{ $mscontent/parent::tei:msPart/tei:msIdentifier[1]/tei:altIdentifier[1]/tei:idno[1]/text() }</label>
                             { local:extractPhysicalFields($mscontent/parent::tei:msPart/tei:physDesc) }
                             { local:extractDates($mscontent/parent::tei:msPart/tei:history) }

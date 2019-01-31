@@ -1,0 +1,55 @@
+<generator_policy>
+    <generator name="SimpleLabel">
+        <pattern>{label}</pattern>
+    </generator>
+    <generator name="Entity" prefix="mmm">
+        <!-- for which the data provides a URI -->
+        <pattern>{identifier}</pattern>
+    </generator>
+    <generator name="EntityComponent" prefix="mmm">
+        <!-- for which the data does not provide a URI -->
+        <pattern>{identifier}/{component}</pattern>
+    </generator>
+    <generator name="EntityMultipleComponent" prefix="mmm">
+        <pattern>{identifier}/{component}/{counter}</pattern>
+    </generator>
+    <generator name="HashedEntityComponent" prefix="mmm">
+        <pattern>{identifier}#{hashed}-{component}</pattern>
+    </generator>
+    <generator name="HashedEntityMultipleComponent" prefix="mmm">
+        <pattern>{identifier}#{hashed}-{component}-{counter}</pattern>
+    </generator>    
+    <generator name="LocalAuthority" prefix="mmm">
+        <!-- for which we have local identifiers -->
+        <pattern>authority/{authority}/{identifier}</pattern>
+        <!-- authority can be either "people" or "places" or "terms" -->
+    </generator>
+    <generator name="LocalAuthorityComponent" prefix="mmm">
+        <pattern>authority/{authority}/{identifier}/{component}</pattern>
+    </generator>
+    <!-- reconciliation URIs -->
+    <generator name="IPNI" prefix="ipni">
+        <pattern>{identifier}</pattern>
+    </generator>
+    <generator name="VIAF" prefix="viaf">
+        <pattern>{identifier}</pattern>
+    </generator>
+    <generator name="Geonames" prefix="geon">
+        <pattern>{identifier}</pattern>
+    </generator>
+    <generator name="Paleobiodb" prefix="pbdb">
+        <pattern>{identifier}</pattern>
+    </generator>
+    <generator name="Getty" prefix="aat">
+        <pattern>{identifier}</pattern>
+    </generator>
+    <generator name="BritishMuseum" prefix="bm">
+        <pattern>{identifier}</pattern>
+    </generator>
+    <generator name="URIorUUID">
+        <custom generatorClass="gr.forth.URIorUUID">
+            <set-arg name="text"/>
+        </custom>
+    </generator>
+</generator_policy>
+
