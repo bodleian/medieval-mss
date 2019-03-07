@@ -5,17 +5,23 @@
          <titleStmt>
             <title>MS. Bodl. 511</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>H. H. E. Craster</persName>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2019">Encoding and markup</resp>
+               <resp when="2019">Updates and corrections</resp>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -51,12 +57,9 @@
                </msIdentifier>
                <msContents>
                   <msItem xml:id="MS_Bodl_511-item1" n="1">
-                     <author key="person_67260463">
-                        
-                        Giraldus Cambrensis
-                     
-                     </author>
+                     <author key="person_67260463">Giraldus Cambrensis</author>
                      <title key="work_1792">De topographia Hiberniae</title>
+                     <note>Fol. iii, note of the election of Leo X in 1513 and his death in 1521.</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -64,26 +67,52 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>
+                           iii + 89 + i fols.
+                              <dimensions unit="mm" type="leaf">
+                                 <height>206</height>
+                                 <width>145</width>
+                              </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="1" writtenLines="21 25">1 col., 21-25 lines, written space <dimensions unit="mm" type="written">
+                           <height max="150" min="145">145-50</height>
+                           <width min="83" max="90">83-90</width>
+                        </dimensions></layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <handDesc>
+                     <handNote script="gothicoAntiqua">Fere-humanistica.</handNote>
+                  </handDesc>
                   <decoDesc>
-                     <decoNote>Illuminated capitals.
-                     </decoNote>
+                     <decoNote type="colInit">Coloured initials, rubrics.</decoNote>
                   </decoDesc>
+                  <bindingDesc>
+                     <binding notBefore="1513">
+                        <p>Former parchment cover, part of which is now fol. i</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" when="1513">1513</origDate>
+                     <origDate calendar="Gregorian" when="1513" cert="high">1513</origDate>
                      <origPlace>
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
+                  <provenance><q>1513 aprilis 12</q>, in the margin opposite the final rubric, probably in the scribe's hand.</provenance>
+                  <provenance><q type="exLibris"><persName role="fmo" key="person_3016"><unclear>Euganis</unclear></persName> ex dono <persName role="fmo" key="person_3015">W.D.</persName></q>, 16th century, fol. iii verso.</provenance>
+                  <acquisition when="1605">Presented by <persName role="dnr" key="person_44167598">William Cotton</persName>, bishop of Exeter, in 1605.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
-                            
+                        <source>Description adapted (2019) from the following sources, with additional reference to published literature cited in the description: 
+                           <listBibl>
+                              <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 97 [contents, physical description, origin, provenance]</bibl>
+                              
+                              <bibl>Summary Catalogue (1922) [acquisition]</bibl></listBibl>
                             
                             <listBibl>
                               <bibl type="SC" facs="aap0267.gif">Summary Catalogue, vol. 2, part 1, p. 246</bibl>
@@ -97,7 +126,9 @@
          </sourceDesc>
       </fileDesc>       
       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
+      <revisionDesc>        
+         <change who="#MLH" when="2019-03-05">Revised to incorporate all information in Watson and SC.</change>
+         <change when="2017-07-01">First online publication.</change>
 
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
