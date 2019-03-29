@@ -6,17 +6,28 @@
          <titleStmt>
             <title>MS. Bodl. 758</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>H. H. E. Craster</persName>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2019">Encoding</resp>
+               <resp when="2019">Updates and corrections</resp>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -50,31 +61,57 @@
                      <idno type="SCN">2670</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <msContents resp="#SC">
                   <msItem xml:id="MS_Bodl_758-item1" n="1">
-                     <author key="person_19444509">
-                        
-                        Michael de Massa
-                     
-                     </author>
+                     <author key="person_19444509">Michael de Massa</author>
                      <title key="work_3209">Tractatus de passione domini</title>
+                     <rubric>Incipiunt scripta super totam Passionem Christi a quatuor Euangelistis formatam edita a quodam fratre heremitarum ordinis sancti Augustini nomine <expan>et</expan> cognomine Michael de Massa</rubric>
+                     <incipit><cit><quote>Angeli pacis amare flebunt.</quote> <bibl>Ysaie .33. capitulo.</bibl></cit> In sacra scriptura inuenitur</incipit>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  <msItem>
+                     <locus>(fol. 87)</locus>
+                     <colophon>Hunc libellum fecit fieri dominus Milo de Stapiltoun Miles. quem Radulphus de Medyltoun scripsit apud Ingham. Anno domini Millesimo CCCC quinto</colophon>
+                  </msItem>
+                  <msItem>
+                     <locus>(fol. 88v)</locus>
+                     <note>Added lines on the things which corrupt the world (in part = <bibl type="repertory">IMEV 1820</bibl>)</note>
+                     <textLang mainLang="en" otherLangs="la">English and Latin</textLang>
+                  </msItem>
                </msContents>
-               <physDesc>
+               <physDesc resp="#DD">
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>iv + <num type="leaf">87</num> + iii fols.
+                           <dimensions unit="mm" type="leaf">
+                              <height>222</height>
+                              <width>143</width>
+                           </dimensions></extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout>1 col., 23 lines, written space <dimensions unit="mm" type="written">
+                           <height>140</height>
+                           <width>90</width>
+                        </dimensions></layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <handDesc>
+                     <handNote>Written by <persName role="scr" key="person_1380">Ralph de Medylton</persName> (colophon).</handNote>
+                  </handDesc>
                   <decoDesc>
-                     <decoNote>
-                        <p>Fine miniatures (drawings), borders, initials. Written by <persName role="scr" key="person_1380">Ralph de Medylton</persName>, fol.
-                  87. (P&amp;A iii. 794, pl. LXXVI)</p>
-                     </decoNote>
+                     <decoNote type="miniature" resp="#PA">Fine miniatures (drawings)</decoNote>
+                     <decoNote type="border">Borders</decoNote>
+                     <decoNote type="decInit">Initials.</decoNote>
+                     <decoNote type="rubrication">Rubrics.</decoNote>
                   </decoDesc>
+                  <bindingDesc>
+                     <binding notAfter="1500" notBefore="1405">
+                        <p>Red whittawed leather over boards, 15th century</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
-               <history>
+               <history resp="#DD">
                   <origin>
                      <origDate calendar="Gregorian" when="1405">1405</origDate>
                      <origPlace>
@@ -82,13 +119,18 @@
                         <!--ORIGINAL: English, Norfolk, Ingham-->
                      </origPlace>
                   </origin>
+                  <provenance>Written on the order of <persName key="person_3059" role="pat">Miles Stapleton of Ingham, -1419</persName> (colophon); Stapleton arms, fol. 1.</provenance>
+                  <provenance>The scribe (depicted robed, fol. 87) may have belonged to the Trinitarian house at Ingham, founded by Miles Stapleton (-1384), father of the patron.</provenance>
+                  <acquisition when="1605" resp="#SC">Presented by <persName role="dnr" key="person_44167598">William Cotton</persName>, bishop of Exeter, in 1605 (<title>Summary catalogue</title> I.91).</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
-                            
-                            
+                        <source>Description adapted (March 2019) from the following sources: 
+                           <listBibl>
+                              <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 113 [physical description, origin, provenance]</bibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, III (1973), no. 794 and pl. LXXVI [decoration]</bibl>
+                              <bibl>Summary Catalogue (1922) [contents, acquisition]</bibl></listBibl>
                             <listBibl>
                               <bibl type="SC" facs="aap0504.gif">Summary Catalogue, vol. 2, part 1, p. 483</bibl>
                            </listBibl>
@@ -100,8 +142,9 @@
          </sourceDesc>
       </fileDesc>       
       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
+      <revisionDesc>   
+         <change who="#MLH" when="2019-03-25">Revised to incorporate all information in Watson, SC and P&amp;A.</change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>
