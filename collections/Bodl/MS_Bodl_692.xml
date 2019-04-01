@@ -5,17 +5,23 @@
          <titleStmt>
             <title>MS. Bodl. 692</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>H. H. E. Craster</persName>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2019">Encoding</resp>
+               <resp when="2019">Updates and corrections</resp>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -49,35 +55,56 @@
                      <idno type="SCN">2508</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <msContents resp="#SC">
                   <msItem xml:id="MS_Bodl_692-item1" n="1" class="#sermones #miscellanea">
                      <title type="desc" key="work_13490">Notebook of <persName role="aut" key="person_233502730">Dr. John Lawerne monk of Worcester, D.D. of Gloucester College, Oxford</persName>
                      </title>
-                     <note>(including lecture notes, sermon, and letters and notes relating to <orgName key="org_148943477">Worcester Priory</orgName> and <orgName key="org_292385856">Gloucester College</orgName>)</note>
-                     <textLang mainLang="la">Latin</textLang>
+                     <note>Miscellaneous contents including:</note>
+                     <msItem>
+                        <note><title type="desc" key="work_14583">Sermons</title>, including one preached before the king at Oxford.</note>
+                     </msItem>
+                     <msItem>
+                        <note>Scholastic exercises and disputations.</note></msItem>
+                     <msItem>
+                        <note>Letters and notes relating to <orgName key="org_148943477">Worcester Priory</orgName> (including a copy of the inscription on the tomb of prior Thomas Ledbury) and <orgName key="org_292385856">Gloucester College</orgName>.</note>
+                     </msItem>
+                     <textLang mainLang="la" otherLangs="en">Latin with a little English (fols. 2v, 31v, 87, etc.)</textLang>
                   </msItem>
                </msContents>
-               <physDesc>
+               <physDesc resp="#DD">
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
+                        <extent><num type="leaf">165</num> fols.
+                           <dimensions unit="mm" type="leaf">
+                              <height>303</height>
+                              <width>225</width>
+                           </dimensions></extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="1">1 col., variable number of lines, written space usually occupies the whole page, <dimensions unit="mm" type="written">
+                           <height>303</height>
+                           <width>225</width>
+                        </dimensions>.</layout>
+                     </layoutDesc>
                   </objectDesc>
                </physDesc>
-               <history>
+               <history resp="#DD">
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1450" notBefore="1442">c. 1442-1450</origDate>
+                     <origDate calendar="Gregorian" notAfter="1449" notBefore="1442" cert="high">c. 1442-1449</origDate>
                      <origPlace>
                         <country key="place_7002445">English</country>, <settlement key="place_7011931">Oxford</settlement>
-                        <!--ORIGINAL: English, Oxford-->
                      </origPlace>
                   </origin>
+                  <provenance>Entries cover the years c. 1442-c. 1449 while the writer was a student monk at Gloucester College, Oxford.</provenance>
+                  <acquisition resp="#SC" notAfter="1611" notBefore="1605">Probably acquired between 1605 and 1611.</acquisition>
                </history>
                <additional><adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
-                            
-                            
+                        <source>Description adapted (2019) from the following sources, with reference to other published literature cited in the description: 
+                           <listBibl>
+                              <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 110 [physical description, origin, provenance]</bibl>
+                              <bibl>Summary Catalogue (1922) [contents, acquisition]</bibl></listBibl>
                             <listBibl>
                               <bibl type="SC" facs="aap0423.gif">Summary Catalogue, vol. 2, part 1, p. 402</bibl>
                               <bibl type="SC" facs="aap0424.gif">Summary Catalogue, vol. 2, part 1, p. 403</bibl>
@@ -89,7 +116,9 @@
          </sourceDesc>
       </fileDesc>       
       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
+      <revisionDesc>     
+         <change who="#MLH" when="2019-03-27">Revised to incorporate all information in Watson and SC.</change>
+         <change when="2017-07-01">First online publication.</change>
 
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>

@@ -5,17 +5,27 @@
          <titleStmt>
             <title>MS. Bodl. 716</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1974">Cataloguer</resp>
+               <persName>Bruce Barker-Benfield</persName>
+            </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>H. H. E. Craster</persName>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2019">Encoding</resp>
+               <resp when="2019">Updates and corrections</resp>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -49,56 +59,71 @@
                      <idno type="SCN">2630</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <msContents resp="#DD #SC">
+                  <textLang mainLang="la">Latin</textLang>
                   <msItem xml:id="MS_Bodl_716-item1" n="1">
-                     <author key="person_68939042">
-                        
-                        John Wyclif
-                     
-                     </author>
+                    <locus>(fol. 1)</locus>
+                     <author key="person_68939042">John Wyclif</author>
                      <title key="work_2789">Postilla super nouum testamentum</title>
-                     <textLang mainLang="la">Latin</textLang>
                   </msItem>
                   <msItem xml:id="MS_Bodl_716-item2" n="2">
-                     <author key="person_2297">
-                        
-                        Ps.-Hugh of Saint-Cher
-                     <!-- not found VIAF -->
-                     </author>
+                     <locus>(fol. 173)</locus>
+                     <author key="person_2297">Ps.-Hugh of Saint-Cher</author>
                      <title key="work_4024">Commentary on Revelation</title>
-                   
-                     <note>(Stegmüller 3771)</note>
-                     <textLang mainLang="la">Latin</textLang>  
-                     <bibl type="commentedOn">
-                        <title>Bible, Apocalypse</title>
-                     </bibl>
+                     <note>(<bibl type="repertory">Stegmüller 3771</bibl>)</note>
+                  </msItem>
+                  <msItem>
+                     <locus>(fol. 246v)</locus>
+                     <colophon>Explicit etcetera Scriptus oxonie Anno domini m<hi rend="superscript">o</hi> cccc<hi rend="superscript">o</hi> 3<hi rend="superscript">o</hi></colophon>
+                  </msItem>
+                  <msItem>
+                     <note>Fols. 247-255v contain tables in a later hand.</note>
                   </msItem>
                </msContents>
-               <physDesc>
+               <physDesc resp="#DD">
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>i + <num type="leaf">255</num> + i fols.
+                           <dimensions unit="mm" type="leaf">
+                              <height>345</height>
+                              <width>245</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2" writtenLines="53 56">2 cols., 53-c. 56 lines, column space <dimensions unit="mm" type="column">
+                           <height max="250" min="240">240-50</height>
+                           <width>80</width>
+                        </dimensions></layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <handDesc hands="2">
+                     <handNote>Two hands: (1) fols. 1-69v, 133v-246v; (2) fols. 73-133.</handNote>
+                  </handDesc>
                   <decoDesc>
-                     <decoNote>Penwork
-                     </decoNote>
+                     <decoNote type="flourInit" resp="#PA">Penwork (P&amp;A, addenda)</decoNote>
+                     <decoNote type="colInit">Coloured initials.</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
-                  <origin>
-                     <origDate calendar="Gregorian" when="1403">1403</origDate>
+                  <origin resp="#DD">
+                     <origDate calendar="Gregorian" when="1403" cert="high">1403</origDate>
                      <origPlace>
                         <country key="place_7002445">English</country>, <settlement key="place_7011931">Oxford</settlement>
-                        <!--ORIGINAL: English, Oxford-->
                      </origPlace>
                   </origin>
+                  <provenance resp="#DD"><orgName role="fmo" key="org_150107857">Benedictine abbey of Bury St Edmunds</orgName>, purchased by fr. <persName key="person_3056">John Cranewys</persName>: <q>Secunda pars postillatoris super sacram scripturam de empcione fratris Johannis Cranewys precij iii marcarum</q> (fol. iii verso).</provenance>
+                  <provenance resp="#SC"><orgName role="fmo" key="org_159532915">Pembroke College, Cambridge</orgName>, pressmark <q>A. 8. 1</q></provenance>
+                  <acquisition when="1613" cert="low" resp="#SC">Perhaps purchased from John Edwards, bookseller, London, 1613.</acquisition><!-- not marked up, as bookseller, but check -->
                </history>
                <additional><adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
-                            
-                            
+                        <source>Description adapted (March 2019) from the following sources, and with reference to published sources cited in the description: 
+                           <listBibl>
+                              <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 111 [contents, physical description, origin, provenance]</bibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, addenda (by B. Barker-Benfield) (1974), p. 10 [decoration]</bibl>
+                              <bibl>Summary Catalogue (1922) [contents, provenance, acquisition]</bibl></listBibl>
                             <listBibl>
                               <bibl type="SC" facs="aap0479.gif">Summary Catalogue, vol. 2, part 1, p. 458</bibl>
                               <bibl type="SC" facs="aap0480.gif">Summary Catalogue, vol. 2, part 1, p. 459</bibl>
@@ -110,8 +135,9 @@
          </sourceDesc>
       </fileDesc>       
       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
+      <revisionDesc>        
+         <change who="#MLH" when="2019-03-25">Revised to incorporate all information in Watson and SC.</change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>
