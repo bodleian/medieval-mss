@@ -6,9 +6,24 @@
          <titleStmt>
             <title>MS. Bodl. 795</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>H. H. E. Craster</persName>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2019">Encoding</resp>
+               <resp when="2019">Updates and corrections</resp>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -50,44 +65,93 @@
                      <idno type="SCN">2644</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <msContents resp="#SC">
+                  <textLang mainLang="la">Latin</textLang>
+                  <msItem>
+                     <locus>(fols. v recto-vi verso)</locus>
+                     <note>Table of contents for the following work (fifteenth-century addition)</note>
+                     <note>Fol. vii r-v blank.</note>
+                  </msItem>
                   <msItem xml:id="MS_Bodl_795-item1" n="1">
-                     <author key="person_202886921">
-                        
-                        William Holme
-                     
-                     </author>
-                     <title key="work_5015">De simplicibus medicinis</title>
-                     <textLang mainLang="la">Latin</textLang>
+                     <locus>(fols. 1r-244v)</locus>
+                     <author key="person_202886921">William Holme</author>
+                     <title key="work_5015">De simplicibus medicinis</title><note>(<bibl type="repertory">TK 0009L</bibl>)</note>
+                     <incipit>Abhominacio. Castanee abhominacionem astringunt</incipit>
+                     <finalRubric>Tractatus optimus de simplicibus medicinis ad singulas corporis egritudines per fratrem Willelmum Holme medicum ordinis fratrum Minorum circa annum Domini .1415. excerptus a 12 medicine doctoribus</finalRubric>
+                     <colophon>Hunc librum scripsit Willelmus Bedmistre oxonie Anno domini .143<subst><del/><add>5</add></subst>. Orate speciliter pro eo inspicientes prefatum librum.</colophon>
+                  </msItem>
+                  <msItem resp="#MLH">
+                     <locus>(fols. 245r-307v)</locus>
+                     <note>Alphabetical index to the preceding work, combined with a medical lexicon. Arranged in three columns (<q>virtus prima</q>, <q>virtus tercia</q>, <q>virtus secunda</q>) of which the second (<q>tercia</q> relates to Holme's work. Columns <q>prima</q> and <q>secunda</q> have no entries from fol. 250 onwards.</note>
+                     <incipit>Aaron ad quid valet vide diccionibus <hi rend="italic">febres</hi>. <hi rend="italic">pectus</hi>. <hi rend="italic">potagra</hi> <note>[virtus tercia]</note></incipit>
+                     <incipit>Idem est quid Iarus pes vituli siue pentaria siue dragancia <note>[virtus prima]</note></incipit>
+                     <incipit>Incisiuam habet virtutem <expan>et</expan>  abstersiuam  <expan>et</expan> maximum iuuamentum eius est in radice <note>[virtus secunda]</note></incipit>
+                     <explicit>Zurinbet prodest vt verb<ex>is</ex> <hi rend="italic">Cor</hi>. <hi rend="italic">Inpinguare</hi>. <hi rend="italic">Matrix</hi>. <hi rend="italic">Venenum</hi>. <hi rend="italic">Venter</hi>. <hi rend="italic">Ventositas</hi>. <hi rend="italic">Vomitus</hi>.</explicit>
+                     <note>Fols. 308r-309v blank.</note>
+                     <!-- check indexing ?  -->
                   </msItem>
                </msContents>
-               <physDesc>
+               <physDesc resp="#DD">
+                  <p resp="#MLH">
+                     <secFol>eius tepidum</secFol>
+                  </p>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent resp="#MLH">ii (paper) + ii (parchment) + 3 + <num type="leaf">308</num> + 1 + ii (paper) 
+                           <dimensions unit="mm" type="leaf">
+                              <height>260</height>
+                              <width>185</width>
+                           </dimensions>
+                        </extent>
+                        <foliation>Foliated i-vii, 1-310</foliation>
+                        <foliation resp="#MLH">15th century foliation in arabic numerals.</foliation>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2" writtenLines="49 53">Fols. 1r-244v: 2 cols., c. 49-53 lines, column space <dimensions unit="mm" type="column">
+                           <height>185</height>
+                           <width max="65" min="55">55-65</width>
+                        </dimensions></layout>
+                        <layout columns="1" writtenLines="41 46" resp="#MLH">Fols. 245r-307v: 3 cols., c. 41-46 lines, central column <dimensions unit="mm" type="column">
+                           <height>180</height>
+                           <width>55</width>
+                        </dimensions>, outer columns <dimensions unit="mm" type="column">
+                           <height>180</height>
+                           <width>40</width>
+                        </dimensions></layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <handDesc hands="1">
+                     <handNote resp="#MLH">Written by <persName role="scr" key="person_1251">Willelmus Bedmistre</persName> (colophon, fol. 244v, but fols. 245-309 are probably in the same hand), on whom see Emden, BRUO, I.147, where he is identified as the scribe of <bibl subtype="external" type="MS">London, British Library, Royal MS. 10 A. xviii</bibl>, and <bibl type="MS" subtype="external">Worcester, Cathedral Library, MS. Q. 45</bibl>.</handNote>
+                  </handDesc>
                   <decoDesc>
-                     <decoNote>Good border, initial. Written by <persName role="scr" key="person_1251">Willelmus Bedmistre</persName>, fol. 244v. (P&amp;A iii.
-                  898)
-                     </decoNote>
+                     <decoNote type="border" resp="#PA #MLH">Initial 'I' extending into border (fol. 1). (P&amp;A iii.898)</decoNote>
+                     <decoNote resp="#MLH">Fols. 1r-244v: paraphs, underlining in red.</decoNote>
+                     <decoNote type="flourInit" resp="#MLH">Fols. 245r-307v: initials in blue with penwork flourishing in red.</decoNote>
                   </decoDesc>
+                  <additions resp="#SC">
+                     <p>Short account of William Holme added, fol. iv verso, sixteenth century.</p>
+                  </additions>
                </physDesc>
                <history>
-                  <origin>
-                     <origDate calendar="Gregorian" when="1435">1435</origDate>
+                  <origin resp="#DD">
+                     <origDate calendar="Gregorian" when="1435" cert="high">1435</origDate>
                      <origPlace>
                         <country key="place_7002445">English</country>, <settlement key="place_7011931">Oxford</settlement>
                         <!--ORIGINAL: English, Oxford-->
                      </origPlace>
                   </origin>
+                  <acquisition notAfter="1620" notBefore="1618" resp="#SC">Acquired about 1618-20.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
-                            
-                            
+                        <source>Description adapted (March 2019) from the following sources. Additional description of fols 245r-307v by Matthew Holford, March 2019. 
+                           <listBibl>
+                              <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 114 [physical description (fols. 1-244), date]</bibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, III (1973), no. 898 [decoration]</bibl>
+                              <bibl>Summary Catalogue (1922) [contents, acquisition]</bibl></listBibl>
+                           
                             <listBibl>
                               <bibl type="SC" facs="aap0489.gif">Summary Catalogue, vol. 2, part 1, p. 468</bibl>
                            </listBibl>
@@ -99,7 +163,9 @@
          </sourceDesc>
       </fileDesc>       
       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
+      <revisionDesc>      
+         <change when="2019-04-02" who="#MLH">Description revised from Waston, P&amp;A, SC, and observation of manuscript.</change>
+         <change when="2017-07-01">First online publication.</change>
 
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
