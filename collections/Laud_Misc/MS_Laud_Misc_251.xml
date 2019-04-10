@@ -5,17 +5,30 @@
          <titleStmt>
             <title>MS. Laud Misc. 251</title>
             <title type="collection">MSS. Laud Misc. (Laud miscellaneous)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="Q">
+               <resp when="1858">Cataloguer</resp>
+               <persName>H. O. Coxe</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1966">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="Q2">
+               <resp when="1973">Cataloguer</resp>
+               <persName>R. W. Hunt</persName>
+            </respStmt>
+            <respStmt xml:id="NFP">
+               <resp when="1998">Cataloguer</resp>
+               <persName>Nigel F. Palmer</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2019">Encoding and markup</resp>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -49,42 +62,75 @@
                      <idno type="SCN">1225</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <msContents resp="#Q #Q2">
                   <msItem xml:id="MS_Laud_Misc_251-item1" n="1">
-                     <author key="person_100251470">
-                        
-                        Ps.-Clement of Rome
-                     
-                     </author>
+                     <author key="person_100251470">Ps.-Clement of Rome</author>
                      <title key="work_3979">Recognitiones</title>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  <msItem>
+                     <locus>(fols. 134v-135r)</locus>
+                     <title type="desc">Verses, added fifteenth century:</title>
+                     <msItem>
+                        <incipit>Qui bene vult</incipit>
+                        <bibl type="repertory">Walther, <title>Sent.</title> 23854</bibl>
+                     </msItem>
+                     <msItem>
+                        <incipit>Servitium dominis</incipit>
+                        <bibl type="repertory">Walther, <title>Sent.</title> 28173a</bibl>
+                     </msItem>
+                     <msItem>
+                        <incipit>Gravis est transire transitus absque redire</incipit>
+                    <!--    not in Walther -->
+                     </msItem>
+                     <msItem>
+                        <incipit>Est grave ridere</incipit>
+                        <bibl type="repertory">Walther 5677</bibl>
+                     </msItem>
+                  </msItem>
                </msContents>
-               <physDesc>
+               <physDesc resp="#NFP">
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>135 fols.
+                           <dimensions unit="mm" type="leaf">
+                              <height>281</height>
+                              <width>182</width>
+                           </dimensions>
+                           <dimensions unit="mm" type="written">
+                              <height>210</height>
+                              <width>132</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>
-                        Penwork initials. (P&amp;A i. 99)
-                     </decoNote>
+                     <decoNote type="decInit">Red initials with occasional decoration</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1200" notBefore="1190">12th century, end</origDate>
-                     <origPlace>
+                     <origDate calendar="Gregorian" notAfter="1210" notBefore="1190" resp="#NFP">12th century, end or 13th century, beginning</origDate>
+                     <origPlace resp="#PA">
                         <country key="place_7000084">German</country>
                      </origPlace>
                   </origin>
+                  <provenance resp="#MLH">Erased ownership inscription, fol. 1r: <q type="exLibris">et est liber sancti <damage><gap reason="deleted" unit="chars" extent="12" precision="medium"/></damage></q></provenance>
+                  <provenance resp="#NFP"><orgName key="org_133214228" role="fmo">Eberbach, Cistercian abbey</orgName>: ex libris, fols. 1r, 135r.</provenance>
+                  <provenance when="1502" resp="#NFP">Identifiable as g 19 in the <orgName key="org_133214228" role="fmo">Eberbach</orgName> library catalogue of 1502.</provenance>
+                  <provenance when="1637" resp="#Q2"><persName role="fmo" key="person_54940373">William Laud, 1573-1645</persName>, 1637.</provenance>
+                  <acquisition when="1639" resp="#Q2">Part of his third donation to the Bodleian, 1639.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Quarto Catalogue (H. O. Coxe,  <title>Laudian Manuscripts</title>, Quarto Catalogues II, repr. with corrections, 1969, from the original ed. of 1858-1885) and supplementary sources. 
-                            
+                        <source>Description adapted (April 2019) from the following sources:
+                           <listBibl>
+                              <bibl>Nigel F. Palmer, <title>Zisterzienser und ihre Bücher: die mittelalterliche Bibliotheksgeschichte von Kloster Eberbach im Rheingau</title> (Regensburg, 1998), p. 291 [physical description, date, provenance]</bibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, I (1966), no. 99 [origin]</bibl>
+                              <bibl>H. O. Coxe,  <title>Laudian Manuscripts</title>, Quarto Catalogues II, repr. with corrections, 1969, from the original ed. of 1858-1885 [contents]</bibl>
+                           </listBibl>
                             
                             <listBibl>
                               <bibl type="QUARTO" facs="aby0154.gif">Quarto Catalogue, col. 212</bibl>
@@ -98,7 +144,9 @@
             </msDesc>
          </sourceDesc>
       </fileDesc>       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
+      <revisionDesc>        
+         <change when="2019-04-08" who="#MLH">Description revised for Polonsky to incorporate all information in Palmer, P&amp;A and Quarto catalogue.</change>
+         <change when="2017-07-01">First online publication.</change>
 
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
