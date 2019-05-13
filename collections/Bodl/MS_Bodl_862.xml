@@ -6,9 +6,24 @@
          <titleStmt>
             <title>MS. Bodl. 862</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>H. H. E. Craster</persName>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2019">Encoding</resp>
+               <resp when="2019">Updates and corrections</resp>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -50,40 +65,67 @@
                      <idno type="SCN">2730</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <msContents resp="#DD #MLH #SC">
                   <msItem xml:id="MS_Bodl_862-item1" n="1" class="#theologica #commentarii">
                      <title type="desc" key="work_14130">Psalter with gloss</title>
+                     <incipit type="prologue">Dauid rex Hebreorum librum Psalmorum composuit prophetans de Christo</incipit>
+                     <note>The text, differing in some respect from the usual gloss, is catalogued in <bibl type="repertory">Stegmüller 4839</bibl> as by John of Pagham (but see below, Provenance).</note>
+                     <note>Former endleaves containing music now kept as <bibl type="MS" subtype="internal">MS. Lat. liturg. d. 20, fols. 23-25</bibl>.</note>
                      <textLang mainLang="la">Latin</textLang>
-                     <bibl type="bible">
-                        <title type="desc">Bible, Psalms</title>
-                     </bibl>
                   </msItem>
                </msContents>
-               <physDesc>
+               <physDesc resp="#DD">
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>ii + 202 + i medieval folios
+                           <dimensions unit="mm" type="leaf">
+                              <height>288</height>
+                              <width>195</width>
+                           </dimensions></extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout>3 cols., column space <dimensions unit="mm" type="column">
+                           <height quantity="150">c. 150</height>
+                           <width>190</width>
+                        </dimensions></layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <handDesc>
+                     <handNote resp="#DD #MLH">Gloss and text in different hands: the former regarded by Thomson as French, the latter as English (R. Thomson, <title>Manuscripts from St Albans Abbey 1066-1235</title> (1982), I.96).</handNote>
+                  </handDesc>
                   <decoDesc>
-                     <decoNote>Fine initials. (P&amp;A iii. 228, pl. XXIII)
-                     </decoNote>
+                     <decoNote type="decInit" resp="#MLH #PA">Fine initials. (P&amp;A iii. 228, pl. XXIII) Attributed to the <persName role="art" key="person_31153593638851670131">Simon Master</persName> (Thomson, op. cit.).</decoNote>
+                     <decoNote type="colInit">Coloured initials.</decoNote>
+                     <decoNote type="rubrication">Rubrics</decoNote>
                   </decoDesc>
+                  <bindingDesc>
+                     <binding notBefore="1230" notAfter="1550">
+                        <p>Boards, period 3 (c. 1230-1500), covered with black velvet (16th century) with brass clasp and corner pieces.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1200" notBefore="1150">12th century, second half</origDate>
-                     <origPlace>
-                        <country key="place_7002445">English</country>, <settlement key="place_7015155">Worcester</settlement>
-                        <!--ORIGINAL: English, Worcester-->
+                     <origDate calendar="Gregorian" notAfter="1157" notBefore="1150" cert="high" resp="#DD #PA">12th century, second half (before 1157 (?))</origDate>
+                     <origPlace resp="#DD #MLH">
+                        <country key="place_7002445">English</country>, <settlement key="place_7015155" cert="unknown">Worcester</settlement> (?)
                      </origPlace>
                   </origin>
+                  <provenance resp="#DD #MLH"><q type="exLibris">psalterium Johannis de pagah<ex>am</ex></q>, fol. v: identified by Watson and others as <persName role="fmo" key="person_3070" cert="medium">John de Pagham</persName>, bishop of Worcester 1151-7, although some scholars have suggested a later date for the manuscript: 12th century, second half (Pacht and Alexander) or late twelfth century (Ker, <title>MLGB</title>).</provenance>
+                  <provenance resp="#DD"><orgName role="fmo" key="org_147766659">Worcester Cathedral Priory</orgName>: 14th-century Worcester litany, fols. 201v-202v.</provenance>
+                  <provenance resp="#DD" notAfter="1500" notBefore="1400"><orgName role="fmo" key="org_147766659">Worcester Cathedral Priory</orgName>: <q type="exLibris">Liber monasterij Wygnorie</q>, fol. 1, fifteenth century.</provenance>
+                  <provenance resp="#SC" notAfter="1547"><persName role="fmo" key="https://medieval.bodleian.ox.ac.uk/catalog/person_172419710">Henry VIII</persName>: evidence of the binding.</provenance>
+                  <provenance resp="#SC"><persName role="fmo" key="person_76469410">Charles Howard, earl of Nottingham</persName>.</provenance>
+                  <acquisition when="1604">Presented by him in 1604.</acquisition>
                </history>
                <additional><adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
-                            
-                            
+                        <source>Description adapted (May 2019) from the following sources, with additional reference to published literature cited in the description: 
+                           <listBibl>
+                              <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 120 [physical description, origin, provenance]</bibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, III (1973), no. 228 [decoration]</bibl>
+                              <bibl>Summary Catalogue (1922) [contents, acquisition]</bibl></listBibl>
                             <listBibl>
                               <bibl type="SC" facs="aap0539.gif">Summary Catalogue, vol. 2, part 1, p. 518</bibl>
                            </listBibl>
@@ -96,8 +138,9 @@
          </sourceDesc>
       </fileDesc>       
       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
+      <revisionDesc>       
+         <change who="#MLH" when="2019-05-10">Revised to incorporate all information in Watson, SC and P&amp;A.</change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>
