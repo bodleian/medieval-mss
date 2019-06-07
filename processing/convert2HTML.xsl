@@ -69,4 +69,16 @@
         </span>
     </xsl:template>
     
+    <!-- Display lemmata in italic -->
+    <xsl:template match="incipit/quote | incipit/cit/quote">
+        <i>
+            <xsl:apply-templates/>
+        </i>
+    </xsl:template>
+    <xsl:template match="text()[ancestor::incipit/@type='lemma']">
+        <i>
+            <xsl:copy/>
+        </i>
+    </xsl:template>
+    
 </xsl:stylesheet>
