@@ -5,17 +5,30 @@
          <titleStmt>
             <title>MS. Laud Misc. 349</title>
             <title type="collection">MSS. Laud Misc. (Laud miscellaneous)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="Q">
+               <resp when="1858">Cataloguer</resp>
+               <persName>H. O. Coxe</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1966">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="Q2">
+               <resp when="1973">Cataloguer</resp>
+               <persName>R. W. Hunt</persName>
+            </respStmt>
+            <respStmt xml:id="NFP">
+               <resp when="1998">Cataloguer</resp>
+               <persName>Nigel F. Palmer</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2019">Encoding</resp>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -49,42 +62,53 @@
                      <idno type="SCN">1289</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <msContents resp="#Q">
                   <msItem xml:id="MS_Laud_Misc_349-item1" n="1">
-                     <author key="person_76708754">
-                        
-                        Paterius
-                     
-                     </author>
+                     <author key="person_76708754">Paterius</author>
                      <title key="work_3449">Liber testimoniorum ueteris testamenti ex opusculis S. Gregorii</title>
+                     <note>(imperfect at end)</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
-               <physDesc>
+               <physDesc resp="#NFP">
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>231 folios
+                           <dimensions unit="mm" type="leaf">
+                              <height>225</height>
+                              <width>138</width>
+                           </dimensions>
+                           <dimensions unit="mm" type="written">
+                              <height>178</height>
+                              <width>93</width>
+                           </dimensions></extent>
                      </supportDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>
-                        Good initial. (P&amp;A i. 94)
-                     </decoNote>
+                     <decoNote type="decInit">Red-brown floriate initial on yellow ground (fol. 1r). Red initials with occasional decoration.</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1200" notBefore="1150">12th century, second half</origDate>
-                     <origPlace>
+                     <origDate calendar="Gregorian" notAfter="1200" notBefore="1175" resp="#NFP">12th century, last quarter</origDate>
+                     <origPlace resp="#Q2">
                         <country key="place_7000084">German</country>
                      </origPlace>
                   </origin>
+                  <provenance>Identifiable as H 5 in the library catalogue of <orgName  key="org_133214228" role="fmo">Eberbach Abbey</orgName>, 1502.</provenance>
+                  <provenance resp="#Q2" when="1637"><persName role="fmo" key="person_54940373">William Laud, 1573-1645</persName>, 1637.</provenance>
+                  <acquisition when="1639" resp="#Q2">Part of his third donation to the Bodleian, 1639.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Quarto Catalogue (H. O. Coxe,  <title>Laudian Manuscripts</title>, Quarto Catalogues II, repr. with corrections, 1969, from the original ed. of 1858-1885) and supplementary sources. 
-                            
+                        <source>Description adapted (July 2019) from the following sources:
+                           <listBibl>
+                              <bibl>Nigel F. Palmer, <title>Zisterzienser und ihre Bücher: die mittelalterliche Bibliotheksgeschichte von Kloster Eberbach im Rheingau</title> (Regensburg, 1998), p. 294 [physical description, date, provenance]</bibl>
+                              <bibl>H. O. Coxe,  <title>Laudian Manuscripts</title>, Quarto Catalogues II, repr. with corrections, 1969, from the original ed. of 1858-1885 [contents, localization, acquisition]</bibl>
+                              
+                           </listBibl>
                             
                             <listBibl>
                               <bibl type="QUARTO" facs="aby0181.gif">Quarto Catalogue, col. 265</bibl>
@@ -93,11 +117,19 @@
                         </source>
                      </recordHist>
                   </adminInfo>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="PRINT">
+                        <head>Printed descriptions:</head>
+                        <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, I (1966), no. 94</bibl>
+                     </listBibl>
+                  </listBibl>
                </additional>
             </msDesc>
          </sourceDesc>
       </fileDesc>       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
+      <revisionDesc>       
+         <change when="2019-07-10">Description revised for Polonsky German.</change>
+         <change when="2017-07-01">First online publication.</change>
 
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
