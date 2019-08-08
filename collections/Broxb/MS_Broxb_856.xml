@@ -5,17 +5,22 @@
          <titleStmt>
             <title>MS. Broxb. 85.6</title>
             <title type="collection">MSS. Broxb. (Broxbourne)</title>
-            <respStmt>
-               <resp>Preliminary description</resp>
+            <respStmt xml:id="PK">
+               <resp>Cataloguer</resp>
                <persName>Peter Kidd</persName>
+            </respStmt>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2019">Encoding</resp>
+               <resp when="2019">Updates and corrections</resp>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -48,44 +53,66 @@
                   <altIdentifier type="internal">
                      <idno type="SCN">Not in SC (late accession)</idno>
                   </altIdentifier>
+                  <altIdentifier type="former">
+                     <idno>Broxbourne ledger no. R 1415</idno>
+                  </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <msContents resp="#DD">
                   <msItem xml:id="MS_Broxb_856-item1" n="1" class="#liturgica #biblia">
 						               <title type="desc" key="work_14114">Psalter</title>
                      
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
-               <physDesc>
+               <physDesc resp="#DD">
                   <objectDesc form="codex">
-                     <supportDesc material="unknown">
-                        <support>(not specified in handlist)</support>
+                     <supportDesc material="perg">
+                        <support>parchment</support>
+                        <extent>iv + 227 + i folios
+                           <dimensions unit="mm" type="leaf">
+                              <height>127</height>
+                              <width>90</width>
+                           </dimensions></extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="1" writtenLines="17">1 col., 17 lines, written space <dimensions unit="mm" type="written">
+                           <height max="90" min="87">87-90</height>
+                           <width>60</width>
+                        </dimensions></layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <decoDesc>
+                     <decoNote type="colInit">Coloured initials.</decoNote>
+                     <decoNote type="rubrication">Rubrics.</decoNote>
+                  </decoDesc>
                   <bindingDesc>
-                     <binding notAfter="1500" notBefore="1600">
-                        <p>Blind-stamped binding,
-				16th-century.</p>
+                     <binding notAfter="1525" notBefore="1500">
+                        <p>Leather over boards, early 16th century.</p>
+                        <decoNote>Blind-stamped.</decoNote>
                      </binding>
                   </bindingDesc>
                </physDesc>
                <history>
-                  <origin>
-                     <origDate calendar="Gregorian" when="1501">1501</origDate>
+                  <origin resp="#DD">
+                     <origDate calendar="Gregorian" when="1501" cert="high">1501</origDate>
                      <origPlace>
-                        <country key="place_7000084">German</country>, <settlement key="place_7004447">Trier</settlement>, Carthusian house of <orgName key="org_133706555">St. Alban</orgName>
+                        <country key="place_7000084">German</country>, <settlement key="place_7004447">Trier</settlement> (?)
                         <!--ORIGINAL: German, Trier, Carthusian house of St. Alban-->
                      </origPlace>
                   </origin>
-                  <provenance>
-                     <persName role="fmo" key="person_64157046">J. P. R. Lyell</persName>
-                  </provenance>
-                  <provenance>Formerly Broxbourne ledger no. R 1415.</provenance>
+                  <provenance resp="#DD"><q>Hoc opus egregiatus suscipe sancta maria <gap reason="editorial"/> anno domini 1501 sabato post dominicam iubilate videlicet octaua die mensis maij. Pro scriptore f.b.b. vnum aue maria in caritate christi</q></provenance>
+                  <provenance resp="#DD">Carthusian house of <orgName key="org_133706555">St. Alban</orgName>, Trier (inscription, inside front cover)</provenance>
+                  <provenance resp="#PK"><persName role="fmo" key="person_64157046">J. P. R. Lyell</persName></provenance>
+                  <provenance resp="#MLH"><persName role="fmo" key="person_53056049">Albert Ehrman (1890-1969)</persName></provenance>
+                  <acquisition resp="#MLH" when="1978">Presented to the Bodleian by his son, John Ehrman, in 1978 through the Friends of the National Libraries.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Peter Kidd, <title>Checklist of Medieval Western Manuscripts Acquired 1916-</title> (typescript, c. 1996-2000)
+                        <source>
+                           Description adapted (August 2019) from the following sources:
+                           <listBibl><bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 131 [contents, physical description, date, provenance]</bibl>
+                           <bibl>Peter Kidd, <title>Checklist of Medieval Western Manuscripts Acquired 1916-</title> (typescript, c. 1996-2000) [provenance]</bibl> </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
@@ -93,7 +120,9 @@
             </msDesc>
          </sourceDesc>
       </fileDesc>       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
+      <revisionDesc>       
+         <change when="2019-08-08">Description revised with reference to Watson.</change>
+         <change when="2017-07-01">First online publication.</change>
 
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>

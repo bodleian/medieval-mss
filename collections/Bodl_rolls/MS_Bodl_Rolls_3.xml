@@ -4,17 +4,27 @@
          <titleStmt>
             <title>MS. Bodl. Rolls 3</title>
             <title type="collection">MSS. Bodl. Rolls  (Bodley Rolls)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1905">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2019">Encoding</resp>
+               <resp when="2019">Updates and corrections</resp>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -50,35 +60,50 @@
                </msIdentifier>
                <msContents>
                   <msItem xml:id="MS_Bodl_Rolls_3-item1" n="1" class="#historica">
-						               <title type="desc" key="work_11982">Genealogy of the kings of <placeName key="place_7002445">England</placeName> to Edward I.</title>
-                     
+						               <title type="desc" key="work_11982">Genealogy of the kings of <placeName key="place_7002445">England</placeName> from Brut to Edward I</title>
+                     <incipit resp="#SC">Hic incipit bellum Grecorum et Troianorum vna cum causa eiusdem belli</incipit>
+                     <note resp="#DD">Membranes illustrating the intermarriages of the kings of England and Scotland are now <bibl type="ms" subtype="external">London, British Library, MS. Cotton Charter xiv. 4</bibl>.</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
-               <physDesc>
+               <physDesc resp="#DD">
                   <objectDesc form="roll">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>
+                           6 membrances + 1 modern membrane
+                           <dimensions unit="mm" type="roll">
+                              <height quantity="4150">c. 4150</height>
+                              <width>475</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>Important miniatures (coloured drawings), borders, initial. (P&amp;A iii.
+                     <decoNote resp="#DD">Important miniatures (coloured drawings), borders, initial. (P&amp;A iii.
 						483, pl. XLVII)
                      </decoNote>
                   </decoDesc>
                </physDesc>
                <history>
-                  <origin>
-                     <origDate calendar="Gregorian" notAfter="1300" notBefore="1290">13th century, end</origDate>
+                  <origin resp="#DD">
+                     <origDate calendar="Gregorian" notAfter="1307" notBefore="1292" cert="high">1292 × 1307</origDate>
                      <origPlace>
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
+                  <provenance resp="#DD">The number of Edward I's regnal years is not inserted, suggesting that the roll was written before his death in 1307. Closely related to MS. Ashmole Rolls 30, which shows John Balliol as king of Scotland, and was therefore written after 1292.</provenance>
+                  <provenance notBefore="1292" resp="#DD #PA"><orgName role="fmo" key="org_135211427">York, Benedictine abbey of St Mary</orgName>: <q>Rotulus Monasterii beate Marie Eboracensis</q>, head of roll, c. 1300 (?)</provenance>
+                  <provenance notAfter="1568" notBefore="1617" resp="#DD"><persName role="fmo" key="person_72196277">Henry Savile of Banke</persName>: no. 292 in the catalogue of his library.</provenance>
+                  <acquisition when="1617" resp="#SC">Given by him to the Library in 1617.</acquisition>
                </history>
                <additional><adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
-                            
+                        <source>Description adapted (August 2019) from the following sources: 
+                           <listBibl>
+                              <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 127 [physical description, date, provenance]</bibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, III (1973), no. 483 [decoration]</bibl>
+                              <bibl>Summary Catalogue (1905) [contents, provenance]</bibl></listBibl>
                             
                             <listBibl>
                               <bibl type="SC" facs="aap0582.gif">Summary Catalogue, vol. 2, part 1, p. 561</bibl>
@@ -89,7 +114,9 @@
             </msDesc>
          </sourceDesc>
       </fileDesc>       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
+      <revisionDesc>       
+         <change when="2019-08-08">Description revised to incorporate all information in Watson, P&amp;A, and SC</change>
+         <change when="2017-07-01">First online publication.</change>
 
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
