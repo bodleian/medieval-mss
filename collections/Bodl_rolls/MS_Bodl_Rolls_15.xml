@@ -5,17 +5,27 @@
          <titleStmt>
             <title>MS. Bodl. Rolls 15</title>
             <title type="collection">MSS. Bodl. Rolls  (Bodley Rolls)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1905">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2019">Encoding</resp>
+               <resp when="2019">Updates and corrections</resp>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -49,39 +59,64 @@
                      <idno type="SCN">2976</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <msContents resp="#SC">
                   <msItem xml:id="MS_Bodl_Rolls_15-item1" n="1" class="#historica">
-						               <title type="desc" key="work_10958">Chronicle of <placeName key="place_7002445">England</placeName> and its kings to 1429.</title>
-                     
+						               <title type="desc" key="work_10958">Chronicle of <placeName key="place_7002445">England</placeName> from Brutus to 1429.</title>
+                     <incipit>Ab origine mundi .ij. millibus iiij<hi rend="superscript">o</hi>. iiij<hi rend="superscript">xx</hi>. x. annis Brutus venit in terram hanc</incipit>
+                     <explicit>H. sexto iusta probatis</explicit>
+                     <note>Followed by a list of kings from Kyngilsus to Henry V, with the length of their reigns and places of burial.</note>
+                     <note>Followed by hexameters:</note>
+                     <msItem>
+                        <rubric>Versus de quibusdam comitatibus Anglie</rubric>
+                        <incipit>Illa quidem longe</incipit>
+                        <explicit>Testis Hely, formosa situ, Rowcestria visu</explicit>
+                     </msItem>
+                     <note>Followed by a fifteenth-century note on the successive races of England, ending <q>quod
+                        <persName key="person_1413">Colbrond</persName></q></note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
-               <physDesc>
+               <physDesc resp="#DD">
                   <objectDesc form="roll">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>
+                           <dimensions unit="mm" type="roll">
+                              <height quantity="2560" precision="medium">c. 2560</height>
+                              <width>155</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="1">1 col., c. <dimensions unit="mm" type="written">
+                           <width>102</width>
+                        </dimensions> mm. wide</layout>
+                     </layoutDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>Good initials. Date 1447 at the beginning. Note added 15th century end 'quod
-                        <persName key="person_1413">Colbrond</persName>'. (P&amp;A iii. 911)
-                     </decoNote>
+                     <decoNote resp="#PA">Good initials. (P&amp;A iii. 911)</decoNote>
+                     <decoNote resp="#DD">Coloured initials, rubrics.</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
-                  <origin>
-                     <origDate calendar="Gregorian" when="1447">1447</origDate>
+                  <origin resp="#DD">
+                     <origDate calendar="Gregorian" when="1447" cert="high">1447</origDate>
                      <origPlace>
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
+                  <provenance resp="#DD"><q>Anno domini. m<hi rend="superscript">l</hi>.cccc. quadragesimo septimo</q>, at head, in the scribe's hand.</provenance>
+                  <provenance notAfter="1604" notBefore="1533"><persName role="dnr" key="person_3105">Thomas Kerry</persName>, clerk of the Privy Seal.</provenance>
+                  <acquisition when="1604">Presented by him in 1604.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
-                            
-                            
+                        <source>Description adapted (August 2019) from the following sources: 
+                           <listBibl>
+                              <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 128 [physical description, date, provenance]</bibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, III (1973), no. 911 [decoration]</bibl>
+                              <bibl>Summary Catalogue (1905) [contents, provenance]</bibl></listBibl>
                             <listBibl>
                               <bibl type="SC" facs="aap0580.gif">Summary Catalogue, vol. 2, part 1, p. 559</bibl>
                               <bibl type="SC" facs="aap0581.gif">Summary Catalogue, vol. 2, part 1, p. 560</bibl>
