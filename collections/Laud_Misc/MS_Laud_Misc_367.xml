@@ -5,17 +5,26 @@
          <titleStmt>
             <title>MS. Laud Misc. 367</title>
             <title type="collection">MSS. Laud Misc. (Laud miscellaneous)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="Q">
+               <resp when="1858">Cataloguer</resp>
+               <persName>H. O. Coxe</persName>
+            </respStmt>
+            <respStmt xml:id="NFP">
+               <resp when="1998">Cataloguer</resp>
+               <persName>Nigel F. Palmer</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1966">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="TA">
+               <resp when="2019">Encoding</resp>
+               <persName>Tuija Ainonen</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -49,32 +58,37 @@
                      <idno type="SCN">1081</idno>
                   </altIdentifier>
                </msIdentifier>
+               <head>Richard of St.-Victor, Commentary on Acts and Benjamin minor; Exposition of faith; 13th century, beginning, Germany, west</head>
                <msContents>
                   <msItem xml:id="MS_Laud_Misc_367-item1" n="1">
-                     <author key="person_98148813">
-                        
-                        Richard of St.-Victor (?)
-                     
-                     </author>
+                     <locus>(fol. 1)</locus>
+                     <author key="person_98148813">Richard of St.-Victor (?) </author>
                      <title key="work_4330">Commentary on Acts xii.1-11</title>
-                     <note>('Misit Herodes rex manus')</note>
+                     <!--Matthew, can you ADD what's relevant to AUTH file of the work: In principio and Stegmuller assign to Fulbert of Chartres based on some other mss; Chatillon rejects this, attributes to R. of St.-Victor. Palmer follows Chatillon. CHK Goy!-->
+                     <note>Sermo de carcere S. Petri Apostoli siue Sermo 'Misit Herodes rex manus'</note>
+                     <rubric>Incipit prologus in sermonem Anshelmi, Cantuariensis episcopi, de caracere beati Petri apostoli.</rubric>
+                     <incipit>Scripturam Sacram recte cum legit intelligit </incipit>
+                     <incipit><hi rend="italic">Misit Herdoes manus</hi> etc. Quem sub Herodis vocabulo accipere debemus </incipit>
+                     <note>Stegmüller 2340 (under Fulbertus Carnotensis).</note>
                      <bibl type="commentedOn">
                         <title>Bible, Acts</title>
                      </bibl>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                   <msItem xml:id="MS_Laud_Misc_367-item2" n="2" class="#pastoralia">
-                     <title type="desc" key="work_11778">Exposition of the faith attributed to <persName role="aut" key="person_88967224">Basil of Caesarea</persName>
-                     </title>
+                     <locus>(fol. 23v)</locus>
+                     <title type="desc" key="work_11778">Exposition of the faith attributed to <persName role="aut" key="person_88967224">Basil of Caesarea</persName></title>
+                     <rubric>Fides beati Basilii, Caesariensis episcopi</rubric>
+                     <incipit>Dei quidem sine intermissione memorem esse </incipit>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                   <msItem xml:id="MS_Laud_Misc_367-item3" n="3">
-                     <author key="person_98148813">
-                        
-                        Richard of St.-Victor
-                     
-                     </author>
+                     <locus>(fol. 26v)</locus>
+                     <author key="person_98148813">Richard of St.-Victor</author>
                      <title key="work_4316">Benjamin minor</title>
+                     <rubric>Incipit liber Richardi de xii. patriarchis </rubric>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -82,28 +96,54 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                     </supportDesc>
+                        <extent>69 leaves
+                           <dimensions unit="mm" type="leaf">
+                              <height>239</height>
+                              <width>150</width>
+                           </dimensions>
+                           <dimensions unit="mm" type="written">
+                              <height>180</height>
+                              <width>111</width>
+                           </dimensions>
+                        </extent>
+                        </supportDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>
-                        Initials in the <orgName key="org_133214228">Eberbach</orgName> style. (P&amp;A i. 117)
+                     <decoNote>Red initials with some decoration, regarded by P&amp;A as similar to the <orgName key="org_133214228">Eberbach</orgName> style. (P&amp;A i. 117).
                      </decoNote>
                   </decoDesc>
+                  <bindingDesc>
+                     <binding calendar="Gregorian" notAfter="1639" notBefore="1637">
+                        <p>Brown tanned calf over laminated pulpboard for Abp. Laud, 1637–1639.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
+               
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1210" notBefore="1200">13th century, beginning</origDate>
-                     <origPlace>
+                     <origPlace resp="#PA">
                         <country key="place_7000084">German</country>, <region>West</region>
                         <!--ORIGINAL: German, West-->
+<!--                        should we add Eberbach as potential place of Origin, based on #PA?-->
                      </origPlace>
                   </origin>
+                  <provenance resp="#NFP" notBefore="1470" notAfter="1479">Identifiable as 'Erb. Mi. liii' in the "Rheinischen Gesamtkatalog" from the 1470s (now Basel, Öffentliche Bibliothek der Universität, cod. F VI 53, pp. 1-28, on p. 9). </provenance>
+                  <provenance resp="#NFP" when="1502">Identifiable as 'I 20' in the <orgName  key="org_133214228" role="fmo">Eberbach</orgName> library catalogue of 1502.</provenance>
+                  <provenance resp="#Q2" when="1638"><persName role="fmo" key="person_54940373">William Laud, 1573-1645</persName>, 1638.
+                  </provenance>
+                  <acquisition when="1639" resp="#Q2">Part of his third donation to the Bodleian, 1639.</acquisition>
+                  
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Quarto Catalogue (H. O. Coxe,  <title>Laudian Manuscripts</title>, Quarto Catalogues II, repr. with corrections, 1969, from the original ed. of 1858-1885) and supplementary sources. 
-                            
+                        <source>Description adapted (September 2019) from the following sources:
+                           <listBibl>
+                              <bibl>Nigel F. Palmer, <title>Zisterzienser und ihre Bücher: die mittelalterliche Bibliotheksgeschichte von Kloster Eberbach im Rheingau</title> (Regensburg, 1998), pp. 227, 243, 294 [physical description, date, provenance].</bibl>
+                              <bibl>H. O. Coxe, <title>Laudian Manuscripts</title>, Quarto Catalogues II, repr. with corrections, 1969, from the original ed. of 1858-1885 [contents, acquisition].</bibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, 3 vols. (1966-1973) I, no. 117.</bibl>
+                           </listBibl>
                             
                             <listBibl>
                               <bibl type="QUARTO" facs="aby0186.gif">Quarto Catalogue, col. 275</bibl>
@@ -117,8 +157,9 @@
             </msDesc>
          </sourceDesc>
       </fileDesc>       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
+      <revisionDesc>          
+         <change when="2019-09-26">Description revised for Polonsky digitization project to include additional information from printed descriptions.</change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>
