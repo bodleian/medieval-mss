@@ -5,9 +5,17 @@
          <titleStmt>
             <title>MS. Hamilton 9</title>
             <title type="collection">MSS. Hamilton</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="SC">
+               <resp when="1905">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2019">Encoding</resp>
+               <persName>Matthew Holford</persName>
+            </respStmt>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>Andrew G. Watson</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -49,37 +57,72 @@
                      <idno type="SCN">24439</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <msContents resp="#SC"> <textLang mainLang="la">Latin</textLang>
                   <msItem xml:id="MS_Hamilton_9-item1" n="1">
-                     <author key="person_61642222">
-                        
-                        Hugo Ripelinus
-                     
-                     </author>
+                     <locus>(fols. 1ra-144vb)</locus>
+                     <author key="person_61642222">Hugo Ripelinus</author>
                      <title key="work_2164">Compendium ueritatis
               theologicae</title>
-                     <textLang mainLang="la">Latin</textLang>
+                     <note>Capitula, fols. 1ra-3ra.</note>
+                     
+                  </msItem>
+                  <msItem>
+                     <locus>(fol. 144v)</locus>
+                     <colophon>Explicit Compendium theologice Veritatis per manus <persName role="scr" key="person_3128">Henrici Regis</persName>
+                        [Heinrich König ?], pro quo orate Deum, omnes hune librum possidentes. Amen.
+                        Anno Christi. 1425. die 21<hi rend="superscript">a</hi> me<supplied>n</supplied>sis Marcij ipso die sancti Benedicti
+                        abbatis &amp; confessoris, etc.</colophon><note>Fol. 145 blank.</note>
                   </msItem>
                </msContents>
-               <physDesc>
+               <physDesc resp="#DD">
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
+                        <!-- watermarks not examined. Clear on final page - perhaps worth checking for Erfurt prov.? -->
+                        <extent>145 fols. <!-- Watson says 144 + i, but fol. 145 is an original part of the final quire -->
+                           <dimensions unit="mm" type="leaf">
+                              <height>312</height>
+                              <width>220</width>
+                           </dimensions></extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2" writtenLines="39 42">2 cols, 39-42 lines, written space <dimensions unit="mm" type="written">
+                           <height max="233" min="230">230-3</height>
+                           <width>70</width>
+                        </dimensions></layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <decoDesc>
+                     <decoNote type="colInit">Coloured initials.</decoNote>
+                     <decoNote type="rubrication">Rubrics.</decoNote>
+                  </decoDesc>
+                  <bindingDesc>
+                     <binding notAfter="1460" notBefore="1440">
+                        <p>White whittawed leather over boards, s. xv med.</p>
+                     </binding>
+                  </bindingDesc>
+                  <accMat resp="#SC">The pastedowns are from a 14th cent. legal book.</accMat>
                </physDesc>
-               <history>
+               <history resp="#DD">
                   <origin>
-                     <origDate calendar="Gregorian" when="1425">1425</origDate>
+                     <origDate calendar="Gregorian" when="1425" cert="high">1425</origDate>
                      <origPlace cert="low">
                         <country key="place_7000084">German</country>, <settlement key="place_7024031">Erfurt</settlement> (?)<!--ORIGINAL: German, Erfurt (?)--></origPlace>
                   </origin>
+                  <provenance resp="#DD"><orgName key="org_135319659" role="fmo">St Peter's, Erfurt</orgName>: pressmark <q type="pressmark">M.xl</q> twice on the binding; fol. 1, <q type="exLibris">liber sancti Petri in Erffordia</q></provenance>
+                  <provenance resp="#SC" notAfter="1831" notBefore="1760"><persName role="fmo" key="person_24953683">Friedrich Gottlieb Julius von Bülow, 1760-?1831</persName>, 42 in the catalogue of part 3 of his sale, 10 Oct. 1836 (cf. pastedown on upper board)</provenance>
+                  <provenance resp="#SC" notBefore="1841" notAfter="1856"><persName role="fmo" key="person_54195353">Sir William Hamilton, 1788-1856</persName></provenance>
+                  <acquisition resp="#SC" when="1857">Presented to the Bodleian Library by his sons and received in 1857.</acquisition>
+                  
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
-                            
+                        <source>Description adapted (2019) from the following sources:  
+                            <listBibl>
+                               <bibl> A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 494 [physical description, localization]</bibl>
+                               <bibl>The Summary Catalogue (1905) [colophon, pastedowns, contents, provenance]</bibl>
+                            </listBibl>
                             <listBibl>
                               <bibl type="SC" facs="aam0050.gif">Summary Catalogue, Vol. 5, p.  15</bibl>
                            </listBibl>
@@ -90,7 +133,9 @@
             </msDesc>
          </sourceDesc>
       </fileDesc>
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
+      <revisionDesc>        
+         <change when="2019-10-03">Updated for Polonsky German with reference to published descriptions and brief observation of manuscript.</change>
+         <change when="2017-07-01">First online publication.</change>
 
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>

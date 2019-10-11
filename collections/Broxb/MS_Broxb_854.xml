@@ -5,17 +5,21 @@
          <titleStmt>
             <title>MS. Broxb. 85.4</title>
             <title type="collection">MSS. Broxb. (Broxbourne)</title>
-            <respStmt>
-               <resp>Preliminary description</resp>
+            <respStmt xml:id="PK">
+               <resp>Cataloguer</resp>
                <persName>Peter Kidd</persName>
+            </respStmt>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2019">Encoding</resp>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -48,44 +52,66 @@
                   <altIdentifier type="internal">
                      <idno type="SCN">Not in SC (late accession)</idno>
                   </altIdentifier>
+                  <altIdentifier type="former">
+                     <idno>Broxbourne ledger R 1786</idno>
+                  </altIdentifier>
                </msIdentifier>
-               <msContents>
-                  <msItem xml:id="MS_Broxb_854-item1" n="1" class="#oratio">
-                     <title type="desc" key="work_13936">Prayer book.</title>
+               <msContents resp="#DD">
+                  <msItem xml:id="MS_Broxb_854-item1" n="1" class="#liturgica">
+                     <title type="desc" key="work_10499">Book of Hours, Dominican Use</title>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
-               <physDesc>
+               <physDesc resp="#DD">
                   <objectDesc form="codex">
-                     <supportDesc material="unknown">
-                        <support>(not specified in handlist)</support>
+                     <supportDesc material="perg">
+                        <support>parchment</support>
+                        <extent>i + 74 + i fols.
+                           <dimensions unit="mm" type="leaf">
+                              <height>123</height>
+                              <width>105</width>
+                           </dimensions></extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="1" writtenLines="16">1 col., 16 lines, written space <dimensions unit="mm" type="written">
+                           <height max="68" min="63">63-8</height>
+                           <width>60</width>
+                        </dimensions></layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <decoDesc>
+                     <decoNote type="miniature">Illuminated miniatures</decoNote><decoNote type="border">Borders</decoNote><decoNote type="decInit">Initials</decoNote>
+                     <decoNote type="colInit">Coloured initials</decoNote><decoNote type="rubrication">Rubrics</decoNote>
+                  </decoDesc>
                   <bindingDesc>
-                     <binding>
-                        <p>Gilt-stamped binding,
-				16th-century.</p>
+                     <binding notAfter="1600" notBefore="1500">
+                        <p>Blind-stamped (originally gilt?) leather, over boards, 16th-century.</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" when="1486">1486</origDate>
-                     <origPlace>
+                     <origDate calendar="Gregorian" when="1486" resp="#DD" cert="high">1486</origDate>
+                     <origPlace resp="#PK">
                         <country key="place_1000062">Austrian</country>, Kramsach (Voldöpp), Dominican house of <orgName key="org_119">Mariathal</orgName>
                         <!--ORIGINAL: Austrian, Dominican house of Mariathal in Voldoepp, Kramsach-->
                      </origPlace>
                   </origin>
-                  <provenance>
+                  <provenance resp="#DD">Fol. 74v: <q>Dausennt Vnnd Viehundert Sex und achtzig. Setz ich bruder Johannes Peckslacher Die geschrifft Jar Tes dritten tag alt wardt. das Monat december. Ich detz selbet. auf aiggem mutt. weder umb gelt noch umb gut. Der edlen Vnnd gaistlichenn Junckfrauen . frauen Barbara Intalerin Schonch ich das Clainath zu ainen gutten Jar. Si was des selben Jars Priorin wirdiglich Auch dar uor wol xvij Jar hethe geregirt. Vnnd mein aller lieste Apolonia Terchingerin Suppriorin. B. C. M. A. I.</q> A miniature on fol. 13 shows a Dominican friar with an open book bearing the initials 'P.J.' kneeling opposite a Dominican nun with an open book showing 'B.I.'.</provenance>
+                  <!-- see Codices manuscripti 6/1 for some info on Mariathal and its library -->
+                  <provenance resp="#DD">The calendar is basically Dominican plus Apollonia (9 Feb.) in the original hand and three feasts added later - the translation of St Barbara totum duplex (2 Sept.) and St Barbara with octave (4 and 11 Dec.). </provenance>
+                  <provenance resp="#DD"><q>Hic liber est G. phi. Com.</q>, <q>Georgius Philippus Comes de <unclear>Lirdentam</unclear></q>, 16th century, inside front cover. </provenance>
+                  <provenance resp="#PK">
                      <persName role="fmo" key="person_20486290">C. W. Dyson Perrins</persName>
                   </provenance>
-                  <provenance>Sotheby's, 29 Nov. 1960, lot 141.</provenance>
-                  <provenance>Formerly Broxbourne ledger no. R 1786.</provenance>
+                  <provenance resp="#PK">Sotheby's, 29 Nov. 1960, lot 141.</provenance>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Peter Kidd, <title>Checklist of Medieval Western Manuscripts Acquired 1916-</title> (typescript, c. 1996-2000)
+                        <source>Description adapted (Oct. 2019) from the following sources:
+                           <listBibl><bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 130 [contents, physical description, provenance]</bibl>
+                           <bibl>Peter Kidd, <title>Checklist of Medieval Western Manuscripts Acquired 1916-</title> (typescript, c. 1996-2000) [origin, provenance] </bibl></listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
@@ -93,7 +119,9 @@
             </msDesc>
          </sourceDesc>
       </fileDesc>       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
+      <revisionDesc>      
+         <change when="2019-10-07">Revised to include additional information from Watson</change>
+         <change when="2017-07-01">First online publication.</change>
 
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
