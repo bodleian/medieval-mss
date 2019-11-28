@@ -7,9 +7,21 @@
          <titleStmt>
             <title>MS. Canon. Class. Lat. 88</title>
             <title type="collection">MSS. Canon. Class. Lat. (Canonici Latin Classical)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2019">Encoding</resp>
+               <persName>Matthew Holford</persName>
+            </respStmt>
+            <respStmt xml:id="ES">
+               <resp when="2019">Cataloguer</resp>
+               <persName>Elizabeth Solopova</persName>
+            </respStmt>
+            <respStmt xml:id="Q">
+               <resp when="1854">Cataloguer</resp>
+               <persName>H. O. Coxe</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -53,12 +65,10 @@
                </msIdentifier>
                <msContents>
                   <msItem xml:id="MS_Canon_Class_Lat_88-item1" n="1">
-                     <author key="person_90637919">
-                        
-                        Seneca
-                     
-                     </author>
+                     <author key="person_90637919">Seneca</author>
                      <title key="work_4505">Tragedies</title>
+                     <colophon><locus>(fol. 228)</locus> ... expliciunt tragedie complete Millesimo trecentesimo Nonagesimo nono die octaua augusti hora xva. in Scol' Reuerendissimi artis gramatice doctoris et rhetorice eximij professoris magistri gentilis de Rauenna ...</colophon>
+                     <note type="annotation">Occasional glossing.</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -66,24 +76,45 @@
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
+                        <extent>228 fols.
+                           <dimensions unit="mm" type="leaf">
+                              <height>290</height>
+                              <width>215</width>
+                           </dimensions></extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="1" writtenLines="27">1 col., 27 lines, written space <dimensions unit="mm" type="written">
+                           <height max="230" min="210">210-30</height>
+                           <width quantity="100" precision="medium">c. 100</width>
+                        </dimensions></layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <handDesc hands="2">
+                     <handNote>More than one scribe: perhaps two, (a) fols. 1-196v, 213-28; (b) fols. 197-212v.</handNote>
+                  </handDesc>
+                  <decoDesc>
+                     <decoNote type="unfilled">Spaces left for initials.</decoNote><decoNote type="rubrication">Rubrics.</decoNote>
+                  </decoDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" when="1399">1399</origDate>
+                     <origDate calendar="Gregorian" when="1399" cert="high">1399</origDate>
                      <origPlace>
-                        <country key="place_1000080">Italian</country>, <settlement key="place_7004935">Ravenna</settlement>
+                        <country key="place_1000080">Italian</country>, <settlement key="place_7005552">Cividale del Friuli</settlement>
                         <!--ORIGINAL: Italian, Ravenna-->
                      </origPlace>
                   </origin>
+                  <provenance>Gentile de Ravenna, referred to in the colophon, is apparently to be identified with <persName key="person_3161">Gentile Belloli (-1403)</persName>, who taught at Cividale del Friuli from 1397 to 1403: see <bibl>Renzi Pellegrini in <title>Dizionario biografico dei friulani</title> (2006)</bibl> [<ref target="http://www.dizionariobiograficodeifriulani.it/belloli-gentile/">online</ref>]</provenance>
                <provenance notBefore="1727" notAfter="1805" resp="#MMM"><persName role="fmo" key="person_2384880">Matteo Luigi Canonici, 1727-1805</persName></provenance><provenance notAfter="1807" resp="#MMM"><persName role="fmo" key="person_446">Giuseppe Canonici , -1807</persName></provenance><acquisition when="1817" resp="#MMM">Purchased by the Bodleian in 1817</acquisition></history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (H. O. Coxe,  <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854). 
-                            
+                        <source>Description adapted (Nov. 2019) from the following sources, corrected with reference to published literature as cited:
                            
+                           <listBibl>
+                              <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 162 [colophon, physical description, date; origin given as Ravenna]</bibl>
+                              <bibl>(H. O. Coxe,  <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854) [contents]</bibl>
+                           </listBibl>
                            
                         <listBibl>
                               <bibl type="QUARTO" facs="abz0079.gif">
@@ -98,7 +129,9 @@
             </msDesc>
          </sourceDesc>
       </fileDesc>       
-      <revisionDesc><change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName>
+      <revisionDesc>
+         <change when="2019-11-26">Description revised to incorporate all information in Watson and Quarto catalogue.</change>
+         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName>
       Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
       in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.'
     </change>          <change when="2017-07-01">First online publication.</change>

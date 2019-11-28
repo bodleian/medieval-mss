@@ -7,17 +7,30 @@
          <titleStmt>
             <title>MS. Canon. Class. Lat. 84</title>
             <title type="collection">MSS. Canon. Class. Lat. (Canonici Latin Classical)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2019">Encoding</resp>
+               <persName>Matthew Holford</persName>
+            </respStmt>
+            <respStmt xml:id="ES">
+               <resp when="2019">Cataloguer</resp>
+               <persName>Elizabeth Solopova</persName>
+            </respStmt>
+            <respStmt xml:id="Q">
+               <resp when="1854">Cataloguer</resp>
+               <persName>H. O. Coxe</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Pächt </persName>
+               <persName>J. J. G. Alexander</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -53,12 +66,9 @@
                </msIdentifier>
                <msContents>
                   <msItem xml:id="MS_Canon_Class_Lat_84-item1" n="1">
-                     <author key="person_8099277">
-                        
-                        Martial
-                     
-                     </author>
+                     <author key="person_8099277">Martial</author>
                      <title key="work_3102">Epigrams</title>
+                     <colophon><locus>(fol. 159v)</locus> Marci Valerij Marcialis explicit ... 1462o die 13 mensis Januarii In ciuitate feltri finis Amen</colophon>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -66,17 +76,29 @@
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
+                        <extent>160 fols.
+                           <dimensions unit="mm" type="leaf">
+                              <height>295</height>
+                              <width>215</width>
+                           </dimensions></extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="1" writtenLines="33">1 col., 33 lines, written space <dimensions unit="mm" type="written">
+                           <height>190</height>
+                           <width quantity="70" precision="medium">c. 70</width>
+                        </dimensions></layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <handDesc>
+                     <handNote script="humanistica">Humanistic script.</handNote>
+                  </handDesc>
                   <decoDesc>
-                     <decoNote>Good initial. Written in humanistic script, fol. 159v. (P&amp;A
-            ii. 836)
-                     </decoNote>
+                     <decoNote type="decInit">Illuminated interlace initial.</decoNote><decoNote type="colInit">Coloured initials.</decoNote><decoNote type="rubrication">Rubrics.</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" when="1462">1462</origDate>
+                     <origDate calendar="Gregorian" when="1462" cert="high">1462</origDate>
                      <origPlace>
                         <country key="place_1000080">Italian</country>, <settlement key="place_7003331">Feltre</settlement>
                         <!--ORIGINAL: Italian, Feltre-->
@@ -86,10 +108,13 @@
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (H. O. Coxe,  <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854). Decoration, localization and date follow Pächt and Alexander (1970). 
-                            
+                        <source>Description adapted (Nov. 2019) from the following sources:
                            
-                           
+                           <listBibl>
+                              <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 161 [colophon, physical description, origin, date]</bibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, II (1970), no. 836 [script]</bibl>
+                              <bibl>(H. O. Coxe,  <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854) [contents]</bibl>
+                           </listBibl>
                         <listBibl>
                               <bibl type="QUARTO" facs="abz0079.gif">
                               Quarto Catalogue, vol. 3, col. 145
@@ -103,7 +128,9 @@
             </msDesc>
          </sourceDesc>
       </fileDesc>       
-      <revisionDesc><change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName>
+      <revisionDesc>
+         <change when="2019-11-26">Description revised to incorporate all information in Watson, P&amp;A, and Quarto catalogues.</change>
+         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName>
       Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
       in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.'
     </change>          <change when="2017-07-01">First online publication.</change>
