@@ -7,17 +7,21 @@
          <titleStmt>
             <title>MS. Canon. Class. Lat. 62</title>
             <title type="collection">MSS. Canon. Class. Lat. (Canonici Latin Classical)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2019">Encoding</resp>
+               <persName>Matthew Holford</persName>
+            </respStmt>
+            <respStmt xml:id="Q">
+               <resp when="1854">Cataloguer</resp>
+               <persName>H. O. Coxe</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -51,46 +55,64 @@
                      <idno type="SCN">18643</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <msContents resp="#Q">
+                  <textLang mainLang="la">Latin</textLang>
                   <msItem xml:id="MS_Canon_Class_Lat_62-item1" n="1">
-                     <author key="person_8194433">
-                        
-                        Virgil
-                     
-                     </author>
+                     <author key="person_8194433">Virgil</author>
                      <title key="work_4920">Aeneid</title>
-                     <textLang mainLang="la">Latin</textLang>
+                     <note>With argumenta.</note>
+                     <note type="annotation">With interlinear glosses.</note>
+                     <colophon resp="#DD"><locus>(fol. 147)</locus> ... liber duodecimus explicit τέλος dεο γραγιας αμιn Die lune 4<hi rend="superscript">or</hi> decembris hora xvj d' m<hi rend="superscript">o</hi>iiii<hi rend="superscript">o</hi>lvij per me antonium urso de uenezijs</colophon>
                   </msItem>
                   <msItem xml:id="MS_Canon_Class_Lat_62-item2" n="2">
-                     <author key="person_78782481">
-                        
-                        Guarino of
-              Verona
-                     
-                     </author>
+                     <locus>(fols. 147v-152r)</locus>
+                     <author key="person_78782481">Guarino of Verona</author>
                      <title key="work_1887">Carmina differentialia</title>
-                     <textLang mainLang="la">Latin</textLang>
+                     <incipit>Dicitur esse nepos de nepa luxuriosus</incipit>
+                     <explicit>Cado facit cessum, cado cassum, cedoque cessum</explicit>
+                     <note type="addition">Later addition.</note>
                   </msItem>
                </msContents>
-               <physDesc>
+               <physDesc resp="#DD">
                   <objectDesc form="codex">
-                     <supportDesc material="chart">
-                        <support>paper and parchment</support>
+                     <supportDesc material="mixed">
+                        <support>paper and parchment mixed</support>
+                        <extent>152 fols.
+                           <dimensions unit="mm" type="leaf">
+                              <height>290</height>
+                              <width>200</width>
+                           </dimensions></extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="1" writtenLines="33 36">1 col., 33-36 lines, written space <dimensions unit="mm" type="written">
+                           <height>210</height>
+                           <width quantity="90" precision="medium">c. 90</width>
+                        </dimensions></layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <handDesc>
+                     <handNote>Fols. 85-147 written by <persName role="scr" key="person_3154">Antonius Urso of Venice</persName>. Fols. 1-84 written by one or more other scribes whose hands, distinct at beginning and end, merge of fol. 68.</handNote>
+                  </handDesc>
+                  <decoDesc>
+                     <decoNote type="unfilled">Spaces left for initials.</decoNote>
+                  </decoDesc>
                </physDesc>
                <history>
-                  <origin>
-                     <origDate calendar="Gregorian" when="1457">1457</origDate>
+                  <origin resp="#DD">
+                     <origDate calendar="Gregorian" when="1457" cert="high">1457</origDate>; <origDate type="additions" notAfter="1500" notBefore="1457" calendar="Gregorian">additions, 15th century, second half</origDate>
                      <origPlace cert="low">
-                        <country key="place_1000080">Italian</country>, <settlement key="place_7018159">Venice</settlement> (?)<!--ORIGINAL: Italian, Venice (?)--></origPlace>
+                        <country key="place_1000080">Italian</country>, <settlement key="place_7018159" cert="medium">Venice (?)</settlement> <!--ORIGINAL: Italian, Venice (?)--></origPlace>
                   </origin>
                <provenance notBefore="1727" notAfter="1805" resp="#MMM"><persName role="fmo" key="person_2384880">Matteo Luigi Canonici, 1727-1805</persName></provenance><provenance notAfter="1807" resp="#MMM"><persName role="fmo" key="person_446">Giuseppe Canonici , -1807</persName></provenance><acquisition when="1817" resp="#MMM">Purchased by the Bodleian in 1817</acquisition></history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (H. O. Coxe,  <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854). 
-                            
+                        <source>Description adapted (Nov. 2019) from the following sources:
+                           
+                           <listBibl>
+                              <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 159 [colophon, physical description, origin, date]</bibl>
+                              <bibl>(H. O. Coxe,  <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854) [contents]</bibl>
+                           </listBibl>
                            
                            
                         <listBibl>
@@ -103,10 +125,13 @@
                      </recordHist>
                   </adminInfo>
                </additional>
+              
             </msDesc>
          </sourceDesc>
       </fileDesc>       
-      <revisionDesc><change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName>
+      <revisionDesc>
+         <change when="2019-11-20">Revised to include all information in Watson, P&amp;A, and Quarto catalogue.</change>
+         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName>
       Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
       in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.'
     </change>          <change when="2017-07-01">First online publication.</change>

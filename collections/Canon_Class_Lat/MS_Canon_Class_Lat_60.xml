@@ -6,17 +6,30 @@
          <titleStmt>
             <title>MS. Canon. Class. Lat. 60</title>
             <title type="collection">MSS. Canon. Class. Lat. (Canonici Latin Classical)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2019">Encoding</resp>
+               <persName>Matthew Holford</persName>
+            </respStmt>
+            <respStmt xml:id="ES">
+               <resp when="2019">Cataloguer</resp>
+               <persName>Elizabeth Solopova</persName>
+            </respStmt>
+            <respStmt xml:id="Q">
+               <resp when="1854">Cataloguer</resp>
+               <persName>H. O. Coxe</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Pächt </persName>
+               <persName>J. J. G. Alexander</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -50,64 +63,68 @@
                      <idno type="SCN">18641</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <msContents resp="#Q">
+                  <textLang mainLang="la">Latin</textLang>
                   <msItem xml:id="MS_Canon_Class_Lat_60-item1" n="1">
                      <author key="person_8194433">Virgil</author>
                      <title key="work_4921">Eclogues</title>
-                     <note>(with
-              glosses)</note>
-                     <textLang mainLang="la">Latin</textLang>
+                     <note type="annotation">Marginal and interlinear glosses.</note>
+                     <colophon resp="#DD"><locus>(fol. 22)</locus> Buccolica haec est nobilis viri d<ex>omini</ex> Johannis tyretha tar<ex>uisiensis</ex> quam Florauantus Antonius et Alexander filij posidebunt. scripta per me Johannem de paruolis presbyterum Anno ... Mcccclxvij die xviij mensis octobris Indictione xv<hi rend="superscript">a</hi></colophon>
+                  </msItem>
+                  <msItem>
+                     <locus>(fol. 22v)</locus>
+                     <msItem><author key="person_301124571"><supplied>Ps.-Vergil</supplied></author>
+                     <note><bibl type="repertory">SK 10279</bibl> ('Nocte pluit tota'); <bibl type="repertory">SK 7221</bibl> ('Hoc ego versiculos', with the three variants of the second line).</note></msItem>
+                     <msItem>
+                        <author key="person_8099277">Martial</author>
+                        <title key="work_3102">Ep. 9. 97</title><note><bibl type="repertory">SK 14406</bibl></note>
+                     </msItem>
                   </msItem>
                </msContents>
-               <physDesc>
+               <physDesc resp="#DD">
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>22 + i fols.
+                           <dimensions unit="mm" type="leaf">
+                              <height>260</height>
+                              <width>175</width>
+                           </dimensions></extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="1" writtenLines="20">1 col., 20 lines, written space <dimensions unit="mm" type="written">
+                           <height>150</height>
+                           <width>105</width>
+                        </dimensions></layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <handDesc>
+                     <handNote script="humanistica" resp="#PA">Written in humanistic script by <persName role="scr" key="person_661">Johannes de Parvolis, priest</persName></handNote>
+                  </handDesc>
                   <decoDesc>
-                     <decoNote>Fine historiated initial. Written in humanistic script by <persName role="scr" key="person_661">
-                           Johannes
-            de Parvolis, priest
-                        </persName>, for <persName role="pat" key="person_652">
-                           Johannes Tyretha of Treviso
-                        </persName> for the use of his sons
-            <persName key="person_338">
-                           Floravantus
-                        </persName>, <persName key="person_82">
-                           Antonius
-                        </persName> and <persName key="person_44">
-                           Alexander
-                        </persName>, fol. 22. (P&amp;A ii. 841, pl. LXXVI)
-                        <list type="gloss">
-                           <head>fol. 1r</head>
-                           <label>Type</label>
-                           <item>
-                              <seg type="genreform">initial T</seg>
-                           </item>
-                           <label>Subject</label>
-                           <item>
-                              <seg type="subject">The shepherds Tityrus and Meliboeus.</seg>
-                           </item>
-                        </list>
-                     </decoNote>
+                     <decoNote type="histInit">Historiated initial: fol. 1r, initial T, the shepherds Tityrus and Meliboeus.</decoNote><decoNote type="colInit">Coloured initials.</decoNote><decoNote type="rubrication">Rubrics.</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
-                  <origin>
-                     <origDate calendar="Gregorian" when="1467">1467</origDate>
+                  <origin resp="#DD">
+                     <origDate calendar="Gregorian" when="1467" cert="high">1467</origDate>
                      <origPlace>
-                        <country key="place_1000080">Italian</country>, <settlement key="place_7003297">Treviso</settlement>
+                        <country key="place_1000080">Italian</country>, <settlement key="place_7003297">Treviso (?)</settlement>
                         <!--ORIGINAL: Italian, Treviso.-->
                      </origPlace>
                   </origin>
+                  <provenance>Written by Johannes de Parvolis, priest, for <persName role="pat" key="person_652">Johannes Tyretha of Treviso</persName>, for the use of his sons <persName key="person_338">Floravantus</persName>, <persName key="person_82">Antonius</persName> and <persName key="person_44">Alexander</persName> (colophon, fol. 22)</provenance>
                <provenance notBefore="1727" notAfter="1805" resp="#MMM"><persName role="fmo" key="person_2384880">Matteo Luigi Canonici, 1727-1805</persName></provenance><provenance notAfter="1807" resp="#MMM"><persName role="fmo" key="person_446">Giuseppe Canonici , -1807</persName></provenance><acquisition when="1817" resp="#MMM">Purchased by the Bodleian in 1817</acquisition></history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (H. O. Coxe,  <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854). Decoration, localization and date follow Pächt and Alexander (1970). 
-                            
+                        <source>Description adapted (Nov. 2019) from the following sources, with additional description of iconography by Elizabeth Solopova, <hi rend="italic">c</hi>. 2000:
                            
+                           <listBibl>
+                              <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 158 [physical description, origin, date]</bibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, II (1970), no. 841 [decoration, script]</bibl>
+                              <bibl>(H. O. Coxe,  <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854) [contents]</bibl>
+                           </listBibl>
                            
                         <listBibl>
                               <bibl type="QUARTO" facs="abz0074.gif">
@@ -122,7 +139,9 @@
             </msDesc>
          </sourceDesc>
       </fileDesc>       
-      <revisionDesc><change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName>
+      <revisionDesc>
+         <change when="2019-11-20">Revised to include all information in Watson, P&amp;A, and Quarto catalogue.</change>
+         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName>
       Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
       in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.'
     </change>          <change when="2017-07-01">First online publication.</change>

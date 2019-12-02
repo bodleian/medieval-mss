@@ -7,17 +7,21 @@
          <titleStmt>
             <title>MS. Canon. Class. Lat. 66</title>
             <title type="collection">MSS. Canon. Class. Lat. (Canonici Latin Classical)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2019">Encoding</resp>
+               <persName>Matthew Holford</persName>
+            </respStmt>
+            <respStmt xml:id="Q">
+               <resp when="1854">Cataloguer</resp>
+               <persName>H. O. Coxe</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -51,43 +55,54 @@
                      <idno type="SCN">18647</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <msContents resp="#Q">
                   <msItem xml:id="MS_Canon_Class_Lat_66-item1" n="1">
-                     <author key="person_10970700">
-                        
-                        Servius
-                     
-                     </author>
+                     <author key="person_10970700">Servius</author>
                      <title key="work_4517">Commentary on Virgil</title>
-                     <bibl type="commentedOn">
-                        <author key="person_8194433">
-                           Virgil
-                        </author>
-                     </bibl>
+                     <note>Aeneid, fol. 1; Eclogues, fol. 240; Georgics, fol. 269v.</note>
+                     <colophon resp="#DD"><locus>(fol. 319)</locus> Istum librum scripsit frater christoforus de Soncino ordinis predicatorum ad usum Mei Gerardi <del>de <gap unit="char" quantity="1"/>elle </del>Anno domini M<hi rend="superscript">o</hi>cccc<hi rend="superscript">o</hi>liij<hi rend="superscript">o</hi> die iij<hi rend="superscript">a</hi> mensis Februarii. etc.</colophon>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
-               <physDesc>
+               <physDesc resp="#DD">
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
+                        <extent>ii + 317 fols.
+                        <dimensions unit="mm" type="leaf">
+                           <height>282</height>
+                           <width>215</width>
+                        </dimensions></extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="1" writtenLines="33">1 col., 33 lines, written space <dimensions unit="mm" type="written">
+                           <height max="180" min="175">175-80</height>
+                           <width min="115" max="120">115-20</width>
+                        </dimensions></layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <decoDesc>
+                     <decoNote type="unfilled">Spaces left for initials.</decoNote>
+                  </decoDesc>
                </physDesc>
-               <history>
+               <history resp="#DD">
                   <origin>
-                     <origDate calendar="Gregorian" when="1453">1453</origDate>
+                     <origDate calendar="Gregorian" when="1453" cert="high">1453</origDate><!-- or 1454? check -->
                      <origPlace>
                         <country key="place_1000080">Italian</country>
                      </origPlace>
                   </origin>
+                  <provenance>Written for <persName role="fmo" key="person_3155">Gherardo de .elle</persName> by <persName role="scr" key="person_3156">Cristoforo de Soncino OP</persName>.</provenance>
                <provenance notBefore="1727" notAfter="1805" resp="#MMM"><persName role="fmo" key="person_2384880">Matteo Luigi Canonici, 1727-1805</persName></provenance><provenance notAfter="1807" resp="#MMM"><persName role="fmo" key="person_446">Giuseppe Canonici , -1807</persName></provenance><acquisition when="1817" resp="#MMM">Purchased by the Bodleian in 1817</acquisition></history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (H. O. Coxe,  <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854). 
-                            
+                        <source>Description adapted (Nov. 2019) by Matthew Holford from the following sources, with additional description of fols. 1-2:
                            
+                           <listBibl>
+                              <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 160 [colophon, physical description, origin, date]</bibl>
+                              <bibl>(H. O. Coxe,  <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854) [contents]</bibl>
+                           </listBibl>
                            
                            
                         <listBibl>
@@ -103,6 +118,54 @@
                      </recordHist>
                   </adminInfo>
                </additional>
+               <msPart>
+                  <msIdentifier>
+                     <altIdentifier>
+                        <idno>MS. Canon. Class. Lat. 66, endleaves (fols. 1-2)</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  
+                  <msContents>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem>
+                        <title><supplied>Aesopus moralizatus abbreviatus</supplied></title>
+                        <incipit defective="true">Esopus tetigit consona uerba mouens <note></note>(xxi a)</incipit>
+                        <explicit defective="true">In miseros armet, nam potes esse miser <note>(xliii)</note></explicit>
+                        <note>The text (cf. Walther 20163, inc. ‘Verborum levitas morum fert pondus honestum’) comprises the concluding distichs from each tale of the <title>Aesopus moralizatus</title> (Hervieux, <title>Les fabulistes latins</title>, II. 316-351), each distich preceded by a rubric.</note>
+                        <note type="annotation">With later annotations and notes.</note>
+                     </msItem>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="perg">
+                           <support>parchment</support>
+                           <extent>bifolium (text is continuous)
+                              <dimensions unit="mm" type="leaf">
+                                 <height>280</height>
+                                 <width>210</width>
+                              </dimensions></extent>
+                        </supportDesc>
+                        <layoutDesc>
+                           <layout columns="1" writtenLines="19 20">1 col., 19-20 lines, written space <dimensions unit="mm" type="written">
+                              <height>210</height>
+                              <width>140</width>
+                           </dimensions></layout>
+                        </layoutDesc>
+                     </objectDesc>
+                     <handDesc>
+                        <handNote>Southern textualis</handNote>
+                     </handDesc>
+                     <decoDesc>
+                        <decoNote>Rubrics. Red and blue paraphs.</decoNote>
+                     </decoDesc>
+                  </physDesc>
+                  <history>
+                     <origin>
+                        <origDate calendar="Gregorian" notBefore="1300" notAfter="1400">14th century</origDate>
+                        <origPlace><country>Italy</country></origPlace>
+                     </origin>
+                  </history>
+               </msPart>
             </msDesc>
          </sourceDesc>
       </fileDesc>       
