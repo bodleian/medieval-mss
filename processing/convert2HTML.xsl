@@ -70,12 +70,12 @@
     </xsl:template>
     
     <!-- Display lemmata in italic -->
-    <xsl:template match="incipit/quote | incipit/cit/quote">
+    <xsl:template match="incipit/quote | incipit/cit/quote | explicit/quote | explicit/cit/quote">
         <i>
             <xsl:apply-templates/>
         </i>
     </xsl:template>
-    <xsl:template match="text()[ancestor::incipit/@type='lemma']">
+    <xsl:template match="text()[ancestor::incipit/@type='lemma' or ancestor::explicit/@type='lemma']">
         <i>
             <xsl:copy/>
         </i>
