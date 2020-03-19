@@ -6,17 +6,24 @@
          <titleStmt>
             <title>MS. Auct. D. 5. 17</title>
             <title type="collection">MSS. Auct. D. (Auctarium D.)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1966">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2020">Encoding</resp>
+               <resp when="2020">Catalogue updates and corrections</resp>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -50,37 +57,71 @@
                      <idno type="SCN">1848</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <msContents resp="#SC">
+                  <textLang mainLang="la">Latin</textLang>
                   <msItem xml:id="MS_Auct_D_5_17-item1" n="1" class="#biblia">
                      <title type="desc" key="work_10455">Bible</title>
-                     <textLang mainLang="la">Latin</textLang>
+                     <note>With st. Jerome's Prefaces: the New Testament begins on
+                        438v. At fol. 549 follow (1) Interpretationes nominum Hebraicorum, (2) short
+                        notes on every book in the Bible, with index, fol. 604, (3) 'Incipiunt
+                        Canones ...', a metrical digest of each Gospel, adapted to form a harmony by
+                        the use of the ten Eusebian canons: text beg. 'A generat. B. magos vocat.
+                        Egiptum petit. exit.': fol. 633.</note>
+                  </msItem>
+                  <msItem>
+                     <locus>(fols. 601v-603v)</locus>
+                     <title type="desc" key="work_10687">Calendar</title>
+                     <note>Added on five blank pages in the 14th century. The obits etc. show a connection with the
+                        Benedictine monastery of St. Denis near Paris.</note>
                   </msItem>
                </msContents>
-               <physDesc>
+               <physDesc resp="#SC">
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>i + 638 leaves
+                           <dimensions type="leaf" unit="in">
+                              <height>6.625</height>
+                              <width>4.5</width>
+                           </dimensions></extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2">2 cols.</layout>
+                     </layoutDesc>
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote>Fine borders, historiated and other initials. (P&amp;A i. 544, pl.
+                  <decoDesc resp="#PA">
+                     <decoNote type="border">Borders.</decoNote><decoNote type="histInit">Historiated initials.</decoNote><decoNote type="decInit">Other initials. (P&amp;A i. 544, pl.
             XLI)
                      </decoNote>
                   </decoDesc>
+                  <bindingDesc>
+                     <binding notAfter="1600" notBefore="1500">
+                        <p>Gold ornament on black leather, Italian style, 16th
+                           cent., with arms inserted on the sides</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
-                  <origin>
-                     <origDate calendar="Gregorian" notAfter="1275" notBefore="1250">13th century, third quarter</origDate>
+                  <origin resp="#PA">
+                     <origDate calendar="Gregorian" notAfter="1275" notBefore="1250">13th century, third quarter</origDate>; <origDate type="additions" calendar="Gregorian" notBefore="1300" notAfter="1400">additions, 14th century</origDate>
                      <origPlace>
                         <country key="place_1000070">French</country>, <settlement key="place_7008038">Paris</settlement>
-                        <!--ORIGINAL: French, Paris-->
                      </origPlace>
                   </origin>
+                  <provenance resp="#SC"><orgName role="fmo" key="org_126179587">Paris, abbey of St Denis</orgName>: evidence in the calendar, see above.</provenance><provenance resp="#SC"> Owned by '<persName role="fmo" key="person_3181">Petrus de Armanhaco</persName>' (?: = Armagnac?) in the 15th cent.
+                     (fol. 548v)</provenance><provenance resp="#SC"><persName role="fmo" key="person_37029945">Cardinal Reginald Pole</persName>: his arms (coloured, but injured)
+                     are on circular pieces of parchment let into the sides of the book.</provenance><acquisition when="1601" resp="#SC"> This MS.
+                        (or possibly no. 1849) was presented by <persName role="dnr" key="person_3182">John Hawley, principal of Gloucester
+                     hall</persName>, in 1601.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1966).  
+                        <source>Description adapted (March 2020) from the following sources:
+                           <listBibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, I (1966), no. 544 [decoration, origin, date]</bibl>
+                              <bibl>Summary Catalogue (1922) [contents, physical description, provenance and acquisition]</bibl>
+                           </listBibl>  
                             
                         <listBibl>
                               <bibl type="SC" facs="aap0104.gif">Summary Catalogue, Vol. 2, part 1, p. 83</bibl>
@@ -92,269 +133,9 @@
             </msDesc>
          </sourceDesc>
       </fileDesc>       
-      <encodingDesc xml:id="encodingDesc" xml:base="../tolkien-classDecl.xml">
-         <classDecl>
-            <taxonomy>
-               <bibl>
-                  <title>Corpus of British Medieval Library Catalogues</title>
-                  <note>(volumes 4,
-                     13, 16)</note>
-               </bibl>
-               <category xml:id="allegoriae">
-                  <catDesc xml:lang="la">Allegoriae</catDesc>
-               </category>
-               <category xml:id="apocrypha">
-                  <catDesc xml:lang="la">Apocrypha, Pseudepigraphia</catDesc>
-               </category>
-               <category xml:id="arbores">
-                  <catDesc xml:lang="la">Arbores</catDesc>
-               </category>
-               <category xml:id="auctoritates">
-                  <catDesc xml:lang="la">Auctoritates, Compilationes, Dicta, Excerta, Excerptiones,
-                     Flores, Notabilia, Notabilitates, Sententiae</catDesc>
-               </category>
-               <category xml:id="biblia">
-                  <catDesc xml:lang="la">Biblia</catDesc>
-               </category>
-               <category xml:id="bibliographica">
-                  <catDesc xml:lang="la">Bibliographica</catDesc>
-               </category>
-              <!-- <category xml:id="cantus">
-                  <catDesc xml:lang="lat">Cantus</catDesc>
-               </category>
-              
-              Not a separate heading in v. 13, cross-referenced to Versus
-              
-              -->
-               <category xml:id="christologia">
-                  <catDesc xml:lang="la">Christologia</catDesc>
-                  <!-- not much used? -->
-               </category>
-               <category xml:id="collectiones">
-                  <catDesc xml:lang="la">Collectiones</catDesc>
-                  <!-- use for commonplace books, zibaldone, etc. -->
-               </category>
-               <category xml:id="commentarii">
-                  <catDesc xml:lang="la">Commentarii, Conclusiones, Expositiones, Glosae, Lecturae,
-                     Notulae, Proemia, Quaestiones, Scholia, Scripta</catDesc>
-                  <!-- query if should be used for biblical commentaries or are they just biblia? -->
-               </category>
-               <category xml:id="computistica">
-                  <catDesc xml:lang="la">Computistica</catDesc>
-               </category>
-              <!-- <category xml:id="concilia">
-                  <catDesc xml:lang="lat">Concilia</catDesc>
-                  <!-\- not a category in vol. 13 -\->
-               </category>-->
-               <category xml:id="concordantiae">
-                  <catDesc xml:lang="la">Concordantiae</catDesc>
-               </category>
-               <category xml:id="constitutiones">
-                  <catDesc xml:lang="la">Constitutiones</catDesc>
-                  <!-- not a category in vol. 13: cross refs to Legalia, Monastica, Theologica -->
-               </category>
-               <category xml:id="contemplationes">
-                  <catDesc xml:lang="la">Contemplationes, Meditationes</catDesc>
-               </category>
-
-               <category xml:id="credo">
-                  <catDesc xml:lang="la">Credo</catDesc>
-               </category>
-               <category xml:id="crux">
-                  <catDesc xml:lang="la">Crux</catDesc>
-               </category>
-               <category xml:id="decem_praecepta">
-                  <catDesc xml:lang="la">Decem Praecepta</catDesc>
-               </category>
-               <category xml:id="dictamen">
-                  <catDesc xml:lang="la">Dictamen</catDesc>
-               </category>
-               <category xml:id="distinctiones">
-                  <catDesc xml:lang="la">Distinctiones</catDesc>
-               </category>
-               <category xml:id="documenta">
-                  <catDesc xml:lang="la">Documenta</catDesc>
-                  <!-- currenlty used for Statutes of Garter (etc) which may not be helpful -->
-                  <!-- check at some stage whether Documenta need other class (e.g. ecclesiastica, monastica) and likewise whether those need xref to Documenta  -->
-                  
-               </category>
-               <category xml:id="ecclesiastica">
-                  <catDesc xml:lang="la">Ecclesiastica</catDesc>
-               </category>
-               <category xml:id="exempla">
-                  <catDesc xml:lang="la">Exempla, Narrationes</catDesc>
-               </category>
-               <category xml:id="formularia">
-                  <catDesc xml:lang="la">Formularia</catDesc>
-               </category>
-               <!-- the following are hardly necessary given that language is recorded separately -->
-              <!-- <category xml:id="gallica">
-                  <catDesc xml:lang="lat">Gallica</catDesc>
-               </category>
-               <category xml:id="graeca">
-                  <catDesc xml:lang="lat">Graeca</catDesc>
-               </category>-->
-               <category xml:id="grammatica">
-                  <catDesc xml:lang="la">Grammatica</catDesc>
-                  <!-- ok for Disticha Catonis? -->
-               </category>
-               <category xml:id="historica">
-                  <catDesc xml:lang="la">Historica</catDesc>
-                  <!-- also used for 'political' content (e.g. poems) -->
-                  <!-- also includes e.g. biographies of Virgil -->
-               </category>
-               <category xml:id="legalia">
-                  <catDesc xml:lang="la">Legalia</catDesc>
-                  <!-- worth subdividing? -->
-                  <!-- ?include ecclesiastical constitutions, currently in Ecclesiastica? -->
-               </category>
-               <category xml:id="liturgica">
-                  <catDesc xml:lang="la">Liturgica</catDesc>
-                  <!-- query if Psalters should be both liturgica and biblia -->
-               </category>
-               <category xml:id="logica">
-                  <catDesc xml:lang="la">Logica</catDesc>
-                  <!-- merge with Philosophica, and/or check for consistency? -->
-               </category>
-               <category xml:id="mariologica">
-                  <catDesc xml:lang="la">Mariologica</catDesc>
-               </category>
-               <category xml:id="mathematica">
-                  <catDesc xml:lang="la">Mathematica</catDesc>
-                  <!-- includes geometry -->
-               </category>
-               <category xml:id="medica">
-                  <catDesc xml:lang="la">Medica</catDesc>
-                  <!-- includes herbals (so Corpus, vol. 13) -->
-               </category>
-               <category xml:id="miracula">
-                  <catDesc xml:lang="la">Miracula</catDesc>
-               </category>
-               <category xml:id="monastica">
-                  <catDesc xml:lang="la">Monastica</catDesc>
-               </category>
-               <category xml:id="musica">
-                  <catDesc xml:lang="la">Musica</catDesc>
-               </category>
-               <category xml:id="oratio_orationes_devotiones">
-                  <!-- check for consistency and check whether separate categories needed -->
-                  <category xml:id="oratio">
-                     <catDesc xml:lang="la">Oratio, Orationes</catDesc>
-                  </category>
-                  <category xml:id="devotiones">
-                     <catDesc xml:lang="la">Devotiones</catDesc>
-                     <!-- used for 'religious poems', etc. Cf. contemplationes above -->
-                  </category>
-
-               </category>
-               <category xml:id="pastoralia">
-                  <catDesc xml:lang="la">Pastoralia</catDesc>
-                  <!-- used for Poor Caitiff and similar texts (which may additionally be classified as Devotiones and/or Theologica) -->
-                  <!-- check for consistency -->
-               </category>
-               <category xml:id="pater_noster">
-                  <catDesc xml:lang="la">Pater Noster</catDesc>
-               </category>
-               <category xml:id="philosophica">
-                  <catDesc xml:lang="la">Philosophica</catDesc>
-               </category>
-               <category xml:id="prognostica">
-                  <catDesc xml:lang="la">Prognostica, Prophetiae</catDesc>
-                  <!-- geomancy goes here -->
-               </category>
-               <category xml:id="proverbia">
-                  <catDesc xml:lang="la">Proverbia</catDesc>
-               </category>
-               <category xml:id="regula">
-                  <catDesc xml:lang="la">Regula</catDesc>
-               </category>
-               <category xml:id="rhetorica">
-                  <catDesc xml:lang="la">Rhetorica</catDesc>
-               </category>
-               <category xml:id="romances">
-                  <catDesc xml:lang="la">Romances</catDesc>
-                  <!-- also used for 'novella' -->
-               </category>
-               <category xml:id="sacramenta">
-                  <catDesc xml:lang="la">Sacramenta</catDesc>
-               </category>
-               <category xml:id="satirica">
-                  <catDesc xml:lang="la">Satirica, Parodiae</catDesc>
-               </category>
-               <category xml:id="scientifica"> 
-                  <!-- to include (and categories could be added for: alchemy; astronomy/astrology; animals/birds (bestiaries); lapidaries; magic; weather -->
-                  <!-- cf. separate heading Veterinaria below -->
-                  <catDesc xml:lang="la">Scientifica</catDesc>
-                  <category xml:id="alchimia">
-                     <catDesc xml:lang="la">Alchimia</catDesc>
-                  </category>
-                  <category xml:id="animalia">
-                     <catDesc xml:lang="la">Animalia</catDesc>
-                     <!-- used for Bestiaries. ?Use also for Fables? -->
-                  </category>
-                  <category xml:id="astrologia_astronomia">
-                     <catDesc xml:lang="la">Astrologia, astronomia</catDesc>
-                  </category>
-                  <category xml:id="lapidaria">
-                     <catDesc xml:lang="la">Lapidaria</catDesc>
-                  </category>
-                  <category xml:id="magica">
-                     <catDesc xml:lang="la">Magica</catDesc>
-                  </category>
-                 
-               </category>
-               <category xml:id="sermones">
-                  <catDesc xml:lang="la">Sermones</catDesc>
-               </category>
-              <!-- the following is not a separate heading in Corpus, vol. 13, but is there cross-referenced to Monastica and Legalia -->
-               <!--<category xml:id="statuta">
-                  <catDesc xml:lang="lat">Statuta</catDesc>
-                  
-               </category>-->
-               <category xml:id="tabulae">
-                  <catDesc xml:lang="la">Tabulae</catDesc>
-               </category>
-               <category xml:id="theologica">
-                  <catDesc xml:lang="la">Theologica</catDesc>
-                  <!-- Chastising of God's Ch. under this heading in 'Carthusians' -->
-               </category>
-               <category xml:id="topographica">
-                  <catDesc xml:lang="la">Topographica</catDesc>
-               </category>
-               <category xml:id="versus">
-                  <catDesc xml:lang="la">Versus</catDesc>
-               </category>
-               <category xml:id="veterinaria">
-                  <catDesc xml:lang="la">Veterinaria</catDesc>
-                  <!-- not used? use Animalia instead? -->
-               </category>
-               <category xml:id="virtutes_et_vitia">
-                  <catDesc xml:lang="la">Virtutes et Vitia</catDesc>
-               </category>
-               <category xml:id="vitae_sanctorum">
-                  <catDesc xml:lang="la">Vitae Sanctorum</catDesc>
-               </category>
-               <category xml:id="vitas_patrum">
-                  <catDesc xml:lang="la">Vitas Patrum</catDesc>
-               </category>
-            </taxonomy>
-            <taxonomy>
-               <!-- categories not in corpus: need to be analysed further?-->
-               <category xml:id="drama">
-                  <catDesc xml:lang="en">Drama</catDesc>
-               </category>
-               <category xml:id="heraldica">
-                  <catDesc xml:lang="la">Heraldica</catDesc>
-               </category>
-               <category xml:id="miscellanea">
-                  <catDesc xml:lang="la">Miscellanea</catDesc>
-                  <!-- culinary recipes go here for the moment -->
-                  <!-- some material here to go into 'collectiones'? -->
-               </category>
-            </taxonomy>
-         </classDecl>
-      </encodingDesc>
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
+      <revisionDesc>    
+         <change when="2020-03-19">Description revised to include all information in SC.</change>
+         <change when="2017-07-01">First online publication.</change>
 
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
