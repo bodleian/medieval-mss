@@ -5,17 +5,24 @@
          <titleStmt>
             <title>MS. Bodl. 23</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2020">Encoding</resp>
+               <resp when="2020">Catalogue updates and corrections</resp>
+               <persName>Matthew Holford</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -37,7 +44,7 @@
             <idno type="catalogue">Western</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc xml:id="MS_Bodl_23" xml:lang="en">
+            <msDesc xml:id="MS_Bodl_23" xml:lang="en" resp="#SC">
                <msIdentifier>
                   <country>United Kingdom</country>
                   <region type="county">Oxfordshire</region>
@@ -50,41 +57,60 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  <textLang mainLang="la">Latin</textLang>
                   <msItem xml:id="MS_Bodl_23-item1" n="1">
-                     <author key="person_101584149">
-                        
-                        Nicholas de Gorran
-                     
-                     </author>
+                     <author key="person_101584149">Nicholas de Gorran</author>
                      <title key="work_3294">Distinctiones theologicae</title>
-                     <textLang mainLang="la">Latin</textLang>
+                     <incipit>Abeuncium per hunc mundum</incipit>
+                     <finalRubric>Expliciunt Distinctiones fratris Nicholai de Gorram, ordinis fratrum
+                     Predicatorum</finalRubric>
+                     <note>Index at fol. 281v. Fol. 286 is injured.</note>
+                     
+                  </msItem>
+                  <msItem>
+                     <locus>(fol. 284)</locus>
+                     <title type="desc">Sermon 'de beata Maria'</title>
+                     <incipit>Non est quod me delectet magis</incipit>
+                     <note>Added in a set contemporary court hand.</note>
+                     <!-- Ps.-Bernardus Claraevallensis: Sermo de beata Maria virgine, Exzerpt (PL 184, 1019D4–6.). check -->
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>ii + 289 leaves
+                           <dimensions type="leaf" unit="in">
+                              <height>6.625</height>
+                              <width>5</width>
+                           </dimensions></extent>
                      </supportDesc>
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote>Penwork border, initials. (P&amp;A iii. 617)
+                  <decoDesc resp="#PA">
+                     <decoNote type="flourInit">Penwork border, initials. (P&amp;A iii. 617)
                      </decoNote>
                   </decoDesc>
                </physDesc>
                <history>
-                  <origin>
+                  <origin resp="#PA">
                      <origDate calendar="Gregorian" notAfter="1350" notBefore="1300">14th century, first half</origDate>
                      <origPlace>
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
+                  <provenance>At fol. ii is 'Contenta
+                     Rosarium theologie Hugonis Mellyng', 16th cent.: perhaps Hugh Mellyng (Emden, ii.1282). </provenance><provenance>'<persName role="sgn" key="person_3191">Robertus Belus</persName> A[nglus?]', 2nd half of 16th cent. (fol. 289v).</provenance>
+                  <acquisition when="1605"> Presented by
+                     <persName role="dnr" key="person_44167598">dr. William Cotton, bp. of Exeter</persName>, in 1605.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973).  
-                            
-                            
+                        <source>Description adapted (March 2020) from the following sources:
+                           <listBibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, III (1973), no. 617 [decoration, origin, date]</bibl>
+                              <bibl>Summary Catalogue (1922) [contents, physical description, provenance and acquisition]</bibl>
+                           </listBibl>  
                             <listBibl>
                               <bibl type="SC" facs="aap0110.gif">Summary Catalogue, vol. 2, part 1, p. 89</bibl>
                            </listBibl>
@@ -96,7 +122,8 @@
          </sourceDesc>
       </fileDesc>       
       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
+      <revisionDesc>      <change when="2020-03-19">Description revised to include all information in SC.</change>
+         <change when="2017-07-01">First online publication.</change>
 
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
