@@ -5,17 +5,24 @@
          <titleStmt>
             <title>MS. Bodl. 46</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2020">Encoding</resp>
+               <resp when="2020">Catalogue updates and corrections</resp>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -49,30 +56,42 @@
                      <idno type="SCN">1877</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <msContents> <textLang mainLang="la">Latin</textLang>
                   <msItem xml:id="MS_Bodl_46-item1" n="1">
-                     <author key="person_19424140">
-                        
-                        Maurice the Englishman
-                     
-                     </author>
+                     <author key="person_19424140">Maurice the Englishman</author>
                      <title key="work_3150">Distinctiones</title>
-                     <textLang mainLang="la">Latin</textLang>
+                     <rubric>Distinctiones fratris Mauricij</rubric>
+                     <incipit>Circa abiectionem nota qualiter in Scriptura</incipit>
+                     <note>preceded by an index</note>
                   </msItem>
                   <msItem xml:id="MS_Bodl_46-item2" n="2" class="#theologica">
+                     <locus>(fol. 297v)</locus>
                      <title type="desc" key="work_15283">Theological notes</title>
-                     <textLang mainLang="la">Latin</textLang>
+                     <note>Including:</note>
+                     <msItem><rubric>Sermo
+                        factus Parisius in domo Minorum scolaribus in festo beati Clementis per
+                        fratrem <persName role="aut" key="person_89204668">Bernardum de Turre</persName></rubric><incipit><quote>Clementia roborabitur ...</quote> Quod Dompnus
+                        completionis</incipit></msItem><msItem> 
+                           <title type="desc" key="work_14580">Sermon</title><incipit><quote>Attendite uobis
+                        et uniuerso gregi ...</quote> Communiter uidemus</incipit></msItem>
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                       <extent> vii + 304 leaves
+                           <dimensions type="leaf" unit="in">
+                              <height>7.75</height>
+                              <width>5.25</width>
+                           </dimensions></extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2">2 cols.</layout>
+                     </layoutDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote type="decInit">Fine initial. (P&amp;A iii. 501)
-                     </decoNote>
+                     <decoNote type="decInit">Fine initial. (P&amp;A iii. 501).</decoNote><decoNote type="flourInit">Illuminated capitals.</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
@@ -82,10 +101,20 @@
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
+                  <provenance>'Iste liber est ... [on an erasure "fratris B. de ... clerici"]' (fol. 297v)</provenance><provenance>
+                     'Liber dompni Thome Jay monachi Westmonasteriensis ex dono eiusdem
+                     conf<supplied>r</supplied>atris egregii viri dompni Roberti Humfrey. cuius iam anime
+                     propicietur iam Deus'; cf. fol. 303v, where there seems also to be the name
+                     of 'Willelmus Barow monachus Westmonasteriensis', all 15th cent.</provenance>
+                  <provenance><orgName role="fmo" key="org_132460849">Westminster Abbey</orgName>: inventory of Archbishop Langham's bequest, 1376 (Corpus of British Medieval Library Catalogues B105.33).</provenance><acquisition notAfter="1611" notBefore="1605"> Probably acquired between 1605 and 1611.</acquisition>
                </history>
                <additional><adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973).  
+                        <source>Description adapted (March 2020) from the following sources: 
+                           <listBibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, III (1973), no. 501 [decoration, localization, date]</bibl>
+                              <bibl>Summary Catalogue (1922) [contents, physical description, provenance, acquisition]</bibl>
+                             </listBibl>  
                             
                             
                             <listBibl>
@@ -99,7 +128,9 @@
          </sourceDesc>
       </fileDesc>       
       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
+      <revisionDesc> 
+         <change when="2020-03-23">Description revised to include all information in SC with reference to published literature as cited.</change>
+         <change when="2017-07-01">First online publication.</change>
 
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
