@@ -5,17 +5,24 @@
          <titleStmt>
             <title>MS. Bodl. 89</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2020">Encoding</resp>
+               <resp when="2020">Catalogue updates and corrections</resp>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -52,22 +59,39 @@
                <msContents>
                   <msItem xml:id="MS_Bodl_89-item1" n="1" class="#pastoralia">
                      <title key="work_14676">Speculum Christiani</title>
+                     <note>A Latin religious treatise in eight Tabulae, with English verse and prose interspersed:
+                        beg. At fol.
+                        44 follow some theological notes. Single leaves are wanting after foll. 2,
+                        6, 10, 36, 43.</note>
+                     <incipit>Jeronimus. In principio cuiuslibet ... Magna differencia est</incipit>
                      <textLang mainLang="en" otherLangs="la">English and  Latin</textLang>
                   </msItem>
                   <msItem xml:id="MS_Bodl_89-item2" n="2" class="#versus #devotiones">
                      <title key="work_10764">Carta Christi</title>
-                     <note>(religious poem)</note>
+                     <incipit>Ihesu Crist of
+                        heuene and helle</incipit>
+                     <note>This is a separate piece in a different handwriting.</note>
+                     <note>‘Long Charter’ of Christ (A Text),  <bibl type="repertory">DIMEV 2859</bibl>, <bibl type="repertory">NIMEV 1718</bibl> </note>
                      <textLang mainLang="en">English</textLang>
+                  </msItem>
+                  <msItem>
+                     <note>French note on fol. 49: see provenance.</note>
+                     <textLang mainLang="fr">French</textLang>
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>ii + 50 leaves
+                           <dimensions type="leaf" unit="in">
+                              <height>8.125</height>
+                              <width>5.5</width>
+                           </dimensions></extent>
                      </supportDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>Good border, initials. The date 1431 is scribbled in the margin, fol. 49. (P&amp;A
+                     <decoNote type="border">Good border.</decoNote><decoNote type="decInit">Initials. (P&amp;A
                   iii. 914)
                      </decoNote>
                   </decoDesc>
@@ -79,11 +103,18 @@
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
+                  <provenance notBefore="1400" notAfter="1600">The date 1431 is written on fol. 49 in Latin and French: also (15th cent.)
+                     'Harwod', and (16th cent.) 'Thomas P' (?), 'Iste liber constat <persName role="fmo" key="person_3202">domino Thome
+                     Geybrygge</persName>.'</provenance><acquisition notAfter="1620" notBefore="1613"> Probably acquired between 1613 and 1620.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973).  
+                        <source>Description adapted (March 2020) from the following sources, with additional reference to published literature as cited:
+                           <listBibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, III (1973), no. 914 [decoration, origin, date]</bibl>
+                              <bibl>Summary Catalogue (1922) [contents, physical description, provenance and acquisition]</bibl>
+                           </listBibl> 
                             
                             
                             <listBibl>
@@ -97,7 +128,9 @@
          </sourceDesc>
       </fileDesc>       
       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
+      <revisionDesc>  
+         <change when="2020-03-24">Description revised to include all information in SC and P&amp;A.</change>
+         <change when="2017-07-01">First online publication.</change>
 
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
