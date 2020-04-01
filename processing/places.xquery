@@ -15,7 +15,7 @@ declare variable $allinstances :=
         return
         <instance>
             { attribute of { if ($instance/self::tei:orgName) then 'org' else 'place' } }
-            { for $key in tokenize($instance/@key, ' ') return <key>{ $key }</key> }
+            { for $key in tokenize(normalize-space($instance/@key), ' ') return <key>{ $key }</key> }
             <name>{ normalize-space($instance/string()) }</name>
             <link>{ concat(
                         '/catalog/', 
