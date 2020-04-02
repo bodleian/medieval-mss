@@ -20,7 +20,7 @@ declare variable $allinstances :=
         let $placesoforigin := distinct-values($roottei//tei:origin//tei:origPlace/normalize-space())
         return
         <instance>
-            { for $key in tokenize($instance/@key, ' ') return <key>{ $key }</key> }
+            { for $key in tokenize(normalize-space($instance/@key), ' ') return <key>{ $key }</key> }
             <title>{ normalize-space($instance/string()) }</title>
             <link>{ concat(
                         '/catalog/', 
