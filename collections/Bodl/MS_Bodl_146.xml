@@ -5,17 +5,24 @@
          <titleStmt>
             <title>MS. Bodl. 146</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+           <respStmt xml:id="PA">
+              <resp when="1973">Cataloguer</resp>
+              <persName>Otto Pächt</persName>
+              <persName>J. J. G. Alexander</persName>
+           </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2020">Encoding</resp>
+               <resp when="2020">Catalogue updates and corrections</resp>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -50,14 +57,41 @@
                   </altIdentifier>
                </msIdentifier>
                <physDesc>
-                  <p n="composite">Composite: two parts</p>
+                  <p n="composite">Composite: two MSS. written in the
+                     same hand</p>
+                  <objectDesc>
+                     <supportDesc>
+                        <extent>ix + 227 leaves
+                           <dimensions type="leaf" unit="in">
+                              <height>10.875</height>
+                              <width>8</width>
+                           </dimensions></extent>
+                     </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2">2 cols.</layout>
+                     </layoutDesc>
+                  </objectDesc>
                   <decoDesc>
                         <decoNote type="flourInit">Penwork.</decoNote>
                      </decoDesc>
+                  <bindingDesc>
+                     <binding contemporary="true">
+                        <p>White leather on
+                           boards, clasp lost, contemporary English work.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
+               <history>
+                  <provenance notBefore="1375"><orgName role="fmo" key="org_139637930">Reading Abbey</orgName>: notes of the contents on fol. iii recto (? s. xiv ex.) are in the same hand as a similar note in MS. Bodl. 409 (MLGB).</provenance>
+                  <acquisition when="1608">Presented by <persName role="dnr" key="person_3194">William Burdet of Sonning</persName> in 1608.</acquisition>
+               </history>
                <additional><adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922).  
+                        <source>Description adapted (March 2020) from the following sources, with additional reference to published literature as cited:  
+                           <listBibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, addenda (by Bruce Barker-Benfield) [decoration, date, localization]</bibl>
+                              <bibl>Summary Catalogue (1922) [contents, physical description, provenance, acquisition]</bibl>
+                           </listBibl>     
                             
                             
                             <listBibl>
@@ -75,8 +109,15 @@
                   </msIdentifier>
                   <msContents>
                      <msItem xml:id="MS_Bodl_146-part1-item1" n="1">
+                        <locus>(fol. 1)</locus>
                         <author key="person_17296399">William of Auxerre</author>
                         <title key="work_5058">Summa aurea super quatuor libros Sententiarum</title>
+                        <rubric>Summa magistri Auberti Altisiodorensis</rubric>
+                        <incipit>Fides est substancia rerum sperandarum ... Cum fides
+                           acquiescat</incipit>
+                        <note>A list of
+                           chapters at fol. iv verso: the title and author's (incorrect) name occur only on
+                           foll. vii, 112v. The books divide at foll. 17r, 50r, 112v.</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                   </msContents>
@@ -107,7 +148,12 @@
                      <msItem xml:id="MS_Bodl_146-part2-item1" n="1">
                         <author key="person_79081365">Raymundus de Penafort</author>
                         <title key="work_4219">Summa de casibus poenitentiae</title>
+                        
                         <note>(bks. 1-3)</note>
+                        <rubric>Summa de casibus penitencie que magister Ramun de
+                           Catalania frater ordinis Predicatorum composuit</rubric>
+                        <note>In three parts, each with
+                           a list of heads (see fols. 166, 184v)</note><note type="annotation">With notes.</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                   </msContents>
@@ -131,7 +177,9 @@
          </sourceDesc>
       </fileDesc>       
       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
+      <revisionDesc>   
+         <change when="2020-03-30">Revised to incorporate all information in SC.</change>
+         <change when="2017-07-01">First online publication.</change>
 
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
