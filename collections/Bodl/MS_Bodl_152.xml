@@ -5,17 +5,19 @@
          <titleStmt>
             <title>MS. Bodl. 152</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2020">Encoding</resp>
+               <resp when="2020">Catalogue updates and corrections</resp>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -50,14 +52,20 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  <textLang mainLang="la">Latin</textLang>
                   <msItem xml:id="MS_Bodl_152-item1" n="1">
-                     <author key="person_41951136">
-                        
-                        Willelmus Peraldus
-                     
-                     </author>
+                     <author key="person_41951136">Willelmus Peraldus</author>
                      <title key="work_1917">Summa de uitiis</title>
-                     <textLang mainLang="la">Latin</textLang>
+                     <incipit>Dicturi de singulis viciis
+                        incipiemus a vicio gule</incipit>
+                     <finalRubric>Et sic explicit Summa de Vitiis</finalRubric>
+                     <note></note>
+                  </msItem>
+                  <msItem class="#tabula">
+                     <locus>(fol. 185)</locus>
+                     <rubric>Tabula Parisiensis de
+                        Vicijs</rubric>
+                     <note>Alphabetical index of subjects, with a few theological notes, added, 15th cent.</note>
                   </msItem>
                </msContents>
                <physDesc>
@@ -67,22 +75,36 @@
                      </supportDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>Illuminated capitals.
-                     </decoNote>
+                     <decoNote type="flourInit">Illuminated capitals.</decoNote>
                   </decoDesc>
+                  <accMat>Foll. iii-vi, 191-4 are parts of leaves from a Latin register of an
+                     ecclesiastical court, and record (fol. v verso) a citation respecting one
+                     Margareta Ludecok of 'Vltewelle' in the diocese of Ely, issued by archbp.
+                     Chicheley in 1440: (fol. vi) an appeal by Robartus Tasse of Walpole in the
+                     diocese of Norwich, 1443: (fol. vi verso) a suit brought by Katerina Botry
+                     against the executors of Robert (Botry? her uncle?), 1435: (fol. 193) an
+                     appointment by Thomas Powdyche of Sutton in the diocese of Lincoln of
+                     Richard Pyghttesley and Nicholas Paternoster, as his proctors, 1441: (fol.
+                     194) a certificate of the marriage of William Babyngtone alias Wodebury or
+                     Perkes of Coventry and Katerina Catys at the priory of Walsingham on Nov. 1,
+                     1431, made in 1439.</accMat>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1275" notBefore="1250">13th century, third quarter</origDate>
+                     <origDate calendar="Gregorian" notAfter="1275" notBefore="1250">13th century, third quarter</origDate>; <origDate type="additions" calendar="Gregorian" notAfter="1500" notBefore="1400">additions, 15th century</origDate>
                      <origPlace>
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
+                  <provenance>Fol. vii verso, 'Istum volumen composuit frater Gulielmus de Lugduno ordinis Predicatorum
+                     prouincie Anglie. Quod Willelmus Sybbe capellanus de Wysebeche
+                     Eliensis dioceseos etc. Deo gracias'. Cf. fol. 184v. <persName role="fmo" key="person_4004">William Gybbe</persName>: see <bibl>P. Lucas, 'William Gybbe of Wisbech: a fifteenth century scribe', <title>Codices Manuscripti</title> 11 (1985).</bibl></provenance>
+                  <acquisition notAfter="1602">Acquired not later than 1602.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922).  
+                        <source>Description adapted (April 2020) from the Summary Catalogue (1922), with additional reference to published literature as cited.  
                             
                             
                             <listBibl>
@@ -97,7 +119,9 @@
          </sourceDesc>
       </fileDesc>       
       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
+      <revisionDesc>     
+         <change when="2020-04-02">Revised to incorporate all information in SC.</change>
+         <change when="2017-07-01">First online publication.</change>
 
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
