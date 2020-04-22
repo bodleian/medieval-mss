@@ -5,18 +5,17 @@
          <titleStmt>
             <title>MS. Bodl. 208</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
             </respStmt>
-         </titleStmt>
-         <editionStmt>
-            <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
+            <respStmt xml:id="MLH">
+               <resp when="2020">Encoding</resp>
+               <resp when="2020">Catalogue updates and corrections</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
-         </editionStmt>
+         </titleStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
             <address>
@@ -49,27 +48,40 @@
                      <idno type="SCN">2033</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <msContents> <textLang mainLang="la">Latin</textLang>
                   <msItem xml:id="MS_Bodl_208-item1" n="1">
-                     <author key="person_40175167">
-                        
-                        Peter Comestor
-                     
-                     </author>
+                     <author key="person_40175167">Peter Comestor</author>
                      <title key="work_3495">Historia scolastica</title>
-                     <textLang mainLang="la">Latin</textLang>
-                  </msItem>
+                     <rubric>Hystoria scolastica de Veteri &#x0026; Nouo Testamento</rubric>
+                     <finalRubric>Liber historiarum magistri Petri Commestori</finalRubric>
+                     <note type="annotation">With marginal notes.</note>
+                  </msItem><msItem xml:id="MS_Bodl_208-item2" class="#theologica"><note>On
+                     fols. ii-vi, 157 are Latin theological notes written with a metal stilus,
+                     and partly illegible. </note></msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>vi + 159 leaves
+                           <dimensions type="leaf" unit="in">
+                              <height>13.5</height>
+                              <width>9.75</width>
+                           </dimensions></extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2">2 cols.</layout>
+                     </layoutDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>Illuminated capitals.
-                     </decoNote>
+                     <decoNote type="flourInit">Illuminated capitals.</decoNote>
                   </decoDesc>
+                  <bindingDesc>
+                     <binding notBefore="1400" notAfter="1500">
+                        <p>White leather on
+                           boards, clasps lost, English 15th cent. work.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
                   <origin>
@@ -78,6 +90,8 @@
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
+                  <provenance><orgName role="fmo" cert="low" key="org_198876802">Witham, charterhouse</orgName> (?): '"Witham" (s. xv), written small near the top of fol. ii recto. Whether it indicates that the MS comes from W. Charterhouse is doubtful.' (MLGB)</provenance><provenance><orgName role="fmo" key="org_2142145857037522921207">Windsor, collegiate chapel</orgName>: 'Liber Collegij de Wyndesore', 16th cent.</provenance><acquisition when="1612">
+                     Presented by the dean and canons of Windsor in 1612.</acquisition>
                </history>
                <additional><adminInfo>
                      <recordHist>
@@ -91,11 +105,41 @@
                         </source>
                      </recordHist>
                   </adminInfo><listBibl type="WRAPPER"><listBibl type="INTERNET"><head>Online resources:</head><bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5903"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl><bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5841"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl></listBibl></listBibl></additional>
+               <msPart xml:id="MS_Bodl_208-endleaf" type="endleaf">
+                  <msIdentifier>
+                     <altIdentifier type="partial">
+                        <idno type="part">MS. Bodl. 208 - endleaf (fol. i)</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  <msContents>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem xml:id="MS_Bodl_208-endleaf-item1">
+                        <title type="desc" key="work_16303">Commentary on Acts</title>
+                     </msItem>
+                     
+                     
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="perg">
+                           <support>parchment</support>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+                  <history>
+                     <origin>
+                        <origDate calendar="Gregorian" notAfter="1300" notBefore="1200">13th century</origDate>
+                        
+                     </origin>
+                  </history>
+               </msPart>
             </msDesc>
          </sourceDesc>
       </fileDesc>       
       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
+      <revisionDesc>      
+         <change when="2020-04-21">Description revised to incorporate all information in SC.</change>
+         <change when="2017-07-01">First online publication.</change>
 
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
