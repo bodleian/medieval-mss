@@ -10,6 +10,9 @@ declare variable $authorsinworksauthority := true();
    their authors (not necessary if the works authority has authors in it) :)
 declare variable $personauthority := doc("../persons.xml")/tei:TEI/tei:text/tei:body/tei:listPerson/tei:person[@xml:id];
 
+(: Get a list of person keys in all the manuscript records, to check a link from work to person won't be broken :)
+declare variable $personkeys := distinct-values(collection('../collections?select=*.xml;recurse=yes')//tei:msDesc//(tei:persName|tei:author|tei:editor)/@key/data());
+
 (: Find instances in manuscript description files, building in-memory data 
    structure, to avoid having to search across all files for each authority file entry :)
 declare variable $allinstances :=
@@ -166,7 +169,7 @@ declare variable $allinstances :=
                     let $linktext := ($personauthority[@xml:id = $authorid]/tei:persName[@type = 'display'][1])[1]
                     order by $linktext
                     return
-                    if (exists($linktext)) then
+                    if (exists($linktext) and exists($personkeys[. = $authorid])) then
                         let $link := concat($url, "|", normalize-space($linktext/string()))
                         return
                         <field name="link_author_smni">{ $link }</field>
@@ -183,7 +186,7 @@ declare variable $allinstances :=
                     let $linktext := ($personauthority[@xml:id = $translatorid]/tei:persName[@type = 'display'][1])[1]
                     order by $linktext
                     return
-                    if (exists($linktext)) then
+                    if (exists($linktext) and exists($personkeys[. = $translatorid])) then
                         let $link := concat($url, "|", normalize-space($linktext/string()))
                         return
                         <field name="link_translator_smni">{ $link }</field>

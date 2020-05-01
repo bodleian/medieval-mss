@@ -9,9 +9,12 @@ declare variable $authorityentries := doc("../persons.xml")/tei:TEI/tei:text/tei
 declare variable $worksauthority := doc("../works.xml")/tei:TEI/tei:text/tei:body/tei:listBibl/tei:bibl[@xml:id];
 declare variable $authorsinworksauthority := true();
 
+(: Get a list of work keys in all the manuscript records, to check a link from author to work won't be broken :)
+declare variable $workkeys := distinct-values(collection('../collections?select=*.xml;recurse=yes')//tei:msDesc//tei:title/@key/data());
+
 (: Find instances in manuscript description files, building in-memory data structure, to avoid having to search across all files for each authority file entry :)
 declare variable $allinstances :=
-    for $instance in collection('../collections?select=*.xml;recurse=yes')//tei:msDesc//(tei:persName|tei:author)
+    for $instance in collection('../collections?select=*.xml;recurse=yes')//tei:msDesc//(tei:persName|tei:author|tei:editor)
         let $roottei := $instance/ancestor::tei:TEI
         let $shelfmark := ($roottei/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:msDesc/tei:msIdentifier/tei:idno[@type = "shelfmark"])[1]/text()
         let $roles := if ($instance/self::tei:author) then ('aut') else tokenize($instance/@role/data(), ' ')
@@ -155,7 +158,7 @@ declare variable $allinstances :=
                         let $linktext := ($worksauthority[@xml:id = $workid]/tei:title[@type = 'uniform'][1])[1]
                         order by $linktext
                         return
-                        if (exists($linktext)) then
+                        if (exists($linktext) and exists($workkeys[. = $workid])) then
                             let $link := concat($url, "|", normalize-space($linktext/string()))
                             return
                             <field name="link_works_smni">{ $link }</field>
@@ -169,15 +172,15 @@ declare variable $allinstances :=
                 if ($istranslator) then 
                     let $workids :=
                         if ($authorsinworksauthority)
-                            then distinct-values($worksauthority[tei:author[@role='translator']/@key = $id]/@xml:id)
-                            else distinct-values(($instances/translated/text(), $worksauthority[tei:author[@role='translator']/@key = $id]/@xml:id))
+                            then distinct-values($worksauthority[tei:author[@role=('trl','translator')]/@key = $id]/@xml:id)
+                            else distinct-values(($instances/translated/text(), $worksauthority[tei:author[@role=('trl','translator')]/@key = $id]/@xml:id))
                     return 
                     for $workid in $workids
                         let $url := concat("/catalog/", $workid)
                         let $linktext := ($worksauthority[@xml:id = $workid]/tei:title[@type = 'uniform'][1])[1]
                         order by $linktext
                         return
-                        if (exists($linktext)) then
+                        if (exists($linktext) and exists($workkeys[. = $workid])) then
                             let $link := concat($url, "|", normalize-space($linktext/string()))
                             return
                             <field name="link_translations_smni">{ $link }</field>
