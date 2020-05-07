@@ -5,18 +5,17 @@
          <titleStmt>
             <title>MS. Bodl. 64</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
             </respStmt>
-         </titleStmt>
-         <editionStmt>
-            <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
+            <respStmt xml:id="MLH">
+               <resp when="2020">Encoding</resp>
+               <resp when="2020">Catalogue updates and corrections</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
-         </editionStmt>
+         </titleStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
             <address>
@@ -50,27 +49,60 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  <textLang mainLang="la">Latin</textLang>
                   <msItem xml:id="MS_Bodl_64-item1" n="1">
+                     <locus>(fol. 1)</locus>
                      <author key="person_79081365">Raymundus de Penafort</author>
                      <title key="work_4219">Summa de poenitentia et matrimonio</title>
-                     <textLang mainLang="la">Latin</textLang>
+                     <rubric>Summa Raymundi</rubric>
+                     <incipit>Quoniam ut ait Jeronimus</incipit>
+                     <note>In four
+                        books; the title is in a later hand, as is
+                        the 2nd article.</note>
                   </msItem>
                   <msItem xml:id="MS_Bodl_64-item2" n="2">
+                     <locus>(fol. 112)</locus>
                      <author key="person_37314703">Richard Wetheringsett</author>
                      <title key="work_4302">Summa qui bene presunt</title>
-                     <textLang mainLang="la">Latin</textLang>
+                     <rubric>Summa magistri Ricardi</rubric>
+                     <incipit>Qui bene
+                        presunt presbiteri ... Presbiter grece, senex latine dicitur</incipit>
+                     <note> The opening
+                        words of the text, which follows a prose preface (beginning as above) and a
+                        short set of verses beginning 'Hec sunt precipue sermonibus insinuanda',
+                        seem to imply that the treatise is based on, or in accordance with, the
+                        'dicta bone memorie W<supplied>illelmi</supplied> de Montibus quondam cancellarii
+                        Lincolniensis, cuius anime propicietur Deus': Gulielmus de Monte, more
+                        commonly known as Gulielmus de Leicestria, who died in 1213. </note></msItem>
+                  <msItem xml:id="MS_Bodl_64-item2a" class="#legalia">
+                     <note> Some Latin notes follow on foll.
+                        149-51, partly from the 5th book of the Decretals.</note>
+                    
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>iii + 155 leaves  
+                           <dimensions type="leaf" unit="in">
+                              <height>7.5</height>
+                              <width>6.875</width>
+                           </dimensions></extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2">2 cols.</layout>
+                     </layoutDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>Illuminated capitals.
-                     </decoNote>
+                     <decoNote type="flourInit">Illuminated capitals.</decoNote>
                   </decoDesc>
+                  <bindingDesc>
+                     <binding notBefore="1500" notAfter="1525">
+                        <p>Stamped brown leather
+                           on boards, early 16th cent., clasps lost.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
                   <origin>
@@ -79,11 +111,13 @@
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
+                  <acquisition when="1607">Bought (as SC 1860) with part of £100 promised by lord Danvers
+                     in 1601, but only received through sir Edwin Sandys in 1607.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922).  
+                        <source>Description adapted (April 2020) from the Summary Catalogue (1922).  
                             
                             
                             <listBibl>
@@ -93,11 +127,41 @@
                      </recordHist>
                   </adminInfo>
                </additional>
+               <msPart xml:id="MS_Bodl_64-endleaves" type="endleaf">
+                  <msIdentifier>
+                     <altIdentifier type="partial">
+                        <idno type="part">MS. Bodl. 64 - endleaves (fols. i-iii, 152-155)</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  <msContents>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem xml:id="MS_Bodl_64-endleaves-item1">
+                        <title type="desc" key="work_14973">Canon Law (?)</title>
+                     </msItem>
+                     
+                     
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="perg">
+                           <support>parchment</support>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+                  <history>
+                     <origin>
+                        <origDate calendar="Gregorian" notAfter="1300" notBefore="1200">13th century</origDate>
+                        
+                     </origin>
+                  </history>
+               </msPart>
             </msDesc>
          </sourceDesc>
       </fileDesc>       
       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
+      <revisionDesc>     
+         <change when="2020-04-30">Description revised to include all information in SC.</change>
+         <change when="2017-07-01">First online publication.</change>
 
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
