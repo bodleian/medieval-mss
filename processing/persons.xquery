@@ -75,6 +75,7 @@ declare variable $allinstances :=
         let $name := if ($person/tei:persName[@type='display']) then normalize-space($person/tei:persName[@type='display'][1]/string()) else normalize-space($person/tei:persName[1]/string())
         let $variants := for $variant in $person/tei:persName[not(@type='display')] return normalize-space($variant/string())
         let $extrefs := for $ref in $person/tei:note[@type='links']//tei:item/tei:ref return concat($ref/@target/data(), '|', bod:lookupAuthorityName(normalize-space($ref/tei:title/string())))
+        let $extauths := distinct-values(for $ref in $person/tei:note[@type='links']//tei:item/tei:ref return normalize-space($ref/tei:title/string()))
         let $bibrefs := for $bibl in $person/tei:bibl return bod:italicizeTitles($bibl)
         let $notes := for $note in ($person/tei:note[not(@type='links')], $person/ancestor::tei:listPerson/tei:head/tei:note) return bod:italicizeTitles($note)
         
@@ -202,6 +203,31 @@ declare variable $allinstances :=
                     order by tokenize($link, '\|')[2]
                     return
                     <field name="link_manuscripts_smni">{ $link }</field>
+                }
+                {
+                (: Filter on which external authorities, if any, this person has been identified in :)
+                let $majorextauths := ('VIAF', 'GND', 'LC', 'ISNI', 'Wikidata', 'SUDOC', 'BNF')
+                return
+                (
+                for $majorextauth in $majorextauths
+                    return
+                    (
+                    if (some $extauth in $extauths satisfies $extauth eq $majorextauth) then
+                        <field name="extauth_sm">{ $majorextauth }</field>
+                    else
+                        <field name="extauth_sm">Not{$majorextauth}</field>
+                    )
+                ,
+                if (some $extauth in $extauths satisfies not($extauth = $majorextauths)) then
+                    <field name="extauth_sm">Other</field>
+                else
+                    ()
+                ,
+                if (count($extauths) eq 0) then
+                    <field name="extauth_sm">None</field>
+                else
+                    ()
+                )
                 }
             </doc>
         else
