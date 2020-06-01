@@ -5,18 +5,17 @@
          <titleStmt>
             <title>MS. Bodl. 412</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
             </respStmt>
-         </titleStmt>
-         <editionStmt>
-            <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
+            <respStmt xml:id="MLH">
+               <resp when="2020">Encoding</resp>
+               <resp when="2020">Catalogue updates and corrections</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
-         </editionStmt>
+         </titleStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
             <address>
@@ -51,10 +50,11 @@
                </msIdentifier>
                <msContents>
                   <msItem xml:id="MS_Bodl_412-item1" n="1" class="#sermones #biblia">
-                     <title type="desc" key="work_14620">Sermons on St. Luke's Gospel</title>
-                     <bibl type="commentedOn">
-                        <title type="desc">Bible, Luke</title>
-                     </bibl>
+                     <author key="person_61516270">Jean de la Rochelle</author>                    
+                     <title key="work_6346">Postilla in Lucam</title><note>(Stegmüller 4900)</note>
+                     <incipit>Habentes
+                        pontificem magnum ... Notantur in hoc uerbo cause</incipit><note>At fol. 257v is a list
+                        of Sunday and other gospels from St. Luke, cf. fols. iv, 252, 258.</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -62,24 +62,36 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>iii + 258 leaves
+                           <dimensions type="leaf" unit="in">
+                              <height>12.375</height>
+                              <width>8.375</width>
+                           </dimensions></extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2">2 cols.</layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <handDesc>
+                     <handNote>Antonia Gransden has identified the scribe of this manuscript in six other manuscripts from Bury St Edmunds and suggested that he was a monk of the abbey: <bibl>A. Gransden, <title>A history of the Abbey of Bury St Edmunds, 1257-1301 : Simon of Luton and John of Northwold</title> (2015), p. 283</bibl>.</handNote>
+                  </handDesc>
                   <decoDesc>
-                     <decoNote>Illuminated capitals.
-                     </decoNote>
+                     <decoNote type="flourInit">Illuminated capitals.</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1300" notBefore="1290">13th century, late</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">English</country>, <settlement key="place_7010914">Bury St Edmunds (?)</settlement>, <orgName key="org_150107857">Benedictine abbey (?)</orgName>
                      </origPlace>
                   </origin>
+                  <provenance><orgName role="fmo" key="org_150107857">Bury St Edmunds, Benedictine abbey</orgName>: ex libris and pressmark, 'Postilla super Lucam: Sancti Edmundi . B. 252,' 14th cent.</provenance>
+                  <provenance>Perhaps to be identified with a manuscript formerly at <orgName role="fmo" key="org_159532915">Pembroke College, Cambridge</orgName>, listed in Thomas James, Ecloga, no. 156 ('Postilla super Lucam. Habentes pontificem'), and therefore one of the Bury manuscripts given to Pembroke by <persName key="person_3310" role="fmo">William Smart of Ipswich</persName> (Summary Catalogue; M. R. James, <title>The abbey of S. Edmund at Bury</title> (1895), pp. 11, 16)  <!-- https://archive.org/details/abbeyofsedmundat00jame/page/16/mode/2up -->.</provenance><acquisition notAfter="1620" notBefore="1613"> It was probably received by the Bodleian in 1613-20.</acquisition>
                </history>
                <additional><adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922).  
+                        <source>Description adapted (May 2020) from the Summary Catalogue (1922), with additional reference to other published literature as cited.  
                             
                             
                             <listBibl>
@@ -92,7 +104,9 @@
          </sourceDesc>
       </fileDesc>       
       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
+      <revisionDesc>   
+         <change when="2020-05-15">Description revised to incorporate all information in SC.</change>
+         <change when="2017-07-01">First online publication.</change>
 
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
