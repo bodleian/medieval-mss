@@ -2,6 +2,13 @@
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6009">
    <teiHeader>
+      <!-- current status: 10.6.10. Content is fully described (although some refinements are possible.) Needs measurements at a minimum. 
+      
+      indexing should be checked
+      
+      fols. 1-14 are a later addition and should perhaps be part of the top level msContents.
+      
+      -->
       <fileDesc>
          <titleStmt>
             <title>MS. Hamilton 46</title>
@@ -78,7 +85,7 @@
                      </supportDesc>
                   </objectDesc>
                  <bindingDesc>
-                     <binding calendar="Gregorian">
+                     <binding calendar="Gregorian" contemporary="true">
                         <p>Brown leather quarter covers over wooden boards, five bands. Latch marks on the upper and lower covers, latch lacking. </p>
                      </binding>
                   </bindingDesc>
@@ -94,7 +101,7 @@
                </history>
                <additional><adminInfo>
                      <recordHist>
-                        <source>Description adapted by Tuija Ainonen and Matthew Holford (April 2020) from the following sources (with additional description of contents):
+                        <source>Draft description adapted by Tuija Ainonen and Matthew Holford (April 2020) from the following sources (with additional description of contents):
                            <listBibl>
                               <bibl>Daniela Mairhofer, "Bodleian Library, MS. Hamilton 46. 'Der Oxforder Boethius. Edition und Studie'," <title>Oxford German Studies</title> 46 (2017) 206-212. [contents, dating]</bibl>
                               <bibl>Unpublished description by Stephen Mossman, c. 2003. [contents, dating]</bibl>
@@ -116,6 +123,10 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
+                     <msItem>
+                        <note>Fol. 1r, contents list to the whole volume, but not including fols. 1v-13v, followed by verses ('Dat vinum purum septem tibi commoda...') and note 'Gloria patri propter tria. Primo quia nos creavit...'.</note>
+                        <textLang mainLang="la">Latin</textLang>
+                     </msItem>
                      <msItem xml:id="MS_Hamilton_46-part1-item1" n="1">
                         <locus>(fols. 1v-11r)</locus>
                         <author key="person_38590640">Ortolf von Baierland</author>
@@ -129,68 +140,117 @@
                         <note>It retains blocks of the German original, and is interpolated with extracts from other sources, notably the Latin ‘<title key="work_3861">Secretum Secretorum</title>’. German passages are located at 1v, lines 16-20, and 2r, lines 1-21 and 39-42. (Mossmann c. 2003, unpublished description).</note>
                         <textLang mainLang="la" otherLangs="de">Latin, German (Northern Central German dialect)</textLang>
                      </msItem>
-                     <msItem>
+                     <msItem xml:id="MS_Hamilton_46-part1-item2" n="2">
                         <locus>(fols. 11v-13v)</locus>
                         <title type="desc">Series of rules for the months</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Hamilton_46-part1-item2" n="2">
+                     <msItem xml:id="MS_Hamilton_46-part1-item3" n="3">
+                           <locus>(fols. 13v-14v)</locus>
+                           <title type="desc">Alphabetical index to art. 4.</title>
+                           <rubric>Sequitur registrum <add place="inspace">seu tabula alphabetica</add> in librum sequentem super Hugonis dydascolicon</rubric>
+                        <textLang mainLang="la">Latin</textLang>
+                        </msItem>
+                     <msItem xml:id="MS_Hamilton_46-part1-item4" n="4">
                         <locus>(fols. 13v-48r)</locus>
                         <author key="person_9865788">Hugh of St. Victor</author>
                         <title key="work_2132">Didascalicon </title>
                         <note>(excerpts)</note>
                         <rubric>Excerptum ex dydascolicon hugonis</rubric>
+                        
+                        <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     <msItem xml:id="MS_Hamilton_46-part1-item5" n="5">
+                        <locus>(fol. 48v)</locus>
+                        <note>Alphabetical index to the remaining folios of part 1 (fols. 'xxxvi' to 'xlv).</note>
+                        <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     <msItem xml:id="MS_Hamilton_46-part1-item6" n="6">
+                        <locus>(fols. 49r-50r)</locus>
+                        <author key="person_9865788">Hugh of St-Victor</author>
+                        <title key="work_5921">De meditatione</title>
+                        <incipit defective="true">nobis ad meritum proximis ad exemplum</incipit>
+                        <explicit>suo tempore apprehendat</explicit>
+                        <note>PL 176.993-8, here beginning imperfect at 995B.</note>
+                        <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     <msItem xml:id="MS_Hamilton_46-part1-item7" n="7">
+                        <locus>(fol. 50rv)</locus>
+                        <title key="work_16338">Life of St. Catherine of Alexandria, in verse</title>
+                        <incipit>Durch dye Ju<ex>n</ex>ffer kathery<ex>n</ex> moße got gelobet sy<ex>n</ex> gode vnd er czü eren wyl ich my<ex>n</ex> sy<ex>n</ex>ne keren an er lyden vnd leuen vnd da<ex>r</ex> va<ex>n</ex> ku<ex>n</ex>tschafft <supplied>geuen</supplied> Er dye iu<ex>n</ex>ffer waz geborn waz sye van gode erko<ex>r</ex>n
+                        </incipit>
+                        <explicit>Sye bede<ex>n</ex> vyel gode a/en Sye yrren alle myt eyn ed en yß nicht dan ey<ex>n</ex> got alley<ex>n</ex> des werke syn alle ding dye y<ex>n</ex>ne hayt der werlde ring all </explicit>
+                        <note>In the hand of a later scribe, this is a German addition between two short, theological pieces; it is in a late 15th century cursive script, in brownish-black ink, and is but poorly legible. It consists of 157 verses of the first part of a lengthy ‘Conversio’ narrative, with the ‘Nativitas’ section added, and is therefore a German text within the ‘Conversio I’ group of Latin verse narratives. This text is in a version not attested in either conspectus of Lives of Catherine of Alexandria: cf. Williams-Krapp, Werner, <title>Die deutschen und niederländischen Legendare des Mittelalters</title>, Texte und Textgeschichte 20 (Tübingen 1986), pp. 425f., and Assion, Peter, ‘Katharina von Alexandrien’, <title>Verfasserlexikon</title> 4 (Berlin and New York 1983), pp. 1055-73. (Mossmann c. 2003, unpublished description).</note>
+                        <textLang mainLang="de">Northern Central German dialect</textLang>
+                     </msItem>
+                     <msItem xml:id="MS_Hamilton_46-part1-item8" n="8">
+                        <locus>(fols. 51r-52v)</locus><!-- xxxvii -->
+                        <title type="desc" key="work_13232">Medical text</title>
+                        <incipit>Nota bene si aliquis homo perdidit scientiam et sensus</incipit>
+                        <explicit>cor abile fortificat triste letificat</explicit>
+                        <!-- not in eTVK -->
+                        <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     <msItem xml:id="MS_Hamilton_46-part1-item9" n="9">
+                        <locus>(fol. 53r)</locus><!-- xxxviij -->
+                        <msItem><rubric>De signis mortis corporalis et spiritualis</rubric>
+                        <incipit>Primum signum mortis corporalis si naros [?infurim] contrahunt</incipit></msItem>
                         <msItem>
-                           <locus>(fols. 13v-14v)</locus>
-                           <title>Alphabetical table</title>
-                           <rubric>Sequitur registrum <add place="inspace">seu tabula alphabetica</add> in librum sequentem super Hugonis dydascolicon</rubric>
+                           <incipit>Sex sunt deuia que nos a via vite seducunt scilicet obliuio dei</incipit>
                         </msItem>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Hamilton_46-part1-item3" n="3">
-                        <locus>(fols. 48v-60v)</locus>
-                        <title key="work_15307">Theological pieces</title>
-                        
-                        
-                        <!-- 48v: alphabetic index to part 1?
-                        
-                        49r-50r ???
-                        
-                        50rv
-                        
-                        51r-52v medical text or texts: nota bene si aliquis homo perdidit scientiam
-                        
-                        53r De signis mortis corporal' et spiritual': Primum signum mortis corporalis.. (-55r, perhaps more than one text)
-                        
-                        55r (-56v?)   in illa die erit fons patens ... In istis v(erb)is propheta duo facit primo commendat divinam largitatem
-                        
-                        56v ?
-                        
-                        57r-v?
-                        
-                        58r-v     De beata virgine maria. qui ... salutis wlt apprehendere dei gentricis ... debet celebrare
-                        
-                        59r-60v?
-                        
-                        -->
-                        
-                        
-                        <note>includes various texts, for example:</note>
-                        <msItem>
-                           <locus>(fol. 50rv)</locus>
-                           <title>Life os St. Catherine of Alexandria, in verse</title>
-                           <incipit>Durch dye Ju<ex>n</ex>ffer kathery<ex>n</ex> moße got gelobet sy<ex>n</ex> gode vnd er czü eren wyl ich my<ex>n</ex> sy<ex>n</ex>ne keren an er lyden vnd leuen vnd da<ex>r</ex> va<ex>n</ex> ku<ex>n</ex>tschafft <supplied>geuen</supplied> Er dye iu<ex>n</ex>ffer waz geborn waz sye van gode erko<ex>r</ex>n
-                           </incipit>
-                           <explicit>Sye bede<ex>n</ex> vyel gode a/en Sye yrren alle myt eyn ed en yß nicht dan ey<ex>n</ex> got alley<ex>n</ex> des werke syn alle ding dye y<ex>n</ex>ne hayt der werlde ring all </explicit>
-                           <note>In the hand of a later scribe, this is a German addition between two short, theological pieces; it is in a late 15th century cursive script, in brownish-black ink, and is but poorly legible. It consists of 157 verses of the first part of a lengthy ‘Conversio’ narrative, with the ‘Nativitas’ section added, and is therefore a German text within the ‘Conversio I’ group of Latin verse narratives. This text is in a version not attested in either conspectus of Lives of Catherine of Alexandria: cf. Williams-Krapp, Werner, <title>Die deutschen und niederländischen Legendare des Mittelalters</title>, Texte und Textgeschichte 20 (Tübingen 1986), pp. 425f., and Assion, Peter, ‘Katharina von Alexandrien’, <title>Verfasserlexikon</title> 4 (Berlin and New York 1983), pp. 1055-73. (Mossmann c. 2003, unpublished description).</note>
+                     
+                     <msItem xml:id="MS_Hamilton_46-part1-item10" n="10">
+                           <locus>(fols. 53r-55r)</locus>
+                           <title type="desc" key="work_14583">Sermon (?)</title>
+                           <incipit>Visus et aspectus aliquarum creaturarum effectum habet in creaturis. Basiliscus enim solo aspectu</incipit>
+                           <!--<incipit>Aspectus dei vij habet effectus </incipit> -->
+                           <explicit>Istos septem oculus quod agnus occisus habebat conuertat et <unclear>digerat</unclear> ad nos per multitudinem miserationum suarum qui venit et regnat deus benedictus in secula amen.</explicit>
+                           <note>Perhaps cf. München, Bayerische Staatsbibliothek, Clm 28602, fol. 127ra.</note>
+                           <textLang mainLang="la">Latin</textLang>
                         </msItem>
-                        <textLang mainLang="la" otherLangs="de">Latin and German (Northern Central German dialect)</textLang>
+                       
+                        
+                     
+                     <msItem xml:id="MS_Hamilton_46-part1-item11" n="11">
+                        <locus>(fols. 55r-56v)</locus><!-- xl to xli -->
+                        <title type="desc" key="work_14583">Sermon</title>
+                        <incipit><quote>In illa die erit fons patens <gap reason="editorial"/></quote> In istis verbis propheta duo facit primo commendat divinam largitatem</incipit>
+                        <explicit>qui amat ardentius currit velocius</explicit>
+                        <note>Followed by short texts on the orders of angels ('Angelus est primus...'), on the three arks ('Temporibus tres esse tribus...), <!-- brito, vocabulorum bibliae 49, ?in walther -->, on metals ('Septem sunt nomina metallorum...').</note>
+                        <textLang mainLang="la">Latin</textLang>
                      </msItem>
+                     <msItem xml:id="MS_Hamilton_46-part1-item12" n="12">
+                        <locus>(fol. 57r-v)</locus>
+                        <note>Various notes and verses: on the Annuciation ('Hec est dies illa dominus quem fecit in ista...'); mnemonic for the order of the gospels ('Purpura cenat...'); on the ages of the world ('Incipiens ab adam quem...', Walther 9182); grades of consanguinity; 'Eusebius dicit in cronica...'; Walther 2058 (Urban V, 'Balsamus et munda'); Walther 11550 (Pius II (?), 'Misticus agnus'). </note>
+                        <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     
+                     
+                     <msItem xml:id="MS_Hamilton_46-part1-item13" n="13">
+                        <locus>(fol. 58r-v)</locus><!-- xliii -->
+                        <title type="desc">On the conception of the Virgin Mary</title>
+                        <rubric>De beata virgine maria</rubric>
+                        <incipit>Qui portum salutis wlt apprehendere dei gentricis creationem et conceptionem dignis obsequiis debet celebrare</incipit><textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     
+                     <msItem xml:id="MS_Hamilton_46-part1-item14" n="14">
+                        <locus>(fols. 59r-60v)</locus>
+                        <title type="desc">'Libellus de tribulacione'</title>
+                        <incipit>Quia per multas tribulationes oportet nos intrare in regnum dei Actus 14 considerandum est scriptum in presenti libello de tribulacione </incipit>
+                        <incipit>Adam post peccatum maximam tribulationem passus est de paradiso expulsus</incipit><!-- checked MA, MM -->
+                        <note>Note at the end: 'Residuum quere in aliis duobus foliis...'.</note><!-- can this be found? -->
+                        <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     
                   </msContents>
                   <physDesc>
+                     <p>Made up of two codicological units, fols. 1-14 and fols. 15-60.</p>
                      <objectDesc form="codex">
                         <supportDesc material="chart">
                            <support>paper</support>
+                           <foliation>Fols. 15-60 with early foliation i-xlv.</foliation>
                         </supportDesc>
                         <layoutDesc>
                            <layout columns="1">Long columns with a varying number of written lines.</layout>
@@ -320,7 +380,7 @@
                         <msItem xml:id="MS_Hamilton_46-part3-item1c">
                         <locus>(fol. 225v)</locus>
                         <note>On <persName key="person_78749939">Joachim of Fiore</persName> and <persName key="person_87772061">Hildegard of Bingen</persName>, chiefly extracts from <persName role="aut" key="person_105133420">Vincent of Beauvais</persName>, <title key="work_4915">Speculum historiale</title> <!--(xxix.21 for Hildegard)-->.</note>
-                        <incipit>De abbate Ioachim ut legitur in speculo historiale vincentii <gap reason="illegible"/> tercia libro</incipit>
+                        <incipit>De abbate Ioachim ut legitur in speculo historiale vincentii parte tercia </incipit>
                         <incipit>Sancta hildegardis de tempore muliebri prophetavit in hunc modum</incipit>
                      </msItem>
                      </msItem>
@@ -484,12 +544,14 @@ Folio :		10; ?cf variant aspice mortalis? -->
                         <msItem xml:id="MS_Hamilton_46-part3-item8" n="8">
                            <locus>(fols. 325r-330r)</locus>
                            <note>On the seven virtues</note>
+                           <!-- ?contents, 102, de septenario virtutum -->
                            <msItem xml:id="MS_Hamilton_46-part3-item8a">
                               <incipit><cit><quote>Apprehendent vij mulieres virum unum</quote> <bibl>Ysa iiij <supplied>1</supplied></bibl></cit> Ecce matrimonium amabile honorabile et nobile inter septenarium virtutum</incipit>
                               <!-- also in Augsburg II 1 4o 9 fol. 296ra (cat. 2007); not in Schneyer -->
                            </msItem>
                            <msItem xml:id="MS_Hamilton_46-part3-item8b">
                               <locus>(fol. 326ar)</locus>
+                              <!-- ?contents, fol. 105, de 7 operibus misercordie -->
                               <rubric>De alio septenario virtutum</rubric>
                               <incipit><cit><quote>Sapientia edificavit sibi domum excidit in ea columnas septem</quote> <bibl>Prov. xj <supplied>1</supplied></bibl></cit> Domum conscientie cuiuslibet fidelis et iusti hominis firmat deus septenario virtutum et gratiarum que sunt iste</incipit><!-- seemingly not in Schneyer -->
                            </msItem>
@@ -498,8 +560,9 @@ Folio :		10; ?cf variant aspice mortalis? -->
                         <msItem xml:id="MS_Hamilton_46-part3-item9" n="9">
                            <locus>(fols. 330v-332r)</locus>
                            <note>On hospitality</note>
+                           <!-- ?contents, 106, 'de peregrini conditionibus' -->
                            <rubric>Hospitalitas placet deo prodest homini</rubric>
-                           <incipit>Hospitalitem nolite obliuisci Heb. 13 Nota in veteri et novo testamentis <gap reason="illegible"/> multa exempla inducenda nos ad amorem hospitalitatis</incipit><!-- not in Schneyer -->
+                           <incipit>Hospitalitem nolite obliuisci Heb. 13 Nota in veteri et novo testamentis habemus multa exempla inducenda nos ad amorem hospitalitatis</incipit><!-- not in Schneyer -->
                         </msItem>
                         
                         
@@ -507,6 +570,7 @@ Folio :		10; ?cf variant aspice mortalis? -->
                         
                         <msItem xml:id="MS_Hamilton_46-part3-item10" n="10">
                            <locus>(fol. 332v)</locus>
+                           <!-- ?contents, 109?, de temptationibus morituri -->
                            <note>On dying</note>
                            <incipit>Mors peccatorum pessima preciosa autem in conspectu domini mors sanctorum eius. Beati mortui qui in domino moriuntur ideo disce mori. Incipe bene et iuste viuere si vis bene mori.</incipit>
                         </msItem>
@@ -578,6 +642,7 @@ Folio :		10; ?cf variant aspice mortalis? -->
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2020-06-12">Additional description of part 1.</change>
          <change when="2020-04-17">Additional description of part 3.</change>
          <change when="2020-04-09">Description revised for Polonsky digitization project to include additional information from printed descriptions.</change>
          <change when="2017-07-01">First online publication.</change>
