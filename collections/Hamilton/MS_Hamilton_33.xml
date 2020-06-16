@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_5995">
    <teiHeader>
+      <!-- todo:
+      extent, measurements
+      watermarks
+      scribes
+      -->
       <fileDesc>
          <titleStmt>
             <title>MS. Hamilton 33</title>
             <title type="collection">MSS. Hamilton</title>
             <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
-            </respStmt>
-         </titleStmt>
-         <editionStmt>
-            <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
+               <resp when="2020">Cataloguer</resp>
+               <resp when="2020">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
-         </editionStmt>
+         </titleStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
             <address>
@@ -51,12 +50,23 @@
                </msIdentifier>
                <physDesc>
                   <p n="composite">Composite: two parts</p>
+                  <bindingDesc>
+                     <binding contemporary="true">
+                        <p>Contemporary binding; clasps lost; contents label.</p>
+                     </binding>
+                  </bindingDesc>
                   <accMat>Endleaves (Sallust, <title>Bellum Jugurthinum</title>, 13th century) now kept as MS. Add. A. 175, part B.</accMat>
                </physDesc>
+               <history>
+                  <provenance><orgName role="fmo" key="org_415145858126223022295">Erfurt Charterhouse</orgName>: ex libris, upper pastedown and fol. 260r; catalogue, E 15.</provenance>
+                  <provenance notAfter="1831" notBefore="1760"><persName role="fmo" key="person_24953683">Friedrich Gottlieb Julius von Bülow, 1760-?1831</persName>: identifiable as no. 167 in the 1836 catalogue ('Quaestiones magistrales et breves super omnes libros <sic>summarum</sic> Conr. Soltow. - Augustinus De fide etc.').</provenance>
+                  <provenance notBefore="1841" notAfter="1856"><persName role="fmo" key="person_54195353">Sir William Hamilton, 1788-1856</persName></provenance>
+                  <acquisition when="1857">Presented to the Bodleian Library by his sons and received in 1857.</acquisition>
+               </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
+                        <source>Draft description (June 2020) by Matthew Holford. Previously described in the Summary Catalogue. 
                             
                             <listBibl>
                               <bibl type="SC" facs="aam0062.gif">Summary Catalogue, Vol. 5, p.  27</bibl>
@@ -72,21 +82,20 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
+                     <textLang mainLang="la">Latin</textLang>
                      <msItem xml:id="MS_Hamilton_33-part1-item1" n="1">
-                        <author key="person_15126913">
-                           
-                           Conrad von Soltow
+                        <locus>(fols. 1ra-155rb)</locus>
+                        <author key="person_15126913">Conrad von Soltow</author>
+                        <title key="work_1307">Quaestiones
+              on Peter Lombard's Sentences</title> <rubric>Questiones integrales et breues circa omnes libros sententiarum comportate per dominum Conradum Soltaw in studio pragen. concurrentem cum Bicipite ibidem. Qui dominus Conradus factus sacre theologie professor postmodum in episcopum Ferdensem electus est. <gap reason="editorial"/></rubric>
+                 <incipit>Queritur primo circa primum sententiarum utrum per studium sacre scripture acquiratur <add place="margin">habitus alius</add> a fide</incipit>
+                 <explicit>usque ad diem iudicij vident gloriam sanctorum. Quam nobis concedat qui sine fine viuit et regnat in secula seculorum amen. </explicit>
+                        <colophon>finis 4tus liber sententiarum per me <persName key="person_3324" role="scr">Wigandum</persName> etc. [added:] questiones conradi soltow</colophon></msItem><msItem xml:id="MS_Hamilton_33-part1-item2" >
+                <locus>(fols. 155va-156vb)</locus>
+                        <note>Register of questions.</note>
+                    <incipit>1. Utrum per studium sacre scripture acquiratur alius habitus a fide</incipit>
+                    <explicit>28. Utrum anime a corpore separate cognoscant <gap reason="editorial"></gap></explicit>
                         
-                        </author>
-                        <title key="work_1307">Questiones
-              on Peter Lombard's Sentences</title>
-                        <bibl type="commentedOn">
-                           <author key="person_51797933">
-                              Peter Lombard
-                           </author>
-                           <title>Sentences</title>
-                        </bibl>
-                        <textLang mainLang="la">Latin</textLang>
                      </msItem>
                   </msContents>
                   <physDesc>
@@ -94,7 +103,13 @@
                         <supportDesc material="chart">
                            <support>paper</support>
                         </supportDesc>
+                        <layoutDesc>
+                           <layout columns="2" writtenLines="43 47">2 cols., c. 43-7 lines, frame-ruled.</layout>
+                        </layoutDesc>
                      </objectDesc>
+                     <decoDesc>
+                        <decoNote type="unfilled">Spaces for initials and rubrics unfilled.</decoNote>
+                     </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
@@ -111,54 +126,104 @@
                         <idno type="part">MS. Hamilton 33 - Part 2</idno>
                      </altIdentifier>
                   </msIdentifier>
-                  <msContents>
+                  <msContents><textLang mainLang="la">Latin</textLang>
                      <msItem xml:id="MS_Hamilton_33-part2-item1" n="1">
-                        <title key="work_14183">'Quaestiones' on
-              selected Decretals.</title>
-                        <textLang mainLang="la">Latin</textLang>
+                        <locus>(fols. 157ra-232rb)</locus>
+                        <author key="person_15126913"> Conrad von Soltow </author>
+                        <title key="work_1308">Lectura super Firmiter credimus</title>
+                        <incipit><quote>Firmiter credimus et simpliciter confitemur fidem <gap
+                           reason="editorial"/></quote> Autorizans magistri gencium Paulos apostolus</incipit>
+                        <explicit>leticia cum wlto tuo. Ad quam letictiam nos perducat  indiuidua trinitas in secula seculorum benedicta. Amen. </explicit>
+                        </msItem><msItem xml:id="MS_Hamilton_33-part2-item1a">
+                           <locus>(fols. 232rb-235rb)</locus>
+                           <rubric>Isti sunt tytuli questionum contentarum in opere precedenti</rubric>
+                        <incipit>Circa prohemium firmiter credimus</incipit>
+                           <explicit>an beatitudo eterna consistit principaliter in visione</explicit>
+                           <colophon>Gloria tibi trinitas equalis vna deitas in secula seculorum AMEN</colophon>
                      </msItem>
                      <msItem xml:id="MS_Hamilton_33-part2-item2" n="2">
-                        <author key="person_102324857">
-                           
-                           Fulgentius of Ruspe
-                        
-                        </author>
+                        <locus>(fols. 235va-246ra)</locus>
+                        <author key="person_102324857">Fulgentius of Ruspe</author>
                         <title key="work_1588">De fide ad Petrum</title>
-                        <textLang mainLang="la">Latin</textLang>
+                        <rubric>Librum Beati Augustini de fide ad petrum etc.</rubric>
+                        <incipit>Epistolam fili petre tue caritatis accepi</incipit>
+                        <explicit>hoc illi quoque deus reuelabit. Hoc est finis huius operis.</explicit>
+                        <finalRubric>Explicit liber Beati Augustini de fide ad petrum</finalRubric>
+                        <note>Fol. 246rb blank.</note>
                      </msItem>
                      <msItem xml:id="MS_Hamilton_33-part2-item3" n="3">
-                        <author key="person_32800362">
-                           
-                           Johannes Klenkok
-                        
-                        </author> 
-                        <title key="work_2494">Quaestiones on the Catholic Epistles</title>
-                        <bibl type="commentedOn">
-                           <title>Bible, Catholic Epistles</title>
-                        </bibl>
-                        <textLang mainLang="la">Latin</textLang>
+                        <locus>(fols. 247ra-258va)</locus>
+                        <author key="person_32800362">Johannes Klenkok</author> 
+                        <title key="work_2494">Quaestiones super materiam totam Canonicae Johannis</title>
+                        <rubric>Questio Johannis Klenkoch professoris theolgica <sic>contingens</sic> in se totam materiam canonice beati Johannis</rubric>
+                        <incipit>Utrum eterna vita manibus contractata sit vere per Johannem in suis canonicis epistolis nuntiata. Arguitur quod non. .</incipit>
+                        <explicit>doctum in opere fuit tamen inditum cordibus nostris a mundi creatione etc. Finis huius operis.</explicit>
+                        <finalRubric>Expliciunt questiones M. Klenkoc sacre theologie professoris in se continens totam materiam canonice Johannis.</finalRubric><colophon> Finitus est hoc opus sub anno domini millesimo tricentesimo nonagesimo quarto. Da mihi dona tria sanctissima virgo maria. Da spacium vite. Da diuicias sine lite. Regnum celeste post mortem da manifeste.</colophon>
+                        <note>Stegmüller 4752,3 (this manuscript only).</note>
                      </msItem>
                   </msContents>
                   <physDesc>
                      <objectDesc form="codex">
                         <supportDesc material="chart">
                            <support>paper</support>
+                           <!-- watermark:
+                           https://www.wasserzeichen-online.de/wzis/struktur.php?klassi=002007002002002001003002&anzeigeIDMotif=11863
+                           
+                           -->
+                        </supportDesc>
+                        <layoutDesc>
+                           <layout columns="2" writtenLines="47 50">2 cols., c. 47-50 lines.</layout>
+                        </layoutDesc>
+                     </objectDesc>
+                     <decoDesc>
+                        <decoNote type="colInit">Red initials sometimes with flourishing in red.</decoNote>
+                        <decoNote type="cadel">Cadels.</decoNote>
+                     </decoDesc>
+                  </physDesc>
+                  <history>
+                     <origin>
+                        <origDate calendar="Gregorian" when="1394" cert="high">1394 (?)</origDate>
+                        <origPlace>
+                           <country key="place_7000084">German</country>
+                        </origPlace>
+                     </origin>
+                     <provenance>Colophon, fol. 258v. The date 1394 was taken in the Summary Catalogue as the date of the work, but Klenkok died before 1374.</provenance>
+                  </history>
+               </msPart>
+               <msPart xml:id="MS_Hamilton_33-endleaf">
+                  <msIdentifier>
+                     <altIdentifier type="partial">
+                        <idno type="part">MS. Hamilton 33 - endleaf (fol. 260)</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  <msContents>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem xml:id="MS_Hamilton_33-endleaf-item1">
+                        <note>Injunctions from a visitation of the Erfurt Charterhouse, 1410</note>
+                     </msItem>
+                     
+                     
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="perg">
+                           <support>parchment</support>
                         </supportDesc>
                      </objectDesc>
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
-                        <origPlace>
-                           <country key="place_7000084">German</country>
-                        </origPlace>
+                        <origDate calendar="Gregorian" when="1410" cert="high">1410</origDate>
+                        
                      </origin>
                   </history>
                </msPart>
             </msDesc>
          </sourceDesc>
       </fileDesc>
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
+      <revisionDesc>    
+         <change when="2020-06">New draft description for Polonsky German.</change>
+         <change when="2017-07-01">First online publication.</change>
 
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
