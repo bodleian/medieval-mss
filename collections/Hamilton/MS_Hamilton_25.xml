@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_5986">
    <teiHeader>
+      <!-- todo:
+         measurements
+         watermarks
+         presumably 185r-265v form a separate codicological unit? confirm
+         check Stegmuller for art. 3
+      -->
       <fileDesc>
          <titleStmt>
             <title>MS. Hamilton 25</title>
             <title type="collection">MSS. Hamilton</title>
             <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
-            </respStmt>
-         </titleStmt>
-         <editionStmt>
-            <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
+               <resp when="2020">Cataloguer</resp>
+               <resp when="2020">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
-         </editionStmt>
+         </titleStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
             <address>
@@ -50,61 +50,147 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  <textLang mainLang="la">Latin</textLang>
                   <msItem xml:id="MS_Hamilton_25-item1" n="1">
-                     <author key="person_100162520">
-                        
-                        Innocent IV
-                     
-                     </author>
-                     <title key="work_2199">Summa canonum
-              poenitentialium</title>
-                     <textLang mainLang="la">Latin</textLang>
+                     <locus>(fols. 1ra-108vb)</locus>
+                     <author key="person_21990654">Thomas of Chobham</author>
+                     <title key="work_4843">Summa confessorum</title>
+                     <!--  Thomas of Chobham Summa confessorum -->
+                     <msItem>
+                        <locus>(fols. 1ra-2ra)</locus>
+                        <note>Capitula</note>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 2rb-108vb)</locus>
+                        <incipit>Cum miseraciones domini sint super omnia opera</incipit>
+                        <explicit>manifesto quam <add>pro</add> oculto. Et hec dicta de penitentia ad presens sufficiant etc.</explicit>
+                        <finalRubric>Explicit Summa innocencij benignissimi Quarti per manus
+                           Nicolaij. Et sic est finis huius</finalRubric><!-- scribe's name? -->
+                     </msItem>
+                     <note>The 'improved' version; F. Broomfield, <title>Thomae de Chobham summa confessorum</title>, sig. T (desc. p. lxxxi).</note>
                   </msItem>
                   <msItem xml:id="MS_Hamilton_25-item2" n="2">
-                     <author key="person_15126913">
-                        
-                        Conrad von Soltow
-                     
-                     </author>
-                     <title key="work_1308">Summa de
-              trinitate</title>
-                     <textLang mainLang="la">Latin</textLang>
+                     <locus>(fols. 109ra-184rb)</locus>
+                     <author key="person_15126913"> Conrad von Soltow </author>
+                     <title key="work_1308">Lectura super Firmiter credimus</title>
+                     <incipit><quote>Firmiter credimus et simpliciter confitemur fidem <gap
+                              reason="editorial"/></quote> Auctorisans egregius magister et doctor
+                        gencium Paulus apostolus</incipit>
+                     <explicit>leticia cum wlto tuo. Ad quam letictiam nos perducat trinitas indiuidua in secula seculorum benedicta. Amen. </explicit>
+                     <finalRubric>Explicit summa de trinitate et fide katholica reuerendi magistri
+                        kunradi soltonis facre theoloye professoris et cetera</finalRubric>
+                     <note>Fol. 184v blank.</note>
+                     <!-- watermark image 374. 
+                     https://www.wasserzeichen-online.de/wzis/struktur.php?klassi=002007002002002001003002&anzeigeIDMotif=11863
+                     several hundred examples -->
                   </msItem>
                   <msItem xml:id="MS_Hamilton_25-item3" n="3">
-                     <author key="person_51797933">
+                     <locus>(fols. 185r-265v)</locus>
+                     <title key="work_11250">Commentary on Peter Lombard, Sentences, I-III</title>
+                     <msItem>
+
+                        <incipit defective="true">de Religione christiana tria sunt necessaria
+                           scilicet quod sciat quid amandum et quomodo secundo quid credendum tertio
+                           de amato et credito. Item duplex est amor scilicet qui quietat appetitum
+                           voluntatem et rationem intellectus, alius qui magis excitat </incipit>
+                        <incipit><locus>(fol. 186v, I. dist. 26?)</locus> Hic de proprietatibus
+                           personarum alie sunt personales que sunt constitutiue personarum ut
+                           paternitas</incipit>
+                        <note>Book I, imperfect at the beginning; no headings.</note>
+                     </msItem>
+                     <msItem>
+                        <rubric><locus>(fol. 194v)</locus> Secundus liber</rubric>
+                        <incipit>Item celum cum terra et angelis <add>cum</add> nascentiis <add>et</add> animalibus suis et substantiam illorum scilicet materiam primam et tempus mensuram <add>omnium</add> ponit habere et ostendit habere principium </incipit>
+                        <note>Bk. II, divided into distinctions by headings. Fols. 229v-230r blank.</note>
+                     </msItem>
+                     <msItem>
+                        <rubric><locus>(fol. 230v)</locus> 3a distinctio libri tercii</rubric>
+                        
+                        <incipit>Utrum caro illa quam assumpsit cum anima in vnitate suppositi fuit
+                           ante conceptcionem peccato obnoxia. Responsum quod sic. </incipit>
+                        <incipit>Utrum caro christi qui in antiquis patribus fuit peccato vitiata in
+                           beata virgine fuerit sanctificata et mundata</incipit>
+                        <rubric><locus>(fol. 262r)</locus> Distinctio 39</rubric>
+                        <incipit>Sequitur de periurio et iuramento <gap reason="editorial"/> In 40a
+                           determinatione determinat de preceptis prohibentibus <gap
+                              reason="editorial"/> Questio. Utrum iuramentum sit bonum et per se
+                           appentendum, quod sic in eo deo conformamur</incipit>
+                        <rubric><locus>(fol. 263r)</locus> Distinctio alia</rubric>
+                        <incipit>Non habebis deos alienos id est non facies tibi pro deo aliquam
+                           similitudinem creature </incipit>
+                        <incipit><locus>(fol. 264r)</locus> Conclusio. Potentia generandi non
+                           extendit se ad plures filios. Tante latitudinis est potentia generandi in
+                           deo quanta est creandi sed potentia creandi extendit se ad
+                           plures</incipit>
+                        <note>Bk. III; dist. 1-2 are omitted and dist. 40, which lacks a separate heading, is followed by other material.</note>
+                     </msItem>
+                     <!-- 
+                        186v conclusio. Relatio orig' non est uniformiter in vt'sque terminis et sic de qualz relatione
+                        f 186v   378   dist 28
+                        f. 187r  379   I dist. 29?
+                        Item in diuinis non est principium tam quia non est creatum igitur nec causa. Item nec 
                         
                         
-                        Peter Lombard 
+                        bk. ii, fol. 194v, image 394 -->
+                     <!-- 465 watermark,
                      
+                     https://www.wasserzeichen-online.de/wzis/struktur.php?klassi=006002002001002001&anzeigeIDMotif=5636
+                     many e.g.s
                      
-                     </author>
-                     <title key="work_3510">Sentences</title>
-                     <note>Summary of Bks. I-III.</note>
-                     <textLang mainLang="la">Latin</textLang>
+                     hand changes at f. 218
+                     
+                     230v     466      lib. 3 dist 3 (dist1-2 not here)
+                     -->
                   </msItem>
                </msContents>
                <physDesc>
+                  <p>
+                     <secFol><locus>(fol. 2r)</locus> De officio mercenariorum</secFol>
+                     <secFol><locus>(fol. 3r)</locus> tabulam post</secFol>
+                     <secFol><locus>(fol. 186r)</locus> deus exprimitur</secFol>
+                  </p>
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2" writtenLines="37 40">Fols. 1r-184v: 2 cols, c. 37-40 lines. Frame-ruled.</layout>
+                        <layout columns="1" writtenLines="41 42">Fols. 185r-265v: 1 col., c. 41-2 lines. Frame-ruled.</layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <handDesc>
+                     <handNote script="cursiva">Cursiva.</handNote>
+                  </handDesc>
+                  <decoDesc>
+                     <decoNote type="flourInit">Coloured red initials, mostly 2-3 lines, with simple arabesque decoration; 8-line initial, fol. 109ra, at the beginning of art. 2.</decoNote>
+                     <decoNote type="cadel">Elaborate interlace descender, fol. 96r.</decoNote>
+                     <decoNote type="none">Fols. 185r-265v: no decoration.</decoNote>
+                  </decoDesc>
+                  <bindingDesc>
+                     <binding contemporary="true">
+                        <p>Alum-tawed skin over boards, ruled; contemporary; bosses and clasps lost; remains of contents label on upper board.</p>
+                     </binding>
+                  </bindingDesc>
+                  <accMat>Endleaves now kept as MS. Lat. misc. c. 17, fols. 53-55.</accMat>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
+                     <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th
+                        century</origDate>
                      <origPlace>
                         <country key="place_7000084">German</country>
                      </origPlace>
                   </origin>
+                  <provenance><persName role="fmo" key="person_54195353">Sir William Hamilton, 1788-1856</persName></provenance>
+                  <acquisition when="1857">Presented to the Bodleian Library by his sons and received in 1857.</acquisition>
+                  <!-- not identifiable in Erfurt catalogues or Bulow cat -->
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
-                            
-                            <listBibl>
-                              <bibl type="SC" facs="aam0058.gif">Summary Catalogue, Vol. 5, p.  23</bibl>
+                        <source>Draft description by Matthew Holford (June 2020). Previously described in the Summary Catalogue and supplementary sources. <listBibl>
+                              <bibl type="SC" facs="aam0058.gif">Summary Catalogue, Vol. 5, p.
+                                 23</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -113,13 +199,19 @@
             </msDesc>
          </sourceDesc>
       </fileDesc>
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
+      <revisionDesc>
+         <change when="2020-06">New draft description for Polonsky German.</change>
+         <change when="2017-07-01">First online publication.</change>
 
          <change when="2017-05-29">
-            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+            <persName>James Cummings</persName> Up-converted the markup using <ref
+               target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl"
+               >https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>
          <change when="2017-05-25">
-            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+            <persName>James Cummings</persName> Up-converted the markup using <ref
+               target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl"
+               >https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>
       </revisionDesc>
    </teiHeader>
