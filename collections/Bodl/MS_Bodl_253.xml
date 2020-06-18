@@ -5,18 +5,22 @@
          <titleStmt>
             <title>MS. Bodl. 253</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+           <respStmt xml:id="PA">
+              <resp when="1973">Cataloguer</resp>
+              <persName>Otto Pächt</persName>
+              <persName>J. J. G. Alexander</persName>
+           </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
             </respStmt>
-         </titleStmt>
-         <editionStmt>
-            <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
+            <respStmt xml:id="MLH">
+               <resp when="2020">Encoding</resp>
+               <resp when="2020">Catalogue updates and corrections</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
-         </editionStmt>
+         </titleStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
             <address>
@@ -49,26 +53,45 @@
                      <idno type="SCN">2123**</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <msContents>   <textLang mainLang="la">Latin</textLang>
                   <msItem xml:id="MS_Bodl_253-item1" n="1">
                      <author key="person_100184667">
                         Gregory the Great
                      </author>
                      <title key="work_1876">Moralia in Job</title>
                      <note>(vol. 2 of a two-volume set; the first volume is MS. Bodl. 683)</note>
-                     <textLang mainLang="la">Latin</textLang>
+                     <rubric>Moralia beati Gregorii pape per contemplationem sumpta libri sex</rubric>
+                     <note>Parts
+                        4-6 (see fols. 95v, 178), books 17-35. </note>
+                  </msItem>
+                  <msItem xml:id="MS_Bodl_253-item2" ><note>On fol. 326v the scribe has added an exhortation to
+                     confess sins, in nine hexameters</note><incipit>Ad se nos Dominus</incipit>
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>iii + 327 leaves
+                           <dimensions type="leaf" unit="in">
+                              <height>15.625</height>
+                              <width>11.375</width>
+                           </dimensions></extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2">2 cols.</layout>
+                     </layoutDesc>
                   </objectDesc>
                   <decoDesc>
                      <decoNote type="decInit">Good initials. (P&amp;A iii. 82)
                      </decoNote>
                   </decoDesc>
+                  <bindingDesc>
+                     <binding when="1602">
+                        <p>Stamped white sheepskin
+                           (about 1602) on older sewing and boards, worn.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
                   <origin>
@@ -77,11 +100,21 @@
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
+                  <provenance notAfter="1602"><orgName key="org_127815410" role="fmo">Exeter Cathedral</orgName>: identifiable in the catalogues of 1327 and 1506 (MLGB3)</provenance>
+                  <acquisition when="1602">Presented by the dean and chapter of Exeter in 1602. By accident this MS.
+                     escaped numeration in the Old Catalogue of 1697. In 1655 it was NE. C. 6.
+                     15, but perhaps the two last volumes on that shelf (this and no. 2123*) were
+                     temporarily moved away, for the last volume recognized in the O. C. is no.
+                     13.</acquisition>
                </history>
                <additional><adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973).
-                            
+                        <source>Description adapted (June 2020) from the following sources, with additional reference to published literature as cited:
+                           <listBibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, III (1973), no. 82 [decoration, origin, date]</bibl>
+                              <bibl>Summary Catalogue (1922) [contents, physical description, provenance and acquisition]</bibl>
+                           </listBibl>  
+                           
                             
                             <listBibl>
                               <bibl type="SC" facs="aap0243.gif">Summary Catalogue, vol. 2, part 1, p. 222</bibl>
@@ -93,7 +126,8 @@
          </sourceDesc>
       </fileDesc>       
       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
+      <revisionDesc>   <change when="2020-06-16">Description revised to include all information in SC.</change>
+         <change when="2017-07-01">First online publication.</change>
 
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
