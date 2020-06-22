@@ -1,22 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_5984">
+   <!--  to do: extent, measurements, scribes (see notes below), watermarks, collation? -->
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Hamilton 23</title>
             <title type="collection">MSS. Hamilton</title>
             <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
-            </respStmt>
-         </titleStmt>
-         <editionStmt>
-            <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
+               <resp when="2020">Cataloguer</resp>
+               <resp>Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
-         </editionStmt>
+         </titleStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
             <address>
@@ -49,27 +44,41 @@
                      <idno type="SCN">24453</idno>
                   </altIdentifier>
                </msIdentifier> 
+               <head>Konrad von Soltau on the Sentences; canon law; papal formularies. Germany, 15th century.</head>
                <msContents> <textLang mainLang="la">Latin</textLang>
+                  <msItem>
+                     <note>On the upper pastedown is a fifteenth-century table of contents, including as the first item, now missing, 'Priuilegia studii Erfordensis'; the foliation indicates that this was missing by the later fifteenth century.</note>
+                  </msItem>
                   <msItem xml:id="MS_Hamilton_23-item1" n="1">
                      <locus>(fols. 1ra-163va)</locus>
-                     <author key="person_15126913">Conrad von Soltow</author>
+                     <author key="person_15126913">Konrad von Soltau</author>
                      <title key="work_1307">Quaestiones
                         on Peter Lombard's Sentences</title> <rubric>Incipiunt questiones sententiarum magistri Conradum Soltonis sacre pagine professoris Studii Pragen.</rubric>
                      <incipit>Queritur circa primum sententiarum utrum per studium sacre scripture acquiratur habitus alius a fide</incipit>
                      <explicit>usque ad diem iudicij vident gloriam sanctorum. Quam nobis concedat qui sine fine viuit et regnat in secula seculorum amen. </explicit>
                      <finalRubric>Expliciunt questiones sententiarum magistri Conradi Sultonis etc.</finalRubric>
-                     <note>Fol. 163v filled up with theological notes in a different hand (the same hand as the final rubric).</note>
+            </msItem><msItem xml:id="MS_Hamilton_23-item1a"><note>Fol. 163v originally blank; added in a different hand:</note>
+               <msItem><note>Confirmation by <persName key="person_32005351">John XXII</persName> of an indulgence of 30 days granted by Urban IV.</note>
+                  <note>Notes from <persName key="person_66806872">Augustine</persName> and <persName key="person_59875293">Bernard of Clairvaux</persName> on the twelve abuses.</note>
+               <note>Verses attributed to Bernard: 'Monachus velox ad mensam ... Monachum demonicum conuersum perversum'; Walther 11178, cf. Speculum peccatoris (PL 40.991).</note></msItem>
                    <note>Fol. 164r-v blank.</note>
                      
+                     
                   </msItem>
-                  <msItem xml:id="MS_Hamilton_23-item2" n="2">
-                     <locus>(fols. 165ra-191va)</locus>
+                  <msItem xml:id="MS_Hamilton_23-item2-1" n="2.1">
+                     <locus>(fols. 165ra-188vb)</locus>
                      <author key="person_305415247">Giovanni Calderini</author>
                      <title key="work_1769">De interdicto ecclesiastico</title>
                      <rubric>Tractatus de ecclesiastico interdicto Johannis Calderini</rubric>
                      <incipit>Quamvis dubia plurima iuxta materiam interdicti</incipit>
+                     <explicit>concessa ipsi ecclesie a christo cui est honor et gloria per infinita <gap reason="editorial"/></explicit>
+                     <finalRubric>Explicit interdictum ecclesiasticum Johannis Calderini Bononiensis</finalRubric>
+                     </msItem><msItem xml:id="MS_Hamilton_23-item2-2" n="2.2">
+                     <locus>(fols. 188vb-191va)</locus>
+                        <rubric>Hoc est registrum ecclesiastici interdicti Johannis Calderini <gap reason="editorial"/> </rubric>
+                        <incipit>In hoc tractatu tractatur primo de dispositione interdicti ecclesiastici cum declaracione membrorum. Secundo de speciebus interdicti.</incipit>
                      <explicit>in fine Johannis Andree</explicit>
-                     <finalRubric>Explicit Registrum ecclesiastici interdicti Johannis Kalderini</finalRubric>
+                     <finalRubric>Explicit Registrum ecclesiastici interdicti Johannis Kalderini</finalRubric><!-- checked MA, MM -->
                      <note>Fol. 191vb blank.</note>
                   </msItem>
                   <msItem xml:id="MS_Hamilton_23-item3" n="3">
@@ -79,54 +88,186 @@
                      <title key="work_698">Arengae</title>
                      <rubric>Incipiunt Arenge</rubric>
                      <incipit>Reuerend<subst><del>o</del><add>issimo</add></subst> in christo patri ac domino suo thome sancte salzenburgensis ecclesie archiepiscopo</incipit><!-- image 397 -->
-                     <finalRubric>Expliciunt arenge magistri arnoldi de augusta canonun professoris canonici sancti mauricii augustinensis AMEN. Non reputes hoc modicum.</finalRubric>
+                     <incipit><locus>(fol. 193ra)</locus> <quote>Svfficentia nostra ex deo est</quote></incipit>
+                     <explicit>tam copiosum quod neque finire tam preciosum quod non potest estimari.</explicit>
+                     <finalRubric>Expliciunt arenge magistri arnoldi de augusta canonum professoris canonici sancti mauricii augustinensis AMEN. Non reputes hoc modicum.</finalRubric>
+                     <note>Fol. 245rb blank.</note>                  
                   </msItem>
-                  <msItem>
+                 
+                  <msItem n="4">
                      <locus>(fols. 245va-252va)</locus>
-                     <rubric>Incipiunt tituli legum et primo Institutorum amen</rubric></msItem><msItem>
+                     <title key="work_16343"><supplied>Tituli legum ciuilium</supplied></title>
+                     <rubric>Incipiunt tituli legum et primo Institutorum amen</rubric>
+                  <incipit>De adopcionibus <lb/> De auctoritate tutorum <lb/> De adepcione legatorum et transl<ex>atione</ex></incipit>
+                     <explicit>Vt differentes iudices audire interpellantium allegationes compellantur <lb/> De vsuris nauticis</explicit>
+                     <note>The rubrics of the Institutes, Digest, Codex, Authenticum, arranged in alphabetical order, as printed (in different order) in the <title>Modus legendi abbreviaturas</title> (GW M24956; ISTC im00746000, etc.) but here without book or other numbers.</note>
+                  </msItem><msItem>
                      <note>Followed by a note on usury:</note>
                         <incipit>Nota quinque sunt casus in quibus licet plus recipere pecunia mutuata</incipit>
+                        <!-- perhaps see: Robert FEENSTRA,
+ La genèse du ‘Modus legendi abbreviaturas in utroque iure’. Editions incunableset manuscrits
+,Studia Gratiana 28, 1998, p. 222–224, reprinted in: idem,
+ Histoire du droit savant (13e–18e siècle). Doctrines et vulgarisation par incunables
+,Ashgate 2005, part X.
+ -->
                   </msItem>
                   
-                  <!-- fol. 253r, 517 -->
-                  
                   <msItem>
-                     <locus>(fol. 253v)</locus>
-                     <incipit>Ordo terminorum in prima instancia. Primo post presentacionem commissionis</incipit>
-                     <!-- http://diglib.hab.de/?db=mss&list=ms&id=271-helmst&catalog=Merzbacher -->
-                  </msItem>
+                     <locus>(fol. 253r)</locus>
+                     <note>Diagrammatic notes on the canon law of marriage, frequently referring to Gratian, Decretum.</note>
+                  </msItem><!-- scribe 1 -->
                   
                   
+                     <msItem n="5">
+                        <locus>(fols. 253va-285vb)</locus>
+                     <note>An anonymous and unidentified collection of texts on procedure in the papal courts: it is unclear to what extent it represents a single compilation and, sometimes, where the different sections end and begin.</note>
+                     <msItem>
+                        <locus>(fols. 253va-254ra)</locus>
+                        <title><supplied>De terminis causarum in curia Romana</supplied></title>
+                        <incipit>Ordo terminorum in prima instancia. Primo post presentacionem commissionis citetur pars ad dicendum</incipit>
+                     <explicit>ad declarandum et dicendum contra</explicit>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fols. 254ra-260r)</locus>
+                        <title><supplied>De modo procedendi in curia Romana</supplied></title>
+                        <rubric>Processus per audientiam litterarum contradictarum</rubric>
+                        <incipit>Item si procedatur coram domino auditore tuo per audientiam contradictarum</incipit>
+                        <explicit><note>(De interrogationis specialibus)</note> audita et narrata huiusmodi in presenti causa deponeret etc. </explicit>
+                        <note>Material in fols. 253va-257vb is closely paralleled (not always in the same order) in Freiburg im Breisgau, UB, Hs. 1154, fols. 31v-35v; for fols. 253va, 254va ('Qualiter procedatur in causis in palacio apostolico') see also BAV, Pal. lat. 685 fols. 35va-36r, 37vb-39v (<bibl>pr. C. Lefebvre in <title>Revue de droit canonique</title> 10-11 (1960-1) 174-191</bibl>); perhaps cf. also Eichstätt, UB, Cod. st. 618 fols. 164v-168ra.</note><!-- https://digi.vatlib.it/view/MSS_Pal.lat.685 -->
+                        <!-- http://dl.ub.uni-freiburg.de/diglit/hs1154/0046?sid=3f4c9daf24929ab932805a3cb64ee5c9 -->
+                        <!-- https://digi.ub.uni-heidelberg.de/diglit/bav_pal_lat_685/0082 -->
+                      
+                     </msItem>
+                     
+                     <msItem ><locus>(fols. 260r-263va)</locus>
+                        <author key="person_100162520"><supplied>Innocent IV</supplied></author>
+                     <title><supplied>Summa exceptionum</supplied></title>
+                     <rubric>De exceptionibus contra litteras et sigilla</rubric><incipit> Excipitur contra litteras et sigillia modis multis</incipit>
+                     <!-- freq. pr.
+                     Schulte II. 93(2)
+                     http://diglib.hab.de/inkunabeln/72-13-jur-2f-1/start.htm
+                     -->
+                     </msItem>
+                     <msItem ><locus>(fol. 263va-264ra)</locus>
+                     <rubric>Notabilia quedam <unclear>circa</unclear> iudicia superius non expressa</rubric><incipit>Si actor aut reus petat per auditorem conpelli adversarium</incipit>
+                        <note>Cf. G. Ehler, <title>Der Liber Cancellariae Apostolicae vom Jahre 1380</title> (1888), 226-8 (<persName key="person_28728357">Dietrich von Nieheim</persName>, <title>Stilus palatii abbreviatus</title>)</note>
+                     </msItem>
+                     
+                     
+                     <msItem><locus>(fols. 264rb-265ra)</locus>
+                        <incipit>Si lite pendente per alteram parcium aliquid in partibus</incipit><explicit>si diligenter ut premittitur operetur</explicit>
+                        <note>Cf. G. Erler, <title>Der Liber Cancellariae</title> (1888), 231-4 (Dietrich von Nieheim).</note>
+                        <!-- https://archive.org/details/derlibercancell00dietgoog/page/n338/mode/2up -->
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 265ra)</locus>
+                        <incipit>Ad cognoscendum publicum instrumentum octo requiruntur scilicet annus domini Indicio </incipit>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 265rb-266va)</locus>
+                        <title type="desc">Short formulary</title>
+                        <rubric>Forma probacionis sententie</rubric>
+                        <incipit>Nos igitur talis auditor etc. Visis et diligenter inspectis</incipit>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 266va-b)</locus>
+                        <incipit>Nota quod si pars post conclusionem iura producere velit</incipit>
+                        <note>Cf. G. Erler, <title>Der Liber Cancellariae Apostolicae</title> (1888), 224-5 (Dietrich von Nieheim).</note>
+                     </msItem>
+                     <msItem><locus>(fol. 266vb)</locus>
+                        <incipit>De conclusionibus faciendis. Si dec..uatur remissio ad partes tunc partus </incipit>
+                        <!-- but ending where? -->
+                        <note>Cf. G. Erler, <title>Der Liber Cancellariae Apostolicae</title> (1888), 224-5 (Dietrich von Nieheim).</note></msItem> <!-- check pages -->
+                     <!-- https://www.geschichtsquellen.de/werk/4503 -->
+                     <!-- preceding all one group of texts? -->
+                     
+                     
+                     <msItem>
+                        <locus>(fols. 267va-273vb)</locus>
+                        <title key="work_16341">Novae constitutiones audientiae contradictarum in curia romana promulgatae A.D. 1375</title>
+                        <rubric>Constituciones audire contradictarum</rubric>
+                        <rubric><add place="margin">De lectura constitutionum</add></rubric>
+                        <incipit>In primis statuimus quod anno quolibet prima die mensis Octobris</incipit>
+                        <explicit>allis illicite et inviolabiliter obseruentur etc. Finis.</explicit>
+                        <bibl>Ed. J. Foerstemann (Leipzig, 1897), here without the prologue.</bibl><!-- check if anything else omitted? -->
+                        
+                        <!-- https://books.google.co.uk/books?id=-J81AQAAMAAJ&lpg=PA775&ots=v0IN1ZItKy&dq=%22anno%20quolibet%20prima%20die%22&pg=PA820#v=onepage&q=%22anno%20quolibet%20prima%20die%22&f=false -->
+                     </msItem>
+                     
+                     
+                     
+                     
+                     <msItem >
+                        <locus>(fols. 273vb-275ra)</locus>
+                        <rubric> Obseruancie audientarum sacri pallacii apostolici</rubric><incipit>Primo nullus auditor iuxta constitutiones </incipit></msItem>
+                     
+                     <msItem><locus>(fols. 275ra-va)</locus><rubric> Constituciones procuratorum penitentorie</rubric><incipit>Statuimus et ordinamus quod singuli et omnes procuratores in officio penitentiarie</incipit></msItem>
+                     
+                     <msItem><rubric><locus>(fol. 275va-276rb)</locus> Taxaciones penitentiarie</rubric><note>Below, fols. 282ra-285vb</note></msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 276va-278ra)</locus>
+                        <note>Constitution 'Qui exacti' of John XXII </note>
+                        <rubric>Die xvj mensis Januarii Anno a natiuitate domini M<hi rend="superscript">o</hi> ccc<hi rend="superscript">o</hi> lxxv<hi rend="superscript">o</hi> <gap reason="editorial"/> fuerunt publicate presentes consitutiones <gap reason="editorial"/> de verbo ad verbum per dominum martinum de Thasters lectorem audien.</rubric>
+                        <incipit>Johannes episcopus <gap reason="editorial"/> <sic>Que</sic> exacti temporis gesta recenset</incipit>
+                        <explicit>absolutionis beneficium obtinere. Nulli ergo etc. Datum <gap reason="editorial"/></explicit>
+                        <note>Erler, <title>Liber cancellariae</title>, 191-6</note>
+                     </msItem>
+                     
+                     
                   <msItem>
-                     <locus>(fol. 278ra)</locus>
+                     <locus>(fols. 278ra-285vb)</locus>
+                     <title type="desc" key="work_16339">Manual of the papal penitentiary</title>
                      <rubric>Incipit formularius sacre penitentiarie Romane curie. Primo copia Bulle constitucioni officii penitentiarie</rubric>
+                     <msItem>
+                        <locus>(fols. 278ra-282ra)</locus>
+                        <author key="person_36914465">Benedict XII</author><title key="work_990">Constitution 'In agro domenico'</title>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 282ra-285vb)</locus>
+                        <title type="desc" key="work_14872">Tax-roll of Benedict XII</title>
+                     </msItem>
+                     <note>C. H. Haskins, 'The sources for the history of the papal penitentiary', <title>The American Journal of Theology</title>
+                        Vol. 9, No. 3 (1905), 421-450, at 426-7, here the first two items only, pr. H. Denifle, 'Die Aelteste Taxrolle der apost. Pönitentiarie, <title>Archiv für Litt. und Kirchengeschichte</title>, 4, 1888.</note>
+                     <!-- 
+                     https://archive.org/details/bub_gb_TMMsAAAAIAAJ/page/n229/mode/2up
+                     -->
+
                   </msItem>
-                  
-                  <msItem>
-                     <locus>(fols. 285vb-285vb)</locus>
+                   </msItem>
+                  <msItem n="6">
+                     <locus>(fols. 285vb-286vb)</locus>
+                     <author key="person_88800528">Bernard Silvestris</author>
+                     <title key="work_1075"> Epistola rei familiaris</title>
                      <rubric>Epistola beati Bernardi de cura domestica vtilius gubernanda et regimine domus</rubric>
                      <incipit>Gratioso et felici militi</incipit>
-                     <explicit defective="true">deum si not timueris omnia timebis</explicit>
+                     <explicit defective="true">deum si non timueris omnia timebis</explicit>
                   </msItem>
                   
-                  <msItem>
-                     <locus>(fols.287r-295r)</locus>
-                     <author>Wilhelm Horboch</author>
-                     <title>Decisiones nouae rotae Romanae </title>
+                  <msItem n="7">
+                     <locus>(fols.287r-295r)</locus><!-- ends 603 -->
+                     <author key="person_72460386">Wilhelm Horborch</author>
+                     <title key="work_4985">Decisiones nouae rotae Romanae</title><note>(abbreviation)</note>
                      <incipit>In nomine domini amen anno domini M<hi rend="superscript">o</hi>ccc<hi rend="superscript">o</hi>lxxvi<hi rend="superscript">o</hi> die mercurii</incipit>
                      <incipit>De attemptatis. Primo quod attemptata appellatione pendente a diffinitiua</incipit>
                      <explicit>caucionem fideiussoriam</explicit>
-                     <!-- todo: check if complete (surely not)
+                     <note>Highly abbreviated; ending at c. 75 in the edition of 1472 (GW 8200, chapter begins 'Item si petatur absolucio simpliciter...').</note>
+                     <!-- 
                      https://daten.digitale-sammlungen.de/bsb00064844/image_1
                      
                      -->
                      <note>Rest of fol. 295r blank.</note>
                   </msItem>
                   
-                  <msItem>
+                 <msItem n="8">
+                    <locus>(fols. 295v-323r)</locus>
+                    <title key="work_16340">Regulae cancellariae Apostolicae</title>
+                    <msItem>
                      <locus>(fols. 295v-298v)</locus>
-                     <author>Boniface IX</author>
-                     <title>Regulae cancellariae (Constitutio 'Intenta salutis', 1402)</title>
+                       <author key="person_69723238">Boniface IX</author>
+                        <title>Regulae cancellariae (Constitutio 'Intenta salutis', 1402)</title>
                      <incipit>Bonifacius episopus serus seruorum ... Intenta salutis operibus </incipit>
                      <explicit>roboris uel momenti. Nulli ergo <gap reason="editorial"/> Si quis autem <gap reason="editorial"/> Datum Rome apud sanctum Petrum xj kl. Januar. pontificatus nostri anno quartodecimo. Amen.</explicit>
                      <bibl><title>Regulae cancellariae apostolicae</title>, ed. Emil von Ottenthal (Innsbruck, 1888), pp. 73-79 (cc. 67-81).</bibl>
@@ -135,40 +276,77 @@
                   
                   <msItem>
                      <locus>(fols. 299r-323r)</locus>
-                     <title>Regulae cancellariae Apostolicae</title>
+                     <title>Regulae cancellariae Apostolicae, John XXII-Boniface IX</title>
                      <rubric>Regule date in vicecancellaria per dominum Johannem papam xxij</rubric>
                      <incipit>Infra scripte sunt regule restrictiue</incipit>
                      <explicit>ullas fore declarauit</explicit>
-                     <bibl><title>Regulae cancellariae apostolicae</title>, ed. Emil von Ottenthal (Innsbruck, 1888), pp. 73- (cc. 67-81).</bibl>
+                     <bibl><title>Regulae cancellariae apostolicae</title>, ed. Emil von Ottenthal (Innsbruck, 1888), pp. 1-70 (ending at c. 59).</bibl>
                      <!-- https://archive.org/details/RegulaeCancellariaeApostolicae/page/n27/mode/2up
                      todo if time: check what is present
                      -->
                   </msItem>
                   <msItem>
                      <locus>(fol. 323v)</locus>
+                     <note>Ordinances of <persName key="person_74644730">John XXIII</persName> (1410?) for letters of gratia expectativa.</note>
                      <rubric>Constituciones pape Johannis xxiij</rubric>
-                     <incipit>Prima videlicet viij kln. Junii sit pro familiaribus </incipit>
-                  </msItem>
+                     <incipit>Prima videlicet viij kln. Junii sit pro familiaribus commensalibus domini nostri pape. Secunda data videlicet vij kln. Junij  </incipit>
+                     <explicit>quas habeant viri eorum</explicit>
+                     <note>Printed in <title>The Register of Nicholas Bubwith</title>, ed. T. S. Holmes, II, Somerset Record Society 30 (1914), 581-3 with the heading 'sequitur date que ponentur in graciis expectativis per modum qui sequitur'</note>
+                     <note>Added, fifteenth century.</note>
+                     <!--
+                        https://archive.org/details/publicationssome30someuoft/page/n5/mode/2up
+                        https://www.uni-marburg.de/de/fb06/mag/institut/prof-dr-andreas-meyer/kanzleiregeldateien/johannes23t.pdf -->
+                  </msItem></msItem>
+                  
                   
                </msContents>
                <physDesc>
+                  <p>Apparently two codicological units (fols. 1-164, 165-323), with the same two scribes chiefly responsible for both units, which were evidently together early.</p>
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
+                        <foliation>Fols. 1-163 foliated in arabic and roman 1-167, fifteenth century.</foliation>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="1 2" writtenLines="31 40">2 cols. except for fols. 287r-323v, 1 col.; c. 31-40 lines; frame-ruled.</layout>
+                     </layoutDesc>
+                     <!-- the sequence of quires is numbered continuously; but art 1 seems a separate unit of production?
+                     art 1: two similar scribes (it seems) most easily distinguished by a different 'orum' abbreviation; they change e.g. at 2vb. 
+                   both A and B have a similar flourishing superscript a
+                   
+                   art 2, 3: 'B' 
+                     art 4 is another scribe to 246r (with another -rum and a different -bus, bz), then 1?
+                     (at image 518) art 5 - scribe of art 1?
+                     arts 7, 8 are scribe B except for 8.3, a different scribe   image 662
+                     -->
                   </objectDesc>
+                  <decoDesc>
+                     <decoNote>Art 1: little decoration: initial in red with simple decoration, fol. 1r; rubrication unfinished.</decoNote>
+                     <decoNote>Elsewhere red initials with simple penwork decoration in red.</decoNote>
+                  </decoDesc>
+                  <bindingDesc>
+                     <binding contemporary="true"><p>Fifteenth-century binding of whittawed skin over boards, damaged; bosses and clasps lost.</p></binding>
+                  </bindingDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
+                     <origDate calendar="Gregorian" notAfter="1425" notBefore="1400">15th century (early (?))</origDate>
                      <origPlace cert="low">
                         <country key="place_7000084">German</country>, <settlement key="place_7024031">Erfurt</settlement> (?)<!--ORIGINAL: German, Erfurt (?)--></origPlace>
                   </origin>
+                  <provenance>Presumably written at Erfurt, on the evidence of the missing first item.</provenance>
+                  <!-- not in the charterhouse catalogue, or identifiable in other Erfurt catalogues -->
+                  <provenance><orgName role="fmo" key="org_135319659">Erfurt, Benedictine monastery of St Peter</orgName>: 'Liber Bibliotheca regalis Monasterij S. Petri Erfordia', 18th century, fol. 1r.</provenance><!-- but when acquired? -->
+                  <provenance><persName key="person_24953683">Friedrich Gottlieb Julius von Bülow</persName>: probably identifiable as no. 116 in the 1836 sale catalogue ('CONR. SOLTONIS Quaestiones in librum 1.
+sententiarnm. - JOA, CALDERINI Tract. de .ecclesiastico
+interdicto'; cf. note on fol. 1r, 'Quaest. M. Conradi Soltonis in 1. Sententiarum').</provenance>
+                  <provenance notBefore="1841" notAfter="1856"><persName role="fmo" key="person_54195353">Sir William Hamilton, 1788-1856</persName></provenance>
+                  <acquisition when="1857">Presented to the Bodleian Library by his sons and received in 1857.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
+                        <source>Draft description by Matthew Holford (June 2020). Previously described in the Summary Catalogue. 
                             
                             <listBibl>
                               <bibl type="SC" facs="aam0057.gif">Summary Catalogue, Vol. 5, p.  22</bibl>
@@ -177,10 +355,83 @@
                      </recordHist>
                   </adminInfo>
                </additional>
+               <msPart xml:id="MS_Hamilton_23-upperpastedown" type="fragment">
+                  <msIdentifier>
+                     <altIdentifier type="partial">
+                        <idno type="part">MS. Hamilton 23 - upper pastedown</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  <msContents>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem xml:id="MS_Hamilton_23-upperpastedown-item1">
+                        <note>Liber sextus with gloss of Johannes Andrease (?) (textus inclusus) and later annotations</note>
+                        <msItem>
+                           <title key="work_1153">Liber sextus decretalium </title>
+                           <note>II.xiv.3, 'ipsius prius facta de illis ... in sua petitione fuerat' (Corpus Iuris Canonici II.1012-13).</note>
+                        </msItem>
+                        <msItem>
+                           <author key="person_24629057">Johannes Andreae</author>
+                           <title key="work_2219">Apparatus ad Sextum</title>
+                           <note>Differing slightly from the text as pr. 1582 </note>
+                        </msItem>
+                     </msItem>
+                     
+                     
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="perg">
+                           <support>parchment</support>
+                           <extent>part of one folio</extent>
+                        </supportDesc>
+                     </objectDesc>
+                     <handDesc><handNote script="textualisSouthern">Southern textualis</handNote></handDesc>
+                  </physDesc>
+                  <history>
+                     <origin>
+                        <origDate calendar="Gregorian" notAfter="1400" notBefore="1300">14th century</origDate>
+                        <origPlace><country key="place_1000080">Italy (?)</country></origPlace>
+                        
+                     </origin>
+                  </history>
+               </msPart>
+               <msPart xml:id="MS_Hamilton_23-lowerpastedown" type="fragment">
+                  <msIdentifier>
+                     <altIdentifier type="partial">
+                        <idno type="part">MS. Hamilton 23 - lower pastedown</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  <msContents>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem xml:id="MS_Hamilton_23-pastedown-item1">
+                        <title type="desc" key="work_14973">Canon law</title>
+                        <note>Part of a list of canon law terms; the final entry is for presumptio (iuris, hominis, naturae, facti). The lower half of the leaf is blank.</note>
+                     </msItem>
+                     
+                     
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="perg">
+                           <support>parchment</support>
+                        </supportDesc>
+                     </objectDesc>
+                     <handDesc><handNote>Cursiva antiquior (anglicana: characteristic two-compartment a, long r and split ascenders).</handNote></handDesc>
+                  </physDesc>
+                  <history>
+                     <origin>
+                        <origDate calendar="Gregorian" notAfter="1300" notBefore="1250">13th century, second half</origDate>
+                        <origPlace><country key="place_7002445">English</country></origPlace>
+                        
+                     </origin>
+                  </history>
+               </msPart>
             </msDesc>
          </sourceDesc>
       </fileDesc>
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
+      <revisionDesc> 
+         <change when="2020-06">Draft new description for Polonsky German.</change>
+         <change when="2017-07-01">First online publication.</change>
 
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
