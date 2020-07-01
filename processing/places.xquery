@@ -55,17 +55,19 @@ declare variable $allinstances :=
     
         (: Get info in authority entry :)
         let $id := $placeororg/@xml:id/data()
+        let $isorg := exists($placeororg/self::tei:org)
         let $name := 
-            if ($placeororg/self::tei:org) then
+            if ($isorg) then
                 if ($placeororg/tei:orgName[@type='display']) then normalize-space($placeororg/tei:orgName[@type='display'][1]/string()) else normalize-space($placeororg/tei:orgName[1]/string())
             else
                 if ($placeororg/tei:placeName[@type='index']) then normalize-space($placeororg/tei:placeName[@type='index'][1]/string()) else normalize-space($placeororg/tei:placeName[1]/string())
         let $variants := 
-            if ($placeororg/self::tei:org) then
+            if ($isorg) then
                 for $v in $placeororg/tei:orgName[not(@type='display')] return normalize-space($v/string())
             else
                 for $v in $placeororg/tei:placeName[not(@type='index')] return normalize-space($v/string())
         let $extrefs := for $r in $placeororg/tei:note[@type="links"]//tei:item/tei:ref return concat($r/@target/data(), '|', bod:lookupAuthorityName(normalize-space($r/tei:title/string())))
+        let $extauths := distinct-values(for $r in $placeororg/tei:note[@type='links']//tei:item/tei:ref return normalize-space($r/tei:title/string()))
         let $bibrefs := for $b in $placeororg/tei:bibl return bod:italicizeTitles($b)
         let $notes := for $n in ($placeororg/tei:note[not(@type="links")], $placeororg/ancestor::tei:listPlace/tei:head/tei:note, $placeororg/ancestor::tei:listOrg/tei:head/tei:note) return bod:italicizeTitles($n)
         let $geolocs := $placeororg/tei:location/tei:geo[matches(text(), '^\s*\-?[\d\.]+\s*,\s*\-?[\d\.]+\s*$')]
@@ -174,6 +176,34 @@ declare variable $allinstances :=
                     order by tokenize($link, '\|')[2]
                     return
                     <field name="link_manuscripts_smni">{ $link }</field>
+                }
+                {
+                (: Filter on which external authorities, if any, this person has been identified in :)
+                if ($isorg) then
+                    let $majorextauths := ('VIAF', 'GND', 'LC', 'ISNI', 'Wikidata', 'SUDOC', 'BNF')
+                    return
+                    (
+                    for $majorextauth in $majorextauths
+                        return
+                        (
+                        if (some $extauth in $extauths satisfies $extauth eq $majorextauth) then
+                            <field name="extauth_sm">{ $majorextauth }</field>
+                        else
+                            <field name="extauth_sm">Not{$majorextauth}</field>
+                        )
+                    ,
+                    if (some $extauth in $extauths satisfies not($extauth = $majorextauths)) then
+                        <field name="extauth_sm">Other</field>
+                    else
+                        ()
+                    ,
+                    if (count($extauths) eq 0) then
+                        <field name="extauth_sm">None</field>
+                    else
+                        ()
+                    )
+                else
+                    ()
                 }
             </doc>
         else
