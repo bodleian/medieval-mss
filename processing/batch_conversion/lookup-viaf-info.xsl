@@ -47,9 +47,9 @@
         </xsl:copy>
     </xsl:template>
     
-    <!-- Person entries which already have VIAF links -->
+    <!-- Entries which already have VIAF links -->
     
-    <xsl:template match="/TEI/text/body/listPerson/person[exists(note/list/item/tei:ref[contains(@target, 'viaf.org')])]">
+    <xsl:template match="/TEI/text/body/(listPerson|listOrg)/(person|org)[exists(note/list/item/tei:ref[contains(@target, 'viaf.org')])]">
         <xsl:variable name="viafurls" as="xs:string*" select="for $target in note/list/item/tei:ref[contains(@target, 'viaf.org')]/@target return normalize-space($target/string())"/>
         <xsl:variable name="viafapiurls" as="xs:string*" select="for $url in $viafurls return if (ends-with($url, '/')) then concat($url, 'viaf.xml') else concat($url, '/viaf.xml')"/>
         <xsl:variable name="viafdocs" as="document-node()*" select="for $url in $viafapiurls return local:lookupVIAF($url)"/>
@@ -88,10 +88,15 @@
         </xsl:copy>
     </xsl:template>
     
-    <!-- Person entries which do not have a VIAF links but are in the section for VIAF-based entries, so their IDs should be based on VIAF numbers -->
+    <!-- Entries which do not have a VIAF links but are in the section for VIAF-based entries, so their IDs should be based on VIAF numbers -->
     
-    <xsl:template match="/TEI/text/body/listPerson[@type='VIAF']/person[not(exists(note/list/item/tei:ref[contains(@target, 'viaf.org')]))]">
-        <xsl:variable name="viafapiurl" as="xs:string" select="concat('http://viaf.org/viaf/', substring-after(@xml:id/string(), 'person_'), '/viaf.xml')"/>
+    <xsl:template match="/TEI/text/body/(listPerson|listOrg)[@type='VIAF']/(person|org)[not(exists(note/list/item/tei:ref[contains(@target, 'viaf.org')]))]">
+        <xsl:variable name="viafapiurl" as="xs:string" select="
+            if (self::org) then 
+                concat('http://viaf.org/viaf/', substring-after(@xml:id/string(), 'org_'), '/viaf.xml')
+            else
+                concat('http://viaf.org/viaf/', substring-after(@xml:id/string(), 'person_'), '/viaf.xml')
+            "/>
         <xsl:variable name="viafdocs" as="document-node()*" select="local:lookupVIAF($viafapiurl)"/>
         <!-- Store a local cached copy of the VIAF document returned from their API -->
         <xsl:variable name="cachefilepath" as="xs:string" select="concat($localcachepath, encode-for-uri(substring-after($viafapiurl, '://')))"/>
@@ -130,7 +135,7 @@
     
     <!-- Insert links -->
     
-    <xsl:template match="person/note/list[@type='links' or parent::note/@type='links']">
+    <xsl:template match="(person|org)/note/list[@type='links' or parent::note/@type='links']">
         <xsl:param name="viafdocs" as="document-node()*"/>
         <xsl:copy>
             <xsl:copy-of select="@*"/>
