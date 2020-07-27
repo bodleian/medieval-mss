@@ -16,15 +16,22 @@
 
     <!-- Any templates added below will override the templates in the shared
          imported stylesheet, allowing customization of manuscript display for each catalogue. -->
+
+
+
     
-    <xsl:template name="SubItems">
-        <!-- For Medieval, notes are sometimes used between items to give context, so this overrides the 
-             default in msdesc2html.xsl, which re-orders child elements of msItem for the sake of neatness. -->
+    <!-- For Medieval, notes are sometimes used between items to give context, so this overrides the 
+         default in msdesc2html.xsl, which re-orders child elements of msItem for the sake of neatness. -->
+    
+    <xsl:template name="SubItems">        
         <xsl:apply-templates/>
     </xsl:template>
 
+
+
+    <!-- TODO: Move these templates to msdesc2html.xsl if applicable to all catalogues? -->
+
     <xsl:template match="msDesc/msIdentifier/altIdentifier[@type='former']">
-        <!-- TODO: Move this template to msdesc2html.xsl? -->
         <p>
             <xsl:text>Former shelfmark: </xsl:text>
             <xsl:apply-templates/>
@@ -32,7 +39,7 @@
     </xsl:template>
 
     <xsl:template match="title[@key]">
-        <!-- TODO: Move this template to msdesc2html.xsl? -->
+        
         <span>
             <xsl:attribute name="class">
                 <xsl:if test="not(parent::msItem)">
@@ -56,20 +63,29 @@
             <xsl:text>, </xsl:text>
         </xsl:if>
     </xsl:template>
-    
+
+
+
     <!-- This is Medieval notation, do not move this to msdesc2html.xsl -->
+    
     <xsl:template match="lb">
         <xsl:text>|</xsl:text>
     </xsl:template>
-    
+
+
+
     <!-- This is an override of the template in msdesc2html.xsl, which outputs a div. Maybe the choice should be based on context? -->
+    
     <xsl:template match="formula">
         <span class="formula">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
-    
+
+
+
     <!-- Display lemmata in italic -->
+    
     <xsl:template match="incipit/quote | incipit/cit/quote | explicit/quote | explicit/cit/quote">
         <i>
             <xsl:apply-templates/>
@@ -80,5 +96,50 @@
             <xsl:copy/>
         </i>
     </xsl:template>
+    
+
+
+    <!-- Display the most recent change at the bottom of manuscript pages (just before Zotero links, if any) -->
+    
+    <xsl:template name="Footer">
+        <xsl:apply-templates select="/TEI/teiHeader/revisionDesc[change][1]"/>
+    </xsl:template>
+    
+    <xsl:template match="revisionDesc[.//change]">
+        <div class="revisionDesc">
+            <xsl:processing-instruction name="ni"/>
+            <h3>Last Substantive Revision</h3>
+            <xsl:choose>
+                <xsl:when test="some $change in .//change satisfies exists($change/@when)">
+                    <xsl:for-each select=".//change[@when]">
+                        <xsl:sort select="@when" order="descending"/>
+                        <xsl:if test="position() eq 1">
+                            <xsl:apply-templates select="."/>
+                        </xsl:if>
+                    </xsl:for-each>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:apply-templates select="(.//change)[1]"/>
+                </xsl:otherwise>
+            </xsl:choose>
+            <xsl:processing-instruction name="ni"/>
+        </div>
+    </xsl:template>
+    
+    <xsl:template match="change">
+        <p class="change">
+            <xsl:if test="@when">
+                <xsl:value-of select="@when"/>
+                <xsl:text>: </xsl:text>
+            </xsl:if>
+            <xsl:apply-templates/>
+        </p>
+    </xsl:template>
+
+
+
+    <!-- TODO: Add quick links drop-down to header -->
+    
+    
     
 </xsl:stylesheet>
