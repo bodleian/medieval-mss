@@ -10,10 +10,14 @@
     exclude-result-prefixes="xs map tei ZiNG marc"
     version="3.0">
     
-    <xsl:output method="xml" indent="yes" encoding="UTF-8"/>
+    <xsl:output method="xml" indent="no" encoding="UTF-8"/>
     
     <!-- This adds ISNIs, or comments when a record exists in the ISNI database but is not yet approved, from the results of 
          calls to the ISNI API saved locally in a temporary folder (done separately via curl as username/password is required) -->
+    
+    <!-- Queries to send to ISNI API can be generated with this XPath:
+         /TEI/text/body/*/(person|org)[not(note/list/item/ref[contains(@target, 'isni.org')])]/note/list/item/ref[contains(@target, 'viaf.org')]/@target/concat('pica.cn+%3D+%22VIAF%2B', substring-after(., '/viaf/'), '%22')
+    -->
     
     <xsl:variable name="newline" as="xs:string" select="'&#10;'"/>
     <xsl:variable name="today" as="xs:string" select="format-date(current-date(), '[Y0001]-[M01]-[D01]')"/>
@@ -81,7 +85,9 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="/TEI/text/body/listPerson/person[@xml:id]/note/list">
+    <!-- Add links or comments to authority entries -->
+    
+    <xsl:template match="/TEI/text/body/(listPerson|listOrg)/(person|org)[@xml:id]/note/list">
         <xsl:variable name="viafurls" as="xs:string*" select="item/ref[title/text()[1] = 'VIAF']/@target"/>
         <xsl:variable name="viafids" as="xs:string*" select="for $url in $viafurls return tokenize($url, '/')[string-length(.) gt 0][position() eq last()]"/>
         <xsl:copy>
