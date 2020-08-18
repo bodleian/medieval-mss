@@ -28,7 +28,7 @@
                 <xsl:map-entry key="$viafid">
                     <xsl:choose>
                         <xsl:when test="$isnidoc/ZiNG:numberOfRecords[1]/text() = '0'">
-                            <xsl:comment> No match found in ISNI for VIAF ID <xsl:value-of select="$viafid"/> on <xsl:value-of select="$today"/> </xsl:comment>
+                            <xsl:comment>No match found in ISNI for VIAF ID <xsl:value-of select="$viafid"/> on <xsl:value-of select="$today"/> </xsl:comment>
                         </xsl:when>
                         <xsl:when test="$isnidoc/ZiNG:numberOfRecords[1]/text() = '1'">
                             <xsl:variable name="isniiddatafield" as="element(marc:datafield)*" select="$isnidoc//marc:collection/marc:record/marc:datafield[@tag='003E']"/>
