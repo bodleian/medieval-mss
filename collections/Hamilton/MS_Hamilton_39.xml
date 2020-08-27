@@ -1,22 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6001">
    <teiHeader>
+      <!-- 
+      watson   
+      https://babel.hathitrust.org/cgi/pt?id=mdp.39015008982863&view=1up&seq=109
+      
+      Lehamm
+      
+      https://babel.hathitrust.org/cgi/pt?id=mdp.39015011813154&view=1up&seq=269
+      
+      todo: 
+      measurements part 4; collation.
+      finish indexing? scribe? 
+      check layout? 
+      
+      -->
+     
       <fileDesc>
          <titleStmt>
             <title>MS. Hamilton 39</title>
             <title type="collection">MSS. Hamilton</title>
             <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
-            </respStmt>
-         </titleStmt>
-         <editionStmt>
-            <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
+               <resp when="2020">Cataloguer</resp>
+               <resp>Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
-         </editionStmt>
+            <respStmt>
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
+         </titleStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
             <address>
@@ -49,47 +62,444 @@
                      <idno type="SCN">24469</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
-                  <msItem xml:id="MS_Hamilton_39-item1" n="1">
-                     <title key="work_14973">Treatises on Canon Law</title>
-                     <textLang mainLang="la">Latin</textLang>
-                  </msItem>
-               </msContents>
+               <head>Canon law; A-C Germany (mostly Leipzig), 1421 etc.</head>
+               
                <physDesc>
                   <objectDesc form="codex">
-                     <supportDesc material="mixed">
-                        <support>parchment, paper</support>
+                     <supportDesc >
+                        <extent>i + 1 (paper) + 1 (parchment) + 275 + 1 (paper) + i folios (132 is double)
+                        <dimensions type="leaf" unit="mm">
+                        <height>304</height>
+                        <width>215</width>
+                     </dimensions></extent>
+                        <foliation>[unfoliated], i-ii, 1-274 (132 is double), 275, [unfoliated]</foliation>
                      </supportDesc>
-                     <layoutDesc>
-                        <p n="composite">three parts</p>
-                     </layoutDesc>
                   </objectDesc>
+                  <bindingDesc>
+                     <binding notAfter="1500" notBefore="1400">
+                        <p>15th-century binding of blind-ruled leather over boards, rebacked.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notBefore="1400" notAfter="1500">15th century, chiefly 1421</origDate>
+                     <origDate calendar="Gregorian" when="1421" cert="high">1421</origDate>
                      <origPlace>
-                        <country key="place_7000084">German</country>, chiefly <settlement key="place_7012329">Leipzig</settlement>
+                        <country key="place_7000084">Germany</country>, (chiefly) <settlement key="place_7012329">Leipzig</settlement>
                         <!--ORIGINAL: German, chiefly Leipzig-->
                      </origPlace>
                   </origin>
+                  <provenance>Dated on fols. 46, 69v, 76v, 101, 126v, 165, 261; the undated sections are contemporary except for short texts added later in the fifteenth century.</provenance>
+                  <provenance><orgName role="fmo" key="org_415145858126223022295">Erfurt, Carthusian abbey</orgName>: identifiable as A23(2) in the late-fifteenth-century catalogue (ed. P. Lehmann, pp. 253-4).</provenance>
+                  <provenance notAfter="1831" notBefore="1760"><persName role="fmo" key="person_24953683">Friedrich Gottlieb Julius von Bülow, 1760-?1831</persName>, probably identifiable as 234 in the catalogue of part 3 of his sale, 10 Oct. 1836.</provenance>
+                  <provenance notBefore="1841" notAfter="1856"><persName role="fmo" key="person_54195353">Sir William Hamilton, 1788-1856</persName></provenance>
+                  <acquisition resp="#SC" when="1857">Presented to the Bodleian Library by his sons and received in 1857.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
-                            
-                            <listBibl>
+                        <source>Draft description adapted by Matthew Holford (August 2020), with additional description of content, decoration, and provenance, from A. G. Watson, <title>Catalogue of dated and datable manuscripts c. 435-1600 in Oxford libraries</title> (1984), no. 505. Previously described in the Summary Catalogue. 
+                           
+                           <listBibl>
                               <bibl type="SC" facs="aam0065.gif">Summary Catalogue, Vol. 5, p.  30</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
                </additional>
+               <msPart xml:id="MS_Hamilton_39_partA">
+                  <msIdentifier>
+                     <altIdentifier type="partial">
+                        <idno type="part">MS. Hamilton 39 - part A (fols. 1-129)</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  <msContents> <textLang mainLang="la">Latin</textLang>
+                     <msItem xml:id="MS_Hamilton_39-item1" n="1">
+                        <locus>(fols. 1ra-126va)</locus>
+                        <msItem n="1.1">
+                           <locus>(fols. 1ra-101rb)</locus><title key="work_16359"><supplied>Summaria capitulorum seu Casus summarii Decretalium Gregorii IX</supplied></title>
+                        <note>Here attributed to an unidentified 'Bernardus' or 'Bernardus graecus' (not the work of Bernard of Compostella or Bernard of Parma). For apparently similar texts see J. Fliege, <title>Die Handschriften der ehemaligen Stifts- und Gymnasialbibliothek Quedlinburg in Halle</title>. (1982), 234, on Qu. Cod. 131, fols. 121r-156v (on Liber extra books 1-2 only); S. Heyne, <title>Die mittelalterlichen Codices Erfordenses  in der  Universitäts- und Forschungsbibliothek Erfurt / Gotha</title> (2005) 61-2, on CE 8o 22, fols. 1r-132v (similar only in Liber extra bks. 1-2); and more generally Schulte II.492-4.</note>
+                        <!-- resembles only generally the text in Erfurt UB Dep. Erf. CA. 2° 208
+                        https://dhb.thulb.uni-jena.de/receive/ufb_cbu_00017613
+                        cf also CE 8o 22
+                        https://www.db-thueringen.de/servlets/MCRFileNodeServlet/dbt_derivate_00004516/codices.pdf [p. 60]
+                        
+                        
+                        -->
+                        <msItem>
+                           <locus>(fols. 1ra-24rb)</locus>
+                           <rubric>Rubrica de Summa Trinitate et Fide Catholica <note type="editorial">[later hand]</note></rubric>
+                           <incipit><quote>Firmiter credimus</quote> Simpliciter credendum est quod vnus solus et verus deus eternus</incipit>
+                           <incipit><locus>(fol. 1rb)</locus> <quote>Damnamus</quote> Casus licet quis erret in fide non debet hereticus censeri dum tamen fidem romane ecclesie paratus sit suscipere uel se illa tenere fatetur</incipit>
+                           <incipit><locus>(fol. 1rb)</locus> De constitucionibus. <quote>Canonum</quote> Postquam deus formauit hominem ad ymaginem et similitudinem eius Ius naturale cum ipso prodiit </incipit>
+                           <!--<incipit><locus>(fol. 1va)</locus> <quote>Casus</quote> Constitutiones canonum ab omnibus sunt seruande</incipit> ... 1va Cognoscentes. Casus. Constitucio respicit futura non preterita -->
+                           <explicit><quote>Compromissum</quote> non extenditur in conpromittentes heredes si de ipsis non caueatur ibidem etc.</explicit>
+                           <finalRubric>Expliciunt casus Bernhardi</finalRubric><finalRubric>Explicit primus liber decretalium</finalRubric>
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 24va-46rb)</locus>
+                           <rubric>De iudiciis II liber</rubric>
+                           <incipit><quote>De quo uult deo <gap reason="editorial"/></quote> Casus. Qui promisit iudicem suum non declinare</incipit>
+                           <incipit><quote>Decreuimus<!-- sic --></quote> Casus. Laycus ecclesiatica negocia tractare non debet</incipit>
+                           <explicit>Item papa per constituciones non intendit viribus episcoporum preiudiciam</explicit>
+                           <!-- followed by a quote from Gregory? image 99 -->
+                           <colophon>Tunc est finis <subst><del>1420</del><add>1421</add></subst> In die marcelli</colophon>
+                           <finalRubric>Et est finis huius secundi libri decretalium</finalRubric>
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 46va-69vb)</locus>
+                           <rubric>De vite et honestate clericorum III</rubric>
+                           <incipit><quote><sic>Et</sic> layci</quote> Casus. Quando sacra celebrantur in ecclesia clerici stare debent in choro et layci in parte maiori ecclesie</incipit>
+                           <explicit>Item litterati in theologia debent esse bellatores pro fide katholica contra impugnatores etc.</explicit>
+                           <colophon>Finis huius 3ij anno MCCCCxxj ipso die Brigide virginis</colophon><finalRubric>etc finis huius tercii</finalRubric>
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 70ra-76vb)</locus>
+                           <rubric>De sponsalibus et matrimoniis IIII liber</rubric>
+                           <incipit><quote>De Francia</quote> Nota sponsalia sunt futurarum nupciarum promissio dicta a spondendo id est promittendo</incipit>
+                           <incipit><quote>Preterea</quote> Casus. Soluuntur sponsalia de futuro si sponsi se ab inuicem absoluunt</incipit>
+                           <!-- TODO: explicit, image 160 -->
+                           <colophon>est finis anno MCCCCo xxj in die sancti blasij hora septima de mane</colophon>
+                           <finalRubric>Etc finis huius quarti sequitur quintus</finalRubric>
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 77ra-101rb)</locus>
+                           <rubric>V De accusacionibus et inquisicionibus et denunciacionibus</rubric>
+                           <incipit><quote>Si legittimus</quote> Accusacio est criminis alicuius apud iudicem competentem facta</incipit>
+                           <incipit><quote>Denuncciacio</quote> Casus. Criminis alicuius apud iudicem competentem non inscripcione  </incipit>
+                           <explicit>prelato suo facere obedienciam etc.</explicit>
+                           <finalRubric>Expliciunt casus libri decretalium compilacionis greci bernhardi</finalRubric>
+                           <colophon>Anno MCCCCo xxj ipso die sancti valentini in lypcz.</colophon>
+                        </msItem></msItem>
+                        <msItem n="1.2">
+                           <locus>(fols. 101va-126va)</locus>
+                           <title key="work_16360"><supplied>Summaria capitulorum seu Casus summarii Libri sexti decretalium </supplied></title>
+                           <incipit><quote>Bonifacius episcopus <gap reason="editorial"/></quote> Prohemium illud in quattuor diuiditur partes. In prima ponitur salutacio </incipit>
+                           <incipit><quote>Episcopus</quote> Hoc est <unclear>verbum</unclear> ante consecracionem et coronacionem, Seruus seruorum dei, non simpliciter dicit se seruum sed seruum dei, quasi de hiis que sunt foris</incipit>
+                       <incipit><locus>(fols. 102rb)</locus> <quote><supplied>Fideli</supplied></quote> Errore grecorum qui dicebant spiritum sanctum procedere a solo patre extirpato per canones</incipit>
+                       <explicit><quote>Sicut</quote> si <unclear>conceditur</unclear>  episcopo ut possit beneficia suorum clericorum cedencium vel decedencium conferre tunc sub clericorum solum ipsius domestici et familiares intelligitur</explicit>
+                           <note>For the ending cf. Augsburg UB Cod. II. 1. 4o 71 art. 5 (also followed by Regulae iuris); elsewhere seems to be abbreviated from <persName role="aut" key="person_24629057">Johannes Andreae</persName>, <title key="work_2219">Apparatus ad Sextum</title> </note>
+</msItem>
+                        <msItem n="1.3">
+<locus>(fol. 125vb-126va)</locus>     
+                           <author key="person_23416912">Boniface VIII</author>
+                           <title key="work_1153">Liber sextus: De regulis iuris</title>
+                           <rubric>De regulis iuris</rubric>
+                           <incipit>Beneficium ecclesiasticum non potest licite</incipit>
+                           
+                           <explicit>contra leges nititur voluntatem</explicit>
+                           <colophon>1421</colophon>
+                           <explicit>Datum Rome aput sanctum petrum v nonarum marcii pontificatus nostri anno 4o.</explicit>
+                           <note>The text only.</note>
+                        </msItem>
+                     </msItem>
+                     <msItem n="2">
+                        <locus>(fol. 126v-127r, margin)</locus>
+                        <note>A later hand adds notes from the <title key="work_14798">Stella clericorum</title>, the <title key="work_6379">Speculum exemplorum</title>, and the <title key="work_1161">Revelations</title> of <persName role="aut" key="person_51685861">St Bridget</persName>.</note>
+                        <!-- TODO: speculum exemplorum 
+                        Speculum exemplorum: pr. Deventer 1481 (Goff S651), &c.; Bloomfield 2003.
+                        and to a book at I 13?
+                        -->
+                     </msItem>
+                     <msItem n="3">
+                        <locus>(fols. 126vb-127vb)</locus>
+                        <title key="work_16358">Epistola Luciferi</title>
+                        <rubric>Epistola Sathane missa ex centro inferni vniuersis principibus mundi maxime moderne ecclesie qui eius imperio et voluntati famulantur <note type="editorial">[later hand]</note></rubric>
+                        <incipit>Lucifer princeps tenebrarum profundi tristicie regens acherontis <gap reason="editorial"/> Dudum quidem christi vicarii sequentes eius vestigia </incipit>
+                        <explicit>in <sic>roborem</sic> premissorum</explicit>
+                        <note>Helen Feng, 'Devil's Letters: Their History and Significance in Church and Society, 1100-1500' (PhD, Northwestern University, 1982), 450-455 (listing this ms.)</note>
+                     </msItem>
+                     <msItem n="4">
+                        <locus>(fols. 127vb-129ra)</locus>
+                        <msItem>
+                           <title key="work_16361"><supplied>Casus reservati</supplied></title>
+                        <rubric>Casus papales</rubric>
+                        <incipit>Primus quando aliquis verberat clericum et sunt multe excepciones</incipit>
+                        <rubric>Casus episcopales</rubric>
+                        <incipit>Primus est coytus cum moniali </incipit></msItem>
+                        <msItem>
+                           <title key="work_16362"><supplied>Casus in quibus</supplied></title><rubric>Nota casus in quibus potest sibi dicere</rubric>
+                        <incipit>Primus est in nocturno alius in notorio depopulliatore</incipit>
+                        <rubric>Casus in quibus ecclesia consecrata debet reconsecrari</rubric>
+                        <incipit>Nota quod tres sunt casus in quibus ecclesia consecrata debet reconsecrari. Primus si ecclesia combusta fuerit</incipit></msItem>
+                        <note>Cf. Wiesbaden, Nassauischen Landesbibliothek, Hs. 25 fol. 339v; (in part) BnF, Latin 8931, fols. 256-257v.</note>
+                        <note>Fol. 129v blank.</note>
+                        <!-- ckd MA, MM -->
+                     </msItem>
+                     
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="mixed">
+                           <support>paper and parchment</support><!-- check -->
+                        </supportDesc>
+                        <layoutDesc>
+                           <layout>2 cols., c. 36-42 lines, column space <dimensions type="column" unit="mm">
+                              <height max="230" min="225">225-30</height>
+                              <width max="75" min="65">65-75</width>
+                           </dimensions></layout>
+                        </layoutDesc>
+                     </objectDesc>
+                     <handDesc>
+                        <handNote script="cursiva">Cursive.</handNote>
+                     </handDesc>
+                     <decoDesc>
+                        <decoNote type="flourInit">Art. 1: 4-7 line red initials with simple silhouette decoration at the beginning of books.</decoNote><decoNote type="colInit"> Elsewhere 2-3 line red initials.</decoNote>
+                     </decoDesc>
+                  </physDesc>
+                 <!-- <history>
+                     <origin>
+                        <origDate calendar="Gregorian" when="1421" cert="high">1421</origDate>
+                        <origPlace><country key="place_7000084">Germany</country>, <settlement key="place_7012329">Leipzig</settlement> (at least in part)</origPlace>
+                     </origin>
+                  </history>-->
+               </msPart>
+               <msPart xml:id="MS_Hamilton_39-partB">
+                  <msIdentifier>
+                     <altIdentifier type="partial">
+                        <idno type="part">MS. Hamilton 39 - part B (fols. 130-165)</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  <msContents>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem xml:id="MS_Hamilton_39-partB-item1" n="1">
+                        <locus>(fols. 130ra-158vc)</locus>
+                        <title key="work_16363"><supplied>Vocabularius utrius iuris cum tabula</supplied></title>
+                        <note>A text which combines a vocabulary of civil law, the 'Epitome exactis regibus', with vocabularies of canon law. The resulting text is divided into 234 numbered sections, which form the basis of an alphabetical index. The same or a very similar compilation in Jena, MS. G. B. f. 18a fols. 29ra-72vb (prov. Erfurt, St Peter's). </note>
+                        <!-- 
+                        https://books.google.co.uk/books?id=uvH85j1qDz8C&pg=PA181&lpg=PA181&dq=%22scriptum+unius+cause%22&source=bl&ots=YXjB2rNK4b&sig=ACfU3U3EHP6C5TtMA2SKWSBRoNEYwKxR7w&hl=en&sa=X&ved=2ahUKEwj_id39hofrAhVdQEEAHWESDCkQ6AEwAHoECAMQAQ#v=onepage&q=%22scriptum%20unius%20cause%22&f=false
+                        -->
+                        <msItem>
+                           <locus>(fols. 130ra-145va)</locus>
+                           <title key="work_16364"><supplied>Epitome exactis regibus</supplied></title>
+                           <incipit>Exactis a romana ciuitate regibus constitutei sunt consules duo</incipit>
+                           <explicit>quod supervacuum est prouectis et tantum de isto</explicit>
+                           <note>Here sections 1-170</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 145va-154vb)</locus>
+                           <msItem><title><supplied>Expositiones titulorum Decretalium</supplied></title>
+                           <rubric>Declaracio terminorum in rubricis primi libri decretalium</rubric>
+                           <incipit>Constitucio est ius scriptum unius cause uel negocii. Consultacio est in qua </incipit>
+                           <explicit>Priuilegium est beneficium contra ius commune institutum</explicit></msItem>
+              <note>Followed immediately by three other alphabetical vocabularies all presented as one continuous text:</note>            
+                         <msItem><incipit><locus>(fol. 147ra)</locus> Ambicio est inordinatum desiderium honoris</incipit> </msItem> <msItem><incipit><locus>(fol. 147vb)</locus> Aduersio est assumpcio cuius operis pro certa mercede</incipit></msItem>
+                           <msItem><incipit><locus>(fol. 150ra)</locus>A quandoque facit separacionem et quandoque includit</incipit></msItem>
+                          
+                          <msItem><rubric>De significacionibus anni</rubric>
+                           <incipit>Annus naturalis est a quolibet die incipiens</incipit><explicit>de iudeis c. ult. Hic est finis.</explicit></msItem>
+                           <note>Sections 171-234</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 154vb-158vc)</locus>
+                           <note>Alphabetical index of terms</note>
+                           <incipit>206 A  <lb/> 52 ABigeus <lb/> 106 Abolicio </incipit>
+                           <explicit>233 Zelus <lb/> 17 Zenodochium <lb/> 17 Zenodochus, Zenon </explicit>
+                           <!-- more after - 326 -->
+                        </msItem>
+                        <colophon>Et sic et finis sit laus et gloria <lb/> Detur pro pena scriptori pulchra puella <lb/> Si non est pulchra pacietur verbera dura</colophon>
+                        <!-- 145v, image 300 - decretals -->
+                     </msItem>
+                     <msItem n="2"><locus>(fol. 158vb</locus>
+                     <title type="desc">List of the archdioceses in Germany and the dioceses within them</title><note>Added in a different hand.</note></msItem>
+                     <msItem n="3">
+                        <locus>(fols. 159-165)</locus>
+                        <author key="person_317285725"><supplied>Johannes de Lignano</supplied></author>
+                        <title key="work_6376"><supplied>De horis canonicis</supplied></title>
+                        <rubric>Circa materia horarum canonicarum <note type="editorial">[later hand]</note></rubric>
+                        <rubric>Repeticio doctoralis et vtilis valde ad studiose persoluendum horas canonicas illius rubrice De celebracione missarum in Clementinas <note type="editorial">[later hand]</note></rubric>
+                        <incipit>In nomine domini amen. Ad honorem illius cuius opera sunt inseperabilia  </incipit>
+                        <incipit><locus>(fol. 159va)</locus> Nota primo ex primo capitulo certum modum et ordine in diuinis officiis debere seruari</incipit>
+                        <explicit>ad aliquas horas peculiares uel vigilias mortuorum obligatur</explicit>
+                        <colophon>Et hec de horis canonicis anno .1421. in festo galli script<ex>a</ex></colophon>
+                        <note>Pr. USTC 805942, vol. 15/2, fols. 558ra-559vb. Rest of fol. 165r blank; fol. 165v blank.</note>
+                        <!-- online: https://amesfoundation.law.harvard.edu/digital/tui/TUI1584_auti.php?vol=15.2 -->
+                     </msItem>
+                     
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="chart">
+                           <support>paper</support>
+                           
+                        </supportDesc>
+                        <layoutDesc>
+                           <layout>2 cols., c. 46 lines, column space <dimensions type="column" unit="mm">
+                              <height>230</height>
+                              <width max="85" min="65">65-85</width>
+                           </dimensions></layout>
+                        </layoutDesc>
+                     </objectDesc>
+                     <handDesc>
+                        <handNote script="cursiva">Cursive.</handNote>
+                     </handDesc>
+                     <decoDesc><decoNote type="flourInit">Art. 1: 4-7 line red initials with simple silhouette decoration </decoNote><decoNote type="colInit">Coloured red initial at the beginning of art 2.</decoNote>
+                 </decoDesc> </physDesc>
+                 <!-- <history>
+                     <origin>
+                        <origDate calendar="Gregorian" when="1421" cert="high">1421</origDate>
+                        <origPlace><country key="place_7000084">Germany</country></origPlace>
+                     </origin>
+                  </history>-->
+               </msPart>
+               <msPart xml:id="MS_Hamilton_38-partC">
+                  <msIdentifier>
+                     <altIdentifier type="partial">
+                        <idno type="part">MS. Hamilton 38 - part C (fols. 166-261)</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  <msContents>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem xml:id="MS_Hamilton_38-partC-item1" n="1">
+                        <locus>(fols. 166ra-261rb)</locus>
+                        <title key="work_16336"><supplied>Commentary on Adam of Aldersbach, Summula Raymundi</supplied></title>
+                        <rubric>Circa Raymundum</rubric>
+                        <incipit>Circa summulam raymundi ponitur tale thema, Oportet illud monstrare iter eterne salutis. Hanc proposicionem scribit beatus gregorius</incipit>
+                        <incipit><locus>(fol. 167va)</locus> Queritur primo utrum utrum sacramenta sint septem in numero et arguitur quod non, tot sunt sacramenta quod sunt vasa gracie susceptiua</incipit> <!-- for this cf. Melk 988 -->
+                        <incipit><locus>(fol. 168va)</locus> Utrum ius canonicum a lege et ewangelio institutum sit hic subiectum et arguitur primo quod non, illud quod subicitur in <unclear>decretalibus</unclear> et in decretis, hoc non est subiectum in hac sciencia </incipit>
+                        <incipit><locus>(fol. 169vb)</locus> <quote>Summula de</quote> Iste liber cuius subiectum est ius canonicum ewangelica tradicione a sanctis patribus confirmatum, prima sui diuisione diuiditur in partem prohemiale et executiuam, pars executiua est ibi, In summis festis. Prima pars diuiditur in tres partes. Primo reddit auditores benevolos ostendens unum esse <unclear>fundamentum</unclear> sui libri. Secundo reddit auditores dociles et attentos </incipit>
+                        <incipit><locus>(fol. 169vb)</locus> <quote>In summis festis ad</quote> Hic est pars executiua. In qua a<ex>ucto</ex>r determinat secundum <unclear>ordinem</unclear> de hiis que promisit in prologo, et diuiditur principaliter in quinque capitula principalia. In primo a<ex>ucto</ex>r determinat de hiis que pertinent ad officium misse et de quibusdam aliis sacramentis scilicet de corpore domenico uel eukaristia, de baptismo, et de uncione</incipit>
+                        <incipit><locus>(fol. 170vb)</locus> <quote>In defunctorum</quote> Hic autor docet modus seruandi collectos in missa defunctorum </incipit>
+          <note>The final lemmata are:</note>               <incipit><locus>(fol. 260rb)</locus> <quote>O species lepre</quote> Hic exclamat contra peccatum sodomiticum et vtitur multis exclamacionibus in quibus detestatur hoc genus peccatorum </incipit>
+                       <incipit><locus>(fol. 260vb)</locus> <quote>Te infelix pudet</quote> Hic autor reprehendit illos qui pudent confiteri peccata sua, sepeliendo ea in corde suo</incipit>
+                        <explicit>Est finis huius <sic>operibus</sic> in quibus si quid dixi quod videatur contrarium veritati in hoc <unclear>petitorem</unclear> subicio correccioni uestra si quid aliter <unclear>sapitis</unclear> hoc vobis dominus reuelauit etc.</explicit>
+                        <colophon>Et sic est finis huius libri Anno domini M CCCCo xx primo In vigilia annucciacionis beate marie virginis. In lypczig.</colophon>
+                        <note>Rest of fol. 261rb blank; fol. 261v blank. </note>
+                        <!-- http://digital.ub.uni-duesseldorf.de/ink/content/pageview/3536469 for this lemma -->
+                        
+                        <!-- cf Seitensetten cod 193? 
+                        https://www.yumpu.com/la/document/read/6428433/inventar-der-mittelalterlichen-handschriften-seitenstetten-1-von-1-
+                        -->
+                        
+                        <!-- ends 262rb? 531 -->
+                     </msItem>
+                     </msContents>
+               <physDesc>   <objectDesc form="codex">
+                     <supportDesc material="chart">
+                        <support>paper</support>
+                     </supportDesc> <layoutDesc>
+                        <layout>2 cols., c. 38-40 lines, column space <dimensions type="column" unit="mm">
+                           <height>220</height>
+                           <width max="70" min="60">60-70</width>
+                        </dimensions></layout>
+                     </layoutDesc>
+                  </objectDesc>
+                  <handDesc>
+                     <handNote script="cursiva">Cursive.</handNote>
+                  </handDesc>
+                  <decoDesc>
+                     <decoNote type="flourInit">10-line flourished initial in red and black at the beginning of art. 1; 6-line red initial with silhouette decoration, fol. 168vb</decoNote>
+                  </decoDesc></physDesc></msPart>
+               <msPart xml:id="MS_Hamilton_38-partD">
+                  <msIdentifier>
+                     <altIdentifier type="partial">
+                        <idno type="part">MS. Hamilton 38 - part D (fols. 262-274)</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  
+                  <msContents>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem n="1">
+                        <locus>(fols. 262ra-265ra)</locus>
+                        <incipit>Distinctus est librum decretorum in tres partes. Prima vocatur distincciones eo quod distincta sit in particulas centum et vna, que particule vocatur distincciones</incipit>
+                        <incipit>In primis xx<hi rend="superscript">ti</hi> distinccionibus tractat gracianus de iure ponendo iuris diffiniciones diuisiones et subdiuisiones</incipit>
+                        <explicit>Item anno domini MCCCmo xvj Clementine sunt promulgate etc.</explicit>
+                     </msItem>
+                     <msItem n="2">
+                        <locus>(fols. 265ra-270rb)</locus>
+                        <msItem>
+                           <locus>(fols. 265ra-269ra)</locus>
+                           <author key="person_24629057"><supplied>Johannes Andreae</supplied></author>
+                           <title key="work_2452"><supplied>Lectura arboris consanguinitas</supplied></title>
+                        <incipit>Circa lecturam arboris consangwinitatis et affinitatis diuersi olym diuersi modum ponentibus uel tenentibus</incipit>
+                        <explicit>et precipue studentes continue perseuerentes per graciam eius qui est benedictus in secula seculorum amen</explicit>
+                           <note>Pr. GW 1692 etc. The 'arbor' on fols. 267v-270r.</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 269ra-270rb)</locus>
+                           <title><supplied>Distincio de successionibus</supplied></title>
+                           <rubric>Addicio</rubric>
+                           <incipit>Decimo ut promissi pro plena instruccione quantum ad nigra puncta arboris et per me apposita in supplementum quantum leuius potero subnecto</incipit>
+                           <explicit>debeneficio femine. Hec de huiusmodi opuscule huius partis.</explicit>
+                           <note>Also in Berlin, SB, Theol. lat. fol. 141 (Rose 534), fol 389v. Cf. Dessau, Stadtbibliothek, Georg Hs. 265. quart, attributed to <persName role="aut" key="person_305415247">Johannes Cald<supplied>erinus</supplied></persName>, but ending differently.</note>
+                        </msItem>
+                     </msItem>
+                     <msItem n="3">
+                        <locus>(fols. 270v-273v)</locus>
+                        <title>Repetitio de usuris</title>
+                        <rubric>Repeticio casus nauiganti de vsurie</rubric>
+                        <incipit>Nauiganti . Casus summarius. Usurarius est qui a debitore aliquid recipit ultra sortem et si suscepit in se periculum. <gap reason="editorial"/> <note type="editorial">[X 5.19.19]</note> <quote>Nauiganti</quote> Exempli gratia ut hic ponitur. Et quia frequencius in talibus casibus illud solet contigere</incipit> 
+                        <incipit><quote>Nundinas</quote> id est ad locum ubi sunt nundine uel mercimonia et conuentus publicus ad merces emendas</incipit>
+                        <explicit>sed quia prima facie <unclear>quicquid similatur</unclear> usure propter hoc tamen non est usura etc finis</explicit>
+                        <!-- not Johannes Calderinus -->
+                     </msItem>
+                     <msItem n="4"><locus>(fol. 274r)</locus>
+                     <title type="desc">Verses on the ten plagues, ten commandments, ten trespasses; added, later hand</title>
+                        <msItem><bibl type="repertory">Walther 14595</bibl></msItem><msItem><bibl  type="repertory">Walther 19669</bibl></msItem><msItem><incipit>Ydola fecit homo dominum iuravit inique</incipit></msItem>
+                     </msItem>
+                     <msItem n="6"><locus>(fol. 274r, slip pasted on)</locus>
+                        <note>Acknowledgement by Nicholaus Wilberg of the sale to the 'archipresbyter' of <placeName key="place_7012774">Wetzlar</placeName> (Wesflariensi) of a <title>Liber decretalium</title> and a <title>Speculum humanae salvationis</title> in 1471</note></msItem>
+                     <msItem n="7"><locus>(fol. 274v, fragment pasted on)</locus>
+                        <note>Fragment of a document mentioning 'Swalbach' (<placeName key="place_7093254">Schwalbach</placeName> (Schöffengrund?)) perhaps relating to gifts to the parish church ('... dat ad fabricam et plebano ...'). Mistakenly described as a German-language document in the Summary Catalogue. </note>
+                     </msItem>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="chart">
+                           <support>paper</support>
+                        </supportDesc> 
+                        
+                     </objectDesc>
+                     <handDesc>
+                        <handNote script="cursiva">Cursive.</handNote>
+                     </handDesc>
+                     <decoDesc><decoNote type="colInit"> 6-line red initial at the beginning of art. 2; elsewhere smaller red initials.</decoNote>
+                        <decoNote type="diagram">Arbor consanguinitas, fols. 267v-268r.</decoNote>
+                     </decoDesc>
+                  </physDesc>
+                 <!-- <history>
+                     <origin>
+                        <origDate calendar="Gregorian" when="1421" cert="high">1421 (c.)</origDate>
+                        <origPlace><country key="place_7000084">Germany</country>, <settlement key="place_7012329">Leipzig</settlement> (at least in part)</origPlace>
+                     </origin>
+                     
+                  </history>-->
+               </msPart>
+               <msPart xml:id="MS_Hamilton_38-endleaf">
+                  <msIdentifier>
+                     <altIdentifier type="partial">
+                        <idno type="part">MS. Hamilton 38 - endleaf (fol. ii)</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  <msContents>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem xml:id="MS_Hamilton_38-endleaf-item1">
+                        <note>Document concerning a benefaction to the church of <placeName key="place_7012742">Uelzen</placeName> ('Vltzen'); issued by 'Turibius episcopus Tuden<ex>sis</ex>' [Tui-Vigo, Spain; occ. 1403, P. M. Baumgarten, <title>Von der Apostolischen kanzlei</title> (1908), 37] in the second year of his pontificate.</note>
+                        <!-- other refs BHO -->
+                     </msItem>
+                     
+                     
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="perg">
+                           <support>parchment</support>
+                        </supportDesc>
+                        
+                     </objectDesc>
+                  </physDesc>
+                  <history>
+                     <origin>
+                        <origDate calendar="Gregorian" notBefore="1390" notAfter="1410">14th century, late or 15th century, early</origDate>
+                     </origin>
+                  </history>
+               </msPart>
             </msDesc>
          </sourceDesc>
       </fileDesc>
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
+      <revisionDesc>   
+         <change when="2020-08-07">New draft description for Polonsky German.</change>
+         <change when="2017-07-01">First online publication.</change>
 
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
