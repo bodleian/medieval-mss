@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_5973">
    <teiHeader>
+      <!-- not done: hands; watermarks; could do decoration in more detail -->
       <fileDesc>
          <titleStmt>
             <title>MS. Hamilton 13</title>
             <title type="collection">MSS. Hamilton</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2019">Encoding</resp>
+               <resp when="2019">Cataloguer</resp>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -49,39 +51,86 @@
                      <idno type="SCN">24443</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <head>Thomas Aquinas, <title>Summa
+                  theologiae, Secunda Secundae</title>; Germany (?Erfurt), 1445</head>
+               <msContents resp="#MLH #DD">
+                  <textLang mainLang="la">Latin</textLang>
                   <msItem xml:id="MS_Hamilton_13-item1" n="1">
-                     <author key="person_264344179">
-                        
-                        Thomas Aquinas
-                     
-                     </author>
+                     <locus>(fols. 1ra-360v)</locus>
+                     <author key="person_264344179">Thomas Aquinas</author>
                      <title key="work_4780">Summa
-                           theologiae</title>
-                     <note>'Secunda Secundae'</note>
-                     <textLang mainLang="la">Latin</textLang>
+                           theologiae, Secunda Secundae</title>
+                     <rubric>Utrum obiectum fidei sit veritas prima</rubric>
+                     <incipit>Post communem consideracionem de virtutibus et viciis </incipit>
+                     <explicit>et sempiternam requiem animarum. Ad quam nos perducat ipse qui promisit Iesus Christus dominus noster qui est super omnia deus benedictus in secula Amen</explicit>
+                     <colophon><locus>(fol. 360v)</locus> Finita est hec pars 2a2e. beati thome. :1445: in vigilia Benedicte Trinitas. Hoc anno Ego .N. huius uoluminis scriptor. fui receptus et indutus habitu carthusiensi in domo Carthusie prope Erffodiam in die sancti Jeronimi</colophon>
+                  </msItem>
+                  <msItem>
+                     <locus>(fols. 360vb-366vb)</locus>
+                     <!-- d&s: fols. 360vb-361rb, 362va-366vb) -->
+                     <note>Table of questions</note>
+                     <rubric>Questio prima de fide quo ad eius obiectum</rubric>
+                     <incipit>Utrum obiectum fidei sit veritas prima</incipit>
+                     <note>Incorporating (on the opening fol. 361v-362r) a diagrammatic representation ('arbor') of Superstitio, Religio, and Irreligio</note>
+                     <!-- d&s: arbor qq. 81-100 de religione -->
                   </msItem>
                </msContents>
-               <physDesc>
+               <physDesc resp="#DD">
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
+                        <!-- dondaine and schooner say the watermarks are briquet 14779 (Bulls head with seven-leafed flower above), 11785, 11786 (Dreiberg) -->
+                        <extent>1 + 368 + 1 fols. (i, 1-369)
+                           <dimensions unit="mm" type="leaf">
+                              <height>312</height>
+                              <width>215</width>
+                           </dimensions></extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2" writtenLines="50">2 cols., c. 50 lines, column space <dimensions unit="mm" type="column">
+                           <height>240-5</height>
+                           <width>65-70</width>
+                        </dimensions></layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <!-- dondaine schooner say one hand except for fols. 222-3 -->
+                  <handDesc>
+                     <handNote script="cursiva">Cursiva</handNote>
+                  </handDesc>
+                  <decoDesc>
+                     <decoNote type="flourInit">Coloured initials, sometimes with penwork decoration.</decoNote>
+                  </decoDesc>
+                  <bindingDesc>
+                     <binding notAfter="1500" notBefore="1445">
+                        <p>Blind-stamped pigskin over boards, with contemporary contents label; bosses and clasps last. Stamps associated with the 'Conradus' workshop at Erfurt (Einbanddatenbank <ref target="https://www.hist-einband.de/werkstattdetails.html?entityID=w002418">w002418</ref>): bird/eagle (<ref target="https://www.hist-einband.de/werkzeugdetails.html?entityID=s016515">s016515</ref>), rosette (<ref target="https://www.hist-einband.de/werkzeugdetails.html?entityID=s016519">s016519</ref>), flower (<ref target="https://www.hist-einband.de/werkzeugdetails.html?entityID=s016518">s016518</ref>), circular ornament (<ref target="https://www.hist-einband.de/werkzeugdetails.html?entityID=s016517">s016517</ref>).</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
-               <history>
+               <history resp="#DD">
                   <origin>
-                     <origDate calendar="Gregorian" when="1445">1445</origDate>
+                     <origDate calendar="Gregorian" when="1445" cert="high">1445</origDate>
                      <origPlace>
-                        <country key="place_7000084">German</country>, <settlement key="place_7024031">Erfurt</settlement>
+                        <country key="place_7000084">German</country>, <settlement key="place_7024031">Erfurt</settlement> (?)
                         <!--ORIGINAL: German, Erfurt-->
                      </origPlace>
                   </origin>
+                  <provenance>Pressmark <q>T</q> or <q>II</q> followed by <q>6</q> or <q>G</q> (?) on the binding.</provenance>
+                  <!-- if T cf 
+                  https://babel.hathitrust.org/cgi/pt?id=mdp.39015011813154&view=1up&seq=613
+                   ???
+                  -->
+                  <provenance>Perhaps identifiable as L90 in the catalogue of the <orgName role="fmo" key="org_415145858126223022295">Erfurt Carthusians</orgName> (ed. P. Lehmann, p. 465: 'Item secunda pars 2. partis in papiro').</provenance>
+                 <!-- check: doesn't fit L89
+                 https://babel.hathitrust.org/cgi/pt?id=mdp.39015011813154&view=1up&seq=481
+                 --> <provenance><orgName role="fmo" key="org_415145858126223022295">Erfurt, Charterhouse</orgName>: <q>Cartusiae Erfordensis</q>, fol. 1r, 17th century</provenance>
+                  <provenance notAfter="1831" notBefore="1760"><persName role="fmo" key="person_24953683">Friedrich Gottlieb Julius von Bülow, 1760-?1831</persName>, 56a in the catalogue of part 3 of his sale, 10 Oct. 1836 (cf. fol. i verso)</provenance>
+                  <provenance notBefore="1841" notAfter="1856"><persName role="fmo" key="person_54195353">Sir William Hamilton, 1788-1856</persName></provenance>
+                  <acquisition when="1857">Presented to the Bodleian Library by his sons and received in 1857.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
+                        <source>Description adapted by Matthew Holford (Sept. 2020), with additional description of cotnent, binding, provenance, and endleaves, from <bibl>Andrew G. Watson, <title>Catalogue of Dated and Datable Manuscripts c. 435-1600 in Oxford Libraries</title> (1984), no. 496 </bibl>. Previously described in the Summary Catalogue. 
                             
                             <listBibl>
                               <bibl type="SC" facs="aam0052.gif">Summary Catalogue, Vol. 5, p.  17</bibl>
@@ -89,11 +138,76 @@
                         </source>
                      </recordHist>
                   </adminInfo>
+                  <listBibl>
+                     <head>Printed descriptions:</head>
+                     <bibl>H. V. Shooner, <title>Codices manuscripti operum Thomae de Aquino III: Bibliothecae Namur - Paris</title> (1985), no. 2051</bibl>
+                     <!-- https://babel.hathitrust.org/cgi/pt?id=uva.x000988966&view=1up&seq=114 -->
+                  </listBibl>
                </additional>
+               <msPart resp="#MLH">
+                  <msIdentifier>
+                     <altIdentifier>
+                        <idno>MS. Hamilton 13, endleaves (fols. i, 369)</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  
+                  <msContents>
+                     <textLang mainLang="la">Latin</textLang>
+                    <msItem>
+                       <note>Dante, <title>Monarchia</title>, fragments (3.1.3 - 3.3.11), with the commentary attributed to Cola di Rienzo.</note>
+                     <msItem>
+                        <author key="person_97105654">Dante</author>
+                        <title key="work_6239">Monarchia</title>
+                        <incipit defective="true">mendacem de palestra <note>(3.1.3, fol. 369v)</note></incipit>
+                        <explicit defective="true">non dubitat et <note>(3.3.11, fol. i verso)</note></explicit>
+                        <note>Reading order 369v, 369r, i recto, i verso.</note>
+                      </msItem>   
+                       <msItem>
+                          <author key="person_98150386">Cola di Rienzo</author>
+                          <title key="work_6240">Commentum in Dantis Monarchiam</title>
+                          <incipit defective="true">Capitulum primum libri tertii <note>(fol. 369v, on 3.2)</note></incipit>
+                       </msItem>
+                       <note>Monarchia, with the commentary, ed. P. Chiesa et al. (2013); Monarchia, ed. Prue Shaw (2019); commentary, ed. P. D'Alessandro (2015); (not using these fragments).</note>
+                    </msItem>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="perg">
+                           <support>parchment</support>
+                           <extent>two consecutive folios
+                              <dimensions unit="mm" type="leaf">
+                                 <height atLeast="315">at least 315</height>
+                                 <width atLeast="220">at least 220</width>
+                              </dimensions>
+                           </extent>
+                        </supportDesc>
+                        <layoutDesc>
+                           <layout columns="2" writtenLines="25">2 cols., 25 lines; ruled space <dimensions unit="mm" type="ruled">
+                              <height>200</height>
+                              <width>145</width>
+                           </dimensions></layout>
+                        </layoutDesc>
+                     </objectDesc>
+                     <handDesc>
+                        <handNote script="textualisNorthern">Main text in central European textualis, with corrections in one or more Italian hands.</handNote><handNote script="cursiva">Commentary added in a formal <placeName key="place_1000080">Italian</placeName> cursive hand.</handNote>
+                     </handDesc>
+                     <decoDesc>
+                        <decoNote type="decInit">Painted foliate initials in rose, green and orange with gold, </decoNote>
+                     </decoDesc>
+                  </physDesc>
+                  <history>
+                     <origin>
+                        <origDate calendar="Gregorian" notBefore="1350" notAfter="1400">14th century, second half</origDate>
+                        <origPlace><country key="place_7006470">Bohemia</country> (?)</origPlace>
+                     </origin>
+                  </history>
+               </msPart>
             </msDesc>
          </sourceDesc>
       </fileDesc>
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
+      <revisionDesc>        
+         <change when="2020-09-11">Description revised for Polonksy German.</change>
+         <change when="2017-07-01">First online publication.</change>
 
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
