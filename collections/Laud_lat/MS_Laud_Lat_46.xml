@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_7620">
    <teiHeader>
-      <!-- todo:
-      measurements
-      layout
-      watermarks to confirm date
-      -->
       <fileDesc>
          <titleStmt>
             <title>MS. Laud Lat. 46</title>
             <title type="collection">MSS. Laud Lat. (Latin)</title>
             <respStmt xml:id="Q">
-               <resp when="1858">Cataloguer</resp>
-               <persName>H. O. Coxe</persName>
+               <resp when="2020">Cataloguer</resp>
+               <resp>Encoding</resp>
+               <persName>Tuija Ainonen</persName>
             </respStmt>
-            <respStmt xml:id="Q2">
-               <resp when="1969">Cataloguer</resp>
-               <persName>R. W. Hunt</persName>
+            <respStmt xml:id="MLH">
+               <resp when="2020">Cataloguer</resp>
+               <resp>Encoding</resp>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -54,10 +51,10 @@
                      <idno type="SCN">1012</idno>
                   </altIdentifier>
                </msIdentifier>
-               <head>Rámon Lull, Margarete Porete, pseudo-Augustine, (pseudo-) Jerome, (pseudo-) Seneca; A-C Italy, 15th century, middle</head>
+               <head>Rámon Lull, Margarete Porete, pseudo-Augustine, (pseudo-) Jerome, (pseudo-) Seneca; A-C northern Italy, 15th century, second quarter and middle</head>
              
                <physDesc>
-                  <p>Three parts, together early. A is a separate production unit but apparently shares paper stock with B and may always have travelled with it; both were certainly together when items 1* and 19* were added. B and C were together soon after, as indicated by the early foliation, apparently by the same (fifteenth-century) hand which added the partial table of contents on fol. i(a) recto.</p>
+                  <p>Three parts, together early, part A created as a supplement to part B by one of the scribes of part C. Early foliation, apparently by the same (fifteenth-century) hand which added the partial table of contents on fol. i(a) recto, probably the main scribe of A and C.</p>
                   <p>
                      <secFol><locus>(fol. iii)</locus> utrum beata uirgo</secFol>
                      <secFol><locus>(fol. 2)</locus> inconueniens. Ait</secFol>
@@ -65,15 +62,12 @@
                   </p>
                   <objectDesc form="codex">
                      <supportDesc>
-                        <extent>i + 10 + 110 leaves
-                           <!--<dimensions unit="mm" type="leaf">
-                              <height></height>
-                              <width></width>
-                           </dimensions>-->
-                           <dimensions unit="mm" type="written">
-                              <height>197</height>
-                              <width>142</width>
+                        <extent>i + 11 + 94 + 15 + i leaves 
+                           <dimensions unit="mm" type="leaf">
+                              <height>295</height>
+                              <width>215</width>
                            </dimensions>
+                          
                         </extent>
                         <foliation>Modern foliation in pencil: i-x (i is doubled), 1-110 (67-70 are omitted, fol. 73 four-foliated, fol. 93 doubled)</foliation>
                         <foliation>Earlier foliation in ink visible on some pages, some trimmed off.</foliation>
@@ -81,7 +75,7 @@
                   </objectDesc>
                   <bindingDesc>
                      <binding calendar="Gregorian" notAfter="1639" notBefore="1637">
-                        <p>Brown tanned calf over laminated pulpboard for Abp. Laud, 1637–1639.</p>
+                        <p>Brown tanned calf over laminated pulpboard for Abp. Laud, 1637–1639; rebacked.</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
@@ -93,7 +87,7 @@
                </history>
                <additional><adminInfo>
                      <recordHist>
-                        <source>Draft description by Tuija Ainonen and Matthew Holford (July 2020). Previously described in the Quarto Catalogue.
+                        <source>Description by Tuija Ainonen and Matthew Holford (July 2020, rev. Sept. 2020). Previously described in the Quarto Catalogue.
                            <listBibl>
                               <bibl>H. O. Coxe, <title>Laudian Manuscripts</title>, Quarto Catalogues II, repr. with corrections, 1969, from the original ed. of 1858-1885 [contents, acquisition]</bibl>
                                 </listBibl>
@@ -129,7 +123,7 @@
                   <textLang mainLang="la">Latin</textLang>
                   <msItem xml:id="MS_Laud_Lat_46-item1" n="1*">
                      <locus>(fol. i(b) recto)</locus>
-                     <author key="person_396150323647509970388">Lentulus, Publius, pseudo</author>
+                     <author key="person_396150323647509970388">Ps.-Lentulus</author>
                      <title key="work_7406">De forma et statura nostri redemptoris</title>
                      <incipit>Quidam Lentulus romanus dum esset officialis in prouincia Iudee pro Romanis tempore</incipit>
                      <incipit>Apparuit temporibus istis et adhuc est homo</incipit>
@@ -159,14 +153,19 @@
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="chart">
-                        <support>paper</support>
-                        <!-- it may not be right to treat this as a separate part, as the watermark seems to be the same as for part B  - cf image 165, 
-                        cf https://www.wasserzeichen-online.de/wzis/struktur.php?klassi=005001001001001&anzeigeIDMotif=5398&alle=1&bildbrowser= 
-                        -->
+                        <support>Paper. Watermark: Dreiburg, on a chainline, <dimensions unit="mm" type="watermark">
+                           <height>23</height>
+                           <width>25</width>
+                        </dimensions>, with 55mm. between chainlines; cf. Piccard XVI.i nos. 77-87 (Udine, etc., 1448-1463)</support>
+                        <collation>10+1 (one leaf, fol. i(b), added at the beginning)</collation>
                      </supportDesc>
+                     <layoutDesc><layout columns="2" writtenLines="39 44">2 cols., c. 39-44 lines. Written space  <dimensions unit="mm" type="written">
+                        <height max="215" min="205">205-215</height>
+                        <width min="140" max="145">140-145</width>
+                     </dimensions></layout></layoutDesc>
                   </objectDesc>
                   <handDesc hands="1">
-                     <handNote script="hybrida">Hybrida by one scribe with later additions by two other scribes on fol. i(b)r.</handNote>
+                     <handNote script="hybrida">Hybrida by one scribe (the same as part C, fols. 95-102) with later additions on fol. i(b)r.</handNote>
                   </handDesc>
                   <decoDesc>
                      <decoNote type="colInit">Plain coloured initials in alternating red and blue, 2 lines; alternating red and blue paraphs.</decoNote><decoNote type="rubrication"> Rubrics.</decoNote>
@@ -174,8 +173,8 @@
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1460" notBefore="1440">15th century, middle</origDate>
-                     <origPlace><country key="place_1000080">Italy</country></origPlace>
+                     <origDate calendar="Gregorian" notAfter="1460" notBefore="1440">15th century, middle</origDate> (as part C)
+                     <origPlace><country key="place_1000080">Italy</country>, <region>North</region></origPlace>
                   </origin>
                </history>
             </msPart>
@@ -585,18 +584,28 @@
                      <incipit>Porro si nimius meror irruens eos </incipit>
                      <explicit>casibus frangi vel deici poteris. Deo gratias.</explicit>
                      <finalRubric>Hic est finis cuiusdam volumnis trium librorum Iohannis <unclear>os auri</unclear> scripti ad Stagirium  monachum arrepetium</finalRubric>
-                     <note>Added later in the same hand as item 1. The final paragraphs of the text as pr. 1487 (ISTC ij00293000).</note>
+                     <note>Added later in the same hand as item 1*. The final paragraphs of the text as pr. 1487 (ISTC ij00293000).</note>
                      <!-- http://hardenberg.jalb.de/display_page.php?elementId=1768 -->
                   </msItem>
                   </msContents>
                   <physDesc>
                      <objectDesc form="codex">
                         <supportDesc material="mixed">
-                           <support>parchment and paper</support><!-- mixed how? -->
+                           <support>Parchment and paper mixed (the outer and middle bifolia of each quire (Italian?) parchment). Watermark: Dreiburg, on a chainline, <dimensions unit="mm" type="watermark">
+                              <height>23</height>
+                              <width>20</width>
+                           </dimensions>, with 48mm. between chainlines; type Piccard XVI.I.66-106, cf. esp. 73-6 (Ferrara, Urbino, Pessara, 1433-1436)</support><!-- mixed how? -->
+                           <collation>1-5(12) (fols. 1-60); 6(12-6)(the last six leaves of the quire cut out with loss of text) (fols. 61-'66-70'); [quires cut out]; 7(probably 12-2) (the first two leaves cut out; fol. 71 misbound and should follow fol. 76) (fols. 71-3, 73 'bis'-73 'quater', 75-77); 8(12) (fols. 78-89); 9(12-6) (the last six leaves cancelled) (fols. 90-93, 93bis, 94).Catchwords; leaf signatures (numbers only).</collation>
                         </supportDesc>
+                        <layoutDesc>
+                           <layout columns="2" writtenLines="46 47" topLine="above">2 cols., 46 lines (fols. 70v-: 47 lines). Ruled horizontally in plummet (mostly erased but see e.g. fols. 52v-53r), vertically mostly in ink. Written above top line. Ruled space <dimensions unit="mm" type="ruled">
+                              <height>195</height>
+                              <width>143</width>
+                           </dimensions></layout>
+                        </layoutDesc>
                      </objectDesc>
                      <handDesc hands="1">
-                        <handNote script="hybrida">Hybrida with some humanistic forms; one scribe (?)</handNote>
+                        <handNote script="hybrida">Hybrida with some humanistic forms; one scribe.</handNote>
                         <!-- check: if this hand is the hands that adds 1* and 19*?  -->
                      </handDesc>
                      <decoDesc>
@@ -605,8 +614,8 @@
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1460" notBefore="1440">15th century, middle</origDate>
-                        <origPlace><country key="place_1000080">Italy</country></origPlace>
+                        <origDate calendar="Gregorian" notAfter="1450" notBefore="1425">15th century, second quarter</origDate> (watermarks)
+                        <origPlace><country key="place_1000080">Italy</country>, <region>North</region></origPlace>
                      </origin>
                   </history>
                </msPart>
@@ -684,12 +693,21 @@
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
-                     <supportDesc material="mixed">
-                        <support>parchment and paper</support><!-- mixed how? -->
+                     <supportDesc material="chart">
+                        <support>Paper (one parchment leaf, fol. 105). Watermark: as part A.</support>
+                        <collation>1(10+1) (one leaf of parchment, fol. 105, added at the end) (fols. 95-104); followed by four leaves of blank paper (fols. 106-109), none watermarked.</collation>
                      </supportDesc>
+                     <layoutDesc><layout columns="2" writtenLines="44 47">Fols. 95ra-102ra: 2 cols., c. 44-7 lines. Written above top line. Ruled space <dimensions unit="mm" type="ruled">
+                        <height>200</height>
+                        <width quantity="140" precision="medium">c. 140</width>
+                     </dimensions></layout>
+                        <layout columns="2" writtenLines="38 39">Fols. 102rb-105ra: 2 cols., c. 38-9 lines. Written below top line. Ruled space <dimensions unit="mm" type="ruled">
+                           <height max="195" min="190">190-5</height>
+                           <width min="140" max="150">140-50</width>
+                        </dimensions></layout></layoutDesc>
                   </objectDesc>
-                  <handDesc hands="1">
-                     <handNote script="hybrida">Hybrida, one hand (?), with some humanistic forms.</handNote>
+                  <handDesc hands="2">
+                     <handNote script="hybrida">Hybrida with some humanistic forms, probably two hands, (a) fols. 95ra-102ra, the hand of part A (b) fols. 102rb-105rb. </handNote>
                   </handDesc>
                   <decoDesc>
                      <decoNote type="colInit">Plain coloured initials in red and blue, varying from 6 to 2 lines.</decoNote>
@@ -699,15 +717,17 @@
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1460" notBefore="1440">15th century, middle</origDate>
-                     <origPlace><country key="place_1000080">Italy</country></origPlace>
+                     <origDate calendar="Gregorian" notAfter="1460" notBefore="1440">15th century, middle</origDate> (watermarks)
+                     <origPlace><country key="place_1000080">Italy</country>, <region>North</region></origPlace>
                   </origin>
                </history>
             </msPart>
             </msDesc>
          </sourceDesc>
       </fileDesc>       
+      
       <revisionDesc>          
+         <change when="2020-09-03">Description finalized for Polonsky German.</change>
          <change when="2020-07">New draft description for Polonsky German.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
