@@ -2,10 +2,11 @@
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_5982">
    <!-- todo: 
-      layout
-      colophon fol. 5 is not legible under UV
-      hands
       
+      colophon fol. 5 is not legible under UV
+      art 5: check Fauser and identify if poss?
+      check sermons in Schneyer
+      collation would be useful to distinguish different units
      -->
    <teiHeader>
       <fileDesc>
@@ -49,21 +50,95 @@
                      <idno type="SCN">24451</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
-                  <textLang mainLang="la">Latin</textLang>
-                  <msItem>
-                     <note>Fol. iii, a pastedown in a former binding, is blank except for (a) later shelfmarks on the verso (b) two fragments of a fourteenth-century theological text on paper glued to the recto </note>
-                     <note>Fol. 1r, table of contents to the whole volume (itemized as 13 items). Fol. iv, note (in the hand of fols. 3r-5r) of 'feriales sermones et communes de omnibus hominibus' in the volume.</note>
-                     <note>Fol. 2r-v blank (reject leaf of art. 1b</note>
-                  </msItem>
-                  <msItem xml:id="MS_Hamilton_21-item1a" n="1a">
-                     <locus>(fols. 3r-4r)</locus>
-                     <note>Alphabetical index of subjects to the whole volume ('Aduocati'to 'Xps dicitur agnus', with a couple of additions out of sequence), indexed by part (a-d) and folio.</note></msItem>
-                  <msItem xml:id="MS_Hamilton_21-item1b" n="1b"><locus>(fols. 4r-5r)</locus><note>Alphabetical index to art. 4 ('Registrum super Abicia<supplied>m</supplied>us secundum ordinem alphabeti'), 'Abicere' to 'Ypocrita', followed a table to contents to the whole volume (21 items)</note>
-                        <colophon>Explicit per manus fratris <supplied reason="erasure"><gap unit="char" quantity="9"/></supplied></colophon>
-                     <!-- the tables of contents are not in the same hand as the rest of the manuscript (if that is in one hand...) -->
-                        <note>Rest of fol. 5r blank; fol. 5v blank; fol. 6r ruled, blank; fol. 6v blank.</note>
-                  </msItem>
+               <physDesc>
+                  <p>Composite: two sections (fols. 7-270, 271-349) together by the late fourteenth century when indexes and tables of contents were added (fols. 1-6) </p>
+                  <objectDesc><supportDesc>
+                     <extent>ii + 1 (former pastedown) + 349 + ii (i-iii, 1-351)
+                        <dimensions unit="mm" type="leaf">
+                           <height max="285" min="280">280-285</height>
+                           <width min="195" max="205">195-205</width>
+                        </dimensions></extent>
+                     <foliation>Contemporary foliation on the top left corner of versos, in a combination of letters and arabic (1) fols. 10-40, 69-136 = a1-31, 32-99; (2) fols. 137-235 = b1-99; (3) fols. 236-333 = c1-99; (4) fols. 334-348 = d1-15; fol. 349 apparently not numbered.</foliation><!-- TODO: check that this fits, or what is missing! -->
+                  </supportDesc></objectDesc>
+                  <bindingDesc>
+                     <binding notAfter="1900" notBefore="1800">
+                        <p>19th-century binding.</p>
+                     </binding>
+                  </bindingDesc>
+               </physDesc>
+               <history><provenance><orgName role="fmo" key="org_245815193">Neuzelle, Cistercian abbey</orgName>: fol. 7r, <q type="exLibris">Liber noue celle sancte marie virginis ordinis Cyst.</q></provenance>
+               <!--   <provenance>Not identifiable in the 1836 catalogue of Friedrich Gottlieb Julius von Bülow, 1760-?1831.</provenance>-->
+               <provenance notBefore="1841" notAfter="1856"><persName role="fmo" key="person_54195353">Sir William Hamilton, 1788-1856</persName></provenance>
+               <acquisition when="1857">Presented to the Bodleian Library by his sons and received in 1857.</acquisition></history>
+               <additional>
+                  <adminInfo>
+                     <recordHist>
+                        <source>Draft description by Matthew Holford (September 2020). Previously described in the Summary Catalogue and supplementary sources. 
+                           
+                           <listBibl>
+                              <bibl type="SC" facs="aam0055.gif">Summary Catalogue, Vol. 5, p.  20</bibl>
+                              <bibl type="SC" facs="aam0056.gif">Summary Catalogue, Vol. 5, p.  21</bibl>
+                           </listBibl>
+                        </source>
+                     </recordHist>
+                  </adminInfo>
+                  
+                  <surrogates><bibl type="digital-facsimile" subtype="partial"><ref target="https://digital.bodleian.ox.ac.uk/inquire/p/246029a1-ef1d-49e2-8bdc-d8e70ee6aaa4"><title>Digital Bodleian</title></ref> <note>(1 image from 35mm slides)</note></bibl></surrogates></additional>
+               <msPart xml:id="MS_Hamilton_21-partA">
+                  <msIdentifier>
+                     <altIdentifier type="partial">
+                        <idno type="part">MS. Hamilton 21 - part A (fols. 1r-6v)</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  <msContents>
+                     <textLang mainLang="la">Latin</textLang>
+                     
+                        <msItem xml:id="MS_Hamilton_21-partA-item1">
+                           <note>Fol. iii, a pastedown in a former binding, is blank except for (a) later shelfmarks on the verso (b) two fragments of a fourteenth-century theological text on paper glued to the recto </note>
+                           <note>Fol. 1r, table of contents (c. 1400?) to the whole volume (itemized as 13 items). Fol. 1v, note (in the hand of fols. 3r-5r) of 'feriales sermones et communes de omnibus hominibus' in the volume.</note>
+                           <note>Fol. 2r-v blank (reject leaf of art. 1b</note>
+                        </msItem>
+                        <msItem xml:id="MS_Hamilton_21-item1a" n="1a">
+                           <locus>(fols. 3r-4r)</locus>
+                           <note>Alphabetical index of subjects to the whole volume ('Aduocati'to 'Xps dicitur agnus', with a couple of additions out of sequence), indexed by folio (letter with arabic number).</note></msItem>
+                        <msItem xml:id="MS_Hamilton_21-item1b" n="1b"><locus>(fols. 4r-5r)</locus><note>Alphabetical index to art. 4 ('Registrum super Abicia<supplied>m</supplied>us secundum ordinem alphabeti'), 'Abicere' to 'Ypocrita', followed a table to contents to the whole volume (21 items)</note>
+                           <colophon>Explicit per manus fratris <supplied reason="erasure"><gap unit="char" quantity="9"/></supplied></colophon>
+                           <!-- the tables of contents are not in the same hand as the rest of the manuscript (if that is in one hand...) -->
+                           <note>Rest of fol. 5r blank; fol. 5v blank; fol. 6r ruled, blank; fol. 6v blank.</note>
+                        </msItem>
+                     
+                     
+                     
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="chart">
+                           <support>Paper except for fol. 3, parchment. Watermark bird (type Briquet 12073-8)</support>
+                        </supportDesc>
+                        <layoutDesc>
+                           <layout columns="3" writtenLines="32 38">3 cols. of c. 32-38 lines.</layout>
+                        </layoutDesc>
+                     </objectDesc>
+                     <handDesc><handNote script="cursivaAntiquior">Fols. 1v, 3r-5r, cursiva antiquior by a scribe whose name was erased (fol. 5r), who also foliated the volume and annotated it througout prior to indexing.</handNote></handDesc>
+                     <decoDesc>
+                        <decoNote type="none">No decoration.</decoNote>
+                     </decoDesc>
+                  </physDesc>
+                  <history>
+                     <origin>
+                        <origDate calendar="Gregorian" notAfter="1400" notBefore="1350">14th century, second half</origDate>
+                        <origPlace><country key="place_7000084">Germany</country></origPlace>
+                     </origin>
+                  </history>
+               </msPart>
+               <msPart xml:id="MS_Hamilton_21-partB">
+                  <msIdentifier>
+                     <altIdentifier type="partial">
+                        <idno type="part">MS. Hamilton 21 - part B (fols. 7-270)</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  <msContents>
+                     <textLang mainLang="la">Latin</textLang>
                   <msItem xml:id="MS_Hamilton_21-item2" n="2">
                      <locus>(fol. 7ra-41ra)</locus>
                      <author key="person_95296771">
@@ -100,6 +175,7 @@
                   </msItem>
                   <msItem xml:id="MS_Hamilton_21-item5" n="5">
                      <locus>(fols. 69va-82ra)</locus>
+                     <!-- TODO: title -->
                      <rubric>De articulis fidei catholice per Apostolos descriptis</rubric>
                      <incipit><quote>Fides est substancia rerum <gap reason="editorial"/></quote> Et tanguntur hic duo scilicet fides, qua creditur in deum, et efficacia crediti in nobis</incipit>
                      <rubric><locus>(fol. 70ra)</locus> Petrus</rubric>
@@ -371,6 +447,7 @@
                   
                   <msItem xml:id="MS_Hamilton_21-item8" n="8">
                      <locus>(fols. 115va-121rb)</locus><!-- 246 -->
+                     <!-- TODO: title -->
                      <rubric>Incipit Concordancie Noui Veteris testamenti et primo de annunciacione beate virginis <gap reason="editorial"/></rubric>
                      <incipit>De annunciacione beatissime et gloriosissime virginis et matris dei marie. Primo intonit dauid dicens, descendit sicut pluuia in vellus </incipit>
                      <explicit> percipite regnum quod uobis paratum est ab origine mundi. Quo nos introducat filius dei viui <supplied reason="omitted">qui</supplied> cum eodem deo patre et spiritu  sancto viuit et regnat <gap reason="editorial"/></explicit><!-- TODO?: verse after -->
@@ -639,102 +716,107 @@
                      <incipit><quote>Videbunt filium hominis <gap reason="editorial"/></quote> Verbum istud sumptum de ewangeli sancti luce quod hodierna die legitur</incipit> 
                      <note>Schneyer IV.505-549 (nos. 554-557). Rest of fol. 270vb blank.</note>
                   </msItem>
-                  
-                  
-                  
-                  <msItem xml:id="MS_Hamilton_21-item18" n="18">
-                     <locus>(fols. 271ra-349vb)</locus><!-- 577 -->
-                     <author key="person_104113324"><supplied>Ps.-Albertus Magnus</supplied></author>
-                     <title key="work_6156">Commentary on Apocalypse</title>
-                     <incipit><quote>Confiteor tibi pater domine celi <gap reason="editorial"/></quote>  Quamvis ista verba secundum sensum litteralem sunt verba christi loquentis ad suum patrem</incipit>
-                     <explicit defective="true">quandoque <quote>per mensem</quote> Ysa. ult. erit mensis ex</explicit>
-                     <note>Ends imperfect in Apoc. 22.2 (<bibl>ed. A. Borgnet, <title>Alberti Magni Opera Omnia</title> 38.784a</bibl>) due to loss of leaves. The following leaf is now MS. Hamilton 6, fol. 2.</note>
-                     <note>Attributed to 'Giselbertus' in the table of contents on fol. 1r.</note>
-                  </msItem>
-               </msContents>
-               <physDesc>
-                  <objectDesc form="codex">
-                     <supportDesc material="chart">
-                        <support>Paper (several stocks, folded both in quarto and folio) except for fol. 3, parchment. Watemarks frequently indistinct: identifiable are (1) two circles with cross (close to WZIS <ref target="https://www.wasserzeichen-online.de/?ref=DE8100-CodMed21_999a">DE8100-CodMed21_999a</ref>, 1343-6); (2) two circles <!-- no close matches found but other examples are s. xiv med/2 -->; (3) pear with two leaves (type Briquet 7345-7379, dated 1331-1392); (4) bird (type Briquet 12073-8)</support>
-                        <extent>ii + 1 (former pastedown) + 349 + ii (i-iii, 1-351)
-                           <dimensions unit="mm" type="leaf">
-                              <height max="285" min="280">280-285</height>
-                              <width min="195" max="205">195-205</width>
-                           </dimensions></extent>
-                        <foliation>Contemporary foliation on the top left corner of versos, in a combination of letters and arabic (1) fols. 10-40, 69-136 = a1-31, 32-99; (2) fols. 137-235 = b1-99; (3) fols. 236-333 = c1-99; (4) fols. 334-348 = d1-15; fol. 349 apparently not numbered.</foliation><!-- TODO: check that this fits, or what is missing! -->
-                     </supportDesc>
-                     <!-- note quire xii, image 532 (fol. 250) -->
-                     <!-- first item 2 cols., 55 lines. final item c 46 lines. -->
-                     <layoutDesc>
-                        <layout>fols. 7-204ra, <dimensions unit="mm" type="ruled">
+                     
+                     
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="chart">
+                           <support>Paper (several stocks) folded in folio. Watemarks frequently indistinct: identifiable are (1) two circles with cross (close to WZIS <ref target="https://www.wasserzeichen-online.de/?ref=DE8100-CodMed21_999a">DE8100-CodMed21_999a</ref>, 1343-6); (2) two circles <!-- no close matches found but other examples are s. xiv med/2 -->; (3) pear with two leaves (type Briquet 7345-7379, dated 1331-1392) </support>
+                        </supportDesc>
+                        <layoutDesc>
+                           <layout>Ruled variously in leadpoint and ink; prickings usually survive.</layout>
+                           <layout columns="2" writtenLines="55">Fols. 7-204ra: 2 cols., c. 55 lines. Ruled space <dimensions unit="mm" type="ruled">
                            <height>245-50</height>
                            <width>160-5</width>
                         </dimensions></layout>
-                        <layout>Fols. 206r-250v, <dimensions unit="mm" type="ruled">
-                           <height max="255" min="250">250-5</height>
-                           <width min="165" max="170">165-170</width>
-                        </dimensions></layout>
-                        <layout>Art 16, <dimensions unit="mm" type="ruled">
-                           <height>220</height>
-                           <width>145</width>
-                        </dimensions></layout>
-                        <layout>Art. 17, <dimensions unit="mm" type="ruled">
-                           <height>240</height>
-                           <width>165</width>
-                        </dimensions></layout>
-                        <layout>Ruled space varies: 
-                           art. 18, <dimensions unit="mm" type="ruled">
-                           <height>230-40</height>
-                           <width>150-5</width>
-                        </dimensions></layout>
-                        <layout>Fols. 7-251 ruled (prickings usually survive); fols. 252-end frame ruled.</layout>
-                     </layoutDesc>
-                  </objectDesc>
-                  <handDesc hands="1">
-                     <!-- check, coudl be 1-48, 48v-204ra, ?one hand thereafter -->
-                     <handNote script="textualisNorthern" execution="currens">Fols. 7r-349v perhaps in a single rather variable hand varying between textualis currents and a formal cursiva antiquior.</handNote>
-                     <handNote script="cursivaAntiquior">Fols. 3r-5r added in cursiva antiquior by a scribe whose name was erased (fol. 5r), who also foliated the volume and annotated it througout prior to indexing.</handNote>
-                  </handDesc>
-                  <decoDesc>
-                     <decoNote type="colInit">Coloured red initials, mostly of three lines, sometimes with simple decoration.</decoNote>
-                     <decoNote type="diagram">Diagrams, fols. 30r (<term type="iconography" ref="http://www.iconclass.org/rkd/71E31113/">arrangement of the Tribes, Numbers 2</term>), 42v (<term type="iconograpy" ref="http://www.iconclass.org/rkd/71B32/">Noah's Ark</term>).</decoNote>
-                  </decoDesc>
-                  <bindingDesc>
-                     <binding notAfter="1900" notBefore="1800">
-                        <p>19th-century binding.</p>
-                     </binding>
-                  </bindingDesc>
-               </physDesc>
-               <history>
-                  <origin>
-                     <origDate calendar="Gregorian" notAfter="1340" notBefore="1400">14th century, middle or second half</origDate>
-                     <origPlace>
-                        <country key="place_7000084">Germany</country>
-                     </origPlace>
-                  </origin>
-                  <provenance><orgName role="fmo" key="org_245815193">Neuzelle, Cistercian abbey</orgName>: fol. 7r, <q type="exLibris">Liber noue celle sancte marie virginis ordinis Cyst.</q></provenance>
-               <!--   <provenance>Not identifiable in the 1836 catalogue of Friedrich Gottlieb Julius von Bülow, 1760-?1831.</provenance>-->
-                  <provenance notBefore="1841" notAfter="1856"><persName role="fmo" key="person_54195353">Sir William Hamilton, 1788-1856</persName></provenance>
-                  <acquisition when="1857">Presented to the Bodleian Library by his sons and received in 1857.</acquisition>
-               </history>
-               <additional>
-                  <adminInfo>
-                     <recordHist>
-                        <source>Draft description by Matthew Holford (September 2020). Previously described in the Summary Catalogue and supplementary sources. 
-                            
-                            <listBibl>
-                              <bibl type="SC" facs="aam0055.gif">Summary Catalogue, Vol. 5, p.  20</bibl>
-                              <bibl type="SC" facs="aam0056.gif">Summary Catalogue, Vol. 5, p.  21</bibl>
-                           </listBibl>
-                        </source>
-                     </recordHist>
-                  </adminInfo>
-                  
-               <surrogates><bibl type="digital-facsimile" subtype="partial"><ref target="https://digital.bodleian.ox.ac.uk/inquire/p/246029a1-ef1d-49e2-8bdc-d8e70ee6aaa4"><title>Digital Bodleian</title></ref> <note>(1 image from 35mm slides)</note></bibl></surrogates></additional>
+                           <layout columns="2" writtenLines="54">Fols. 206r-250v: 2 cols., c. 54 lines, ruled space <dimensions unit="mm" type="ruled">
+                              <height max="255" min="250">250-5</height>
+                              <width min="165" max="170">165-170</width>
+                           </dimensions></layout>
+                           <layout columns="2" writtenLines="40">Art 16; 2 cols. c. 40 lines, ruled space <dimensions unit="mm" type="ruled">
+                              <height>220</height>
+                              <width>145</width>
+                           </dimensions></layout>
+                           <layout columns="2" writtenLines="48">Art. 17: 2 cols., c. 48 lines, ruled space <dimensions unit="mm" type="ruled">
+                              <height>240</height>
+                              <width>165</width>
+                           </dimensions></layout></layoutDesc>
+                     </objectDesc>
+                     <handDesc><handNote script="textualisNorthern" execution="currens">Probably three hands varying between textualis currens and a formal cursiva antiquior: fols. 1-48r, 48v-204ra, 204rb-270vb.</handNote></handDesc><!-- check! 48v-204ra more than one hand? -->
+                     <decoDesc>
+                        <decoNote type="colInit">Coloured red initials, mostly of three lines, sometimes with simple decoration.</decoNote>
+                        <decoNote type="diagram">Diagrams, fols. 30r (<term type="iconography" ref="http://www.iconclass.org/rkd/71E31113/">arrangement of the Tribes, Numbers 2</term>), 42v (<term type="iconograpy" ref="http://www.iconclass.org/rkd/71B32/">Noah's Ark</term>).</decoNote>
+                     </decoDesc>
+                  </physDesc>
+                  <history>
+                     <origin>
+                        <origDate calendar="Gregorian" notAfter="1340" notBefore="1400">14th century, middle or second half</origDate>
+                        <origPlace>
+                           <country key="place_7000084">Germany</country>
+                        </origPlace>
+                     </origin>
+                     
+                  </history>
+               </msPart>
+               <msPart xml:id="MS_Hamilton_21-partC">
+                  <msIdentifier>
+                     <altIdentifier type="partial">
+                        <idno type="part">MS. Hamilton 21 - part C (fols. 270-349)</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  <msContents>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem xml:id="MS_Hamilton_21-item18" n="18">
+                        <locus>(fols. 271ra-349vb)</locus><!-- 577 -->
+                        <author key="person_104113324"><supplied>Ps.-Albertus Magnus</supplied></author>
+                        <title key="work_6156">Commentary on Apocalypse</title>
+                        <incipit><quote>Confiteor tibi pater domine celi <gap reason="editorial"/></quote>  Quamvis ista verba secundum sensum litteralem sunt verba christi loquentis ad suum patrem</incipit>
+                        <explicit defective="true">quandoque <quote>per mensem</quote> Ysa. ult. erit mensis ex</explicit>
+                        <note>Ends imperfect in Apoc. 22.2 (<bibl>ed. A. Borgnet, <title>Alberti Magni Opera Omnia</title> 38.784a</bibl>) due to loss of leaves. The following leaf is now MS. Hamilton 6, fol. 2.</note>
+                        <note>Attributed to 'Giselbertus' in the table of contents on fol. 1r.</note>
+                     </msItem>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="chart">
+                           <support>Paper, folded in quarto; watermark(s) indistinct.</support>
+                        </supportDesc>
+                        <layoutDesc>
+                           <layout columns="2" writtenLines="42 49">2 cols., c. 42-49 lines. Frame ruled. Ruled space <dimensions unit="mm" type="ruled">
+                              <height max="240" min="230">230-40</height>
+                              <width min="150" max="155">150-5</width>
+                           </dimensions></layout>
+                        </layoutDesc>
+                     </objectDesc>
+                     <handDesc hands="1">
+                        <handNote script="textualisNorthern" execution="currens">Textualis currens by one hand.</handNote>
+                     </handDesc> <decoDesc>
+                        <decoNote type="colInit">Coloured red initials of two to three lines, sometimes with simple decoration.</decoNote></decoDesc>
+                  </physDesc>
+                  <history>
+                     <origin>
+                        <origDate calendar="Gregorian" notAfter="1340" notBefore="1400">14th century, middle or second half</origDate>
+                        <origPlace>
+                           <country key="place_7000084">Germany</country>
+                        </origPlace>
+                     </origin>
+                     
+                  </history>
+               </msPart>
+             
+                        
+                     <!-- first item 2 cols., 55 lines. final item c 46 lines. -->
+                     <!-- catchwords and signatures, fols. 31v (1), 51v (2) , .. xii, image 532 (fol. 250v) -->
+                    
+                
+             
+              
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2020-09-17">Revised description of structure.</change>
          <change when="2020-09-15">Revisions based on examination of watermarks.</change>
          <change when="2020-09-08">New draft description for Polonsky German.</change>
          <change when="2017-07-01">First online publication.</change>
