@@ -17,7 +17,9 @@
     
     <!-- Queries to send to ISNI API can be generated with this XPath:
          /TEI/text/body/*/(person|org)[not(note/list/item/ref[contains(@target, 'isni.org')])]/note/list/item/ref[contains(@target, 'viaf.org')]/@target/concat('pica.cn+%3D+%22VIAF%2B', substring-after(., '/viaf/'), '%22')
-    -->
+         The output of that can then be passed to a Bash command like:
+         xargs -I {} bash -c 'curl -k -o "/tmp/isni/output/{}.xml" "https://isni-m.oclc.nl/sru/username=____/password=____/DB=1.3/?query={}"; sleep 2;'
+         Finally transform either persons.xml or places.xml using this stylesheet, and it will retrieve the ISNI API responses to add to the authority file. -->
     
     <xsl:variable name="newline" as="xs:string" select="'&#10;'"/>
     <xsl:variable name="today" as="xs:string" select="format-date(current-date(), '[Y0001]-[M01]-[D01]')"/>
@@ -46,6 +48,9 @@
                                 </xsl:when>
                                 <xsl:when test="$isniiddatafield/marc:subfield[@code='a']/text()[1] = 'provisional'">
                                     <xsl:comment>Provisional ISNI ID as of <xsl:value-of select="$today"/>: <xsl:value-of select="$isniiddatafield/marc:subfield[@code='0']/text()[1]"/></xsl:comment>
+                                </xsl:when>
+                                <xsl:when test="$isniiddatafield/marc:subfield[@code='a']/text()[1] = 'suspect'">
+                                    <xsl:comment>Suspect ISNI ID as of <xsl:value-of select="$today"/>: <xsl:value-of select="$isniiddatafield/marc:subfield[@code='0']/text()[1]"/></xsl:comment>
                                 </xsl:when>
                                 <xsl:otherwise>
                                     <xsl:comment>Unexpected ISNI API response for <xsl:value-of select="$viafid"/></xsl:comment>
@@ -92,7 +97,7 @@
         <xsl:variable name="viafids" as="xs:string*" select="for $url in $viafurls return tokenize($url, '/')[string-length(.) gt 0][position() eq last()]"/>
         <xsl:copy>
             <xsl:copy-of select="@*"/>
-            <xsl:apply-templates/>
+            <xsl:apply-templates select="(*|comment()|text()|processing-instruction())[not(self::comment()[matches(., '^(Provisional ISNI ID|No match found in ISNI|Suspect ISNI ID|Unexpected ISNI API|Multiple matches found in ISNI)')])]"/>
             <xsl:for-each select="$viafids">
                 <xsl:if test="exists($viaf2isni(.))">
                     <xsl:copy-of select="$viaf2isni(.)"/>
