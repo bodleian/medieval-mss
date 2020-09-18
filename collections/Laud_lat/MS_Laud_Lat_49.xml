@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_7623">
    <teiHeader>
+      <!-- todo:
+      fol. 1 erasure (not recoverable)
+      glossing
+      shorter texts and additions
+      finish work on the Cicero commentary
+      
+      attributes on dimensions
+  -->
       <fileDesc>
          <titleStmt>
             <title>MS. Laud Lat. 49</title>
             <title type="collection">MSS. Laud Lat. (Latin)</title>
             <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
-            </respStmt>
-         </titleStmt>
-         <editionStmt>
-            <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
+               <resp when="2020">Cataloguer</resp>
+               <resp>Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
-         </editionStmt>
+         </titleStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
             <address>
@@ -49,13 +51,29 @@
                      <idno type="SCN">1143</idno>
                   </altIdentifier>
                </msIdentifier>
+               <head>A Porphyry, Aristotle, Cicero, with commentaries of Boethius, Germany (Mainz?), 11th century; B John of Hildesheim, Speculum fons vitae, Germany, 14th century</head>
                <physDesc>
-                  <p>Composite: fols. 1-166 || fols. 167-176</p>
+                  <p>Composite: two manuscripts (fols. 1-166 || fols. 167-176) probably together at Eberbach Abbey by at least 1502.</p>
+                  <objectDesc>
+                     <supportDesc>
+                        <extent>i + 176 + i (i, 1-177)</extent>
+                     </supportDesc>
+                  </objectDesc>
+                  <bindingDesc>
+                     <binding notAfter="1638" notBefore="1637">
+                        <p>Laudian binding, re-backed.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
+               <history>
+                  <provenance when="1502"><orgName role="fmo" key="org_133214228">Eberbach, Cistercian abbey</orgName> (?): the whole volume  probably identifiable as R 23 in the catalogue of 1502 ('Textus porphirii cum commento Item <sic>quidem</sic> tractatus marci T Item libellus qui dicitur fons vite Initium <hi rend="italic">Cum sit ne-</hi>'; N. Palmer, <title>Zisterzienser und ihre Bücher</title> (1998), 251, without reference to this manuscript).</provenance>
+                  <provenance resp="#Q2" when="1637"><persName role="fmo" key="person_54940373">William Laud, 1573-1645</persName>, 1637.</provenance>
+                  <acquisition when="1639" resp="#Q2">Part of his third donation to the Bodleian, 1639.</acquisition>
+               </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Quarto Catalogue (H. O. Coxe,  <title>Laudian Manuscripts</title>, Quarto Catalogues II, repr. with corrections, 1969, from the original ed. of 1858-1885) and supplementary sources. 
+                        <source>Draft description by Matthew Holford (Sept. 2020). Previously described in the Quarto Catalogue (H. O. Coxe,  <title>Laudian Manuscripts</title>, Quarto Catalogues II, repr. with corrections, 1969, from the original ed. of 1858-1885). 
                             <listBibl>
                                <bibl type="QUARTO" facs="aby0060.gif">
                                   Quarto Catalogue, col. 24
@@ -70,117 +88,291 @@
                         </source>
                      </recordHist>
                   </adminInfo>
+                  <listBibl>
+                     <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, I (1966), no. 30 (part A), pl. IV</bibl>
+                  </listBibl>
                </additional>
                <msPart xml:id="MS_Laud_Lat_49-part1">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Laud Lat. 49 - Part 1</idno>
+                        <idno type="part">MS. Laud Lat. 49 - Part A (fols. 1-166)</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
+                     <textLang mainLang="la">Latin</textLang>
                      <msItem xml:id="MS_Laud_Lat_49-part1-item1" n="1">
+                        <locus>(fols. 1ra-3ra)</locus>
                         <author key="person_64016141">
-                           
                            Porphyry
-                        
                         </author>
-                        <author key="person_7524651">
-                           Aristotle
-                        </author>
-                        <title key="work_3765">Logica uetus</title>
-                        <note>with commentaries of <persName role="aut" key="person_100218964">
-                              Boethius
-                           </persName>
-                        </note>
-                        <textLang mainLang="la">Latin</textLang>
+                        <title key="work_3764">Isagoge</title><note>(tr. <persName role="trl" key="person_100218964">Boethius</persName>)</note>
+                        <incipit>Cum sit necessarium crisarori</incipit>
+                        <explicit>eorum communitatisque traditionem
+                        </explicit>
+                       
                      </msItem>
-                     
+                   
                      <msItem xml:id="MS_Laud_Lat_49-part1-item2" n="2">
-                        <author key="person_96533523">
-                           
-                           Alcuin
-                        
-                        </author>
+                        <locus>(fols. 3ra-9vb, 10ra-14ra)</locus><!-- check -->
+                        <author key="person_100218964">Boethius</author>
+                        <title key="work_6426"> In Isagogen Porphyrii Commentorum editio prima</title>
+                        <rubric>Anicii Man<ex>lii</ex> S<ex>everini</ex> Boetii <gap reason="editorial"/> in Porphyrii Ysag<ex>ogen</ex> a Mario Victorino translatas editionis prime liber primus incipit </rubric>
+                        <incipit>Hiemantis anni tempore</incipit>
+                        <explicit>consideratione tractabitur</explicit>
+                        <note>Bk. i ends fol. 9vb, followed by art. 3 below; bk. ii begins fol. 10ra.</note>
+                     </msItem>
+                   
+                     <msItem xml:id="MS_Laud_Lat_49-part1-item3" n="3">
+                        <locus>(fols. 9vb-c, 9v lower margin; 10r-v lower margin; 27vb-28vc)</locus>
+                        <author key="person_96533523">Alcuin</author>
                         <title key="work_377">De dialectica</title>
-                        <textLang mainLang="la">Latin</textLang>
+                        <rubric>Ysag. Albini</rubric>
+                        <rubric><locus>(fol. 27vb, lower margin)</locus> <add>Dyalogus regis karoli et albini magistri eius de predicamentis</add></rubric>
+                        <incipit>Quia mentionem philosophię</incipit>
+                        <explicit>qui possessionem nostram</explicit>
+                        <note>Ch. 3 begins fol. 27vb. Breaks off unfinished in c. 8 (PL 101.962C). Rest of fol. 28vc blank except for rubric for art. 5 at bottom.</note>
                      </msItem>
                      
-                     <msItem xml:id="MS_Laud_Lat_49-part1-item3" n="3">
-                        <author key="person_78769600">
-                           
-                           Cicero
-                        
-                        </author>
-                        <title key="work_1274">Topica</title>
-                        <note>with commentary of <persName role="aut" key="person_100218964">
-                              Boethius
-                           </persName>
-                        </note>
-                        <textLang mainLang="la">Latin</textLang>
-                     </msItem>
                      <msItem xml:id="MS_Laud_Lat_49-part1-item4" n="4">
-                        <author key="person_78769600">
-                           
-                           Cicero
-                        
-                        </author>
-                        <title key="work_1244">De inuentione</title>
-                        <note>glossed, with commentary of <persName role="aut" key="person_89512766">
-                              Victorinus
-                           </persName>
-                        </note>
-                        <textLang mainLang="la">Latin</textLang>
+                        <locus>(fols. 14ra-27vb)</locus>
+                        <author key="person_100218964">Boethius</author>
+                        <title key="work_6426"> In Isagogen Porphyrii Commentorum editio secunda</title>
+                        <rubric>Anicii Manlii Severini Boetii <gap reason="editorial"/> in Porphyrii Ysagogas a se translatas editionis secunde liber I incipit </rubric>
+                        <incipit>Secundus his arreptę expositionis labor</incipit>
+                        <explicit>ad predicamenta seruanti</explicit></msItem>
+                   
+                     <msItem><note>Fols. 27vb-28vc, see art. 3 above.</note></msItem>
+                   
+                     <msItem xml:id="MS_Laud_Lat_49-part1-item5" n="5">
+                        <locus>(fols. 29ra-32va)</locus>
+                        <author key="person_7524651">Aristotle</author>
+                        <title key="work_6427">Categoriae</title><note>(tr. <persName role="trl" key="person_100218964">Boethius</persName>)</note>
+                        <rubric><locus>(fol. 28vc)</locus> Incipivnt cathegoriae Aristotelis</rubric>
+                        <incipit>AEQUIUOCA DICVNTVR <add>quorum nomen solum commune est secundum nomen vero substan</add>tię ratio diuersa</incipit>
+                        <explicit>omnes annumerati</explicit>
+                        <note>Fol. 32vb-c blank.</note>
+                        </msItem>
+                   
+                     <msItem xml:id="MS_Laud_Lat_49-part1-item6" n="6">
+                        <locus>(fols. 33ra-56va)</locus>
+                        <author key="person_100218964">Boethius</author>
+                        <title key="work_6428">In Categorias Aristotelis</title>
+                        <rubric>Anicii Manlii Severini Boetii <gap reason="editorial"/> editionis primę in Aristotelis Cathegorias a se translatas incipit liber primvs</rubric>
+                        <incipit>Expeditis hiis quę ad predicamenta</incipit>
+                        <explicit>aliquas partes speciesque contineat</explicit></msItem>
+                  
+                     <msItem xml:id="MS_Laud_Lat_49-part1-item7" n="7">
+                        <locus>(fols. 56va-58vc)</locus>  <author key="person_7524651">Aristotle</author>
+                        <title key="work_650">De interpretatione</title><note>(tr. <persName role="trl" key="person_100218964">Boethius</persName>)</note>
+                        <rubric><add>Textus libri periermen.</add></rubric>
+                      
+                        <incipit>Primum oportet constituere</incipit>
+                        <explicit>non contingit inesse contraria</explicit></msItem>
+                  
+                     <msItem xml:id="MS_Laud_Lat_49-part1-item8" n="8">
+                        <locus>(fol. 58vc-76rc)</locus>
+                        <author key="person_100218964">Boethius</author>
+                        <title key="work_6429">In librum Aristotelis Perihermenias commentarii editio prima</title>
+                        <rubric>Anicii M. S. Boetii <gap reason="editorial"/> In πηριηρμηνιας editionis .i. liber .i. incipit</rubric>
+                        <incipit>Magna quidem libri huius apud peripatheticam sectam probatur auctorias</incipit>
+                        <explicit>editionis series explicabit</explicit>
+                        <finalRubric><add place="margin">Explicit</add></finalRubric>
                      </msItem>
+                     
+                     <msItem xml:id="MS_Laud_Lat_49-part1-item9" n="9">
+                        <locus>(fols. 76rc-va)</locus>
+                        <title><supplied>Accessus: on the name and title of Boethius and the definition of philosophy</supplied></title>
+                        <incipit>Anicius ut quidam putant ab anno dictus, eo quod optabant parentes eius eum annosum fieri</incipit>
+                        <incipit><locus>(fol. 76va)</locus> Philosophia est amor sapientię et inquisitio uel cognitio diuinarium humanarumque rerum. Aliter, philosophia est honestas uitę, studium bene uiuendi</incipit>
+                        <explicit>Aethica socrates primus ad componendos mores instituit <gap reason="editorial"/> Logicam que rationalis uocatur plato sub iunxit diuidens in dialecticam et rethoricam</explicit>
+                        <note>Follows without a break from the preceding item. Rest of fol. 76va blank.</note>
+                        </msItem>
+                     
+                     <msItem xml:id="MS_Laud_Lat_49-part1-item10" n="10">
+                        <locus>(fols. 76vb-96vc)</locus>
+                        <author key="person_100218964">Boethius</author>
+                        <title key="work_6429">In librum Aristotelis Perihermenias commentarii editio secunda</title>
+                        <rubric><add>Incipit secunda edicio boecij super librum peryermenias aristotelis</add></rubric>
+                        <incipit>Alexander in commentariis suis</incipit>
+                        <explicit defective="true"> illas quidem quas cathegoricas greci nominant</explicit>
+                        <note>Ends presumably imperfect at PL 64.487D.</note>
+                        <!-- TODO check lib iii intro -->
+                        <note>Fol. 97r blank.</note>
+                     </msItem>
+                     
+                     <msItem xml:id="MS_Laud_Lat_49-part1-item11" n="11">
+                        <locus>(fols. 97va-100vc)</locus>
+                        <author key="person_78769600">Cicero</author>
+                        <title key="work_1274">Topica</title>
+                        <rubric><add>Textus <unclear>Marci</unclear> Tullij ad trebecium iuris consultum <gap reason="editorial"/></add></rubric>
+                        <incipit>MAIORES NOS RES SRIBERE ingressos </incipit>
+                        <explicit>non debita accedere</explicit>
+                        <finalRubric><add>Explicit liber topicorum Marci tulii ad trebatium</add></finalRubric>
+                     </msItem>
+                     
+                     <msItem xml:id="MS_Laud_Lat_49-part1-item12" n="12">
+                        <locus>(fols. 101ra-128rc)</locus>
+                        <author key="person_100218964">Boethius</author>
+                        <title key="work_7323">In Ciceronis Topica commentum</title>
+                        <rubric><add>Commentum <add>subsequens est</add> antecedentis immediate libri <add>a Boetio editum</add></add></rubric>
+                        <incipit>Exhortatione mi patri cum rethoricum</incipit><!-- check 205 -->
+                        <explicit>ad culmen perfection<subst><del>e</del><add>i</add></subst> adducitur</explicit>
+                        <note>Rest of fol. 128rc blank; fol. 128v blank.</note>
+                     </msItem>
+                     
+                     <msItem xml:id="MS_Laud_Lat_49-part1-item13" n="13">
+                      
+                        <msItem><locus>(fols. 129ra-146rb)</locus>
+                        <author key="person_78769600"><supplied>Cicero</supplied></author>
+                        <title key="work_1244"><supplied>De inuentione</supplied></title>
+                       <incipit><locus>(fol. 137va)</locus> Sępe et multum hoc mecum cogitaui</incipit>
+                           <explicit><locus>(fol. 146rb)</locus> in reliquis dicemus</explicit>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 146rb-c)</locus>
+                           <title><supplied>De rhetorica</supplied></title>
+                           <rubric>Corax siracusanus Rethoricam apud romanos primus inuenit, Tisias diuulgauit</rubric>
+                           <incipit>Partes rethorices sunt .v. Inuentio, disposito, elocutio, memoria, pronunciatio. Inuentio est excogiatio rerum uerarum et uerisimilium que causam probabilem reddant</incipit>
+                           <explicit>Tertium demonstratiuum dicitur cuius finis est honestas et turpitudo, cuius auditor demonstator uel laudator dicitur</explicit>
+                           <note>Contemporary addition.</note>
+                        </msItem>
+                     
+                        <msItem>
+                          <locus>(fols. 129ra-146rc)</locus>
+                           <title type="desc" key="work_16368">Gloss on Cicero, De inuentione</title>
+                          <incipit><locus>(fol. 137va, margin)</locus> Primum in hoc libro notandum quod quicumque incipit orationem tria adhibere debet</incipit>
+                         <!-- <explicit><locus>(fol. 136vv, margin)</locus> in parentum manum bona sua transirent</explicit>--> <!-- 295 fol. 146) -->
+                           <note>Marginal and interlinear gloss and commentary, deriving in large part from Victorinus (see the following item); see Mary Dickey, ‘Some Commentaries on the De Inventione and Ad Herennium of the Eleventh and Twelfth Centuries’, <title>Mediaeval and Renaissance Studies</title>, 6 (1968), 1–41 (2, 8-9): 'the Laudian gloss', written probably in southern Germany or northern Italy, after 996 (on the date see also Colin Morris in <title>Journal of Theological Studies</title> 20/2 (1969), 671).</note>
+                       </msItem>
+                        <!-- -us ligature, 132vc -->
+                        <note>Misbound: the correct order is 137-144, 129-136, 145-146. Fol. 137r blank.</note>
+                        <note> </note>
+                     </msItem>
+                     
+                     <msItem xml:id="MS_Laud_Lat_49-part1-item14" n="14">
+                   <locus>(fol. 146va-166rc)</locus>
+                        <msItem>
+                           <locus>(fols. 146va-166rb)</locus>
+                           <author key="person_89512766"><supplied>Marius Victorinus</supplied></author>
+                        <title key="work_4908"> <supplied>Explanationes in Ciceronis Rhetoricam </supplied></title><bibl>(on bk. 1)</bibl>
+                        <incipit>OMNIS QUVICVQUE incipit cuiuscumque generis orationem hec tria in principus adhibere debet</incipit>
+                        <explicit>nobis animum prebeat misericordem</explicit>
+                        <note>Followed without a break by:</note>
+                        </msItem>
+                        
+                       <msItem><locus>(fol. 166rb-c)</locus>
+                          <title key="work_16367"><supplied>De attributis personae</supplied></title>
+                          <incipit> <supplied>C</supplied>um sint .xi. attributa personis quibus approbatur persona</incipit>
+                        <explicit>alias quod per affectionem</explicit>
+                          <note>Frequently transmitted with Victorinus; here breaks off unfinished. <bibl>K. Halm, <title>Rhetores Latini minores</title> (1863) 305-306.10</bibl></note></msItem>
+                        <!-- https://archive.org/details/rhetoreslatinim00halmgoog/page/n254/mode/1up check ending -->
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 166v)</locus>
+                        <note>Top left corner: Ovid, <title>Ex ponto</title>, iii.13-14. Bottom: grammatical note (?) (beg. 'Per genus et <unclear>differentiam</unclear> fit diffinitio uera').</note>
+                     </msItem>
+                    <msItem>
+                       <note type="annotation">Contemporary and later marginal and interlinear glosses and notes, especially in arts. 1-2, 6, 13 (for which see above).</note>
+                    </msItem>
+                 
+                        
                   </msContents>
                   <physDesc>
                      <objectDesc form="codex">
                         <supportDesc material="perg">
                            <support>parchment</support>
+                           <extent><dimensions unit="mm" type="leaf">
+                              <height>340-5</height>
+                              <width>280</width>
+                           </dimensions></extent> 
                         </supportDesc>
+                        <layoutDesc>
+                           <layout columns="3" writtenLines="50 51">3 cols., 50-51 lines. Written space c. <dimensions unit="mm" type="written">
+                              <height>250-5</height>
+                              <width>205-10</width>
+                           </dimensions></layout>
+                        </layoutDesc>
                      </objectDesc>
+                     <handDesc>
+                        <handNote script="minusculeCaroline">Caroline minuscule by several hands ('at least eight' according to Hoffmann).</handNote>
+                        <handNote script="capitalsRustic" scope="minor">Rubrics in rustic capitals.</handNote>
+                     </handDesc>
                      <decoDesc>
-                        <decoNote>Good initials. Diagrams. (P&amp;A i. 30, pl. IV)</decoNote>
+                        <decoNote type="decInit">Foliate interlace initials.</decoNote><decoNote type="unfilled">Spaces for initials, not filled in, fols. 76v, 96v, etc.</decoNote><decoNote> Diagrams (sometimes not completed, e.g. fol. 92v). </decoNote>
+                        <decoNote type="colInit">Coloured initials.</decoNote>
+                        <decoNote type="flourInit">'Puzzle' initials in red and blue with penwork flourishing in both colours added, late thirteenth or fourteenth century, fols. 119r, 129r, 147v.</decoNote>
                      </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1010" notBefore="1000">11th century, early</origDate>
+                        <origDate calendar="Gregorian" notAfter="1025" notBefore="1000">11th century (first quarter?)</origDate>
                         <origPlace>
-                           <country key="place_7000084">German</country>, <settlement key="place_7004449">Mainz</settlement>
-                           <!--ORIGINAL: German, Mainz-->
+                           <country key="place_7000084">German</country>, <settlement key="place_7004449">Mainz</settlement> (?)
                         </origPlace>
                      </origin>
+                     <provenance>The script and original decoration were attributed to Mainz by <bibl>H. Hoffmann, <title>Buchkunst und Königtum im ottonischen und frühsalischen Reich</title> (1986), I.253</bibl>, who compared the script of Basel, UB, L III 3 and N 1 2 and (p. 246) of Marburg, UB, MS. 375/32.</provenance>
                   </history>
                </msPart>
                <msPart xml:id="MS_Laud_Lat_49-part2">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Laud Lat. 49 - Part 2</idno>
+                        <idno type="part">MS. Laud Lat. 49 - Part B (fols. 167-176)</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Laud_Lat_49-part2-item1" n="1">
-                        <author key="person_265992475">
-                           
-                           John of Hildesheim
-                        
-                        </author>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem xml:id="MS_Laud_Lat_49-part2-item15" n="15">
+                        <locus>(fols. 167v-176r)</locus>
+                        <author key="person_265992475">John of Hildesheim</author>
                         <title key="work_2836">Speculum fontis uitae</title>
-                        <textLang mainLang="la">Latin</textLang>
+                        <note>Fol. 167r blank except for theological notes added in the bottom left corner: 'Omnium quomodolibet illuminatorum est unicus tantum <damage><gap/></damage>'</note>
+                        <note>Fol. 167v, capitula; added in the upper right margin is a reference to bk. 3 of the <title>Fons vite</title> of 'Auicebromphus' (Ibn Gabirol)</note>
+                        <rubric><locus>(fol. 167v)</locus> Stet speculum vita fontis precor omnibus annis quod carmelite finxit pia musa iohannis hildensheimensis necis a quo sit procul ensis. <lb/> Alma parens vite pons <sic>deduscissima</sic> vita <lb/> Fac mea me vite pia dignificare loqui te</rubric>
+                        <rubric><locus>(fol. 168r)</locus> Incipit speculum fontis vite fratris iohannis de hildenshiem ordinis beate marie de monte karmeli. Capitulum primum de viui fontis intrinseca secunda perfeccione</rubric>
+                        <incipit> Unicum est omne penitus ens transcendens intellectuale fontale non mensum viuum</incipit>
+                        <explicit>diuersimode participat qualecumque . VIWM </explicit>
+           <note>Blank spaces (intended for decoration?) on fol. 173r-v.</note>             
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 167r)</locus>
+                        <title type="desc">Prayer to Jesus</title>
+                        <incipit>Domine iesu christe qui singulari dileccione a beate martha virgine et hospit<subst><del>e</del><add>a</add></subst> tua corporaliter sepius hospitari refici et tibi ministrari elegisti</incipit>
+                        <note>Contemporary addition. Followed by two lines in red:</note>
+                        <msItem><incipit>O pharisee ideo parum diligis quia parum tibi dimitti suspicaris </incipit><!-- from Augustine --></msItem>
+                        <note>Fol. 176v blank; fol. 177r-v blank.</note>
                      </msItem>
                   </msContents>
                   <physDesc>
                      <objectDesc form="codex">
                         <supportDesc material="perg">
                            <support>parchment</support>
+                           <extent>
+                              <dimensions unit="mm" type="leaf">
+                                 <height>335</height>
+                                 <width>260</width>
+                              </dimensions>
+                           </extent>
+                           <collation>1(10)</collation>
                         </supportDesc>
+                        <layoutDesc>
+                           <layout columns="1" writtenLines="27">1 col., 27 lines; ruled in leadpoint. Area of the ruled space for the main text, <dimensions unit="mm" type="ruled">
+                              <height>190</height>
+                              <width>115-20</width>
+                           </dimensions></layout>
+                        </layoutDesc>
                      </objectDesc>
+                     <handDesc>
+                        <handNote script="textualisNorthern" execution="formata">Main text, textualis formata by one hand.</handNote>
+                     </handDesc>
+                     <decoDesc>
+                        <decoNote type="colInit">3-line red initial, fol. 168r.</decoNote>
+                     </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1400" notBefore="1300">14th century</origDate>
+                        <origDate calendar="Gregorian" notAfter="1400" notBefore="1350">14th century, second half</origDate>
                         <origPlace>
-                           <country key="place_7000084">German</country>, <settlement key="place_7004449">Mainz</settlement>
+                           <country key="place_7000084">German</country>
                            <!--ORIGINAL: German, Mainz-->
                         </origPlace>
                      </origin>
@@ -189,7 +381,9 @@
             </msDesc>
          </sourceDesc>
       </fileDesc>       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
+      <revisionDesc>      
+         <change when="2020-09-14">New draft description for Polonsky German.</change>
+         <change when="2017-07-01">First online publication.</change>
 
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
