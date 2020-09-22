@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_5970">
    <teiHeader>
+      <!-- todo:
+      measurements
+      watermarks
+         
+      check art 1 is one hand
+      
+      structure: not clear that 2 is really a separate part. Same hand as part 3? any other evidence for structure?
+      
+      -->
       <fileDesc>
          <titleStmt>
             <title>MS. Hamilton 10</title>
             <title type="collection">MSS. Hamilton</title>
             <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
-            </respStmt>
-         </titleStmt>
-         <editionStmt>
-            <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
+               <resp when="2020-09">Cataloguer</resp>
+               <resp>Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
-         </editionStmt>
+         </titleStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
             <address>
@@ -50,13 +53,31 @@
                   </altIdentifier>
                </msIdentifier>
                <physDesc>
-                  <p n="composite">Composite: five parts</p>
+                  <p n="composite">Composite: five sections, together early.</p>
+                  <objectDesc>
+                     <supportDesc>
+                        <extent>318 fols.
+                           <dimensions type="leaf" unit="in">
+                              <height>295</height>
+                              <width>205</width>
+                           </dimensions>
+                        </extent>
+                     </supportDesc></objectDesc>
                   <bindingDesc>
                      <binding contemporary="true">
                         <p>Brown leather over boards, contemporary, rebacked; bosses and clasps lost; contemporary contents label on upper cover.</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
+               <history>
+                  <provenance><q type="exLibris">Frater charo nolo librum maculare <lb/> <persName role="sgn" key="person_4381">Ambrosius schreiber de Oschatz</persName> 1543</q> (upper pastedown): probably identifiable with the parish priest of Collm (1555) and Mockritz (1567) who died in 1576: see <ref target="https://pfarrerbuch.de/sachsen/person/1402393204">Pfarrerbuch</ref>.</provenance>
+                  <provenance>Not identifiable in the 1836 catalogue of Friedrich Gottlieb Julius von Bülow, 1760-?1831, and so probably not from Erfurt.</provenance>
+                  <provenance notBefore="1841" notAfter="1856"><persName role="fmo"
+                     key="person_54195353">Sir William Hamilton,
+                     1788-1856</persName></provenance>
+                  <acquisition when="1857">Presented to the Bodleian Library by his sons and
+                     received in 1857.</acquisition>
+               </history>
                <additional>
                   <adminInfo>
                      <recordHist>
@@ -69,11 +90,14 @@
                         </source>
                      </recordHist>
                   </adminInfo>
+                  <listBibl>
+                     <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts in Oxford Libraries</title> (1984), no. 495</bibl>
+                  </listBibl>
                </additional>
                <msPart xml:id="MS_Hamilton_10-part1">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Hamilton 10 - Part 1</idno>
+                        <idno type="part">MS. Hamilton 10 - Part 1 (fols. 1-112)</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>   <textLang mainLang="la">Latin</textLang>
@@ -98,7 +122,7 @@
                            <support>paper</support>
                         </supportDesc>
                         <layoutDesc>
-                           <layout>2 cols., c. 46-49 lines.</layout>
+                           <layout columns="2" writtenLines="46 49">2 cols., c. 46-49 lines.</layout>
                         </layoutDesc>
                      </objectDesc>
                      <handDesc>
@@ -120,14 +144,16 @@
                <msPart xml:id="MS_Hamilton_10-part2">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Hamilton 10 - Part 2</idno>
+                        <idno type="part">MS. Hamilton 10 - Part 2 (fols. 113-117)</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Hamilton_10-part2-item1" n="1">
+                     <msItem xml:id="MS_Hamilton_10-part2-item1" n="2">
                         <locus>(fols. 113ra-117rb)</locus>
-                        <title key="work_12947">List of lections from Prophets, Epistles and Gospels</title>
+                        <!-- 231 -->
+                        <title key="work_14847" type="desc">Table of lections </title>
                         <rubric>De Invencione prophetiarum Epistolarum Ewangeliorum per circulum anni tam de sanctis quam de tempore nota bene</rubric>
+                        <note>Temporal from Advent to the 25th Sunday after Trinity, 'in dedicacione', sanctoral from the vigil of Andrew to Katherine, with widows and apostles added at the bottom of fol. 117r. </note>
                         <note>Fol. 117v blank.</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
@@ -137,7 +163,14 @@
                         <supportDesc material="chart">
                            <support>paper</support>
                         </supportDesc>
+                        <layoutDesc>
+                           <layout columns="2" writtenLines="44 45">2 cols., c. 44-5 lines</layout><!-- check -->
+                        </layoutDesc>
                      </objectDesc>
+                     <handDesc hands="1"><handNote script="cursiva">Cursive by one hand.</handNote></handDesc>
+                     <decoDesc>
+                        <decoNote type="colInit">1-2 line red initials with simple decoration at the beginning of each group of lections.</decoNote>
+                     </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
@@ -151,32 +184,44 @@
                <msPart xml:id="MS_Hamilton_10-part3">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Hamilton 10 - Part 3</idno>
+                        <idno type="part">MS. Hamilton 10 - Part 3 (fols. 118-236)</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
+                     <textLang mainLang="la">Latin</textLang>
                      <msItem xml:id="MS_Hamilton_10-part3-item1" n="1">
                         <!-- image 241, ends 482-->
                         <locus>(fols. 118r-236v)</locus>
-                        <title key="work_13443">New Testament</title>
-                        <!-- TODO: itemize -->
-                        <textLang mainLang="la">Latin</textLang>
+                        <title key="work_13443" type="desc">New Testament</title>
+                        <note>Stegmüller 590, 589, Matthew, (fol. 132r) Stegm. 607, Mark, (fol. 141r) Stegm. 49 (prol.), 620, Luke, (fol. 157v) Stegm. 624, John (ends fol. 170v; rest of fol. 170v blank), (fol. 171r) Stegm. 670, 677, Romans, (fol. 178r) Stegm. 685, 1 Cor., (fol. 184v) Stegm. 699, 2 Cor., (fol. 188v) Stegm. 707, Gal., (fol. 190r) Stegm. 715, Eph., (fol. 192v) Stegm. 728, Phil., (fol. 194r) Stegm. 736, Col., (fol. 195v) Stegm. 747, 1 Thess., (fol. 196v) Stegm. 752, 2 Thess., (fol. 197r) Stegm. 765, 1 Tim., (fol. 199r) Stegm. 772, 2 Tim., (fol. 200r) Stegm. 780, Tit., (fol. 200v) Stegm. 783, Philem., (fol. 201r) Stegm. 793, Hebr., (fol. 205v) Stegm. 640, Acts, (fol. 222r, rubric at end of fol. 221v) Stegm. 809, James, (fol. 223v) 1 Pet. (no prol.), (fol. 225r) 2 Pet. (no prol.), (fol. 226r) 1 John (no prol.), (fol. 227v) 2 John (no prol.), (fol. 228r) 3 John (no prol.), (fol. 228r) Jude (no prol.), (fol. 228v) Stegm. 839, Apoc.</note>
+                        <colophon><locus>(fol. 236v)</locus> Explicit liber noui testamenti finitus per me <persName role="scr" key="person_4382">Thomam Backmel</persName> <del>tunc</del> sub anno domini Mo cccco Tricesimo quarto Ipso die sancti Agapiti martiris. Pro cuius fine deus gloriosus sit benedictus In secula seculorum amen. Et sic est finis huius libri deo gracias amen.</colophon>
+                       
                         <!-- 237r, 483, more lections.  237v blank. -->
-                     </msItem>
+                   </msItem>
+                     <msItem xml:id="MS_Hamilton_10-part3-item2" n="2">
+                     <locus>(fol. 237r)</locus>
+                        <note>List of lections from Advent to feria sexta after Quinquagesima, apparently breaking off unfinished with Isaiah 58 'A clama ne cesses'. Cf. fols. 113ra-117rb above. Fol. 237v blank.</note></msItem>
                   </msContents>
                   <physDesc>
                      <objectDesc form="codex">
                         <supportDesc material="chart">
                            <support>paper</support>
                         </supportDesc>
+                        <layoutDesc>
+                           <layout columns="1" writtenLines="40 46">1 col., c. 40-46 lines.</layout>
+                        </layoutDesc>
                      </objectDesc>
+                     <handDesc hands="1">
+                        <handNote script="cursiva">Cursive by one hand, that of Thomas Backmel (colophon, fol. 236v)</handNote>
+                     </handDesc>
                      <decoDesc>
                         <decoNote type="flourInit">Four- to eleven-line red initials with elaborate silhouette/arabesque decoration and floursiing in the ink of the text.</decoNote><decoNote type="colInit">Elsewhere three-line red initials with a little arabesque decoration.</decoNote>
+                        <decoNote type="none">No decoration or rubrication on fol. 237r.</decoNote>
                      </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" when="1434">1434</origDate>
+                        <origDate calendar="Gregorian" when="1434" cert="high">1434</origDate>
                         <origPlace>
                            <country key="place_7000084">German</country>
                         </origPlace>
@@ -186,27 +231,33 @@
                <msPart xml:id="MS_Hamilton_10-part4">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Hamilton 10 - Part 4</idno>
+                        <idno type="part">MS. Hamilton 10 - Part 4 (fols. 238r-266v)</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
                      <msItem xml:id="MS_Hamilton_10-part4-item1" n="1">
-                        <locus>(fol. 238r)</locus>
-                        <title key="work_14408">Apocalypse with glossa ordinaria</title>
+                        <locus>(fols. 238r-266v)</locus>
+                        <title key="work_10230" type="desc">Apocalypse with glossa ordinaria</title>
+                        <note><bibl type="repertory">Stegmüller 11853</bibl></note>
                         <!-- https://dhb.thulb.uni-jena.de/rsc/viewer/ufb_derivate_00000066/Mon-typ-2-00011_553.tif
                         https://gloss-e.irht.cnrs.fr/php/editions_chapitre.php?livre=../sources/editions/GLOSS-liber83.xml&chapitre=83_
                         -->
                         <msItem>
-                           <locus>(fol. 238r)</locus>
-                           <note>Prologues: Stegmüller 832, 828; 'A principium est elementum grecorum alpha et o finis' (cf. Stegmüller 8881); 'Nomen auctoris eciam queritur'; Stegmüller 834; 'Sicut in secularibus libris' (cf. Stegmüller 8881 etc.); 'Asia minor est ista non magna'; 'Notandum quod visio que futura indicat'. </note>
+                           <locus>(fols. 238r-239r)</locus>
+                           <note>Prologues: Stegmüller 832 (= 11853(1)), 828 (= 11853(5)); 'A<supplied>lpha</supplied> principium est elementum grecorum alpha et o finis' (Stegmüller 11853(6)); 'Nomen auctoris eciam queritur' (Stegmüller 11853(8)); Stegmüller 834; 'Sicut in secularibus libris' (Stegmüller 11853(1)); 'Asia minor est ista non magna'; 'Notandum quod visio que futura indicat'. </note>
                         </msItem>
                         <msItem>
                            <locus>(fols. 239r-266r)</locus>
                            <!-- 541 --><msItem><incipit>Prepat auditores beniuolos attentos sicut et ibi</incipit>
                            <explicit>Amen consummacio apostoli in verba christi</explicit></msItem>
                            <finalRubric>Explicit Apocalipsis</finalRubric></msItem>
-                        <!-- followed by text on 12 stones, ends 542 267v
-                        Stegmüller, IX, no. 11854,1 -->
+                        <msItem>
+                           <locus>(fols. 266r-v)</locus>
+                           <title>De XII lapidibus</title>
+                          
+                           <incipit>Ysid. xvj ethymologicorum significat fidem. Primus. Jaspis viridis virorem </incipit>
+                           <explicit>colorum varietas virtutum <sic>multiplicatas</sic></explicit> <bibl type="repertory">Stegmüller 11854</bibl>
+                        </msItem>
                         
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
@@ -216,7 +267,17 @@
                         <supportDesc material="chart">
                            <support>paper</support>
                         </supportDesc>
+                        <layoutDesc>
+                           <layout columns="2 3">In 2 or 3 columns (one column of text, 1-2 of gloss) of varying dimensions.</layout>
+                           <layout writtenLines="20 21">c. 20-1 lines of text</layout><layout writtenLines="45">c. 45 lines of gloss.</layout>
+                        </layoutDesc>
                      </objectDesc>
+                     <handDesc hands="1">
+                        <handNote script="hybrida">Hybrida (loopless bastarda) by one hand.</handNote>
+                     </handDesc>
+                     <decoDesc>
+                        <decoNote type="colInit">5-line red initial, fol. 238r; 7-line red initial, fol. 239r.</decoNote><decoNote>Otherwise no decoration, and rubrication of the text not continued past fol. 247r.</decoNote>
+                     </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
@@ -230,7 +291,7 @@
                <msPart xml:id="MS_Hamilton_10-part5">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Hamilton 10 - Part 5</idno>
+                        <idno type="part">MS. Hamilton 10 - Part 5 (fols. 267-318)</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
@@ -241,21 +302,22 @@
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>-->
                      <msItem xml:id="MS_Hamilton_10-part5-item2" n="1">
-                        <locus>(fols. 267ra-318va)</locus>
-                        <title key="work_16369">Abyssus mundi seu moralitates ad praedicandum</title>
+                        <locus>(fols. 267ra-318va)</locus><!-- 543 -->
+                        <author key="person_24992037"><supplied>James of Lausanne</supplied></author>   
+                        <title key="work_2355"><supplied>Compendium moralitatum</supplied></title>
                         <incipit><quote>Abicit mundus pauperes et honorat divites</quote> Nota Augustinus dicit quod coruus est talis nature</incipit>
-                        <incipit>Abiciendum est peccatum quia nidum est diaboli</incipit>
+                        <incipit>Abiciendum est peccatum quia nidum est diaboli. Nota auis quandoque facit nidum</incipit>
+                        <incipit>Abire debemus post christum <gap reason="editorial"/> Nota quod dicit philosophus de auibus quod perdix nutrit pullos alteris perdicis</incipit>
                         <incipit><locus>(fol. 273ra)</locus> Baptismus dat uitam gracie. Nota narrat jacob anthioceus in historiis orientalibus qui in quibus</incipit>
                         <incipit><locus>(fol. 318ra)</locus> Sanctificari debet cor ut in christe digne accipiatur. Nota secundum iura ecclesia in qua sepelitur iudeus uel paganus </incipit>
-                        <explicit>omni mense obtenebratur</explicit>
+                        <explicit>omni mense obtenebratur. Sic illi q'</explicit>
                         <note>Breaks off apparently unfinished in the entry for 'Sequentes christum per consilium ...' (cf. Troyes, BM, 1272, fol. 45r).</note>
-                        <note>Glorieux II.229 (345aa), attributed with caution to Nicholas Lyre, James of Lausanne, Nicholas Byard, or fr. Maurice. Not to be confused with James of Lausanne, <title>Compendium moralitatum</title>, which has a very similar incipit.</note>
-                        <note>Prepared for indexing: each divided by marginal letters into smaller subsections.</note>
+                        <note>Marginal letters in alphabetical sequence mark each entry.</note>
                        <!-- 273r=555, B Baptismus 
                           274v = 558 C Cadit homo in peccatum propter defectum caritatis -->
                         <!-- 296r = 601 Habundancia 
                            310r  = 629 Nativitas 
-                           311r = 631  Obediencia
+                           311r = 631  Obediencia facit hominem securum. Nota ouis quam diu stat
                         312v = 634 Pacem
                         316r = 641 Q, R 
                         318r  = 647 S -->
@@ -271,16 +333,61 @@
                            <layout columns="2" writtenLines="39 40">2 cols., c. 39-40 lines. Frame-ruled, written above top line.</layout>
                         </layoutDesc>
                      </objectDesc>
-                     <handDesc>
-                        <handNote script="cursiva">Cursiva.</handNote>
+                     <handDesc hands="2">
+                        <handNote script="cursiva">Cursive by two hands, fols. 267ra-296rb, 297ra-318va.</handNote>
                      </handDesc>
                      <decoDesc>
-                        <decoNote type="unfilled">Spaces for initials at the beginning of each alphabetical section left unfilled.</decoNote>
+                        <decoNote type="unfilled">3-line spaces for initials at the beginning of each alphabetical section left unfilled.</decoNote>
                      </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
                         <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
+                        <origPlace>
+                           <country key="place_7000084">German</country>
+                        </origPlace>
+                     </origin>
+                  </history>
+               </msPart>
+               <msPart xml:id="MS_Hamilton_10-pastedowns">
+                  <msIdentifier>
+                     <altIdentifier type="partial">
+                        <idno type="part">MS. Hamilton 10 - pastedowns</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  <msContents>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem xml:id="MS_Hamilton_10-pastedowns-item1">
+                        <title key="work_14583">Sermones de tempore</title>
+                        <note>Three incipits are preserved:</note>
+                        <msItem><incipit><locus>(upper pastedown)</locus> <quote><supplied>E</supplied>t postquam <sic>conseruati</sic> sunt dies octo <gap reason="editorial"/></quote> Continuatur hoc ewangelium de circumsione christi precedenti dominice in hunc modum. Dixit apostolus in epistola precedentis dominice, Misit deus filium suum</incipit></msItem>
+                        <msItem><incipit><locus>(lower pastedown)</locus> <quote>Pastores loquebantur ad inuicem</quote> Hoc ewangelium secunde misse continuatur ewangelio prime misse, hoc modo. Dicit </incipit></msItem>
+                        <msItem><incipit><quote>In principio erat uerbum</quote> In hoc ewangelio tercie misse describit Johannes ewangelista eterna dei natiuitate  </incipit></msItem>
+                        <note>Unidentified.</note>
+                     </msItem>
+                     
+                     
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="perg">
+                           <support>parchment</support>
+                           <extent>Two bifolia</extent>
+                        </supportDesc>
+                        <layoutDesc>
+                           <layout columns="2">2 cols., at least 43 lines</layout>
+                        </layoutDesc>
+                     </objectDesc>
+                     <handDesc>
+                        <handNote script="textualisNorthern">Textualis</handNote>
+                     </handDesc>
+                     <decoDesc>
+                        <decoNote type="unfilled">3-line spaces for initials left unfilled.</decoNote>
+                     </decoDesc>
+                  </physDesc>
+                  <history>
+                     <origin>
+                        <origDate calendar="Gregorian" notAfter="1310" notBefore="1300">14th century, early</origDate>
                         <origPlace>
                            <country key="place_7000084">German</country>
                         </origPlace>
