@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6025">
    <!-- TODO: 
-      extent (check)
-      measure written space
+     
       transcribe frags B, C?
+      watermarks, collation
        -->
    <teiHeader>
       <fileDesc>
@@ -141,12 +141,15 @@
                         <support>paper</support>
                         <extent>161 folios
                            <dimensions type="leaf" unit="mm">
-                              <height>297</height>
+                              <height>295</height>
                               <width>210</width>
                            </dimensions></extent>
                      </supportDesc>
                      <layoutDesc>
-                        <layout columns="2" writtenLines="40 46">2 cols., c. 40-46 lines<!--, written space  col 65-75 says Watson --></layout>
+                        <layout columns="2" writtenLines="40 46">2 cols., c. 40-46 lines. Frame-ruled, ruled space c. <dimensions unit="mm" type="ruled">
+                           <height max="230" min="225">225-30</height>
+                           <width>150</width>
+                        </dimensions> <!--, written space  col 65-75 says Watson --></layout>
                      </layoutDesc>
                   </objectDesc>
                   <handDesc>
@@ -170,7 +173,7 @@
                   </origin>
                   <provenance>Colophon, fol. 161vb, referring to fols. 109-161, but fols. 1-108 are evidently contemporary.</provenance>
                   <!-- not identifiable in MBKMS -->
-                  <provenance>Erfurt, unidentified religious house: <q>Liber conuentus Erfford' Held'ug' (Heldrug'?)</q> (fol. 1r); pressmark <q type="pressmark">E 1</q> on the binding.</provenance><!-- Heldrungen? -->
+                  <provenance><placeName key="place_7024031">Erfurt</placeName>, unidentified religious house: <q>Liber conuentus Erfford' Held'ug' (Heldrug'?)</q> (fol. 1r); pressmark <q type="pressmark">E 1</q> on the binding.</provenance><!-- Heldrungen? -->
                   <provenance>Not identifiable in the sale catalogue of Friedrich Gottlieb Julius von Bülow.</provenance>
                   <provenance notBefore="1841" notAfter="1856"><persName role="fmo"
                      key="person_54195353">Sir William Hamilton,
@@ -181,14 +184,15 @@
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Draft description by Matthew Holford, July 2020. Previously described in the Summary Catalogue.
+                        <source>Description by Matthew Holford, September 2020. Previously described in the Summary Catalogue.
                             
                             <listBibl>
                               <bibl type="SC" facs="aam0050.gif">Summary Catalogue, Vol. 5, p.  15</bibl>
                            </listBibl>
                         </source>
-                     </recordHist><!-- bibl: Watson no 493 -->
+                     </recordHist>
                   </adminInfo>
+                  <listBibl><bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts in Oxford Libraries</title> (1984) no. 493</bibl></listBibl>
                </additional>
                <msPart xml:id="MS_Hamilton_8-upper-pastedown" type="fragment">
                   <msIdentifier>
@@ -211,8 +215,13 @@
                      <objectDesc form="codex">
                         <supportDesc material="perg">
                            <support>parchment</support>
-                           <extent>bifolium, cropped, bound in sideways</extent>
+                           <extent>bifolium, cropped, bound in sideways
+                              <dimensions unit="mm" type="leaf">
+                                 <height atLeast="195">at least 195</height>
+                                 <width>140</width>
+                              </dimensions></extent>
                         </supportDesc>
+                        <layoutDesc><layout>1 col., at least 42 lines. Width of the ruled space, 90 mm.</layout></layoutDesc>
                      </objectDesc>
                   </physDesc>
                   <history>
@@ -247,6 +256,7 @@
                            <support>parchment</support>
                            <extent>part of a bifolium</extent>
                         </supportDesc>
+                        <layoutDesc><layout>Width of a column, 80 mm.</layout></layoutDesc>
                      </objectDesc>
                   </physDesc>
                   <history>
@@ -288,6 +298,7 @@
                            <support>paper</support>
                            <extent>two fragments from a folio</extent>
                         </supportDesc>
+                        <layoutDesc><layout>1 col., 50 lines of gloss. Height of the written space, 185 mm.</layout></layoutDesc>
                      </objectDesc>
                   </physDesc>
                   <history>
@@ -302,6 +313,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>      
+         <change when="2020-09-23">Revised description finalized for Polonsky German project.</change>
          <change when="2020-07-02">New draft description for Polonsky German.</change>
          <change when="2017-07-01">First online publication.</change>
 
