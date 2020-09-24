@@ -5,18 +5,17 @@
          <titleStmt>
             <title>MS. Bodl. 187</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
             </respStmt>
-         </titleStmt>
-         <editionStmt>
-            <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
+            <respStmt xml:id="MLH">
+               <resp when="2020">Encoding</resp>
+               <resp when="2020">Catalogue updates and corrections</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
-         </editionStmt>
+         </titleStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
             <address>
@@ -50,33 +49,54 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  <textLang mainLang="la">Latin</textLang>
                   <msItem xml:id="MS_Bodl_187-item1" n="1">
-                     <author key="person_57004795">
-                        
-                        John Felton
-                     
-                     </author>
+                     <msItem><locus>(fol. 1)</locus>
+                     <author key="person_57004795">John Felton</author>
                      <title key="work_2693">Sermones de tempore</title>
-                     <textLang mainLang="la">Latin</textLang>
+                     <rubric>Sermones dominicales per annum per vicarium Magdalene Oxon. horum collectorem</rubric>
+                     <incipit type="preface">Penuria studencium in materia morali</incipit>
+                     <incipit><quote>Dicite filie
+                     Syon ...</quote> Sciendum est quod gracia Dei</incipit></msItem>
+                     <msItem class="#tabulae"><note>An
+                        index follows on fol. 118v.</note></msItem>
                   </msItem>
                   <msItem xml:id="MS_Bodl_187-item2" n="2" class="#sermones">
-                     <title key="work_11808">Fasciculus morum</title>
-                     <note>(handbook for preachers)</note>
-                     <textLang mainLang="la">Latin</textLang>
+                     <msItem><title key="work_11808">Fasciculus morum</title>
+                     <rubric>Tractatus de Viciis &#x0026; Virtutibus qui Fasciculus Morum
+                        nominatur</rubric>
+                     <note>Etenim habetur in regula beati Francisci'.
+                        Part of fol. 126 is torn away.</note></msItem><msItem class="#tabulae"><note> At fol. 218v is an appendix of 'Sermones in libro qui intitulatur Fasciculus morum', after which comes
+                        the index.</note></msItem>
                   </msItem>
                   <msItem xml:id="MS_Bodl_187-item3" n="3" class="#theologica">
+                     <locus>(fol. 222)</locus>
                      <title type="desc" key="work_15256">Theological compilation</title>
-                     <textLang mainLang="la">Latin</textLang>
+                     <rubric>Liber diuersorum bonorum, qui congregatus est de spiritualibus
+                        autoribus &#x0026; de tractatibus Sacre Scripture</rubric>
+                     <incipit>Sanctus Augustinus
+                        dicit</incipit></msItem>
+                  <msItem xml:id="MS_Bodl_187-item3a"><incipit> On fol. 228v is 'Nouem responsiones quas fecit dominus Ihesus
+                        Christus vni creature desideranti et querenti, Quid sibi pre omnibus
+                        placeret in hac vita'.</incipit>
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>iv + 233 leaves
+                           <dimensions type="leaf" unit="in">
+                              <height>11.125</height>
+                              <width>7.5</width>
+                           </dimensions></extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2">2 cols.</layout>
+                     </layoutDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>Coloured capitals.
+                     <decoNote type="colInit">Coloured capitals.
                      </decoNote>
                   </decoDesc>
                </physDesc>
@@ -87,11 +107,12 @@
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
+                  <acquisition>Presented by <persName role="dnr" key="person_2822">William Harwood, prebendary of Winchester</persName>, in 1611.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922).  
+                        <source>Description adapted (May 2020) from the Summary Catalogue (1922).  
                             
                             
                             <listBibl>
@@ -105,8 +126,9 @@
          </sourceDesc>
       </fileDesc>       
       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
+      <revisionDesc>         
+         <change when="2020-05-11">Revised to incorporate all information in SC.</change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>
