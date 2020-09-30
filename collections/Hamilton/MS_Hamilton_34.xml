@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_5996">
-   <!-- TODO: measurements; watermarks (part 1 at least); check Watson entry in D&D; check lit for binding; check part 1 really is one hand; check lit for Henricus Barben -->
+   <!-- TODO: 
+      collation
+   -->
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Hamilton 34</title>
             <title type="collection">MSS. Hamilton</title>
             <respStmt>
-               <resp>Cataloguer</resp>
+               <resp when="2020-09">Cataloguer</resp>
                <resp>Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
@@ -44,20 +46,24 @@
                      <idno type="SCN">24464</idno>
                   </altIdentifier>
                </msIdentifier>
-             
+               <head>Canon law; Guido de Montrocher, Manipulus curatorum. A, B Germany, 15th century, third quarter (in part 1466)</head>
                <physDesc>
-                  <p>Two manuscripts (note staining at the beginning of part B) together by the second half of the fifteenth century.</p>
+                  <p>Two manuscripts (note staining at the beginning of part B) together by at least the end of the fifteenth century.</p>
                   <p>
                      <secFol><locus>(fol. 2r)</locus> de nimia</secFol><secFol><locus>(fol. 244r)</locus> viam ad sciencias</secFol></p>
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
-                        <extent>i + 369 fols.</extent>
+                        <extent>1 + 369 fols. (i, 1-369)
+                           <dimensions unit="mm" type="leaf">
+                              <height>310</height>
+                              <width>215</width>
+                           </dimensions></extent>
                      </supportDesc>
                   </objectDesc>
                   <bindingDesc>
                      <binding notAfter="1500" notBefore="1466">
-                        <p>Brown leather over boards, fifteenth century (second half, after 1466), ruled and stamped in blind: the main stamp is 'Blattwerk | Bündelung mehrerer Stämme (offen)' (sometimes classified as 'Lilie'), unidentified. Clasps mostly lost.</p>
+                        <p>Brown leather over boards, fifteenth century (second half, after 1466) or early sixteenth century, ruled and stamped in blind: the main stamp is 'Blattwerk | Bündelung mehrerer Stämme (offen)' (sometimes classified as 'Lilie'), unidentified. Clasps mostly lost.</p>
                         <!-- ?try 
                         https://www.hist-einband.de/motivdetails.html?entityID=1900
                         -->
@@ -73,7 +79,7 @@
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Draft description by Matthew Holford, September 2020. Previously described in the Summary Catalogue. 
+                        <source>Description by Matthew Holford, September 2020. Previously described in the Summary Catalogue. 
                             
                             <listBibl>
                               <bibl type="SC" facs="aam0062.gif">Summary Catalogue, Vol. 5, p.  27</bibl>
@@ -82,6 +88,7 @@
                         </source>
                      </recordHist>
                   </adminInfo>
+                  <listBibl><bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c. 435-1600 in Oxford Libraries</title> (1984), no. 503 (part B) </bibl></listBibl>
                </additional>
                <msPart xml:id="MS_Hamilton_34-partA">
                   <msIdentifier>
@@ -106,18 +113,21 @@
                   <physDesc>
                      <objectDesc form="codex">
                         <supportDesc material="chart">
-                           <support>paper</support>
+                           <support>Paper folded in folio. At least four watermarks: (a) indistinct, bull's head with five-petalled flower above and triangle below, type Piccard xii.781-878 (b) bull's head with six-petalled flower above and triangle below, Piccard xiii.801 (1462); (c) dreiberg with latin cross, no close parallels in Piccard, cf WZIS <ref target="https://www.wasserzeichen-online.de/?ref=DE8580-HAAB_Q_108_208">DE8580-HAAB_Q_108_208</ref>; (d) bull's head with cross and seven-petalled flower, type Piccard xi.311-359 (cf. 336-7)</support>
                         </supportDesc>
-                        <layoutDesc><layout columns="2" writtenLines="43 51">2 cols., c. 43-51 lines.</layout></layoutDesc>
+                        <layoutDesc><layout columns="2" writtenLines="43 51">2 cols., c. 43-51 lines. Frame-ruled, ruled space <dimensions unit="mm" type="ruled">
+                           <height max="240" min="230">230-40</height>
+                           <width>150</width>
+                        </dimensions></layout></layoutDesc>
                      </objectDesc>
-                     <handDesc hands="1">
-                        <handNote script="cursiva">Cursive by one hand.</handNote><!-- check -->
+                     <handDesc hands="2">
+                        <handNote script="cursiva">Cursive by two hands: fols. 1ra-60vb, fols. 61ra-242vb.</handNote><!-- check -->
                      </handDesc>
-                     <decoDesc><decoNote type="flourInit">Five- to nine-line initials in alternating red and pale blue, with elaborate penwork flourishing in the other colour, at the beginning of each letter. (The flourishing not carried out, fol. 194r.)</decoNote></decoDesc>
+                     <decoDesc><decoNote type="flourInit">Five- to nine-line initials in alternating red and pale blue, with elaborate penwork flourishing in the other colour, at the beginning of each alphabetical section. (The flourishing not carried out, fol. 194r.)</decoNote></decoDesc>
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
+                        <origDate calendar="Gregorian" notAfter="1475" notBefore="1450">15th century, third quarter</origDate> (watermarks)
                         <origPlace>
                            <country key="place_7000084">German</country>
                         </origPlace>
@@ -142,7 +152,7 @@
                      Clm 28216 https://daten.digitale-sammlungen.de/bsb00105540/image_5 
                      -->
                         <!-- image 497 -->
-                        <author key="person_35292498">Henricus de Barben</author>
+                        <author key="person_35292498"><supplied>Henricus de Barben</supplied></author>
                         <title key="work_6418">Casus ad Summam Henrici de Merseburg</title>
                         <rubric>Incipit Summa fratris Heinrici de Meszburg de ordine minorum quondam lectoris in Magdburg Et distingwitur per quinque libros decretalium et eorum titulos qui patent inferius</rubric>
                         <rubric>Registrum primi libri <gap reason="editorial"/></rubric>
@@ -150,11 +160,10 @@
                         <incipit><locus>(fol. 244vb)</locus> Cum summam henrici fratribus legeremus et quosdam casus leccioni intersererem </incipit>
                         <incipit><locus>(fol. 245rb)</locus> Quid si omnes velint habere ratam eleccionem factam a paucioribus</incipit>
                         <explicit>diuina audire et non officiare, hec Hostensis</explicit>
-                        <note>Schulte II.244-5, 535-6. For authorship see S. Kuttner, <title>Repertorium der Kanonistik 1140-1234</title> (1937) 160.</note>
-                        <!-- CHECK -->
+                        <note>Schulte II.244-5, 535-6. For authorship see S. Kuttner, <title>Repertorium der Kanonistik 1140-1234</title> (1937) 160 n. 1.</note>
                      </msItem>
                      
-                     <msItem>
+                     <msItem xml:id="MS_Hamilton_34-item3" n="3">
                         <locus>(fols. 282rb-290rb)</locus>
                         <note>Several texts on the sacraments presented as a single item:</note>
                         <msItem>
@@ -174,7 +183,7 @@
                            <title key="work_15161"><supplied>De sacramentis</supplied></title>
                            <incipit>Septem sunt sacramenta noue legis Baptismus confirmacio</incipit>
                            <incipit><locus>(fol. 283rb)</locus> Baptismus sic diffinitur a hugone. Est aqua diluendis criminibus sanctificata per verbum Dei. Dyonisius in ecclesiastica ierarchia, karacter est signum</incipit>
-                        <explicit><note>[matrimonium]</note> vel sacramentum est res et karacter fidei</explicit>
+                        <explicit><note>(matrimonium)</note> vel sacramentum est res et karacter fidei</explicit>
                            <note>Unidentified; perhaps the same text as Berlin, SB, MS. theol. fol. 28 (Rose 495) fol. 255va, 'Heinrici Erffordiensis de septem sacramentis'; also followed in that manuscript by the following text.</note>
                         </msItem>
                         <!-- https://books.google.co.uk/books?id=cBImLP7GsQEC&lpg=PA361&ots=1EV6kZIUS6&dq=%22septem%20sunt%20sacramenta%20nove%20legis%22&pg=PA361#v=onepage&q=%22septem%20sunt%20sacramenta%20nove%20legis%22&f=true -->
@@ -192,7 +201,7 @@
                         <note>Rest of fol. 290rb blank; fol. 290v blank.</note>
                      </msItem>
                      
-                     <msItem >
+                     <msItem xml:id="MS_Hamilton_34-partA-item4" n="4">
                         <locus>(fols. 291ra-369rb)</locus>
                         <author key="person_20035294">Guido de Montrocher</author>
                         <title key="work_1910">Manipulus curatorum</title>
@@ -212,9 +221,12 @@
                   <physDesc>
                      <objectDesc form="codex">
                         <supportDesc material="chart">
-                           <support>paper</support>
+                           <support>Paper folded in folio. Watermark: dreiberg with latin cross, Piccard vii.2358</support>
                         </supportDesc>
-                        <layoutDesc><layout columns="2" writtenLines="46 52">2 cols., c. 46-52 lines.</layout></layoutDesc>
+                        <layoutDesc><layout columns="2" writtenLines="46 52">2 cols., c. 46-52 lines. Frame-ruled, ruled space <dimensions unit="mm" type="ruled">
+                           <height max="230" min="225">225-30</height>
+                           <width min="142" max="144">142-4</width>
+                        </dimensions></layout></layoutDesc>
                      </objectDesc>
                      <handDesc hands="1">
                         <handNote script="cursiva">Cursive by one hand.</handNote>
@@ -237,6 +249,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>     
+         <change when="2020-09-30">Finalized description for Polonsky German project.</change>
          <change when="2020-09-02">New draft description for Polonsky German.</change>
          <change when="2017-07-01">First online publication.</change>
 
