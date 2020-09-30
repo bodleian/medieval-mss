@@ -2,9 +2,8 @@
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_5982">
    <!-- todo: 
-      
-      check sermons in Schneyer
-      
+      collation
+      identify spine supports
      -->
    <teiHeader>
       <fileDesc>
@@ -12,7 +11,7 @@
             <title>MS. Hamilton 21</title>
             <title type="collection">MSS. Hamilton</title>
             <respStmt>
-               <resp when="2020">Cataloguing</resp><resp>Encoding</resp>
+               <resp when="2020-09">Cataloguing</resp><resp>Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -48,6 +47,7 @@
                      <idno type="SCN">24451</idno>
                   </altIdentifier>
                </msIdentifier>
+               <head>Theological collection; A-C Germany, 14th century, middle or second half</head>
                <physDesc>
                   <p>Composite: two sections (fols. 7-270, 271-349) together by the late fourteenth century when indexes and tables of contents were added (fols. 1-6) </p>
                   <objectDesc><supportDesc>
@@ -56,7 +56,8 @@
                            <height max="285" min="280">280-285</height>
                            <width min="195" max="205">195-205</width>
                         </dimensions></extent>
-                     <foliation>Contemporary foliation on the top left corner of versos, in a combination of letters and arabic (1) fols. 10-40, 69-136 = a1-31, 32-99; (2) fols. 137-235 = b1-99; (3) fols. 236-333 = c1-99; (4) fols. 334-348 = d1-15; fol. 349 apparently not numbered.</foliation><!-- TODO: check that this fits, or what is missing! -->
+                     <foliation>Contemporary foliation on the top left corner of versos, in a combination of letters and arabic (1) fols. 10-40, 69-136 = a1-31, 32-99<!-- ok -->; (2) fols. 137-235 = b1-99<!-- ok -->; (3) fols. 236-333 = c1-99 (no 16)<!-- 2 leaves missing? check again -->; (4) fols. 334-348 = d1-15<!-- ok -->; fol. 349 apparently not numbered.</foliation>
+                     
                   </supportDesc></objectDesc>
                   <bindingDesc>
                      <binding notAfter="1900" notBefore="1800">
@@ -71,7 +72,7 @@
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Draft description by Matthew Holford (September 2020). Previously described in the Summary Catalogue and supplementary sources. 
+                        <source>Description by Matthew Holford (September 2020). Previously described in the Summary Catalogue and supplementary sources. 
                            
                            <listBibl>
                               <bibl type="SC" facs="aam0055.gif">Summary Catalogue, Vol. 5, p.  20</bibl>
@@ -176,15 +177,14 @@
                   </msItem>
                   <msItem xml:id="MS_Hamilton_21-item5" n="5">
                      <locus>(fols. 69va-82ra)</locus>
-                     <title type="desc" key="work_11188">Commentary on the Creed</title>
-                     <rubric>De articulis fidei catholice per Apostolos descriptis</rubric>
+                     <title type="desc" key="work_16373">‘De articulis fidei catholice per Apostolos descriptis’</title>
                      <incipit><quote>Fides est substancia rerum <gap reason="editorial"/></quote> Et tanguntur hic duo scilicet fides, qua creditur in deum, et efficacia crediti in nobis</incipit>
                      <rubric><locus>(fol. 70ra)</locus> Petrus</rubric>
                      <incipit><quote>Credo in deum vnum deum patrem <gap reason="editorial"/></quote> Huc usque secundum sententiam Petri apostoli</incipit>
                      <incipit>In primo autem articulo duo notantur, actus credendi et credibile primum</incipit>
                      <explicit>vite possessio tota simul. Ad quam nos perducat auctor et fidei consummator iesus christus cui cum patre et spiritu sancto est honor et gloria in secula seculorum. Amen.</explicit>
                      <finalRubric>Explicit liber de articulis fidei catholice per apostolos descriptis</finalRubric>
-                     <note>Perhaps cf. Stegmüller 1049 (Ps.-Albertus Magnus); also Graz, UB, 724, fols. 188v-218v; Osnabrück, Gymnasium Carolinum, Hs. 2.</note>
+                     <note>Perhaps the same text in Osnabrück, Gymnasium Carolinum, Hs. 2, and Provinsjale Biblioteek fan Fryslân, 281 Hs.; and perhaps cf. Graz, UB, 724, fols. 188v-218v. Stegmüller 1049 (Ps.-Albertus Magnus) seems to be a different text.</note>
                      <!-- ?Stegmuller 1049 
                      
                      see http://sosa2.uni-graz.at/sosa/katalog/katalogisate/724.html
@@ -212,249 +212,267 @@
                   
                   <msItem xml:id="MS_Hamilton_21-item7" n="7">
                      <locus>(fols. 96rb-115rb)</locus><!-- 203 -->
-                     <title type="desc" key="work_14583">Sermons</title>
-                     <!-- TODO: full check of Schneyer -->
-                     <msItem>
+                     <title type="desc" key="work_14583">Sermones quadregesimales et de tempore</title>
+                     
+                     <note>Most of the Lenten sermons (nos. 1 (?), 4-15, 17, 18 (?), 19, 20 (?), 21, 22, 23, 24, 25, 26, 27, 28, 30, 31, 32, 34) are from a possibly Franciscan quadragesimale collection itemized in Schneyer IV.329-32. </note>
+                     <msItem n="7.1">
                         <incipit><quote>Cum ieiunatis nolite <gap reason="editorial"/></quote> Quia homo per peccatum totus deordinatur, ideo ecclesia in principio quadragesime hominem incipit ordinare. Primo quantum ad se, secundo quantum ad deum, tercio quantum ad proximum</incipit><!-- checked MM, MA, G, Schn -->
                      </msItem>
-                     <msItem>
+                     <msItem  n="7.2">
                         <rubric><locus>(fol. 96va)</locus> Feria sexta</rubric>
-                        <incipit><quote>Audistis quia dictum est <gap reason="editorial"/></quote> In serie huius ewangelii homo ordinari ad proximum multipliciter ut <unclear>s<ex>equitur</ex></unclear>, non solum diligamus corde sed bene faciamus opere</incipit><!-- ckd MM -->
+                        <incipit><quote>Audistis quia dictum est <gap reason="editorial"/></quote> In serie huius ewangelii homo ordinari ad proximum multipliciter ut <unclear>s<ex>cilicet</ex></unclear>, non solum diligamus corde sed bene faciamus opere</incipit>
                      </msItem>
-                     <msItem>
+                     <msItem n="7.3">
                         <rubric><locus>(fol. 96va)</locus> Sabbato</rubric>
-                        <incipit><quote>Erat nauis in medio mari</quote> Circa quod notatur status penitentie. Dicitur autem penitentia nauis propter disposicionem seu qualitatem</incipit><!-- ckd MM -->
+                        <incipit><quote>Erat nauis in medio mari</quote> Circa quod notatur status penitentie. Dicitur autem penitentia nauis propter disposicionem seu qualitatem</incipit><!-- ckd MM, Schn -->
                      </msItem>
-                     <msItem>
+                     <msItem n="7.4">
                         <rubric><locus>(fol. 96vb)</locus> Dominica prima in Quadragesima</rubric>
                         <incipit><quote>Ductus est iesus in desertum <gap reason="editorial"/></quote> Postquam homo incepit penitentiam agere magis ab aduersario impugnatur</incipit>
+                        <!--<note>Cf. Schneyer IV.330, no. 4  </note>--><!-- ckd Schn -->
                      </msItem>
-                     <msItem>
+                     <msItem n="7.5">
                         <rubric><locus>(fol. 97ra)</locus> Feria secunda sermo</rubric>
-                        <incipit><quote>Cum venit filius hominis <gap reason="editorial"/></quote> Quia tempus est penitentie, et multi cordis <unclear>pusillitate</unclear> nolunt penitentiam agere </incipit>
+                        <incipit><quote>Cum venerit filius hominis <gap reason="editorial"/></quote> Quia tempus est penitentie, et multi cordis peruersitatem nolunt penitentiam agere </incipit>
+                        <!--<note>Cf. Schneyer IV.330, no. 6; IX.343, no. 51; IX.467, no. 58.</note>-->
                      </msItem>
-                     <msItem>
+                     <msItem n="7.6">
                         <rubric><locus>(fol. 97rb)</locus> Feria tercia</rubric>
-                        <incipit><quote>Cum intraret iesus ierosol. <gap reason="editorial"/></quote> Quia per iudicium generale incussit terrorem sancta mater ecclesia per quam ad penitentiam ducimur</incipit>
+                        <incipit><quote>Cum intraret iesus ierosol. <gap reason="editorial"/></quote> Quia per iudicium generale incussit terrorem<!-- sic --> sancta mater ecclesia per quam ad penitentiam ducimur</incipit>
+                        <!--<note>Cf. Schneyer IV.330, no. 7; IX.343 no. 52; IX.467 no. 59.</note>-->
                      </msItem>
-                     <msItem>
+                     <msItem n="7.7">
                         <rubric><locus>(fol. 97va)</locus> Feria Quarta</rubric>
-                        <incipit><quote>Magister volumus a te signum videre <gap reason="editorial"/></quote> In hoc ewangelio habemus exemplum qualiter in nostris responsis nos debeamus habere</incipit><!-- ckd MM -->
+                        <incipit><quote>Magister volumus a te signum videre <gap reason="editorial"/></quote> In hoc ewangelio habemus exemplum qualiter in nostris responsis nos debeamus habere</incipit><!--<note>Cf. Schneyer IV.330, no. 8; IX.467 no. 60</note>-->
                      </msItem>
-                     <msItem>
+                     <msItem n="7.8">
                         <rubric><locus>(fol. 97vb)</locus> Quinta feria sermo</rubric>
-                        <incipit><quote>Qui facit peccatum seruus est peccati <gap reason="editorial"/></quote> Hoc ewangelium non est hystoriale sed continet quandam questionem domini </incipit>
+                        <incipit><quote>Qui facit peccatum seruus est peccati <gap reason="editorial"/></quote> Hoc ewangelium non est hystoriale sed continet quandam questionem domini </incipit><!-- <note>Cf. Schneyer IV.330 no. 9</note>--><!-- not in IX.344 -->
                      </msItem>
-                     <msItem>
+                     <msItem n="7.9">
                         <rubric><locus>(fol. 98ra)</locus> Feria sexta</rubric>
                         <incipit><quote>Erat dies festus iudeorum <gap reason="editorial"/></quote> In hoc ewangelio agitur de quodam <unclear>infirmo</unclear> quem deus solo verbo curauit</incipit>
+                        <!--<note>Cf. Schneyer IV.330 no. 10, IX.344 no. 55</note>-->
                      </msItem>
-                     <msItem>
+                     <msItem n="7.10">
                         <rubric><locus>(fol. 98rb)</locus> Sabbato</rubric>
                         <incipit><quote>Assumpsit iesus petrum <gap reason="editorial"/></quote> Postquam in hestero ewangelio ostensa sunt quatuor que necessaria sunt ad salutem</incipit>
                      </msItem>
-                     <msItem>
+                     <msItem n="7.11">
                         <rubric><locus>(fol. 98va)</locus> Feria quinta</rubric>
                         <incipit><quote>Homo quidam erat dives <gap reason="editorial"/></quote> Quantum ad diuitem istum continet series ewangelii detestabilem eius condicionem</incipit>
                      </msItem>
-                     <msItem>
+                     <msItem n="7.12">
                         <rubric><locus>(fol. 98vb)</locus> Feria sexta sermo</rubric>
-                        <incipit><quote>Homo quidam erat paterfamilias qui plantauit vineam <gap reason="editorial"/></quote> Bonus magister et sapiens in docendo </incipit><!-- TODO: more? -->
+                        <incipit><quote>Homo quidam erat paterfamilias qui plantauit vineam <gap reason="editorial"/></quote> Bonus magister et sapiens in docendo semper</incipit>
                      </msItem>
-                     <msItem>
+                     <msItem n="7.13">
                        <!-- no rubric -->
                         <incipit><locus>(fol. 99ra)</locus> Quanta audimus facta in capitulo Luc. In hoc ewangelio dicuntur quedam <unclear>mirabilia</unclear> ex parte dei et quedam ex parte populi  </incipit>
                         <!-- image 214 -->
                      </msItem>
-                     <msItem>
+                     <msItem n="7.14">
                         <rubric><locus>(fol. 99rb)</locus> Feria tercia sermo</rubric>
-                        <incipit><quote>Si peccaverit in te frater tuus <gap reason="editorial"/></quote> Quia liberalitatis homines multum </incipit><!-- ckd MM, MA, G -->
-                        <!-- TODO: transcribe more -->
+                        <incipit><quote>Si peccaverit in te frater tuus <gap reason="editorial"/></quote> Quia liberalitatis homines multum peccant circa correptionem</incipit><!-- ckd MM, MA, G -->
                      </msItem>
-                     <msItem>
+                     <msItem n="7.15">
                         <rubric><locus>(fol. 99vb)</locus> Feria quarta</rubric>
                         <incipit><quote>Honora patrem et matrem <gap reason="editorial"/></quote> Quia omnis creatura ad aliquem finem debitum ordinatur, finis autem rationalis creature est vite eterna, ad quam nullus peruenire potest sine ordinacione debita</incipit><!-- ckd MM, MA -->
                      </msItem>
-                     <msItem>
+                     <msItem n="7.16">
                         <rubric><locus>(fol. 100ra)</locus> Feria quinta sermo</rubric>
                         <incipit><quote>Surgens iesus de synagogo intrauit in domum <gap reason="editorial"/></quote> Circa cuius curacionem quatuor sunt notanda que sunt in curacione peccati. Primum est presencia medici</incipit>
                      </msItem>
-                     <msItem>
+                     <msItem n="7.17">
                         <rubric><locus>(fol. 100rb)</locus> Feria sexta</rubric>
                         <incipit><quote>Iesus fatigatus ex itinere <gap reason="editorial"/></quote> In serie huius ewangelii quedam mirabilia continentur. Nam mirabile est quod fortitudo dei infatigabilis fatigatur</incipit>
                      </msItem>
-                     <msItem>
-                        <incipit><locus>(fol. 100va)</locus> <quote><sic>Serrexit</sic> iesus in monte olyueti <gap reason="editorial"/></quote> Huius ewangelii series continet plura. Primo diuinam sapientiam, quia diluculo uenit, per quam scilicet sapientiam Christus elegit omnia</incipit><!-- note, this may not be a new sermon, but a section of the preceding - check and cf other items without rubrics -->
+                     <msItem n="7.18">
+                        <incipit><locus>(fol. 100va)</locus> <quote><sic>Serrexit</sic><!-- sic --> iesus in monte olyueti <gap reason="editorial"/></quote> Huius ewangelii series continet plura. Primo diuinam sapientiam, quia diluculo uenit, per quam scilicet sapientiam Christus elegit omnia</incipit><!-- note, this may not be a new sermon, but a section of the preceding - check and cf other items without rubrics -->
                      </msItem>
-                     <msItem>
+                     <msItem n="7.19">
                         <rubric><locus>(fol. 100vb)</locus> Dominica quarta</rubric>
                         <incipit><quote>Abiit iesus trans mare galilee <gap reason="editorial"/></quote> Multa beneficia saluator nobis contulit et mirabilia fecit per que nos ad amore suum a<unclear>d</unclear>duxit</incipit>
                      </msItem>
-                     <msItem>
+                     <msItem n="7.20">
                         <rubric><locus>(fol. 101ra)</locus> Feria secunda</rubric>
                         <incipit><quote>Prope erat pascha <gap reason="editorial"/></quote> In hoc ewangelio de hiis que pertinent ad diuinum cultum mouemur exemplo saluatoris nostri</incipit>
                      </msItem>
-                     <msItem>
+                     <msItem n="7.21">
                         <rubric><locus>(fol. 101rb)</locus> Feria <sic>quarta</sic></rubric>
                         <incipit><quote>Iam die festo mediante <gap reason="editorial"/></quote> Istud ewangelium continet quandam disputacionem iudeorum cum christo. Primo ostenditur iudeorum stulticia</incipit>
                      </msItem>
-                     <msItem>
+                     <msItem n="7.22">
                         <rubric><locus>(fol. 101vb)</locus> Feria quinta</rubric>
                         <incipit><quote>Et preteriens ihesus <gap reason="editorial"/></quote> In mundo isto inueniuntur quatuor origines rerum. Nam aliquando oritur de malo bonum, sicut de dolore partus filius</incipit>
                      </msItem>
-                     <msItem>
+                     <msItem n="7.23">
                         <rubric><locus>(fol. 102rb)</locus> Sexta</rubric>
                         <incipit><quote>Lazarus amicus noster dormit <gap reason="editorial"/></quote> Inter alia que operatus est dominus miracula, suscitacio lazari videtur fuisse sollempnis</incipit><!-- ckd MA, MM -->
                      </msItem>
-                     <msItem>
+                     <msItem n="7.24">
                         <rubric><locus>(fol. 102va)</locus> Sabbato</rubric>
                         <incipit><quote>Ego sum lux mundi <gap reason="editorial"/></quote> Quia dominus uenit in mundum ut peccatores reduceret ad celum</incipit>
                      </msItem>
-                     <msItem>
+                     <msItem n="7.25">
                         <incipit><locus>(fol. 102vb)</locus> <quote>Quis ex uobis arguet me de peccato <gap reason="editorial"/></quote> Filius dei in hunc mundum uenit saluos facere peccatores, sed nullus potest saluari nisi deus. Et ideo in hoc ewangelio ostendit se habere plures nobiles condiciones per quas ostenditur esse deus</incipit>
                      </msItem>
-                     <msItem>
+                     <msItem n="7.26">
                         <rubric><locus>(fol. 103rb)</locus> Feria secunda</rubric>
                         <incipit><quote>Miserunt principes et pharisei <gap reason="editorial"/></quote> Heri ecclesia sancta egit de iniuriis et blasphemiis christo illatis. Hodie agit quomodo principes et pharisei </incipit>
                      </msItem>
-                     <msItem>
+                     <msItem n="7.27">
                         <rubric><locus>(fol. 103va)</locus> Feria quarta</rubric>
                         <incipit><quote>Facta sunt encenia <gap reason="editorial"/></quote> In hoc ewangelium agitur de quadam questione quam habuerunt iudei cum christo. Et sciendum quod christus fecti quatuor genera operum per que ostendit se esse deum</incipit>
                      </msItem>
-                     <msItem>
+                     <msItem n="7.28">
                         <rubric><locus>(fol. 103vb)</locus> Feria quinta</rubric>
                         <incipit><quote>Rogabat iesum quidam phariseum <gap reason="editorial"/></quote> In hoc ewangelium habent peccatores exemplum penitencia et documentum confidencie, quia nullus debet diffidere de dei misericordia</incipit>
                      </msItem>
-                     <msItem>
+                     <msItem n="7.29">
                         <rubric><locus>(fol. 104ra)</locus> Feria sexta</rubric>
                         <incipit><quote>Collegerunt pontifices <gap reason="editorial"/></quote> In hoc ewangelio ostenditur quod iudei faciunt aliquid contra naturam. Naturali enim est ut superiori ab inferiori obediatur</incipit>
                      </msItem>
-                     <msItem>
+                     <msItem n="7.30">
                         <incipit><locus>(fol. 104ra)</locus> <quote>Subleuatis oculis <gap reason="editorial"/></quote> Adueniente ipse <sic>passionis</sic> filius dixit multa et fecit qui nobis inferunt magnam consolacionem</incipit>
                      </msItem>
-                     <msItem>
+                     <msItem n="7.31">
                         <incipit><locus>(fol. 104rb)</locus> <quote>Cum appropinquaret iesus <gap reason="editorial"/></quote> Sancta mater ecclesia quandam nobis processionem representat quam fecerunt iudei christo uenienti ierusolimam ad diem festum</incipit>
                      </msItem>
-                     <msItem>
+                     <msItem n="7.32">
                         <incipit><locus>(fol. 104va)</locus> <quote>Ego si exaltatus fuero <gap reason="editorial"/></quote> Quia infidelibus non sunt diuina <sic>ministeria</sic> reuelanda, ideo dominus loquens iudeis de passione sua quibus verbis occultis loquebatur</incipit>
                      </msItem>
-                     <msItem>
+                     <msItem n="7.33">
                         <rubric><locus>(fol. 104vb)</locus> In cena domini</rubric>
                         <incipit><quote>Cum dilexisset suos <gap reason="editorial"/></quote> Ideo <unclear>v</unclear>olens dominus noster in nobis inchoare legem caritatis statuit</incipit>
                      </msItem>
-                     <msItem>
+                     <msItem n="7.34">
                         <rubric><locus>(fol. 105ra)</locus> In parasceue</rubric>
-                        <incipit><quote>Venter meus ad Moab <gap reason="editorial"/></quote> Crux christi sub quadam <unclear>mechanica</unclear> designatur. Nam cytera habet lignum</incipit>
+                        <incipit><quote>Venter meus ad Moab <gap reason="editorial"/></quote> Crux christi sub quadam methaphora designatur. Nam cytera habet lignum</incipit>
                      </msItem>
-                     <msItem>
+                     <msItem n="7.35">
                         <rubric><locus>(fol. 105vb)</locus> De resurrectione domini</rubric>
                         <incipit><cit><quote>Surrexit non est hic <gap reason="editorial"/></quote> <bibl>Mt.</bibl></cit> Circa dominicam resurrecionem tria principaliter considerantur, videlicet quod fuit approbata, fuit perfecta, et fuit necessaria </incipit>
                      </msItem>
-                     <msItem>
+                     <msItem n="7.36">
                         <rubric><locus>(fol. 106ra)</locus> De eodem</rubric>
                         <incipit><quote>Surrexit dominus vere et apparuit <gap reason="editorial"/></quote> Cum aliquis perdit aliquam rem preciosam, diligenter eam inquirit </incipit>
                      </msItem>
-                     <msItem>
+                     <msItem n="7.37">
                         <rubric><locus>(fol. 106rb)</locus> De resurrecione</rubric>
-                        <incipit><quote>Si christus surrexit et nos resurgemus <gap reason="editorial"/></quote> Circa resurrecionem generale considerandum est primus an debeat esse</incipit>
+                        <incipit><quote>Si christus surrexit et nos resurgemus <gap reason="editorial"/></quote> Circa resurrecionem generale considerandum est primus an debeat esse</incipit><!-- ckd Schn -->
                      </msItem>
-                     <msItem>
+                     <msItem n="7.38">
                         <rubric><locus>(fol. 106vb)</locus> De generali resurrecione</rubric>
-                        <incipit><quote>Si christus surrexit et nos resurgemus <gap reason="editorial"/></quote> Christus non solum per se resurrexit solus, sed et plures mortuos adhuc viuens et a mortuis resurgens secum resuscitauit</incipit>
+                        <incipit><quote>Si christus surrexit et nos resurgemus <gap reason="editorial"/></quote> Christus non solum per se resurrexit solus, sed et plures mortuos adhuc viuens et a mortuis resurgens secum resuscitauit</incipit><!-- ckd Schn -->
                      </msItem>
-                     <msItem>
+                     
+                     
+                     <msItem n="7.39">
                         <rubric><locus>(fol. 107vb)</locus> Dominica quinta post natiuitatem</rubric><!-- check -->
-                        <incipit><quote>Ascendente iesu in nauiculam <gap reason="editorial"/></quote> Describit <unclear>enim</unclear> ewangelista nauigium christi quia <quote>ascendente</quote> etc. Est autem multiplex nauigium christi. Primum fuit per quod venit in mundum, scilicet uterus virginis</incipit>
+                        <incipit><quote>Ascendente iesu in nauiculam <gap reason="editorial"/></quote> Describit <unclear>enim</unclear> ewangelista nauigium christi quia <quote>ascendente</quote> etc. Est autem multiplex nauigium christi. Primum fuit per quod venit in mundum, scilicet uterus virginis</incipit><!-- ckd Schn -->
                      </msItem>
-                     <msItem>
+                     <msItem n="7.40">
                         <rubric><locus>(fol. 108ra)</locus> Dominica tercia in quadragesima</rubric>
                         <incipit><quote>Omnis fornicator <gap reason="editorial"/></quote> Valde lamentabilis res est peccatum, per quod perditur regnum supernum, et licet perdatur per quodlibet mortalem peccatum, tamen hic tangitur per auariciam et luxuriam</incipit>
-                        <note><persName role="aut" key="person_31883329">Aldobrandinus de Toscanella</persName> 410 (Schneyer I.255)</note>
+                        <author key="person_31883329">Aldobrandinus de Toscanella</author> <bibl>410 (Schneyer I.255)</bibl>
                      </msItem>
-                     <msItem>
+                     <msItem n="7.41">
                         <rubric><locus>(fol. 108rb)</locus> Dominica quarta in quadragesima</rubric>
-                        <incipit><quote>Illa autem que sursum est <gap reason="editorial"/></quote> Et quia locus habet conuenientiam cum locato diuersa sunt loca</incipit><!-- OK? -->
+                        <incipit><quote>Illa autem que sursum est <gap reason="editorial"/></quote> Et quia locus habet conuenientiam cum locato diuersa sunt loca</incipit><!-- OK? --><!-- ckd Schn -->
                      </msItem>
-                     <msItem>
+                     <msItem n="7.42">
                         <rubric><locus>(fol. 108va)</locus> Dominica in passione</rubric>
-                        <incipit><quote>Christus assistens pontifex <gap reason="editorial"/></quote> Sunt enim duo quare multum diligendus est christus. Primum est quod habet excellentes effectus</incipit>
+                        <incipit><quote>Christus assistens pontifex <gap reason="editorial"/></quote> Sunt enim duo quare multum diligendus est christus. Primum est quod habet excellentes effectus</incipit><!-- ckd Schn -->
                      </msItem>
-                     <msItem>
+                     <msItem n="7.43">
                         <incipit><locus>(fol. 108vb)</locus> <quote>Hoc sentite in uobis <gap reason="editorial"/></quote> Magna curialitas est si sint duo socii uel amici, quorum unus conformet se alteri. Unde christus se nobis conformit</incipit>
+                        <author key="person_31883329">Aldobrandinus de Toscanella</author> <bibl>515 (Schneyer I.263)</bibl>
                      </msItem>
-                     <msItem>
+                     <msItem n="7.44">
                         <rubric><locus>(fol. 109ra)</locus> Feria tercia post pascha</rubric>
-                        <incipit><quote>Ecce iesus in medio <gap reason="editorial"/></quote> Tria hic dicuntur. Primum est altitudo condicionis ibi</incipit>
+                        <incipit><quote>Ecce iesus in medio <gap reason="editorial"/></quote> Tria hic dicuntur. Primum est altitudo condicionis ibi</incipit><!-- ckd Schn -->
                      </msItem>
-                     <msItem>
+                     <msItem n="7.45">
                         <rubric><locus>(fol. 109rb)</locus> Dominica prima post pascha</rubric>
                         <incipit><quote>Cum sero esset die illa <gap reason="editorial"/></quote> In hoc ewangelio dominus resurrecionem suam probat esse gloriosam, quia intrauit ianuis clausis</incipit>
-                        <note><persName role="aut" key="person_31883329">Aldobrandinus de Toscanella</persName> 436 (Schneyer I.257)</note><!-- check? -->
+                        <author key="person_31883329">Aldobrandinus de Toscanella</author> <bibl>436 (Schneyer I.257)</bibl><!-- check? -->
                      </msItem>
-                     <msItem>
+                     <msItem n="7.46">
                         <rubric><locus>(fol. 109va)</locus> Hora est iam nos de sompno surgere</rubric>
-                        <incipit><quote>Est autem aduertendum quod d<ex>istinguitu</ex>r est sompnus, unus gratie et alter culpe<gap reason="editorial"/></quote> </incipit>
+                        <incipit><quote>Est autem aduertendum quod d<ex>istinguitu</ex>r est sompnus, unus gratie et alter culpe<gap reason="editorial"/></quote> </incipit><!-- ckd Schn -->
                      </msItem>
-                     <msItem>
+                     <msItem n="7.47">
                         <rubric><locus>(fol. 110ra)</locus> Ad idem sermo</rubric>
-                        <incipit><quote>Benedictus qui uenit in nomine domini <gap reason="editorial"/></quote> In uerbis istis propositis aduentus saluatoris nostri ostenditur laudabilis et amorosus </incipit><!-- ckd MM , MA -->
+                        <incipit><quote>Benedictus qui uenit in nomine domini <gap reason="editorial"/></quote> In uerbis istis propositis aduentus saluatoris nostri ostenditur laudabilis et amorosus </incipit>
+                        <note>Cf. Paris, BNF, Latin 3734 (Schneyer VI.532, no. 3) (?)</note>
+                        <!-- ckd MM , MA -->
                      </msItem>
-                     <msItem>
+                     <msItem n="7.48">
                         <rubric><locus>(fol. 110vb)</locus> Dominica secunda</rubric>
-                        <incipit><quote>Quecumque scripta sunt ad nostram doctrinam <gap reason="editorial"/></quote> Notandum quod ad nostram doctrinam multa sunt necessaria, fecit enim deus quadruplicem scripturam</incipit>
+                        <incipit><quote>Quecumque scripta sunt ad nostram doctrinam <gap reason="editorial"/></quote> Notandum quod ad nostram doctrinam multa sunt necessaria, fecit enim deus quadruplicem scripturam</incipit><!-- ckd Schn -->
                      </msItem>
-                     <msItem>
+                     <msItem n="7.49">
                         <rubric><locus>(fol. 111ra)</locus> Ad idem sermo</rubric>
-                        <incipit><quote>Leuate capita vestra <gap reason="editorial"/></quote> Debemus enim capita leuare quadrupliciter. Primo ad considerandum peccata propria</incipit>
+                        <incipit><quote>Leuate capita vestra <gap reason="editorial"/></quote> Debemus enim capita leuare quadrupliciter. Primo ad considerandum peccata propria</incipit><!-- ckd Schn -->
                      </msItem>
-                     <msItem>
+                     <msItem n="7.50">
                         <rubric><locus>(fol. 111vb)</locus> Dominica tercia</rubric>
-                        <incipit><quote>Si nos estimet homo ut ministros christi <gap reason="editorial"/></quote> Quoniam secundum sanctos in presenti vita nullus esse status spiritualis indifferens, ideo apostolus in verbis premissis hortatur </incipit>
+                        <incipit><quote><sic>Hic</sic> nos <sic>estimet</sic> homo ut ministros christi <gap reason="editorial"/></quote> Quoniam secundum sanctos in presenti vita nullus esse status spiritualis indifferens, ideo apostolus in verbis premissis hortatur </incipit>
+                        <author key="person_31883329">Aldobrandinus de Toscanella</author> <bibl>500 (Schneyer I.262)</bibl>
                      </msItem>
-                     <msItem>
+                     <msItem n="7.51">
                         <rubric><locus>(fol. 112ra)</locus> De eodem sermo</rubric>
                         <incipit><quote>Cum audisset Iohannes in vinculis opera christi <gap reason="editorial"/></quote> In hoc loco Iohannes gerit formam hominis penitentis</incipit>
+                        <author key="person_42232659">Lucas de Bitonto</author><bibl>8 (Schneyer IV.50)</bibl>
                      </msItem>
-                     <msItem>
+                     <msItem n="7.52">
                         <rubric><locus>(fol. 112va)</locus> Dominica quarta</rubric>
                         <incipit><quote>Gaudete in domino semper <gap reason="editorial"/></quote> In hiis verbis hortatur nos apostolus ut gaudium nostrum sit in domino solo et <add>non</add> in seculo</incipit>
+                        <author key="person_31883329">Aldobrandinus de Toscanella</author> <bibl>501 (Schneyer I.262)</bibl>
                      </msItem>
-                     <msItem>
+                     <msItem n="7.53">
                         <rubric><locus>(fol. 112vb)</locus> De eodem sermo</rubric>
-                        <incipit><quote>Ego vox clamantis in deserto <gap reason="editorial"/></quote> In verbis premissis tria notanda sunt, videlicet cuius sit vox ibi</incipit><!-- ckd MM -->
+                        <incipit><quote>Ego vox clamantis in deserto <gap reason="editorial"/></quote> In verbis premissis tria notanda sunt, videlicet cuius sit vox ibi</incipit><!-- ckd MM, Schn -->
                      </msItem>
-                     <msItem>
+                     <msItem n="7.54">
                         <rubric><locus>(fol. 113rb)</locus> Infra octauam</rubric>
                         <incipit><quote>Quanto tempore heres parvulus est nihil differt <gap reason="editorial"/></quote> Consuetudo est cum filius regit, multum se humiliat ut sua humilitas preconizetur</incipit>
+                        <author key="person_31883329">Aldobrandinus de Toscanella</author> <bibl>502 (Schneyer I.262)</bibl>
                      </msItem>
                      <!--  113va, 242 -->
-                     <msItem>
+                     <msItem n="7.55">
                         <rubric><locus>(fol. 113va)</locus> Dominica infra octauam epyphanie</rubric>
                         <incipit><quote>Obsecro uos per misericordiam dei <gap reason="editorial"/></quote> Istud est honestatis consilium, et debet sumere efficaciam implecionis ex tribus</incipit>
-                        <note><persName key="person_2614028">Martin of Troppau</persName> 27 (Schneyer IV.126)</note>
-                        <!-- ending differs? image 243 -->
+                        <author key="person_31883329">Aldobrandinus de Toscanella</author> <bibl>503 (Schneyer I.262) (ending differs)</bibl>
+                        <note>Cf. <persName role="aut" key="person_2614028">Martin of Troppau</persName> 34 (Schneyer IV.126)</note>
                      </msItem>
-                     <msItem>
+                     <msItem n="7.56">
                         <rubric><locus>(fol. 114ra)</locus> Dominica post ephiphaniam</rubric>
-                        <incipit><quote>Audientes malum adherentes bono <gap reason="editorial"/></quote> Sicut <unclear>ter</unclear>rigena errantibus viam ostendit manibus</incipit>
+                        <incipit><quote><sic>Audientes</sic> malum adherentes bono <gap reason="editorial"/></quote> Sicut terrigena errantibus viam ostendit manibus</incipit>
+                        <author key="person_31883329">Aldobrandinus de Toscanella</author> <bibl>504 (Schneyer I.262)</bibl>
                      </msItem>
-                     <msItem>
+                     <msItem n="7.57">
                         <rubric><locus>(fol. 114va)</locus> Dominica <unclear>letania</unclear></rubric><!-- check Sch -->
                         <incipit><quote>Nolite esse prudentes <gap reason="editorial"/></quote> In hac epistola apostolus tria docet, scilicet vicia exstirpare, virtutes aggregare, et consilia adimplere</incipit>
-                        <note><persName key="person_2614028">Martin of Troppau</persName> 34 (Schneyer IV.126)</note><!-- expl fits -->
+                        <note><persName role="aut" key="person_2614028">Martin of Troppau</persName> 34 (Schneyer IV.126)</note><!-- expl fits -->
                      </msItem>
-                     <msItem>
+                     <msItem n="7.58">
                         <rubric><locus>(fol. 115ra)</locus> Dominica tertia</rubric>
-                        <incipit><quote>Nemini quidquam debeatis <gap reason="editorial"/></quote> In uerbis istis apostolus duo facit. Primo docet animam esse liberam</incipit><!-- could be Martin of T 38 ? check printed ed  -->
+                        <incipit><quote>Nemini quidquam debeatis <gap reason="editorial"/></quote> In uerbis istis apostolus duo facit. Primo docet animam esse liberam</incipit>
+                        <author key="person_31883329">Aldobrandinus de Toscanella</author> <bibl>506 (Schneyer I.262)</bibl>
+                        <!-- could also be Martin of T 38 ?   -->
                      </msItem>
                      <colophon>Explicit iste liber sit scriptor crimine liber</colophon>
                   </msItem>
                   
                   <msItem xml:id="MS_Hamilton_21-item8" n="8">
                      <locus>(fols. 115va-121rb)</locus><!-- 246 -->
-                     <!-- TODO: title -->
+                     <title key="work_16374">Concordantiae Noui et Veteris testamenti</title>
                      <rubric>Incipit Concordancie Noui Veteris testamenti et primo de annunciacione beate virginis <gap reason="editorial"/></rubric>
-                     <incipit>De annunciacione beatissime et gloriosissime virginis et matris dei marie. Primo intonit dauid dicens, descendit sicut pluuia in vellus </incipit>
+                     <incipit>De annunciacione beatissime et gloriosissime virginis et matris dei marie. Primo intonit dauid dicens, descendit sicut pluuia in vellus. Item Ezechiel, Porta hec clausa erit </incipit>
+                     <rubric>De annunciacione</rubric>
+                     <incipit>Annunciacio hac prefiguratur. In libro Gen. capitulo xviiijo vbi legitur quod cum tres viri venissent</incipit>
                      <explicit> percipite regnum quod uobis paratum est ab origine mundi. Quo nos introducat filius dei viui <supplied reason="omitted">qui</supplied> cum eodem deo patre et spiritu  sancto viuit et regnat <gap reason="editorial"/></explicit><!-- TODO?: verse after -->
                      <note>Stegmüller 10147 (this ms. only, shelfmark given incorrectly as MS. Hamilton 51); see also <bibl type="ms" subtype="external">Greifswald, Geistliches Ministerium, XXXVII.E.109</bibl>, fols. 81rb-85rb.</note>
                   </msItem>
@@ -470,7 +488,7 @@
                      <explicit> immutabilis ratio repugnat</explicit>
                     <note>Ends at the end of II.xxi</note>
                     </msItem>
-                     <msItem>
+                     <msItem >
                         <locus>(fols. 132rb-133ra)</locus>
                         <author key="person_295911479"><supplied>Ralph d'Escures (pseudo-Anselm)</supplied></author>
                         <title key="work_5924"><supplied>Homilia de assumptione Mariae (hom. 9)</supplied></title>
@@ -483,7 +501,8 @@
                         <title type="desc" key="work_14583"><supplied>Sermon</supplied></title>
                         <!--<author key="person_3011"><supplied>Ps.-Maximus of Turin</supplied></author>
                         <title key="work_4598"><supplied>Sermo LXV (de natiuitate Johannis Baptistae IX)</supplied></title>-->
-                        <incipit>Post illum sacrum domini natale diem natiuitatem nullius hominis legimus celebrari nisi solum beati Johannis baptiste. Cuius hodie <sic>concepcionem</sic> sollempnia veneranda colimus et <sic>tuimus</sic> et iam<!-- check? --> <sic>natiuitatis</sic> signatur in semetipso, Jeremias propheta demonstrauit dicens ut audistis in leccione presenti, ait enim <quote>Factum est verbum domini</quote> </incipit><!-- not all of this is clear -->
+                        <!-- image 281 -->
+                        <incipit>Post illum sacrum domini natale diem natiuitatem nullius hominis legimus celebrari nisi solum beati Johannis baptiste. Cuius hodie <sic>concepcionem</sic> sollempnia veneranda colimus et <sic>tuimus</sic> et <sic>iam natiuitatis</sic> signatur in semetipso, Jeremias propheta demonstrauit dicens ut audistis in leccione presenti, ait enim <quote>Factum est verbum domini</quote> </incipit><!-- not all of this is clear -->
                      
                         <explicit>viam per quam nos ducat ad patriam ut de nobis dicere dignetur, <quote>et inambulo et inhabitabo cum eis, et ero illorum deus</quote>. Sed in isto seculo ambulauerit in nobis in illo habitabit in nobis, qui viuit et regnat deus in secula seculorum, amen </explicit>
                         <note>For the opening sentence only cf. PL 57.661 (Ps.-Maximus of Turin); for the ending cf. PL 39.2117 (Ps.-Augustine, Serm. app. 198).</note>
@@ -506,7 +525,7 @@
                      <colophon>Explicit iste sit scriptor crimine liber</colophon>
                   </msItem>
                   
-                  <msItem>
+                     <msItem xml:id="MS_Hamilton_21-item10" n="10"> 
                      <locus>(fols. 134va-151ra)</locus>
                      <title type="desc" key="work_16366">Commentary on ‘Benedicite omnia opera’</title>
                      
@@ -589,11 +608,11 @@
                        <note><q>Feria 4a</q> in initial <q>C</q></note>
                     </msItem>
                     <msItem>
-                       <incipit><locus>(fol. 199vb)</locus> <quote>Qui se exaltat humiliabitur <gap reason="editorial"/></quote> Quemadmodum medicus vitenda et que agenda infirmo sunt, predicit seruo fuo</incipit>
+                       <incipit><locus>(fol. 199vb)</locus> <quote>Qui se exaltat humiliabitur <gap reason="editorial"/></quote> Quemadmodum medicus vitenda et que agenda infirmo sunt, predicit seruo suo</incipit>
                        <note><q>Feria iija</q> in initial <q>Q</q></note>
                     </msItem>
                     <msItem>
-                       <incipit><locus>(fol. 200rb)</locus> <quote>Homo quidam erat diues <gap reason="editorial"/></quote> Quemadmodum filius rebellis demeretur gratiam patris, seruus inutilis iram princpis</incipit>
+                       <incipit><locus>(fol. 200rb)</locus> <quote>Homo quidam erat diues <gap reason="editorial"/></quote> Quemadmodum filius rebellis demeretur gratiam patris, seruus inutilis iram principis</incipit>
                     </msItem>
                     <msItem>
                        <incipit><locus>(fol. 200va)</locus> <quote>Hic est heres occidamus eum <gap reason="editorial"/></quote> Quemadmodum per mortem patris filii <sic>constitutiuntur</sic> heredes omni boni </incipit>
@@ -640,16 +659,13 @@
                     <msItem>
                        <incipit><locus>(fol. 203va)</locus> <quote>Afflictus sum solus et querunt animam meam <gap reason="editorial"/></quote> Quemadmodum pauper clamore, infirmus dolore, incarceratus captiuitatis onere inducit sibi compassionem impendere</incipit>
                     </msItem>
-                    <msItem>
-                       <incipit><locus>(fol. 202rb)</locus> <quote> <gap reason="editorial"/></quote> </incipit>
-                    </msItem>
                      <note>Fol. 204ra part blank.</note>
-                   </msItem>    <msItem>
+                  </msItem>    <msItem xml:id="MS_Hamilton_21-item14.1" n="14.1">
                         <locus>(fols.204rb-206ra)</locus><note>Alphabetical subject index 'Abhominacio' to 'Xpus' to the following item</note>
                      </msItem>
                 
                   
-                  <msItem xml:id="MS_Hamilton_21-item14" n="14">
+                  <msItem xml:id="MS_Hamilton_21-item14.2" n="14.2">
                      <locus>(fols. 206rb-246rb)</locus>
                      <author key="person_44658476"><supplied>Odo of Morimond (?)</supplied></author>
                      <title key="work_6421"><supplied>De spirituali aedificio</supplied></title>
@@ -678,7 +694,7 @@
                      <incipit>Eya nunc homuncio</incipit>
                      <explicit>donec intrem in gaudium domini mei qui est trinus deus benedictus. Amen. Explicit.</explicit>
                   </msItem>
-                  <msItem>
+                     <msItem xml:id="MS_Hamilton_21-item16" n="16">
                      <locus>(fol. 250vb)</locus>
                      <title type="desc">Verses on the Virgin</title>
                      <msItem><incipit>Pneum<subst><del>a</del><add>e</add></subst> <sic>coflages</sic> <sic>stages</sic> trine deitatis </incipit><note>Thirteen lines; <bibl type="repertory">Walther 14215</bibl></note></msItem>
@@ -688,15 +704,15 @@
                   <msItem>
                      <note>Fol. 251r ruled, blank, except for passage from 'Veni creator spiritus': <q>Nichil est in homine nichil est in noxium <gap reason="editorial"/> mox honori facati</q></note>
                   </msItem>
-                  <msItem>
+                     <msItem xml:id="MS_Hamilton_21-item17" n="17">
                      <locus>(fol. 251v)</locus>
                      <title type="desc">Verses on the Passion</title>
                      <rubric>Versus magistri Petri de passione domini</rubric>
                      <incipit>In cruce pro te sum fili me respice cesum</incipit>
                      <explicit>Introitum vite reddo tibi redde michi te</explicit>
-                     <note><bibl type="repertory">Walther, <title>Carmina</title>, 8884</bibl>; <bibl type="repertory">RH 28005</bibl>. Rest of fol. 251v blank.</note><!-- check -->
+                     <note><bibl type="repertory">Walther, <title>Carmina</title>, 8884</bibl>; <bibl type="repertory">RH 28005</bibl>. Rest of fol. 251vb blank.</note>
                   </msItem>
-                  <msItem xml:id="MS_Hamilton_21-item16" n="16">
+                  <msItem xml:id="MS_Hamilton_21-item18" n="18">
                      <locus>(fol. 252ra-266rb)</locus>
                      <author key="person_51660071">Petrus Roger (Clement VI)</author>
                      <title key="work_6422">Sermones 74, 63, 59 </title>
@@ -713,7 +729,7 @@
                      <bibl>Schneyer IV.757-769</bibl>
                   </msItem>
                   
-                  <msItem xml:id="MS_Hamilton_21-item17" n="17">
+                  <msItem xml:id="MS_Hamilton_21-item19" n="19">
                      <locus>(fols. 266rb-270vb)</locus>
                      <author key="person_89204668">Bertrandus de Turre</author>
                      <title key="work_6170">Sermones de tempore: de aduentu domini </title>
@@ -739,11 +755,11 @@
                               <height max="255" min="250">250-5</height>
                               <width min="165" max="170">165-170</width>
                            </dimensions></layout>
-                           <layout columns="2" writtenLines="40">Art 16; 2 cols. c. 40 lines, ruled space <dimensions unit="mm" type="ruled">
+                           <layout columns="2" writtenLines="40">Art 18: 2 cols. c. 40 lines, ruled space <dimensions unit="mm" type="ruled">
                               <height>220</height>
                               <width>145</width>
                            </dimensions></layout>
-                           <layout columns="2" writtenLines="48">Art. 17: 2 cols., c. 48 lines, ruled space <dimensions unit="mm" type="ruled">
+                           <layout columns="2" writtenLines="48">Art. 19: 2 cols., c. 48 lines, ruled space <dimensions unit="mm" type="ruled">
                               <height>240</height>
                               <width>165</width>
                            </dimensions></layout></layoutDesc>
@@ -772,7 +788,7 @@
                   </msIdentifier>
                   <msContents>
                      <textLang mainLang="la">Latin</textLang>
-                     <msItem xml:id="MS_Hamilton_21-item18" n="18">
+                     <msItem xml:id="MS_Hamilton_21-item20" n="10">
                         <locus>(fols. 271ra-349vb)</locus><!-- 577 -->
                         <author key="person_104113324"><supplied>Ps.-Albertus Magnus</supplied></author>
                         <title key="work_6156">Commentary on Apocalypse</title>
@@ -821,6 +837,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2020-09-29">Finalized description for Polonsky German.</change>
          <change when="2020-09-25">Identified watermark of part C.</change>
          <change when="2020-09-17">Revised description of structure.</change>
          <change when="2020-09-15">Revisions based on examination of watermarks.</change>
