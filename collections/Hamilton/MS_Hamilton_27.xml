@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_5988">
+   <!-- todo: foliation: explain any missing leaves
+      endleaves
+      dimensions
+      watermarks
+      collation
+         check prov. -->
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Hamilton 27</title>
             <title type="collection">MSS. Hamilton</title>
             <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
-            </respStmt>
-         </titleStmt>
-         <editionStmt>
-            <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
+               <resp when="2020-10">Cataloguer</resp><resp>Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
-         </editionStmt>
+         </titleStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
             <address>
@@ -49,23 +48,97 @@
                      <idno type="SCN">24457</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <head>Franciscus de Abbatibus, etc.; Germany, 15th century</head>
+               <msContents> <textLang mainLang="la">Latin</textLang>
                   <msItem xml:id="MS_Hamilton_27-item1" n="1">
-                     <author key="person_87832561">
-                        
-                        Francis of Assisi
-                     
+                     <author key="person_66857505">
+                        Francisus <supplied>de Abbatibus</supplied>
                      </author>
-                     <title key="work_1550">Sermons</title>
-                     <textLang mainLang="la">Latin</textLang>
+                     <title key="work_6433">Postilla super euangelia dominicalia</title><note>(with additional sermons)</note>
+                     <rubric><subst><del>Incipiunt postilla</del><add>Incipiunt sermones</add></subst> francisci de assis' <add>de ordine fratrum minorum</add> super euangelia dominicalia per annum</rubric>
+                     <incipit><quote>Erunt signa <gap reason="editorial"/></quote> Quamuis iesus christus in morte cuiuslibet</incipit>
+                     <bibl>Schneyer II.55-9 (this ms. listed)</bibl>
+                     <msItem n="1.1">
+                        <locus>(fols. 1r-87v)</locus>
+                        <note>Francis de Abbatibus nos. 1-13.</note>
+                        <note>Fol. 13r-v blank.</note>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 87v-98v)</locus>
+                        <incipit><quote>Dvctus est iesus in desertum <gap reason="editorial"/></quote> Sciendum quod secundum sentenciam sanctorum primus homo et per consequens totum genus humanum propter peccatum incurrit duplex dampnum, scilicet mortem et debilitatem</incipit>
+                        <explicit>dyadema speciei de manu Domini. Quod regnum et dyadema nobis concedat qui sine fine viuit et regnat <gap reason="editorial"/> </explicit>
+                        <author key="person_24992037"><supplied>James of Lausanne</supplied></author> <bibl>781 (Schneyer III.120)</bibl> <!--<note>'Secunda pars', fol. 91v; 'alia pars tercia', fol. 94r; 'sequitur allegoria', fol. 94r.</note>-->
+                    <!-- 184 -->   <!-- <rubric><locus>(fol. 91v)</locus> Secunda pars</rubric><incipit>Sequitur <quote>et accedens etc.</quote> Ubi tangit sagacitatem sugestionis </incipit>
+                        <rubric><locus>(fol. 94r)</locus> Sequitur alia pars tercia</rubric>-->
+                        <!--<explicit>dabo edere de ligno vite quod est in paradisco dei mei. Quod nobis concedat qui viuit etc.</explicit>
+                        <incipit><locus>(fol. 94v)</locus> Sciendum est autem quod iste tres temptaciones predicte, scilicet gule, inanis glorie et auaricie, possunt intelligi de peccato ostentacionis</incipit>
+                        <incipit><locus>(fol. 96v)</locus> Sciendum est autem quod in isto totali ewangelio ostenditur quod christus fuit virtuosus</incipit>-->
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 98v-108v)</locus>
+                        <!--<incipit><quote>Et post dies sex <gap reason="editorial"/></quote> Videmus per experienciam quod <unclear>aliquando</unclear> alicui homini afflicto promittitur aliquid pro certo <unclear>solacio</unclear>, ut de labore certa et magna remuneracio, ut facilius desolacionem et laborem subportet</incipit>
+                        <explicit>nobis retribuet gratiam in presento Et gloriam in futuro. Ad quam nos perducat iesus marie filius amen.</explicit>
+                       --> <author key="person_24992037"><supplied>James of Lausanne</supplied></author> <bibl>787 (Schneyer III.120)</bibl>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 108v-121v)</locus>
+                        <author key="person_24992037"><supplied>James of Lausanne</supplied></author> <bibl>794 (Schneyer III.121)</bibl>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 121v-133v)</locus>
+                        <author key="person_24992037"><supplied>James of Lausanne</supplied></author> <bibl>801 (Schneyer III.121)</bibl>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 133v-142r)</locus>
+                        <author key="person_24992037"><supplied>James of Lausanne</supplied></author> <bibl>807 (Schneyer III.122), ending here longer</bibl>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 142r-152r)</locus>
+                        <incipit><quote>Cum appropinquaret iesus <gap reason="editorial"></gap></quote> Diuersitas opinionum fuit antiquitus cui debebatur honor et reuerencia exhiberi</incipit>
+                        <explicit>in gloria paradisi eternaliter permanere. Ad quam nos perducat qui vnus et trinus viuit et regnat in secula seculorum. Amen.</explicit>
+                        <finalRubric>Et sic est fine sermo partis <subst><del>estiualis</del><add>hyemalis</add></subst>. Deo gracias.</finalRubric>
+                        <author key="person_32388889"><supplied>Philip de Monte Calerio</supplied></author><note>Cf. MS. Laud Misc. 281 fol. 119r.</note>
+                        
+                        <note>Rest of fol. 152r blank; fol. 152v blank.</note>
+                        <!-- this first part all in one hand, same as next? -->
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fols. 153r-159v)</locus>
+                        <incipit><quote>Maria magdalene <gap reason="editorial"/></quote> Nos videmus per experientiam quod vnusquisque delectatur in presencia illius quem diliget</incipit>
+                        <author key="person_32388889"><supplied>Philip de Monte Calerio</supplied></author><note>Cf. MS. Laud Misc. 281 fol. 184r.</note>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 159v-299v)</locus>
+                        <!--<incipit><quote>Cum sero esset die illa <gap reason="editorial"/></quote> Sciendum quod tria genera hominum </incipit>-->
+                        <note>Franciscus de Abbatibus nos. 14-22, 23 (as two sermons, with 'feria secunda post penth.' at fol. 191v), 24 ('feria tercia post penth.'), 25-48</note>
+                        <!-- image 580 -->
+                        <note>Fol. 193r-v blank.</note>
+                     </msItem>
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
+                        <extent>Fol. 218 is an inserted slip.</extent>
+                        <foliation>15th-century foliation in arabic.</foliation>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="1" writtenLines="36 39">1 col., c. 36-39 lines. Frame-ruled.</layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <handDesc hands="1">
+                     <handNote script="cursiva">Cursive by one scribe.</handNote>
+                  </handDesc>
+                  <decoDesc>
+                     <decoNote type="flourInit">Six-line red initial with simple silhouette decoration, fol. 1r.</decoNote>
+                     <decoNote type="colInit">Elsewhere three-line red initials with simple decoration.</decoNote>
+                  </decoDesc>
+                  <additions>Contemporary and later annotation, mostly by the main scribe, extensive in places.</additions>
+                  <bindingDesc><binding notAfter="1500">
+                     <p>15th-century binding of plain whittawed skin over boards, damaged; clasps and bosses lost.</p>
+                  </binding></bindingDesc>
                </physDesc>
                <history>
                   <origin>
@@ -74,11 +147,18 @@
                         <country key="place_7000084">German</country>
                      </origPlace>
                   </origin>
+                  <provenance><orgName key="org_415145858126223022295" role="fmo">Erfurt, Charterhouse</orgName>: identifiable as O 19 in the late-fifteenth-century library catalogue.</provenance><!-- check and ref. -->
+                  <provenance notAfter="1831" notBefore="1760"><persName role="fmo" key="person_24953683">Friedrich Gottlieb Julius von Bülow, 1760-?1831</persName> (?): probably identifiable as 211 in the catalogue of part 3 of his sale, 10 Oct. 1836 ('FRANCISCI ASSISlNATIS Postilla super evangelia dominicalia per totum annum').</provenance>
+                  <provenance notBefore="1841" notAfter="1856"><persName role="fmo"
+                     key="person_54195353">Sir William Hamilton,
+                     1788-1856</persName></provenance>
+                  <acquisition when="1857">Presented to the Bodleian Library by his sons and
+                     received in 1857.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
+                        <source>Draft description by Matthew Holford (Oct. 2020). Previously described in the Summary Catalogue. 
                             
                             <listBibl>
                               <bibl type="SC" facs="aam0059.gif">Summary Catalogue, Vol. 5, p.  24</bibl>
@@ -90,7 +170,9 @@
             </msDesc>
          </sourceDesc>
       </fileDesc>
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
+      <revisionDesc>       
+         <change when="2020-10-06">New draft description for Polonsky German project.</change>
+         <change when="2017-07-01">First online publication.</change>
 
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
