@@ -1,22 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6016">
    <teiHeader>
+      <!-- todo: binding; hands (just 1?); measurements; watermark; ?collation -->
       <fileDesc>
          <titleStmt>
             <title>MS. Hamilton 52</title>
             <title type="collection">MSS. Hamilton</title>
             <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
-            </respStmt>
-         </titleStmt>
-         <editionStmt>
-            <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
+               <resp when="2020-10">Cataloguer</resp>
+               <resp>Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
-         </editionStmt>
+         </titleStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
             <address>
@@ -49,22 +44,51 @@
                      <idno type="SCN">24482</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <msContents>  <textLang mainLang="la">Latin</textLang>
                   <msItem xml:id="MS_Hamilton_52-item1" n="1">
+                     <locus>(fols. 1r-129r)</locus>
                      <author key="person_19648593">
                         Henricus de Frimaria
                      </author>
                      <title key="work_1982">De perfectione
               interioris hominis</title>
-                     <textLang mainLang="la">Latin</textLang>
+                     <incipit>Qui non <unclear>causidici</unclear>. Et est <gap reason="damage" unit="char" quantity="7"></gap> <supplied>con</supplied>tinencia libri presentis cuius titulus est liber de perfeccione spirituali interioris hominis. Istum librum pro honore dei et edificacione legencium studiose concepit magister Henricus de Vrimaria</incipit>
+                   <incipit><locus>(fol. 2r)</locus> Quia multa predicabilia pulcra et vtilia licet sparsim et diffuse in libris collacionum </incipit>
+                     <incipit>Quia meriti rationali virtutes non possunt inseri nisi prius uicia exterpuntur</incipit>
+                     <explicit>gloriam eterne beatitudinis recepturi. Qui est honor et gloria in secula seculorum amen</explicit>
+                     <finalRubric>Explicit liber de perfeccione interioris hominis studiose conceptus per magistrum Henricum de Vrimaria sacre theologie professore ex libris collacionum et institucionum sacrum patrum <gap reason="editorial"/></finalRubric>
+                 </msItem>
+                  <msItem xml:id="MS_Hamilton_52-item2" n="2"> 
+                  <locus>(fol. 129v)</locus>
+                  <note>Fifteenth-century pen-trials (including 'Anno lxviii') and additions:</note>
+                  <msItem>
+                     <rubric>Oratio magistri henrici thoctzen cum legere uoluit</rubric>
                   </msItem>
+                  <msItem><note>The distich 'Littera gesta docet' with note on the four levels of interpretation.</note></msItem>
+                     <msItem><note><q>Ne confundaris . taceas . fugias et patiaris. Hoc Bernardus.</q></note></msItem>
+                  </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
                      </supportDesc>
+                     <layoutDesc><layout columns="1" writtenLines="31 33">1 col., c. 31-3 lines.</layout></layoutDesc>
                   </objectDesc>
+                  <handDesc hands="1">
+                     <handNote script="textualisNorthern" scope="major">One scribe, textualis with cursive features.</handNote>
+                     <handNote script="hybrida" scope="minor">Additions on fol. 129v in hybrida.</handNote>
+                  </handDesc>
+                  <decoDesc>
+                     <decoNote type="flourInit">Five-line red initial with simple penwork decoration in red, fol. 1r.</decoNote>
+                     <decoNote type="colInit">Elsewhere mostly three-line initials in red or the ink of the text, or both, sometimes with simple silhouette decoration.</decoNote>
+                  </decoDesc>
+                 <!--check --><bindingDesc>
+                     <binding notAfter="1500" notBefore="1400">
+                        <p>15th-century binding of brown leather over boards, stamped and ruled in blind; clasp, mostly lost; four (of five) bosses on the lower board; contemporary contents label and pressmark (D XXXIIII). Bindery of St Peter's Erfurt, Einbanddatenbank <ref target="https://www.hist-einband.de/de/werkstattdetails.html?entityID=501181s">501181s</ref></p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
                   <origin>
@@ -73,11 +97,18 @@
                         <country key="place_7000084">German</country>
                      </origPlace>
                   </origin>
+                  <provenance><orgName role="fmo" key="org_135319659">Benedictine abbey of St Peter, Erfurt</orgName>: ex libris, fol. 1r, 15th century, with pressmark D 34.</provenance>
+                  <provenance notAfter="1831" notBefore="1760"><persName role="fmo" key="person_24953683">Friedrich Gottlieb Julius von Bülow, 1760-?1831</persName> (?): possibly identifiable as 469 in the catalogue of part 3 of his sale, 10 Oct. 1836.</provenance>
+                  <provenance notBefore="1841" notAfter="1856"><persName role="fmo"
+                     key="person_54195353">Sir William Hamilton,
+                     1788-1856</persName></provenance>
+                  <acquisition when="1857">Presented to the Bodleian Library by his sons and
+                     received in 1857.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
+                        <source>Draft description by Matthew Holford (Oct. 2020). Previously described in the Summary Catalogue. 
                             
                             <listBibl>
                               <bibl type="SC" facs="aam0071.gif">Summary Catalogue, Vol. 5, p.  36</bibl>
@@ -89,7 +120,9 @@
             </msDesc>
          </sourceDesc>
       </fileDesc>
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
+      <revisionDesc>  
+         <change when="2020-10-01">Description revised for Polonsky German project.</change>
+         <change when="2017-07-01">First online publication.</change>
 
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>

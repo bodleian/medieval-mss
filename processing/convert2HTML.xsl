@@ -99,9 +99,16 @@
     
 
 
-    <!-- Display the most recent change at the bottom of manuscript pages (just before Zotero links, if any) -->
+    <!-- Display links to abbreviations and conventions pages, and the most recent change 
+         at the bottom of manuscript pages (just before Zotero links, if any) -->
     
     <xsl:template name="Footer">
+        <div class="abbreviations">
+            <xsl:processing-instruction name="ni"/>
+            <h3>Abbreviations</h3>
+            <p>View <a href="https://github.com/bodleian/medieval-mss/wiki/Abbreviations" target="_blank">list of abbreviations</a> and <a href="https://github.com/bodleian/medieval-mss/wiki/Conventions" target="_blank">editiorial conventions</a>.</p>
+            <xsl:processing-instruction name="ni"/>
+        </div>
         <xsl:apply-templates select="/TEI/teiHeader/revisionDesc[change][1]"/>
     </xsl:template>
     
