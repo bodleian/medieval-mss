@@ -1,21 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_7148">
    <teiHeader>
+      <!--to do: unclear provenance inscription ; some texts could use with more identification-->
       <fileDesc>
          <titleStmt>
             <title>MS. Laud Misc. 350</title>
             <title type="collection">MSS. Laud Misc. (Laud miscellaneous)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="Q">
+               <resp when="1858">Cataloguer</resp>
+               <persName>H. O. Coxe</persName>
+            </respStmt>
+            <respStmt xml:id="Q2">
+               <resp when="1969">Cataloguer</resp>
+               <persName>R. W. Hunt</persName>
+            </respStmt>
+            <respStmt xml:id="NFP">
+               <resp when="1998">Cataloguer</resp>
+               <persName>Nigel F. Palmer</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2019">Encoding</resp>
+               <persName>Matthew Holford</persName>
+            </respStmt>
+            <respStmt xml:id="TA">
+               <resp when="2020">Encoding</resp>
+               <persName>Tuija Ainonen</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -49,89 +62,345 @@
                      <idno type="SCN">1082</idno>
                   </altIdentifier>
                </msIdentifier>
+               <head>Theological texts and sermons; Germany (Eberbach), 12th century, beginning or middle</head>
                <msContents>
                   <msItem xml:id="MS_Laud_Misc_350-item1" n="1">
-                     <author key="person_49149353">
-                        
-                        Haimo of Halberstadt
-                     
-                     </author>
+                     <locus>(fols. 1v-50r)</locus>
+                     <author key="person_306419523">Ps.-Haimo of Halberstadt</author>
                      <title key="work_1950">De uarietate librorum</title>
+                     <incipit>De futura enim uita plus credendum est</incipit>
+                     <explicit>cum Patre et Spiritu sancto, per infinita vivit et regnat saecula. Amen.</explicit>
+                     <note>Begins with a table of content. Fol. 1 incised to a stub, recto with Eberbach ownership inscription. </note>
+                     <note>Ed. <title>PL</title> 118.875-958.</note>
+                     <note>The work is followed by:</note>
+                     <msItem>
+                        <locus>(fols. 50r-52r)</locus>
+                        <title type="desc">Disputatio dives et pauperis</title>
+                        <rubric>Diues dicit</rubric>
+                        <incipit>Utinam ad desideratas aliquando merear peruenire</incipit>
+                        <explicit>volumus habere uirtutes, non amittere uitia, quod fieri non potest.</explicit>
+                     </msItem>
+                     <finalRubric>Explicit liber iii.</finalRubric>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                   <msItem xml:id="MS_Laud_Misc_350-item2" n="2">
-                     <author key="person_7386286">
-                        
-                        Ps.-Augustine
-                     
-                     </author>
+                     <locus>(fols. 52v-56r)</locus>
+                     <author key="person_7386286">Ps.-Augustine</author>
                      <title key="work_3879">De quattuor uirtutibus caritatis</title>
+                     <rubric>Incipit liber sancti Augustini de quatuor virtutibus karitatis</rubric>
+                     <incipit>Desiderium karitatis vestrae </incipit>
+                     <finalRubric>Explicit de quatuor virtutibus karitatis. </finalRubric>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                   <msItem xml:id="MS_Laud_Misc_350-item3" n="3">
-                     <author key="person_66806872">
-                        
-                        Augustine (?)
-                     
-                     </author>
-                     <title key="work_820">Sermons</title>
+                     <locus>(fols. 56r-83v)</locus>
+                     <title type="desc" key="work_14583">Sermons</title>
+                     <msItem n="3.1">
+                        <locus>(fols. 56r-57r)</locus>
+                        <author key="person_102305735">Caesarius of Arles (?)</author>
+                        <title key="work_1190">Sermo 63</title>
+                        <rubric>Incipit sermo eiusdem sancti Augustii de penitentia</rubric>
+                        <incipit>Admoneo fratres in conspectu Dei timori vestro </incipit>
+                        <finalRubric>Explicit de penitentia.</finalRubric>
+                        <note><title>CCL</title> 103 (1953) 272-274; <title>PL</title> 67.1082-1083: Homilia 19. Also transmitted as <persName key="person_66806872">Augustine</persName>, Sermo 393, <hi rend="italic">de paenitentibus</hi>, (<title>PL</title> 39.1713-1715); <persName key="person_2290">Ps.-Ambrose</persName>, <title>De paenientia ex dictis s. Augustini</title>. (see Drobner, <title>Augustinianum</title>, 55:2 (2015) p. 525).</note>
+                     </msItem>
+                     <msItem n="3.2">
+                        <locus>(fol. 57r-v)</locus>
+                        <author key="person_285603831">Petrus Chrysologus (?) (Ps.-Augustine)</author>
+                        <title key="work_3580">(serm. 6)</title>
+                        <rubric>Incipit sermo sancti Augustini de ieiunio et oratione</rubric>
+                        <incipit>Aduersus demonum nequitiam que Dominus arma ostendit, debemus utique retinere</incipit>
+                        <finalRubric>Explicit sermo sancti Augustini de ieiunio et oratione</finalRubric>
+                        <note><title>PL</title> 39.1886 (as Augustine), <title>PL</title> 52.678b (Petrus Chrysologus (?))</note>
+                     </msItem>
+                     <msItem n="3.3">
+                        <locus>(fols. 57v-58v)</locus>
+                        <author key="person_66806872">Augustine</author>
+                        <title>In die Paschae (serm. 224)</title>
+                        <rubric>Incipit admonitio eiusdem ad populum</rubric>
+                        <incipit>Hodierna die qui baptizati sunt in Christo et renati, alloquamur eos et uos in eis</incipit>
+                        <note><title>PL</title> 38.1093</note>
+                     </msItem>
+                     <msItem n="3.4">
+                        <locus>(fols. 58v-60r)</locus>
+                        <author key="person_66806872">Augustine</author>
+                        <title key="work_790">Enarratio in Psalmos</title>
+                        <note>(48.2.2-4)</note>
+                        <rubric>Sermo sancti Augustini de morte</rubric>
+                        <incipit>Mors autem uera quam non timent homines </incipit>
+                        <note><title>CCSL</title> 38 (1956) 565.10-568.75 (see Drobner, <title>Augustinianum</title>, 55:2 (2015) p. 525). Römer (1972) p. 381.</note>
+                     </msItem>
+                     <msItem n="3.5">
+                        <locus>(fols. 60r-61v)</locus>
+                        <author key="person_66806872">Augustine (?)</author>
+                        <title>De dilectione inimicorum (serm. 386)</title>
+                        <rubric>In hoc libello increpatur dolosus et iracundus, ut agnoscat quadam? iram tenuerit proximo suo, peccata sua sibi dimitti non posse sed potius augerit</rubric>
+                        <incipit>Intendite fratres mei ad karitatem, quam sic laudat scriptura diuina ut nihil ei coaequet. </incipit>
+                        <note><title>PL</title> 39.1695</note>
+                     </msItem>
+                     <msItem n="3.6">
+                        <locus>(fols. 61v-62r)</locus>
+                        <author key="person_7309730">Maximus of Turin (Ps.-Augustine)</author>
+                        <title key="work_4598">De quadragesima (serm. 18)</title>
+                        <rubric>Sermo sancti Augustini de quadragesimae abstinentiae</rubric>
+                        <incipit>Omne uitae nostrae tempus stadium quoddam debemus putare uirtutum et ad caeleste brauium tota uirtute contendere </incipit>
+                        <note><title>PL</title> 57.567</note>
+                     </msItem>
+                     <msItem n="3.7">
+                        <locus>(fol. 62r-v)</locus>
+                        <author key="person_66806872">Augustine (?)</author>
+                        <title>Sermo de cogitationibus (serm. 76)</title>
+                        <rubric>Sancti Augustini de cogitationibus</rubric>
+                        <incipit>Primum quidem cogitationibus malis repugnandum est ut cum aliquid carnale </incipit>
+                        <note><title>PL</title> 40.1358</note>
+                     </msItem>
+                     <msItem n="3.8">
+                        <locus>(fols. 62v-63r)</locus>
+                        <author key="person_66806872">Augustine (?)</author>
+                        <title>De illo qui diu iram in pectore retinet et non uult humiliari (serm. 73)</title>
+                        <rubric>Sermo sancti Augustini ubi increpat qui diu iram in pectore retinet et non uult humiliari</rubric>
+                        <incipit>Omnis homo qui uult de inimico suo uindicari, prouocat se uindictam Dei</incipit>
+                        <note><title>PL</title> 40.1357</note>
+                     </msItem>
+                     <msItem n="3.9">
+                        <locus>(fols. 63r-64r)</locus>
+                        <author key="person_66806872">Augustine</author>
+                        <title>Sermo de reddendis decimis (serm. 272)</title>
+                        <rubric>Sermo sancti Augustini de decimis</rubric>
+                        <incipit>Scriptum est fratres <quote>Domini est terra et plenitudo eius</quote>. Serui Domini pariter sumus et coloni </incipit>
+                        <note><title>PL</title> 39.2266</note>
+                     </msItem>
+                     <msItem n="3.10">
+                        <locus>(fol. 64r-v)</locus>
+                        <author key="person_66806872">Augustine</author>
+                        <title>(serm. 395)</title>
+                        <rubric>Sancti Augustini de futura uita cogita<supplied>tio</supplied></rubric>
+                        <incipit>Fratres karissimi, quod audiuimus dici ut sursum corda habeamus</incipit>
+                        <note><title>PL</title> 39.1716-1717; cf. Ps.-Augustine, Ad fratres in eremo (serm. 74) (<title>PL</title> 40.1358). (see Drobner, <title>Augustinianum</title>, 55:2 (2015) p. 526).</note>
+                     </msItem>
+                     <msItem n="3.11">
+                        <locus>(fols. 64v-66r)</locus>
+                        <author key="person_66806872">Augustine</author>
+                        <title>(serm. 211)</title>
+                        <rubric>Sermo sancti Augustini de oratione dominica</rubric>
+                        <incipit>Fratres, diebus istis quos agimus obseruationem uitae nostrae </incipit>
+                        <note>Sermo 211.1-4 (<title>Sources Chretiennes</title> 116 (1966) 154-166.11) (see Drobner, <title>Augustinianum</title>, 55:2 (2015) p. 526).</note>
+                     </msItem>
+                     <msItem n="3.12">
+                        <locus>(fol. 66r-v)</locus>
+                        <author key="person_7386286">Ps.-Augustine</author>
+                        <title key="work_3906">Ad fratres in eremo (serm. 75)</title>
+                        <rubric>Sermo sancti Augustini de diuite</rubric>
+                        <incipit>Audite itaque qui estis in populo et stulti aliquando sapite</incipit>
+                        <note><title>PL</title> 40.1358. (see Drobner, <title>Augustinianum</title>, 55:2 (2015) p. 526).</note>
+                     </msItem>
+                     <msItem n="3.13">
+                        <locus>(fols. 66v-67v)</locus>
+                        <author key="person_7386286">Ps.-Augustine</author>
+                        <title>Sermo de pace (serm. app. 61)</title>
+                        <rubric>Sermo sancti Augustini de pace</rubric>
+                        <incipit><quote>Felices pacifici quoniam filii Dei uocabuntur</quote>. Meritum christianae uirtutis uilescit in cunctis </incipit>
+                        <note><title>PL</title> 39.1858-59. (see Drobner, <title>Augustinianum</title>, 55:2 (2015) pp. 526-27).</note>
+                     </msItem>
+                     <msItem n="3.14">
+                        <locus>(fols. 67v-69r)</locus>
+                        <author key="person_7386286">Ps.-Augustine</author>
+                        <title>(serm. app. 56)</title>
+                        <rubric>Sermo sancti Augustini de flagellis</rubric>
+                        <incipit><quote>Quem enim diligit Dominus, corripit, flagellat autem omnem filium quem recipit</quote>. Ad hoc flagellat ut corrigat, ad hoc autem corrigat, ut Patri, id est Deo, dignum exhibeat </incipit>
+                        <note><title>PL</title> 39.1851-53. (see Drobner, <title>Augustinianum</title>, 55:2 (2015) pp. 527).</note>
+                     </msItem>
+                     <msItem n="3.15">
+                        <locus>(fols. 69r-70v)</locus>
+                        <author key="person_285603831">Peter Chrysologus (Ps.-Augustine)</author>
+                        <title key="work_3580">Sermo 145</title>
+                        <rubric>Sermo sancti Augustini De natituitate domini nostri Iesu Christi</rubric>
+                        <incipit>Audistis fratres quemadmodum nobis hodie beatus euangelista</incipit>
+                        <note><title>CCSL</title> 24b (1982) 889-898. (see Drobner, <title>Augustinianum</title>, 55:2 (2015) pp. 527).</note>
+                     </msItem>
+                     <msItem n="3.16">
+                        <locus>(fols. 70v-75r)</locus>
+                        <author key="person_7386286">Ps.-Augustine</author>
+                        <title key="work_7435">De sobrietate et castitate </title>
+                        <rubric>Sermo sancti Augustini ad <supplied>virgines</supplied></rubric>
+                        <incipit>Cum mortalium mutabiles mentes uel bonis uel malis </incipit>
+                        <note>Ed. <title>PL</title> 40.1105-06; <title>CSEL</title> 99, pp. 11-32; <title>CPL</title> 374; Römer (1972) p. 169 .</note>
+                     </msItem>
+                     <msItem n="3.17">
+                        <locus>(fols. 75r-76v)</locus>
+                        <author key="person_291862125">Ps.-Jerome</author>
+                        <title key="work_7436">Admonitio contra carnis superbiam (Ep. supp. 60)</title>
+                        <rubric>Tractatus sancti Augustini de carne superba</rubric>
+                        <incipit>Ad te manum meam extendo quem sentio in timore Dei portare uexillum. Ad te me conuerto </incipit>
+                        <note><title>CPL</title> 639a. </note>
+                     </msItem>
+                     <msItem n="3.18">
+                        <locus>(fols. 76v-78r)</locus>
+                        <author key="person_9961331">Ps.-Chrysostom</author>
+                        <title key="work_7437">Sermo in coena Domini (CPL 937)</title>
+                        <rubric>De quinta feria passionis</rubric>
+                        <incipit>In hodiernum conuiuium qui solemni frequentia conuenistis </incipit>
+                        <note>Ed. <title>PLS</title> 4.656–659; <title>CPL</title> 937.</note>
+                     </msItem>
+                     <msItem n="3.19">
+                        <locus>(fols. 78r-79v)</locus>
+                        <author key="person_7386286">Ps.-Augustine</author>
+                        <title key="work_3907">Sermones de passione domini</title>
+                        <rubric>De sexta feria sancti Augustini</rubric>
+                        <incipit>Euangelicae series lectionis qua per ordinem passionis dominicae gloriam didicistis credo quod </incipit>
+                        <note>Ed. <title>PLS</title> 2.1126-1128.</note>
+                     </msItem>
+                     <msItem n="3.20">
+                        <locus>(fols. 79v-80v)</locus>
+                        <author key="person_7386286">Ps.-Augustine</author>
+                        <title key="work_3907">Sermones de passione domini</title>
+                        <rubric>Sermo sancti Augustini de latrone</rubric>
+                        <incipit>Lectio sancti euangelii docet nos quemadmodum multis peccata sua Domino confitentibus cito possit uenia promereri </incipit>
+                        <note>Ed. <title>PLS</title> 2.1130-32.</note>
+                     </msItem>
+                     <msItem n="3.21">
+                        <locus>(fols. 80v-81r)</locus>
+                        <author key="person_7386286">Ps.-Augustine</author>
+                        <title key="work_3907">Sermones de passione domini</title>
+                        <rubric>De duobus latronibus. Augustinus</rubric>
+                        <incipit>In cruce Dominus Christus pendebat, iudei blasphemabant, principes subsannabant. Latro confitebatur Domini </incipit>
+                        <note>Ed. <title>PLS</title> 2.1071-73.</note>
+                     </msItem>
+                     <msItem n="3.22">
+                        <locus>(fols. 81r-83r)</locus>
+                        <author key="person_7386286">Ps.-Augustine</author>
+                        <rubric>De cruce et latrone. Augustinus</rubric>
+                        <incipit>Hodierna die, fratres, Dominus noster pependit in cruce, cuius festiuitatem celebrantes redempti cognoscimus</incipit>
+                        <!--not sure what this sermon is; CHK, not online: <note>CPPM 1.1451 or CPPM 1.91, 2085 </note>-->
+                     </msItem>
+                     <msItem n="3.23">
+                        <locus>(fol. 83r-v)</locus>
+                        <author key="person_7386286">Ps.-Austine</author>
+                        <title key="work_3907">(serm. 97)</title>
+                        <rubric>Sermo sancti Augustini de pace</rubric>
+                        <incipit>Domini est ista uox <quote>Pacem meam do uobis</quote>, pacem dimitto uobis. De pace dicturi prius que sint pacis commoda audiamus</incipit>
+                        <explicit>ut cum illo in aeterna beatitudine vivere possimus. Amen.</explicit>
+                        <note><title>PL</title> 39.1931-1932.</note>
+                     </msItem>
+                     <msItem n="3.24">
+                        <locus>(fols. 83v-84v)</locus>
+                        <author key="person_9961331">Ps.-J
+                           hn Chrysostom</author>
+                        <title key="">Sermo in psalmum 50</title>
+                        <rubric>Sermo s. Iohannis episcopi. De compunctione cordis</rubric>
+                        <incipit>Rogat Dauid ut multum ab iniquitatem saluetur. Quod ergo pro hoc munus intulit </incipit>
+                        <explicit>dat Deus remedium animae.</explicit>
+                     </msItem>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                   <msItem xml:id="MS_Laud_Misc_350-item4" n="4">
-                     <author key="person_66806872">
-                        
-                        Augustine
-                     
-                     </author>
-                     <title key="work_774">De octo quaestionibus ex veteri Testamento</title>
+                     <locus>(fols. 84v-85v)</locus>
+                     <rubric>Doctrina Seuerini episcopi</rubric>
+                     <incipit>Dilige Deum, sapientiam disce, omnia cum mensura age </incipit>
+                     <explicit>et quae cogitas non ignorat. </explicit>
+                     <note><title>PL</title> 74.845-848.</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                   <msItem xml:id="MS_Laud_Misc_350-item5" n="5">
-                     <author key="person_7386286">
-                        
-                        Ps.-Augustine
-                     
-                     </author>
-                     <title key="work_3885">De XII abusiuis saeculi</title>
+                     <locus>(fols. 85v-86v)</locus>
+                     <rubric>Incipit altercatio Ambrosii contra eos, qui animam non confitentur esse facturam, aut extraducem esse dicunt</rubric>
+                     <incipit>Sic enim dicit Deus: A me exiit spiritus et flatum omnem ego creo. Nonne hic est Deus qui uocauit puerum suum Iacob </incipit>
+                     <note>Printed in Caspari, <title>Kirchenhistorische Anecdota</title>, 1 (Christiania, 1888) pp. 227-29.</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                   <msItem xml:id="MS_Laud_Misc_350-item6" n="6">
-                     <author key="person_294784551">
-                        
-                        Ps.-Seneca
-                     
-                     </author>
-                     <author key="person_2304"><!-- not found -->
-                        
-                        Ps.-Paul
-                     
-                     </author>
-                     <title key="work_4121">Epistolae</title>
+                     <locus>(fols. 86v-88r)</locus>
+                     <author key="person_66806872">Augustine</author>
+                     <title key="work_774">De octo quaestionibus ex veteri Testamento</title>
+                     <rubric>Sancti Augustini de octo questionibus ex ueteri testamento</rubric>
+                     <incipit><sic>Uenerabilem</sic> iusticiam non uiolat quis nisi libidine transgressus fuerit placitum societatis humanae</incipit>
+                     <note>CPL 277; CPPM 2.1895; CCSL (1958) 33, p. 469f.</note>
+                     <!--not online, have not consulted this: <note>see G. Morin, 'Un traité inédit attribué à Saint Augustin Le de VIII quaestionibus ex vet. test. du catalogue de lorsch', Revue Bénédictine 28 (1911) pp. 3-4.</note>-->
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
-                  <msItem xml:id="MS_Laud_Misc_350-item7" n="7" class="#theologica #auctoritates">
+                  
+                  <msItem xml:id="MS_Laud_Misc_350-item7" n="7">
+                     <locus>(fols. 88r-94r)</locus>
+                     <author key="person_7386286">Ps.-Augustine</author>
+                     <title key="work_3885">De XII abusiuis saeculi</title>
+                     <rubric>De duodecim abusiuis seculi</rubric>
+                     <incipit>Duodecim abusiua sunt seculi. Hoc est sapiens sine operibus, senex sine religione </incipit>
+                     <note><hi rend="italic">Ciprianus</hi> added by a later hand in the margin. </note> 
+                     <note>see Römer (1972) p. 24.</note>
+                     <textLang mainLang="la">Latin</textLang>
+                  </msItem>
+                  
+                  <msItem xml:id="MS_Laud_Misc_350-item8" n="8">
+                     <locus>(fols. 94r-95r)</locus>
+                     <author key="person_294784551">Ps.-Seneca</author>
+                     <author key="person_2304"><!-- not found -->Ps.-Paul</author>
+                     <title key="work_4121">Epistolae <!--ad Paulum--></title>
+                     <rubric>Incipiunt epistolae Senecae ad Paulum, Paulique similiter ad eundem, quas sibi causa familiaritati et inuicem transmiserunt </rubric>
+                     <incipit>Credo tibi Paule nunciatum </incipit>
+                     <textLang mainLang="la">Latin</textLang>
+                  </msItem>
+                  
+                  <msItem xml:id="MS_Laud_Misc_350-item9" n="9" class="#theologica #auctoritates">
+                     <locus>(fols. 95v-126r)</locus>
                      <title type="desc" key="work_13730">Patristic extracts</title>
+                     <note>from Fructuosus, Isidorus, Basilius, Gregorius, Benedictus abbas, Ambrosius, Jerome, Prosper, Cyprianus, Origen, Cassianus, Augustine, Johannes Constantinopolitanus, Chrysostomus, Caesarius</note>
+                     <rubric>Fructuosi episcopi sermo, qualis esse debeat rector</rubric>
+                     <incipit>Sit autem rector vir, sanctus, discretus, gravis </incipit>
+                     <explicit> meliora sunt vulnera diligentis quam fraudulenta oscula odientis.</explicit>
+                     <note>Fol. 126v blank.</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>ii (17th-century paper) + 126 + ii (17th-century paper) leaves
+                           <dimensions unit="mm" type="leaf">
+                              <height>225</height>
+                              <width min="155" max="160">155-60</width>
+                           </dimensions>
+                           <dimensions unit="mm" type="written">
+                              <height min="174" max="180">174-80</height>
+                              <width min="100" max="100">100-10</width>
+                           </dimensions>
+                        </extent>
+                        <foliation>i-ii, 1-129 (fol. 1 is a stub, fol. 128 numbered erraneously 129)</foliation>
                      </supportDesc>
                   </objectDesc>
+                  <decoDesc>
+                     <decoNote>Red initials and rubrics.</decoNote>
+                  </decoDesc>
+                  <bindingDesc>
+                     <binding calendar="Gregorian" notAfter="1639" notBefore="1637">
+                        <p>Brown tanned calf over laminated pulpboard for Abp. Laud, 1637–1639.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1200" notBefore="1100">12th century</origDate>
+                     <!--was <origDate calendar="Gregorian" notAfter="1200" notBefore="1100">12th century</origDate>-->
+                     <origDate calendar="Gregorian" notAfter="1160" notBefore="1100" resp="#NFP">12th century, beginning or middle</origDate>
                   </origin>
+                  <provenance resp="#NFP"><orgName key="org_133214228" role="fmo">Eberbach</orgName> ex libris, 15th century (fol. 1r): Liber de Marie in eberbach. Excerpta patrum.</provenance>
+                  <provenance resp="#NFP" notBefore="1470" notAfter="1479">Augustine's <title>Sermons</title> identifiable as 'Mi. O 1' in the "Rheinischen Gesamtkatalog" from the 1470s (now Basel, Öffentliche Bibliothek der Universität, cod. F VI 53, pp. 1-28, on p. 22a/b). </provenance>
+                  <provenance resp="#NFP" when="1502">Identifiable as b 26 in the <orgName key="org_133214228" role="fmo">Eberbach</orgName> library catalogue of 1502.</provenance>
+                  <!--unclear inscription with date <provenance>Liber? ...  1531 (fol. 95v)</provenance>-->
+                  <provenance resp="#Q2" when="1638"><persName role="fmo" key="person_54940373">William Laud, 1573-1645</persName>, 1638.</provenance>
+                  <acquisition when="1639" resp="#Q2">Part of his third donation to the Bodleian, 1639.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (H. O. Coxe,  <title>Laudian Manuscripts</title>, Quarto Catalogues II, repr. with corrections, 1969, from the original ed. of 1858-1885). 
-                            
-                            
+                        <source>Description adapted by Tuija Ainonen (October 2020) from the following sources (with additional description of the contents):
+                           <listBibl>
+                              <bibl>Nigel F. Palmer, <title>Zisterzienser und ihre Bücher: die mittelalterliche Bibliotheksgeschichte von Kloster Eberbach im Rheingau</title> (Regensburg, 1998), pp. 229, 265, 294 [physical description, date, origin, provenance]</bibl>
+                              <bibl>H. O. Coxe, <title>Laudian Manuscripts</title>, Quarto Catalogues II, repr. with corrections, 1969, from the original ed. of 1858-1885 [contents, acquisition]</bibl>
+                           </listBibl>
                             <listBibl>
                               <bibl type="QUARTO" facs="aby0181.gif">Quarto Catalogue, cols. 265-6</bibl>
                               <bibl type="QUARTO" facs="aby0337.gif">Quarto Catalogue, p. 557</bibl>
@@ -144,8 +413,9 @@
             </msDesc>
          </sourceDesc>
       </fileDesc>       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
+      <revisionDesc>          
+         <change when="2020-10-09">Description revised for Polonsky digitization project to include additional information from printed descriptions.</change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>
