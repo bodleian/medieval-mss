@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_7191">
    <teiHeader>
-      <!--to be done: add measurements-->
-      <!--fol. 35, should we create a separate 'part' / fragment?-->
-      <!--to be done: inscription on fol. 92v: provenance?-->
+      <!--to be done: add measurements of fol. 35?-->
       <fileDesc>
          <titleStmt>
             <title>MS. Laud Misc. 393</title>
@@ -11,6 +9,10 @@
             <respStmt xml:id="Q">
                <resp when="1858">Cataloguer</resp>
                <persName>H. O. Coxe</persName>
+            </respStmt>
+            <respStmt>
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
             </respStmt>
             <respStmt xml:id="Q2">
                <resp when="1969">Cataloguer</resp>
@@ -56,64 +58,74 @@
                      <idno type="SCN">935</idno>
                   </altIdentifier>
                </msIdentifier>
-               <head>Martyrology; Germany, 14th century, end</head>
+               <head>Usuard, <title>Martyrology</title>; Germany, 14th century, middle</head>
                <msContents>
+                  <textLang mainLang="la">Latin</textLang>
+                  <msItem> <note>Fol. 1r-v originally blank. Added on fol. 1r, later fourteenth century: note on the use of the ablative and accusative case in dates of the Roman calendar; note on why 'pridie kalendas' is said instead of 'secundo kalendas'.</note></msItem>
                   <msItem xml:id="MS_Laud_Misc_393-item1" n="1" class="#liturgica">
                      <locus>(fols. 2r-34v, 36r-81v)</locus>
-                     <title type="desc" key="work_13137">Martyrologium</title>
-                     <incipit>A. ix. kalend Januarii. Vigilia natalis Domini. Apud Antiochiam Syrie</incipit>
-                     <explicit>G. x kalendas Januarii. Apud Nicomediam sanctorum ... miracula creberrime fiunt.</explicit>
-                     <note>Followed by:</note>
+                     <author key="person_264282437"><supplied>Usuard</supplied></author>
+                     <title type="desc" key="work_4890">Martyrologium</title>
+                    
+                     
                      <msItem>
-                        <locus>(fols. 81v-r)</locus>
-                        <title>Hours and Mass of Corpus Christi</title>
-                        <rubric>De corpore Domini. Lectio prima. Sermo beati Augustini episcopi.</rubric>
+                        <incipit>A. ix. kalend Januarii. Vigilia natalis Domini. Apud Antiochiam Syrie</incipit>
+                     <explicit>G. x kalendas Januarii. Apud Nicomediam sanctorum <gap reason="editorial"/> miracula creberrime fiunt.</explicit>
+                     <note>Beginning at Christmas Eve; PL 124.833-858, 123.601-988, 124.9-830.</note>
+                        <note>Many marginal additions, both specifying the grade of the feasts, and adding further feasts, including (fol. 59r, 15 kl. Oct) 'anniuersarium familiarum et benefactorum nostorum'; (fol. 64v, 6 id. Oct) 'anniversarium fratrum et sororum ordinis nostri'</note>
+                     </msItem>
+                  </msItem>
+                     <msItem>
+                        <locus>(fols. 81v-91v)</locus>
+                        <title type="desc" key="work_16378">Office of Corpus Christi</title><!--  set of 9 lessons (81<hi rend="su">v</hi>), chapter at vespers (87: Dominus Ihesus in qua nocte), two collects (87<hi rend="su">v</hi>: Deus qui nobis; Deus qui gloriosum), and the alleluia versicle, prose, offertory, communio of the mass of Corpus Christi; musical notation. Fol.35 an addition with prayers for the dead -->
+                       <msItem>
+                          <locus>(fols. 81v-87r)</locus>
+                          <rubric>De corpore Domini. Lectio prima. Sermo beati Augustini episcopi.</rubric>
                         <incipit>In mensa diuine largitatis</incipit>
-                        <note>With music for: </note>
+                       <note>Nine lessons.</note></msItem>
                         <msItem>
+                           <locus>(fol. 87r-v)</locus>
+                           <incipit>Dominus iesu in qua nocte tradebatur</incipit>
+                           <note>Chapter at vespers</note>
+                        </msItem> </msItem>
+                       <msItem>
+                          <locus>(fols. 87v-91v)</locus>
+                          <title type="desc" key="work_16377">Mass of Corpus Christi (alleluia versicle, prose, offertory, communio, with music)</title>
+                          <msItem>
                            <locus>(fol. 87v-88r)</locus>
-                           <title>Alleuia 'Caro mea uere est' (Cantus ID 507001)</title>
+                           <note>'Caro mea uere est' (Cantus ID 507001)</note>
                         </msItem>
                         <msItem>
                            <locus>(fols. 88r-90v)</locus>
-                           <title>Sequence 'Lauda Syon Salvatorem' (Cantus ID ah50385).</title>
+                           <note>'Lauda Syon Salvatorem' (Cantus ID ah50385).</note>
                         </msItem>
                         <msItem>
                            <locus>(fols. 91r)</locus>
-                           <title>Offertorium 'Sacerdotes incensum domini et panes' (Cantus ID 502001)</title>
+                           <note>'Sacerdotes incensum domini et panes' (Cantus ID 502001) uel 'Portas caeli' (ID 800509), the incipit only given of the latter.</note>
                         </msItem>
                         <msItem>
                            <locus>(fol. 91r-v)</locus>
-                           <title>Communion 'Quotienscumque manducabitis panem' (Cantus ID 503001)</title>
-                           <note>Followed by 'Vel communio Hoc corpus' that ends aprubtly.</note>
+                           <note> 'Quotienscumque manducabitis panem' (Cantus ID 503001) uel 'Hoc corpus' (601044), the incipit only given of the latter.</note>
+                           <note> Rest of fol. 91v blank.</note>
                         </msItem>
-                        <textLang mainLang="la">Latin</textLang>
-                     </msItem>
-                       <note>Fol. 92rv blank, except for ruling and note on 92v<!-- cannot solve this: "Dem windigenu(m) ... Waltfenu(m) von E/Cronberg L.umptf... zue finnnrkfurt Erufstsch.... "-->.</note>
-                     <textLang mainLang="la">Latin</textLang>
-                  </msItem>
-                  <msItem>
-<!-- should this be entered as a fragment, and therefore in a separate part? -->
-                     <locus>(fol. 35rv)</locus>
-                     <title>Prayers from the Office of the dead</title>
-                     <note>Inserted leaf containing: Pro parentibus oracio. Deus qui nos patrem et matrem; In aniuersario oracio. Deus indulgentiarum; Pro defuncto oracio. Inclina Domine aurem tuam; Pro episcopo oracio. Deus qui in; Pro sacerdote oracio. Presta quesumus Domine; Pro de molinariis oracio. Deus cuius misericordie non est; Pro femina defuncta oracio. Quesumus Domine pro tuoa pietate </note>
-                     <note>Written in 2 columns, 19 lines. Alternating red and blue initials, rubrics in red.</note>
-                     <textLang mainLang="la">Latin</textLang>
-                  </msItem>
+                    
+                       <note>Fol. 92rv blank, except for ruling and note on 92v (see Provenance)</note>
+                 
+                       </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
                         <extent>i (paper) + i (parchment) + 92 + i (parchment) + i (paper) leaves
-                           <!--ADD from MS: <dimensions unit="mm" type="leaf">
-                              <height></height>
-                              <width></width>
+                           <dimensions unit="mm" type="leaf">
+                              <height>245</height>
+                              <width>170</width>
                            </dimensions>
                            <dimensions unit="mm" type="written">
-                              <height></height>
-                              <width></width>
-                           </dimensions>-->
+                              <height>165</height>
+                              <width>108</width>
+                           </dimensions>
                         </extent>
                         <foliation>i-ii, 1-94</foliation>
                      </supportDesc>
@@ -122,10 +134,10 @@
                      </layoutDesc>
                   </objectDesc>
                   <musicNotation>
-                     <note>Notation on fols. 87v-91v.</note>
+                     <note>Gothic 'hufnagel' notation on staves of 5 black lines, the F line(s) red (fols. 87v-91v).</note>
                   </musicNotation>
                   <decoDesc>
-                     <decoNote>Plain red initials, rubrics in red.</decoNote>
+                     <decoNote type="colInit">Plain red initials, rubrics in red.</decoNote>
                   </decoDesc>
                   <bindingDesc>
                      <binding calendar="Gregorian" notAfter="1639" notBefore="1637">
@@ -135,10 +147,10 @@
                </physDesc>
                <history>
                   <origin>
-                     <origPlace><country key="place_7000084">German</country></origPlace>
-                     <origDate calendar="Gregorian" notAfter="1400" notBefore="1390">14th century, end</origDate>
+                     
+                     <origDate calendar="Gregorian" notAfter="1360" notBefore="1340">14th century, middle</origDate><origPlace><country key="place_7000084">Germany</country></origPlace>
                   </origin>
-                  <provenance><orgName key="org_139700865" resp="#Q2">Deutschordenskirche (Sachsenhausen)</orgName>
+                  <provenance><orgName key="org_139700865" resp="#Q2">Deutschordenskirche (Sachsenhausen, Frankfurt am Main)</orgName> (?): liturgical evidence for the Teutonic Order, and on fol. 92v <q>Dem wurdigem hern Waltherm von Cronberg Compthur zu Frankfurt teutsches ordens</q>: <persName key="person_52483392">Walther von Kronberg</persName>, ?1479-1543, who held this office in 1509 (B. Dudik, <title>Des hohen Deutschen Ritterordens Münz-Sammlung in Wien</title> (Vienna, 1858), 152).
                      <!--I cannot find the basis for this. However, fol. 64v add i.m.: "Item anniuersarium fratrum et sororum ordinis nostri." for v. idus octobris (11.10.) (Dominicans? though the date is off by one)--></provenance>
                   <provenance resp="#Q2" when="1637"><persName role="fmo" key="person_54940373">William Laud, 1573-1645</persName>, 1637.
                   </provenance>
@@ -149,7 +161,8 @@
                      <recordHist>
                         <source>Description adapted by Tuija Ainonen (October 2020) (with additional description of the contents) from:
                            <listBibl>
-                              <bibl>H. O. Coxe, <title>Laudian Manuscripts</title>, Quarto Catalogues II, repr. with corrections, 1969, from the original ed. of 1858-1885 [contents, provenance, acquisition]</bibl>
+                              <bibl> S. J. P. Van Dijk, <title>Handlist of the Latin Liturgical Manuscripts in the Bodleian Library Oxford</title> (typescript, 1957), II (Office books), p. 211 [contents, date, provenance]</bibl>
+                              <bibl>H. O. Coxe, <title>Laudian Manuscripts</title>, Quarto Catalogues II, repr. with corrections, 1969, from the original ed. of 1858-1885 [acquisition]</bibl>
                            </listBibl>
                             <listBibl>
                               <bibl type="QUARTO" facs="aby0193.gif">Quarto Catalogue, col. 290</bibl>
@@ -159,11 +172,47 @@
                      </recordHist>
                   </adminInfo>
                </additional>
+               <msPart xml:id="MS_Laud_Misc_393_fol_35">
+                  <msIdentifier>
+                     <altIdentifier type="partial">
+                        <idno type="part">MS. Laud Misc. 393 - fol. 35</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  <msContents>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem>
+                        <!-- should this be entered as a fragment, and therefore in a separate part? -->
+                        <locus>(fol. 35rv)</locus>
+                        <title type="desc" key="work_13574"><supplied>Prayers from the Office of the dead</supplied></title>
+                        <note>Inserted leaf from another manuscript containing: Pro parentibus oracio. Deus qui nos patrem et matrem; In aniuersario oracio. Deus indulgentiarum; Pro defuncto oracio. Inclina Domine aurem tuam; Pro episcopo oracio. Deus qui in; Pro sacerdote oracio. Presta quesumus Domine; Pro de molinariis oracio. Deus cuius misericordie non est; Pro femina defuncta oracio. Quesumus Domine pro tuoa pietate </note>
+                        <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     
+                     
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="perg">
+                           <support>parchment</support>
+                        </supportDesc>
+                        <layoutDesc><layout columns="2" writtenLines="19">Written in 2 columns, 19 lines. </layout></layoutDesc>
+                     </objectDesc>
+                     <decoDesc>
+                        <decoNote type="colInit">Alternating red and blue initials, rubrics in red.</decoNote>
+                     </decoDesc>
+                  </physDesc>
+                  <history>
+                     <origin>
+                        
+                        <origDate calendar="Gregorian" notAfter="1400" notBefore="1300">14th century</origDate><origPlace><country key="place_7000084">Germany</country></origPlace>
+                     </origin>
+                  </history>
+               </msPart>
             </msDesc>
          </sourceDesc>
       </fileDesc>       
       <revisionDesc>          
-         <change when="2020-10-16">Description revised for Polonsky digitization project to include additional information from printed descriptions.</change>
+         <change when="2020-10-16">Description revised for Polonsky digitization project.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
