@@ -2,20 +2,35 @@
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_7149">
    <teiHeader>
       <fileDesc>
+         <!--to be done: add measurements-->
+         <!--CHK provenance - should something be included from Gomez?-->
          <titleStmt>
             <title>MS. Laud Misc. 351</title>
             <title type="collection">MSS. Laud Misc. (Laud miscellaneous)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="Q">
+               <resp when="1858">Cataloguer</resp>
+               <persName>H. O. Coxe</persName>
+            </respStmt>
+            <respStmt xml:id="Q2">
+               <resp when="1969">Cataloguer</resp>
+               <persName>R. W. Hunt</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1966">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2019">Encoding</resp>
+               <persName>Matthew Holford</persName>
+            </respStmt>
+            <respStmt xml:id="TA">
+               <resp when="2020">Encoding</resp>
+               <persName>Tuija Ainonen</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -49,33 +64,54 @@
                      <idno type="SCN">1080</idno>
                   </altIdentifier>
                </msIdentifier>
+               <head>Thomas Aquinas, Lectura super Iohannem; Germany, 14th century, second half</head>
                <msContents>
                   <msItem xml:id="MS_Laud_Misc_351-item1" n="1">
-                     <author key="person_264344179">
-                        
-                        Thomas Aquinas
-                     
-                     </author>
+                     <locus>(fols. 1r-85r)</locus>
+                     <author key="person_264344179"> Thomas Aquinas </author>
                      <title key="work_4773">Lectura super Iohannem</title>
                      <note>reported by <persName role="aut" key="person_63019369">Reginald of Piperno</persName>
                      </note>
                      <bibl type="commentedOn">
                         <title>Bible, John</title>
                      </bibl>
+                     <incipit>Factum est verbum super Johannem </incipit>
+                     <explicit>annunciam et multiplicati sunt super etc. </explicit>
+                     <colophon>Hec ergo sunt que ego Raynaldus de Piperino ordinis predicatorum ad preces quodrundam sociorum et specialiter ad mandatum reuerendi patris prepositi sancti Adomari post fratrem Thomam de Aquino quasi qui colligit racemos post uindemiam utinam non diminute collegi, ubi de bene dictis Deo inspirante laudes, magistro dicenti grates a legentibus, sed de minimis bene dictis michi tantum atribuendum veram labor et impericia impetrent. Caritas uero qua labor assumitur, orationum suffragia merentur.</colophon>
+                     <finalRubric>Explicit super Johannemm</finalRubric>
                      <textLang mainLang="la">Latin</textLang>
+                     <note>Fols. 85v-86v blank except for ruling.</note>
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>i + 86 leaves
+                           <!--<dimensions unit="mm" type="leaf">
+                              <height></height>
+                              <width></width>
+                           </dimensions>
+                           <dimensions unit="mm" type="written">
+                              <height></height>
+                              <width></width>
+                           </dimensions>-->
+                        </extent>
+                        <foliation>i, 1-86</foliation>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2" writtenLines="40">Written in two columns, 40 lines.</layout>
+                     </layoutDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>
-                        Fleuronnée initials. (P&amp;A i. list, p. 72)
-                     </decoNote>
+                     <decoNote resp="#PA" type="flourInit"> Fleuronnée initial. (P&amp;A i. list, p. 72) </decoNote>
+                     <decoNote resp="#TA" type="colInit">Plain initials alternating in red and blue; red or blue paraphs; red underlining; running headings with chapter number in both colours.</decoNote>
                   </decoDesc>
+                  <bindingDesc>
+                     <binding calendar="Gregorian" notAfter="1639" notBefore="1637">
+                        <p>Brown tanned calf over laminated pulpboard for Abp. Laud, 1637–1639.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
                   <origin>
@@ -84,13 +120,19 @@
                         <country key="place_7000084">German</country>
                      </origPlace>
                   </origin>
+                  <!--<provenance>Gómez (1932, p. 400), based on 'the shields that raise the covers' ("los escudos que elevan las cuniertas"), deduces that the MS. comes either from the Carthusians near Mainz or from Eberbach. Not sure if I understand the Spanish correctly, but if I do, I don't follow this as the covers are regular Laudian covers. see: https://www.jstor.org/stable/45081787 . Not included in Palmer </provenance>-->
+                  <provenance resp="#Q2" when="1638"><persName role="fmo" key="person_54940373">William Laud, 1573-1645</persName>, 1638.
+                  </provenance>
+                  <acquisition when="1639" resp="#Q2">Part of his third donation to the Bodleian, 1639.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (H. O. Coxe,  <title>Laudian Manuscripts</title>, Quarto Catalogues II, repr. with corrections, 1969, from the original ed. of 1858-1885). Decoration, localization and date follow Pächt and Alexander (1966).  
-                            
-                            
+                        <source>Description adapted (October 2020) from the following sources:
+                           <listBibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, 3 vols. (1966-1973) I, list, p. 72. [decoration, localization and date]</bibl>                    
+                           <bibl>H. O. Coxe, <title>Laudian Manuscripts</title>, Quarto Catalogues II, repr. with corrections, 1969, from the original ed. of 1858-1885 [contents, acquisition]</bibl>
+                           </listBibl>
                             <listBibl>
                               <bibl type="QUARTO" facs="aby0181.gif">Quarto Catalogue, col. 266</bibl>
                               <bibl type="SC" facs="aap0067.gif">Summary Catalogue, vol. 2, part 1, p. 46</bibl>
@@ -102,8 +144,9 @@
             </msDesc>
          </sourceDesc>
       </fileDesc>       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
+      <revisionDesc>          
+         <change when="2020-10-16">Description revised for Polonsky digitization project to include additional information from printed descriptions.</change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>
