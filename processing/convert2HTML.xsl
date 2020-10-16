@@ -106,7 +106,7 @@
         <div class="abbreviations">
             <xsl:processing-instruction name="ni"/>
             <h3>Abbreviations</h3>
-            <p>View <a href="https://github.com/bodleian/medieval-mss/wiki/Abbreviations" target="_blank">list of abbreviations</a> and <a href="https://github.com/bodleian/medieval-mss/wiki/Conventions" target="_blank">editiorial conventions</a>.</p>
+            <p>View <a href="https://github.com/bodleian/medieval-mss/wiki/Abbreviations" target="_blank">list of abbreviations</a> and <a href="https://github.com/bodleian/medieval-mss/wiki/Conventions" target="_blank">editorial conventions</a>.</p>
             <xsl:processing-instruction name="ni"/>
         </div>
         <xsl:apply-templates select="/TEI/teiHeader/revisionDesc[change][1]"/>
