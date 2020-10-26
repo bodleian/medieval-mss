@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6984">
    <teiHeader>
-      <!--TO BE DONE: add measurements:  place of origin lacking
-      fol. 1 note?
-      -->
       <fileDesc>
          <titleStmt>
             <title>MS. Laud Misc. 175</title>
             <title type="collection">MSS. Laud Misc. (Laud miscellaneous)</title>
-            <respStmt xml:id="Q">
+           <!-- <respStmt xml:id="Q">
                <resp when="1858">Cataloguer</resp>
                <persName>H. O. Coxe</persName>
             </respStmt>
             <respStmt xml:id="Q2">
                <resp when="1969">Cataloguer</resp>
                <persName>R. W. Hunt</persName>
-            </respStmt>
+            </respStmt>-->
             <respStmt xml:id="TA">
+               <resp when="2020">Cataloguer</resp>
                <resp when="2020">Encoding</resp>
                <persName>Tuija Ainonen</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2020">Cataloguer</resp>
+               <resp when="2020">Encoding</resp>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -86,14 +89,14 @@
                      <note>See Römer, <title>Handschrifliche Überlieferung</title> (1972), p. 159. </note>
                   </msItem>
                   <msItem xml:id="MS_Laud_Misc_175-item4" n="4">
-                     <locus>(fols. 17r-18v)</locus>
+                     <locus>(fols. 17r-18(a)v)</locus>
                      <author key="person_100227669">Ambrose</author>
                      <title key="work_462">De mysteriis</title>
                      <incipit>De mysteriis cottidianis sermonem habuimus </incipit>
                      <explicit>in hac fide mortuus mundo </explicit>
                      <note>1.1–4.21</note>
                      <note>ed. <title>PL</title> 16.389A-395A. See Drobner, "Newly identified Augustinian and pseudo-Augustinian texts ...", <title>Augustinianum</title> 55:2 (2015) p. 523.</note>
-                     <note>Fol. 18b recto-verso blank.</note>
+                     <note>Rest of fol. 18(a) blank. Fol. 18(b) recto-verso blank.</note>
                   </msItem>
                   <msItem xml:id="MS_Laud_Misc_175-item5" n="5">
                      <locus>(fols. 19r-37r)</locus>
@@ -131,48 +134,57 @@
                      <note>See Römer, <title>Handschrifliche Überlieferung</title> (1972), p. 123. </note>
                   </msItem>
                   <msItem>
+                     <msItem xml:id="MS_Laud_Misc_175-item9" n="9">
                      <locus>(fols. 85r-v)</locus>
                      <author key="person_268614077"><supplied>Walter of Mortagne</supplied></author>
                      <title key="work_4974"><supplied>Tractatus de trinitate</supplied></title><note>(cc. 1-2)</note>
                      <incipit>Indubitanter credo unum deum esse et non plures iuxta illud moysi, Audi israel</incipit>
                      <explicit>quod est contrarium sabelliane heresi</explicit>
-                     <note>PL 209.575-8</note>
+                     <note>PL 209.575-8. </note>
                      <!-- date: ante 1136 (mirabile0 -->
                   </msItem>
-                  <msItem>
+                     <msItem xml:id="MS_Laud_Misc_175-item10" n="10">
                      <locus>(fol. 85v)</locus>
                      <author key="person_77109407"><supplied>Anselm of Laon</supplied></author>
-                     <title>Commentary on Gloria patri</title>
+                     <title type="desc">Commentary on Gloria patri</title>
                      <incipit><quote>Gloria patri et filio <gap reason="editorial"/></quote>  Iste versiculus postunumquemque psalmum cantatur</incipit>
                      <explicit>honoretur et magnificetur deus</explicit>
-                     <note>Stegmüller 1357,1</note>
+                     <bibl type="repertory">Stegmüller 1357,1</bibl>
                   </msItem>
-                  <msItem>
+                     <msItem xml:id="MS_Laud_Misc_175-item11" n="11">
                      <locus>(fol. 85v)</locus>
                      <incipit>Has questiones fecit quidam Augustino de anima humana: unde sit, qualis sit, quanta sit, cur corpori fuerit dedita</incipit>
-                     <explicit>regendo corpori accomodata</explicit>
+                     <explicit>rationis particeps regendo corpori accomodata</explicit>
+                        <note>Cf. Augustine, <title>De quantitate animae</title>, 1.1 and 13.12</note>
                   </msItem>
+                  <note>Items 9-11 are contemporary additions.</note></msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
                         <extent>1 + 86 + 1 leaves 
-                           <!--ADD: <dimensions unit="mm" type="leaf">
-                              <height></height>
-                              <width></width>
+                            <dimensions unit="mm" type="leaf">
+                              <height>158</height>
+                              <width>110</width>
                            </dimensions>
-                           <dimensions unit="mm" type="written">
-                              <height></height>
-                              <width></width>
-                           </dimensions>-->
+                          
                         </extent>
                         <foliation>i, 1-86 (fol. 18 doubled)</foliation>
                      </supportDesc>
                      <layoutDesc>
-                        <layout columns="1" writtenLines="35">Written in 35 long lines. </layout>
+                        <layout columns="1" writtenLines="35">Written in 35 long lines; ruled in leadpoint. Written space <dimensions unit="mm" type="written">
+                              <height>135</height>
+                              <width>100</width>
+                           </dimensions> </layout>
                      </layoutDesc>
                   </objectDesc>
+                  <handDesc>
+                     <handNote script="protogothic">Protogothic; several hands.</handNote>
+                  </handDesc>
+                  <decoDesc>
+                     <decoNote type="colInit">Coloured initials; rubrics.</decoNote>
+                  </decoDesc>
                   <bindingDesc>
                      <binding calendar="Gregorian" notAfter="1639" notBefore="1637">
                         <p>Reversed calf binding over laminated pulpboard for Abp. Laud, 1637–1639.</p>
@@ -181,11 +193,11 @@
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1160" notBefore="1140" resp="#Q">12th century (middle (?))</origDate>
-                     <!--none assigned <origPlace></origPlace>-->
+                     <origDate calendar="Gregorian" notAfter="1160" notBefore="1140" resp="#Q">12th century, second half</origDate>
+                     <origPlace>southern <country key="place_7000084">Germany</country> (?), or <country key="place_1000062">Austria</country> (?)</origPlace>
                   </origin>
-                  <provenance resp="#Q"><orgName key="org_148392609">Cistercian abbey of Engelszell</orgName>: Inscription 'Liber sancte Marie in Cella Angelorum' (fol. 85v).</provenance>
-                  <provenance resp="#Q2" when="1638"><persName role="fmo" key="person_54940373">William Laud, 1573-1645</persName>, 1638: his ex libris, 1638, fol. i verso.</provenance>
+                  <provenance resp="#Q"><orgName key="org_148392609">Cistercian abbey of Engelszell</orgName> (founded 1293): 'Liber sancte Marie in Cella Angelorum' (fol. 85v). Dispersed at an unknown date.</provenance>
+                  <provenance resp="#Q2" when="1638">Acquired in Germany during the period of the Thirty Years' War on behalf of <persName role="fmo" key="person_54940373">William Laud, 1573-1645</persName>: his ex libris, 1638, fol. i verso.</provenance>
                   <acquisition when="1639" resp="#Q2">Part of his third donation to the Bodleian, 1639.</acquisition>
                </history>
                <additional>
@@ -204,13 +216,14 @@
                      </recordHist>
                   </adminInfo>
                   <listBibl>
-                     <bibl>F. Römer, <title>Die handschriftliche Überlieferung der Werke des Heiligen Augustinus</title> II/1: Großbritannien und Irland: Werkverzeichnis (1972) pp. 90, 92, 96, 123, 159, 367 [contents]</bibl>
+                     <bibl>F. Römer, <title>Die handschriftliche Überlieferung der Werke des Heiligen Augustinus</title> II/1: Großbritannien und Irland: Werkverzeichnis (1972) pp. 90, 92, 96, 123, 159, 367 </bibl>
                   </listBibl>
                </additional>
             </msDesc>
          </sourceDesc>
       </fileDesc>       
       <revisionDesc>
+         <change when="2020-10-26">Description finalized for Polonsky German digitization project.</change>
          <change when="2020-10-22">Description revised for Polonsky digitization project.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
