@@ -1,21 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_716">
    <teiHeader>
+      <!--TO BE DONE: watermarks on flyleaves - not sure if we mark these-->
+      <!-- CHK Claudia Villa, La "lectura Terentii" (1984) that contains a study of this MS. Available at R.Cat. 16r Weston Gallery Open Shelves, Books N10503617. Cannot find it online, might have more provenance info. chk against content descr. too-->
+      <!-- what to do with the long [encodingDesc xml:id="encodingDesc" xml:base="../tolkien-classDecl.xml"] section at the end?-->
       <fileDesc>
          <titleStmt>
             <title>MS. Auct. F. 6. 27</title>
             <title type="collection">MSS. Auct. F. (Auctarium F.)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="SC">
+               <resp when="1905">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1966">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2020">Encoding</resp>
+               <persName>Matthew Holford</persName>
+            </respStmt>
+            <respStmt xml:id="TA">
+               <resp when="2020">Encoding</resp>
+               <persName>Tuija Ainonen</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -49,12 +61,176 @@
                      <idno type="SCN">28117</idno>
                   </altIdentifier>
                </msIdentifier>
+               <head>Terence, Comedies; Germany, 11th century, first half</head>
                <msContents>
                   <msItem xml:id="MS_Auct_F_6_27-item1" n="1">
-                     <author key="person_66462384">
-                        Terence
-                     </author>
+                     <locus>(fols. 1r-112v)</locus>
+                     <author key="person_66462384">Terence </author>
                      <title key="work_4666">Comedies</title>
+                     <note>With interlinear and marginal commentary. The 'Codex Ebnerianus' of Terence. Calliopian note after all plays except the Andria. </note>
+                     <msItem>
+                        <locus>(fol. 1r-1v)</locus>
+                        <rubric>Incipit uita <supplied>Ter</supplied>entii</rubric>
+                        <incipit>Terentius afer genere cartagin<add place="above">i</add>ensis</incipit>
+                        <explicit>nemo accipiebat. </explicit>
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 1v)</locus>
+                        <rubric>Terentii uersus</rubric>
+                        <incipit>Natus in excelsis</incipit>
+                        <explicit> cautus erit. </explicit>
+                        <incipit>Sororem falso creditam</incipit>
+                        <explicit> alias Charino coniugem. </explicit>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 2r-21r)</locus>
+                        <title type="desc">Andria</title>
+                        <msItem>
+                           <locus>(fol. 2r-v)</locus>
+                           <title type="desc">Prologue</title>
+                           <rubric>Incipit Liber primus Terentii Afri In andria</rubric>
+                           <incipit>Poeta cum primum appulit animum adscribendum </incipit>
+                           <explicit>sint uobis prius. </explicit>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 2v-21r)</locus>
+                           <incipit>Simo. senex. sosia. Uos istec intro auferte </incipit>
+                           <note>Spurious alternative ending: </note>
+                           <incipit><locus>(fol. 21r)</locus> Te expectabam </incipit>
+                           <explicit>sex talenta spondeo. </explicit>
+                        </msItem>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 22v-45r)</locus>
+                        <title type="desc">Eunuchus</title>
+                        <msItem>
+                           <locus>(fol. 22v)</locus>
+                           <title type="desc">Prologue</title>
+                           <incipit>Quisquam collectiuum nomen est</incipit>
+                           <explicit> et huic testamentum ea lege.</explicit>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 22v)</locus>
+                           <rubric>Argumentum Eunuchi</rubric>
+                           <incipit>Meretrix adulescente cuius mutuo amore</incipit>
+                           <explicit> amoris receptus includitur.</explicit>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 22v)</locus>
+                           <title type="desc">Versus</title>
+                           <incipit>Dulcia que docuit </incipit>
+                           <explicit>dulcis mente conscriptio heri.</explicit>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 23r-v)</locus>
+                           <title type="desc">Prologue</title>
+                           <rubric>Incipit Eunuchus</rubric>
+                           <incipit>Acta Ludis Megalensibus. Lucio. Postumio ...</incipit>
+                           <incipit>Si quisquam est qui placere se studeat </incipit>
+                           <explicit>ut pernoscatis quid sibi Eunuchus velit.</explicit>
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 23v-45r)</locus>
+                           <incipit>Phedria, Parmeno adulscens seruus. Quid igitur faciam? </incipit>
+                           <explicit>et plaudite Calliopius recensui.</explicit>
+                        </msItem>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 45r-63v)</locus>
+                        <title type="desc">Hautontimorumenos</title>
+                        <rubric>Incipit Hea<add place="inline">u</add>tontimru<add place="inline">me</add>nos. Acta Ludis Megalensibus Cornelio Leniulo ...</rubric>
+                        <msItem>
+                           <locus>(fol. 45r-v)</locus>
+                           <rubric>Incipit feliciter argumentum</rubric>
+                           <incipit>In militiam proficisci gnatum cluniam amantem</incipit>
+                           <explicit>alia clitipho uxorem accipit.</explicit>
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 45v-46r)</locus>
+                           <rubric>Prologus</rubric>
+                           <incipit>Ne cui uestrum sit mirum</incipit>
+                           <explicit>uobis placere studeant potius quam sibi.</explicit>
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 46r-63v)</locus>
+                           <incipit>Chremes Menedemus Senes ii. Quam quam hec inter nos </incipit>
+                           <explicit>Vos valete et plaudite. ego calliopius recensui. </explicit>
+                        </msItem>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 64r-79v)</locus>
+                        <title type="desc">Adelphi</title>
+                        <msItem>
+                           <locus>(fol. 64r)</locus>
+                           <rubric>Incipit argumentum adelphe</rubric>
+                           <incipit>O uos cum haberet</incipit>
+                           <explicit>patre duro demea. </explicit>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 64r-v)</locus>
+                           <rubric>Prologus</rubric>
+                           <incipit><supplied>P</supplied>ostquam poeta sensit scripturam </incipit>
+                           <explicit>asscribendum augeat industriam. </explicit>
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 64v-79v)</locus>
+                           <rubric>Acta de Funebris, Quinto Fabio Maximo ...</rubric>
+                           <incipit>Storax in hac non rediit hac nocte a cena</incipit>
+                           <explicit>istud recte. Claudite. Calliopius recensui.</explicit>
+                           <finalRubric>P. Terentii Afri Adelphos Explicit.</finalRubric>
+                        </msItem>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 79v-93v)</locus>
+                        <title type="desc">Hecyra</title>
+                        <rubric>Incipit Hecira feliciter Acta Ludis Romanis ...</rubric>
+                        <msItem>
+                           <locus>(fol. 79v)</locus>
+                           <rubric>Argumentum</rubric>
+                           <incipit>Uxorem duxit paphilus philumenam</incipit>
+                           <explicit>reciupit pamphilus cum filio.</explicit>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 80r-v)</locus>
+                           <rubric>Prologus</rubric>
+                           <incipit>Hecira est huic nomen fabulae</incipit>
+                           <explicit>posthac precio emptas meo.</explicit>
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 80v-93v)</locus>
+                           <incipit>Philotis. Syra. Meretrix. Lena. Per pol quam paucos <sic>reperperias</sic> meretricibus</incipit>
+                           <explicit>ante hunc diem unquam. Plaudite. Calliopius recensui.</explicit>
+                           <finalRubric>Terentius Afri Explicit Hecira.</finalRubric>
+                        </msItem>
+                     </msItem>
+                     <msItem>
+                           <locus>(fol. 93v)</locus>
+                           <title type="desc">Distich</title>
+                           <incipit>Potinam qui natans litus pertingere temptat. Herbarum fessus. carpere summa nitens.</incipit>
+                        </msItem>
+                     <msItem>
+                        <locus>(fols. 93v-112v)</locus>
+                        <title type="desc">Phormio</title>
+                        <rubric>Incipit Phormio. Acta ludis Romanis .L. postumio Albino ...</rubric>
+                        <msItem>
+                           <locus>(fol. 93v)</locus>
+                           <rubric>Argumentum</rubric>
+                           <incipit>Chremetis frater abierat</incipit>
+                           <explicit> a patruo agnitam.</explicit>
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 93v-94r)</locus>
+                           <rubric>Prologus</rubric>
+                           <incipit>Postquam poeta vetus poetam </incipit>
+                           <explicit>adiutans atque aequanimitas.</explicit>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 94r-112v)</locus>
+                           <incipit>Amicus summus meus </incipit>
+                           <explicit>Iam hic faxo aderit. </explicit>
+                           <finalRubric>Vos valete et paludite Ter<ex>entius</ex> Pho<ex>rmio</ex> Explicit. Calliopius recensui nouissima.</finalRubric>
+                        </msItem>
+                     </msItem>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -62,8 +238,29 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                           <extent>iii + 112 + iii leaves
+                              <dimensions unit="mm" type="leaf" resp="#MHL">
+                                 <height>225</height>
+                                 <width>180</width>
+                              </dimensions>
+                              <dimensions unit="mm" type="written" resp="#MLH">
+                                 <height min="170" max="175">170-75</height>
+                                 <width min="105" max="110">105-10</width>
+                              </dimensions>
+                              Outer column of the gloss:
+                              <dimensions unit="mm" type="written" resp="#MLH">
+                                 <width min="40" max="45">c. 40-45</width>
+                              </dimensions>
+                           </extent>
+                        <foliation>i-iii, 1-115 (additional modern paper bifolium attached before fol. i )</foliation>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="1" writtenLines="22 32">Main text written in 22-32 long lines, with an interlinear and marginal gloss. </layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <handDesc>
+                     <handNote>Five distinct hands, A (fols. 1r-8v), B (fols. 9-22), C (foot of 22v), D (fols. 23r-5v), E (fols. 55r-end)</handNote>
+                  </handDesc>
                   <decoDesc>
                      <decoNote type="decInit">Initials, defaced. (P&amp;A i. 29)
                      </decoNote>
@@ -76,13 +273,18 @@
                         <country key="place_7000084">German</country>
                      </origPlace>
                   </origin>
+                  <provenance>Adelheit, Heilwich and Matthilt: 11th century inscription 'Adelheit. Heilwich. Matthilt curiales adulescentulae unum par sunt amicitiae' (fol. 112v). It has been suggested that Adelheit could be <persName key="person_43060060">Adelheid (Adelaide)</persName>, daughter of Otto II and Theophanu, later abbess of Quelingburg (999), later of Gandersheim (1039) (see Costant J. Mews, <title>The lost love letters of Heloise and Abelard</title> (1999, second edition 2008), pp. 367-68 n. 119. </provenance>
+                  <provenance><settlement key="place_7004324">Augsburg</settlement>, <orgName key="org_246280460" role="fmo">Nunnery of St Ursula (?)</orgName>: inscription 'Iste liber ... monasterij sanct<supplied>e Vrsule martiris in <unclear>??</unclear></supplied>' (fol. 1r).</provenance>
+                   <provenance><persName key="person_4384">Michael von Pfullendorf</persName>: inscription 'accomodatus M. Michaeli de Fullendorff <sic>secretarij</sic> domini Regis romanorum', c. 1450 (fol. 1r)</provenance>
+                  <provenance><persName role="fmo" key="person_42586595">Hieronymus Wilhelm Ebner von Eschenbach</persName>, Biblioteca Ebneriana, <settlement key="place_7004334">Nuremberg</settlement>: catalogued in Christophori Tehophili de Murr, <title>Memorabilia bibliothecarum publicarum Norimbergensium et universitatis altdorfinae</title> (1788), pt. 2, pp. 135-37 (Codices in forma quarta, no. 5); Ebner sale no. 384.</provenance>
+                  <acquisition>Purchased from Payne &amp; Foss on 19 November 1819, for £10 10s.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1905). Decoration, localization and date follow Pächt and Alexander (1966).  
-                            
-                        <listBibl>
+                        <source>Description adapted by Tuija Ainonen (October 2020) from the following sources (with additional description of the contents and physical description):
+                           <listBibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, 3 vols. (1966-1973) I, no. 29. [Decoration, localization and date]. </bibl> 
                               <bibl type="SC" facs="aam0446.gif">Summary Catalogue, Vol. 5, p. 411</bibl>
                            </listBibl>
                         </source>
@@ -91,6 +293,7 @@
                </additional>
             </msDesc>
          </sourceDesc>
+         
       </fileDesc>       
       <encodingDesc xml:id="encodingDesc" xml:base="../tolkien-classDecl.xml">
          <classDecl>
@@ -354,8 +557,9 @@
             </taxonomy>
          </classDecl>
       </encodingDesc>
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
+      <revisionDesc>        
+         <change when="2020-10-28">Description revised for Polonsky digitization project to include additional information from printed descriptions.</change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>
