@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_5974">
+   <!-- todo:
+   check how many scribes
+   measurements
+   watermarks
+   check Watson
+   -->
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Hamilton 14</title>
             <title type="collection">MSS. Hamilton</title>
             <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
-            </respStmt>
-         </titleStmt>
-         <editionStmt>
-            <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
+               <resp when="2020-10">Cataloguer</resp>
+               <resp>Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
-         </editionStmt>
+         </titleStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
             <address>
@@ -51,14 +51,30 @@
                </msIdentifier>
                <physDesc>
                   <p n="composite">Composite: three parts</p>
+                  <objectDesc>
+                     <supportDesc>
+                        <extent>235 fols. (1-234, 57 is double)</extent>
+                     </supportDesc>
+                  </objectDesc>
+                  <bindingDesc>
+                     <binding contemporary="true">
+                        <p>Contemporary binding of plain leather over boards; remains of title written on the upper cover; clasp lost; bosses on the upper and lower boards lost.</p>
+                     </binding>
+                  </bindingDesc>
+                  <accMat>Offsets from a fourteenth-century (?) liturgical manuscript with musical notation.</accMat>
                </physDesc>
+               <history>
+                  <provenance>Medieval provenance unknown: placenames in part A might suggest the Cistercian abbey of Neuzelle, a source of other manuscripts in the Hamilton collection, but positive evidence is lacking.</provenance>
+                  <provenance>Not identifiable in the 1836 sale catalogue of Friedrich Gottlieb Julius von Bülow.</provenance>
+                  <provenance notBefore="1841" notAfter="1856"><persName role="fmo" key="person_54195353">Sir William Hamilton, 1788-1856</persName></provenance>
+                  <acquisition when="1857">Presented to the Bodleian Library by his sons and received in 1857.</acquisition>
+               </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
-                            
-                            <listBibl>
-                              <bibl type="SC" facs="aam0052.gif">Summary Catalogue, Vol. 5, p.  17</bibl>
+                        <source>Draft description by Matthew Holford (Oct. 2020). Previously described in the Summary Catalogue. <listBibl>
+                              <bibl type="SC" facs="aam0052.gif">Summary Catalogue, Vol. 5, p.
+                                 17</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -67,13 +83,328 @@
                <msPart xml:id="MS_Hamilton_14-part1">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Hamilton 14 - Part 1</idno>
+                        <idno type="part">MS. Hamilton 14 - Part A (fols. 1-153)</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
+                     <textLang mainLang="la">Latin</textLang>
                      <msItem xml:id="MS_Hamilton_14-part1-item1" n="1">
-                        <title key="work_14583">Sermons</title>
-                        <textLang mainLang="la">Latin</textLang>
+                        <locus>(fols. 1ra-151ra)</locus>
+                        <title key="work_14583">Sermones de sanctis</title>
+                        <note>The same collection apparently found (in shorter form?) in <bibl type="ms" subtype="external">Gotha, Chart. A 24c</bibl> and <bibl type="ms" subtype="external">BSB, Clm 12293</bibl> (E. Wunderle, <title>Katalog der mittelalterlichen lateinischen Papierhandschriften ... Gotha'schen Stiftung</title> (2002), p. 83</note>
+                        <note>Three sermons for each feast, except as noted: SS Andrew, Barbara, Nicholas, Conception BVM, Lucy, Thomas, Stephen, John the Evangelist, Innocents, Fabian and Sebastian, Agnes, Vincent, Conversion of Paul, Purification BVM, Blaise, Agatha, Dorothy, Peter in cathedra, Matthias, Gregory, Annunciation, George, Mark, Philip and James, Invention of the Cross, John ante portam latinam, 'x milium militum', John the Baptist, 'de sancto petro tantum' (one sermon), Paul (one sermon), Peter and Paul (two sermons), 'de commemoratione sancti pauli' (one sermon), Margaret, 'de divisione apostolorum', Alexius, Mary Magdalen, James, Anne, Peter in chains, Laurence, Assumption BVM, Bartholomew, Augustine, Decollation of John the Baptist, Felix and Aduactus, Nativity BVM, Exaltation of the Cross, Matthew, Maurice (one sermon), Wenceslas (one sermon), Michael (four sermons, the fourth 'uel de animabus'), Jerome, Luke (two sermons, followed by 'vita S. Luce' (cf. BHL 4973, PL 95.1530-5, but abbreviated and ending differently), 11000 Virgins ('sequitur passio pro iijo sermone'), ... (text lost between fols. 130 and 131), All Saints (three sermons, followed by 'sermo iiijus de omnibus sanctis et de animabus', followed by three sermons 'de animabus'), Martin, Livinus (one sermon), Elizabeth, Cecily (end of the final sermon missing between fols. 148 and 149), Katherine.</note>
+                        <note>The incipits of the first three and final three sermons as follows:</note>
+                           <msItem>
+                              <locus>(fol. 1ra)</locus>
+                              <title><supplied>De S. Andrea</supplied></title>
+                              <incipit><quote>Venite post me <gap reason="editorial"/></quote> <unclear>Locum</unclear> habent antedicta hec verba fratres karissimi non solum dixit dominus ad beatum andreas cuius festum hodie sollempnizat ecclesia, et ad fratrem suum beatum petrum, sed dicit ad quodlibet hominem </incipit>
+                              <note>Cf. Schneyer, Wegweiser, p. 513 (Clm 12293, fol. 121)</note>
+                           </msItem>
+                           
+                              <msItem>
+                              <locus>(fol. 1vb)</locus>
+                                 <rubric>Sermo secundus</rubric>
+                              <incipit><quote>Vias domini custodiui <gap reason="editorial"/></quote> In sermone <sic>predicti</sic> karissimi dictum est de quibus nos <unclear>debemus</unclear> recedere  </incipit>
+                           </msItem>
+                           
+                             <msItem>
+                              <locus>(fol. 2vb)</locus>
+                                <rubric>Sermo tercius</rubric>
+                              <incipit><quote>Dixi ascendam in palmam <gap reason="editorial"/></quote> Ista verba nobis proponantur ad informacionem principaliter, sed beato andree ad veneracionem secundario</incipit>
+                           </msItem>
+                           
+                           <!--Barbara-->
+                          <!--  <msItem>
+                              <locus>(fol. 3ra)</locus>
+                              <incipit><quote>Indica mihi quem diligit <gap reason="editorial"/></quote> In istis verbis duo tanguntur. Primo hominis ignorancie peticio</incipit>
+                           </msItem>
+                           
+                            <msItem>
+                              <locus>(fol. 4va)</locus>
+                              <incipit><quote>Qui habitas in ortis fac me audire <gap reason="editorial"/></quote> Circa quod nota quod ortus est fidelis anime vita, que ortus, id est vita, multum debet esse laudabilis</incipit>
+                           </msItem>
+                           
+                             <msItem>
+                              <locus>(fol. 4vb)</locus>
+                              <incipit><quote>Sicud lilium inter spinas <gap reason="editorial"/></quote> Que verba potest vniuersalis ecclesie uel quelibet fidelis anima de virtutibus et vicijs enarrare</incipit>
+                           </msItem>
+                           
+                          <msItem>
+                           <locus>(fol. 5rb)</locus>
+                           <rubric>De sancto Nicolao confessore</rubric>
+                           <incipit><quote>Ex studiis suis <gap reason="editorial"/></quote> Hec verba scripta sunt. Et notandum quod vij sunt sp<ex>iritu</ex>aliter que quilibet iuuenis debet habere</incipit>
+                        </msItem>
+                           
+                             <msItem>
+                           <locus>(fol. 6ra)</locus> <!-\-(sermo secundus)-\->
+                           <incipit><quote>Ex studiis suis <gap reason="editorial"/></quote> In predicto sermone est dictum de honesta agilitate </incipit>
+                        </msItem>
+                           
+                             <msItem>
+                           <locus>(fol. 6va)</locus> <!-\-image 16-\->
+                           <incipit><quote>Oleum effusum <gap reason="editorial"/></quote> Hec verba sacerdotibus per presens beato vero(?verbo, vestro) Nicolae per pos   proposita sunt ad dignitatem </incipit>
+                        </msItem>
+                           
+                              <msItem>
+                           <locus>(fol. 7rb)</locus>
+                           <rubric>In concepcione beate marie</rubric>
+                           <incipit><quote>Una columba mea <gap reason="editorial"/></quote> In quibus verbis commendatur beata virgo maria pre omnibus sanctis in singulari sanctitate</incipit>
+                        </msItem>
+                           
+                            <msItem>
+                           <locus>(fol. 8rb)</locus>
+                           <incipit><quote>Quam pulchra es <gap reason="editorial"/></quote> Quia beata maria pre omni creatura in celo et in terra in quinque dignitatibus exaltatur</incipit>
+                        </msItem>
+                           
+                             <msItem>
+                           <locus>(fol. 9ra)</locus>
+                           <incipit><quote>Una est columba <gap reason="editorial"/></quote> Sicud in primo sermones habetur. Nota de concepcione beate marie virginis quod quadrupliciter fieri potest </incipit>
+                        </msItem>
+                           
+                            <msItem>
+                           <locus>(fol. 9rb)</locus>
+                           <rubric>De sancta Lucia primus</rubric>
+                           <incipit><quote>Veni coronaberis <gap reason="editorial"/></quote> Hec verba possunt predicari de sancta lucia et tanguntur h<ex>ic</ex> duo </incipit>
+                        </msItem>
+                           
+                            <msItem>
+                           <locus>(fol. 9va)</locus>
+                           <incipit><quote>Lectulus noster floridus <gap reason="editorial"/></quote> Verba ista sunt fidelis anime ad christum sponsum suum qui eam sibi amore diuino desponsauit</incipit>
+                        </msItem>
+                           
+                             <msItem>
+                           <locus>(fol. 10ra)</locus>
+                           <rubric>De sancto Thoma</rubric>
+                           <incipit><quote>Qui manet in me <gap reason="editorial"/></quote> Quamuis hec verba fratres karissimi dicta sunt de sanctis apostolis</incipit>
+                        </msItem>
+                        
+                           <msItem>
+                           <locus>(fol. 11ra)</locus>
+                           <incipit><quote>Affer manum tuam et mitte  <gap reason="editorial"/></quote> Hec enim verba fratres karissimi dominus nostre Iesus ore suo benedicto dixit ad beatum apostolum</incipit>
+                        </msItem>
+                        
+                        <msItem>
+                           <locus>(fol. 11va)</locus>
+                           <incipit><quote>Quesiui illum et non inveni <gap reason="editorial"/></quote> Occasione huius queritur vtrum fidelis possit diuinum sponsum invenire, hoc est cognoscere</incipit>
+                        </msItem>
+                           
+                               <msItem>
+                           <locus>(fol. 12ra)</locus>
+                           <rubric>De sancto Stephano</rubric>
+                           <incipit><quote>Ecce video celos apertos <gap reason="editorial"/></quote> Dictus stephanus fratres karissimi apropinquans morti duo vidit videlicet celos apertos et iesum stantem </incipit>
+                        </msItem>
+                           
+                             <msItem>
+                           <locus>(fol. 12vb)</locus>
+                           <incipit><quote>Secundum multitudinem dolorum meorum in corde meo <gap reason="editorial"/></quote> In predictis verbis karissimi beatus stephanus dominum laudauit et gracias ei retulit de consolatione quam sibi in tribulacione exhibuit</incipit>
+                        </msItem>
+                           
+                             <msItem>
+                           <locus>(fol. 13ra)</locus>
+                           <incipit><quote>Filii matris mee pugnauerunt contra me <gap reason="editorial"/></quote> Ista verba preposita sunt nobis omnibus ad fidei spei et caritatis roboracionem, beato vero Stepheno ad commendacionem</incipit>
+                        </msItem>
+                           
+                            <msItem>
+                           <locus>(fol. 14rb)</locus>
+                           <rubric>De sancto Iohanne ewangeliste</rubric>
+                           <incipit><quote>Amantissimus domino habitabit confidenter cum eo <gap reason="editorial"/></quote> Tria sunt fratres karissimi qui beatum Johannem decorant et vniverso mundo faciunt venerabilem. Primum est prerogacio spiritualis</incipit> <!-\-checked MM-\->
+                        </msItem>
+                           
+                             <msItem>
+                           <locus>(fol. 14vb)</locus>
+                           <incipit><quote>Aquila grandis magnarum alarum plena plumis <gap reason="editorial"/></quote> Verba predicta fratres karissimi possunt accipi ad commendacionem sancti Johannis </incipit>
+                        </msItem>
+                         
+                              <msItem>
+                           <locus>(fol. 15va)</locus>
+                           <incipit><quote>Ordinavit in me caritatem <gap reason="editorial"/></quote> Ex quo deus inestimabilia caritatis insignia exhibuit </incipit>
+                        </msItem>
+                    
+                    <msItem> Innocents
+                           <locus>(fol. 16rb)</locus>
+                           <incipit><quote>Vidi supra montem syon agnum <gap reason="editorial"/></quote> In verbis predictis beatus Johannes in apoc. ostendit magnam gloriam illorum infancium</incipit>
+                        </msItem>
+                        
+                      <msItem>
+                           <locus>(fol. 17ra)</locus>
+                           <incipit><quote>Sine macula sunt ante thronum <gap reason="editorial"/></quote> In predictis verbis fratres karissimi laudantur hodierni pueri qui innocentes de hoc mundo usque ad thronum dei peruenerunt</incipit>
+                        </msItem>
+                    
+                     <msItem>
+                           <locus>(fol. 17va)</locus>
+                           <incipit><quote>come capitis euis ut purpura <gap reason="editorial"/></quote> Ista verba iustis et fidelibus prius generaltier sed sanctis innocentibus per posterius specialiter proposita sunt</incipit>
+                        </msItem>
+                        
+                           <msItem>
+                           <locus>(fol. 17vb)</locus>
+                           <rubric>De sancto fabiano et sebastiano</rubric>
+                           <incipit><quote>Capite nobis wlpes paruulas <gap reason="editorial"/></quote> In istis verbis tanguntur duo, primo phariseorum et iniustorum captio</incipit>
+                        </msItem>
+                        
+                             <msItem>
+                           <locus>(fol. 18vb)</locus>
+                           <incipit><quote>Hii sunt quos aliquando in derisum <gap reason="editorial"/></quote> In quibus verbis tria notantur. Primum vite sue despectio</incipit>
+                        </msItem>
+                        
+                          <msItem>
+                           <locus>(fol. 19va)</locus>
+                           <incipit><quote>Recti diligant te <gap reason="editorial"/></quote> Tria hic tanguntur. Primo tangitur subiectum dilectionis. Secundo actus diligentis. Tercio obiectum dilectionis.</incipit>
+                        </msItem>
+                        
+                          
+                         <msItem>
+                           <locus>(fol. 19vb)</locus>
+                           <rubric>De sancta Agnetis</rubric>
+                           <incipit><quote> Murenulas aureas facies tibi <gap reason="editorial"/></quote> In quibus exprimitur bona dotalicia et dona singulariter amatoria que christus sponsus promittit sponse fideli anime</incipit>
+                        </msItem>
+                        
+                        <msItem>
+                           <locus>(fol. 20vb)</locus>
+                           <incipit><quote>Dilexisti iusticiam <gap reason="editorial"/></quote> Hec verba possunt predicari de beata agnete. In quibus due tanguntur. Primum virtutum dileccio.</incipit>
+                        </msItem>
+                        
+                          <msItem>
+                           <locus>(fol. 21ra)</locus>
+                           <incipit><quote>Columba mea in foraminibus <gap reason="editorial"/></quote> Hic duo describuntur de beata agnete propter duplicitem commendacionem</incipit>
+                        </msItem>
+                        
+                        <msItem>
+                           <locus>(fol. 21va)</locus>
+                           <rubric>De sancto vincencio</rubric>
+                           <incipit><quote>Fortis est ut mors <gap reason="editorial"/></quote> Si placet potes hic distinguere triplicem dileccionem. Prima est patris eterni ad humanam naturam.</incipit>
+                        </msItem>
+                        
+                          <msItem>
+                           <locus>(fol. 22rb)</locus>
+                           <incipit><quote>Ecce quam robusta est dileccio <gap reason="editorial"/></quote> Lampades ignis atque flamme et aque multe non potuerunt extingwere</incipit>
+                        </msItem>
+                        
+                          <msItem>
+                           <locus>(fol. 22vb)</locus>
+                           <incipit><quote>Dilectus meus candidus et rubicundus <gap reason="editorial"/></quote> In hiis verbis possit christus commendare quemlibet martyrum uel alium suum fidelem</incipit>
+                        </msItem>
+                        
+                        
+                        <!-\-image 52-\->
+                          <msItem>
+                           <locus>(fol. 23vb)</locus>
+                           <rubric>De conuersione sancti pauli</rubric>
+                           <incipit><quote>Ecce nos reliquimus omnia <gap reason="editorial"/></quote> Beatus enim Paulus, fratres karissimi, hodie in conuersione sua omnia relinquit, et ideo bene dicere potuit verba predicta</incipit><!-\- chkd Schn, G -\->
+                        </msItem>
+                        
+                        <msItem>
+                           <locus>(fol. 24va)</locus><!-\- sermo secundus -\->
+                           <incipit><quote>Aufer rubiginem de argento <gap reason="editorial"/></quote> Verba autem predicta, fratres karissimi, omni laude et exposicione sunt dignissima et omni dulcedine plena</incipit>
+                           <!-\- ckd Sch, MM -\->
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 25va)</locus><!-\- sermo iijus -\->
+                           <incipit><quote>Posuerunt me custodem <gap reason="editorial"/></quote> Ista verba proposita sunt de prelatis tam spiritualibus quam secularibus, et caueat vnusquisque ne in die nouissimo </incipit>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 26va)</locus>
+                           <rubric>De purificacione beate marie virginis</rubric>
+                           <incipit><quote>Iam letus <sic>morior</sic> <gap reason="editorial"/></quote> Symeon senex, fratres dilectissimi, intimo desiderio expectans consolacionem</incipit><!-\- ckd G, MM -\->
+                           <note>Begins as Schneyer VII.281 no. 63 (Leipzig UB 719).</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 27ra)</locus>
+                           <incipit><quote>Tulerunt illum in ierusalem <gap reason="editorial"/></quote> In premissis verbis, fratres karissimi, tria per ordinem notaure possumus, scilicet quem tulerunt, quo tulerunt</incipit><!-\- ckd Sch -\->
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 27vb)</locus>
+                           <incipit><quote>Cum inducerent puerum <gap reason="editorial"/></quote> Tria hic notantur. Primum qualiter esse debeat qui introducitur in celum</incipit><!-\- ckd Schn -\->
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 28ra)</locus>
+                           <rubric>De sancto blasio</rubric>
+                           <incipit><quote>Collum tuum sicud monilia <gap reason="editorial"/></quote> In quibus verbis aliquis doctor ecclesie fidelis commendatur. Glossa dicit, In collo doctrina, in monilibus opera designantur</incipit><!-\- ckd Schn -\->
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 28vb)</locus>
+                           <incipit><quote>Aque multe non potuerunt extingwere caritatem</quote> Hic notantur tria de passione sancti blasii. Primo passionis eius acerbitas, in aque multe</incipit>
+                           <note>cf. Schneyer IV.563, no. 184 (Peregrinus de Oppeln, Sermones de sanctis, S. Clement).</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 29rb)</locus>
+                           <incipit><quote>Calicem salutaris accipiam <gap reason="editorial"/></quote> Duo hic describuntur in hiis verbis scilicet de sancto Blasio martyre. Primo enim sue passionis insinuacio</incipit><!-\- ckd Schn, MM -\->
+                        </msItem>
+                        
+                        <msItem>
+                           <locus>(fol. 29va)</locus>
+                           <rubric>De sancta agatha</rubric>
+                           <incipit><quote>Pulchre sunt gene tue <gap reason="editorial"/></quote> In quibus verbis spiritus sanctus sponsam suam, id est animam dilectam</incipit><!-\- chkd Schn -\->
+                        </msItem>
+                        
+                        <msItem>
+                           <locus>(fol. 30rb)</locus>
+                           <incipit><quote>Pulchre sunt gene tue <gap reason="editorial"/></quote> Nota quod hec verba premissa potuit bene spiritus sanctus dicere de felice turture beate agathe</incipit><!-\- ckd MM, Sch, MA -\->
+                        </msItem>
+                        
+                        <msItem>
+                           <locus>(fol. 30vb)</locus>
+                           <incipit><quote>Sapentia vincit maliciam <gap reason="editorial"/></quote>Hec verba possunt predicari de sancta Agatha et tanguntur in eis duo </incipit>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 31ra)</locus>
+                           <rubric>De sancta Dorothea</rubric>
+                           <incipit><quote>Anima mea liquefacta <gap reason="editorial"/></quote> Debet autem ordo istorum verborum sic sumi ad intellectum ordine <sic>preposterato</sic> </incipit>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 31va)</locus><!-\- 70 -\->
+                           <incipit><quote>Anima mea liquefacta <gap reason="editorial"/></quote> Hec verba premissa conuenienter possunt beate virgini dorothee applicari </incipit> 72                         </msItem>-->
+                        
+                    <!-- The same collection (in shorter form?) also found in Gotha Chart A 24C   (and Clm 12293)
+                        https://books.google.co.uk/books?id=FdfJEuId3Y4C&lpg=PA491&ots=i5MawvtElK&dq=%22clm%2012293%22&pg=PA83#v=onepage&q=%22clm%2012293%22&f=false
+                        
+                        ? https://manuscripta.at/hs_detail.php?ID=1637&IDinitia=72782 (not close)
+                        
+                        -->
+                       
+                        <msItem>
+                           <locus>(fol. 149ra)</locus>
+                           <rubric>De sancta katherina</rubric>
+                           <incipit><quote>Que parate erant <gap reason="editorial"/></quote> Licet verba predicta fratres karissimi dici possunt de qualibet virgine sancta, tamen per quandam excellenciam assumi possunt de sancta katherina</incipit>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 149rb)</locus>
+                           <rubric>Sermo secundus</rubric>
+                           <incipit><quote>Inveni graciam in oculis tuis <gap reason="editorial"/></quote> Verba predicta fratres karissimi sunt Ruth ii. ad boos et bene conueniunt beate katherine quomodo ad christum</incipit>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 150ra)</locus>
+                           <rubric>Sermo tercius</rubric>
+                           <incipit><quote>Quam pulchre sunt gressus tui <gap reason="editorial"/></quote> In quibus verbis christus dei filius commendat amabilem suam sponsam fidelem animam a tribus. Primo a pulchritudine operis</incipit>
+                           <explicit>ubi ex eius ossibus oleum manat et cunctorum debilium membra sanat</explicit>
+                        </msItem>
+                        <msItem>
+                           <note>The final sermon followed by eight lines of verse:</note>
+                           <incipit>Nunc concludamus et toto corde rogamus <lb/> Te collaudamus te semper glorificamus <lb/> O Katherina</incipit>
+                           
+                        </msItem>
+                       <finalRubric>Sermo sanctorum tripliciter hic variorum <lb/> Per anni cursum perlecta per lege cursum</finalRubric>
+                        <colophon>Expliciunt dicta sermonum de sanctis per circulum anni per manus Johannis fabri sub anno domini Mo CCCCo v feria secunda carnis privij circa horam vesperorum</colophon>
+                        <note>Followed by two notes: (1) that the third sermon for St Matthew may be used for the feast of the dedication; (2) why continence is easily endangered, quoting Bernard of Clairvaux ep. 182 (PL 182.261). Rest of fol. 151rb blank.</note>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 151va-152ra)</locus>
+                        <title key="work_16379"><supplied>Vita brevis sancti Quirini</supplied></title>
+                        <incipit>Rome natalis sancti Quirini martiris, cuius miracula pro nunc in ecclesia Mulkenicz a multis hominibus bonis sunt visa. Item quidem sanctus quirinus cum esset ad huc gentilis sub trayano imperatore</incipit>
+                        <explicit><unclear>ligwam</unclear> est mortuus</explicit>
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 152ra-b)</locus>
+                        <note>Note of indulgences granted by fourteen bishops, including 'our bishop' Witko (Witigo of Kolditz, bp. of Meissen 1312-1342, or perhaps Witigo de Wur, bp. of Meissen 1266-1293), and note of local miracles performed by St Quirinus, mentioning 'Stargrat', 'Stregow' (Strzegow), and 'Mulkenicz' (Mulknitz), one miracle dated 1391.</note>
+                     </msItem>
+                    
+                     <msItem><locus>(fols. 152rb-153ra)</locus>
+                        <title key="work_16380"><supplied>Passio decem milium martyrum</supplied></title>
+                     <incipit>Adrianus et antonius Romani imperatores audientes quod gadareni et eufratenses eis rebellare cepissent</incipit>
+                     <explicit>et provenerunt ad regna celorum</explicit></msItem>
+                     <msItem><locus>(fols. 153ra-b)</locus>
+                        <title key="work_16381"><supplied>Vita brevis sancti Laurentii</supplied></title>
+                     <incipit>Erat quidam rex gentilis in hyspania residens qui vixerat longe tempore cum vxore sua</incipit><explicit>dei ab eo discessit</explicit><!-- not in BHL -->
+                     <note>Fol. 153v blank.</note>
                      </msItem>
                   </msContents>
                   <physDesc>
@@ -81,14 +412,22 @@
                         <supportDesc material="chart">
                            <support>paper</support>
                         </supportDesc>
+                        <layoutDesc>
+                           <layout>2 cols., c. 42-7 lines.</layout>
+                        </layoutDesc>
                      </objectDesc>
+                     <handDesc>
+                        <handNote script="cursiva">Cursive by <persName role="scr" key="person_3384">Johannes Faber</persName> (colophon, fol. 151ra)</handNote><!-- one hand? -->
+                     </handDesc>
+                     <decoDesc>
+                        <decoNote type="flourInit">5-line puzzle initial in red and blank, fol. 1r; elaborate red-and-black initial, fol. 25v, 88v.</decoNote><decoNote type="colInit">2-line red initials sometimes with simple penwork decoration in the same colour.</decoNote>
+                     </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century, partly 1405</origDate>
+                        <origDate calendar="Gregorian" when="1405" cert="high">1405</origDate>
                         <origPlace>
-                           <country key="place_7000084">German</country>, <settlement key="place_7024031">Erfurt</settlement>
-                           <!--ORIGINAL: German, Erfurt-->
+                           <country key="place_7000084">Germany</country>, <settlement key="place_7134531">Mulknitz</settlement> or area 
                         </origPlace>
                      </origin>
                   </history>
@@ -96,18 +435,18 @@
                <msPart xml:id="MS_Hamilton_14-part2">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Hamilton 14 - Part 2</idno>
+                        <idno type="part">MS. Hamilton 14 - Part B (fols. 154-179)</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
                      <msItem xml:id="MS_Hamilton_14-part2-item1" n="1">
-                        <author key="person_19444509">
-                           
-                           Michael de Massa
-                        
-                        </author>
-                        <title key="work_3209">Super
-              Passionem</title>
+                        <locus>(fols. 154va-179va)</locus>
+                        <author key="person_19444509"> Michael de Massa </author>
+                        <title key="work_3209">Super Passionem</title>
+                        <incipit><quote>Angeli pacis a mare flebunt</quote> Sic scribitur ysaie 33o. In sacra scriptura reperitur fletus cordialis amoris</incipit>
+                        <explicit>ad dulcedinem celestis fruicionis amen</explicit>
+                        <finalRubric>Explicit passio venerabilis magistri michahelis de massa ordinis fratrum</finalRubric>
+                        <note>Fol. 154r blank, except for cancelled opening passage of the text. Fol. 179vb blank.</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                   </msContents>
@@ -116,14 +455,23 @@
                         <supportDesc material="chart">
                            <support>paper</support>
                         </supportDesc>
+                        <layoutDesc>
+                           <layout columns="2" writtenLines="44 45">2 cols., c. 44-45 lines.</layout>
+                        </layoutDesc>
                      </objectDesc>
+                     <handDesc hands="1">
+                        <handNote script="cursiva">Cursive, one hand.</handNote>
+                     </handDesc>
+                     <decoDesc>
+                        <decoNote type="colInit">Six-line coloured initial with simple silhouette decoration.</decoNote>
+                     </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century, partly 1405</origDate>
+                        <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th
+                           century</origDate>
                         <origPlace>
-                           <country key="place_7000084">German</country>, <settlement key="place_7024031">Erfurt</settlement>
-                           <!--ORIGINAL: German, Erfurt-->
+                           <country key="place_7000084">Germany</country>
                         </origPlace>
                      </origin>
                   </history>
@@ -131,12 +479,80 @@
                <msPart xml:id="MS_Hamilton_14-part3">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Hamilton 14 - Part 3</idno>
+                        <idno type="part">MS. Hamilton 14 - Part C (fols. 180-234)</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
                      <msItem xml:id="MS_Hamilton_14-part3-item1" n="1">
-                        <title key="work_14568">Sermones de Sanctis</title>
+                        <locus>(fols. 180ra-234vb)</locus>
+                        <author key="person_100198644"><supplied>Jacobus de Voragine</supplied></author>
+                        <title key="work_2330"><supplied>Legenda aurea</supplied></title>
+                        <note>(imperfect)</note>
+                        <rubric>De aduentu domini</rubric>
+                        <incipit>Universum tempus presentis vite in iiijor distingwitur</incipit>
+                        <note>Graesse, cc. 1 (treated as one unit with the prologue), 2 (sections
+                           1-9), St Barbara (see below), 3 (ending 'omnibus generatur', Graesse p.
+                           29); Conception of the Virgin (see below), 4-8,
+                           <!-- image 392, fol. 190v -->, 9 (sections 1-12), 10-11, 12 (without the
+                           prologue), 13 (ending 'rediit ad locum suum', Graesse p. 86), 14-17, 19,
+                           21, 22-26, 28, 31 (with the preceding paragraph 'De festivitatibus'),
+                           32-36, 37 (section 1 only), 38-39, 210 (207, Dorothy, varied), <!-- check here -->
+                           42-44, 45
+                           (ending 'populo demonstratur', Graesse p. 187), 46 (sections 1-17), 47,
+                           Gertrude (see below), 49-51, 53-58, Passio S. Georgii (see below), 59
+                           (ending shortly after the beginning of sect. 2), 61, 63 (ends imperfect,
+                           fol. 233vb 'die fuisset sepultum. Plura et ||', cf. Graesse p. 283 near
+                           bottom). Fol. 234r-v contains part of c. 67, St James the Less, 'sicut in
+                           calcaneis ... monicionibus conuerterentur', Grasse pp. 296-9.</note>
+                        <note>Often shorter than the text printed in Graesse. Many chapters are
+                           followed by a paragraph of 'merita' summarizing or giving additional
+                           reasons for a saint's veneration, e.g. (fol. 184rb) 'sancta barbara habet
+                           sibi omnes seruientes a subita morte custodire...', (fol. 186va) 'Sancta
+                           lucia habet contra fluxum sanguinis opem ferre...'.</note>
+                        <note>The following texts are not printed by Graesse:</note>
+                        <msItem>
+                           <locus>(fols. 183va-184ra)</locus>
+                           <rubric>De sancta barbara</rubric>
+                           <incipit>Temporibus maximiniani imperatoris erat vir quidam nomine dyoscorus</incipit>
+                           <explicit>in habitaculum modicum in quo et sanaciones plurime celebrantur in laudem et gloriam omnipotentis dei cui et honor <gap reason="editorial"/></explicit>
+                           <bibl type="repertory">BHL 913</bibl>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 184ra-b)</locus>
+                           <rubric>Miraculum</rubric>
+                           <incipit>Legitur quod quidam christiani ciuitatem in qua beata barbara
+                              nata fuit passa et sepulta manu armata cepissent </incipit>
+                           <explicit>conscripsit ad honorem beate barbare virginis
+                              gloriose</explicit>
+                           <note>Begins as BHL 929 (abbrev.), followed by a miracle of a beheaded merchant (resembling BHL 940 only very broadly).</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 185ra-vb)</locus>
+                           
+                           <rubric>De concepcione marie</rubric>
+                           <msItem><incipit>Eo tempore quo Wilhelmus dux nortmanorum
+                              potentissimus prostrato anglorum rege</incipit>
+                           <explicit>post hanc vitam requies eternam. Amen.</explicit>
+                              <author key="person_280344084"><supplied>Ps.-Anselm</supplied></author>
+                              <title key="work_6459"><supplied>Miraculum de conceptione beatae Mariae</supplied></title>
+                              <!-- http://www.mirabileweb.it/title/miraculum-de-conceptione-sanctae-mariae-anselmus-c-title/125037 -->
+                              <note>PL 159.323</note>
+                           </msItem>
+                           <msItem><incipit>Liber generacionis Iesu <gap reason="editorial"/> Maria ut plerique estimant interpretatur illuminatrix uel stella maris</incipit><explicit>ab omni tristicia seculi <unclear>sunt</unclear> liberati in eterna beatitudine regnare cum christo mereamur</explicit>
+                              <note>PL 114.859, a passage from <persName key="person_47555113">Walafrid Strabo</persName>, <title>Homilia in initium evangelii sancti Matthaei</title></note></msItem>
+                           <note> Followed by a note that whoever fasts on the vigil and feast of the conception is delivered from all evil, etc.</note>
+                        </msItem>
+                        <msItem>
+                           <note>(fol. 214vb)</note><note>Gertrude</note>
+                           <incipit>Gerdrudis virgo, venerabilis nobilibus ac
+                              religiosis orta parentibus</incipit><explicit> filium suum ministrare constituit</explicit><note>Apparently as
+                              in <bibl type="ms" subtype="external">Fribourg L 743</bibl> fols. 123v-124, BHL inedits.</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 228va)</locus>
+                           <note>Passion of St George</note><incipit>Tempore illo rex Dacianus qui erat christianorum persecutor posuit
+                              tribunal suum</incipit><explicit> nona die kalendae may in christo ...</explicit><note>Perhaps as <bibl subtype="external" type="ms">Frankfurt am Main SUB Praed. 43</bibl>, fols. 64v-65, BHL inedits.</note>
+                        </msItem>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                   </msContents>
@@ -145,28 +561,43 @@
                         <supportDesc material="chart">
                            <support>paper</support>
                         </supportDesc>
+                        <layoutDesc>
+                           <layout columns="2" writtenLines="37 46">2 cols., c. 37-46 lines</layout><!-- 46 lines  -->
+                        </layoutDesc>
                      </objectDesc>
+                     <handDesc>
+                        <handNote script="cursivaAntiquior">Cursiva antiquior</handNote><!-- one hand? -->
+                     </handDesc>
+                     <decoDesc>
+                        <decoNote type="colInit">Three- to five-line puzzle initials in red and blank, fols. 180r-192r; elsewhere one- to three-line red initials.</decoNote>
+                     </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century, partly 1405</origDate>
+                        <origDate calendar="Gregorian" notAfter="1400" notBefore="1350">14th century, second half (?)</origDate>
                         <origPlace>
-                           <country key="place_7000084">German</country>, <settlement key="place_7024031">Erfurt</settlement>
-                           <!--ORIGINAL: German, Erfurt-->
+                           <country key="place_7000084">German</country>
                         </origPlace>
                      </origin>
+                     <provenance><q>Liber Ny<ex>cola</ex>i presbiteri in <subst><del>Wylog</del> <del>Wolframsdorf</del> <add>Willentyn</add></subst> </q> (fol. 180r)</provenance><!-- willentyn = wilten, Tirol?  Wolframsdorf nr Trunzig s of Leipzig?-->
                   </history>
                </msPart>
             </msDesc>
          </sourceDesc>
       </fileDesc>
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
+      <revisionDesc>
+         <change when="2020-10-29">Draft description for Polonsky German project.</change>
+         <change when="2017-07-01">First online publication.</change>
 
          <change when="2017-05-29">
-            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+            <persName>James Cummings</persName> Up-converted the markup using <ref
+               target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl"
+               >https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>
          <change when="2017-05-25">
-            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+            <persName>James Cummings</persName> Up-converted the markup using <ref
+               target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl"
+               >https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>
       </revisionDesc>
    </teiHeader>
