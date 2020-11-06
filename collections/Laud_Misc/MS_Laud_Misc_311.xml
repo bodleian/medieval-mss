@@ -5,17 +5,26 @@
          <titleStmt>
             <title>MS. Laud Misc. 311</title>
             <title type="collection">MSS. Laud Misc. (Laud miscellaneous)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="Q">
+               <resp when="1858">Cataloguer</resp>
+               <persName>H. O. Coxe</persName>
+            </respStmt>
+            <respStmt xml:id="Q2">
+               <resp when="1969">Cataloguer</resp>
+               <persName>R. W. Hunt</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1966">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="TA">
+               <resp when="2020">Encoding</resp>
+               <persName>Tuija Ainonen</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -49,14 +58,14 @@
                      <idno type="SCN">901</idno>
                   </altIdentifier>
                </msIdentifier>
+               <head>Willelmus Durandus the Elder, Rationale divinorum officiorum; Bohemia, 14th century</head>
                <msContents>
                   <msItem xml:id="MS_Laud_Misc_311-item1" n="1">
-                     <author key="person_44320252">
-                        
-                        Willelmus Durandus the Elder
-                     
-                     </author>
+                     <locus>(fols. 1r-267v)</locus>
+                     <author key="person_44320252">Willelmus Durandus the Elder </author>
                      <title key="work_4984">Rationale diuinorum officiorum</title>
+                     <finalRubric>Explicit Rationale Divinorum Officiorum.</finalRubric>
+                     <note>Fols. 268r-270v blank except for ruling.</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -64,13 +73,33 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>ii + 270 leaves
+                           <dimensions unit="mm" type="leaf">
+                              <height>380-85</height>
+                              <width>270-80</width>
+                           </dimensions>
+                           <dimensions unit="mm" type="column">
+                              <height>251</height>
+                              <width>85</width>
+                           </dimensions>
+                        </extent>
+                        <foliation>i-ii, 1-270</foliation>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2" writtenLines="40" resp="#TA">Written in 2 columns, 40 lines.</layout>
+                     </layoutDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>
-                        Fine border, historiated initial. (P&amp;A i. 149)
-                     </decoNote>
+                     <decoNote type="histInit" resp="#PA">Historiated initial. (P&amp;A i. 149) </decoNote>
+                     <decoNote type="border" resp="#PA">Fine border. (P&amp;A i. 149)</decoNote>
+                     <decoNote type="decInit" resp="#TA">Red and blue puzzle initials with pen flourishes in red and in blue.</decoNote>
+                     <decoNote type="rubrication" resp="#TA">Red rubrics.</decoNote>
                   </decoDesc>
+                  <bindingDesc>
+                     <binding calendar="Gregorian" notAfter="1639" notBefore="1637">
+                        <p>Brown tanned calf over laminated pulpboard for Abp. Laud, 1637–1639.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
                   <origin>
@@ -79,13 +108,19 @@
                         <country key="place_7006470">Bohemia</country>
                      </origPlace>
                   </origin>
+                  <provenance resp="#Q2" when="1638"><persName role="fmo" key="person_54940373">William Laud, 1573-1645</persName>, 1638.
+                  </provenance>
+                  <acquisition when="1639" resp="#Q2">Part of his third donation to the Bodleian, 1639.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (H. O. Coxe,  <title>Laudian Manuscripts</title>, Quarto Catalogues II, repr. with corrections, 1969, from the original ed. of 1858-1885). Decoration, localization and date follow Pächt and Alexander (1966).  
-                            
-                            
+                        <source> Description adapted (October 2020) from the following sources:
+                            <listBibl>
+                               <!--should this be included: <bibl>T. Gaudek, <title>Zpráva ze studia českých iluminovaných rukopisů 14. století v Bodleian Library</title>, Studie o rukopisech 42 (2013), p. 148 [measurements].</bibl>-->
+                               <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, 3 vols. (1966-1973) I, no. 149 [decoration, localization and date].</bibl>                    
+                               <bibl>H. O. Coxe, <title>Laudian Manuscripts</title>, Quarto Catalogues II, repr. with corrections, 1969, from the original ed. of 1858-1885 [contents, acquisition].</bibl>
+                            </listBibl>
                             <listBibl>
                               <bibl type="QUARTO" facs="aby0170.gif">Quarto Catalogue, col. 244</bibl>
                               <bibl type="SC" facs="aap0059.gif">Summary Catalogue, vol. 2, part 1, p. 38</bibl>
@@ -97,8 +132,9 @@
             </msDesc>
          </sourceDesc>
       </fileDesc>       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
+      <revisionDesc>          
+         <change when="2020-11-05">Description revised for Polonsky digitization project to include additional information from printed descriptions.</change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>
