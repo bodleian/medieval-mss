@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6004">
    <teiHeader>
+      <!-- to do:
+         material: how mixed?
+         dimensions  
+         watermarks
+         collation
+         hands
+      -->
       <fileDesc>
          <titleStmt>
             <title>MS. Hamilton 41</title>
@@ -61,14 +68,14 @@
                <head>Sermons for Lent; Germany, 15th century</head>
              <msContents>  <msItem>
                   <locus>(fol. 1r)</locus>
-                  <note>Fifteenth-century table of contents to the whole volume.</note>
+                  <note>Fifteenth-century table of contents to the whole volume. For the document on fol. 1v, see below.</note>
                 <textLang mainLang="la">Latin</textLang>
                </msItem></msContents>
                <physDesc>
                   <p n="composite">Composite: two parts</p>
                   <objectDesc form="codex">
                      <supportDesc>
-                        <extent>ii + 267 leaves <!-- check -->
+                        <extent>ii + 1 + 264 (199 + 65) + ii leaves (i-ii, 1-267) <!-- check -->
                            <!--<dimensions unit="mm" type="leaf">
                               <height></height>
                               <width></width>
@@ -82,7 +89,7 @@
                   </objectDesc>
                   <bindingDesc>
                      <binding calendar="Gregorian" notAfter="1400" notBefore="1500" contemporary="true">
-                        <p>White leather on boards, contemporary, rebacked and mended.</p>
+                        <p>White leather on boards, contemporary, rebacked and mended; contemporary labels with contents and pressmark (C. VI).</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
@@ -96,9 +103,9 @@
                <additional>
                   <adminInfo>
                      <recordHist>
-                       <source>Description adapted by Tuija Ainonen (March 2020) from the following sources:
+                       <source>Draft description by Tuija Ainonen and Matthew Holford (March 2020, rev. Nov. 2020), drawing on an unpublished description by Stephen Mossman, c. 2003. Previously described in the Summary Catalogue:
                            <listBibl>
-                              <bibl>Unpublished description by Stephen Mossman, c. 2003.</bibl>
+                              <bibl></bibl>
                               <bibl>Summary Catalogue (1905)</bibl>
                            </listBibl>
                             <listBibl>
@@ -121,11 +128,30 @@
                      <msItem xml:id="MS_Hamilton_41-part1-item1" n="1">
                         <locus>(fols. 2r-195r)</locus>
                         <title key="work_14611">Sermones quadragesimales</title>
-                        <rubric>Opus quadragesimale</rubric>
-                        <incipit><quote>Videntes admirati sunt <gap reason="editorial"/></quote> Ciues obsesse ciuitatis et vallati forti et grandi inimicorum exercitu </incipit>
-                        <explicit>Ploratus simus tue resurrectionis consortes in secula seculorum. Amen.</explicit>
+                        <rubric><add>Opus quadragesimale</add></rubric>
+                        <note>The first three and last three incipits as follows:</note>
+                        <msItem><rubric>Quarta feria cinerum sermo</rubric>
+                        <incipit><quote>Videntes admirati sunt <gap reason="editorial"/></quote> Ciues obsesse ciuitatis et vallati forti et grandi inimicorum exercitu </incipit></msItem>
+                        <msItem>
+                           <incipit><locus>(fol. 5v)</locus> <quote>Puer meus iacet paralaticus <gap reason="editorial"></gap></quote> Inter alia egritudini curandi utilia sunt duo precipue, primum est ut eger se curandum committat medico de quo confidat</incipit>
+                        </msItem>
+                        <msItem>
+                           <incipit><locus>(fol. 9r)</locus> <quote>Ego autem dico vobis <gap reason="editorial"></gap></quote> In eodem foro seu mercato in <sic>mundinibus</sic> consueuerunt vendi viles merces et preciose</incipit>
+                        </msItem>
+                        
+                        <msItem>
+                           <incipit><locus>(fol. 169r)</locus> <quote>Sciens iesus quia ut uenit hora <gap reason="editorial"></gap></quote> Prudens dux peregrinorum debens eos ducere per v<supplied reason="omitted">i</supplied>am asperam prouidet eis quibus sustentari possint</incipit>
+                        </msItem>
+                        <msItem><!-- 351 -->
+                           <incipit><locus>(fol. 172r)</locus> <quote>Nolite me vocare <gap reason="editorial"></gap></quote> In eodem libro legimus predictam mulierem esse pulchram valde</incipit><!-- bordeaux f. 66rb; image 74 -->
+                        </msItem>
+                        <msItem><!-- 386 -->
+                           <incipit><locus>(fol. 189v)</locus> <quote>Quo abiit abiit dilectus <gap reason="editorial"></gap></quote> Non est reliquenda hodie sic sauciata doloribus super ploratu filii</incipit>
+                        
+                        <explicit>Ploratus simus tue resurrectionis consortes in secula seculorum. Amen.</explicit></msItem>
+                        
                         <finalRubric>Expliciunt postille quadragesimales</finalRubric>
-                        <note>Apparently the same collection as Bordeaux, BM, 294, fols. 1-81v but lacking the two final sermons there. Cf. Darmstadt, Universitäts- und Landesbibliothek Darmstadt, Hs 2207, fols. 2r–86v. Followed by three additional sermons:</note>
+                        <note>Apparently the same collection as <bibl type="ms" subtype="external">Bordeaux, BM 294</bibl> fols. 1-81v but lacking the two final sermons in that manuscript. Cf. <bibl subtype="external" type="ms">Darmstadt, Universitäts- und Landesbibliothek Darmstadt, Hs 2207</bibl> fols. 2r–86v. Followed by three additional sermons:</note>
                         <!--
                            sermo 2: puer meus iacet
                            sermo 3: ego autem dico
@@ -163,7 +189,16 @@
                         <supportDesc material="cart">
                            <support>paper</support>
                         </supportDesc>
+                        <layoutDesc>
+                           <layout columns="1" writtenLines="29 31">1 col., c. 29-31 lines.</layout>
+                        </layoutDesc>
                      </objectDesc>
+                     <handDesc>
+                        <handNote script="cursiva">Cursive.</handNote><!-- one hand? -->
+                     </handDesc>
+                     <decoDesc>
+                        <decoNote type="colInit">Coloured red initials, usually three-line.</decoNote>
+                     </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
@@ -190,15 +225,42 @@
                         <locus>(fols. 202r-262v)</locus>
                         <title key="work_14611">Sermones quadgragesimales</title>
                         <rubric>Item sermones quadgragesimales</rubric>
-                        <incipit><quote>Sedit in cinere et spersit cinerem <gap reason="editorial"/></quote> Hodie fratres karissimi incipit tempus decime</incipit>
-                        <!-- ends imperect? cf. BSB Clm 18313, 2-18; and Gotha, Chart A 24c  -->
+                        <note>Incipits of the first three and last three sermons as follows:</note>
+                        <msItem><incipit><quote>Sedit in cinere et spersit cinerem <gap reason="editorial"/></quote> Hodie fratres karissimi incipit tempus decime quo unusquisque debet domino suo et hoc de toto corpore suo</incipit></msItem>
+                        <msItem>
+                           <!-- 413 -->
+                           <incipit><locus>(fol. 203r)</locus> <quote>Accessit centurio rogans <gap reason="editorial"/></quote> Tota intencio ecclesie fratres karissimi in ista quadragesima est ut peccatores ad penitenciam reducant</incipit>
+                        </msItem>
+                        <msItem>
+                           <incipit><locus>(fol. 204r)</locus> <quote>Quare ieiunauinmus <gap reason="editorial"/></quote> In prenotatis verbis fratres karissimi duo notare debemus, de quibus Ysay propheta domini interrogauit</incipit>
+                        </msItem>
+                        
+                        <!--  518? -->
+                     <!--   <msItem>
+                           <incipit><locus>(fol. 255v)</locus> <quote>Traditus est ad mortem <gap reason="editorial"/></quote> Hodie fratres karissimi celebratur saluatoris nostri tradicio quia in hac hie ut dicit Luc</incipit>
+                        </msItem>-->
+                        <msItem>
+                           <incipit><locus>(fol. 257r)</locus> <quote>Comedite amici mei <gap reason="editorial"/></quote> Karissimi, scribit Salomon ista uerba in Cantica canticorum et tanguntur duo verba in eis</incipit>
+                        </msItem>
+                        <msItem>
+                           <incipit><locus>(fol. 258v)</locus> Hodie fratres karissimi campane non pulsantur, missarum solempnia debito more non teneantur</incipit>
+                        </msItem>
+                        
+                        <msItem>
+                           <incipit><locus>(fol. 262r)</locus> <quote>O vos omnes qui transitis <gap reason="editorial"/></quote> Verba predicta fratres karissimi scripsit Ier. in libro lac. lamentacionum quod ipse exposuit et exclamauit vehementissime</incipit>
+                           <explicit defective="true">De quo Job xxo ait, Quousque confligitis animam meam et atteritis</explicit>
+                        </msItem>
+                        <note>Apparently the same collection as in BSB Clm 18313, fols. 2-18 and Gotha Chart A 24c fols. 129ra-166ra (see E. Wunderle, <title>Katalog der mittelalterlichen lateinischen Papierhandschriften</title> (2002) 83-4), here imperfect at the end due to loss of leaves.</note>
+                        <!-- ends imperect? cf. ; and Gotha, Chart A 24c  -->
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                      <msItem xml:id="MS_Hamilton_41-part2-item2" n="2">
                         <locus>(fol. 263r-265v)</locus>
-                        <title type="desc" key="work_14583">Sermon on the Visitation of Virgin Mary</title>
-                        <incipit><quote>Exurgens Maria ...</quote> Postquam Maria suum sensum apperuit</incipit>
-                        <explicit></explicit>
+                        <title type="desc" key="work_14583">Sermon on the Visitation of the Virgin Mary</title>
+                        <rubric>Sermo de visitacione marie matris domini nostri iesu christi</rubric>
+                        <incipit><quote>Exurgens Maria <gap reason="editorial"/></quote> Postquam Maria suum sensum apperuit quam angelus in persona tocius trinitatis expectauit, ymmo tocius genus humanum et angelus, reuertebatur ad domum</incipit>
+                        <explicit>quia ipsa concussit capud antiqui serpentis et conpletum est id in ea quod dicitur Genes. 3, Ipsa conteret caput serpentis et cetera</explicit>
+                        <note>Followed by a later note on the seven 'peccata aliena' and seven metals.</note>
                         <textLang mainLang="la" >Latin</textLang>
                      </msItem>
                      <msItem>
@@ -210,7 +272,16 @@
                         <supportDesc material="mixed">
                            <support>parchment, paper</support>
                         </supportDesc>
+                        <layoutDesc>
+                           <layout columns="1" writtenLines="27 30">1 col., c. 27-30 lines</layout>
+                        </layoutDesc>
                      </objectDesc>
+                     <handDesc>
+                        <handNote script="cursiva">Cursive.</handNote><!-- one hand? -->
+                     </handDesc>
+                     <decoDesc>
+                        <decoNote type="colInit">Two-line coloured red initials (three-line, fol. 202r)</decoNote>
+                     </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
@@ -224,42 +295,63 @@
                
 <!--SC mentions flyleaf relating to Mainz, in Latin, c. 1400, Legal document of Boniface IX? chk-->
                
+               
+               <msPart>
+                  <msIdentifier>
+                     <altIdentifier type="partial">
+                        <idno>MS. Hamilton 41 - upper pastedown </idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  <msContents>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem><note>Mandate of <persName key="person_69723238">Boniface <supplied>IX</supplied></persName> to a papal judge delegate to hear a case between vicars choral and a dean and chapter (?); mentions 'muros Maguntin.' (<placeName key="place_7004449">Mainz</placeName>)</note></msItem>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="sheet">
+                        <supportDesc material="perg">
+                           <support>parchment</support>
+                        </supportDesc>
+                     </objectDesc>
+                     <handDesc>
+                        <handNote script="cursiva">Gothic cursive script</handNote>
+                     </handDesc>
+                  </physDesc>
+                  <history><origin><origDate notAfter="1404" notBefore="1389" cert="high" calendar="Gregorian">1389 × 1404</origDate></origin></history>
+               </msPart>
                <msPart xml:id="MS_Hamilton_41-part3">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno>MS. Hamilton 41 - flyleaves (fols. 1, rear pastedown)</idno>
+                        <idno>MS. Hamilton 41 - endleaf (fol. 1) and lower pastedown </idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
                      <textLang mainLang="de">German</textLang>
                      <msItem n="1">
-                        <locus>(fol. 1rv)</locus>
-                        <title key="work_17120">Charter from Gotha</title>
-                        <note>fragment, part of a charter</note>
+                        <title key="work_17120" type="desc">Charter from Gotha</title>
+                         <note>Two fragments of a financial document issued by the town council of Gotha, concerning taxation, rents, and possibly tithes due to the church of St. Margaret in the same town.</note>
+                       <msItem> <locus>(fol. 1rv)</locus>
                         <incipit>Wir Hnrich Schonouwe unde Jacoph Ringhofin </incipit>
-                        <explicit defective="true"> nochgeschrebin stucke und artikele als </explicit>
-                        <note>Financial document issued by the town council of Gotha, concerning taxation, rents, and possibly tithes due to the church of St. Margaret in the same town.</note>
-                     </msItem>
-                     <msItem n="2">
+                        <explicit defective="true"> nochgeschrebin stucke und artikele als </explicit></msItem>
+                        <msItem>
                         <locus>(rear pastedown)</locus>
-                        <title key="work_17120">Charter from Gotha</title>
                         <incipit defective="true"> eber und hand sandir kemmerere Apil </incipit>
                         <explicit defective="true"> kegin den megena<supplied>n</supplied>tin kouffiti<supplied>n</supplied> gehaldin ub</explicit>
-                        <note>Another section of the same charter that formed the flyleaf of fol. 1v.</note>
+                     </msItem>
+                    
                      </msItem>
                   </msContents>
                   <physDesc>
-                     <objectDesc form="codex">
+                     <objectDesc form="sheet">
                         <supportDesc material="perg">
                            <support>parchment</support>
                            <extent>sides and bottom severely cut, with consequent loss of text.</extent>
                         </supportDesc>
                         <layoutDesc>
-                           <layout writtenLines="34">34 lines</layout>
+                           <layout>at least 34 lines</layout>
                         </layoutDesc>
                      </objectDesc>
                      <handDesc>
-                        <handNote>Gothic cursive script</handNote>
+                        <handNote script="cursiva">Gothic cursive script</handNote>
                      </handDesc>
                   </physDesc>
                   <history>
@@ -273,6 +365,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2020-11-12">Added further details of contents and further physical description</change>
          <change when="2020-03-19">Description revised for Polonsky digitization project to include additional information from printed descriptions.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
