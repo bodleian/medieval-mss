@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_5993">
+   <!-- todo: confirm hands; measurements; watermarks/date
+      binding R 5 437
+   -->
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Hamilton 31</title>
             <title type="collection">MSS. Hamilton</title>
             <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
-            </respStmt>
-         </titleStmt>
-         <editionStmt>
-            <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
+               <resp when="2020-11">Cataloguer</resp>
+               <resp>Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
-         </editionStmt>
+         </titleStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
             <address>
@@ -49,15 +46,40 @@
                      <idno type="SCN">24461</idno>
                   </altIdentifier>
                </msIdentifier>
+               <msContents>
+                  <msItem>
+                     <note>On the upper pastedown in fifteenth-century hands (1) a theological quaestio; (2) a note of the volume's contents, not mentioning item 3, and attributing item 1 to 'quodam fratre ordinis minorum'; (3) ex libris (see provenance). On the lower pastedown are another fifteenth-century ex libris, pen trials, and a subject-index (partly alphabetical) to art. 1 in four columns.</note>
+                     <textLang mainLang="la">Latin</textLang>
+                  </msItem>
+               </msContents>
                <physDesc>
                   <p n="composite">Composite: two parts</p>
+                  <objectDesc>
+                     <supportDesc>
+                        <extent>1 + 235 + 1 folios</extent>
+                     </supportDesc>
+                  </objectDesc>
+                  <bindingDesc>
+                     <binding contemporary="true">
+                        <p>Fifteenth-century ruled and stamped binding with cut-leather decoration (the Virgin and Child) on the upper board. Contemporary labels on the upper board with contents and pressmark.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
+               <history>
+                  <provenance><orgName role="fmo" key="org_415145858126223022295">Erfurt, Carthusian abbey</orgName>: ex libris, fifteenth-century, on both pastedowns; ex libris, 17th century (?), fol. 1; pressmark C 91 on label on the upper cover; listed under that pressmark in the late-fifteenth-century library catalogue (<title>Mittelalterliche Bibliothekskataloge Deutschlands und der Schweiz, II: Erfurt</title>, ed. P. Lehmann (1928), p. 292). </provenance>
+                  <provenance notAfter="1831" notBefore="1760"><persName role="fmo" key="person_24953683">Friedrich Gottlieb Julius von Bülow, 1760-?1831</persName>:  identifiable as 177 in the catalogue of part 3 of his sale, 10 Oct. 1836.</provenance>
+                  <provenance notBefore="1841" notAfter="1856"><persName role="fmo"
+                     key="person_54195353">Sir William Hamilton,
+                     1788-1856</persName></provenance>
+                  <acquisition when="1857">Presented to the Bodleian Library by his sons and
+                     received in 1857.</acquisition>
+               </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
-                            
-                            <listBibl>
+                        <source>Draft description by Matthew Holford, Nov. 2020. Previously described in the Summary Catalogue.
+                           
+                           <listBibl>
                               <bibl type="SC" facs="aam0061.gif">Summary Catalogue, Vol. 5, p.  26</bibl>
                            </listBibl>
                         </source>
@@ -72,10 +94,21 @@
                   </msIdentifier>
                   <msContents>
                      <msItem xml:id="MS_Hamilton_31-part1-item1" n="1">
-                        <title key="work_15602">Commentary on Apocalypse (Stegmüller 2961)</title><!-- ?William Melton d. 1257/61? check Sharpe -->
-                        <bibl type="commentedOn">
-                           <title>Bible, Apocalypse</title>
-                        </bibl>
+                        <locus>(fols. 1ra-179rb)</locus>
+                        <author key="person_316874550">John of Wales</author>
+                        <title key="work_15602">Postilla in Apocalypsim</title>
+                        <incipit><quote>Spiritu magno vidit vltima <gap reason="editorial"></gap></quote> Cum in sacra scriptura doctrina reuelata beato Johanne in apo. sint abscondita quinque per ordinem videnda sunt videlicet dei reuelantis dignatiua et dispensatiua bonitas, beati Johannis ad intuendum secreta celestia ydonietas, archanorum reuelatorum alta profunditas, modi reuelacionis congrua qualitas, et ultimo eiusdem perutilis commoditas </incipit>
+                        <explicit><locus>(fol. 4vb)</locus> et suscipientis auctoritatem. Et hec sufficiant quantum ad hodiernam leccionem.</explicit>
+                        <incipit><locus>(fol. 5ra)</locus> <supplied>P</supplied>ostquam ostensum est que sit presentis operis materia istius prophecie prefulgentia et eminencia hic 3o inquirimur qua visione Johannes viderit ista misteria</incipit>
+                        <explicit><locus>(fol. 8va)</locus> Postea accedens ad narracionem distinguit septem visiones quibus terminatis iste liber consummatur. Et his nos consummemus</explicit>
+                        <incipit><locus>(fol. 8va)</locus> <quote><supplied>A</supplied>pocalypsis Iesu Christi etc.</quote> Premissis causis principalibus huius doctrine sanctissime Sequitur euisdem diuisio et exposicio summalis</incipit>
+                        <incipit><locus>(fol. 8vb)</locus> Dicit ergo apocalypsis iesu christi. Et est sermo grecus qui interpretatur reuelacio eo quod in ipsa status presentis et future ecclesie designatur</incipit>
+                        <explicit>non malicie sed ignorancie asscribat et corrigat quidquid viderit corrigendum. Benedictus sit altissimus in secula seculorum. Amen.</explicit>
+                        <note>Rest of fol. 179rb blank; fol. 179v blank.</note>
+                        <bibl>Stegmüller 2961, this ms. listed; cf. also 2962, 2963, 4518; J. Swanson, <title>John of Wales, A study of the works and ideas of a thirteenth-century friar</title>, Cambridge 1989, 230 no. 17. Mostly anonymous in the manuscripts, sometimes also attributed to William Melton; less commonly to Nicholas Lyra or Nicholas Gorran, William Alnwick, or Vitalis de Furno (Stegmüller 8312,2).</bibl>
+                        <!-- another copy online: https://collections.thulb.uni-jena.de/receive/HisBest_cbu_00013667
+                        https://hab.bodleian.ox.ac.uk/en/image-viewer/?manifest=https://iiif.hab.de/object/mss_394-helmst/manifest
+                        -->
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                   </msContents>
@@ -84,7 +117,19 @@
                         <supportDesc material="chart">
                            <support>paper</support>
                         </supportDesc>
+                        <layoutDesc>
+                           <layout>2 cols., c. 36-39 lines.</layout>
+                        </layoutDesc>
                      </objectDesc>
+                     <handDesc>
+                        <handNote>Hybrida</handNote><!-- just one slightly variable hand?  -->
+                     </handDesc>
+                     <decoDesc>
+                        <decoNote type="colInit">Four-line coloured red initial, fol. 1ra.</decoNote>
+                        <decoNote type="flourInit">Three-line initial flourished in the ink of the text, fol. 160v.</decoNote>
+                        <decoNote type="unfilled">Elsewhere spaces for two- to three-line initials, unfilled. No rubrication, although running-heads and marginal comments are occasionally in red ink.</decoNote>
+                     </decoDesc>
+                     <additions>Marginal notes, extensive in places.</additions>
                   </physDesc>
                   <history>
                      <origin>
@@ -101,24 +146,51 @@
                         <idno type="part">MS. Hamilton 31 - Part 2</idno>
                      </altIdentifier>
                   </msIdentifier>
-                  <msContents>
-                     <msItem xml:id="MS_Hamilton_31-part2-item1" n="1">
-                        <author key="person_95301446">
-                           
-                           Agostino Trionfo
-                        
-                        </author>
-                        <title key="work_285">Commentary on
-                           Epistle to the Hebrews</title><note>(Stegmüller 1527)</note>
-                        <textLang mainLang="la">Latin</textLang>
+                  <msContents> <textLang mainLang="la">Latin</textLang>
+                     <msItem xml:id="MS_Hamilton_31-part2-item1" n="2">
+                        <locus>(fols. 180ra-231va)</locus>
+                        <author key="person_95301446">Agostino Trionfo</author>
+                        <title key="work_285">Commentary on Hebrews</title>
+                        <incipit><quote>Hebraei sunt et ego <gap reason="editorial"/></quote> Secundum beatum Ambrosium illum merito sanctitatis debemus extollere</incipit>
+                        <finalRubric>Explicit epistola pauli ad hebreos postillata per reuerendum magistrum augustini de ancona ordinis fratrum heremitarum sancti augustini et completa est per scriptorem in die sancti Mychaelis annos supra dicto in conuentu Ayrynensi</finalRubric>
+                        <note>Rest of fol. 231va blank; fol. 231vb blank.</note>
+                        <bibl>Stegmüller 1527, this ms. listed.</bibl>
+                     </msItem>
+                     <msItem xml:id="MS_Hamilton_31-part2-item2" n="3">
+                        <locus>(fols. 232ra-233rb)</locus>
+                        <author key="person_95301446"><supplied>Agostino Trionfo</supplied></author>
+                        <title key="work_6270"><supplied>Postilla seu lectura in epistolas canonicas (James, imperfect)</supplied></title>
+                        <incipit><quote>Sapientia hedificauit sibi domum <gap reason="editorial"/></quote> Cuiuslibet sciencie professor in principio sui studii tria tenetur dicere et pertractare</incipit>
+                        <incipit><locus>(fol. 233rb)</locus> <quote>Non est ita ordo etc.</quote> Istis epistolis beatus Ieronimus premittit quendam prologum</incipit>
+                        <explicit defective="true">qui istas epistolas</explicit>
+                        <note>Breaks off imperfect.</note>
+                        <bibl>Stegmüller 1528</bibl>
                      </msItem>
                   </msContents>
                   <physDesc>
                      <objectDesc form="codex">
                         <supportDesc material="chart">
                            <support>paper</support>
+                           <!-- watermark: grapes (fol. 235)
+                           either
+                           https://www.wasserzeichen-online.de/wzis/struktur.php?klassi=004002010001002002&anzeigeIDMotif=6710
+                           
+                           or
+                           
+                           https://www.wasserzeichen-online.de/wzis/struktur.php?klassi=004002010001002002&anzeigeIDMotif=2578
+                           
+                           -->
                         </supportDesc>
+                        <layoutDesc>
+                           <layout>2 cols., c. 53-57 lines.</layout>
+                        </layoutDesc>
                      </objectDesc>
+                     <handDesc>
+                        <handNote>Cursive.</handNote><!-- one hand? -->
+                     </handDesc>
+                     <decoDesc>
+                        <decoNote type="unfilled">Spaces for initials unfilled.</decoNote>
+                     </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
@@ -132,8 +204,10 @@
             </msDesc>
          </sourceDesc>
       </fileDesc>
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
+      <revisionDesc>          
+         <change when="2020-11-10">New draft description for Polonsky German.</change>
+         <change when="2017-07-01">First online publication.</change>
+         
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>
