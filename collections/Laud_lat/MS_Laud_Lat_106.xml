@@ -2,7 +2,10 @@
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_7569">
    <teiHeader>
-      <!-- TO BE DONE: add measurements; CHK O'Boyle's <title>The Art of Medicine</title> for this MS. see #13 and #14, perhaps create new authority files for the commentaries?-->
+      <!-- TO BE DONE: add measurements; CHK O'Boyle's <title>The Art of Medicine</title> for this MS. see #13 and #14, perhaps create new authority files for the commentaries?
+      
+      update laud misc 237? part 4 italian parchment. date - below top line
+      -->
       <fileDesc>
          <titleStmt>
             <title>MS. Laud Lat. 106</title>
@@ -59,6 +62,13 @@
                   <altIdentifier type="internal">
                      <idno type="SCN">1252</idno>
                   </altIdentifier>
+                  <!-- fol. 37 = xix, etc. 
+                     26v annot wlt, vult
+                  fol. 30 = xviij, 25 = xiij and -3-
+                  form of the -re abbre annot 28r
+                  annotations on 3v-4r are German? so too 142v? (sangwis, script), 143v (lingwa)
+                  250-end a different codicological unit?
+                  -->
                </msIdentifier>
                <head>Medical texts; France, 13th century, end</head>
                <msContents>
@@ -167,45 +177,81 @@
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                   <msItem xml:id="MS_Laud_Lat_106-item13" n="13" class="#medica">
+                     
+                     <!-- the poems ed: 
+                     https://babel.hathitrust.org/cgi/pt?id=hvd.32044010419547&view=2up&seq=94
+                     
+                     https://babel.hathitrust.org/cgi/pt?id=hvd.32044010419547&view=2up&seq=64 suggests that the expos to urines is by Fulgineo, the comm by Giles himself, the comm to pulses by Fulgineo
+                     
+                     biog http://studium.univ-paris1.fr/individus/50072-gentilisdefulgineo
+                     
+                     https://books.google.co.uk/books?id=3c0Tn7PnVnYC&lpg=PA118&ots=iKzv_UtTgy&dq=%22GENTILE%20da%20Foligno%22%20urinis&pg=PA118#v=onepage&q=%22GENTILE%20da%20Foligno%22%20urinis&f=false
+                     entry in Medieval Science, Technology, and Medicine: An Encyclopedia
+                     -->
+                     
                      <locus>(fols. 209v-229r)</locus>
                      <author key="person_71543640">Giles of Corbeil</author>
                      <note>(with a commentary)</note>
                      <!--This seems to be at times attributed to Gentilis de Fulgineo, but his dates are later than the current MS. origin. O'Boyle's <title>The Art of Medicine</title> might offer some more info > CHK! If the commentary is indeed anonymous, perhaps good to create its own authority file?-->
                      <title>De urinis</title>
-                     <incipit type="prol.">Liber iste quem legendum proponimus est nouelle institucionis studiose</incipit>
+                     <incipit type="prol.">Liber iste quem legendum proponimus est nouelle institucionis studiose composicionis artificio de antiquorum scriniis elicitus et extortus</incipit>
+                     <explicit type="prol.">Distinguitur liber iste in duas particiones, in primam et secundam. In prima agitur de de iudiciis urinarum secundum <add>cogicionem</add> colorum et subiectarum. In secunda agitur de iudiciis earum secundum distinctionem contentorum.</explicit>
                      <incipit>Dicitur urina quoniam fit renibus una</incipit>
-                     <incipit type="comm."><quote>Dicitur urina etc.</quote> Quia ibi formaliter et generaliter discernitur </incipit>
-                     <finalRubric>Expliciunt usus egidii</finalRubric>
+                     <explicit>aggrauat et cumulat mala circumstancia culpam</explicit>
+                     <incipit type="comm."><quote>Dicitur urina etc.</quote> Quia ibi formaliter et generaliter discernitur et licet prius in epate et subiectam et colorem acceperit</incipit>
+                     <incipit><quote>Quale quid etc.</quote> forma descripcionis intencionem capituli declarat. In hoc enim ostenditur que in iudicio urine sint notanda</incipit>
+                     <explicit><quote>Non ideo plus</quote> scilicet in quantitate <quote>plus sedimen</quote> Nota quod nigra ypostasis in fundo significat extinctionem caloris naturalis qui inpotens est dissoluere humores <unclear>inde</unclear> aliquam uentositatem que possit ipsam eleuare et hoc nobis de coloribus et substanciis et contentis vrinarum sufficiant </explicit>
+                     <!-- as pr https://iiif.lib.harvard.edu/manifests/view/drs:7323648$8i but without the expositio brevis
+                     https://www.jstor.org/stable/23415995?seq=1#page_thumbnails_tab_contents for a list of mss.
+                     -->
+                     
+                     <!-- TK  1348G is the commentary beg. 'Renibus una dicitur quia formaliter generatur
+                        TK 0689G is Gentile da Foligno beg. 'in libro isto autor ille intendens doctrinam'
+                        TK 0821I is the prologue beg. 'liber iste quem legendum'
+                     -->
+                     
+                     <finalRubric>Expliciunt uersus egidii</finalRubric>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                   <msItem xml:id="MS_Laud_Lat_106-item14" n="14" class="#medica">
                      <locus>(fols. 229r-249v)</locus>
-                     <author key="person_71543640">Giles of Corbeil</author>
+                    
                      <note>(with a commentary)</note>
                      <!--This seems to be at times attributed to Gentilis de Fulgineo, but his dates are later than the current MS. origin. O'Boyle's <title>The Art of Medicine</title> might offer some more info > CHK! If the commentary is indeed anonymous, perhaps good to create its own authority file?-->
-                     <title key="work_1748">De pulsibus</title>
-                     <incipit type="comm.">Quatuor sunt membra principalia quibus humani coeperis machina firmis basibus</incipit>
-                     <incipit>Ingenii uires modicis conatibus impar</incipit>
+                     <msItem> <author key="person_71543640">Giles of Corbeil</author>
+                        <title key="work_1748">De pulsibus</title>
+                     <incipit><locus>(fol. 230va)</locus> Ingenii uires modicis conatibus impar</incipit>
+                     <explicit>Iam sterilem cultum philareti vomeris horret</explicit>
+                     </msItem>
+                     
+                   <msItem>  <incipit type="comm.">Quatuor sunt membra principalia quibus humani corporis machina firmis basibus et fundamentis roborata subsistit</incipit>
+                      <explicit>effigiare non possit, est ergo tytulus talis, Incipit liber magistri egidii de differenciis pulsuum metrice compositus</explicit>
+                     <incipit><locus>(fol. 230rb)</locus> Hiis prelibatis ad litteram accedamus. <quote>Ingenii etc.</quote> tria exequitur beniuolenciam </incipit>
+                     <incipit><quote>Cor uite</quote> Complete proemio aggreditur principale ut tractet de differenciis pulsuum sed prius quedam preludia premittit et accessoria ad principale et primo de complexione cordis </incipit>
+                   <explicit><quote>Fige tuo</quote> opere <sic>fuo</sic> finito et conpleto alloquitur musam suam et monet eam quod figat hic metam et opus suum concludat unde versus</explicit>
+                   </msItem>
+                     <!-- prol = Gentilis ( https://iiif.lib.harvard.edu/manifests/view/drs:7323507$11i ) - the text also? -->
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                   <msItem xml:id="MS_Laud_Lat_106-item15" n="15" class="#medica">
                      <locus>(fols. 250r-254r)</locus>
                      <author key="person_287984736">Hippocrates</author>
                      <title key="work_2070">De Regimine Acutorum Morborum</title>
-                     <incipit>Qui de egrotancium accidentibus in singulis egritudinibus</incipit>
+                     <incipit><supplied>Q</supplied>ui de egrotancium accidentibus in singulis egritudinibus</incipit>
                      <finalRubric>Explicit regimen acutorum</finalRubric>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                   <msItem xml:id="MS_Laud_Lat_106-item16" n="16" class="#medica">
-                     <locus>(fols. 254v-144v)</locus>
+                     <locus>(fols. 254v-255v)</locus>
                      <title key="work_10205">Antidotarium Nicholai</title>
-                     <incipit>Ego Nicolaus rogatus a quibusdam in practica studere volentibus </incipit>
+                     <incipit><supplied>E</supplied>go Nicolaus rogatus a quibusdam in practica studere volentibus </incipit>
                      <explicit defective="true">camphorum similiter post ea </explicit>
                      <note>Incomplete.</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
                <physDesc>
+                  <p><secFol>habundancia</secFol></p>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
@@ -230,6 +276,7 @@
                      <decoNote type="decInit" resp="#PA">Good initials. (P&amp;A i. 560)</decoNote>
                      <decoNote type="flourInit">Red or blue initials, flourished in the other colour</decoNote>
                      <decoNote type="rubrication">Running headings in alternating red and blue capitals, red rubrics.</decoNote>
+                     <decoNote type="unfilled">Fols. 250r-255v: spaces for initials unfilled.</decoNote>
                   </decoDesc>
                   <bindingDesc>
                      <binding calendar="Gregorian" notAfter="1639" notBefore="1637">
@@ -239,7 +286,11 @@
                </physDesc>
                <history>
                   <origin>
+                     <!-- boyle art of medicine 116 accepts french origin -->
                      <origDate calendar="Gregorian" notAfter="1300" notBefore="1290">13th century, end</origDate>
+                     <!-- xiv 1/2 might not be impossible?
+                     cf http://bilder.manuscripta-mediaevalia.de/hs/katalogseiten/HSK0537b_b0223_jpg.htm 
+                     -->
                      <origPlace> <country key="place_1000070">French</country> </origPlace>
                   </origin>
                   <provenance resp="#Q2" when="1637"><persName role="fmo" key="person_54940373">William Laud, 1573-1645</persName>, 1637.
