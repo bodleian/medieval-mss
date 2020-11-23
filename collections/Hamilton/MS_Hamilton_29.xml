@@ -1,22 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_5990">
    <teiHeader>
+      <!-- TODO: check Thomson for the endleaves
+         pastedowns (for one passage "homo praecessit in tempre" perhaps cf. avicenna Metaph vi.1-2 (f. 91rbB-92rbD)
+      dimensions of main book and fragments
+      watermarks
+      collation
+      just one codicological unit?
+      identify text 4b?
+      hands (?1-4, 4-108, 110-125 (all one hand?), 126-137, all different hands)
+      -->
       <fileDesc>
          <titleStmt>
             <title>MS. Hamilton 29</title>
             <title type="collection">MSS. Hamilton</title>
             <respStmt>
-               <resp>Cataloguer</resp>
-               <persName>F. Madan</persName>
+               <resp when="2020-11">Cataloguer</resp>
+               <persName>Matthew Holford</persName>
             </respStmt>
             <respStmt>
                <resp>Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
-         <editionStmt>
-            <edition>TEI P5</edition>
-         </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
             <address>
@@ -51,43 +57,150 @@
                </msIdentifier>
                <msContents>
                   <msItem xml:id="MS_Hamilton_29-item1" n="1">
-                     <author key="person_63741243">Peregrinus de Oppeln</author>
-                     <title key="work_3485">Sermones de sanctis</title>
-                     <note>(Schneyer IV.564-572)</note>
+                     <locus>(fols. 2ra-108rb)</locus>
+                     <author key="person_63741243"><supplied>Peregrinus de Oppeln (?)</supplied></author>
+                     <title key="work_3485">Sermones de sanctis (Hieron. de Salzburg collecti aut variati)</title>
+                     <title key="work_16273">(Collectio sermonum ‘Flores de sanctis’ siue ‘Piper’)</title>
+                     <note>Schneyer IV.557-572, from this manuscript: 195-202, 204-5, 113, 206-21, 114, 222-4, 126, 225, 127, 226-33, 129, 234-5, 131-2, 236-7, 134, 238-9, 136, 240-1, 137, 242, 140, 243-9, 144-6, 250-9, 260-1, 149, 262-4, 150-1, 265-76, 155, 277-8, 156, 279-301, 174, 302-5, 185, 306-9.</note><!-- CHECK that 203 really is omitted -->
                      <rubric>De sancto Andrea</rubric>
                      <incipit>Simili pena seruus ... Filius Dei considerans</incipit>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
-                  <msItem>
-                     <locus>(fol. 108v)</locus>
-                     <title key="work_16254">Abstractum-Glossar</title>
-                     <note>Late 15th cent.</note>
+                  <msItem xml:id="MS_Hamilton_29-item2" n="2">
+                     <locus>(fol. 108rb)</locus>
+                     <title type="desc" key="work_13934">Prayer</title>
+                     <note><q>Nve helfft mir bethe v<ex>or</ex> daz wandel der heylygen <ex>cristen</ex>heut Snder v<ex>or</ex> eynen stete frede dez landes vor vsz<ex>er</ex>n geystlich vater den babest vor alle syne kardenal v<ex>or</ex> alle bysschoff v<ex>or</ex> alle p<ex>re</ex>st<ex>er</ex>liche werdykeyt dar nach helfft mir flyszlich bethe vor den romischen konigk</q></note>
+                     <note>Added in a different hand.</note>
+                     <textLang mainLang="de">German</textLang>
+                  </msItem>
+                  <msItem xml:id="MS_Hamilton_29-item3" n="3">
+                     <locus>(fol. 108va-b)</locus>
+                     <title key="work_16254">Abstractum-Glossar A-I</title>
+                     <incipit>Abstractu<ex>m</ex> abgeczohe<ex>n</ex> ad<ex>er</ex> abgeschede<ex>n</ex> </incipit>
+                     <explicit>Int<ex>er</ex>cu<ex>m</ex>spect<ex>us</ex> beslossen <lb/> <subst><del>Incura</del><add>Incuria</add></subst> ruchluskeyt</explicit>
+                     <note>Added by another hand in two columns on an originally blank leaf.</note>
+                     <note>Fol. 109r-v blank.</note>
                      <textLang mainLang="la" otherLangs="de">Latin and German</textLang>
                   </msItem>
-                  <msItem>
-                     <locus>(fol. 110)</locus>
-                     <title type="desc" key="work_14583">Sermons</title>
-                     <note>Miscellaneous sermons, one entitled 'Passio Domini', 'per manus Henrici Rulandi',
-                  late 15th cent.</note>
+                  <msItem xml:id="MS_Hamilton_29-item4" n="4">
+                        <locus>(fols. 111ra-125vb)</locus>
+                        <title key="work_14583">Sermones varii</title>
+                     <msItem><locus>(fols. 110ra-vb)</locus><title> <supplied>De rogationibus</supplied></title>
+                     <msItem>
+                        <locus>(fol. 110ra-b)</locus>
+                        <incipit>Oculi domini super iustos <gap reason="editorial"/> Tribus modis orationes nostre inpediuntur quod a deo non exaudiuntur. Primo qui orat ut de inimicis suis ulcisatur</incipit>
+                        <explicit>negatum fructum agricolis impendit</explicit>
+                        <note>Abbreviated from <persName role="aut" key="person_100201145">Honorius of Autun</persName>, <title key="work_6452">Speculum ecclesiae</title>, PL 172.949B-953B</note>
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 110rb-vb)</locus>
+                        <rubric>Item alius</rubric>
+                        <incipit>De regacionibus que dicitur letania minor. Maior vero peragitur in die marci, instituto a gregoria magno in urbe romano pro magno et grauissimo morbo</incipit>
+                        <explicit>angelum domini qui gladium cruentatum detergentem et in vaginam mittentem et intellexit quod pestis ista cessasset et statutum est ut castrum istud castrum angeli vocaretur</explicit>
+                        <note>Rest of fol. 110vb blank.</note>
+                     </msItem></msItem>
+                              <msItem>
+                                 <locus>(fol. 111ra-b, margin)</locus><!-- image 223 -->
+                                 <rubric>De animabus</rubric>
+                                 <incipit><quote>Mittite partes <choice><sic>eius</sic><corr>eis</corr></choice> qui non preparaveru<supplied>n</supplied>t sibi</quote> Consuetudo est quando aliqui usque ad mortem infirmati uel ad mortem flagellati aut in carcere ad mortem cruciati ad amicos suos karissimos</incipit>
+                                 <explicit defective="true">qui vos pauperibus clamantibus de</explicit>
+                                 <note>Text continued in the lower margin of the page; the end lost through trimming. Cf. Schneyer V.432 (49) (<persName role="aut" key="person_15175769">Sifridus OP</persName>), VIII.705 (50), IX.535 (59).</note>
+                              </msItem>
+                        <msItem>
+                           <locus>(fol. 111va-b)</locus>
+                           <rubric>De dedicacione</rubric>
+                           <incipit><quote>Egressus Ihesus perambulabat Iherico etc.</quote> Hystoria patet et ideo eam obmittamus et sensum moralem que multum edificat</incipit>
+                           <explicit> Hodie salus huic domui facta est id est anime nostre et corpori nostro vt nos manere mereamur cum <sic/> in domo sua in eternum, quod nobis prestare dignetur <gap reason="editorial"/></explicit>
+                           <note>Begins as BSB, Clm 28454 fol. 1ra and Augsburg UB Cod. II.1.fol.46 fol. 303va, but the ending differs.</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 112ra-113ra)</locus>
+                           <rubric>De epyphania</rubric>
+                           <incipit>Epyphania domini quadruplici decoratur miraculo, et ideo quadruplici vocabulo nuncupatur</incipit>
+                           <explicit>sed colonie requiescunt etc. </explicit>
+                           <author key="person_100198644">Jacobus de Voragine</author>
+                           <title key="work_2330">Legenda Aurea c. xiv</title>
+                           <!-- followed by a note, TODO, image 227 -->
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 113ra-116ra)</locus>
+                           <rubric>De assumpcione beate uirginis</rubric>
+                           <incipit><quote>Hodie magnificata est anima mea <gap reason="editorial"/></quote> De multiplicibus gaudiis marie legimus in scripturis. Et singulariter de vij</incipit>
+                           <explicit>marie precibus saluatur hic et in futurum Amen</explicit>
+                           <!-- seems to be one item, though there is a lombard at 113rb Hodie ... congrue hodie magnificata est maria et ipsius sancta anima -->
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 116ra-117vb)</locus><!-- 233 -->
+                           <rubric>De angelis</rubric>
+                           <incipit><quote>Omnes sunt administratorii <gap reason="editorial"/></quote> Duo notantur hic scilicet admirabilis clemencia diuine pietatis dando homini angelum ad custodia <add place="margin">secundo</add> condignitas humane nature</incipit>
+                           <explicit>Hoc est distribucio ministeriorum descendencium quo ad diuinam misericordiam circa nos</explicit>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 118ra-vb)</locus>
+                           <rubric><locus>(fol. 117vb)</locus> In Rogacionibus</rubric>
+                           <incipit><quote>Quis <del>ex vobis</del> vestrum habebit amicum et ibit ad eum <gap reason="editorial"/></quote> Modo sunt dies rogacionum fratres karissimi et oracionum et ideo dignum</incipit>
+                           <explicit>venenum in cauda gerit. Itaque qui a deo onum et spem <!-- check --> celestium querit non scorpionum retro ad terrena recipit, ergo fratres karissimi nolite petere a deo que petenda non sunt sed celestia assidue et terrena in necessitate</explicit>
+                           <note><persName role="aut" key="person_54538580">Geoffrey Babio</persName> 29 (Schneyer II.152-3, PL 171.574-577A)</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 118vb-125vb)</locus>
+                           <rubric>De passione domini sermo</rubric>
+                           <incipit><quote>O vos omnes qui transitis <gap reason="editorial"/></quote> Verba preposita scripta sunt per prophetam Jeremiam et sunt verba ipsius Christi que poterat dicere cum pro nobis in cruce penderet manibus et pedibus transfossus et omnia membra dolerent, tunc flendo dicere poterat O uos omnes</incipit>
+                           <incipit><locus>(fol. 118vb)</locus> Multa sunt que nos ad fletum ducunt que transfero propter prolixitatem sermonis. Super omnia debet vnum nos mouere, quod hodie fratres fratrem interfecerunt</incipit>
+                           <explicit>Quicumque contristatus fuerit hodie cum hac mestissima matre, illo gaudio celesti eum cum felice matre maria in eternum debet perfrui, ad quod nos christus per suam passionem peruenire concedat, qui cum patre <gap reason="editorial"/></explicit>
+                           <colophon>Explicit passio domini nostri iesu christi scripta per manus <persName role="scr" key="person_3390">Heinrici Rulandi</persName>.</colophon>
+                           <!-- ? https://archive.org/details/MitteilungenDesVereinsFrGeschichteUndAltertumskundeVonErfurtVol/page/n155/mode/2up -->
+                           <note>Begins as Johannes Contractus (not in Schneyer; printed in the edition of not after 1478, istc ic00871000), but varies soon after the beginning.</note>
+                        </msItem>
+                        <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     
+                    
+                    
+                  <msItem xml:id="MS_Hamilton_29-item5" n="5">
+                     <locus>(fols. 126(a)ra-137vb)</locus>
+                     <author key="person_100198644"><supplied>Jacobus de Voragine</supplied></author>
+                     <title key="work_2333">Sermones de tempore: dom. 2-10 post oct. Pent.</title>
+                     <!-- http://digital.ub.uni-duesseldorf.de/urn/urn:nbn:de:hbz:061:1-134536 -->
+                        <rubric>Dominica 2a</rubric>
+                        <incipit><quote>Homo quidem fecit cenam magnam <gap reason="editorial"/></quote> Cum homo ad ymaginem dei sit factus, non est incongruum</incipit>
+                        <note>Schneyer III.221-235 nos. 89 (text partially repeated on fol. 126(b), an inserted slip, from 'circa ista cena tria notantur, scilicet inuitantis magna liberalitas' to 'secundum puritatem manuum mearum <sic>retribuet</sic> mihi'), 90, 93-5, 98 (beginning at 'In isto ewangelio instruuntur auditores verbi' and ending at 'Ps. Ignitum tuum eloquium vehementer'), 99-100, 101 (beg. some way through at 'Nota quod iusticia phariseorum erat nimis seuera, Mt. v Audistis'), 105 (signficantly longer than as pr. [not after 1478], istc ij00193000, ending 'reuerencia cum signo corporis'), 110 ('dominica 8', again significantly longer than pr., ending 'ut pauperes eos in sua hereditate collocet et utrumque per alium collocentur'),  <!-- http://digital.ub.uni-duesseldorf.de/ink/content/pageview/3956031 col b -->, 102, 103 (ending at 'de quo dicitur Mt. xxxij Omnis qui ...'), 113 ('dominica ixa', beginning 'dicit ewangelium quod cum dominus appropinquaret ad descensum montis oliuati turbe sibi occurrerunt cum canticis' and ending at 'uel saltem leuiter subridentem'), 114 (followed by a note that the third sermon 'Domus mea domus' is found in the quadragesimale), 116 ('dominica xa'), 117 (ending varies, here squeezed into the lower margin). <!-- http://digital.ub.uni-duesseldorf.de/ink/content/pageview/3956069 col. a -->)  <!-- change just of ink at here image 264? -->,  <!-- image 264 Ascendens = JoV 99, then 100, then at 131rb (267) another unid., then (131va) 102, then 103? (ending varies), then ?105 (ending var.), then (134rb, 273) 110? (var), then ? (276, 135vb), ?114 (277), 116, 117  --> </note>
                      <textLang mainLang="la">Latin</textLang>
-                  </msItem>
+                     </msItem>
+                   
+                    
+                     
+                     
                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
+                        <extent>1 + 137 + 1</extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2" writtenLines="37 45">2 cols., c. 37-45 lines </layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <handDesc>
+                     <handNote script="cursiva">Cursive</handNote>
+                  </handDesc>
+                 <!-- <handDesc>
+                     <handNote>Hand changes at: fol. 4rb | fol. 43ra | </handNote>
+                     <!-\- several changes of ink, eg. image 192 -\->
+                  </handDesc>-->
+                  <decoDesc>
+                     <decoNote type="colInit">Plain red initials of three or (mostly) two lines with simple decoration.</decoNote>
+                  </decoDesc>
                   <bindingDesc>
                      <binding notAfter="1500" notBefore="1400">
                         <p>Plain leather on boards,
-                           contemporary</p>
+                           contemporary; clasps lost; bosses on upper and lower boards lost; contemporary labels with contents and pressmark on upper board.</p>
                      </binding>
                   </bindingDesc>
-                  <accMat>The fly-leaves are fragments from a 13th cent. commentary on a philosophical
-                     work, and from a 15th cent. logical treatise, both in Latin.</accMat>
-                  
+                  <accMat>The pastedowns are fragments of a grammatical or logical text in Latin (Germany, 15th century)</accMat>
+                  <!-- cf http://diglib.hab.de/inkunabeln/4-log-2f/start.htm -->
                </physDesc>
                <history>
                   <origin>
@@ -96,14 +209,14 @@
                         <country key="place_7000084">German</country>
                      </origPlace>
                   </origin>
-                  <provenance><orgName role="fmo" key="org_415145858126223022295">Erfurt, Charterhouse</orgName> (catalogue, 0. 9)</provenance>
+                  <provenance><orgName role="fmo" key="org_415145858126223022295">Erfurt, Charterhouse</orgName>: 15th-century ex libris, fols. 1r, 138r; 17th(?)-century ex libris, fol. 2r; pressmark O.9<damage><gap unit="char" quantity="1"/></damage> on the cover; identifiable as O.92 (not O.9) in the late-fifteenth-century catalogue (ed. P. Lehmann, p. 503).</provenance>
+                  <provenance>Not certainly identifiable in the 1836 catalogue of the Friedrich Gottlieb Julius von Bülow  sale (could be 168?)</provenance>
                   <provenance notBefore="1841" notAfter="1856"><persName role="fmo" key="person_54195353">Sir William Hamilton, 1788-1856</persName></provenance>
                   <acquisition when="1857">Presented to the Bodleian Library by his sons and received in 1857.</acquisition>
                </history>
                <additional><adminInfo>
                      <recordHist>
-                        <source>Adapted from the Summary Catalogue (1897) with additional reference to published literature cited in the description. 
-                            
+                        <source>Draft description by Matthew Holford (Nov. 2020). Previously described in the Summary Catalogue (1897). 
                             <listBibl>
                               <bibl type="SC" facs="aam0059.gif">Summary Catalogue, Vol. 5, p.  24</bibl>
                               <bibl type="SC" facs="aam0060.gif">Summary Catalogue, Vol. 5, p.  25</bibl>
@@ -111,10 +224,62 @@
                         </source>
                      </recordHist>
                   </adminInfo><listBibl type="WRAPPER"><listBibl type="INTERNET"><head>Online resources:</head><bibl><ref target="http://www.handschriftencensus.de/23293"><title>Handschriftencensus: Eine Bestandsaufnahme der handschriftlichen Überlieferung deutschsprachiger Texte des Mittelalters</title></ref></bibl></listBibl></listBibl></additional>
+               <msPart xml:id="MS_Hamilton_29_endleaf">
+                  <msIdentifier>
+                     <altIdentifier type="partial">
+                        <idno type="part">MS. Hamilton 29 - endleaf (fol. 1)</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  <msContents>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem xml:id="MS_Hamilton_29_endleaf-item1" n="1">
+                        <locus>(fol. 1ra-vb)</locus>
+                        <author key="person_100187638">Giles of Rome</author>
+                        <title key="work_1755">Commentary on (Ps.-)Aristotle, De Bona Fortuna</title>
+                        <incipit><supplied>Q</supplied>uidam ordinant in idem bonam fortunam felicitati ut uult philosophus </incipit>
+                        <explicit defective="true">deum dignificamus dominum id est</explicit>
+                        <note>Ed. 1551 (USTC 859499) fols. 72va-74ra </note>
+                        <!-- google books: https://books.google.co.uk/books?id=qX0kj87wVPwC&lpg=PA72-IA1&ots=i-PYc36AXe&dq=%22bonam%20fortunam%20felicitati%22&pg=PA74#v=onepage&q=%22bonam%20fortunam%20felicitati%22&f=false  -->
+                     </msItem>
+                     <msItem xml:id="MS_Hamilton_29_endleaf-item2" n="2">
+                        <locus>(fol. 138ra-vb)</locus>
+                        <author key="person_17579824">Peter of Auvergne</author>
+                        <title key="work_7224">Commentary on Aristotle's De senectute et iuuentute</title>
+                        <incipit defective="true">ordinantur ad aliquem effectum inducendum</incipit>
+                        <explicit defective="true">quod suffocatorio apposito continue cito corrumpitur cum</explicit>
+                        <note>Ed. 1551 fols. 58rb-60ra</note>
+                     </msItem>
+                     
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="perg">
+                           <support>parchment</support>
+                        </supportDesc>
+                        <layoutDesc>
+                           <layout columns="2" writtenLines="52">2 cols., 52 lines.</layout>
+                        </layoutDesc>
+                     </objectDesc>
+                     <handDesc>
+                        <handNote script="textualisNorthern">Textualis</handNote>
+                     </handDesc>
+                     <decoDesc>
+                        <decoNote type="unfilled">Spaces for initials unfilled.</decoNote>
+                     </decoDesc>
+                  </physDesc>
+                  <history>
+                     <origin>
+                        <origDate calendar="Gregorian" notAfter="1325" notBefore="1275">13th century, late, or 14th century, early</origDate>
+                        <origPlace><country key="place_1000070">France</country></origPlace>
+                     </origin>
+                  </history>
+               </msPart>
             </msDesc>
          </sourceDesc>
       </fileDesc>
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
+      <revisionDesc>      
+         <change when="2020-11-19">New draft description for Polonsky German.</change>
+         <change when="2017-07-01">First online publication.</change>
 
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>

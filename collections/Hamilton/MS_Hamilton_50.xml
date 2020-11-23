@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6014">
    <teiHeader>
+      <!-- to do:
+         measurements (part 1 and check part 2)
+         watermarks (part 1, part 2 if time)
+         checks on transcriptions etc as noted below
+         endleaves
+      -->
+      
       <fileDesc>
          <titleStmt>
             <title>MS. Hamilton 50</title>
             <title type="collection">MSS. Hamilton</title>
             <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
-            </respStmt>
-         </titleStmt>
-         <editionStmt>
-            <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
+               <resp when="2020-10">Cataloguer</resp>
+               <resp>Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
-         </editionStmt>
+         </titleStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
             <address>
@@ -49,13 +50,27 @@
                      <idno type="SCN">24480</idno>
                   </altIdentifier>
                </msIdentifier>
+               <head>A Sermons (de tempore, de sanctis, de virgine); Germany, 14th century, second half. B Peregrinus Polonus, <title>Sermones de sanctis</title>, Germany, 1375.</head>
                <physDesc>
                   <p n="composite">Composite: two parts</p>
+                  <objectDesc>
+                     <supportDesc>
+                        <extent>2 + 260 + 1 folios (i-ii, 1-261)</extent>
+                     </supportDesc>
+                  </objectDesc>
+                  <bindingDesc><binding notAfter="1500" notBefore="1400">
+                     <p>Half-leather binding over wooden boards, ruled and stamped in blind, fifteenth century. Contemporary contents label and pressmarks <q>C .49.</q>, <q>C xlix</q>. Clasp lost. Stamps probably of the bindery of St Peter's, Erfurt (<ref target="https://www.hist-einband.de/werkstattdetails.html?entityID=w002367">w002367</ref>), including 'vierblatt' (<ref target="https://www.hist-einband.de/werkzeugdetails.html?entityID=s015813">s015813</ref>), rosette (<ref target="https://www.hist-einband.de/werkzeugdetails.html?entityID=s015819">s015819</ref>), lion (<ref target="https://www.hist-einband.de/werkzeugdetails.html?entityID=s015828">s015828</ref>)</p>
+                     <p>Traces of an earlier binding on the lower pastedown.</p>
+                  </binding></bindingDesc>
                </physDesc>
+               <history>
+                  <provenance>Erfurt, Benedictine monastery of St Peter</provenance>
+                  <provenance>Bulow, no. 294.</provenance>
+               </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
+                        <source>Draft description by Matthew Holford, October 2020. Previously described in the Summary Catalogue. 
                             
                             <listBibl>
                               <bibl type="SC" facs="aam0070.gif">Summary Catalogue, Vol. 5, p.  35</bibl>
@@ -71,29 +86,767 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem>
+                        <note>Fol. i r-v (medieval paper endleaf) blank except for later Bodleian shelfmarks on fol. i r. Fol. ii is a reject leaf of the following text, containing the beginning of Jordanus de Quedlinburg, sermo 142, to which were added later in the fifteenth century (i) (fol. i recto) a note 'de uisitacione marie' beginning 'Item nota de saluacione que facta est a maria ad elizabeth, dicunt aliqui doctores quod Maria salutabat elizabeth in ydeomate ebrayco' (ii) (fol. ii verso) notes on St John the Baptist including eight 'signa' performed in church on the day and vigil of the saint's feast.</note>
+                     </msItem>
                      <msItem xml:id="MS_Hamilton_50-part1-item1" n="1">
-                        <author key="person_84971788">Jordanus de Quedlingburg</author>
-                        <title key="work_2869">Sermones de tempore</title>
-                        <note>(series 2: Schneyer III.825-43)</note>
-                        <textLang mainLang="la">Latin</textLang>
+                        <locus>(fols. 1ra-106vb)</locus>
+                        <title key="work_14583">Sermones de tempore</title>
+                        <note>Largely from the two collections of Jordanus de Quedlinburg (Schneyer III.802-825, nos. 1-134 = series 1, this ms. not listed, and III.825-843, nos. 135-351 = series 2, this ms. listed)</note>
+                        <msItem>
+                           <locus>(fol. 1ra)</locus>
+                           <author key="person_84971788">Jordanus de Quedlingburg</author><bibl>142</bibl>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 3rb)</locus>
+                           <author key="person_84971788">Jordanus de Quedlingburg</author><bibl>145 (ends as 144)</bibl>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 4vb)</locus>
+                           <author key="person_100198644">Jacobus de Voragine</author><bibl>13 (explicit differs)</bibl>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 6ra)</locus>
+                           <rubric>feria 4a</rubric>
+                           <incipit><quote>Missus est angelus <gap reason="editorial"/></quote> Hic notatur tria. Primum est quod deus angelum ad virginem destinauit, ibi missum etc. Secundum est quod angelus missus</incipit>
+                           <explicit>spiritus tuus bonus deducet me. Rogemus.</explicit>
+                           <author>Jacobus de Valliaco (?)</author><note>(cf. Schneyer VII, 293, no. 42; <bibl type="ms" subtype="external">Innsbruck, ULBT, Cod. 938</bibl> fol. 35v) </note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 7rb)</locus>
+                           <rubric>Feria sexta</rubric>
+                           <author key="person_84971788">Jordanus de Quedlingburg</author><bibl>152</bibl>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 8rb)</locus>
+                           <rubric>Sabbato 4or temporum in aduentu</rubric>
+                           <author key="person_84971788">Jordanus de Quedlingburg</author><bibl>154</bibl><!-- expl matches -->
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 10va)</locus>
+                           <rubric>In vigilia christi</rubric> <author key="person_84971788">Jordanus de Quedlingburg</author><bibl>157, explicit differs</bibl>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 11vb)</locus>
+                           <rubric>In die christi</rubric> <author key="person_84971788">Jordanus de Quedlingburg</author><bibl>159 (ends as 160)</bibl>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 13vb)</locus>
+                           <rubric>Dominica 1 post nativitati christi</rubric> 
+                           <author key="person_84971788">Jordanus de Quedlingburg</author>
+                           <bibl>162, explicit differs</bibl>
+                           <!-- iamge 40 -->
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 15va)</locus>
+                           <rubric>In octaua christi</rubric> <rubric><add place="margin">In circumcisione christi sermo</add></rubric>
+                           <incipit><quote>Postquam consumati sunt dies octo <gap reason="editorial"/></quote> Solent in nouo anno munuscula dari; maiores </incipit>
+                           <explicit>Ita electi in sua circumcisione spirituali participant isto nomine ut sicut ipsi sint in eternum amen</explicit><!-- check, image 43 -->
+                           <!-- cf
+                           https://books.google.co.uk/books?id=Yf5kAAAAcAAJ&lpg=PT119&ots=8__uWReKmy&dq=%22anno%20munuscula%20dari%22&pg=PT125#v=onepage&q=%22anno%20munuscula%20dari%22&f=false
+                           -->
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 17rb)</locus>
+                           <rubric>In die epy</rubric>
+                           <author key="person_84971788">Jordanus de Quedlingburg</author><bibl>170</bibl>
+                           <explicit>de hoc odore dicit apostolus christi bonus odor sumus in omni loco. Rogemus.</explicit><note>Followed by a note on the names of the kings 'ut dicti magister in hystoriis'.</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 18va)</locus>
+                           <!-- 46 -->
+                           <incipit><quote>Remansit puer iesus <gap reason="editorial"/></quote> Nota preceptum fuit filiis Israel Exo. 23 quod ter in anno scilicet in aprili, iunio et septembri tria festa celebrarent scilicet pasca penthecosten et scenophegia</incipit>
+                           <!-- not = Pal. lat. 448 fol. 114v -->
+                           <!-- explicit, 48 -->
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 20ra)</locus>
+                           <incipit><quote>Baptizatus autem iesus confestim ascendit <gap reason="editorial"/></quote> Sancta ecclesia colit hodie magnum festum, scilicet anniuersarium quando dominus nouam legem incepit </incipit>
+                           <explicit>deus volt talis <unclear>recte</unclear> dicitur filius dei. Rogemus.</explicit>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 21rb)</locus>
+                           <author key="person_84971788">Jordanus de Quedlingburg</author>
+                           <bibl>179</bibl>
+                           <!-- expl ok -->
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 21va)</locus>
+                           <rubric><locus>(fol. 21rb)</locus> Dominica <subst><del>2a</del><add>3a</add></subst> post Epyphaniam</rubric>
+                           <author key="person_84971788">Jordanus de Quedlingburg</author>
+                           <bibl>36</bibl><!-- ser 1-->
+                           <!-- explicit differs, cf. image 57 with the printed text
+                           http://tudigit.ulb.tu-darmstadt.de/show/inc-v-104
+                           
+                           -->
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 24ra)</locus>
+                           <rubric>Dominica <subst><del>3a</del><add>4a</add></subst> post epyphaniam</rubric>
+                           <author key="person_84971788">Jordanus de Quedlingburg</author>
+                           <bibl>183</bibl>
+                           <explicit>post magna enim tribulacionem magna sequitur consolacio. Rogemus. </explicit><!--<note>[Pat. lat. 448 fol. 132ra]</note>-->
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 25rb)</locus>
+                           <rubric>Dominica <subst><del>4a</del><add>5a</add></subst></rubric>
+                           <author key="person_84971788">Jordanus de Quedlingburg</author>
+                           <bibl>184</bibl>
+                           <note>The second part, with thema 'Sinite utraque', rubricated as for the 6th Sunday after Epiphany.</note><!-- expl. ok -->
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 26va)</locus>
+                           <!-- image 62 -->
+                           <rubric>Dominica in lxx</rubric>
+                           <author key="person_84971788">Jordanus de Quedlingburg</author>
+                           <bibl>186</bibl><!-- expl ok -->
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 28ra)</locus>
+                           <rubric><locus>(fol. 27vb)</locus> Dominica <subst><del>quinquagesima</del><add>sexagesima</add></subst></rubric>
+                           <author key="person_84971788">Jordanus de Quedlingburg</author>
+                           <bibl>189</bibl><!-- expl. ok -->
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 29rb)</locus>
+                           <!-- rubric TODO -->
+                           <author key="person_100198644">Jacobus de Voragine</author><bibl>38 (explicit differs)</bibl>
+                           <!-- check printed text, here and above? -->
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 30va)</locus>
+                           <rubric>Dominica in xla</rubric>
+                           <author key="person_84971788">Jordanus de Quedlingburg</author>
+                           <bibl>199</bibl>
+                           <explicit><unclear>competenter</unclear> habere non possunt</explicit><!-- cf Pal lat f. 161v, text seems to differ -->
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 32va)</locus><!-- 74 -->
+                           <rubric>Dominica 2a in <subst><del>lxa</del><add>xl</add></subst></rubric>
+                           <author key="person_84971788">Jordanus de Quedlingburg</author>
+                           <bibl>205, part 3</bibl>
+                           <!-- expl ok -->
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 33va)</locus>
+                           <rubric>Dominica 3 <add>in xl</add></rubric>
+                           <author key="person_84971788">Jordanus de Quedlingburg</author>
+                           <bibl>215</bibl>
+                           <!-- expl ok -->
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 35ra)</locus>
+                           <rubric>Dominica 4a in <subst><del>lxa</del><add>xl</add></subst></rubric>
+                           <incipit><quote>Abiit iesus trans mare <gap reason="editorial"/></quote> Ista dominica dicitur dominica rosea triplici racione. Prima est literalis </incipit><!-- check -->
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 36vb)</locus>
+                           <rubric>dominica 5</rubric>
+                           <rubric><add place="margin">Dominica in passione christi</add></rubric>
+                           <incipit><quote>Iesus autem abscondit <gap reason="editorial"/></quote> Augustinus. Non autem abscondit se in angulo templi quasi timens </incipit>
+                           <explicit>ardor penitencie ad quem prouocatur. Rogemus.</explicit>
+                           <!-- ending resembles J de Voragine 55, check print ed -->
+                        </msItem>
+                        
+                        <msItem>
+                           <locus>(fol. 38rb)</locus>
+                           <rubric>Dominica 6</rubric>
+                           <incipit><cit><quote>Cum appropinquasset iesus <gap reason="editorial"></gap></quote> <bibl>Mt. xxj</bibl></cit> Tota continentia istius ewangelii comprehenduntur in quatuor que christo hodie exhibuit</incipit><author key="person_100198644">Jacobus de Voragine</author><bibl>273</bibl><!-- expl ok -->
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 40ra)</locus>
+                           <rubric>Quare portantur palme in die palmarum</rubric>
+                           <incipit>Et primo potest queri cum tali die turba processit 4o obiuam cum palmis </incipit><!-- check: 89 -->
+                           <!-- TODO: identify -->
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 40rb)</locus>
+                           <rubric>In cena domini</rubric>
+                           <incipit><quote>Probet autem se ipsum homo <gap reason="editorial"></gap></quote> Si aliquis debet aliquem cibum recipere, oportet quod videat et probet</incipit><author key="person_100198644">Jacobus de Voragine</author><bibl>281 (explicit differs)</bibl><!-- chk pr. ; image 92-->
+                           <note>In lower margin: 'sacerdos nota istum sermonem valde bene'.</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 41vb)</locus>
+                           <rubric>In vigilia pasce</rubric>
+                           <incipit><quote>Mortui enim estis <gap reason="editorial"></gap></quote> Hoie deplorat et representat ecclesia christum mortuum, sepultum, et eciam in lymbo absconditum</incipit>
+                           <author key="person_5028934">Jacobus a S. Geminiano</author><bibl>243</bibl>  <author key="person_84971788">Jordanus de Quedlinburg</author><bibl>258 (explicit differs)</bibl>
+                        </msItem><!-- image 97 = fol. 44ra -->
+                        <msItem>
+                           <locus>(fol. 44ra)</locus>
+                           <incipit><quote>Ite dicite discipulis euis <gap reason="editorial"></gap></quote> Prima mulier fuit media </incipit>
+                           <author key="person_100198644">Jacobus de Voragine</author><bibl>61</bibl><!-- expl ok -->
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 45ra)</locus>
+                           <rubric>Feria <subst><del>2</del><add>3</add></subst></rubric>
+                           <incipit><quote>Surrexit dominus vere <gap reason="editorial"></gap></quote> Hec sunt verba discipulorum veniencium de castello Emaus quibus dominus in die pasche postquam surrexerat a mortuis in via apparuit</incipit><!-- ckd MM -->
+                           <explicit>quam diem resurrecionis nobis illucescere faciat. Rogemus.</explicit>
+                           <author key="person_84971788">Jordanus de Quedlinburg</author><bibl>262 (part 3)</bibl>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 46rb)</locus>
+                           <rubric>Feria <subst><del>2</del><add>3</add></subst></rubric>
+                           <incipit><quote>Stetit iesus in medio discipulorum <gap reason="editorial"></gap> Dominus noster inter discipulos suos tria specialiter in vsu habuit, scilicet in medio eorum stare</quote></incipit>
+                           <author key="person_84971788">Jordanus de Quedlinburg</author><bibl>263</bibl>
+                           
+           
+                           
+                        </msItem>
+                        
+                        <msItem>
+                           <locus>(fol. 47va)</locus>
+                           <rubric>In octaua pasche</rubric>
+                           <incipit><quote>Stetit iesus in medio discipulorum <gap reason="editorial"></gap></quote> Ista apparicio in isto die contigit, licet hodie legatur, in quo die quinquies apparuit</incipit>
+                           <author key="person_84971788">Jordanus de Quedlinburg</author><bibl>266 (part 2)</bibl>
+                        </msItem>
+                        <msItem><!-- 106 -->
+                           <locus>(fol. 48va)</locus>
+                           <rubric>Dominica 1a</rubric>
+                           <incipit><quote>Ego sum pastor bonus <gap reason="editorial"></gap></quote> Bonus pastor debet suum gregem pascere</incipit>
+                           <author key="person_84971788">Jordanus de Quedlinburg</author><bibl>267</bibl>
+                        </msItem>
+                        
+                        <msItem><!-- 109 -->
+                           <locus>(fol. 50ra)</locus>
+                           <rubric>Dominica 2a</rubric>
+                           <incipit><quote>Modicum et non videbitis me <gap reason="editorial"></gap></quote> Naturale est inter amicos </incipit>
+                           <explicit>amplius amat</explicit>
+                           <!-- incipit resembles J. de V 68 (III.226) and Johannes Contractus 48 (III.436), also Clm 2702 (Schneyer VIII.577 (no 109)) -->
+                        </msItem>
+                        <msItem><!-- 112 -->
+                           <locus>(fol. 51va)</locus>
+                           <rubric>Dominica <del>4a</del> 3a post octavam pasche</rubric>
+                           <incipit><quote>Arguet mundum de peccato <gap reason="editorial"></gap></quote> Sicud nullum bonum irremuneratum sit nullum omnino malum tam paruum quod maneat impunitum</incipit>
+                           <!-- cf J de Quedl. 273? cf. Vat Pat lat -->
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 53rb)</locus>
+                           <rubric>Dominica <add>4</add> post <add>octavam</add> pasce</rubric>
+                           <incipit><quote>Relinquo mundum et vado ad patrem <gap reason="editorial"></gap></quote> Si quis dominica verba et exempla penset </incipit>
+                           <author key="person_84971788">Jordanus de Quedlinburg</author><bibl>274</bibl><!-- expl OK -->
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 54vb)</locus>
+                           <rubric>In vigilia ascensionis</rubric>
+                           <incipit><quote>Pater venit hora <gap reason="editorial"></gap></quote> In presenti ewangelio postulat ipse Christus claritatem suam</incipit>
+                           <author key="person_84971788">Jordanus de Quedlinburg</author><bibl>274</bibl><!-- expl OK -->
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 56ra)</locus>
+                           <rubric>Sermo in die ascencionis</rubric>
+                           <incipit><quote>Species celi gloria stellarum <gap reason="editorial"></gap></quote> In verba proposita de gloriosa ascensione domini sunt ponenda</incipit>
+                           <author key="person_84971788">Jordanus de Quedlinburg</author><bibl>279</bibl><!-- expl ok -->
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 57va)</locus>
+                           <rubric><locus>(fol. 56rb)</locus> Dominica infra ascensionis</rubric>
+                           <incipit><quote>Absque synagogis facient vos <gap reason="editorial"></gap></quote> Quia discipuli multa aduersa erant passuri</incipit>
+                           <author key="person_84971788">Jordanus de Quedlinburg</author><bibl>284</bibl><!-- expl ok -->
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 59ra)</locus>
+                           <rubric><locus>(fol. 58vb)</locus> In vigilia penthecoste</rubric>
+                           <incipit><quote>Si diligitis me <gap reason="editorial"></gap></quote> Nullus debet credere quod deum diligit</incipit>
+                           <author key="person_84971788">Jordanus de Quedlinburg</author><bibl>286 (explicit differs)</bibl>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 60ra)</locus>
+                           <rubric><locus>(fol. 59vb)</locus> Sermo de spiritu</rubric>
+                           <incipit><quote>Spiritum sanctum tuum ne auferas a me <gap reason="editorial"></gap></quote> Naturale est quod qui habet thesaurum preciosum</incipit>
+                           <author key="person_84971788">Jordanus de Quedlinburg</author><bibl>289</bibl><!-- expl ok -->
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 60va)</locus>
+                           <rubric>Sermo de spiritu</rubric>
+                           <incipit><quote>Ad eum veniemus <gap reason="editorial"></gap> Secundum Gregorium spiritus sanctus ad quosdam venit</quote> </incipit>
+                           <author key="person_84971788">Jordanus de Quedlinburg</author><bibl>289</bibl><!-- expl ok -->
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 61vb)</locus>
+                           <rubric>Feria 2a</rubric>
+                           <incipit><quote>Sic deux dilexit mundum <gap reason="editorial"></gap> Sicud dicit beatus Bernardus in libro de diligendo deo, prior dilexit deus</quote> </incipit>
+                           <author key="person_84971788">Jordanus de Quedlinburg</author><bibl>291</bibl><!-- expl ok -->
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 62vb)</locus>
+                           <rubric>Feria 3a</rubric>
+                           <incipit><quote>Ego sum ostium <gap reason="editorial"></gap></quote> <unclear>Alchimius</unclear> dicit quod alios non audiunt oues sed me audiunt quia sum ostium</incipit>
+                           <explicit>ostium apertum in celo etc. Rogemus.</explicit>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 63vb)</locus>
+                           <rubric><locus>(fol. 63va) Sermo de trinitate</locus></rubric>
+                           <incipit><quote>Tres sunt qui testimonium dant <gap reason="editorial"></gap></quote> Beatus Johannes tamquam aquila celestis secreta celestia penetrans </incipit>
+                           <author key="person_84971788">Jordanus de Quedlinburg</author><bibl>291 (explicit differs)</bibl>
+                        </msItem>
+                        <msItem><!-- 140 -->
+                           <locus>(fol. 65va)</locus>
+                           <rubric>Dominica .4. post trinitatis</rubric>
+                           <incipit><quote>Estote misericordes <gap reason="editorial"></gap></quote> Saluator nostre fide et operibus </incipit>
+                           <author key="person_84971788">Jordanus de Quedlinburg</author><bibl>84</bibl>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 68ra)</locus>
+                           <rubric>Sermo de corpore christo. Dominica .2. post trinitatis.</rubric>
+                           <incipit><quote>Homo quidam fecit cenam magnam <gap reason="editorial"></gap></quote> Expositis verbis istis de cena celesti</incipit>
+                           <author key="person_84971788">Jordanus de Quedlinburg</author><bibl>86 (part 2)</bibl>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 69vb) </locus>
+                           <rubric>Dominica 2a post <subst><del>Pent.</del><add>trinitatis</add></subst></rubric>
+                           <incipit><quote>Homo quidam fecit cenam magnam <gap reason="editorial"></gap></quote> Beatus Augustinus in libro de uerbis Domini de praesento evangelio loquens</incipit> <author key="person_84971788">Jordanus de Quedlinburg</author><bibl>86 (part 1)</bibl>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 71rb)</locus>
+                           <rubric>Dominica 3a post trinitatis</rubric>
+                           <incipit><quote>Gaudium erit angelis <gap reason="editorial"></gap></quote> Quoniam sicud dicit Augustinus in libro de mirabilibus sacre scripture </incipit>
+                           <author key="person_84971788">Jordanus de Quedlinburg</author><bibl>88</bibl>
+                           <note>Fol. 72v, upper margin, cross-reference to the sermon (fol. 65va) for the fourth Sunday after Trinity.</note>
+                        </msItem>
+                        
+                        <msItem>
+                           <locus>(fol. 72va)</locus>
+                           <rubric>Dominica <add>quinta</add></rubric>
+                           <incipit><quote>Relictis omnibus secuti sunt eum <gap reason="editorial"></gap></quote> Sicud dicit Gregorius 22. Moral. super illud Job 31 </incipit><author key="person_84971788">Jordanus de Quedlinburg</author><bibl>308 (part 2, explicit differs)</bibl>
+                        </msItem>
+                        
+                        <msItem>
+                           <locus>(fol. 74ra)</locus>
+                           <rubric><locus>(fol. 73vb)</locus> Dominica <add>sexta</add></rubric>
+                           <incipit><quote>Non occides <gap reason="editorial"></gap></quote> Lege diuina ordinata est hominum multiplicacio</incipit>
+                           <author key="person_84971788">Jordanus de Quedlinburg</author><bibl>310</bibl><!-- expl ok -->
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 75ra)</locus>
+                           <rubric>Dominica <add>7</add>a</rubric>
+                           <incipit><quote>Cum turba multa esset <gap reason="editorial"></gap></quote> Pii patrisfamilias est hospites sibi avenientes ieiunos </incipit>
+                           <author key="person_84971788">Jordanus de Quedlinburg</author><bibl>93 (part 1)</bibl>
+                        </msItem>
+                        
+                        <msItem>
+                           <locus>(fol. 76vb)</locus>
+                           <rubric>Dominica <add>8</add></rubric>
+                           <incipit><quote>Arbor bona fructus bonos facit <gap reason="editorial"></gap></quote> Homo latine dicitur antropos greci id est arbor reuersa</incipit>
+                           <author key="person_100198644">Jacobus de Voragine</author><bibl>109</bibl><!-- expl ok -->
+                        </msItem>
+                        
+                        <msItem>
+                           <locus>(fol. 78ra)</locus>
+                           <rubric>Dominica <add>9</add></rubric>
+                           <incipit><quote>Facite vobis amicos <gap reason="editorial"></gap></quote> Sicud dicit quedam glossa Amb<unclear><ex>rosii</ex></unclear> super illud 1. Thi. 4</incipit>
+                           <author key="person_84971788">Jordanus de Quedlinburg</author><bibl>316</bibl><!-- expl ok -->
+                        </msItem>
+                        
+                        <msItem>
+                           <locus>(fol. 80ra)</locus>
+                           <rubric>Dominica <add>10</add>a post <add>trinitatis</add></rubric>
+                           <incipit><quote>Videns iesus ciuitatem <gap reason="editorial"></gap> In verbis istis notantur duo. Primum est dei</quote> </incipit>
+                           <author key="person_84971788">Jordanus de Quedlinburg</author><bibl>318 (explicit differs)</bibl>
+                        </msItem>
+                        
+                        <msItem>
+                           <locus>(fol. 81vb)</locus>
+                           <rubric>Dominica <add>11</add> post <add>trinitatis</add></rubric>
+                           <incipit><quote>Duo homines ascenderunt <gap reason="editorial"/></quote> Ea propter dominus noster cui <unclear>cura</unclear> est de nobis</incipit>
+                           <explicit>et stare ante filium hominis</explicit>
+                           <note></note>
+                        </msItem>
+                        <msItem><!-- 175 -->
+                           <locus>(fol. 83rb)</locus>
+                           <rubric>Dominica <add>12</add> post <add>trinitatis</add></rubric>
+                           <incipit><quote>Effeta, quod est adaperire  <gap reason="editorial"/></quote> Ut ingrediatur dominus in templum corporis nostri</incipit>
+                           <author key="person_84971788">Jordanus de Quedlinburg</author><bibl>322 (explicit differs)</bibl>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 84va)</locus>
+                           <rubric>Dominica <add>13</add></rubric>
+                           <incipit><quote>Beati oculi <gap reason="editorial"/></quote> Sicud dicit beatus Augustinus 5. libro confess<ex>ionum</ex> loquens ad deum, Infelix homo</incipit><!-- videntes regem in decore suo -->
+                           <author key="person_84971788">Jordanus de Quedlinburg</author><bibl>106</bibl><!-- expl. ok -->
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 86ra)</locus>
+                           <rubric>Dominica <add>14</add></rubric>
+                           <incipit><quote>Surge vade <gap reason="editorial"/></quote> Verba ista a Domino dicta viro
+                              leproso mundato a lepra corporali</incipit>
+                           <author key="person_84971788">Jordanus de Quedlinburg</author><bibl>109 (explicit differs)</bibl>
+                        </msItem>
+                        
+                        <msItem>
+                           <locus>(fol. 89ra)</locus>
+                           <rubric>Dominica <subst><del>14</del><add>15</add></subst></rubric>
+                           <incipit><quote>Querite primum regnum Dei </quote> Sicud dicit
+                              philosophus <add place="margin">Elementa</add> appetunt loca sua </incipit><!-- ... sed perennis laetitia regnat -->
+                           <author key="person_84971788">Jordanus de Quedlinburg</author><bibl>328 (explicit differs)</bibl>
+                        </msItem>
+                       
+                        <msItem>
+                           <locus>(fol. 90ra)</locus>
+                           <rubric>Dominica <subst><del>15</del><add>16</add></subst></rubric>
+                           <incipit><quote>Propheta magnus surrexit <gap reason="editorial"/></quote> Seneca epistola 3 volens attollere nobilitatem animi sie ait, O homo<!--ut mereamur ad aetemitatis gloriam pervenire-->.</incipit>
+                           <author key="person_84971788">Jordanus de Quedlinburg</author><bibl>113 (explicit differs)</bibl>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 91va)</locus>
+                           <rubric>Dominica <add>17</add></rubric>
+                           <incipit><quote>Amice ascende superius</quote> Cum amicicia proprie sit inter equales secundum philosophum 8 Ethic.</incipit>
+                           <author key="person_84971788">Jordanus de Quedlinburg</author><bibl>115 (explicit differs)</bibl>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 93rb)</locus>
+                           <rubric>Dominica <add>18</add></rubric>
+                           <incipit><quote>Diliges dominum deum tuum ex toto corde tuo</quote> In quo verbo tria maxime notantur. Nam primo dominus ad actum amoris invitat</incipit>
+                           <author key="person_84971788">Jordanus de Quedlinburg</author><bibl>334 (explicit differs)</bibl>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 95ra)</locus>
+                           <rubric>Dominica <subst><del>18</del><add>19</add></subst></rubric>
+                           <incipit><quote>Dixit <subst><del>dominus</del><add>iesus</add></subst> paralitico <gap reason="editorial"/></quote> Quia paraliticus ille signat peccatorem</incipit><!-- expl. ok: ad paradisum redire -->
+                           <author key="person_84971788">Jordanus de Quedlinburg</author><bibl>337</bibl>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 96va)</locus>
+                           <rubric>Dominica <add>20</add></rubric>
+                           <incipit><quote>Omnia parata sunt <gap reason="editorial"/></quote> Mira dei benignitas et super admirabilis pietas <!--infinitum excedit, ad has ergo nuptias.--></incipit>
+                           <author key="person_84971788">Jordanus de Quedlinburg</author><bibl>339 (explicit differs)</bibl>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 98ra)</locus>
+                           <rubric>Dominica <add>20</add></rubric>
+                           <incipit><quote>Domine descende priusquam <gap reason="editorial"/></quote> Hic notantur duo infirmitas incurabilis, incipiebat enim iam mori <!--... hora 7. reliquit eum
+                              febris.--></incipit>
+                           <author key="person_84971788">Jordanus de Quedlinburg</author><bibl>341</bibl><!-- expl ok, slightly longer here -->
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 99ra)</locus>
+                           <rubric>Dominica <add>22</add></rubric>
+                           <incipit><quote>Redde quod debes <gap reason="editorial"/></quote> Licet hec verba parabolice dicta fuerint a seruo <!--. . mystice autem possunt accipi a summo
+                              judice--></incipit>
+                           <author key="person_84971788">Jordanus de Quedlinburg</author><bibl>125 (explicit differs)</bibl>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 101ra)</locus>
+                           <rubric>Dominica 2<add>3</add></rubric>
+                           <incipit><quote>Cuius est ymago <gap reason="editorial"/></quote> Quia ut dicit glossa super eodem verbo, Sicud cesar</incipit>
+                           <author key="person_84971788">Jordanus de Quedlinburg</author><bibl>130 (part one only?)</bibl>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 103ra)</locus>
+                           <rubric>Dominica 2<add>4</add></rubric>
+                           <incipit><quote>Cum eiecta esset turba <gap reason="editorial"/></quote> Cum omnis christi actio nostra sit instructio</incipit>
+                           <author key="person_84971788">Jordanus de Quedlinburg</author><bibl>132 (as one sermon)</bibl><!-- expl. ok -->
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 105ra)</locus><!-- 219 -->
+                           <rubric>Dominica <add>25</add></rubric>
+                           <incipit><quote>Cum videritis abhominacionem <gap reason="editorial"/></quote> Verba ista licet ad litteram dicta sunt de destructione urbis</incipit>
+                           <author key="person_84971788">Jordanus de Quedlinburg</author><bibl>134 (as one sermon, explicit differs)</bibl>
+                        </msItem>
+                        
+                        <finalRubric>Expliciunt sermones dominicales per totum annum</finalRubric><finalRubric>Expliciunt sermones fratris <sic>Johanni thome</sic> per totum annum de tempore</finalRubric>
                      </msItem>
-                     <msItem xml:id="MS_Hamilton_50-part1-item2" n="1">
-                        <author key="person_84971788">Jordanus de Quedlingburg</author>
-                        <title key="work_2868">Sermones de sanctis</title>
-                        <note>(Schneyer III.843-64-43)</note>
-                        <textLang mainLang="la">Latin</textLang>
+                     
+                     <msItem>
+                        <locus>(fol. 107ra-va)</locus>
+                        <title type="desc"><supplied>Sermon</supplied></title>
+                        <incipit><quote>Factum est autem dum iret <gap reason="editorial"/> Superius instruxit dominus discipulos suos de perfeccione vite actiue, hic instruxit de preeminencia contemplatiue</quote></incipit>
+                        <explicit>2m sponse in via, unde Cant. ijo Sub umbra illius quam desideraueram sede, 3m sponse in patria</explicit>
+                        <note>Added by a later hand on originally blank space. Fols. 108vb-109vb blank.</note>
                      </msItem>
+                     
+                     <msItem xml:id="MS_Hamilton_50-part1-item2" n="2">
+                        <locus>(fols. 110r-152v)</locus>
+                       
+                        <title key="work_14583">Sermones de sanctis</title>
+                        <msItem>
+                           <locus></locus>
+                           <author key="person_84971788">Jordanus de Quedlingburg</author>
+                           <bibl>355</bibl></msItem>
+                        <msItem>
+                           <author key="person_84971788">Jordanus de Quedlingburg</author>
+                           <bibl>358, <!-- ending may differ: image 114, S Nicholas --> 360 </bibl>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 116r)</locus>
+                           <rubric>De sancto Thome</rubric>
+                           <author key="person_61943800">Johannes Contractus</author>
+                        <bibl>91</bibl></msItem>
+                        <msItem>
+                           <locus>(fol. 118r)</locus>
+                           <incipit><quote>Lapides torrentes ille dulces fuerunt</quote> Verba assumpta leguntur de sancto stephano qui amore die inflaminatus </incipit>
+                           <!-- todo: explicit. 249 -->
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 119r)</locus>
+                           <rubric>De sancto iohanne ewangelista</rubric>
+                           <author key="person_100198644">Jacobus de Voragine</author><bibl>331 (text varies from the edition of c. 1478, ISTC ij00187000)</bibl>
+                           <!-- http://digital.ub.uni-duesseldorf.de/urn/urn:nbn:de:hbz:061:1-173004 -->
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 121r)</locus>
+                           <rubric><locus>(fol. 120v)</locus> De purificacione</rubric>
+                           <author key="person_84971788">Jordanus de Quedlinburg</author><bibl>396</bibl>
+                           <!-- as pr.: http://tudigit.ulb.tu-darmstadt.de/show/inc-v-105/0097/image - lacks final sentence -->
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 122v)</locus>
+                           <rubric>De sancto Math<unclear>ya</unclear></rubric>
+                           <author key="person_61943800">Johannes Contractus</author><bibl>99</bibl>
+                           <!-- as pr. http://digital.ub.uni-duesseldorf.de/ink/content/pageview/6016232 - lacks final sentence -->
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 124r)</locus>
+                           <rubric>De annunciacione beate virginis</rubric>
+                           <incipit><quote>Septima uice ascendit nubecula <gap reason="editorial"/></quote> Quamquam verba assumpta ad litteram dicta sunt de puero quem helyas sepcies misit ad mare</incipit>
+                           <explicit>pie matris manibus fuerit representatum etc. patet. Rogemus gloriosam virginem mariam.</explicit>
+                           <note>Also in <bibl type="ms" subtype="external">Wolfenbüttel, HAB, Aug. quart. 23. 26</bibl> (Schneyer IX.890 no. 53)</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 126v)</locus>
+                           <rubric>Sermo de sancto philippo et iacobo</rubric>
+                           <incipit><quote>Zabulon et neptalim <gap reason="editorial"/></quote> Verba proposita moraliter intellecta possunt exponi de beatis apostolis in quibus commendantur dupliciter, primo in multiplici vite perfectione</incipit>
+                           <explicit>per calicem passionis peruenitur ad regnum diuine maiestatis. Rogemus.</explicit>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 127v)</locus>
+                           <rubric>Invencio sancte crucis</rubric>
+                           <incipit><quote>Michi autem absit gloriari <gap reason="editorial"/></quote> Exemplo apostoli christianus quilibet in cruce domini gloriari debet </incipit>
+                           <explicit>tamquam in speculo relucentem. Cuius crucis passionem prestet dei filius.</explicit>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 129v)</locus>
+                           <rubric>De sancto Iohanne ante portam latinum</rubric>
+                           <incipit>
+                              <quote>Sic eum volo manere <gap reason="editoriale"/></quote> Verba proposita dicta sunt de beato Iohanne ewangelista de quo legimus, quod mansit in triplice mansione, primo in cena super pectus domini
+                           </incipit>
+                           <explicit>ut epuleris in conuiuio meo cum fratribus meis. Rogemus dominum</explicit>
+                           <note>Cf. <bibl type="ms" subtype="external">Munich, BSB, Clm 2726</bibl> (Schneyer VIII.591 no. 11)</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 130v)</locus>
+                           <rubric>De natiuitate sancte iohanne baptiste</rubric>
+                           <incipit><quote>Erit magnus coram domino</quote> Verbum assumptum est ipsius angeli beati iohannis natiuitatem et vite eminentiam preconizantis</incipit>
+                           <explicit>quod perfectionem nobis prestare dignetur iesus christus amen</explicit>
+                           <note>Cf. <bibl type="ms" subtype="external">Munich, BSB, Clm 2726</bibl> (Schneyer VIII.592 no. 28)</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 132r)</locus>
+                           <rubric>De sancto petro et paulo</rubric>
+                           <incipit><quote>Fecit salomon in oraculo suo <gap reason="editorial"/></quote> In verbis assumptis tripliciter commendantur beati apostoli. Primo <sic>ad</sic> diuine sciencie plenitudine, 2o ab operibus pietatis</incipit>
+                           <explicit>de dei dileccione senciebat. Rogemus.</explicit>
+                           <note>Cf. <bibl type="ms" subtype="external">Munich, BSB, Clm 2726</bibl> (Schneyer VIII.592 no. 29)</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 134r)</locus>
+                           <rubric>Sermo de beata maria magdalena</rubric>
+                           <incipit><quote>Arcum meum ponam <gap reason="editorial"/></quote> In verbis assumptis tripliciter commendatur beata maria madgalena. Primo in lacrimarum pro peccatis effusione</incipit>
+                           <explicit>eam fideliter in celo collocauit. Rogemus.</explicit>
+                           <note>Cf. <bibl type="ms" subtype="external">Munich, BSB, Clm 2726</bibl> (Schneyer VIII.592 no. 31)</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 135r)</locus>
+                           <rubric>De sancto iacobo</rubric>
+                           <incipit><quote>Potestis bibere calicem <gap reason="editorial"></gap></quote> Verba sunt saluatoris per que matri filiorum respondit </incipit>
+                           <!-- todo: explicit, 283 -->
+                           <note>Cf. <bibl type="ms" subtype="external">Munich, BSB, Clm 2726</bibl> (Schneyer VIII.592 no. 32)</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 136r)</locus>
+                           <rubric>De sancto laurencio</rubric>
+                           <incipit><quote>Puer noli meus timere quia redemi te <gap reason="editorial"></gap></quote> In verbis istis 4or tanguntur. Primum est familiaris beati laurencii per christum denominacio, 2m dulcis confortacio</incipit>
+                           <explicit>frigidum est illi omne quod sustinet. Rogemus.</explicit>
+                           <note>Cf. <bibl type="ms" subtype="external">Munich, BSB, Clm 2726</bibl> (Schneyer VIII.592 no. 34)</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 138r)</locus>
+                           <rubric>Sermo de assumpcione marie</rubric>
+                           <incipit><quote>Vidi et ecce in firmamento <gap reason="editorial"></gap></quote> Hec est visio eze<ex>chielis</ex> prophete per quam congrue videtur innuere triplicem sancte marie exaltacionem. Primam quantum ad vite eius perfeccionem</incipit>
+                           <explicit>ipsa est sola gratia qua egemus. Rogemus.</explicit>
+                           <note>Cf. <bibl type="ms" subtype="external">Munich, BSB, Clm 2726</bibl> (Schneyer VIII.592 no. 35)</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 139v)</locus>
+                           <rubric>De sancto bartolomeo</rubric>
+                           <incipit><quote>Jonathas exspoliauit se tunica sua <gap reason="editorial"></gap></quote> In verbis assumptis quantum spectat ad commendacionem beati Bartholomei tria tanguntur. Primo tocius operis eius strenuitas</incipit>
+                           <explicit>eum seperare a caritate die. Rogemus.</explicit>
+                           <note>Cf. <bibl type="ms" subtype="external">Munich, BSB, Clm 2726</bibl> (Schneyer VIII.593 no. 37)</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 141r)</locus>
+                           <rubric>De sancto Augustinus</rubric>
+                           <incipit><quote>Tu signaculum similitudinis <gap reason="editorial"></gap></quote> Considerans eke<ex>chiel</ex> prerogatiuam et excellenciam beati augustini qua ipsum dei filius pre ceteris nobilitauerit, commendat eum in tribus. Primo in diuine similitudinis singularitate</incipit>
+                           <explicit>quod formatur viro perfecto. Rogemus.</explicit>
+                           <note>Cf. <bibl type="ms" subtype="external">Munich, BSB, Clm 2726</bibl> (Schneyer VIII.593 no. 38)</note><!-- also in Wurzburg M. ch. q. 412 f. 89  http://bilder.manuscripta-mediaevalia.de/hs/katalogseiten/HSK0083_b038_JPG.htm  -->
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 143r)</locus>
+                           <rubric>Sermo de natiuitate</rubric>
+                           <incipit><quote>Dixit deus fiat lux <gap reason="editorial"></gap></quote> Verba ista optime congruunt presenti sollempnitate beate virginis scilicet eius natiuitati. Nam <choice><sic>fecit</sic><corr>sicut</corr></choice> deus in <sic>mundum</sic> creacione primo formauit lucem</incipit>
+                           <explicit>beata maria istam sibi statuit regulam etc. Rogemus.</explicit>
+                           <note>Cf. <bibl type="ms" subtype="external">Valencia, Bibi. del Cabildo 284</bibl> (Schneyer VI.211-12 no. 79)</note>
+                           <msItem>
+                              <locus>(fol. 144v)</locus>
+                              <rubric>De Mathe<supplied>o</supplied></rubric><!-- check, 300 -->
+                              <incipit><quote>Vidit iesus quendam sedentem <gap reason="editorial"></gap></quote> In verbis assumptis tria notantur. Primum est agnoscentis benignitas</incipit>
+                              <explicit>continuo liberabat. Rogemus.</explicit>
+                              <note>Cf. <bibl type="ms" subtype="external">Wolfenbüttel, HAB, Aug. quart. 23. 26</bibl> (Schneyer IX.896 no. ???)</note><!-- TODO -->
+                           </msItem>
+                        </msItem>
+                        <!-- at 145 / 303 -->
+                        <msItem>
+                           <locus>(fol. 146r)</locus>
+                           <rubric>De <unclear>Anghelis</unclear></rubric>
+                           <!-- check -->
+                           <incipit><quote>Omnes administratorii spiritus  <gap reason="editorial"></gap></quote> Magna <sic>clemencie</sic> diuine potencie ut non solum humane nature per <sic>principatis</sic> et <sic>potestatis</sic> sed per omnes angelos suos ministret </incipit>
+                           <explicit>et custodit te et introducit te ad terram promissionis. Rogemus.</explicit>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 148r)</locus>
+                           <rubric>De symone et iude</rubric>
+                           <incipit><quote>Cur orbabor una die utroque filio</quote> Verba proposita ad litteram sunt rebecce, sed moraliter intellecta possunt Christi causam mortis apostolorum investigantis</incipit>
+                           <explicit>quorum propter consideracionem ibant gaudentes a conspectu consilii quoniam digni etc. Rogemus.</explicit>
+                           <note>Cf. <bibl type="ms" subtype="external">Munich, BSB, Clm 2726</bibl> (Schneyer VIII.590 no. 1)</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 150r)</locus>
+                           <rubric><locus>(fol. 149v)</locus> De omnibus sanctis</rubric>
+                           <incipit><quote>Tercio anno inperii sui fecit rex assuerus conuiuium <gap reason="editorial"></gap></quote> Ad commendacionem solempnitatis omnium sanctorum in verbis assumptis duo notantur. Primum est conuiuii preparantis denominacio</incipit>
+                           <explicit>diuina bonitatis habundancia siue propiciacionis nobis omnibus largitas. Rogemus dominum et gloriosam dei virgine mariam et apostolos et martires episcopos confessores et virgines ut prestant nobis vitam eternam. Amen.</explicit>
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 151v-152v)</locus>
+                           <rubric><locus>(fol. 151r)</locus> De sancta katherina</rubric>
+                           <incipit><quote>Mulier amicta sole <gap reason="editorial"></gap></quote> Verba assumpta congrue exponi possunt de solempnitate beate katherine. In quibus quadruplicter commendatur, primo in puritate virginalis continencie</incipit>
+                           <explicit>11 est angelorum exaltacione. 12 est <unclear>tornacio</unclear> in celis. Rogemus.</explicit>
+                           <note>Cf. <bibl type="ms" subtype="external">Munich, BSB, Clm 2726</bibl> (Schneyer VIII.591 no. 4). Rest of fol. 152v blank.</note>
+                        </msItem>
+                     </msItem>
+                     <msItem xml:id="MS_Hamilton_50-part1-item3" n="3">
+                           <locus>(fols. 153r-162v)</locus>
+                           <title key="work_14583">Sermones de beata virgine</title>
+                           <msItem>
+                              <locus>(fol. 153r)</locus>
+                              <rubric>Sermo de annunciatione uel de concepcione</rubric>
+                              <incipit><quote>Plantauerat autem deus paradysum voluptates <gap reason="editorial/"></gap></quote> Istud verbum bene potest exponi de annuciacione et concepcione christi quia deus plantauerat paradysum id est mariam matrem suam </incipit>
+                              <explicit>propter magnum misericordiam tuam esto mihi propicius</explicit>
+                           </msItem>
+                           <msItem>
+                              <locus>(fol. 153v)</locus>
+                              <rubric>Sermo de eodem 2us</rubric>
+                              <incipit><quote>Sanctificauit dominus tabernaculum suum <gap reason="editorial/"></gap></quote> Nota quod tres fuerunt sanctificaciones virginis maria. Prima fuit eius sanctificacio in utero</incipit>
+                              <explicit>proficere potuit in merito et non deficere et patet</explicit>
+                           </msItem>
+                           <msItem>
+                              <locus>(fol. 154r)</locus>
+                              <rubric><locus>(fol. 153v)</locus> Sermo de concepcione virginis 3us</rubric>
+                              <incipit><quote>Apertum est templum domini in celo <gap reason="editorial/"></gap></quote> Sicud dicit Seneca in lbiro de beneficiis, per continuacionem beneficiorum ingrati et aduersarii efficiuntur grati et amici</incipit>
+                              <explicit></explicit><!-- TODO: 322 -->
+                           </msItem>
+                           <msItem>
+                              <locus>(fol. 156r)</locus>
+                              <rubric>Sermo de purificacione virginis marie 1us</rubric>
+                              <incipit><quote>Columba portans ramum <gap reason="editorial/"></gap></quote> In verbis litteraliter scriptis texitur historia de columba ramum floridum noe referente et cessacionem <sic>diliuii</sic> nunciante</incipit>
+                              <explicit>inpleuit gratiam in ascensione</explicit>
+                              <note>Rest of fol. 156r blank.</note>
+                           </msItem>
+                           <!--  324 -->
+                           <msItem>
+                              <locus>(fol. 156v)</locus>
+                              <rubric>Sermo de eodem 2us</rubric>
+                              <incipit><quote>Accepit eum symeon <gap reason="editorial/"></gap></quote> Nota quod candelas portamus hodie propter tria. Primo ut ostendatur marie sanctitas, secundo Christi trinitas</incipit><!-- ckd MM, G -->
+                              <explicit>venite benedicti etc.</explicit>
+                           </msItem>
+                           <msItem>
+                              <locus>(fol. 157r)</locus>
+                              <rubric>Sermo de annunciacione marie 1us</rubric>
+                              <incipit><quote>Ave gratia plena <gap reason="editorial/"></gap></quote> Quamuis ewangelium hoc nomen marie pretermittit, tamen ecclesia ab amore deuocionem superaddit</incipit>
+                              <explicit>regine celi et terre et matri dei. Rogemus.</explicit><!-- ckd MM -->
+                           </msItem>
+                           <msItem>
+                              <locus>(fol. 157v)</locus>
+                              <rubric>Sermo de eodem 2us</rubric>
+                              <incipit><quote>Missus est angelus gabriel <gap reason="editorial/"></gap></quote> Hodie dominus afflictionem populi sui aspexit etc.</incipit>
+                              <explicit>et <unclear>aduiuat</unclear> in uitam eternam. Amen.</explicit>
+                           </msItem>
+                           <msItem>
+                              <locus>(fols. 158r-159v)</locus>
+                              <rubric>Sermo de eodem et bonus</rubric>
+                              <incipit><quote>Vir gabriel venit ad me <gap reason="editorial/"></gap></quote> Secundum quod dicit seneca in epistola 44, Si ymagines absencium amicorum nobis iocunde sunt</incipit>
+                              <explicit>Ruth Inveni gratiam in oculis suis <gap reason="editorial"/></explicit>
+                              <note>Rest of fol. 159v blank.</note>
+                           </msItem>
+                           <msItem>
+                              <locus>(fol. 160r-v)</locus>
+                              <rubric>Sermo de assumpcione marie 1us</rubric>
+                              <incipit><quote>Ecce sicud aquila ascendet <gap reason="editorial/"></gap></quote> Maria sicud hodie colimus est super omnes choros exaltata</incipit>
+                              <explicit>tota pulchra et ornata. Rogemus.</explicit>
+                              <note>Rest of fol. 160v blank.</note>
+                           </msItem>
+                           <msItem>
+                              <locus>(fol. 161r)</locus>
+                              <rubric>Sermo de eodem 2us</rubric>
+                              <incipit><quote>Que est ista que progreditur <gap reason="editorial/"></gap></quote> Nota quod sancta maria mater domini comparatur tribus in hoc verbo expresso, primo aurore, 2o lune, 3o soli</incipit>
+                              <explicit></explicit>
+                           </msItem>
+                           <msItem>
+                              <locus>(fol. 161v)</locus>
+                              <rubric>Sermo de eodem 3us</rubric>
+                              <incipit><quote>Veni de lybano veni coronaberis <gap reason="editorial/"></gap></quote> Hoc verbum hodie dicere potuit christus iesus ad matrem suam quando eam de mundo ad celum vocauit</incipit>
+                              <explicit>legenda sua ostendit. Rogemus.</explicit>
+                           </msItem>
+                           <msItem>
+                              <locus>(fol. 162r)</locus>
+                              <rubric>Sermo de natiuitate marie 1us</rubric>
+                              <incipit><quote>Noua lux oriri visa est <gap reason="editorial/"></gap></quote> Nota quod sancta maria comparatur luci propter tres <sic>proprietatem</sic>. Prima est quia lux dicitur noua</incipit>
+                              <explicit>tuo odore precellis. Rogemus.</explicit>
+                           </msItem>
+                           <msItem>
+                              <locus>(fol. 162v)</locus>
+                              <rubric>Sermo de eodem 2us</rubric>
+                              <incipit><quote>Egredietur virga de radice yesse<gap reason="editorial/"></gap></quote> Nota quod maria mater domini comparatur uirge propter tria siue propter triplicem proprietatem. Primo maria habet proprietatem destruendi culpam</incipit>
+                              <explicit>introducens in regnum celestem etc. Rogemus. Amen.</explicit>
+                           </msItem>
+                     </msItem>
+                           <msItem>
+                              <locus>(fol. 163r-v)</locus>
+                              <rubric>Sermo de omnibus sanctis</rubric>
+                              <incipit><quote>Beati pauperes spiritu <gap reason="editorial/"></gap></quote> Hodie agitur sollempnitas omnium sanctorum scilicet angelorum, patriarcharum, prophetarum</incipit>
+                              <explicit>wlt venire regnum celorum. Rogemus.</explicit><note>Rest of fol. 163v blank.</note>
+                           </msItem>
+                           <msItem>
+                              <locus>(fols. 164r-165v)</locus>
+                              <rubric>Sermo de sancta katerina</rubric>
+                              <incipit><quote><subst><del>U</del><add>D</add></subst>edi te in lumen gentium <gap reason="editorial/"></gap></quote> Verba proposita in persona tocius trinitatis prolata conuenienter assumuntur in laudis preconium inclite virginis katherine</incipit>
+                              <explicit>inebriat in trina consolacione. Rogemus <gap reason="editorial"/></explicit>
+                           </msItem>
+                        
+                        
+                       
+                        
+                     
                   </msContents>
                   <physDesc>
                      <objectDesc form="codex">
                         <supportDesc material="chart">
                            <support>paper</support>
+                           <collation>Catchwords in decorative boxes. Quires numbered in arabic on the top middle of the first recto.</collation>
                         </supportDesc>
+                        <layoutDesc>
+                           <layout columns="2" writtenLines="36 37">Fols. 1ra-107va: 2 cols., c. 36-7 lines</layout>
+                           <layout columns="1" writtenLines="36 37">Fols. 110r-165v: 1 col., c. 36-7 lines</layout>
+                        </layoutDesc>
                      </objectDesc>
+                     <handDesc>
+                        <handNote script="cursivaAntiquior" scope="major">Cursiva antiquior by one hand.</handNote><handNote scope="minor" script="textualisNorthern">Themata in textualis.</handNote>
+                        <handNote script="cursiva" scope="minor">Later addition in cursive, fols. 107ra-va.</handNote>
+                     </handDesc>
+                     <decoDesc>
+                        <decoNote type="colInit">3-4 line initials in red with simple decoration.</decoNote>
+                     </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
+                        <origDate calendar="Gregorian" notAfter="1400" notBefore="1350">14th century, second half</origDate>
                         <origPlace>
                            <country key="place_7000084">German</country>
                         </origPlace>
@@ -107,26 +860,172 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem>
+                        <locus>(fol. 166r-v)</locus><!-- image 344 -->
+                        <msItem><note>Fol. 16r; continuation of text from fol. 166v.</note></msItem>
+                        <msItem><note>Fol. 166r: distich: <q>Quisquis amat dictis absentum rodere vitam <lb/> Hanc mensam indignam nouerit esse sibi. Dicit Augustinus</q> (see PL 32.52, etc.)</note></msItem>
+                        <msItem><note>Fol. 166r: list of contents: <q>Peregrinus de sanctis <lb/> De velamine virginum <lb/> De corona virginum <lb/> De anulo virginum <lb/> Sermo de virginibus et de margarita lapide <lb/> De 4or temporibus anni</q></note></msItem> <msItem>
+                        <locus>(fol. 166v-r)</locus>
+                        <title type="desc"><supplied>Sermon notes (?)</supplied></title>
+                        <rubric>Nota pro nouo anno</rubric>
+                        <incipit>Jhesus ut puer natus detur ipsis pueris et puellis, ut vir currens et predicans detur servientibus et laborantibus, ut crucifixus detur viduatis, ut resurgens detur in leccio choro constitutus</incipit>
+                     </msItem>
+                        <note>Each item in a different hand, fifteenth or early sixteenth century.</note>
+                     </msItem>
+                    
                      <msItem xml:id="MS_Hamilton_50-part2-item1" n="1">
+                        <locus>(fols. 167r-256r)</locus>
                         <author key="person_63741243">
-                           
                            Peregrinus Polonus
-                        
                         </author>
-                        <title key="work_3485">Sermones</title>
-                        <textLang mainLang="la">Latin</textLang>
+                        <title key="work_3485">Sermones de sanctis</title>
+                        <rubric>Incipit peregrinus de sanctis. De sancto Andrea.</rubric>
+                        <msItem>
+                           <locus>(fols. 167r-172v)</locus>
+                           <note>Peregrinus nos. 106-8, 110</note></msItem>
+                        <msItem>
+                           <locus>(fols. 172v-173v)</locus>
+                           <note>Paratus de sanctis 180 (Schneyer IV.538), followed by <q>Exemplum de heremita qui voluit ire ad celum nec cum apostolis nec cum angelis nec cum beata virgine maria nisi christus personaliter veniret</q></note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 173v-)</locus>
+                           <note>Peregrinus nos. 111, 113, 114, 115, 116, 118, 119 (ending differs, with exemplum of priest vexed by temptation), 120 (longer than as printed, with additional section beginning 'sequitur eius merces quia edit de ligno vite'), 121, 122 (differing considerably from the text as printed), 123 (longer than as pr. and followed by exemplum), 124 (longer) <!-- pr http://digital.ub.uni-duesseldorf.de/ink/content/pageview/2837981  -->, 125, 126, 127, 128 (longer and followed by exemplum), 38 <!-- fol. 196v -->, 43, 129, 130, 131 (de sancto Adalberto), 132, 133, 134, 136, 137, 138, 139, 140, 141, 142, 144, 145, 146, 147, 148 (longer), 149 (ends 'peccatum pertrahat. Exemplum habemus in quodam heremita quem .xl. annis dyabolus tempatauit'), 150, 151, 152 (longer), 153, 154 (ending at 'filiam ut in cronicis legitur terra deglutiuit'), 155, 156 (fols. 234v-235r, ending on fol. 236v, with additional sentence at end beginning 'hoc est locus angustus de quo Ys.').  </note>
+                        </msItem>
+                        <!-- TODO: double check variations from printed text up to 128 -->
+                        <msItem>
+                           <locus>(fols. 235v-236r)</locus>
+                           <incipit><quote>Videte quomodo caute ambulemus</quote> Paulus hortatur nos in hac epistola ab insidiis dyaboli caute ambulare  </incipit>
+                           <explicit>ad celum inexpugnabile quod apertum erit ei. Quod nobis prestare dignetur etc.</explicit>
+                           <note>Cf. J.-B. Schneyer, 'Die Sermonesreihen des Johannes Ludovici v. Würzburg OESA', Augustiniana 23 (1973), 218-241 no. 189. The grounds for the attribution of the series to Johannes Ludovici are unclear and the early date of this copy calls the attribution into question.</note><!-- TODO: check -->
+                        </msItem>
+                          <msItem>
+                             <locus>(fols. 236v-254r)</locus>
+                            <!-- <incipit><quote>Vidit iesus hominem sedentem <gap reason="editorial"/></quote> Notare debemus triplex signum amoris christi ad hominem. Primum quantum ad aspectum in uidendo</incipit>-->
+                             <note>Peregrinus 159 ('Mathei apostoli et ewangeliste'), 161, 163, 166, 168, 169, 171, 172, 175, 176, 178, 179, 184, 186.</note>
+                          </msItem>
+                          <msItem>
+                             <locus>(fol. 254r)</locus>
+                             <colophon>Qui scripsit scribat et longe tempore viuat etc. etc. etc. <lb/> Anno domini MoCCCo lxx quinto Conpletus est liber iste per manus fratris Heinr. Rossinges sabbato ante dominicam sextam post festum Epyphanie etc. <lb/> Detur pro penna scriptori <gap reason="erasure" unit="char" quantity="16"/> etc. si deus hoc vellet.</colophon>
+                          </msItem>
+                          <msItem>
+                             <locus>(fols. 254v-256r)</locus>
+                             <rubric>Incipit commune sanctorum de apostolis</rubric>
+                             <note>Peregrinus nos. 191, 192, 193.</note>
+                          </msItem>
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 256r)</locus>
+                        <title type="desc">Theological notes</title><!-- TODO -->
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 256v)</locus>
+                        <rubric>Nota hic de velamine uirginum qualiter velantur</rubric>
+                        <incipit>Nota velum quod datur virginibus post consecracionem et est ornamentum quia virgines consecrate sunt templum domini</incipit>
+                     </msItem>
+                     <msItem><!-- image 525 -->
+                        <locus>(fol. 257r-v)</locus>
+                        <rubric>De corona uirginum</rubric>
+                        <incipit>Corona precipuum est ornamentum et est signum victorie</incipit>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 257v-258r)</locus>
+                        <rubric>De anulo sequitur</rubric>
+                        <incipit>Deinde o virgo adornaris anulo munere</incipit>
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 258r)</locus>
+                        <incipit>Sollempnitates legales erant septem, sabbatum </incipit>
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 258v-260r)</locus>
+                        <rubric>De margaritha lapide preciosa</rubric>
+                        <incipit><quote>Simile est regnum celorum thesauro abscondito <gap reason="editorial"/></quote> Istud ewangelium legitur de uirginibus et habet tres partes principales. Habet enim tres parabolas. </incipit>
+                        <explicit>nunquam possunt resurgere. Rogemus ergo dominum.</explicit>
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 260r)</locus><!-- 531 -->
+                       <title type="desc">Several short theological and other notes:</title>  <note>On St John evangelist (beg. 'Ille dominus ego seruus, ille fons ego riuus'); on Gregory I fishing for a soul; on a people in India who live only by the smell of apples; on how rich men can be saved.</note>
+                        
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 260v)</locus>
+                        <rubric>De 4or temporibus</rubric>
+                        <incipit>Ieiunia quatuorum temporum a kalixta papa institua sunt</incipit>
+                        <author key="person_100198644"><supplied>Johannes de Voragine</supplied></author>
+                        <title key="work_2330"><supplied>Legenda aurea</supplied></title><bibl>(c. 35)</bibl>
+                        <note>Ending imperfect at 'In autumpno ut edometur' with loss of at least one leaf.</note>
                      </msItem>
                   </msContents>
                   <physDesc>
                      <objectDesc form="codex">
                         <supportDesc material="chart">
-                           <support>paper</support>
+                           <support>Paper. </support>
+                           <extent>
+                              <dimensions type="leaf" unit="mm">
+                                 <height>205</height>
+                                 <width>145</width>
+                              </dimensions>
+                           </extent>
+                         
+                           <foliation>Fifteenth-century (?) foliation in arabic, often cropped.</foliation>  
+                           <collation>Quires numbered on the bottom centre of the final verso, 'Primus sexternus' etc.</collation><condition>Fols. 167-8 damaged by wear with loss of text.</condition>
+                        </supportDesc>
+                        <layoutDesc><layout columns="1" writtenLines="35 37">1 col., c. 35-37 lines; ruled space <dimensions type="ruled" unit="mm">
+                           <height max="150" min="145">145-50</height>
+                           <width min="110" max="115">110-15</width>
+                        </dimensions></layout></layoutDesc>
+                     </objectDesc>
+                     <handDesc hands="1">
+                        <handNote script="cursivaAntiquior">Cursiva antiquior apparently all by one scribe, <persName role="scr" key="person_3381">fr. Heinrich Rossinges</persName> (colophon, fol. 254r).</handNote>
+                        <!-- Colophons, II, no. 6771 ('Rossinger') cites 'Erfurt SP p. 175 no. 215' = Theele -->
+                     </handDesc>
+                     <decoDesc>
+                        <decoNote type="colInit">Two-line initials in red, sometimes with simple decoration and penwork in the ink of the text.</decoNote>
+                        <decoNote>Occasional cadels.</decoNote>
+                        <decoNote>Rubrics; capitals touched in red.</decoNote>
+                     </decoDesc>
+                     <additions>Annotations throughout by a fifteenth-century hand.</additions>
+                  </physDesc>
+                  <history>
+                     <origin>
+                        <origDate calendar="Gregorian" when="1375">1375</origDate>
+                        <origPlace>
+                           <country key="place_7000084">German</country>
+                        </origPlace>
+                     </origin>
+                  </history>
+               </msPart>
+               <msPart xml:id="MS_Hamilton_50-endleaf">
+                  <msIdentifier>
+                     <altIdentifier type="partial">
+                        <idno type="part">MS. Hamilton 50 - endleaf (fol. 261)</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  <msContents>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem xml:id="MS_Hamilton_50-endleaf-item1">
+                        <locus>(fol. 261r-v)</locus>
+                        <title type="desc">Psalter (fragment)</title>
+                        <note>End of Ps. 5, followed by response, Ps. 6, followed by response, beginning of Ps. 7. The text has been imperfectly erased, and subsequently ruled for staves of five lines.</note>
+                        
+                        <!-- choir psalter acc. to van dijk vi p. 13 
+                           end of ps 5, ps 6, beg of ps 7
+                           - final endleaf ends with Ps 7, - before that, after Ps 6, comes ps 6.5-6 again as a response? (Convertere, Domine, et eripe animam meam; salvum me fac propter misericordiam tuam.) -->
+                     </msItem>
+                     
+                     
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="perg">
+                           <support>parchment</support>
                         </supportDesc>
                      </objectDesc>
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" when="1375">1375</origDate>
+                        <origDate calendar="Gregorian" notAfter="1410" notBefore="1350">14th century, second half, or 15th century, early (?)</origDate>
                         <origPlace>
                            <country key="place_7000084">German</country>
                         </origPlace>
