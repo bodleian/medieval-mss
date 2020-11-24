@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_5990">
    <teiHeader>
-      <!-- TODO: check Thomson for the endleaves
-         pastedowns (for one passage "homo praecessit in tempre" perhaps cf. avicenna Metaph vi.1-2 (f. 91rbB-92rbD)
+      <!-- TODO: 
       dimensions of main book and fragments
-      watermarks
-      collation
-      just one codicological unit?
       identify text 4b?
-      hands (?1-4, 4-108, 110-125 (all one hand?), 126-137, all different hands)
       -->
       <fileDesc>
          <titleStmt>
@@ -19,7 +14,7 @@
                <persName>Matthew Holford</persName>
             </respStmt>
             <respStmt>
-               <resp>Encoding</resp>
+               <resp when="2020-11">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -55,30 +50,33 @@
                      <idno type="SCN">24459</idno>
                   </altIdentifier>
                </msIdentifier>
-               <head>Sermons (Peregrinus de Oppeln (?), Jacobus de Voragine, etc.); A-C Germany, 1, first quarter</head>
+               <head>Sermons (Peregrinus de Oppeln (?), Jacobus de Voragine, etc.); A-C Germany, 15th century, first quarter</head>
                <physDesc>
                   <p>Three codicological units together by the late fifteenth century at the latest.</p>
                   <objectDesc form="codex">
                      <supportDesc material="chart">
-                        <extent>1 + 137 (108 + 16 + 12+1: fol. 126 is double, with fol. 126(b) being a slip inserted between fols. 126(a) and 127) + 1</extent>
-                        <foliation>1-138, 126 double</foliation>
-                        <collation mainStructures="12">endleaf | 1(12)-3(12) (fols. 2-27), 4(10) (fols. 38-47), 5(14) (fols. 48-61), 6(12)-9(12) (fols. 62-109) | 11(16) (fols. 110-125) | 12(12) (fols. 126(a)-137 | endleaf. Quires 1-7 numbered in arabic on the bottom centre of the opening recto.</collation>
+                        <extent>1 + 137 (108 + 16 + 12+1: fol. 126 is double, with fol. 126(b) being a slip inserted between fols. 126(a) and 127) + 1
+                           <dimensions type="leaf" unit="mm">
+                              <height>290</height>
+                              <width>210</width>
+                           </dimensions></extent>
+                        <foliation>1-138 (126 is double)</foliation>
+                        <collation mainStructures="12">singleton, 1(12)-3(12) (fols. 2-27), 4(10) (fols. 38-47), 5(14) (fols. 48-61), 6(12)-9(12) (fols. 62-109) | 11(16) (fols. 110-125) | 12(12) (fols. 126(a)-137), singleton. Quires 1-7 numbered in arabic on the bottom centre of the opening recto.</collation>
                         
                      </supportDesc>
                   </objectDesc>
                  
                   <bindingDesc>
                      <binding notAfter="1500" notBefore="1400">
-                        <p>Fifteenth-century binding of plain leather on boards,
-                           contemporary; clasps lost; bosses on upper and lower boards lost; contemporary labels with contents and pressmark on upper board.</p>
+                        <p>Fifteenth-century binding of plain leather on boards; clasps lost; bosses on upper and lower boards lost; contemporary labels with contents and pressmark on upper board.</p>
                      </binding>
                   </bindingDesc>
                  <!-- <accMat>The pastedowns are fragments of a grammatical or logical text in Latin (Germany, 15th century)</accMat>-->
                   <!-- cf http://diglib.hab.de/inkunabeln/4-log-2f/start.htm -->
                </physDesc>
                <history>
-                  <provenance><orgName role="fmo" key="org_415145858126223022295">Erfurt, Charterhouse</orgName>: 15th-century ex libris, fols. 1r, 138r; 17th(?)-century ex libris, fol. 2r; pressmark O.9<damage><gap unit="char" quantity="1"/></damage> on the cover; identifiable as O.92 (not O.9) in the late-fifteenth-century catalogue (ed. P. Lehmann, p. 503).</provenance>
-                  <provenance>Not certainly identifiable in the 1836 catalogue of the Friedrich Gottlieb Julius von Bülow  sale (could be 168?)</provenance>
+                  <provenance><orgName role="fmo" key="org_415145858126223022295">Erfurt, Charterhouse</orgName>: 15th-century ex libris, fols. 1r, 138r; 17th(?)-century ex libris, fol. 2r; pressmark O.9<damage><gap unit="char" quantity="1"/></damage> on the cover; identifiable as O.92 (not O.9, as in the Summary Catalogue, and repeated by Krämer, <title>Handschriftenerbe</title>) in the late-fifteenth-century catalogue (ed. P. Lehmann, p. 503).</provenance>
+                  <provenance>Not certainly identifiable in the 1836 catalogue of the Friedrich Gottlieb Julius von Bülow  sale: perhaps no. 168 ('Sermones de sanctis')</provenance>
                   <provenance notBefore="1841" notAfter="1856"><persName role="fmo" key="person_54195353">Sir William Hamilton, 1788-1856</persName></provenance>
                   <acquisition when="1857">Presented to the Bodleian Library by his sons and received in 1857.</acquisition>
                </history>
@@ -99,20 +97,24 @@
                   </msIdentifier>
                   
                   <msContents>
+                     <msItem>
+                        <note>For fol. 1 see endleaves, below.</note>
+                     </msItem>
                      <msItem xml:id="MS_Hamilton_29-item1" n="1">
                         <locus>(fols. 2ra-108rb)</locus>
                         <author key="person_63741243"><supplied>Peregrinus de Oppeln (?)</supplied></author>
                         <title key="work_3485">Sermones de sanctis (Hieron. de Salzburg collecti aut variati)</title>
                         <title key="work_16273">(Collectio sermonum ‘Flores de sanctis’ siue ‘Piper’)</title>
-                        <note>Schneyer IV.557-572, from this manuscript: 195-202, 204-5, 113, 206-21, 114, 222-4, 126, 225, 127, 226-33, 129, 234-5, 131-2, 236-7, 134, 238-9, 136, 240-1, 137, 242, 140, 243-9, 144-6, 250-9, 260-1, 149, 262-4, 150-1, 265-76, 155, 277-8, 156, 279-301, 174, 302-5, 185, 306-9.</note><!-- CHECK that 203 really is omitted -->
-                        <rubric>De sancto Andrea</rubric>
-                        <incipit>Simili pena seruus ... Filius Dei considerans</incipit>
+                        <note>Schneyer IV.557-572, from this manuscript: 195-205, 113, 206-21, 114, 222-4, 126, 225, 127, 226-33, 129, 234-5, 131-2, 236-7, 134, 238-9, 136, 240-1, 137, 242, 140, 243-9, 144-6, 250-9, 260-1, 149, 262-4, 150-1, 265-76, 155, 277-8, 156, 279-301, 174, 302-5, 185, 306-9.</note>
+                        <msItem><rubric>De sancto Andrea</rubric>
+                        <incipit>Simili pena seruus ... Filius Dei considerans</incipit></msItem>
+                        <msItem><explicit>sic saluus erit. Quod nobis prestare dignetur pater et filius et spiritus sanctus Amen etc. etc. etc.</explicit></msItem>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                      <msItem xml:id="MS_Hamilton_29-item2" n="2">
                         <locus>(fol. 108rb)</locus>
                         <title type="desc" key="work_13934">Prayer</title>
-                        <note><q>Nve helfft mir bethe v<ex>or</ex> daz wandel der heylygen <ex>cristen</ex>heut Snder v<ex>or</ex> eynen stete frede dez landes vor vsz<ex>er</ex>n geystlich vater den babest vor alle syne kardenal v<ex>or</ex> alle bysschoff v<ex>or</ex> alle p<ex>re</ex>st<ex>er</ex>liche werdykeyt dar nach helfft mir flyszlich bethe vor den romischen konigk</q></note>
+                        <note><q>Nve helfft mir bethe v<ex>or</ex> daz wandel der heylygen <ex>cristen</ex>heyt <unclear>Sonder</unclear> v<ex>or</ex> eynen stete frede dez landes vor vns<ex>er</ex>n geystlich vater den babest vor alle syne kardenal v<ex>or</ex> alle bysschoff v<ex>or</ex> alle p<ex>re</ex>st<ex>er</ex>liche werdykeyt dar nach helfft mir flyszlich bethe vor den romischen konigk</q></note>
                         <note>Added in a different hand.</note>
                         <textLang mainLang="de">German</textLang>
                      </msItem>
@@ -175,12 +177,13 @@
                            <msItem>
                               <locus>(fol. 110rb-vb)</locus>
                               <rubric>Item alius</rubric>
-                              <incipit>De regacionibus que dicitur letania minor. Maior vero peragitur in die marci, instituto a gregoria magno in urbe romano pro magno et grauissimo morbo</incipit>
+                              <incipit>De rogacionibus que dicitur letania minor. Maior vero peragitur in die marci, instituto a gregoria magno in urbe romano pro magno et grauissimo morbo</incipit>
                               <explicit>angelum domini qui gladium cruentatum detergentem et in vaginam mittentem et intellexit quod pestis ista cessasset et statutum est ut castrum istud castrum angeli vocaretur</explicit>
+                              <note>From <persName role="aut" key="person_100198644">Jacobus de Voragine</persName>, <title key="work_2330">Legenda Aurea</title>, cc. 70 (de letania) and 46 (de sancto Gregorio, sect. 4): ed. Graesse, pp. 312-3, 190-2</note>
                               <note>Rest of fol. 110vb blank.</note>
                            </msItem></msItem>
                         <msItem>
-                           <locus>(fol. 111ra-b, margin)</locus><!-- image 223 -->
+                           <locus>(fol. 111ra-b and margin)</locus><!-- image 223 -->
                            <rubric>De animabus</rubric>
                            <incipit><quote>Mittite partes <choice><sic>eius</sic><corr>eis</corr></choice> qui non preparaveru<supplied>n</supplied>t sibi</quote> Consuetudo est quando aliqui usque ad mortem infirmati uel ad mortem flagellati aut in carcere ad mortem cruciati ad amicos suos karissimos</incipit>
                            <explicit defective="true">qui vos pauperibus clamantibus de</explicit>
@@ -199,7 +202,7 @@
                            <incipit>Epyphania domini quadruplici decoratur miraculo, et ideo quadruplici vocabulo nuncupatur</incipit>
                            <explicit>sed colonie requiescunt etc. </explicit>
                            <author key="person_100198644">Jacobus de Voragine</author>
-                           <title key="work_2330">Legenda Aurea c. xiv</title>
+                           <title key="work_2330">Legenda Aurea: c. xiv</title>
                            <!-- followed by a note, TODO, image 227 -->
                         </msItem>
                         <msItem>
