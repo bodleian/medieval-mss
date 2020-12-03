@@ -2,26 +2,32 @@
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2984">
    <teiHeader>
+      <!-- todo: 
+         literature on Moggio
+      -->
       <fileDesc>
          <titleStmt>
             <title>MS. Canon. Liturg. 297</title>
             <title type="collection">MSS. Canon. Liturg. (Canonici Liturgical)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
+            <!-- <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>-->
+            <respStmt xml:id="MLH">
+               <resp when="2020">Encoding</resp>
+               <resp when="2020">Catalogue updates and corrections</resp>
+               <persName>Matthew Holford</persName>
             </respStmt>
             <respStmt xml:id="BCBB">
                <resp when="2020">Cataloguer</resp>
                <persName>B. C. Barker-Benfield</persName>
             </respStmt>
          </titleStmt>
-         <editionStmt>
-            <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
-         </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
             <address>
@@ -54,9 +60,125 @@
                      <idno type="SCN">19395</idno>
                   </altIdentifier>
                </msIdentifier>
+               <head>Noted breviary; Germany (Münsterschwarzach), 1154 × 1173 </head>
                <msContents>
                   <msItem xml:id="MS_Canon_Liturg_297-item1" n="1" class="#liturgica">
-                     <title type="desc" key="work_10621">Breviary (Benedictine)</title>
+                     <title type="desc" key="work_10621">Noted choir Breviary, Benedictine use</title>
+                     <msItem>
+                        <locus>(fols. 1v-2r)</locus>
+                        <title type="desc">Verses (Riddles)</title>
+                        <msItem><incipit>Est in crathero meo thetis conuincta <unclear>lieo</unclear></incipit><note>Four lines</note></msItem>
+                        <msItem><incipit>Cum bipes in tripode comedendo sederet</incipit><note>Four lines</note></msItem>
+                        <!-- TODO two more, image 8 -->
+                        <msItem><incipit>Pocula Ianus amat sed Febrius algeo clamat</incipit><note>Six lines</note></msItem>
+                        <note>Addition on originally blank space, 15th century, Italian (?) hand</note>
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 2r-v)</locus>
+                        <rubric>Secuntur versus beati Bernardi qui cottidie dixit ut diabolus sibi retulit prout in vita dicti beati bernardi</rubric>
+                        <incipit>O bone yhesu. Illumina oculos meos ut nunquam obdormiam in morte nequando dicat inimicus meus jactans prevalui adversus eum </incipit>
+                        <explicit>Sequitur oracio oremus. Omnipotens sempiterne deus <gap reason="editorial"/> misericordiam consequi merear eternam per christum dominum nostrum amen.</explicit>
+                        <note>Addition on originally blank space, 15th century, different Italian hand</note>
+                     </msItem>
+                    
+                     <msItem>
+                        <locus>(fols. 3r-8v)</locus>
+                        <title type="desc" level="a">Calendar</title>
+                        <note>With additions for the sanctorale. Printed (without the liturgical additions) by P. Berger, 'Zum Kalendarium eines Schwarzacher Breviers von 1154', Würzburger Diözesangeschichtsblätter 25 (1963), 113-124.</note>
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 9r)</locus>
+                        <title type="desc" level="a">Easter table for the years 1154-86</title>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 9v-10v)</locus>
+                        <rubric><damage><gap/></damage>ciones de domina nostra. Si tibi necesse erit de Reponsoriis quere in assumptione beate virginis</rubric>
+                        <incipit>Benedicta es Maria inter mulieres, id est plus benedicta quam omnes mulieres</incipit>
+                        <note>Addition, 13th century.</note>
+                     </msItem>
+                     <msItem><locus>(fol. 10v)</locus><note>Added drawing, see Decoration.</note></msItem>
+                     <msItem>
+                        <locus>(fols. 11r-188r)</locus>
+                        <title type="desc" level="a">Temporale</title>
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 188v)</locus>
+                        <title type="desc" level="a">Blessings</title>
+                        <note>Contemporary addition on originally blank folio: Pro fratribus in via dirigentibus … pro redeuntibus … pro servitoribus dum exeunt … dum intrant </note>
+                     </msItem>
+                     <msItem><!-- image 382 -->
+                        <locus>(fol. 188v)</locus>
+                        <title type="desc" level="a">Responsory verse for Christmas</title>
+                        <note>Slightly later addition on originally blank folio: 'Iam missue ab arce ueniebat'</note>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 189r-262r)</locus>
+                        <title type="desc" level="a">Sanctorale</title>
+                        <note>St Nicholas (6 December) to St Damasas</note>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 262v-297r)</locus>
+                        <title type="desc" level="a">Common of the saints</title>
+                        <note>Fol. 281v part blank at the end of the common of a martyr, with later additions.</note>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 297r-301r)</locus>
+                        <title type="desc" level="a">Dedication</title>
+                     </msItem>
+                     <msItem><!-- 608 -->
+                        <locus>(fol. 301v)</locus>
+                        <note>Originally blank; added, 13th century (same hand as fols. 9v-10r?) office In divisione apostolorum, and (15th century, Italian hand) macaronic Latin-Italian hymn, beginning 'Ave virgo madre gloriosa <lb/> De dio padre uoy siti la sua sposa</note><textLang mainLang="la" otherLangs="it">Latin and Italian</textLang>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 302r-315r)</locus>
+                        <title type="desc" level="a">Hymnal, without music</title>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 315r-318r)</locus>
+                        <title type="desc" level="a">Canticles, without music</title>
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 318r-v)</locus>
+                        <title type="desc" level="a">Breves lectiones in estate </title>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 318v-320v)</locus>
+                        <title type="desc" level="a">Daily litany of the saints (supplicatio cotidiana)</title>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 320v-324v)</locus>
+                        <title type="desc" level="a">Office of the dead</title><note>With another set of lessons and responsories for the same office at fol 322r and a third series of lessons at fol. 323v.</note></msItem>
+                     <msItem>
+                        <locus>(fols. 325r-326r)</locus>
+                        <title type="desc" level="a">Psalm Voce mea</title></msItem>
+                     <msItem>
+                        <locus>(fol. 326r-327r)</locus>
+                           <title type="desc" level="a">Hymns, without music (but some notation added later)</title></msItem>
+                     <msItem>
+                        <locus>(fols. 327r-v)</locus>
+                        <title type="desc" level="a">Verses for the responsories at prime</title>
+                        <note>Two 15th-century additions, 'Inseparabilis fides passioque germana laudabiles',  and 'Infer ventus olay' on fol. 327vb.</note>
+                        <note>The early foliation indicates that two leaves are missing after fol. 327.</note>
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 328(c)r-v)</locus>
+                        <title type="desc" level="a">Baptismal rite</title>
+                        <note>Perhaps originally from a different manuscript, but in its current position by the 14th or 15th century as indicated by the foliation.</note>
+                     </msItem>
+                     <!-- TODO: 328 etc. -->
+                     <msItem>
+                        <locus>(fols. 329(b)r-352r)</locus>
+                        <title type="desc" level="a">Psalter with weekly (fol. 349r) and daily (fol. 351r) canticles, Te deum, Credo and Quicumque</title></msItem>
+                     <msItem>
+                        <locus>(fol. 352v)</locus>
+                        <title type="desc" level="a">Preces pro omni gradu ecclesiae</title></msItem>
+                     <msItem>
+                        <locus>(fol. 352v)</locus>
+                        <title type="desc" level="a">Collects ad prostratos psalmos during Lent. </title>
+                     </msItem>
+                     
+                    <note>Only a few and short rubrics.</note>
+                     
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -64,12 +186,27 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>ii + 2 + 353 + 1 + ii fol. (i-ii, 1-355, including 328a-c and 329a-b) 
+                           <dimensions type="leaf" unit="mm">
+                              <height>216</height>
+                              <width>150</width>
+                           </dimensions> 
+                         </extent>
+                        <foliation>Fols. 11-328(c) with 14th- or 15th-century foliation cccxxi</foliation>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="1" writtenLines="34">1 col., 34 lines; written space <dimensions type="written" unit="mm">
+                           <height>178</height>
+                           <width>114</width>
+                        </dimensions></layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <musicNotation>
+                     <p>Fine adiastematic, non-rhythmical notation of German neums, tending towards point neums.</p>
+                  </musicNotation>
                   <decoDesc>
-                     <decoNote type="decInit">Good initials.</decoNote><decoNote type="drawing"> Byzantinizing drawing added, 13th century, first
-            half, fol. 10v. (P&amp;A i. 78, pl. VI)
-                     </decoNote>
+                     <decoNote type="decInit">Good initials (fols. 11r, 110v, 139v, 142v, etc.)</decoNote><decoNote type="drawing"> Full-page Byzantinizing drawing added, 13th century, first
+            half, fol. 10v: identified by van Dijk as Gregory the Great </decoNote>
                   </decoDesc>
                   <bindingDesc resp="#BCBB">
                      <binding notAfter="1800" notBefore="1600">
@@ -84,17 +221,20 @@
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notBefore="1154" notAfter="1200">after 1154</origDate>; <origDate type="additions" notAfter="1250" notBefore="1200" calendar="Gregorian">added drawing, 13th century, first half</origDate>
+                     <origDate calendar="Gregorian" notBefore="1154" notAfter="1173" cert="high">1154 × c. 1173</origDate>; <origDate type="additions" notAfter="1250" notBefore="1200" calendar="Gregorian">added drawing, 13th century, first half</origDate>
                      <origPlace>
-                        <country key="place_7000084">German</country>, <settlement key="place_7004335">Würzburg</settlement>
-                        <!--ORIGINAL: German, Würzburg-->
+                        <country key="place_7000084">Germany</country>, south, <orgName key="org_141615902">Münsterschwarzach, Schwarzach-am-Main, Benedictine abbey of St Felicitas</orgName> 
                      </origPlace>
                   </origin>
+                  <provenance>Easter table for 1154-1186; presumably written before 1173 as Thomas of Canterbury is a later addition in the calendar.</provenance>
+                  <provenance>The manuscript is usually regarded as written at or for the Benedictine abbey of <orgName role="fmo" key="org_141615902">St Felicitas in Münsterschwarzach</orgName>, Schwarzach-am-Main. Felicitas and her sons are emphasized in the calendar (10 July), in the litany, fol. 319r, and there are two hymns to Felicitas in the hymnal (fol. 327r). There are numerous entries in the calendar pointing to the diocese of Würzburg, such as the feasts of Burchard on 2 Feb. and 14 Oct. and of Kilian on 8 July: all are marked 'in Wirziburg'. </provenance>
+                  <provenance>By the 15th century, and probably earlier, the manuscript was in Italy. Flotzinger suggested that soon after its production the manuscript was in use at the <orgName role="fmo" key="org_254016085">Benedictine abbey of St Gall, Moggio Udinense</orgName>. His evidence for this was the obit in the calendar (15 Aug.) of 'Albertus presbyter et monachus sancti Galli' and the very early addition of Hermagoras and Fortunatus of Aquileia (12 July) in the calendar. Flotzinger also raised the possibility that the manuscript was written at Münsterschwarzach for Moggio: this was based on the version of 'Aeterne rerum conditor' on fol. 302r incorporating St Gall (although this is also found in a breviary probably from Würzburg, see Cantus 008254a-g). </provenance>
+                  <provenance notBefore="1727" notAfter="1805"><persName role="fmo" key="person_2384880">Matteo Luigi Canonici, 1727-1805</persName>: uncertain when acquired, not from Trevisan / Soranzo.</provenance><provenance notAfter="1807"><persName role="fmo" key="person_446">Giuseppe Canonici , -1807</persName></provenance><acquisition when="1817">Purchased by the Bodleian in 1817</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1966). Binding: <bibl>B. C. Barker-Benfield, <title>Bookbindings of Canonici manuscripts : a survey of early and non-standard bindings, mostly Italian, in the Canonici collection of the Bodleian Library, University of Oxford</title> (Oxford, privately printed, 2020).</bibl> 
+                        <source>Description adapted by Matthew Holford (Nov. 2020), with some additional description of content, and additional reference to published literature as cited, from <bibl>S. J. P. Van Dijk, <title>Handlist of the Latin Liturgical Manuscripts in the Bodleian Library Oxford</title>  Vol. 2: Office Books (typescript, 1957), p. 221</bibl>, except for binding description, after <bibl>B. C. Barker-Benfield, <title>Bookbindings of Canonici manuscripts : a survey of early and non-standard bindings, mostly Italian, in the Canonici collection of the Bodleian Library, University of Oxford</title> (Oxford, privately printed, 2020).</bibl> Previously described in the Summary Catalogue (1897).
                             
                             
                             <listBibl>
@@ -104,11 +244,20 @@
                         </source>
                      </recordHist>
                   </adminInfo>
-               <surrogates><bibl type="digital-facsimile" subtype="partial"><ref target="https://digital.bodleian.ox.ac.uk/inquire/p/05e1bd6e-1749-469b-90af-0c772ae07b5f"><title>Digital Bodleian</title></ref> <note>(2 images from 35mm slides)</note></bibl></surrogates></additional>
+               <surrogates><bibl type="digital-facsimile" subtype="partial"><ref target="https://digital.bodleian.ox.ac.uk/objects/05e1bd6e-1749-469b-90af-0c772ae07b5f/"><title>Digital Bodleian</title></ref> <note>(2 images from 35mm slides)</note></bibl></surrogates>
+               <listBibl>
+                  <bibl>Rudolf Flotzinger, <title>Choralhandschriften Österreichischer Provenienz in Der Bodleian Library, Oxford</title>, Sitzungsberichte / Österreichische Akademie Der Wissenschaften. Philosophisch-Historische Klasse; Bd. 580 (Wien: Verlag der Österreichischen Akademie der Wissenschaften, 1991), 60-2</bibl>
+                  <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 269</bibl>
+                  <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, I (1966), no. 78</bibl>
+               </listBibl>
+               </additional>
             </msDesc>
          </sourceDesc>
       </fileDesc>       
-      <revisionDesc>      <change when="2020-08-20">Binding description added.</change>    <change when="2017-07-01">First online publication.</change>
+      <revisionDesc>    
+         <change when="2020-11-27">Description finalized for Polonsky German project.</change>
+         <change when="2020-11-24">Initial revision of description from van Dijk and other literature as cited for Polonsky German project</change>
+         <change when="2020-08-20">Binding description added.</change>    <change when="2017-07-01">First online publication.</change>
 
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
