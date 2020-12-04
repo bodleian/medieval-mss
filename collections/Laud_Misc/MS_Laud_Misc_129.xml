@@ -1,21 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6939">
    <teiHeader>
+      <!--TO BE DONE: CHK WORKS, SERMONS AND BHL NUMBERS
+      DESIDE DIVISIONS AND NUMERING OF WORKS (current numbers reflect the current record online), HOW MANY WORKS ARE THERE IN THIS MS? QUARTO ITEMISES 27 WORKS-->
       <fileDesc>
          <titleStmt>
             <title>MS. Laud Misc. 129</title>
             <title type="collection">MSS. Laud Misc. (Laud miscellaneous)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="Q">
+               <resp when="1858">Cataloguer</resp>
+               <persName>H. O. Coxe</persName>
+            </respStmt>
+            <respStmt xml:id="Q2">
+               <resp when="1969">Cataloguer</resp>
+               <persName>R. W. Hunt</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1966">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="TA">
+               <resp when="2020">Encoding</resp>
+               <persName>Tuija Ainonen</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -49,30 +60,425 @@
                      <idno type="SCN">1575</idno>
                   </altIdentifier>
                </msIdentifier>
+               <head>Theological miscellany; German, 9th century, beginning</head>
                <msContents>
                   <msItem xml:id="MS_Laud_Misc_129-item1" n="1" class="#sermones">
-                     <title type="desc" key="work_14583">Sermons</title>
-                     <note>(including <persName role="aut" key="person_66806872">
-                           Augustine
-                        </persName>, <persName role="aut" key="person_102305735">
-                           Caesarius of Arles
-                        </persName>)</note>
+                     <locus>(fols. 1r-11r)</locus>
+                     <title key="work_14583">Sermons</title>
+                     <msItem n="1.1">
+                        <locus>(fols. 1r-2r)</locus>
+                        <author key="person_100184667">Gregory I</author>
+                        <title key="work_1869">Homiliae in Ezechielem</title>
+                        <note>Hom. VIII, excerpt.</note>
+                        <incipit defective="true"> nam semina arborum odorem et saporum habent </incipit>
+                        <explicit> ratio potentia facientis.</explicit>
+                     </msItem>
+                     <msItem n="1.2">
+                        <locus>(fols. 2r-4r)</locus>
+                        <rubric>Sententie prophete sicut ipse dominus per illum testatur sacerdotibus</rubric>
+                        <incipit><quote>Clama ne cesses quasi tuba ...</quote> Esaias propheta a domino <sic>misus</sic> iubetur non solum predicare sed etiam clamare </incipit>
+                        <explicit> qui nos remunerat pacifici et securi et laeti cum Christo regnamus quod regnat cum patre et spiritu sancto uiuit. In secula seculorum. </explicit>
+                        <!--not in Schneyer; In Principio; Brepols Cross Database Searchtool; PL-->
+                        <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     <msItem n="1.3">
+                        <locus>(fols. 4r-5r)</locus>
+                        <rubric>De timore Domini</rubric>
+                        <incipit><quote>Seruite Domino in timore et exaltate ei cum tremore.</quote> Hoc Dauid dicit tribus personis qui e hereditatem Christi patris tenent </incipit>
+                        <explicit>in amore Christi hic saluus erit.</explicit>
+                        <!--not in Schneyer; In Principio; Brepols Cross Database Searchtool; PL-->
+                     </msItem>
+                     <msItem n="1.4">
+                        <locus>(fols. 5r-6v)</locus>
+                        <note>Excerpts from <persName role="aut" key="person_102305735">Caesarius of Arles</persName> <title>Sermo 10</title> (CCSL 103).</note>
+                        <rubric>In euuangelium</rubric>
+                        <incipit>Igitur si quis uult discipulus esse mandata sua custodiat, humilitatem discat </incipit>
+                        <explicit>mansionem ei preparemus ut ipse regnet in nos et nos in eo qui cum patre uiuit et spiritu sancto in secula seculorum amen.</explicit>
+                     </msItem>
+                     <msItem n="1.5">
+                        <locus>(fols. 6v-7v)</locus>
+                        <rubric>Po<supplied>te</supplied>sta<supplied>t</supplied>e</rubric>
+                        <incipit><quote>Iam securis ad radices arborum posita est ...</quote> Christus hoc uerbum dixit de exercitatione uinae </incipit>
+                        <explicit>quid aliud quam supernae misericordiae pignus tenemus. </explicit>
+                        <!--not in Schneyer; In Principio; Brepols Cross Database Searchtool; PL-->
+                     </msItem>
+                     <msItem n="1.6">
+                        <locus>(fols. 7v-8v)</locus>  
+                        <rubric>De militia hominum</rubric>
+                        <incipit><quote>Nemo coronabitur nisi qui legitime certauerit.</quote> Paulus hoc uerbum dixit de militia militum quia quando homines conueniunt ad bellum </incipit>
+                        <explicit> bonis actibus cum festinatione preparemur. </explicit>
+                        <!--not in Schneyer; In Principio; Brepols Cross Database Searchtool; PL-->
+                     </msItem>
+                     <msItem n="1.7">
+                        <locus>(fols. 8v-11r)</locus>
+                        <rubric>Omelia sancti Augustini</rubric>
+                        <incipit>Fratres karissimi, ad memoriam uestram reducimus quod per sacras paginas </incipit>
+                        <explicit> quae preparauit Deus diligentibus se. </explicit>
+                        <note>Excerpts from <title>Homily XVII</title>, attributed to <persName role="aut" key="person_102305735">Caesarius of Arles</persName>, ed. in <title>PL</title> 67, 1079C-1081B; see further <title>CCSL</title> 104, p. 966.</note>
+                     </msItem>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
-                  <msItem xml:id="MS_Laud_Misc_129-item2" n="2" class="#theologica">
+                  
+                  <msItem xml:id="MS_Laud_Misc_129-item2" n="2" class="theologica">
+                     <locus>(fols. 11r-)</locus>
                      <title type="desc" key="work_15308">Theological texts</title>
+                     <msItem>
+                        <locus>(fols. 11r-16r)</locus>
+                        <title key="work_17156">Passio sanctorum septem dormientium Ephesi</title>
+                        <rubric>Maximianus, Malcus, Martinaus, Dionisius, Iohannes, Serapion, Constantinus</rubric>
+                        <incipit>In illo tempore Decius regnabat imperator, descendit in ciuitatem Constantina</incipit>
+                        <explicit> glorificantes Deum propter mirabilia magna qua uiderant. Gratia enim et misericordia Patris et Filii et Spiritus Sancti cum omnibus fidelibus sacra confitentibus trinitate et credentibus resurrectio<add place="above">ne</add> mortuorum per cuncta secula seculorum. Amen.</explicit>
+                        <note><title>BHL</title> 2315-18. </note>
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 16r-v)</locus>
+                        <title key="work_17155">Sententiae de floratibus diversis</title>
+                        <rubric>Incipit de diuersis interpretationum</rubric>
+                        <incipit>Interrogo te pro quid dicitur homo? Respondit, homo dictus est ab humo </incipit>
+                        <explicit>quia fructus uetitus usurpauit auaritia quia plusquam ei sufficeret poterat appetiuit. </explicit>
+                        <note>Excerpts (part I, questions 1-7, 9-11, 13, 15-17). (See Soase (2016) 321-366, esp. pp. 336-37.)</note>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 16v-22v)</locus>
+                        <title key="work_17157">Inventio sanctae crucis</title>
+                        <rubric>Incipit inuentio sanctae crucis</rubric>
+                        <incipit>Anno ducentessimo trigissimo tertio regnante uenerabili Dei cultore magno uiro Constantino</incipit>
+                        <explicit>memoriam faciunt, crucis accipiunt, partem cum Deo et Maria Dei genetrice. Amen. </explicit>
+                        <note><title>BHL</title> 4169.</note>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 22v-42r)</locus>
+                        <title>Sermons</title>
+                        <msItem>
+                           <locus>(fols. 22v-23r)</locus> 
+                           <rubric>Discretio tenenda</rubric>
+                           <incipit>Pax uera tenenda est quae de filiis diabuli filios Dei efficit </incipit>
+                           <!--not in Schneyer; In Principio; Brepols Cross Database Searchtool-->
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 23r-24r)</locus>  
+                           <rubric>De uocatio</rubric>
+                           <incipit>Tribus uocationibus uocauit Deus hunc mundum ad uitam</incipit>
+                           <!--not in Schneyer; In Principio; Brepols Cross Database Searchtool-->
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 24r-25r)</locus>
+                           <rubric>De succestione diaboli</rubric>
+                           <incipit>Dixit Deus ad Adam de ligno scienti boni et mali: Ex eo mortem morieris et mortuus est</incipit>
+                           <!--not in Schneyer; In Principio; Brepols Cross Database Searchtool-->
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 25r-27v)</locus> 
+                           <rubric>In euuangelio</rubric>
+                           <incipit><quote>Ecce ego mitto uos sicut oues in medio luporum ...</quote> Dominus enim noster mittere uolens apostolas ad praedicandum</incipit>
+                           <!--not in Schneyer; In Principio; Brepols Cross Database Searchtool-->
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 27v-31r)</locus>
+                           <author key="person_102305735">Caesarius of Arles</author>
+                           <title>Sermon</title>
+                           <!--CHK CCSL 103, 104 > could give the current sermon ref number, PL calls this Homilia VIII-->
+                           <rubric>Omelia sancti Caesarii episcopi</rubric>
+                           <incipit>Scimus quidem <sic>spritale</sic> militiae cui nos mancipauimus </incipit>
+                           <explicit> et ad uitam festinare debemus tandem optamus bonae perseuerentiae usque infinem, quia non qui coeperit, sed qui perseuerauerit usque in finem, hic saluus erit.</explicit>
+                           <note><title>PL</title> 67, 1062A, ending differently.</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 31v-32v)</locus>
+                           <author key="person_102305735"><!--Ps.? -->Caesarius of Arles</author>
+                           <title>Sermon</title> 
+                           <!--CHK CCSL 103, 104 > could give the current sermon ref number, PL calls this Homilia IX
+                              also same as Ps. Eusebius Sermo 41? 
+                           CHK: CC 101 A, 487-492, CPPM I nr. 4383, 4397, 4599, 4661, 4746-->
+                           <rubric>Omelia item uis'</rubric>
+                           <incipit>Fratres karissimi ad hoc istum locum conuenimus ut domino nostro uacare possimus </incipit>
+                           <explicit>quo gaudio ad munera sua ipso inuitante ueniamus, cui est honor in secula seculorum. Amen. </explicit>
+                           <note><title>PL</title> 67, 1066B.</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 32v-34v)</locus>
+                           <rubric>Sancti Caesaris</rubric>
+                           <incipit>Uidete uocationem uestram fratres karissimi </incipit>
+                           <explicit>uiuemus in conspectu suo sine fine in saecula seculorum. Amen.</explicit>
+                           <!--not searched yet-->
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 34v-36v)</locus>
+                           <rubric>Omelia sancti Cesarii</rubric>
+                           <incipit>Sanctus et uenerabilis pater uester relegiosam fidem monet caritate </incipit>
+                           <explicit>et felicitatis uenire ipso fauente qui uiuit et regnat in unitate Deus per omnia saecula saeculorum. Amen. </explicit> 
+                           <!--not searched yet-->
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 36v-38v)</locus>
+                           <rubric>In euuangelium</rubric>
+                           <incipit><quote>Petite et accipietis ut gaudium ut gaudium uestram plenum sit</quote>. Quicquid petierimus secundum uoluntatem eius audit nos </incipit>
+                           <explicit>cum gaudio ipsius, et nostram gaudium adipisci manere mereamur in aeterna saecula. </explicit> 
+                           <!--not searched yet-->
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 38v-41r)</locus>
+                           <rubric>Incipit omelia sancti Cesarii</rubric>
+                           <incipit>Ad hunc locum, fratres karissimi, non ad quietem, non ad securitatem, sed ad pugnam ceptam </incipit>
+                           <explicit> ut in beata felicitate coronemur adiuuante Deo qui uiuit et regnat in secula.</explicit>
+                           <!--not searched yet-->
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 41r-42r)</locus>
+                           <author key="person_7386286">Ps.-Augustine</author>
+                           <title>Sermon</title>
+                           <rubric>Incipit interpretatio sancti Augustini de x talentis</rubric>
+                           <incipit>Auditor hoc tempus per mulierem illam sollicitam quae habuit decem denarios </incipit>
+                           <explicit>capitur ut hodie Adam cum Christo et cum omnibus sanctis in paradiso laetetur. </explicit>
+                           <!--chk  <note>ed. Mai 113a <title>Nova Patrum Bibliotheca</title>, I, 250 (Römer, <title>Augustinushandschriften</title> II/1 (1972) p. 348)</note>-->
+                        </msItem>
+                     </msItem>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                   <msItem xml:id="MS_Laud_Misc_129-item3" n="3" class="#historica">
+                     <locus>(fols. 42r-87r)</locus>
                      <title type="desc" key="work_13615">Old Testament history</title>
+                     <!-- perhaps this kind of detail not needed but I'm not yet sure if this is one work or not:
+                     <msItem>
+                        <locus>(fols. 42r-43r)</locus>
+                        <rubric>Deo quod dixit ad Habraham </rubric>
+                        <incipit>Erit semen tuum ... Haec loquitur pater omnium creaturarum prophetans</incipit>
+                        <explicit>ut uideant opera uestra bona, et glorificent patrem uestrum qui in caelis est. </explicit>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 43r-44r)</locus>
+                        <rubric>De scala illa quam uidit Iacob</rubric>
+                        <incipit>Uidit Iacob scalam stantem ponens lapides sub capite suo in somnis super terram et </incipit>
+                        <explicit></explicit>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fols. 44r-45v)</locus>
+                        <rubric>De vietates mundi</rubric>
+                        <incipit>Primo enim seculo factus est lux homo in paradiso</incipit>
+                        <explicit>post alia enim opera speranda est requies in die septimo quies peram non habet.</explicit>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 45v-48r)</locus>
+                        <rubric>De paradiso</rubric>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 48r-49v)</locus>
+                        <rubric>Praedicatio de primi homine</rubric>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 49v-53v)</locus>
+                        <rubric>De Noe patriarca</rubric>
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 54r-v)</locus>
+                        <rubric>De Habraham</rubric>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 54v-58v)</locus>
+                        <rubric>De Ioseph</rubric>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 58v-60v)</locus>
+                        <rubric>De filiis Israel</rubric>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 60v-)</locus>
+                        <rubric>De Samson</rubric>
+                     </msItem>
+ff. 63r, 65r Item ui's
+f. 66r De Iosue
+f. 67r De filiis
+f. 68r De uetus testamentum
+f. 69v, 74r De Iosue
+f. 76v De Iob pati
+f. 78v De Nabuch'
+f. 80r De rege Baltham
+f. 81v De Dauit
+f. 84r De Roboam rege
+f. 86r Psalmorum canticis laus ad animam refocilare-->
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
+                  <msItem> 
+                     <locus>(fols. 87r-09R)</locus>
+                     <title>Sermons</title>
+                     <msItem>
+                        <locus>(fols. 87r-88r)</locus>
+                        <rubric>De natiuitate Domini et interpretatio</rubric>
+                       <incipit>Sciendum est quare natus est Ihesus in octava kal. Ianuarii </incipit>
+                        <explicit>factus est homo sexto die et sic aetate seculi. </explicit>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 88r-89v)</locus>
+                        <rubric>In natiuitate sancte Marie semper uiginis</rubric>
+                        <incipit>Illum sacratissimum uterum ex quo homine Deus unigenitus apparuit</incipit>
+                        <explicit>uirginitatem non abstulit ipsi gloria in secula seculorum. Amen.</explicit>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 89v-91v)</locus>
+                        <incipit>Descendit Dominus de monte ubi erant</incipit>
+                        <explicit>quando intrabunt cum fiducia coram Domino suo in regnum caelorum ubi regnabunt sine fine in saecula seculorum. Amen. </explicit>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 91v-93v)</locus>
+                        <rubric>Incipit sermo de natiuitate Domini</rubric>
+                        <incipit>Fraters karissimi ineffabile natiuitatis dominice sacramentum iam credi magis conuenit </incipit>
+                        <explicit>et naturae curatio esset uiuificatio filiorum. Amen. </explicit>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 94v-96r)</locus>
+                        <rubric>De Iesse</rubric>
+                        <incipit>Exiet uirga de radice Iesse</incipit>
+                        <explicit>qui in trina unitate manens sui nullum p'stolatur habere finem. </explicit>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 96v-97r)</locus>
+                        <rubric>Omelia sancti Augustini de pascha</rubric>
+                        <incipit>Gaudemus, fratres karissimi, quia dominus noster Ihesus Christus uenit redimere mundum sanguine suo</incipit>
+                        <explicit>quia Christus de sua diuinitate nihil minuit et homiem quem fecerat liberauit cui est honor et gloria in saecula saeculorum. Amen  </explicit>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 97v-99r)</locus>
+                        <rubric>De nominibus apostolorum interpretatio</rubric>
+                        <incipit>Sciendum est tamen cur hii duodecim numero ponitur</incipit>
+                        <explicit>ut Paulus ait per multas tribulationes oportet nos intrare in regnum Dei. </explicit>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 99r-100v)</locus>
+                        <rubric>De pretiosa morte iustorum </rubric>
+                        <incipit>Pretiosa est in conspectu Domini mors sanctorum eius </incipit>
+                        <explicit>ut particeps illius efficimereamur in futuro Christo adiuuante.</explicit>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 100r-101v)</locus>
+                        <rubric>Explanatio sancti Gregorii pape</rubric> Matt 7.24
+                        <incipit>Christus haec duo uerba ad populum </incipit>
+                        <explicit>et aedificationem suam nullus uiolat sed undique est tutus ac munitus.</explicit>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 101v-103v)</locus>
+                        <rubric>Omelia de sanctorum martyrum</rubric>
+                        <incipit>Cum omnium sanctorum martyrum, fratres karissimi, natalem deuotissime celebrare debemus </incipit>
+                        <explicit>quod ipse prestare dignetur qui uiuit et regnat in secula seculorum. Amen.</explicit>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 103v-104r)</locus>
+                        <rubric>Omelia de sanitate animae</rubric>
+                        <incipit>Nostis, fratres karissimi, omnes homines sanitatem corporis querere </incipit>
+                        <explicit>et inmarciscibilem gloriam perfruatis sine fine in saecula adiuuante ipso qui cum patre uiuit et regnat. </explicit>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 104r-105v)</locus>
+                        <rubric>Sermo sancti Augustini de sanctorum mart.</rubric>
+                        <incipit>Solemnitas beatissimorum martyrum lectionem nobis reddidit diem</incipit>
+                        <explicit>ut probatum uellit cum martyribus coronare cui est honor et gloria in saecula saeculorum. Amen.</explicit>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 105v-107r)</locus>
+                        <rubric>Omelia in natiuitate et dedicatio ecclesie</rubric>
+                        <incipit>Quotienscumque, fratres karissimi, <sic>alturis</sic> et templi festiuitatem colimus</incipit>
+                        <explicit>et illud serue bone et fidelis intra in gaudium Domini tui.</explicit>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 107r-108r)</locus>
+                        <rubric>Predicatio sancti Pauli apostoli</rubric>
+                        <incipit><quote>Spiritu ambulate et desideria carnis non perficietis ...</quote> Sed haec contra singula uitia uirtutes singulae opponuntur ut ipso </incipit>
+                        <explicit>ubi certa requies exspectatur indesinenter desiderent</explicit>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 108r-109r)</locus>
+                        <rubric>De Dei timore</rubric>
+                        <incipit>Timor Domini sicut dictum est: <quote>initium sapientiae timor Domini</quote>. Per timorem Domini multa bona possumus promereri </incipit>
+                        <explicit>ut illuc conprehendere possit, uitam caelestem quietem sine fine in saecula saeculorum. Amen. </explicit>
+                     </msItem>
+                     <textLang mainLang="la">Latin</textLang>
+                  </msItem>
+                  
                   <msItem xml:id="MS_Laud_Misc_129-item4" n="4" class="#vitas_patrum">
+                     <locus>(fols. 109v-137v)</locus>
                      <title type="desc" key="work_13047">Lives of Church Fathers</title>
+                     <rubric>De monacho uage mentis ad salutem reducto</rubric>
+                     <incipit>In uno autem monasterii quidam monachus erat, qui adorationem stare non poterat </incipit>
+                     <note>Includes readings on Severus, Martinus, Gregorius, Benedictus, De puerulo liberato, De offerendis, Eulogius, Apollonius, Ammonius, Copres, Mutius, Piamon, Arsenius, Paphnutius, Eulalius. </note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
+                  <msItem>
+                     <locus>(fols. 138r-149v)</locus>
+                     <title>Theological work</title>
+                     <!--not searched yet if this is an authored work-->
+                     <note>Includes readings on various theological topics:</note>
+                     <rubric>De martirio</rubric>
+                     <incipit>Seruus Dei aduersitate nulla frangitur sed pro ueritatis defensione</incipit>
+                     <rubric>De antichristo</rubric>
+                     <rubric>De die iudici</rubric>
+                     <rubric>De gehenna</rubric>
+                     <rubric>De penis impiorum</rubric>
+                     <rubric>De resurrectione</rubric>
+                     <rubric>De sapientia</rubric>
+                     <rubric>De fide</rubric>
+                     <rubric>De caritate</rubric>
+                     <rubric>De spe</rubric>
+                     <rubric>De gratia</rubric>
+                     <rubric>De conuersis</rubric>
+                     <rubric>De conpunctione</rubric>
+                     <rubric>De confessione</rubric>
+                     <rubric>De manifestis ocultisque peccatis</rubric>
+                     <rubric>De desperatio</rubric>
+                     <rubric>De peccandi consuetudine</rubric>
+                     <rubric>De cogitatione</rubric>
+                     <rubric>De conscientia</rubric>
+                     <rubric>De mendatio</rubric>
+                     <rubric>De iuramento</rubric>
+                     <rubric>De continentia</rubric>
+                     <rubric>De tribulatione iustorum</rubric>
+                     <rubric>De iracundis</rubric>
+                     <rubric>De amicitia munera orta</rubric>
+                     <rubric>De odio</rubric>
+                     <rubric>De tollerantia diuine correptionis</rubric>
+                     <rubric>De temptationibus diaboli</rubric>
+                     <rubric>De inuidia</rubric>
+                     <textLang mainLang="la">Latin</textLang>
+                  </msItem>
+                  
                   <msItem xml:id="MS_Laud_Misc_129-item5" n="5">
+                     <locus>(fols. 149v-158v)</locus>
                      <title type="desc" key="work_10448">Bestiary</title>
+                     <!--not searched yet if this is an authored work-->
+                     <rubric>Incipit de natura animalium de leone et animalium et enim Iacob bene dicens ait, catulus leonis iuda </rubric>
+                     <incipit>Leo tres naturas habet, prima cum ambulat iter faciens in montibus</incipit>
+                     <note>Includes readings on the following:</note>
+                     <rubric>De autolape</rubric>
+                     <rubric>De pirabolo</rubric>
+                     <rubric>De serra</rubric>
+                     <rubric>De caratrio</rubric>
+                     <rubric>De pellicano</rubric>
+                     <rubric>De noctecorace</rubric>
+                     <rubric>De foenice</rubric>
+                     <rubric>De upupo</rubric>
+                     <rubric>De onagro</rubric>
+                     <rubric>De serpente</rubric>
+                     <rubric>De aquila</rubric>
+                     <rubric>De formica</rubric>
+                     <rubric>De uulpe</rubric>
+                     <rubric>De arbore perennicae</rubric>
+                     <rubric>De elifante</rubric>
+                     <rubric>De agate</rubric>
+                     <rubric>De lapide adamantino</rubric>
+                     <rubric>De pardice</rubric>
+                     <rubric>De ultore</rubric>
+                     <rubric>De renocae</rubric>
+                     <textLang mainLang="la">Latin</textLang>
+                  </msItem>
+                  <msItem>
+                     <locus>(fols. 158v-159v)</locus>
+                     <!--not searched yet if this is an authored work-->
+                     <rubric>Super cantica canticorum</rubric>
+                     <incipit>Rex Dominus Ihesus aeclesiam id est Dei sermo animam sub conlugis titulo appellauit</incipit>
+                     <explicit>ab Adam usque Iohannem baptistam</explicit>
+                     <note>fols. 159v-160v blank.</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -80,28 +486,56 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>i (paper) + 160 + i (paper) leaves
+                           <dimensions unit="mm" type="leaf">
+                              <height>285</height>
+                              <width>220</width>
+                           </dimensions>
+                           <dimensions unit="mm" type="written">
+                              <height>200</height>
+                              <width>140</width>
+                           </dimensions>
+                        </extent>
+                        <foliation>1-161</foliation>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="1" writtenLines="26">26 long lines</layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <handDesc>
+                     <handNote script="minusculeCaroline">In Anglo-Saxon (fols. 120v, 148v, 149r) and early Carolingian minuscule. (P&amp;A iii. 15, pl. I)</handNote>
+                  </handDesc>
                   <decoDesc>
-                     <decoNote type="decInit">Good initials. In Anglo-Saxon and early Carolingian minuscule (fols. 120v, 148v,
-                  149). (P&amp;A iii. 15, pl. I)
-                     </decoNote>
+                     <decoNote type="decInit">Good initials. (P&amp;A iii. 15, pl. I) </decoNote>
                   </decoDesc>
+                  <bindingDesc>
+                     <binding calendar="Gregorian" notAfter="1639" notBefore="1637">
+                        <p>Brown tanned calf over laminated pulpboard for Abp. Laud, 1637–1639.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="0850" notBefore="0800">9th century, first half</origDate>
+                     <origDate calendar="Gregorian" notBefore="0800" notAfter="0825">9th century, beginning</origDate>
+                     <!--WAS: <origDate calendar="Gregorian" notAfter="0850" notBefore="0800">9th century, first half</origDate>-->
                      <origPlace>
-                        <country key="place_7000084">German</country>, <region>Middle Rhine</region>
-                        <!--ORIGINAL: German, Middle Rhine-->
+                        <country key="place_7muumi000084">German</country>, <region>Middle Rhine</region>
+                        <!--ORIGINmoominAL: German, Middle Rhine-->
                      </origPlace>
                   </origin>
+                  <provenance resp="#Q2" when="1637"><persName role="fmo" key="person_54940373">William Laud, 1573-1645</persName>, 1637.
+                  </provenance>
+                  <acquisition when="1639" resp="#Q2">Part of his third donation to the Bodleian, 1639.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (H. O. Coxe,  <title>Laudian Manuscripts</title>, Quarto Catalogues II, repr. with corrections, 1969, from the original ed. of 1858-1885). Decoration, localization and date follow Pächt and Alexander (1973).  
-                            
+                        <source>Description adapted (November 2020) from the following sources: 
+                           <listBibl>
+                              <bibl>B. Bischoff, <title>Katalog der festländischen Handschriften des neunten Jahrhunderts</title>, II, p. 373, no. 3834. [measurements, script, origin]</bibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, 3 vols. (1966-1973) III, no. 15, pl. I. [decoration]</bibl>
+                              <bibl>H. O. Coxe, <title>Laudian Manuscripts</title>, Quarto Catalogues II, repr. with corrections, 1969, from the original ed. of 1858-1885. [contents, acquisition]</bibl>
+                           </listBibl>
                             
                             <listBibl>
                               <bibl type="QUARTO" facs="aby0113.gif">Quarto Catalogue, cols. 129-30</bibl>
@@ -115,8 +549,9 @@
             </msDesc>
          </sourceDesc>
       </fileDesc>       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
+      <revisionDesc>          
+         <change when="2020-11-18">Description revised for Polonsky digitization project to include additional information from printed descriptions.</change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>
