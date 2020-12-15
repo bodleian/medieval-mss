@@ -3,7 +3,10 @@
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6326">
    <teiHeader>
-      <!-- todo: dimensions -->
+      <!-- todo: dimensions; 
+         binding
+         authority records and indexing
+      -->
       <fileDesc>
          <titleStmt>
             <title>MS. Junius 83</title>
@@ -11,6 +14,8 @@
             <respStmt>
                <resp when="2003">Cataloguer</resp>
                <persName>Stephen Mossman</persName></respStmt>
+            <respStmt>
+               <resp when="2020">Cataloguer</resp><persName>Matthew Holford</persName></respStmt>
             <respStmt><resp when="2020">Encoding</resp><persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -108,8 +113,8 @@
                         
                         <msItem>
                            <locus>(fols. 4r-9v)</locus>
-                           <title key="work_10685">Calendar</title>
-                           <note>About half-full; includes (30 April) Peter of Verona, canonized 1253, apparently as an early addition. Pr. Braekman and Gysseling, 581-90. Attributed to the Cistercian abbey of St Servaes, Utrecht, by A.D.A. Monna, ‘Diagnose van een omstreden 13e eeuwse kalender uit de Servaasabdij te Utrecht’, <title>Archief voor de geschiedenis van de Katholieke Kerk in Nederland</title> 25 (1983), 145-180.</note>
+                           <title key="work_10685" type="desc">Calendar</title>
+                           <note>About half-full; includes (30 April) Peter of Verona, canonized 1253, apparently as an early addition. Pr. Braekman and Gysseling, 581-90. Attributed to the Cistercian abbey of St Servaes, Utrecht, by A.D.A. Monna, ‘Diagnose van een omstreden 13e eeuwse kalender uit de Servaasabdij te Utrecht’, <title>Archief voor de geschiedenis van de Katholieke Kerk in Nederland</title> 25 (1983), 145-180. The attribution had been queried by J. P. Gumbert, 'Is Het ‘Kalendarium Van 1253’ Wel Utrechts?', <title>Tijdschrift voor Nederlandse Taal- en Letterkunde</title> 93 (1977), 201-2, but Gumbert withdrew his objections after the publication of Monna's article (J. P. Gumbert, 'Het ‘Kalendarium van 1253’ is wel degelijk Utrechts', <title>Tijdschrift voor Nederlandse Taal- en Letterkunde</title> 101 (1985), 160.</note>
                         <textLang mainLang="la">Latin</textLang></msItem>
                            <msItem><locus>(fols. 4v-9v)</locus><title>Limburger Monatsregeln (Limburgse Gezondheidsregels)</title>
                               <incipit><note>(February)</note> In deser manet sal tu blůet laten bi den dume of ander medianen · drach oec enen warmen      
@@ -117,7 +122,7 @@
                               <explicit><note>(December)</note> In dece<ex>m</ex>bri so iset winter · So laet an dinen houede blůt dat is di wer dat houetswar gůt 
                               · Et alre hande sote eten · ende bade mitten steine · so bliuet din lif sunt ende reine · </explicit>
                               <note>In the margins of the kalendar are rules for the months in rhymed verse, beginning with February (January, on 4r, is without one). These are added in a 13th century textualis by a subsequent hand to the primary hand of the kalendar.<!-- They are not in Dutch, but in Middle Low German of the North Limburg dialect, probably from the Middle High German – Middle Low German transitional region around Venlo.--> Pr. Braekman and Gysseling, 591-2.</note>
-                           <textLang mainLang="nl">Dutch</textLang>
+                           <textLang mainLang="nl" otherLangs="de">Dutch or Middle Low German (dialect of N. Limburg)</textLang>
                            </msItem>
                      </msItem>
                      <msItem n="3">
@@ -130,14 +135,14 @@
                      </msItem>
                      <msItem n="4">
                         <locus>(fol. 10r)</locus>
-                        <title type="desc">Notes on the liturgy of the divine office</title>
+                        <title type="desc">Brief ordinal</title>
                         <incipit>Quando hystor<ex>ia</ex> in principio infra octauam assumptionis beate marie euenerit canenda<!--, dicetur ad vesperas capit. Benedictus deus, R. Inicium, Ymnus Deus creator--></incipit>
                         <explicit>Benedicti et Bernardi non dicetur excepto quod in festo beati Bernardi fiet commemoratio de sancto Benedicto</explicit>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                      <msItem n="5">
                         <locus>(fols. 10v-11r)</locus>
-                        <note>Table of movable feasts for each of the possible days of Easter</note>
+                        <note>Table of movable feasts for each of the possible days of Easter from 22 March to 25 April</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                      <msItem n="6">
@@ -176,10 +181,10 @@
                      <origin>
                         <origDate calendar="Gregorian" notBefore="1250" notAfter="1255" cert="high">c. 1252 (with later additions)</origDate>
                         <origPlace>
-                           <country key="place_7016845">Dutch</country>, <settlement key="place_7006926">Utrecht</settlement>, <orgName role="fmo">Cistercian nunnery of St Servatius (St Servaes) (?)</orgName>
+                           <country key="place_7016845">Dutch</country>, <settlement key="place_7006926">Utrecht</settlement>, <orgName role="fmo">Cistercian nunnery of St Servatius (St Servaes) </orgName>
                         </origPlace>
                      </origin>
-                     <provenance>Probably written at the nunnery of St Servatius (evidence of the calendar and other contents); the date is suggested by the computistical tables and the apparent addition of Peter of Verona to the calendar.</provenance>
+                     <provenance>Probably written at the nunnery of St Servatius (evidence of the calendar and other contents); the date is suggested by the computistical tables and the apparent addition of Peter of Verona to the calendar. <!-- TODO: literature --></provenance>
                   </history>
                </msPart>
                <msPart xml:id="MS_Junius_83-part2">
@@ -209,7 +214,7 @@
                         <incipit>Homo · Vir · Mulier · Femina · Uirago · Capud · Vertex <lb/> Coma ualh · Capillus har · Cesaries · 
                            Jungenmannes · <lb/> Crines · wiueshar · Barba · bart · 
                         </incipit><explicit>   Laureum lorboum · Quando u<ex>er</ex>o hui<ex>us</ex>modi diriuatiua de arborib<ex>us</ex> nomi<ex>n</ex>a minus idonee 
-                           potuerint inueniri · rac<ex>i</ex>onabilit<ex>er</ex> loquum<ex>ur</ex> · sicut nobis i<ex>n</ex> sc<ex>ri</ex>ptura diuina explanatum e<ex>st</ex>  · Tulit uirgas ex platanis <ex>et</ex> similia · 
+                           potuerint inueniri · rac<ex>i</ex>onabilit<ex>er</ex> loquim<ex>ur</ex> · sicut nobis i<ex>n</ex> sc<ex>ri</ex>ptura diuina explanatum e<ex>st</ex>  · Tulit uirgas ex platanis <ex>et</ex> similia · 
                         </explicit>
                         <bibl>E. Steinmeyer and E. Sievers, <title>Die althochdeutschen glossen</title> III (1879) 362-88 (no. 841)</bibl>
                         <textLang mainLang="la" otherLangs="de">Latin and Old High German </textLang>
