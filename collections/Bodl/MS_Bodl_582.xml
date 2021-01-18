@@ -5,18 +5,21 @@
          <titleStmt>
             <title>MS. Bodl. 582</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
             </respStmt>
-         </titleStmt>
-         <editionStmt>
-            <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>H. H. E. Craster</persName>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2021">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
-         </editionStmt>
+         </titleStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
             <address>
@@ -50,44 +53,74 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  <textLang mainLang="la">Latin</textLang>
                   <msItem xml:id="MS_Bodl_582-item1" n="1">
-                     <author key="person_95147024">
-                        
-                        Jerome
-                     
-                     </author>
+                     <author key="person_95147024">Jerome</author>
                      <title key="work_2399">Commentary on Ecclesiastes</title>
-                     <bibl type="commentedOn">
-                        <title>Bible, Ecclesiastes</title>
-                     </bibl>
-                     <textLang mainLang="la">Latin</textLang>
+                     <rubric>Expositio Ieronimi in Ęcclesiasten</rubric>
+                  </msItem>
+                  <msItem xml:id="MS_Bodl_582-item1a">
+                     <locus>(fol. 52v)</locus>
+                     <title type="desc" key="work_15283">Theological notes</title>
+                     <rubric>Quedam exposiciones in theologia</rubric>
+                     <incipit>Sexto die formatur homo</incipit>
+                  </msItem>
+                  <msItem xml:id="MS_Bodl_582-item1b">
+                     <locus>(fol. 59)</locus>
+                     <rubric>De nominibus Hebraicis interpretationes</rubric>
+                     <incipit>Adonay in Latinum
+                     dicitur Dominus</incipit>
+                     <note>Based on the first eight chapters of the second
+                        book of the <title key="work_1478">Instructiones</title> of <persName role="aut" key="person_90719515">Eucherius</persName>, but fuller.</note>
+                  </msItem>
+                  <msItem xml:id="MS_Bodl_582-item1c"><note> There are 13th, 14th, and 15th cent. lists of contents on
+                     fol. 1v and the outer covers: and some theological notes written with a
+                     metal stilus on fols. 64v-6.</note>
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>i + 67 leaves
+                           <dimensions type="leaf" unit="in">
+                              <height>11</height>
+                              <width>7</width>
+                           </dimensions></extent>
                      </supportDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>Fine initials. By the same hand as London, B.L., Cotton MS. Caligula A. VIII.
+                     <decoNote type="decInit">Fine initials. By the same hand as <bibl type="ms" subtype="external">London, B.L., Cotton MS. Caligula A. VIII</bibl>.
                   (P&amp;A iii. 101, pl. X)
                      </decoNote>
                   </decoDesc>
+                  <bindingDesc>
+                     <binding notAfter="1150" notBefore="1125">
+                        <p>Contemporary binding of white leather on boards. Tabs with traces of colour woven fabric. Later title in red. Book-markers.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1150" notBefore="1125">12th century, second quarter</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>, <settlement key="place_7012190">Ely</settlement>
+                        <country key="place_7002445">English</country>, <settlement key="place_7012190">Ely</settlement>, <orgName role="fmo" key="org_158244517">cathedral priory</orgName> 
                         <!--ORIGINAL: English, Ely-->
                      </origPlace>
                   </origin>
+                  <provenance><orgName role="fmo" key="org_158244517">Ely Cathedral</orgName>: pressmark 'M. 23'.</provenance>
+                  <provenance>Erased 15th-century ex libris, fol. 1.</provenance>
+                  <provenance><orgName role="fmo" key="org_2142145857037522921207">Windsor, collegiate church.</orgName></provenance>
+                  <acquisition when="1612">Presented by the Dean and
+                     canons of Windsor in 1612.</acquisition>
                </history>
                <additional><adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973).  
-                            
+                        <source>Description adapted (Jan. 2021) from the following sources:
+                           <listBibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, III (1973), no. 101 [decoration, origin, date, binding, provenance]</bibl>
+                              <bibl>Summary Catalogue (1922)</bibl>
+                           </listBibl> 
                             
                             <listBibl>
                               <bibl type="SC" facs="aap0278.gif">Summary Catalogue, vol. 2, part 1, p. 257</bibl>
@@ -100,8 +133,9 @@
          </sourceDesc>
       </fileDesc>       
       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
+      <revisionDesc>       
+         <change when="2021-01-18">Description revised to incorporate all information in SC and P&amp;A.</change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>
