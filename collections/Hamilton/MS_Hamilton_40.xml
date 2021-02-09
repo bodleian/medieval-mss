@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6003">
    <teiHeader>
-      <!-- TODO: (now) dimensions -->
       <!-- TODO: (if time) identify text on fol. 290 -->
       <!-- TODO: (later) fuller descriptions of content and codicology -->
       <fileDesc>
@@ -73,13 +72,20 @@
                      <supportDesc material="chart">
                         <support>paper</support>
                         <extent> ii (medieval parchment) + 352 leaves + i (medieval parchment)
-                           <!-- TODO: dimensions -->
+                              <dimensions unit="mm" type="leaf">
+                                 <height max="155" min="145">145-155</height>
+                                 <width>105</width>
+                              </dimensions>
                         </extent>
                         <foliation>Medieval foliation in back and red inks, 1–289, but with numerous gaps and inserted leaves, necessitating duplicate folio numbers in modern pencil, recorded as: ‘Really 352 for pp 26, 32, 40, 49, 50, 52, 54, 59, 71, 75, 76, 78, 83, 96, 117, 127, 133, 134, 147, 148, 149, 150, 151, 152, 153, 159, 163, 165, 167, 169, 170, 178, 179, 180, 181, 185, 187, 191, 193, 194, 195, 216, 236, 242, 244, 247, 248, 249, 250, 267 and 273 are double; pp. 47 &amp; 195 are treble; page 101 is fivefold and p. 201 is sevenfold’
                         </foliation>
                      </supportDesc>
                      <layoutDesc>
-                        <layout columns="1" writtenLines="31 35">Verticals (only) ruled in ink, written in 1 col., typically of 31–35 lines.
+                        <layout columns="1" writtenLines="31 35">Verticals (only) ruled in ink, written in 1 col., typically of 31–35 lines. 
+                           Written space varies, typically <dimensions unit="mm" type="written">
+                           <height min="120" max="135">120-135</height>
+                           <width max="80" min="70">70-80</width>
+                        </dimensions>
                         </layout>
                      </layoutDesc>
                   </objectDesc>
@@ -113,7 +119,7 @@
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Peter Kidd (Jan. 2021), edited by Matthew Holford. Previously described in the Summary Catalogue. 
+                        <source>Summary description (Jan. 2021) by Peter Kidd, edited and dimensions supplied by Matthew Holford. Previously described in the Summary Catalogue. 
                            
                             <listBibl>
                               <bibl type="SC" facs="aam0066.gif">Summary Catalogue, Vol. 5, p.  31</bibl>
@@ -145,7 +151,7 @@
                      <objectDesc form="codex">
                         <supportDesc material="perg">
                            <support>parchment</support>
-                           <!-- TODO: dimensions -->
+                           <extent>lower part of a leaf</extent>
                         </supportDesc>
                      </objectDesc>
                      <handDesc><handNote script="protogothic">Protogothic bookhand.</handNote></handDesc>
@@ -160,7 +166,7 @@
                <msPart xml:id="MS_Hamilton_40_endleaf_2" type="endleaf">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Hamilton 40 - endleaf (fol. ii r-v)</idno>
+                        <idno type="part">MS. Hamilton 40 - endleaf (fol. ii r-v and unfoliated fragment before fol. i)</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
@@ -171,7 +177,9 @@
                            <title key="work_16400">Compilatio tertia decretalium</title>
                            <rubric>Idem illustri regi Navarie</rubric>
                            <incipit>Ad audienciam nostram</incipit>
-                           <note>Fol. ii verso has the end of II.xv.2 and the beginning of II.xv.3; fol. ii recto has the end of II.xv.3 and (presumably) part of II.xv.4 (<title>Quinque compilationes</title>, ed. Friedberg, 114-5); cf. Innocent III, ep. I.556 (PL 214.509)</note></msItem><!-- online: https://works.bepress.com/david_freidenreich/21/ -->
+                           <rubric>Idem illustri regi aringonen.</rubric>
+                           <incipit>Quanto personam tuam</incipit>
+                           <note>Fol. ii verso has the end of II.xv.2 and the beginning of II.xv.3; fol. ii recto has the end of II.xv.3 and (presumably) part of II.xv.4 (<title>Quinque compilationes</title>, ed. Friedberg, 114-5); cf. Innocent III, ep. I.556 (PL 214.509); the fragment before fol. i has (on the verso) the beginning of II.xv.4</note></msItem><!-- online: https://works.bepress.com/david_freidenreich/21/ -->
                         <msItem>
                            <title key="work_16401" type="desc">Commentary on Compilatio tertia decretalium</title>
                            <note>Apparently not the usual apparatus of Johannes Teutonicus (ed. K. Pennington)</note> <!-- online:  http://legalhistorysources.com/#Joh.%20Teu.%20Baldus -->
@@ -185,9 +193,11 @@
                      <objectDesc form="codex">
                         <supportDesc material="perg">
                            <support>parchment</support>
-                           <!-- todo: dimensions -->
+                           <extent>fragments of one folio (the upper fore-edge corner)</extent>
                         </supportDesc>
-                        <layoutDesc><layout columns="2">2 cols.</layout></layoutDesc>
+                        <layoutDesc><layout columns="2">2 cols., width of a column c. <dimensions unit="mm" type="column">
+                           <width>50</width>
+                        </dimensions> mm.</layout></layoutDesc>
                      </objectDesc>
                      <handDesc>
                         <handNote script="textualisNorthern">Gothic bookhand</handNote>
@@ -223,10 +233,13 @@
                      <objectDesc form="codex">
                         <supportDesc material="perg">
                            <support>parchment</support>
+                           <extent>part of a bifolium</extent>
                            <!-- TODO: dimensions -->
                         </supportDesc>
                         <layoutDesc>
-                           <layout>2 cols.</layout>
+                           <layout>1 col., width of the column at least <dimensions unit="mm" type="column">
+                              <width atLeast="80">80</width>
+                           </dimensions>80 mm.</layout>
                         </layoutDesc>
                      </objectDesc>
                      <handDesc><handNote>Informal bookhand with cursive features</handNote></handDesc>
