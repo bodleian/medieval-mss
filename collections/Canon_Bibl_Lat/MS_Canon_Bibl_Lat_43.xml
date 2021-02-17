@@ -4,10 +4,14 @@
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2059">
    <teiHeader>
       <fileDesc>
+         <!-- TODO: return to question of origin (since Canon liturg 324 may be attributable to Moggio) 
+                    check Soranzo card-index
+                    confirm collation
+         -->
          <titleStmt>
             <title>MS. Canon. Bibl. Lat. 43</title>
             <title type="collection">MSS. Canon. Bibl. Lat. (Canonici Latin Biblical)</title>
-            <respStmt xml:id="VD">
+           <!-- <respStmt xml:id="VD">
                <resp when="1957">Cataloguer</resp>
                <persName>S. J. P. van Dijk</persName>
             </respStmt>
@@ -15,15 +19,19 @@
                <resp when="1966">Cataloguer</resp>
                <persName>Otto Pächt</persName>
                <persName>J. J. G. Alexander</persName>
+            </respStmt>-->
+            <respStmt xml:id="PK">
+               <resp when="2021-02">Cataloguer</resp>
+               <persName>Peter Kidd</persName>
             </respStmt>
             <respStmt xml:id="MLH">
-               <resp when="2017">Encoding and markup</resp>
+               <resp when="2021-02">Encoding and markup</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
-            <respStmt xml:id="Q">
+            <!--<respStmt xml:id="Q">
                <resp when="1854">Cataloguer</resp>
                <persName>H. O. Coxe</persName>
-            </respStmt>
+            </respStmt>-->
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
@@ -60,17 +68,44 @@
                      <idno type="SCN">18935</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents resp="#VD">
-                  <msItem xml:id="MS_Canon_Bibl_Lat_43-item1" n="1" class="#liturgica">
+               <head>Gospel lectionary, Benedictine use; Germany, 11th century</head>
+               <msContents>
+                  <textLang mainLang="la">Latin</textLang>
+                  <msItem>
                      <title type="desc" key="work_12069">Gospel lectionary, Benedictine use</title>
-                     <note>Temporale (fol. 1), beginning with Christmas eve and ending with votive masses during
-                        the week after the Dominica proxima to Christmas (fol. 86); sanctorale (fol. 87),
-                        beginning with St. Sylvester; common of the saints and the dedication (fol. 99);
-                        votive masses (fol. 107<hi rend="superscript">v</hi>) and masses for the dead (fol. 113), in some
-                     cases with the epistle as well. Contemporary additions: super analogium, ad
-                     bened. palmarum, in die [ad] collationem sancti Iohannis baptiste (fol. 115, see 90);
-                     several additions in the sanctorale.</note>
-                     <textLang mainLang="la">Latin</textLang>
+                     <msItem xml:id="MS_Canon_Bibl_Lat_43-item1">
+                        <locus>(fols. 1r-86r)</locus>
+                        <note>Temporale from Christmas Eve to twenty-four weeks after Trinity Sunday, the five weeks before Christmas, and Trinity</note>
+                        <rubric>In vigilia nativitatis domini. Matheum</rubric>
+                        <incipit>Cum esset deponsata mater Ihesu Maria </incipit></msItem>
+                     <msItem xml:id="MS_Canon_Bibl_Lat_43-item2">
+                        <locus>(fols. 87r-98v)</locus>
+                        <note>Sanctorale, from St Sylvester to St Thomas the Apostle (31 December – 21 December). Most feasts indicated by name and heavily abbreviated cue only:</note>
+                        <rubric>Incipit breuiarium de sanctis</rubric>
+                        <incipit>Nat<ex>alis</ex> Siluestri pape. Ev<ex>angelium</ex>. Vigil<ex>ate</ex> q<ex>uia</ex> n<ex>escitis</ex></incipit>
+                        <note>Original feasts include Walburga, Gangulf, Ulric, Kylian, Affra, Verena, Emmeram, Wenceslas (‘Venezlai’), Gereon, Wolfgang, Pirminus (fol. 97r), Willibrord, and Othmar.</note>
+                        <note>Early additions include Oswald (fol. 92v), Radegund (fol. 93r), and Florinus (fol. 97v).</note>
+                     </msItem>
+                     <msItem xml:id="MS_Canon_Bibl_Lat_43-item3">
+                        <locus>(fols. 98v–107r)</locus>
+                        <note>Common of the saints</note></msItem>
+                     <msItem xml:id="MS_Canon_Bibl_Lat_43-item4">
+                        <locus>(fols. 107v–113r) </locus>
+                        <note>Votive masses</note>
+                        </msItem>
+                     <msItem xml:id="MS_Canon_Bibl_Lat_43-item5">
+                        <locus>(fols. 113r–114v)</locus>
+                        <note> Masses for the dead, in some cases with the epistle as well.</note>
+                        <rubric>In agenda mortuorum. Ad Thessalonicenses</rubric>
+                        <incipit>Fratres. <supplied>N</supplied>olumus vos ignorare de dormientibus</incipit></msItem>
+                     <msItem xml:id="MS_Canon_Bibl_Lat_43-item6">
+                        <locus>(fol. 115r–v)</locus>
+                        <note>Contemporary additions:</note>
+                        <rubric>Super analogium</rubric>
+                        <rubric>Ad benedictionem palmarum</rubric>
+                        <rubric>In decollationem sancti Iohannis baptiste</rubric>
+                     </msItem>
+                     <note>The accounts of the Passion (fols. 30r–46v) with the parts indicated by a, c and t, and with neumes above Christ’s words on the cross from Matthew 27:46 (fol. 34r). Luke 3:1–2 (fol. 85r–v), and the genealogies of Christ from Luke (fol. 5r–v) and Matthew (fol. 94v–95r) also notated.</note>
                   </msItem>
                </msContents>
                <physDesc>
@@ -86,40 +121,51 @@
                               <width>120</width>
                            </dimensions>
                         </extent>
-                      
+                        <foliation>1–115 (the flyleaves not foliated)</foliation>
+                        <collation>12th(?)-century quire signatures from ‘iiii’ (fol. 8v) suggest three missing quires at the beginning; xv and xvi written as ‘vx’ and ‘vix’; apparently in quires of 8 leaves except ‘x’ of 10 leaves (fols. 48–57) and the final quire, also of 10 (fols. 106–115) </collation>
                      </supportDesc>
                      
                      <layoutDesc>
-                           <layout columns="1" writtenLines="27">27 lines</layout>
+                        <layout columns="1" writtenLines="27" rulingMedium="hardpoint">Blind-ruled for a single column of 27 lines; the list of ancestors of Christ from Luke in three columns (fol. 5r–v).</layout>
                         </layoutDesc>
                   </objectDesc>
+                  <handDesc>
+                     <handNote script="minusculeCaroline">Late Caroline bookhand.</handNote>
+                  </handDesc>
                   <musicNotation>
-                     <p>Occasional neums above the text; the genealogies of Christ (fol. 5: St. Luke, 94<hi rend="superscript">v</hi>: St. Matthew) with notation; in all passions (fol. 30) the parts are indicated by a, c and t. </p>
+                     <p>Occasional neums above the text; the genealogies of Christ (fol. 5r-v, 94v-95r) with notation. </p>
                   </musicNotation>
                   <decoDesc>
-                     <decoNote resp="#PA">Initial. (P&amp;A i. 47)</decoNote>
-                     <decoNote resp="#VD">Plain red initials, except for one on the titlepage (fol. 1).</decoNote>
+                     <decoNote type="decInit">One four-line pen-drawn initial (fol. 1r), with coiling foliate forms and buds in brown ink, and red dots. (P&amp;A i. 47)</decoNote>
+                     <decoNote type="unfilled">A space left blank for one other large initial (fol. 113r).</decoNote>
+                     <decoNote type="colInit">Other initials throughout in plain red.</decoNote>
                   </decoDesc>
+                  <bindingDesc>
+                     <binding notAfter="1810" notBefore="1700">
+                        <p>Sewn on four bands and bound with 18th/19th-century Italian(?) three-quarter leather over brown paper-covered pasteboards; the spine with a title-piece lettered in gilt capitals ‘Evang. per totum annum MS Sec. X’</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
                   <origin resp="#PA">
-                     <origDate calendar="Gregorian" notAfter="1100" notBefore="1090">11th century, end</origDate>
+                     <origDate calendar="Gregorian" notAfter="1100" notBefore="1090">11th century, late</origDate>
                      <origPlace>
-                        <country key="place_7000084">German</country>, <region>South</region>
+                        <country key="place_7000084">German</country>, <region>south-west</region>
                         <!--ORIGINAL: German, South-->
                      </origPlace>
                   </origin>
-                  <provenance resp="#VD">Van Dijk, noting that the sanctorale is identical to that of the Epistle &amp; Gospel Book,
-                     MS. Canon. liturg. 324, suggested an origin in <placeName key="place_7005178">Hirsau</placeName>.</provenance>
+                  <provenance resp="#VD"><orgName role="fmo" key="org_312840854">Hirsau Abbey</orgName>?: van Dijk notes that the sanctorale is identical to that of the Epistle &amp; Gospel Book, MS. Canon. liturg. 324, which he suggests is from Hirsau Abbey, partly due to the presence of its patron, St Aurelius, whose relics there were elevated by Pope Leo IX in 1049. He is included in the present volume (fol. 95v), as is the rare St Pirminus, who was venerated at Strasbourg, Chur, Freiburg, St Gall, and Speyer, supporting an origin in south-western Germany.
+                  </provenance>
                   <provenance notBefore="1727" notAfter="1805"><persName role="fmo" key="person_2384880">Matteo Luigi Canonici, 1727-1805</persName></provenance>
                   <provenance notAfter="1807"><persName role="fmo" key="person_446">Giuseppe Canonici, -1807</persName></provenance>
-                  <acquisition when="1817">Purchased by the Bodleian in 1817.</acquisition>
+                  <acquisition when="1817">Purchased by the Bodleian in 1817. Former Bodleian shelfmark ‘Can Bibl. 43.’ (front pastedown)
+                     A list in pencil of some of the saints in the sanctorale is initialled H.C. (front pastedown).</acquisition>
                   
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>S. J. P. Van Dijk, <title>Handlist of the Latin Liturgical Manuscripts in the Bodleian Library Oxford : Vol. 1: Mass Books</title> (typescript, 1957); Pächt and Alexander (see Bibliography); previously described in the Quarto Catalogue (H. O. Coxe,  <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854). 
+                        <source>Summary description (Feb. 2021) by Peter Kidd, edited by Matthew Holford. Previously described in the Quarto Catalogue (H. O. Coxe,  <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854). 
                             
                             
                             <listBibl>
@@ -131,12 +177,15 @@
                   </adminInfo>
                   <listBibl type="WRAPPER"><listBibl>
                      <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, I (1966), no. 47</bibl>
+                     <bibl>S. J. P. Van Dijk, <title>Handlist of the Latin Liturgical Manuscripts in the Bodleian Library Oxford : Vol. 1: Mass Books</title> (typescript, 1957)</bibl>
                   </listBibl></listBibl>
                </additional>
             </msDesc>
          </sourceDesc>
       </fileDesc>       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
+      <revisionDesc>       
+         <change when="2021-02-17">Description revised for Polonsky German digitization project.</change>
+         <change when="2017-07-01">First online publication.</change>
 
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
