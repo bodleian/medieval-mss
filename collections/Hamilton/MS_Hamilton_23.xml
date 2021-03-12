@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_5984">
-   <!--  to do: extent, measurements, scribes (see notes below), watermarks, collation? -->
+  <!-- TODO perhaps: more indexing; more detail on fragments -->
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -44,8 +44,7 @@
                      <idno type="SCN">24453</idno>
                   </altIdentifier>
                </msIdentifier>
-               <head>Konrad von Soltau on the Sentences; canon law; papal formularies. Germany, 15th
-                  century.</head>
+               <head>Konrad von Soltau on the Sentences; canon law; papal formularies. Germany, presumably Erfurt, early 15th century.</head>
                <msContents>
                   <textLang mainLang="la">Latin</textLang>
                   <msItem>
@@ -125,7 +124,7 @@
                      <finalRubric>Expliciunt arenge magistri arnoldi de augusta canonum professoris
                         canonici sancti mauricii augustinensis AMEN. Non reputes hoc
                         modicum.</finalRubric>
-                     <note>Fol. 245rb blank. Comparison with other manuscripts (e.g. Munich, BSB Clm 14280, fol. 3, BAV, Borgh 95 fol. 3) suggests that the words 'hec est gratie iterate' in the incipit are a garbled version of the final words of the original rubric, 'gratie sapientie increate'.</note>
+                     <note>Fol. 245rb blank. Comparison with other manuscripts (e.g. Munich, BSB Clm 14280, fol. 3<!--, BAV, Borgh 95 fol. 3-->) suggests that the words 'hec est gratie iterate' in the incipit are a garbled version of the final words of the original rubric, 'gratie sapientie increate'.</note>
                      <!-- https://daten.digitale-sammlungen.de/bsb00046654/image_19
                      https://digi.vatlib.it/view/MSS_Borgh.95 -->
                   </msItem>
@@ -348,7 +347,9 @@
                      <rubric>Epistola beati Bernardi de cura domestica vtilius gubernanda et
                         regimine domus</rubric>
                      <incipit>Gratioso et felici militi</incipit>
-                     <explicit defective="true">deum si non timueris omnia timebis</explicit>
+                     <explicit>sue dampnabilis senectutis amen</explicit>
+                     <note>Followed, filling out the rest of fol. 286vb, by proverbial extracts, the first heading 'Verba salomonis' ('Quid prodest homini generacio clara ... de claro contemptibilem'), the second beginning 'humilitas dat ascensum' and ending 'deum si non timueris omnia timebis'.</note>
+                     
                   </msItem>
 
                   <msItem n="7">
@@ -423,22 +424,33 @@
 
                </msContents>
                <physDesc>
-                  <p>Apparently two codicological units (fols. 1-164, 165-323), with the same 
+                  <p>Apparently two codicological units (fols. 1-164, 165-323, the second falling into two sections, fols. 165-286, 287-323), with the same 
                      scribe chiefly responsible for both units, which were evidently together
-                     early.</p>
+                     early or from the outset.</p>
                   <objectDesc form="codex">
                      <supportDesc material="chart">
-                        <support>paper</support>
-                        <extent>ii (modern paper) + 323 + ii (modern paper)</extent>
+                        <support>Paper, folded in folio. Watermarks: (fols. 1-164 except quires 7, 8, 13), bull's head with 6-pointed star; (quires 7, 8, 13) bull's head with 5-petalled flower, resembles WZIS <ref target="https://www.wasserzeichen-online.de/?ref=DE4620-PO-65005">DE4620-PO-65005</ref> (1410); (fols. 165-78) fleur-de-lis with 6-petalled flower; (fols. 189-323) fleur-de-lis with 8-pointed star.</support>
+                        <extent>ii (modern paper) + 323 + ii (modern paper). Loose fragments between fols. 36/7, 152/3, 263/4, and 298/9
+                           <dimensions unit="mm" type="leaf">
+                              <height>300</height>
+                              <width>210</width>
+                           </dimensions></extent>
                         <foliation>Modern foliation i-ii, 1-325. Fols. 1-163 with fifteenth-century foliation in arabic (but with c for 100) 1-167 ('c67') in the
-                           top left corner of rectos; missing 50 before modern fol. 50, 55 before
+                           top left corner of rectos; skipping 50 before modern fol. 50, 55 before
                            modern fol. 54, 60 before (modern) fol. 58, 117 before modern fol.
                            114.</foliation>
-                        <!-- c/w: fol. 11v; fol. 12 numbered 3;   -->
+                        <collation>one quire missing; 1(12-1, 12 canc.?) (fols. 1-11), 2(12)-13(12) (fols. 12-155); 14(12-3: 9-11 canc. before fol. 164) | 15(12)-18(12) (fols. 165-212), 19(14) (fols. 213-226), 20(12)-24(12) (fols. 227-286) | 25(12)-26(12) (fols. 287-310), 27(14-1) (14 canc.; fols. 311-323). Quires numbered 2-27 (the final quire not numbered) on the bottom centre of the opening recto; catchwords.</collation>
                      </supportDesc>
                      <layoutDesc>
-                        <layout columns="1 2" writtenLines="31 40">2 cols. except for fols.
-                           287r-323v, 1 col.; c. 31-40 lines; frame-ruled in ink.</layout>
+                        <layout columns="1 2" writtenLines="31 40">2 cols., c. 37-40 lines; frame-ruled in ink. Ruled space c. <dimensions unit="mm" type="ruled">
+                              <height>220-35</height>
+                              <width>145-70</width>
+                           </dimensions></layout>
+                        <layout>Fols. 254-85 frame-ruled in blind, verticals only.</layout>
+                        <layout columns="1 2" writtenLines="31 40"> Fols. 287r-323v: 1 col., c. 32-4 lines, frame-ruled in ink with double bounding lines; ruled space <dimensions unit="mm" type="ruled">
+                           <height>220-30</height>
+                           <width>145-50</width>
+                        </dimensions></layout>
                      </layoutDesc>
                      <!-- the sequence of quires is numbered continuously; but art 1 seems a separate unit of production?
                      probably only one main scribe who seems to use 2 forms of the -rum abbreviation, sometimes preferring one, sometimes the other, but using both e.g. 94r, 100r, 102r, 258r. Changes of aspect e.g. at fol. 2vb likely represent scribal stints not changes of scribe. A florid form of superscript a characterizes the scribe in general.
@@ -457,19 +469,18 @@
                   <bindingDesc>
                      <binding contemporary="true">
                         <p>Fifteenth-century binding of whittawed skin over boards, sewn on four
-                           double/split bands, damaged; 4+1 bosses lost on each board; two clasps,
-                           fastening on the front board, lost.</p>
+                           double/split bands; 4+1 bosses lost on each board; two clasps,
+                           fastening on the front board, lost. Rebacked and repaired.</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1425" notBefore="1400">15th century
-                        (early (?))</origDate>
+                     <origDate calendar="Gregorian" notAfter="1425" notBefore="1400">15th century, early (contents, watermarks)</origDate>
                      <origPlace cert="low">
-                        <country key="place_7000084">German</country>, <settlement
+                        <country key="place_7000084">German</country>, presumably <settlement
                            key="place_7024031">Erfurt</settlement>
-                        (?)<!--ORIGINAL: German, Erfurt (?)--></origPlace>
+        <!--ORIGINAL: German, Erfurt (?)--></origPlace>
                   </origin>
                   <provenance>Presumably written at Erfurt, on the evidence of the missing first
                      item.</provenance>
@@ -492,7 +503,7 @@
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Draft description by Matthew Holford (June 2020). Previously
+                        <source>Description by Matthew Holford (June 2020, rev. March 2021). Previously
                            described in the Summary Catalogue. <listBibl>
                               <bibl type="SC" facs="aam0057.gif">Summary Catalogue, Vol. 5, p.
                                  22</bibl>
@@ -585,6 +596,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2021-03-12">Finalize description for Polonsky German digitization project.</change>
          <change when="2020-06">Draft new description for Polonsky German.</change>
          <change when="2017-07-01">First online publication.</change>
 
