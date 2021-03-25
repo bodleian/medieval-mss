@@ -3,6 +3,7 @@
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8900">
    <teiHeader>
+      <!-- TODO: check Selden's catalogue, MS. Selden Supra 111 -->
       <fileDesc>
          <titleStmt>
             <title>MS. Selden Supra 27</title>
@@ -25,10 +26,11 @@
                <persName>Otto Pächt</persName>
                <persName>J. J. G. Alexander</persName>
             </respStmt>
+            <respStmt xml:id="PK">
+               <resp when="2021-03">Cataloguer</resp>
+               <persName>Peter Kidd</persName>
+            </respStmt>
          </titleStmt>
-         <editionStmt>
-            <edition>TEI P5</edition>
-         </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
             <address>
@@ -61,71 +63,173 @@
                      <idno type="SCN">3415</idno>
                   </altIdentifier>
                </msIdentifier>
-               <head>Sequentiary and Proser, Troper; Germany (Heidenheim), 11th century, second half</head>
-               <msContents resp="#VD">
+               <head>Sequentiary and Proser, Troper, in Latin (with a few added words in German); south-east Germany (?Heidenheim), 11th century, first half</head>
+               <msContents resp="#PK">
                   <textLang mainLang="la">Latin</textLang>
-                  <msItem xml:id="MS_Selden_Supra_27-item1" n="1" class="#liturgica">
-                     <note><title type="desc" key="work_16184">Sequentiary</title> and <title type="desc" key="work_14052">proser</title>. Introductory letter of Notker Balbulus (fol. 1), imperfect at the end;
-                        proses with the notation of the Alleluia sequences in the outer margins, the
-                        interlinear neums being added; combined temporale and sanctorale (fol. 3), common
-                        of the saints (fol. 54).</note>
+                  <msItem>
+                     <locus>(fol. ir–v)</locus>
+                     <note> Inserted notes signed and dated by ‘H.M.Bannister | Sep. 3. [18]98’, with initialled addenda and corrigenda by him dated August 1901 and September 1918.</note>
                   </msItem>
-                  <msItem xml:id="MS_Selden_Supra_27-item2" n="2" class="#liturgica">
-                     <note><title type="desc" key="work_15390">Troper</title>. Tropes, mostly for introit and communion: combined temporale and
-                        sanctorale (fol. 60), incomplete at the beginning; common of the saints (fol. 78);
-                        proses of St. Willibald, Easter and Sundays (fol. 80); tropes for Kyrie (fol. 82),
-                        Gloria (fol. 84), Sanctus (fol. 89) and Agnus dei (fol. 90). Additions: proses of St.
-                        Bartholomew (fol. 90<hi rend="superscript">v</hi>), St. John the evangelist (fol. 91<hi rend="superscript">v</hi>), the verses Salve lacteolo (see fol. 88<hi rend="superscript">v</hi>
-                        and 1), some troped Ite missa est (fol. 91<hi rend="superscript">v</hi>, fol. 92); mostly 12th
-                        century.</note>
+                  <msItem>
+                     <locus>(fol. 1r)</locus>
+                     <note> Added (13th century) verses for the procession of the Holy Innocents (cf. fol. 88v).
+                     </note>
+                  </msItem>
+                  <msItem xml:id="MS_Selden_Supra_27-item1" class="#liturgica">
+                     <locus>(fols. 1v-59v)</locus>
+                     <note><title type="desc" key="work_16184">Sequentiary</title> and <title type="desc" key="work_14052">Proser</title></note>
+                     <note>The proses with the notation of the Alleluia sequences in the outer margins, mostly also with added interlinear neums.</note>
+                     <msItem>
+                     <locus>(fols. 1v–2v)</locus>
+                     <note> Introductory letter of Notker Balbulus (imperfect at the end)</note>
+                     <rubric><note>(very faded)</note> Incipit pro[ … ]</rubric>
+                     <incipit>Summę sanctitatis merito summi sacerdotii sublimato</incipit>
+                     <explicit defective="true">ego pudore retractus</explicit>
+                  </msItem>
+                  
+                     
+                     <msItem>
+                        <locus>(fols. 3r-35r)</locus>
+                        <note> Temporale, from Christmas to the octave of Pentecost</note>
+                        <incipit>Natus ante secula dei filius inuisibilis interminus</incipit>
+                        <explicit>Sanctissime spiritus patris filiique</explicit>
+                        <note>Including saints’ feasts in Christmastide, from St Stephen, and as late as St Agnes (26 Dec. – 21 Jan.); and with St Walburga (fols. 29r–30r), without notation, between the octave of Easter and Ascension.</note>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 35v–54r)</locus>
+                        <note>Sanctorale, from St John the Baptist to St Winibald (24 June – 18 Dec.)</note>
+                        <rubric> In natalis sancti Iohannis. Iustus in palma</rubric>
+                        <incipit>Sancti baptiste Christi preconis</incipit>
+                        <explicit> benedicte ueni patris mei ac perenne posside regnum</explicit>
+                        <note>Including St Willibald (fols. 37r–38v) and Winibald (fols. 53r–54r). The dedication of a church (fols. 47v–48v) is between the feasts of St Gall (16 Oct.) and All Saints (1 Nov.).</note>
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 54r–59r)</locus>
+                        <note> Common of saints</note>
+                        <rubric> In natale apostolorum</rubric>
+                        <incipit>Clare sanctorum senatus apostolorum princeps orbis terrarum </incipit>
+                        <explicit>ut saltim post facinora surgamus</explicit>
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 59r–v)</locus>
+                        <note> The Trinity</note>
+                        <rubric> De sancta trinitate</rubric>
+                        <incipit>Benedicta semper sancta trinitas</incipit>
+                        <explicit><note>(rewritten over erasure)</note> modulemur organica cantica dulci melodia</explicit>
+                        <note>Without marginal notation, and the added interlinear neumes in a more grey ink than the brown neumes added elsewhere.</note>
+                     </msItem>
+                  </msItem>
+                  <msItem xml:id="MS_Selden_Supra_27-item2"  class="#liturgica">
+                     <locus>(fols. 60r-90v)</locus>
+                     <title type="desc" key="work_15390">Troper</title>
+                     <note>Proper Tropes, mostly for introit and communion, with interlinear neumes.</note>
+                     <msItem>
+                        <locus>(fols. 60r–72)</locus>
+                        <note> Temporale, from Christmas Eve to Pentecost (lacking the first leaf).</note></msItem>
+                     <msItem>
+                        <locus>(fols. 72v–77v)</locus>
+                        <note> Sanctorale, from John the Baptist to Martin (24 June – 11 Nov.)</note>
+                        </msItem>
+                     <msItem>
+                        <locus>(fols. 77v–78r)</locus>
+                        <note> The Dedication of a church</note>
+                        </msItem>
+                     <msItem>
+                        <locus>(fols. 78r–80r)</locus>
+                        <note> Common of the saints. Many Saints is followed by St Gall, referring to him as ‘sanctissimi patroni nostri Galli’.</note></msItem>
+                  
+                  <msItem>
+                     <locus>(fols. 80r–82r)</locus>
+                     <note> Alleluia prosula for St Willibald, Easter, and Sundays</note></msItem>
+                  <msItem>
+                     <locus>(fols. 82r–90v)</locus>
+                     <note> Tropes for the Ordinary of the Mass</note>
+                     <note> Kyrie (fols. 82r–84v), Gloria (fols. 84v–89r), Sanctus (fols. 89r–90r) and Agnus dei (fol. 90r–v).</note></msItem>
+                  </msItem>
+                  <msItem>
+                     <note>12th- &amp; 13th-century additions:</note>
+                     <msItem>
+                        <locus> (fol. 88v)</locus>
+                        <note> Holy Innocents (cf. fol. 1r)</note>
+                        </msItem>
+                     <msItem>
+                        <locus>(fols. 90v–91r)</locus>
+                        <note> St Bartholomew</note>
+                        </msItem>
+                     <msItem>
+                        <locus>(fol. 91v)</locus>
+                        <note> St John the Evangelist</note>
+                        </msItem>
+                     <msItem>
+                        <locus>(fol. 92r)</locus>
+                        <note> Ite missa est </note>
+                     </msItem>
+                  </msItem>
+                  <msItem>
+                     <note>There are occasional marginal variant readings and glosses in Latin and German, and a note in German on fol. 46v.</note>
+                     <textLang mainLang="la" otherLangs="de">Latin and German</textLang>
+                  </msItem>
+                  <msItem>
+                     <note>The textual and musical contents of the volume are described and analysed in much greater detail in the introduction to a published facsimile: <title>Oxford, Bodleian Library, MS. Selden Supra 27: Prosaire-Tropaire de Heidenheim</title>, Publications des manuscrits musicaux du moyen âge, 33, ed. Dujka Smoje (Ottawa: Institute of Mediaeval Music, 2006).</note>
+                     <note>Fols. 3r-59r, 90v, 91v are inventoried by Calvin Bowers for the Cantus project [<ref target="https://cantus.uwaterloo.ca/source/123797">online</ref>]</note>
                   </msItem>
                </msContents>
                <physDesc resp="#VD">
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                        <extent>iii + 92 + ii fol., a leaf missing after fol. 1 and 59.
+                        <extent>i (19th cent. paper) + ii (paper) + 92 + ii (paper) <!--fol., a leaf missing after fol. 1 [recte 2?] and 59.-->
                            <dimensions unit="mm" type="leaf">
-                              <height>172</height>
-                              <width>147</width>
+                              <height>170</height>
+                              <width>150</width>
                            </dimensions> </extent>
+                        <foliation>i–iii, 1–94 in 20th-century pencil. There are vestiges of a 19th-century pencil foliation in the lower right corner, often more or less thoroughly erased, and sometimes discrepant (e.g. fols. 70–71 were previously 69–70) and an altered 20th-century foliation (e.g. fol. 57r has ‘60’, erased, immediately adjacent to it). Bannister’s notes state ‘NB. ff. 92 not 91 – 69 is double’ (fol. ir); where he refers to ‘f. 79’ this has been corrected in pencil to ‘80’ (fol. i verso), and his ‘90v’ is corrected to ‘91v’.
+                        </foliation>
+                        <collation>1(two) (fols. 1–2), 2(4+1) (the 3rd leaf is a singleton; fols. 3–7), 3–8(8) (fols. 8–55), 9(8-1) (5th leaf missing; fols. 56–62), 10(8) (fols. 63–70), [quire missing], 11(8) (fols. 71–78), [quire missing], 12(8) (fols. 79–86), 13(6) (the 3rd and 4th leaves are singletons; fols. 87–92) </collation><!-- check. there is at least 1 leaf missing after fol. 2? -->
                      </supportDesc>
                      <layoutDesc>
-                        <layout>Sequentiary in 15 lines, <dimensions unit="mm" type="written">
+                        <layout columns="1" writtenLines="15" rulingMedium="hardpoint">Blind-ruled for 15 lines of text per page, allowing a wide fore-edge margin for music. The ruled area for the text is <dimensions type="ruled" unit="mm">
                            <height>115</height>
-                           <width>72</width>
-                        </dimensions>; the ruling measures <dimensions unit="mm" type="ruled">
+                           <width>70</width>
+                        </dimensions>; the ruled area including the space left for notation is <dimensions type="ruled" unit="mm">
                            <height>115</height>
                            <width>115</width>
-                        </dimensions>. Troper written by another
-                           hand on the same ruling; the marginal space for the notation has been left
-                           blank.</layout>
+                        </dimensions> (the dimensions in Smoje, p. 9, are incorrect).</layout>
                      </layoutDesc>
                   </objectDesc>
+                  <handDesc hands="6">
+                     <handNote script="minusculeCaroline">Written in Caroline minuscule, said by Smoje to be very close to that of St Gall; she identifies three main scribes (fols. 1v-50r; fols. 50r5-59v; fols. 60r-62, 63r5-90v), three lesser ones, and additions by five more (Smoje, 2006, pp. 2, 10).</handNote>
+                  </handDesc>
                   <musicNotation>
-                     <p>Adiastematic rhythmical notation of St.
-                        Gall in the margins of the sequentiary.</p>
+                     <p>‘[N]otated in staffless neumes, which are based on the Saint-Gall tradition’ (Smoje, 2006, p. vii).</p>
                   </musicNotation>
                   <decoDesc>
-                     <decoNote resp="#PA" type="decInit">Good initials. (P&amp;A i. 44)</decoNote>
+                     <decoNote type="decInit">With enlarged foliated initials drawn in red ink for the feasts of Christmas (fols. 3r, 61v), Easter (fol. 19v, 70r), Ascension (fol. 30r), Pentecost (fols. 32v, 72v), and the Kyries and Glorias (fols. 82r, 84v).</decoNote>
+                     <decoNote type="colInit">Other 1-, 2-, and 3-line initials in plain red.
+                     </decoNote>
                   </decoDesc>
+                  <bindingDesc>
+                     <binding notAfter="1800" notBefore="1700">
+                        <p>Sewn on three (medieval alum-tawed?) bands and bound in quarter vellum and marbled paper over pasteboards (not ‘en bois’ as stated by Smoje, 2006, p. 5), without pastedowns; 18th century (?). Rebacked; the former spine with the number ‘27’ twice, now stuck to the inner face of the front board.</p><p>Fol. 1r is far more worn than 1v, suggesting that the book existed without a binding for a significant length of time.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
                   <origin resp="#PA">
-                     <origDate calendar="Gregorian" notAfter="1100" notBefore="1050">11th century, second half</origDate>
+                     <origDate calendar="Gregorian" notAfter="1100" notBefore="1050">11th century, first half/middle (Smoje suggests c. 1030)</origDate>
                      <origPlace>
-                        <country key="place_7000084">German</country>, <settlement key="place_1039508">Heidenheim</settlement>, <orgName role="fmo" key="org_139922418">St Wunibald's</orgName>
-                        <!--ORIGINAL: German, Heidenheim-->
+                        <country key="place_7000084">Germany</country>,  (Franconia/Bavaria; <settlement key="place_1039508">Heidenheim</settlement>?)
                      </origPlace>
                   </origin>
-                  <provenance resp="#VD">In part A the dedication is (fol.47<hi rend="superscript">v</hi>) between the
-                     feasts of St. Gall (16 Oct.) and All Saints (1 Nov.).</provenance>
-                  <provenance resp="#PA">Written for the canons of St Wunibald, Heidenheim.</provenance>
-               <provenance notBefore="1584" notAfter="1654" resp="#MMM"><persName role="fmo" key="person_51728429">John Selden, 1584-1654</persName></provenance><acquisition when="1659" resp="#MMM">Acquired by the Bodleian in 1659</acquisition></history>
+                  <provenance>Apparently written for use at <orgName role="fmo" key="org_139922418">St Wunibald's, Heidenheim</orgName>, as suggested by the importance accorded to Sts Willibald, Winibald, and Walburga: Willibald was first bishop of Eichstätt; his brother Winibald founded the double monastery at Heidenheim (about 50km to the south-west of Eichstätt, and within its diocese) and was its first abbot; their sister Walburga was first abbess. The two main parts seem to have been copied from different (St Gall?) models, but as the second starts in the same quire as that in which the firsts ends, they were demonstrably written as a single volume. Smoje suggests that it was owned by a succession of cantors of Heidenheim; additions were made in the 12th and 13th centuries.</provenance>
+                  <provenance>Inscribed in German ‘do huit?? ich un<ex>d</ex> gotefrit’, 13th(?) century (fol. 46v, upper margin).
+                  </provenance>
+                  <provenance notBefore="1584" notAfter="1654" resp="#MMM"><persName role="fmo" key="person_51728429">John Selden, 1584-1654</persName></provenance>
+                  <acquisition when="1659" resp="#MMM">Acquired by the Bodleian in 1659 from his executors. Former Bodleian shelfmarks: ‘MS. Supra. Seld. 27.’ in 17th-/18th-century ink and ‘[kept as Arch. F.e.10]’ in 20th-century pencil (fol. iir). To judge by the various foliations, some leaves have been rearranged at least once since acquisition by the Library.</acquisition></history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Adapted (2018) from S. J. P. Van Dijk, <title>Handlist of the Latin Liturgical Manuscripts in the Bodleian Library Oxford</title>  Vol. 1: Mass Books (typescript, 1957), p. 111; Pächt and Alexander; and the Summary Catalogue (1922).
+                        <source>Summary description (March 2021) by Peter Kidd, edited by Matthew Holford. Previously described in the Summary Catalogue (1922).
                             <listBibl>
                               <bibl type="SC" facs="aap0646.gif">Summary Catalogue, Vol. 2 Part 1, p.  625</bibl>
                               <bibl type="SC" facs="aap0647.gif">Summary Catalogue, Vol. 2 Part 1, p.  626</bibl>
@@ -133,15 +237,23 @@
                         </source>
                      </recordHist><availability status="restricted"><p>To ensure its availability to future readers, access to this item is restricted, and readers are asked to work from reproductions and published descriptions as far as possible. To apply to see the original, please send a message to <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>, outlining the subject of your research, the importance of this item to that research, and the resources you have already consulted.</p></availability>
                   </adminInfo>
-                  <listBibl type="WRAPPER"><listBibl>
-                     <bibl><title>Oxford, Bodleian Library, MS. Selden Supra 27</title>, ed. D. Smoje (2006) [facsimile]</bibl>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="ONLINE">
+                        <head>Online resources:</head>
+                        <bibl><ref target="https://cantus.uwaterloo.ca/source/123797"><title>CANTUS: A Database for Latin Ecclesiastical Chant</title></ref> </bibl>
+                     </listBibl>
+                     <listBibl>
+                     <bibl><title>Oxford, Bodleian Library, MS. Selden Supra 27</title>, ed. D. Smoje (2006) [facsimile with introduction]</bibl>
                      <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, I (1966), no. 44</bibl>
+                     <bibl>S. J. P. Van Dijk, <title>Handlist of the Latin Liturgical Manuscripts in the Bodleian Library Oxford</title>  Vol. 1: Mass Books (typescript, 1957), p. 111</bibl>
                   </listBibl></listBibl>
                </additional>
             </msDesc>
          </sourceDesc>
       </fileDesc>       
-      <revisionDesc><change when="2019-10-31" xml:id="MMM"><persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>     
+      <revisionDesc>
+         <change when="2021-03-25">Revised description for Polonsky German digitization projecct.</change>
+         <change when="2019-10-31" xml:id="MMM"><persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>     
          <change when="2018-08-13" who="#MLH">Description revised to incorporate all information from van Dijk, P&amp;A, and the Summary Catalogue.</change>
          <change when="2017-07-01">First online publication.</change>
 
