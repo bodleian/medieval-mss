@@ -5,17 +5,19 @@
          <titleStmt>
             <title>MS. Bodl. 98</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2020">Encoding</resp>
+               <resp when="2020">Catalogue updates and corrections</resp>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -57,6 +59,9 @@
                      
                      </author>
                      <title key="work_2335">Tabula super Sacram Scripturam</title>
+                     <incipit>Abstinencia caro
+                        domatur, unde prima Cor. 9 scribitur Castigo corpus meum</incipit>
+                     <note>Here without title or author. Ends with Zelus.</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -64,10 +69,18 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>i + 150 leaves
+                           <dimensions type="leaf" unit="in">
+                              <height>9.375</height>
+                              <width>7.5</width>
+                           </dimensions></extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2">2 cols.</layout>
+                     </layoutDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>Illuminated capitals.
+                     <decoNote type="flourInit">Illuminated capitals.
                      </decoNote>
                   </decoDesc>
                </physDesc>
@@ -77,11 +90,14 @@
                      <origPlace cert="low">
                         <country key="place_7002445">English</country> (?)</origPlace>
                   </origin>
+                  <provenance>'Anno 1584 hoc vtitur frater <persName role="sgn" key="person_3230">Philippus Huglize minorita <placeName key="place_7007960">Namurcensis</placeName></persName>' (the
+                     last word added, but contemporary)</provenance><provenance>Soon after '<persName role="fmo" key="person_3229">Jhon Wyght</persName>' owned it.</provenance><acquisition>
+                        Presented by <persName role="fmo" key="person_2677">sir Walter Cope</persName> in 1602.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922).  
+                        <source>Description adapted (April 2020) from the Summary Catalogue (1922).  
                             
                             
                             <listBibl>
@@ -91,11 +107,44 @@
                      </recordHist>
                   </adminInfo>
                </additional>
+               <msPart xml:id="MS_Bodl_98_endleaves" type="endleaf">
+                  <msIdentifier>
+                     <altIdentifier type="partial">
+                        <idno type="part">MS. Bodl. 98 - endleaves (fols. 149-150)</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  <msContents>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem xml:id="MS_Bodl_98_endleaves-item1">
+                        <title type="desc" key="work_11416">Customary, Use of Sarum</title>
+                        <note>Two worn leaves,
+                           containing chapters 14, 15, 17 et seq.</note>
+                     </msItem>
+                     
+                     
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="perg">
+                           <support>parchment</support>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+                  <history>
+                     <origin>
+                        <origDate calendar="Gregorian" notAfter="1400" notBefore="1300">14th century</origDate>
+                        
+                     </origin>
+                  </history>
+               </msPart>
             </msDesc>
          </sourceDesc>
       </fileDesc>       
       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
+      <revisionDesc>      
+         
+         <change when="2020-04-02">Revised to incorporate all information in SC.</change>
+         <change when="2017-07-01">First online publication.</change>
 
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>

@@ -5,17 +5,24 @@
          <titleStmt>
             <title>MS. Bodl. 116</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2020">Encoding</resp>
+               <resp when="2020">Catalogue updates and corrections</resp>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -51,21 +58,20 @@
                </msIdentifier>
                <msContents>
                   <msItem xml:id="MS_Bodl_116-item1" n="1">
-                     <author key="person_100184667">
-                        
-                        Gregory the Great
-                     
-                     </author>
+                     <locus>(fol. 1)</locus>
+                     <author key="person_100184667">Gregory the Great</author>
                      <title key="work_1862">De cura pastorali</title>
+                     <rubric>Incipit prologus sancti Gregorii pape in libro Pastorali</rubric>
+                     <note>Preceded by a list of chapters.</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                   <msItem xml:id="MS_Bodl_116-item2" n="2">
-                     <author key="person_9865788">
-                        
-                        Hugh of St.-Victor
-                     
-                     </author>
+                     <locus>(fol. 51v)</locus>
+                     <author key="person_9865788">Hugh of St.-Victor</author>
                      <title key="work_2149">De institutione novitiorum</title>
+                     <rubric>Incipit libellus magistri Ricardi prioris sancti Victoris de
+                        scientia &#x0026; disciplina</rubric>
+                     <note>With prologue.</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -73,12 +79,18 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>68 leaves
+                           <dimensions type="leaf" unit="in">
+                              <height>9.25</height>
+                              <width>6.375</width>
+                           </dimensions></extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2">2 cols.</layout>
+                     </layoutDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>
-                        <p>Penwork.</p>
-                     </decoNote>
+                     <decoNote type="flourInit">Penwork.</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
@@ -88,13 +100,17 @@
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
+                  <acquisition when="1603">Presented by <persName role="dnr" key="person_37261411">sir Robert Cotton</persName> (with his 'votiva ara' on fol. 2) in 1603.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922).  
-                            
-                            
+                        <source>Description adapted (April 2020) from the following sources:
+                           <listBibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, addenda (by Bruce Barker-Benfield) [decoration, origin, date]</bibl>
+                              <bibl>Summary Catalogue (1922) [contents, physical description, provenance and acquisition]</bibl>
+                           </listBibl>  
+                           
                             <listBibl>
                               <bibl type="SC" facs="aap0165.gif">Summary Catalogue, vol. 2, part 1, p. 144</bibl>
                            </listBibl>
@@ -106,7 +122,9 @@
          </sourceDesc>
       </fileDesc>       
       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
+      <revisionDesc>    
+         <change when="2020-04-07">Description revised to incorporate all information in SC.</change>
+         <change when="2017-07-01">First online publication.</change>
 
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>

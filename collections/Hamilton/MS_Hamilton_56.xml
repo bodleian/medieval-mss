@@ -1,22 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6020">
    <teiHeader>
+      <!-- todo:
+      stubs have not been treated fully 
+      -->
       <fileDesc>
          <titleStmt>
             <title>MS. Hamilton 56</title>
             <title type="collection">MSS. Hamilton</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
-         </titleStmt>
-         <editionStmt>
-            <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
+            <respStmt xml:id="SM">
+               <resp when="2003">Cataloguer</resp>
+               <persName>Stephen Mossman</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2020">Cataloguer</resp>
+               <resp when="2020">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
-         </editionStmt>
+            <respStmt xml:id="TA">
+               <resp when="2020">Cataloguer</resp>
+               <resp when="2020">Encoding</resp>
+               <persName>Tuija Ainonen</persName>
+            </respStmt>
+         </titleStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
             <address>
@@ -49,116 +59,1212 @@
                      <idno type="SCN">24486</idno>
                   </altIdentifier>
                </msIdentifier>
+               <head>A Augustinus de Ancona, etc.; B, C Sermons. Germany (in part Erfurt OCart?), 15th
+                  century </head>
                <physDesc>
-                  <p n="composite">Composite: three parts</p>
+                  <p n="composite">Composite:  fols. 1-82 | fols. 83-206 | fols. 207-338</p>
+                  <objectDesc form="codex">
+                     <supportDesc material="chart">
+                        <support>paper</support>
+                        <extent>331 (82 + 117 + 132) + 1 (original paper endleaf), with 20 foliated inserted slips (fols. 68b, 74b, 74c, 77b, 78b, 105 (formerly 104b), 106 (formerly 104c), 107, 125b, 125c, 131b, 135b, 136b, 136c, 145, 146b, 153, 155, 160b, 174); with unfoliated slips between fols. 163 and 164, and fols. 177 and 178; and with unfoliated smaller fragments elsewhere in the volume (e.g. between 167 and 168, 168 and 169, 175 and 176). Fol. 206 is a half-sheet.
+                           <dimensions unit="mm" type="leaf">
+                              <height>220</height>
+                              <width>150</width>
+                           </dimensions>
+                        </extent>
+                        <foliation>1-339 in modern (19th-century) pencil, including 68b, 74b, 74c, 77b, 78b, 125b, 125c, 131b, 135b, 136b, 136c, 146b, 160b; superceding earlier separate medieval foliations in ink, for which see below.</foliation>
+                        <collation> 1(12) (fols. 1-12), 2(16) (fols. 13-28), 3(14) (fols. 29-42), 4(18) (fols. 43-60), 5(10) (fols. 61-70), 6(12) (fols. 71-82) | 7(20) (fols. 83-102), 8(24+1?) (fols. 103-4, 108-130, fols. 105-7 being inserted slips; apparently one leaf added in the second half of the quire), 9(20) (fols. 131a-144, 146-151, fol. 145 being an inserted slip; fol. 151 is two leaves glued together), 10(16) (fols. 152, 154, 156-69, fols. 153, 155 being inserted slips), 11-12(12) (fols. 170-3, 174-194, fol. 174 being an inserted slip), 13(?12-1+1) (fols. 195-206: 1 apparently cancelled before fol. 194, and the half-sheet fol. 206 added at the end of the quire; fols. 199-200 misbound?) | 14-24(12) (fols. 207-338). Collation of fols. 83-206 (part B) sometimes uncertain.</collation>
+                     </supportDesc>
+                  </objectDesc>
+                  <bindingDesc>
+                     <binding notAfter="1500" notBefore="1400">
+                        <p>Whittawed skin over boards, 15th century, damaged; sewn on three bands; 4+1 bosses on the back board, lost; strap-and-pin fastening, closing on the front board, lost; contents label on the front board.</p>
+                     </binding>
+                  </bindingDesc>
+                  <accMat>In addition to the binding fragments described below, the volume contains a fifteenth-century Latin legal document used as an endleaf (fol. 339), a German document (?) (stub from a missing endleaf, after fol. 12), and some fragments of other documents or manuscripts (e.g. after fol. 109), all Latin and mostly with theological notes.</accMat>
                </physDesc>
+               <history>
+                  <provenance>Two stages of assembly can be identified. In the first, parts A and B were brought together by the scribe of part B, who added additional texts and an index to part A (fols. 69rb-82vb), partly on an additional quire (fols. 71-82). In the second, parts A and B were bound with part C.</provenance>
+                  <provenance resp="SC"><orgName key="org_415145858126223022295">Erfurt, Carthusian
+                        abbey of St. Salvator</orgName>: inscription, <q>Pertinet hic
+                        liber ad carthus' erfford'</q> (front pastedown); <q>Carthusiensium prope Erfford' est hoc liber</q>, 15th century, fol. 1r; cf. 339v; identifiable as H 110 in the late-fifteenth-century
+                     catalogue (<title>Mittelalterliche Bibliothekskataloge Deutschlands...</title>, II, 422).</provenance>
+                  <provenance><persName key="person_24953683">Friedrich Gottlieb Julius von
+                        Bülow</persName>: probably identifiable as no. 387 in the 1836 sale
+                     catalogue of his library ('AUGUSTJNUS DE ANCONA Super angelicam salutationem. -
+                     JOA. ANDRAE Tract. de sacramento altaris. - Sermones varii').</provenance>
+                  <provenance notBefore="1841" notAfter="1856"><persName role="fmo"
+                        key="person_54195353">Sir William Hamilton,
+                     1788-1856</persName></provenance>
+                  <acquisition when="1857">Presented to the Bodleian Library by his sons and
+                     received in 1857. Former Bodleian shelfmark 'Addit. IV. A. 11' (front pastedown)</acquisition>
+               </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
-                            
-                            <listBibl>
-                              <bibl type="SC" facs="aam0073.gif">Summary Catalogue, Vol. 5, p.  38</bibl>
-                              <bibl type="SC" facs="aam0074.gif">Summary Catalogue, Vol. 5, p.  39</bibl>
+                        <source>Description by Tuija Ainonen and Matthew Holford (June 2020, rev. March 2021),
+                           except for the fragments in German, described by Stephen Mossman, c.
+                           2003. Previously described in the Summary Catalogue. <listBibl>
+                              <bibl type="SC" facs="aam0073.gif">Summary Catalogue, Vol. 5, p.
+                                 38</bibl>
+                              <bibl type="SC" facs="aam0074.gif">Summary Catalogue, Vol. 5, p.
+                                 39</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
                </additional>
+
                <msPart xml:id="MS_Hamilton_56-part1">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Hamilton 56 - Part 1</idno>
+                        <idno type="part">MS. Hamilton 56 - Part A (fols. 1-82)</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Hamilton_56-part1-item1" n="1">
-                        <title key="work_15328">Theological treatises and sermons</title>
-                        <textLang mainLang="la">Latin</textLang>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem>
+                        <locus>(front pastedown)</locus>
+                        <note>Table of contents for the whole volume, late fifteenth century </note>
                      </msItem>
+                     <msItem>
+                        <!--WAS: <title key="work_15328">Theological treatises and sermons</title>-->
+                        <locus>(fols. 1ra-66rb)</locus>
+                        <msItem xml:id="MS_Hamilton_56-part1-item1" n="1.1">
+                           <author key="person_95301446">Augustinus de Ancona</author>
+                           <title key="work_838">Tractatus de angelica annuntiatione</title>
+                           <rubric>Augustinus de Anchona super angelicam salutationem <note>(rubric
+                                 in the table of contents, front pastedown)</note></rubric>
+                           <incipit>Quatuor mihi tremorem ac timorem faciunt loqui de virgine
+                              gloriosa</incipit>
+                           <explicit><locus>(fol. 65rb)</locus> in hora mortis nostre nobis
+                              acquirat salvatorem. Amen. </explicit>
+                           <note>Stegmüller 1547, Zumkeller 136, both listing this manuscript.</note>
+                        </msItem>
+                        <msItem xml:id="MS_Hamilton_56-part1-item2" n="1.2">
+                           <note>Fols. 65rb-66rb contain the table of quaestiones, as pr. in the
+                              1590 edition, sig. Aa2-5.</note>
+                           <incipit>Missus est angelus Gabriel <add place="margin">a Deo</add>.
+                              Utrum conueniens fuerit angelum ad virginem mitti</incipit>
+                           <finalRubric>Expliciunt tituli questionum super Ave Maria
+                              ...</finalRubric>
+                           <note>Followed by a brief note on whether a preacher saying a falsehood sins.</note>
+                        </msItem>
+
+                     </msItem>
+                     <!-- image 158 - fol. 74av - slip- chapters? beginning at 79 ending wtih ref to 1298 - cf
+                     http://www.columbia.edu/cu/lweb/digital/collections/cul/texts/ldpd_6029936_002/pages/ldpd_6029936_002_00000604.html?toggle=image&menu=maximize&top=&left=
+                     
+                     with diff numbering (79 = 82) -->
+                     <msItem xml:id="MS_Hamilton_56-part1-item3">
+                        <locus>(fols. 66r-74(c)v)</locus>
+                        <msItem n="2.1">
+                           <locus>(fols. 66r-69r)</locus>
+                           <title type="desc" key="work_16349">Quaestiones on the Assumption of the Virgin</title>
+                           <rubric>De assumptione virginis</rubric>
+                           <incipit>Sed hic triplex occurrit questio. Prima Quid post ascensionem
+                              filii sui ante suam assumptionem ipsa egerit </incipit>
+                        </msItem>
+                        <msItem n="2.2">
+                           <locus>(fols. 69r-74(c)v)</locus>
+                           <title type="desc" key="work_14558">Sermons on the Assumption</title>
+                           <rubric>De assumptione beate Marie semper virginis sermones boni
+                                 <note>[in blue]</note></rubric>
+                           <msItem>
+                              <locus>(fols. 69r-71ra)</locus>
+                              <incipit><quote>Astitit regina a dextris tuis <gap reason="editorial"
+                                    /></quote> Pro impetranda gratia dicamus deuote Aue Maria. In
+                                 hac cantilena dauitica introducitur mundi domina quadriformiter
+                                 admiranda </incipit>
+                              <explicit>ut aduocet pro peccatoribus misericorditer, quam
+                                 aduocacionem ut consequi mereamur <gap reason="editorial"/>
+                              </explicit>
+                              <note>Cf. Graz, UB, MS. 295, fol. 250; HAB, Cod. Guelf. 159 Helmst.,
+                                 fol. 278v. The thema is preceded by other relevant themata.</note>
+                              <!--Misit de <subst><del>summo</del> <add>excelsis</add></subst> ...-->
+                           </msItem>
+                           <msItem>
+                              <incipit><locus>(fol. 71ra)</locus>
+                                 <quote><del>Misit de excelso</del> Archa eleuata est <gap
+                                       reason="editorial"/></quote> Hec archa est virgo maria,
+                                 ratione sue <unclear>clementie</unclear> et pietatis</incipit>
+                           </msItem>
+                           <msItem>
+                              <incipit><locus>(fol. 71va)</locus>
+                                 <quote>Assumpsit me <add place="margin">spiritus</add><gap
+                                       reason="editorial"/></quote> Hec sunt verba prophete dicta ad
+                                 commendacionem istius benedicte assumpcionis</incipit>
+                           </msItem>
+                           <msItem>
+                              <incipit><locus>(fol. 73va)</locus>
+                                 <quote>Que est ista que ascendit <gap reason="editorial"/></quote>
+                                 Gloriam istius benedicte virginis, que coronam 12 stellarum
+                                 splendentem habet</incipit>
+                           </msItem>
+                        </msItem>
+                     </msItem>
+                     <msItem xml:id="MS_Hamilton_56-part1-item4" n="3" class="#tabulae">
+                        <locus>(fols. 75r-79v)</locus>
+                        <title type="desc">Alphabetical index to fols. 1-74</title>
+                        <incipit><add place="margin">Abel</add>
+                           <lb/> Abraham adorauit angelos <lb/> Accepcio personarum <lb/> Adam
+                        </incipit>
+                     </msItem>
+                     <msItem xml:id="MS_Hamilton_56-part1-item5" n="4">
+                        <locus>(fols. 79v-82r)</locus>
+                        <author key="person_24629057">Iohannes Andreae</author>
+                        <title key="work_11344">Apparatus ad Clementinas</title>
+                        <note>(excerpts on 3.16 etc.: entitled in the table of contents 'Scripta quedam Johannis Andree de sacro Altare et ceteris multis')</note>
+                        <incipit>Nota omnia que hic subsequntur scribit Io<ex>hannis</ex>
+                              An<ex>dree</ex> in glosa super ca<ex>usa</ex>m unicum Si dominum in
+                           sanctis eius laudare iubemur </incipit>
+                     </msItem>
+                    
+                     
+                     <msItem xml:id="MS_Hamilton_56-part2-item2" n="5.1">
+                         <locus>(fols. 82r-v)</locus>
+                           <title key="work_14901">Testamentum XII patriarcharum</title>
+                           <note>(excerpts)</note>
+                           <incipit><note><locus>(fol. 82r)</locus></note> Ambulemus in simplicitate
+                              cordis quoniam per eam omnem beneplacentiam Dei perficimus </incipit>
+                        <note>Text continues at fol. 193r in part B</note>
+                           
+                     </msItem>
+
                   </msContents>
                   <physDesc>
                      <objectDesc form="codex">
                         <supportDesc material="chart">
-                           <support>paper</support>
+                           <support>Paper, folded in quarto. Watermarks (fols. 1-70) lily with 8-pointed star; (fols. 71-82) indistinct</support>
+                           <foliation>Fifteenth-century foliation 1-82 in black ink, ignoring inserted slips.</foliation>
+                           <collation>Catchwords; quires apparently numbered on the bottom left of the final verso (often cropped away).</collation>
                         </supportDesc>
+                        <layoutDesc>
+                           <layout columns="2" writtenLines="43 46">Fols. 1r-69rb: frame-ruled in ink; 2 columns, c. 43-46 lines. Ruled space <dimensions unit="mm" type="ruled">
+                              <height max="195" min="190">190-5</height>
+                              <width>120</width>
+                           </dimensions></layout>
+                           <layout columns="2" writtenLines="54 58">Fols. 69va-82rb: frame-ruled in ink; 2 columns, c. 54-8 lines (the index, fols. 75r-79v, c. 47 lines); ruled space <dimensions unit="mm" type="ruled">
+                              <height>200</height>
+                              <width>125</width>
+                           </dimensions></layout>
+                        </layoutDesc>
                      </objectDesc>
+                     <handDesc hands="2">
+                        <handNote script="cursiva">Cursive, two hands: (a) fols. 1r-69rb, (b) fols. 69rb-82vb (the scribe of part B)</handNote>
+                     </handDesc>
+                     <decoDesc>
+                        <decoNote type="colInit">2-line initials in blue; often not filled in.</decoNote>
+                        <decoNote type="colInit">1-2 line initials in red in the index.</decoNote>
+                        <decoNote type="rubrication">Rubric in blue, fol. 69r</decoNote>
+                     </decoDesc>
+                     <additions>Marginal notes throughout.</additions>
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
+                        <origDate calendar="Gregorian" notAfter="1425" notBefore="1390">14th
+                           century, late, or 15th century, first quarter (watermark)</origDate>
                         <origPlace>
-                           <country key="place_7000084">German</country>
+                           <country key="place_7000084">Germany</country>, perhaps (at least in part) <orgName key="org_415145858126223022295">Erfurt, Carthusian abbey </orgName>
                         </origPlace>
                      </origin>
+                     <provenance>For the possibility that scribe B was writing at Erfurt see the discussion under part B, below.</provenance>
                   </history>
                </msPart>
+
                <msPart xml:id="MS_Hamilton_56-part2">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Hamilton 56 - Part 2</idno>
+                        <idno type="part">MS. Hamilton 56 - Part B (fols. 83-206)</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Hamilton_56-part2-item1" n="1">
-                        <title key="work_14583">Sermons</title>
-                        <textLang mainLang="la">Latin</textLang>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem xml:id="MS_Hamilton_56-part2-item1" n="6">
+                        <locus>(fols. 83r-193r)</locus>
+                        <title key="work_14583">Sermons: de aduentu Christi siue de natiuitate; in die palmarum; in dedicatione ecclesiae; de corpore Christi; de apostolis Petri et Pauli; de sancto Benedicto; de sancto Bernardo; de visitatione; de electione priorum</title>
+                        <note>Marginal annotation mostly of key words, used to construct the index (art 6.11)</note>
+                        <msItem n="6.1">
+                           <msItem>
+                              <rubric>Sermo aduentus Domini primus. aliter de
+                                 natiuitate Christi. </rubric>
+                              <incipit><quote>Videbunt filium hominis venientem in nubibus.</quote>
+                                 Luc. 21. Unde dicit in sermone: Fratres mei non solum cogitetis
+                                 aduentum domini quo veniet querere <sic>et et</sic> sal<ex>uum</ex>
+                                 facere [Bernard, Serm. IV in adventu] <gap reason="editorial"/>
+                                 Sicud enim primus aduentus fuit ad reformacionem animarum
+                                 nostrarum, sic 2us ad reformacionem corporum nostrorum
+                                 celebratur</incipit>
+                           </msItem>
+                           <msItem>
+                              <incipit><locus>(fol. 84rb)</locus>
+                                 <quote>Vtinam esset nobis arbiter</quote> Verba sunt beati iob
+                                 secundum aliam translacionem, in quibus multum affectuose desiderat
+                                 aduentum salvatoris</incipit>
+                           </msItem>
+                           <msItem>
+                              <incipit><locus>(fol. 85ra)</locus>
+                                 <quote>Medius vestrum stetit <gap reason="editorial"/></quote> Unde
+                                 secundum beatus augustinus in libro confessionum mediator inter
+                                 deum et homines oportebat</incipit>
+                           </msItem>
+                           <msItem>
+                              <incipit><locus>(fol. 86ra)</locus>
+                                 <quote>Mittet eis propugnatorem <gap reason="editorial"/></quote>
+                                 Secundum Augustinus 4o de Trinitate capitulo penultimo filius
+                                 missus est a patre. Sicud ergo pater genuit, filius genitus est.
+                                 Ita congrue pater misit, filius missus est</incipit>
+                           </msItem>
+                           <msItem>
+                              <incipit><locus>(fol. 87rb)</locus>
+                                 <quote>Oscule me osculo <gap reason="editorial"/> Boecius dicit in
+                                    3o libro de consolatione philosophie quod mentibus hominum veri
+                                    boni naturaliter est inserta cupiditas sed ad falsa deuius error
+                                    inducit</quote></incipit>
+                           </msItem>
+                        </msItem>
+
+
+
+                        <msItem n="6.2">
+                           <rubric>In die palmarum</rubric>
+                           <msItem>
+                              <incipit><locus>(fol. 87vb)</locus>
+                                 <quote>Occurrerunt ei honorifice <gap reason="editorial"/></quote>
+                                 Pro impetranda gracia. Occurrerunt. Secundum philosophum primo
+                                 ethycorum honor semper debet optimis. </incipit>
+                           </msItem>
+                           <msItem>
+                              <incipit><locus>(fol. 88va)</locus>
+                                 <quote> Egredimini in montem <gap reason="editorial"/></quote>
+                                 Secundum beatum Bernardum in sermone hodierno necesse est ut
+                                 loquimur hodie breuius propter angustiam temporis</incipit>
+                           </msItem>
+                           <msItem>
+                              <incipit><locus>(fol. 89rb)</locus>
+                                 <quote>Homines et iumenta <gap reason="editorial"/></quote>
+                                 Augustinus dicit in Ench. Credamus rerum creatarum celestium uel
+                                 terrestrium, visibilium uel invisibilium</incipit>
+                           </msItem>
+                           <msItem>
+                              <incipit><locus>(fol. 90vb)</locus><cit>
+                                    <quote>Ligans ad vitem asinam suam</quote>
+                                    <bibl>Gen 42</bibl>
+                                 </cit> Dicit beatus bernharus Triplici morbo laborabat genus
+                                 humanum</incipit>
+                           </msItem>
+                           <msItem>
+                              <incipit><locus>(fol. 91vb)</locus>
+                                 <quote>Acceperunt ramos palmarum <gap reason="editorial"/></quote>
+                                 Secundum philosophum primo ethycorum honor etc. patet ante in 6o
+                                 folio in principio sermonis</incipit>
+                           </msItem>
+                           <msItem>
+                              <incipit><locus>(fol. 92vb)</locus>
+                                 <quote> Clamabant osanna <gap reason="editorial"/></quote> Nota
+                                 totum prothemata precedentis sermonis scilicet acceperunt ramos
+                                 usque obuiam ei et clamabant osanna filio david. Huius honoris
+                                 memoria</incipit>
+                           </msItem>
+                           <msItem>
+                              <incipit><locus>(fol. 93vb)</locus>
+                                 <quote>Ecce rex tuus venit tibi.</quote> Secundum beatum augustinum
+                                 in libro de vera religione Tota vita christi in terris per hominem
+                                 quem suscipere dignatus est, disciplina morum fuit, precipue
+                                 humilitatem suam</incipit>
+                           </msItem>
+                        </msItem>
+
+
+                        <msItem n="6.3">
+                           <rubric>Sequitur sermones in dedicatione ecclesiae. Sermo
+                              primus.</rubric>
+                           <msItem>
+                              <incipit><locus>(fol. 95rb)</locus>
+                                 <quote>Inhabitabo in eis <gap reason="editorial"/></quote> Que
+                                 auctorias secundum apostolum 2 Cor. 6 sumitur ex Ezech. 37 capitulo
+                                 aliter ex Leuit. 18 capitulo. Secundum sacros doctores in sacra
+                                 scriptura triplex templum domini reperitur</incipit>
+                           </msItem>
+                           <msItem>
+                              <incipit><locus>(fol. 96rb)</locus>
+                                 <quote>Moyses sanctificauit <gap reason="editorial"/></quote> Verba
+                                 dicti thematis possumus intelligere vniuersaliter et
+                                 particulariter. Vniuersaliter quidem pro tota ecclesia
+                                 militanti</incipit>
+                           </msItem>
+                           <msItem>
+                              <incipit><locus>(fol. 97ra)</locus>
+                                 <quote>Ipsa est mulier que preparauit <gap reason="editorial"
+                                    /></quote> Hec verba dixit elieser famulus abhe de ysaac filio
+                                 eius et rebecca sponsa euisdem filii domini sui. Quia ex promocione
+                                 et iuuamine dei </incipit>
+                           </msItem>
+                           <msItem>
+                              <incipit><locus>(fol. 98ra)</locus>
+                                 <quote>Noui quod pulchra sis mulier</quote> Glosa dicit super verbo
+                                 illo eiusdem libri Isaac accepit rebeccam vxorem quod coniugia
+                                 patriarchum significant coniugium christi et ecclesie</incipit>
+                           </msItem>
+                           <msItem>
+                              <!-- 5 -->
+                              <incipit><locus>(fol. 99ra)</locus>
+                                 <quote>Abraham fixit tabernaculum suum <gap reason="editorial"
+                                    /></quote> Secundum philosophum 1o Methaphisice Sapientis est
+                                 ordinare. Unde de sapientissimo ordinacione</incipit>
+                           </msItem>
+                           <msItem>
+                              <incipit><locus>(fol. 100vb)</locus>
+                                 <quote>Lauda deum tuum syon <gap reason="editorial"/></quote>
+                                 Bernardus super cantica sermone xi O si quis haberet oculos
+                                 apertos. Videre qua cura </incipit>
+                           </msItem>
+                           <msItem>
+                              <incipit><locus>(fol. 102ra)</locus>
+                                 <quote> Templum dei sanctum est <gap reason="editorial"/></quote>
+                                 Gregorius super cantica dicit Licet deus communi modo etc. patet
+                                 ante 14 folio</incipit>
+                              <!-- check xref -->
+                           </msItem>
+                        </msItem>
+
+                        <msItem n="6.4">
+                           <rubric>Sequitur sermones de corpore christi</rubric>
+                           <msItem>
+                              <rubric>Sermo primus. Etiam in die pasce in penthecosten aliter
+                                 natiuitatis christi</rubric>
+                              <incipit><locus>(fol. 103rb)</locus>
+                                 <quote>Inuoluit illus scilicet corpus christi iesu in syndone
+                                    munda</quote> Licet verba ista dicta quomodo ad litteram
+                                 pertinent ad passionem domini</incipit>
+                           </msItem>
+                           <msItem>
+                              <incipit><locus>(fol. 104ar)</locus>
+                                 <quote>Pane nostrum cottidanum da nobis hodie</quote> Philosophus
+                                 dicit in 2o de anima Nichil alitur quod non communicet vita. Quibus
+                                 verbis intendit quod illud quod non habet vitam corporalem
+                                 corporaliter non potest nutriri</incipit>
+                           </msItem>
+                           <!-- there are three inserted slips here: image 235 -->
+                           <msItem>
+                              <incipit><locus>(fol. 108ra)</locus>
+                                 <quote> Epulemur non in frumento veteri <gap reason="editorial"
+                                    /></quote> Secundum philosophum in 8 ethycorum Pessimum optimo
+                                 contrarium est</incipit>
+                           </msItem>
+                           <msItem>
+                              <incipit><locus>(fol. 109ra)</locus>
+                                 <quote>Rex assuerus fecit grande conuiuium <gap reason="editorial"
+                                    /></quote> Ecclesia canit hodie Sit laus plena sit
+                                 sonora</incipit>
+                           </msItem>
+                           <msItem>
+                              <incipit><locus>(fol. 110ra)</locus>
+                                 <quote>Qui manducat hunc panem viuet in eternum</quote> Ecclesia
+                                 hodie canit Laudis thema specialis panis viuus et vitalis</incipit>
+                           </msItem>
+                           <msItem>
+                              <incipit><locus>(fol. 110vb)</locus>
+                                 <quote>Melchisedech saceros summi dei optulit panem et
+                                    vinum</quote> Beatus bernardus dicit Felices vos dixerim o
+                                 sacerdotes si tamen sacerdotaliter viuitis</incipit>
+                           </msItem>
+                           <msItem>
+                              <incipit><locus>(fol. 111va)</locus>
+                                 <quote>Manducauerunt et saturati sunt nimis</quote> Nota secundum
+                                 Philosophum 2o de anima Nichil detrimentum patitur nec augetur
+                                 phisici nisi alatur</incipit>
+                           </msItem>
+                           <msItem>
+                              <!-- 8 -->
+                              <incipit><locus>(fol. 112vb)</locus>
+                                 <quote>Panis cor hominis confirmet</quote> Glosa dicit super primo
+                                 verbo Iohannis 6 Ego sum panis vite Ego sum panis qui pasco donec
+                                 pascos iungam vite. Pascos enim omnes principiis</incipit>
+                           </msItem>
+                           <msItem>
+                              <incipit><locus>(fol. 114ra)</locus>
+                                 <quote>Vinum letificat cor hominis</quote> Galienus dicit O quam
+                                 benefecit deus quando vinum fecit nasci de vite quod animum
+                                 letificat </incipit>
+                           </msItem>
+                           <msItem>
+                              <incipit><locus>(fol. 115rb)</locus>
+                                 <quote>Caro mea vere est cibus <gap reason="editorial"/></quote>
+                                 Hylarius dicit in 8 libro de trinitate de veritate sanguinis, patet
+                                 ante 22 folio</incipit>
+                              <!-- check -->
+                           </msItem>
+                           <msItem>
+                              <incipit><locus>(fol. 116va)</locus>
+                                 <quote>De comendente exiuit cibus <gap reason="editorial"/></quote>
+                                 Augustinus ut panem angelorum manducaret homo creator angelorum
+                                 factus est homo. Hinc est quod corpus christi debet sumi per modum
+                                 manducacionis</incipit>
+                           </msItem>
+                           <msItem>
+                              <!-- 12 -->
+                              <incipit><locus>(fol. 118ra)</locus>
+                                 <quote>Dauid erat rufus et pulchrus <gap reason="editorial"
+                                    /></quote> In quibus verbis tria notantur, scilicet congruencia
+                                 operationum suarum ad nostrarum </incipit>
+                           </msItem>
+                           <msItem>
+                              <incipit><locus>(fol. 119rb)</locus>
+                                 <quote> Confiteantur domine nomine eius et mirabilia eius <gap
+                                       reason="editorial"/></quote> Excitat nos david ad gratiarium
+                                 accionem subiungens rationem</incipit>
+                           </msItem>
+                        </msItem>
+
+                        <msItem n="6.5">
+                           <rubric>Sermones de apostolis petri et pauli</rubric>
+                           <msItem>
+                              <incipit><locus>(fol. 121vb)</locus>
+                                 <quote>Mulier abscondit exploratores <gap reason="editorial"
+                                    /></quote> Pro inperpetua gratia, unde dicit honorius papa super
+                                 cantica Cristus per similem dicitur sponsus</incipit>
+                           </msItem>
+                           <msItem>
+                              <incipit><locus>(fol. 122va)</locus>
+                                 <quote>Duo angeli venerunt Zodomam <gap reason="editorial"
+                                    /></quote> Augustinus dicit in libro q<ex>uestionum</ex> noui et
+                                 veteris testamenti In potestate dantis est quando uel quantum velit
+                                 misereri. Venit ergo deus </incipit>
+                           </msItem>
+                           <msItem>
+                              <!-- 3 -->
+                              <incipit><locus>(fol. 123va)</locus>
+                                 <quote> Relictis omnibus secuti sunt eum</quote> Secundum
+                                 philosophum 3o physicorum Perfectum est cui nihil deest. Primum
+                                 enim opus</incipit>
+                           </msItem>
+                           <msItem>
+                              <!-- 4 -->
+                              <incipit><locus>(fol. 125arb)</locus>
+                                 <quote> Cum sancto sanctus eris</quote> Istud propheticum in istis
+                                 duobus apostolis completum est. Unde paulus qui fuit blasphemus et
+                                 persecutor</incipit>
+                           </msItem>
+                           <!-- 125b is an inserted slip - 273- 125c is another -->
+
+                           <msItem>
+                              <!-- 5 -->
+                              <incipit><locus>(fol. 125va)</locus>
+                                 <quote> Lucetis sicud luminaria in mundo</quote>
+                                    Cris<ex>ostomus</ex> dicit super primo verbo Mt 5 Vos estis lux
+                                 mundi, Sicud doctores propter bonum conuersacionem</incipit>
+                           </msItem>
+                           <!-- here ; image 266 -->
+
+                        </msItem>
+
+                        <msItem n="6.6">
+                           <rubric>De sancto Benedicto</rubric>
+                           <msItem>
+                              <incipit><locus>(fol. 127va)</locus>
+                                 <quote>Quicumque hanc regulam secuti fuerint <gap
+                                       reason="editorial"/></quote> Nota secundum boecium in topicis
+                                 omnis lex fit propter comunem bonum</incipit>
+                           </msItem>
+                           <msItem>
+                              <!-- 2 -->
+                              <incipit><locus>(fol. 128va)</locus>
+                                 <quote> Benedictus est<gap reason="editorial"/></quote> Secundum
+                                 philosophum in primo ethycorum Humana beatitudo est operacio
+                                 secundum virtutem perfectam, quod sic declaratur Boni hominis est
+                                 bene operari</incipit>
+                           </msItem>
+                           <msItem>
+                              <incipit><locus>(fol. 130va)</locus>
+                                 <quote> Pater noster es tu</quote> Boecius dicit in 4o libro de
+                                 consolatione, Deus ex alta prouidencie specula respicit</incipit>
+                           </msItem>
+                        </msItem>
+
+                        <msItem n="6.7">
+                           <rubric>Sequitur sermones de beato .n. <del>sermo quartus de s.
+                                 bernardus</del></rubric>
+                           <msItem>
+                              <incipit><locus>(fol. 132rb)</locus>
+                                 <quote> Esdra scriba ingeniosus <gap reason="editorial"/></quote>
+                                 Secundum aristotelem primo peryar<ex>mena</ex>rium Sunt ea que sunt
+                                 in voce earum que sunt in anima passionum note</incipit>
+                           </msItem>
+                           <msItem>
+                              <incipit><locus>(fol. 133vb)</locus>
+                                 <quote> Quomodo amplificemus Zorobabel</quote> Secundum philosophum
+                                 2o ethycorum virtus est habitus qui habentem perficit et opus eius
+                                 bonum reddit. In hac enim auctoritate tria declaranda </incipit>
+                           </msItem>
+                           <msItem>
+                              <!-- 3 -->
+                              <incipit><locus>(fol. 135ara)</locus>
+                                 <quote> Relicto in manu eius pallio <gap reason="editorial"
+                                    /></quote> Verba proposita historialiter intellecta scripta sunt
+                                 de patriarcha ioseph</incipit>
+                           </msItem>
+                              <!-- 135b is a slip -->
+                              <msItem>
+                                 <incipit><locus>(fol. 136avb)</locus>
+                                    <quote> Jacob seruiuit pro rachel <gap reason="editorial"
+                                       /></quote> Secundum aristotelem in 2o physicorum finis est
+                                    cuius causa aliqua fiunt, ut sanitas est causa finalis
+                                    ambulandi</incipit>
+                                 <!-- 156b, c slips -->
+                              </msItem>
+                              <msItem>
+                                 <!-- 5    313-->
+                                 <incipit><locus>(fol. 138ra)</locus>
+                                    <quote> Amorem sequentis priori pretulit</quote> Historia narrat
+                                    quod iacob patriarcha duxerat duas sorores quarum prima scilicet
+                                    lya lippis erat oculis</incipit>
+                              </msItem>
+                              <msItem>
+                                 <incipit><locus>(fol. 139rb)</locus>
+                                    <quote> Ad aquato grege osculatus est eam</quote> Boecius dicit
+                                    in 3o de consolatione Deum esse ipsam beatitudinem necesse est
+                                    confiteri. Ipse enim est</incipit>
+                              </msItem>
+                              <msItem>
+                                 <!-- 7 -->
+                                 <incipit><locus>(fol. 141ra)</locus>
+                                    <quote> Erat vir</quote> Gen. 39. Philosophus in libro
+                                       p<ex>redicame</ex>ntorum ponit virtute esse habitum. Quod
+                                    idem ostendit in 4o physicorum</incipit>
+                              </msItem>
+                              <msItem>
+                                 <incipit><locus>(fol. 142vb)</locus>
+                                    <quote> Letare cum muliere <gap reason="editorial"/></quote>
+                                    Aristoteles in 1o ethycorum dicit quod honor nichil aliud est
+                                    quam quedam protestacio de excellencia bonitatis
+                                    alicuius</incipit>
+                              </msItem>
+                              <msItem>
+                                 <incipit><locus>(fol. 143vb)</locus>
+                                    <quote> Modo video</quote> Joh. 9. Hugo de sancto victore dicit
+                                    in commento super angelicam ierarchiam Quemadmodum infirmi oculi
+                                    solem nube tectum libere conspiciunt</incipit>
+                              </msItem>
+                              <!-- two stubs before 146a -->
+                              <msItem>
+                                 <!-- 10  332 -->
+                                 <incipit><locus>(fol. 146ava)</locus>
+                                    <quote> Sortitus sum animam bonam</quote> Beatus Augustinus
+                                    dicit in 2o de libero arbitrio virtus est bona qualitas mentis
+                                    etc patet ante 44 folio</incipit>
+                                 <!-- 146b is a slip -->
+                              </msItem>
+                           </msItem>
+
+                           <msItem n="6.8">
+                              <rubric>Sequitur sermones de visitacione. Sermo primus.</rubric>
+                              <msItem>
+                                 <incipit><locus>(fol. 148rb)</locus>
+                                    <quote> Exhortamini idem sapite</quote> Pro impetranda gratia
+                                    etc. Secundum Philosophum 9 ethycorum virtuosus et studiosus
+                                    sunt mensura et regula vnicuique</incipit>
+                              </msItem>
+                              <!-- 339 -->
+                              <msItem>
+                                 <incipit><locus>(fol. 149rb)</locus>
+                                    <quote>Voluimus venire ad vos <gap reason="editorial"/></quote>
+                                    Beatus Johannes Damascenus dicit in 2o libro Quod voluntarium
+                                    est actum qui est operatio rationalis </incipit>
+                              </msItem>
+                              <msItem>
+                                 <incipit><locus>(fol. 150ra)</locus>
+                                    <quote>Nolite deficere benefacientes</quote> Aristoteles dicit
+                                    in primo ethycorum quod vna yrundo veniens non demonstrat ver
+                                 </incipit>
+                              </msItem>
+                              <msItem>
+                                 <note>Followed (fol. 151rb) by a passage marked 'illud pertinet ante 59 folio', and (fols. 151rb-152va) by a deleted alphabetical index, only part of A, part of T and V-W surviving because two folios have been glued together to form the present fol. 151. The index is followed (fol. 151vb) by a passage beginning 'Nota secundum beatum Thomam super 2m sententiarum dist. 22'.</note>
+                              </msItem>
+
+                              <!-- fol. 151rb: 345:   illus pertinet ante 59 folio -->
+                              <!-- fol. 151rb-va: 345: deleted index to 'the preceding' - followed by notes -->
+                          
+                           <msItem>
+                              <rubric>De visitacione sermones. De monialibus.</rubric>
+                              <incipit><locus>(fol. 152ra)</locus>
+                                 <quote> Ortus conclusus fons signatus <gap reason="editorial"
+                                    /></quote> Hugo de sancto victore in libro suo de arra sponse
+                                 alloquitur cuilibet fideli anime que christi sponsa
+                                 dicitur</incipit>
+                              <!-- 153 a slip -->
+                           </msItem>
+                           <msItem>
+                              <!-- sermo 4us -->
+                              <incipit><locus>(fol. 154rb)</locus>
+                                 <quote>Non est hic alius nisi domus dei <gap reason="editorial"
+                                    /></quote> Beatus Ieronimus a scolis liberalium artium conuolans
+                                 ad heremum sic scribit</incipit>
+                              <!-- 155 a slip -->
+                           </msItem>
+                           <msItem>
+                              <incipit><locus>(fol. 156va)</locus>
+                                 <quote>Plantauerat dominus deus paradisum <gap reason="editorial"
+                                    /></quote> Secundum boetium 4o de consolatione deus ex alta
+                                 prouidencie specula, patet ante 46 folio</incipit>
+                           </msItem>
+                           <msItem>
+                              <!-- 359 -->
+                              <incipit><locus>(fol. 158rb)</locus>
+                                 <quote> Perfruere vita cum uxore <gap reason="editorial"/></quote>
+                                 Aristoteles dicit in 8o ethycorum Multis esse amicum secundum
+                                 perfectam amiciciam, que est propter bonum virtutis, non
+                                 contingit</incipit>
+                           </msItem>
+                           <msItem>
+                              <incipit><locus>(fol. 159rb)</locus>
+                                 <quote>Gaudete in domino</quote> Phil. 3o. Philosophus dicit in x
+                                 ethycorum quod delectabilissima est illa operatio que est secundum
+                                 sapientiam</incipit>
+                           </msItem>
+                           <msItem>
+                              <incipit><locus>(fol. 160(a)rb)</locus>
+                                 <quote>Religio munda et immaculata <gap reason="editorial"
+                                    /></quote> Tullius dicit in 2o rethorice sue Religio est que
+                                 cuidam superiori nature quam diuinam <sic>vocat</sic> cultum
+                                 cereimoniamque affert</incipit>
+                           </msItem>
+                           <!-- 160b slip -->
+                           <msItem>
+                              <incipit><locus>(fol. 161va)</locus>
+                                 <quote>Sol illuminas per omnia <gap reason="editorial"/></quote>
+                                 Plato dicit in thymeo, fecit deus rerum conditor lucem clarissimam
+                                 quam solem vocamus</incipit>
+                           </msItem>
+                           <msItem>
+                              <incipit><locus>(fol. 162rb)</locus>
+                                 <quote>Omnia quecumque dixerunt <gap reason="editorial"/></quote>
+                                 Dicitur 7 q. j Monachorum vita subiectionis habet verbum et
+                                 disciplinatus</incipit>
+                           </msItem>
+                           <msItem>
+                              <incipit><locus>(fol. 163vb)</locus>
+                                 <quote>Estote prudentes <gap reason="editorial"/></quote> Secundum
+                                 beatus iohannes damascenus libro 2o capitulo 4o Omnis malicia et
+                                 immunde passiones ex demonibus excogitate sunt</incipit>
+                              <!-- unfoliated slip after -->
+                           </msItem>
+                           <msItem>
+                              <incipit><locus>(fol. 165ra)</locus>
+                                 <quote>Frater qui iuuatur a fratre <gap reason="editorial"
+                                    /></quote> Secundum auctorem libri de causis, omnis virtus vnita
+                                 plus est infinita quam virtus multiplicata</incipit>
+                           </msItem>
+                           <msItem>
+                              <!-- numbered 14 -->
+                              <incipit><locus>(fol. 166rb)</locus>
+                                 <quote>Omnia honeste et secundum ordinem <gap reason="editorial"
+                                    /></quote> Beatus Augustinus in enchiridion dicit deus fecit
+                              </incipit>
+                           </msItem>
+                           <msItem>
+                              <incipit><locus>(fol. 167rb)</locus>
+                                 <quote>Descendit in ortum nucum <gap reason="editorial"/></quote>
+                                 Unde beatus bernardus dicit, O si talibus lignis edificetur domus
+                                 mea quam custodio</incipit>
+                           </msItem>
+                           <!-- slip after 167 -->
+                           <msItem>
+                              <incipit><locus>(fol. 168va)</locus>
+                                 <quote>Videte quomodo caute ambuletis</quote> Secundum aristotelem
+                                 in 6 ethycorum Prudentis videtur esse posse bene consiliari circa
+                                 ipsa bona</incipit>
+                              <!-- image 390 - small slip after 168 -->
+                           </msItem>
+                           <msItem>
+                              <incipit><locus>(fol. 169va)</locus>
+                                 <quote>Ambuletis digne <gap reason="editorial"/></quote> Beatus
+                                 dyonisius dicit 4o capitulo de diuinis nominibus quod bonum est
+                                 etc. patet ante 65 folio</incipit>
+                           </msItem>
+                           <msItem>
+                              <incipit><locus>(fol. 170rb)</locus>
+                                 <quote>De caritate fraternitatis non habuimus <gap
+                                       reason="editorial"/></quote> Secundum philosophum 2o
+                                 ethycorum virtus est que bonum fecit habentem et opus eius bonum
+                                 reddit</incipit>
+                           </msItem>
+                           <msItem>
+                              <incipit><locus>(fol. 171rb)</locus>
+                                 <quote>Humiluamur sed non confundimur</quote> Secundum ysidorum in
+                                 libro ethymologiarum Superbus dictus quia super wlt videri quam
+                                 est</incipit>
+                           </msItem>
+                           <msItem>
+                              <incipit><locus>(fol. 172vb)</locus>
+                                 <quote>Festinauimus videre faciem <gap reason="editorial"/></quote>
+                                 Beatus Augustinus dicit in primo libro de doctrina christiana quod
+                                 omnes homines eque diligendi sunt </incipit>
+                           </msItem>
+                           <msItem>
+                              <incipit><locus>(fol. 173va)</locus>
+                                 <quote>In disciplina perseuerate</quote> Beatus Bernardus in libro
+                                 de ordine vite et morum instruccione dicit Infelix est qui legem
+                                 ite et discipline abicit</incipit>
+                           </msItem>
+                           <!-- slip after 174 -->
+                           <msItem>
+                              <!-- 175 = orig fol 86 = imge 405 -->
+                              <incipit><locus>(fol. 175rb)</locus>
+                                 <quote>Labor vester non est inanis <gap reason="editorial"
+                                    /></quote> Secundum aristotelem in 2o physicorum finis est cuius
+                                 causa etc., patet ante 52 folio</incipit>
+                           </msItem>
+                           <!-- scrap after 175 -->
+                        </msItem>
+
+                        <msItem n="6.9">
+                           <rubric>Sequuntur Sermones de Eleccione priorum</rubric>
+                           <msItem>
+                              <incipit><locus>(fol. 176vb)</locus>
+                                 <quote>Quis erit electus <gap reason="editorial"/></quote> Pro
+                                 impetranda gratia dicamus aue maria. Secundum philosophum in 2o
+                                 physicorum ars imitatur naturam in quantum potest</incipit>
+                           </msItem>
+
+                           <msItem>
+                              <incipit><locus>(fol. 179va)</locus>
+                                 <quote>Constitue nobis regem ut iudicet nos</quote>
+                                 Secundum aristotelem libri de causis Omnis virtus unita etc., patet
+                                 ante 77 folio</incipit>
+                           </msItem>
+                           <!-- slip after 177 -->
+                           <msItem>
+                              <incipit><locus>(fol. 178va)</locus>
+                                 <quote>Eligite vobis virum</quote> Secundum boetium 4o de
+                                 consolatione, Prouidencia est ipsa diuina ratio in summo omnium
+                                 prinicipe constituta</incipit>
+                              <!-- slip after 178 -->
+                           </msItem>
+                           <msItem>
+                              <incipit><locus>(fol. 179vb)</locus>
+                                 <quote>Eligite uobis virum </quote> Secundum aristotelem in 1o
+                                 politicorum, homo naturaliter est animal politicum et
+                                 ciuile</incipit>
+                           </msItem>
+                           <msItem>
+                              <incipit><locus>(fol. 180vb)</locus>
+                                 <quote>Eligite uobis virum</quote> Secundum aristotelem xij methace
+                                 Totus mundus est <unclear>quasi</unclear> vnum vnitate ordinis
+                              </incipit>
+                           </msItem>
+                          
+                        </msItem>
+
+
+                        <msItem n="6.10">
+                           <locus>(fols. 181v-182r)</locus>
+                           <title type="desc">List of the themata of the preceding sermons, keyed to
+                              the contemporary foliation.</title>
+                        </msItem>
+                        <msItem n="6.11">
+                           <locus>(fols. 182r-193r)</locus>
+                           <title type="desc">Alphabetical index of key words</title>
+                           <incipit>Aa ... Abymeleth ... Abscondes eos ... Abstinentia </incipit>
+                           <explicit>Zodome iniquitas 39 <lb/> Zorobabel 49. </explicit>
+                        </msItem>
+                         <note>A working text, with erasures, corrections, and cross-references to other folios of the manuscript. The compiler and scribe seems to have been a Carthusian, as indicated by the contents of the election and visitation sermons, and by the index entry and associated marginal notes relating to Carthusians (e.g. fols. 160ar, 170r).</note>
                      </msItem>
+                     
+                      <msItem xml:id="MS_Hamilton_56-part2-item6" n="5.2">  <msItem> <locus>(fols. 193r-203r)</locus>
+                           <title key="work_14901">Testamentum XII patriarcharum</title>
+                           <note>(excerpts)</note>
+                          
+                           <incipit><note><locus>(fol. 193r-198v, 201r-203rb, text continues from 82v)</locus></note> Dico vobis filii mei ut
+                              fugiatis odium et adheretis dilectioni </incipit>
+                           <explicit>erit in vobis rex seculorum</explicit>
+                         <note>Ending with I.vi (PG 2.1046). Contemporary notes indicate that fols. 199-200 are misplaced, with the text running from 198v to 201r.</note></msItem>
+                        <msItem>
+                           <locus>(fols. 203rb-204v, 199r-200v, 205r-206v)</locus>
+                           <title key="work_16351"><supplied>De XII patriarcharum</supplied></title>
+                           <incipit>Nota ossa omnium 12 patriarcharum sunt sepulta in ebron in spelunca duplici </incipit>
+                           <incipit>Ruben. Transcriptum eius De fornicatione. Et mortuus est ruben 130 anno vite sue</incipit>
+                           <explicit>et habitauerunt in egipto usque ad diem exitus eorum ex terra egipti scilicet per manum moysi</explicit>
+                           <note>Contemporary notes indicate that fols. 199-200 are misplaced, and the order should be 204, 199-200, 205.</note>
+                        </msItem>
+                        <note> Added after parts A and B were brought together. Described in the table of contents as 'Extracta de testamento 12 patriarcharum'. On fol. 206v is a genealogical diagram of the patriarchs, preceded by an extract from 'Gwigo'.</note></msItem>
+                     
+                   
                   </msContents>
                   <physDesc>
                      <objectDesc form="codex">
                         <supportDesc material="chart">
-                           <support>paper</support>
+                           <support>Paper, folded in quarto. Watermarks indistinct: include bull's head, unidentified.</support>
+                           <foliation>Fifteenth-century foliation 1-117 in brown ink, ignoring the inserted sheets.</foliation>
                         </supportDesc>
+                        <layoutDesc>
+                           <layout columns="2" writtenLines="55 57">2 cols., c. 55-7 lines. Frame-ruled in faint leadpoint, ruled space <dimensions unit="mm" type="ruled">
+                              <height min="185" max="200">185-200</height>
+                              <width max="125" min="120">120-125</width>
+                           </dimensions></layout>
+                        </layoutDesc>
                      </objectDesc>
+                     <handDesc hands="1">
+                        <handNote script="cursiva">Cursive by one hand (hand B of part A)</handNote>
+                     </handDesc>
+                     <decoDesc>
+                        <decoNote type="none">None in the main text; underling and paraph marks in red.</decoNote>
+                        <decoNote type="colInit">1-2 line initials in red or blue in the index.</decoNote>
+                     </decoDesc>
+                     <additions>Marginal notes throughout.</additions>
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
+                        <origDate calendar="Gregorian" notAfter="1450" notBefore="1400">15th
+                           century (first half (?))</origDate>
                         <origPlace>
-                           <country key="place_7000084">German</country>
+                           <country key="place_7000084">Germany</country>, perhaps <orgName key="org_415145858126223022295">Erfurt, Carthusian
+                              abbey of St. Salvator</orgName>
                         </origPlace>
                      </origin>
+                     <provenance>The scribe and compiler was very probably a Carthusian (see the note at the end of art. 6 above), perhaps at Erfurt.</provenance>
                   </history>
                </msPart>
+
                <msPart xml:id="MS_Hamilton_56-part3">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Hamilton 56 - Part 3</idno>
+                        <idno type="part">MS. Hamilton 56 - Part C (fols. 207-338)</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Hamilton_56-part3-item1" n="1">
-                        <title key="work_14583">Sermons</title>
-                        <textLang mainLang="la">Latin</textLang>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem xml:id="MS_Hamilton_56-part3-item1" n="7">
+                        <locus>(fols. 207r-291v)</locus>
+                        <title key="work_14583" type="desc">Sermones de sanctis</title>
+                        <msItem>
+                           <locus>(fols. 207r-211v)</locus>
+                           <rubric>Incipit iam sermo de sancta Maria Magdalena</rubric>
+                           <incipit>Non est talis super terram in aspectu et pulchritudine et in
+                              sensu verborum. Iudith xi. Verba proposita conuenienter assumuntur pro
+                              laude et preconio beate Marie Magdalene, in quibus verbis tripliciter
+                              commendatur et attollitur </incipit>
+                           <note>Schneyer 2. 664 (<persName key="person_19648593" role="aut"
+                                 >Henricus de Friemar</persName>, 354)</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 211v-216r)</locus>
+                           <rubric>Sermo de sancto Iacobo</rubric>
+                           <note>added in the margin</note>
+                           <incipit>Dilectus Deo et hominibus Moyses ... Recte per Moysen sanctus
+                              Iacobus intelligitur quia uterque ex aque assumptis </incipit>
+                           <note>Schneyer 1. 655 (<persName key="person_89657091" role="aut"
+                                 >Bonaventura</persName>, 969); Schneyer 5. 386 (<persName
+                                 key="person_22059469" role="aut">Servasanctus de Faenza</persName>,
+                              166); Schneyer 7. 316 (Sermones Fratrum Min. Clm 7779 no. 273).</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 216r-220v)</locus>
+                           <rubric>De eodem sermo</rubric>
+                           <incipit>E<supplied>t</supplied> erit sepulchrum eius gloriosum. Ysaie
+                              xi. Sicut patet ex superiorore et ad sensum cernimus tota die, nullius
+                              sancti sepulchrum sic est aput<sic/> homines gloriosum </incipit>
+                           <note>Schneyer 1. 655 (<persName key="person_89657091" role="aut"
+                                 >Bonaventura</persName>, 970); Schneyer 5. 386 (<persName
+                                 key="person_22059469" role="aut">Servasanctus de Faenza</persName>,
+                              167)</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 220v-225v)</locus>
+                           <rubric>Sermo de vinculis Petri</rubric>
+                           <note>added in the margin</note>
+                           <incipit>Surge velociter. Act. xii. Cum liberatio Petri apostoli facta
+                              fuerit in die dominice incarnytionis<sic/>
+                           </incipit>
+                           <note>Schneyer 1. 655 (<persName key="person_89657091" role="aut"
+                                 >Bonaventura</persName>, 971)</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 225v-231v)</locus>
+                           <rubric>De sermone sancti Laurentio</rubric>
+                           <incipit>Probauit me quasi aurum quod transit per ignem. Iob 23. Miror
+                              ualde modo quare beatus Laurencius significatur in auro ignis in auro
+                              maximo calore probato </incipit>
+                           <note>cf. Schneyer 1. 655 (<persName key="person_89657091" role="aut"
+                                 >Bonaventura</persName>, 972); Schneyer 5. 387 (<persName
+                                 key="person_22059469" role="aut">Servasanctus de Faenza</persName>,
+                              169)</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 231v-236v)</locus>
+                           <rubric>Sermo de eodem</rubric>
+                           <incipit>Igne me examinasti ... Ps. Inter omnia elementa ignis est
+                              actiuus eo quod plus ceteris habeat<sic/> de forma et minus de materia </incipit>
+                           <note>Schneyer 1. 656 (<persName key="person_89657091" role="aut"
+                                 >Bonaventura</persName>, 973); Schneyer 5. 387 (<persName
+                                 key="person_22059469" role="aut">Servasanctus de Faenza</persName>,
+                              170)</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 237r-243r)</locus>
+                           <rubric>Sermo de sancto Bartolomeo</rubric>
+                           <incipit><sic>Aamice</sic> ascende superius. Luc. 14. Dicit<sic/>
+                              <sic>Tulius</sic> et Valerius Maximus quod amicicia propinquitati
+                              prefertur eo quod a propinquitate amor removeri potest </incipit>
+                           <note>Schneyer 1. 656 (<persName key="person_89657091" role="aut"
+                                 >Bonaventura</persName>, 974); Schneyer 5. 387 (<persName
+                                 key="person_22059469" role="aut">Servasanctus de Faenza</persName>,
+                              171)</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 243r-247r)</locus>
+                           <rubric>De eodem</rubric>
+                           <incipit>Posuisti Domine super caput eius coronam de lapide precioso.
+                              Psalmista triplex corona legitur esse in scriptura, una aurea, altera
+                              stellea, 3o vero lapidea </incipit>
+                           <note>Schneyer 1. 656 (<persName key="person_89657091" role="aut"
+                                 >Bonaventura</persName>, 975); Schneyer 5. 387 (<persName
+                                 key="person_22059469" role="aut">Servasanctus de Faenza</persName>,
+                              172)</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 247r-255r)</locus>
+                           <rubric>De Assumptione</rubric>
+                           <incipit><quote>Maria optimam partem elegit</quote>. Luc. x. Qui uero in assumpcione
+                              matris Domini </incipit>
+                           <note>Unidentified</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 255r-261r)</locus>
+                           <rubric>De conuiuio Domini nostri</rubric>
+                           <incipit>Ut autem digne possumus ad conuiuium dominicum accedere
+                              debeamus nos vestire et preparare virtutibus predictis ne nobis
+                              dicatur 'Amice quomodo intrasti non habens vestem nuptialem' Mt. xxij.
+                              Ad Colos. </incipit>
+                           <note>Unidentified</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 261r-269v)</locus>
+                           <rubric>De eodem</rubric>
+                           <incipit>Ad conuiuium vero sacramentale attende </incipit>
+                           <note>Unidentified</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 269v-273r)</locus>
+                           <rubric>Exemplum seu sermo de dedicatione</rubric>
+                           <incipit><quote>Vos estis templum Dei uiui <gap reason="editorial"/></quote> ii Cor. iii<hi rend="superscript"
+                                 >o</hi>. Verba proposita conuenienter possunt exponi de templo
+                              spirituali fidelis anime </incipit>
+                           <note>Schneyer 2. 670 (<persName key="person_19648593" role="aut"
+                                 >Henricus de Friemar</persName>, 430); Schneyer 8. 782 (Anon. in
+                              Clm 28382, 46)</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 273r-282v)</locus>
+                           <rubric>De dedicatione</rubric>
+                           <incipit><quote>Uidi ciuitatem sanctam Iherusalem <gap reason="editorial"/></quote>Apocc. xxi. Verba
+                              proposita que scribuntur in epistula hodierna, spiritualiter
+                              intellecta possunt esse dicta in persona militantis ecclesie </incipit>
+                           <note>Schneyer 2. 671 (<persName key="person_19648593" role="aut"
+                                 >Henricus de Friemar</persName>, 431)</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 285r-288r)</locus>
+                           <rubric>Sequitur sermo de sancto Matheo</rubric>
+                           <incipit>Notandum quod nos legimus Christum recubuisse in 4or domibus ad
+                              comedendum </incipit>
+                           <note>Unidentified</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 288r-291v)</locus>
+                           <rubric>Item de sancto Matheo</rubric>
+                           <incipit>In nomine Domini amen. Notandum quod beatus Matheus
+                              spiritualiter secutus fuit Cristum </incipit>
+                           <note>Unidentified</note>
+                        </msItem>
+
+                     </msItem>
+                     <msItem xml:id="MS_Hamilton_56-part3-item2" n="8">
+                        <locus>(fols. 291v-324v)</locus>
+                        <title key="work_16350">De octo beatitudinibus</title>
+                        <rubric>Tractatus bonus de 8 Beatitudinibus <note>[added in the
+                              margin]</note></rubric>
+
+                        <incipit><quote>Videns Ihesus turbas <gap reason="editorial"/></quote> Math.
+                           Hodie sancta mater ecclesia ipsius sancti sanctorum
+                           nec non omnium quos sanctificauit sanctorum gloriam recolit sub vna
+                           celebritate</incipit>
+                        <explicit>merces fructus ventris Amen. <gap reason="editorial"/></explicit>
+                        <!-- 317r: 8th. Not Bernardino of Siena. -->
+                     </msItem>
+                     <msItem xml:id="MS_Hamilton_56-part3-item3" n="9">
+                        <locus>(fol. 325r-338v)</locus>
+                        <author key="person_12349035"><supplied>Bernardino da Siena</supplied></author><title key="work_1068"><supplied>Sermo extraordinarius XVI: de mortuis</supplied></title> 
+                        <rubric><locus>(fol. 324v)</locus> Sequitur iam sermo de mortuis nec non pro
+                           animabus <gap reason="editorial"/></rubric>
+                        <incipit><quote>Vidi mortuos magnos et pusillos <gap reason="editorial"
+                              /></quote> Beatus Cris<ex>ostomus</ex> in <choice>
+                              <sic><unclear>symeone</unclear></sic>
+                              <corr>sermone</corr>
+                           </choice> de mortuis dicit verbum terribile de morientibus. Ait enim sic moriens cunctos salutat </incipit>
+                        <explicit>in paradiso erit contentus</explicit>
+                        <note>Opera Omnia (1745), III.377-8, but varies from, and longer than, the text as printed (providing the full sermon?).</note>
+                      </msItem>
+                     <msItem xml:id="MS_Hamilton_56-part3-item4" n="10">
+                        <locus>(fol. 338v)</locus>
+                        <rubric>Sequitur iam sermo de sancta Elizabeth</rubric>
+                        <incipit><quote>Considerauit semitas domus sue <gap reason="editorial"></gap></quote> Prouerb. 31. Verba proposita
+                           convenienter assumitur in laudem et preconium in honorem beate Elisabeth </incipit>
+                        <note>Ends imperfect due to loss of leaves. Marginal note: 'Vide istum sermonem pulchre completum in sermonibus Henrici de Frimaria'.</note>
+                        <note>Schneyer 2. 670 (<persName key="person_19648593" role="aut">Henricus
+                              de Friemar</persName>, 423)</note>
                      </msItem>
                   </msContents>
                   <physDesc>
                      <objectDesc form="codex">
                         <supportDesc material="chart">
-                           <support>paper</support>
+                           <support>Paper, folded in quarto. Watermarks (a) bull's head with six- or seven-petalled flower on rod of one line, indistinct, not identified; (b) (fols.315-338) bull's head with seven-petalled flower on rod of two lines, not identified.</support>
+                           <foliation>Fifteenth-century foliation 1-132 in brown ink.</foliation>
+                           <collation>Catchwords; quires numbered in arabic on the bottom middle of the final verso and the top right corner of the opening recto.</collation>
                         </supportDesc>
+                        <layoutDesc>
+                           <layout columns="1" writtenLines="26 31" rulingMedium="leadpoint">Written in 26-31 long
+                              lines. Frame-ruled in leadpoint, ruled space <dimensions unit="mm" type="ruled">
+                                 <height max="145" min="135">135-145</height>
+                                 <width min="85" max="90">85-90</width>
+                              </dimensions></layout>
+                        </layoutDesc>
                      </objectDesc>
+                     <handDesc hands="1">
+                        <handNote script="cursiva">Cursive by one hand with many loopless forms.</handNote>
+                     </handDesc>
+                     <decoDesc>
+                        <decoNote type="colInit">3-line initials in red.</decoNote>
+                     </decoDesc>
+                     <additions>Occasional marginal notes.</additions>
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
+                        <origDate calendar="Gregorian" notAfter="1460" notBefore="1440">15th
+                           century (middle (?))</origDate>
                         <origPlace>
                            <country key="place_7000084">German</country>
                         </origPlace>
                      </origin>
                   </history>
                </msPart>
+
+               <msPart>
+                  <msIdentifier>
+                     <altIdentifier type="partial">
+                        <idno type="part">MS. Hamilton 56 - fragments </idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  <msContents>
+                     <summary>The table of contents is pasted over a parchment pastedown containing German text. No entire words are visible though the
+                        text is clearly in German. This is the first of four other identifiable
+                        fragments of the same document in this manuscript. Other fragments are
+                        visible between fols. 12v-13r (the second stub), 326v-327r (the first stub), and as the rear pastedown.</summary>
+                     <msItem>
+                        <title key="work_17152" type="desc">Cartulary of the Carthusian convent in Erfurt</title>
+                       <!-- <msItem>
+                           <locus>(fols. 12v-13r (stub 1))</locus>
+                           <incipit><gap/> vnd vnsern gotishusz ewiclich bliben vnd sollen des
+                              nymande zugebin vorbasz nie plichtig sy</incipit>
+                        </msItem>-->
+                        <msItem>
+                           <locus>(fols. 12v-13r (stub 2))</locus>
+                           <incipit><note>(recto)</note>
+                              <gap/>ans vom Eckirsberge Techand czu Nuwenburg <lb/> eyne gemeyne
+                              herberge czu mulhusz odir czu saltza war vns dy vorgenantin koufer
+                              odir </incipit>
+                           <incipit><note>(verso)</note> ma<gap/>g<gap/>se vnd were dy vns der
+                              vorgenanten er berld koufer gutlich gantz<gap/>
+                              <lb/> Jare an deme tage der heilgen Aposteln</incipit>
+                           <note>This is evidently the continuation of the document underneath the
+                              paper pastedown on the inside front cover. The text is in two columns.
+                           </note>
+                        </msItem>
+                        <msItem>
+                           <locus>(326v-327r (stub 1))</locus>
+                           <note>Three lines of visible text on either
+                              side, in two columns.</note>
+                           <incipit><note>(recto)</note> vorbaz an vnsern nutz vnd vromen
+                              wiszintlich gewant habin noch rate vnser frunde vnd dez selbin geldez <gap/>
+                              <lb/> czusant worden Era dominorum de Saltza Antiquorum super
+                              pensio<gap/> Guntheri gotschalci in Isenack </incipit>
+                           <incipit><note>(verso)</note> gestrengin herre Ditherich von wytzeleiben
+                              er <gap/>cze von Blyken Blywen ditherich von Bernwal<gap/> ander lute
+                              <gap/> den wol ist czu geloubin <lb/> yre nochkomen hene heischin vnd
+                              sullin vnd wollin dar Inleger halden alse lange biz diz der vorgenante
+                              Bernhard vnd sime erbin vorkoufer dy ansprache</incipit>
+                        </msItem>
+                        <msItem>
+                           <locus>(rear pastedown)</locus>
+                           <incipit><note>(left-hand column)</note>
+                              <gap/>te Kylians tage Nach Cristi geburte dry <gap/>hundirt iar In dem
+                              tzwei vnd achtzigestem jare <lb/><gap/>ntique littere super bonis in Saltza
+                              et <unclear>censibus</unclear> <lb/><gap/> Reynhart ratgebe houbtman Czu Mulhu <lb/><gap/>
+                           </incipit>
+                           <explicit><note>(left-hand column)</note> fyer hůnre jerlicher vnd ewiger
+                              gulde czu <gap/> cristene vnd czu gebene alle jar vff sente Mi
+                              <gap/>hels tag in dren Milen von der stad czu Saltza </explicit>
+                           <incipit><note>(right-hand column)</note> dez czu warem orkunde vnser
+                              icklich<gap/> eygin Ingesigel an des brief by dez vorgenantin
+                              vorkoufers Insegil wiszintlichin laszen hengin · vnd ich vorgenanten
+                              Reynhard Ratgebe vorkoufer </incipit>
+                           <explicit><note>(right-hand column)</note> Item Ekkehard goszwin gebt von
+                              eyme vyrteile landes eyn vyrteil weyszis eyn vyrteil rocken vnd eyn
+                              vyrteil gersten Item Heinrich heyse gebit von eyme vyrteil swides </explicit>
+                           <note>The rear pastedown contains the final, and most complete, of the
+                              four fragments of the same document preserved in the binding of this
+                              manuscript. Two columns are visible; in each 21 lines of text are
+                              visible. The document has been cut at the left with loss of text. </note>
+                           <note>Stephen Mossmann in 2003 identified the text as relating to the Fransiscan house in Erfurt, but the word 'Car...user' is clearly visible, left column, lines 9-10 from bottom.</note>
+                        </msItem>
+                        <textLang mainLang="de">German</textLang>
+                     </msItem>
+                  </msContents>
+
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="perg">
+                           <support>parchment</support>
+                        </supportDesc>
+                        <layoutDesc>
+                           <layout columns="2" rulingMedium="ink">Ruled in ink for 2 columns of more than 21 lines.</layout>
+                        </layoutDesc>
+                     </objectDesc>
+                     <handDesc>
+                        <handNote script="cursiva">Cursive</handNote>
+                     </handDesc>
+                     <decoDesc>
+                        <decoNote type="none">None</decoNote>
+                     </decoDesc>
+                  </physDesc>
+                  <history>
+                     <origin>
+                        <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th
+                           century</origDate>
+                        <origPlace><country key="place_7000084">Germany</country>, presumably <settlement key="place_7024031">Erfurt</settlement>, <orgName key="org_415145858126223022295">Carthusians</orgName></origPlace>
+                     </origin>
+                  </history>
+               </msPart>
+
+
             </msDesc>
          </sourceDesc>
       </fileDesc>
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
+      <revisionDesc>
+         <change when="2021-03">Revised description with changes to physical description including collation, watermarks; dating; fragments.</change>
+         <change when="2020-06">New draft description for Polonsky German project.</change>
+         <change when="2020-05-14">Description revised for Polonsky digitization project to include
+            additional information from printed descriptions.</change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
-            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+            <persName>James Cummings</persName> Up-converted the markup using <ref
+               target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl"
+               >https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>
          <change when="2017-05-25">
-            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+            <persName>James Cummings</persName> Up-converted the markup using <ref
+               target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl"
+               >https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>
       </revisionDesc>
    </teiHeader>

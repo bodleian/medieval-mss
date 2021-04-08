@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_7096">
+   <!-- todo: fuller account of content? -->
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -23,13 +24,13 @@
                <resp when="1973"/>
                <persName>R. W. Hunt</persName>
             </respStmt>
+            <respStmt xml:id="TA">
+               <resp when="2020">Encoding</resp>
+               <persName>Tuija Ainonen</persName>
+            </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -63,10 +64,12 @@
                      <idno type="SCN">1259</idno>
                   </altIdentifier>
                </msIdentifier>
+               <head>Missal; Germany (Speyer), c. 1430-1440</head>
                <msContents resp="#VD">
                   <msItem xml:id="MS_Laud_Misc_282-item1" n="1" class="#liturgica">
+                     <locus>(fols. 1r-330v)</locus>
                      <title type="desc" key="work_13355">Missal, local use</title>
-                     <note>Fragmentary calendar (fol. 1), Jan.Febr.; mass of the Three Kings (fol. 2); temporale (fol. 3)
+                     <note>Fragmentary calendar (fol. 1), Jan. Febr.; mass of the Three Kings (fol. 2); temporale (fol. 3)
                         with Epistole et evangelia feriarum per circulum anni. Excepta quadragesima (fol. 35)
                         instead of the first Sunday of Lent (fol. 67 continues: feria secunda post
                         Invocavit). Fols. 131-44 a replacement: there is a gap in the original foliation between cxxviii (fol. 130) and
@@ -76,8 +79,8 @@
                         dedication (fol. 268v) and the saints (fol. 270); votive masses (fol. 301:
                         Incipiunt speciales misse), partly written by another hand which added a proser
                         (fol. 323).</note>
-                     <note>Leather and parchment tags, in the
-                        lower (fol. 138) and upper (fols. 131 f.) margins.</note>
+                     <note>Leather and parchment tags, in the lower (fol. 138) and upper (fols. 131 f.) margins.</note>
+                     <note>Two leaves are wanting between fols. 144 &amp; 145 (Frere, <title>Biblioteca musico-liturgica</title>, p. 98).</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -85,7 +88,8 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                        <extent> i + 330 + i fol.<dimensions type="leaf" unit="mm">
+                        <extent> i + 331 + i leaves 
+                           <dimensions type="leaf" unit="mm">
                            <height>330</height>
                            <width>250</width>
                         </dimensions>
@@ -94,20 +98,27 @@
                               <width>160</width>
                            </dimensions>
                         </extent>
-                        
+                        <foliation>i, 1-330 (fol. 294 doubled, fol. 331 numbered in error as 231)</foliation>
                      </supportDesc>
                      <layoutDesc>
                            <layout columns="2" writtenLines="29 30">2 col. of 29/30 lines.</layout>
                         <layout writtenLines="19">19 lines in the canon.</layout>
                         </layoutDesc>
                   </objectDesc>
+                  <handDesc>
+                     <handNote script="textualisNorthern" execution="formata">Textura.</handNote>
+                  </handDesc>
                   <musicNotation>
                      <p>Gothic notation on 5 lines (3 black, 1 yellow, 1 red)</p>
                   </musicNotation>
                   <decoDesc>
-                     <decoNote resp="#PA">Fine miniature, borders, historiated and other initials. (P&amp;A i. 155, pl. XI)</decoNote>
-                     <decoNote>Rubrics in black and red underlined. Some coloured initials
-                        (fols. 13, 189, 215, 268v, 270)</decoNote>
+                     <decoNote resp="#PA" type="miniature">Fine miniature: fol. 137v, Crucifixion. (P&amp;A i. 155, pl. XI)</decoNote>
+                    <!-- chk that #PA plate is of the miniature-->
+                     <decoNote resp="PA" type="border">Borders.</decoNote>
+                     <decoNote resp="#PA" type="histInit">Historiated initials: fol. 3r, Annunciation; fol. 13r, Nativity; </decoNote><decoNote resp="#PA" type="histInit">Decorated initials.</decoNote>
+                     <decoNote type="flourInit">Penwork initials.</decoNote>
+                     <decoNote type="colInit">Coloured initials.</decoNote>
+                     <decoNote type="rubrication">Rubrics in black and red underlined.</decoNote>
                   </decoDesc>
                   <bindingDesc resp="#Q2">
                      <binding notAfter="1800" notBefore="1700">
@@ -117,7 +128,7 @@
                </physDesc>
                <history>
                   <origin resp="#PA">
-                     <origDate calendar="Gregorian" notAfter="1440" notBefore="1430">c. 1430 - 1440</origDate>
+                     <origDate calendar="Gregorian" notAfter="1450" notBefore="1420">c. 1430 - 1440</origDate>
                      <origPlace>
                         <country key="place_7000084">German</country>, <settlement key="place_7012341">Speyer</settlement>
                      </origPlace>
@@ -129,8 +140,8 @@
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Adapted (2018) from S. J. P. Van Dijk, <title>Handlist of the Latin Liturgical Manuscripts in the Bodleian Library Oxford</title>  Vol. 1: Mass Books, and Pächt and Alexander. Previously described in the Quarto Catalogue (H. O. Coxe,  <title>Laudian Manuscripts</title>, Quarto Catalogues II, repr. with corrections, 1969-73, from the original ed. of 1858-1885). 
-                            
+                        <source>Description adapted (Sept. 2020), with additional description of decoration, from the following sources, with additional reference to published literature as cited:
+                           <listBibl><bibl>S. J. P. Van Dijk, <title>Handlist of the Latin Liturgical Manuscripts in the Bodleian Library Oxford</title>  Vol. 1: Mass Books</bibl><bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, I (1966), no. 155</bibl></listBibl> Previously described in the Quarto Catalogue (H. O. Coxe,  <title>Laudian Manuscripts</title>, Quarto Catalogues II, repr. with corrections, 1969-73, from the original ed. of 1858-1885). 
                             
                             <listBibl>
                               <bibl type="QUARTO" facs="aby0164.gif">Quarto Catalogue, col. 231</bibl>
@@ -141,15 +152,29 @@
                         </source>
                      </recordHist>
                   </adminInfo>
-                  <surrogates><bibl type="digital-facsimile" subtype="partial"><ref target="https://digital.bodleian.ox.ac.uk/inquire/p/95855790-0754-4bbf-9ba3-37191a7f2411"><title>Digital Bodleian</title></ref> <note>(1 image from 35mm slides)</note></bibl></surrogates><listBibl type="WRAPPER"><listBibl>
-                     <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, I (1966), no. 155</bibl>
-                  </listBibl></listBibl>
+                  <surrogates>
+                     <bibl type="digital-facsimile" subtype="full">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/4a5ecff9-fc8d-4315-a85f-8f21f8b96fac/">
+                           <title>Digital Bodleian</title></ref> <note>(full digital facsimile)</note>
+                     </bibl>
+                     <bibl type="digital-facsimile" subtype="partial">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/95855790-0754-4bbf-9ba3-37191a7f2411/">
+                           <title>Digital Bodleian</title></ref> <note>(1 image from 35mm slides)</note>
+                     </bibl>
+                  </surrogates>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="INTERNET">
+                        <head>Online resources:</head>
+                        <bibl><ref target="https://hab.bodleian.ox.ac.uk/en/"><title>Manuscripts from German-Speaking Lands – A Polonsky Foundation Digitization Project</title></ref></bibl>
+                     </listBibl>
+                  </listBibl>
                </additional>
             </msDesc>
          </sourceDesc>
       </fileDesc>       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
+      <revisionDesc>          
+         <change when="2020-09-23">Description revised for Polonsky digitization project.</change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

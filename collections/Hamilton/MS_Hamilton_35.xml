@@ -1,21 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_5997">
    <teiHeader>
+      <!-- todo: see below. check decoration also -->
       <fileDesc>
          <titleStmt>
             <title>MS. Hamilton 35</title>
             <title type="collection">MSS. Hamilton</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="SC">
+               <resp when="1905">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            <respStmt xml:id="SM">
+               <resp when="2003">Cataloguer</resp>
+               <persName>Stephen Mossman</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2019">Encoding</resp>
+               <persName>Matthew Holford</persName>
+            </respStmt>
+            <respStmt xml:id="TA">
+               <resp when="2019">Encoding</resp>
+               <persName>Tuija Ainonen</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -49,82 +58,124 @@
                      <idno type="SCN">24465</idno>
                   </altIdentifier>
                </msIdentifier>
+               <head>Jacobus de Clusa, various works; Germany, 15th century, partly 1443-1444</head>
                <msContents>
+                  <textLang mainLang="la">Latin</textLang>
+<!-- chk all incipits and explicits; add folio ranges; check flyleaves - correct like this?; chk 'Dated and Datable'; check & describe provenance marks-->
                   <msItem xml:id="MS_Hamilton_35-item1" n="1">
                      <locus>(fol. 1)</locus>
+                     <author key="person_22933358">Jacobus, de Clusa, 1381?-1465</author>
+                     <title key="work_7399">Liber Quaestionum de diversis materiis</title> 	
                      <rubric>Questiones et dubia pro religiosis vtilia</rubric>
-                     <incipit>In
-                     nomine ... Ad mandatum et beneplacitum venerabilis patris domini abbatis de
+                     <incipit>In nomine ... Ad mandatum et beneplacitum venerabilis patris domini abbatis de
                      Claratumba</incipit>
-                     <incipit>Queritur
-                     volenti ingredi religionem</incipit>
-                     <note>In 24 parts. At fol. 158v is 'Epistola Bernardi
+                     <incipit>Queritur volenti ingredi religionem </incipit><!-- Meier says this is different from Dialogus religiosum which is his no. 36 -->
+                     <note>In 24 parts. Meier, no. 3 (this ms. listed)</note></msItem><msItem xml:id="MS_Hamilton_35-item1a">
+                        <!-- TODO ? --><note> At fol. 158v is 'Epistola Bernardi
                         in libello de Mundi contemptu', addressed to the abbot of Cluny.</note>
                   </msItem>
                   <msItem xml:id="MS_Hamilton_35-item2" n="2">
                      <locus>(fol. 160)</locus>
-                     <author key="person_22933358"><supplied>Jacobus de Clusa</supplied></author>
-                     <title>De temptatione et consolatione religiosorum</title>
-                     <rubric>De temptacionibus &#x0026; solacionibus religiosorum</rubric>
-                     <incipit>Instantibus tuis patribus</incipit>
+                     <author key="person_22933358">Jacobus de Clusa</author>
+                     <title key="work_2316">De temptatione et consolatione religiosorum</title>
+                     <rubric>De temptacionibus &amp; solacionibus religiosorum</rubric>
+                     <incipit>Instantibus tuis precibus</incipit>  
                      <note>In 16 dialogues between Magister and
-                        Discipulus, with preface: at end is 'Planctus Peccatoris' beg. 'Scribis
-                        contra me': fol. 240v)</note>
+                        Discipulus, with preface. Meier no. 38, this ms. listed</note><!-- also Laud 586 fol. 2a ff --></msItem>
+                  <msItem xml:id="MS_Hamilton_35-item2a" >
+                     <locus>(fol. 240v)</locus>
+                     <author key="person_22933358">Jacobus de Clusa</author>
+                     <title>Planctus peccatorum</title>
+                     <rubric>Planctus Peccatoris</rubric><incipit>Scribis
+                        contra me</incipit>
+                     <note>Meier no. 76, this ms. listed.</note>
                   </msItem>
                   <msItem xml:id="MS_Hamilton_35-item3" n="3">
                      <locus>(fol. 245)</locus>
-                     <rubric>...Oculus Religiosorum</rubric>
-                     <incipit>In nomine ... Multorum Deo
-                     militare cupiencium</incipit>
+                     <author key="person_22933358">Jacobus de Clusa</author>
+                     <title key="work_2352">Oculus religiosorum</title>
+                     <rubric>... Oculus Religiosorum</rubric>
+                     <incipit>In nomine ... Multorum Deo militare cupiencium</incipit>
                      <note>in 28 chapters: at end in a different but contemporary
                         hand is 'Anno Domini M° cccc° xliij° infra octauas Natiuitatis gloriose
-                        Virginis ... Marie.' Then follow 'Formula reformandi religiones ab
-                        obseruancia lapsas' beg. 'Quia teste ore veri-tatis': fol. 286): 'Epistola
+                        Virginis ... Marie.'</note>  <note>Meier no. 45, this ms. listed.</note></msItem>
+                  <msItem xml:id="MS_Hamilton_35-item3a">
+                     <locus>(fol. 286)</locus>
+                     <author key="person_22933358">Jacobus de Clusa</author>
+                     <title>De reformatione claustrorum</title>
+                     <rubric>Formula reformandi religiones ab
+                        obseruancia lapsas</rubric><incipit>Quia teste ore veritatis</incipit><note>Meier no. 63, this ms. listed.</note></msItem>
+                  <msItem xml:id="MS_Hamilton_35-item3b"><note>'Epistola
                         Henrici de Hassia' (beg. 'Honorabili ... Literas caritatis vestre': fol.
                         292): a poem on the vanity of earthly delights (beg. 'Si tibi diuicias
                         cumules metalla, quid inde?': fol. 293v).</note>
+                   
+                     <!--chk ref & add to authority file? <note>see Paul Lehmann, Mittelalterliche Bibliothekskataloge Deutschlands und der Schweiz, II (München 1928) pp. 231, 238, 384 ff.; D. Mertens, <title>Iacobus Carthusiensis: Untersuchungen zur Rezeption der Werke des Kartäusers Jakob von Paradies: (1381-1465)</title>. Veröffentlichungen des Max-Planck-Instituts für Geschichte. Studien zur Germania sacra 13 (Göttingen 1976) p. 90.</note>-->
                   </msItem>
                   <msItem xml:id="MS_Hamilton_35-item4" n="4">
                      <locus>(fol. 295)</locus>
+                     <author key="person_22933358">Jacobus de Clusa</author>
+                     <title key="work_7400">De bona voluntate</title>
                      <rubric>...Tractatus de bona voluntate</rubric>
-                     <incipit>Cum omnium fructuum
-                     nobilitas</incipit>
+                     <incipit>Cum omnium fructuum nobilitas</incipit>
                      <note>in 22 chapters: at end 'Annis [sic] Domini 1444° in octaua
-                        Epyphanie, etc.'</note>
+                        Epyphanie, etc.'</note><note>Meier no. 19, this ms. listed.</note>
                   </msItem>
                   <msItem xml:id="MS_Hamilton_35-item5" n="5">
                      <locus>(fol. 323v)</locus>
+                     <author key="person_22933358">Jacobus de Clusa</author>
+                     <title key="work_7401">De perfectione religiosorum</title>
                      <rubric>De perfectione Religiosorum</rubric>
-                     <incipit>Cum cognitio et
-                     desiderium finis</incipit>
+                     <incipit>Cum cognitio et desiderium finis</incipit><note>Meier no. 15, this ms. listed.</note>
                   </msItem>
                   <msItem xml:id="MS_Hamilton_35-item6" n="6">
                      <locus>(fol. 331v)</locus>
+                     <author key="person_22933358">Jacobus de Clusa</author>
+                     <title key="work_2313">De arte curandi vitia</title>
                      <rubric>De arte curandi Vicia</rubric>
                      <incipit>Isaac sanctus patriarcha</incipit>
-                     <note>At
-                     the foot of the first column is '1444 Mich'', i.e. Michaelmas (?).</note>
+                     <note>At the foot of the first column is '1444 Mich'', i.e. Michaelmas (?).</note><note>Meier no. 40, this ms. listed.</note>
                   </msItem>
                   <msItem xml:id="MS_Hamilton_35-item7" n="7">
                      <locus>(fol. 340v)</locus>
+                     <author key="person_22933358">Jacobus de Clusa</author>
+                     <title key="work_7402">De profectu spiritualis uitae</title>
                      <rubric>De profectu in vita spirituali</rubric>
-                     <incipit>Spiritualis vir omnia
-                     diiudicans</incipit>
+                     <incipit>Spiritualis vir omnia diiudicans</incipit>
                      <note> At the foot of the first column is '1444', and at the foot of
-                        the last '1444. hedwigis', i.e. St. Hedwig's day (?).</note>
+                        the last '1444. hedwigis', i.e. St. Hedwig's day (?).</note><note>Meier no. 77, this ms. listed.</note>
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
+                        <extent>345 leaves
+                        <dimensions unit="mm" type="leaf">
+                              <height>285</height>
+                              <width>210</width>
+                           </dimensions>
+                         
+                        </extent>
                      </supportDesc>
+                     <layoutDesc>
+<!--add written lines -->                       <layout columns="2" writtenLines="38 52">Two columns, c. 38-52 lines. Column space <dimensions unit="mm" type="column">
+                              <height>230-40</height>
+                              <width>70</width>
+                           </dimensions></layout>
+                     </layoutDesc>
                   </objectDesc>
-                  <accMat>The fly-leaves are (1) part of an original Latin indulgence issued by the
+                  <bindingDesc>
+                     <binding calendar="Gregorian" notAfter="1475" notBefore="1500" cert="unknown">
+                        <p>Ruled and stamped pigskin on boards (15th century)</p>
+                     </binding>
+                  </bindingDesc>
+<!--moved to spearate flyleaf parts:
+                     <accMat>The fly-leaves are (1) part of an original Latin indulgence issued by the
                      archbp. of Mayence, June 10, 1252, in connexion with a new hospital in that
                      city: (2) a 13th cent. German medical note which beg. '[M ?]orfea ist ein
                      sichtum da von kumit vil dicke daz den mannen uz den barte uettet daz
-                     har.'.</accMat>
+                     har.'.</accMat>-->
                </physDesc>
                <history>
                   <origin>
@@ -133,24 +184,136 @@
                         <country key="place_7000084">German</country>
                      </origPlace>
                   </origin>
+                  <provenance resp="SC"><orgName key="org_415145858126223022295">Erfurt, Carthusian abbey of St. Salvator</orgName>: 'Hxx': H20 in the catalogue.<!--: unspecified marks. CHK!! --></provenance>
+                  <!-- TODO: add Bulow -->
+                  <provenance notBefore="1841" notAfter="1856"><persName role="fmo" key="person_54195353">Sir William Hamilton, 1788-1856</persName></provenance>
+                  <acquisition when="1857">Presented to the Bodleian Library by his sons and received in 1857.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Description adapted from the Summary Catalogue (1897). 
-                            
+                        <source>Description adapted by Tuija Ainonen (March 2020) from the following sources (with additional physical description):
+                            <listBibl>
+                               <bibl>Unpublished description by Stephen Mossman, c. 2003.</bibl>
+                            </listBibl>
                             <listBibl>
                               <bibl type="SC" facs="aam0063.gif">Summary Catalogue, Vol. 5, p.  28</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
+                  <surrogates>
+                     <bibl type="digital-facsimile" subtype="full">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/6832ad07-2f51-4874-94f8-7a818dfa038b/">
+                           <title>Digital Bodleian</title></ref> <note>(full digital facsimile)</note>
+                     </bibl>
+                  </surrogates>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="INTERNET">
+                        <head>Online resources:</head>
+                        <bibl><ref target="https://hab.bodleian.ox.ac.uk/en/"><title>Manuscripts from German-Speaking Lands – A Polonsky Foundation Digitization Project</title></ref></bibl>
+                     </listBibl>
+                  </listBibl>
                </additional>
+               
+               <msPart>
+                  <msIdentifier>
+                     <altIdentifier>
+                        <idno>MS. Hamilton 35 - flyleaf (fol. i)</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  <msContents>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem>
+                        <locus>(fol. i)</locus>
+                        <title>Indulgence</title>
+                        <note>Fragment. Issued by the archbishop of Mayence, June 10, 1252, in 
+                           connexion with a new hospital in that city. </note>
+                     </msItem>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="perg">
+                           <support>parchment</support>
+                           <extent>
+                              <!--<dimensions unit="mm" type="leaf">
+                                 <height></height>
+                                 <width></width>
+                              </dimensions>
+                              <dimensions unit="mm" type="written">
+                                 <height></height>
+                                 <width></width>
+                              </dimensions>-->
+                           </extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+                  <history>
+                     <origin>
+                        <origDate calendar="Gregorian" when="1252">1252</origDate>
+                        <origPlace><settlement key="place_7004449">Mayence</settlement>, <country key="place_7000084">Germany</country></origPlace>
+                     </origin>
+                  </history>
+               </msPart>
+               
+               <msPart>
+                  <msIdentifier>
+                     <altIdentifier>
+                        <idno>MS. Hamilton 35 - flyleaf (fol. ii)</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  <msContents>
+                     <textLang mainLang="de">German</textLang>
+                     <msItem>
+                        <locus>(fol. ii)</locus>
+                        <author key="person_38590640">Ortolf von Baierland</author>
+                        <title key="work_7398">Arzneibuch</title>
+                        <note>fragment</note>
+                        <incipit><unclear>M</unclear>orfea ist ein sichtu<ex>m</ex> da vo<ex>n</ex> kumit 
+                           vil dicke daz de<ex>n</ex> man<ex>n</ex>e<ex>n</ex> uz den barte uellet daz
+                           har </incipit>
+                        <explicit>De<ex>n</ex> die mil daz har vrezsen d<ex>ar</ex>zu stoze senf 
+                           mit honigk vn<ex>d</ex> sm<ex>er</ex>e daz houb<ex>et</ex> stetlichen do 
+                           mite </explicit>
+                        <note>This fragment is an unfoliated parchment leaf which has a text in German on what is now the recto. The flyleaf is an unfolded bifolium, and originally the text would have been on the second verso of the bifolium. The main text is substantially worn through being pasted onto the board cover. </note>
+                        <note>It contains a medical treatise on the treatment of morphea, a form of skin disease. The treatise contains medicinal recipes, along with an exemplum of one master Johannes who was treated for this complaint by his wife. This text is similar to that in Trier, Stadtbibliothek Hs. 1025/1944 8°, beginning on fol. 124v, where it forms part of a collection of medical recipes associated with a heavily interpolated text of the ‘Arzneibuch’: cf. Betty C. Bushey, <title>Die deutschen und niederländischen Handschriften der Stadtbibliothek Trier bis 1600</title> (Wiesbaden 1996), pp. 138-143. The precise status of this recipe within the ‘Arzneibuch’ is not yet precisely defined; it does not feature in the single-manuscript edition of the oldest manuscript (Cologne, Stadtarchiv W 4° 24*), that being James Follan (ed.), <title>Das Arzneibuch Ortolfs von Baierland</title>, Veröffentlichungen der Internationalen Gesellschaft für Geschichte der Pharmazie e. V., N. F. 23 (Stuttgart 1963).</note> 
+                     </msItem>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="perg">
+                           <support>parchment</support>
+                           <extent>
+                             <!-- <dimensions unit="mm" type="leaf">
+                                 <height></height>
+                                 <width></width>
+                              </dimensions>
+                              <dimensions unit="mm" type="written">
+                                 <height></height>
+                                 <width></width>
+                              </dimensions>-->
+                           </extent>
+                        </supportDesc>
+                        <layoutDesc>
+                           <layout columns="2" writtenLines="22">Two columns of 22 lines each; the final three lines of the second column contain a later Latin benediction, in weaker ink and heavily faded. </layout>
+                        </layoutDesc>
+                     </objectDesc>
+                     <handDesc>
+                        <handNote>13th century textura, in black ink. </handNote>
+                     </handDesc>
+                  </physDesc>
+                  <history>
+                     <origin>
+                        <origDate calendar="Gregorian" notBefore="1200" notAfter="1300">13th century</origDate>
+                     </origin>
+                  </history>
+               </msPart>
             </msDesc>
          </sourceDesc>
       </fileDesc>
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
+      <revisionDesc> 
+         <change when="2020-03-19">Description revised for Polonsky digitization project to include additional information from printed descriptions.</change>         
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

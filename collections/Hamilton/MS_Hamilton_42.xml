@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6005">
    <teiHeader>
+      <!-- todo: 
+         check extent with collation. check for any missing text at folio errors
+         double check text and blank leaves
+         -->
       <fileDesc>
          <titleStmt>
             <title>MS. Hamilton 42</title>
             <title type="collection">MSS. Hamilton</title>
             <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
-            </respStmt>
-         </titleStmt>
-         <editionStmt>
-            <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
+               <resp when="2020-12">Cataloguer</resp>
+               <resp when="2020-12">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
-         </editionStmt>
+         </titleStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
             <address>
@@ -49,13 +47,47 @@
                      <idno type="SCN">24472</idno>
                   </altIdentifier>
                </msIdentifier>
+               <head>Sermon collection of Conrad Ubelin; De passione domini; Carthusian visitation sermons. A, B Germany (probably Erfurt Charterhouse), 15th century, second half, partly 1459</head>
                <physDesc>
-                  <p n="composite">Composite: two parts</p>
+                  <objectDesc>
+                     <supportDesc>
+                        <extent>ii (unfoliated) + 289 + ii (unfoliated)
+                           <dimensions unit="mm" type="leaf">
+                              <height>210</height>
+                              <width>155</width>
+                           </dimensions></extent>
+                        <foliation>Fifteenth-century foliation in arabic; skips 20-29 (apparently in error), 41-3 (leaves cut out), 68-70 (leaves cut out), 110 (error), 193 (error), 212-3 (probably leaves cut out), 241-9 (error)</foliation>
+                     </supportDesc>
+                  </objectDesc>
+                  <bindingDesc>
+                     <binding notBefore="1459" notAfter="1500">
+                        <p>Blind-stamped half-leather binding, late 15th century or early 16th century, over wooden boards; stamps including lily, rosette (several varieties), not identified; boards a modern replacement. Fol. 289, an endleaf, has a variant of the grapes watermark similar to examples from the 1530s (e.g. WZIS <ref target="https://www.wasserzeichen-online.de/?ref=DE8085-PO-128965">DE8085-PO-128965</ref>).</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
+                
+                 <!--  binding: https://www.hist-einband.de/de/werkstattdetails.html?entityID=500813s ? 
+                  or more likely https://www.hist-einband.de/de/werkstattdetails.html?entityID=500422w 
+                  or https://www.hist-einband.de/de/werkstattdetails.html?entityID=501405s ?-->
+                 
+              <history>
+               <provenance><orgName role="fmo" key="org_415145858126223022295">Erfurt Carthusians</orgName>: identifiable as O 35(4) in the late-fifteenth-century library catalogue (ed. P. Lehmann, p. 496 and n). Pressmark <q>O 35</q> on a label on the front cover. Fragmentary fifteenth-century ex libris on the verso of the first (unfoliated) leaf.</provenance>
+               <provenance>Not certainly identifiable in the 1836 catalogue of Friedrich Gottlieb Julius von Bülow, 1760-?1831</provenance>
+               <provenance notBefore="1841" notAfter="1856"><persName role="fmo"
+                  key="person_54195353">Sir William Hamilton,
+                  1788-1856</persName></provenance>
+               <acquisition when="1857">Presented to the Bodleian Library by his sons and
+                  received in 1857.</acquisition>
+               <!-- 35(4). Sermones Conradi Ubelyn de tempore et de quibusdam |
+sanctis, quos ipse extraxit et collegit presertim ex sermonibus | doctoris
+Jacobi Carthusiensis. | Passio Domini cum textu. | Collaciones due pro
+actu visitacionis in ordine Carthusiensium. ||  p. 496 ed. Lehmann -->
+               
+               <!-- see http://bilder.manuscripta-mediaevalia.de/hs/katalogseiten/HSK0568_b113_jpg.htm for Ubelyn --></history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
+                        <source>Description by Matthew Holford (Dec. 2020). Previously described in the Summary Catalogue. 
                             
                             <listBibl>
                               <bibl type="SC" facs="aam0066.gif">Summary Catalogue, Vol. 5, p.  31</bibl>
@@ -63,82 +95,535 @@
                         </source>
                      </recordHist>
                   </adminInfo>
+                  <surrogates>
+                     <bibl type="digital-facsimile" subtype="full">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/083488e7-ed46-4cfc-ae85-0b6eec08dd93/">
+                           <title>Digital Bodleian</title></ref> <note>(full digital facsimile)</note>
+                     </bibl>
+                  </surrogates>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="INTERNET">
+                        <head>Online resources:</head>
+                        <bibl><ref target="https://hab.bodleian.ox.ac.uk/en/"><title>Manuscripts from German-Speaking Lands – A Polonsky Foundation Digitization Project</title></ref></bibl>
+                     </listBibl>
+                  </listBibl>
                </additional>
                <msPart xml:id="MS_Hamilton_42-part1">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Hamilton 42 - Part 1</idno>
+                        <idno type="part">MS. Hamilton 42 - Part A (fols. 1-243)</idno>
                      </altIdentifier>
                   </msIdentifier>
-                  <msContents>
-                     <msItem xml:id="MS_Hamilton_42-part1-item1" n="1">
-                        <title key="work_14569">Sermones de tempore et de sanctis</title>
-                        <textLang mainLang="la">Latin</textLang>
+                 <msContents>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem><note>The first endleaf, fragmentary, has a cancelled account on the recto; on the verso, what appears to be the remains of a 15th-century table of contents for the volume.</note></msItem>
+                     <msItem n="1">
+                        <locus>(fols. 1r-243r)</locus>
+                        <title key="work_14583"><supplied>Collectio sermonum Conradi Ubelin</supplied></title>
+                        <note>Identified in the library catalogue of the Erfurt Carthusians (O.35(4)): 'Sermones Conradi Ubelyn de tempore et de quibusdam sanctis, quos ipse extraxit et collegit presertim ex sermonibus doctoris Jacobi Carthusiensis'. <persName key="person_3396">Conrad Ubelin</persName> or Oberlin of Ebern matriculated at Erfurt in Easter 1455 and was afterwards scribe and compiler in the Erfurt charterhouse: D. Mertens, <title>Iacobus Carthusiensis</title> (1976), 61 and n, and <bibl>Betty C. Bushey and Hartmut Broszinski, <title>Bibliographien und Kataloge der Herzogin Anna Amalia Bibliothek zu Weimar: Die lateinischen Handschriften bis 1600</title> (Wiesbaden: Harrassowitz, 2004), 113.</bibl></note>
+                        <!-- RPG VI.3244 as cited in Goetschi, Klosterflucht  -->
+                        <note>In addition to the <title key="work_6463">Sermones de tempore et de sanctis</title> of <persName key="person_22933358">Jacobus de Clusa</persName>, other authors represented in the collection are <persName role="aut" key="person_61943800">Johannes Contractus</persName>, <persName role="aut" key="person_162373552">'Paratus'</persName>, <persName role="aut" key="person_19648593">Henricus de Friemar</persName>, <persName role="aut" key="person_63741243">Peregrinus de Oppeln</persName>, and <persName role="aut" key="person_2614028">Martin of Troppau</persName></note>
+                        
+                        <msItem xml:id="MS_Hamilton_42-part1-item1" n="1.1">
+                           <locus>(fols. 1r-197v)</locus>
+                           <title><supplied>Sermones de tempore et de quibusdam sanctis</supplied></title>
+                        <msItem>
+                           <locus>(fols. 1r-4r)</locus>
+                           <note>Johannes Contractus 4. Fol. 4v blank.</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 5r-20v)</locus>
+                           <note>Jacobus de Clusa, sermons for the first four Sundays in Advent</note>
+                           <!--<incipit><quote>Dicite filie syon <gap reason="editorial"/></quote> Scribitur Math. 21 et originaliter Zacharie ix</incipit>
+                           <note>Pr. not after 1472, ISTC ij00037000.</note>-->
+                           <!-- TODO: give details -->
+                           <!-- as far as 22r as pr. then: conception BVM, image 60 Nat Xi (not in pr), Nat xi image 71 not pr.; and another fol. 33 image 75; image 87, fol. 39, dom. inf. oct. Nat, is not Clusa; f. 42 image 93 not Clusa,  47 (103) is Johannes Contractus --> 
+                           
+                           
+                           </msItem>
+                           <msItem>
+                              <locus>(fols. 22r-25v)</locus>
+                              <note>Jacobus de Clusa, Sermones de sanctis, sermo in die conceptionis Mariae</note>
+                              <!--<rubric>De concepcione beatissimie virginis marie</rubric>--></msItem>
+                           
+                           <msItem>
+                              <locus>(fols. 25v-29r)</locus>
+                              <note>Jacobus de Clusa, Sermones de sanctis, sermo IV de nativitate Christi</note>
+                              <!--<rubric>De natiuitate christi</rubric>
+                              <incipit><supplied>P</supplied>opulus qui ambulat in tenebris <quote><gap reason="editorial"></gap></quote> Omnia ecclesie membra id est fideles speciali et excellentissimo tripudio cordis merito triumphant <add place="margin">hodie</add></incipit>--><!-- chdk Sch, MM -->
+                           </msItem>
+                           <msItem>
+                              <locus>(fols. 31r-32v)</locus>
+                              <incipit>Puer natus est nobis <quote><gap reason="editorial"></gap></quote> Hodie dilectissimi dicuntur nobis boni rumores</incipit>
+                              <explicit>vilibus pannis ipsum inuoluit</explicit>
+                              <note>Paratus 180 (Schneyer IV.538), ending varies after 'Tu princeps meus sicut matres solent dicere dilectis filiis suis'.</note><!-- http://digital.ub.uni-duesseldorf.de/ink/content/pageview/3764930 -->
+                           </msItem>
+                           <msItem>
+                              <locus>(fol. 33r)</locus>
+                              <incipit>Paruulus natus est nobis <quote><gap reason="editorial"></gap></quote> In verbis prepositis mens humana vehementer accenditur ad diuinum amore</incipit>
+                              <explicit>et destruxit omnem auaritiam</explicit>
+                              <note>Henricus de Friemar 272 (Schneyer II.658-9), opening section only.</note></msItem><!-- http://digital.onb.ac.at/OnbViewer/viewer.faces?doc=ABO_%2BZ16847530X -->
+                           <msItem> 
+                              <locus>(fols. 33r-35r)</locus>
+                              <incipit>Paruulus natus est nobis <quote><gap reason="editorial"></gap></quote> De hac melliflua <unclear>nuntiatione</unclear> magnum gaudium ortum est</incipit>
+                              <explicit>fiebat magna leticia in celo</explicit>
+                              
+                              <!-- not Clusa or Frimaria. Not found Sch or MM
+                              -->
+                              
+                             </msItem>
+                           <msItem>  <locus>(fol. 36v)</locus> 
+                              <incipit><quote>Ewangelizo vobis <gap reason="editorial"/></quote> Verba thematis huius scribuntur Luce 2o. Et hodie lecta in leccione sancti ewangelii. Nec dicta sunt primo ab humano ore.</incipit>
+                              <note>Breaks off unfinished after seven lines.</note>
+                           </msItem>
+                           
+                           <msItem>
+                              <locus>(fols. 39r-57v)</locus>
+                              <!--<incipit>Quanto tempore heres paruulus <quote><gap reason="editorial"></gap></quote> Dilecti fratres ex quo sumus iam constituti infra octauam dominice incarnacionis. Et iesus qui hoc tempore humanam carnem assumpsit erat paruulus in corpore assumpto.</incipit>
+                              <explicit>Dixit Samuel ad Saul Melior est obedientia quam victime</explicit>-->
+                              <note>Johannes Contractus 14-18, (fol. 56r) 24 (Schneyer III.434)</note>
+                              
+                              <!--<note>Johannes Contractus 14 (Schneyer III.434)</note>-->
+                              <!-- http://digital.ub.uni-duesseldorf.de/id/6015827 -->
+                           </msItem>
+                           
+                         <!--  <msItem>
+                              <locus>(fols. 42r-45v)</locus>
+                              <incipit><quote>Vocatum est nomen <gap reason="editorial"/></quote> In hiis verbis agit ewangelista de hoc benedicto nomine iesus</incipit>
+                              <explicit>prestante paruulo domino iesu saluatore qui est benedictus in secula. Amen.</explicit>
+                              <note>Johannes Contractus 15 (Schneyer III.434). Rest of fol. 45v blank.</note>
+                           </msItem>
+                           <msItem>
+                              <locus>(fols. 47r-49v)</locus>
+                              <note>Johannes Contractus 16 (Schneyer III.434).</note>
+                           </msItem>-->
+                           
+                          <!-- <msItem><locus>(fols. 50r-52v)</locus>
+                              <rubric>Dominica infra octauam epiphanie</rubric>
+                           <incipit><quote>Post triduum inuenerunt <gap reason="editorial"/></quote> In hiis verbis instruimur de duobus, scilicet qualiter christum querere debemus et ubi ipsum inuenire valeamus</incipit>
+                              <explicit>ut ipsum querendo inueniamus et inuentum nunquam amittamus. Quod prestare dignetur qui est benedictus in secula. Amen.</explicit>
+                              <note><persName role="aut">Johannes Contractus</persName> 17 (Schneyer III.434).</note>
+                           </msItem>
+                           
+                           <msItem>
+                              <locus>(fols. 53r-54v)</locus>
+                              <note><persName role="aut">Johannes Contractus</persName> 18 (Schneyer III.434).</note>
+                           </msItem>-->
+                           
+                          <!-- <msItem>
+                              <locus>(fols. 56r-57v)</locus>
+                              <note><persName role="aut">Johannes Contractus</persName> 24 (Schneyer III.435).</note>
+                           </msItem>
+                           -->
+                          
+                           
+                           <msItem>
+                              <locus>(fols. 61r-65r) </locus>
+                              <note>Jacobus de Clusa, Sermo in annuntiatione beatae Virginis</note>
+                           </msItem>
+                           
+                           <msItem>
+                              <locus>(fols. 65v-69r) </locus>
+                              <note>Jacobus de Clusa, Sermo in die iudica </note>
+                           </msItem>
+                           
+                           <msItem>
+                              <locus>(fols. 72r-73v)</locus>
+                              <note>Peregrinus de Oppeln 52 (in octava Paschae)</note>
+                              <!-- http://digital.ub.uni-duesseldorf.de/urn/urn:nbn:de:hbz:061:1-75488 but not in pr ed -->
+                           </msItem>
+                           
+                           <msItem>
+                              <locus>(fols. 74r-75v)</locus>
+                              <note>Notes for Easter Sermons (?)</note>
+                              <msItem>
+                              <locus>(fol. 74r)</locus>
+                              <incipit><quote>Hec est dies quam fecit dominus</quote> Hodie celebramus iocundum diem paschale. Iocundior dies in anno non est.</incipit>
+                           </msItem>
+                           <msItem>
+                              <locus>(fol. 74v)</locus>
+                              <incipit><quote>Surrexit autem Christus a mortuis</quote> Primo propter corporis dignitatem cum enim corpus illus esset dignissimum ex eo quod fuit diuinitati vnitum</incipit>
+                           </msItem>
+                           <msItem>
+                              <locus>(fol. 75r)</locus>
+                              <incipit><quote>In hoc quod dicitur Christus resurgens</quote> Surrexit enim christus tripliciter. Primo surrexit Christus plenus victoriis</incipit>
+                           </msItem>
+                           <msItem>
+                              <locus>(fol. 75v)</locus>
+                              <incipit defective="true">Que quidem dies sicut dicit beatus augustinus est excellentior cunctis </incipit>
+                              <note>Beginning lost through cropping of the top of the page.</note>
+                           </msItem></msItem>
+                           
+                           <msItem>
+                              <locus>(fols. 76r-77r)</locus>
+                              <note>Martin of Troppau 317 (in dedicatione ecclesiae)</note>
+                           </msItem>
+                           <msItem>
+                              <locus>(fols. 78r-80v)</locus>
+                              <note>Jacobus de Clusa (feria 2a paschae)</note>
+                           </msItem>
+                           <msItem>
+                              <locus>(fols. 81r-83v)</locus>
+                              <note>Johannes Contractus 47 (dom. 1 post oct. pasch.)</note>
+                           </msItem>
+                           <msItem>
+                              <locus>(fols. 84r-87r)</locus>
+                              <note>Jacobus de Clusa (dom. 3 post pasch.)</note><!-- modicum ... salvator -->
+                           </msItem>
+                           
+                           <msItem>
+                              <locus>(fols. 87v-90v)</locus>
+                              <note>Jacobus de Clusa (dom. 3 post oct. pasch.)</note><!-- vado ... ista sacra -->
+                           </msItem>
+                           
+                           <msItem>
+                              <locus>(fol. 91r-94r)</locus>
+                              <rubric>In die penth.</rubric>
+                              <incipit><quote>Accende lumen sensibus <gap reason="editorial"/></quote> Hunc deuotissimum cantum et necessarium frequentat ecclesiam in hac sancti spiritus solempnitate</incipit>
+                              <explicit>Iudas traditor christi et multi alii qui bona inicia malos exitus habuerunt quia non perseuauerunt vsque in finem</explicit>
+                           </msItem>
+                           
+                           <msItem>
+                              <locus>(fols. 95r-119v)</locus>
+                              <note>Jacobus de Clusa, sermons for dom. 1-6 post oct. Penth.</note>
+                           </msItem>
+                           
+                          <!-- <msItem>
+                              <locus>(fols. 95r-99v)</locus>
+                              <note>Jacobus de Clusa (dom. 1 post oct. penth.) Bottom of fol. 99 torn away.</note><!-\- homo quidam .. .salvator noster -\->
+                           </msItem>
+                           
+                           <msItem>
+                              <locus>(fols. 100r-103v)</locus>
+                              <note>Jacobus de Clusa (dom. 2 post oct. penth.)</note><!-\- homo quidam .. .deus duplicia -\->
+                           </msItem>
+                           
+                           <msItem>
+                              <locus>(fols. 104r-107v)</locus>
+                              <note>Jacobus de Clusa (dom. 3 post oct. penth.)</note><!-\- erat ... dominica -\->
+                           </msItem>
+                           
+                           <msItem>
+                              <locus>(fols. 108r-111r)</locus>
+                              <note>Jacobus de Clusa (dom. 4 post oct. penth.)</note><!-\- estote ... inter -\->
+                           </msItem>
+                           
+                           <msItem>
+                              <locus>(fols. 111v-115v)</locus>
+                              <note>Jacobus de Clusa (dom. 5 post oct. penth.)</note><!-\- cum turbe .. in precedenti -\->
+                           </msItem>
+                           
+                           <msItem>
+                              <locus>(fols. 116r-119v)</locus>
+                              <note>Jacobus de Clusa (dom. 6 post oct. penth.)</note><!-\- Nisi habundaverit .. doctrina -\->
+                           </msItem>-->
+                           
+                           <msItem>
+                              <locus>(fols. 120r-122r)</locus>
+                              <note>Johannes Contractus 70 (dom. 7 post oct. penth.)</note>
+                           </msItem>
+                           
+                           <msItem>
+                              <locus>(fols. 122v-193r)</locus>
+                              <note>Jacobus de Clusa, sermons for dom. 8, 7, 9-24 post oct. Penth. The final sermon breaks off unfinished at the end of fol. 193r.</note>
+                           </msItem>
+                           
+                          <!-- <msItem>
+                              <locus>(fols. 122v-125r)</locus>
+                              <note>Jacobus de Clusa (dom. 8 post oct. penth.)</note><!-\- Attendite ... Ex cottidiana -\->
+                           </msItem>
+                           
+                           <msItem>
+                              <locus>(fols. 128r-131r)</locus>
+                              <note>Jacobus de Clusa (dom. 7 post oct. penth.)</note><!-\- Cum turba...sanctus paulus -\->
+                           </msItem>
+                           
+                           <msItem>
+                              <locus>(fols. 132r-135v)</locus>
+                              <note>Jacobus de Clusa (dom. 9 post oct. penth.)</note><!-\- homo quidam ... salvator noster considerans omnes homines promptos esse  -\->
+                           </msItem>
+                           
+                           <msItem>
+                              <locus>(fols. 136r-139v)</locus>
+                              <note>Jacobus de Clusa (dom. 10 post oct. penth.)</note>
+                              <!-\- http://tudigit.ulb.tu-darmstadt.de/show/inc-iii-198/0318 -\->
+                           </msItem>
+                           
+                           <msItem>
+                              <locus>(fols. 140r-143v)</locus>
+                              <note>Jacobus de Clusa (dom. 11 post oct. penth.)</note>
+                              <!-\- http://tudigit.ulb.tu-darmstadt.de/show/inc-iii-198/0326/image -\->
+                           </msItem>
+                           
+                           <msItem>
+                              <locus>(fols. 144r-147r)</locus>
+                              <note>Jacobus de Clusa (dom. 12 post oct. penth.)</note>
+                              <!-\- http://tudigit.ulb.tu-darmstadt.de/show/inc-iii-198/0336/image -\->
+                           </msItem>
+                           
+                           <msItem>
+                              <locus>(fols. 148r-151v)</locus>
+                              <note>Jacobus de Clusa (dom. 13 post oct. penth.)</note>
+                              <!-\- http://tudigit.ulb.tu-darmstadt.de/show/inc-iii-198/0344/image -\->
+                           </msItem>
+                           
+                           <msItem>
+                              <locus>(fols. 152r-155r)</locus>
+                              <note>Jacobus de Clusa (dom. 14 post oct. penth.)</note>
+                              <!-\- http://tudigit.ulb.tu-darmstadt.de/show/inc-iii-198/0354/image -\->
+                           </msItem>
+                           
+                           <msItem>
+                              <locus>(fols. 156r-159v)</locus>
+                              <note>Jacobus de Clusa (dom. 15 post oct. penth.)</note>
+                           </msItem>
+                           <msItem>
+                              <locus>(fols. 160r-163v)</locus>
+                              <note>Jacobus de Clusa (dom. 16 post oct. penth.)</note>
+                           </msItem>
+                           
+                           <msItem>
+                              <locus>(fols. 164r-166v)</locus>
+                              <note>Jacobus de Clusa (dom. 17 post oct. penth.)</note>
+                             
+                           </msItem>
+                           
+                           <msItem>
+                              <locus>(fols. 168r-170v)</locus>
+                              <note>Jacobus de Clusa (dom. 18 post oct. penth.)</note>
+                           </msItem>
+                           
+                           <msItem>
+                              <locus>(fols. 171r-174v)</locus>
+                              <note>Jacobus de Clusa (dom. 19 post oct. penth.)</note>
+                            
+                           </msItem>
+                           <msItem>
+                              <locus>(fols. 175r-178v)</locus>
+                              <note>Jacobus de Clusa (dom. 20 post oct. penth.)</note>
+                           </msItem>
+                           <msItem>
+                              <locus>(fols. 180r-183r)</locus>
+                              <note>Jacobus de Clusa (dom. 21 post oct. penth.)</note>
+                           </msItem>
+                           <msItem>
+                              <locus>(fols. 183r-187v)</locus>
+                              <note>Jacobus de Clusa (dom. 22 post oct. penth.)</note>
+                           </msItem>
+                           <msItem>
+                              <locus>(fols. 188r-191v)</locus>
+                              <note>Jacobus de Clusa (dom. 23 post oct. penth.)</note>
+                           </msItem>
+                           <msItem>
+                              <locus>(fols. 192r-193r)</locus>
+                              <note>Jacobus de Clusa (dom. 24 post oct. penth.). Breaks off unfinished at the end of fol. 193r.</note>
+                           </msItem>-->
+                           <msItem>
+                              <locus>(fols. 196r-197v)</locus>
+                              <incipit><quote>Domus mea domus oracionis <gap reason="editorial"/></quote> In istis verbis possumus intelligere magnam dei misericordiam que semper querit</incipit>
+                              <explicit>de templo suo vocem meam. Rogemus etc.</explicit>
+                           </msItem>
+                           
+                           
+                           <msItem>
+                              <note>There are contemporary and later additions by the same scribe in Latin and German.</note> 
+                              <msItem>
+                                 <note>In Latin: fol. 163v, Luke 7.11-16 (beg. 'in illo tempore ibat in ciuitatem que vocatur...');  fol. 166v, Luke 13.1-11 (beg. 'In illo tempore Cum intraret iesus in domum cuiusdam principis phariseorum'); fol. 174v, 'De instabilitate cordis' beginning 'Legitur in vita sancti Bernardi quod quodam tempore eo iter agente sedens querulabatur de eadem instabilitate cordis sui, quod audiens quidam rusticus derisit eum'. </note>
+                              </msItem>
+                              <msItem>
+                                 <note>In German:  fol. 60v, perhaps notes for a sermon on Missus est angelus, apparently incomplete, beg. 'Als ein suse spiss...'; fol. 65r, on the Annuciation beg. 'dar vmb lieben bruder...'; fol. 69r, on Christ's sacrifice, beg. 'secht meyn lieben bruder...'; fol. 71v, on the removal of Mary's doubts at the Annunciation. Occasional German glosses to the text (e.g. fol. 74r, iocundum 'lustbar', 75r).</note><!-- 65r: 139; 69r: 147; 71v: image 152 -->
+                                    <textLang mainLang="de">German</textLang>
+                              </msItem>
+                              
+                           </msItem>
+                           
+                           <msItem>
+                           <note>Several blank folios, often one or more after a sermon: fols. 8v, 21r-v, 29v-30v, 35v-36r, 37r-38v, 41v, 46r-v, 55r-v, 58r-60r, 69v, 70r-v, 71r, 77v, 94v, 126r-127v, 131v, 147v, 155v, 167r-v, 179r-v, 193v-195v, 198r-199v.   </note>
+                        </msItem>
+                        <!-- image 49 is a loose slip -->
+                        
+                       
                      </msItem>
-                  </msContents>
+                     <msItem xml:id="MS_Hamilton_42-part1-item3" n="1.2">
+                        <locus>(fols. 200r-243r)</locus>
+                        <title><supplied>Sermones de sanctis</supplied></title>
+                        
+                        <msItem>
+                           <locus>(fols. 200r-235r)</locus>
+                           <incipit><quote>Ambulans Ihesus iuxta mare <gap reason="editorial"/></quote> Sicut testatur historia ewangelica Mt. iij et Luc. iij dominus ihesus trecesimum agens annum</incipit>
+                        <explicit>claret in sua legenda quam post predicator recitare <sic/> Amen</explicit>
+                       <!-- <note>, as pr. [1472] (GW 10875) etc.; part ed. <title>Jakub z Paradyża: Sermones de sanctis et de praecipuis festivitatibus</title>, ed. Stanisław Andrzej Porębski (Warszawa 2004)</note>-->
+                        <note>Jacobus de Clusa: SS. Andrew, Nicholas, 'de apostolis generaliter', Peter and Paul, Visitation BVM, Mary Magdalene, Laurence, Decollation of John the Baptist <!-- #390 in pr -->, 'Agatha. Et de virginibus. Elizabeth' (the 'sermo secundus de virginibus' in GW M10873).</note>
+                           <note>Fol. 235v blank; fols. 236r-237v blank.</note>
+                           </msItem>
+                        
+                        <!-- https://daten.digitale-sammlungen.de/bsb00043185/image_1 -->
+                        
+                        <!-- fols. 240v (494) -  256v (526) -->
+                        
+                        <msItem>
+                           <locus>(fols. 238r-240r)</locus>
+                           <rubric>Sermo de assumpcione beate marie virginis</rubric>
+                           <incipit><quote>Que est ista que ascendit de deserto <gap reason="editorial"/></quote> Questio est angelorum assumpcionem beate virginis marie admirantium. Quam olim Salomon per spiritum sanctum </incipit>
+                           <explicit>qui non matri domini festinarent occurere</explicit>
+                           <note>Cf. Martin of Troppau 267</note><!-- http://tudigit.ulb.tu-darmstadt.de/show/inc-iii-186/0397/image TODO check new ed; longer here than as pr. -->
+                        </msItem>
+                        
+                        <msItem>
+                           <locus>(fols. 240v-243r)</locus>
+                           <rubric>Sermo de nativitate beate marie virginis</rubric>
+                           <note>Martin of Troppau 277</note>
+                           <note>Fol. 243v blank.</note>
+                        </msItem>
+                        
+                      
+                     </msItem>
+                    
+                     </msItem>
+                     </msContents>
                   <physDesc>
                      <objectDesc form="codex">
                         <supportDesc material="chart">
-                           <support>paper</support>
+                           <support>Paper, folded in quarto. The main watermark is dreiburg with cross; also (fol. 32) oschenkopf, not identifiable; (fol. 37) crown with five-petalled flower (cf. WZIS <ref target="https://www.wasserzeichen-online.de/?ref=DE8310-Mc187_154">DE8310-Mc187_154</ref>, c. 1475)</support><!-- but what can be seen of dreiburg suggests c. 1470 -->
+                           <collation>Sometimes uncertain: probably 1(12) (fols. 1-12), 2(12-3?, 9-11 canc.?) (fols. 13-21),  3(12-3, 10-12 canc.) (fols. 22-30), 4(16?) (fols. 31-46), 5(12-3, 9-11 canc.) (fols. 47-55),  fols. 56-78 uncertain, 6(12+1?) (fols. 78-90), 7(12+1?) (fols. 91-103), 8-9(12) (fols. 104-127),  10(8) (fols. 128-35), 11(12) (fols. 136-47), 12(8) (fols. 148-55), 13(12)-15(12) (fols. 156-191), 16(8?) (fols. 192-9), 17(12)-19(12) (fols. 200-235), 20(8) (fols. 236-43)  </collation>
                         </supportDesc>
+                        <layoutDesc>
+                           <layout columns="1" writtenLines="30 31">1 col., mostly c. 30-1 lines but varying; written space mostly <dimensions unit="mm" type="written">
+                              <height max="165" min="160">160-5</height>
+                              <width min="100" max="106">100-5</width>
+                           </dimensions> but varying</layout>
+                        </layoutDesc>
                      </objectDesc>
+                     <handDesc hands="1">
+                        <handNote script="hybrida">Cursive/hybrida (many loopless forms) by one hand, presumably <persName role="scr"  key="person_3396">Conrad Ubelin</persName>.</handNote>
+                     </handDesc>
+                     <decoDesc><decoNote type="colInit">Coloured red initials; highlighting in red.</decoNote></decoDesc>
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
+                        <origDate calendar="Gregorian" notAfter="1500" notBefore="1450">15th century, second half, probably c. 1475</origDate>
                         <origPlace>
-                           <country key="place_7000084">German</country>
+                           <country key="place_7000084">Germany</country>, probably <settlement key="place_7024031">Erfurt</settlement>, <orgName key="org_415145858126223022295">charterhouse</orgName>
                         </origPlace>
                      </origin>
+                     
                   </history>
                </msPart>
                <msPart xml:id="MS_Hamilton_42-part2">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Hamilton 42 - Part 2</idno>
+                        <idno type="part">MS. Hamilton 42 - Part B (fols. 244-288)</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Hamilton_42-part2-item1" n="1">
-                        <title key="work_13532">Notes on St. John
-              xiii</title>
-                        <textLang mainLang="la">Latin</textLang>
-                        <bibl type="commentedOn">
-                           <title>Bible, John</title>
-                        </bibl>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem n="2">
+                        <locus>(fols. 244r-280r)</locus>
+                        <title key="work_11337"><supplied>De passione domini</supplied></title>
+                        <!-- in a diferent hand -->
+                        <note>Fols. 244-258v contain a mixture of sermon notes and developed notes for a narrative of the passion, evidently intended for preaching, drawn from the four gospels and covering roughly John 12.1 to Matt. 26.39. On fols. 258v-280r follows a gospel harmony for the passion narrative (beginning at Matt. 26.40 and ending at Matt. 27.65) with extensive notes and commentary, again presumably intended for homiletic use.</note>
+                        <msItem>
+                           <locus>(fols. 244r-258v)</locus>
+                           <msItem>
+                           <locus>(fol. 244r)</locus>
+                        <incipit><quote>Scitis quid fecerim vobis</quote> Sciendum nobis est in christo iesu dilectissimi quod secundum beatum Augustinum 4to de ciuitate dei, sermo predicatoris ad hoc precipue tendere debet, ut intellectus cecitas illustretur et affectus tepiditas prouocetur</incipit></msItem>
+                        <msItem>
+                           <locus>(fol. 244v-254v)</locus>
+                           <incipit><cit><quote>Scitis quid fecerim vobis</quote> <bibl>loco etc. quibus supra</bibl></cit> Amantissimi in christo iesu pro illorum verborum intellectu in aliquali est notandum pro introductione</incipit>
+                           <note>Sermon, leading into a narrative of the passion as far as Luke 22.38</note>
+                           <note></note>
+                           <!-- fol. 249r: Jn. 13.16 -->
+                           <!-- 253v: Luke 22.24  -->
+                           <!-- fol. 254r: Mt. 26.31 -->
+                           <note>Fol. 250r blank; fol. 254v mostly blank; fol. 255r-v blank.</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 256r-v)</locus>
+                           <incipit><quote>Scitis quid fecerim vobis</quote> Ex quo secundum Crisostomum omnis salus hominis in passione christi et eius morte quam hodie pro nobis <unclear>nunc</unclear> commemorat sancta mater ecclesia </incipit>
+                           <note>Fol. 257r blank.</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 257v-258v)</locus>
+                           <incipit>Karissimi in christo iesu prosequendo historiam dominice passionis secundum 4or ewangelistas conscriptam </incipit><note>Continuing the narrative from John 18.1 to Matt. 26.39 ('transeat a me calix iste').</note>
+                        </msItem></msItem>
+                        <msItem>
+                           <locus>(fols. 258v-280r)</locus>
+                           <msItem>
+                              <title type="desc">Gospel harmony for the passion narrative, with commentary</title>
+                              <incipit>Et venit ad discipulos suos</incipit>
+                              <explicit>lapidem cum custodibus</explicit>
+                              <note>Beginning at Matt. 26.40. Written with c. 10-11 lines of the gospel text per page with marginal and interlinear commentary.</note>
+                           </msItem>
+                        </msItem>
                      </msItem>
-                     <msItem xml:id="MS_Hamilton_42-part2-item2" n="2">
-                        <title key="work_12055">Glosses, with text, on St. Matthew xxvi, 40 - xxvii</title>
-                        <textLang mainLang="la">Latin</textLang>
-                        <bibl type="commentedOn">
-                           <title>Bible, Matthew</title>
-                        </bibl>
+                     <msItem n="3">
+                        <!-- a third hand -->
+                        <locus>(fols. 281r-286v)</locus>
+                        <title key="work_14583"><supplied>Collaciones due pro actu visitacionis in ordine Carthusiensium</supplied></title>
+                        <note>So identified in the library catalogue of the Erfurt Carthusians.</note>
+                        <msItem>
+                           <locus>(fols. 281r-283r)</locus>
+                           <incipit><quote>Emulatores estote legis <gap reason="editorial"/></quote> Tyranni quondam ydolatrie inimici veritatis <!--instigante ipsos--> </incipit><!-- ckd MM -->
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 283r-286v)</locus>
+                           <incipit><quote>Nisi habundauerit iusticia <gap reason="editorial"/></quote> Narrat Albertus magnus philosophus quod oculi sunt partes corporis preciosissime et sunt maxime necessarij </incipit><!-- ckd MM -->
+                           <colophon>1459 quinta die <del>decemb</del> septembris</colophon>
+                           <note>In a different hand, the colophon followed by a deleted passage. The date was read as '1479' in the Summary Catalogue; the manuscript is not included in Watson, <title>Dated and Datable</title></note>
+                         
+                        </msItem>
+                        <note>Fols. 287r-288v blank.</note>
+                        <!-- watermark on the last endleaf -->
                      </msItem>
-                     <msItem xml:id="MS_Hamilton_42-part2-item3" n="3">
-                        <title key="work_14583">Sermons</title>
-                        <textLang mainLang="la">Latin</textLang>
-                     </msItem>
-                  </msContents>
+                     
+                     </msContents>
                   <physDesc>
                      <objectDesc form="codex">
                         <supportDesc material="chart">
-                           <support>paper</support>
+                           <support>Paper, folded in quarto. Watermark bull's head with 7-petalled flower (not identifiable).</support>
+                           <collation>1(12)-3(12) (fols. 244-278; 272 is double), 4(12-2, two leaves wanting from the second half of the quire) (fols. 279-88)</collation>
                         </supportDesc>
+                        <layoutDesc>
+                           <layout columns="1" writtenLines="41 42">Fols. 244r-258v: 1 col., c. 41-2 lines, written space c. <dimensions unit="mm" type="written">
+                              <height min="180" max="190">180-90</height>
+                              <width>120</width>
+                           </dimensions></layout>
+                           <layout>Fols. 258v-280r: 1 col., usually 10-11 lines of gospel text with variable amount of commentary, written space c. <dimensions unit="mm" type="written">
+                              <height>170</height>
+                              <width>120</width>
+                           </dimensions></layout>
+                           <layout columns="1" writtenLines="29 35">Fols. 281r-286v: 1 col., c. 29-35 lines, written space c. <dimensions unit="mm" type="written">
+                              <height>170</height>
+                              <width max="125" min="115">115-25</width>
+                           </dimensions></layout>
+                        </layoutDesc>
                      </objectDesc>
+                     <handDesc>
+                        <handNote>Cursive by two hands (fols. 244r-280r, 281r-286v); hand 2 with several loopless forms.</handNote>
+                     </handDesc>
+                     <decoDesc>
+                        <decoNote type="none">No decoration or rubrication.</decoNote>
+                     </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
+                        <origDate calendar="Gregorian" when="1459" cert="high">c. 1459</origDate> (fol. 286v)
                         <origPlace>
-                           <country key="place_7000084">German</country>
+                           <country key="place_7000084">Germany</country>, probably at least in part <settlement key="place_7024031">Erfurt</settlement>, <orgName key="org_415145858126223022295">charterhouse</orgName>
                         </origPlace>
                      </origin>
+                     
                   </history>
                </msPart>
+          
             </msDesc>
          </sourceDesc>
       </fileDesc>
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
+      <revisionDesc>      
+         <change when="2020-12-17">Finalize description for Polonsky German project.</change>
+         <change when="2020-12-11">Additional physical description.</change>
+         <change when="2020-12-09">New draft description for Polonsky German project.</change>
+         <change when="2017-07-01">First online publication.</change>
 
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>

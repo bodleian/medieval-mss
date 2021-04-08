@@ -5,17 +5,24 @@
          <titleStmt>
             <title>MS. Bodl. 241</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+           <respStmt xml:id="PA">
+              <resp when="1973">Cataloguer</resp>
+              <persName>Otto Pächt</persName>
+              <persName>J. J. G. Alexander</persName>
+           </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2020">Encoding</resp>
+               <resp when="2020">Catalogue updates and corrections</resp>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -51,39 +58,59 @@
                </msIdentifier>
                <msContents>
                   <msItem xml:id="MS_Bodl_241-item1" n="1">
-                     <author key="person_66806872">
-                        
-                        Augustine
-                     
-                     </author>
-                     <title key="work_790">Commentary on Psalms cxix-cl</title>
+                     <author key="person_66806872">Augustine</author>
+                     <title key="work_790">Enarrationes in Psalmos cxix-cl</title>
+                     <rubric>Aurelii Augustini egregii doctoris de Psalmo C° хіхmо tractatus</rubric>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
-                        <support>parchment</support>
+                        <support>parchment; rather soiled</support>
+                        <extent>ii + 188 leaves
+                           <dimensions type="leaf" unit="in">
+                              <height>14.75</height>
+                              <width>11</width>
+                           </dimensions></extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2">2 cols.</layout>
+                     </layoutDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>Good initials. Cf. MS. Bodl. 257 etc. Marginal sketches added, 15th century. Cf. MSS Bodl. 413, Digby 158. (P&amp;A iii. 144)
+                     <decoNote type="decInit">Good initials. Cf. MS. Bodl. 257 etc.</decoNote><decoNote type="drawing"> Marginal sketches added, 15th century. Cf. MSS Bodl. 413, Digby 158. (P&amp;A iii. 144)</decoNote><decoNote> On the margin of fol. 49v is a
+                        stilus-drawing of a monk asleep in a chair, cf. fol. 47v.
                      </decoNote>
                   </decoDesc>
+                  <bindingDesc>
+                     <binding contemporary="true">
+                        <p>White leather on
+                           boards, with tabs at top and bottom, but clasps and bosses lost,
+                           contemporary English work, perhaps of Readin.g</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1160" notBefore="1140">12th century, middle</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>, <settlement key="place_7011918">Reading</settlement>
+                        <country key="place_7002445">English</country>, <settlement key="place_7011918">Reading</settlement>, <orgName key="org_139637930">Benedictine Abbey</orgName>
                         <!--ORIGINAL: English, Reading-->
                      </origPlace>
                   </origin>
+                  <provenance when="1192"><orgName role="fmo" key="org_139637930">Reading Abbey</orgName>: identifiable in the catalogue of 1192 (MLGB).</provenance><provenance notAfter="1300" notBefore="1200"><orgName role="fmo" key="org_139637930">Reading Abbey</orgName>: 'Hic est liber. S. Marie de Radynge. Quem qui celauerit uel fraudem de eo
+                     fecerit anathema sit,' 13th cent.</provenance><acquisition when="1608"> Presented by <persName role="dnr" key="person_3194">William Burdet of Sonning</persName> in
+                     1608.</acquisition>
                </history>
                <additional><adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973).  
-                            
+                        <source>Description adapted (March 2020) from the following sources, with additional reference to published literature as cited:
+                           <listBibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, III (1973), no. 144 [decoration, origin, date]</bibl>
+                              <bibl>Summary Catalogue (1922) [contents, physical description, provenance and acquisition]</bibl>
+                           </listBibl>  
+                           
                             
                             <listBibl>
                               <bibl type="SC" facs="aap0140.gif">Summary Catalogue, vol. 2, part 1, p. 119</bibl>
@@ -95,7 +122,9 @@
          </sourceDesc>
       </fileDesc>       
       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
+      <revisionDesc>      
+         <change when="2020-03-31">Revised to incorporate all information in SC.</change>
+         <change when="2017-07-01">First online publication.</change>
 
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>

@@ -1,22 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_5971">
+   <!-- todo: measure written space; confirm watermarks  -->
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Hamilton 11</title>
             <title type="collection">MSS. Hamilton</title>
             <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
-            </respStmt>
-         </titleStmt>
-         <editionStmt>
-            <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
+               <resp when="2020-09">Cataloguer</resp>
+               <resp>Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
-         </editionStmt>
+         </titleStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
             <address>
@@ -49,41 +44,78 @@
                      <idno type="SCN">24441</idno>
                   </altIdentifier>
                </msIdentifier>
+               <head>Thomas Aquinas, Prima secundae; Germany (?Erfurt), 15th century, middle</head>
                <msContents>
+                  <textLang mainLang="la">Latin</textLang>
+                  <msItem>
+                     <note>Fol. 1r-v (original endleaf) blank.</note>
+                  </msItem>
                   <msItem xml:id="MS_Hamilton_11-item1" n="1">
-                     <author key="person_264344179">
-                        
-                        Thomas Aquinas
-                     
-                     </author>
+                     <locus>(fols. 2ra-359rb)</locus>
+                     <author key="person_264344179">Thomas Aquinas</author>
                      <title key="work_4780">Summa
-              theologiae</title>
-                     <note>'Prima Secundae'</note>
-                     <textLang mainLang="la">Latin</textLang>
+              theologiae, Prima Secundae</title>
+                     <incipit>Quia sicut damascenus dicit homo <subst><del>stultus</del> <add>factus</add></subst> ad ymaginem dei dicitur</incipit>
+                     <incipit>Ad primum sic proceditur. Videtur quod homini non conueniat agere propter finem</incipit>
+                     <explicit>Et hec de moralibus in communi dicta sufficiant. Et est finis.</explicit>
+                     <note>Fol. 290rb partly blank at the end of a scribal stint; note 'Hic non est aliquis defectus'.</note>
+                        <rubric> <locus>(fol. 352rb)</locus> Incipiunt capitula prime partis secundi libri summe edite a fratre thoma de aquino ordinis fratrum predicatorum</rubric>
+                        <incipit>Questio prima de vltimo fine hominis in generali seu communi</incipit>  <explicit>Vtrum bona temporalia cadant sub merito. Et sic est finis. Amen.</explicit>
+                   
+                     <note>Rest of fol. 359rb blank. Fol. 359v blank. Fol. 360r-v (original endleaf) blank.</note>
+                    
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="chart">
-                        <support>paper</support>
+                        <support>Paper. Watermarks: bull's head with latin cross and six-pointed star (Piccard xi.216-35, cf. 217); bull's head with latin cross and seven-petalled flower (type Piccard xi.311-353, cf. 336-7); scales (type Piccard i.301-11); dreiburg with cross, type Piccard vii.2175-2392 (cf. 2205, 2210 etc.) </support>
+                        <!-- scooner says the watermarks are Briquet 11798 (for which cf. https://www.wasserzeichen-online.de/wzis/struktur.php?klassi=005001001003001001001001&anzeigeIDMotif=5505 ) and 14545-51 var. -->
+                        <extent>1 + 361 + 1 leaves (foliated 1-360; 18, 223 and 227 are double; 18b, 67, 223b and 227b are inserted slips; other slips, unfoliated, are between 90 and 91, 94 and 95)
+                           <dimensions type="leaf" unit="mm">
+                              <height>305-320</height>
+                              <width>215</width>
+                           </dimensions></extent><!-- from Scooner: check -->
                      </supportDesc>
                      <layoutDesc>
-                        <p><!--Empty paragraph in source of conversion--></p>
+                        <layout columns="2" writtenLines="37 47">2 cols., c. 37-47 lines. Frame-ruled, ruled space <dimensions unit="mm" type="ruled">
+                           <height>220-5</height>
+                           <width>145</width>
+                        </dimensions></layout>
                      </layoutDesc>
                   </objectDesc>
+                  <handDesc>
+                     <handNote script="cursiva">Cursive by several hands.</handNote>
+                  </handDesc>
+                  <decoDesc>
+                     <decoNote type="flourInit">6-line initial Q with silhouette decoration, fol. 1ra.</decoNote>
+                     <decoNote type="colInit">3-4 line and 2-3 line initials in red with simple decoration marking different levels of textual division.</decoNote>
+                  </decoDesc>
+                  <bindingDesc>
+                     <binding notAfter="1465" notBefore="1455"><p>Brown leather over boards, blind-stamped; clasps and bosses lost. Protective corners and (on the tail edge) shoes partly survive. Workshop of <persName role="bnd" key="person_31832960">Johannes Fogel</persName> (<placeName key="place_7024031">Erfurt</placeName>, c. 1455-1462; Einbanddatenbank <ref target="https://www.hist-einband.de/de/werkstattdetails.html?entityID=500116s">500116s</ref>). Tabs. <!--Stamps include:  Adler (<ref target="https://www.hist-einband.de/werkzeugdetails.html?entityID=s000009">s000009</ref>); Herz von Pfeil durchbohrt (<ref target="https://www.hist-einband.de/werkzeugdetails.html?entityID=s007542">s007542</ref>) OR 005054; Löwe (<ref target="s000009">s000009</ref>); Flechtwerk (<ref target="https://www.hist-einband.de/werkzeugdetails.html?entityID=s004688">s004688</ref>) OR 007550; Vogelpaar mit Lilie (<ref target="https://www.hist-einband.de/werkzeugdetails.html?entityID=s007534">s007534</ref>); Madonna mit Kind (<ref target="https://www.hist-einband.de/werkzeugdetails.html?entityID=s003016">s003016</ref>); Rosette, sechsblättrig (<ref target="https://www.hist-einband.de/werkzeugdetails.html?entityID=s007545">s007545</ref>; Rosette, fünfblättrig(<ref target="https://www.hist-einband.de/werkzeugdetails.html?entityID=s007546">s007546</ref>--></p></binding>
+                  </bindingDesc>
+                  <!-- binding:
+                  https://www.hist-einband.de/de/werkstattdetails.html?entityID=500116s
+                  
+                  -->
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
+                     <origDate calendar="Gregorian" notAfter="1460" notBefore="1440">15th century, middle (c. 1450-60)</origDate> (watermarks, binding)
                      <origPlace>
-                        <country key="place_7000084">German</country>
+                        <country key="place_7000084">Germany</country>, perhaps <settlement key="place_7024031">Erfurt</settlement>
                      </origPlace>
                   </origin>
+                  <provenance><orgName role="fmo" key="org_415145858126223022295">Erfurt, Carthusians</orgName>: ex libris, 15th century, upper pastedown and lower pastedown and on fol. 182r.</provenance>
+                  <provenance>Not certainly identifiable in the late-fifteenth-century library catalogue: perhaps L88 ('Item prima pars 2. partis'; ed. Lehmann, MBK II.465)</provenance>
+                  <provenance notAfter="1831" notBefore="1760"><persName role="fmo" key="person_24953683">Friedrich Gottlieb Julius von Bülow, 1760-?1831</persName>, 56c in the catalogue of part 3 of his sale, 10 Oct. 1836 (cf. upper pastedown)</provenance>
+                  <provenance notBefore="1841" notAfter="1856"><persName role="fmo" key="person_54195353">Sir William Hamilton, 1788-1856</persName></provenance>
+                  <acquisition when="1857">Presented to the Bodleian Library by his sons and received in 1857.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
+                        <source>Description by Matthew Holford (September 2020). Previously described in the Summary Catalogue. 
                             
                             <listBibl>
                               <bibl type="SC" facs="aam0051.gif">Summary Catalogue, Vol. 5, p.  16</bibl>
@@ -91,11 +123,30 @@
                         </source>
                      </recordHist>
                   </adminInfo>
+                  <surrogates>
+                     <bibl type="digital-facsimile" subtype="full">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/dc089fda-22e2-486e-8203-653ea55aa166/">
+                           <title>Digital Bodleian</title></ref> <note>(full digital facsimile)</note>
+                     </bibl>
+                  </surrogates>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="INTERNET">
+                        <head>Online resources:</head>
+                        <bibl><ref target="https://hab.bodleian.ox.ac.uk/en/"><title>Manuscripts from German-Speaking Lands – A Polonsky Foundation Digitization Project</title></ref></bibl>
+                     </listBibl>
+                     <listBibl type="PRINT">
+                        <head>Printed descriptions:</head>
+                        <bibl>H. V. Shooner, <title>Codices manuscripti operum Thomae de Aquino III: Bibliothecae Namur - Paris</title> (1985), no. 2050</bibl>
+                     </listBibl>
+                  </listBibl>
                </additional>
             </msDesc>
          </sourceDesc>
       </fileDesc>
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
+      <revisionDesc>
+         <change when="2020-09-25">Finalized description for Polonsky German.</change>
+         <change when="2020-09-02">New draft description for Polonsky German.</change>
+         <change when="2017-07-01">First online publication.</change>
 
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
