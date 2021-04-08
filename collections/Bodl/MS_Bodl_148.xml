@@ -5,17 +5,24 @@
          <titleStmt>
             <title>MS. Bodl. 148</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+           <respStmt xml:id="PA">
+              <resp when="1966">Cataloguer</resp>
+              <persName>Otto Pächt</persName>
+              <persName>J. J. G. Alexander</persName>
+           </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2020">Encoding</resp>
+               <resp when="2020">Catalogue updates and corrections</resp>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -51,24 +58,23 @@
                </msIdentifier>
                <msContents>
                   <msItem xml:id="MS_Bodl_148-item1" n="1">
-                     <author key="person_66806872">
-                        
-                        Augustine
-                     
-                     </author>
+                     <author key="person_66806872">Augustine</author>
                      <title key="work_754">De consensu evangelistarum</title>
-                     <note>preceded by the Retraction</note>
-                     <bibl type="related">
-                        <author key="person_66806872">Augustine</author>
-                        <title>Retractationes</title>
-                     </bibl>
+                     <rubric>Aurelii Augustini doctoris Hyponiensis episcopi de Consensu
+                        Euangelistarum</rubric>
+                     <note>In four books, preceded by the <title key="work_804">Retraction</title>.</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
-                        <support>parchment</support>
+                        <support>parchment, in parts stained by damp</support>
+                        <extent>i + 193 leaves
+                           <dimensions type="leaf" unit="in">
+                              <height>10.525</height>
+                              <width>7.525</width>
+                           </dimensions></extent>
                      </supportDesc>
                   </objectDesc>
                   <decoDesc>
@@ -78,16 +84,22 @@
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" when="1100">c. 1100</origDate>
+                     <origDate calendar="Gregorian" notBefore="1090" notAfter="1110">c. 1100</origDate>
                      <origPlace>
                         <country key="place_1000070">French</country>, <region key="place_7002886">Normandy</region>
                         <!--ORIGINAL: French, Normandy-->
                      </origPlace>
                   </origin>
+                  <provenance notBefore="1300"><orgName key="org_127815410" role="fmo">Exeter Cathedral</orgName>: <q type="exLibris">Liber Ecclesie Exoniensis de communi</q>, 14th century. Identifiable in medieval catalogues (MLGB).</provenance>
+                  <acquisition when="1602">Presented by the dean and chapter of Exeter in 1602.</acquisition>
                </history>
                <additional><adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1966).  
+                        <source>Description adapted (March 2020) from the following sources, with reference to additional published literature as cited:
+                           <listBibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, I (1966), no. 461 [decoration, origin, date]</bibl>
+                              <bibl>Summary Catalogue (1922) [contents, physical description, provenance and acquisition, endleaves]</bibl>
+                           </listBibl>    
                             
                             
                             <listBibl>
@@ -95,12 +107,20 @@
                            </listBibl>
                         </source>
                      </recordHist>
-                  </adminInfo><listBibl type="WRAPPER"><listBibl type="INTERNET"><head>Online resources:</head><bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/62"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl><bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/2737"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl></listBibl></listBibl></additional>
+                  </adminInfo><listBibl type="WRAPPER">
+                     <listBibl type="PRINT">
+                        <head>Printed descriptions:</head>
+                        <bibl>H. Gneuss and M. Lapidge, <title>Anglo-Saxon Manuscripts : A Bibliographical Handlist of Manuscripts and Manuscript Fragments Written or Owned in England up to 1100</title> (2014), no. 553</bibl>
+                     </listBibl>
+                     <listBibl type="INTERNET"><head>Online resources:</head><!--<bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/62"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl>--><bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/2737"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl></listBibl></listBibl></additional>
             </msDesc>
          </sourceDesc>
       </fileDesc>       
       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
+      <revisionDesc>    
+         
+         <change when="2020-03-30">Revised to incorporate all information in SC.</change>
+         <change when="2017-07-01">First online publication.</change>
 
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>

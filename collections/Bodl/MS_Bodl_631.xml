@@ -5,17 +5,19 @@
          <titleStmt>
             <title>MS. Bodl. 631</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2020">Encoding</resp>
+               <resp when="2020">Catalogue updates and corrections</resp>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -50,43 +52,58 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  <textLang mainLang="la">Latin</textLang>
                   <msItem xml:id="MS_Bodl_631-item1" n="1">
-                     <author key="person_54553752">
-                        
-                        Richard of Thetford
-                     
-                     </author>
+                     <locus>(fol. iv verso)</locus>
+                     <author key="person_54553752">Richard of Thetford</author>
                      <title key="work_4332">Ars dilatandi sermones </title>
-                     <note>(short extract)</note>
-                     <textLang mainLang="la">Latin</textLang>
+                     <note>(summary)</note>
+                     <rubric>Istis modis potest quis habundare in themate</rubric>
+                     <incipit>Primo per qualemcunque
+                        termini notificationem</incipit>
+                     <note>This is ascribed in an almost contemporary list of
+                        contents on fol. iv to 'frater Ricardus de Tefforď, as a 'Summa de modo
+                        predicandi'; cf. Charland, <title>Artes praedicandi</title> (1936), 79.</note>
+                    
                   </msItem>
                   <msItem xml:id="MS_Bodl_631-item2" n="2" class="#biblia">
-                     <title type="desc" key="work_10468">Biblical concordance</title>
-                     <textLang mainLang="la">Latin</textLang>
-                     <bibl type="bible">
-                        <title type="desc">Bible</title>
-                     </bibl>
+                     <locus>(fol. 1)</locus>
+                     <title type="desc" key="work_10468">Biblical concordance 'De vitando consortio'</title><note>(<bibl type="repertory">Stegmüller 10084</bibl>)</note>
+                     <note>The first title is 'De uitando
+                        consorcio ... malorum', the second 'de celeri conuersione a seculo', and a
+                        conspectus of the whole precedes. This is no doubt for a preacher's use.</note>
                   </msItem>
                   <msItem xml:id="MS_Bodl_631-item3" n="3">
-                     <author key="person_86920837">
-                        
-                        Robert Grosseteste
-                     
-                     </author>
+                     <locus>(fol. 183v)</locus>
+                     <author key="person_86920837">Robert Grosseteste</author>
                      <title key="work_4387">Templum Domini</title>
-                     <textLang mainLang="la">Latin</textLang>
+                     <rubric>Libellus domini Roberti Lincolniensis qui
+                        intitulatur Templum Dei <note type="editorial">[list of contents]</note></rubric>
+                     <incipit>Templum
+                        Dei sanctum est ... Sermo iste quamuis omnes tangať</incipit>
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>iv + 200 leaves
+                           <dimensions type="leaf" unit="in">
+                              <height>7.875</height>
+                              <width>6</width>
+                           </dimensions></extent>
                      </supportDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>Illuminated capitals.
-                     </decoNote>
+                     <decoNote type="flourInit">Illuminated capitals.</decoNote>
                   </decoDesc>
+                  <bindingDesc>
+                     <binding notAfter="1525" notBefore="1500">
+                        <p>Poor red leather on
+                           older boards, probably early 16th cent. Reading
+                           work.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
                   <origin>
@@ -95,10 +112,13 @@
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
+                  <provenance><orgName role="fmo" key="org_139637930">Reading Abbey</orgName>: evidence of the binding (MLGB).</provenance>
+                  <acquisition when="1608">Presented by <persName role="dnr" key="person_3194">William Burdet of
+                     Sonning</persName>, in 1608.</acquisition>
                </history>
                <additional><adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922).  
+                        <source>Description adapted (April 2020) from the Summary Catalogue (1922) with additional reference to other published literature as cited.  
                             
                             
                             <listBibl>
@@ -112,7 +132,9 @@
          </sourceDesc>
       </fileDesc>       
       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
+      <revisionDesc>     
+         <change when="2020-04-03">Revised to incorporate all information in SC.</change>
+         <change when="2017-07-01">First online publication.</change>
 
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>

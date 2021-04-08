@@ -1,21 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_7227">
    <teiHeader>
+      <!-- 
+
+   and check id of art. 2 (Stegm. Sent. 526 or 527 with Doucet suppl.), Glorieux Rep 318f  - and create index entry for it; 
+   
+   MH to finish-->
       <fileDesc>
          <titleStmt>
             <title>MS. Laud Misc. 426</title>
             <title type="collection">MSS. Laud Misc. (Laud miscellaneous)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+           <!-- <respStmt xml:id="Q">
+               <resp when="1858">Cataloguer</resp>
+               <persName>H. O. Coxe</persName>
+            </respStmt>
+            <respStmt xml:id="Q2">
+               <resp when="1969">Cataloguer</resp>
+               <persName>R. W. Hunt</persName>
+            </respStmt>-->
+            <respStmt xml:id="TA">
+               <resp when="2020">Cataloguer</resp>
+               <resp when="2020">Encoding</resp>
+               <persName>Tuija Ainonen</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2020">Cataloguer</resp>
+               <resp when="2020">Encoding</resp>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -49,75 +64,49 @@
                      <idno type="SCN">1126</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
-                  <msItem xml:id="MS_Laud_Misc_426-item1" n="1">
-                     <author key="person_17360618">
-                        Thomas Waleys
-                     </author>
-                     <title key="work_4827">Commentary on Augustine, De civitate dei</title> 
-                     <note>Waleys's commentary on bks. I-X completed by the <title type="desc" key="work_3276">commentary</title> of <persName role="aut" key="person_71433906">
-                        Nicholas Trevet.
-                     </persName>
-                     </note>
-                     <textLang mainLang="la">Latin</textLang>
-                     <bibl type="commentedOn">
-                        <author key="person_66806872">
-                           Augustine
-                        </author>
-                        <title>De civitate Dei</title>
-                     </bibl>
-                  </msItem>
-                  <msItem xml:id="MS_Laud_Misc_426-item2" n="2" class="#tabulae">
-                     <title type="desc" key="work_12369">Index to Peter Lombard, <hi rend="italic">Sententiae</hi>
-                     </title>
-                     <textLang mainLang="la">Latin</textLang>
-                     <bibl type="related">
-                        <author key="person_51797933">
-                           Peter Lombard
-                        </author>
-                        <title>Sententiarum libri IV</title>
-                     </bibl>
-                  </msItem>
-                  <msItem xml:id="MS_Laud_Misc_426-item3" n="3">
-                     <author key="person_2193"><!-- not found VIAF, mirabile; Stegm. 8913 -->
-                        
-                        Rainerius Aretinus
-                     
-                     </author>
-                     <title key="work_4179">Auctoritates Bibliae</title>
-                     <note>(Stegmuller 8913; extracts from <persName role="aut" key="person_100184667">
-                           Gregory the Great
-                        </persName>)</note>
-                     <textLang mainLang="la">Latin</textLang>
-                  </msItem>
-                  <msItem xml:id="MS_Laud_Misc_426-item4" n="4">
-                     <author key="person_16017787">
-                        
-                        Innocent III
-                     
-                     </author>
-                     <title key="work_2191">De miseria humanae conditionis</title>
-                     <textLang mainLang="la">Latin</textLang>
-                  </msItem>
-               </msContents>
+               <head>Thomas Waleys, Rainerius Aretinus, Innocent III; Germany, c. 1473</head>
                <physDesc>
+                  <p>Three codicological units, the last dated 1473, the others more or less contemporary, as suggested by watermarks, and the whole volume assembled very soon after. Fol. 1 is an endleaf with table of contents to the whole volume on the recto, verso blank; watermark, bull's head with four-petalled flower, Piccard xiii.525 (Innsbruck, 1473); fol. 270 is another endleaf, blank, with ex libris on the verso.</p>
+                  <p>
+                     <secFol><supplied>multitu</supplied>dine copiosa</secFol>
+                  </p>
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
+                        <extent> 1 + 278 (218+36+24) + 1 leaves 
+                           <dimensions unit="mm" type="leaf">
+                              <height>315</height>
+                              <width>215</width>
+                           </dimensions>
+                          
+                        </extent>
+                        <foliation>1-217, 218(a)-(c), 219-245, 246(a)-(h), 247-268, 269(a)-(b), 270</foliation>
+                        <collation>a(1) | 1(12)-17(12), 18(14) | 19(12)-21(12) | 22(12)-23(12) | b(1)</collation>
                      </supportDesc>
+                   
                   </objectDesc>
+                  <!-- watson for the last part has:  315 x 210mm. 2 cols, 225 x 55mm. 42 lines, col. inits, rubrics. 
+
+ -->
+                  <bindingDesc>
+                     <binding calendar="Gregorian" notAfter="1639" notBefore="1637">
+                        <p>Brown tanned calf over laminated pulpboard for Abp. Laud, 1637–1639.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
-                  <origin>
-                     <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
-                  </origin>
+                  <provenance><orgName key="org_133893958">Prüll, Benedictine, later Carthusian monastery</orgName>: inscription 'pertinet ad domum sancti viti in prwell ord. Carthus. prope ratisbonam' (fol. 270v); identified as one of the volumes taken over from the Benedictine library: <bibl>R. Micus, <title>Die Bibliothek der ehemaligen Kartause Prüll</title> (Salzburg, 2013), 115-6.</bibl>. Ex libris probably not (pace Watson) in the same hand as fols. 247-68. Listed in the catalogues of 1595-1610 (<bibl>Micus, 50, 61-62, 65 </bibl>).</provenance>
+                  <provenance resp="#Q2" when="1638"><persName role="fmo" key="person_54940373">William Laud, 1573-1645</persName>, 1638.
+                  </provenance>
+                  <acquisition when="1639" resp="#Q2">Part of his third donation to the Bodleian, 1639.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (H. O. Coxe,  <title>Laudian Manuscripts</title>, Quarto Catalogues II, repr. with corrections, 1969, from the original ed. of 1858-1885). 
-                            
-                            
+                        <source>Description by Tuija Ainonen and Matthew Holford (June 2020, rev. Oct. 2020); previously described in the Quarto Catalogue.
+                              <listBibl>
+                                 <bibl>H. O. Coxe, <title>Laudian Manuscripts</title>, Quarto Catalogues II, repr. with corrections, 1969, from the original ed. of 1858-1885 [contents, acquisition]</bibl>
+                              </listBibl>
                             <listBibl>
                               <bibl type="QUARTO" facs="aby0204.gif">Quarto Catalogue, col. 311</bibl>
                               <bibl type="SC" facs="aap0069.gif">Summary Catalogue, vol. 2, part 1, p. 48</bibl>
@@ -125,12 +114,197 @@
                         </source>
                      </recordHist>
                   </adminInfo>
+                  <surrogates>
+                     <bibl type="digital-facsimile" subtype="full">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/3bb17c58-ab3a-45b9-a482-3333103787f9/">
+                           <title>Digital Bodleian</title></ref> <note>(full digital facsimile)</note>
+                     </bibl>
+                  </surrogates>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="INTERNET">
+                        <head>Online resources:</head>
+                        <bibl><ref target="https://hab.bodleian.ox.ac.uk/en/"><title>Manuscripts from German-Speaking Lands – A Polonsky Foundation Digitization Project</title></ref></bibl>
+                     </listBibl>
+                     <listBibl type="PRINT">
+                        <head>Printed descriptions:</head>
+                        <bibl>A. G. Watson, <title>Dated and Datable Manuscripts in Oxford Libraries</title> (1984) no. 604 (fols. 247-68)</bibl>
+                     </listBibl>
+                  </listBibl>
                </additional>
+               <msPart xml:id="MS_Laud_Misc_426_partA">
+                  <msIdentifier>
+                     <altIdentifier><idno>MS. Laud Misc. 426 - Part A (fols. 2-218(b))</idno></altIdentifier>
+                  </msIdentifier>
+                  
+                  <msContents>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem xml:id="MS_Laud_Misc_426-item1" n="1">
+                        <locus>(fols. 2r-208v)</locus>
+                        <author key="person_17360618">Thomas Waleys</author>
+                        <title key="work_4827">Commentary on Augustine, De civitate dei</title> 
+                        <incipit><supplied>F</supplied>luminis impetus letificat</incipit>
+                        <explicit>cum vera fide resurrectionis future ad eternam beatitudinem. Ad quam nos perducat <gap reason="editorial"/></explicit>
+                        <note>Waleys's commentary on bks. I-X completed by the <title type="desc" key="work_3276">commentary</title> of <persName role="aut" key="person_71433906">
+                           Nicholas Trevet.</persName></note>
+                     </msItem>
+                     
+                     <msItem xml:id="MS_Laud_Misc_426-item2" n="2" class="#tabulae">
+                        <locus>(fols. 209r-218(a)r)</locus>
+                        <author key="person_89499857"><supplied>Matthaeus ab Aquasparta </supplied></author>
+                        <title key="work_6457"><supplied>Tabula Sententiarum</supplied></title>
+                        <rubric>Incipit registrum in libros sententiarum quantum ad contenta secundum alphabetum</rubric>
+                        <incipit><supplied>A</supplied>bsolvere aliquem ab aliquo delicto non debet nisi immunis ab illo li. 4 dis. 19. Abortiuum procurantes </incipit>
+                        <explicit>Ypocrita est qui non wlt confiteri peccata sua</explicit>
+                        <note>Mohan, 'Incipits', 6-7; Stegmüller-Doucet 526-7; Glorieux, <title>Theol</title>. 318f.<!--Also in Universitäts- und Forschungsbibliothek Erfurt- Gotha, CE 8° 28a fols. 324ra-332vb; UB Erfurt, Dep. Erf. CA. 4° 155, 132-141.--></note>
+                        <note>Fols. 218(a)v-218(b)v blank.</note>
+                     </msItem>
+                     <!-- watermark: image 441. 
+                  https://www.wasserzeichen-online.de/wzis/struktur.php?klassi=002007002003004001011001&anzeigeIDMotif=12731 (several hundred examples)
+                  -->
+                     
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="chart">
+                           <support>Paper. Watermarks: Dreiberg with cross, at least three variants, all type Piccard vii.2251-79, 2298-2331<!--: (a) cf. vii.2308, (b) cf. vii.2328 (c) cf. vii.2297-->
+                           </support>
+                           <collation>1-17(12) (fols. 2-205), 18(14) (fols. 206-18(b))</collation>
+                        </supportDesc>
+                        <layoutDesc>
+                           <layout columns="1" writtenLines="38">Fols. 2r-208v: 38 long lines. Frame-ruled (outer margins only?) with a hard point.  Written space <dimensions unit="mm" type="written">
+                              <height min="230" max="235">230-35</height>
+                              <width min="140" max="145">140-45</width>
+                           </dimensions></layout>
+                           <layout columns="1" writtenLines="44 45">Fols. 209r-218(a)r: 44-45 long lines. Written space <dimensions unit="mm" type="written">
+                              <height min="260" max="265">260-65</height>
+                              <width min="150" max="152">150-52</width>
+                           </dimensions></layout>
+                         
+                        </layoutDesc>
+                     </objectDesc>
+                     <handDesc hands="2">
+                        <handNote script="hybrida">Fols. 2r-208v: hybrida by one hand.</handNote>
+                        <handNote script="cursiva">Fols. 209r-218a: cursive by one hand.</handNote>
+                     </handDesc>
+                     <decoDesc>
+                        <decoNote type="unfilled">Spaces left for initials; instructions for rubrication, not carried out.</decoNote>
+                     </decoDesc>
+                  </physDesc>
+                  <history>
+                     <origin>
+                        <origDate calendar="Gregorian" notBefore="1465" notAfter="1480">c. 1473</origDate>
+                        <origPlace><country key="place_7000084">Germany</country></origPlace>
+                        
+                     </origin>
+                  </history>
+               </msPart>
+               <msPart xml:id="MS_Laud_Misc_426_partB">
+                  <msIdentifier>
+                     <altIdentifier><idno>MS. Laud Misc. 426 - Part B (fols. 218(c)-246(h))</idno></altIdentifier>
+                  </msIdentifier>
+                  
+                  <msContents>
+                     <textLang mainLang="la">Latin</textLang>
+                 
+                     
+                     <msItem xml:id="MS_Laud_Misc_426-item3" n="3">
+                        <locus>(fols. 219r-246(a)r)</locus>
+                        <author key="person_2193"><!-- not found VIAF, mirabile; Stegm. 8913 -->Rainerius Aretinus</author>
+                        <title key="work_4179">Auctoritates Bibliae</title>
+                        <incipit type="prol.">Gregorius Ihesu Christi servus ac urbis Rome papa beatissimus</incipit>
+                        <rubric><note><locus>(fol. 219v)</locus></note> Auctoritates libri Genesis. </rubric>
+                        <incipit type="text">In principio creavit Deus </incipit>
+                        <note>(Stegmuller 8913; extracts from <persName role="aut" key="person_100184667">Gregory the Great</persName>)</note>
+                        <note>Fols. 246(a)v-246(h)v blank.</note>
+                     </msItem>
+                     
+                     <!-- watermark, image 501, 503
+                  https://www.wasserzeichen-online.de/wzis/struktur.php?klassi=002007002003004001004001002&anzeigeIDMotif=12698 (several hundred examples)
+                  -->
+                     
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="chart">
+                           <support>Paper. Watermarks: bull's head with cross and six-pointed star (cf. Piccard xi.227, 230-5); bull's head with seven(?)-petalled flower (cf. Piccard  xii.752-5?)<!-- check -->; bull's head with cross and seven-petalled flower (cf. Piccard xi.347-8); 
+                           </support>
+                           <collation>19(12)-21(12)</collation>
+                        </supportDesc>
+                        <layoutDesc>
+                           <layout columns="1" writtenLines="41 43">41-43 long lines. Written space  <dimensions unit="mm" type="written">
+                              <height min="210" max="217">210-17</height>
+                              <width min="128" max="130">128-30</width>
+                           </dimensions></layout>
+                        </layoutDesc>
+                     </objectDesc>
+                     <handDesc hands="1">
+                        <handNote script="cursiva">Cursive by one hand.</handNote>
+                     </handDesc>
+                     <decoDesc>
+                        <decoNote type="flourInit">Eleven-line red initial with silhouette decoration and penwork flourishing.</decoNote><decoNote type="colInit">Two-line plain red initials, rubrics.</decoNote>
+                     </decoDesc>
+                  </physDesc>
+                  <history>
+                     <origin>
+                        <origDate calendar="Gregorian" notBefore="1465" notAfter="1480">c. 1473</origDate>
+                        <origPlace><country key="place_7000084">Germany</country> </origPlace>
+                     </origin>
+                  </history>
+               </msPart>
+               <msPart xml:id="MS_Laud_Misc_426_partC">
+                  <msIdentifier>
+                     <altIdentifier><idno>MS. Laud Misc. 426 - Part C (fols. 247-269(b))</idno></altIdentifier>
+                  </msIdentifier>
+                  
+                  <msContents>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem xml:id="MS_Laud_Misc_426-item4" n="4">
+                        <locus>(fols. 247r-268r)</locus>
+                        <author key="person_16017787">Innocent III</author>
+                        <title key="work_2191">De miseria humanae conditionis</title>
+                        <rubric>Incipit liber de miseria humane condicionis editus a Lotario dyacono Cardinali SS. Sergii et Bachi qui postea Innocentius Tercius est appellatus.</rubric>
+                        <incipit>Domino patri carissimo P<ex>etro</ex> Dei gratia Portuensi episcopo Lotarius indignus dyaconus ... Modicum ocii inter multas angustias </incipit>
+                        <explicit>Tunc iusti ibunt in vita eternam, maledicti autem in ignem eternum. A quo nos custodiat Pater et Filius et Spiritus Sanctus. Amen. 1473.</explicit>
+                        <note>Fols. 268v-269(b)v blank.</note>
+                        <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="chart">
+                           <support>Paper. Watermark, bull's head with five-petalled flower, cf. Piccard xii.185-8.</support>
+                           <collation>22(12)-23(12). Catchwords.</collation>
+                        </supportDesc>
+                        <layoutDesc>
+                           <layout columns="2" writtenLines="42">2 columns, 42 lines. Written space <dimensions unit="mm" type="written">
+                              <height>225</height>
+                              <width>135</width>
+                           </dimensions></layout>
+                        </layoutDesc>
+                     </objectDesc>
+                     <handDesc hands="1">
+                        <handNote script="hybrida">Hybrida by one scribe.</handNote>
+                     </handDesc>
+                     <decoDesc>
+                        <decoNote type="colInit">Two- to four-line plain red initials; rubrics.</decoNote>
+                     </decoDesc>
+                  </physDesc>
+                  <history>
+                     <origin>
+                        <origDate calendar="Gregorian" when="1473" cert="high">1473</origDate>
+                        <origPlace><country key="place_7000084">Germany</country> </origPlace>
+                     </origin>
+                     <provenance></provenance>
+                  </history>
+               </msPart>
             </msDesc>
+           
          </sourceDesc>
       </fileDesc>       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
+      <revisionDesc>          
+         <change when="2020-10-19">Description finalized for Polonsky German project: structure and dating revised.</change>
+         <change when="2020-06-10">Description revised for Polonsky digitization project to include additional information from printed descriptions.</change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

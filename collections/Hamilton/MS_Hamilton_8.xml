@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6025">
+   <!-- TODO: 
+     
+      transcribe frags B, C?
+      watermarks, collation
+       -->
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Hamilton 8</title>
             <title type="collection">MSS. Hamilton</title>
             <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <resp when="2020-07">Cataloguer</resp>
+               <resp>Encoding</resp><persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
-         <editionStmt>
-            <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
-         </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
             <address>
@@ -49,33 +47,145 @@
                      <idno type="SCN">24438</idno>
                   </altIdentifier>
                </msIdentifier>
+               <head>Johannes a Sancto Geminiano, <title>Sermones quadragesimales</title>; Germany (in part Erfurt), c. 1442</head>
                <msContents>
                   <msItem xml:id="MS_Hamilton_8-item1" n="1">
-                     <title key="work_14583">Sermons</title>
+                     <locus>(fols. 1ra-161vb)</locus>
+                     <author key="person_5028934">Johannes a Sancto Geminiano</author>
+                     <title key="work_6367">Sermones quadragesimales</title>
+                     <incipit><quote>Conuertimini ad me <gap reason="editorial"></gap></quote> Videmus quod omne animale cum se infirmum sencit</incipit>
+                     <msItem>
+                        <locus>(fols. 1ra-139va)</locus>
+                        <note>Schneyer III.734-41, nos. 155-242; the end of 165 and the beginning of 166 lost. As pr. <title>Convivium quadragesimale</title> (Cologne, 1612).</note>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 139vb-140ra)</locus>
+                        <incipit><cit><quote>Inclinato capite emisit spiritum</quote> <bibl>Jo. xix</bibl></cit> Mors saluatoris nostri karissimi quam hodie recolimus per inclinacionem factam</incipit>
+                        <explicit>per ordinem hystoria passionis prout invenitur in illa passione</explicit>
+                        <note>Not listed by Schneyer; ed. 1612, pp. 643-644.</note>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 140ra-141ra)</locus>
+                        <incipit><cit><quote>Memento mei domine dum veneris <gap reason="editorial"/></quote> <bibl>Luc. xxiij</bibl></cit> Introducit breuiter ewangelista primo latronem humiliter postulantem</incipit>
+                        <!--<explicit>in qua visione habebis gloriam eternam, ad quam perducat nos etc.</explicit>-->
+                        <note>Not listed by Schneyer; ed. 1612, pp. 687-692.</note>
+                        <!-- 692 -->
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 141ra-143va)</locus>
+                        <note>Schneyer, no. 243</note>
+                        <!--<incipit><cit><quote>Mortui estis <gap reason="editorial"/></quote> <bibl>Colo. iij</bibl></cit> Hodie deploratur et repentat ecclesia christum mortuum</incipit>-->
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 143va-146vb)</locus>
+                        <incipit><cit><quote>Descendit primum ad inferiores <gap/></quote> <bibl>Eph. iiij</bibl></cit> Cum dominus iesus christus nostre redempcionis opere in cruce consummato</incipit>
+                        <note>Not listed by Schneyer; ed. 1612, pp. 702-717</note>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 146vb-148vb)</locus><!-- 306 -->
+                        <note>Schneyer, no. 244</note>
+                        <!--<incipit><cit><quote>Maria Magdalena et Maria <gap reason="editorial"/></quote> <bibl>Mar. xvj</bibl></cit> Sicud dicit beatus Hilarius, Omnis res pro quocumque</incipit>-->
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 149ra-150vb)</locus>
+                        <note>Schneyer, no. 245</note>
+                        <!--<incipit><cit><quote>Scio quod iesum <gap reason="editorial"/></quote> <bibl>Mar. xvj</bibl></cit> Generaliter videmus in mundo quod omnes mutaciones sunt de contrario in contrarium. Sicud aqua quando calesit</incipit>-->
+                     </msItem>
+                     <msItem>
+                        <!-- TODO - mage 316 -->
+                        <locus>(fols. 150vb-153ra)</locus>
+                        <incipit><cit><quote>Duo ex discipulis Iesu ibant ipsa die in castellum </quote> <bibl>Luc. xxiiij</bibl></cit> Consueuerunt boni et magni doctores quando volunt discipulos suos de aliquo re difficili informare</incipit>
+                        <note>Not listed by Schneyer; ed. 1612, pp. 750-751[bis] </note>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 153ra-154ra)</locus>
+                        <incipit><cit><quote>Surrexit dominus vere et apparuit <gap reason="editorial"/></quote> <bibl>Luc. xxiij</bibl></cit> Quia testes debent esse certi de hiis </incipit>
+                        <note>Not listed by Schneyer; ed. 1612, pp. 751[bis]-756[bis] <!--(recte 761-6)--></note>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 154ra-155vb)</locus>
+                        <incipit>
+                           <cit><quote>Stetit iesus in medio <gap reason="editorial"/></quote> <bibl>Luc. ultimo</bibl></cit> Quando rex a <unclear>turma</unclear> sua alias pontifex ab acclesia
+                        </incipit>
+                        <note>Not listed by Schneyer; ed. 1612, pp. 756[bis]-68 <!--(recte 766-78)--></note>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols. 155vb-156vb)</locus>
+                        <incipit><cit><quote>Oportebat pati christum <gap reason="editorial"/></quote> <bibl>Luc. ultimo</bibl></cit> Sicud dicit philosophus, Opposita iuxta se posita magis elucescunt, sicud nigrum magis apparet</incipit>
+                        <note>Not listed by Schneyer; ed. 1612, pp. 769-74<!-- (recte 779-84)--></note>
+                     </msItem>
+                     
                      <finalRubric>Explicit liber sermonum quadragesimalium
-              compilatus a magistro Johanne fratre ordinis sancti Dominici
-              confessoris</finalRubric>
+              compilatus a magistro Johanne fratre ordinis sancti <sic>a</sic> dominici
+              confessoris. Sit laus tibi Criste AMEN </finalRubric>
+                     <note>Sermons 1-58 numbered in arabic and roman. Marginal notes marking divisions of the sermons and cited authorities.</note>
+                     <note>Additional notes in later hands, fols. 35r, 61, 74r, 91r-v, etc.</note>
+                     <note>Rest of fol. 156vb blank.</note>
+                     
+                     <msItem>
+                        <locus>(fols. 157ra-161vb)</locus>
+                        <title type="desc">Index</title>
+                        <incipit>Agilitas xxvj. Abire retrosum lxxxj b.</incipit>
+                        <explicit>Zelus liiij b. lxxvij a <lb/> Zezastres xlv b</explicit>
+                     </msItem>
+                     <colophon><locus>(fol. 161vb)</locus> Sit nomen domini nostri iesu christi et nomen gloriose virginis matris eius marie semper benedictum in secula seculorum amen. <lb/> Sub anno domini M<hi rend="superscript">o</hi> cccc<hi rend="superscript">o</hi> xlij<hi rend="superscript">o</hi> sabbato die post festum beatissimj et eximij  doctoris sancti Augustini et hac die in qua inponitur hystoria Iob finitus est iste liber. <lb/> Scriptor huius libri dimidii fuit Iohannes czesaris Tunc temporis existens studens Erphordien' etc. Aue maria gratia plena dominus tecum.</colophon>
+                     <note>Later note, fol. 1r, 'Sermones isti scripsit Matheus de Cracouia'.</note>
+                     
                      <textLang mainLang="la">Latin</textLang>
+                     <!-- bottom of 35r (81), added note , also 61r (135), 74r, 91r, 91v, 92r, etc -->
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
+                        <extent>161 folios
+                           <dimensions type="leaf" unit="mm">
+                              <height>295</height>
+                              <width>210</width>
+                           </dimensions></extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2" writtenLines="40 46">2 cols., c. 40-46 lines. Frame-ruled, ruled space c. <dimensions unit="mm" type="ruled">
+                           <height max="230" min="225">225-30</height>
+                           <width>150</width>
+                        </dimensions> <!--, written space  col 65-75 says Watson --></layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <handDesc>
+                     <handNote>Mostly the work of two scribes, (a) fols. 1ra-108vb (b) fols. 109ra-161v, <persName role="scr" key="person_3341">Johannes Czesaris</persName>; a third scribe seems to appear briefly on fols. 153vb-154ra.</handNote>
+                     <handNote script="cursiva">Scribe a, cursiva</handNote>
+                     <handNote script="hybrida">Scribe b, hybrida (loopless cursive)</handNote>
+                  </handDesc>
+                  <decoDesc>
+                     <decoNote type="colInit">Red initials, mostly 2-3 lines, sometimes with simple 'arabesque' or 'silhouette' decoration.</decoNote>
+                     <decoNote>Rubrication of fols. 1-108 apparently unfinished.</decoNote>
+                  </decoDesc>
+                  <bindingDesc><binding contemporary="true">
+                     <p>Contemporary binding of white whittawed skin over boards; clasps lost; formerly chained from the head of the back board. Contemporary contents label on the front cover, with pressmark E 1.</p>
+                  </binding></bindingDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century, partly 1442</origDate>
+                     <origDate calendar="Gregorian" notAfter="1442" notBefore="1435" cert="high">c. 1442</origDate>
                      <origPlace>
-                        <country key="place_7000084">German</country>, <settlement key="place_7024031">Erfurt</settlement> (partly)<!--ORIGINAL: German, Erfurt (partly)--></origPlace>
+                        <country key="place_7000084">Germany</country>, <settlement key="place_7024031">Erfurt</settlement> (at least in part)<!--ORIGINAL: German, Erfurt (partly)--></origPlace>
                   </origin>
+                  <provenance>Colophon, fol. 161vb, referring to fols. 109-161, but fols. 1-108 are evidently contemporary.</provenance>
+                  <!-- not identifiable in MBKMS -->
+                  <provenance><placeName key="place_7024031">Erfurt</placeName>, unidentified religious house: <q>Liber conuentus Erfford' Held'ug' (Heldrug'?)</q> (fol. 1r); pressmark <q type="pressmark">E 1</q> on the binding.</provenance><!-- Heldrungen? -->
+                  <!-- perhaps not the Franciscans, binding does not resemble MS. Hamilton 55 -->
+                  <provenance notAfter="1831" notBefore="1760"><persName role="fmo" key="person_24953683">Friedrich Gottlieb Julius von Bülow, 1760-?1831</persName> (?): probably identifiable as 209a in the catalogue of part 3 of his sale, 10 Oct. 1836 ('JOHANNIS (Fr. Ord. S. Domin.) Sermones quadragesimales (a. 1442. scr.)').</provenance>
+                  <provenance notBefore="1841" notAfter="1856"><persName role="fmo"
+                     key="person_54195353">Sir William Hamilton,
+                     1788-1856</persName></provenance>
+                  <acquisition when="1857">Presented to the Bodleian Library by his sons and
+                     received in 1857.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
+                        <source>Description by Matthew Holford, September 2020. Previously described in the Summary Catalogue.
                             
                             <listBibl>
                               <bibl type="SC" facs="aam0050.gif">Summary Catalogue, Vol. 5, p.  15</bibl>
@@ -83,11 +193,146 @@
                         </source>
                      </recordHist>
                   </adminInfo>
+                  <surrogates>
+                     <bibl type="digital-facsimile" subtype="full">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/87f14422-f9b5-461f-8daf-c5f541389ca2/">
+                           <title>Digital Bodleian</title></ref> <note>(full digital facsimile)</note>
+                     </bibl>
+                  </surrogates>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="INTERNET">
+                        <head>Online resources:</head>
+                        <bibl><ref target="https://hab.bodleian.ox.ac.uk/en/"><title>Manuscripts from German-Speaking Lands – A Polonsky Foundation Digitization Project</title></ref></bibl>
+                     </listBibl>
+                     <listBibl type="PRINT">
+                        <head>Printed descriptions:</head>
+                        <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts in Oxford Libraries</title> (1984) no. 493</bibl>
+                     </listBibl>
+                  </listBibl>
                </additional>
+               <msPart xml:id="MS_Hamilton_8-upper-pastedown" type="fragment">
+                  <msIdentifier>
+                     <altIdentifier type="partial">
+                        <idno type="part">MS. Hamilton 8 - upper pastedown</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  <msContents>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem xml:id="MS_Hamilton_8-upper-pastedown-item1">
+                        <author key="person_100201145">Honorius of Autun</author>
+                        <title key="work_2089">Elucidarium</title>
+                        <note>Bifolium of non-continous text, (a) II.20-21 '|mittet nobis. Septimo per karitatis ... // ... vnde dicitur Timor primus |' (PL 172.1150C-1151C), (b) III.11-13 '|giter in morte dolentia ... // ... ut dicitur Sedibitis super|' (PL 172.1165B-1166B)</note>
+                        <!-- note the form of round r -->
+                     </msItem>
+                     
+                     
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="perg">
+                           <support>parchment</support>
+                           <extent>bifolium, cropped, bound in sideways
+                              <dimensions unit="mm" type="leaf">
+                                 <height atLeast="195">at least 195</height>
+                                 <width>140</width>
+                              </dimensions></extent>
+                        </supportDesc>
+                        <layoutDesc><layout>1 col., at least 42 lines. Width of the ruled space, 90 mm.</layout></layoutDesc>
+                     </objectDesc>
+                  </physDesc>
+                  <history>
+                     <origin>
+                        <origDate calendar="Gregorian" notAfter="1300" notBefore="1200">13th century</origDate>
+                        <origPlace> <country key="place_7000084">Germany</country></origPlace>
+                        
+                     </origin>
+                  </history>
+               </msPart>
+               <msPart xml:id="MS_Hamilton_8-lower-pastedown-fragment1" type="fragment">
+                  <msIdentifier>
+                     <altIdentifier type="partial">
+                        <idno type="part">MS. Hamilton 8 - lower pastedown, fragment A</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  <msContents>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem xml:id="MS_Hamilton_8--lower-pastedown-fragment1-item1">
+                        <author key="person_63741243">Peregrinus de Opole</author>
+                        <title key="work_3485">Sermones de sanctis</title>
+                       <note>Bifolium of non-continuous text. Left folio: apparently part of the sermon for St James (Schneyer IV.560 no. 148): <q>confitentem timuisset. hominem illum cum cedula in qua peccatum illud erat scriptum ad sanctum iacobum misit ut ille suis meritis deleret rogauit. et sic cedulam super altare posuit. Quam postmodum inueniens deletum aperiens deo gratias et sancto Iacobo egit. Quidam uir ad sanctum Iacobum pecunia deficiente mendicare erubuit requirens</q> (cf. the edition of 1495)</note>
+                        <note>Right folio: apparently part of the sermon on St Bartholomew (Schneyer IV.561 no. 152): <q>Prima igitur via dicitur lata et hoc ideo quia multi <damage><gap/></damage> et cottidie per eam ambulant, quia lucifer cum <damage><gap/></damage> quando detrusus fuit de celo <supplied>per eam</supplied> ambulavit <damage><gap/></damage> <supplied>so</supplied>domite, quando</q> (cf. MS. Laud Misc. 198, fol. 47ra)</note>
+                        <!-- note -m abbreviation  -->
+                     </msItem>
+                     
+                     
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="perg">
+                           <support>parchment</support>
+                           <extent>part of a bifolium</extent>
+                        </supportDesc>
+                        <layoutDesc><layout>Width of a column, 80 mm.</layout></layoutDesc>
+                     </objectDesc>
+                  </physDesc>
+                  <history>
+                     <origin>
+                        <origDate calendar="Gregorian" notAfter="1400" notBefore="1300">14th century</origDate><!-- could be late 13th? -->
+                        <origPlace> <country key="place_7000084">Germany</country></origPlace>
+                        
+                     </origin>
+                  </history>
+               </msPart>
+               <msPart xml:id="MS_Hamilton_8-lower-pastedown-fragmentB" type="fragment">
+                  <msIdentifier>
+                     <altIdentifier type="partial">
+                        <idno type="part">MS. Hamilton 8 - lower pastedown, fragments B and C</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  <msContents>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem xml:id="MS_Hamilton_8-lower-pastedown-fragmentsB-C-item1">
+                        <note>Alexander de Villa Dei, Doctrinale, with interlinear glosses and commentary in textus inclusus.</note>
+                        <msItem><author key="person_2583890">Alexander de Villa Dei</author>
+                          <title key="work_410">Doctrinale</title>
+                          <note>Fragment B: part of lines 1159-1167 (ed. Reichling) (II c. 8) <q>|oteris coniugere vini ... <lb/> |os crimine purget ab omni|</q>. Fragment C has the earlier part of lines 1164-7.</note>
+                       </msItem>
+                        <msItem>
+                           <title type="desc" key="work_16270">Commentary on Alexander de Villa Dei, Doctrinale magnum </title>
+                           <note>Unidentified. <!--The commentary on l. 1164 (?) begins 'potest aliquid <unclear>rem</unclear> ipsius genitivi casus'--></note>
+                           <!-- 
+                              not Guaschis https://daten.digitale-sammlungen.de/bsb00045281/image_60 
+                              not Gerard of Zutphen https://app.digitale-sammlungen.de/bookshelf/bsb00025754/view?currentUrl=%2Fview%2Fbsb00025754%3Fview%3DImageView&manifest=https%3A%2F%2Fapi.digitale-sammlungen.de%2Fiiif%2Fpresentation%2Fv2%2Fbsb00025754%2Fmanifest&canvas=https%3A%2F%2Fapi.digitale-sammlungen.de%2Fiiif%2Fpresentation%2Fv2%2Fbsb00025754%2Fcanvas%2F69&view=ImageView  -->
+                        </msItem>
+                     </msItem>
+                     
+                     
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="chart">
+                           <support>paper</support>
+                           <extent>two fragments from a folio</extent>
+                        </supportDesc>
+                        <layoutDesc><layout>1 col., 50 lines of gloss. Height of the written space, 185 mm.</layout></layoutDesc>
+                     </objectDesc>
+                  </physDesc>
+                  <history>
+                     <origin>
+                        <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
+                        <origPlace> <country key="place_7000084">Germany</country></origPlace>
+                        
+                     </origin>
+                  </history>
+               </msPart>
             </msDesc>
          </sourceDesc>
       </fileDesc>
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
+      <revisionDesc>      
+         <change when="2021-03-02">Added identification in Buelow catalogue.</change>
+         <change when="2020-09-23">Revised description finalized for Polonsky German project.</change>
+         <change when="2020-07-02">New draft description for Polonsky German.</change>
+         <change when="2017-07-01">First online publication.</change>
 
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>

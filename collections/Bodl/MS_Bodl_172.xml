@@ -5,18 +5,17 @@
          <titleStmt>
             <title>MS. Bodl. 172</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
             </respStmt>
-         </titleStmt>
-         <editionStmt>
-            <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
+            <respStmt xml:id="MLH">
+               <resp when="2020">Encoding</resp>
+               <resp when="2020">Catalogue updates and corrections</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
-         </editionStmt>
+         </titleStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
             <address>
@@ -50,21 +49,60 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  <textLang mainLang="la">Latin</textLang>
                   <msItem xml:id="MS_Bodl_172-item1" n="1" class="#sermones">
                      <title type="desc" key="work_14583">Sermons</title>
-                     <textLang mainLang="la">Latin</textLang>
+                     <note>Latin sermons for holy days and other special occasions: but according to a
+                        list at fol. ii the first fourteen and part of the fifteenth are lost at the
+                        beginning, and one leaf is wanting after fol. 56: there were originally at
+                        least seventy-four sermons.</note><msItem>
+                           <author key="person_282035032">Hildebert of le Mans</author>
+                           <title key="work_6590">Sermo</title>
+                           <incipit><quote>Surge Aquilo ...</quote> Videndum est quis loquitur</incipit>
+                           <note> The first sermon of which the beginning is preserved.</note></msItem>
+                  <msItem>
+                     <author key="person_40175167">Peter Comestor</author>
+                     <title key="work_3496">Sermones</title>
+                     <note> Two sermons are directly attributed to Petrus Comestor (fols. 19, 63)
+                        and others are by him, but not all, in spite of a nearly contemporary title
+                        'Sermones magistri Petri Manducatoris' (fol. ii verso).</note></msItem></msItem>
+                  <msItem xml:id="MS_Bodl_172-item2"  class="#theologica"><note> Later theological notes
+                        are on foll. iv, ii, 63v, 64v, and scattered about the volume: one on fol.
+                        63v begins 'Mandata secundum Abuyle super Evangelium', on the Decalogue.</note>
+                     </msItem><msItem xml:id="MS_Bodl_172-item3">
+                        <locus>(fol. i)</locus>
+                        <author key="person_95219820">Baldwin of Ford</author>
+                        <title key="work_871">De sacramento altaris</title>
+                        <incipit>Amantissimo domino ... Reuerenda nomina
+                        magistri</incipit>
+                        <note>Part of the preface, added 13th century.</note>
+                       
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>ii + 64 leaves
+                            <dimensions type="leaf" unit="in">
+                               <height>12.25</height>
+                               <width>7.875</width>
+                            </dimensions>
+                           </extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2">2 cols., with wide margins</layout>
+                     </layoutDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>Illuminated capitals.
+                     <decoNote type="flourInit">Illuminated capitals.
                      </decoNote>
                   </decoDesc>
+                  <bindingDesc>
+                     <binding notAfter="1400" notBefore="1300">
+                        <p>White leather on
+                           boards, English 14th cent. (?) work.</p>
+                     </binding></bindingDesc>
                </physDesc>
                <history>
                   <origin>
@@ -73,10 +111,11 @@
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
+                  <provenance><orgName role="fmo" key="org_2142145857037522921207">Windsor, collegiate chapel</orgName>: evidence of the binding (MLGB).</provenance><acquisition when="1612">Presented by the dean and canons of Windsor in 1612.</acquisition>
                </history>
                <additional><adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922).  
+                        <source>Description adapted (April 2020) from the Summary Catalogue (1922), with additional reference to other published literature as cited.  
                             
                             
                             <listBibl>
@@ -89,8 +128,9 @@
          </sourceDesc>
       </fileDesc>       
       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
+      <revisionDesc>    
+         <change when="2020-04-21">Description revised to incorporate all information in SC.</change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

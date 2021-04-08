@@ -9,9 +9,12 @@ declare variable $authorityentries := doc("../persons.xml")/tei:TEI/tei:text/tei
 declare variable $worksauthority := doc("../works.xml")/tei:TEI/tei:text/tei:body/tei:listBibl/tei:bibl[@xml:id];
 declare variable $authorsinworksauthority := true();
 
+(: Get a list of work keys in all the manuscript records, to check a link from author to work won't be broken :)
+declare variable $workkeys := distinct-values(collection('../collections?select=*.xml;recurse=yes')//tei:msDesc//tei:title/@key/data());
+
 (: Find instances in manuscript description files, building in-memory data structure, to avoid having to search across all files for each authority file entry :)
 declare variable $allinstances :=
-    for $instance in collection('../collections?select=*.xml;recurse=yes')//tei:msDesc//(tei:persName|tei:author)
+    for $instance in collection('../collections?select=*.xml;recurse=yes')//tei:msDesc//(tei:persName|tei:author|tei:editor)
         let $roottei := $instance/ancestor::tei:TEI
         let $shelfmark := ($roottei/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:msDesc/tei:msIdentifier/tei:idno[@type = "shelfmark"])[1]/text()
         let $roles := if ($instance/self::tei:author) then ('aut') else tokenize($instance/@role/data(), ' ')
@@ -19,7 +22,7 @@ declare variable $allinstances :=
         let $placesoforigin := distinct-values($roottei//tei:origin//tei:origPlace/normalize-space())
         return
         <instance>
-            { for $key in tokenize($instance/@key, ' ') return <key>{ $key }</key> }
+            { for $key in tokenize(normalize-space($instance/@key), ' ') return <key>{ $key }</key> }
             <name>{ normalize-space($instance/string()) }</name>
             <link>{ concat(
                         '/catalog/', 
@@ -72,6 +75,7 @@ declare variable $allinstances :=
         let $name := if ($person/tei:persName[@type='display']) then normalize-space($person/tei:persName[@type='display'][1]/string()) else normalize-space($person/tei:persName[1]/string())
         let $variants := for $variant in $person/tei:persName[not(@type='display')] return normalize-space($variant/string())
         let $extrefs := for $ref in $person/tei:note[@type='links']//tei:item/tei:ref return concat($ref/@target/data(), '|', bod:lookupAuthorityName(normalize-space($ref/tei:title/string())))
+        let $extauths := distinct-values(for $ref in $person/tei:note[@type='links']//tei:item/tei:ref return normalize-space($ref/tei:title/string()))
         let $bibrefs := for $bibl in $person/tei:bibl return bod:italicizeTitles($bibl)
         let $notes := for $note in ($person/tei:note[not(@type='links')], $person/ancestor::tei:listPerson/tei:head/tei:note) return bod:italicizeTitles($note)
         
@@ -155,7 +159,7 @@ declare variable $allinstances :=
                         let $linktext := ($worksauthority[@xml:id = $workid]/tei:title[@type = 'uniform'][1])[1]
                         order by $linktext
                         return
-                        if (exists($linktext)) then
+                        if (exists($linktext) and exists($workkeys[. = $workid])) then
                             let $link := concat($url, "|", normalize-space($linktext/string()))
                             return
                             <field name="link_works_smni">{ $link }</field>
@@ -169,15 +173,15 @@ declare variable $allinstances :=
                 if ($istranslator) then 
                     let $workids :=
                         if ($authorsinworksauthority)
-                            then distinct-values($worksauthority[tei:author[@role='translator']/@key = $id]/@xml:id)
-                            else distinct-values(($instances/translated/text(), $worksauthority[tei:author[@role='translator']/@key = $id]/@xml:id))
+                            then distinct-values($worksauthority[tei:author[@role=('trl','translator')]/@key = $id]/@xml:id)
+                            else distinct-values(($instances/translated/text(), $worksauthority[tei:author[@role=('trl','translator')]/@key = $id]/@xml:id))
                     return 
                     for $workid in $workids
                         let $url := concat("/catalog/", $workid)
                         let $linktext := ($worksauthority[@xml:id = $workid]/tei:title[@type = 'uniform'][1])[1]
                         order by $linktext
                         return
-                        if (exists($linktext)) then
+                        if (exists($linktext) and exists($workkeys[. = $workid])) then
                             let $link := concat($url, "|", normalize-space($linktext/string()))
                             return
                             <field name="link_translations_smni">{ $link }</field>
@@ -199,6 +203,31 @@ declare variable $allinstances :=
                     order by tokenize($link, '\|')[2]
                     return
                     <field name="link_manuscripts_smni">{ $link }</field>
+                }
+                {
+                (: Filter on which external authorities, if any, this person has been identified in :)
+                let $majorextauths := ('VIAF', 'GND', 'LC', 'ISNI', 'Wikidata', 'SUDOC', 'BNF')
+                return
+                (
+                for $majorextauth in $majorextauths
+                    return
+                    (
+                    if (some $extauth in $extauths satisfies $extauth eq $majorextauth) then
+                        <field name="extauth_sm">{ $majorextauth }</field>
+                    else
+                        <field name="extauth_sm">Not{$majorextauth}</field>
+                    )
+                ,
+                if (some $extauth in $extauths satisfies not($extauth = $majorextauths)) then
+                    <field name="extauth_sm">Other</field>
+                else
+                    ()
+                ,
+                if (count($extauths) eq 0) then
+                    <field name="extauth_sm">None</field>
+                else
+                    ()
+                )
                 }
             </doc>
         else

@@ -6,16 +6,18 @@
             <title>MS. Bodl. 41</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
             <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2020">Encoding</resp>
+               <resp when="2020">Catalogue updates and corrections</resp>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -51,14 +53,24 @@
                </msIdentifier>
                <physDesc>
                   <p n="composite">Composite: two parts</p>
+                  <objectDesc form="codex"><supportDesc material="perg">
+                     <extent>iv + 150 leaves
+                        <dimensions type="leaf" unit="in">
+                           <height>8</height>
+                           <width>5.75</width>
+                        </dimensions></extent>
+                  </supportDesc></objectDesc>
                   <decoDesc>
-                     <decoNote>Illuminated capitals.</decoNote>
+                     <decoNote type="flourInit">Penwork.</decoNote>
                   </decoDesc>
                </physDesc>
+               <history>
+                  <acquisition notAfter="1611" notBefore="1605">Probably acquired by the Library between 1605 and 1611.</acquisition>
+               </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922).  
+                        <source>Description adapted (March 2020) from the Summary Catalogue (1922), with reference to other published literature as cited.   
                             
                             
                             <listBibl>
@@ -76,17 +88,23 @@
                   </msIdentifier>
                   <msContents>
                      <msItem xml:id="MS_Bodl_41-part1-item1" n="1" class="#auctoritates">
-                        <title type="desc" key="work_14319">Religious and moral sentences from patristic and other
-                           authors</title>
+                        <locus>(fol. 1)</locus>
+                        <title type="desc" key="work_14319">‘Auctoritates sanctorum doctorum’</title>
+                        <incipit>Jeronimus. Apud Deum non est quicquam humilitate
+                           sublimius</incipit>
+                        <note>Religious and moral sentences from patristic and other
+                           authors, beginning with Jerome and ending
+                           with Seneca: under each author the passages are in alphabetical order of the
+                           first letter.</note>
+                        <note resp="#MLH">Cf. <bibl type="ms" subtype="external">Vienna, ONB, Cod. 2480</bibl> fols. 56-67.</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                      <msItem xml:id="MS_Bodl_41-part1-item2" n="2">
-                        <author key="person_24992037">
-                           
-                           Jacobus de Lausanna
-                        
-                        </author>
-                        <title key="work_2355">Compendium moralitatum</title>
+                        <locus>(fol. 42)</locus>
+                        <author key="person_24992037"><supplied>Jacobus de Lausanna</supplied></author>
+                        <title key="work_2355"><supplied>Compendium moralitatum</supplied></title><bibl>(Stegmüller 3887)</bibl>
+                        <incipit>Abicit
+                           mundus pauperes</incipit>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                   </msContents>
@@ -113,14 +131,14 @@
                   </msIdentifier>
                   <msContents>
                      <msItem xml:id="MS_Bodl_41-part2-item1" n="1">
-                        <author key="person_41951136">
-                           
-                           Willelmus Peraldus
-                        
-                        </author>
+                        <locus>(fol. 109)</locus>
+                        <author key="person_41951136">Willelmus Peraldus</author>
                         <title key="work_1917">Summa de vitiis et virtutibus</title>
                         <note>(abbreviation)</note>
+                        <rubric>Quedam notabilia a Summa Viciorum extracta</rubric>
+                        <incipit><note>(de gula)</note> Ualde placent vicia demonibus</incipit>
                         <textLang mainLang="la">Latin</textLang>
+                        <!-- check Bloomfield (rev) 6524 -->
                      </msItem>
                   </msContents>
                   <physDesc>
@@ -128,6 +146,9 @@
                         <supportDesc material="perg">
                            <support>parchment</support>
                         </supportDesc>
+                        <layoutDesc>
+                           <layout columns="1 2">Partly in double columns.</layout>
+                        </layoutDesc>
                      </objectDesc>
                   </physDesc>
                   <history>
@@ -141,8 +162,9 @@
          </sourceDesc>
       </fileDesc>       
       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
+      <revisionDesc>  
+         <change when="2020-03-18">Description revised to include all information in SC updated in the light of published literature as cited.</change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>
