@@ -6,22 +6,25 @@
          <titleStmt>
             <title>MS. Canon. Liturg. 388</title>
             <title type="collection">MSS. Canon. Liturg. (Canonici Liturgical)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2021">Encoding</resp>
+               <persName>Matthew Holford</persName>
             </respStmt>
             <respStmt xml:id="BCBB">
                <resp when="2020">Cataloguer</resp>
                <persName>B. C. Barker-Benfield</persName>
             </respStmt>
          </titleStmt>
-         <editionStmt>
-            <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
-         </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
             <address>
@@ -54,27 +57,36 @@
                      <idno type="SCN">19470</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <msContents resp="#SC">
                   <msItem xml:id="MS_Canon_Liturg_388-item1" n="1" class="#liturgica">
                      <title type="desc" key="work_10655">Breviary, Use of Rome (Augustinian)</title>
+                     <note>Calendar (fol. 1), Proprium de Tempore (fol. 7), Psalter with canticles, etc. (fol. 187), 'Hymni tam dominicales quam festiui' (fol. 244v), Proprium ('festiuitates') Sanctorum, with minor offices (foL 267).</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
-               <physDesc>
-                  <objectDesc form="codex">
+               <physDesc >
+                  <objectDesc form="codex" resp="#SC">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>iii + 438 leaves
+                           <dimensions type="leaf" unit="in">
+                              <height>16</height>
+                              <width>11.5</width>
+                           </dimensions></extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2">2 cols.</layout>
+                     </layoutDesc>
                   </objectDesc>
-                  <decoDesc>
+                  <decoDesc resp="#PA">
                      <decoNote type="border">Fine historiated borders. </decoNote><decoNote type="border">Fine other borders. </decoNote>
-                     <decoNote type="decInit">Fine initials. </decoNote><decoNote>By <persName role="art" key="person_96179506">Frate Nebridio</persName>. (P&amp;A ii. 735,
-            pl. LXXI)
-                     </decoNote><!-- unclear if there are hist init. Check. -->
+                     <decoNote type="decInit">Fine initials. By <persName role="art" key="person_96179506">Frate Nebridio</persName>. (P&amp;A ii. 735,
+            pl. LXXI)</decoNote>
+                     <!-- unclear if there are hist init. Check. -->
                   </decoDesc>
                   <bindingDesc resp="#BCBB">
                      <binding notAfter="1550" notBefore="1500">
-                        <p>16th century, first half, <placeName key="place_1000080">Italian</placeName>, bound perhaps for the <persName>Armellini family [of Venice?]</persName> (fol. ir): wood boards, inside bevel. Polished red leather, decorated on each cover with blind lines and an all-over gilt design: a solid frame with corner-pieces, around a lozenge shape made up of single curved lines (oriental style?) and a centrepiece of two interlocking squares. Inside bevels finished with multiple blind lines; spine lost; traces of four lost clasps with leather straps; edges gilt, gauffered. Reback in brown leather, with gilt lines, small stamps, and gilt red-leather label, 18th century, <placeName key="place_1000080">Italian</placeName>; second reback in red leather, 20th century, Bodleian. <dimensions type="binding" unit="mm">
+                        <p>16th century, first half, <placeName key="place_1000080">Italian</placeName>, bound perhaps for the Armellini family [of Venice?] (fol. ir): wood boards, inside bevel. Polished red leather, decorated on each cover with blind lines and an all-over gilt design: a solid frame with corner-pieces, around a lozenge shape made up of single curved lines (oriental style?) and a centrepiece of two interlocking squares. Inside bevels finished with multiple blind lines; spine lost; traces of four lost clasps with leather straps; edges gilt, gauffered. Reback in brown leather, with gilt lines, small stamps, and gilt red-leather label, 18th century, <placeName key="place_1000080">Italian</placeName>; second reback in red leather, 20th century, Bodleian. <dimensions type="binding" unit="mm">
                            <height min="405" max="7">405-7</height>
                            <width min="268" max="272">268-272</width>
                            <depth min="117" precision="medium" max="18">c. 117-18</depth>
@@ -83,16 +95,27 @@
                   </bindingDesc>
                </physDesc>
                <history>
-                  <origin>
+                  <origin resp="#PA">
                      <origDate calendar="Gregorian" notAfter="1475" notBefore="1450">15th century, third quarter</origDate>
                      <origPlace cert="low">
                         <country key="place_1000080">Italian</country>, <region>Lombardy</region> or <region>Bologna</region> (?)<!--ORIGINAL: Italian, Lombardy or Bologna (?)--></origPlace>
                   </origin>
+                  <provenance resp="#PA">Made probably for an Augustinian house in Venice.</provenance>
+                  <provenance resp="#PA">'Armellinae familiae' (16th cent), fol. i: <persName type="family" role="fmo" key="person_3431">Armellini family of Venice</persName>. A note on the family by Canonici is at fol. ii.</provenance>
+                  <provenance notBefore="1727" notAfter="1805" resp="#SC"><persName role="fmo" key="person_2384880">Matteo Luigi Canonici, 1727-1805</persName></provenance>
+                  <provenance notAfter="1807" resp="#SC"><persName role="fmo" key="person_446">Giuseppe Canonici, -1807</persName></provenance>
+                  <acquisition when="1817" resp="#SC">Purchased by the Bodleian in 1817</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1970). Binding: <bibl>B. C. Barker-Benfield, <title>Bookbindings of Canonici manuscripts : a survey of early and non-standard bindings, mostly Italian, in the Canonici collection of the Bodleian Library, University of Oxford</title> (Oxford, privately printed, 2020).</bibl> 
+                        <source>Description adapted (March 2021) from the following sources:
+                           <listBibl>
+                              <bibl>B. C. Barker-Benfield, <title>Bookbindings of Canonici manuscripts : a survey of early and non-standard bindings, mostly Italian, in the Canonici collection of the Bodleian Library, University of Oxford</title> (Oxford, privately printed, 2020) [binding]</bibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, II (1970), no. 735 [decoration, date, origin, provenance]</bibl>
+                              <bibl>The Summary Catalogue (1897) [contents, physical description, provenance, acquisition]</bibl>
+                           </listBibl>
+                          
                             
                             
                             <listBibl>
@@ -109,7 +132,9 @@
             </msDesc>
          </sourceDesc>
       </fileDesc>       
-      <revisionDesc>     <change when="2020-08-20">Binding description added.</change>     <change when="2017-07-01">First online publication.</change>
+      <revisionDesc>  
+         <change when="2021-03">Description revised to incorporate all information in SC and P&amp;A</change>
+         <change when="2020-08-20">Binding description added.</change>     <change when="2017-07-01">First online publication.</change>
 
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
