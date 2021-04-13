@@ -1,24 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_7783">
+<TEI xml:id="manuscript_7783" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Lyell 50</title>
             <title type="collection">MSS. Lyell</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="DLM">
+               <resp when="1971">Cataloguer</resp>
+               <persName>Albinia de la Mare</persName>
+            </respStmt>
+            <respStmt xml:id="ANJD">
+               <resp when="2020">Encoding</resp>
+               <persName>Andrew Dunning</persName>
             </respStmt>
          </titleStmt>
-         <editionStmt>
-            <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
-         </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
             <address>
@@ -48,24 +45,39 @@
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Lyell 50</idno>
                </msIdentifier>
+               <head>Theological <foreign>quaestiones</foreign>; Gilbert Crispin; Honorius Augustodunensis</head>
                <physDesc>
-                  <p n="composite">Composite: fols. 1-40 || fols. 41-63</p>
+                  <p n="composite">Two MSS. written in Austria or Germany, bound together.</p>
+                  <objectDesc form="codex">
+                     <supportDesc material="perg">
+                        <support>parchment</support>
+                        <extent><measure quantity="63" type="leaf">63</measure> leaves <dimensions type="leaf" unit="mm">
+                              <height>220</height>
+                              <width>150</width>
+                           </dimensions> Edges cropped by binder. </extent>
+                        <foliation>Modern foliation.</foliation>
+                     </supportDesc>
+                  </objectDesc>
+                  <bindingDesc>
+                     <binding contemporary="true" notAfter="1488" notBefore="1450">
+                        <p>Archaizing binding of second half of 15th cent. (not later than 1488), in wooden boards covered with rough white skin, with parchment pastedowns and original place marker of string. Original central leather strap and metal clasp fastening to pin on the upper cover – compare the clasp of MS. Lat. misc. d. 68, also from Admont. On the front cover is a parchment label with the title (15th cent.) <q>Lucidarius de peccato originali</q>.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
-                  <provenance>
-                     <orgName key="org_128466393">Admont</orgName>, Benedictine monastery</provenance>
-               <provenance notBefore="1871" notAfter="1948" resp="#MMM"><persName role="fmo" key="person_64157046">James P. R. Lyell, 1871-1948</persName></provenance><acquisition when="1948" resp="#MMM">Chosen as one of the hundred manuscripts bequeathed to the Bodleian by Lyell in 1948.</acquisition></history>
+                  <provenance><orgName key="org_128466393">Benedictine monastery of Admont</orgName> in Austria: <q>no. 563</q> on spine of binding and inside front cover remains of MS. description (only surviving words: N° 563) as found in other Admont MSS. Listed in the 1380 catalogue: <q>Item questio cuiusdam de originali peccato, incipit <q>Queritur</q>; in eodem lucidarius</q>; see G. Möser-Mersky, <title>Mittelalt. Bibl.kat. Österreichs</title> iii (1961), p. 56 l. 14–15.</provenance>
+                  <provenance>Bought by Lyell in October 1936 from E.P. Goldschmidt and Co.; see his Cat. 44, no. 10 <locus>(fol. 18)</locus>. </provenance>
+                  <provenance notAfter="1948" notBefore="1936-10" resp="#MMM"><persName key="person_64157046" role="fmo">James P. R. Lyell, 1871-1948</persName></provenance>
+                  <acquisition resp="#MMM" when="1948">Chosen as one of the hundred manuscripts bequeathed to the Bodleian by Lyell in 1948.</acquisition>
+               </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from A. de la Mare, <title>Catalogue of the Medieval Manuscripts Bequeathed to the Bodleian Library Oxford by James P. R. Lyell</title> (1971) 
-                            
-                            
-                            <listBibl>
-                              <bibl type="LYELL" facs="cah0168.gif">Catalogue, p. 134</bibl>
-                              <bibl type="LYELL" facs="cah0169.gif">Catalogue, p. 135</bibl>
-                              <bibl type="LYELL" facs="cah0170.gif">Catalogue, p. 136</bibl>
-                              <bibl type="LYELL" facs="cah0171.gif">Catalogue, p. 137</bibl>
+                        <source>Description adapted from A. de la Mare, <title>Catalogue of the Medieval Manuscripts Bequeathed to the Bodleian Library Oxford by James P. R. Lyell</title> (1971); with additions by Andrew Dunning. <listBibl>
+                              <bibl facs="cah0168.gif" type="LYELL">Catalogue, p. 134</bibl>
+                              <bibl facs="cah0169.gif" type="LYELL">Catalogue, p. 135</bibl>
+                              <bibl facs="cah0170.gif" type="LYELL">Catalogue, p. 136</bibl>
+                              <bibl facs="cah0171.gif" type="LYELL">Catalogue, p. 137</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -74,43 +86,150 @@
                <msPart xml:id="MS_Lyell_50-part1">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Lyell 50 - Part 1</idno>
+                        <idno type="part">MS. Lyell 50 – Part A, fols. 1-40</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Lyell_50-part1-item1" n="1" class="#theologica">
-                        <title type="desc" key="work_11089">Collection of quaestiones and sentences from the school of <persName role="aut" key="person_77109407">
-                              Anselm of
-                           Laon
-                           </persName>.</title>
-                        <textLang mainLang="la">Latin</textLang>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem n="1">
+                        <title key="work_11089" type="desc">Collection of <foreign>quaestiones</foreign> and sentences from the school of <persName key="person_77109407" role="aut">Anselm of Laon</persName></title>
+                        <msItem n="a">
+                           <note>Five <foreign>quaestiones</foreign> on original sin begin after an erasure of which only the initial <quote>P</quote> is legible.</note>
+                           <msItem>
+                              <incipit><locus>(fol. 1)</locus> Queritur cur originale peccatum scilicet <sic>inobediendientia</sic> primi hominis animę inputetur cum ipsa non descendat ex traducę</incipit>
+                              <explicit><locus>(fol. 1vb)</locus> integer homo resurget</explicit>
+                           </msItem>
+                           <msItem>
+                              <incipit>Iterum queritur quomodo anima contrahat a corpore peccatum cum corpus per se non habeat peccatum, donec sit animatum</incipit>
+                              <explicit><locus>(fol. 2ra)</locus> animarum non homines</explicit>
+                           </msItem>
+                           <msItem>
+                              <incipit>Queritur cum omne peccatum tam originale quam actuale per prespiteri efficatiam dimittatur</incipit>
+                              <explicit><locus>(fol. 2rb)</locus> merces iusticię</explicit>
+                           </msItem>
+                           <msItem>
+                              <incipit>Sed iterum dices cum abluatur in baptismate peccatum, cur filiis renatorum parentum imputatur?</incipit>
+                              <explicit><locus>(fol. 2va)</locus> concupiscentia generantur</explicit>
+                           </msItem>
+                           <msItem>
+                              <incipit>Sed iterum occurrit questio cur magis originale peccatum imputetur quam actuale parentum</incipit>
+                              <explicit><locus>(fol. 2vb)</locus> de effectu illius generantur.</explicit>
+                           </msItem>
+                        </msItem>
+                        <msItem n="b">
+                           <incipit><locus>(fol. 2vb)</locus> Iacob dilexi, Esau autem odio habui (Rom. ix. 13). Queri<ex>tur</ex> quę iusticia fuerit in electione Iacob, nam liberum arbitrium nihil operari videtur</incipit>
+                           <explicit><locus>(fol. 3ra)</locus> non deserit sed deseritur.</explicit>
+                        </msItem>
+                        <msItem n="c">
+                           <incipit><locus>(fol. 3ra)</locus> Deus de cuius principio et fine tacetur.</incipit>
+                           <note>Pr. H. Weisweiler, 'Le recueil des sentences “Deus de cuius principio” et son remaniement', in <title>RTAM</title> 5 (1933): 254-68, chiefly from Munich clm. 23440.</note>
+                        </msItem>
+                        <msItem n="d">
+                           <locus>(fol. 10vb)</locus>
+                           <incipit>Queritur quare homo puniatur secundum animam propter peccatum primi hominis.</incipit>
+                           <note>Also in the Munich MS. cit., see Weisweiler, 'L’École d’Anselme de Laon et de Guillaume de Champeaux' in <title>R.T.A.M.</title> 4 (1932), 245.</note>
+                           <note>In the <title>Liber Pancrisis</title> it is attributed to Anselm of Laon. Pr. O. Lottin, <title>Pyschologie et Morale</title> V, 1959, p. 40, no. 44.</note>
+                        </msItem>
+                        <msItem n="e">
+                           <incipit><locus>(fol. 10vb)</locus> Querit sanctus Augustinus cum sanguine passionis filii Dei accepimus.</incipit>
+                           <note>The first of a series of six questions also found in the Munich MS. cit., fol. 84v-86v, pr. Lottin, 'Nouveaux fragments théologiques de l’école d’Anselme de Laon' in <title>R.T.A.M.</title> 13 (1946), 219-20, nos. 322-7.</note>
+                        </msItem>
+                        <msItem n="f">
+                           <incipit><locus>(fol. 12va)</locus> Queritur cum peccatum non sit nisi ex sola uoluntate</incipit>
+                           <explicit><locus>(fol. 12vb)</locus> in ministris satis habundet.</explicit>
+                           <note>Also in the Munich MS. cit., fol. 86v. In Paris, BnF, lat. 18113 (destroyed in 1914) it was attributed to William of Champeaux: see Weisweiler, <title>L'École</title>, cit., p. 246. Pr. Lottin, <title>Psychologie</title> v, p. 307, no. 462; our MS. contains a slightly fuller version.</note>
+                        </msItem>
+                        <msItem n="g">
+                           <note>Two sentences also found in the Munich MS. cit., fol. 86v–87</note>
+                           <msItem>
+                              <locus>(fol. 12vb)</locus>
+                              <incipit>Si secundum hominem dictum est hodie mecum eris in paradiso, in inferno intelligatur paradysus</incipit>
+                              <explicit><locus>(fol. 13rb)</locus> quod nos ipsi esse debemus</explicit>
+                           </msItem>
+                           <msItem>
+                              <incipit>An non se garrire arbitratur quis cum dicit. Si caro est sanguis est</incipit>
+                              <explicit><locus>(fol. 13va)</locus> amaritudinis perpetuę recordatio<locus>(fol. 13vb)</locus>ne pellamus.</explicit>
+                           </msItem>
+                           <note>The text in our MS. appears to be slightly different from that in the Munich MS.; see Weisweiler, <title>L’École</title>, cit., p. 246.</note>
+                        </msItem>
+                        <msItem n="h">
+                           <locus>(fol. 13vb)</locus>
+                           <incipit>Queris etiam si de nihilo cottidie nouę fiunt animę</incipit>
+                           <explicit><locus>(fol. 14vb)</locus> quam sine uiro sumpsit ex femina.</explicit>
+                           <note>Part of the letter of <persName key="person_19820278" role="aut">Hugh of Rouen</persName> on the soul, written to Gravion d’Angers, P.L. 166 col. 835A8-836C9. Lottin printed part of this extract, also found in the Munich MS. cit., fols. 88v-89, as two sentences in <title>R.T.A.M.</title> 13 (1946), 221, nos. 328-9.</note>
+                        </msItem>
+                        <msItem n="j">
+                           <title type="desc">Miscellaneous sentences</title>
+                           <msItem>
+                              <incipit><locus>(fol. 14vb)</locus> Cum duę rationales creaturę peccauissent, homo uidelicet et angelus</incipit>
+                              <explicit><locus>(fol. 15rb)</locus> deitas designatur.</explicit>
+                              <note>Part of the unpublished preface to the commentary on Matthew from the school of Anselm of Laon (<persName key="person_54538580" role="aut">Geoffroy Babion</persName>?), pr. P.L. 162. See MSS. Lyell 66, fol. 2va, 1. 33; Laud Misc. 87, fol. irb 1. 45</note>
+                           </msItem>
+                           <msItem>
+                              <incipit><locus>(fol. 15rb)</locus> Serui obedite dominis carnalibus ... (Ephes. vi. 5-8). Sed forte dicit aliquis. Ego fidelis sum, dominus meus iniquus et infidelis est</incipit>
+                              <explicit><locus>(fol. 15vb)</locus> sublimioribus subdita sit</explicit>
+                           </msItem>
+                           <msItem>
+                              <incipit>Si fuerit bonus qui tibi preest nutritor tuus est</incipit>
+                              <explicit>dei ordinationi resistit</explicit>
+                           </msItem>
+                           <msItem>
+                              <incipit>Sciendum quod recordari deus nequaquam proprie dicitur</incipit>
+                              <explicit><locus>(fol. 16rb)</locus> Nemo militans deo implicat se n<ex>egotiis</ex> s<ex>aecularibus</ex> (II Tim. ii. 4)</explicit>
+                           </msItem>
+                           <msItem>
+                              <incipit><locus>(fol. 16rb)</locus><quote>Luna non splendet</quote> … (Iob xxv. 5). Quid per lunam nisi cuncta simul ecclesia</incipit>
+                              <explicit><locus>(fol. 16va)</locus> corruptione propagatur</explicit>
+                           </msItem>
+                           <msItem>
+                              <incipit>Qui facit concordiam in sublimibus suis (Iob xxv. 2). Multa enim sibimet dissident inferius</incipit>
+                              <explicit><locus>(fol. 17va)</locus> quod optinere non ualent numquam uolunt bene ergo dicitur. Qui facit concordiam in sublimibus.</explicit>
+                           </msItem>
+                        </msItem>
                      </msItem>
-                     <msItem xml:id="MS_Lyell_50-part1-item2" n="2">
-                        <author key="person_97751571">
-                           
-                           Gilbert Crispin
-                        
-                        </author>
-                        <title key="work_1735">Disputatio Iudei et
-              Christiani</title>
-                        <textLang mainLang="la">Latin</textLang>
+                     <msItem n="2" xml:id="MS_Lyell_50-part1-item2">
+                        <author key="person_97751571">Gilbert Crispin</author>
+                        <title key="work_1735">Disputatio Iudei et Christiani</title>
+                        <msItem>
+                           <locus>(fol. 18)</locus>
+                           <title>Preface</title>
+                           <incipit>Reuerendo patri et domino Anshelmo</incipit>
+                        </msItem>
+                        <msItem>
+                           <incipit><locus>(fol. 18vb)</locus> Quia Christiani te dicunt</incipit>
+                           <explicit><locus>(fol. 40vb)</locus> cui honor et imperium per omnia secula seculorum. Amen.</explicit>
+                           <note>Pr. B. Blumenkranz, <title>Gisleberti Crispini Disputatio Iudei et Christiani</title> (Stromata Patristica et Medievalia, Fasc. hi), Utrecht and Antwerp, 1956. The text of our MS. is not obviously related to any one of the groups of MSS. used for this edition and it has many variants not found in the MSS. used.</note>
+                        </msItem>
                      </msItem>
                   </msContents>
                   <physDesc>
                      <objectDesc form="codex">
                         <supportDesc material="perg">
-                           <support>parchment</support>
+                           <support>Fine parchment</support>
+                           <extent>
+                              <dimensions type="written" unit="mm">
+                                 <height>175</height>
+                                 <width>120</width>
+                              </dimensions>
+                           </extent>
+                           <collation>1⁸, 2⁸ (+1 added after 8), 3⁸-5⁸ (8 canc.); <secFol>-cessitate iniuste</secFol></collation>
                         </supportDesc>
+                        <layoutDesc>
+                           <layout columns="2" writtenLines="27">2 cols, of 27 lines ruled with a hard point. </layout>
+                        </layoutDesc>
                      </objectDesc>
+                     <handDesc>
+                        <handNote script="protogothic">Written in a large rounded minuscule</handNote>
+                     </handDesc>
                      <decoDesc>
-                        <decoNote type="decInit">Fine initials of vinescroll type drawn in the ink of the text and rubrics, apparently before the text was written. (P&amp;A i. 65)</decoNote>
+                        <decoNote type="decInit">Fine initials of vinescroll type drawn in the ink of the text and rubrics, apparently before the text was written, on fol. 1, 18.</decoNote>
+                        <decoNote type="histInit">Initial on fol. 18v with figure of Christ blessing. (P&amp;A i. 65)</decoNote>
                      </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
                         <origDate calendar="Gregorian" notAfter="1150" notBefore="1100">12th century, first half</origDate>
-                        <origPlace cert="low">
-                           <country key="place_1000062">Austrian</country> or <country key="place_7000084">German</country>
+                        <origPlace cert="low"><country key="place_1000062">Austrian</country> or <country key="place_7000084">German</country>
                            <!--ORIGINAL: Austrian, Admont-->
                         </origPlace>
                      </origin>
@@ -119,35 +238,89 @@
                <msPart xml:id="MS_Lyell_50-part2">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Lyell 50 - Part 2</idno>
+                        <idno type="part">MS. Lyell 50 - Part B, fols. 41-63</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Lyell_50-part2-item1" n="1">
-                        <author key="person_100201145">
-                           
-                           Honorius Augustodunensis
-                        
-                        </author>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem n="1" xml:id="MS_Lyell_50-part2-item1">
+                        <author key="person_100201145">Honorius Augustodunensis</author>
                         <title key="work_2089">Elucidarius</title>
-                        <textLang mainLang="la">Latin</textLang>
+                        <rubric><locus>(fol. 41)</locus> Incipit Lucidarius</rubric>
+                        <msItem>
+                           <bibl>Preface</bibl>
+                           <incipit>Sepius rogatus a condiscipulis</incipit>
+                        </msItem>
+                        <msItem>
+                           <bibl>Bk. 1</bibl>
+                           <incipit>Gloriose magister rogo ut ad inquisita mihi ne pigriteris</incipit>
+                        </msItem>
+                        <note>Bk. II beg. fol. 48; Bk. III beg. fol. 56.</note>
+                        <explicit><locus>(fol. 63v)</locus> omnibus diebus uitę tuę. Amen.</explicit>
+                        <finalRubric>Explicit Lucidarius.</finalRubric>
+                        <note>Pr. Y. Lefèvre, 'L’Elucidarium et les Lucidaires', <title>Bibl. des écoles françaises d'Athènes et de Rome</title> 180 (1954), 359-477. Belongs to his family A, having all the early additions common to that family, including those only found in the group MAH, see op. cit., pp. 72-8; 232-42. The scribe has accidentally omitted Bk. 1 Q. 9-20 <locus>(fol. 41v, 1. 3-4)</locus> and Bk. 1 Q. 71a-most of 86 <locus>(fol. 43, 1. 32)</locus>. In both cases the text continues without a break. The text is written without any division into Questions and Answers.</note>
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 63v)</locus>
+                        <note>After the text of the <title>Elucidarius</title>, the scribe has written in red capitals: <quote>
+                              <l>Auscultate pie prescriptę uerba sophyę.</l>
+                              <l>Auribus audite cordeque diligite.</l></quote></note>
+                     </msItem>
+                     <msItem>
+                        <note>Various later additions on fol. 63v.</note>
+                        <msItem>
+                           <quote>
+                              <lb/>Diues mendicus deus infernus paradysus <lb/>Pascit deposcit conpensat torquet amenat</quote>
+                           <bibl type="repertory">Walther, <title>Initia</title>, no. 4624</bibl>
+                        </msItem>
+                        <msItem>
+                           <title type="desc">Τwo lines in mirror writing</title>
+                           <quote>
+                              <lb/>Te diligo pre ceteris, a nexu pie Veneris me soluere dignare. <lb/>Nam solam te desidero, spem puram ad te defero quam nollem euitare</quote>
+                        </msItem>
+                        <msItem>
+                           <title key="work_10875" type="desc">A charm</title>
+                           <quote>✠ Esyppus ✠ Speusippus ✠ Melesyppus ✠ Caspar ✠ Melchior ✠ Balthasar</quote>
+                        </msItem>
+                        <msItem>
+                           <quote>Incaustum dum penna probat simul ipsa probatur</quote>
+                           <note>See W. Wattenbach, <title>Das Schriftwesen im Mittelalter</title>, 3rd ed., Leipzig, 1896, p. 231.</note>
+                        </msItem>
+                     </msItem>
+                     <msItem>
+                        <note>On the verso of a strip of parchment used in the binding, on which is written another charm (13th cent.), mostly illegible (beg. : <q>✠ In nomine patris</q>, ends: <q>protectio huic N. famulo dei ✠</q>) is written <q><persName key="person_3379" role="sgn">Casperus Mulhoff</persName></q> (15th cent.?); on the front and end pastedowns are also written the letters <quote>C.M.</quote> and on the end pastedown are <quote>1488. K <note>[or R]</note> Petri</quote> and the line: <quote>Ante dei uultum n<supplied reason="omitted">il</supplied> unquam transit inultum</quote>. There are annotations in the hand of this last note, which may be a hand used in one of the other notes, throughout the <title>Elucidarius</title>; and on fol. 4–4v of the first MS. this hand has supplied words cropped by the binder.</note>
                      </msItem>
                   </msContents>
                   <physDesc>
+                     <p>
+                        <secFol>-cerem retrusus</secFol>
+                     </p>
                      <objectDesc form="codex">
                         <supportDesc material="perg">
                            <support>parchment</support>
+                           <extent>
+                              <dimensions type="written" unit="mm">
+                                 <height>180</height>
+                                 <width>120</width>
+                              </dimensions>
+                           </extent>
+                           <collation>6⁸-9⁸ (8 canc.)</collation>
                         </supportDesc>
+                        <layoutDesc>
+                           <layout columns="1" writtenLines="35">35 long lines, ruled in crayon, mostly erased. Written above top line.</layout>
+                        </layoutDesc>
                      </objectDesc>
+                     <handDesc>
+                        <handNote script="protogothic">Written on thick parchment in a small close-packed hand in the late 12th or early 13th cent.</handNote>
+                     </handDesc>
                      <decoDesc>
-                        <decoNote>Plain red initials.</decoNote>
+                        <decoNote type="colInit">Plain red initials.</decoNote>
                      </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
                         <origDate calendar="Gregorian" notAfter="1210" notBefore="1190">12th century, late or 13th century, early</origDate>
-                        <origPlace cert="low">
-                           <country key="place_1000062">Austrian</country> or <country key="place_7000084">German</country>
+                        <origPlace cert="low"><country key="place_1000062">Austrian</country> or <country key="place_7000084">German</country>
                            <!--ORIGINAL: Austrian, Admont-->
                         </origPlace>
                      </origin>
@@ -155,23 +328,22 @@
                </msPart>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc><change when="2018-06-15" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName>
-      Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
-      in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.'
-    </change>          <change when="2017-07-01">First online publication.</change>
-
-         <change when="2017-05-29">
-            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+      </fileDesc>
+      <revisionDesc>
+         <change when="2020-12-16"><persName>Andrew Dunning</persName> Revised from description by <persName>Albinia de la Mare</persName>.</change>
+         <change when="2018-06-15" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.' </change>
+         <change when="2017-07-01">First online publication.</change>
+         <change when="2017-05-29"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>
-         <change when="2017-05-25">
-            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>
       </revisionDesc>
    </teiHeader>
    <text>
       <body>
-         <p><!--Body paragraph provided for validation and future transcription--></p>
+         <p>
+            <!--Body paragraph provided for validation and future transcription-->
+         </p>
       </body>
    </text>
 </TEI>

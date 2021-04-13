@@ -1,24 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_7792">
+<TEI xml:id="manuscript_7792" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Lyell 59</title>
             <title type="collection">MSS. Lyell</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="DLM">
+               <resp when="1971">Cataloguer</resp>
+               <persName>Albinia de la Mare</persName>
+            </respStmt>
+            <respStmt xml:id="ANJD">
+               <resp when="2020">Encoding</resp>
+               <persName>Andrew Dunning</persName>
             </respStmt>
          </titleStmt>
-         <editionStmt>
-            <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
-         </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
             <address>
@@ -48,27 +45,65 @@
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Lyell 59</idno>
                </msIdentifier>
+               <head>Summa magistri Ade</head>
                <msContents>
-                  <msItem xml:id="MS_Lyell_59-item1" n="1">
-                     <author key="person_282716748">
-                        Adam of Aldersbach
-                     </author>
+                  <textLang mainLang="la">Latin</textLang>
+                  <msItem>
+                     <locus>(fol. 1r)</locus>
+                     <author key="person_282716748">Adam of Aldersbach</author>
                      <title key="work_230">Summula Raymundi</title>
-                     <textLang mainLang="la">Latin</textLang>
+                     <rubric>Incipit summa magistri Ade de septem sacramentis. Primo qualiter collecte dicende sint in missa</rubric>
+                     <incipit>In summis festis ad missam dicitur una.</incipit>
+                     <explicit><locus>(fol. 23v)</locus> si funus presens non est transferre necesse.</explicit>
+                     <finalRubric>Explicit summa magistri Ade.</finalRubric>
+                     <msItem>
+                        <note>There follows the couplet:</note>
+                        <quote>
+                           <l>Adam iure minus doctis versus dedit istos.</l>
+                           <l>Ut discant que sint fugienda per hos ve tenenda.</l>
+                        </quote>
+                        <note>Below this a further line, in red, has been completely erased.</note>
+                     </msItem>
+                     <note>The text is divided into about 230 short sections, with headings. This is the metrical version of the Summa of St. Raymundus de Penafort, generally known as the <quote>Summula Raimundi</quote> or <quote>Summula pauperum</quote>, found here without its prologue. A number of MSS. attribute it to <quote>Adam</quote>; see bibliography in <title>Mittelalt. Hss. der Univ. Basely</title> Abt. B. (Theologie), 1, 1960, pp. 628–9; further MSS. listed by Walther, <title>Initia,</title> no. 9117. The author was probably Adam of Aldersbach; see F. Vails Tabemer, <quote>La Summula Pauperum de Adam de Aldersbach</quote>, <title>Spanische Forschungen der Görresgesellschafty</title> Reihe 1, Bd. 7 (1938), 69–71. Munich clm. 2633, 14th cent., from Aldersbach, fol. 83, has the title <quote>Adami magistri Alderspacensis summa Raimundi</quote>. This MS. (see A. Franz, <title>Die Messe im deutschen Mittelalter,</title> Freiburg im B., 1902, p. 484 n. 2), Munich clm. 14104, St. Emmeran, 15th cent., and Paris B.N. lat. 14927, 13th cent, (see Hauréau, <title>N.E.</title> 11 (1891), 210), have the two extra lines on Adam at the end, as in our MS.</note>
+                     <note>Editions discussed by Vails Tabemer, op. cit., pp. 78–82. The closest to our MS. in order and content are probably those by Quentell, Cologne, 1495–1508, though they show considerable differences, especially at the end. After the 3 lines <hi rend="italic">beg.:</hi> Virgo si rapitur (MS., fol. 22v; ed. of 1508, fol. cxxxvv) the edition is quite different, including many verses not in our MS. and omitting several which are in it.</note>
+                     <msItem>
+                        <note>On <locus>fol. 1–2</locus> is a fragment of a marginal gloss.</note>
+                        <incipit><supplied reason="omitted">I</supplied>gitur tractatum istorum versuum cum vicio scriptorum nimis depravatum, conspicerem et valde incorrectum invenirem, rogatus a sociis correxi eum</incipit>
+                        <explicit>Sumpsisse. Sicut legitur de manna.</explicit>
+                        <note>This is quite different from the gloss generally found in MSS. and editions, and dated by Vails Tabemer (op. cit., p. 74) to the late 14th cent.</note>
+                     </msItem>
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>iii+27 leaves <locus>(fol. i–iii, 24–7 are flyleaves)</locus>, <dimensions type="leaf" unit="mm">
+                              <height>310</height>
+                              <width>210</width>
+                           </dimensions></extent>
+                        <foliation>An early foliation (3–25) has been partly cut off; over it has been written a later pagination (89–134).</foliation>
+                        <collation>1¹⁰–2¹⁰, 3 leaves, the quires are numbered in roman numerals at the end; <secFol>Non sumas</secFol></collation>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="1" ruledLines="39 30"><dimensions type="ruled" unit="mm">
+                              <height>235</height>
+                              <width>130</width>
+                           </dimensions>: 29–30 long lines ruled in ink</layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <handDesc>
+                     <handNote script="textualisNorthern">Written, probably in Austria, in the early 14th cent, in a large textura.</handNote>
+                  </handDesc>
                   <decoDesc>
-                     <decoNote>
-                        <p>Drawing in red ink. Plain red initials, the first and the last
-            flourished in red. (P&amp;A i. 132)</p>
-                     </decoNote>
+                     <decoNote type="flourInit">Drawing in red ink. Plain red initials, the first and the last flourished in red. (P&amp;A i. 132) </decoNote>
+                     <decoNote type="miniature">In the blank space after the end of the text on fol. 23v the rubricator has drawn in red ink the figure of a priest holding a chalice.</decoNote>
                   </decoDesc>
+                  <bindingDesc>
+                     <binding notAfter="1970" notBefore="1950">
+                        <p>Modern dark-brown morocco binding by Sangorski and Sutcliffe.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
                   <origin>
@@ -76,16 +111,17 @@
                      <origPlace cert="low">
                         <country key="place_1000062">Austrian</country> (?)</origPlace>
                   </origin>
-               <provenance notBefore="1871" notAfter="1948" resp="#MMM"><persName role="fmo" key="person_64157046">James P. R. Lyell, 1871-1948</persName></provenance><acquisition when="1948" resp="#MMM">Chosen as one of the hundred manuscripts bequeathed to the Bodleian by Lyell in 1948.</acquisition></history>
+                  <provenance>Formerly in the library of the <orgName key="org_154518343" role="fmo">abbey of Melk</orgName>, in Austria: fol. 1, <quote>Monasterii Mellicensis</quote>; fol. 23v, modern library stamp. It appears that our MS. originally formed the first part of the MS. which was D (171) in the 1483 Melk catalogue (Gottlieb, <title>Mittelalt. Bibl.kat. Österreichs</title> 1, 1915, p. 224 1. 4) and which was subsequently MS. Melk 26 (A. 29), but that it later formed pp. 89–134 of MS. Melk 228 (E. 17b): see <title>Cat</title>. <title>Codd. MSS. Mellicensis</title> 1, 1889, pp. 64, 325. It must also be the <quote>Codex Mellicensis alius in folio membr. Anno 29. qui certissime seculo xiv exaratus est</quote>, cited by B. Pez, <title>Thesaurus Anecd. Nov.</title> I, 1721, p. lxxii.</provenance>
+                  <provenance>Bought by Lyell in October 1939 from E. P. Goldschmidt and Co., see his <title>Cat.</title> 44, no. 1.</provenance>
+                  <provenance notAfter="1948" notBefore="1939-10" resp="#MMM"><persName key="person_64157046" role="fmo">James P. R. Lyell, 1871-1948</persName></provenance>
+                  <acquisition resp="#MMM" when="1948">Chosen as one of the hundred manuscripts bequeathed to the Bodleian by Lyell in 1948.</acquisition>
+               </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from A. de la Mare, <title>Catalogue of the Medieval Manuscripts Bequeathed to the Bodleian Library Oxford by James P. R. Lyell</title> (1971) 
-                            
-                            
-                            <listBibl>
-                              <bibl type="LYELL" facs="cah0214.gif">Catalogue, p. 180</bibl>
-                              <bibl type="LYELL" facs="cah0215.gif">Catalogue, p. 181</bibl>
+                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from A. de la Mare, <title>Catalogue of the Medieval Manuscripts Bequeathed to the Bodleian Library Oxford by James P. R. Lyell</title> (1971) <listBibl>
+                              <bibl facs="cah0214.gif" type="LYELL">Catalogue, p. 180</bibl>
+                              <bibl facs="cah0215.gif" type="LYELL">Catalogue, p. 181</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -93,12 +129,11 @@
                </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc><change when="2018-06-15" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName>
-      Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
-      in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.'
-    </change>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2020-12-16"><persName>Andrew Dunning</persName> Revised from description by <persName>Albinia de la Mare</persName>.</change>
+         <change when="2018-06-15" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.' </change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>
@@ -109,7 +144,7 @@
    </teiHeader>
    <text>
       <body>
-         <p><!--Body paragraph provided for validation and future transcription--></p>
+         <p/>
       </body>
    </text>
 </TEI>

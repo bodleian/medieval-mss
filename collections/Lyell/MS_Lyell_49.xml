@@ -1,24 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_7781">
+<TEI xml:id="manuscript_7781" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Lyell 49</title>
             <title type="collection">MSS. Lyell</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="DLM">
+               <resp when="1971">Cataloguer</resp>
+               <persName>Albinia de la Mare</persName>
+            </respStmt>
+            <respStmt xml:id="ANJD">
+               <resp when="2020">Encoding</resp>
+               <persName>Andrew Dunning</persName>
             </respStmt>
          </titleStmt>
-         <editionStmt>
-            <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
-         </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
             <address>
@@ -48,58 +45,89 @@
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Lyell 49</idno>
                </msIdentifier>
+               <head>Boethius with commentaries; Peter Abelard</head>
                <physDesc>
-                  <p n="composite">Composite: fols. 1-57 || fols. 58-80 || fols. 81-100
-            || fols. 101-128</p>
+                  <objectDesc form="codex">
+                     <supportDesc material="perg">
+                        <support>Four MSS. written in the late 12th cent, in Austria or Germany, bound together </support>
+                        <extent>
+                           i+<measure quantity="128" type="leaf">129</measure> leaves (fol. i and 129 are the original flyleaves).
+                           <dimensions type="leaf" unit="mm">
+                              <height>230</height>
+                              <width>155</width>
+                           </dimensions> </extent>
+                     </supportDesc>
+                  </objectDesc>
+                  <bindingDesc>
+                     <binding contemporary="true" notAfter="1340" notBefore="1300">
+                        <p>Early 14th-cent. binding of thick wooden boards with sharp bevelled edges covered with rough white leather, fastened by single clasp (now missing, but the catch survives), on leather strap; parchment label on upper cover: <q>Boecius Glosatus de S. Trinitate</q>.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
-                  <provenance>
-                     <orgName key="org_128466393">Admont</orgName>, Benedictine monastery</provenance>
-               <provenance notBefore="1871" notAfter="1948" resp="#MMM"><persName role="fmo" key="person_64157046">James P. R. Lyell, 1871-1948</persName></provenance><acquisition when="1948" resp="#MMM">Chosen as one of the hundred manuscripts bequeathed to the Bodleian by Lyell in 1948.</acquisition></history>
+                  <provenance>From the library of the Benedictine monastery of <orgName key="org_128466393">Admont</orgName> in Austria; see note on fol. 80v. Listed in the catalogue of c. 1376, pr. G. Möser-Mersky, <title>Mittelalt. Bibl. kat. Österreichs</title> iii (1961), p. 30 l. 25–6: <q>Boecius glosatus de sancta Trinitate incipit <q>Investigatam</q>: in eodem Conmentum super Boecium et Magister Helyas super Boecium</q>, and similarly in the 1380 catalogue (loc. cit., p. 56, 1. 6–7). Later no. 382 in the library: number on spine.</provenance>
+                  <provenance notAfter="1948" notBefore="1871" resp="#MMM"><persName key="person_64157046" role="fmo">James P. R. Lyell, 1871-1948</persName>: Bought by Lyell in November 1936 from E. P. Goldschmidt and Co.; see his <title>Cat.</title> 47, no. 3.</provenance>
+                  <acquisition resp="#MMM" when="1948">Chosen as one of the hundred manuscripts bequeathed to the Bodleian by Lyell in 1948.</acquisition>
+               </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from A. de la Mare, <title>Catalogue of the Medieval Manuscripts Bequeathed to the Bodleian Library Oxford by James P. R. Lyell</title> (1971) 
-                            
-                            
-                            <listBibl>
-                              <bibl type="LYELL" facs="cah0999.gif">Catalogue, p. 131</bibl>
-                              <bibl type="LYELL" facs="cah0166.gif">Catalogue, p. 132</bibl>
-                              <bibl type="LYELL" facs="cah0167.gif">Catalogue, p. 133</bibl>
+                        <source>Description adapted from A. de la Mare, <title>Catalogue of the Medieval Manuscripts Bequeathed to the Bodleian Library Oxford by James P. R. Lyell</title> (1971); with additions by Andrew Dunning. <listBibl>
+                              <bibl facs="cah0999.gif" type="LYELL">Catalogue, p. 131</bibl>
+                              <bibl facs="cah0166.gif" type="LYELL">Catalogue, p. 132</bibl>
+                              <bibl facs="cah0167.gif" type="LYELL">Catalogue, p. 133</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
+                  <listBibl>
+                     <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, I (1966), no. 92, pl. VIII, not distinguishing the parts</bibl>
+                  </listBibl>
                </additional>
                <msPart xml:id="MS_Lyell_49-part1">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Lyell 49 - Part 1</idno>
+                        <idno type="part">MS. Lyell 49, Part A, fols. 1–57</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Lyell_49-part1-item1" n="1">
-                        <author key="person_100218964">
-                           
-                           Boethius
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem n="1" xml:id="MS_Lyell_49-part1-item1">
+                        <note>Boethius, Opuscula Sacra, with a commentary on I, II, III, and V written in the form of interlinear and marginal glosses.</note>
+                        <msItem>
+                           <author key="person_100218964">Boethius </author>
+                        <title key="work_1130">Opuscula sacra</title>
+                        <explicit><locus>(fol. 57v)</locus> causa perscribit.</explicit>
+                        <finalRubric>Explicit.</finalRubric>
+                        <note>Pr. R. Peiper, <title>Boetii Phil. Consol.</title>, Leipzig (Teubner), 1871, pp. 149–218</note>
+                        <note>Tr. 1 beg. fol. 1; Tr. 11, fol. 11v; Tr. III, fol. 14v; Tr. IV, fol. 20v; Tr. V, fol. 30.</note>
+                        <note>The text of i–iii appears to belong to Rand’s D (St. Denis) class of MSS. but iv–v have characteristics found only in his C (Corbie) class; see E. K. Rand, 'Der dem Boethius zugeschriebene Traktat "De Fide Catholica"', <title>Jahrbuch fur klassische Philol.,</title> Supplementband xxvi (1901), 448–56.</note></msItem>
+                        <msItem>
+                           <author key="person_121885360">Remigius of Auxerre (attrib.)</author>
+                           <title key="work_4244">Commentary on Boethius, Opuscula Sacra</title>
+                           <note>This appears to be an incomplete copy of the second, shorter version of the commentary now generally attributed to Remigius; see D. M. Cappuyns, 'Le plus ancien commentaire des "Opuscula Sacra" et son origine', <title>R.T.A.M.</title> 3 (1931), 243. Further glosses were added in the 14th cent. (?). </note>
                         
-                        </author>
-                        <title key="work_1130">Opuscula
-              sacra</title>
-                        <note>(with glosses from the shorter version of the commentary attributed to <persName role="aut" key="person_121885360">
-                              Remigius of Auxerre
-                           </persName>)</note>
-                        <textLang mainLang="la">Latin</textLang>
-                     </msItem>
+                     </msItem></msItem>
                   </msContents>
                   <physDesc>
                      <objectDesc form="codex">
                         <supportDesc material="perg">
                            <support>parchment</support>
+                           <collation>1⁸–6⁸, 7¹⁰ (10 canc.) <secFol>reverentiam</secFol></collation>
                         </supportDesc>
+                        <layoutDesc>
+                           <layout columns="1" ruledLines="20 23">20–3 long lines, with extra ruling in the first quire for glosses; fol. 1–16v ruled in pencil, fol. 17–57 ruled with a hard point; text <dimensions type="written" unit="mm">
+                                 <height max="165" min="157">157–65</height>
+                                 <width max="75" min="65">65–75</width>
+                              </dimensions></layout>
+                        </layoutDesc>
                      </objectDesc>
+                     <handDesc>
+                        <handNote script="protogothic">Text written in a large minuscule, varying considerably in size, with spaces left between the lines and wide margins for glosses.</handNote>
+                     </handDesc>
                      <decoDesc>
-                        <decoNote>(P&amp;A i. 92, pl. VIII, not distinguishing the parts): (flyleaf, fol. i verso) Drawing in hard point of an archway.</decoNote>
+                        <decoNote type="drawing">(flyleaf, fol. i verso) Drawing in hard point of an archway.</decoNote>
+                        <decoNote type="decInit">Spaces left for headings, not filled in; elaborate vinescroll type initials drawn in red and brown ink on fol. 11v (with monster) and fol. 30; compare an initial, done at Admont, from MS. Admont 83 in P. Buberl, <title>Die Mum. Hss. in Steiermark, I. Admont und Vorau</title> (Beschr. Verzeichnis der ilium. Hss. in Oesterreich iv), Leipzig, 1911, p. 83, fig. 85. Decorated red initials on fol. 1, iv, 14v.</decoNote>
                      </decoDesc>
                   </physDesc>
                   <history>
@@ -107,7 +135,6 @@
                         <origDate calendar="Gregorian" notAfter="1200" notBefore="1150">12th century, second half</origDate>
                         <origPlace cert="low">
                            <country key="place_1000062">Austrian</country> or <country key="place_7000084">German</country>
-                           <!--ORIGINAL: Austrian, Admont-->
                         </origPlace>
                      </origin>
                   </history>
@@ -115,36 +142,72 @@
                <msPart xml:id="MS_Lyell_49-part2">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Lyell 49 - Part 2</idno>
+                        <idno type="part">MS. Lyell 49, part B, fols. 58–80</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Lyell_49-part2-item1" n="1">
-                        <author key="person_121885360">
-                           
-                           Remigius of Auxerre (attrib.)
-                        
-                        </author>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem n="1" xml:id="MS_Lyell_49-part2-item1">
+                        <author key="person_121885360">Remigius of Auxerre (attrib.) </author>
                         <title key="work_4244">Commentary on Boethius, Opuscula sacra</title>
-                        <bibl type="commentedOn">
-                           <author key="person_100218964">
-                              Boethius
-                           </author>
-                           <title>Opuscula sacra</title>
-                        </bibl>
-                        <note>(longer version)</note>
-                        <textLang mainLang="la">Latin</textLang>
+                        <note>Longer version of the commentary on Boethius, Opuscula Sacra, i, ii, iii, and v, attributed to Remigius of Auxerre, written in continuous form. Pr. E. K. Rand, 'Johannes Scotus', <title>Quellen und Untersuchungen zur lat. Philol. des M.A.</title> I, 2 (1906), 30–80.</note>
+                        <msItem>
+                           <locus>(fol. 59r)</locus>
+                           <bibl>Commentary on Tr. i</bibl>
+                           <incipit>Investigatam diutissime questionem. Sub<ex>audis</ex>. De sancta trinitate</incipit>
+                           <bibl>Rand p. 31 l. 5</bibl>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 67r)</locus>
+                           <bibl>Tr. ii</bibl>
+                           <rubric>Incipit eiusdem Boetii liber ad Iohannem diaconum</rubric>
+                           <incipit>Iohannes iste postea papa fuit</incipit>
+                           <bibl>Rand p. 47 1. 19</bibl>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 68r)</locus>
+                           <bibl>Tr. iii</bibl>
+                           <incipit>Postulas ut ex ebdomadibus. id est conceptionibus</incipit>
+                           <bibl>Rand p. 50 l. 6</bibl>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 70v)</locus>
+                           <bibl>Tr. v</bibl>
+                           <rubric>Eiusdem ad eundem contra Eutichen et Nestorium</rubric>
+                           <incipit>Anxie. Sollicite. Sustinui. Expectavi</incipit>
+                           <bibl>Rand p. 57 1. 23.</bibl>
+                           <explicit><locus>(fol. 79v)</locus> Perscribit approbat, commendat.</explicit>
+                           <finalRubric>Explicit commentum super Boetium de S. Trinitate.</finalRubric>
+                        </msItem>
+                        <note>The commentary belongs to the second group of MSS. containing the fuller version; see Cappuyns, op. cit., pp. 245–50. The marginal notes in Tr. v which Haring, <title>Two Commentaries</title> (see below), p. 71, regarded as additional, are all found in Rand’s edition. There are two later notes <locus>(fol. 62v, 70)</locus> in the same hand as those in A.</note>
                      </msItem>
-                   
+                     <msItem>
+                        <locus>Fol. 80</locus>
+                        <note>Originally left blank. On fol. 80v is a pen drawing (see below). Below it is the contemporary note: <q>Hic claustri sancti Blasii liber est <subst><del>Ademunti</del><add>Ademonti</add></subst></q>.</note>
+                     </msItem>
+                     <msItem>
+                        <locus>(Fol. 58)</locus>
+                        <note>A reject leaf for the beginning of the Commentary. It had several lines of text, a red incipit, and an initial, which have been erased.</note>
+                     </msItem>
                   </msContents>
                   <physDesc>
                      <objectDesc form="codex">
                         <supportDesc material="perg">
                            <support>parchment</support>
+                           <collation>8⁸–9⁸, 10⁸ (7 canc.) <secFol>materia</secFol></collation>
                         </supportDesc>
+                        <layoutDesc>
+                           <layout columns="1" ruledLines="32">32 long lines, text ruled with a hard point, text <dimensions type="written" unit="mm">
+                                 <height max="178" min="173">173–8</height>
+                                 <width max="115" min="105">105–15</width>
+                              </dimensions></layout>
+                        </layoutDesc>
                      </objectDesc>
+                    <!-- <handDesc>
+                        <handNote script="protogothic">Text written in a large minuscule, varying considerably in size, with spaces left between the lines and wide margins for glosses.</handNote> this relates to part A
+                     </handDesc>-->
                      <decoDesc>
-                        <decoNote>Elaborate vinescroll type initials drawn in red and brown ink on fols. 11v (with monster) and 30r.</decoNote>
+                        <decoNote type="decInit">Vinescroll initial (with monster) in brown and red ink on fol. 59; decorated initials in brown ink on fol. 67, 68, and 70v.</decoNote>
                      </decoDesc>
                   </physDesc>
                   <history>
@@ -152,7 +215,6 @@
                         <origDate calendar="Gregorian" notAfter="1200" notBefore="1150">12th century, second half</origDate>
                         <origPlace cert="low">
                            <country key="place_1000062">Austrian</country> or <country key="place_7000084">German</country>
-                           <!--ORIGINAL: Austrian, Admont-->
                         </origPlace>
                      </origin>
                   </history>
@@ -160,38 +222,27 @@
                <msPart xml:id="MS_Lyell_49-part3">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Lyell 49 - Part 3</idno>
+                        <idno type="part">MS. Lyell 49, part C, fols. 81–100</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Lyell_49-part3-item1" n="1">
-                        <author key="person_106964309">
-                           
-                           Thierry of Chartres (attrib.)
-                        
-                        </author>
-                        <title key="work_4747">Commentary on Boethius, Opuscula sacra </title>
-                        <bibl type="commentedOn">
-                           <author key="person_100218964">
-                              Boethius
-                           </author>
-                           <title>Opuscula sacra</title>
-                        </bibl>
+                     <msItem n="1" xml:id="MS_Lyell_49-part3-item1">
+                        <locus>(fols. 81r–99v)</locus>
+                        <author key="person_106964309">Thierry of Chartres (attrib.) </author>
+                        <title key="work_4747">Commentary on Boethius, Opuscula sacra</title>
+                        <rubric>Commentum Helye cuiusdam Magistri Gallicani super Boetium de Trinitate</rubric>
+                        <incipit>Christiane religionis et cetera. Intendit auctor operis ut predictum est.</incipit>
+                        <note>The commentary on Boethius’ Opuscula Sacra known as 'Librum Hunc' and now attributed to Thierry of Chartres, omitting the Prologue. Pr. N. Haring, 'Two Commentaries on Boethius by Thierry of Chartres', <title>Archives</title> 27 (1960), 85–134. He used this MS.</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Lyell_49-part3-item2" n="2">
-                        <author key="person_106964309">
-                           
-                           Thierry of Chartres (attrib.)
-                        
-                        </author>
+                     <msItem n="2" xml:id="MS_Lyell_49-part3-item2">
+                        <locus>(fol. 99v)</locus>
+                        <author key="person_106964309">Thierry of Chartres (attrib.) </author>
                         <title key="work_4746">Commentary on Boethius, De hebdomadibus</title>
-                        <bibl type="commentedOn">
-                           <author key="person_100218964">
-                              Boethius
-                           </author>
-                           <title>De hebdomadis</title>
-                        </bibl>
+                        <rubric>Explicit tractatus super Boetium. Incipit de bono ad Iohannem</rubric>
+                        <incipit>Intentio auctoris est in hoc opusculo questionem illam Iohannis Romane ecclesie diaconi solvere</incipit>
+                        <explicit defective="true"><locus>(mid-fol. 100v)</locus> nec participat entitate.</explicit>
+                        <note>Fragment of a commentary on Boethius, <title>De Hebdomadibus</title>, attributed to Thierry of Chartres, pr., from this MS., by Haring, op. cit., pp. 134–6. The rest of fol. 100v is left blank.</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                   </msContents>
@@ -199,10 +250,19 @@
                      <objectDesc form="codex">
                         <supportDesc material="perg">
                            <support>parchment</support>
+                           <collation>11⁸–12⁸, 13⁴
+                              <secFol>accidentium</secFol></collation>
                         </supportDesc>
+                        <layoutDesc>
+                           <layout columns="1" ruledLines="32">32 long lines ruled with a hard point, text <dimensions type="written" unit="mm">
+                                 <height>178</height>
+                                 <width>100</width>
+                              </dimensions></layout>
+                        </layoutDesc>
                      </objectDesc>
                      <decoDesc>
-                        <decoNote>Vinescroll initial (with monster) in brown and red ink on fol. 59r; decorated initials in brown ink on fols. 67r, 68r and 70v. Drawings on fol. 80r in hard point of a soldier, and on fol. 80v in ink of a figure in a short tunic, but booted and spurred, offering a flower to a veiled woman with hands raised in front of her.</decoNote>
+                        <decoNote type="rubrication">Headings in red.</decoNote>
+                        <decoNote type="decInit">Decorated red initials on fol. 81, 99v.</decoNote>
                      </decoDesc>
                   </physDesc>
                   <history>
@@ -210,7 +270,6 @@
                         <origDate calendar="Gregorian" notAfter="1200" notBefore="1150">12th century, second half</origDate>
                         <origPlace cert="low">
                            <country key="place_1000062">Austrian</country> or <country key="place_7000084">German</country>
-                           <!--ORIGINAL: Austrian, Admont-->
                         </origPlace>
                      </origin>
                   </history>
@@ -218,28 +277,58 @@
                <msPart xml:id="MS_Lyell_49-part4">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Lyell 49 - Part 4</idno>
+                        <idno type="part">MS. Lyell 49, part D, fols. 101–28</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Lyell_49-part4-item1" n="1">
-                        <author key="person_88995118">
-                           
-                           Peter Abelard
-                        
-                        </author>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem n="1" xml:id="MS_Lyell_49-part4-item1">
+                        <locus>(fol. 101r)</locus>
+                        <author key="person_88995118">Peter Abelard </author>
                         <title key="work_3490">Theologia summi boni</title>
-                        <textLang mainLang="la">Latin</textLang>
+                        <msItem>
+                           <rubric>Librorum de Trinitate capitula</rubric>
+                           <incipit>Primus liber continet quid velit distinctio</incipit>
+                        </msItem>
+                        <msItem>
+                           <rubric>Incipit liber I</rubric>
+                           <incipit>Summi boni perfectionem quod Deus est</incipit>
+                        </msItem>
+                        <msItem>
+                           <bibl>Bk. ii, fol. 105v</bibl>
+                        </msItem>
+                        <msItem>
+                           <bibl>Bk. iii, fol. 121r</bibl>
+                           <explicit defective="true"><locus>(fol. 128v l. 11)</locus> est materia huius hominis.</explicit>
+                        </msItem>
+                        <note>Pr. H. Ostlender, 'Peter Abaelards Theologia "Summi Boni"', <title>Beiträge</title> 25, 2–3 (1939), 2–83 1. 31. The variants of this MS. are discussed and listed by Haring, <q>A third MS. of Peter Abelard’s Theologia "Summi Boni"</q>, <title>Mediaeval Studies</title> 18 (1956), 215–24. He shows that it is closely related to MS. Erlangen Univ. 182 from Heilsbronn, which also contains Boethius’ Opuscula Sacra and the Commentary 'Librum Hunc'. It ends at the same place and has the same lacunae, including a large one (Ostlender, p. 81. 24–19 1. 21) found in our MS. at the bottom of fol. 102v where the scribe has left a gap of 3¼ lines, not a mere quarter of a line as stated by Haring, op. cit., p. 217.</note>
+                     </msItem>
+                     <msItem>
+                        <note>In the blank space on fol. 128v a later (14th-cent.?) hand added two notes on the Trinity, <q>Nota. Cum pater sit deus, filius deus, spiritus sanctus sit deus et pater sit alius quam filius.</q></note>
+                     </msItem>
+                     <msItem>
+                        <note>The end flyleaf <locus>(fol. 129r)</locus> contains a fragment on the Immaculate Conception in a hand similar to fol. 128v. The front flyleaf <locus>(fol. i)</locus>, bound upside down, has a note (12th cent.) <q>Exponat nobis lector quid sit ydioma Boetii</q> and below it another note in the hand of fol. 128v.</note>
+                     </msItem>
+                     <msItem>
+                        <note>There are drawings with a point on the front flyleaf <locus>(fol. 1v)</locus>, archway, and fol. 80, soldier with shield in left hand and sword resting on right shoulder and there is a pen drawing on fol. 80v of a figure in a short tunic, but booted and spurred, offering a flower to a veiled woman with hands raised in front of her it has been queried whether the spurs are original. (Haloes have been added later, drawn with a hard point.) For the style of the drawing on fol. 80v cf. a figure from MS. Admont 36, written at Admont c. 1180, in Buberl, op. cit., p. 64 fig. 69. Pächt-Alexander 1, no. 92, pl. viii <locus>(fol. 80v)</locus>.</note>
                      </msItem>
                   </msContents>
                   <physDesc>
                      <objectDesc form="codex">
                         <supportDesc material="perg">
                            <support>parchment</support>
+                           <collation>14⁸–16⁸, 17⁴
+                              <secFol>ille prophetarum</secFol></collation>
                         </supportDesc>
+                        <layoutDesc>
+                           <layout columns="1" ruledLines="32">32 long lines ruled with a hard point, ruling <dimensions type="ruled" unit="mm">
+                                 <height>180</height>
+                                 <width>100</width>
+                              </dimensions></layout>
+                        </layoutDesc>
                      </objectDesc>
                      <decoDesc>
-                        <decoNote>Decorated red initials on fols. 81r, 99v.</decoNote>
+                        <decoNote type="decInit">Decorated red initials on fol. 101, 105v, 121.</decoNote>
                      </decoDesc>
                   </physDesc>
                   <history>
@@ -254,12 +343,11 @@
                </msPart>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc><change when="2018-06-15" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName>
-      Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
-      in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.'
-    </change>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2020-12-16"><persName>Andrew Dunning</persName> Revised from description by <persName>Albinia de la Mare</persName>.</change>
+         <change when="2018-06-15" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.' </change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>
@@ -270,7 +358,7 @@
    </teiHeader>
    <text>
       <body>
-         <p><!--Body paragraph provided for validation and future transcription--></p>
+         <p/>
       </body>
    </text>
 </TEI>

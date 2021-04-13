@@ -1,23 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_7789">
+<TEI xml:id="manuscript_7789" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Lyell 56</title>
             <title type="collection">MSS. Lyell</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="DLM">
+               <resp when="1971">Cataloguer</resp>
+               <persName>Albinia de la Mare</persName>
+            </respStmt>
+            <respStmt xml:id="ANJD">
+               <resp when="2020">Encoding</resp>
+               <persName>Andrew Dunning</persName>
             </respStmt>
          </titleStmt>
-         <editionStmt>
-            <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
-         </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
             <address>
@@ -47,72 +44,548 @@
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Lyell 56</idno>
                </msIdentifier>
+               <head>Honorius Augustodunensis</head>
                <msContents>
-                  <msItem xml:id="MS_Lyell_56-item1" n="1">
-                     <author key="person_100201145">
-                        
-                        Honorius
-              Augustodunensis
-                     
-                     </author>
-                     <title key="work_2088">works</title>
-                     <note>(items 2-22 are also found, in the same order, in
-                           Munich clm 22225, copied between 1154-1159 for <persName role="pat" key="person_411">Gerhard, abbot of
-                              Windberg</persName>)</note>
-                     <textLang mainLang="la">Latin</textLang>
+                  <summary>A collection of writings chiefly by Honorius Augustodunensis, of which nos. 2–22 are also found, in the same order, in Munich clm. 22225, copied between 1154–9 for Gerhard, abbot of Windberg. No. 22 is shorter in the Munich MS., and no. 21b consists of a heading only.</summary>
+                  <textLang mainLang="la">Latin</textLang>
+                  <msItem n="1">
+                     <locus>(fol. 1r)</locus>
+                     <author key="person_100201145">Honorius of Autun</author>
+                     <title key="work_6452">Speculum ecclesiae</title>
+                     <msItem n="a">
+                        <rubric>Fratres Solitario De Speculo Ęcclesię</rubric>
+                        <incipit>Cum proxime in nostro conventu resideres</incipit>
+                     </msItem>
+                     <msItem n="b">
+                        <rubric>Prologus</rubric>
+                        <note>(marginal note: <q>Responsio Solitarii</q>)</note>
+                        <incipit>Peritissimi pictores Ambrosius et Augustinus Hieronymus et Gregorius</incipit>
+                     </msItem>
+                     <msItem n="c">
+                        <rubric>Incipit Speculum Ęcclesię</rubric>
+                        <incipit>Cum vis populum alloqui in primis ori et pectori tuo.</incipit>
+                        <note>Partly pr. PL 172 col. 813–1104 from an imperfect MS: the missing pieces (found on fol. 153v–162v in our MS.) pr. J. Kelle, 'Untersuchungen über das Spec. Eccles. des Honorius', <title>Sitzungsber. Akad. Wiss. Wien,</title> Phil.-Hist. Kl. 145 (1902), 2–19.</note>
+                     </msItem>
+                     <msItem>
+                        <note>At the end of the <title>Speculum</title>
+                           <locus>(fol. 166–167v)</locus> is an apparently unpublished piece:</note>
+                        <rubric>Via Karitatis</rubric>
+                        <incipit><sic>Hinch</sic> Arbitrium, inde Artificium.</incipit>
+                        <msItem>
+                           <note>An extra piece on an inserted leaf <locus>(fol. 161r)</locus></note>
+                           <incipit>Ecclesia, id est domus orationis, umbra et figura</incipit>
+                           <note>Pr. Kelle, op. cit., p. 18 n. from MS. St. Florian xi. 244, 12th cent.</note>
+                        </msItem>
+                        <note>Insertions on other extra leaves <locus>(fol. 4, 158)</locus> are found in the main printed text. The arrangement of the main work in our MS. differs from PL, but appears to be the same as in the St. Florian MS. On variants in MSS. of the Speculum see Kelle, op. cit., pp. 28–44.</note>
+                     </msItem>
+                     <msItem>
+                        <note>On fol. 18 there is a long marginal addition to the second sermon:</note>
+                        <rubric>In purificatione S. Marię</rubric>
+                        <incipit>In candela tria considerantur lumen, cera, lichinus. Lumen lucet</incipit>
+                        <explicit>cum ipsa regnetis in secula. Amen.</explicit>
+                     </msItem>
+                     <msItem>
+                        <note>In the margins of the Speculum has been added a series of Latin verses, most of which are also found in the 12th-cent. St. Florian MS. already cited (Fl.); see Walther in <title>Centralblatt für Bibliothekswesen</title> 49 (1932), 330. The numbers in Walther’s <title>Initia</title> are not given where he only refers to Fl.</note>
+                        <msItem n="a">
+                           <locus>(fol. 11v)</locus>
+                           <incipit>✠In nuce tres species sunt Christi signa gerentes.</incipit>
+                           <note>2 lines.</note>
+                        </msItem>
+                        <msItem n="b">
+                           <locus>(fol. 14v)</locus>
+                           <author key="person_282035032">Hildebert of Le Mans</author>
+                           <incipit>Dat magus aurum thus myrram rex suscipit aurum.</incipit>
+                           <note>4 lines. PL 171 col. 1275. Walther, <title>Initia</title>, no. 4063.</note>
+                        </msItem>
+                        <msItem n="c">
+                           <locus>(fol. 19r)</locus>
+                           <incipit>Lectus ager mola signant consociatos</incipit>
+                           <note>3 lines. Fl., fol. 21.</note>
+                        </msItem>
+                        <msItem n="d">
+                           <locus>(fol. 21r)</locus>
+                           <author key="person_282035032">Hildebert of Le Mans</author>
+                           <incipit>Vinea culta fuit, cultores premia querunt</incipit>
+                           <note>6 lines. Walther, <title>Initia,</title> no. 20357: edition closest to this version in Hervieux, <title>Les Fabulistes Latins</title> iv, 1896, p. 353. Fl., fol. 24.</note>
+                        </msItem>
+                        <msItem n="e">
+                           <locus>(fol. 30r)</locus>
+                           <incipit>Cecus vociferat ut lucis munera querat</incipit>
+                           <note>4 lines. Fl., fol. 36v.</note>
+                        </msItem>
+                        <msItem n="f">
+                           <incipit>Est genus humanum cecum stultum quia vanum</incipit>
+                           <note>6 lines. Fl., fol. 36v.</note>
+                        </msItem>
+                        <msItem n="g">
+                           <incipit>Ante Deum sordet quem fęda scientia mordet.</incipit>
+                           <note>Probably also in Fl., as Walther says the preceding poem has 7 lines.</note>
+                        </msItem>
+                        <msItem n="h">
+                           <locus>(fol. 34r)</locus>
+                           <incipit>Hęc sunt sex opera quę prestant gaudia vera</incipit>
+                           <note>4 lines. Fl., fol. 41v.</note>
+                        </msItem>
+                        <msItem n="i">
+                           <title type="desc">Another version of the corporal works of mercy</title>
+                           <incipit>Esurit ille, ciba, sitit alter, pocula liba</incipit>
+                           <note>3 lines. Again probably in Fl., since Walther says the preceding poem has 7 lines.</note>
+                        </msItem>
+                        <msItem n="k">
+                           <locus>(fol. 43r)</locus>
+                           <incipit>Scis triplicem curam baculi signare figuram</incipit>
+                           <note>6 lines. Fl., fol. 53.</note>
+                        </msItem>
+                        <msItem n="l">
+                           <locus>(fol. 44v)</locus>
+                           <incipit>Angelus est missus est passus et in cruce Christus.</incipit>
+                           <note>4 lines. FL, fol. 55 and MS. Vienna 625, fol. 24. The edition quoted by Walther, <title>Initia,</title> no. 991, contains a variant version.</note>
+                        </msItem>
+                        <msItem n="m">
+                           <locus>(fol. 52r)</locus>
+                           <incipit>Intus obit qui mente foris qui peccat in actu.</incipit>
+                           <note>2 lines. FL, fol. 63v. Walther, <title>Initia,</title> no. 9516.</note>
+                        </msItem>
+                        <msItem n="n">
+                           <locus>(fol. 114v)</locus>
+                           <incipit>Sicut is qui invitatus renuit, quesitus refugit, sacris est altaribus admovendus</incipit>
+                           <note>2 lines.</note>
+                        </msItem>
+                        <msItem n="o">
+                           <locus>(fol. 115r)</locus>
+                           <incipit>Cuncta licent ubi nulla nocent, ubi crimen inultum</incipit>
+                           <note>2 lines.</note>
+                        </msItem>
+                        <msItem n="p">
+                           <locus>(fol. 120r)</locus>
+                           <incipit>Villa, boves, uxor, substantia, cura, voluptas</incipit>
+                           <note>2 lines. A variant of the verses of Hildebert. Walther, <title>Initia,</title> no. 20336.</note>
+                        </msItem>
+                        <msItem n="q">
+                           <locus>(fol. 126v)</locus>
+                           <incipit>Hic ruit elatus, dum reprobat est reprobatus <add place="above">Phariseus</add>.</incipit>
+                           <note>2 lines. Fl., fol. 154v</note>
+                           <rubric>Rota Fortunae</rubric>
+                        </msItem>
+                        <msItem n="r">
+                           <locus>(fol. 127r)</locus>
+                           <incipit>Gratia debetur mihi vobis officiante</incipit>
+                           <note>2 lines. Fl., fol. 155.</note>
+                        </msItem>
+                        <msItem n="s">
+                           <locus>(fol. 147v)</locus>
+                           <incipit>Tres partes factę de Christi corpore signant</incipit>
+                           <note>4 lines. Walther, <title>Initia,</title> no. 19401. Apparently a version of Hildebert, cf. Walther, <title>Initia,</title> no. 18193.</note>
+                        </msItem>
+                        <msItem n="t">
+                           <locus>(fol. 164v)</locus>
+                           <incipit>Cordis scrutator est confessoris amator</incipit>
+                           <note>3 lines.</note>
+                        </msItem>
+                     </msItem>
                   </msItem>
-             
+                  <msItem n="2">
+                     <locus>(fol. 168r)</locus>
+                     <author key="person_100201145">Honorius of Autun</author>
+                     <title key="work_2081">De cognitione uerae uitae</title>
+                     <rubric>Incipit prologus Honorii in cognitionem vitę</rubric>
+                     <incipit>Sapientia Dei quę os muti aperuit</incipit>
+                     <msItem>
+                        <locus>(fol. 168v)</locus>
+                        <rubric>Cognitio vitę</rubric>
+                        <incipit>Fratres. Gratias Deo persolvimus cuius dono per te</incipit>
+                        <note>[sic: MS. Lyell 58, 12th cent., fol. 33v, also has this reading]</note>
+                        <note>PL 40 col. 1003–32</note>
+                     </msItem>
+                     <msItem>
+                        <note>With an additional passage on fol. 181–181v:</note>
+                        <rubric>De viciis et virtutibus</rubric>
+                        <incipit>Fratres <note>[in margin]</note> Eia hic ędere sacri ędificii</incipit>
+                        <explicit>quę devitanda sunt</explicit>
+                        <note>Inserted between cap. 37–8 of text printed in PL; it is pr. J. A. Endres, <title>Honorius Augustodunensis,</title> Kempten, 1906, pp. 138–40, from Munich clm. 22225.</note>
+                     </msItem>
+                  </msItem>
+                  <msItem n="3">
+                     <locus>(fol. 185r)</locus>
+                     <author key="person_9865788">Hugh of Saint-Victor</author>
+                     <title key="work_2131">De archa Noe</title>
+                     <rubric>Hugo De Domo Domini</rubric>
+                     <incipit>Homo ad hoc conditus fuit ut unum tantum id est summum bonum deum amaret</incipit>
+                     <explicit><locus>(fol. 191r)</locus> in quo sunt ineffabiles delectationes in finem, id est sine fine.</explicit>
+                     <note>This work, which has marginal headings: <q>V Mansiones</q>; <q>quid sit cubitus</q>; <q><sic>iiiiº</sic> Areas</q>; <q>tres voluntates</q>; <q>De arca gratię</q>; <q>De arca sapientię</q>, etc., seems to be a shorter version of Hugh of St. Victor’s De Arca Noe (PL 176 col. 617–704). It is also found in MSS. Vienna 1165, 14th cent., in which it follows Honorius’ Cognitio Vitae, and 1561, 14th cent, from Salzburg, and was in Klosterneuburg MS. 931, listed in 1330; see Gottlieb, <title>Mittelalt. BibLkat. Österreichs</title> 1, 1915, p. 106 1. 18–19.</note>
+                  </msItem>
+                  <msItem n="4">
+                     <locus>(fol. 191r)</locus>
+                     <author cert="low" key="person_100201145">Honorius of Autun (?)</author>
+                     <title key="work_2086" type="desc">Short <foreign>quaestiones</foreign></title>
+                     <msItem n="a">
+                        <rubric>Quod autenticum sit omne quod aliquis catholicus de Deo scripserit quod canonicę scripturę contrarium non fuerit. Kathegoriarum Syllog</rubric>
+                        <incipit>Deus est auctor totius boni</incipit>
+                     </msItem>
+                     <msItem n="b">
+                        <rubric>Utrum lex servanda sit</rubric>
+                        <incipit>Lex Christum predixit. Sed Christus iam venit</incipit>
+                     </msItem>
+                     <msItem n="c">
+                        <locus>(fol. 191v)</locus>
+                        <rubric>Utrum totum in homine resurgat quod in corpore hominum hic fuerat</rubric>
+                        <incipit>Tres opiniones sunt de resurrectione</incipit>
+                        <note>This <hi rend="italic">quaestio</hi> is also in MSS. St. Florian xi. 54, 14th cent., fol. 104v and Vienna 1561, fol. 25.</note>
+                     </msItem>
+                     <msItem n="d">
+                        <rubric>Utrum peccatum sit nubere vel carnes comedere</rubric>
+                        <incipit>Neutrum est peccatum quia utrumque a deo est concessum</incipit>
+                     </msItem>
+                     <msItem n="e">
+                        <rubric>Quomodo igitur dicit idem apostolus bonum est mulierem non tangere et bonum est carnes non manducare?</rubric>
+                        <incipit>Non tamen dixit peccatum est mulierem tangere</incipit>
+                     </msItem>
+                     <msItem n="f">
+                        <locus>(fol. 192r)</locus>
+                        <rubric>Interrogatio</rubric>
+                        <incipit>Cum idem apostolus nullum excipiat, sed omnibus generaliter dicat</incipit>
+                        <note>Items d–f are pr. I. Dieterich in Introd. to 'Libelli Honorii Augustodunensis', <title>Libelli de Lite</title> 3 (1897), 34–5, from the Munich MS. already cited and MS. St. Florian xi. 54.</note>
+                     </msItem>
+                  </msItem>
+                  <msItem n="5">
+                     <locus>(fol. 192r)</locus>
+                     <author key="person_100201145">Honorius of Autun</author>
+                     <title key="work_6613">De libero arbitrio</title>
+                     <rubric>Incipit De Libero Arbitrio</rubric>
+                     <incipit>Gotscalco fide et opere sudanti in sancto proposito</incipit>
+                     <note>PL 172 col. 1223–6.</note>
+                  </msItem>
+                  <msItem n="6">
+                     <locus>(fol. 193v)</locus>
+                     <author key="person_100201145">Honorius of Autun</author>
+                     <title key="work_6614">De animae exilio et patria</title>
+                     <rubric>De animę exilio et patria</rubric>
+                     <incipit>Thomę gratiam apostolici nominis sortito multis donis sophyę <note>[inserted in margin]</note> insignito. Honorius illum in gloria</incipit>
+                     <note>PL 172 col. 1241–6.</note>
+                  </msItem>
+                  <msItem n="7">
+                     <locus>(fol. 195r)</locus>
+                     <author cert="low" key="person_100201145">Honorius of Autun (?)</author>
+                     <rubric>De legione</rubric><!-- not in Mirabile -->
+                     <incipit>Legio constat ex sex milibus et sexcentis et sexaginta atque vi militibus</incipit>
+                  </msItem>
+                  <msItem n="8">
+                     <locus>(fol. 195v)</locus>
+                     <author key="person_100201145">Honorius of Autun</author>
+                     <title key="work_6615">Liber duodecim quaestionum</title>
+                     <rubric>Questio de <sic>Michahele</sic> et Petro</rubric>
+                     <incipit>Splendore sapientię rutilo. Honorius videre fadem domini in iubilo</incipit>
+                     <rubric>De xii questionibus</rubric>
+                     <incipit>In hac angelica questione solvuntur XII questiones</incipit>
+                     <note>PL 172 col. 1177–86.</note>
+                  </msItem>
+                  <msItem n="9">
+                     <locus>(fol. 199r)</locus>
+                     <author key="person_100201145">Honorius of Autun</author>
+                     <title key="work_6616">De decem plagis Aegypti spiritualiter</title>
+                     <rubric>De plagis</rubric>
+                     <incipit>Prima plaga erat aqua in sanguinem versa</incipit>
+                     <note>PL 172 col. 265–70.</note>
+                  </msItem>
+                  <msItem n="10">
+                     <locus>(fol. 200r)</locus>
+                     <author key="person_100201145">Honorius of Autun</author>
+                     <title key="work_6617">Quid vasa honoris et quid vasa contumeliae</title>
+                     <rubric>Honorius. Quid vasa honoris et quid vasa contumelię</rubric>
+                     <incipit>In domo magna non solum sunt vasa aurea et argentea</incipit>
+                     <note>Also in MSS. St. Florian xi. 54, fol. 106; Heiligenkreuz 77, 12th–13th cent., fol. 114; Prague Univ. xiii G. 15 (2382), 15th cent., fol. 193v, and in the Klosterneuburg MS. cit., where it was ascribed to <quote>Hugo</quote>. Ed. from this MS. by M.O. Garrigues, in <title>Studiamonastieo</title> 20 (1978), 48–53.</note>
+                  </msItem>
+                  <msItem n="11">
+                     <locus>(fol. 202r)</locus>
+                     <author key="person_100201145">Honorius of Autun</author>
+                     <title key="work_6618">De claustrali vita</title>
+                     <rubric>Quid sit claustralis vita</rubric>
+                     <incipit>Claustralis vita est ab ipso domino instituta</incipit>
+                     <note>PL 172 col. 1247–8.</note>
+                  </msItem>
+                  <msItem n="12">
+                     <locus>(fol. 202v)</locus>
+                     <author cert="low" key="person_100201145">Honorius of Autun</author>
+                     <title key="work_6619">Quid sit scala ad caelum</title>
+                     <rubric>Quid sit scala ad cęlum</rubric>
+                     <incipit>Iacob in somnis scalam usque ad cęlos erectam vidit</incipit>
+                     <note>Ed. from this MS. by M.O. Garrigues, in <title>Studiamonastieo</title> 20 (1978), 67–70.</note>
+                  </msItem>
+                  <msItem n="13">
+                     <locus>(fol. 203v)</locus>
+                     <author key="person_200687519">Rupert of Deutz</author>
+                     <title key="work_6626">Quaestio utrum monachis liceat praedicare</title>
+                     <rubric>Roudpertus. Questio utrum monachis liceat predicare</rubric>
+                     <incipit>Cum monachus sit mortuus seculo</incipit>
+                     <note>Pr. Endres, op. cit., pp. 145–7 from Munich clm. 22225 quoting variants from our MS., then at Lambach. Also in Munich clm. 9711, 15th cent.</note>
+                  </msItem>
+                  <msItem n="14">
+                     <locus>(fol. 204r)</locus>
+                     <author key="person_100201145">Honorius of Autun</author>
+                     <title key="work_6620">Quod monachis liceat praedicare</title>
+                     <rubric>Quod monachis liceat predicare</rubric>
+                     <incipit>Fratres Honorio salutem. Quidam erronei nescientes de quibus loquuntur</incipit>
+                     <note>Pr. Endres, op. cit., pp. 147–50 from Munich clm. 22225 with variants from our MS., then at Lambach. Also in MSS. St. Florian xi. 54; Prague Univ. xiii G. 15, fol. 199.</note>
+                  </msItem>
+                  <msItem n="15">
+                     <locus>(fol. 205v)</locus>
+                     <author cert="low" key="person_100201145">Honorius of Autun</author>
+                     <title key="work_2086">Quaestiones theologicae</title>
+                     <rubric>Interrogatio. Questio de Deo utrum localis sit</rubric>
+                     <incipit>Queritur utrum Deus sit in loco qui predicatur ubique esse</incipit>
+                     <msItem>
+                        <note>Followed by three other <foreign>quaestiones</foreign>, two with marginal headings</note>
+                        <msItem>
+                           <locus>(fol. 206)</locus>
+                           <rubric>Questio utrum Deus ubique sit</rubric>
+                           <incipit>Item queritur utrum Deus ubique totus sit; Iterum queritur utrum Deus in omnibus sit. Deus est bonitas</incipit>
+                        </msItem>
+                        <msItem>
+                           <rubric>Questio utrum anima localis sit</rubric>
+                           <incipit>Item queritur utrum anima in loco sit, quę corpori includi</incipit>
+                        </msItem>
+                        <note>A pre–1381 Heiligenkreuz inventory lists these four <foreign>quaestiones</foreign> as in a MS. which in general corresponds with the present MS. Heiligenkreuz 77 cit., but these <foreign>quaestiones</foreign> are not listed in the modern catalogue. See Gottlieb, op. cit., p. 421. 36–9. Two at least of these <foreign>quaestiones</foreign> are in Prague Univ. MS. xiii G. 15, following our item 14.</note>
+                     </msItem>
+                  </msItem>
+                  <msItem n="16">
+                     <locus>(fol. 206v)</locus>
+                     <author key="person_100201145">Honorius of Autun</author>
+                     <title key="work_6621">Quaestiones octo de angelo et homine</title>
+                     <rubric>Questio de angelis et hominibus</rubric>
+                     <incipit>D. Interrogatio. Vellem mihi certa auctoritate monstrari</incipit>
+                     <note>PL 172 col. 1185–92. There are lacunae on fol. 208v and 209.</note>
+                     <msItem>
+                        <note>There follows without a break <locus>(fol. 209v)</locus> a question headed</note>
+                        <rubric>De Genesi Iheronimus</rubric>
+                        <incipit>D. Occidi virum in vulnus meum et adolescentulum in livore meo</incipit>
+                     </msItem>
+                  </msItem>
+                  <msItem n="17">
+                     <locus>(fol. 209v)</locus>
+                     <author key="person_100201145">Honorius of Autun</author>
+                     <title key="work_6622">Summa gloria</title>
+                     <rubric>Incipit prologus in summam gloriam</rubric>
+                     <incipit>Pusilli gregis Christi duci verbo et exemplo ad pabula vitę previo</incipit>
+                     <msItem>
+                        <rubric>Incipiunt capitula</rubric>
+                        <incipit>I. Quod sicut spirituale precellit seculare sic sacerdotium precellit regnum</incipit>
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 210r)</locus>
+                        <rubric>Incipit summa gloria</rubric>
+                        <incipit>Cum universitas fidelium in clerum et populum distribuatur</incipit>
+                     </msItem>
+                     <note>Pr. J. Dieterich in <title>M.G.H.</title>, op. cit., pp. 63–80.</note>
+                     <msItem>
+                        <note>At the end of ch. 27 the scribe left half a page blank <locus>(fol. 214v)</locus> and a contemporary hand added a short passage.</note>
+                        <incipit>Tres tamen patriarchatus sancta instituit ęcclesia.</incipit>
+                     </msItem>
+                  </msItem>
+                  <msItem n="18">
+                     <locus>(fol. 216v)</locus>
+                     <author key="person_100201145">Honorius of Autun</author>
+                     <title key="work_6623">Scala coeli maior</title>
+                     <rubric>Incipit prologus in scalam cęli</rubric>
+                     <incipit>Frequenti meditatione animo revolvo</incipit>
+                     <msItem>
+                        <locus>(fol. 217r)</locus>
+                        <rubric>Incipiunt capitula</rubric>
+                        <incipit>I. Quod religio Christiana sit navis ad patriam</incipit>
+                     </msItem>
+                     <msItem>
+                        <rubric>Incipit de scala cęli</rubric>
+                        <incipit>Quia inter sedule disputationis documenta</incipit>
+                     </msItem>
+                     <note>Not identical with the text pr. in PL 172 col. 1229–40.</note>
+                  </msItem>
+                  <msItem n="19">
+                     <locus>(fol. 222r)</locus>
+                     <author key="person_100201145">Honorius of Autun</author>
+                     <title key="work_6624">Sententias patrum de libero arbitrio</title>
+                     <rubric>Ysidorus de libero arbitrio et gratia Dei</rubric>
+                     <incipit>Arbitrium est voluntas liberę potestatis</incipit>
+                     <note>Extracts from the fathers on free will; the extracts, with minor differences, are the same as those pr. in PL 172 col. 1226–30, following the <title>De libero arbitrio</title>.</note>
+                  </msItem>
+                  <msItem n="20">
+                     <locus>(fol. 223v)</locus>
+                     <author key="person_100201145">Honorius of Autun</author>
+                     <title key="work_7607">Inevitabile</title>
+                     <rubric>Legatio fratrum ad Honorium. Inevitabile</rubric>
+                     <incipit>Fratres in domo Dei cum consensu ambulantes</incipit>
+                     <msItem>
+                        <locus>(fol. 224r)</locus>
+                        <rubric>Incipit inevitabile</rubric>
+                        <incipit>D. Queso ut me velut insipientem sufferas</incipit>
+                     </msItem>
+                     <note>Pr. PL 172 col. 1197–222. F. Baeumker, <title>Das Inevitabile des H.A.</title>, in <title>Beiträge</title> xiii, 6, 1914, showed that this is a revised version of the Inevitabile but our MS. <locus>(fol. 232v–234v, end of De Juda to De vii Sigillis)</locus> has a fuller version of col. 1216D–1218A.</note>
+                  </msItem>
+                  <msItem n="21">
+                     <locus>(fol. 236v)</locus>
+                     <note>Four short pieces</note>
+                     <msItem n="a">
+                        <rubric>De quattuor Modis scripturarum</rubric>
+                        <incipit>Sacra scriptura quattuor modis intelligitur. Hystoria est res gesta</incipit>
+                        <note>Also in Prague Univ. MS. xiii G. 15, fol. 235v.</note>
+                     </msItem>
+                     <msItem n="b">
+                        <locus>(fol. 237r)</locus>
+                        <rubric>De Hierusalem</rubric>
+                        <incipit>Hierusalem triplici muro circumdata Nabuchodonosor auxilio vi regum expugnando cepit</incipit>
+                     </msItem>
+                     <msItem n="c">
+                        <locus>(fol. 237r)</locus>
+                        <rubric>De vi ętatibus</rubric>
+                        <incipit>Homo vetus et exterior et terrenus dicitur</incipit>
+                     </msItem>
+                     <msItem n="d">
+                        <locus>(fol. 237r)</locus>
+                        <rubric>De numero</rubric>
+                        <incipit>Hebrei et Greci numerant secundum ordinem suarum litterarum</incipit>
+                     </msItem>
+                  </msItem>
+                  <msItem n="22">
+                     <locus>(fol. 237v)</locus>
+                     <author key="person_100201145">Honorius of Autun</author>
+                     <title key="work_6625">Sacramentarium</title>
+                     <rubric>Incipit Sacramentarium</rubric>
+                     <incipit>Hunc libellum de sacramentis collegi de sanctorum scriptis</incipit>
+                     <note>PL 172 col. 737–806. The arrangement in our MS. differs from the text printed in PL: many important headings are omitted, others are added. The order of chapters is: 1–111; v; iv; vi–xxxix; lxxxii–xcv; xl–lx; lxi omitted; lxii–lxxxi; xcvi–ci. The Munich MS. cit. ends fol. 128v with <quote>De resurrectione domini</quote>, which in our MS. is lxxxi–xcvi conflated.</note>
+                  </msItem>
+                  <msItem n="23">
+                     <locus>(fol. 272v)</locus>
+                     <note>Further short pieces:</note>
+                     <msItem n="a">
+                        <rubric>De Salomone</rubric>
+                        <incipit>Ieron. Quamvis <sic>Salemon</sic> peccasset, tamen egit penitentiam scribens proverbia</incipit>
+                        <note>Nos. 2–3, 7–8 of the catena on the penitence of Solomon pr. R. W. Hunt in App. to R. Loewe, <q>Alexander Neckham’s knowledge of Hebrew</q>, <title>Med. and Ren. Studies</title> 4 (1958) 30–1.</note>
+                     </msItem>
+                     <msItem n="b">
+                        <rubric>De Apostatis</rubric>
+                        <incipit>Queritur de apostatis qui foris ordines suscipiunt utrum eos vere suscipiant</incipit>
+                     </msItem>
+                     <msItem n="c">
+                        <locus>(fol. 273r)</locus>
+                        <note>No heading</note>
+                        <incipit>Queritur si Deus alio modo humanum genus salvare potuerit quam per mortem filii sui</incipit>
+                     </msItem>
+                     <msItem n="d">
+                        <rubric>Ieronimus super Esayam</rubric>
+                        <incipit>Draco in hebreo proprie appellatur leviathan.</incipit>
+                        <note>These four pieces appear also to be in MS. St. Florian xi. 54, fol. no–11 preceding the Sacramentarium, entitled <quote>Hieronymi quaestiones aliquot</quote> and <hi rend="italic">a</hi> and <hi rend="italic">b</hi> at least are also in the Munich MS. cit., fol. 129.</note>
+                     </msItem>
+                  </msItem>
+                  <msItem n="24">
+                     <locus>(fol. 273v)</locus>
+                     <title type="desc" key="work_14583">Four sermons possibly added afterwards:</title>
+                     <msItem n="a">
+                        <rubric>Sermo ad episcopos supervenientes</rubric>
+                        <incipit>Vos estis sal terrę. Si igitur sal sumus, condire mentes fidelium debemus</incipit>
+                     </msItem>
+                     <msItem n="b">
+                        <rubric>In Adventu Regum</rubric>
+                        <incipit>Qui recte utitur regni potestate ita prestare se omnibus debet</incipit>
+                     </msItem>
+                     <msItem n="c">
+                        <locus>(fol. 274r)</locus>
+                        <rubric>In Adventu Abbatum</rubric>
+                        <incipit>Fili hominis, speculatorem dedi te domui Israel</incipit>
+                     </msItem>
+                     <msItem n="d">
+                        <rubric>In Adventu Iudicum</rubric>
+                        <incipit>Principes seculi nonnunquam intra ęcclesiam potestatis adeptę culmina tenent</incipit>
+                     </msItem>
+                  </msItem>
+                  <msItem>
+                     <note>On fol. 274v among other 12th–15th cent, scribbles are:</note>
+                     <msItem n="a">
+                        <incipit>Clauditur hoc vase nostri pia victima phase</incipit>
+                        <note>12th cent. 2 lines. Cf. MS. Digby 53, fol. 21v; Walther, <title>Initia,</title> no. 2870.</note>
+                     </msItem>
+                     <msItem n="b">
+                        <title type="desc">A list of Latin numbers from 30 to 1,000 with roman numerals written above (12th cent.)</title>
+                     </msItem>
+                     <msItem n="c">
+                        <incipit>Hic male defunctus non est oleo prius unctus</incipit>
+                        <note>11 lines;  12th cent.</note>
+                     </msItem>
+                     <msItem n="d">
+                        <incipit>Machmet <sic>pagnos</sic> a fide fecit <sic>prohnos</sic></incipit>
+                        <note>15th cent.; 2 lines. The beginning of a verse against heretics found in Andreas Ratisbonensis, 'Chronica Pontif. et Imp. Romanorum', pr. Leidinger, <title>Andreas von Regensburg, Sämtliche Werke,</title> Munich, 1904, p. 144 (an. 1410). Walther, <title>Initia,</title> no. 10552.</note>
+                     </msItem>
+                  </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
-                        <support>parchment</support>
+                        <support>parchment (rather rough)</support>
+                        <extent>273 leaves
+                           <dimensions type="leaf" unit="mm">
+                              <height>285</height>
+                              <width>205</width>
+                           </dimensions></extent>
+                        <foliation>there is no fol. 151r; 14th cent. foliation in roman numerals written in the bottom margin of the recto</foliation>
+                        <collation>1⁸ (+ a leaf added after 3), 2⁸–19⁸, 20⁸ (+ 1 leaf added after 3 and another after 5), 21⁴ (4 canc.), 22⁸–26⁸, 27⁸ (8 canc.), 28⁸ (8 canc.), 29⁸–34⁸, 35⁴, 36² (1 canc.): quires 1–18 numbered in roman numerals at the end; quires 23–4 numbered II and III at the beginning; quire 29 numbered I at the end <secFol>admonentur</secFol></collation>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="1" ruledLines="28 33"><dimensions type="ruled" unit="mm">
+                              <height max="235" min="215">215–35</height>
+                              <width max="145" min="135">135–45</width>
+                           </dimensions>: 28–33 long lines, apart from fol. 140v–150v which are written in two cols., ruled in pencil or crayon apart from fol. 58–65v (quire viii) and fol. 165–166v, apparently ruled with a hard point</layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <handDesc>
+                     <handNote>Written in several hands in Austria (probably at Lambach) in the third quarter of the 12th cent.</handNote>
+                     <handNote>There are many contemporary corrections and insertions. Some of the insertions and marginal captions by the scribes, describing the contents of the text, are enclosed in frames of red. There are also marginalia in 12th–15th-cent. hands.</handNote>
+                  </handDesc>
                   <decoDesc>
-                     <decoNote>
-                        <p> Fine initials, mostly of vinescroll type, drawn mainly in red but
-            with further details in lilac or light-brown ink, sometimes with parts washed
-            in yellow or green. Some have zoomorphic features and figures, including (fol.
-            168r) a figure of a monk, possibly intended to be Honorius himself. (P&amp;A i.
-            80, pl. VII)</p>
+                     <decoNote type="decInit">The MS. has a series of fine initials, mostly of the vinescroll type, drawn mainly in red but with further details in lilac or light-brown ink, sometimes with parts washed in yellow or green.</decoNote>
+                     <decoNote type="histInit"> <p>Some of the initials have zoomorphic features: birds (fols. 1, 1v, 6v, 44v, 75, 192, 209v), monsters (fols. 34, 44v, 55, 97v) and a hare <locus>(fol. 108v)</locus>; others have figures: the risen Christ <locus>(fol. 58v)</locus>, St. John the Baptist (fols. 78v, 95: freestanding figures); heads: fol. 70r, 73r, 86r (Christ and St. Mary Magdalene), 87v (St. James), in (St. Cecilia), 113v (St. Andrew), 117 (St. Thomas), 135v (a monk). On fol. 168 is a figure of a monk, possibly intended to be Honorius himself.</p>
+                        <p>The style of the initials is close to the Salzburg school of the second half of the 12th cent., and the style of drawing of the figures and faces is similar to that in the <q>Williram</q> codex from Lambach, now MS. Berlin theol. lat. qu. 140 (see Swarzenski, <title>Salzburger Malerei,</title> 1913, pp. 154–5 and Abb. 413–21) and that in the St. Augustine from Lambach (Sotheby sale, 12 Nov. 1929, lot 389, with plates) and the copy of Honorius on the Song of Songs, now Baltimore, Walters Art Gallery MS. W. 29 (ex-Lambach xciv, identified by H. Menhaxdt, 'Der Nachlass des H. A.', in <title>Zeitschrift für deutsches Altertum und Literatur</title> 89 (1958–9), 60), illustrated in J. Rosenthal, <title>Bibi. Med. Aevi MSS. H Kat.</title> 90), 1928, Taf. viii (no. 144), and Walters Art Gallery Exhibition Catalogue, <title>Illuminated Books of the M. Ages and Renaissance,</title> Baltimore 1949, pl. xviil (no. 27). According to Swarzenski, the use of red and violet together in the pen drawing, with occasional use of brown ink, and of yellow wash, are characteristics of MSS. from Lambach (op. cit., p. 155). Pächt–Alexander 1, no. 80, pl. vii <locus>(fol. 58v)</locus>.</p>
                      </decoNote>
+                     <!--<decoNote type="flourInit">Fine initials, mostly of vinescroll type, drawn mainly in red but with further details in lilac or light-brown ink, sometimes with parts washed in yellow or green. Some have zoomorphic features and figures, including (fol. 168r) a figure of a monk, possibly intended to be Honorius himself. (P&amp;A i. 80, pl. VII)</decoNote>-->
                   </decoDesc>
+                  <bindingDesc>
+                     <binding contemporary="true" notAfter="1500" notBefore="1150">
+                        <p>Monastic binding: original thick wooden boards, covered in 15th cent, in white leather with traces of tooling (15th cent.?), plaited head and tail bands. Remains of two clasps (15th cent.?, modern straps), traces of bosses; two labels removed from upper cover. On the early bindings of Lambach see K. Holter in <title>Gutenberg Jahrbuch,</title> 1954, p. 280.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1175" notBefore="1150">12th century, third quarter</origDate>
                      <origPlace cert="low">
-                        <country key="place_1000062">Austrian</country>, <settlement key="place_7003278">Lambach</settlement> (?)<!--ORIGINAL: Austrian, Lambach (?)--></origPlace>
+                        <country key="place_1000062">Austrian</country>, <orgName key="org_143705101">Lambach, Benedictine abbey (?)</orgName><!--ORIGINAL: Austrian, Lambach (?)--></origPlace>
                   </origin>
-               <provenance notBefore="1871" notAfter="1948" resp="#MMM"><persName role="fmo" key="person_64157046">James P. R. Lyell, 1871-1948</persName></provenance><acquisition when="1948" resp="#MMM">Chosen as one of the hundred manuscripts bequeathed to the Bodleian by Lyell in 1948.</acquisition></history>
+                  <provenance>Formerly MS. xliii in the library of the <orgName role="fmo" key="org_143705101">Benedictine abbey of Lambach</orgName> in Austria – the shelfmark <quote>M. Memb. <hi rend="smallcaps">xliii</hi></quote> (early 19th cent.) is on the spine, where there are also two earlier labels, now illegible. Mentioned in a list of books from the Lambach library made c. 1210, pr. by K. Holter, 'Zwei Bibliotheksverzeichnisse des 13 Jh.', <title>M.I.Ö.G.</title> 64 (1956), 273; see also K. Holter 'Stift Lambach. Die Hss. und Inkunabeln', <title>Österreichische Kunsttopographie</title> xxxiv, ii (1959), 239.</provenance>
+                  <provenance>Bought by Lyell in March 1942 from A. Rosenthal; see J. Rosenthal, <title>Kat.</title> 90 cit., no. 145 and Taf. lii <locus>(fol. 44v)</locus>.</provenance>
+                  <provenance notAfter="1948" notBefore="1942" resp="#MMM"><persName key="person_64157046" role="fmo">James P. R. Lyell, 1871-1948</persName></provenance>
+                  <acquisition resp="#MMM" when="1948">Chosen as one of the hundred manuscripts bequeathed to the Bodleian by Lyell in 1948.</acquisition>
+               </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from A. de la Mare, <title>Catalogue of the Medieval Manuscripts Bequeathed to the Bodleian Library Oxford by James P. R. Lyell</title> (1971) 
-                            
-                            
-                            <listBibl>
-                              <bibl type="LYELL" facs="cah0202.gif">Catalogue, p. 168</bibl>
-                              <bibl type="LYELL" facs="cah0203.gif">Catalogue, p. 169</bibl>
-                              <bibl type="LYELL" facs="cah0204.gif">Catalogue, p. 170</bibl>
-                              <bibl type="LYELL" facs="cah0205.gif">Catalogue, p. 171</bibl>
-                              <bibl type="LYELL" facs="cah0206.gif">Catalogue, p. 172</bibl>
-                              <bibl type="LYELL" facs="cah0207.gif">Catalogue, p. 173</bibl>
-                              <bibl type="LYELL" facs="cah0208.gif">Catalogue, p. 174</bibl>
+                        <source>Description adapted from A. de la Mare, <title>Catalogue of the Medieval Manuscripts Bequeathed to the Bodleian Library Oxford by James P. R. Lyell</title> (1971); with additions by Andrew Dunning. <listBibl>
+                              <bibl facs="cah0202.gif" type="LYELL">Catalogue, p. 168</bibl>
+                              <bibl facs="cah0203.gif" type="LYELL">Catalogue, p. 169</bibl>
+                              <bibl facs="cah0204.gif" type="LYELL">Catalogue, p. 170</bibl>
+                              <bibl facs="cah0205.gif" type="LYELL">Catalogue, p. 171</bibl>
+                              <bibl facs="cah0206.gif" type="LYELL">Catalogue, p. 172</bibl>
+                              <bibl facs="cah0207.gif" type="LYELL">Catalogue, p. 173</bibl>
+                              <bibl facs="cah0208.gif" type="LYELL">Catalogue, p. 174</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
-               <surrogates><bibl type="digital-facsimile" subtype="partial"><ref target="https://digital.bodleian.ox.ac.uk/objects/21744c95-de71-48a5-a55d-ebdd5741f0c4/"><title>Digital Bodleian</title></ref> <note>(9 images from 35mm slides)</note></bibl></surrogates></additional>
+                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/inquire/p/21744c95-de71-48a5-a55d-ebdd5741f0c4"><title>Digital Bodleian</title></ref>
+                        <note>(9 images from 35mm slides)</note></bibl></surrogates>
+               </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc><change when="2018-06-15" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName>
-      Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
-      in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.'
-    </change>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2020-12-16"><persName>Andrew Dunning</persName> Revised from description by <persName>Albinia de la Mare</persName>.</change>
+         <change when="2018-06-15" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.' </change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>
@@ -123,7 +596,7 @@
    </teiHeader>
    <text>
       <body>
-         <p><!--Body paragraph provided for validation and future transcription--></p>
+         <p/>
       </body>
    </text>
 </TEI>
