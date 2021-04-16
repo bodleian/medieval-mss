@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_3615">
+<TEI xml:id="manuscript_3615" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -9,7 +9,8 @@
             <title type="collection">MSS. Canon. Misc. (Canonici Miscellaneous)</title>
             <respStmt>
                <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <persName>Elizabeth Solopova</persName>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -54,15 +55,17 @@
                <physDesc>
                   <p n="composite">Composite: two parts</p>
                </physDesc>
-               <history><provenance notBefore="1727" notAfter="1805" resp="#MMM"><persName role="fmo" key="person_2384880">Matteo Luigi Canonici, 1727-1805</persName></provenance><provenance notAfter="1807" resp="#MMM"><persName role="fmo" key="person_446">Giuseppe Canonici , -1807</persName></provenance><acquisition when="1817" resp="#MMM">Purchased by the Bodleian in 1817</acquisition></history><additional>
+               <history>
+                  <provenance notAfter="1805" notBefore="1727" resp="#MMM"><persName key="person_2384880" role="fmo">Matteo Luigi Canonici, 1727-1805</persName></provenance>
+                  <provenance notAfter="1807" resp="#MMM"><persName key="person_446" role="fmo">Giuseppe Canonici , -1807</persName></provenance>
+                  <acquisition resp="#MMM" when="1817">Purchased by the Bodleian in 1817</acquisition>
+               </history>
+               <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (H. O. Coxe,  <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854) 
-                            
-                            
-                            <listBibl>
-                              <bibl type="QUARTO" facs="abz0440.gif">Quarto Catalogue, col. 867</bibl>
-                              <bibl type="SC" facs="aaz0424.gif">Summary Catalogue, vol. 4, p. 405</bibl>
+                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (H. O. Coxe, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854) <listBibl>
+                              <bibl facs="abz0440.gif" type="QUARTO">Quarto Catalogue, col. 867</bibl>
+                              <bibl facs="aaz0424.gif" type="SC">Summary Catalogue, vol. 4, p. 405</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -75,13 +78,12 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Canon_Misc_569-part1-item1" n="1" class="#astrologia_astronomia">
-						                  <title type="desc" key="work_10409">Astrological treatises.</title>
-                        
+                     <msItem class="#astrologia_astronomia" n="1" xml:id="MS_Canon_Misc_569-part1-item1">
+                        <title key="work_10409" type="desc">Astrological treatises.</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Canon_Misc_569-part1-item2" n="2" class="#prognostica">
-                        <title type="desc" key="work_15044">Treatise on geomancy</title>
+                     <msItem class="#prognostica" n="2" xml:id="MS_Canon_Misc_569-part1-item2">
+                        <title key="work_15044" type="desc">Treatise on geomancy</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                   </msContents>
@@ -95,7 +97,6 @@
                   <history>
                      <origin>
                         <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
-                        
                      </origin>
                   </history>
                </msPart>
@@ -106,12 +107,10 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Canon_Misc_569-part2-item1" n="1" class="#tabulae">
-                        <title type="desc" key="work_14842">Table of contents to 1491 edition of Plato, works</title>
+                     <msItem class="#tabulae" n="1" xml:id="MS_Canon_Misc_569-part2-item1">
+                        <title key="work_14842" type="desc">Table of contents to 1491 edition of Plato, works</title>
                         <bibl type="related">
-                           <author key="person_108159964">
-                              Plato
-                           </author>
+                           <author key="person_108159964"> Plato </author>
                            <title>works</title>
                         </bibl>
                         <textLang mainLang="la">Latin</textLang>
@@ -127,18 +126,15 @@
                   <history>
                      <origin>
                         <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
-                        
                      </origin>
                   </history>
                </msPart>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc><change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName>
-      Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
-      in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.'
-    </change>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.' </change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

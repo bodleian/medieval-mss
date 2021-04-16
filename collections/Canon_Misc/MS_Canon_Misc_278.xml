@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_3299">
+<TEI xml:id="manuscript_3299" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -9,7 +9,8 @@
             <title type="collection">MSS. Canon. Misc. (Canonici Miscellaneous)</title>
             <respStmt>
                <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <persName>Elizabeth Solopova</persName>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -52,31 +53,27 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem xml:id="MS_Canon_Misc_278-item1" n="1">
-                     <author key="person_56624842">
-                        Jacob van Maerlant
-                     </author>
+                  <msItem n="1" xml:id="MS_Canon_Misc_278-item1">
+                     <author key="person_56624842"> Jacob van Maerlant </author>
                      <title key="work_2298">Martin</title>
-                     <note>(with <title type="desc" key="work_5925">Latin translation</title> by <persName role="trl" key="person_286134771">Jan Bukelare</persName>)</note>
+                     <note>(with <title key="work_5925" type="desc">Latin translation</title> by <persName key="person_286134771" role="trl">Jan Bukelare</persName>)</note>
                      <textLang mainLang="la" otherLangs="nl">Latin and Dutch</textLang>
                   </msItem>
-                  <msItem xml:id="MS_Canon_Misc_278-item2" n="2" class="#versus">
-						               <title type="desc" key="work_15434">Verses</title>
-                     
+                  <msItem class="#versus" n="2" xml:id="MS_Canon_Misc_278-item2">
+                     <title key="work_15434" type="desc">Verses</title>
                      <textLang mainLang="la" otherLangs="de fr nl">Latin, German (Dutch?) and French</textLang>
                   </msItem>
-                  <msItem xml:id="MS_Canon_Misc_278-item3" n="3" class="#grammatica">
+                  <msItem class="#grammatica" n="3" xml:id="MS_Canon_Misc_278-item3">
                      <title key="work_11561">Disticha Catonis</title>
                      <note>(with French translation)</note>
                      <textLang mainLang="la" otherLangs="fr">Latin and French</textLang>
                   </msItem>
-                  <msItem xml:id="MS_Canon_Misc_278-item4" n="4" class="#proverbia">
-                     <title type="desc" key="work_14062">Proverbs</title>
+                  <msItem class="#proverbia" n="4" xml:id="MS_Canon_Misc_278-item4">
+                     <title key="work_14062" type="desc">Proverbs</title>
                      <textLang mainLang="de" otherLangs="nl">German (Dutch?)</textLang>
                   </msItem>
-                  <msItem xml:id="MS_Canon_Misc_278-item5" n="5" class="#versus #miscellanea">
-						               <title type="desc" key="work_13842">Poem of advice to a youth</title>
-                     
+                  <msItem class="#versus #miscellanea" n="5" xml:id="MS_Canon_Misc_278-item5">
+                     <title key="work_13842" type="desc">Poem of advice to a youth</title>
                      <textLang mainLang="de" otherLangs="fr nl">German (Dutch?) and French</textLang>
                   </msItem>
                </msContents>
@@ -91,27 +88,34 @@
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
                   </origin>
-               <provenance notBefore="1727" notAfter="1805" resp="#MMM"><persName role="fmo" key="person_2384880">Matteo Luigi Canonici, 1727-1805</persName></provenance><provenance notAfter="1807" resp="#MMM"><persName role="fmo" key="person_446">Giuseppe Canonici , -1807</persName></provenance><acquisition when="1817" resp="#MMM">Purchased by the Bodleian in 1817</acquisition></history>
-               <additional><adminInfo>
+                  <provenance notAfter="1805" notBefore="1727" resp="#MMM"><persName key="person_2384880" role="fmo">Matteo Luigi Canonici, 1727-1805</persName></provenance>
+                  <provenance notAfter="1807" resp="#MMM"><persName key="person_446" role="fmo">Giuseppe Canonici , -1807</persName></provenance>
+                  <acquisition resp="#MMM" when="1817">Purchased by the Bodleian in 1817</acquisition>
+               </history>
+               <additional>
+                  <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (H. O. Coxe,  <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854) 
-                            
-                            
-                            <listBibl>
-                              <bibl type="QUARTO" facs="abz0328.gif">Quarto Catalogue, cols. 643-4</bibl>
-                              <bibl type="SC" facs="aaz0424.gif">Summary Catalogue, vol. 4, p. 405</bibl>
+                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (H. O. Coxe, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854) <listBibl>
+                              <bibl facs="abz0328.gif" type="QUARTO">Quarto Catalogue, cols. 643-4</bibl>
+                              <bibl facs="aaz0424.gif" type="SC">Summary Catalogue, vol. 4, p. 405</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
-                  </adminInfo><listBibl type="WRAPPER"><listBibl type="INTERNET"><head>Online resources:</head><bibl><ref target="http://www.handschriftencensus.de/6989"><title>Handschriftencensus: Eine Bestandsaufnahme der handschriftlichen Überlieferung deutschsprachiger Texte des Mittelalters</title></ref></bibl><bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/76397"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title></ref></bibl></listBibl></listBibl></additional>
+                  </adminInfo>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="INTERNET">
+                        <head>Online resources:</head>
+                        <bibl><ref target="http://www.handschriftencensus.de/6989"><title>Handschriftencensus: Eine Bestandsaufnahme der handschriftlichen Überlieferung deutschsprachiger Texte des Mittelalters</title></ref></bibl>
+                        <bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/76397"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title></ref></bibl>
+                     </listBibl>
+                  </listBibl>
+               </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc><change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName>
-      Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
-      in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.'
-    </change>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.' </change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4391">
+<TEI xml:id="manuscript_4391" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -9,15 +9,14 @@
             <title type="collection">MSS. Digby</title>
             <respStmt>
                <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <persName>Elizabeth Solopova</persName>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
             <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH
-                                        project (enrich@oucs.ox.ac.uk;
-                                        http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
+               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </editionStmt>
@@ -53,25 +52,21 @@
                      <idno type="SCN">1654</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents> <textLang mainLang="la" otherLangs="fr en">Latin with a little French and English</textLang>
-                  <msItem xml:id="MS_Digby_53-item1" n="1">
+               <msContents>
+                  <textLang mainLang="la" otherLangs="fr en">Latin with a little French and English</textLang>
+                  <msItem n="1" xml:id="MS_Digby_53-item1">
                      <author key="person_13760428">Serlo of Wilton</author>
                      <title key="work_4514">Poems</title>
                   </msItem>
-                  <msItem xml:id="MS_Digby_53-item2" n="2" class="#versus">
-						               <title type="desc" key="work_13887">Poems and epigrams</title>
-                     
-                     <note>(by <persName role="aut" key="person_100212859">
-                           Walter of Châtillon
-                     </persName>, <persName role="aut" key="person_282035032">
-                           Hildebert of Le Mans
-                        </persName>, and others)</note>
+                  <msItem class="#versus" n="2" xml:id="MS_Digby_53-item2">
+                     <title key="work_13887" type="desc">Poems and epigrams</title>
+                     <note>(by <persName key="person_100212859" role="aut"> Walter of Châtillon </persName>, <persName key="person_282035032" role="aut"> Hildebert of Le Mans </persName>, and others)</note>
                   </msItem>
-                  <msItem xml:id="MS_Digby_53-item3" n="3" class="#versus #drama">
+                  <msItem class="#versus #drama" n="3" xml:id="MS_Digby_53-item3">
                      <title key="work_10432">Babio</title>
                      <note>(comedy in elegiacs)</note>
                   </msItem>
-                  <msItem xml:id="MS_Digby_53-item4" n="4">
+                  <msItem n="4" xml:id="MS_Digby_53-item4">
                      <author key="person_82793219">Geoffrey of Vinsauf</author>
                      <title key="work_1680">Summa de coloribus rhetoricis</title>
                   </msItem>
@@ -87,30 +82,38 @@
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1200" notBefore="1190">12th century, end</origDate>
                   </origin>
-               <provenance notBefore="1603" notAfter="1634" resp="#MMM"><persName role="fmo" key="person_49357645">Kenelm Digby, 1603-1665</persName></provenance><acquisition when="1634" resp="#MMM">Donated to the Bodleian, 1634.</acquisition></history>
-               <additional><adminInfo>
+                  <provenance notAfter="1634" notBefore="1603" resp="#MMM"><persName key="person_49357645" role="fmo">Kenelm Digby, 1603-1665</persName></provenance>
+                  <acquisition resp="#MMM" when="1634">Donated to the Bodleian, 1634.</acquisition>
+               </history>
+               <additional>
+                  <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (W. D. Macray, <title>Bodleian Library Quarto Catalogues IX: Digby Manuscripts</title>, repr. with addenda by R. W. Hunt and A. G. Watson, 1999).  
-                        
-                        <listBibl>
-                              <bibl type="QUARTO" facs="abw0034.gif">Quarto Catalogue, cols. 49-50</bibl>
-                              <bibl type="QUARTO" facs="abw0035.gif">Quarto Catalogue, cols. 51-2</bibl>
-                              <bibl type="QUARTO" facs="abw0036.gif">Quarto Catalogue, cols. 53-4</bibl>
-                              <bibl type="QUARTO" facs="abw0203.gif">Quarto Catalogue (addenda), p. 26</bibl>
-                              <bibl type="QUARTO" facs="abw0204.gif">Quarto Catalogue (addenda), p. 27</bibl>
-                              <bibl type="SC" facs="aap0092.gif">Summary Catalogue, vol. 2, part 1, p. 71</bibl>
+                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (W. D. Macray, <title>Bodleian Library Quarto Catalogues IX: Digby Manuscripts</title>, repr. with addenda by R. W. Hunt and A. G. Watson, 1999). <listBibl>
+                              <bibl facs="abw0034.gif" type="QUARTO">Quarto Catalogue, cols. 49-50</bibl>
+                              <bibl facs="abw0035.gif" type="QUARTO">Quarto Catalogue, cols. 51-2</bibl>
+                              <bibl facs="abw0036.gif" type="QUARTO">Quarto Catalogue, cols. 53-4</bibl>
+                              <bibl facs="abw0203.gif" type="QUARTO">Quarto Catalogue (addenda), p. 26</bibl>
+                              <bibl facs="abw0204.gif" type="QUARTO">Quarto Catalogue (addenda), p. 27</bibl>
+                              <bibl facs="aap0092.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 71</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
-                  </adminInfo><listBibl type="WRAPPER"><listBibl type="INTERNET"><head>Online resources:</head><!--Existing bibliography in place: check sorting of entries--><bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/40197"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title></ref></bibl><bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/482"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl></listBibl></listBibl></additional>
+                  </adminInfo>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="INTERNET">
+                        <head>Online resources:</head>
+                        <!--Existing bibliography in place: check sorting of entries-->
+                        <bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/40197"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title></ref></bibl>
+                        <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/482"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl>
+                     </listBibl>
+                  </listBibl>
+               </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc><change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName>
-      Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
-      in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.'
-    </change>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.' </change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

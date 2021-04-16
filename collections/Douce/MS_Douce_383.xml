@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4705">
+<TEI xml:id="manuscript_4705" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -8,7 +8,8 @@
             <title type="collection">MSS. Douce</title>
             <respStmt>
                <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <persName>Elizabeth Solopova</persName>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -53,18 +54,31 @@
                <physDesc>
                   <p n="composite">Composite: fols. 1-18 || B || C || D</p>
                </physDesc>
-               <history><provenance notBefore="1757" notAfter="1834" resp="#MMM"><persName role="fmo" key="person_69848690">Francis Douce, 1757-1834</persName></provenance><acquisition when="1834" resp="#MMM">Bequeathed to the Bodleian in 1834</acquisition></history><additional><adminInfo>
+               <history>
+                  <provenance notAfter="1834" notBefore="1757" resp="#MMM"><persName key="person_69848690" role="fmo">Francis Douce, 1757-1834</persName></provenance>
+                  <acquisition resp="#MMM" when="1834">Bequeathed to the Bodleian in 1834</acquisition>
+               </history>
+               <additional>
+                  <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1966). 
-                            
-                            
-                            <listBibl>
-                              <bibl type="SC" facs="aaz0634.gif">Summary Catalogue, vol. 4, p. 615</bibl>
-                              <bibl type="SC" facs="aaz0635.gif">Summary Catalogue, vol. 4, p. 616</bibl>
+                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1966). <listBibl>
+                              <bibl facs="aaz0634.gif" type="SC">Summary Catalogue, vol. 4, p. 615</bibl>
+                              <bibl facs="aaz0635.gif" type="SC">Summary Catalogue, vol. 4, p. 616</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
-                  </adminInfo><surrogates><bibl type="digital-facsimile" subtype="partial"><ref target="https://digital.bodleian.ox.ac.uk/objects/de11a7fc-9a2a-4809-8a76-5a831f85fd04/"><title>Digital Bodleian</title></ref> <note>(24 images from 35mm slides)</note></bibl></surrogates><listBibl type="WRAPPER"><listBibl type="INTERNET"><head>Online resources:</head><!--Existing bibliography in place: check sorting of entries--><bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/71981"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title></ref></bibl><bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4175"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl></listBibl></listBibl></additional>
+                  </adminInfo>
+                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/de11a7fc-9a2a-4809-8a76-5a831f85fd04/"><title>Digital Bodleian</title></ref>
+                        <note>(24 images from 35mm slides)</note></bibl></surrogates>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="INTERNET">
+                        <head>Online resources:</head>
+                        <!--Existing bibliography in place: check sorting of entries-->
+                        <bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/71981"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title></ref></bibl>
+                        <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4175"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl>
+                     </listBibl>
+                  </listBibl>
+               </additional>
                <msPart xml:id="MS_Douce_383-part1">
                   <msIdentifier>
                      <altIdentifier type="partial">
@@ -72,10 +86,8 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Douce_383-part1-item1" n="1">
-                        <author key="person_30846436">
-                           Hélie de Boron
-                        </author>
+                     <msItem n="1" xml:id="MS_Douce_383-part1-item1">
+                        <author key="person_30846436"> Hélie de Boron </author>
                         <title key="work_2181">Guiron le Courtois</title>
                         <note>(fragments)</note>
                         <textLang mainLang="fr">French</textLang>
@@ -88,7 +100,9 @@
                         </supportDesc>
                      </objectDesc>
                      <decoDesc>
-                        <decoNote type="miniature">Fine miniatures.</decoNote><decoNote type="border">Borders.</decoNote><decoNote type="decInit">Initials, partly rubbed. First miniature by the <persName role="art" key="person_831">Master of the Roman de la Rose<!-- not in VIAF? --></persName>, the others by the <persName role="art" key="person_95690260">Master of Edward IV</persName>. (P&amp;A i. 367, pl. XXIX)</decoNote>
+                        <decoNote type="miniature">Fine miniatures.</decoNote>
+                        <decoNote type="border">Borders.</decoNote>
+                        <decoNote type="decInit">Initials, partly rubbed. First miniature by the <persName key="person_831" role="art">Master of the Roman de la Rose<!-- not in VIAF? --></persName>, the others by the <persName key="person_95690260" role="art">Master of Edward IV</persName>. (P&amp;A i. 367, pl. XXIX)</decoNote>
                      </decoDesc>
                   </physDesc>
                   <history>
@@ -107,8 +121,8 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Douce_383-part2-item1" n="1" class="#liturgica">
-                        <title type="desc" key="work_11060">Collectar</title>
+                     <msItem class="#liturgica" n="1" xml:id="MS_Douce_383-part2-item1">
+                        <title key="work_11060" type="desc">Collectar</title>
                         <note>(fragments)</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
@@ -133,8 +147,8 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Douce_383-part3-item1" n="1" class="#liturgica #computistica">
-                        <title type="desc" key="work_10687">Calendar</title>
+                     <msItem class="#liturgica #computistica" n="1" xml:id="MS_Douce_383-part3-item1">
+                        <title key="work_10687" type="desc">Calendar</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                   </msContents>
@@ -161,8 +175,8 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Douce_383-part4-item1" n="1" class="#legalia">
-                        <title type="desc" key="work_12517">Law dictionary</title>
+                     <msItem class="#legalia" n="1" xml:id="MS_Douce_383-part4-item1">
+                        <title key="work_12517" type="desc">Law dictionary</title>
                         <note>(fragments)</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
@@ -186,12 +200,10 @@
                </msPart>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc><change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName>
-      Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
-      in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.'
-    </change>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.' </change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

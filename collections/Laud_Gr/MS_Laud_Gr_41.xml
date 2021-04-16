@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6855">
+<TEI xml:id="manuscript_6855" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -9,7 +9,8 @@
             <title type="collection">MSS. Laud Gr. (Laud Greek)</title>
             <respStmt>
                <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <persName>Elizabeth Solopova</persName>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -54,24 +55,31 @@
                <physDesc>
                   <p n="composite">Composite: two parts</p>
                </physDesc>
-               <history><provenance notBefore="1573" notAfter="1641" resp="#MMM"><persName role="fmo" key="person_54940373">William Laud, 1573-1645</persName></provenance><acquisition notBefore="1635" notAfter="1641" resp="#MMM">Donated by him to the Bodleian between 1635 and 1641.</acquisition></history><additional><adminInfo>
+               <history>
+                  <provenance notAfter="1641" notBefore="1573" resp="#MMM"><persName key="person_54940373" role="fmo">William Laud, 1573-1645</persName></provenance>
+                  <acquisition notAfter="1641" notBefore="1635" resp="#MMM">Donated by him to the Bodleian between 1635 and 1641.</acquisition>
+               </history>
+               <additional>
+                  <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (H. O. Coxe,  <title>Catalogi codicum manuscriptorum Bibliothecae Bodleianae pars prima recensionem codicum Graecorum continens</title>, Quarto Catalogues I, 1883, repr. with corrections 1969). Decoration, localization and date follow Hutter (1977-1982). 
-                           
-                            
-                          
-                            
-                            
-                            
-                            
-                            <listBibl>
-                              <bibl type="QUARTO" facs="abu0270.gif">Quarto Catalogue, col. 526</bibl>
-                              <bibl type="QUARTO" facs="abu0271.gif">Quarto Catalogue, cols. 527-8</bibl>
-                              <bibl type="SC" facs="aap0052.gif">Summary Catalogue, vol. 2, part 1, p. 31</bibl>
+                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (H. O. Coxe, <title>Catalogi codicum manuscriptorum Bibliothecae Bodleianae pars prima recensionem codicum Graecorum continens</title>, Quarto Catalogues I, 1883, repr. with corrections 1969). Decoration, localization and date follow Hutter (1977-1982). <listBibl>
+                              <bibl facs="abu0270.gif" type="QUARTO">Quarto Catalogue, col. 526</bibl>
+                              <bibl facs="abu0271.gif" type="QUARTO">Quarto Catalogue, cols. 527-8</bibl>
+                              <bibl facs="aap0052.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 31</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
-                  </adminInfo><listBibl type="WRAPPER"><listBibl><bibl>Irmgard Hutter, <title>Corpus der byzantinischen Miniaturenhandschriften, I-III, Oxford, Bodleian Library</title>, 3 vols. in 4 (Stuttgart, 1977-82), iii, 171</bibl></listBibl><listBibl type="INTERNET"><head>Online resources:</head><bibl><ref target="http://pinakes.irht.cnrs.fr/notices/cote/48263/"><title>Pinakes | Πίνακες: Textes et manuscrits grecs</title></ref></bibl></listBibl></listBibl></additional>
+                  </adminInfo>
+                  <listBibl type="WRAPPER">
+                     <listBibl>
+                        <bibl>Irmgard Hutter, <title>Corpus der byzantinischen Miniaturenhandschriften, I-III, Oxford, Bodleian Library</title>, 3 vols. in 4 (Stuttgart, 1977-82), iii, 171</bibl>
+                     </listBibl>
+                     <listBibl type="INTERNET">
+                        <head>Online resources:</head>
+                        <bibl><ref target="http://pinakes.irht.cnrs.fr/notices/cote/48263/"><title>Pinakes | Πίνακες: Textes et manuscrits grecs</title></ref></bibl>
+                     </listBibl>
+                  </listBibl>
+               </additional>
                <msPart xml:id="MS_Laud_Gr_41-part1">
                   <msIdentifier>
                      <altIdentifier type="partial">
@@ -79,12 +87,8 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Laud_Gr_41-part1-item1" n="1">
-                        <author key="person_224924963">
-                           
-                           Homer
-                        
-                        </author>
+                     <msItem n="1" xml:id="MS_Laud_Gr_41-part1-item1">
+                        <author key="person_224924963"> Homer </author>
                         <title key="work_2076">Iliad </title>
                         <note>(fragment, ii.536-end)</note>
                         <textLang mainLang="grc">Greek</textLang>
@@ -116,27 +120,18 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Laud_Gr_41-part2-item1" n="1" class="#sermones">
-						                  <title type="desc" key="work_14578">Sermons</title>
-                        
+                     <msItem class="#sermones" n="1" xml:id="MS_Laud_Gr_41-part2-item1">
+                        <title key="work_14578" type="desc">Sermons</title>
                         <textLang mainLang="grc">Greek</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Laud_Gr_41-part2-item2" n="2">
-                        <author key="person_22143666">
-                           
-                           Flavius Josephus
-                        
-                        </author>
+                     <msItem n="2" xml:id="MS_Laud_Gr_41-part2-item2">
+                        <author key="person_22143666"> Flavius Josephus </author>
                         <title key="work_1530">Antiquitates Iudaicae</title>
                         <note>(extract, 'De martyrio SS. Maccabeorum')</note>
                         <textLang mainLang="grc">Greek</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Laud_Gr_41-part2-item3" n="3">
-                        <author key="person_24639287">
-                           
-                           Theodorus Meliteniotes
-                        
-                        </author>
+                     <msItem n="3" xml:id="MS_Laud_Gr_41-part2-item3">
+                        <author key="person_24639287"> Theodorus Meliteniotes </author>
                         <title key="work_4708">Tribiblus sacer</title>
                         <textLang mainLang="grc">Greek</textLang>
                      </msItem>
@@ -159,12 +154,10 @@
                </msPart>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc><change when="2018-08-15" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName>
-      Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
-      in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.'
-    </change>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2018-08-15" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.' </change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

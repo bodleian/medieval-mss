@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_3563">
+<TEI xml:id="manuscript_3563" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -9,7 +9,8 @@
             <title type="collection">MSS. Canon. Misc. (Canonici Miscellaneous)</title>
             <respStmt>
                <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <persName>Elizabeth Solopova</persName>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -57,15 +58,17 @@
                <physDesc>
                   <p n="composite">Composite: fols. 1-28 || fols. 29-36 || fols. 37-79</p>
                </physDesc>
-               <history><provenance notBefore="1727" notAfter="1805" resp="#MMM"><persName role="fmo" key="person_2384880">Matteo Luigi Canonici, 1727-1805</persName></provenance><provenance notAfter="1807" resp="#MMM"><persName role="fmo" key="person_446">Giuseppe Canonici , -1807</persName></provenance><acquisition when="1817" resp="#MMM">Purchased by the Bodleian in 1817</acquisition></history><additional>
+               <history>
+                  <provenance notAfter="1805" notBefore="1727" resp="#MMM"><persName key="person_2384880" role="fmo">Matteo Luigi Canonici, 1727-1805</persName></provenance>
+                  <provenance notAfter="1807" resp="#MMM"><persName key="person_446" role="fmo">Giuseppe Canonici , -1807</persName></provenance>
+                  <acquisition resp="#MMM" when="1817">Purchased by the Bodleian in 1817</acquisition>
+               </history>
+               <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (1854). Decoration, localization and date follow Pächt and Alexander (1970). 
-                            
-                            
-                            <listBibl>
-                              <bibl type="QUARTO" facs="abz0422.gif">Quarto Catalogue, col. 832</bibl>
-                              <bibl type="SC" facs="aaz0429.gif">Summary Catalogue, vol. 4, p. 410</bibl>
+                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (1854). Decoration, localization and date follow Pächt and Alexander (1970). <listBibl>
+                              <bibl facs="abz0422.gif" type="QUARTO">Quarto Catalogue, col. 832</bibl>
+                              <bibl facs="aaz0429.gif" type="SC">Summary Catalogue, vol. 4, p. 410</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -88,16 +91,12 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Canon_Misc_521-part1-item1" n="1">
-                        <author key="person_9873664">
-                           Leo the Wise
-                        </author>
+                     <msItem n="1" xml:id="MS_Canon_Misc_521-part1-item1">
+                        <author key="person_9873664"> Leo the Wise </author>
                         <title key="work_2944">Oracles</title>
                         <note>(with Latin translation)</note>
-                        <bibl type="related"> 
-                           <author key="person_9873664">
-                           Leo the Wise
-                        </author>
+                        <bibl type="related">
+                           <author key="person_9873664"> Leo the Wise </author>
                            <title key="work_2943">Oracles [Latin]</title></bibl>
                         <textLang mainLang="grc" otherLangs="la">Greek and Latin</textLang>
                      </msItem>
@@ -128,8 +127,8 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Canon_Misc_521-part2-item1" n="1" class="#scientifica">
-                        <title type="desc" key="work_15104">Treatise on motion </title>
+                     <msItem class="#scientifica" n="1" xml:id="MS_Canon_Misc_521-part2-item1">
+                        <title key="work_15104" type="desc">Treatise on motion </title>
                         <note>('de aquarum ductibus et motibus rotarum')</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
@@ -160,12 +159,8 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Canon_Misc_521-part3-item1" n="1">
-                        <author key="person_22944086">
-                           
-                           Hero of Alexandria
-                        
-                        </author>
+                     <msItem n="1" xml:id="MS_Canon_Misc_521-part3-item1">
+                        <author key="person_22944086"> Hero of Alexandria </author>
                         <title key="work_2028">Pneumatika </title>
                         <note>(Latin translation; incomplete)</note>
                         <textLang mainLang="la">Latin</textLang>
@@ -192,12 +187,10 @@
                </msPart>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc><change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName>
-      Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
-      in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.'
-    </change>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.' </change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

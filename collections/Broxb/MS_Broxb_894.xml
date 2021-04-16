@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1978">
+<TEI xml:id="manuscript_1978" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -53,9 +53,8 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem xml:id="MS_Broxb_894-item1" n="1" class="#liturgica">
-                     <title type="desc" key="work_16260">Missal, Use of Tournai</title>
-                     
+                  <msItem class="#liturgica" n="1" xml:id="MS_Broxb_894-item1">
+                     <title key="work_16260" type="desc">Missal, Use of Tournai</title>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -63,25 +62,25 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                        <extent><measure type="endleaf" quantity="1">i</measure> + <measure type="leaf" quantity="297">297</measure> + <measure type="endleaf" quantity="3">iii</measure>
-                           <dimensions unit="mm" type="leaf">
+                        <extent><measure quantity="1" type="endleaf">i</measure> + <measure quantity="297" type="leaf">297</measure> + <measure quantity="3" type="endleaf">iii</measure>
+                           <dimensions type="leaf" unit="mm">
                               <height>230</height>
                               <width>170</width>
                            </dimensions></extent>
                      </supportDesc>
                      <layoutDesc>
-                        <layout columns="1" writtenLines="31"><locus from="v" to="x">Fols. v-x</locus>: 1 col., c. 31 lines, written space <dimensions unit="mm" type="written">
-                           <height>150</height>
-                           <width>115</width>
-                        </dimensions></layout>
-                        <layout columns="1" writtenLines="19"><locus from="161" to="179">Fols. 161-179</locus>: 1 col., 19 lines of script or 7 lines of script and 7 staves of music, or a variable mixture, written space <dimensions unit="mm" type="written">
-                           <height max="165" min="155">155-65</height>
-                           <width>110</width>
-                        </dimensions>.</layout>
-                        <layout columns="1" writtenLines="36">Otherwise 2 cols., 36 lines, column space <dimensions unit="mm" type="column">
-                           <height>145</height>
-                           <width min="45" max="50">45-50</width>
-                        </dimensions></layout>
+                        <layout columns="1" writtenLines="31"><locus from="v" to="x">Fols. v-x</locus>: 1 col., c. 31 lines, written space <dimensions type="written" unit="mm">
+                              <height>150</height>
+                              <width>115</width>
+                           </dimensions></layout>
+                        <layout columns="1" writtenLines="19"><locus from="161" to="179">Fols. 161-179</locus>: 1 col., 19 lines of script or 7 lines of script and 7 staves of music, or a variable mixture, written space <dimensions type="written" unit="mm">
+                              <height max="165" min="155">155-65</height>
+                              <width>110</width>
+                           </dimensions>.</layout>
+                        <layout columns="1" writtenLines="36">Otherwise 2 cols., 36 lines, column space <dimensions type="column" unit="mm">
+                              <height>145</height>
+                              <width max="50" min="45">45-50</width>
+                           </dimensions></layout>
                      </layoutDesc>
                   </objectDesc>
                   <musicNotation>
@@ -103,28 +102,30 @@
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" when="1508" cert="high">1508</origDate>
+                     <origDate calendar="Gregorian" cert="high" when="1508">1508</origDate>
                      <origPlace>
                         <country key="place_7024097">Flemish</country>, <settlement key="place_7007867">Bruges</settlement>
                         <!--ORIGINAL: Flanders, Bruges-->
                      </origPlace>
                   </origin>
-                  <provenance><q>Hic liber emptus a <persName key="person_3107">Johanne de hannonia</persName> nondum ligatus. Per venerabiles viros dominum <persName key="person_3108">Judocum bochstael</persName> presbitrum. Fratrem <persName key="person_3109">Danielem scuppelin</persName> magistrum. fratrem <persName key="person_3110">Leonardum van den beckene</persName> professum <sic>prochialis</sic> ecclesie et <orgName role="fmo" key="org_180">domus marie magdalene iuxta brugis</orgName>. et per <persName key="person_3111">petrum van cassele</persName> decanum et quamplures confratres gulde seu confraternitatis ad nutum et ad vsum altaris sancti Alexij confessoris in eadem ecclesia <sic>situatis</sic>. Anno domini Millesimo quingentesimo octauo. Decima octaua die mensis Septembris. Per me <persName role="scr" key="person_3112">Jacobum Byens</persName> fideliter scriptum. et eciam ad deo laudem correcte completum. Ad vsum cathedralis ecclesiae Tornacensis. <sic>I.0.5.8</sic> 16. octobris</q> (fol. 291v).</provenance>
-                  <provenance resp="#MLH"><persName role="fmo" key="person_53056049">Albert Ehrman (1890-1969)</persName></provenance>
+                  <provenance><q>Hic liber emptus a <persName key="person_3107">Johanne de hannonia</persName> nondum ligatus. Per venerabiles viros dominum <persName key="person_3108">Judocum bochstael</persName> presbitrum. Fratrem <persName key="person_3109">Danielem scuppelin</persName> magistrum. fratrem <persName key="person_3110">Leonardum van den beckene</persName> professum <sic>prochialis</sic> ecclesie et <orgName key="org_180" role="fmo">domus marie magdalene iuxta brugis</orgName>. et per <persName key="person_3111">petrum van cassele</persName> decanum et quamplures confratres gulde seu confraternitatis ad nutum et ad vsum altaris sancti Alexij confessoris in eadem ecclesia <sic>situatis</sic>. Anno domini Millesimo quingentesimo octauo. Decima octaua die mensis Septembris. Per me <persName key="person_3112" role="scr">Jacobum Byens</persName> fideliter scriptum. et eciam ad deo laudem correcte completum. Ad vsum cathedralis ecclesiae Tornacensis. <sic>I.0.5.8</sic> 16. octobris</q> (fol. 291v).</provenance>
+                  <provenance resp="#MLH"><persName key="person_53056049" role="fmo">Albert Ehrman (1890-1969)</persName></provenance>
                   <acquisition resp="#MLH" when="1978">Presented to the Bodleian by his son, John Ehrman, in 1978 through the Friends of the National Libraries.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Description adapted (August 2019) from <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 134</bibl> </source>
+                        <source>Description adapted (August 2019) from <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 134</bibl>
+                        </source>
                      </recordHist>
                   </adminInfo>
                </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc>          <change when="2019-08-08">Description revised with reference to Watson.</change> <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2019-08-08">Description revised with reference to Watson.</change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

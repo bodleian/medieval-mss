@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8767">
+<TEI xml:id="manuscript_8767" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -9,7 +9,8 @@
             <title type="collection">MSS. Rawl. poet. (Rawlinson poetry) </title>
             <respStmt>
                <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <persName>Elizabeth Solopova</persName>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -54,16 +55,26 @@
                <physDesc>
                   <p n="composite">Composite: A || B || C</p>
                </physDesc>
-               <history><provenance notBefore="1690" notAfter="1755" resp="#MMM"><persName role="fmo" key="person_47563478">Richard Rawlinson, 1690-1755</persName></provenance><acquisition when="1755" resp="#MMM">Bequeathed to the Bodleian in 1755</acquisition></history><additional><adminInfo>
+               <history>
+                  <provenance notAfter="1755" notBefore="1690" resp="#MMM"><persName key="person_47563478" role="fmo">Richard Rawlinson, 1690-1755</persName></provenance>
+                  <acquisition resp="#MMM" when="1755">Bequeathed to the Bodleian in 1755</acquisition>
+               </history>
+               <additional>
+                  <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1895). 
-                            
-                            <listBibl>
-                              <bibl type="SC" facs="aas0351.gif">Summary Catalogue, Vol. 3, p.  336</bibl>
+                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1895). <listBibl>
+                              <bibl facs="aas0351.gif" type="SC">Summary Catalogue, Vol. 3, p. 336</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
-                  </adminInfo><listBibl type="WRAPPER"><listBibl type="INTERNET"><head>Online resources:</head><bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/71991"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title></ref></bibl></listBibl></listBibl></additional>
+                  </adminInfo>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="INTERNET">
+                        <head>Online resources:</head>
+                        <bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/71991"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title></ref></bibl>
+                     </listBibl>
+                  </listBibl>
+               </additional>
                <msPart xml:id="MS_Rawl_poet_234-part1">
                   <msIdentifier>
                      <altIdentifier type="partial">
@@ -71,15 +82,10 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Rawl_poet_234-part1-item1" n="1">
-                        <author key="person_8181973">
-                           
-                           William the Clerk of Normandy
-                        
-                        </author>
+                     <msItem n="1" xml:id="MS_Rawl_poet_234-part1-item1">
+                        <author key="person_8181973"> William the Clerk of Normandy </author>
                         <!-- see Oxford DNB s.n. William the Clerk. Distinct from William the Clerk author of 'Fergus' -->
-                        <title key="work_5105">Vie de
-              Tobie</title>
+                        <title key="work_5105">Vie de Tobie</title>
                         <note>(in verse)</note>
                         <textLang mainLang="fr">French</textLang>
                      </msItem>
@@ -104,12 +110,8 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Rawl_poet_234-part2-item1" n="1">
-                        <author key="person_2176">
-                           
-                           Ps.-John of Damascus
-                        
-                        </author>
+                     <msItem n="1" xml:id="MS_Rawl_poet_234-part2-item1">
+                        <author key="person_2176"> Ps.-John of Damascus </author>
                         <title key="work_4062">Barlaam et Josaphat</title>
                         <note>(French prose translation)</note>
                         <textLang mainLang="fr">French</textLang>
@@ -135,11 +137,9 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Rawl_poet_234-part3-item1" n="1" class="#versus #biblia">
-						                  <title type="desc" key="work_14656">Song of Solomon, French verse paraphrase</title>
-                        
-                        <note>With added prophecy in English
-              verse</note>
+                     <msItem class="#versus #biblia" n="1" xml:id="MS_Rawl_poet_234-part3-item1">
+                        <title key="work_14656" type="desc">Song of Solomon, French verse paraphrase</title>
+                        <note>With added prophecy in English verse</note>
                         <textLang mainLang="fr" otherLangs="en">French, English</textLang>
                      </msItem>
                   </msContents>
@@ -158,9 +158,10 @@
                </msPart>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc><change when="2019-10-31" xml:id="MMM"><persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2019-10-31" xml:id="MMM"><persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

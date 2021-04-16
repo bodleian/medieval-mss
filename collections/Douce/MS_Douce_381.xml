@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4703">
+<TEI xml:id="manuscript_4703" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -8,7 +8,8 @@
             <title type="collection">MSS. Douce</title>
             <respStmt>
                <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <persName>Elizabeth Solopova</persName>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -53,20 +54,31 @@
                <physDesc>
                   <p n="composite">Composite</p>
                </physDesc>
-               <history><provenance notBefore="1757" notAfter="1834" resp="#MMM"><persName role="fmo" key="person_69848690">Francis Douce, 1757-1834</persName></provenance><acquisition when="1834" resp="#MMM">Bequeathed to the Bodleian in 1834</acquisition></history><additional><adminInfo>
+               <history>
+                  <provenance notAfter="1834" notBefore="1757" resp="#MMM"><persName key="person_69848690" role="fmo">Francis Douce, 1757-1834</persName></provenance>
+                  <acquisition resp="#MMM" when="1834">Bequeathed to the Bodleian in 1834</acquisition>
+               </history>
+               <additional>
+                  <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1970). 
-                            
-                            
-                            <listBibl>
-                              <bibl type="SC" facs="aaz0633.gif">Summary Catalogue, vol. 4, p. 614</bibl>
-                              <bibl type="SC" facs="aaz0634.gif">Summary Catalogue, vol. 4, p. 615</bibl>
+                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1970). <listBibl>
+                              <bibl facs="aaz0633.gif" type="SC">Summary Catalogue, vol. 4, p. 614</bibl>
+                              <bibl facs="aaz0634.gif" type="SC">Summary Catalogue, vol. 4, p. 615</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
-                  </adminInfo><surrogates><bibl type="digital-facsimile" subtype="partial"><ref target="https://digital.bodleian.ox.ac.uk/objects/98f1b5a6-045b-4282-b123-35c4443932a2/"><title>Digital Bodleian</title></ref> <note>(38 images from 35mm slides)</note></bibl></surrogates><listBibl type="WRAPPER"><listBibl type="INTERNET"><head>Online resources:</head>
-                     <bibl><ref target="https://www.diamm.ac.uk/sources/512/"><title>DIAMM: Digital Image Archive of Medieval Music</title></ref></bibl>
-                     <bibl><ref target="http://www.handschriftencensus.de/23326"><title>Handschriftencensus: Eine Bestandsaufnahme der handschriftlichen Überlieferung deutschsprachiger Texte des Mittelalters</title></ref></bibl><bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/40279"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title></ref></bibl></listBibl></listBibl></additional>
+                  </adminInfo>
+                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/98f1b5a6-045b-4282-b123-35c4443932a2/"><title>Digital Bodleian</title></ref>
+                        <note>(38 images from 35mm slides)</note></bibl></surrogates>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="INTERNET">
+                        <head>Online resources:</head>
+                        <bibl><ref target="https://www.diamm.ac.uk/sources/512/"><title>DIAMM: Digital Image Archive of Medieval Music</title></ref></bibl>
+                        <bibl><ref target="http://www.handschriftencensus.de/23326"><title>Handschriftencensus: Eine Bestandsaufnahme der handschriftlichen Überlieferung deutschsprachiger Texte des Mittelalters</title></ref></bibl>
+                        <bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/40279"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title></ref></bibl>
+                     </listBibl>
+                  </listBibl>
+               </additional>
                <msPart xml:id="MS_Douce_381-part1">
                   <msIdentifier>
                      <altIdentifier type="partial">
@@ -74,9 +86,8 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Douce_381-part1-item1" n="1" class="#versus #vitae_sanctorum">
-                        <title type="desc" key="work_12878">Life of
-              St. Juliana</title>
+                     <msItem class="#versus #vitae_sanctorum" n="1" xml:id="MS_Douce_381-part1-item1">
+                        <title key="work_12878" type="desc">Life of St. Juliana</title>
                         <note>(metrical)</note>
                         <note>(fragment)</note>
                         <textLang mainLang="fr">French</textLang>
@@ -102,10 +113,8 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Douce_381-part2-item1" n="1">
-                        <author key="person_15126474">
-                           Adam Ross
-                        </author>
+                     <msItem n="1" xml:id="MS_Douce_381-part2-item1">
+                        <author key="person_15126474"> Adam Ross </author>
                         <title key="work_229">Vision de St. Paul</title>
                         <note>(fragment)</note>
                         <textLang mainLang="fr">French</textLang>
@@ -131,9 +140,8 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Douce_381-part3-item1" n="1" class="#romances">
-                        <title key="work_11508">The Destruction of
-                           Troy</title>
+                     <msItem class="#romances" n="1" xml:id="MS_Douce_381-part3-item1">
+                        <title key="work_11508">The Destruction of Troy</title>
                         <note>(fragment)</note>
                         <textLang mainLang="fr">French</textLang>
                      </msItem>
@@ -158,9 +166,8 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Douce_381-part4-item1" n="1" class="#prognostica">
-                        <title type="desc" key="work_10870">Characters of first eighteen days of the month in relation to good and
-                           ill fortune</title>
+                     <msItem class="#prognostica" n="1" xml:id="MS_Douce_381-part4-item1">
+                        <title key="work_10870" type="desc">Characters of first eighteen days of the month in relation to good and ill fortune</title>
                         <note>(fragment)</note>
                         <textLang mainLang="en">English</textLang>
                      </msItem>
@@ -185,10 +192,8 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Douce_381-part5-item1" n="1">
-                        <author key="person_40224714">
-                           Martijn van Thorout
-                        </author>
+                     <msItem n="1" xml:id="MS_Douce_381-part5-item1">
+                        <author key="person_40224714"> Martijn van Thorout </author>
                         <title key="work_3106">Lives of Saints</title>
                         <note>(fragment)</note>
                         <textLang mainLang="nl">Netherlandish</textLang>
@@ -220,9 +225,8 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Douce_381-part6-item1" n="1" class="#romances">
-                        <title key="work_14438">Romance of Garin de
-                        Montglane (?)</title>
+                     <msItem class="#romances" n="1" xml:id="MS_Douce_381-part6-item1">
+                        <title key="work_14438">Romance of Garin de Montglane (?)</title>
                         <note>(fragment)</note>
                         <textLang mainLang="fr">French</textLang>
                      </msItem>
@@ -247,8 +251,8 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Douce_381-part7-item1" n="1" class="#versus">
-                        <title type="desc" key="work_14665">Songs</title>
+                     <msItem class="#versus" n="1" xml:id="MS_Douce_381-part7-item1">
+                        <title key="work_14665" type="desc">Songs</title>
                         <note>(fragment)</note>
                         <textLang mainLang="fr">French</textLang>
                      </msItem>
@@ -273,8 +277,8 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Douce_381-part8-item1" n="1" class="#versus #musica">
-                        <title type="desc" key="work_14667">Songs with music</title>
+                     <msItem class="#versus #musica" n="1" xml:id="MS_Douce_381-part8-item1">
+                        <title key="work_14667" type="desc">Songs with music</title>
                         <note>(fragment)</note>
                         <textLang mainLang="en" otherLangs="fr">English and French</textLang>
                      </msItem>
@@ -299,7 +303,7 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Douce_381-part9-item1" n="1" class="#romances">
+                     <msItem class="#romances" n="1" xml:id="MS_Douce_381-part9-item1">
                         <title key="work_10864">Chanson de Jérusalem</title>
                         <note>(fragment)</note>
                         <textLang mainLang="fr">French</textLang>
@@ -325,8 +329,8 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Douce_381-part10-item1" n="1" class="#liturgica">
-                        <title type="desc" key="work_11062">Collectar and Hymnal</title>
+                     <msItem class="#liturgica" n="1" xml:id="MS_Douce_381-part10-item1">
+                        <title key="work_11062" type="desc">Collectar and Hymnal</title>
                         <note>(fragment)</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
@@ -337,7 +341,6 @@
                            <support>parchment</support>
                         </supportDesc>
                      </objectDesc>
-                     
                   </physDesc>
                   <history>
                      <origin>
@@ -352,11 +355,10 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Douce_381-part11-item1" n="1" class="#liturgica #biblia">
+                     <msItem class="#liturgica #biblia" n="1" xml:id="MS_Douce_381-part11-item1">
                         <locus>(fols. 63v-65v)</locus>
-                        <title type="desc" key="work_14161">Psalter/Hours and Calendar</title>
+                        <title key="work_14161" type="desc">Psalter/Hours and Calendar</title>
                         <note>(cuttings, see also MS. Douce d. 19 fols. 10-39)</note>
-                        
                         <textLang mainLang="la" otherLangs="fr">Latin and French</textLang>
                      </msItem>
                   </msContents>
@@ -368,7 +370,7 @@
                      </objectDesc>
                      <decoDesc>
                         <decoNote>Fine borders, initial. (P&amp;A i. 284, pl. XX)</decoNote>
-                     </decoDesc> 
+                     </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
@@ -387,11 +389,10 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Douce_381-part12-item1" n="1" class="#liturgica #biblia">
+                     <msItem class="#liturgica #biblia" n="1" xml:id="MS_Douce_381-part12-item1">
                         <locus>fols. 66-82v</locus>
-                        <title type="desc" key="work_14114">Psalter</title>
+                        <title key="work_14114" type="desc">Psalter</title>
                         <note>(cuttings)</note>
-                        
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                   </msContents>
@@ -403,7 +404,7 @@
                      </objectDesc>
                      <decoDesc>
                         <decoNote>Good unfinished initials. (P&amp;A i. 519)</decoNote>
-                     </decoDesc> 
+                     </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
@@ -420,11 +421,10 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Douce_381-part13-item1" n="1" class="#liturgica"> 
+                     <msItem class="#liturgica" n="1" xml:id="MS_Douce_381-part13-item1">
                         <locus>fols. 78-88</locus>
-                        <title type="desc" key="work_10505">Book of Hours</title>
+                        <title key="work_10505" type="desc">Book of Hours</title>
                         <note>(fragment, see also MS. Douce d. 19 fol. 71v)</note>
-                       
                         <textLang mainLang="la" otherLangs="nl">Latin and Netherlandish</textLang>
                      </msItem>
                   </msContents>
@@ -435,8 +435,10 @@
                         </supportDesc>
                      </objectDesc>
                      <decoDesc>
-                        <decoNote type="miniature">Fine miniatures.</decoNote><decoNote type="border">Borders.</decoNote><decoNote type="decInit">Initials. (P&amp;A i. 345, pl. XXVII)</decoNote>
-                     </decoDesc> 
+                        <decoNote type="miniature">Fine miniatures.</decoNote>
+                        <decoNote type="border">Borders.</decoNote>
+                        <decoNote type="decInit">Initials. (P&amp;A i. 345, pl. XXVII)</decoNote>
+                     </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
@@ -457,11 +459,10 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Douce_381-part14-item1" n="1" class="#liturgica">
+                     <msItem class="#liturgica" n="1" xml:id="MS_Douce_381-part14-item1">
                         <locus>(fols. 89-103)</locus>
-                        <title type="desc" key="work_10509">Book of Hours</title>
+                        <title key="work_10509" type="desc">Book of Hours</title>
                         <note>(cuttings)</note>
-                        
                         <textLang mainLang="nl">Netherlandish</textLang>
                      </msItem>
                   </msContents>
@@ -473,11 +474,11 @@
                      </objectDesc>
                      <decoDesc>
                         <decoNote>Good borders, historiated and other initials. (P&amp;A i. 225)</decoNote>
-                     </decoDesc> 
+                     </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notBefore="1470" notAfter="1480">c. 1470-80</origDate>
+                        <origDate calendar="Gregorian" notAfter="1480" notBefore="1470">c. 1470-80</origDate>
                         <origPlace>
                            <country key="place_7016845">Dutch</country>
                         </origPlace>
@@ -491,9 +492,9 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Douce_381-part15-item1" n="1" class="#liturgica">
+                     <msItem class="#liturgica" n="1" xml:id="MS_Douce_381-part15-item1">
                         <locus>(fols. 106-20)</locus>
-                        <title type="desc" key="work_10507">Book of Hours</title>
+                        <title key="work_10507" type="desc">Book of Hours</title>
                         <note>(fragments)</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
@@ -506,7 +507,7 @@
                      </objectDesc>
                      <decoDesc>
                         <decoNote>Fine borders, historiated and other initials, mutilated. (P&amp;A i. 363)</decoNote>
-                     </decoDesc>    
+                     </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
@@ -524,9 +525,9 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Douce_381-part16-item1" n="1" class="#liturgica #biblia">
+                     <msItem class="#liturgica #biblia" n="1" xml:id="MS_Douce_381-part16-item1">
                         <locus>(fols. 122-4)</locus>
-                        <title type="desc" key="work_14114">Psalter</title>
+                        <title key="work_14114" type="desc">Psalter</title>
                         <note>(fragments of illustrations)</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
@@ -539,7 +540,7 @@
                      </objectDesc>
                      <decoDesc>
                         <decoNote>Seven important miniatures, partly unfinished. (P&amp;A i. 536, pl. XLI)</decoNote>
-                     </decoDesc>    
+                     </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
@@ -558,9 +559,9 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Douce_381-part17-item1" n="1" class="#liturgica">
+                     <msItem class="#liturgica" n="1" xml:id="MS_Douce_381-part17-item1">
                         <locus>(fol. 125)</locus>
-                        <title type="desc" key="work_12122">Gradual</title>
+                        <title key="work_12122" type="desc">Gradual</title>
                         <note>(cutting)</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
@@ -573,7 +574,7 @@
                      </objectDesc>
                      <decoDesc>
                         <decoNote>Fine historiated initial. (P&amp;A i. 852, pl. LXIII)</decoNote>
-                     </decoDesc>    
+                     </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
@@ -591,9 +592,9 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Douce_381-part18-item1" n="1" class="#liturgica">
+                     <msItem class="#liturgica" n="1" xml:id="MS_Douce_381-part18-item1">
                         <locus>(fol. 127)</locus>
-                        <title type="desc" key="work_12122">Gradual</title>
+                        <title key="work_12122" type="desc">Gradual</title>
                         <note>(cutting)</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
@@ -606,7 +607,7 @@
                      </objectDesc>
                      <decoDesc>
                         <decoNote>Good historiated initial (P&amp;A i. 853)</decoNote>
-                     </decoDesc>   
+                     </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
@@ -624,9 +625,9 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Douce_381-part19-item1" n="1" class="#liturgica">
+                     <msItem class="#liturgica" n="1" xml:id="MS_Douce_381-part19-item1">
                         <locus>(fols. 128-48)</locus>
-                        <title type="desc" key="work_12122">Gradual</title>
+                        <title key="work_12122" type="desc">Gradual</title>
                         <note>(cuttings)</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
@@ -639,7 +640,7 @@
                      </objectDesc>
                      <decoDesc>
                         <decoNote>Fine initials (P&amp;A ii.915, pl. LXXIX)</decoNote>
-                     </decoDesc>   
+                     </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
@@ -656,9 +657,9 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Douce_381-part20-item1" n="1" class="#liturgica">
+                     <msItem class="#liturgica" n="1" xml:id="MS_Douce_381-part20-item1">
                         <locus>(fol. 152)</locus>
-                        <title type="desc" key="work_12122">Gradual</title>
+                        <title key="work_12122" type="desc">Gradual</title>
                         <note>(fragment)</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
@@ -671,7 +672,7 @@
                      </objectDesc>
                      <decoDesc>
                         <decoNote>Good historiated initial, but retouched. (P&amp;A ii 485, pl. LXVI)</decoNote>
-                     </decoDesc>   
+                     </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
@@ -688,9 +689,9 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Douce_381-part21-item1" n="1" class="#liturgica">
+                     <msItem class="#liturgica" n="1" xml:id="MS_Douce_381-part21-item1">
                         <locus>(fols. 157r-158v, 169)</locus>
-                        <title type="desc" key="work_10507">Book of Hours</title>
+                        <title key="work_10507" type="desc">Book of Hours</title>
                         <note>(fragments)</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
@@ -702,8 +703,10 @@
                         </supportDesc>
                      </objectDesc>
                      <decoDesc>
-                        <decoNote type="miniature">Fine miniatures.</decoNote><decoNote type="border">Borders.</decoNote><decoNote type="decInit">Initials. By <persName role="art" key="person_57406287">Maître François</persName>. (P&amp;A i. 722, pl. LVI)</decoNote>
-                     </decoDesc>    
+                        <decoNote type="miniature">Fine miniatures.</decoNote>
+                        <decoNote type="border">Borders.</decoNote>
+                        <decoNote type="decInit">Initials. By <persName key="person_57406287" role="art">Maître François</persName>. (P&amp;A i. 722, pl. LVI)</decoNote>
+                     </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
@@ -721,9 +724,9 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Douce_381-part22-item1" n="1" class="#miscellanea">
+                     <msItem class="#miscellanea" n="1" xml:id="MS_Douce_381-part22-item1">
                         <locus>(fol. 159)</locus>
-                        <title type="desc" key="work_11423">Cutting</title>
+                        <title key="work_11423" type="desc">Cutting</title>
                         <textLang mainLang="zxx">No linguistic content (?)</textLang>
                      </msItem>
                   </msContents>
@@ -735,7 +738,7 @@
                      </objectDesc>
                      <decoDesc>
                         <decoNote>Good miniature, border. (P&amp;A i. 337)</decoNote>
-                     </decoDesc>   
+                     </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
@@ -753,9 +756,9 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Douce_381-part23-item1" n="1" class="#miscellanea">
+                     <msItem class="#miscellanea" n="1" xml:id="MS_Douce_381-part23-item1">
                         <locus>(fol. 160)</locus>
-                        <title type="desc" key="work_11423">Cutting</title>
+                        <title key="work_11423" type="desc">Cutting</title>
                         <textLang mainLang="zxx">No linguistic content (?)</textLang>
                      </msItem>
                   </msContents>
@@ -767,7 +770,7 @@
                      </objectDesc>
                      <decoDesc>
                         <decoNote type="miniature">Miniature (damaged). (P&amp;A i. 374)</decoNote>
-                     </decoDesc>   
+                     </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
@@ -785,9 +788,9 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Douce_381-part24-item1" n="1" class="#miscellanea">
+                     <msItem class="#miscellanea" n="1" xml:id="MS_Douce_381-part24-item1">
                         <locus>(fol. 162)</locus>
-                        <title type="desc" key="work_11423">Cutting</title>
+                        <title key="work_11423" type="desc">Cutting</title>
                         <textLang mainLang="zxx">No linguistic content (?)</textLang>
                      </msItem>
                   </msContents>
@@ -799,7 +802,7 @@
                      </objectDesc>
                      <decoDesc>
                         <decoNote>Fine miniature with border. (P&amp;A i. 246)</decoNote>
-                     </decoDesc>    
+                     </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
@@ -817,9 +820,9 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Douce_381-part25-item1" n="1" class="#liturgica">
+                     <msItem class="#liturgica" n="1" xml:id="MS_Douce_381-part25-item1">
                         <locus>(fol. 163a)</locus>
-                        <title type="desc" key="work_10507">Book of Hours</title>
+                        <title key="work_10507" type="desc">Book of Hours</title>
                         <note>(cutting)</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
@@ -831,8 +834,10 @@
                         </supportDesc>
                      </objectDesc>
                      <decoDesc>
-                        <decoNote type="miniature">Fine miniature.</decoNote><decoNote type="border">Border.</decoNote><decoNote type="decInit">Initial. (P&amp;A i. 833)</decoNote>
-                     </decoDesc>   
+                        <decoNote type="miniature">Fine miniature.</decoNote>
+                        <decoNote type="border">Border.</decoNote>
+                        <decoNote type="decInit">Initial. (P&amp;A i. 833)</decoNote>
+                     </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
@@ -850,9 +855,9 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Douce_381-part26-item1" n="1" class="#miscellanea">
+                     <msItem class="#miscellanea" n="1" xml:id="MS_Douce_381-part26-item1">
                         <locus>(fol. 163b)</locus>
-                        <title type="desc" key="work_11423">Cutting</title>
+                        <title key="work_11423" type="desc">Cutting</title>
                         <textLang mainLang="zxx">No linguistic content (?)</textLang>
                      </msItem>
                   </msContents>
@@ -864,7 +869,7 @@
                      </objectDesc>
                      <decoDesc>
                         <decoNote type="miniature">Miniature (damaged). (P&amp;A i. 375)</decoNote>
-                     </decoDesc>    
+                     </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
@@ -882,9 +887,9 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Douce_381-part27-item1" n="1" class="#liturgica">
+                     <msItem class="#liturgica" n="1" xml:id="MS_Douce_381-part27-item1">
                         <locus>(fol. 163c)</locus>
-                        <title type="desc" key="work_10507">Book of Hours</title>
+                        <title key="work_10507" type="desc">Book of Hours</title>
                         <note>(fragment)</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
@@ -897,7 +902,7 @@
                      </objectDesc>
                      <decoDesc>
                         <decoNote>Fine border, historiated initial. (P&amp;A ii. 564)</decoNote>
-                     </decoDesc>   
+                     </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
@@ -916,9 +921,9 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Douce_381-part28-item1" n="1" class="#liturgica">
+                     <msItem class="#liturgica" n="1" xml:id="MS_Douce_381-part28-item1">
                         <locus>(fols. 164-6)</locus>
-                        <title type="desc" key="work_10507">Book of Hours</title>
+                        <title key="work_10507" type="desc">Book of Hours</title>
                         <note>(cuttings)</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
@@ -930,8 +935,8 @@
                         </supportDesc>
                      </objectDesc>
                      <decoDesc>
-                        <decoNote>Fine historiated borders and initials. By the <persName role="art" key="person_3302971">Master of the Dresden Hours</persName>. Script overpainted. (P&amp;A i. 369)</decoNote>
-                     </decoDesc>   
+                        <decoNote>Fine historiated borders and initials. By the <persName key="person_3302971" role="art">Master of the Dresden Hours</persName>. Script overpainted. (P&amp;A i. 369)</decoNote>
+                     </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
@@ -950,9 +955,9 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Douce_381-part29-item1" n="1" class="#liturgica">
+                     <msItem class="#liturgica" n="1" xml:id="MS_Douce_381-part29-item1">
                         <locus>(fols. 170-3)</locus>
-                        <title type="desc" key="work_13776">Pericope, prayers</title>
+                        <title key="work_13776" type="desc">Pericope, prayers</title>
                         <note>(fragments)</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
@@ -964,8 +969,8 @@
                         </supportDesc>
                      </objectDesc>
                      <decoDesc>
-                        <decoNote>Fine grisaille miniatures, borders, historiated and other initials. By the atelier of <persName role="art" key="person_95823026">Willem Vrelant</persName>. (P&amp;A i. 344)</decoNote>
-                     </decoDesc>    
+                        <decoNote>Fine grisaille miniatures, borders, historiated and other initials. By the atelier of <persName key="person_95823026" role="art">Willem Vrelant</persName>. (P&amp;A i. 344)</decoNote>
+                     </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
@@ -983,9 +988,9 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Douce_381-part30-item1" n="1" class="#liturgica">
+                     <msItem class="#liturgica" n="1" xml:id="MS_Douce_381-part30-item1">
                         <locus>(fol. 174b)</locus>
-                        <title type="desc" key="work_10507">Book of Hours</title>
+                        <title key="work_10507" type="desc">Book of Hours</title>
                         <note>(cutting)</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
@@ -998,7 +1003,7 @@
                      </objectDesc>
                      <decoDesc>
                         <decoNote>Good miniature. (P&amp;A i. 321, pl. XXV)</decoNote>
-                     </decoDesc>     
+                     </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
@@ -1016,9 +1021,9 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Douce_381-part31-item1" n="1" class="#liturgica">
+                     <msItem class="#liturgica" n="1" xml:id="MS_Douce_381-part31-item1">
                         <locus>(fols. 175-9)</locus>
-                        <title type="desc" key="work_10507">Book of Hours</title>
+                        <title key="work_10507" type="desc">Book of Hours</title>
                         <note>(cuttings)</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
@@ -1030,8 +1035,10 @@
                         </supportDesc>
                      </objectDesc>
                      <decoDesc>
-                        <decoNote type="miniature">Good miniatures.</decoNote><decoNote type="border">Borders.</decoNote><decoNote type="decInit">Initials. (P&amp;A i. 782)</decoNote>
-                     </decoDesc>     
+                        <decoNote type="miniature">Good miniatures.</decoNote>
+                        <decoNote type="border">Borders.</decoNote>
+                        <decoNote type="decInit">Initials. (P&amp;A i. 782)</decoNote>
+                     </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
@@ -1049,9 +1056,9 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Douce_381-part32-item1" n="1" class="#liturgica">
+                     <msItem class="#liturgica" n="1" xml:id="MS_Douce_381-part32-item1">
                         <locus>(fol. 180)</locus>
-                        <title type="desc" key="work_12122">Gradual</title>
+                        <title key="work_12122" type="desc">Gradual</title>
                         <note>(cutting)</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
@@ -1076,12 +1083,10 @@
                </msPart>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc><change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName>
-      Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
-      in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.'
-    </change>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.' </change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

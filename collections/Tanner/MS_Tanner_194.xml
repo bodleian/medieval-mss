@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8986">
+<TEI xml:id="manuscript_8986" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -9,7 +9,8 @@
             <title type="collection">MSS. Tanner</title>
             <respStmt>
                <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <persName>Elizabeth Solopova</persName>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -52,9 +53,8 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem xml:id="MS_Tanner_194-item1" n="1" class="#documenta">
-                     <title type="desc" key="work_10075">Accounts of <persName key="person_974">Prior Robert Wymondham</persName> of <orgName key="org_65">Hickling Priory,
-				  Norfolk</orgName>, acting as cellarer, 1509-1522, with some later Hickling materials.</title>
+                  <msItem class="#documenta" n="1" xml:id="MS_Tanner_194-item1">
+                     <title key="work_10075" type="desc">Accounts of <persName key="person_974">Prior Robert Wymondham</persName> of <orgName key="org_65">Hickling Priory, Norfolk</orgName>, acting as cellarer, 1509-1522, with some later Hickling materials.</title>
                      <textLang mainLang="la" otherLangs="en">Latin and English</textLang>
                   </msItem>
                </msContents>
@@ -69,20 +69,20 @@
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1600" notBefore="1500">16th century</origDate>
                   </origin>
-               <provenance notBefore="1674" notAfter="1735" resp="#MMM"><persName role="fmo" key="person_11058091">Thomas Tanner, 1674-1735</persName></provenance><acquisition when="1735" resp="#MMM">Bequeathed by him to the Bodleian in 1735.</acquisition></history>
+                  <provenance notAfter="1735" notBefore="1674" resp="#MMM"><persName key="person_11058091" role="fmo">Thomas Tanner, 1674-1735</persName></provenance>
+                  <acquisition resp="#MMM" when="1735">Bequeathed by him to the Bodleian in 1735.</acquisition>
+               </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (A. Hackman, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars quarta codices viri admodum reverendi Thomæ Tanneri, S.T.P., episcopi Asaphensis, complectens</title>, Quarto Catalogues IV, repr. 1966, with corrections, from the ed. of 1860).  
-                            
-                            <listBibl>
-                              <bibl type="SC" facs="aas0102.gif">Summary Catalogue, Vol. 3, p.  87</bibl>
+                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (A. Hackman, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars quarta codices viri admodum reverendi Thomæ Tanneri, S.T.P., episcopi Asaphensis, complectens</title>, Quarto Catalogues IV, repr. 1966, with corrections, from the ed. of 1860). <listBibl>
+                              <bibl facs="aas0102.gif" type="SC">Summary Catalogue, Vol. 3, p. 87</bibl>
                            </listBibl>
                            <listBibl>
-                              <bibl type="QUARTO" facs="ace0324.gif">Quarto Catalogue, Col. 632</bibl>
+                              <bibl facs="ace0324.gif" type="QUARTO">Quarto Catalogue, Col. 632</bibl>
                            </listBibl>
                            <listBibl>
-                              <bibl type="QUARTO" facs="ace0325.gif">Quarto Catalogue, Col. 633</bibl>
+                              <bibl facs="ace0325.gif" type="QUARTO">Quarto Catalogue, Col. 633</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -90,12 +90,10 @@
                </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc><change when="2018-08-15" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName>
-      Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
-      in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.'
-    </change>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2018-08-15" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.' </change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

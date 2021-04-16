@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_918">
+<TEI xml:id="manuscript_918" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -62,10 +62,8 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents resp="#PA">
-                  <msItem xml:id="MS_Barlow_6-item1" n="1">
-                     <author key="person_67145970022632250570">
-                        John of Salisbury
-                     </author>
+                  <msItem n="1" xml:id="MS_Barlow_6-item1">
+                     <author key="person_67145970022632250570"> John of Salisbury </author>
                      <title key="work_2848">Polycraticus</title>
                      <note>Contemporary marginalia.</note>
                      <textLang mainLang="la">Latin</textLang>
@@ -75,64 +73,67 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                        <extent>209 fols.
-                        <dimensions unit="mm" type="leaf">
-                           <height>325</height>
-                           <width>240</width>
-                        </dimensions></extent>
+                        <extent>209 fols. <dimensions type="leaf" unit="mm">
+                              <height>325</height>
+                              <width>240</width>
+                           </dimensions></extent>
                      </supportDesc>
                      <layoutDesc>
-                        <layout columns="2" writtenLines="39 40">2 cols., 39-40 lines, column space 
-                        <dimensions unit="mm" type="column">
-                           <height max="250" min="243">243-50</height>
-                           <width>65</width>
-                        </dimensions></layout>
+                        <layout columns="2" writtenLines="39 40">2 cols., 39-40 lines, column space <dimensions type="column" unit="mm">
+                              <height max="250" min="243">243-50</height>
+                              <width>65</width>
+                           </dimensions></layout>
                      </layoutDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote resp="#PA">Fine historiated and other initials, added in the second quarter
-            of the 13th century. (P&amp;A iii. 368, pl. XXXII)
-                     </decoNote>
+                     <decoNote resp="#PA">Fine historiated and other initials, added in the second quarter of the 13th century. (P&amp;A iii. 368, pl. XXXII) </decoNote>
                      <decoNote>Illuminated initials (some historiated), coloured initials, rubrics.</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin resp="#DD #PA">
-                     <origDate calendar="Gregorian" notAfter="1205" notBefore="1187" cert="high">1187 × 1205</origDate>; <origDate calendar="Gregorian" notAfter="1250" notBefore="1225">decoration added, 13th century, second quarter</origDate>
+                     <origDate calendar="Gregorian" cert="high" notAfter="1205" notBefore="1187">1187 × 1205</origDate>; <origDate calendar="Gregorian" notAfter="1250" notBefore="1225">decoration added, 13th century, second quarter</origDate>
                      <origPlace>
                         <country key="place_7002445">English</country>, <settlement key="place_7011217">Malmesbury</settlement>, <orgName key="org_134872490" role="fmo">Benedictine Abbey</orgName>
                         <!--ORIGINAL: English, Malmesbury-->
                      </origPlace>
                   </origin>
-                  <provenance resp="#DD">Written at Malmesbury Abbey by <persName role="scr" key="person_2944">Salomon</persName> under Abbot Robert of Meldon (1187-1205); inscription, fol. 209: <q type="colophon">Explicit Policraticus per Salomonem sub Abbate Roberto .ii<hi rend="superscript">o</hi></q>.</provenance>
-                  <provenance notAfter="1600" notBefore="1500" resp="#DD">Fol. 142r-v: <q type="inscription"><persName role="sgn" key="person_2945">Thomas Lonwell</persName></q> or <q type="inscription">Lonewell</q>. 16th century (?).</provenance>
-                  <provenance notBefore="1540" notAfter="1560" resp="#DD">Fol. 209 : <q type="exLibris"><persName role="fmo" key="person_2946">Richardus Ramsaeus</persName> possidet</q>, mid-16th century.</provenance>
-                  <provenance notAfter="1560" notBefore="1540" resp="#DD">Fol. 209v: <q type="inscription"><persName role="sgn" key="person_2947">Wyllyam Fyttz</persName></q>, mid-16th century.</provenance>
-                  <provenance from="1633" to="1691" resp="#SC"><persName role="fmo" key="person_465">Thomas Barlow, 1607-1691</persName>: acquired 1633, inscription fol. 1.</provenance>
-                  <acquisition when="1691" resp="#SC">Bequeathed by him in 1691.</acquisition>
+                  <provenance resp="#DD">Written at Malmesbury Abbey by <persName key="person_2944" role="scr">Salomon</persName> under Abbot Robert of Meldon (1187-1205); inscription, fol. 209: <q type="colophon">Explicit Policraticus per Salomonem sub Abbate Roberto .ii<hi rend="superscript">o</hi></q>.</provenance>
+                  <provenance notAfter="1600" notBefore="1500" resp="#DD">Fol. 142r-v: <q type="inscription"><persName key="person_2945" role="sgn">Thomas Lonwell</persName></q> or <q type="inscription">Lonewell</q>. 16th century (?).</provenance>
+                  <provenance notAfter="1560" notBefore="1540" resp="#DD">Fol. 209 : <q type="exLibris"><persName key="person_2946" role="fmo">Richardus Ramsaeus</persName> possidet</q>, mid-16th century.</provenance>
+                  <provenance notAfter="1560" notBefore="1540" resp="#DD">Fol. 209v: <q type="inscription"><persName key="person_2947" role="sgn">Wyllyam Fyttz</persName></q>, mid-16th century.</provenance>
+                  <provenance from="1633" resp="#SC" to="1691"><persName key="person_465" role="fmo">Thomas Barlow, 1607-1691</persName>: acquired 1633, inscription fol. 1.</provenance>
+                  <acquisition resp="#SC" when="1691">Bequeathed by him in 1691.</acquisition>
                </history>
-               <additional><adminInfo>
+               <additional>
+                  <adminInfo>
                      <recordHist>
-                        <source>
-                           Description adapted (2018) from the following sources:
-                           <listBibl>
+                        <source> Description adapted (2018) from the following sources: <listBibl>
                               <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 65 [physical description, origin, provenance]</bibl>
                               <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, III (1973), no. 368 [decoration]</bibl>
                               <bibl>Summary Catalogue (1937) [contents, provenance]</bibl>
-                           </listBibl> 
-                            <listBibl>
-                              <bibl type="SC" facs="aaq0404.gif">Summary Catalogue, Vol. 2 Part 2, p.  1045</bibl>
-                              <bibl type="SC" facs="aaq0405.gif">Summary Catalogue, Vol. 2 Part 2, p.  1046</bibl>
+                           </listBibl>
+                           <listBibl>
+                              <bibl facs="aaq0404.gif" type="SC">Summary Catalogue, Vol. 2 Part 2, p. 1045</bibl>
+                              <bibl facs="aaq0405.gif" type="SC">Summary Catalogue, Vol. 2 Part 2, p. 1046</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
-                  </adminInfo><surrogates><bibl type="digital-facsimile" subtype="partial"><ref target="https://digital.bodleian.ox.ac.uk/objects/73b89e3c-c884-4826-b146-8e21caec92ac/"><title>Digital Bodleian</title></ref> <note>(2 images from 35mm slides)</note></bibl></surrogates><listBibl type="WRAPPER">
-                     <listBibl type="INTERNET"><head>Online resources:</head><bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/3915"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl></listBibl></listBibl></additional>
+                  </adminInfo>
+                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/73b89e3c-c884-4826-b146-8e21caec92ac/"><title>Digital Bodleian</title></ref>
+                        <note>(2 images from 35mm slides)</note></bibl></surrogates>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="INTERNET">
+                        <head>Online resources:</head>
+                        <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/3915"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl>
+                     </listBibl>
+                  </listBibl>
+               </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc>          
-         <change who="#MLH" when="2018-10-24">Fully revised to incorporate all information in Watson, P&amp;A, and SC.</change>
+      </fileDesc>
+      <revisionDesc>
+         <change when="2018-10-24" who="#MLH">Fully revised to incorporate all information in Watson, P&amp;A, and SC.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>

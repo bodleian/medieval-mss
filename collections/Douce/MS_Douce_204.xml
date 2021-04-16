@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4567">
+<TEI xml:id="manuscript_4567" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -8,7 +8,8 @@
             <title type="collection">MSS. Douce</title>
             <respStmt>
                <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <persName>Elizabeth Solopova</persName>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -51,9 +52,8 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem xml:id="MS_Douce_204-item1" n="1" class="#theologica">
-                     <title key="work_14679">Speculum humanae
-              saluationis</title>
+                  <msItem class="#theologica" n="1" xml:id="MS_Douce_204-item1">
+                     <title key="work_14679">Speculum humanae saluationis</title>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -64,10 +64,8 @@
                      </supportDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>Fine miniatures (drawings), initials. By <persName role="art" key="person_752">Laurentius Dyamas</persName>
-                        <!-- not in VIAF -->.
-            (P&amp;A i. 886, pl. LXV-LXVI)
-                     </decoNote>
+                     <decoNote>Fine miniatures (drawings), initials. By <persName key="person_752" role="art">Laurentius Dyamas</persName>
+                        <!-- not in VIAF -->. (P&amp;A i. 886, pl. LXV-LXVI) </decoNote>
                   </decoDesc>
                </physDesc>
                <history>
@@ -78,21 +76,22 @@
                         <!--ORIGINAL: Spanish, Catalonia, Roussillon-->
                      </origPlace>
                   </origin>
-               <provenance notBefore="1757" notAfter="1834" resp="#MMM"><persName role="fmo" key="person_69848690">Francis Douce, 1757-1834</persName></provenance><acquisition when="1834" resp="#MMM">Bequeathed to the Bodleian in 1834</acquisition></history>
+                  <provenance notAfter="1834" notBefore="1757" resp="#MMM"><persName key="person_69848690" role="fmo">Francis Douce, 1757-1834</persName></provenance>
+                  <acquisition resp="#MMM" when="1834">Bequeathed to the Bodleian in 1834</acquisition>
+               </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1966). 
-                            
-                            
-                            <listBibl>
-                              <bibl type="SC" facs="aaz0572.gif">Summary Catalogue, vol. 4, p. 553</bibl>
-                              <bibl type="SC" facs="aaz0573.gif">Summary Catalogue, vol. 4, p. 554</bibl>
+                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1966). <listBibl>
+                              <bibl facs="aaz0572.gif" type="SC">Summary Catalogue, vol. 4, p. 553</bibl>
+                              <bibl facs="aaz0573.gif" type="SC">Summary Catalogue, vol. 4, p. 554</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
-                  <surrogates><bibl type="digital-facsimile" subtype="partial"><ref target="https://digital.bodleian.ox.ac.uk/objects/4be078f0-633e-415c-a87d-96b600051940/"><title>Digital Bodleian</title></ref> <note>(112 images from 35mm slides)</note></bibl></surrogates><listBibl type="WRAPPER">
+                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/4be078f0-633e-415c-a87d-96b600051940/"><title>Digital Bodleian</title></ref>
+                        <note>(112 images from 35mm slides)</note></bibl></surrogates>
+                  <listBibl type="WRAPPER">
                      <listBibl type="INTERNET">
                         <head>Online resources:</head>
                         <bibl><ref target="https://iconographic.warburg.sas.ac.uk/vpc/VPC_search/subcats.php?cat_1=14&amp;cat_2=812&amp;cat_3=2903&amp;cat_4=5439&amp;cat_5=13111&amp;cat_6=9245&amp;cat_7=3059"><title>The Warburg Institute Iconographic Database</title></ref></bibl>
@@ -101,12 +100,10 @@
                </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc><change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName>
-      Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
-      in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.'
-    </change>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.' </change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

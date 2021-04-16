@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_530">
+<TEI xml:id="manuscript_530" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -7,7 +7,8 @@
             <title type="collection">MSS. Auct. E. (Auctarium E.)</title>
             <respStmt>
                <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <persName>Elizabeth Solopova</persName>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -50,9 +51,8 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem xml:id="MS_Auct_E_1_5-item1" n="1" class="#biblia">
-                     <title type="desc" key="work_10839">Catena from the Fathers of the Church on the
-                        second part of the Psalter </title>
+                  <msItem class="#biblia" n="1" xml:id="MS_Auct_E_1_5-item1">
+                     <title key="work_10839" type="desc">Catena from the Fathers of the Church on the second part of the Psalter </title>
                      <note>(The volume containing the first part is New Coll. MS. 3).</note>
                      <bibl type="commentedOn">
                         <title type="desc">Bible, Psalms</title>
@@ -72,28 +72,32 @@
                      <origDate calendar="Gregorian" notAfter="1510" notBefore="1500">16th century, beginning</origDate>
                   </origin>
                </history>
-               <additional><adminInfo>
+               <additional>
+                  <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref>  abbreviated from the Quarto Catalogue (H. O. Coxe,  <title>Catalogi codicum manuscriptorum Bibliothecae Bodleianae pars prima recensionem codicum Graecorum continens</title>, Quarto Catalogues I, 1883, repr. with corrections 1969).  
-                            
-                           
-                        <listBibl>
-                              <bibl type="QUARTO" facs="abu0322.gif">Quarto Catalogue I, col. 630 (Misc. 19)</bibl>
-                              <bibl type="SC" facs="aap0333.gif">Summary Catalogue, Vol. 2, part 1, p. 312</bibl>
+                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (H. O. Coxe, <title>Catalogi codicum manuscriptorum Bibliothecae Bodleianae pars prima recensionem codicum Graecorum continens</title>, Quarto Catalogues I, 1883, repr. with corrections 1969). <listBibl>
+                              <bibl facs="abu0322.gif" type="QUARTO">Quarto Catalogue I, col. 630 (Misc. 19)</bibl>
+                              <bibl facs="aap0333.gif" type="SC">Summary Catalogue, Vol. 2, part 1, p. 312</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
-                  </adminInfo><listBibl type="WRAPPER"><listBibl type="INTERNET"><head>Online resources:</head><bibl><ref target="http://pinakes.irht.cnrs.fr/notices/cote/46985/"><title>Pinakes | Πίνακες: Textes et manuscrits grecs</title></ref></bibl></listBibl></listBibl></additional>
+                  </adminInfo>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="INTERNET">
+                        <head>Online resources:</head>
+                        <bibl><ref target="http://pinakes.irht.cnrs.fr/notices/cote/46985/"><title>Pinakes | Πίνακες: Textes et manuscrits grecs</title></ref></bibl>
+                     </listBibl>
+                  </listBibl>
+               </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <encodingDesc xml:id="encodingDesc" xml:base="../tolkien-classDecl.xml">
+      </fileDesc>
+      <encodingDesc xml:base="../tolkien-classDecl.xml" xml:id="encodingDesc">
          <classDecl>
             <taxonomy>
                <bibl>
                   <title>Corpus of British Medieval Library Catalogues</title>
-                  <note>(volumes 4,
-                     13, 16)</note>
+                  <note>(volumes 4, 13, 16)</note>
                </bibl>
                <category xml:id="allegoriae">
                   <catDesc xml:lang="la">Allegoriae</catDesc>
@@ -105,8 +109,7 @@
                   <catDesc xml:lang="la">Arbores</catDesc>
                </category>
                <category xml:id="auctoritates">
-                  <catDesc xml:lang="la">Auctoritates, Compilationes, Dicta, Excerta, Excerptiones,
-                     Flores, Notabilia, Notabilitates, Sententiae</catDesc>
+                  <catDesc xml:lang="la">Auctoritates, Compilationes, Dicta, Excerta, Excerptiones, Flores, Notabilia, Notabilitates, Sententiae</catDesc>
                </category>
                <category xml:id="biblia">
                   <catDesc xml:lang="la">Biblia</catDesc>
@@ -114,7 +117,7 @@
                <category xml:id="bibliographica">
                   <catDesc xml:lang="la">Bibliographica</catDesc>
                </category>
-              <!-- <category xml:id="cantus">
+               <!-- <category xml:id="cantus">
                   <catDesc xml:lang="lat">Cantus</catDesc>
                </category>
               
@@ -130,14 +133,13 @@
                   <!-- use for commonplace books, zibaldone, etc. -->
                </category>
                <category xml:id="commentarii">
-                  <catDesc xml:lang="la">Commentarii, Conclusiones, Expositiones, Glosae, Lecturae,
-                     Notulae, Proemia, Quaestiones, Scholia, Scripta</catDesc>
+                  <catDesc xml:lang="la">Commentarii, Conclusiones, Expositiones, Glosae, Lecturae, Notulae, Proemia, Quaestiones, Scholia, Scripta</catDesc>
                   <!-- query if should be used for biblical commentaries or are they just biblia? -->
                </category>
                <category xml:id="computistica">
                   <catDesc xml:lang="la">Computistica</catDesc>
                </category>
-              <!-- <category xml:id="concilia">
+               <!-- <category xml:id="concilia">
                   <catDesc xml:lang="lat">Concilia</catDesc>
                   <!-\- not a category in vol. 13 -\->
                </category>-->
@@ -151,7 +153,6 @@
                <category xml:id="contemplationes">
                   <catDesc xml:lang="la">Contemplationes, Meditationes</catDesc>
                </category>
-
                <category xml:id="credo">
                   <catDesc xml:lang="la">Credo</catDesc>
                </category>
@@ -171,7 +172,6 @@
                   <catDesc xml:lang="la">Documenta</catDesc>
                   <!-- currenlty used for Statutes of Garter (etc) which may not be helpful -->
                   <!-- check at some stage whether Documenta need other class (e.g. ecclesiastica, monastica) and likewise whether those need xref to Documenta  -->
-                  
                </category>
                <category xml:id="ecclesiastica">
                   <catDesc xml:lang="la">Ecclesiastica</catDesc>
@@ -183,7 +183,7 @@
                   <catDesc xml:lang="la">Formularia</catDesc>
                </category>
                <!-- the following are hardly necessary given that language is recorded separately -->
-              <!-- <category xml:id="gallica">
+               <!-- <category xml:id="gallica">
                   <catDesc xml:lang="lat">Gallica</catDesc>
                </category>
                <category xml:id="graeca">
@@ -240,7 +240,6 @@
                      <catDesc xml:lang="la">Devotiones</catDesc>
                      <!-- used for 'religious poems', etc. Cf. contemplationes above -->
                   </category>
-
                </category>
                <category xml:id="pastoralia">
                   <catDesc xml:lang="la">Pastoralia</catDesc>
@@ -276,7 +275,7 @@
                <category xml:id="satirica">
                   <catDesc xml:lang="la">Satirica, Parodiae</catDesc>
                </category>
-               <category xml:id="scientifica"> 
+               <category xml:id="scientifica">
                   <!-- to include (and categories could be added for: alchemy; astronomy/astrology; animals/birds (bestiaries); lapidaries; magic; weather -->
                   <!-- cf. separate heading Veterinaria below -->
                   <catDesc xml:lang="la">Scientifica</catDesc>
@@ -296,12 +295,11 @@
                   <category xml:id="magica">
                      <catDesc xml:lang="la">Magica</catDesc>
                   </category>
-                 
                </category>
                <category xml:id="sermones">
                   <catDesc xml:lang="la">Sermones</catDesc>
                </category>
-              <!-- the following is not a separate heading in Corpus, vol. 13, but is there cross-referenced to Monastica and Legalia -->
+               <!-- the following is not a separate heading in Corpus, vol. 13, but is there cross-referenced to Monastica and Legalia -->
                <!--<category xml:id="statuta">
                   <catDesc xml:lang="lat">Statuta</catDesc>
                   
@@ -349,8 +347,8 @@
             </taxonomy>
          </classDecl>
       </encodingDesc>
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
+      <revisionDesc>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

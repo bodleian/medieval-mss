@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1821">
+<TEI xml:id="manuscript_1821" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -61,7 +61,7 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem xml:id="MS_Bodl_831-item1" n="1">
+                  <msItem n="1" xml:id="MS_Bodl_831-item1">
                      <author key="person_100227669">Ambrose</author>
                      <title key="work_464">De officiis ministrorum</title>
                      <colophon><locus>(fol. 73)</locus> Finis Tercij liber sancti Ambrosij de officijs .1493.</colophon>
@@ -73,18 +73,17 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                        <extent>iii + <num type="leaf">73</num> + i fols
-                           <dimensions unit="mm" type="leaf">
+                        <extent>iii + <num type="leaf">73</num> + i fols <dimensions type="leaf" unit="mm">
                               <height>222</height>
                               <width>155</width>
                            </dimensions>
                         </extent>
                      </supportDesc>
                      <layoutDesc>
-                        <layout columns="1" writtenLines="33 36">1 col., 33-36 lines, written space <dimensions unit="mm" type="written">
-                           <height max="160" min="147">147-60</height>
-                           <width min="110" max="112">110-12</width>
-                        </dimensions></layout>
+                        <layout columns="1" writtenLines="33 36">1 col., 33-36 lines, written space <dimensions type="written" unit="mm">
+                              <height max="160" min="147">147-60</height>
+                              <width max="112" min="110">110-12</width>
+                           </dimensions></layout>
                      </layoutDesc>
                   </objectDesc>
                   <decoDesc>
@@ -95,7 +94,7 @@
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" when="1493" cert="high">1493</origDate>
+                     <origDate calendar="Gregorian" cert="high" when="1493">1493</origDate>
                      <origPlace>
                         <country key="place_7002445">English</country>
                      </origPlace>
@@ -105,13 +104,13 @@
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Description adapted (March 2019) from the following sources: 
-                           <listBibl>
+                        <source>Description adapted (March 2019) from the following sources: <listBibl>
                               <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 115 [physical description, origin, provenance]</bibl>
                               <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, III (1973), no. 1123 [decoration]</bibl>
-                              <bibl>Summary Catalogue (1922) [contents, acquisition]</bibl></listBibl>
-                            <listBibl>
-                              <bibl type="SC" facs="aap0427.gif">Summary Catalogue, vol. 2, part 1, p. 406</bibl>
+                              <bibl>Summary Catalogue (1922) [contents, acquisition]</bibl>
+                           </listBibl>
+                           <listBibl>
+                              <bibl facs="aap0427.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 406</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -119,10 +118,9 @@
                </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      
-      <revisionDesc>        
-         <change who="#MLH" when="2019-03-28">Revised to incorporate all information in Watson, SC and P&amp;A.</change>
+      </fileDesc>
+      <revisionDesc>
+         <change when="2019-03-28" who="#MLH">Revised to incorporate all information in Watson, SC and P&amp;A.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>

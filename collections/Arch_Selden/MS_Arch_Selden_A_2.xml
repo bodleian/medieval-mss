@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8835">
+<TEI xml:id="manuscript_8835" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -9,7 +9,8 @@
             <title type="collection">MSS. Arch. Selden. (Archivum Seldenianum)</title>
             <respStmt>
                <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <persName>Elizabeth Solopova</persName>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -52,8 +53,8 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem xml:id="MS_Arch_Selden_A_2-item1" n="1" class="#historica">
-                     <title type="desc" key="work_11055">'Codex Selden': Mexican pictorial screenfold manuscript</title>
+                  <msItem class="#historica" n="1" xml:id="MS_Arch_Selden_A_2-item1">
+                     <title key="work_11055" type="desc">'Codex Selden': Mexican pictorial screenfold manuscript</title>
                      <note>Of Mixtec origin, pre-Conquest in style, recording the genealogies and history from A.D. 783 to A.D. 1556 of the rulers of a place called 'Cloud Belching Mountain', identifiable as Añute (<placeName key="place_7380762">Magdalena Jaltepec</placeName>) in the Mixtec Alta (Oaxaca, Mexico).</note>
                      <!-- ?no language, just pictorial -->
                      <textLang mainLang="zxx">No linguistic content</textLang>
@@ -66,8 +67,7 @@
                      </supportDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>Coloured pictures.
-                     </decoNote>
+                     <decoNote>Coloured pictures. </decoNote>
                   </decoDesc>
                </physDesc>
                <history>
@@ -77,23 +77,30 @@
                         <country key="place_7005560">Mexican</country>
                      </origPlace>
                   </origin>
-               <provenance notBefore="1584" notAfter="1654" resp="#MMM"><persName role="fmo" key="person_51728429">John Selden, 1584-1654</persName></provenance><acquisition when="1659" resp="#MMM">Acquired by the Bodleian in 1659</acquisition></history>
+                  <provenance notAfter="1654" notBefore="1584" resp="#MMM"><persName key="person_51728429" role="fmo">John Selden, 1584-1654</persName></provenance>
+                  <acquisition resp="#MMM" when="1659">Acquired by the Bodleian in 1659</acquisition>
+               </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
-                            <listBibl>
-                              <bibl type="SC" facs="aap0617.gif">Summary Catalogue, Vol. 2 Part 1, p.  596</bibl>
+                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
+                              <bibl facs="aap0617.gif" type="SC">Summary Catalogue, Vol. 2 Part 1, p. 596</bibl>
                            </listBibl>
                         </source>
-                     </recordHist><availability status="restricted"><p>To ensure its availability to future readers, access to this item is restricted, and readers are asked to work from reproductions and published descriptions as far as possible. To apply to see the original, please send a message to <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>, outlining the subject of your research, the importance of this item to that research, and the resources you have already consulted.</p></availability>
+                     </recordHist>
+                     <availability status="restricted">
+                        <p>To ensure its availability to future readers, access to this item is restricted, and readers are asked to work from reproductions and published descriptions as far as possible. To apply to see the original, please send a message to <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>, outlining the subject of your research, the importance of this item to that research, and the resources you have already consulted.</p>
+                     </availability>
                   </adminInfo>
-               <surrogates><bibl type="digital-facsimile" subtype="partial"><ref target="https://digital.bodleian.ox.ac.uk/objects/5fb5517b-0539-4531-b996-44fa52ede044/"><title>Digital Bodleian</title></ref> <note>(21 images from 35mm slides)</note></bibl></surrogates></additional>
+                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/5fb5517b-0539-4531-b996-44fa52ede044/"><title>Digital Bodleian</title></ref>
+                        <note>(21 images from 35mm slides)</note></bibl></surrogates>
+               </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc><change when="2019-10-31" xml:id="MMM"><persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2019-10-31" xml:id="MMM"><persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

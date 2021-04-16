@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4424">
+<TEI xml:id="manuscript_4424" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -19,7 +19,6 @@
                <resp when="1974">Cataloguer</resp>
                <persName>B. C. Barker-Benfield</persName>
             </respStmt>
-           
             <respStmt>
                <resp when="2017">Markup and encoding</resp>
                <persName>Matthew Holford</persName>
@@ -27,7 +26,6 @@
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
-           
          </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
@@ -49,7 +47,7 @@
             <idno type="catalogue">Western</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc xml:id="MS_Digby_84" xml:lang="en" resp="#Q1 #Q2">
+            <msDesc resp="#Q1 #Q2" xml:id="MS_Digby_84" xml:lang="en">
                <msIdentifier>
                   <country>United Kingdom</country>
                   <region type="county">Oxfordshire</region>
@@ -62,7 +60,7 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem xml:id="MS_Digby_84-item1" n="1">
+                  <msItem n="1" xml:id="MS_Digby_84-item1">
                      <author key="person_88125532">Albertus Magnus</author>
                      <title key="work_330">De causis et processu universitatis</title>
                      <note><title>Alberti Magni Ordinis Fratrum Praedicatorum De causis et processu universitatis a prima causa</title>, ed. W. Fauser (1993)</note>
@@ -90,26 +88,29 @@
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
-                  <provenance><persName role="fmo" key="person_25374986">Thomas Allen</persName> (his number '71', fol. 1).</provenance>
-                  <provenance><persName role="fmo" key="person_49357645">Kenelm Digby</persName>.</provenance>
+                  <provenance><persName key="person_25374986" role="fmo">Thomas Allen</persName> (his number '71', fol. 1).</provenance>
+                  <provenance><persName key="person_49357645" role="fmo">Kenelm Digby</persName>.</provenance>
                   <acquisition when="1634">Presented by him to the Bodleian in 1634.</acquisition>
                </history>
-               <additional><adminInfo>
+               <additional>
+                  <adminInfo>
                      <recordHist>
-                        <source>Description adapted (2017) from the Quarto Catalogue (W. D. Macray, <title>Bodleian Library Quarto Catalogues IX: Digby Manuscripts</title>, repr. with addenda by R. W. Hunt and A. G. Watson, 1999) and supplementary sources.                         
-                        <listBibl>
-                              <bibl type="QUARTO" facs="abw0054.gif">Quarto Catalogue, col. 90</bibl>
-                              <bibl type="QUARTO" facs="abw0221.gif">Quarto Catalogue (addenda), p. 44</bibl>
-                              <bibl type="SC" facs="aap0093.gif">Summary Catalogue, vol. 2, part 1, p. 72</bibl>
+                        <source>Description adapted (2017) from the Quarto Catalogue (W. D. Macray, <title>Bodleian Library Quarto Catalogues IX: Digby Manuscripts</title>, repr. with addenda by R. W. Hunt and A. G. Watson, 1999) and supplementary sources. <listBibl>
+                              <bibl facs="abw0054.gif" type="QUARTO">Quarto Catalogue, col. 90</bibl>
+                              <bibl facs="abw0221.gif" type="QUARTO">Quarto Catalogue (addenda), p. 44</bibl>
+                              <bibl facs="aap0093.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 72</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
-                  </adminInfo><surrogates><bibl type="digital-facsimile" subtype="full"><ref target="https://digital.bodleian.ox.ac.uk/objects/78839a03-bc12-4779-b1a2-4655dd076c1a/"><title>Digital Bodleian</title></ref> <note>(full digital facsimile)</note></bibl></surrogates></additional>
+                  </adminInfo>
+                  <surrogates><bibl subtype="full" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/78839a03-bc12-4779-b1a2-4655dd076c1a/"><title>Digital Bodleian</title></ref>
+                        <note>(full digital facsimile)</note></bibl></surrogates>
+               </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

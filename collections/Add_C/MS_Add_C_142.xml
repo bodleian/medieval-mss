@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_107">
+<TEI xml:id="manuscript_107" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -54,10 +54,8 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem xml:id="MS_Add_C_142-item1" n="1" resp="#DD">
-                     <author key="person_105100637">
-                        Priscian
-                     </author>
+                  <msItem n="1" resp="#DD" xml:id="MS_Add_C_142-item1">
+                     <author key="person_105100637"> Priscian </author>
                      <title key="work_3777">Institutiones grammaticae I-XVI</title>
                      <colophon><locus>(fol. 152v)</locus> Ars Prisciani ... Sedecimi libri ... finiunt ... Anno domini. millesimo. duocentesimo. sexagesimo. vi<hi rend="superscript">o</hi> [recte xvi<hi rend="superscript">o</hi>] kalendas madii. uidelicet. Sextodeçimo. die. aprilis.</colophon>
                      <textLang mainLang="la">Latin</textLang>
@@ -67,12 +65,11 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                        <extent>154 fols.
-                           <dimensions unit="mm" type="leaf">
+                        <extent>154 fols. <dimensions type="leaf" unit="mm">
                               <height>260</height>
                               <width>160</width>
                            </dimensions>
-                           <dimensions unit="mm" type="written">
+                           <dimensions type="written" unit="mm">
                               <height>184</height>
                               <width>115</width>
                            </dimensions>
@@ -90,37 +87,38 @@
                </physDesc>
                <history>
                   <origin resp="#DD">
-                     <origDate calendar="Gregorian" when="1260" cert="high">1260</origDate>
+                     <origDate calendar="Gregorian" cert="high" when="1260">1260</origDate>
                      <origPlace cert="low">
                         <country key="place_1000070">French</country>, <region>South</region> (?)<!--ORIGINAL: French, South (?)--></origPlace>
                   </origin>
-                  <provenance resp="#DD">'Notum sit omnibus quod die sabbati intitulata viiij<hi rend="superscript">o</hi> Idus Nouembris hora completorij Anno domini Millesimo Trecentesimo secundo fuit ex parte et ad opus Venerabilis <persName role="fmo" key="person_2806">Iacobi carrocij</persName> emptus iste liber uocatus Priscianus per Magistrum Guillelmum Figuera et uenditus a <persName role="fmo" key="person_2807">Petro Barranj</persName> scolari de Carbona [<placeName key="place_7656909">Carbonne</placeName>, south-west of Toulouse] precio Viginti et octo solidorum turonensium Presentibus testibus Magistris Guillermo de trona clerico de Serancobi <gap unit="chars" quantity="7"/> discipulo suo et Bernj de uer<supplied><unclear>dun</unclear></supplied>io [<placeName>Verdun</placeName><!-- not found TGN -->, north-west of Toulouse] de Ciuitate Appamiarum [<placeName key="place_1034799">Pamiers</placeName>]. Quod precium solutum et traditum fuit... jn presentia et testimonio Venerabilium Jacobi carrocij. Jordani de palacio. magistri P Martini et <gap unit="chars" quantity="7"/> et Bernj' (fol. 154v). A Jordanus de Palatio was <foreign rend="italic">consiliarius</foreign> of the University of Toulouse in 1328.</provenance>
-                  <provenance resp="#DD">'<persName role="fmo" key="person_2805">P. Miralli Galaesii Vullaconiani</persName>', 15th cent. (?), fol. 152v.</provenance>
-                  <provenance resp="#SC">'Du Cabinet de Mr. le Cte. Wlgrin Taillefer', c. 1800, fols. 2r, 152: (?) <persName role="fmo" cert="unknown" key="person_27199933">Henry François Athanase Wlgrin de Taillefer (1761-1833)</persName>.</provenance>
-                  <provenance resp="#SC"><persName role="fmo" key="person_5314321" cert="unknown">Richard Heber (1773-1833)</persName>, probably no. 1717 in his sale, bought by Thorpe for £5 7s. 6d.</provenance>
+                  <provenance resp="#DD">'Notum sit omnibus quod die sabbati intitulata viiij<hi rend="superscript">o</hi> Idus Nouembris hora completorij Anno domini Millesimo Trecentesimo secundo fuit ex parte et ad opus Venerabilis <persName key="person_2806" role="fmo">Iacobi carrocij</persName> emptus iste liber uocatus Priscianus per Magistrum Guillelmum Figuera et uenditus a <persName key="person_2807" role="fmo">Petro Barranj</persName> scolari de Carbona [<placeName key="place_7656909">Carbonne</placeName>, south-west of Toulouse] precio Viginti et octo solidorum turonensium Presentibus testibus Magistris Guillermo de trona clerico de Serancobi <gap quantity="7" unit="chars"/> discipulo suo et Bernj de uer<supplied><unclear>dun</unclear></supplied>io [<placeName>Verdun</placeName><!-- not found TGN -->, north-west of Toulouse] de Ciuitate Appamiarum [<placeName key="place_1034799">Pamiers</placeName>]. Quod precium solutum et traditum fuit... jn presentia et testimonio Venerabilium Jacobi carrocij. Jordani de palacio. magistri P Martini et <gap quantity="7" unit="chars"/> et Bernj' (fol. 154v). A Jordanus de Palatio was <foreign rend="italic">consiliarius</foreign> of the University of Toulouse in 1328.</provenance>
+                  <provenance resp="#DD">'<persName key="person_2805" role="fmo">P. Miralli Galaesii Vullaconiani</persName>', 15th cent. (?), fol. 152v.</provenance>
+                  <provenance resp="#SC">'Du Cabinet de Mr. le Cte. Wlgrin Taillefer', c. 1800, fols. 2r, 152: (?) <persName cert="unknown" key="person_27199933" role="fmo">Henry François Athanase Wlgrin de Taillefer (1761-1833)</persName>.</provenance>
+                  <provenance resp="#SC"><persName cert="unknown" key="person_5314321" role="fmo">Richard Heber (1773-1833)</persName>, probably no. 1717 in his sale, bought by Thorpe for £5 7s. 6d.</provenance>
                   <provenance resp="#SC">Thorpe, 1836 catalogue, no. 1064.</provenance>
-                  <acquisition when="1836" resp="#SC">Bought from Thorpe for £10 10s. in 1836.</acquisition>
+                  <acquisition resp="#SC" when="1836">Bought from Thorpe for £10 10s. in 1836.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Adapted (2018) from A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts</title>, and the Summary Catalogue (1905). 
-                            <listBibl>
-                              <bibl type="SC" facs="aam0481.gif">Summary Catalogue, Vol. 5, p.  446</bibl>
-                              <bibl type="SC" facs="aam0482.gif">Summary Catalogue, Vol. 5, p.  447</bibl>
+                        <source>Adapted (2018) from A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts</title>, and the Summary Catalogue (1905). <listBibl>
+                              <bibl facs="aam0481.gif" type="SC">Summary Catalogue, Vol. 5, p. 446</bibl>
+                              <bibl facs="aam0482.gif" type="SC">Summary Catalogue, Vol. 5, p. 447</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
-                  <listBibl type="WRAPPER"><listBibl>
-                     <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 20</bibl>
-                  </listBibl></listBibl>
+                  <listBibl type="WRAPPER">
+                     <listBibl>
+                        <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 20</bibl>
+                     </listBibl>
+                  </listBibl>
                </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

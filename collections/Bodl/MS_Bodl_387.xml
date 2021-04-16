@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1417">
+<TEI xml:id="manuscript_1417" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -66,22 +66,20 @@
                      <locus>(fol. ii)</locus>
                      <note>13th century list of contents.</note>
                   </msItem>
-                  <msItem xml:id="MS_Bodl_387-item1" n="1">
+                  <msItem n="1" xml:id="MS_Bodl_387-item1">
                      <locus>(fol. 1)</locus>
                      <author key="person_95155322">Origen</author>
                      <title key="work_3395">Homilies on Joshua</title>
-                     <note>(tr. <persName role="trl" key="person_77679446">Rufinus</persName>)</note>
+                     <note>(tr. <persName key="person_77679446" role="trl">Rufinus</persName>)</note>
                   </msItem>
-                  <msItem xml:id="MS_Bodl_387-item2" n="2">
-                     <author key="person_66806872">
-                        Augustine
-                     </author>
+                  <msItem n="2" xml:id="MS_Bodl_387-item2">
+                     <author key="person_66806872"> Augustine </author>
                      <note>Treatises:</note>
-                     <msItem xml:id="MS_Bodl_387-item2a" n="2a">
+                     <msItem n="2a" xml:id="MS_Bodl_387-item2a">
                         <locus>(fol. 70v)</locus>
                         <title key="work_6077">De adulterinis conjugiis</title>
                      </msItem>
-                     <msItem xml:id="MS_Bodl_387-item2b" n="2b">
+                     <msItem n="2b" xml:id="MS_Bodl_387-item2b">
                         <locus>(fol. 92v)</locus>
                         <title key="work_770">De mendacio</title>
                      </msItem>
@@ -96,7 +94,9 @@
                      <msItem n="2e" xml:id="MS_Bodl_387-item2e">
                         <locus>(fol. 186)</locus>
                         <title key="work_5779">Contra Arrianorum perfidiam</title>
-                        <msItem><note>Preceded at <locus>fol. 182v</locus> by the <title key="work_16071">Sermo Arrianorum</title>.</note></msItem>
+                        <msItem>
+                           <note>Preceded at <locus>fol. 182v</locus> by the <title key="work_16071">Sermo Arrianorum</title>.</note>
+                        </msItem>
                      </msItem>
                      <msItem n="2f" xml:id="MS_Bodl_387-item2f">
                         <locus>(fol. 202)</locus>
@@ -108,18 +108,17 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                        <extent>ii + 244 + ii fols.
-                        <dimensions unit="mm" type="leaf">
-                           <height>303</height>
-                           <width>207</width>
-                        </dimensions>
+                        <extent>ii + 244 + ii fols. <dimensions type="leaf" unit="mm">
+                              <height>303</height>
+                              <width>207</width>
+                           </dimensions>
                         </extent>
                      </supportDesc>
                      <layoutDesc>
-                        <layout columns="1" writtenLines="30">1 col., 30 lines, written space <dimensions unit="mm" type="written">
-                           <height quantity="215">c. 215</height>
-                           <width>132</width>
-                        </dimensions></layout>
+                        <layout columns="1" writtenLines="30">1 col., 30 lines, written space <dimensions type="written" unit="mm">
+                              <height quantity="215">c. 215</height>
+                              <width>132</width>
+                           </dimensions></layout>
                      </layoutDesc>
                   </objectDesc>
                   <handDesc>
@@ -143,35 +142,40 @@
                         <!--ORIGINAL: English, Rochester-->
                      </origPlace>
                   </origin>
-                  <provenance notBefore="1122" notAfter="1123" resp="#DD #MLH">Recorded in a list of <orgName role="fmo" key="org_173408842">Rochester Priory</orgName> books written 1122/1123 (<bibl><title>English Benedictine Libraries: The Shorter Catalogues</title> B77.30</bibl>).</provenance>
-                  <provenance when="1202" resp="#MLH">Identifiable in the <orgName role="fmo" key="org_173408842">Rochester Priory</orgName> library catalogue of 1202 (B79.45).</provenance>
-                  <provenance notBefore="1300" notAfter="1400" resp="#DD">Fol. 1: <q type="exLibris"><supplied>Liber de claustro <orgName role="fmo" key="org_173408842">Roffensi</orgName> per Godfridum monachum</supplied></q>, 14th century.</provenance>
+                  <provenance notAfter="1123" notBefore="1122" resp="#DD #MLH">Recorded in a list of <orgName key="org_173408842" role="fmo">Rochester Priory</orgName> books written 1122/1123 (<bibl><title>English Benedictine Libraries: The Shorter Catalogues</title> B77.30</bibl>).</provenance>
+                  <provenance resp="#MLH" when="1202">Identifiable in the <orgName key="org_173408842" role="fmo">Rochester Priory</orgName> library catalogue of 1202 (B79.45).</provenance>
+                  <provenance notAfter="1400" notBefore="1300" resp="#DD">Fol. 1: <q type="exLibris"><supplied>Liber de claustro <orgName key="org_173408842" role="fmo">Roffensi</orgName> per Godfridum monachum</supplied></q>, 14th century.</provenance>
                   <provenance resp="#SC"><q type="unknown">Wigorniae (?) round whete</q>, 15th century, fol. 246v.</provenance>
-                  <provenance resp="#SC"><orgName role="fmo" key="org_2142145857037522921207">Windsor, collegiate chapel of St George</orgName>.</provenance>
-                  <acquisition when="1612" resp="#SC">Presented by the dean and canons in 1612.</acquisition>
+                  <provenance resp="#SC"><orgName key="org_2142145857037522921207" role="fmo">Windsor, collegiate chapel of St George</orgName>.</provenance>
+                  <acquisition resp="#SC" when="1612">Presented by the dean and canons in 1612.</acquisition>
                </history>
-               <additional><adminInfo>
+               <additional>
+                  <adminInfo>
                      <recordHist>
-                        <source>Description adapted (2018) from the following sources: 
-                           <listBibl>
+                        <source>Description adapted (2018) from the following sources: <listBibl>
                               <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 82 [physical description, origin, provenance]</bibl>
                               <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, III (1973), no. 97 [decoration]</bibl>
                               <bibl>Summary Catalogue (1922) [contents, provenance, acquisition]</bibl>
-                           </listBibl>      
-                            <listBibl>
-                              <bibl type="SC" facs="aap0282.gif">Summary Catalogue, vol. 2, part 1, p. 261</bibl>
+                           </listBibl>
+                           <listBibl>
+                              <bibl facs="aap0282.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 261</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
-                  </adminInfo><listBibl type="WRAPPER"><listBibl type="INTERNET"><head>Online resources:</head><bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5856"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl></listBibl></listBibl></additional>
+                  </adminInfo>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="INTERNET">
+                        <head>Online resources:</head>
+                        <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5856"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl>
+                     </listBibl>
+                  </listBibl>
+               </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      
-      <revisionDesc>       
-         <change who="#MLH" when="2018-11-20">Revised to incorporate all information in Watson, P&amp;A, and SC.</change>
+      </fileDesc>
+      <revisionDesc>
+         <change when="2018-11-20" who="#MLH">Revised to incorporate all information in Watson, P&amp;A, and SC.</change>
          <change when="2017-07-01">First online publication.</change>
-
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

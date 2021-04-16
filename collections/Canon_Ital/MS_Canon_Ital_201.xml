@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2637">
+<TEI xml:id="manuscript_2637" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -9,7 +9,8 @@
             <title type="collection">MSS. Canon. Ital. (Canonici Italian)</title>
             <respStmt>
                <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <persName>Elizabeth Solopova</persName>
+               <persName>Matthew Holford</persName>
             </respStmt>
             <respStmt xml:id="BCBB">
                <resp when="2020">Cataloguer</resp>
@@ -56,16 +57,10 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem xml:id="MS_Canon_Ital_201-item1" n="1">
-                     <author key="person_100184667">
-                        
-                        Gregory the Great
-                     
-                     </author>
+                  <msItem n="1" xml:id="MS_Canon_Ital_201-item1">
+                     <author key="person_100184667"> Gregory the Great </author>
                      <title key="work_1864">Dialogues</title>
-                     <note>(Italian translation by <persName role="trl" key="person_29576537">
-                           Domenico Cavalca
-                        </persName>)</note>
+                     <note>(Italian translation by <persName key="person_29576537" role="trl"> Domenico Cavalca </persName>)</note>
                      <textLang mainLang="it">Italian</textLang>
                   </msItem>
                </msContents>
@@ -78,10 +73,10 @@
                   <bindingDesc resp="#BCBB">
                      <binding notAfter="1500" notBefore="1400">
                         <p>15th century, <placeName key="place_1000080">Italian</placeName> (as MS.): wood boards with cushion bevel; red tawed leather, blind-tooled with double or triple lines forming four panels with crossed diagonals on each cover; remnants of two fore-edge clasps with lost straps of similar red leather, and of a lost rectangular label-frame at upper centre of back cover (six nail holes); edges plain; spine original, plain, but with an added gilt green-leather label, 18th century, <placeName key="place_1000080">Italian</placeName>. <dimensions type="binding" unit="mm">
-                           <height min="223" max="226">223-226</height>
-                           <width quantity="147" precision="medium">c. 147</width>
-                           <depth quantity="66" precision="medium">c. 66</depth>
-                        </dimensions> (book closed).</p>
+                              <height max="226" min="223">223-226</height>
+                              <width precision="medium" quantity="147">c. 147</width>
+                              <depth precision="medium" quantity="66">c. 66</depth>
+                           </dimensions> (book closed).</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
@@ -92,17 +87,18 @@
                         <country key="place_1000080">Italian</country>
                      </origPlace>
                   </origin>
-               <provenance notBefore="1727" notAfter="1805" resp="#MMM"><persName role="fmo" key="person_2384880">Matteo Luigi Canonici, 1727-1805</persName></provenance><provenance notAfter="1807" resp="#MMM"><persName role="fmo" key="person_446">Giuseppe Canonici , -1807</persName></provenance><acquisition when="1817" resp="#MMM">Purchased by the Bodleian in 1817</acquisition></history>
+                  <provenance notAfter="1805" notBefore="1727" resp="#MMM"><persName key="person_2384880" role="fmo">Matteo Luigi Canonici, 1727-1805</persName></provenance>
+                  <provenance notAfter="1807" resp="#MMM"><persName key="person_446" role="fmo">Giuseppe Canonici , -1807</persName></provenance>
+                  <acquisition resp="#MMM" when="1817">Purchased by the Bodleian in 1817</acquisition>
+               </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (A. Mortara,  <title>Catalogo dei manoscritti italiani che sotto la denominazione di Codici Canoniciani Italici si conservano nella Biblioteca Bodleiana a Oxford</title>, Quarto Catalogues XI, 1864). Binding: <bibl>B. C. Barker-Benfield, <title>Bookbindings of Canonici manuscripts : a survey of early and non-standard bindings, mostly Italian, in the Canonici collection of the Bodleian Library, University of Oxford</title> (Oxford, privately printed, 2020).</bibl> 
-                            
-                            
-                            <listBibl>
-                              <bibl type="QUARTO" facs="acp0115.gif">Quarto Catalogue, col. 198</bibl>
-                              <bibl type="QUARTO" facs="acp0116.gif">Quarto Catalogue, col. 199</bibl>
-                              <bibl type="SC" facs="aaz0435.gif">Summary Catalogue, vol. 4, p. 416</bibl>
+                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (A. Mortara, <title>Catalogo dei manoscritti italiani che sotto la denominazione di Codici Canoniciani Italici si conservano nella Biblioteca Bodleiana a Oxford</title>, Quarto Catalogues XI, 1864). Binding: <bibl>B. C. Barker-Benfield, <title>Bookbindings of Canonici manuscripts : a survey of early and non-standard bindings, mostly Italian, in the Canonici collection of the Bodleian Library, University of Oxford</title> (Oxford, privately printed, 2020).</bibl>
+                           <listBibl>
+                              <bibl facs="acp0115.gif" type="QUARTO">Quarto Catalogue, col. 198</bibl>
+                              <bibl facs="acp0116.gif" type="QUARTO">Quarto Catalogue, col. 199</bibl>
+                              <bibl facs="aaz0435.gif" type="SC">Summary Catalogue, vol. 4, p. 416</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -110,12 +106,11 @@
                </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc><change when="2020-07-21">Binding description added.</change><change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName>
-      Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
-      in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.'
-    </change>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2020-07-21">Binding description added.</change>
+         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.' </change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

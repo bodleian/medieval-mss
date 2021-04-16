@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2725">
+<TEI xml:id="manuscript_2725" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -8,7 +8,8 @@
             <title type="collection">MSS. Canon. Ital. (Canonici Italian)</title>
             <respStmt>
                <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <persName>Elizabeth Solopova</persName>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -53,20 +54,24 @@
                <physDesc>
                   <p n="composite">Composite: fols. 1-91 || fols. 92-105</p>
                </physDesc>
-               <history><provenance notBefore="1727" notAfter="1805" resp="#MMM"><persName role="fmo" key="person_2384880">Matteo Luigi Canonici, 1727-1805</persName></provenance><provenance notAfter="1807" resp="#MMM"><persName role="fmo" key="person_446">Giuseppe Canonici , -1807</persName></provenance><acquisition when="1817" resp="#MMM">Purchased by the Bodleian in 1817</acquisition></history><additional>
+               <history>
+                  <provenance notAfter="1805" notBefore="1727" resp="#MMM"><persName key="person_2384880" role="fmo">Matteo Luigi Canonici, 1727-1805</persName></provenance>
+                  <provenance notAfter="1807" resp="#MMM"><persName key="person_446" role="fmo">Giuseppe Canonici , -1807</persName></provenance>
+                  <acquisition resp="#MMM" when="1817">Purchased by the Bodleian in 1817</acquisition>
+               </history>
+               <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (A. Mortara,  <title>Catalogo dei manoscritti italiani che sotto la denominazione di Codici Canoniciani Italici si conservano nella Biblioteca Bodleiana a Oxford</title>, Quarto Catalogues XI, 1864). Decoration, localization and date follow Pächt and Alexander (1970).  
-                            
-                            
-                            <listBibl>
-                              <bibl type="QUARTO" facs="acp0144.gif">Quarto Catalogue, col. 255</bibl>
-                              <bibl type="SC" facs="aaz0437.gif">Summary Catalogue, vol. 4, p. 418</bibl>
+                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (A. Mortara, <title>Catalogo dei manoscritti italiani che sotto la denominazione di Codici Canoniciani Italici si conservano nella Biblioteca Bodleiana a Oxford</title>, Quarto Catalogues XI, 1864). Decoration, localization and date follow Pächt and Alexander (1970). <listBibl>
+                              <bibl facs="acp0144.gif" type="QUARTO">Quarto Catalogue, col. 255</bibl>
+                              <bibl facs="aaz0437.gif" type="SC">Summary Catalogue, vol. 4, p. 418</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
-               <surrogates><bibl type="digital-facsimile" subtype="partial"><ref target="https://digital.bodleian.ox.ac.uk/objects/bd329c9b-e43c-4b02-862b-3aa12178b27d/"><title>Digital Bodleian</title></ref> <note>(2 images from 35mm slides)</note></bibl></surrogates></additional>
+                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/bd329c9b-e43c-4b02-862b-3aa12178b27d/"><title>Digital Bodleian</title></ref>
+                        <note>(2 images from 35mm slides)</note></bibl></surrogates>
+               </additional>
                <msPart xml:id="MS_Canon_Ital_288-part1">
                   <msIdentifier>
                      <altIdentifier type="partial">
@@ -74,15 +79,11 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Canon_Ital_288-part1-item1" n="1">
-                        <author key="person_2249">
-                           
-                           Benedetto da Cesena
-                        <!-- not found VIAF -->
+                     <msItem n="1" xml:id="MS_Canon_Ital_288-part1-item1">
+                        <author key="person_2249"> Benedetto da Cesena <!-- not found VIAF -->
                         </author>
-                        <title key="work_987">De honore
-              mulierum</title>
-                        <note>(dedicated to <persName role="dte" key="person_927">Pandolfo Malatesta</persName>)<!-- which one? --></note>
+                        <title key="work_987">De honore mulierum</title>
+                        <note>(dedicated to <persName key="person_927" role="dte">Pandolfo Malatesta</persName>)<!-- which one? --></note>
                         <textLang mainLang="it">Italian</textLang>
                      </msItem>
                   </msContents>
@@ -111,12 +112,8 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Canon_Ital_288-part2-item1" n="1">
-                        <author key="person_39382430">
-                           
-                           Petrarch
-                        
-                        </author>
+                     <msItem n="1" xml:id="MS_Canon_Ital_288-part2-item1">
+                        <author key="person_39382430"> Petrarch </author>
                         <title key="work_3561">Il Canzoniere </title>
                         <note>(fragments)</note>
                         <textLang mainLang="it">Italian</textLang>
@@ -142,12 +139,10 @@
                </msPart>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc><change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName>
-      Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
-      in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.'
-    </change>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.' </change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

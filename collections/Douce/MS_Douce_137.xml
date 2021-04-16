@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4514">
+<TEI xml:id="manuscript_4514" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -9,7 +9,8 @@
             <title type="collection">MSS. Douce</title>
             <respStmt>
                <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <persName>Elizabeth Solopova</persName>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -54,18 +55,27 @@
                <physDesc>
                   <p n="composite">Composite: three parts</p>
                </physDesc>
-               <history><provenance notBefore="1757" notAfter="1834" resp="#MMM"><persName role="fmo" key="person_69848690">Francis Douce, 1757-1834</persName></provenance><acquisition when="1834" resp="#MMM">Bequeathed to the Bodleian in 1834</acquisition></history><additional><adminInfo>
+               <history>
+                  <provenance notAfter="1834" notBefore="1757" resp="#MMM"><persName key="person_69848690" role="fmo">Francis Douce, 1757-1834</persName></provenance>
+                  <acquisition resp="#MMM" when="1834">Bequeathed to the Bodleian in 1834</acquisition>
+               </history>
+               <additional>
+                  <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897).  
-                            
-                            
-                            <listBibl>
-                              <bibl type="SC" facs="aaz0552.gif">Summary Catalogue, vol. 4, p. 533</bibl>
-                              <bibl type="SC" facs="aaz0553.gif">Summary Catalogue, vol. 4, p. 534</bibl>
+                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). <listBibl>
+                              <bibl facs="aaz0552.gif" type="SC">Summary Catalogue, vol. 4, p. 533</bibl>
+                              <bibl facs="aaz0553.gif" type="SC">Summary Catalogue, vol. 4, p. 534</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
-                  </adminInfo><listBibl type="WRAPPER"><listBibl type="INTERNET"><head>Online resources:</head><bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/40250"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title></ref></bibl></listBibl></listBibl></additional>
+                  </adminInfo>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="INTERNET">
+                        <head>Online resources:</head>
+                        <bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/40250"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title></ref></bibl>
+                     </listBibl>
+                  </listBibl>
+               </additional>
                <msPart xml:id="MS_Douce_137-part1">
                   <msIdentifier>
                      <altIdentifier type="partial">
@@ -73,12 +83,12 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Douce_137-part1-item1" n="1" class="#legali">
-                        <title type="desc" key="work_12597">Legal texts</title>
+                     <msItem class="#legali" n="1" xml:id="MS_Douce_137-part1-item1">
+                        <title key="work_12597" type="desc">Legal texts</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Douce_137-part1-item2" n="2" class="#legalia #dictamen #documenta">
-                        <title type="desc" key="work_11872">Formulary</title>
+                     <msItem class="#legalia #dictamen #documenta" n="2" xml:id="MS_Douce_137-part1-item2">
+                        <title key="work_11872" type="desc">Formulary</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                   </msContents>
@@ -105,12 +115,12 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Douce_137-part2-item1" n="1">
+                     <msItem n="1" xml:id="MS_Douce_137-part2-item1">
                         <author key="person_34524757" role="attributed">Ranulph Glanville (attrib.)</author>
                         <title key="work_4215">De legibus et consuetudinibus regni Anglie</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Douce_137-part2-item2" n="2" class="#legalia">
+                     <msItem class="#legalia" n="2" xml:id="MS_Douce_137-part2-item2">
                         <title key="work_12613">Leges Edwardi confessoris</title>
                         <note>(version 1)</note>
                         <textLang mainLang="la">Latin</textLang>
@@ -139,12 +149,12 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Douce_137-part3-item1" n="1" class="#legalia">
-                        <title type="desc" key="work_14286">Register of writs</title>
+                     <msItem class="#legalia" n="1" xml:id="MS_Douce_137-part3-item1">
+                        <title key="work_14286" type="desc">Register of writs</title>
                         <textLang mainLang="fr">French</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Douce_137-part3-item2" n="2" class="#versus">
-                        <title type="desc" key="work_13876">Poems</title>
+                     <msItem class="#versus" n="2" xml:id="MS_Douce_137-part3-item2">
+                        <title key="work_13876" type="desc">Poems</title>
                         <textLang mainLang="fr" otherLangs="la">French and Latin</textLang>
                      </msItem>
                   </msContents>
@@ -166,12 +176,10 @@
                </msPart>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc><change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName>
-      Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
-      in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.'
-    </change>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.' </change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

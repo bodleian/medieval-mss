@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8770">
+<TEI xml:id="manuscript_8770" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -9,7 +9,8 @@
             <title type="collection">MSS. Rawl. poet. (Rawlinson poetry) </title>
             <respStmt>
                <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <persName>Elizabeth Solopova</persName>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -54,19 +55,23 @@
                <physDesc>
                   <p n="composite">Composite: A || B || C</p>
                </physDesc>
-               <history><provenance notBefore="1690" notAfter="1755" resp="#MMM"><persName role="fmo" key="person_47563478">Richard Rawlinson, 1690-1755</persName></provenance><acquisition when="1755" resp="#MMM">Bequeathed to the Bodleian in 1755</acquisition></history><additional>
+               <history>
+                  <provenance notAfter="1755" notBefore="1690" resp="#MMM"><persName key="person_47563478" role="fmo">Richard Rawlinson, 1690-1755</persName></provenance>
+                  <acquisition resp="#MMM" when="1755">Bequeathed to the Bodleian in 1755</acquisition>
+               </history>
+               <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1895). 
-                            
-                            <listBibl>
-                              <bibl type="SC" facs="aas0306.gif">Summary Catalogue, Vol. 3, p.  291</bibl>
-                              <bibl type="SC" facs="aas0307.gif">Summary Catalogue, Vol. 3, p.  292</bibl>
+                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1895). <listBibl>
+                              <bibl facs="aas0306.gif" type="SC">Summary Catalogue, Vol. 3, p. 291</bibl>
+                              <bibl facs="aas0307.gif" type="SC">Summary Catalogue, Vol. 3, p. 292</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
-               <surrogates><bibl type="digital-facsimile" subtype="partial"><ref target="https://digital.bodleian.ox.ac.uk/objects/f24926f6-4653-40ce-9c39-95da38101a20/"><title>Digital Bodleian</title></ref> <note>(2 images from 35mm slides)</note></bibl></surrogates></additional>
+                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/f24926f6-4653-40ce-9c39-95da38101a20/"><title>Digital Bodleian</title></ref>
+                        <note>(2 images from 35mm slides)</note></bibl></surrogates>
+               </additional>
                <msPart xml:id="MS_Rawl_poet_34-part1">
                   <msIdentifier>
                      <altIdentifier type="partial">
@@ -74,9 +79,8 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Rawl_poet_34-part1-item1" n="1" class="#vitae_sanctorum">
-						                  <title type="desc" key="work_12887">Life of St. Margaret</title>
-                        
+                     <msItem class="#vitae_sanctorum" n="1" xml:id="MS_Rawl_poet_34-part1-item1">
+                        <title key="work_12887" type="desc">Life of St. Margaret</title>
                         <textLang mainLang="en">English</textLang>
                      </msItem>
                   </msContents>
@@ -103,12 +107,11 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Rawl_poet_34-part2-item1" n="1" class="#versus">
-						                  <title type="desc" key="work_13875">Poems</title>
-                        
+                     <msItem class="#versus" n="1" xml:id="MS_Rawl_poet_34-part2-item1">
+                        <title key="work_13875" type="desc">Poems</title>
                         <textLang mainLang="en">English</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Rawl_poet_34-part2-item2" n="2" class="#romances">
+                     <msItem class="#romances" n="2" xml:id="MS_Rawl_poet_34-part2-item2">
                         <title key="work_14651">Sir Degare</title>
                         <textLang mainLang="en">English</textLang>
                      </msItem>
@@ -136,13 +139,11 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Rawl_poet_34-part3-item1" n="1" class="#mariologica">
-                        <title key="work_10433">A Balade in praise of the Virgin
-                           Mary</title>
+                     <msItem class="#mariologica" n="1" xml:id="MS_Rawl_poet_34-part3-item1">
+                        <title key="work_10433">A Balade in praise of the Virgin Mary</title>
                         <note>with acrostic</note>
                         <note>fifteen stanzas rhyme royal</note>
-                        <incipit>Away ffeynt lufe full of
-                              varyaunce</incipit>
+                        <incipit>Away ffeynt lufe full of varyaunce</incipit>
                         <textLang mainLang="en">English</textLang>
                      </msItem>
                   </msContents>
@@ -164,9 +165,10 @@
                </msPart>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc><change when="2019-10-31" xml:id="MMM"><persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2019-10-31" xml:id="MMM"><persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

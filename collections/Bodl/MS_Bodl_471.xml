@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1504">
+<TEI xml:id="manuscript_1504" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -56,7 +56,7 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents resp="#SC">
-                  <msItem xml:id="MS_Bodl_471-item1" n="1">
+                  <msItem n="1" xml:id="MS_Bodl_471-item1">
                      <author key="person_84971735">Johannes de Janduno</author>
                      <title key="work_2563">Questiones super libros de anima Aristotelis</title>
                      <textLang mainLang="la">Latin</textLang>
@@ -66,21 +66,20 @@
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
-                        <extent>iii + 209 fols.
-                        <dimensions unit="mm" type="leaf">
-                           <height>280</height>
-                           <width>195</width>
-                        </dimensions></extent>
+                        <extent>iii + 209 fols. <dimensions type="leaf" unit="mm">
+                              <height>280</height>
+                              <width>195</width>
+                           </dimensions></extent>
                      </supportDesc>
                      <layoutDesc>
-                        <layout>2 cols., 42 lines, column space <dimensions unit="mm" type="column">
-                           <height min="175" max="180">175-80</height>
-                           <width max="65" min="60">60-5</width>
-                        </dimensions></layout>
+                        <layout>2 cols., 42 lines, column space <dimensions type="column" unit="mm">
+                              <height max="180" min="175">175-80</height>
+                              <width max="65" min="60">60-5</width>
+                           </dimensions></layout>
                      </layoutDesc>
                   </objectDesc>
                   <handDesc>
-                     <handNote>Written by <persName role="scr" key="person_2970">Angelus de Sancto Severo, OFM</persName> (see Provenance).</handNote>
+                     <handNote>Written by <persName key="person_2970" role="scr">Angelus de Sancto Severo, OFM</persName> (see Provenance).</handNote>
                   </handDesc>
                   <decoDesc>
                      <decoNote>Coloured capitals.</decoNote>
@@ -93,29 +92,27 @@
                </physDesc>
                <history>
                   <origin resp="#DD">
-                     <origDate calendar="Gregorian" when="1467" cert="high">1467</origDate>
+                     <origDate calendar="Gregorian" cert="high" when="1467">1467</origDate>
                      <origPlace>
                         <country key="place_1000080">Italian</country>, <settlement key="place_7004474">Naples</settlement>
                         <!--ORIGINAL: Italian, Naples-->
                      </origPlace>
                   </origin>
                   <provenance resp="#DD"><q type="colophon">Hunc librum Ego frater <supplied>Angelus</supplied> de sancto seuero ordinis minorum prouincie sancti Angeli feci scribere In ciuitate neapolitana Anno domini M<hi rend="superscript">o</hi>cccc<hi rend="superscript">o</hi> lxvii</q> (fol. 207; a similar but briefer colophon is on fol. 205v).</provenance>
-                  <provenance resp="#SC"><q type="exLibris">Iste liber <unclear>fuit</unclear> <persName role="fmo" key="person_2971">Aulexander</persName></q>, late 15th century.</provenance>
-                  <acquisition when="1603" resp="#SC">Presented by <persName role="dnr" key="person_2966">Sir Richard Fermor of Somerton</persName> in 1603.</acquisition>
+                  <provenance resp="#SC"><q type="exLibris">Iste liber <unclear>fuit</unclear>
+                        <persName key="person_2971" role="fmo">Aulexander</persName></q>, late 15th century.</provenance>
+                  <acquisition resp="#SC" when="1603">Presented by <persName key="person_2966" role="dnr">Sir Richard Fermor of Somerton</persName> in 1603.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Description adapted (2018) from the following sources: 
-                           <listBibl>
+                        <source>Description adapted (2018) from the following sources: <listBibl>
                               <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 93 [physical description, origin, provenance]</bibl>
-                             
-                              <bibl>Summary Catalogue (1922) [contents, provenance, acquisition, binding]</bibl></listBibl>
-                            
-                            
-                            <listBibl>
-                              <bibl type="SC" facs="aap0414.gif">Summary Catalogue, vol. 2, part 1, p. 393</bibl>
-                              <bibl type="SC" facs="aap0415.gif">Summary Catalogue, vol. 2, part 1, p. 394</bibl>
+                              <bibl>Summary Catalogue (1922) [contents, provenance, acquisition, binding]</bibl>
+                           </listBibl>
+                           <listBibl>
+                              <bibl facs="aap0414.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 393</bibl>
+                              <bibl facs="aap0415.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 394</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -123,12 +120,10 @@
                </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      
-      <revisionDesc>         
-         <change who="#MLH" when="2018-11-23">Revised to incorporate all information in Watson and SC.</change>
+      </fileDesc>
+      <revisionDesc>
+         <change when="2018-11-23" who="#MLH">Revised to incorporate all information in Watson and SC.</change>
          <change when="2017-07-01">First online publication.</change>
-
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

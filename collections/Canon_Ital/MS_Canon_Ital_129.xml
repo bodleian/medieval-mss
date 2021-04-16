@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2563">
+<TEI xml:id="manuscript_2563" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -9,7 +9,8 @@
             <title type="collection">MSS. Canon. Ital. (Canonici Italian)</title>
             <respStmt>
                <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <persName>Elizabeth Solopova</persName>
+               <persName>Matthew Holford</persName>
             </respStmt>
             <respStmt xml:id="BCBB">
                <resp when="2020">Cataloguer</resp>
@@ -56,10 +57,9 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem xml:id="MS_Canon_Ital_129-item1" n="1" class="#historica">
-						               <title type="desc" key="work_12270">History of <placeName key="place_1000070">France</placeName>
+                  <msItem class="#historica" n="1" xml:id="MS_Canon_Ital_129-item1">
+                     <title key="work_12270" type="desc">History of <placeName key="place_1000070">France</placeName>
                      </title>
-                     
                      <textLang mainLang="it">Italian</textLang>
                   </msItem>
                </msContents>
@@ -68,14 +68,17 @@
                      <supportDesc material="chart">
                         <support>paper</support>
                      </supportDesc>
-                  </objectDesc> <bindingDesc resp="#BCBB">
+                  </objectDesc>
+                  <bindingDesc resp="#BCBB">
                      <binding notAfter="1500" notBefore="1400">
                         <p>15th century, <placeName key="place_1000080">Italian</placeName> (as MS.): wood boards with slight cushion bevel, fore-edge corners rounded as textblock, now bare but perhaps originally full leather; traces of two clasps with green textile straps running to trefoil-shaped catch-plates, and of four bosses on each cover (all lost).</p>
-                        </binding><binding notAfter="1800" notBefore="1700"><p>Reback, 18th century, <placeName key="place_1000080">Italian</placeName>: spine replaced as a quarter-binding of light brown leather, extending across about a quarter of each board to a vertical row of 1+9+1 small nails with a thin edging strip; side-leather and spine decorated with blind quintuple lines forming five panels, acorn stamps on spine (possibly gilt, very worn), in same style as MSS. Canon. Ital. 27 and 96 (see also 222 and 228). <dimensions type="binding" unit="mm">
-                           <height quantity="300">300</height>
-                           <width min="220" max="222">220-222</width>
-                           <depth quantity="50" precision="medium">c. 50</depth>
-                        </dimensions> (book closed).</p>
+                     </binding>
+                     <binding notAfter="1800" notBefore="1700">
+                        <p>Reback, 18th century, <placeName key="place_1000080">Italian</placeName>: spine replaced as a quarter-binding of light brown leather, extending across about a quarter of each board to a vertical row of 1+9+1 small nails with a thin edging strip; side-leather and spine decorated with blind quintuple lines forming five panels, acorn stamps on spine (possibly gilt, very worn), in same style as MSS. Canon. Ital. 27 and 96 (see also 222 and 228). <dimensions type="binding" unit="mm">
+                              <height quantity="300">300</height>
+                              <width max="222" min="220">220-222</width>
+                              <depth precision="medium" quantity="50">c. 50</depth>
+                           </dimensions> (book closed).</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
@@ -86,16 +89,17 @@
                         <country key="place_1000080">Italian</country>
                      </origPlace>
                   </origin>
-               <provenance notBefore="1727" notAfter="1805" resp="#MMM"><persName role="fmo" key="person_2384880">Matteo Luigi Canonici, 1727-1805</persName></provenance><provenance notAfter="1807" resp="#MMM"><persName role="fmo" key="person_446">Giuseppe Canonici , -1807</persName></provenance><acquisition when="1817" resp="#MMM">Purchased by the Bodleian in 1817</acquisition></history>
+                  <provenance notAfter="1805" notBefore="1727" resp="#MMM"><persName key="person_2384880" role="fmo">Matteo Luigi Canonici, 1727-1805</persName></provenance>
+                  <provenance notAfter="1807" resp="#MMM"><persName key="person_446" role="fmo">Giuseppe Canonici , -1807</persName></provenance>
+                  <acquisition resp="#MMM" when="1817">Purchased by the Bodleian in 1817</acquisition>
+               </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (A. Mortara,  <title>Catalogo dei manoscritti italiani che sotto la denominazione di Codici Canoniciani Italici si conservano nella Biblioteca Bodleiana a Oxford</title>, Quarto Catalogues XI, 1864). Binding: <bibl>B. C. Barker-Benfield, <title>Bookbindings of Canonici manuscripts : a survey of early and non-standard bindings, mostly Italian, in the Canonici collection of the Bodleian Library, University of Oxford</title> (Oxford, privately printed, 2020).</bibl> 
-                            
-                            
-                            <listBibl>
-                              <bibl type="QUARTO" facs="acp0088.gif">Quarto Catalogue, cols. 143-4</bibl>
-                              <bibl type="SC" facs="aaz0433.gif">Summary Catalogue, vol. 4, p. 414</bibl>
+                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (A. Mortara, <title>Catalogo dei manoscritti italiani che sotto la denominazione di Codici Canoniciani Italici si conservano nella Biblioteca Bodleiana a Oxford</title>, Quarto Catalogues XI, 1864). Binding: <bibl>B. C. Barker-Benfield, <title>Bookbindings of Canonici manuscripts : a survey of early and non-standard bindings, mostly Italian, in the Canonici collection of the Bodleian Library, University of Oxford</title> (Oxford, privately printed, 2020).</bibl>
+                           <listBibl>
+                              <bibl facs="acp0088.gif" type="QUARTO">Quarto Catalogue, cols. 143-4</bibl>
+                              <bibl facs="aaz0433.gif" type="SC">Summary Catalogue, vol. 4, p. 414</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -103,12 +107,11 @@
                </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc><change when="2020-07-21">Binding description added.</change><change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName>
-      Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
-      in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.'
-    </change>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2020-07-21">Binding description added.</change>
+         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.' </change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

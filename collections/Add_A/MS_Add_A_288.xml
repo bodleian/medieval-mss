@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_55">
+<TEI xml:id="manuscript_55" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -54,11 +54,11 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem xml:id="MS_Add_A_288-item1" n="1" class="#sermones">
-                     <title type="desc" key="work_14573">Sermons</title>
+                  <msItem class="#sermones" n="1" xml:id="MS_Add_A_288-item1">
+                     <title key="work_14573" type="desc">Sermons</title>
                      <note type="content">Thirty sermons by various authors on St Mary the Virgin.</note>
                      <incipit><note>(first sermon)</note> Hier begint een seer schoon Cappittel vander grooter goedertierentjz enn werdichz van Maria. Sinte Ambrosius seet, alzo ghenadig was Maria</incipit>
-                     <colophon>Desen boeck heeft ghescreuen Suster <persName role="scr" key="person_2797">lysbeth lenaerts</persName> ... ende is voleynt Jnt Jaer ons heeren Anno xv<hi rend="superscript">c</hi> lxxviij Den xv<hi rend="superscript">en</hi> dach Junij ...</colophon>
+                     <colophon>Desen boeck heeft ghescreuen Suster <persName key="person_2797" role="scr">lysbeth lenaerts</persName> ... ende is voleynt Jnt Jaer ons heeren Anno xv<hi rend="superscript">c</hi> lxxviij Den xv<hi rend="superscript">en</hi> dach Junij ...</colophon>
                      <textLang mainLang="nl">Dutch</textLang>
                   </msItem>
                </msContents>
@@ -66,14 +66,13 @@
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
-                        <extent>144 fols.
-                        <dimensions unit="mm" type="leaf">
-                           <height>215</height>
-                           <width>160</width>
-                        </dimensions>
-                           <dimensions unit="mm" type="written">
+                        <extent>144 fols. <dimensions type="leaf" unit="mm">
+                              <height>215</height>
+                              <width>160</width>
+                           </dimensions>
+                           <dimensions type="written" unit="mm">
                               <height max="165" min="160">160-5</height>
-                              <width min="115" max="120">115-20</width>
+                              <width max="120" min="115">115-20</width>
                            </dimensions>
                         </extent>
                      </supportDesc>
@@ -81,38 +80,43 @@
                         <layout columns="1" writtenLines="26 31">1 col., c. 26-31 lines.</layout>
                      </layoutDesc>
                   </objectDesc>
-                  <decoDesc><decoNote>Coloured initials and headings.</decoNote></decoDesc>
+                  <decoDesc>
+                     <decoNote>Coloured initials and headings.</decoNote>
+                  </decoDesc>
                   <bindingDesc>
-                     <binding notAfter="1600" notBefore="1575"><p>Blind-stamped leather over boards, late 16th century.</p></binding>
+                     <binding notAfter="1600" notBefore="1575">
+                        <p>Blind-stamped leather over boards, late 16th century.</p>
+                     </binding>
                   </bindingDesc>
                </physDesc>
                <history>
                   <origin resp="#DD">
                      <origPlace><country key="place_7016845">Netherlands</country></origPlace>
-                     <origDate calendar="Gregorian" when="1578" cert="high">1578</origDate>
+                     <origDate calendar="Gregorian" cert="high" when="1578">1578</origDate>
                   </origin>
                   <acquisition resp="#SC">Bought from H. Grevel on Feb. 19 1885 for £1 1s.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Adapted (2017) from A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts</title>, and the Summary Catalogue (1905). 
-                            <listBibl>
-                              <bibl type="SC" facs="aam0671.gif">Summary Catalogue, Vol. 5, p.  636</bibl>
-                              <bibl type="SC" facs="aam0672.gif">Summary Catalogue, Vol. 5, p.  637</bibl>
+                        <source>Adapted (2017) from A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts</title>, and the Summary Catalogue (1905). <listBibl>
+                              <bibl facs="aam0671.gif" type="SC">Summary Catalogue, Vol. 5, p. 636</bibl>
+                              <bibl facs="aam0672.gif" type="SC">Summary Catalogue, Vol. 5, p. 637</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
-                  <listBibl type="WRAPPER"><listBibl>
-                     <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 14</bibl>
-                  </listBibl></listBibl>
+                  <listBibl type="WRAPPER">
+                     <listBibl>
+                        <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 14</bibl>
+                     </listBibl>
+                  </listBibl>
                </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

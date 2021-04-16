@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1965">
+<TEI xml:id="manuscript_1965" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -58,9 +58,8 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents resp="#DD">
-                  <msItem xml:id="MS_Broxb_856-item1" n="1" class="#liturgica #biblia">
-						               <title type="desc" key="work_14114">Psalter</title>
-                     
+                  <msItem class="#liturgica #biblia" n="1" xml:id="MS_Broxb_856-item1">
+                     <title key="work_14114" type="desc">Psalter</title>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -68,17 +67,16 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                        <extent>iv + 227 + i folios
-                           <dimensions unit="mm" type="leaf">
+                        <extent>iv + 227 + i folios <dimensions type="leaf" unit="mm">
                               <height>127</height>
                               <width>90</width>
                            </dimensions></extent>
                      </supportDesc>
                      <layoutDesc>
-                        <layout columns="1" writtenLines="17">1 col., 17 lines, written space <dimensions unit="mm" type="written">
-                           <height max="90" min="87">87-90</height>
-                           <width>60</width>
-                        </dimensions></layout>
+                        <layout columns="1" writtenLines="17">1 col., 17 lines, written space <dimensions type="written" unit="mm">
+                              <height max="90" min="87">87-90</height>
+                              <width>60</width>
+                           </dimensions></layout>
                      </layoutDesc>
                   </objectDesc>
                   <decoDesc>
@@ -94,36 +92,34 @@
                </physDesc>
                <history>
                   <origin resp="#DD">
-                     <origDate calendar="Gregorian" when="1501" cert="high">1501</origDate>
+                     <origDate calendar="Gregorian" cert="high" when="1501">1501</origDate>
                      <origPlace>
-                        <country key="place_7000084">German</country>, <settlement key="place_7004447">Trier</settlement> (?)
-                        <!--ORIGINAL: German, Trier, Carthusian house of St. Alban-->
+                        <country key="place_7000084">German</country>, <settlement key="place_7004447">Trier</settlement> (?) <!--ORIGINAL: German, Trier, Carthusian house of St. Alban-->
                      </origPlace>
                   </origin>
                   <provenance resp="#DD"><q>Hoc opus egregiatus suscipe sancta maria <gap reason="editorial"/> anno domini 1501 sabato post dominicam iubilate videlicet octaua die mensis maij. Pro scriptore f.b.b. vnum aue maria in caritate christi</q></provenance>
                   <provenance resp="#DD">Carthusian house of <orgName key="org_133706555">St. Alban</orgName>, Trier (inscription, inside front cover)</provenance>
-                  <provenance resp="#PK"><persName role="fmo" key="person_64157046">J. P. R. Lyell</persName></provenance>
-                  <provenance resp="#MLH"><persName role="fmo" key="person_53056049">Albert Ehrman (1890-1969)</persName></provenance>
+                  <provenance resp="#PK"><persName key="person_64157046" role="fmo">J. P. R. Lyell</persName></provenance>
+                  <provenance resp="#MLH"><persName key="person_53056049" role="fmo">Albert Ehrman (1890-1969)</persName></provenance>
                   <acquisition resp="#MLH" when="1978">Presented to the Bodleian by his son, John Ehrman, in 1978 through the Friends of the National Libraries.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>
-                           Description adapted (August 2019) from the following sources:
-                           <listBibl><bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 131 [contents, physical description, date, provenance]</bibl>
-                           <bibl>Peter Kidd, <title>Checklist of Medieval Western Manuscripts Acquired 1916-</title> (typescript, c. 1996-2000) [provenance]</bibl> </listBibl>
+                        <source> Description adapted (August 2019) from the following sources: <listBibl>
+                              <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 131 [contents, physical description, date, provenance]</bibl>
+                              <bibl>Peter Kidd, <title>Checklist of Medieval Western Manuscripts Acquired 1916-</title> (typescript, c. 1996-2000) [provenance]</bibl>
+                           </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
                </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc>       
+      </fileDesc>
+      <revisionDesc>
          <change when="2019-08-08">Description revised with reference to Watson.</change>
          <change when="2017-07-01">First online publication.</change>
-
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

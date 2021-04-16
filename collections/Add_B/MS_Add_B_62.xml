@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_91">
+<TEI xml:id="manuscript_91" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -54,8 +54,8 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents resp="#SC">
-                  <msItem xml:id="MS_Add_B_62-item1" n="1" class="#monastica">
-                     <title type="desc" key="work_11032">Cistercian Ordinances to 1288, with additions to 1301</title>
+                  <msItem class="#monastica" n="1" xml:id="MS_Add_B_62-item1">
+                     <title key="work_11032" type="desc">Cistercian Ordinances to 1288, with additions to 1301</title>
                      <note>Including:</note>
                      <msItem>
                         <locus>(fol. 5)</locus>
@@ -77,14 +77,13 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                        <extent>80 fols.
-                        <dimensions unit="mm" type="leaf">
-                           <height>180</height>
-                           <width>133</width>
-                        </dimensions>
-                           <dimensions unit="mm" type="written">
+                        <extent>80 fols. <dimensions type="leaf" unit="mm">
+                              <height>180</height>
+                              <width>133</width>
+                           </dimensions>
+                           <dimensions type="written" unit="mm">
                               <height max="140" min="135">135-40</height>
-                              <width min="95" max="102">95-102</width>
+                              <width max="102" min="95">95-102</width>
                            </dimensions>
                         </extent>
                      </supportDesc>
@@ -93,7 +92,9 @@
                         <layout writtenLines="15 17">Fols. 68-80: 15-17 lines.</layout>
                      </layoutDesc>
                   </objectDesc>
-                  <decoDesc><decoNote>Coloured initials, rubrics.</decoNote></decoDesc>
+                  <decoDesc>
+                     <decoNote>Coloured initials, rubrics.</decoNote>
+                  </decoDesc>
                   <bindingDesc>
                      <binding notAfter="1600" notBefore="1575">
                         <p>Blind-stamped leather, late 16th century, rebacked.</p>
@@ -102,34 +103,35 @@
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1300" notBefore="1288" cert="high">1288-1300</origDate>
+                     <origDate calendar="Gregorian" cert="high" notAfter="1300" notBefore="1288">1288-1300</origDate>
                      <origPlace>
                         <country key="place_1000080">Italian</country>
                      </origPlace>
                   </origin>
-                  <provenance resp="#DD">Cistercian abbey of <orgName role="fmo" key="org_212968081">Chiaravalle</orgName> de Bagnolo, dioc. Milan: 'Sum Monasterii Clareuallis', fol. 1, 17th cent.</provenance>
+                  <provenance resp="#DD">Cistercian abbey of <orgName key="org_212968081" role="fmo">Chiaravalle</orgName> de Bagnolo, dioc. Milan: 'Sum Monasterii Clareuallis', fol. 1, 17th cent.</provenance>
                   <provenance resp="#DD">Fol. iii: 'Nota che questo libro delle Diffinitioni dell'Ordine e del Monastero di Chiaraualle di Milano; il quale deuo restituire al prossimi Capitolo 1641'.</provenance>
-                  <acquisition resp="#SC">Bought at the <persName role="fmo" key="person_238406190">William Bragge</persName> sale, Nov. 1880 (lot 1363) for £3.</acquisition>
+                  <acquisition resp="#SC">Bought at the <persName key="person_238406190" role="fmo">William Bragge</persName> sale, Nov. 1880 (lot 1363) for £3.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Adapted (2018) from A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts</title>; and the Summary Catalogue (1905). 
-                            <listBibl>
-                              <bibl type="SC" facs="aam0614.gif">Summary Catalogue, Vol. 5, p.  579</bibl>
+                        <source>Adapted (2018) from A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts</title>; and the Summary Catalogue (1905). <listBibl>
+                              <bibl facs="aam0614.gif" type="SC">Summary Catalogue, Vol. 5, p. 579</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
-                  <listBibl type="WRAPPER"><listBibl>
-                     <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 17</bibl>
-                  </listBibl></listBibl>
+                  <listBibl type="WRAPPER">
+                     <listBibl>
+                        <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 17</bibl>
+                     </listBibl>
+                  </listBibl>
                </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

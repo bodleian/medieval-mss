@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4772">
+<TEI xml:id="manuscript_4772" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -8,7 +8,8 @@
             <title type="collection">MSS. Douce</title>
             <respStmt>
                <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <persName>Elizabeth Solopova</persName>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -53,19 +54,22 @@
                <physDesc>
                   <p n="composite">Composite</p>
                </physDesc>
-               <history><provenance notBefore="1757" notAfter="1834" resp="#MMM"><persName role="fmo" key="person_69848690">Francis Douce, 1757-1834</persName></provenance><acquisition when="1834" resp="#MMM">Bequeathed to the Bodleian in 1834</acquisition></history><additional>
+               <history>
+                  <provenance notAfter="1834" notBefore="1757" resp="#MMM"><persName key="person_69848690" role="fmo">Francis Douce, 1757-1834</persName></provenance>
+                  <acquisition resp="#MMM" when="1834">Bequeathed to the Bodleian in 1834</acquisition>
+               </history>
+               <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1966). 
-                            
-                            
-                            <listBibl>
-                              <bibl type="SC" facs="aaz0645.gif">Summary Catalogue, vol. 4, p. 626</bibl>
+                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1966). <listBibl>
+                              <bibl facs="aaz0645.gif" type="SC">Summary Catalogue, vol. 4, p. 626</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
-               <surrogates><bibl type="digital-facsimile" subtype="partial"><ref target="https://digital.bodleian.ox.ac.uk/objects/f8b97417-1131-4879-8853-51d572383599/"><title>Digital Bodleian</title></ref> <note>(5 images from 35mm slides)</note></bibl></surrogates></additional>
+                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/f8b97417-1131-4879-8853-51d572383599/"><title>Digital Bodleian</title></ref>
+                        <note>(5 images from 35mm slides)</note></bibl></surrogates>
+               </additional>
                <msPart xml:id="MS_Douce_f_2-part1">
                   <msIdentifier>
                      <altIdentifier type="partial">
@@ -73,10 +77,10 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Douce_f_2-part1-item1" n="1" class="#miscellanea"> 
+                     <msItem class="#miscellanea" n="1" xml:id="MS_Douce_f_2-part1-item1">
                         <locus>fols. 1-23, 24v, 69</locus>
                         <title type="desc">Alphabet of painted capitals</title>
-                       <textLang mainLang="zxx">No linguistic content</textLang>
+                        <textLang mainLang="zxx">No linguistic content</textLang>
                      </msItem>
                   </msContents>
                   <physDesc>
@@ -88,9 +92,7 @@
                      <decoDesc>
                         <decoNote type="decInit">Good initials. (P&amp;A i. 839)</decoNote>
                      </decoDesc>
-                     
                   </physDesc>
-                  
                   <history>
                      <origin>
                         <origDate calendar="Gregorian" notAfter="1510" notBefore="1500">16th century, beginning</origDate>
@@ -107,10 +109,9 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Douce_f_2-part2-item1" n="1" class="#liturgica #biblia">
-                        <locus>fol.
-                      24r</locus>
-                        <title type="desc" key="work_14115">Psalter (?)</title>
+                     <msItem class="#liturgica #biblia" n="1" xml:id="MS_Douce_f_2-part2-item1">
+                        <locus>fol. 24r</locus>
+                        <title key="work_14115" type="desc">Psalter (?)</title>
                         <note>(cutting)</note>
                         <textLang mainLang="zxx">No linguistic content (?)</textLang>
                      </msItem>
@@ -141,9 +142,9 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Douce_f_2-part3-item1" n="1" class="#miscellanea">  
+                     <msItem class="#miscellanea" n="1" xml:id="MS_Douce_f_2-part3-item1">
                         <locus>fol. 70</locus>
-                        <title type="desc" key="work_11423">Cutting</title>
+                        <title key="work_11423" type="desc">Cutting</title>
                         <textLang mainLang="zxx">No linguistic content (?)</textLang>
                      </msItem>
                   </msContents>
@@ -168,12 +169,10 @@
                </msPart>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc><change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName>
-      Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
-      in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.'
-    </change>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.' </change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>
