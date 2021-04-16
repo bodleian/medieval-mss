@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1808">
+<TEI xml:id="manuscript_1808" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -7,7 +7,8 @@
             <title type="collection">MSS. Bodl. (Bodley)</title>
             <respStmt>
                <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <persName>Elizabeth Solopova</persName>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -50,25 +51,25 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem xml:id="MS_Bodl_82-item1" n="1" class="#proverbia">
-                     <title type="desc" key="work_14073">Proverbs of Solomon</title>
+                  <msItem class="#proverbia" n="1" xml:id="MS_Bodl_82-item1">
+                     <title key="work_14073" type="desc">Proverbs of Solomon</title>
                      <textLang mainLang="fr">French</textLang>
                   </msItem>
-                  <msItem xml:id="MS_Bodl_82-item2" n="2" class="#theologica #miscellanea">
-                     <title type="desc" key="work_11505">Description of purgatory</title>
+                  <msItem class="#theologica #miscellanea" n="2" xml:id="MS_Bodl_82-item2">
+                     <title key="work_11505" type="desc">Description of purgatory</title>
                      <textLang mainLang="fr">French</textLang>
                   </msItem>
-                  <msItem xml:id="MS_Bodl_82-item3" n="3" class="#devotiones">
-                     <title type="desc" key="work_13945">Prayers</title>
+                  <msItem class="#devotiones" n="3" xml:id="MS_Bodl_82-item3">
+                     <title key="work_13945" type="desc">Prayers</title>
                      <textLang mainLang="fr" otherLangs="la">French and Latin</textLang>
                   </msItem>
-                  <msItem xml:id="MS_Bodl_82-item4" n="4" class="#theologica #sacramenta #virtutes_et_vitia">
-                     <title type="desc" key="work_15302">Theological treatises</title>
+                  <msItem class="#theologica #sacramenta #virtutes_et_vitia" n="4" xml:id="MS_Bodl_82-item4">
+                     <title key="work_15302" type="desc">Theological treatises</title>
                      <note>(on the sacraments, confession, and the seven deadly sins)</note>
                      <textLang mainLang="fr">French</textLang>
                   </msItem>
-                  <msItem xml:id="MS_Bodl_82-item5" n="5" class="#apocrypha">
-                     <title type="desc" key="work_10246">Apocryphal legend of events before the birth of Christ</title>
+                  <msItem class="#apocrypha" n="5" xml:id="MS_Bodl_82-item5">
+                     <title key="work_10246" type="desc">Apocryphal legend of events before the birth of Christ</title>
                      <textLang mainLang="fr">French</textLang>
                   </msItem>
                </msContents>
@@ -79,8 +80,7 @@
                      </supportDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>Coloured capitals.
-                     </decoNote>
+                     <decoNote>Coloured capitals.</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
@@ -90,23 +90,27 @@
                         <country key="place_7002445">English</country> (?)</origPlace>
                   </origin>
                </history>
-               <additional><adminInfo>
+               <additional>
+                  <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922).  
-                            
-                            
-                            <listBibl>
-                              <bibl type="SC" facs="aap0309.gif">Summary Catalogue, vol. 2, part 1, p. 288</bibl>
+                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). <listBibl>
+                              <bibl facs="aap0309.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 288</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
-                  </adminInfo><listBibl type="WRAPPER"><listBibl type="INTERNET"><head>Online resources:</head><bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/39990"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title></ref></bibl></listBibl></listBibl></additional>
+                  </adminInfo>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="INTERNET">
+                        <head>Online resources:</head>
+                        <bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/39990"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title></ref></bibl>
+                     </listBibl>
+                  </listBibl>
+               </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

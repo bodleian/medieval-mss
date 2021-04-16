@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8944">
+<TEI xml:id="manuscript_8944" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -9,7 +9,8 @@
             <title type="collection">MSS. Selden Supra</title>
             <respStmt>
                <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <persName>Elizabeth Solopova</persName>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -54,14 +55,16 @@
                <physDesc>
                   <p n="composite">Composite: two parts</p>
                </physDesc>
-               <history><provenance notBefore="1584" notAfter="1654" resp="#MMM"><persName role="fmo" key="person_51728429">John Selden, 1584-1654</persName></provenance><acquisition when="1659" resp="#MMM">Acquired by the Bodleian in 1659</acquisition></history><additional>
+               <history>
+                  <provenance notAfter="1654" notBefore="1584" resp="#MMM"><persName key="person_51728429" role="fmo">John Selden, 1584-1654</persName></provenance>
+                  <acquisition resp="#MMM" when="1659">Acquired by the Bodleian in 1659</acquisition>
+               </history>
+               <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
-                            
-                            <listBibl>
-                              <bibl type="SC" facs="aap0668.gif">Summary Catalogue, Vol. 2 Part 1, p.  647</bibl>
-                              <bibl type="SC" facs="aap0669.gif">Summary Catalogue, Vol. 2 Part 1, p.  648</bibl>
+                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
+                              <bibl facs="aap0668.gif" type="SC">Summary Catalogue, Vol. 2 Part 1, p. 647</bibl>
+                              <bibl facs="aap0669.gif" type="SC">Summary Catalogue, Vol. 2 Part 1, p. 648</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -74,10 +77,8 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Selden_Supra_81-part1-item1" n="1" class="#versus #miscellanea">
-						                  <title type="desc" key="work_12742">Letters, dedications, and poems, almost
-                           all by <persName role="aut" key="person_50306599">Dr. Degory Whear</persName>, 1595-1631.</title>
-                        
+                     <msItem class="#versus #miscellanea" n="1" xml:id="MS_Selden_Supra_81-part1-item1">
+                        <title key="work_12742" type="desc">Letters, dedications, and poems, almost all by <persName key="person_50306599" role="aut">Dr. Degory Whear</persName>, 1595-1631.</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                   </msContents>
@@ -104,11 +105,9 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Selden_Supra_81-part2-item1" n="1" class="#sermones">
-						                  <title type="desc" key="work_14612">Sermons on the Gospels</title>
-                        
-                        <note>imperfect at
-              beginning and end</note>
+                     <msItem class="#sermones" n="1" xml:id="MS_Selden_Supra_81-part2-item1">
+                        <title key="work_14612" type="desc">Sermons on the Gospels</title>
+                        <note>imperfect at beginning and end</note>
                         <textLang mainLang="la">Latin</textLang>
                         <bibl type="commentedOn">
                            <title>Bible, Gospels</title>
@@ -133,9 +132,10 @@
                </msPart>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc><change when="2019-10-31" xml:id="MMM"><persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2019-10-31" xml:id="MMM"><persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

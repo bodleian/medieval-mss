@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1146">
+<TEI xml:id="manuscript_1146" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -7,7 +7,8 @@
             <title type="collection">MSS. Barocci</title>
             <respStmt>
                <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <persName>Elizabeth Solopova</persName>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -50,30 +51,15 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem xml:id="MS_Barocci_83-item1" n="1">
-                     
-                     <author key="person_32134390">
-                        Nicephorus Blemmides
-                     </author>
-                        <title key="work_3238">
-                           Logica
-                        </title>
-                     
+                  <msItem n="1" xml:id="MS_Barocci_83-item1">
+                     <author key="person_32134390">Nicephorus Blemmides</author>
+                     <title key="work_3238">Logica</title>
                      <textLang mainLang="grc">Greek</textLang>
                   </msItem>
-                  <msItem xml:id="MS_Barocci_83-item2" n="2">
-                     
-                     <author key="person_100218964">
-                        Boethius
-                     </author>
-                        <title key="work_1124">
-                           De differentiis topicis
-                        </title>
-				                 <note>tr. 
-                            
-				     <persName role="trl" key="person_9857802">
-                           Maximus Planudes(?)</persName>  (extracts) </note>
-                     
+                  <msItem n="2" xml:id="MS_Barocci_83-item2">
+                     <author key="person_100218964">Boethius</author>
+                     <title key="work_1124">De differentiis topicis</title>
+                     <note>tr. <persName key="person_9857802" role="trl"> Maximus Planudes(?)</persName> (extracts) </note>
                      <textLang mainLang="grc">Greek</textLang>
                   </msItem>
                </msContents>
@@ -89,22 +75,30 @@
                      <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
                   </origin>
                </history>
-               <additional><adminInfo>
+               <additional>
+                  <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (H. O. Coxe, <title>Greek Manuscripts</title>, Quarto Catalogues I, repr. 1969, with corrections, from the ed. of 1853).   
-                           
-                            <listBibl>
-                              <bibl type="SC" facs="aap0026.gif">Summary Catalogue, Vol. 2 Part 1, p.  5</bibl>
-                              <bibl type="QUARTO" facs="abu0079.gif">Quarto Catalogue, Col. 143</bibl>
+                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (H. O. Coxe, <title>Greek Manuscripts</title>, Quarto Catalogues I, repr. 1969, with corrections, from the ed. of 1853). <listBibl>
+                              <bibl facs="aap0026.gif" type="SC">Summary Catalogue, Vol. 2 Part 1, p. 5</bibl>
+                              <bibl facs="abu0079.gif" type="QUARTO">Quarto Catalogue, Col. 143</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
-                  </adminInfo><surrogates><bibl type="digital-facsimile" subtype="full"><ref target="https://digital.bodleian.ox.ac.uk/objects/1d92a261-7a55-4948-aeb9-9883fc7cffab/"><title>Digital Bodleian</title> <note>(full digital facsimile)</note></ref></bibl></surrogates><listBibl type="WRAPPER"><listBibl type="INTERNET"><head>Online resources:</head><bibl><ref target="http://pinakes.irht.cnrs.fr/notices/cote/47370/"><title>Pinakes | Πίνακες: Textes et manuscrits grecs</title></ref></bibl></listBibl></listBibl></additional>
+                  </adminInfo>
+                  <surrogates><bibl subtype="full" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/1d92a261-7a55-4948-aeb9-9883fc7cffab/"><title>Digital Bodleian</title>
+                           <note>(full digital facsimile)</note></ref></bibl></surrogates>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="INTERNET">
+                        <head>Online resources:</head>
+                        <bibl><ref target="http://pinakes.irht.cnrs.fr/notices/cote/47370/"><title>Pinakes | Πίνακες: Textes et manuscrits grecs</title></ref></bibl>
+                     </listBibl>
+                  </listBibl>
+               </additional>
             </msDesc>
          </sourceDesc>
       </fileDesc>
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
+      <revisionDesc>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

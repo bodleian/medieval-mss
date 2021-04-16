@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_904">
+<TEI xml:id="manuscript_904" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -9,7 +9,8 @@
             <title type="collection">MSS. Barlow</title>
             <respStmt>
                <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <persName>Elizabeth Solopova</persName>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -52,14 +53,9 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem xml:id="MS_Barlow_40-item1" n="1">
-                     <author key="person_78769600">
-                        
-                        Cicero
-                     
-                     </author>
-                     <title key="work_1244">De inventione
-              rhetorica</title>
+                  <msItem n="1" xml:id="MS_Barlow_40-item1">
+                     <author key="person_78769600">Cicero</author>
+                     <title key="work_1244">De inventione rhetorica</title>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -70,8 +66,7 @@
                      </supportDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>Fine miniature, good initials. (P&amp;A ii. 1047, pl. LXXXIV)
-                        <list type="gloss">
+                     <decoNote>Fine miniature, good initials. (P&amp;A ii. 1047, pl. LXXXIV) <list type="gloss">
                            <head>fol. 1r</head>
                            <label>Type</label>
                            <item>
@@ -79,8 +74,7 @@
                            </item>
                            <label>Subject</label>
                            <item>
-                              <seg type="subject">Cicero, flanked by Cato and Caesar, decides the fate
-                  of the Catilinarian conspirators.</seg>
+                              <seg type="subject">Cicero, flanked by Cato and Caesar, decides the fate of the Catilinarian conspirators.</seg>
                            </item>
                         </list>
                         <list type="gloss">
@@ -101,28 +95,31 @@
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1150" notBefore="1125">12th century, second quarter</origDate>
                      <origPlace cert="low">
-                        <country key="place_1000080">Italian</country>, <region>North</region> (?)</origPlace>,  or <origPlace cert="low">
+                        <country key="place_1000080">Italian</country>, <region>North</region> (?)</origPlace>, or <origPlace cert="low">
                         <country key="place_1000070">French</country>, <region>South</region> (?)</origPlace>
                      <!--ORIGINAL: Italian, North (?) or French, South (?)-->
                   </origin>
-               <provenance notBefore="1607" notAfter="1691" resp="#MMM"><persName role="fmo" key="person_465">Thomas Barlow, 1607-1691</persName></provenance><acquisition when="1691" resp="#MMM">Bequeathed to the Bodleian in 1691</acquisition></history>
+                  <provenance notAfter="1691" notBefore="1607" resp="#MMM"><persName key="person_465" role="fmo">Thomas Barlow, 1607-1691</persName></provenance>
+                  <acquisition resp="#MMM" when="1691">Bequeathed to the Bodleian in 1691</acquisition>
+               </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1937). Decoration, localization and date follow Pächt and Alexander (1970). 
-                            <listBibl>
-                              <bibl type="SC" facs="aaq0420.gif">Summary Catalogue, Vol. 2 Part 2, p.  1061</bibl>
+                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1937). Decoration, localization and date follow Pächt and Alexander (1970). <listBibl>
+                              <bibl facs="aaq0420.gif" type="SC">Summary Catalogue, Vol. 2 Part 2, p. 1061</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
-               
-               <surrogates><bibl type="digital-facsimile" subtype="partial"><ref target="https://digital.bodleian.ox.ac.uk/objects/81fa5c48-1310-4d6d-897a-68205e4013f1/"><title>Digital Bodleian</title></ref> <note>(1 image from 35mm slides)</note></bibl></surrogates></additional>
+                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/81fa5c48-1310-4d6d-897a-68205e4013f1/"><title>Digital Bodleian</title></ref>
+                        <note>(1 image from 35mm slides)</note></bibl></surrogates>
+               </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc><change when="2019-10-31" xml:id="MMM"><persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2019-10-31" xml:id="MMM"><persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

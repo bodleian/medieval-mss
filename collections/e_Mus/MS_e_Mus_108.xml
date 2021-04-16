@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_9072">
+<TEI xml:id="manuscript_9072" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -8,7 +8,8 @@
             <title type="collection">MSS. E Mus. (e Musaeo)</title>
             <respStmt>
                <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <persName>Elizabeth Solopova</persName>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -51,9 +52,8 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem xml:id="MS_e_Mus_108-item1" n="1" class="#historica">
-						               <title type="desc" key="work_10933">Chronicle of <placeName key="place_7002445">England</placeName> (Brut Chronicle) to 1327</title>
-                     
+                  <msItem class="#historica" n="1" xml:id="MS_e_Mus_108-item1">
+                     <title key="work_10933" type="desc">Chronicle of <placeName key="place_7002445">England</placeName> (Brut Chronicle) to 1327</title>
                      <note>(defective at end)</note>
                      <textLang mainLang="fr">French</textLang>
                   </msItem>
@@ -77,21 +77,29 @@
                      </origPlace>
                   </origin>
                </history>
-               <additional><adminInfo>
+               <additional>
+                  <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
-                            
-                            <listBibl>
-                              <bibl type="SC" facs="aaq0092.gif">Summary Catalogue, Vol. 2 Part 2, p.  733</bibl>
+                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
+                              <bibl facs="aaq0092.gif" type="SC">Summary Catalogue, Vol. 2 Part 2, p. 733</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
-                  </adminInfo><surrogates><bibl type="digital-facsimile" subtype="partial"><ref target="https://digital.bodleian.ox.ac.uk/objects/53e637e7-3ea2-4892-8eef-5fdc12edaef5/"><title>Digital Bodleian</title></ref> <note>(2 images from 35mm slides)</note></bibl></surrogates><listBibl type="WRAPPER"><listBibl type="INTERNET"><head>Online resources:</head><bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/73251"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title></ref></bibl></listBibl></listBibl></additional>
+                  </adminInfo>
+                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/53e637e7-3ea2-4892-8eef-5fdc12edaef5/"><title>Digital Bodleian</title></ref>
+                        <note>(2 images from 35mm slides)</note></bibl></surrogates>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="INTERNET">
+                        <head>Online resources:</head>
+                        <bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/73251"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title></ref></bibl>
+                     </listBibl>
+                  </listBibl>
+               </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

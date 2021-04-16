@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1714">
+<TEI xml:id="manuscript_1714" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -8,7 +8,8 @@
             <title type="collection">MSS. Bodl. (Bodley)</title>
             <respStmt>
                <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <persName>Elizabeth Solopova</persName>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -51,9 +52,8 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem xml:id="MS_Bodl_725-item1" n="1" class="#commentarii #biblia">
-                     <title type="desc" key="work_13749">Pauline Epistles, with gloss of 
-                           Peter Lombard</title>
+                  <msItem class="#commentarii #biblia" n="1" xml:id="MS_Bodl_725-item1">
+                     <title key="work_13749" type="desc">Pauline Epistles, with gloss of Peter Lombard</title>
                      <bibl type="bible">
                         <title type="desc">Bible, Pauline Epistles</title>
                      </bibl>
@@ -83,24 +83,31 @@
                         <country key="place_1000070">French</country>, <settlement key="place_7008038">Paris</settlement> (?)<!--ORIGINAL: French, Paris (?)--></origPlace>
                   </origin>
                </history>
-               <additional><adminInfo>
+               <additional>
+                  <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973).  
-                            
-                            
-                            <listBibl>
-                              <bibl type="SC" facs="aap0494.gif">Summary Catalogue, vol. 2, part 1, p. 473</bibl>
-                              <bibl type="SC" facs="aap0495.gif">Summary Catalogue, vol. 2, part 1, p. 474</bibl>
+                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
+                              <bibl facs="aap0494.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 473</bibl>
+                              <bibl facs="aap0495.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 474</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
-                  </adminInfo><surrogates><bibl type="digital-facsimile" subtype="partial"><ref target="https://digital.bodleian.ox.ac.uk/objects/be1d2c02-02b2-4509-af5f-c6e28e823a55/"><title>Digital Bodleian</title></ref> <note>(8 images from 35mm slides)</note></bibl></surrogates><listBibl type="WRAPPER"><listBibl type="INTERNET"><head>Online resources:</head><bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/118"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl><bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/2796"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl></listBibl></listBibl></additional>
+                  </adminInfo>
+                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/be1d2c02-02b2-4509-af5f-c6e28e823a55/"><title>Digital Bodleian</title></ref>
+                        <note>(8 images from 35mm slides)</note></bibl></surrogates>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="INTERNET">
+                        <head>Online resources:</head>
+                        <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/118"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl>
+                        <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/2796"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl>
+                     </listBibl>
+                  </listBibl>
+               </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

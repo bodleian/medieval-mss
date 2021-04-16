@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1124">
+<TEI xml:id="manuscript_1124" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -7,7 +7,8 @@
             <title type="collection">MSS. Barocci</title>
             <respStmt>
                <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <persName>Elizabeth Solopova</persName>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -52,17 +53,25 @@
                <physDesc>
                   <p>Composite: two parts</p>
                </physDesc>
-               <additional><adminInfo>
+               <additional>
+                  <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (H. O. Coxe, <title>Greek Manuscripts</title>, Quarto Catalogues I, repr. 1969, with corrections, from the ed. of 1853).  
-                           
-                            <listBibl>
-                              <bibl type="SC" facs="aap0026.gif">Summary Catalogue, Vol. 2 Part 1, p.  5</bibl>
-                              <bibl type="QUARTO" facs="abu0056.gif">Quarto Catalogue, Cols. 97-98</bibl>
+                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (H. O. Coxe, <title>Greek Manuscripts</title>, Quarto Catalogues I, repr. 1969, with corrections, from the ed. of 1853). <listBibl>
+                              <bibl facs="aap0026.gif" type="SC">Summary Catalogue, Vol. 2 Part 1, p. 5</bibl>
+                              <bibl facs="abu0056.gif" type="QUARTO">Quarto Catalogue, Cols. 97-98</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
-                  </adminInfo><surrogates><bibl type="digital-facsimile" subtype="full"><ref target="https://digital.bodleian.ox.ac.uk/objects/e5f3cb4f-0360-4330-b8e1-3fb5befc514b/"><title>Digital Bodleian</title> <note>(full digital facsimile)</note></ref></bibl></surrogates><listBibl type="WRAPPER"><listBibl type="INTERNET"><head>Online resources:</head><bibl><ref target="http://pinakes.irht.cnrs.fr/notices/cote/47350/"><title>Pinakes | Πίνακες: Textes et manuscrits grecs</title></ref></bibl></listBibl></listBibl></additional>
+                  </adminInfo>
+                  <surrogates><bibl subtype="full" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/e5f3cb4f-0360-4330-b8e1-3fb5befc514b/"><title>Digital Bodleian</title>
+                           <note>(full digital facsimile)</note></ref></bibl></surrogates>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="INTERNET">
+                        <head>Online resources:</head>
+                        <bibl><ref target="http://pinakes.irht.cnrs.fr/notices/cote/47350/"><title>Pinakes | Πίνακες: Textes et manuscrits grecs</title></ref></bibl>
+                     </listBibl>
+                  </listBibl>
+               </additional>
                <msPart xml:id="MS_Barocci_63-part1">
                   <msIdentifier>
                      <altIdentifier type="partial">
@@ -70,28 +79,17 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Barocci_63-part1-item1" n="1">
-                        <title type="desc" key="work_10393">Astronomical tables</title>
+                     <msItem n="1" xml:id="MS_Barocci_63-part1-item1">
+                        <title key="work_10393" type="desc">Astronomical tables</title>
                         <textLang mainLang="grc">Greek</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Barocci_63-part1-item2" n="2">
-                        <title type="desc" key="work_14690">Speeches by <persName role="aut" key="person_89043754">
-                              Aristides
-                           </persName> and <persName role="aut" key="person_17225859">
-                              Libanius
-                           </persName>
-                        </title>
+                     <msItem n="2" xml:id="MS_Barocci_63-part1-item2">
+                        <title key="work_14690" type="desc">Speeches by <persName key="person_89043754" role="aut"> Aristides </persName> and <persName key="person_17225859" role="aut"> Libanius </persName></title>
                         <textLang mainLang="grc">Greek</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Barocci_63-part1-item3" n="3">
-                        
-                        <author key="person_91438276">
-                           Matthew Blastares
-                        </author>
-                           <title key="work_3137">
-                              De appositione colybi
-                           </title>
-                        
+                     <msItem n="3" xml:id="MS_Barocci_63-part1-item3">
+                        <author key="person_91438276">Matthew Blastares</author>
+                        <title key="work_3137">De appositione colybi</title>
                         <textLang mainLang="grc">Greek</textLang>
                      </msItem>
                   </msContents>
@@ -107,7 +105,6 @@
                         <origDate calendar="Gregorian" notAfter="1400" notBefore="1300">14th century</origDate>
                      </origin>
                   </history>
-                 
                </msPart>
                <msPart xml:id="MS_Barocci_63-part2">
                   <msIdentifier>
@@ -116,9 +113,8 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Barocci_63-part2-item1" n="1">
-                        <title type="desc" key="work_13406">Moral
-				  poems.</title>
+                     <msItem n="1" xml:id="MS_Barocci_63-part2-item1">
+                        <title key="work_13406" type="desc">Moral poems.</title>
                         <textLang mainLang="el">Modern Greek</textLang>
                      </msItem>
                   </msContents>
@@ -134,13 +130,12 @@
                         <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
                      </origin>
                   </history>
-                  
                </msPart>
             </msDesc>
          </sourceDesc>
       </fileDesc>
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
+      <revisionDesc>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

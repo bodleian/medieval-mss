@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2677">
+<TEI xml:id="manuscript_2677" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -9,7 +9,8 @@
             <title type="collection">MSS. Canon. Ital. (Canonici Italian)</title>
             <respStmt>
                <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <persName>Elizabeth Solopova</persName>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -54,16 +55,18 @@
                <physDesc>
                   <p n="composite">Composite: fols. 1-70 || fols. 71-94</p>
                </physDesc>
-               <history><provenance notBefore="1727" notAfter="1805" resp="#MMM"><persName role="fmo" key="person_2384880">Matteo Luigi Canonici, 1727-1805</persName></provenance><provenance notAfter="1807" resp="#MMM"><persName role="fmo" key="person_446">Giuseppe Canonici , -1807</persName></provenance><acquisition when="1817" resp="#MMM">Purchased by the Bodleian in 1817</acquisition></history><additional>
+               <history>
+                  <provenance notAfter="1805" notBefore="1727" resp="#MMM"><persName key="person_2384880" role="fmo">Matteo Luigi Canonici, 1727-1805</persName></provenance>
+                  <provenance notAfter="1807" resp="#MMM"><persName key="person_446" role="fmo">Giuseppe Canonici , -1807</persName></provenance>
+                  <acquisition resp="#MMM" when="1817">Purchased by the Bodleian in 1817</acquisition>
+               </history>
+               <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (A. Mortara,  <title>Catalogo dei manoscritti italiani che sotto la denominazione di Codici Canoniciani Italici si conservano nella Biblioteca Bodleiana a Oxford</title>, Quarto Catalogues XI, 1864). Decoration, localization and date follow Pächt and Alexander (1970).  
-                            
-                            
-                            <listBibl>
-                              <bibl type="QUARTO" facs="acp0130.gif">Quarto Catalogue, col. 228</bibl>
-                              <bibl type="QUARTO" facs="acp0131.gif">Quarto Catalogue, col. 229</bibl>
-                              <bibl type="SC" facs="aaz0436.gif">Summary Catalogue, vol. 4, p. 417</bibl>
+                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (A. Mortara, <title>Catalogo dei manoscritti italiani che sotto la denominazione di Codici Canoniciani Italici si conservano nella Biblioteca Bodleiana a Oxford</title>, Quarto Catalogues XI, 1864). Decoration, localization and date follow Pächt and Alexander (1970). <listBibl>
+                              <bibl facs="acp0130.gif" type="QUARTO">Quarto Catalogue, col. 228</bibl>
+                              <bibl facs="acp0131.gif" type="QUARTO">Quarto Catalogue, col. 229</bibl>
+                              <bibl facs="aaz0436.gif" type="SC">Summary Catalogue, vol. 4, p. 417</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -76,37 +79,27 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Canon_Ital_240-part1-item1" n="1">
-                        <author key="person_7386286">
-                           
-                           Ps.-Augustine
-                        
-                        </author>
+                     <msItem n="1" xml:id="MS_Canon_Ital_240-part1-item1">
+                        <author key="person_7386286">Ps.-Augustine</author>
                         <title key="work_3908">Soliloquia animae ad Deum</title>
                         <note>(Italian translation)</note>
                         <textLang mainLang="it">Italian</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Canon_Ital_240-part1-item2" n="2" class="#vitae_sanctorum">
-						                  <title type="desc" key="work_12888">Life of St Margaret</title>
-                        
+                     <msItem class="#vitae_sanctorum" n="2" xml:id="MS_Canon_Ital_240-part1-item2">
+                        <title key="work_12888" type="desc">Life of St Margaret</title>
                         <textLang mainLang="it">Italian</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Canon_Ital_240-part1-item3" n="3">
-                        <author key="person_54194694">
-                           
-                           Jacopone da Todi
-                        
-                        </author>
+                     <msItem n="3" xml:id="MS_Canon_Ital_240-part1-item3">
+                        <author key="person_54194694">Jacopone da Todi</author>
                         <title key="work_2345">Laudi</title>
                         <textLang mainLang="it">Italian</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Canon_Ital_240-part1-item4" n="4" class="#oratio">
-                        <title type="desc" key="work_13950">Prayers</title>
+                     <msItem class="#oratio" n="4" xml:id="MS_Canon_Ital_240-part1-item4">
+                        <title key="work_13950" type="desc">Prayers</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Canon_Ital_240-part1-item5" n="5" class="#versus">
-						                  <title type="desc" key="work_13881">Poems</title>
-                        
+                     <msItem class="#versus" n="5" xml:id="MS_Canon_Ital_240-part1-item5">
+                        <title key="work_13881" type="desc">Poems</title>
                         <textLang mainLang="it">Italian</textLang>
                      </msItem>
                   </msContents>
@@ -135,8 +128,8 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Canon_Ital_240-part2-item1" n="1" class="#liturgica #mariologica">
-                        <title type="desc" key="work_12342">Hymns to the Virgin</title>
+                     <msItem class="#liturgica #mariologica" n="1" xml:id="MS_Canon_Ital_240-part2-item1">
+                        <title key="work_12342" type="desc">Hymns to the Virgin</title>
                         <textLang mainLang="it">Italian</textLang>
                      </msItem>
                   </msContents>
@@ -162,12 +155,10 @@
                </msPart>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc><change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName>
-      Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
-      in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.'
-    </change>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.' </change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

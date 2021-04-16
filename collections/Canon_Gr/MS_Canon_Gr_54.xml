@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2486">
+<TEI xml:id="manuscript_2486" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -9,7 +9,8 @@
             <title type="collection">MSS. Canon. Gr. (Canonici Greek)</title>
             <respStmt>
                <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <persName>Elizabeth Solopova</persName>
+               <persName>Matthew Holford</persName>
             </respStmt>
             <respStmt xml:id="BCBB">
                <resp when="2020">Cataloguer</resp>
@@ -56,12 +57,8 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem xml:id="MS_Canon_Gr_54-item1" n="1">
-                     <author key="person_52046984">
-                        
-                        Dorotheus the Archimandrite
-                     
-                     </author>
+                  <msItem n="1" xml:id="MS_Canon_Gr_54-item1">
+                     <author key="person_52046984">Dorotheus the Archimandrite</author>
                      <title key="work_1427">Doctrinae</title>
                      <textLang mainLang="grc">Greek</textLang>
                   </msItem>
@@ -76,11 +73,13 @@
                      <binding notAfter="1575" notBefore="1540">
                         <p>A composite binding, with original boards completely obscured by later covering.</p>
                         <p>16th century, mid to 3rd quarter (as MS., by a Cretan scribe working in Rome): wood boards with inside bevel, possible traces of two lost sets of fore-edge ties.</p>
-                        </binding><binding notAfter="1800" notBefore="1750"><p>18th century, second half, <placeName key="place_1000080">Italian</placeName>, <placeName key="place_7018159">Venice</placeName>, a standard Canonici style: the old boards reused in a half-binding with brown leather spine and corners: spine with gilt lines and green-leather label; sides covered in red paper combed with a bold wavy pattern. <dimensions type="binding" unit="mm">
-                           <height quantity="230">230</height>
-                           <width min="163" max="165">163-165</width>
-                           <depth min="36" precision="medium" max="37">c. 36-37</depth>
-                        </dimensions> (book closed).</p>
+                     </binding>
+                     <binding notAfter="1800" notBefore="1750">
+                        <p>18th century, second half, <placeName key="place_1000080">Italian</placeName>, <placeName key="place_7018159">Venice</placeName>, a standard Canonici style: the old boards reused in a half-binding with brown leather spine and corners: spine with gilt lines and green-leather label; sides covered in red paper combed with a bold wavy pattern. <dimensions type="binding" unit="mm">
+                              <height quantity="230">230</height>
+                              <width max="165" min="163">163-165</width>
+                              <depth max="37" min="36" precision="medium">c. 36-37</depth>
+                           </dimensions> (book closed).</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
@@ -88,33 +87,39 @@
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1600" notBefore="1500">16th century</origDate>
                   </origin>
-               <provenance notBefore="1727" notAfter="1805" resp="#MMM"><persName role="fmo" key="person_2384880">Matteo Luigi Canonici, 1727-1805</persName></provenance><provenance notAfter="1807" resp="#MMM"><persName role="fmo" key="person_446">Giuseppe Canonici , -1807</persName></provenance><acquisition when="1817" resp="#MMM">Purchased by the Bodleian in 1817</acquisition></history>
-               <additional><adminInfo>
+                  <provenance notAfter="1805" notBefore="1727" resp="#MMM"><persName key="person_2384880" role="fmo">Matteo Luigi Canonici, 1727-1805</persName></provenance>
+                  <provenance notAfter="1807" resp="#MMM"><persName key="person_446" role="fmo">Giuseppe Canonici , -1807</persName></provenance>
+                  <acquisition resp="#MMM" when="1817">Purchased by the Bodleian in 1817</acquisition>
+               </history>
+               <additional>
+                  <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (H. O. Coxe,  <title>Catalogi codicum manuscriptorum Bibliothecae Bodleianae pars prima recensionem codicum Graecorum continens</title>, Quarto Catalogues I, 1883, repr. with corrections 1969). <bibl>B. C. Barker-Benfield, <title>Bookbindings of Canonici manuscripts : a survey of early and non-standard bindings, mostly Italian, in the Canonici collection of the Bodleian Library, University of Oxford</title> (Oxford, privately printed, 2020).</bibl>
-                           
-                          
-                            
-                            <listBibl>
-                              <bibl type="QUARTO" facs="abu0492.gif">Quarto Catalogue, col. 61</bibl>
-                              <bibl type="SC" facs="aaz0334.gif">Summary Catalogue, vol. 4, p. 315</bibl>
+                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (H. O. Coxe, <title>Catalogi codicum manuscriptorum Bibliothecae Bodleianae pars prima recensionem codicum Graecorum continens</title>, Quarto Catalogues I, 1883, repr. with corrections 1969). <bibl>B. C. Barker-Benfield, <title>Bookbindings of Canonici manuscripts : a survey of early and non-standard bindings, mostly Italian, in the Canonici collection of the Bodleian Library, University of Oxford</title> (Oxford, privately printed, 2020).</bibl>
+                           <listBibl>
+                              <bibl facs="abu0492.gif" type="QUARTO">Quarto Catalogue, col. 61</bibl>
+                              <bibl facs="aaz0334.gif" type="SC">Summary Catalogue, vol. 4, p. 315</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
-                  </adminInfo><listBibl type="WRAPPER">
+                  </adminInfo>
+                  <listBibl type="WRAPPER">
                      <listBibl type="PRINT">
                         <head>Printed descriptions:</head>
                         <bibl>Ernst Gamillscheg &amp; Dieter Harlfinger, <title>Repertorium der griechischen Kopisten, 800-1600, Teil 1, Handschriften aus Bibliotheken Grossbritanniens, A. Verzeichnis der Kopisten</title> (Vienna 1981), pp. 138-140 no. 254 (‘Manuel Probatares’)</bibl>
                      </listBibl>
-                     <listBibl type="INTERNET"><head>Online resources:</head><bibl><ref target="http://pinakes.irht.cnrs.fr/notices/cote/47604/"><title>Pinakes | Πίνακες: Textes et manuscrits grecs</title></ref></bibl></listBibl></listBibl></additional>
+                     <listBibl type="INTERNET">
+                        <head>Online resources:</head>
+                        <bibl><ref target="http://pinakes.irht.cnrs.fr/notices/cote/47604/"><title>Pinakes | Πίνακες: Textes et manuscrits grecs</title></ref></bibl>
+                     </listBibl>
+                  </listBibl>
+               </additional>
             </msDesc>
          </sourceDesc>
       </fileDesc>
-      <revisionDesc><change when="2020-04">Binding description added.</change><change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName>
-      Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
-      in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.'
-    </change>          <change when="2017-07-01">First online publication.</change>
-
+      <revisionDesc>
+         <change when="2020-04">Binding description added.</change>
+         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.' </change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

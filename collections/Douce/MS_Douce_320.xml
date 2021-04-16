@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4656">
+<TEI xml:id="manuscript_4656" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -8,7 +8,8 @@
             <title type="collection">MSS. Douce</title>
             <respStmt>
                <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <persName>Elizabeth Solopova</persName>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -53,18 +54,30 @@
                <physDesc>
                   <p n="composite">Composite: fols. 1-36 || fols. 37-75</p>
                </physDesc>
-               <history><provenance notBefore="1757" notAfter="1834" resp="#MMM"><persName role="fmo" key="person_69848690">Francis Douce, 1757-1834</persName></provenance><acquisition when="1834" resp="#MMM">Bequeathed to the Bodleian in 1834</acquisition></history><additional><adminInfo>
+               <history>
+                  <provenance notAfter="1834" notBefore="1757" resp="#MMM"><persName key="person_69848690" role="fmo">Francis Douce, 1757-1834</persName></provenance>
+                  <acquisition resp="#MMM" when="1834">Bequeathed to the Bodleian in 1834</acquisition>
+               </history>
+               <additional>
+                  <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1966). 
-                            
-                            
-                            <listBibl>
-                              <bibl type="SC" facs="aaz0611.gif">Summary Catalogue, vol. 4, p. 592</bibl>
-                              <bibl type="SC" facs="aaz0612.gif">Summary Catalogue, vol. 4, p. 593</bibl>
+                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1966). <listBibl>
+                              <bibl facs="aaz0611.gif" type="SC">Summary Catalogue, vol. 4, p. 592</bibl>
+                              <bibl facs="aaz0612.gif" type="SC">Summary Catalogue, vol. 4, p. 593</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
-                  </adminInfo><surrogates><bibl type="digital-facsimile" subtype="full"><ref target="https://digital.bodleian.ox.ac.uk/objects/00f9f687-77e8-4099-ac49-8c94a6555125/"><title>Digital Bodleian</title> <note>(full digital facsimile)</note></ref></bibl><bibl type="digital-facsimile" subtype="partial"><ref target="https://digital.bodleian.ox.ac.uk/objects/b64b102e-b365-44c8-9441-e4f21a28db68/"><title>Digital Bodleian</title></ref> <note>(1 image from 35mm slides)</note></bibl></surrogates><listBibl type="WRAPPER"><listBibl type="INTERNET"><head>Online resources:</head><bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/40272"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title></ref></bibl></listBibl></listBibl></additional>
+                  </adminInfo>
+                  <surrogates><bibl subtype="full" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/00f9f687-77e8-4099-ac49-8c94a6555125/"><title>Digital Bodleian</title>
+                           <note>(full digital facsimile)</note></ref></bibl><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/b64b102e-b365-44c8-9441-e4f21a28db68/"><title>Digital Bodleian</title></ref>
+                        <note>(1 image from 35mm slides)</note></bibl></surrogates>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="INTERNET">
+                        <head>Online resources:</head>
+                        <bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/40272"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title></ref></bibl>
+                     </listBibl>
+                  </listBibl>
+               </additional>
                <msPart xml:id="MS_Douce_320-part1">
                   <msIdentifier>
                      <altIdentifier type="partial">
@@ -72,8 +85,8 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Douce_320-part1-item1" n="1" class="#monastica">
-                        <title type="desc" key="work_14457">Rule of St. Benedict</title>
+                     <msItem class="#monastica" n="1" xml:id="MS_Douce_320-part1-item1">
+                        <title key="work_14457" type="desc">Rule of St. Benedict</title>
                         <note>(French translation)</note>
                         <textLang mainLang="fr">French</textLang>
                      </msItem>
@@ -100,9 +113,8 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Douce_320-part2-item1" n="1" class="#liturgica #biblia">
-                        <title type="desc" key="work_14117">Psalter and Canticles (Psalter of
-              Montebourg)</title>
+                     <msItem class="#liturgica #biblia" n="1" xml:id="MS_Douce_320-part2-item1">
+                        <title key="work_14117" type="desc">Psalter and Canticles (Psalter of Montebourg)</title>
                         <note>(French translation)</note>
                         <textLang mainLang="fr">French</textLang>
                      </msItem>
@@ -127,12 +139,10 @@
                </msPart>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc><change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName>
-      Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
-      in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.'
-    </change>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.' </change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

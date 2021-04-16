@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_7778">
+<TEI xml:id="manuscript_7778" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -9,7 +9,8 @@
             <title type="collection">MSS. Lyell</title>
             <respStmt>
                <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <persName>Elizabeth Solopova</persName>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -49,17 +50,17 @@
                   <idno type="shelfmark">MS. Lyell 46</idno>
                </msIdentifier>
                <msContents>
-                  <msItem xml:id="MS_Lyell_46-item1" n="1" class="#monastica">
+                  <msItem class="#monastica" n="1" xml:id="MS_Lyell_46-item1">
                      <title key="work_14303">Regula S. Benedicti</title>
                      <note>(French translation)</note>
                      <textLang mainLang="fr">French</textLang>
                   </msItem>
-                  <msItem xml:id="MS_Lyell_46-item2" n="2" class="#virtutes_et_vitia">
-                     <title type="desc" key="work_15201">Treatise on virtues</title>
+                  <msItem class="#virtutes_et_vitia" n="2" xml:id="MS_Lyell_46-item2">
+                     <title key="work_15201" type="desc">Treatise on virtues</title>
                      <note>(extract)</note>
                      <textLang mainLang="fr">French</textLang>
                   </msItem>
-                  <msItem xml:id="MS_Lyell_46-item3" n="3" class="#vitas_patrum">
+                  <msItem class="#vitas_patrum" n="3" xml:id="MS_Lyell_46-item3">
                      <title key="work_15484">Vitas Patrum</title>
                      <note>(extracts)</note>
                      <textLang mainLang="la">Latin</textLang>
@@ -73,7 +74,7 @@
                   </objectDesc>
                   <decoDesc>
                      <decoNote>
-                        <p>The ink initial 'I' on fol. 1r is in the form of a fish.</p>
+                        <p>The ink initial <q>I</q> on fol. 1r is in the form of a fish.</p>
                      </decoNote>
                   </decoDesc>
                </physDesc>
@@ -84,27 +85,32 @@
                         <country key="place_1000070">French</country>
                      </origPlace>
                   </origin>
-               <provenance notBefore="1871" notAfter="1948" resp="#MMM"><persName role="fmo" key="person_64157046">James P. R. Lyell, 1871-1948</persName></provenance><acquisition when="1948" resp="#MMM">Chosen as one of the hundred manuscripts bequeathed to the Bodleian by Lyell in 1948.</acquisition></history>
-               <additional><adminInfo>
+                  <provenance notAfter="1948" notBefore="1871" resp="#MMM"><persName key="person_64157046" role="fmo">James P. R. Lyell, 1871-1948</persName></provenance>
+                  <acquisition resp="#MMM" when="1948">Chosen as one of the hundred manuscripts bequeathed to the Bodleian by Lyell in 1948.</acquisition>
+               </history>
+               <additional>
+                  <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from A. de la Mare, <title>Catalogue of the Medieval Manuscripts Bequeathed to the Bodleian Library Oxford by James P. R. Lyell</title> (1971) 
-                            
-                            
-                            <listBibl>
-                              <bibl type="LYELL" facs="cah0161.gif">Catalogue, p. 125</bibl>
-                              <bibl type="LYELL" facs="cah0162.gif">Catalogue, p. 126</bibl>
+                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from A. de la Mare, <title>Catalogue of the Medieval Manuscripts Bequeathed to the Bodleian Library Oxford by James P. R. Lyell</title> (1971) <listBibl>
+                              <bibl facs="cah0161.gif" type="LYELL">Catalogue, p. 125</bibl>
+                              <bibl facs="cah0162.gif" type="LYELL">Catalogue, p. 126</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
-                  </adminInfo><listBibl type="WRAPPER"><listBibl type="INTERNET"><head>Online resources:</head><bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/76267"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title></ref></bibl></listBibl></listBibl></additional>
+                  </adminInfo>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="INTERNET">
+                        <head>Online resources:</head>
+                        <bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/76267"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d’oc et d’oïl</title></ref></bibl>
+                     </listBibl>
+                  </listBibl>
+               </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc><change when="2018-06-15" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName>
-      Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
-      in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.'
-    </change>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2018-06-15" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.' </change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

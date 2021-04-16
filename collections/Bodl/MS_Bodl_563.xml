@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1582">
+<TEI xml:id="manuscript_1582" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -52,7 +52,7 @@
                <physDesc>
                   <p n="composite">Composite: three parts, bound together in the early seventeenth century.</p>
                   <bindingDesc>
-                     <binding notBefore="1600" notAfter="1610">
+                     <binding notAfter="1610" notBefore="1600">
                         <p>Blind-tooled, centrepiece Pearson no. x; Oxford, early seventeenth century (centrepiece in use ?1600-1610)</p>
                      </binding>
                   </bindingDesc>
@@ -63,16 +63,13 @@
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Adapted by Matthew Holford (August 2019) from the following sources, with additional description of parts 1 and 3:
-                              <listBibl>
-                                 <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 100 [part 2]</bibl>
-                                 <bibl>Summary Catalogue (1922)</bibl>
-                              </listBibl>
-                            
-                            
-                            <listBibl>
-                              <bibl type="SC" facs="aap0342.gif">Summary Catalogue, vol. 2, part 1, p. 321</bibl>
-                              <bibl type="SC" facs="aap0343.gif">Summary Catalogue, vol. 2, part 1, p. 322</bibl>
+                        <source>Adapted by Matthew Holford (August 2019) from the following sources, with additional description of parts 1 and 3: <listBibl>
+                              <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 100 [part 2]</bibl>
+                              <bibl>Summary Catalogue (1922)</bibl>
+                           </listBibl>
+                           <listBibl>
+                              <bibl facs="aap0342.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 321</bibl>
+                              <bibl facs="aap0343.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 322</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -92,7 +89,7 @@
 <otherfindaid><p>SC 2347</p></otherfindaid>
 
 </c> -->
-              <!-- <msPart xml:id="MS_Bodl_563-part1">
+               <!-- <msPart xml:id="MS_Bodl_563-part1">
                   <msIdentifier>
                      <altIdentifier type="partial">
                         <idno type="part">MS. Bodl. 563 - Part 1</idno>
@@ -102,10 +99,8 @@
                      <msItem xml:id="MS_Bodl_563-part1-item1" n="1">
                         <author key="person_37709153">
                            
-                           Roger Frugardi of Salerno
-                        
-                        </author>
-                        <title key="work_4447">Chirurgia </title>
+                           Roger Frugardi of Salerno</author>
+                        <title key="work_4447">Chirurgia</title>
                         <note>(fragments)</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
@@ -131,7 +126,7 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Bodl_563-part1-item1" n="1">
+                     <msItem n="1" xml:id="MS_Bodl_563-part1-item1">
                         <locus>(fols. 1ra-191vb)</locus>
                         <author key="person_249874164">Nicholas de Byard</author>
                         <title key="work_3287">Distinctiones theologicae</title>
@@ -147,18 +142,17 @@
                      <objectDesc form="codex">
                         <supportDesc material="perg">
                            <support>parchment</support>
-                           <extent>191 fols.
-                              <dimensions unit="mm" type="leaf">
+                           <extent>191 fols. <dimensions type="leaf" unit="mm">
                                  <height>235</height>
                                  <width>150</width>
-                              </dimensions>                           
+                              </dimensions>
                            </extent>
                         </supportDesc>
                         <layoutDesc>
-                           <layout>2 cols., 45 lines, written space c. <dimensions unit="mm" type="written">
-                              <height>190</height>
-                              <width>120</width>
-                           </dimensions></layout>
+                           <layout>2 cols., 45 lines, written space c. <dimensions type="written" unit="mm">
+                                 <height>190</height>
+                                 <width>120</width>
+                              </dimensions></layout>
                         </layoutDesc>
                      </objectDesc>
                      <decoDesc>
@@ -181,8 +175,9 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Bodl_563-part2-item1" n="1" class="#theologica #tabulae">
-                        <title type="desc" key="work_12361">Index of subjects to a theological treatise</title><note>(incomplete: D-end)</note>
+                     <msItem class="#theologica #tabulae" n="1" xml:id="MS_Bodl_563-part2-item1">
+                        <title key="work_12361" type="desc">Index of subjects to a theological treatise</title>
+                        <note>(incomplete: D-end)</note>
                         <incipit>Descensus christi 4<hi rend="superscript">x</hi> c<hi rend="superscript">o</hi> 7<hi rend="superscript">o</hi></incipit>
                         <explicit>Ymago trinitatis c<hi rend="superscript">o</hi> 11</explicit>
                         <colophon>Herford 1455</colophon>
@@ -194,19 +189,20 @@
                      <objectDesc form="codex">
                         <supportDesc material="perg">
                            <support>parchment</support>
-                           <extent>6 fols.
-                              <dimensions unit="mm" type="leaf">
-                                 <height quantity="235" precision="medium">c. 235</height>
+                           <extent>6 fols. <dimensions type="leaf" unit="mm">
+                                 <height precision="medium" quantity="235">c. 235</height>
                                  <width>155</width>
                               </dimensions></extent>
                         </supportDesc>
-                        <layoutDesc><layout>1-2 cols., c. 23-26 lines, written space <dimensions unit="mm" type="written">
-                           <height max="175" min="170" precision="medium">c. 170-5</height>
-                           <width quantity="125" precision="medium">c. 125</width>
-                        </dimensions></layout></layoutDesc>
+                        <layoutDesc>
+                           <layout>1-2 cols., c. 23-26 lines, written space <dimensions type="written" unit="mm">
+                                 <height max="175" min="170" precision="medium">c. 170-5</height>
+                                 <width precision="medium" quantity="125">c. 125</width>
+                              </dimensions></layout>
+                        </layoutDesc>
                      </objectDesc>
                      <handDesc>
-                        <handNote>Perhaps written by ‘<persName role="scr" key="person_3124">Herford</persName>’, perhaps John Herford OP (on whom see Emden).</handNote>
+                        <handNote>Perhaps written by ‘<persName key="person_3124" role="scr">Herford</persName>’, perhaps John Herford OP (on whom see Emden).</handNote>
                      </handDesc>
                      <decoDesc>
                         <decoNote type="colInit">Coloured blue initials.</decoNote>
@@ -214,10 +210,10 @@
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" when="1455" cert="high">1455</origDate>
+                        <origDate calendar="Gregorian" cert="high" when="1455">1455</origDate>
                         <origPlace><country key="place_7002445">England</country>, <settlement key="place_7011931">Oxford (?)</settlement></origPlace>
                      </origin>
-                     <provenance type="cautio">Fol. 197v, cautio notes: 1480 by <persName role="fmo" key="person_3125">William Wryght</persName> for 8s.: in 1481 by the same in the Selton chest, for 8s. (2o folio ‘num’), redeemed in 1482 for 6s.; in 1484 deposited by the same in the same chest for 8s., and redeemed in 1485 by mr. Crow (probably <persName key="person_3127">Richard Crow</persName>) for 6s. Monogram of <persName key="person_3126" role="bsl">Thomas Hunt</persName>, the university stationer.</provenance>
+                     <provenance type="cautio">Fol. 197v, cautio notes: 1480 by <persName key="person_3125" role="fmo">William Wryght</persName> for 8s.: in 1481 by the same in the Selton chest, for 8s. (2o folio ‘num’), redeemed in 1482 for 6s.; in 1484 deposited by the same in the same chest for 8s., and redeemed in 1485 by mr. Crow (probably <persName key="person_3127">Richard Crow</persName>) for 6s. Monogram of <persName key="person_3126" role="bsl">Thomas Hunt</persName>, the university stationer.</provenance>
                   </history>
                </msPart>
                <msPart xml:id="MS_Bodl_563-part3">
@@ -228,13 +224,15 @@
                   </msIdentifier>
                   <msContents>
                      <textLang mainLang="la">Latin</textLang>
-                     <msItem xml:id="MS_Bodl_563-part3-item1" n="1">
+                     <msItem n="1" xml:id="MS_Bodl_563-part3-item1">
                         <locus>(fols. 198ra-350vb)</locus>
                         <author key="person_210864072">Thomas the Cistercian</author>
-                        <title key="work_6192">De praeparatione cordis</title><note>(imperfect)</note>
+                        <title key="work_6192">De praeparatione cordis</title>
+                        <note>(imperfect)</note>
                         <incipit>Si ergo preparata sunt corda nostra domino ut ueraciter dicamus Paratum cor meum</incipit>
                         <explicit>ubi homo preparati cordis suscipetur cum leticia a domino quem dilexit ut in thronum sedeat cum principibus scilicet apostolis et sanctis et solium glorie teneat. amen.</explicit>
-                        <note>Otherwise known only in <bibl type="ms" subtype="external">Le Mans, Bibliothèque municipale, MS. 3</bibl>, . The present copy lacks the first quire, containing the first eighteen chapters, and ends, apparently complete, at Le Mans, MS. 3, col. dxxxvi (the le Mans text continuing to col. dclv.) Here divided into divided into eleven books (ten in le Mans).</note>                       <note>Followed, fols. 350vb-353rb, by a list of the 618 chapters, numbered as far as 615, with a note of the quires in which they occur.</note> 
+                        <note>Otherwise known only in <bibl subtype="external" type="ms">Le Mans, Bibliothèque municipale, MS. 3</bibl>, . The present copy lacks the first quire, containing the first eighteen chapters, and ends, apparently complete, at Le Mans, MS. 3, col. dxxxvi (the le Mans text continuing to col. dclv.) Here divided into divided into eleven books (ten in le Mans).</note>
+                        <note>Followed, fols. 350vb-353rb, by a list of the 618 chapters, numbered as far as 615, with a note of the quires in which they occur.</note>
                         <!--  bk 10, f. 314
                        -->
                         <!-- start 
@@ -253,17 +251,18 @@
                         <supportDesc material="perg">
                            <support>parchment</support>
                            <extent>
-                              <dimensions unit="mm" type="leaf">
+                              <dimensions type="leaf" unit="mm">
                                  <height quantity="240">c. 240</height>
                                  <width>155</width>
                               </dimensions>
                            </extent>
                         </supportDesc>
                         <layoutDesc>
-                           <layout columns="2" writtenLines="39">Written above top line. 2 cols., 39 lines, written space <dimensions unit="mm" type="written">
-                              <height>170</height>
-                              <width>120</width>
-                           </dimensions> </layout>
+                           <layout columns="2" writtenLines="39">Written above top line. 2 cols., 39 lines, written space <dimensions type="written" unit="mm">
+                                 <height>170</height>
+                                 <width>120</width>
+                              </dimensions>
+                           </layout>
                         </layoutDesc>
                      </objectDesc>
                      <decoDesc>
@@ -279,15 +278,12 @@
                      <provenance>Probably in England by the fifteenth century (annotation, fol. 247v).</provenance>
                   </history>
                </msPart>
-              
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      
-      <revisionDesc>         
+      </fileDesc>
+      <revisionDesc>
          <change when="2019-08-15">Description revised with reference to Watson, SC, and examination of MS.</change>
          <change when="2017-07-01">First online publication.</change>
-
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

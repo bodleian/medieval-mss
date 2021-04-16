@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4243">
+<TEI xml:id="manuscript_4243" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -9,15 +9,14 @@
             <title type="collection">MSS. Digby</title>
             <respStmt>
                <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <persName>Elizabeth Solopova</persName>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
             <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH
-                                        project (enrich@oucs.ox.ac.uk;
-                                        http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
+               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </editionStmt>
@@ -54,23 +53,17 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem xml:id="MS_Digby_123-item1" n="1" class="#medica">
-						               <title type="desc" key="work_13232">Medical treatise</title>
-                     
+                  <msItem class="#medica" n="1" xml:id="MS_Digby_123-item1">
+                     <title key="work_13232" type="desc">Medical treatise</title>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
-                  <msItem xml:id="MS_Digby_123-item2" n="2">
-                     <author key="person_17232883">
-                        
-                        John of Burgundy
-                     
-                     </author>
+                  <msItem n="2" xml:id="MS_Digby_123-item2">
+                     <author key="person_17232883">John of Burgundy</author>
                      <title key="work_2810">Tractatus de morbo epidemiae</title>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
-                  <msItem xml:id="MS_Digby_123-item3" n="3" class="#astrologia_astronomia">
-						               <title type="desc" key="work_10409">Astrological treatise</title>
-                     
+                  <msItem class="#astrologia_astronomia" n="3" xml:id="MS_Digby_123-item3">
+                     <title key="work_10409" type="desc">Astrological treatise</title>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -88,16 +81,16 @@
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
-               <provenance notBefore="1603" notAfter="1634" resp="#MMM"><persName role="fmo" key="person_49357645">Kenelm Digby, 1603-1665</persName></provenance><acquisition when="1634" resp="#MMM">Donated to the Bodleian, 1634.</acquisition></history>
+                  <provenance notAfter="1634" notBefore="1603" resp="#MMM"><persName key="person_49357645" role="fmo">Kenelm Digby, 1603-1665</persName></provenance>
+                  <acquisition resp="#MMM" when="1634">Donated to the Bodleian, 1634.</acquisition>
+               </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (W. D. Macray, <title>Bodleian Library Quarto Catalogues IX: Digby Manuscripts</title>, repr. with addenda by R. W. Hunt and A. G. Watson, 1999).  
-                        
-                        <listBibl>
-                              <bibl type="QUARTO" facs="abw0077.gif">Quarto Catalogue, col. 135</bibl>
-                              <bibl type="QUARTO" facs="abw0240.gif">Quarto Catalogue (addenda), p. 63</bibl>
-                              <bibl type="SC" facs="aap0094.gif">Summary Catalogue, vol. 2, part 1, p. 73</bibl>
+                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (W. D. Macray, <title>Bodleian Library Quarto Catalogues IX: Digby Manuscripts</title>, repr. with addenda by R. W. Hunt and A. G. Watson, 1999). <listBibl>
+                              <bibl facs="abw0077.gif" type="QUARTO">Quarto Catalogue, col. 135</bibl>
+                              <bibl facs="abw0240.gif" type="QUARTO">Quarto Catalogue (addenda), p. 63</bibl>
+                              <bibl facs="aap0094.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 73</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -105,12 +98,10 @@
                </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc><change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName>
-      Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
-      in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.'
-    </change>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.' </change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

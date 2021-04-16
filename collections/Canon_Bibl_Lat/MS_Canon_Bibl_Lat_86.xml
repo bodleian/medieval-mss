@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2100">
+<TEI xml:id="manuscript_2100" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -9,7 +9,8 @@
             <title type="collection">MSS. Canon. Bibl. Lat. (Canonici Latin Biblical)</title>
             <respStmt>
                <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <persName>Elizabeth Solopova</persName>
+               <persName>Matthew Holford</persName>
             </respStmt>
             <respStmt>
                <resp>Markup and encoding</resp>
@@ -56,9 +57,9 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem xml:id="MS_Canon_Bibl_Lat_86-item1" n="1" class="#biblia">
-                     <title type="desc" key="work_12359">Index of Biblical words and phrases</title>
-                     <note>By <persName role="aut" key="person_46">Alexander Terentius</persName> (?) </note>
+                  <msItem class="#biblia" n="1" xml:id="MS_Canon_Bibl_Lat_86-item1">
+                     <title key="work_12359" type="desc">Index of Biblical words and phrases</title>
+                     <note>By <persName key="person_46" role="aut">Alexander Terentius</persName> (?) </note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -71,10 +72,10 @@
                   <bindingDesc resp="#BCBB">
                      <binding notAfter="1610" notBefore="1590">
                         <p>16th century, late, or early 17th century, <placeName key="place_1000080">Italian</placeName>: a limp, unstiffened parchment wrapper with a flap at lower fore-edge and remains of a long central tie of white tawed leather; quires sewn on brown tanned leather cords through two external spine-strengtheners of brown leather; undecorated. <dimensions type="binding" unit="mm">
-                           <height quantity="310">310</height>
-                           <width min="207" max="211">207-211</width>
-                           <depth quantity="27" precision="medium">c. 27</depth>
-                        </dimensions> (book closed).</p>
+                              <height quantity="310">310</height>
+                              <width max="211" min="207">207-211</width>
+                              <depth precision="medium" quantity="27">c. 27</depth>
+                           </dimensions> (book closed).</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
@@ -83,16 +84,17 @@
                      <origDate calendar="Gregorian" notAfter="1610" notBefore="1590">late 16th or early 17th century</origDate>
                      <origPlace><country key="place_1000080">Italy</country></origPlace>
                   </origin>
-               <provenance notBefore="1727" notAfter="1805" resp="#MMM"><persName role="fmo" key="person_2384880">Matteo Luigi Canonici, 1727-1805</persName></provenance><provenance notAfter="1807" resp="#MMM"><persName role="fmo" key="person_446">Giuseppe Canonici , -1807</persName></provenance><acquisition when="1817" resp="#MMM">Purchased by the Bodleian in 1817</acquisition></history>
+                  <provenance notAfter="1805" notBefore="1727" resp="#MMM"><persName key="person_2384880" role="fmo">Matteo Luigi Canonici, 1727-1805</persName></provenance>
+                  <provenance notAfter="1807" resp="#MMM"><persName key="person_446" role="fmo">Giuseppe Canonici , -1807</persName></provenance>
+                  <acquisition resp="#MMM" when="1817">Purchased by the Bodleian in 1817</acquisition>
+               </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (H. O. Coxe,  <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854). Correction of compiler(?)'s name, and redating of manuscript by Bruce-Barker Benfield, 2018. Binding: <bibl>B. C. Barker-Benfield, <title>Bookbindings of Canonici manuscripts : a survey of early and non-standard bindings, mostly Italian, in the Canonici collection of the Bodleian Library, University of Oxford</title> (Oxford, privately printed, 2020).</bibl>
-                            
-                            
-                            <listBibl>
-                              <bibl type="QUARTO" facs="abz0145.gif">Quarto Catalogue, col. 278</bibl>
-                               <bibl type="SC" facs="aaz0345.gif">Summary Catalogue, vol. 4, p. 326</bibl>
+                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (H. O. Coxe, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854). Correction of compiler(?)'s name, and redating of manuscript by Bruce-Barker Benfield, 2018. Binding: <bibl>B. C. Barker-Benfield, <title>Bookbindings of Canonici manuscripts : a survey of early and non-standard bindings, mostly Italian, in the Canonici collection of the Bodleian Library, University of Oxford</title> (Oxford, privately printed, 2020).</bibl>
+                           <listBibl>
+                              <bibl facs="abz0145.gif" type="QUARTO">Quarto Catalogue, col. 278</bibl>
+                              <bibl facs="aaz0345.gif" type="SC">Summary Catalogue, vol. 4, p. 326</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -100,15 +102,12 @@
                </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
+      </fileDesc>
       <revisionDesc>
          <change when="2020-04">Binding description revised.</change>
          <change when="2018-11-26" who="#MLH">Added binding description, corrected dating and identication of compiler.</change>
-         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName>
-      Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
-      in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.'
-    </change>          <change when="2017-07-01">First online publication.</change>
-
+         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.' </change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

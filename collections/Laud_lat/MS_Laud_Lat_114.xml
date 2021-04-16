@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_7578">
+<TEI xml:id="manuscript_7578" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -8,7 +8,8 @@
             <title type="collection">MSS. Laud Lat. (Latin)</title>
             <respStmt>
                <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <persName>Elizabeth Solopova</persName>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -51,26 +52,30 @@
                   </altIdentifier>
                </msIdentifier>
                <physDesc>
-                  <p>Composite: fols. 7-174 || fols. 1-6,
-				175-210</p>
+                  <p>Composite: fols. 7-174 || fols. 1-6, 175-210</p>
                </physDesc>
-               <additional><adminInfo>
+               <additional>
+                  <adminInfo>
                      <recordHist>
-                        <source>Summary description based on Elizabeth Solopova, <title>Latin Liturgical Psalters in the Bodleian Library: A Select Catalogue</title> (Oxford, 2013), pp. 108-14. Previously described in the Quarto Catalogue (H. O. Coxe,  <title>Laudian Manuscripts</title>, Quarto Catalogues II, repr. with corrections, 1969, from the original ed. of 1858-1885). 
-                            <listBibl>
-                               <bibl type="QUARTO" facs="aby0074.gif">
-                                  Quarto Catalogue, col. 52
-                               </bibl>
-                               <bibl type="QUARTO" facs="aby0322.gif">
-                                  Quarto Catalogue, p. 542 (addenda)
-                               </bibl>
+                        <source>Summary description based on Elizabeth Solopova, <title>Latin Liturgical Psalters in the Bodleian Library: A Select Catalogue</title> (Oxford, 2013), pp. 108-14. Previously described in the Quarto Catalogue (H. O. Coxe, <title>Laudian Manuscripts</title>, Quarto Catalogues II, repr. with corrections, 1969, from the original ed. of 1858-1885). <listBibl>
+                              <bibl facs="aby0074.gif" type="QUARTO"> Quarto Catalogue, col. 52 </bibl>
+                              <bibl facs="aby0322.gif" type="QUARTO"> Quarto Catalogue, p. 542 (addenda) </bibl>
                            </listBibl>
                            <listBibl>
-                              <bibl type="SC" facs="aap0050.gif">Summary Catalogue, Vol. 2, part 1, p. 29</bibl>
+                              <bibl facs="aap0050.gif" type="SC">Summary Catalogue, Vol. 2, part 1, p. 29</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
-                  </adminInfo><surrogates><bibl type="digital-facsimile" subtype="partial"><ref target="https://digital.bodleian.ox.ac.uk/objects/5a4fb726-f1ee-4486-9843-a04e89f71afa/"><title>Digital Bodleian</title></ref> <note>(24 images from 35mm slides)</note></bibl></surrogates><listBibl type="WRAPPER"><listBibl type="INTERNET"><head>Online resources:</head><bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/3369"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl></listBibl></listBibl></additional>
+                  </adminInfo>
+                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/5a4fb726-f1ee-4486-9843-a04e89f71afa/"><title>Digital Bodleian</title></ref>
+                        <note>(24 images from 35mm slides)</note></bibl></surrogates>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="INTERNET">
+                        <head>Online resources:</head>
+                        <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/3369"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl>
+                     </listBibl>
+                  </listBibl>
+               </additional>
                <msPart xml:id="MS_Laud_Lat_114-part1">
                   <msIdentifier>
                      <altIdentifier type="partial">
@@ -78,9 +83,9 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Laud_Lat_114-part1-item1" n="1" class="#liturgica #biblia">
-						                  <title type="desc" key="work_14114">Psalter</title><note>Augustinian choir psalter)</note>
-                        
+                     <msItem class="#liturgica #biblia" n="1" xml:id="MS_Laud_Lat_114-part1-item1">
+                        <title key="work_14114" type="desc">Psalter</title>
+                        <note>Augustinian choir psalter)</note>
                         <note>(unfinished)</note>
                         <bibl type="bible">
                            <title>Bible, Psalms</title>
@@ -104,8 +109,7 @@
                      <origin>
                         <origDate calendar="Gregorian" when="1260">c. 1260</origDate>
                         <origPlace>
-                           <country key="place_7002445">English</country>, <settlement key="place_7011931">Oxford</settlement> (?)
-                           <!--ORIGINAL: English, Oxford-->
+                           <country key="place_7002445">English</country>, <settlement key="place_7011931">Oxford</settlement> (?) <!--ORIGINAL: English, Oxford-->
                         </origPlace>
                      </origin>
                   </history>
@@ -117,14 +121,12 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Laud_Lat_114-part2-item1" n="1" class="#computistica #liturgica">
-						                  <title type="desc" key="work_10687">Calendar</title>
-                        
+                     <msItem class="#computistica #liturgica" n="1" xml:id="MS_Laud_Lat_114-part2-item1">
+                        <title key="work_10687" type="desc">Calendar</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Laud_Lat_114-part2-item2" n="2" class="#liturgica #biblia">
-						                  <title type="desc" key="work_14114">Psalter</title>
-                        
+                     <msItem class="#liturgica #biblia" n="2" xml:id="MS_Laud_Lat_114-part2-item2">
+                        <title key="work_14114" type="desc">Psalter</title>
                         <note>(completion of fos. 7-174)</note>
                         <bibl type="bible">
                            <title>Bible, Psalms</title>
@@ -139,7 +141,9 @@
                         </supportDesc>
                      </objectDesc>
                      <decoDesc>
-                        <decoNote type="border">Fine borders.</decoNote><decoNote type="histInit"> Fine historiated initials.</decoNote><decoNote type="decInit"> Fine initials (including additions on the original leaves). Additional fols. written by <persName role="scr" key="person_1287">William Symon</persName>, fol. 210r. (P&amp;A iii. 1042, pl. XCVII)</decoNote>
+                        <decoNote type="border">Fine borders.</decoNote>
+                        <decoNote type="histInit"> Fine historiated initials.</decoNote>
+                        <decoNote type="decInit"> Fine initials (including additions on the original leaves). Additional fols. written by <persName key="person_1287" role="scr">William Symon</persName>, fol. 210r. (P&amp;A iii. 1042, pl. XCVII)</decoNote>
                      </decoDesc>
                   </physDesc>
                   <history>
@@ -154,9 +158,9 @@
                </msPart>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

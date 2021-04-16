@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_3858">
+<TEI xml:id="manuscript_3858" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -9,7 +9,8 @@
             <title type="collection">MSS. Canon. Pat. Lat. (Canonici Latin Patristic)</title>
             <respStmt>
                <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <persName>Elizabeth Solopova</persName>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -54,17 +55,19 @@
                <physDesc>
                   <p n="composite">Composite: three parts</p>
                </physDesc>
-               <history><provenance notBefore="1727" notAfter="1805" resp="#MMM"><persName role="fmo" key="person_2384880">Matteo Luigi Canonici, 1727-1805</persName></provenance><provenance notAfter="1807" resp="#MMM"><persName role="fmo" key="person_446">Giuseppe Canonici , -1807</persName></provenance><acquisition when="1817" resp="#MMM">Purchased by the Bodleian in 1817</acquisition></history><additional>
+               <history>
+                  <provenance notAfter="1805" notBefore="1727" resp="#MMM"><persName key="person_2384880" role="fmo">Matteo Luigi Canonici, 1727-1805</persName></provenance>
+                  <provenance notAfter="1807" resp="#MMM"><persName key="person_446" role="fmo">Giuseppe Canonici , -1807</persName></provenance>
+                  <acquisition resp="#MMM" when="1817">Purchased by the Bodleian in 1817</acquisition>
+               </history>
+               <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (H. O. Coxe,  <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854).  
-                            
-                            
-                            <listBibl>
-                              <bibl type="QUARTO" facs="abz0169.gif">Quarto Catalogue, cols. 325-6</bibl>
-                              <bibl type="QUARTO" facs="abz0170.gif">Quarto Catalogue, cols. 327-8</bibl>
-                              <bibl type="QUARTO" facs="abz0171.gif">Quarto Catalogue, col. 329</bibl>
-                              <bibl type="SC" facs="aaz0346.gif">Summary Catalogue, vol. 4, p. 327</bibl>
+                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (H. O. Coxe, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854). <listBibl>
+                              <bibl facs="abz0169.gif" type="QUARTO">Quarto Catalogue, cols. 325-6</bibl>
+                              <bibl facs="abz0170.gif" type="QUARTO">Quarto Catalogue, cols. 327-8</bibl>
+                              <bibl facs="abz0171.gif" type="QUARTO">Quarto Catalogue, col. 329</bibl>
+                              <bibl facs="aaz0346.gif" type="SC">Summary Catalogue, vol. 4, p. 327</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -77,45 +80,33 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Canon_Pat_Lat_62-part1-item1" n="1">
-                        <author key="person_268708272">
-                           
-                           Guigo II
-                        
-                        </author>
+                     <msItem n="1" xml:id="MS_Canon_Pat_Lat_62-part1-item1">
+                        <author key="person_268708272">Guigo II</author>
                         <title key="work_1914">Scala claustralium</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Canon_Pat_Lat_62-part1-item2" n="2">
-                        <author key="person_306415749">
-                           
-                           Ps.-Bernard of Clairvaux
-                        
-                        </author>
+                     <msItem n="2" xml:id="MS_Canon_Pat_Lat_62-part1-item2">
+                        <author key="person_306415749">Ps.-Bernard of Clairvaux</author>
                         <title key="work_3949">Formula honestae uitae</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Canon_Pat_Lat_62-part1-item3" n="3">
-                        <author key="person_2188">
-                           
-                           Ps.-Valerius
-                        
-                        </author>
+                     <msItem n="3" xml:id="MS_Canon_Pat_Lat_62-part1-item3">
+                        <author key="person_2188">Ps.-Valerius</author>
                         <!-- not found in VIAF -->
                         <title key="work_4132">De nouae uitae institutione</title>
                         <note>(CPL 1289)</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Canon_Pat_Lat_62-part1-item4" n="4" class="#sermones">
-                        <title type="desc" key="work_14582">Sermons.</title>
+                     <msItem class="#sermones" n="4" xml:id="MS_Canon_Pat_Lat_62-part1-item4">
+                        <title key="work_14582" type="desc">Sermons.</title>
                         <textLang mainLang="la" otherLangs="it">Latin and Italian</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Canon_Pat_Lat_62-part1-item5" n="5" class="#theologica #devotiones">
-                        <title type="desc" key="work_14357">Religious treatises.</title>
+                     <msItem class="#theologica #devotiones" n="5" xml:id="MS_Canon_Pat_Lat_62-part1-item5">
+                        <title key="work_14357" type="desc">Religious treatises.</title>
                         <textLang mainLang="la" otherLangs="it">Latin and Italian</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Canon_Pat_Lat_62-part1-item6" n="6" class="#vitae_sanctorum">
-                        <title type="desc" key="work_13059">Lives of Saints</title>
+                     <msItem class="#vitae_sanctorum" n="6" xml:id="MS_Canon_Pat_Lat_62-part1-item6">
+                        <title key="work_13059" type="desc">Lives of Saints</title>
                         <textLang mainLang="la" otherLangs="it">Latin and Italian</textLang>
                      </msItem>
                   </msContents>
@@ -139,15 +130,12 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Canon_Pat_Lat_62-part2-item1" n="1" class="#auctoritates">
-                        <title type="desc" key="work_13723">Patristic and other extracts</title>
+                     <msItem class="#auctoritates" n="1" xml:id="MS_Canon_Pat_Lat_62-part2-item1">
+                        <title key="work_13723" type="desc">Patristic and other extracts</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Canon_Pat_Lat_62-part2-item2" n="2" class="#auctoritates">
-                        <title type="desc" key="work_11787">Extracts from <persName role="aut" key="person_7524651">
-                              Aristotle
-                           </persName>
-                        </title>
+                     <msItem class="#auctoritates" n="2" xml:id="MS_Canon_Pat_Lat_62-part2-item2">
+                        <title key="work_11787" type="desc">Extracts from <persName key="person_7524651" role="aut"> Aristotle </persName></title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                   </msContents>
@@ -171,21 +159,13 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Canon_Pat_Lat_62-part3-item1" n="1">
-                        <author key="person_803890">
-                           
-                           Isidore
-                        
-                        </author>
+                     <msItem n="1" xml:id="MS_Canon_Pat_Lat_62-part3-item1">
+                        <author key="person_803890">Isidore</author>
                         <title key="work_2268">Sententiae</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Canon_Pat_Lat_62-part3-item2" n="2">
-                        <author key="person_401332">
-                           
-                           Isaac Ninevita
-                        
-                        </author>
+                     <msItem n="2" xml:id="MS_Canon_Pat_Lat_62-part3-item2">
+                        <author key="person_401332">Isaac Ninevita</author>
                         <title key="work_2242">Liber de contemptu mundi</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
@@ -205,12 +185,10 @@
                </msPart>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc><change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName>
-      Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
-      in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.'
-    </change>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.' </change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

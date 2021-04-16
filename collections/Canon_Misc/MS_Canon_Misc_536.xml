@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_3579">
+<TEI xml:id="manuscript_3579" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -9,7 +9,8 @@
             <title type="collection">MSS. Canon. Misc. (Canonici Miscellaneous)</title>
             <respStmt>
                <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <persName>Elizabeth Solopova</persName>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -52,24 +53,22 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem xml:id="MS_Canon_Misc_536-item1" n="1" class="#auctoritates">
-						               <title type="desc" key="work_13721">Patristic and classical extracts</title>
-                     
+                  <msItem class="#auctoritates" n="1" xml:id="MS_Canon_Misc_536-item1">
+                     <title key="work_13721" type="desc">Patristic and classical extracts</title>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
-                  <msItem xml:id="MS_Canon_Misc_536-item2" n="2" class="#liturgica">
-                     <title type="desc" key="work_12334">Hymns</title>
+                  <msItem class="#liturgica" n="2" xml:id="MS_Canon_Misc_536-item2">
+                     <title key="work_12334" type="desc">Hymns</title>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
-                  <msItem xml:id="MS_Canon_Misc_536-item3" n="3">
+                  <msItem n="3" xml:id="MS_Canon_Misc_536-item3">
                      <author key="person_268286342">John Climax</author>
                      <title key="work_2469">Scala paradisi</title>
                      <note>(extracts)</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
-                  <msItem xml:id="MS_Canon_Misc_536-item4" n="4" class="#versus #devotiones">
-						               <title type="desc" key="work_13888">Poems and laude</title>
-                     
+                  <msItem class="#versus #devotiones" n="4" xml:id="MS_Canon_Misc_536-item4">
+                     <title key="work_13888" type="desc">Poems and laude</title>
                      <textLang mainLang="la" otherLangs="it">Latin and Italian</textLang>
                   </msItem>
                </msContents>
@@ -84,17 +83,17 @@
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1600" notBefore="1500">16th century</origDate>
                   </origin>
-               <provenance notBefore="1727" notAfter="1805" resp="#MMM"><persName role="fmo" key="person_2384880">Matteo Luigi Canonici, 1727-1805</persName></provenance><provenance notAfter="1807" resp="#MMM"><persName role="fmo" key="person_446">Giuseppe Canonici , -1807</persName></provenance><acquisition when="1817" resp="#MMM">Purchased by the Bodleian in 1817</acquisition></history>
+                  <provenance notAfter="1805" notBefore="1727" resp="#MMM"><persName key="person_2384880" role="fmo">Matteo Luigi Canonici, 1727-1805</persName></provenance>
+                  <provenance notAfter="1807" resp="#MMM"><persName key="person_446" role="fmo">Giuseppe Canonici , -1807</persName></provenance>
+                  <acquisition resp="#MMM" when="1817">Purchased by the Bodleian in 1817</acquisition>
+               </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (H. O. Coxe,  <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854) 
-                            
-                            
-                            <listBibl>
-                              <bibl type="QUARTO" facs="abz0429.gif">Quarto Catalogue, cols. 845-6</bibl>
-                              <bibl type="QUARTO" facs="abz0430.gif">Quarto Catalogue, col. 847</bibl>
-                              <bibl type="SC" facs="aaz0429.gif">Summary Catalogue, vol. 4, p. 410</bibl>
+                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (H. O. Coxe, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854) <listBibl>
+                              <bibl facs="abz0429.gif" type="QUARTO">Quarto Catalogue, cols. 845-6</bibl>
+                              <bibl facs="abz0430.gif" type="QUARTO">Quarto Catalogue, col. 847</bibl>
+                              <bibl facs="aaz0429.gif" type="SC">Summary Catalogue, vol. 4, p. 410</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -102,12 +101,10 @@
                </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc><change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName>
-      Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
-      in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.'
-    </change>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.' </change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

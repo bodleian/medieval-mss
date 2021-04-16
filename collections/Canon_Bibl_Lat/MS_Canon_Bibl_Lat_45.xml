@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2062">
+<TEI xml:id="manuscript_2062" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -61,14 +61,10 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents resp="#VD">
-                  <msItem xml:id="MS_Canon_Bibl_Lat_45-item1" n="1" class="#liturgica">
-                     <title type="desc" key="work_12069">Gospel lectionary</title>
-                     <note>Temporale (fol. 1<hi rend="superscript">v</hi>), beginning with Christmas eve and containing
-                        the Purification of the Virgin (fol. 10); sanctorale (fol. 97<hi rend="superscript">v</hi>),
-                        beginning with St. Sylvester; dedication (fol. 115); votive masses for each day of
-                        the week (fol. 116) for ordinations (fol. 117) and other intentions; masses for the dead
-                        (fol. 118<hi rend="superscript">v</hi>). In the
-                        passions (fol. 35) the parts are indicated by a, c and t. </note><!-- check: music? -->
+                  <msItem class="#liturgica" n="1" xml:id="MS_Canon_Bibl_Lat_45-item1">
+                     <title key="work_12069" type="desc">Gospel lectionary</title>
+                     <note>Temporale (fol. 1<hi rend="superscript">v</hi>), beginning with Christmas eve and containing the Purification of the Virgin (fol. 10); sanctorale (fol. 97<hi rend="superscript">v</hi>), beginning with St. Sylvester; dedication (fol. 115); votive masses for each day of the week (fol. 116) for ordinations (fol. 117) and other intentions; masses for the dead (fol. 118<hi rend="superscript">v</hi>). In the passions (fol. 35) the parts are indicated by a, c and t. </note>
+                     <!-- check: music? -->
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -77,60 +73,58 @@
                      <supportDesc material="perg">
                         <support>parchment</support>
                         <extent> ii + 120 + ii fol.<dimensions type="leaf" unit="mm">
-                           <height>215</height>
-                           <width>156</width>
-                        </dimensions>
+                              <height>215</height>
+                              <width>156</width>
+                           </dimensions>
                            <dimensions type="written" unit="mm">
                               <height>148</height>
                               <width>95</width>
                            </dimensions>
                         </extent>
-                       
-                     </supportDesc> <layoutDesc>
-                           <layout columns="1" writtenLines="26">26 lines</layout>
-                        </layoutDesc>
+                     </supportDesc>
+                     <layoutDesc>
+                        <layout columns="1" writtenLines="26">26 lines</layout>
+                     </layoutDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote resp="#PA">Fine initials. Drawing added, fol. 57v, 12th century, middle.
-				(P&amp;A i. 37, pl. IV)
-                     </decoNote>
-                     <decoNote>All capitals and titles in
-                        gold; gold initials on a blue ground; spaces for miniatures left blank, except
-                        for a drawing on Holy Saturday (fol. 57v).</decoNote>
+                     <decoNote resp="#PA">Fine initials. Drawing added, fol. 57v, 12th century, middle. (P&amp;A i. 37, pl. IV)</decoNote>
+                     <decoNote>All capitals and titles in gold; gold initials on a blue ground; spaces for miniatures left blank, except for a drawing on Holy Saturday (fol. 57v).</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin resp="#PA">
-                     <origDate calendar="Gregorian" notAfter="1100" notBefore="1050">11th century, second half</origDate><origDate calendar="Gregorian" type="addition" notAfter="1160" notBefore="1140">; added decoration 12th century, middle.</origDate>
+                     <origDate calendar="Gregorian" notAfter="1100" notBefore="1050">11th century, second half</origDate><origDate calendar="Gregorian" notAfter="1160" notBefore="1140" type="addition">; added decoration 12th century, middle.</origDate>
                      <origPlace>
                         <country key="place_1000062">Austria</country>, <settlement key="place_7003256">Salzburg</settlement>
                         <!--ORIGINAL: German, Salzburg-->
                      </origPlace>
                   </origin>
-               <provenance notBefore="1727" notAfter="1805" resp="#MMM"><persName role="fmo" key="person_2384880">Matteo Luigi Canonici, 1727-1805</persName></provenance><provenance notAfter="1807" resp="#MMM"><persName role="fmo" key="person_446">Giuseppe Canonici , -1807</persName></provenance><acquisition when="1817" resp="#MMM">Purchased by the Bodleian in 1817</acquisition></history>
+                  <provenance notAfter="1805" notBefore="1727" resp="#MMM"><persName key="person_2384880" role="fmo">Matteo Luigi Canonici, 1727-1805</persName></provenance>
+                  <provenance notAfter="1807" resp="#MMM"><persName key="person_446" role="fmo">Giuseppe Canonici , -1807</persName></provenance>
+                  <acquisition resp="#MMM" when="1817">Purchased by the Bodleian in 1817</acquisition>
+               </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Adapted (2018) from S. J. P. Van Dijk, <title>Handlist of the Latin Liturgical Manuscripts in the Bodleian Library Oxford : Vol. 1: Mass Books</title> (typescript, 1957); Pächt and Alexander (see Bibliography); and the Quarto Catalogue (H. O. Coxe,  <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854). 
-                            <listBibl>
-                              <bibl type="QUARTO" facs="abz0138.gif">Quarto Catalogue, col. 264</bibl>
-                              <bibl type="SC" facs="aaz0344.gif">Summary Catalogue, vol. 4, p. 325</bibl>
+                        <source>Adapted (2018) from S. J. P. Van Dijk, <title>Handlist of the Latin Liturgical Manuscripts in the Bodleian Library Oxford : Vol. 1: Mass Books</title> (typescript, 1957); Pächt and Alexander (see Bibliography); and the Quarto Catalogue (H. O. Coxe, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854). <listBibl>
+                              <bibl facs="abz0138.gif" type="QUARTO">Quarto Catalogue, col. 264</bibl>
+                              <bibl facs="aaz0344.gif" type="SC">Summary Catalogue, vol. 4, p. 325</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
-                  <listBibl type="WRAPPER"><listBibl>
-                     <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, I (1966), no. 37</bibl>
-                  </listBibl></listBibl>
+                  <listBibl type="WRAPPER">
+                     <listBibl>
+                        <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, I (1966), no. 37</bibl>
+                     </listBibl>
+                  </listBibl>
                </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc><change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName>
-      Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
-      in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.'
-    </change>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.' </change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

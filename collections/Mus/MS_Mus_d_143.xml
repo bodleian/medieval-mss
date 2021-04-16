@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_7888">
+<TEI xml:id="manuscript_7888" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -8,7 +8,8 @@
             <title type="collection">MSS. Music</title>
             <respStmt>
                <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <persName>Elizabeth Solopova</persName>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -51,21 +52,28 @@
                   </altIdentifier>
                </msIdentifier>
                <physDesc>
-                  <p n="composite">Composite: </p>
+                  <p n="composite">Composite:</p>
                </physDesc>
-               <additional><adminInfo>
+               <additional>
+                  <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
-                            
-                            <listBibl>
-                              <bibl type="SC" facs="aam0897.gif">Summary Catalogue, Vol. 5, p.  860</bibl>
-                              <bibl type="SC" facs="aam0898.gif">Summary Catalogue, Vol. 5, p.  861</bibl>
+                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
+                              <bibl facs="aam0897.gif" type="SC">Summary Catalogue, Vol. 5, p. 860</bibl>
+                              <bibl facs="aam0898.gif" type="SC">Summary Catalogue, Vol. 5, p. 861</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
-                  </adminInfo><surrogates><bibl type="digital-facsimile" subtype="partial"><ref target="https://digital.bodleian.ox.ac.uk/objects/569f1417-da0f-4cdd-a9a6-764d72bc3f7e/"><title>Digital Bodleian</title></ref> <note>(1 image from 35mm slides)</note></bibl></surrogates><listBibl type="WRAPPER"><listBibl type="INTERNET"><head>Online resources:</head>
-                     <bibl><ref target="https://www.diamm.ac.uk/sources/535/"><title>DIAMM: Digital Image Archive of Medieval Music</title></ref></bibl>
-                     <bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/78220"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title></ref></bibl></listBibl></listBibl></additional>
+                  </adminInfo>
+                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/569f1417-da0f-4cdd-a9a6-764d72bc3f7e/"><title>Digital Bodleian</title></ref>
+                        <note>(1 image from 35mm slides)</note></bibl></surrogates>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="INTERNET">
+                        <head>Online resources:</head>
+                        <bibl><ref target="https://www.diamm.ac.uk/sources/535/"><title>DIAMM: Digital Image Archive of Medieval Music</title></ref></bibl>
+                        <bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/78220"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title></ref></bibl>
+                     </listBibl>
+                  </listBibl>
+               </additional>
                <msPart xml:id="MS_Mus_d_143-part1">
                   <msIdentifier>
                      <altIdentifier type="partial">
@@ -73,9 +81,9 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Mus_d_143-part1-item1" n="1" class="#versus #musica">
+                     <msItem class="#versus #musica" n="1" xml:id="MS_Mus_d_143-part1-item1">
                         <locus>(fols. 1-2)</locus>
-                        <title type="desc" key="work_13909">Polyphonic motets for three voices</title>
+                        <title key="work_13909" type="desc">Polyphonic motets for three voices</title>
                         <note>Two imperfect leaves</note>
                         <textLang mainLang="la" otherLangs="fr">Latin and French</textLang>
                      </msItem>
@@ -100,13 +108,10 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Mus_d_143-part2-item1" n="1" class="#musica">
+                     <msItem class="#musica" n="1" xml:id="MS_Mus_d_143-part2-item1">
                         <locus>(fols. 3-6)</locus>
-                        <title>Galliardo
-                           quadrans and <persName role="aut" key="person_14744124">John Dowland</persName>'s Almayne, for
-				 keyboard </title>
-                        
-                       <!-- language not specified in cat. -->
+                        <title>Galliardo quadrans and <persName key="person_14744124" role="aut">John Dowland</persName>'s Almayne, for keyboard</title>
+                        <!-- language not specified in cat. -->
                      </msItem>
                   </msContents>
                   <physDesc>
@@ -124,9 +129,9 @@
                </msPart>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

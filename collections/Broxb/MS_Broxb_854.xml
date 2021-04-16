@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1963">
+<TEI xml:id="manuscript_1963" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -57,8 +57,8 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents resp="#DD">
-                  <msItem xml:id="MS_Broxb_854-item1" n="1" class="#liturgica">
-                     <title type="desc" key="work_10499">Book of Hours, Dominican Use</title>
+                  <msItem class="#liturgica" n="1" xml:id="MS_Broxb_854-item1">
+                     <title key="work_10499" type="desc">Book of Hours, Dominican Use</title>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -66,22 +66,24 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                        <extent>i + 74 + i fols.
-                           <dimensions unit="mm" type="leaf">
+                        <extent>i + 74 + i fols. <dimensions type="leaf" unit="mm">
                               <height>123</height>
                               <width>105</width>
                            </dimensions></extent>
                      </supportDesc>
                      <layoutDesc>
-                        <layout columns="1" writtenLines="16">1 col., 16 lines, written space <dimensions unit="mm" type="written">
-                           <height max="68" min="63">63-8</height>
-                           <width>60</width>
-                        </dimensions></layout>
+                        <layout columns="1" writtenLines="16">1 col., 16 lines, written space <dimensions type="written" unit="mm">
+                              <height max="68" min="63">63-8</height>
+                              <width>60</width>
+                           </dimensions></layout>
                      </layoutDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote type="miniature">Illuminated miniatures</decoNote><decoNote type="border">Borders</decoNote><decoNote type="decInit">Initials</decoNote>
-                     <decoNote type="colInit">Coloured initials</decoNote><decoNote type="rubrication">Rubrics</decoNote>
+                     <decoNote type="miniature">Illuminated miniatures</decoNote>
+                     <decoNote type="border">Borders</decoNote>
+                     <decoNote type="decInit">Initials</decoNote>
+                     <decoNote type="colInit">Coloured initials</decoNote>
+                     <decoNote type="rubrication">Rubrics</decoNote>
                   </decoDesc>
                   <bindingDesc>
                      <binding notAfter="1600" notBefore="1500">
@@ -91,7 +93,7 @@
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" when="1486" resp="#DD" cert="high">1486</origDate>
+                     <origDate calendar="Gregorian" cert="high" resp="#DD" when="1486">1486</origDate>
                      <origPlace resp="#PK">
                         <country key="place_1000062">Austrian</country>, Kramsach (Voldöpp), Dominican house of <orgName key="org_119">Mariathal</orgName>
                         <!--ORIGINAL: Austrian, Dominican house of Mariathal in Voldoepp, Kramsach-->
@@ -102,27 +104,27 @@
                   <provenance resp="#DD">The calendar is basically Dominican plus Apollonia (9 Feb.) in the original hand and three feasts added later - the translation of St Barbara totum duplex (2 Sept.) and St Barbara with octave (4 and 11 Dec.). </provenance>
                   <provenance resp="#DD"><q>Hic liber est G. phi. Com.</q>, <q>Georgius Philippus Comes de <unclear>Lirdentam</unclear></q>, 16th century, inside front cover. </provenance>
                   <provenance resp="#PK">
-                     <persName role="fmo" key="person_20486290">C. W. Dyson Perrins</persName>
+                     <persName key="person_20486290" role="fmo">C. W. Dyson Perrins</persName>
                   </provenance>
                   <provenance resp="#PK">Sotheby's, 29 Nov. 1960, lot 141.</provenance>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Description adapted (Oct. 2019) from the following sources:
-                           <listBibl><bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 130 [contents, physical description, provenance]</bibl>
-                           <bibl>Peter Kidd, <title>Checklist of Medieval Western Manuscripts Acquired 1916-</title> (typescript, c. 1996-2000) [origin, provenance] </bibl></listBibl>
+                        <source>Description adapted (Oct. 2019) from the following sources: <listBibl>
+                              <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 130 [contents, physical description, provenance]</bibl>
+                              <bibl>Peter Kidd, <title>Checklist of Medieval Western Manuscripts Acquired 1916-</title> (typescript, c. 1996-2000) [origin, provenance] </bibl>
+                           </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
                </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc>      
+      </fileDesc>
+      <revisionDesc>
          <change when="2019-10-07">Revised to include additional information from Watson</change>
          <change when="2017-07-01">First online publication.</change>
-
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

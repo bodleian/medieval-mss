@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_9160">
+<TEI xml:id="manuscript_9160" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -8,7 +8,8 @@
             <title type="collection">MSS. E Mus. (e Musaeo)</title>
             <respStmt>
                <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <persName>Elizabeth Solopova</persName>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -53,18 +54,25 @@
                <physDesc>
                   <p n="composite">Composite: pp. 1-508 || pp. 509-528 || pp. v-xii, 529-536</p>
                </physDesc>
-               <additional><adminInfo>
+               <additional>
+                  <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
-                            
-                            <listBibl>
-                              <bibl type="SC" facs="aaq0043.gif">Summary Catalogue, Vol. 2 Part 2, p.  684</bibl>
+                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
+                              <bibl facs="aaq0043.gif" type="SC">Summary Catalogue, Vol. 2 Part 2, p. 684</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
-                  </adminInfo><surrogates><bibl type="digital-facsimile" subtype="partial"><ref target="https://digital.bodleian.ox.ac.uk/objects/42797a5a-1060-4df1-b9c1-5285c169808d/"><title>Digital Bodleian</title></ref> <note>(4 images from 35mm slides)</note></bibl></surrogates><listBibl type="WRAPPER"><listBibl type="INTERNET"><head>Online resources:</head>
-                     <bibl><ref target="https://www.diamm.ac.uk/sources/513/"><title>DIAMM: Digital Image Archive of Medieval Music</title></ref></bibl>
-                     <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/829"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl></listBibl></listBibl></additional>
+                  </adminInfo>
+                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/42797a5a-1060-4df1-b9c1-5285c169808d/"><title>Digital Bodleian</title></ref>
+                        <note>(4 images from 35mm slides)</note></bibl></surrogates>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="INTERNET">
+                        <head>Online resources:</head>
+                        <bibl><ref target="https://www.diamm.ac.uk/sources/513/"><title>DIAMM: Digital Image Archive of Medieval Music</title></ref></bibl>
+                        <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/829"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl>
+                     </listBibl>
+                  </listBibl>
+               </additional>
                <msPart xml:id="MS_e_Mus_7-part1">
                   <msIdentifier>
                      <altIdentifier type="partial">
@@ -72,12 +80,8 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_e_Mus_7-part1-item1" n="1">
-                        <author key="person_66806872">
-                           
-                           Augustine
-                        
-                        </author>
+                     <msItem n="1" xml:id="MS_e_Mus_7-part1-item1">
+                        <author key="person_66806872">Augustine</author>
                         <title key="work_790">Commentary on Psalms ci - cl</title>
                         <bibl type="commentedOn">
                            <title>Bible, Psalms</title>
@@ -112,13 +116,9 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_e_Mus_7-part2-item1" n="1">
-                        <author key="person_88881722">
-                           
-                           Justinian
-                        
-                        </author>
-                        <title key="work_2888">Codex </title>
+                     <msItem n="1" xml:id="MS_e_Mus_7-part2-item1">
+                        <author key="person_88881722">Justinian</author>
+                        <title key="work_2888">Codex</title>
                         <note>(fragment)</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
@@ -147,9 +147,8 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_e_Mus_7-part3-item1" n="1" class="#musica">
-                        <title type="desc" key="work_13910">Polyphonic music
-                     </title>
+                     <msItem class="#musica" n="1" xml:id="MS_e_Mus_7-part3-item1">
+                        <title key="work_13910" type="desc">Polyphonic music</title>
                         <note>(fragments)</note>
                         <textLang mainLang="la" otherLangs="fr">Latin and French</textLang>
                      </msItem>
@@ -173,9 +172,9 @@
                </msPart>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

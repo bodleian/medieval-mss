@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_180">
+<TEI xml:id="manuscript_180" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -54,9 +54,8 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents resp="#DD">
-                  <msItem xml:id="MS_Add_E_14_R-item1" n="1" class="#historica">
-                     <title type="desc" key="work_11975">Genealogy and chronicle of the kings of England from Brut to
-                        Edward I (1272), with additions to c. 1301.</title>
+                  <msItem class="#historica" n="1" xml:id="MS_Add_E_14_R-item1">
+                     <title key="work_11975" type="desc">Genealogy and chronicle of the kings of England from Brut to Edward I (1272), with additions to c. 1301.</title>
                      <note>In one hand to the death and burial of Henry III (1272), after which a second hand continues briefly to c. 1301.</note>
                      <textLang mainLang="fr">French</textLang>
                   </msItem>
@@ -65,39 +64,50 @@
                   <objectDesc form="roll">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                        <extent><dimensions unit="mm" type="roll">
-                           <height quantity="4215">c. 4215</height>
-                           <width>325</width>
-                        </dimensions></extent>
+                        <extent><dimensions type="roll" unit="mm">
+                              <height quantity="4215">c. 4215</height>
+                              <width>325</width>
+                           </dimensions></extent>
                      </supportDesc>
                   </objectDesc>
-                  <decoDesc><decoNote>Parts of text in red.</decoNote></decoDesc>
+                  <decoDesc>
+                     <decoNote>Parts of text in red.</decoNote>
+                  </decoDesc>
                </physDesc>
                <history resp="#DD">
                   <origin>
-                     <origDate calendar="Gregorian" notBefore="1272" notAfter="1301" cert="high">after 1272 - c. 1301</origDate>
+                     <origDate calendar="Gregorian" cert="high" notAfter="1301" notBefore="1272">after 1272 - c. 1301</origDate>
                      <origPlace>
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
-                  <acquisition resp="#SC">Bought from <persName role="fmo" key="person_2829">George W. Baller</persName>, 18 March 1885, for £5.</acquisition>
+                  <acquisition resp="#SC">Bought from <persName key="person_2829" role="fmo">George W. Baller</persName>, 18 March 1885, for £5.</acquisition>
                </history>
-               <additional><adminInfo>
+               <additional>
+                  <adminInfo>
                      <recordHist>
-                        <source>Adapted (2017) from A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts</title>, and from the Summary Catalogue (1905). 
-                            <listBibl>
-                              <bibl type="SC" facs="aam0683.gif">Summary Catalogue, Vol. 5, p.  648</bibl>
+                        <source>Adapted (2017) from A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts</title>, and from the Summary Catalogue (1905). <listBibl>
+                              <bibl facs="aam0683.gif" type="SC">Summary Catalogue, Vol. 5, p. 648</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
-                  </adminInfo><listBibl type="WRAPPER"><listBibl>
-                     <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 31</bibl>
-                  </listBibl><listBibl type="INTERNET"><head>Online resources:</head><bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/39744"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title></ref></bibl><bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/39761"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title></ref></bibl></listBibl></listBibl></additional>
+                  </adminInfo>
+                  <listBibl type="WRAPPER">
+                     <listBibl>
+                        <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 31</bibl>
+                     </listBibl>
+                     <listBibl type="INTERNET">
+                        <head>Online resources:</head>
+                        <bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/39744"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title></ref></bibl>
+                        <bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/39761"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title></ref></bibl>
+                     </listBibl>
+                  </listBibl>
+               </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

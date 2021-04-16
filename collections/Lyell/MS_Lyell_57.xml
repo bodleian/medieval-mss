@@ -1,23 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_7790">
+<TEI xml:id="manuscript_7790" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Lyell 57</title>
             <title type="collection">MSS. Lyell</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="DLM">
+               <resp when="1971">Cataloguer</resp>
+               <persName>Albinia de la Mare</persName>
+            </respStmt>
+            <respStmt xml:id="ANJD">
+               <resp when="2020">Encoding</resp>
+               <persName>Andrew Dunning</persName>
             </respStmt>
          </titleStmt>
-         <editionStmt>
-            <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
-         </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
             <address>
@@ -47,68 +44,143 @@
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Lyell 57</idno>
                </msIdentifier>
+               <head>Hucbald, Palladius, etc.</head>
                <msContents>
-                  <msItem xml:id="MS_Lyell_57-item1" n="1" class="#topographica">
-                     <title type="desc" key="work_13132">Maps</title>
-                     <note>(two zone-maps of the earth, of the type illustrated in
-                           Macrobius, <title>Commentary on Somnium Scipionis</title>)</note>
-                     <textLang mainLang="la">Latin</textLang>
+                  <textLang mainLang="la">Latin</textLang>
+                  <msItem>
+                     <locus>(fol. 1r)</locus>
+                     <note>A later erased note: <q>Precepta rei rustice</q>.</note>
                   </msItem>
-                  <msItem xml:id="MS_Lyell_57-item2" n="2" class="#mathematica">
-						               <title type="desc" key="work_13156">Mathematical treatise</title>
-                     
-                     <textLang mainLang="la">Latin</textLang>
+                  <msItem n="1">
+                     <locus>(fol. 1r)</locus>
+                     <msItem n="a">
+                        <title key="work_13132" type="desc">Two <q>Macrobian</q> zone-maps of the earth</title>
+                        <msItem>
+                           <note>The first showing the five habitable and uninhabitable zones, the 4th of which contains the Antipodes <q>qui sub terra sunt et pedes habent contra nos versos</q></note>
+                        </msItem>
+                        <msItem>
+                           <note>The second is lettered like the diagram which illustrates <persName key="person_39387062">Macrobius</persName>, <title key="work_3038">De somno Scipionis</title>, 11. v. 13, but its descriptive text is derived as well from II. vii. 4; ed. Eyssenhardt, Leipzig, 1893, pp. 601, 608 and diags. iv-v.</note>
+                        </msItem>
+                     </msItem>
+                     <msItem n="b">
+                        <note>Lists of names, some glossed, of the Fates, Furies, Harpies, Graces, and Gorgons.</note>
+                     </msItem>
                   </msItem>
-                  <msItem xml:id="MS_Lyell_57-item3" n="3" class="#mathematica">
-                     <title type="desc" key="work_15046">Treatise on geometry</title>
-                     <note>(fragments)</note>
-                     <textLang mainLang="la">Latin</textLang>
+                  <msItem n="2">
+                     <title key="work_16419">De minutiis</title>
+                     <rubric>De minutiis</rubric>
+                     <incipit><locus>(fol. 1v)</locus> Cum passione contraria</incipit>
+                     <explicit><locus>(fol. 5r)</locus> Bis dragma sicilicus</explicit>
+                     <note>Ed. N. Bubnov, <title>Gerberti Opera Mathematica,</title> Berlin, 1899, in App. 1B, iv, pp. 228–44.</note>
+                     <note>It is preceded by</note>
+                     <msItem n="a">
+                        <locus>(fol. 1r)</locus>
+                        <note>A table, pr. Bubnov, pp. 227–8. The table differs considerably from the printed edition. In the MSS. cited by Bubnov this table is only found at the beginning in Munich clm. 14272.</note>
+                     </msItem>
+                     <msItem n="b">
+                        <locus>(fol. 1v)</locus>
+                        <incipit>Duo calci faciunt unum ceratem,</incipit>
+                        <explicit>erit sicilicus assis.</explicit>
+                        <note>Bubnov, p. 228 n. 4, only found this piece in Munich clm. 14272 and 14689 and Oxford, St. John’s College MS. 17. It is also found in MS. D’Orville 158, 11th cent., fol. 122v.</note>
+                     </msItem>
+                     <msItem>
+                        <note>Following the text is a short passage, added in a different hand:</note>
+                        <incipit>Et secundum superiorem regulam sicut precepimus caute dividatur. Quotlibet asses precesserint</incipit>
+                        <explicit>assium in se qui minucias precedunt.</explicit>
+                        <note>The section <hi rend="italic">beg.:</hi>
+                           <q>Quotlibet</q> is part of an alien fragment following the treatise found in several MSS., including Munich clm. 14689 and pr. A. Olleris, <title>Œuvres de Gerbert,</title> Paris, 1867, p. 345; see Bubnov, p. 244 n. There is an addition in the same hand on fol. 2, marked for insertion by <q>d</q> in text and <q>h</q> in margin: <q>De Sescuntia</q>
+                           <hi rend="italic">beg.:</hi>
+                           <q>Sescuntia in sextantem fit sicilicus</q>, which is not in Bubnov (p. 230 l.26).</note>
+                     </msItem>
                   </msItem>
-                  <msItem xml:id="MS_Lyell_57-item4" n="4">
-                     <author key="person_62341245">
-                        
-                        Regino of Prüm
-                     
-                     </author>
-                     <title key="work_4241">Epistola de
-              harmonica institutione</title>
-                     <textLang mainLang="la">Latin</textLang>
+                  <msItem n="3">
+                     <locus>(fol. 5v)</locus>
+                     <title key="work_16420">Geometria incerti auctoris</title>
+                     <note>(extracts)</note>
+                     <msItem n="(i)">
+                        <rubric>Ad existimandam cuiusque rei altitudinem</rubric>
+                        <incipit>Sole lucente quęcumque res illa fuerit sub divo</incipit>
+                        <explicit>altitudinis teneto</explicit>
+                     </msItem>
+                     <msItem n="(ii)">
+                        <incipit>Est et alia ratio altitudinem videndi quę est huiusmodi. Hortogonium cuius katetus.</incipit>
+                        <note>Bk. iii. 9 and iv. 48 of <title>Geometria incerti auctoris</title> ed. Bubnov, op. cit., pp. 323, 358. The same fragments are found in Munich clm. 14689.</note>
+                     </msItem>
                   </msItem>
-                  <msItem xml:id="MS_Lyell_57-item5" n="5" class="#musica">
-                     <title type="desc" key="work_15101">Treatise on monochord.</title>
-                     <textLang mainLang="la">Latin</textLang>
+                  <msItem n="4">
+                     <locus>(fol. 5v)</locus>
+                     <author key="person_62341245">Regino of Prüm</author>
+                     <title key="work_4241">Epistola de harmonica institutione</title>
+                     <incipit>Nosse oportet peritum cantorem quod non omnis tonorum</incipit>
+                     <note>§ 2. PL 132 col. 485B3–486A7. The version in our MS. is slightly shortened.</note>
                   </msItem>
-                  <msItem xml:id="MS_Lyell_57-item6" n="6">
-                     <author key="person_66622010">
-                        
-                        Hucbald of St. Amand
-                     
-                     </author>
+                  <msItem n="5">
+                     <locus>(fol. 6r)</locus>
+                     <title key="work_15101" type="desc">A short treatise on the monochord</title>
+                     <incipit>Monochordum divisurus. Tres primum magodas providendum censeo, quę fiant hoc modo</incipit>
+                     <explicit><locus>(fol. 7r)</locus>
+                        <sic>diaposon</sic> probatur reddere.</explicit>
+                     <note>Also found in MS. D’Orville 158 cit., fol. 120, and in Munich clm. 19489, 11th cent., Tegernsee, p. 62, and 23577, 11th cent., fol. 75.</note>
+                  </msItem>
+                  <msItem n="6">
+                     <locus>(fol. 7r)</locus>
+                     <title type="desc">A diagram of contingent propositions</title>
+                     <incipit>Primus ordo consequentię. Possibile est esse</incipit>
+                     <note>Derived from the table in Boethius, <title>Comm. on Aristotle De Interpretatione</title>, Ed. Prima, Bk. II, c. 13, ed. Meiser, Leipzig, 1877, p. 180.</note>
+                     <note>Fol. 1–7 listed by Pächt-Alexander 1, no. 43.</note>
+                  </msItem>
+                  <msItem n="7">
+                     <locus>(fol. 7v)</locus>
+                     <author key="person_66622010">Hucbald of St-Amand</author>
                      <title key="work_2108">Ecloga de caluis</title>
-                     <textLang mainLang="la">Latin</textLang>
+                     <rubric>Egloga de Calvis in qua habetur Paronomeon versuum cxxxiii</rubric>
+                     <incipit>Carmina convitii cerritus carpere calvos</incipit>
+                     <explicit><locus>(fol. 8v)</locus> Completur claris carmen cantabile calvis.</explicit>
+                     <note>Ed. P. von Winterfeld in <title>M.G.H. Poetarum Lat. Med. Aev.</title> iv, i, 1899, pp. 267–71. He used our MS., which was then at Maihingen; it belongs to the non-interpolated group. On fol. 7v a slightly later hand has added the heading: <q>Egloga de calvis in qua habetur Parameon versuum cxxxvi. Egloga Hugbaldi de calvis cuius hęc est causa carminis</q>.</note>
+                     <msItem>
+                        <note>A blank space of half a column remains on fol. 8v.</note>
+                     </msItem>
                   </msItem>
-                  <msItem xml:id="MS_Lyell_57-item7" n="7">
-                     <author key="person_54143112">
-                        
-                        Palladius
-                     
-                     </author>
+                  <msItem n="8">
+                     <locus>(fol. 9r)</locus>
+                     <author key="person_54143112">Palladius</author>
                      <title key="work_3434">De re rustica</title>
-                     <note>(incomplete)</note>
-                     <textLang mainLang="la">Latin</textLang>
+                     <bibl>Bk. i-iii. 24</bibl>
+                     <note>Ed. Schmitt, Leipzig, 1898. Each book is preceded by a list of chapters. Bk. II <hi rend="italic">beg.</hi> fol. 20v; Bk. III, fol. 24v. Ends <locus>(fol. 31rb 1. 7)</locus> in the middle of a sentence in hi. 24 (Schmitt p. 97 1. 26): adlevandus est sarculo. The rest of fol. 31rb is left blank. Only fol. 9–10v are rubricated.</note>
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>iii+35 leaves <locus>(fol. i–iii, 33–5 are flyleaves)</locus>; <dimensions type="leaf" unit="mm">
+                              <height>290</height>
+                              <width>210</width>
+                           </dimensions></extent>
+                        <collation>1⁸ (4 and 5 are singletons), 2⁸–3⁸, 4⁸ (3 and 6 are singletons) <secFol>minutionem</secFol>
+                        </collation>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="1 2" ruledLines="33">Ruled space <dimensions type="ruled" unit="mm">
+                              <height>210</height>
+                              <width max="155" min="145">145–55</width>
+                           </dimensions>: 33 lines, fol. 1–7 in long lines; ruled with a hard point</layout>
+                        <layout columns="2">fol. 7v–31 in 2 cols.</layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <handDesc>
+                     <handNote>Written in several hands in Germany in the 11th cent.</handNote>
+                  </handDesc>
                   <decoDesc>
-                     <decoNote>
-                        <p>Diagrams. (P&amp;A i. 43)</p>
-                     </decoNote>
+                     <decoNote type="rubrication">Rubrication only on fol. 7–10v.</decoNote>
+                     <decoNote type="map"><q>Macrobian</q> maps.</decoNote>
+                     <decoNote type="diagram">Diagrams. (P&amp;A i. 43)</decoNote>
                   </decoDesc>
+                  <bindingDesc>
+                     <binding notAfter="1980" notBefore="1950">
+                        <p>Modern binding of dark-brown morocco by <orgName key="org_125" role="bnd">Maltby of Oxford</orgName>.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
                   <origin>
@@ -117,30 +189,41 @@
                         <country key="place_7000084">German</country>
                      </origPlace>
                   </origin>
-               <provenance notBefore="1871" notAfter="1948" resp="#MMM"><persName role="fmo" key="person_64157046">James P. R. Lyell, 1871-1948</persName></provenance><acquisition when="1948" resp="#MMM">Chosen as one of the hundred manuscripts bequeathed to the Bodleian by Lyell in 1948.</acquisition></history>
-               <additional><adminInfo>
+                  <provenance>Identifiable as L.47 in the catalogue of <orgName key="org_139580416" role="fmo">Tegernsee</orgName> made by Konrad Sortorius, librarian 1500–1531 (Krämer, op. cit., 85). Krämer, <title>B.L.R.</title> IX, 4 (1976), 199–207 and plate XII (fol. 7v). A 15th-cent. hand has added marginal descriptions of pieces throughout the MS (identifiable as Ambrosius Schwarzenbeck, librarian of Tegernsee 1481–1500; see S. Krämer in <title>Codices manuscripti</title> I, 3 (1975), 84–5).</provenance>
+                  <provenance>Formerly MS.1.2.fol.5 in the <orgName key="org_202664137" role="fmo">Fürstliche Oettingen-Wallerstein’sehe Bibliothek, Maihingen</orgName>; library stamp on pastedown. See <title>Neues Archiv</title> vii, 180; vol. cit., p. 261.</provenance>
+                  <provenance>No. 10 in <title>Catalogue</title> xix (1936) of L’Art Ancien S.A., Zurich.</provenance>
+                  <provenance>Bought by Lyell in February 1942 from A. Rosenthal; see his <title>Cat.</title> i (1939), no. 19 and pl. iv <locus>(fol. 7v)</locus>.</provenance>
+                  <provenance notAfter="1948" notBefore="1871" resp="#MMM"><persName key="person_64157046" role="fmo">James P. R. Lyell, 1871-1948</persName></provenance>
+                  <acquisition resp="#MMM" when="1948">Chosen as one of the hundred manuscripts bequeathed to the Bodleian by Lyell in 1948.</acquisition>
+               </history>
+               <additional>
+                  <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from A. de la Mare, <title>Catalogue of the Medieval Manuscripts Bequeathed to the Bodleian Library Oxford by James P. R. Lyell</title> (1971) 
-                            
-                            
-                            <listBibl>
-                              <bibl type="LYELL" facs="cah0208.gif">Catalogue, p. 174</bibl>
-                              <bibl type="LYELL" facs="cah0209.gif">Catalogue, p. 175</bibl>
-                              <bibl type="LYELL" facs="cah0210.gif">Catalogue, p. 176</bibl>
+                        <source>Description adapted from A. de la Mare, <title>Catalogue of the Medieval Manuscripts Bequeathed to the Bodleian Library Oxford by James P. R. Lyell</title> (1971); with additions by Andrew Dunning. <listBibl>
+                              <bibl facs="cah0208.gif" type="LYELL">Catalogue, p. 174</bibl>
+                              <bibl facs="cah0209.gif" type="LYELL">Catalogue, p. 175</bibl>
+                              <bibl facs="cah0210.gif" type="LYELL">Catalogue, p. 176</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
-                  </adminInfo><surrogates><bibl type="digital-facsimile" subtype="partial"><ref target="https://digital.bodleian.ox.ac.uk/objects/7c576df6-949b-4afd-a0b7-2642ea82e1bd/"><title>Digital Bodleian</title></ref> <note>(1 image from 35mm slides)</note></bibl></surrogates><listBibl type="WRAPPER"><listBibl type="INTERNET"><head>Online resources:</head><bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/40524"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title></ref></bibl>
-                        <bibl><ref target="http://musmed.fr/RISM/rismindex01.htm">Christian Meyer, <title>Les Sources manuscrites de la théorie de la musique (S. IX-XVI)</title></ref></bibl>
-                     </listBibl></listBibl></additional>
+                  </adminInfo>
+                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/inquire/p/7c576df6-949b-4afd-a0b7-2642ea82e1bd"><title>Digital Bodleian</title></ref>
+                        <note>(1 image from 35mm slides)</note></bibl></surrogates>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="INTERNET">
+                        <head>Online resources:</head>
+                        <bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/40524"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d’oc et d’oïl</title></ref> [entry without content]</bibl>
+                        <bibl><ref target="http://musmed.fr/RISM/rismindex01.htm">Christian Meyer, <title>Les Sources manuscrites de la théorie de la musique (S. IX–XVI)</title></ref></bibl>
+                     </listBibl>
+                  </listBibl>
+               </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc><change when="2018-06-15" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName>
-      Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
-      in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.'
-    </change>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2020-12-16"><persName>Andrew Dunning</persName> Revised from description by <persName>Albinia de la Mare</persName>.</change>
+         <change when="2018-06-15" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.' </change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>
@@ -151,7 +234,7 @@
    </teiHeader>
    <text>
       <body>
-         <p><!--Body paragraph provided for validation and future transcription--></p>
+         <p/>
       </body>
    </text>
 </TEI>

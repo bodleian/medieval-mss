@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_7784">
+<TEI xml:id="manuscript_7784" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Lyell 51</title>
             <title type="collection">MSS. Lyell</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="DLM">
+               <resp when="1971">Cataloguer</resp>
+               <persName>Albinia de la Mare</persName>
             </respStmt>
-         </titleStmt>
-         <editionStmt>
-            <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
+            <respStmt xml:id="ANJD">
+               <resp when="2020">Encoding</resp>
+               <persName>Andrew Dunning</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2021">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
-         </editionStmt>
+         </titleStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
             <address>
@@ -48,25 +49,44 @@
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Lyell 51</idno>
                </msIdentifier>
+               <head>Latin miscellany</head>
                <physDesc>
-                  <p n="composite">Composite: fols. i + 1-24 || fols. 25-48 || fols.
-            49-56 || fols. 57-85 || fols. 86-128 || fols. 129-140 || fols. 141-152 || fols.
-            153-160 || fols. 161-175 || fols. 176-183 || fols. 184-192</p>
+                  <p>Eleven pieces bound together, written probably in Austria, in the 13th–14th (items J, K), and 15th cents.</p>
+                  <objectDesc form="codex">
+                     <supportDesc>
+                        <extent>i+192 leaves <locus>(fol. i, left blank, is part of the first quire)</locus>
+                           <dimensions type="leaf" unit="mm">
+                              <height>206</height>
+                              <width>140</width>
+                           </dimensions>
+                        </extent>
+                        <collation><secFol>distinctis que</secFol></collation>
+                     </supportDesc>
+                  </objectDesc>
+                  <bindingDesc>
+                     <binding contemporary="true" notAfter="1500" notBefore="1400">
+                        <p>15th-cent. monastic binding of wooden boards covered with white leather (probably polished sheepskin) decorated with tooled panels and stamps; sewing strengthened in the middle of the quires with strips of parchment taken from MSS.; traces of a label on the upper cover.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
-               <history><provenance notBefore="1871" notAfter="1948" resp="#MMM"><persName role="fmo" key="person_64157046">James P. R. Lyell, 1871-1948</persName></provenance><acquisition when="1948" resp="#MMM">Chosen as one of the hundred manuscripts bequeathed to the Bodleian by Lyell in 1948.</acquisition></history><additional>
+               <history>
+                  <provenance>Formerly no. 596 in the library of <orgName key="org_128466393" role="fmo">Admont</orgName> (see paper label on spine).</provenance>
+                  <provenance>Sold by Admont in or after 1934 to L. and A. Brecher of Brünn; see G. Moser-Mersky, <title>Mittelalt. Bibl.kat. Österreichs</title> iii, 1961, p. 9.</provenance>
+                  <provenance>Bought by Lyell from Davis and Orioli in April 1938; see their <title>Cat.</title> 79 (Nov. 1937), no. 90.</provenance>
+                  <provenance notAfter="1948" notBefore="1871" resp="#MMM"><persName key="person_64157046" role="fmo">James P. R. Lyell, 1871-1948</persName></provenance>
+                  <acquisition resp="#MMM" when="1948">Chosen as one of the hundred manuscripts bequeathed to the Bodleian by Lyell in 1948.</acquisition>
+               </history>
+               <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from A. de la Mare, <title>Catalogue of the Medieval Manuscripts Bequeathed to the Bodleian Library Oxford by James P. R. Lyell</title> (1971) 
-                            
-                            
-                            <listBibl>
-                              <bibl type="LYELL" facs="cah0171.gif">Catalogue, p. 137</bibl>
-                              <bibl type="LYELL" facs="cah0172.gif">Catalogue, p. 138</bibl>
-                              <bibl type="LYELL" facs="cah0173.gif">Catalogue, p. 139</bibl>
-                              <bibl type="LYELL" facs="cah0174.gif">Catalogue, p. 140</bibl>
-                              <bibl type="LYELL" facs="cah0175.gif">Catalogue, p. 141</bibl>
-                              <bibl type="LYELL" facs="cah0176.gif">Catalogue, p. 142</bibl>
-                              <bibl type="LYELL" facs="cah0177.gif">Catalogue, p. 143</bibl>
+                        <source>Description adapted from A. de la Mare, <title>Catalogue of the Medieval Manuscripts Bequeathed to the Bodleian Library Oxford by James P. R. Lyell</title> (1971); with additions by Andrew Dunning. <listBibl>
+                              <bibl facs="cah0171.gif" type="LYELL">Catalogue, p. 137</bibl>
+                              <bibl facs="cah0172.gif" type="LYELL">Catalogue, p. 138</bibl>
+                              <bibl facs="cah0173.gif" type="LYELL">Catalogue, p. 139</bibl>
+                              <bibl facs="cah0174.gif" type="LYELL">Catalogue, p. 140</bibl>
+                              <bibl facs="cah0175.gif" type="LYELL">Catalogue, p. 141</bibl>
+                              <bibl facs="cah0176.gif" type="LYELL">Catalogue, p. 142</bibl>
+                              <bibl facs="cah0177.gif" type="LYELL">Catalogue, p. 143</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -75,36 +95,49 @@
                <msPart xml:id="MS_Lyell_51-part1">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Lyell 51 - Part 1</idno>
+                        <idno type="part">MS. Lyell 51 – Part A (fol. i+1–24)</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Lyell_51-part1-item1" n="1">
-                        <author key="person_100160310">
-                           
-                           Jean Gerson
-                        
-                        </author>
-                        <title key="work_2376">Opusculum
-              tripartitum</title>
-                        <textLang mainLang="la">Latin</textLang>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem n="1" xml:id="MS_Lyell_51-part1-item1">
+                        <author key="person_100160310">Jean Gerson</author>
+                        <title key="work_2376">Opusculum tripartitum</title>
+                        <rubric><locus>(fol. 1r)</locus> Incipit opusculum tripertitum Iohannis de Gersona de preceptis, de confessione et de sciencia moriendi</rubric>
+                        <incipit>Cristianitati suus qualiscunque zelator</incipit>
+                        <explicit><locus>(fol. 24r)</locus> laudabiliter observatur.</explicit>
+                        <finalRubric>Explicit opusculum tripertitum de preceptis, de confessione et de sciencia mortis per eximium theologie doctorem magistrum Iohannem de Gersona alme universitatis Parisiensis cancellarium compilatum. 1471.</finalRubric>
+                        <bibl>Pr. L. E. du Pin, <title>Joannis Gersonii Opera Omnia</title>, Antwerp, 1706, 1, col. 427–50.</bibl>
+                     </msItem>
+                     <msItem>
+                        <note>Fol. 24v is blank.</note>
                      </msItem>
                   </msContents>
                   <physDesc>
                      <objectDesc form="codex">
                         <supportDesc material="chart">
-                           <support>paper</support>
+                           <support>paper; <watermark>watermark, steer’s head with cross and flower with seven petals, cf. Briquet nos. 14547, 14550–2</watermark></support>
+                           <collation>1¹²–2¹² (+ 1 added after 12)</collation>
                         </supportDesc>
+                        <layoutDesc>
+                           <layout columns="1" ruledLines="28">Frame ruling, mostly 28 long lines, <dimensions type="ruling" unit="mm">
+                                 <height>145</height>
+                                 <width>100</width>
+                              </dimensions></layout>
+                        </layoutDesc>
                      </objectDesc>
+                     <handDesc>
+                        <handNote execution="currens" script="hybrida">Written in a current hybrid hand in 1471.</handNote>
+                     </handDesc>
                      <decoDesc>
-                        <decoNote>Red initials and headings.</decoNote>
+                        <decoNote type="rubrication">Red initials and headings.</decoNote>
                      </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" when="1471">1471</origDate>
+                        <origDate calendar="Gregorian" cert="high" when="1471">1471</origDate>
                         <origPlace>
-                           <country key="place_1000062">Austrian</country>
+                           <country key="place_1000062">Austria (?)</country>
                         </origPlace>
                      </origin>
                   </history>
@@ -112,40 +145,57 @@
                <msPart xml:id="MS_Lyell_51-part2">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Lyell 51 - Part 2</idno>
+                        <idno type="part">MS. Lyell 51 – Part B (fol. 25–48)</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Lyell_51-part2-item1" n="1">
-                        <author key="person_17616715">
-                           
-                           Jodocus Weiler of Heilbronn
-                        
-                        </author>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem n="1" xml:id="MS_Lyell_51-part2-item1">
+                        <author key="person_17616715">Jodocus Weiler of Heilbronn</author>
                         <title key="work_2444">Tractatus de usu et modo dictandi</title>
-                        <textLang mainLang="la">Latin</textLang>
+                        <rubric><locus>(fol. 26r)</locus> Prima tabula in qua continentur salutaciones ad summum pontificem</rubric>
+                        <incipit>Sanctissimo in Christo patri ac domino domino Ewgenio divina providencia sacrosancte Romane ac universalis ecclesie summo pontifici Sigismundus eadem providencia Romanorum imperator</incipit>
+                        <explicit><locus>(fol. 39v)</locus> Valete. Deus conducat vos et cum prosperitate reducat etc.</explicit>
+                        <finalRubric>Explicit tractatus de usu et modo dictandi editus per venerabilem magistrum Iodocum de Haylprunn waccalarium <sic>formatus</sic> in theologia.</finalRubric>
+                        <note>Another MS. is cited by L. Rockinger, <title>Briefsteller und Formelbücher,</title> 1863, pp. 952–3 n. 2.</note>
                      </msItem>
-                     <msItem xml:id="MS_Lyell_51-part2-item2" n="2" class="#dictamen">
-						                  <title type="desc" key="work_15014">Treatise on dictamen</title>
-                        
-                        <textLang mainLang="la">Latin</textLang>
+                     <msItem class="#dictamen" n="2" xml:id="MS_Lyell_51-part2-item2">
+                        <author key="person_17616715" resp="#MLH"><supplied>Jodocus Weiler of Heilbronn (?)</supplied></author>
+                        <title key="work_16421" resp="#MLH">De exordiis</title>
+                        <rubric><locus>(fol. 39v)</locus> Incipit de exordiis</rubric>
+                        <incipit>Quia melius ex forma quam ex materia rei formande habetur doctrina, idcirco de octo modis exordiendi duxi formulas</incipit>
+                        <explicit><locus>(fol. 44v)</locus> et promovendos etc et sic est finis Deo gracias etc.</explicit>
+                        <finalRubric>Explicit tractatulus de exordiis octo modorum Deo gracias.</finalRubric>
+                     </msItem>
+                     <msItem>
+                        <note>Fols. 25–25v, 45–48v are blank.</note>
                      </msItem>
                   </msContents>
                   <physDesc>
                      <objectDesc form="codex">
                         <supportDesc material="chart">
-                           <support>paper</support>
+                           <support>paper; <watermark>watermark, mount with cross and flower, cf. Briquet no. 11825</watermark></support>
+                           <collation>3¹²–4¹²</collation>
                         </supportDesc>
+                        <layoutDesc>
+                           <layout columns="2" ruledLines="34">Frame ruling, 2 cols., c. 34 lines, <dimensions type="ruling" unit="mm">
+                                 <height>160</height>
+                                 <width>110</width>
+                              </dimensions></layout>
+                        </layoutDesc>
                      </objectDesc>
+                     <handDesc>
+                        <handNote script="cursiva">Written in the 15th cent, in a cursive hand.</handNote>
+                     </handDesc>
                      <decoDesc>
-                        <decoNote>Red initials and headings.</decoNote>
+                        <decoNote type="colInit">Red initials and headings.</decoNote>
                      </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
                         <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
                         <origPlace>
-                           <country key="place_1000062">Austrian</country>
+                           <country key="place_1000062">Austria (?)</country>
                         </origPlace>
                      </origin>
                   </history>
@@ -153,35 +203,43 @@
                <msPart xml:id="MS_Lyell_51-part3">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Lyell 51 - Part 3</idno>
+                        <idno type="part">MS. Lyell 51 – Part C (fol. 49–56)</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Lyell_51-part3-item1" n="1" class="#commentarii">
-                        <title type="desc" key="work_13506">Notes on
-              Aristotle, <hi rend="italic">Ethics</hi>
-                        </title>
-                        <bibl type="commentedOn">
-                           <author key="person_7524651">
-                              Aristotle
-                           </author>
-                           <title>Ethics</title>
-                        </bibl>
-                        <textLang mainLang="la">Latin</textLang>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem class="#commentarii" n="1" xml:id="MS_Lyell_51-part3-item1">
+                        <title key="work_13506" type="desc">Notes on Aristotle, <title>Ethics</title></title>
+                        <rubric><locus>(fol. 49r)</locus> Hic <sic>incipiuntur</sic> auctoritates primi libri ethicorum</rubric>
+                        <incipit>Omnia bona appetunt / Cognicio finis utilis est in arte</incipit>
+                        <explicit><locus>(fol. 52r) (bk. 10)</locus> quia intellectus est principialissimum hominis</explicit>
+                     </msItem>
+                     <msItem>
+                        <note>Fol. 52v–56v are blank.</note>
                      </msItem>
                   </msContents>
                   <physDesc>
                      <objectDesc form="codex">
                         <supportDesc material="chart">
-                           <support>paper</support>
+                           <support>paper, <watermark>no watermark</watermark></support>
+                           <collation>5⁸</collation>
                         </supportDesc>
+                        <layoutDesc>
+                           <layout columns="1" ruledLines="32">32 long lines, not ruled, c. <dimensions type="ruling" unit="mm">
+                                 <height>175</height>
+                                 <width>125</width>
+                              </dimensions></layout>
+                        </layoutDesc>
                      </objectDesc>
+                     <handDesc>
+                        <handNote script="cursiva">Written in the 15th cent, in a cursive hand</handNote>
+                     </handDesc>
                   </physDesc>
                   <history>
                      <origin>
                         <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
                         <origPlace>
-                           <country key="place_1000062">Austrian</country>
+                           <country key="place_1000062">Austria (?)</country>
                         </origPlace>
                      </origin>
                   </history>
@@ -189,31 +247,42 @@
                <msPart xml:id="MS_Lyell_51-part4">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Lyell 51 - Part 4</idno>
+                        <idno type="part">MS. Lyell 51 – Part D (fol. 57–85)</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Lyell_51-part4-item1" n="1" class="#dictamen">
-						                  <title type="desc" key="work_15014">Treatise on dictamen.</title>
-                        
+                     <msItem class="#dictamen" n="1" xml:id="MS_Lyell_51-part4-item1">
+                        <title key="work_15014" type="desc">Treatise on dictamen</title>
+                        <incipit><locus>(fol. 57r)</locus> Rethorice dulcedinis florenti sermone</incipit>
+                        <explicit><locus>(fol. 85v)</locus> ad eterna celestium habitacula valeamus feliciter pervenire. Amen.</explicit>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                   </msContents>
                   <physDesc>
                      <objectDesc form="codex">
                         <supportDesc material="chart">
-                           <support>paper</support>
+                           <support>paper; <watermark>watermarks very hard to see, mount in circle, scales, cf. Briquet nos. 11878, etc.(?), 2399</watermark></support>
+                           <collation>6¹² (1 canc.), 7¹², 8¹² (7–12 canc.)</collation>
                         </supportDesc>
+                        <layoutDesc>
+                           <layout columns="2" ruledLines="31 34">frame ruling in ink, 2 cols., c. 31–4 lines, <dimensions type="ruling" unit="mm">
+                                 <height>160</height>
+                                 <width>105</width>
+                              </dimensions></layout>
+                        </layoutDesc>
                      </objectDesc>
+                     <handDesc>
+                        <handNote script="cursiva">Written in the 15th cent, in a cursive hand</handNote>
+                     </handDesc>
                      <decoDesc>
-                        <decoNote>Red initials.</decoNote>
+                        <decoNote type="colInit">Red initials.</decoNote>
                      </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
                         <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
                         <origPlace>
-                           <country key="place_1000062">Austrian</country>
+                           <country key="place_1000062">Austria (?)</country>
                         </origPlace>
                      </origin>
                   </history>
@@ -221,65 +290,221 @@
                <msPart xml:id="MS_Lyell_51-part5">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Lyell 51 - Part 5</idno>
+                        <idno type="part">MS. Lyell 51 – Part E (fol. 86–128)</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Lyell_51-part5-item1" n="1">
-                        <author key="person_2238">
-                           
-                           
-                           Mauricius Leydis
-                        
-                        
-                        </author>
-                        <!-- not found in VIAF -->
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem n="1">
+                        <locus>(fol. 88v)</locus>
+                        <author key="person_2238">Mauricius Leydis</author>
                         <title key="work_3151">Ars predicandi</title>
-                        <textLang mainLang="la">Latin</textLang>
+                        <msItem>
+                           <bibl>Introduction</bibl>
+                           <incipit>Communicaturus caritative meis desiderantibus hoc quod de modo predicandi ad populos multos per labores donavit altissimus</incipit>
+                           <explicit><locus>(fol. 89r)</locus> descendunt quando per moralia se inferioribus (?) conformant</explicit>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 89r)</locus>
+                           <rubric>Divisio predicacionum</rubric>
+                           <incipit>Ulterius notandum quod predicacionum alia de festis, alia de tempore</incipit>
+                        </msItem>
+                        <msItem>
+                           <rubric>Declaracio. Declaracio paradigmatis de sanctis et primo de prima riga primi semicirculi</rubric>
+                           <incipit><locus>(fol. 89v)</locus> Fulgendus in sermone infra octavas Epiphanie</incipit>
+                           <explicit><locus>(fol. 100r) (de tempore)</locus> de figuris et propheciis etc. Et hec de paradigmate de tempore</explicit>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 100r)</locus>
+                           <rubric>Sequitur nunc de partibus integralibus sermonis</rubric>
+                           <incipit><supplied>E</supplied>xpeditis duobus paradigmatibus quorum primum fuit de sanctis et secundum de tempore restat nunc dicere de partibus inte<supplied>g</supplied>ralibus sermonis</incipit>
+                           <explicit><locus>(fol. 105r)</locus> hoc nobis prestare dignetur id est ipse cum patre et spiritu sancto Deus imus in secula benedictus Amen.</explicit>
+                        </msItem>
+                        <finalRubric>Explicit Ars predicandi per reverendissimum magistrum Mauririum Leydis per manus <persName key="person_3441" role="scr">domini Nicolai Weigselpammer (?) de Wasserurga</persName> Anno domini Mºccccº et Lii in vigilia vigile Nativitatis Christi etc.</finalRubric>
                      </msItem>
-                     <msItem xml:id="MS_Lyell_51-part5-item2" n="2">
-                        <author key="person_72188800">
-                           
-                           Giovanni da
-              Capestrano
-                        
-                        </author>
+                     <msItem>
+                        <note>This is preceded <locus>(fol. 86v–88)</locus> by paradigms expounded in the text:</note>
+                        <msItem n="a">
+                           <rubric>De sanctis</rubric>
+                           <msItem>
+                              <rubric><locus>(fol. 86v)</locus> Prima pars primi paradigmatis</rubric>
+                              <incipit>Beneficio impenso in ipsa festivitate</incipit>
+                           </msItem>
+                           <msItem>
+                              <locus>(fol. 87r)</locus>
+                              <rubric>Secunda pars primi paradigmatis</rubric>
+                              <note>heading mostly cropped by binder</note>
+                              <incipit>Sancti vita atque conversacione</incipit>
+                              <note>See fol. 89–96v;</note>
+                           </msItem>
+                        </msItem>
+                        <msItem n="b">
+                           <locus>(fol. 86v–87)</locus>
+                           <rubric>Dyabolus</rubric>
+                           <note>drawing with text</note>
+                           <incipit>Utrobique nocet nos supersticionum perversitate</incipit>
+                           <note>See fol. 96v–97v;</note>
+                        </msItem>
+                        <msItem n="c">
+                           <locus>(fol. 88r)</locus>
+                           <rubric>Secundum paradigma <note>(de tempore)</note></rubric>
+                           <note>see fol. 97v–100. On fol. 87v are lists of different kinds of feast days.</note>
+                        </msItem>
+                        <note>See H. Caplan, <title>Medieval Artes Praedicandi</title> (Cornell Studies in Classical Philology, XXIV), 1934, no. 27; T. Charland, <title>Artes Praedicandi</title> (Publ. de l’Inst. d’études médiév. d’Ottawa, vii), 1936, p. 70, both of whom cite our MS. as Admont 596. Only the introduction is similar to the printed <q>Aquinas</q> tract cited by them (Hain 1351–62).</note>
+                     </msItem>
+                     <msItem n="2">
+                        <author key="person_72188800">Giovanni da Capestrano</author>
                         <title key="work_1789">Sermons preached at <placeName key="place_7013496">Regensburg</placeName>, 1452</title>
-                        <textLang mainLang="la">Latin</textLang>
+                        <msItem n="a">
+                           <locus>(fol. 105r)</locus>
+                           <rubric>Sermo de visitacione virginis benedicte factus <sic>Radispone a fratre Iohannis</sic> de Capistrano doctore egregio iuris civilis ac viro devoto ordinis minorum</rubric>
+                           <incipit><supplied>U</supplied>t audivit Elisabet salutacionem Marie exultavit infans … Cum enim virgo benedicta fuisset</incipit>
+                           <explicit><locus>(fol. 108v)</locus> maior aut par. Et sic patet (?) declaracio istarum prerogativarum virginis et aliarum prerogativarum <unclear>declaracio</unclear> obmittitur diligendus studiose etc.</explicit>
+                           <msItem>
+                              <note>Followed by a note on the celebration of the feast of the Visitation.</note>
+                           </msItem>
+                           <msItem n="b">
+                              <locus>(fol. 109r)</locus>
+                              <rubric>… Et est de ludo</rubric>
+                              <note>(top of heading cut off by binder)</note>
+                              <note>In several parts:</note>
+                              <msItem n="(i)">
+                                 <incipit>Gegimina viperarum quis vobis demonst<supplied>r</supplied>abit … Genimina ostendit eos culpabiles</incipit>
+                                 <note>ends with a list of 50 sins arising from games</note>
+                              </msItem>
+                              <msItem n="(ii)">
+                                 <rubric>Item nota versus et metra de ludo</rubric>
+                                 <incipit>Et cum taxillis <add place="above">tabellis</add> ludo tibi crimina fiunt</incipit>
+                                 <note>7 lines. Cf. Walther, <title>Initia</title>, no. 7487;</note>
+                              </msItem>
+                              <msItem n="(iii)">
+                                 <rubric>Nota alia metra de eiusdem Ovidius poeta dicta<supplied><unclear>vit</unclear></supplied></rubric>
+                                 <incipit>Nunc etenim mihi pisces captare marinos</incipit>
+                                 <note>38 lines. Probably also in Munich clm. 5844, which Walther cites for the previous item.</note>
+                              </msItem>
+                              <msItem n="(iv)">
+                                 <locus>(fol. 109v)</locus>
+                                 <rubric>Ad <unclear>propositum</unclear> sermonis</rubric>
+                                 <incipit>Primum peccatum et principale est superbia</incipit>
+                                 <explicit><locus>(fol. 110r)</locus> quelibet vida orienda ex ludo per se ipsum explicare secundum statum specialem(?) per propriam industriam naturalem etc.</explicit>
+                                 <note>On these <q>reports</q> of sermons given at Regensburg, see L. Luszczki, <q>De manuscriptis sermonum S. Ioannis de Capistrano</q>, <title>Antemurale</title> 5 (1959), 127–9. The two sermons in our MS. seem to be from the same recension as the three in MS. Vienna 3693, fol. 122–8.</note>
+                              </msItem>
+                           </msItem>
+                        </msItem>
+                        <msItem>
+                           <note>Fol. 110v is blank.</note>
+                        </msItem>
+                        <msItem n="3">
+                           <title>Ars generalis</title>
+                           <msItem n="a">
+                              <locus>(fol. 111r)</locus>
+                              <rubric>Sequitur Ars generalis prima figura</rubric>
+                              <note>An incomplete version of the first of the four basic figures of <persName key="person_120696927">Ramon Lull</persName>, given in his <title key="work_6627">Ars brevis</title>, followed by</note>
+                              <msItem>
+                                 <rubric>secunda figura</rubric>
+                                 <note>(also incomplete)</note>
+                              </msItem>
+                              <msItem>
+                                 <locus>(fol. 111v)</locus>
+                                 <rubric>figura quarta</rubric>
+                                 <note>with revolving discs</note>
+                              </msItem>
+                              <msItem>
+                                 <locus>(fol. 112r)</locus>
+                                 <rubric>Hec est figura tercia</rubric>
+                              </msItem>
+                              <note>see F. Yates, <q>The Art of Ramon Lull</q>, <title>Journal of Warburg and Courtauld Institutes</title> 17 (1954), 116 and Pl. 8b, c, d, e;</note>
+                           </msItem>
+                           <msItem n="b">
+                              <locus>(fol. 112r)</locus>
+                              <note>a table, with the letters B–K at the left, (left to right)</note>
+                              <incipit>Bonitas, Differenda, Utrum</incipit>
+                              <note>The equivalent of the first three lines of Lull’s <q>Alphabet</q> (Yates, pl. 8a)</note>
+                           </msItem>
+                           <msItem n="c">
+                              <locus>(fol. 112v)</locus>
+                              <note>a list of Lull’s nine <q>Dignitates Dei</q> or <q>Essencialis Accentualis</q></note>
+                           </msItem>
+                           <msItem n="d">
+                              <locus>(fol. 113r)</locus>
+                              <note>Definition of the <q>absoluta</q> and <q>relata</q></note>
+                              <incipit>B. Bonitas est ens racion<supplied>e</supplied> cuius bonum agit bonum</incipit>
+                              <note>similar to Lull’s Ars Brevis, cap. vi. <title>De Diffinitionibus</title> (in <title>Opera</title>, ed. Zetzner, Strassburg, 1617, p. 10)</note>
+                              <msItem>
+                                 <note>Followed by definitions of Lull’s <q>questiones</q> (Utrum-Cum quo)</note>
+                                 <incipit>Utrum querit possibilitatem rei</incipit>
+                              </msItem>
+                           </msItem>
+                           <msItem n="e">
+                              <note>Examples of the application of the Art using <q>mensa</q> and <q>liber</q></note>
+                              <msItem n="(i)">
+                                 <locus>(fol. 113v)</locus>
+                                 <incipit>Virtutes eius quis sufficit enarrare. Est enim mensa valde bona </incipit>
+                                 <note>etc., using the eighteen principles</note>
+                                 <msItem>
+                                    <locus>(fol. 114r)</locus>
+                                    <rubric>Argumentum</rubric>
+                                    <incipit>Rethoricum <unclear>formabitur</unclear> ex novem questionibus et omnibus tripartitis sic Utrum mensa est</incipit>
+                                    <note>, etc., using the nine questiones</note>
+                                 </msItem>
+                              </msItem>
+                              <msItem n="(ii)">
+                                 <locus>(fol. 114v)</locus>
+                                 <incipit>Item nota quot decem et octo principia supra dicta et eciam novem questiones supra dicta sunt generalia sive generales ad omne quod est et possunt applicari ad omnem rem et ad omne thema ut iam patuit superius de mensa. Exemplum secundum de libro et dicitur sic. Virtutes eius quis sufficit enarrare. Est liber valde bonus</incipit>
+                                 <msItem>
+                                    <locus>(fol. 115r)</locus>
+                                    <rubric>Argumentum</rubric>
+                                    <incipit>Utrum <sic>librum</sic> est. Responditur quod sic</incipit>
+                                    <explicit>Cum quo tu es o homo certe cum gratia Dei si vis etc. Et sic de aliis.</explicit>
+                                 </msItem>
+                              </msItem>
+                           </msItem>
+                        </msItem>
                      </msItem>
-                     <msItem xml:id="MS_Lyell_51-part5-item3" n="3">
-                        <author key="person_120696927">
-                           
-                           Ramon Lull
-                        
-                        </author>
-                        
-                           <title key="work_4224">
-                           works
-                        </title>
-                        
-                        <textLang mainLang="la">Latin</textLang>
+                     <msItem>
+                        <note>Fol. 115v–121v are blank.</note>
                      </msItem>
-                     <msItem xml:id="MS_Lyell_51-part5-item4" n="4" class="#scientifica">
+                     <msItem n="4">
+                        <locus>(fol. 122r)</locus>
                         <title key="work_10283">Ars memoratiua</title>
-                        <textLang mainLang="la">Latin</textLang>
+                        <note>(so called in a list of contents on fol. 86r)</note>
+                        <incipit>Invoco auxilium altissimi creatoris ut ab illo summantur exordium medium et finis. Quantum ad principium huius artis est notandum quod ars ista consistit in duobus punctis, scilicet in locis et in <sic>maginibus</sic></incipit>
+                        <explicit><locus>(fol. 127v)</locus> et ita approprianda huic ymagine signa adequate representativa clausularum istius hystorie etc. Deo gracias.</explicit>
+                     </msItem>
+                     <msItem>
+                        <note>Fol. 128 is blank.</note>
                      </msItem>
                   </msContents>
                   <physDesc>
                      <objectDesc form="codex">
                         <supportDesc material="chart">
-                           <support>paper</support>
+                           <support>paper; <watermark>fol. 86–120: steer’s head with flower, cf. Briquet no. 14760;</watermark>
+                              <watermark>fol. 121–8: two versions of steer’s head with flower, cf. Briquet 14785 (for general type), 14790</watermark></support>
+                           <collation>9¹², 10¹² (+1 added after 12), 11¹⁰, 12⁸</collation>
                         </supportDesc>
+                        <layoutDesc>
+                           <layout columns="1" ruledLines="36 40">fol. 86–120: c. 36–40 long lines, not ruled, c. <dimensions type="ruling" unit="mm">
+                                 <height>175</height>
+                                 <width>120</width>
+                              </dimensions></layout>
+                           <layout columns="1" ruledLines="30 34">fol. 121–8: frame ruling in ink, c. 30–4 long lines, c. <dimensions type="ruling" unit="mm">
+                                 <height>105</height>
+                                 <width>165</width>
+                              </dimensions></layout>
+                        </layoutDesc>
                      </objectDesc>
+                     <handDesc>
+                        <handNote script="cursiva">In two 15th-cent. cursive hands (fols. 86-120, 121-8), the first part written in 1452 <locus>(fol. 105r)</locus></handNote>
+                     </handDesc>
                      <decoDesc>
-                        <decoNote>Diagrams deriving from Rámon Lull. (P&amp;A i. 167)</decoNote>
+                        <decoNote type="diagram">Diagrams deriving from Rámon Lull. (P&amp;A i. 167)</decoNote>
                      </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1460" notBefore="1440">1452 and 15th century, middle</origDate>
+                        <origDate calendar="Gregorian" cert="high" notAfter="1460" notBefore="1440">1452 and 15th century, middle</origDate>
                         <origPlace>
-                           <country key="place_1000062">Austrian</country>
+                           <country key="place_1000062">Austria (?)</country>
                         </origPlace>
                      </origin>
                   </history>
@@ -287,30 +512,60 @@
                <msPart xml:id="MS_Lyell_51-part6">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Lyell 51 - Part 6</idno>
+                        <idno type="part">MS. Lyell 51 – Part F (fol. 129–40)</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Lyell_51-part6-item1" n="1" class="#legalia #ecclesiastica">
-                        <title type="desc" key="work_14711">Statutes and customs of
-                           the <orgName key="org_143202638">
-                              Cathedral Chapter of Bressanone
-                           </orgName> (formerly Brixen), 20 March 1422.</title>
-                        <textLang mainLang="la">Latin</textLang>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem class="#legalia #ecclesiastica" xml:id="MS_Lyell_51-part6-item1">
+                        <title key="work_14711" type="desc">Statutes and customs of the <orgName key="org_143202638">Cathedral Chapter of Bressanone</orgName> (formerly Brixen), 20 March 1422</title>
+                        <msItem n="1">
+                           <locus>(fol. 129r)</locus>
+                           <title type="desc">Record of the reading by the Dean, Nicolaus Swarat, to the Canons of Bressanone, of the <q>Statuta et consuetudines dicti Capituli</q>, and of their approval of them, 20 March 1422.</title>
+                           <note>The names tally with those listed by F. A. Sinnacher, <title>Beyträge zur Gesch. der bischöflichen Kirchen Sähen und Brixen in Tyrol</title> VI, 1828, p. 88.</note>
+                        </msItem>
+                        <msItem n="2">
+                           <locus>(fol. 129v)</locus>
+                           <rubric>Tenores Statutorum et consuetudinum de quibus superius facta est mencio secuntur in hec verba</rubric>
+                           <incipit>Quia kathedralium et aliarum ecclesiarum collegiatarum capitula facere possunt statuta licita et honesta</incipit>
+                           <explicit><locus>(fol. 137r)</locus> dictis hospitibus ipso facto privati.</explicit>
+                        </msItem>
+                        <msItem n="3">
+                           <locus>(fol. 137r)</locus>
+                           <title type="desc">Record of the approval and sealing of the statutes by the Bishop, Berchtholdus, and of the canons’ solemn oath to observe them</title>
+                        </msItem>
+                        <msItem n="4">
+                           <locus>(fol. 137v–138)</locus>
+                           <title type="desc">Testimony of the notary, Nicolaus Johannis Clericus Augustensis diocesis</title>
+                        </msItem>
+                        <note>The statutes have apparently been published by L. Santifaller, <q>Gli statuti del capitolo della cattedrale di Bressanone nel medioevo</q>, <title>Archivio per l’Alto Adige</title> 22, 1927; see J. Prader, <q>Die Gerichtsbarkeit des Brixner Domkapitels</q> in <title>Festschrift zur Feier das 200 Jh. Bestandes des Haus-, Hof-, und Staatsarchivs</title> (Vienna), 11, 1951, pp. 155, etc. Sinnacher, loc. cit., pp. 88–90, gives an account, of the Statutes <q>Ex Autogr. in Arch. Capit.</q> Some passages from the statutes are quoted by Santifaller, <title>Das Brixner Domkapitel in seiner persönlichen Zusammensetzung in M.A.</title> (Schlem-Schriften, 7), Innsbruck, 1924–5, pp. 105–6 (= our MS., fol. 130–131); 116 n. 63 (= fol. 134–134v; 233–4v–84 (= fol. 131–2), from Bressanone, Arch. Capit., Cod. L. 25 n. 3 fol. 3–14v. Prader, op. cit., p. 192 n. 4, quotes another passage (= fol. 135v).</note>
+                     </msItem>
+                     <msItem>
+                        <note>Fol. 138v–140v are blank.</note>
                      </msItem>
                   </msContents>
                   <physDesc>
                      <objectDesc form="codex">
                         <supportDesc material="chart">
-                           <support>paper</support>
+                           <support>paper; <watermark>watermarks, steer’s head with flower (two versions), cf. Briquet nos. 14751, 14760</watermark></support>
+                           <collation>13¹²</collation>
                         </supportDesc>
+                        <layoutDesc>
+                           <layout columns="1" ruledLines="30 35">partly with frame ruling in ink, c. 30–35 long lines, c. <dimensions type="ruled" unit="mm">
+                                 <height max="180" min="170">170–80</height>
+                                 <width max="120" min="110">110–20</width>
+                              </dimensions></layout>
+                        </layoutDesc>
                      </objectDesc>
+                     <handDesc>
+                        <handNote script="cursiva">Written in the 15th cent, in a cursive hand</handNote>
+                     </handDesc>
                   </physDesc>
                   <history>
                      <origin>
                         <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
                         <origPlace>
-                           <country key="place_1000062">Austrian</country>
+                           <country key="place_1000062">Austria (?)</country>
                         </origPlace>
                      </origin>
                   </history>
@@ -318,50 +573,51 @@
                <msPart xml:id="MS_Lyell_51-part7">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Lyell 51 - Part 7</idno>
+                        <idno type="part">MS. Lyell 51 – Part G (fol. 141–52)</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Lyell_51-part7-item1" n="1">
-                        <author key="person_81124187">
-                           
-                           
-                           Elizabeth, dowager Queen of Hungary and
-              Bohemia (?)
-                        
-                        
-                        </author>
-                        <note>Exhortation to <persName key="person_99344661">
-                              Frederick King of the Romans
-                           </persName> (elected 1440, cr. Emperor Frederick
-                           III in 1452) and <persName key="person_52501450">
-                              Albert VI Duke of Styria
-                           </persName>
-                        </note>
-                        <note>(urging them to to end their quarrel over their lands in Styria, Carinthia and Carniola)</note>
-                        <textLang mainLang="la">Latin</textLang>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem n="1">
+                        <locus>(fol. 141r)</locus>
+                        <author key="person_81124187">Elizabeth, dowager Queen of Hungary and Bohemia (?)</author>
+                        <title type="desc">An exhortation to <persName key="person_99344661">Frederick King of the Romans</persName> (elected 1440, cr. Emperor Frederick III in 1452) and his brother Albert (<persName key="person_52501450">Albert VI Duke of Styria</persName>, d. 1463) to end their quarrel over their lands in Styria, Carinthia and Camiola</title>
+                        <incipit>Prefulcite magister ac comprogenialis amantissime et dilecti Domini fratres nil aliud quam se totum licet in sudore vultus mei</incipit>
+                        <explicit><locus>(fol. 144r)</locus> in celo dignis coronabimur feliciter premiis adiuti per eum qui omnium bonorum amator est operum sempiternus etc.</explicit>
+                        <note>On fol. 143v the writer says: <q>Terminemus preterea vitam nostram exemplo domini regis Alberti pacifici confratruelis nostri nouiter heu defuncti …</q> According to Du Cange, <title>Glossarium</title> ii, p. 502, <q>confratruelis</q> probably means a consort. King Albert II of Hungary and Bohemia died in October 1439; his queen, Elizabeth, daughter of the Emperor Sigismund and mother of Ladislas Postumus, died in December 1442.</note>
                      </msItem>
-                     <msItem xml:id="MS_Lyell_51-part7-item2" n="2">
-                        <author key="person_7791200">
-                           
-                           Nicolaus Petschacher of Znoyma (Znaim)
-                        
-                        </author>
-                        <title key="work_3334">Poems</title>
-                        <textLang mainLang="la">Latin</textLang>
+                     <msItem n="2">
+                        <locus>(fol. 144v–149v)</locus>
+                        <author key="person_7791200">Nicolaus Petschacher of Znoyma (Znaim)</author>
+                        <title key="work_3334" type="desc">Collection (anonymous in this MS.) of Latin poems chiefly about King Albert II of Hungary and Bohemia and the Hussite problem</title>
+                        <rubric>Epitaphium domini regis Alberti</rubric>
+                        <incipit>Ecclesiam Christi quam pacificare cupivi.</incipit>
+                        <note>Nos. XII, i<hi rend="superscript">a</hi>, xi 1. 1–14, v, xi, 1.15–18, x, vi, vii, viii, ix, ii, iii, iv of the collection ed. J. Huemer, <q>Historische Gedichte aus dem XV Jh. Nicolaus Petschacher</q>, <title>M.I.Ö.G.</title> 16 (1895), 638–47. He used Munich clm. 563, in which the poems are attributed to Petschacher, and our MS., then Admont 596, which he says (p. 638) has a better text, though fewer poems. Since our MS. does not include xiii, <q>Epitaphium Elizabet regine</q>, the poems in it may all have been written before her death in 1442.</note>
+                     </msItem>
+                     <msItem>
+                        <note>Fol. 150–2 are blank.</note>
                      </msItem>
                   </msContents>
                   <physDesc>
                      <objectDesc form="codex">
                         <supportDesc material="chart">
-                           <support>paper</support>
+                           <support>paperl <watermark>watermarks, scales, cf. Briquet no. 2401; mount in circle, cf. Briquet no. 11878</watermark></support>
+                           <collation>14¹²</collation>
                         </supportDesc>
+                        <layoutDesc>
+                           <layout columns="1" ruledLines="39">frame ruling in ink (apart from fol. 141r), c. 39 long lines, c. <dimensions type="ruling" unit="mm">
+                                 <height>165</height>
+                                 <width>90</width>
+                              </dimensions></layout>
+                        </layoutDesc>
                      </objectDesc>
-                    
+                     <handDesc>
+                        <handNote execution="currens" script="hybrida">Written in the 15th cent, in a current fere hybrida</handNote>
+                     </handDesc>
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
+                        <origDate calendar="Gregorian" notAfter="1500" notBefore="1440">15th century</origDate>
                         <origPlace>
                            <country key="place_1000062">Austrian</country>
                         </origPlace>
@@ -371,28 +627,39 @@
                <msPart xml:id="MS_Lyell_51-part8">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Lyell 51 - Part 8</idno>
+                        <idno type="part">MS. Lyell 51 – Part H (fol. 153–60)</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Lyell_51-part8-item1" n="1">
-                        <author key="person_44695448">
-                           
-                           Johannes Bondi of Aquileia
-                        
-                        </author>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem n="1" xml:id="MS_Lyell_51-part8-item1">
+                        <locus>(fol. 153r)</locus>
+                        <author key="person_44695448">Johannes Bondi of Aquileia</author>
                         <title key="work_2461">Liber epythetorum</title>
-                        <textLang mainLang="la">Latin</textLang>
+                        <rubric>Incipit liber epythetorum compylatus a magistro Iohanne de Aquilegia in dictamine refulgent</rubric>
+                        <incipit>Unus est pater omnium cuius nutu celestia et terrestria gubernantur</incipit>
+                        <explicit><locus>(fol. 160v)</locus> Et manifeste promittit fieri quod fit etc. Et sic est finis.</explicit>
+                        <note>Rockinger, <title>Briefsteller</title> cit., p. 954 n. i, lists a <q>libellus de epythetis</q> by Bondi in Munich clm. 9683, fol. 13–16.</note>
                      </msItem>
                   </msContents>
                   <physDesc>
                      <objectDesc form="codex">
                         <supportDesc material="perg">
                            <support>parchment</support>
+                           <collation>15⁸</collation>
                         </supportDesc>
+                        <layoutDesc>
+                           <layout columns="1" ruledLines="23 26">frame ruling, c. <dimensions type="ruling" unit="mm">
+                                 <height>135</height>
+                                 <width>90</width>
+                              </dimensions>, c. 23–6 lines</layout>
+                        </layoutDesc>
                      </objectDesc>
+                     <handDesc>
+                        <handNote script="hybrida">written in the 15th cent, in a hybrid hand</handNote>
+                     </handDesc>
                      <decoDesc>
-                        <decoNote>Red headings.</decoNote>
+                        <decoNote type="rubrication">Red headings.</decoNote>
                      </decoDesc>
                   </physDesc>
                   <history>
@@ -407,35 +674,65 @@
                <msPart xml:id="MS_Lyell_51-part9">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Lyell 51 - Part 9</idno>
+                        <idno type="part">MS. Lyell 51 – Part J (fol. 161–75)</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Lyell_51-part9-item1" n="1" class="#sacramenta">
-                        <title type="desc" key="work_14999">Treatise on confession.</title>
-                        <textLang mainLang="la">Latin</textLang>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem class="#sacramenta" n="1" xml:id="MS_Lyell_51-part9-item1">
+                        <locus>(fol. 161r)</locus>
+                        <title key="work_14999" type="desc">Treatise on confession</title>
+                        <incipit>Circa confessionem primo queritur ad quid sit utilis. Ad quod notandum quod confessio utilis est ad novem</incipit>
+                        <explicit><locus>(fol. 173ra)</locus> et licet non possit opera de genere bonorum mortua vivificare, potest tamen mortifica resuscitare. Amen dicant omnia. Amen.</explicit>
+                        <colophon>Finivi librum scripsi sine manibus illum.</colophon>
+                        <note>The treatise in MS. Trier Stadtbibi. 691, fol. 251–6, may be the same but its ending is different; see M. W. Bloomfield, <q>Incipits</q>, p. 275, no. 108.</note>
                      </msItem>
-                     <msItem xml:id="MS_Lyell_51-part9-item2" n="2" class="#sermones">
-						                  <title type="desc" key="work_14583">Sermons.</title>
-                        
-                        <textLang mainLang="la">Latin</textLang>
+                     <msItem class="#sermones" n="2" xml:id="MS_Lyell_51-part9-item2">
+                        <title key="work_14583" type="desc">Sermons</title>
+                        <msItem n="a">
+                           <locus>(fol. 173v, continued on fol. 174r)</locus>
+                           <rubric>De novo sacerdote</rubric>
+                           <incipit><supplied>Vi</supplied>di alterum angelum ascendentem ab ortu solis… In hiis verbis honor et <sic>dingnitas</sic> exprimit</incipit>
+                           <explicit><locus>(fol. 174v)</locus> fructus honoris et honestatis. Istud singnum nullus defert nisi sit episcopus.</explicit>
+                           <finalRubric>Explicit sermo de novo sac<supplied>er</supplied>dote</finalRubric>
+                        </msItem>
+                        <msItem n="b">
+                           <locus>(fol. 173v, continued on fol. 174va)</locus>
+                           <rubric>In cena Domini</rubric>
+                           <incipit>Et facta cena cum dyabolus iam misisset… Sic eciam Christus sciens quod debeat ab apostolis recedere prius voluit cum eis <unclear>cenare</unclear>
+                           </incipit>
+                           <explicit><locus>(fol. 175vb)</locus> veraciter et firmiter credere debent etc.</explicit>
+                        </msItem>
                      </msItem>
                   </msContents>
                   <physDesc>
                      <objectDesc form="codex">
                         <supportDesc material="perg">
-                           <support>parchment</support>
+                           <support>parchment, <dimensions type="leaf" unit="mm">
+                                 <height quantity="190">c. 190</height>
+                                 <width>135</width>
+                              </dimensions></support>
+                           <collation>16⁸, 17⁶ (+1 added at the end)</collation>
                         </supportDesc>
+                        <layoutDesc>
+                           <layout columns="2" ruledLines="43"><dimensions type="ruled" unit="mm">
+                                 <height>160</height>
+                                 <width>105</width>
+                              </dimensions>: 2 cols, of 43 lines ruled in ink</layout>
+                        </layoutDesc>
                      </objectDesc>
+                     <handDesc hands="2">
+                        <handNote execution="currens" script="textualisNorthern">Written in the 13th–14th cent, in two current text hands: a. fol. 161–173v; b. fol. 173ra–175v.</handNote>
+                     </handDesc>
                      <decoDesc>
-                        <decoNote>Red headings and initials.</decoNote>
+                        <decoNote type="rubrication">Red headings and initials.</decoNote>
                      </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notBefore="1200" notAfter="1400">13th-14th century</origDate>
+                        <origDate calendar="Gregorian" notAfter="1400" notBefore="1200">13th-14th century</origDate>
                         <origPlace>
-                           <country key="place_1000062">Austrian</country>
+                           <country key="place_1000062">Austria (?)</country>
                         </origPlace>
                      </origin>
                   </history>
@@ -443,28 +740,49 @@
                <msPart xml:id="MS_Lyell_51-part10">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Lyell 51 - Part 10</idno>
+                        <idno type="part">MS. Lyell 51 – Part K (fol. 176–83)</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Lyell_51-part10-item1" n="1" class="#theologica">
-						                  <title type="desc" key="work_15283">Theological notes</title>
-                        
-                        <note>(chiefly on sin,
-                           penitence, and redemption, imperfect at begining and end.)</note>
-                        <textLang mainLang="la">Latin</textLang>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem class="#theologica" n="1" xml:id="MS_Lyell_51-part10-item1">
+                        <title key="work_15283" type="desc">Theological notes</title>
+                        <note>chiefly on sin, penitence, and redemption, imperfect at beginning and end.</note>
+                        <msItem>
+                           <note>The first complete paragraph</note>
+                           <rubric>De x generibus hominum</rubric>
+                           <incipit><locus>(fol. 176rb)</locus> Nota quod legitur in Regum ubi Ieroboam egressus de Ierusalem magum invenit… <locus>(fol. 176rb)</locus> Nota sicut xii sunt hore diei.</incipit>
+                        </msItem>
+                        <msItem>
+                           <note>The last paragraph</note>
+                           <incipit><locus>(fol. 183vb)</locus>
+                              <supplied>A</supplied>ngeli eorum similiter vident faciem patris.</incipit>
+                        </msItem>
                      </msItem>
                   </msContents>
                   <physDesc>
                      <objectDesc form="codex">
                         <supportDesc material="perg">
-                           <support>parchment</support>
+                           <support>parchment <dimensions type="leaf" unit="mm">
+                                 <height>187</height>
+                                 <width>140</width>
+                              </dimensions></support>
+                           <collation>18⁸</collation>
                         </supportDesc>
+                        <layoutDesc>
+                           <layout columns="2" ruledLines="35"><dimensions type="ruled" unit="mm">
+                                 <height>144</height>
+                                 <width>100</width>
+                              </dimensions>: 2 cols, of 35 lines ruled in ink</layout>
+                        </layoutDesc>
                      </objectDesc>
+                     <handDesc>
+                        <handNote execution="currens" script="textualisNorthern">written in the 13th–14th cent, in a current text hand</handNote>
+                     </handDesc>
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notBefore="1200" notAfter="1400">13th-14th century</origDate>
+                        <origDate calendar="Gregorian" notAfter="1400" notBefore="1200">13th-14th century</origDate>
                         <origPlace>
                            <country key="place_1000062">Austrian</country>
                         </origPlace>
@@ -474,42 +792,67 @@
                <msPart xml:id="MS_Lyell_51-part11">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Lyell 51 - Part 11</idno>
+                        <idno type="part">MS. Lyell 51 – Part L (fol. 184–92)</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Lyell_51-part11-item1" n="1">
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem xml:id="MS_Lyell_51-part11-item1">
                         <author key="person_284197158">Pope Paul II</author>
-                        <title key="work_3755">Bulls against <persName key="person_25396661">
-                              Georgy Podebrad, King of Bohemia
-                           </persName>, issued on 20 April 1468</title>
-                        <textLang mainLang="la">Latin</textLang>
+                        <title key="work_3755">Bulls against <persName key="person_25396661">Georgy Podebrad, King of Bohemia</persName>, issued on 20 April 1468</title>
+                        <msItem n="1">
+                           <locus>(fol. 184r)</locus>
+                           <incipit>Paulus episcopus servus servorum Dei, ad futuram rei memoriam. Licet inscrutabilis superni consilii prudencia</incipit>
+                           <explicit><locus>(fol. 185v)</locus> plenariam et liberam tenore presencium concedimus facultatem …</explicit>
+                           <explicit><locus>(fol. 186r)</locus> Datum Rome apud Sanctum Marcum anno incarnationis dominice Millesimo quadringentesimo sexagesimo octavo duodecima Kal. Maii, pontificatus nostri anno quarto etc.</explicit>
+                        </msItem>
+                        <msItem n="2">
+                           <locus>(fol. 186r)</locus>
+                           <incipit>Paulus episcopus servus servorum Dei, ad perpetuam rei memoriam. Regnans in secula sempiternus vivorum et mortuorum Iudex fortis et paciens</incipit>
+                           <explicit><locus>(fol. 188r)</locus> Et procul ab eis ecclesiastica sepultura eiciant corpora eorundem …</explicit>
+                           <note>with the same date as 1.</note>
+                        </msItem>
+                        <note>Then follows the scribe’s colophon:</note>
+                        <colophon>Ista copia collacionata et concordat cum originali scriptus per me <persName key="person_3441" role="scr">Nicolaum Weigselpammer</persName> tunc temporis divinorum <unclear>cooperator</unclear> in valle Sell. Anno 1468º etc.</colophon>
+                        <bibl>These Bulls are apparently printed in <title>Scriptores Renan Silesicarum</title> (or <title>Sammlung schlesischer Geschichtsschreiber</title>), ix, 1874, pp. 265–9; see Pastor, <title>History of the Popes</title> iv, 1894, p. 144. An extract from the first (= fol. 184’ 1. 10–185 1. 6) but dated xiii Kal. Maii, is printed by Raynaldus, <title>Annales Ecclesiastici</title> x, 1753, pp. 450–1.</bibl>
+                     </msItem>
+                     <msItem>
+                        <note>Fol. 188v–192v are blank.</note>
                      </msItem>
                   </msContents>
                   <physDesc>
                      <objectDesc form="codex">
                         <supportDesc material="perg">
-                           <support>parchment</support>
+                           <support>parchment; <watermark>watermark, steer’s head with flower, cf. Briquet no. 14857</watermark></support>
+                           <collation>19¹² (10 stuck to binding, 11–12 canc.)</collation>
                         </supportDesc>
+                        <layoutDesc>
+                           <layout columns="1" ruledLines="35 37">frame ruling in ink, c. 35–7 long lines, c. <dimensions type="ruled" unit="mm">
+                                 <height>175</height>
+                                 <width>110</width>
+                              </dimensions></layout>
+                        </layoutDesc>
                      </objectDesc>
+                     <handDesc>
+                        <handNote execution="currens" script="hybrida">Written in 1468 in a current fere hybrida</handNote>
+                     </handDesc>
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" when="1468">1468</origDate>
+                        <origDate calendar="Gregorian" cert="high" when="1468">1468</origDate>
                         <origPlace>
-                           <country key="place_1000062">Austrian</country>
+                           <country key="place_1000062">Austria (?)</country>
                         </origPlace>
                      </origin>
                   </history>
                </msPart>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc><change when="2018-06-15" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName>
-      Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
-      in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.'
-    </change>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2020-12-16"><persName>Andrew Dunning</persName> Revised from description by <persName>Albinia de la Mare</persName>.</change>
+         <change when="2018-06-15" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.' </change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>
@@ -520,7 +863,7 @@
    </teiHeader>
    <text>
       <body>
-         <p><!--Body paragraph provided for validation and future transcription--></p>
+         <p/>
       </body>
    </text>
 </TEI>

@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_7833">
+<TEI xml:id="manuscript_7833" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Lyell empt. 1</title>
             <title type="collection">MSS. Lyell</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="DLM">
+               <resp when="1971">Cataloguer</resp>
+               <persName>Albinia de la Mare</persName>
+            </respStmt>
+            <respStmt xml:id="ANJD">
+               <resp when="2020">Encoding</resp>
+               <persName>Andrew Dunning</persName>
             </respStmt>
          </titleStmt>
-         <editionStmt>
-            <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
-         </editionStmt>
          <publicationStmt>
             <publisher>Special Collections, Bodleian Libraries</publisher>
             <address>
@@ -46,32 +43,140 @@
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Lyell empt. 1</idno>
                </msIdentifier>
+               <head>Rasis</head>
                <msContents>
-                  <msItem xml:id="MS_Lyell_empt_1-item1" n="1">
-                     <author key="person_95154093">
-                        
-                        Razes
-                     
-                     </author>
+                  <summary>Works of Rasis in Latin, probably all translated by <persName key="person_84814786" role="trl">Gerard of Cremona</persName>.</summary>
+                  <textLang mainLang="la">Latin</textLang>
+                  <msItem n="1">
+                     <locus>(fol. 1r)</locus>
+                     <author key="person_95154093">Razes</author>
                      <title key="work_4249">Liber diuisionum</title>
-                     <textLang mainLang="la">Latin</textLang>
+                     <rubric>Incipit liber divisionum verba Abuberi filii Zaccarie Azari ventillatus</rubric>
+                     <incipit><sic><supplied>V</supplied>entillatum</sic> fuit in presendam</incipit>
+                     <explicit><locus>(fol. 32v)</locus> delent vestigia earum.</explicit>
+                     <note>Thorndike–Kibre, <title>Incipits</title>², col. 1684.</note>
                   </msItem>
-                  <msItem xml:id="MS_Lyell_empt_1-item2" n="2">
-                     <author key="person_95154093">
-                        
-                        Razes
-                     
-                     </author>
+                  <msItem n="2">
+                     <locus>(fol. 32v)</locus>
+                     <rubric>Incipiunt capitula antidotarii verba Abubacri filii Zacarie Azari</rubric>
+                     <incipit><supplied>D</supplied>xi in hoc meo libro</incipit>
+                     <explicit><locus>(fol. 41r)</locus> donec inspissetur deinde repone.</explicit>
+                     <finalRubric>Explicit Antidotarium divisionum libri.</finalRubric>
+                     <note>Thorndike–Kibre, <title>Incipits</title>², col. 445.</note>
+                     <msItem>
+                        <note>Followed by recipes for a plaster and an ointment, after which the explicit is repeated.</note>
+                     </msItem>
+                  </msItem>
+                  <msItem n="3">
+                     <locus>(fol. 41v)</locus>
+                     <author key="person_95154093">Razes</author>
                      <title key="work_4231">Synonima</title>
-                     <textLang mainLang="la">Latin</textLang>
+                     <incipit><supplied>A</supplied>ltit id est asa fetida</incipit>
+                     <explicit><locus>(fol. 43v)</locus> Zamab id est psilorrum.</explicit>
+                     <finalRubric>Expliciunt synonoma libri divisionum.</finalRubric>
+                     <note>Thorndike–Kibre, <title>Incipits</title>², col. 82, cite our MS.</note>
+                     <msItem>
+                        <note>Followed by a list of measures: Obolus-Cyathos.</note>
+                     </msItem>
+                     <msItem>
+                        <note>In the bottom margins are additions in two main hands:</note>
+                     </msItem>
+                     <msItem n="a">
+                        <title type="desc">Recipes, mainly medical</title>
+                        <note>Contemporary and Italian (?); including</note>
+                        <msItem>
+                           <locus>(fol. 16v)</locus>
+                           <author key="person_273335435">Avenzoar</author>
+                           <title>De curatione lapidis</title>
+                           <rubric>Canon quem scripsit Algazir Adule Cor filius Abimelech filii Cor imperatori Sarracenorum Ali filio Iosephi filii Tesiphin de curatione lapidis</rubric>
+                           <incipit>Accidenda a quibus conveniencius est cavere</incipit>
+                           <explicit><locus>(fol. 17v)</locus> squillitico 1. 25. et bibatur.</explicit>
+                           <note>Thorndike–Kibre, <title>Incipits</title>², col. 14 and 185</note>
+                        </msItem>
+                     </msItem>
+                     <msItem n="b">
+                        <title type="desc">Charms, recipes, etc.</title>
+                        <note>German, 13th–14th cent.; including:</note>
+                        <msItem n="(i)">
+                           <locus>(fol. 22v)</locus>
+                           <incipit>Ad calculum optima confectio, fecit eam Magister Albertus</incipit>
+                        </msItem>
+                        <msItem n="(ii)">
+                           <locus>(fol. 23r)</locus>
+                           <incipit>Pulvis probatissimus Magistri Nicolai de Anglia que cerebrum purgat, vertiginem capitis tollit … etc. etc.</incipit>
+                        </msItem>
+                        <msItem n="(iii)">
+                           <locus>(fol. 32r)</locus>
+                           <title type="desc">Two charms in German</title>
+                           <textLang mainLang="de">German</textLang>
+                        </msItem>
+                        <msItem n="(iv)">
+                           <locus>(fol. 28r)</locus>
+                           <title type="desc">Medical precepts in verse</title>
+                           <incipit>Hec precepta sequi debent aliosque docere</incipit>
+                           <explicit>Hec ut sis sanus et eis contraria serves. Auctor Goswinus est metri non peregrinus.</explicit>
+                           <note>22 lines, Walther, <title>Initia,</title> no. 7570.</note>
+                        </msItem>
+                        <msItem n="(v)">
+                           <locus>(fol. 31v)</locus>
+                           <title type="desc">Verses</title>
+                           <incipit>Est quedam forma que cuncta preit sine norma.</incipit>
+                           <note>8 lines.</note>
+                        </msItem>
+                        <msItem n="(vi)">
+                           <locus>(fol. 37v)</locus>
+                           <title type="desc">A piece on the soul and the seats of the faculties</title>
+                           <incipit>Anima secundum officium … viva est anima</incipit>
+                           <note>(cf. Ps.-Augustine, <title>Liber de spiritu et anima</title>, cap. xiii 1. 5–12 in PL 40 col. 788–9)</note>
+                           <note>Continues:</note>
+                           <incipit>Et nota quod intellectus dicitur esse in fronte, memoria in cerebro</incipit>
+                           <explicit>mens in spiritu</explicit>
+                           <note>(also in MS. Lyell 8, fol. 20va: see no. 200 in index of incipits)</note>
+                        </msItem>
+                        <msItem n="(vii)">
+                           <locus>(fol. 39r)</locus>
+                           <title type="desc">A blessing for medicine</title>
+                           <incipit>Deus qui mirabiliter hominem creasti</incipit>
+                           <explicit>recipere mereatur per d.</explicit>
+                           <note>See E. Wickersheimer, <q>Bénédiction des remèdes au moyen âge</q>, <title>Lychnos,</title> 1952, p. 99; Thorndike–Kibre, <title>Incipits</title>², col. 410. Also in MS. Lyell 35, fol. 42v.</note>
+                        </msItem>
+                        <msItem n="(viii)">
+                           <locus>(fol. 9v–10r)</locus>
+                           <title type="desc">A piece of necromancy</title>
+                        </msItem>
+                     </msItem>
+                  </msItem>
+                  <msItem>
+                     <locus>(pastedowns)</locus>
+                     <note>Formed of parts of two bifolia of a late 13th-cent. MS. of <foreign>quaestiones gramaticales.</foreign></note>
+                     <incipit>Consequenter queritur utrum lego sit oratio perfecta.</incipit>
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
-                        <support>parchment</support>
+                        <support>Rather poor quality parchment</support>
+                        <extent>44 leaves <locus>(fol. 44 is a detached pastedown)</locus>, <dimensions type="leaf" unit="mm">
+                              <height>274</height>
+                              <width>190</width>
+                           </dimensions></extent>
+                        <collation>1⁸–2⁸, 3⁸ (+1 added after 8), 4⁸, 5¹⁰; <secFol>Et cura</secFol></collation>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2" ruledLines="40">Writing above top line: <dimensions type="ruled" unit="mm">
+                              <height max="198" min="190">190–8</height>
+                              <width>140</width>
+                           </dimensions>; 2 cols., 40 lines ruled with a hard point</layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <handDesc>
+                     <handNote execution="currens" script="textualisSouthern">Written in a current text hand probably in Italy, to judge from the parchment, in the early 13th cent.</handNote>
+                  </handDesc>
+                  <bindingDesc>
+                     <binding contemporary="true" notAfter="1510" notBefore="1490">
+                        <p>Binding of c. 1500 in wooden boards covered with rough white leather. Title written on the front cover in a contemporary hand.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
                   <origin>
@@ -79,16 +184,16 @@
                      <origPlace cert="low">
                         <country key="place_1000080">Italian</country> (?)</origPlace>
                   </origin>
+                  <provenance>Formerly no. 355 in the library of the <orgName key="org_128466393" role="fmo">abbey of Admont</orgName>, Austria (paper label on spine, and igth-cent. description in German pasted inside front cover). Identifiable in the 1376 catalogue: <q>Item divisiones egritudinum incipit <q>Ventilatus</q></q>, and in the 1380 catalogue: <q>Item divisiones egritudinum Abubet incipit <q>Ventilatum fuit</q></q> (ed. G. Moser-Mersky, <title>Mittelalt. Bibl.kat. Oesterreichs</title> ui, 1961, pp. 34 1. i, 59 1. 26).</provenance>
+                  <provenance>Sold by Admont in or after 1934 to L. and A. Brecher of Brünn (Moser-Mersky, op. cit., p. 9).</provenance>
+                  <provenance>Bought by Lyell in February 1941 from Davis and Orioli: see their <title>Cat.</title> 93, no. 177.</provenance>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from A. de la Mare, <title>Catalogue of the Medieval Manuscripts Bequeathed to the Bodleian Library Oxford by James P. R. Lyell</title> (1971) 
-                            
-                            
-                            <listBibl>
-                              <bibl type="LYELL" facs="cah0313.gif">Catalogue, p. 279</bibl>
-                              <bibl type="LYELL" facs="cah0116.gif">Catalogue, p. 80</bibl>
+                        <source>Description adapted from A. de la Mare, <title>Catalogue of the Medieval Manuscripts Bequeathed to the Bodleian Library Oxford by James P. R. Lyell</title> (1971); with additions by Andrew Dunning. <listBibl>
+                              <bibl facs="cah0313.gif" type="LYELL">Catalogue, p. 279</bibl>
+                              <bibl facs="cah0116.gif" type="LYELL">Catalogue, p. 80</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -96,9 +201,10 @@
                </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2020-12-16"><persName>Andrew Dunning</persName> Revised from description by <persName>Albinia de la Mare</persName>.</change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>
@@ -109,7 +215,7 @@
    </teiHeader>
    <text>
       <body>
-         <p><!--Body paragraph provided for validation and future transcription--></p>
+         <p/>
       </body>
    </text>
 </TEI>

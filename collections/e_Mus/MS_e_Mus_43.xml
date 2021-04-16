@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_9147">
+<TEI xml:id="manuscript_9147" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -8,7 +8,8 @@
             <title type="collection">MSS. E Mus. (e Musaeo)</title>
             <respStmt>
                <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <persName>Elizabeth Solopova</persName>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -51,8 +52,8 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem xml:id="MS_e_Mus_43-item1" n="1">
-                     <author key="person_47495827">Evrart de Trémaugon (?)</author> 
+                  <msItem n="1" xml:id="MS_e_Mus_43-item1">
+                     <author key="person_47495827">Evrart de Trémaugon (?)</author>
                      <title key="work_1522">Le Songe du Vergier</title>
                      <textLang mainLang="fr">French</textLang>
                   </msItem>
@@ -64,10 +65,7 @@
                      </supportDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>Fine miniatures (damaged) attributed by Pächt and Alexander to the <persName role="art" key="person_95739617">Master of the Brussels Initials</persName> ('Zenobi da Firenze').
-                           <!-- not found in VIAF. artist details updated 12.2.18, cf. record for MS. Douce 62. -->. Borders, initials. (P&amp;A i.
-                  638, pl. XLIX)
-                     </decoNote>
+                     <decoNote>Fine miniatures (damaged) attributed by Pächt and Alexander to the <persName key="person_95739617" role="art">Master of the Brussels Initials</persName> ('Zenobi da Firenze'). <!-- not found in VIAF. artist details updated 12.2.18, cf. record for MS. Douce 62. -->. Borders, initials. (P&amp;A i. 638, pl. XLIX)</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
@@ -78,22 +76,30 @@
                      </origPlace>
                   </origin>
                </history>
-               <additional><adminInfo>
+               <additional>
+                  <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. 
-                            
-                            <listBibl>
-                              <bibl type="SC" facs="aaq0088.gif">Summary Catalogue, Vol. 2 Part 2, p.  729</bibl>
-                              <bibl type="SC" facs="aaq0089.gif">Summary Catalogue, Vol. 2 Part 2, p.  730</bibl>
+                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
+                              <bibl facs="aaq0088.gif" type="SC">Summary Catalogue, Vol. 2 Part 2, p. 729</bibl>
+                              <bibl facs="aaq0089.gif" type="SC">Summary Catalogue, Vol. 2 Part 2, p. 730</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
-                  </adminInfo><surrogates><bibl type="digital-facsimile" subtype="partial"><ref target="https://digital.bodleian.ox.ac.uk/objects/3989e3ce-85ed-48e0-9d8d-79868773059a/"><title>Digital Bodleian</title></ref> <note>(1 image from 35mm slides)</note></bibl></surrogates><listBibl type="WRAPPER"><listBibl type="INTERNET"><head>Online resources:</head><bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/40598"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title></ref></bibl></listBibl></listBibl></additional>
+                  </adminInfo>
+                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/3989e3ce-85ed-48e0-9d8d-79868773059a/"><title>Digital Bodleian</title></ref>
+                        <note>(1 image from 35mm slides)</note></bibl></surrogates>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="INTERNET">
+                        <head>Online resources:</head>
+                        <bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/40598"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title></ref></bibl>
+                     </listBibl>
+                  </listBibl>
+               </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_7615">
+<TEI xml:id="manuscript_7615" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -52,14 +52,15 @@
                </msIdentifier>
                <head>Matthew, glossed; France, c. 1200</head>
                <msContents>
-                  <msItem>  
-                     <note>This description is abbreviated from Daniela Mairhofer, <title>Medieval Manuscripts from Würzburg in the Bodleian Library, Oxford: A Descriptive Catalogue</title> (Oxford, 2014), pp. 180-6. For purposes of scholarly citation, reference to the printed catalogue is requested.</note></msItem>
-                  <msItem xml:id="MS_Laud_Lat_41-item1" n="1" class="#biblia">
-                     <title type="desc" key="work_12085">Gospel of St Matthew, with gloss</title>
-                   <msItem>
-                      <locus>(fol. 1ra-1vb)</locus>
-                      <note>Three prologues to Matthew and the four Gospels; added, early thirteenth century.</note>
-                   </msItem>
+                  <msItem>
+                     <note>This description is abbreviated from Daniela Mairhofer, <title>Medieval Manuscripts from Würzburg in the Bodleian Library, Oxford: A Descriptive Catalogue</title> (Oxford, 2014), pp. 180-6. For purposes of scholarly citation, reference to the printed catalogue is requested.</note>
+                  </msItem>
+                  <msItem class="#biblia" n="1" xml:id="MS_Laud_Lat_41-item1">
+                     <title key="work_12085" type="desc">Gospel of St Matthew, with gloss</title>
+                     <msItem>
+                        <locus>(fol. 1ra-1vb)</locus>
+                        <note>Three prologues to Matthew and the four Gospels; added, early thirteenth century.</note>
+                     </msItem>
                      <msItem>
                         <locus>(fol. 2ra-rb)</locus>
                         <note>Letter from the cathedral chapter of Würzburg to the cathedral chapter at Mainz; added, early thirteenth century.</note>
@@ -79,23 +80,22 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                        <extent>i (paper) + i (parchment) + 160 + i (parchment) + i (paper), foliated i-ii, 1-162
-                           <dimensions unit="mm" type="leaf">
+                        <extent>i (paper) + i (parchment) + 160 + i (parchment) + i (paper), foliated i-ii, 1-162 <dimensions type="leaf" unit="mm">
                               <height max="294" min="287">c. 287-94</height>
-                              <width min="207" max="212">207-12</width>
+                              <width max="212" min="207">207-12</width>
                            </dimensions>
                         </extent>
                      </supportDesc>
                      <layoutDesc>
                         <layout>Ruled in lead point.</layout>
-                        <layout columns="2" ruledLines="43 45">Fols. 1ra-1vb: 2 cols. of 43-45 lines, ruled space <dimensions unit="mm" type="ruled">
-                           <height max="230" min="227">c. 227/30</height>
-                           <width min="148" max="165">148-65</width>
-                        </dimensions></layout>
-                        <layout columns="2 3" ruledLines="34 35">Fols. 3r-160va: 2-3 shifting cols., 34-35 lines, ruled space <dimensions unit="mm" type="ruled">
-                           <height max="199" min="193">c. 193-9</height>
-                           <width min="135" max="146">135-46</width>
-                        </dimensions></layout>
+                        <layout columns="2" ruledLines="43 45">Fols. 1ra-1vb: 2 cols. of 43-45 lines, ruled space <dimensions type="ruled" unit="mm">
+                              <height max="230" min="227">c. 227/30</height>
+                              <width max="165" min="148">148-65</width>
+                           </dimensions></layout>
+                        <layout columns="2 3" ruledLines="34 35">Fols. 3r-160va: 2-3 shifting cols., 34-35 lines, ruled space <dimensions type="ruled" unit="mm">
+                              <height max="199" min="193">c. 193-9</height>
+                              <width max="146" min="135">135-46</width>
+                           </dimensions></layout>
                      </layoutDesc>
                   </objectDesc>
                   <handDesc>
@@ -114,53 +114,49 @@
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notBefore="1190" notAfter="1210">c. 1200</origDate>
+                     <origDate calendar="Gregorian" notAfter="1210" notBefore="1190">c. 1200</origDate>
                      <origPlace>
                         <country key="place_1000070">French</country>
                      </origPlace>
                   </origin>
-                  <provenance notAfter="1300" notBefore="1200"><orgName role="fmo" key="org_148998848">Würzburg, Domstift St Kilian</orgName>: 13th-century ex libris, fol. 3r.</provenance>
-                  <provenance when="1637"><persName role="fmo" key="person_54940373">William Laud, 1573-1645</persName>: his ex libris, 1637, fol. 3r.</provenance>
+                  <provenance notAfter="1300" notBefore="1200"><orgName key="org_148998848" role="fmo">Würzburg, Domstift St Kilian</orgName>: 13th-century ex libris, fol. 3r.</provenance>
+                  <provenance when="1637"><persName key="person_54940373" role="fmo">William Laud, 1573-1645</persName>: his ex libris, 1637, fol. 3r.</provenance>
                   <acquisition when="1639">Given to the Bodleian as part of his third donation, dispatched on 28 June 1639.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>See above. Previously described in the Quarto Catalogue (H. O. Coxe,  <title>Laudian Manuscripts</title>, Quarto Catalogues II, repr. with corrections, 1969, from the original ed. of 1858-1885). 
-                            <listBibl>
-                               <bibl type="QUARTO" facs="aby0058.gif">
-                                  Quarto Catalogue, col. 20
-                               </bibl>
-                               <bibl type="QUARTO" facs="aby0318.gif">
-                                  Quarto Catalogue, p. 538 (addenda)
-                               </bibl>
+                        <source>See above. Previously described in the Quarto Catalogue (H. O. Coxe, <title>Laudian Manuscripts</title>, Quarto Catalogues II, repr. with corrections, 1969, from the original ed. of 1858-1885). <listBibl>
+                              <bibl facs="aby0058.gif" type="QUARTO"> Quarto Catalogue, col. 20 </bibl>
+                              <bibl facs="aby0318.gif" type="QUARTO"> Quarto Catalogue, p. 538 (addenda) </bibl>
                            </listBibl>
                            <listBibl>
-                              <bibl type="SC" facs="aap0058.gif">Summary Catalogue, Vol. 2, part 1, p. 37</bibl>
+                              <bibl facs="aap0058.gif" type="SC">Summary Catalogue, Vol. 2, part 1, p. 37</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
-               <surrogates>
-                     <bibl type="digital-facsimile" subtype="full">
+                  <surrogates>
+                     <bibl subtype="full" type="digital-facsimile">
                         <ref target="https://digital.bodleian.ox.ac.uk/objects/f792e7f0-acfb-4908-9b2b-f246939e2573/">
-                           <title>Digital Bodleian</title></ref> <note>(full digital facsimile)</note>
+                           <title>Digital Bodleian</title></ref>
+                        <note>(full digital facsimile)</note>
                      </bibl>
-                  <bibl type="digital-facsimile" subtype="partial"><ref target="https://digital.bodleian.ox.ac.uk/objects/de856f69-7079-4898-8a69-7aa8fc08fdc9/"><title>Digital Bodleian</title></ref> <note>(1 image from 35mm slides)</note></bibl></surrogates>
-               <listBibl type="WRAPPER">
-                  <listBibl type="INTERNET">
-                     <head>Online resources:</head>
-                     <bibl><ref target="https://hab.bodleian.ox.ac.uk/en/"><title>Manuscripts from German-Speaking Lands – A Polonsky Foundation Digitization Project</title></ref></bibl>
+                     <bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/de856f69-7079-4898-8a69-7aa8fc08fdc9/"><title>Digital Bodleian</title></ref>
+                        <note>(1 image from 35mm slides)</note></bibl></surrogates>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="INTERNET">
+                        <head>Online resources:</head>
+                        <bibl><ref target="https://hab.bodleian.ox.ac.uk/en/"><title>Manuscripts from German-Speaking Lands – A Polonsky Foundation Digitization Project</title></ref></bibl>
+                     </listBibl>
                   </listBibl>
-               </listBibl>
                </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
+      </fileDesc>
       <revisionDesc>
-         <change who="#MLH" when="2018-10-10">Fuller summary of Mairhofer's catalogue created for Polonsky German manuscripts project.</change>
+         <change when="2018-10-10" who="#MLH">Fuller summary of Mairhofer's catalogue created for Polonsky German manuscripts project.</change>
          <change when="2017-07-01">First online publication.</change>
-
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

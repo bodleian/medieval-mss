@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_9023">
+<TEI xml:id="manuscript_9023" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -9,7 +9,8 @@
             <title type="collection">MSS. Tanner</title>
             <respStmt>
                <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <persName>Elizabeth Solopova</persName>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -54,16 +55,18 @@
                <physDesc>
                   <p n="composite">Composite: fols. 1-300 || fols. 301-723</p>
                </physDesc>
-               <history><provenance notBefore="1674" notAfter="1735" resp="#MMM"><persName role="fmo" key="person_11058091">Thomas Tanner, 1674-1735</persName></provenance><acquisition when="1735" resp="#MMM">Bequeathed by him to the Bodleian in 1735.</acquisition></history><additional>
+               <history>
+                  <provenance notAfter="1735" notBefore="1674" resp="#MMM"><persName key="person_11058091" role="fmo">Thomas Tanner, 1674-1735</persName></provenance>
+                  <acquisition resp="#MMM" when="1735">Bequeathed by him to the Bodleian in 1735.</acquisition>
+               </history>
+               <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (A. Hackman, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars quarta codices viri admodum reverendi Thomæ Tanneri, S.T.P., episcopi Asaphensis, complectens</title>, Quarto Catalogues IV, repr. 1966, with corrections, from the ed. of 1860). Decoration, localization and date follow Pächt and Alexander (1973). 
-                            
-                            <listBibl>
-                              <bibl type="SC" facs="aas0097.gif">Summary Catalogue, Vol. 3, p.  82</bibl>
+                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (A. Hackman, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars quarta codices viri admodum reverendi Thomæ Tanneri, S.T.P., episcopi Asaphensis, complectens</title>, Quarto Catalogues IV, repr. 1966, with corrections, from the ed. of 1860). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
+                              <bibl facs="aas0097.gif" type="SC">Summary Catalogue, Vol. 3, p. 82</bibl>
                            </listBibl>
                            <listBibl>
-                              <bibl type="QUARTO" facs="ace0013.gif">Quarto Catalogue, Cols. 9-10</bibl>
+                              <bibl facs="ace0013.gif" type="QUARTO">Quarto Catalogue, Cols. 9-10</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -76,10 +79,8 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Tanner_8-part1-item1" n="1">
-                        <author key="person_30336838">
-                           Johannes Faventinus
-                        </author>
+                     <msItem n="1" xml:id="MS_Tanner_8-part1-item1">
+                        <author key="person_30336838">Johannes Faventinus</author>
                         <title key="work_2488">Summa in Gratiani Decretum</title>
                         <bibl type="commentedOn">
                            <author key="person_33242385">Gratian</author>
@@ -87,8 +88,8 @@
                         </bibl>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Tanner_8-part1-item2" n="2" class="#legalia">
-                        <title type="desc" key="work_10745">Canons (Tanner collection)</title>
+                     <msItem class="#legalia" n="2" xml:id="MS_Tanner_8-part1-item2">
+                        <title key="work_10745" type="desc">Canons (Tanner collection)</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                   </msContents>
@@ -118,8 +119,8 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Tanner_8-part2-item1" n="1" class="#legalia">
-                        <title type="desc" key="work_11074">Collection of Canons (Tanner collection)</title>
+                     <msItem class="#legalia" n="1" xml:id="MS_Tanner_8-part2-item1">
+                        <title key="work_11074" type="desc">Collection of Canons (Tanner collection)</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                   </msContents>
@@ -144,12 +145,10 @@
                </msPart>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc><change when="2018-08-15" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName>
-      Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
-      in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.'
-    </change>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2018-08-15" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.' </change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

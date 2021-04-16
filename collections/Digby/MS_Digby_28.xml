@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4363">
+<TEI xml:id="manuscript_4363" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -9,15 +9,14 @@
             <title type="collection">MSS. Digby</title>
             <respStmt>
                <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <persName>Elizabeth Solopova</persName>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
             <edition>TEI P5</edition>
             <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH
-                                        project (enrich@oucs.ox.ac.uk;
-                                        http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
+               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </editionStmt>
@@ -56,20 +55,30 @@
                <physDesc>
                   <p n="composite">Composite: two parts</p>
                </physDesc>
-               <history><provenance notBefore="1603" notAfter="1634" resp="#MMM"><persName role="fmo" key="person_49357645">Kenelm Digby, 1603-1665</persName></provenance><acquisition when="1634" resp="#MMM">Donated to the Bodleian, 1634.</acquisition></history><additional><adminInfo>
+               <history>
+                  <provenance notAfter="1634" notBefore="1603" resp="#MMM"><persName key="person_49357645" role="fmo">Kenelm Digby, 1603-1665</persName></provenance>
+                  <acquisition resp="#MMM" when="1634">Donated to the Bodleian, 1634.</acquisition>
+               </history>
+               <additional>
+                  <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (W. D. Macray, <title>Bodleian Library Quarto Catalogues IX: Digby Manuscripts</title>, repr. with addenda by R. W. Hunt and A. G. Watson, 1999).  
-                        
-                        <listBibl>
-                              <bibl type="QUARTO" facs="abw0021.gif">Quarto Catalogue, cols. 23-4</bibl>
-                              <bibl type="QUARTO" facs="abw0022.gif">Quarto Catalogue, col. 25</bibl>
-                              <bibl type="QUARTO" facs="abw0194.gif">Quarto Catalogue (addenda), p. 17</bibl>
-                              <bibl type="QUARTO" facs="abw0195.gif">Quarto Catalogue (addenda), p. 18</bibl>
-                              <bibl type="SC" facs="aap0091.gif">Summary Catalogue, vol. 2, part 1, p. 70</bibl>
+                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (W. D. Macray, <title>Bodleian Library Quarto Catalogues IX: Digby Manuscripts</title>, repr. with addenda by R. W. Hunt and A. G. Watson, 1999). <listBibl>
+                              <bibl facs="abw0021.gif" type="QUARTO">Quarto Catalogue, cols. 23-4</bibl>
+                              <bibl facs="abw0022.gif" type="QUARTO">Quarto Catalogue, col. 25</bibl>
+                              <bibl facs="abw0194.gif" type="QUARTO">Quarto Catalogue (addenda), p. 17</bibl>
+                              <bibl facs="abw0195.gif" type="QUARTO">Quarto Catalogue (addenda), p. 18</bibl>
+                              <bibl facs="aap0091.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 70</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
-                  </adminInfo><listBibl type="WRAPPER"><listBibl type="INTERNET"><head>Online resources:</head><bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1320"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl></listBibl></listBibl></additional>
+                  </adminInfo>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="INTERNET">
+                        <head>Online resources:</head>
+                        <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1320"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl>
+                     </listBibl>
+                  </listBibl>
+               </additional>
                <msPart xml:id="MS_Digby_28-part1">
                   <msIdentifier>
                      <altIdentifier type="partial">
@@ -77,7 +86,7 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Digby_28-part1-item1" n="1">
+                     <msItem n="1" xml:id="MS_Digby_28-part1-item1">
                         <author key="person_2583890">Alexander de Villa Dei</author>
                         <title key="work_411">Massa compoti</title>
                         <note>(imperfect)</note>
@@ -106,78 +115,73 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Digby_28-part2-item1" n="1" class="#computistica">
-						                  <title type="desc" key="work_14971">Treatises on calendar</title>
-                        
+                     <msItem class="#computistica" n="1" xml:id="MS_Digby_28-part2-item1">
+                        <title key="work_14971" type="desc">Treatises on calendar</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Digby_28-part2-item2" n="2">
+                     <msItem n="2" xml:id="MS_Digby_28-part2-item2">
                         <author key="person_33343877">Petrus Peregrinus de Maricourt</author>
                         <title key="work_3599">Epistola de magnete</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Digby_28-part2-item3" n="3" class="#astrologia_astronomia">
-						                  <title type="desc" key="work_10409">Astronomical treatises</title>
-                        
+                     <msItem class="#astrologia_astronomia" n="3" xml:id="MS_Digby_28-part2-item3">
+                        <title key="work_10409" type="desc">Astronomical treatises</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Digby_28-part2-item4" n="4" class="#versus">
-						                  <title type="desc" key="work_13886">Poems</title>
-                        
+                     <msItem class="#versus" n="4" xml:id="MS_Digby_28-part2-item4">
+                        <title key="work_13886" type="desc">Poems</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Digby_28-part2-item5" n="5">
+                     <msItem n="5" xml:id="MS_Digby_28-part2-item5">
                         <author key="person_88794405">John Pecham</author>
                         <title key="work_2754">Philomena</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Digby_28-part2-item6" n="6">
+                     <msItem n="6" xml:id="MS_Digby_28-part2-item6">
                         <author key="person_2581859">Ps.-Aristotle</author>
                         <title key="work_3861">Secreta secretorum</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Digby_28-part2-item7" n="7">
-                        <author key="person_2184">Ps.-Roger Bacon<!-- not in VIAF -->
-                        </author>
+                     <msItem n="7" xml:id="MS_Digby_28-part2-item7">
+                        <author key="person_2184">Ps.-Roger Bacon<!-- not in VIAF --></author>
                         <title key="work_4112">Speculum secretorum</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Digby_28-part2-item8" n="8" class="#theologica">
-						                  <title type="desc" key="work_15308">Theological treatise</title>
-                        
+                     <msItem class="#theologica" n="8" xml:id="MS_Digby_28-part2-item8">
+                        <title key="work_15308" type="desc">Theological treatise</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Digby_28-part2-item9" n="9">
+                     <msItem n="9" xml:id="MS_Digby_28-part2-item9">
                         <author key="person_303414130">Ps.-Hippocrates</author>
                         <title key="work_4016">Astrologia medicorum</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Digby_28-part2-item10" n="10">
+                     <msItem n="10" xml:id="MS_Digby_28-part2-item10">
                         <author key="person_291628297">Nicholas of Amiens</author>
                         <title key="work_3305">Ars fidei catholicae</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Digby_28-part2-item11" n="11">
+                     <msItem n="11" xml:id="MS_Digby_28-part2-item11">
                         <author key="person_2581859">Ps.-Aristotle</author>
                         <title key="work_3856">Physiognomia</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Digby_28-part2-item12" n="12" class="#prognostica">
+                     <msItem class="#prognostica" n="12" xml:id="MS_Digby_28-part2-item12">
                         <title key="work_14040">Prophetia Merlini</title>
-                        <note>(<persName role="aut" key="person_89028232">Geoffrey of Monmouth</persName>, bk. vii)</note>
+                        <note>(<persName key="person_89028232" role="aut">Geoffrey of Monmouth</persName>, bk. vii)</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Digby_28-part2-item13" n="13">
+                     <msItem n="13" xml:id="MS_Digby_28-part2-item13">
                         <author key="person_241082057">Marbod of Rennes</author>
                         <title key="work_3072">Liber lapidum</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Digby_28-part2-item14" n="14">
+                     <msItem n="14" xml:id="MS_Digby_28-part2-item14">
                         <author key="person_88794405">John Pecham</author>
                         <title key="work_2753">Perspectiua</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Digby_28-part2-item15" n="15">
+                     <msItem n="15" xml:id="MS_Digby_28-part2-item15">
                         <author key="person_37256856">Messahala</author>
                         <title key="work_3174">Astrolabium</title>
                         <textLang mainLang="la">Latin</textLang>
@@ -200,12 +204,10 @@
                </msPart>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc><change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName>
-      Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
-      in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.'
-    </change>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.' </change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

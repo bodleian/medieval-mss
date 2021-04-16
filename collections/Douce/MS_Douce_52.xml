@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4723">
+<TEI xml:id="manuscript_4723" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -9,7 +9,8 @@
             <title type="collection">MSS. Douce</title>
             <respStmt>
                <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <persName>Elizabeth Solopova</persName>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -54,14 +55,15 @@
                <physDesc>
                   <p n="composite">Composite: three parts</p>
                </physDesc>
-               <history><provenance notBefore="1757" notAfter="1834" resp="#MMM"><persName role="fmo" key="person_69848690">Francis Douce, 1757-1834</persName></provenance><acquisition when="1834" resp="#MMM">Bequeathed to the Bodleian in 1834</acquisition></history><additional>
+               <history>
+                  <provenance notAfter="1834" notBefore="1757" resp="#MMM"><persName key="person_69848690" role="fmo">Francis Douce, 1757-1834</persName></provenance>
+                  <acquisition resp="#MMM" when="1834">Bequeathed to the Bodleian in 1834</acquisition>
+               </history>
+               <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897).  
-                            
-                            
-                            <listBibl>
-                              <bibl type="SC" facs="aaz0524.gif">Summary Catalogue, vol. 4, p. 505</bibl>
+                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). <listBibl>
+                              <bibl facs="aaz0524.gif" type="SC">Summary Catalogue, vol. 4, p. 505</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -74,12 +76,12 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Douce_52-part1-item1" n="1" class="#proverbia">
-                        <title type="desc" key="work_14060">Proverbs</title>
+                     <msItem class="#proverbia" n="1" xml:id="MS_Douce_52-part1-item1">
+                        <title key="work_14060" type="desc">Proverbs</title>
                         <textLang mainLang="en" otherLangs="la">English and Latin</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Douce_52-part1-item2" n="2" class="#astrologia_astronomia">
-                        <title type="desc" key="work_14959">Treatise on astronomy</title>
+                     <msItem class="#astrologia_astronomia" n="2" xml:id="MS_Douce_52-part1-item2">
+                        <title key="work_14959" type="desc">Treatise on astronomy</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                   </msContents>
@@ -106,8 +108,8 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Douce_52-part2-item1" n="1" class="#grammatica">
-                        <title type="desc" key="work_12509">Latin sentences</title>
+                     <msItem class="#grammatica" n="1" xml:id="MS_Douce_52-part2-item1">
+                        <title key="work_12509" type="desc">Latin sentences</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                   </msContents>
@@ -134,21 +136,17 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Douce_52-part3-item1" n="1" class="#rhetorica #versus">
-                        <title type="desc" key="work_15094">Treatise on metre</title>
+                     <msItem class="#rhetorica #versus" n="1" xml:id="MS_Douce_52-part3-item1">
+                        <title key="work_15094" type="desc">Treatise on metre</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Douce_52-part3-item2" n="2">
-                        <author key="person_2343">
-                           John Bridges<!-- not in VIAF -->
-                        </author>
+                     <msItem n="2" xml:id="MS_Douce_52-part3-item2">
+                        <author key="person_2343">John Bridges<!-- not in VIAF --></author>
                         <title key="work_2625">Compilatio de arte dictandi</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Douce_52-part3-item3" n="3">
-                        <author key="person_34844498">
-                           Bernard of Meung
-                        </author>
+                     <msItem n="3" xml:id="MS_Douce_52-part3-item3">
+                        <author key="person_34844498">Bernard of Meung</author>
                         <title key="work_1060">Flores dictaminum</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
@@ -171,12 +169,10 @@
                </msPart>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc><change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName>
-      Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
-      in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.'
-    </change>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.' </change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

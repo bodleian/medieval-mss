@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8544">
+<TEI xml:id="manuscript_8544" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -9,7 +9,8 @@
             <title type="collection">MSS. Rawl. G. (Rawlinson G)</title>
             <respStmt>
                <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <persName>Elizabeth Solopova</persName>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -54,16 +55,22 @@
                <physDesc>
                   <p n="composite">Composite. Formerly one volume, a psalter, with MS. Lat. liturg. f. 11.</p>
                </physDesc>
-               <history><provenance notBefore="1690" notAfter="1755" resp="#MMM"><persName role="fmo" key="person_47563478">Richard Rawlinson, 1690-1755</persName></provenance><acquisition when="1755" resp="#MMM">Bequeathed to the Bodleian in 1755</acquisition></history><additional>
+               <history>
+                  <provenance notAfter="1755" notBefore="1690" resp="#MMM"><persName key="person_47563478" role="fmo">Richard Rawlinson, 1690-1755</persName></provenance>
+                  <acquisition resp="#MMM" when="1755">Bequeathed to the Bodleian in 1755</acquisition>
+               </history>
+               <additional>
                   <adminInfo>
                      <recordHist>
                         <source>Summary description based on Elizabeth Solopova, <title>Latin Liturgical Psalters in the Bodleian Library: A Select Catalogue</title> (Oxford, 2013), pp. 92-7. Previously described in the Summary Catalogue. <listBibl>
-                              <bibl type="SC" facs="aas0358.gif">Summary Catalogue, Vol. 3, p.  343</bibl>
+                              <bibl facs="aas0358.gif" type="SC">Summary Catalogue, Vol. 3, p. 343</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
-                  <surrogates><bibl type="digital-facsimile" subtype="partial"><ref target="https://digital.bodleian.ox.ac.uk/objects/56d656a2-a929-4e9c-8f0f-04eeafa8c35c/"><title>Digital Bodleian</title></ref> <note>(5 images from 35mm slides)</note></bibl></surrogates><listBibl type="WRAPPER">
+                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/56d656a2-a929-4e9c-8f0f-04eeafa8c35c/"><title>Digital Bodleian</title></ref>
+                        <note>(5 images from 35mm slides)</note></bibl></surrogates>
+                  <listBibl type="WRAPPER">
                      <listBibl type="INTERNET">
                         <head>Online resources:</head>
                         <bibl><ref target="https://www.diamm.ac.uk/sources/940/"><title>DIAMM: Digital Image Archive of Medieval Music</title></ref></bibl>
@@ -77,10 +84,9 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Rawl_G_18-part1-item1" n="1" class="#documenta">
-                        <title type="desc" key="work_11483">Deed</title> 
-                        <note>(once part of the binding): grant of lands at
-              <placeName key="place_7447726">Stapleford Abbot's</placeName> in Essex by <persName key="person_888">Mrs. Grey</persName>, daughter of <persName key="person_1176">Thomas Bull</persName>.</note>
+                     <msItem class="#documenta" n="1" xml:id="MS_Rawl_G_18-part1-item1">
+                        <title key="work_11483" type="desc">Deed</title>
+                        <note>(once part of the binding): grant of lands at <placeName key="place_7447726">Stapleford Abbot's</placeName> in Essex by <persName key="person_888">Mrs. Grey</persName>, daughter of <persName key="person_1176">Thomas Bull</persName>.</note>
                         <textLang mainLang="la">Latin</textLang>
                         <!-- not mentioned in Summary Catalogue, so language is a guess -->
                      </msItem>
@@ -108,37 +114,26 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Rawl_G_18-part2-item1" n="1" class="#liturgica #biblia">
-						                  <title type="desc" key="work_14114">Psalter</title>
-                        
-                        
+                     <msItem class="#liturgica #biblia" n="1" xml:id="MS_Rawl_G_18-part2-item1">
+                        <title key="work_14114" type="desc">Psalter</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Rawl_G_18-part2-item2" n="2" class="#theologica #devotiones">
+                     <msItem class="#theologica #devotiones" n="2" xml:id="MS_Rawl_G_18-part2-item2">
                         <locus>fols.102r-105v</locus>
-						                  <title type="desc" key="work_14343">Religious poem</title>
-                        
-                        
+                        <title key="work_14343" type="desc">Religious poem</title>
                         <textLang mainLang="fr">French</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Rawl_G_18-part2-item3" n="3" class="#versus #musica">
-                        <locus>
-                        fols.105
-                        v-106r</locus>
-						                  <title type="desc" key="work_13836">Poem accompanied by music
-                     </title>
+                     <msItem class="#versus #musica" n="3" xml:id="MS_Rawl_G_18-part2-item3">
+                        <locus> fols.105 v-106r</locus>
+                        <title key="work_13836" type="desc">Poem accompanied by music</title>
                         <incipit>Worldes blis ne last no þrowe...</incipit>
-                        
                         <textLang mainLang="en">English</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Rawl_G_18-part2-item4" n="4" class="#versus #musica">
+                     <msItem class="#versus #musica" n="4" xml:id="MS_Rawl_G_18-part2-item4">
                         <locus>fols.106v-107v</locus>
-						                  <title type="desc" key="work_13871">Poem with music
-              and prayers </title>
-                        
+                        <title key="work_13871" type="desc">Poem with music and prayers</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                    
                   </msContents>
                   <physDesc>
                      <objectDesc form="codex">
@@ -154,16 +149,16 @@
                      <origin>
                         <origDate calendar="Gregorian" notAfter="1300" notBefore="1200">13th century, early (probably before 1221); additions, 13th century</origDate>
                         <origPlace>
-                           <country key="place_7002445">English</country>, <region>East Anglia</region> (?)
-                        </origPlace>
+                           <country key="place_7002445">English</country>, <region>East Anglia</region> (?) </origPlace>
                      </origin>
                   </history>
                </msPart>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc><change when="2019-10-31" xml:id="MMM"><persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2019-10-31" xml:id="MMM"><persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

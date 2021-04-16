@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_3407">
+<TEI xml:id="manuscript_3407" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -9,7 +9,8 @@
             <title type="collection">MSS. Canon. Misc. (Canonici Miscellaneous)</title>
             <respStmt>
                <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <persName>Elizabeth Solopova</persName>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -54,15 +55,17 @@
                <physDesc>
                   <p n="composite">Composite: two parts</p>
                </physDesc>
-               <history><provenance notBefore="1727" notAfter="1805" resp="#MMM"><persName role="fmo" key="person_2384880">Matteo Luigi Canonici, 1727-1805</persName></provenance><provenance notAfter="1807" resp="#MMM"><persName role="fmo" key="person_446">Giuseppe Canonici , -1807</persName></provenance><acquisition when="1817" resp="#MMM">Purchased by the Bodleian in 1817</acquisition></history><additional>
+               <history>
+                  <provenance notAfter="1805" notBefore="1727" resp="#MMM"><persName key="person_2384880" role="fmo">Matteo Luigi Canonici, 1727-1805</persName></provenance>
+                  <provenance notAfter="1807" resp="#MMM"><persName key="person_446" role="fmo">Giuseppe Canonici , -1807</persName></provenance>
+                  <acquisition resp="#MMM" when="1817">Purchased by the Bodleian in 1817</acquisition>
+               </history>
+               <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (H. O. Coxe,  <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854) 
-                            
-                            
-                            <listBibl>
-                              <bibl type="QUARTO" facs="abz0236.gif">Quarto Catalogue, cols. 459-60</bibl>
-                              <bibl type="SC" facs="aaz0419.gif">Summary Catalogue, vol. 4, p. 400</bibl>
+                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (H. O. Coxe, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854) <listBibl>
+                              <bibl facs="abz0236.gif" type="QUARTO">Quarto Catalogue, cols. 459-60</bibl>
+                              <bibl facs="aaz0419.gif" type="SC">Summary Catalogue, vol. 4, p. 400</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -75,48 +78,31 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Canon_Misc_38-part1-item1" n="1" class="#historica">
-                        <title type="desc" key="work_15050">Treatise on Greek and Roman religion.</title>
+                     <msItem class="#historica" n="1" xml:id="MS_Canon_Misc_38-part1-item1">
+                        <title key="work_15050" type="desc">Treatise on Greek and Roman religion.</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Canon_Misc_38-part1-item2" n="2">
-                        <author key="person_78782481">
-                           
-                           Guarino Guarini
-                        
-                        </author>
+                     <msItem n="2" xml:id="MS_Canon_Misc_38-part1-item2">
+                        <author key="person_78782481">Guarino Guarini</author>
                         <title key="work_1882">works</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Canon_Misc_38-part1-item3" n="3">
-                        <author key="person_100218901">
-                           
-                           Lucian
-                        
-                        </author>
+                     <msItem n="3" xml:id="MS_Canon_Misc_38-part1-item3">
+                        <author key="person_100218901">Lucian</author>
                         <title key="work_3003">Calumniae</title>
-                        <note>(tr.
-                           <persName role="trl" key="person_78782481">Guarini</persName>)</note>
+                        <note>(tr. <persName key="person_78782481" role="trl">Guarini</persName>)</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Canon_Misc_38-part1-item4" n="4">
-                        <author key="person_36926979">
-                           
-                           Isocrates
-                        
-                        </author>
+                     <msItem n="4" xml:id="MS_Canon_Misc_38-part1-item4">
+                        <author key="person_36926979">Isocrates</author>
                         <title key="work_2276">Ad Nicoclem</title>
-                        <note>(tr. <persName role="trl" key="person_100164940">Bernardo Giustiniani</persName>)</note>
+                        <note>(tr. <persName key="person_100164940" role="trl">Bernardo Giustiniani</persName>)</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Canon_Misc_38-part1-item5" n="5">
-                        <author key="person_268955446">
-                           
-                       Plutarch
-                        
-                        </author>
+                     <msItem n="5" xml:id="MS_Canon_Misc_38-part1-item5">
+                        <author key="person_268955446">Plutarch</author>
                         <title key="work_3709">De liberis educandis</title>
-                        <note>(tr. <persName role="trl" key="person_78782481">Guarini</persName>)</note>
+                        <note>(tr. <persName key="person_78782481" role="trl">Guarini</persName>)</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                   </msContents>
@@ -130,7 +116,6 @@
                   <history>
                      <origin>
                         <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
-                        
                      </origin>
                   </history>
                </msPart>
@@ -141,9 +126,8 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Canon_Misc_38-part2-item1" n="1" class="#historica">
-						                  <title type="desc" key="work_10993">Chronicle of <placeName key="place_7000874">Rome</placeName>.</title>
-                        
+                     <msItem class="#historica" n="1" xml:id="MS_Canon_Misc_38-part2-item1">
+                        <title key="work_10993" type="desc">Chronicle of <placeName key="place_7000874">Rome</placeName>.</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                   </msContents>
@@ -157,18 +141,15 @@
                   <history>
                      <origin>
                         <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
-                        
                      </origin>
                   </history>
                </msPart>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc><change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName>
-      Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
-      in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.'
-    </change>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.' </change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6297">
+<TEI xml:id="manuscript_6297" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -52,8 +52,10 @@
                <physDesc>
                   <p>Composite: main MS. || wrapper</p>
                </physDesc>
-               <history><provenance>Sotheby's, 20 Nov. 1979, lot 288.</provenance>
-               <acquisition>Bought by the Bodleian from Quaritch, Jan. 1980.</acquisition></history>
+               <history>
+                  <provenance>Sotheby's, 20 Nov. 1979, lot 288.</provenance>
+                  <acquisition>Bought by the Bodleian from Quaritch, Jan. 1980.</acquisition>
+               </history>
                <additional>
                   <adminInfo>
                      <recordHist>
@@ -68,26 +70,24 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                  <msItem xml:id="MS_Ital_e_20-item1" n="1">
-                     <author key="person_4472713">Simone Fidati da Cascia</author>
-                     <title key="work_4561"> Ordine della vita
-				  christiana</title>
-                     <note>First book, written in 1333 during his stay in Florence. </note>
-                     <note>Attributed in an added post-medieval title to <persName key="person_121624533" role="aut" cert="low">Michele Savonarola</persName>.</note>
-                    
-                     <textLang mainLang="it">Italian</textLang>
-                  </msItem>
-               </msContents>
-               <physDesc>
-                  <objectDesc form="codex">
-                     <supportDesc material="chart">
-                        <support>paper</support>
-                     </supportDesc>
-                  </objectDesc>
-                  <decoDesc>
-                     <decoNote>Spaces left for initials.</decoNote>
-                  </decoDesc>
-               </physDesc>
+                     <msItem n="1" xml:id="MS_Ital_e_20-item1">
+                        <author key="person_4472713">Simone Fidati da Cascia</author>
+                        <title key="work_4561">Ordine della vita christiana</title>
+                        <note>First book, written in 1333 during his stay in Florence. </note>
+                        <note>Attributed in an added post-medieval title to <persName cert="low" key="person_121624533" role="aut">Michele Savonarola</persName>.</note>
+                        <textLang mainLang="it">Italian</textLang>
+                     </msItem>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="chart">
+                           <support>paper</support>
+                        </supportDesc>
+                     </objectDesc>
+                     <decoDesc>
+                        <decoNote>Spaces left for initials.</decoNote>
+                     </decoDesc>
+                  </physDesc>
                   <history>
                      <origin>
                         <origDate calendar="Gregorian" notAfter="1500" notBefore="1450">15th century, second half</origDate>
@@ -96,33 +96,40 @@
                      </origin>
                   </history>
                </msPart>
-               
-                  <msPart>
-                     <msIdentifier>
-                        <altIdentifier><idno>MS. Ital. e. 20 - Part 2 (wrapper)</idno></altIdentifier></msIdentifier>
-                     <msContents><msItem xml:id="MS_Ital_e_20_wrapper-item1"><title type="desc" key="work_12559">Lectionary</title><note>(one leaf)</note><textLang mainLang="la">Latin</textLang></msItem>
-                           </msContents>
-                        <physDesc><objectDesc form="codex">
-                           <supportDesc material="perg">
-                              <support>parchment</support>
-                           </supportDesc>
-                        </objectDesc>
-                           <decoDesc>
-                              <decoNote>Initial with penwork.
-                              </decoNote>
-                           </decoDesc></physDesc>
-                        <history><origin><origDate calendar="Gregorian" notAfter="1310" notBefore="1300">14th century, early</origDate>
+               <msPart>
+                  <msIdentifier>
+                     <altIdentifier>
+                        <idno>MS. Ital. e. 20 - Part 2 (wrapper)</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  <msContents>
+                     <msItem xml:id="MS_Ital_e_20_wrapper-item1">
+                        <title key="work_12559" type="desc">Lectionary</title>
+                        <note>(one leaf)</note>
+                        <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="perg">
+                           <support>parchment</support>
+                        </supportDesc>
+                     </objectDesc>
+                     <decoDesc>
+                        <decoNote>Initial with penwork.</decoNote>
+                     </decoDesc>
+                  </physDesc>
+                  <history>
+                     <origin><origDate calendar="Gregorian" notAfter="1310" notBefore="1300">14th century, early</origDate>
                         <origPlace cert="low">
-                           <country key="place_1000080">Italian</country></origPlace></origin></history>
-        </msPart>
-              
-              
-                  
+                           <country key="place_1000080">Italian</country></origPlace></origin>
+                  </history>
+               </msPart>
             </msDesc>
          </sourceDesc>
       </fileDesc>
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
+      <revisionDesc>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

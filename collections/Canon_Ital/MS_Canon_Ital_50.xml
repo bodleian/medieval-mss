@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2761">
+<TEI xml:id="manuscript_2761" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -9,7 +9,8 @@
             <title type="collection">MSS. Canon. Ital. (Canonici Italian)</title>
             <respStmt>
                <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <persName>Elizabeth Solopova</persName>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -52,10 +53,8 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem xml:id="MS_Canon_Ital_50-item1" n="1" class="#collectiones">
-                     <title type="desc" key="work_11313">Common-place book (zibaldone) of <persName role="scr" key="person_80">Antonio di Cecco Rosso de' Petrucci da
-                        Siena</persName>
-                     </title>
+                  <msItem class="#collectiones" n="1" xml:id="MS_Canon_Ital_50-item1">
+                     <title key="work_11313" type="desc">Common-place book (zibaldone) of <persName key="person_80" role="scr">Antonio di Cecco Rosso de' Petrucci da Siena</persName></title>
                      <textLang mainLang="it" otherLangs="la">Italian and Latin</textLang>
                   </msItem>
                </msContents>
@@ -73,34 +72,40 @@
                         <country key="place_1000080">Italian</country>
                      </origPlace>
                   </origin>
-               <provenance notBefore="1727" notAfter="1805" resp="#MMM"><persName role="fmo" key="person_2384880">Matteo Luigi Canonici, 1727-1805</persName></provenance><provenance notAfter="1807" resp="#MMM"><persName role="fmo" key="person_446">Giuseppe Canonici , -1807</persName></provenance><acquisition when="1817" resp="#MMM">Purchased by the Bodleian in 1817</acquisition></history>
-               <additional><adminInfo>
+                  <provenance notAfter="1805" notBefore="1727" resp="#MMM"><persName key="person_2384880" role="fmo">Matteo Luigi Canonici, 1727-1805</persName></provenance>
+                  <provenance notAfter="1807" resp="#MMM"><persName key="person_446" role="fmo">Giuseppe Canonici , -1807</persName></provenance>
+                  <acquisition resp="#MMM" when="1817">Purchased by the Bodleian in 1817</acquisition>
+               </history>
+               <additional>
+                  <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (A. Mortara,  <title>Catalogo dei manoscritti italiani che sotto la denominazione di Codici Canoniciani Italici si conservano nella Biblioteca Bodleiana a Oxford</title>, Quarto Catalogues XI, 1864).  
-                            
-                            
-                            <listBibl>
-                              <bibl type="QUARTO" facs="acp0044.gif">Quarto Catalogue, col. 56</bibl>
-                              <bibl type="QUARTO" facs="acp0045.gif">Quarto Catalogue, cols. 57-8</bibl>
-                              <bibl type="QUARTO" facs="acp0046.gif">Quarto Catalogue, cols. 59-60</bibl>
-                              <bibl type="QUARTO" facs="acp0047.gif">Quarto Catalogue, cols. 61-2</bibl>
-                              <bibl type="QUARTO" facs="acp0048.gif">Quarto Catalogue, cols. 63-4</bibl>
-                              <bibl type="QUARTO" facs="acp0049.gif">Quarto Catalogue, cols. 65-6</bibl>
-                              <bibl type="QUARTO" facs="acp0050.gif">Quarto Catalogue, cols. 67-8</bibl>
-                              <bibl type="QUARTO" facs="acp0051.gif">Quarto Catalogue, col. 69</bibl>
-                              <bibl type="SC" facs="aaz0431.gif">Summary Catalogue, vol. 4, p. 412</bibl>
+                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (A. Mortara, <title>Catalogo dei manoscritti italiani che sotto la denominazione di Codici Canoniciani Italici si conservano nella Biblioteca Bodleiana a Oxford</title>, Quarto Catalogues XI, 1864). <listBibl>
+                              <bibl facs="acp0044.gif" type="QUARTO">Quarto Catalogue, col. 56</bibl>
+                              <bibl facs="acp0045.gif" type="QUARTO">Quarto Catalogue, cols. 57-8</bibl>
+                              <bibl facs="acp0046.gif" type="QUARTO">Quarto Catalogue, cols. 59-60</bibl>
+                              <bibl facs="acp0047.gif" type="QUARTO">Quarto Catalogue, cols. 61-2</bibl>
+                              <bibl facs="acp0048.gif" type="QUARTO">Quarto Catalogue, cols. 63-4</bibl>
+                              <bibl facs="acp0049.gif" type="QUARTO">Quarto Catalogue, cols. 65-6</bibl>
+                              <bibl facs="acp0050.gif" type="QUARTO">Quarto Catalogue, cols. 67-8</bibl>
+                              <bibl facs="acp0051.gif" type="QUARTO">Quarto Catalogue, col. 69</bibl>
+                              <bibl facs="aaz0431.gif" type="SC">Summary Catalogue, vol. 4, p. 412</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
-                  </adminInfo><listBibl type="WRAPPER"><listBibl type="INTERNET"><head>Online resources:</head><bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/40107"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title></ref></bibl></listBibl></listBibl></additional>
+                  </adminInfo>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="INTERNET">
+                        <head>Online resources:</head>
+                        <bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/40107"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title></ref></bibl>
+                     </listBibl>
+                  </listBibl>
+               </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc><change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName>
-      Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
-      in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.'
-    </change>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.' </change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

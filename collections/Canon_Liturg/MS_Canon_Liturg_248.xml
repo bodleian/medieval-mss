@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2937">
+<TEI xml:id="manuscript_2937" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -7,7 +7,8 @@
             <title type="collection">MSS. Canon. Liturg. (Canonici Liturgical)</title>
             <respStmt>
                <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <persName>Elizabeth Solopova</persName>
+               <persName>Matthew Holford</persName>
             </respStmt>
             <respStmt xml:id="BCBB">
                <resp when="2020">Cataloguer</resp>
@@ -54,8 +55,8 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem xml:id="MS_Canon_Liturg_248-item1" n="1" class="#liturgica">
-                     <title type="desc" key="work_11570">Diurnal (Franciscan)</title>
+                  <msItem class="#liturgica" n="1" xml:id="MS_Canon_Liturg_248-item1">
+                     <title key="work_11570" type="desc">Diurnal (Franciscan)</title>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -68,16 +69,16 @@
                   <bindingDesc resp="#BCBB">
                      <binding notAfter="1525" notBefore="1475">
                         <p>15th century, late, or early 16th century, <placeName key="place_1000080">Italian</placeName> (MS. from the nunnery of the <orgName>Poor Clares of Assisi</orgName>): wood boards; dark brown leather, blind-tooled with lines, stamps and strapwork; original spine lost; remains of a single central clasp with part of a brown-leather strap (not original?) and a brass catch-plate with a boss-like protrusion on the back cover; edges discoloured, probably plain. Rebacked, later 19th century, Bodleian, whilst classified amongst MSS. Liturg. (c. 1877-1887?). <dimensions type="binding" unit="mm">
-                           <height quantity="104">104</height>
-                           <width quantity="74">74</width>
-                           <depth min="55" precision="medium" max="56">c. 55-56</depth>
-                        </dimensions> (book closed).</p>
+                              <height quantity="104">104</height>
+                              <width quantity="74">74</width>
+                              <depth max="56" min="55" precision="medium">c. 55-56</depth>
+                           </dimensions> (book closed).</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notBefore="1250" notAfter="1350">13th century, second half - 14th century, first half</origDate>
+                     <origDate calendar="Gregorian" notAfter="1350" notBefore="1250">13th century, second half - 14th century, first half</origDate>
                      <origPlace>
                         <country key="place_1000080">Italian</country>, <settlement key="place_7000874">Rome</settlement>
                         <!--ORIGINAL: Italian, Rome-->
@@ -88,10 +89,8 @@
                   <adminInfo>
                      <recordHist>
                         <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Binding: <bibl>B. C. Barker-Benfield, <title>Bookbindings of Canonici manuscripts : a survey of early and non-standard bindings, mostly Italian, in the Canonici collection of the Bodleian Library, University of Oxford</title> (Oxford, privately printed, 2020).</bibl>
-                            
-                            
-                            <listBibl>
-                              <bibl type="SC" facs="aaz0385.gif">Summary Catalogue, vol. 4, p. 366</bibl>
+                           <listBibl>
+                              <bibl facs="aaz0385.gif" type="SC">Summary Catalogue, vol. 4, p. 366</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -99,9 +98,10 @@
                </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc>     <change when="2020-08-20">Binding description added.</change>     <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2020-08-20">Binding description added.</change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

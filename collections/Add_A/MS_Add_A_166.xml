@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_20">
+<TEI xml:id="manuscript_20" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -54,8 +54,8 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem xml:id="MS_Add_A_166-item1" n="1" >
-                     <title type="desc" key="work_13052">Lives of <persName key="person_83985148">Juvenal</persName></title>
+                  <msItem n="1" xml:id="MS_Add_A_166-item1">
+                     <title key="work_13052" type="desc">Lives of <persName key="person_83985148">Juvenal</persName></title>
                      <note>(three short lives)</note>
                      <msItem>
                         <incipit><supplied>I</supplied>unius Iuuenalis libertino locupletis</incipit>
@@ -68,27 +68,32 @@
                      </msItem>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
-                  <msItem xml:id="MS_Add_A_166-item2" n="2">
-                     <author key="person_83985148">
-                        Juvenal
-                     </author>
-                     <title key="work_2896">Satires</title><note>With partial glosses (sat. i and part of ii) and arguments in verse to eight satires.</note>
+                  <msItem n="2" xml:id="MS_Add_A_166-item2">
+                     <author key="person_83985148">Juvenal</author>
+                     <title key="work_2896">Satires</title>
+                     <note>With partial glosses (sat. i and part of ii) and arguments in verse to eight satires.</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                   <msItem n="3">
                      <locus>(fol. 93)</locus>
                      <note>Later additions:</note>
-                     <msItem><title type="desc">Metrical calendar</title>
-                     <incipit>Principio Jany</incipit>
-                        <textLang mainLang="la">Latin</textLang></msItem>
                      <msItem>
-                        <title type="desc" key="work_1388">Poems</title>
-                        <msItem><incipit>Colluj che parte more et tace in foro</incipit></msItem>
-                        <msItem><incipit>Infelici parenti. infelice hora</incipit></msItem>
+                        <title type="desc">Metrical calendar</title>
+                        <incipit>Principio Jany</incipit>
+                        <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     <msItem>
+                        <title key="work_1388" type="desc">Poems</title>
+                        <msItem>
+                           <incipit>Colluj che parte more et tace in foro</incipit>
+                        </msItem>
+                        <msItem>
+                           <incipit>Infelici parenti. infelice hora</incipit>
+                        </msItem>
                         <textLang mainLang="it">Italian</textLang>
                      </msItem>
                      <msItem>
-                        <title type="desc" key="work_10353">Astrological poem</title> 
+                        <title key="work_10353" type="desc">Astrological poem</title>
                         <incipit>Nil capiti facias, Aries cum Luna refulget</incipit>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
@@ -98,12 +103,11 @@
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
-                        <extent>96 fols.
-                        <dimensions unit="mm" type="leaf">
-                           <height>197</height>
-                           <width>140</width>
-                        </dimensions>
-                           <dimensions unit="mm" type="written">
+                        <extent>96 fols. <dimensions type="leaf" unit="mm">
+                              <height>197</height>
+                              <width>140</width>
+                           </dimensions>
+                           <dimensions type="written" unit="mm">
                               <height>140</height>
                               <width max="80" min="75">c. 75-80</width>
                            </dimensions>
@@ -113,39 +117,42 @@
                         <layout columns="1" writtenLines="22">1 col., 22 lines.</layout>
                      </layoutDesc>
                   </objectDesc>
-                  <decoDesc><decoNote>Rubrics; spaces left for initials.</decoNote></decoDesc>
+                  <decoDesc>
+                     <decoNote>Rubrics; spaces left for initials.</decoNote>
+                  </decoDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" when="1475" cert="high">1475</origDate>
+                     <origDate calendar="Gregorian" cert="high" when="1475">1475</origDate>
                      <origPlace>
                         <country key="place_1000080">Italian</country>, <settlement key="place_7006739">Rieti</settlement>
                         <!--ORIGINAL: Italian, Rieti-->
                      </origPlace>
                   </origin>
-                  <provenance>Fol. 92v: 'Explicit liber <sic>vuuenalis</sic> Quem ego <persName role="scr" key="person_2753">petrus simon constantiny Jacobi Vanderutij de Rieto</persName> scrypsy et ad ffinem produxy in Ciuitate Rieti ac in escola magistri petri felitiany de cingulo sub Anno domini M<hi rend="superscript">o</hi>cccc<hi rend="superscript">o</hi>Lxxv [v <hi rend="italic">erased and arabic</hi> 2 <hi rend="italic">added</hi>] Inditione viija tempore dominy dominy ...Sixty pape quinty... etc. die xxv mensis Iulij etc.'.</provenance>
-                  <provenance><persName role="fmo" key="person_19743305">Guglielmo Libri</persName>, no. 565 in his sale, 1859.</provenance>
-                  <acquisition when="1859" resp="#SC">Purchased by the Bodleian.</acquisition>
+                  <provenance>Fol. 92v: 'Explicit liber <sic>vuuenalis</sic> Quem ego <persName key="person_2753" role="scr">petrus simon constantiny Jacobi Vanderutij de Rieto</persName> scrypsy et ad ffinem produxy in Ciuitate Rieti ac in escola magistri petri felitiany de cingulo sub Anno domini M<hi rend="superscript">o</hi>cccc<hi rend="superscript">o</hi>Lxxv [v <hi rend="italic">erased and arabic</hi> 2 <hi rend="italic">added</hi>] Inditione viija tempore dominy dominy ...Sixty pape quinty... etc. die xxv mensis Iulij etc.'.</provenance>
+                  <provenance><persName key="person_19743305" role="fmo">Guglielmo Libri</persName>, no. 565 in his sale, 1859.</provenance>
+                  <acquisition resp="#SC" when="1859">Purchased by the Bodleian.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Adapted (2017) from A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts</title>, and from the Summary Catalogue (1905).
-                            <listBibl>
-                              <bibl type="SC" facs="aam0090.gif">Summary Catalogue, Vol. 5, p.  55</bibl>
+                        <source>Adapted (2017) from A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts</title>, and from the Summary Catalogue (1905). <listBibl>
+                              <bibl facs="aam0090.gif" type="SC">Summary Catalogue, Vol. 5, p. 55</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
-                  <listBibl type="WRAPPER"><listBibl>
-                     <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 7</bibl>
-                  </listBibl></listBibl>
+                  <listBibl type="WRAPPER">
+                     <listBibl>
+                        <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 7</bibl>
+                     </listBibl>
+                  </listBibl>
                </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

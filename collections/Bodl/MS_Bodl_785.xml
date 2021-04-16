@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1770">
+<TEI xml:id="manuscript_1770" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -7,7 +7,8 @@
             <title type="collection">MSS. Bodl. (Bodley)</title>
             <respStmt>
                <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <persName>Elizabeth Solopova</persName>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -52,18 +53,23 @@
                <physDesc>
                   <p n="composite">Composite: two parts</p>
                </physDesc>
-               <additional><adminInfo>
+               <additional>
+                  <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922).  
-                            
-                            
-                            <listBibl>
-                              <bibl type="SC" facs="aap0476.gif">Summary Catalogue, vol. 2, part 1, p. 455</bibl>
-                              <bibl type="SC" facs="aap0477.gif">Summary Catalogue, vol. 2, part 1, p. 456</bibl>
+                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). <listBibl>
+                              <bibl facs="aap0476.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 455</bibl>
+                              <bibl facs="aap0477.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 456</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
-                  </adminInfo><listBibl type="WRAPPER"><listBibl type="INTERNET"><head>Online resources:</head><bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5879"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl></listBibl></listBibl></additional>
+                  </adminInfo>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="INTERNET">
+                        <head>Online resources:</head>
+                        <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5879"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl>
+                     </listBibl>
+                  </listBibl>
+               </additional>
                <msPart xml:id="MS_Bodl_785-part1">
                   <msIdentifier>
                      <altIdentifier type="partial">
@@ -71,17 +77,9 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Bodl_785-part1-item1" n="1">
-                        <author key="person_66806872">
-                           
-                           Augustine
-                        
-                        </author>
-                        <author key="person_100187025">
-                           
-                           Anselm
-                        
-                        </author>
+                     <msItem n="1" xml:id="MS_Bodl_785-part1-item1">
+                        <author key="person_66806872">Augustine</author>
+                        <author key="person_100187025">Anselm</author>
                         <note>(extracts)</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
@@ -109,26 +107,17 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Bodl_785-part2-item1" n="1">
-                        <author key="person_100184667">
-                           
-                           Gregory the Great
-                        
-                        </author>
+                     <msItem n="1" xml:id="MS_Bodl_785-part2-item1">
+                        <author key="person_100184667">Gregory the Great</author>
                         <title key="work_1862">De cura pastorali</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Bodl_785-part2-item2" n="2" class="#theologica">
-                        <title key="work_15362">Tractatus de fide spe et caritate fratris <persName role="aut" key="person_264344179" cert="low">Thome de Aquino</persName>
-                        </title>
+                     <msItem class="#theologica" n="2" xml:id="MS_Bodl_785-part2-item2">
+                        <title key="work_15362">Tractatus de fide spe et caritate fratris <persName cert="low" key="person_264344179" role="aut">Thome de Aquino</persName></title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem xml:id="MS_Bodl_785-part2-item3" n="3">
-                        <author key="person_61642222">
-                           
-                           Hugo Ripelinus
-                        
-                        </author>
+                     <msItem n="3" xml:id="MS_Bodl_785-part2-item3">
+                        <author key="person_61642222">Hugo Ripelinus</author>
                         <title key="work_2164">Compendium ueritatis theologicae</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
@@ -151,10 +140,9 @@
                </msPart>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

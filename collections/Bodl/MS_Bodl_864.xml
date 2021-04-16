@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1855">
+<TEI xml:id="manuscript_1855" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -8,7 +8,8 @@
             <title type="collection">MSS. Bodl. (Bodley)</title>
             <respStmt>
                <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <persName>Elizabeth Solopova</persName>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -53,18 +54,25 @@
                <physDesc>
                   <p n="composite">Composite: A || B || C || fols. 148-285</p>
                </physDesc>
-               <additional><adminInfo>
+               <additional>
+                  <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973).  
-                            
-                            
-                            <listBibl>
-                              <bibl type="SC" facs="aap0541.gif">Summary Catalogue, vol. 2, part 1, p. 520</bibl>
-                              <bibl type="SC" facs="aap0542.gif">Summary Catalogue, vol. 2, part 1, p. 521</bibl>
+                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
+                              <bibl facs="aap0541.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 520</bibl>
+                              <bibl facs="aap0542.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 521</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
-                  </adminInfo><surrogates><bibl type="digital-facsimile" subtype="partial"><ref target="https://digital.bodleian.ox.ac.uk/objects/fc2b0271-3a4c-4768-9dbe-bcf2765c9862/"><title>Digital Bodleian</title></ref> <note>(4 images from 35mm slides)</note></bibl></surrogates><listBibl type="WRAPPER"><listBibl type="INTERNET"><head>Online resources:</head><bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/40044"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title></ref></bibl></listBibl></listBibl></additional>
+                  </adminInfo>
+                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/fc2b0271-3a4c-4768-9dbe-bcf2765c9862/"><title>Digital Bodleian</title></ref>
+                        <note>(4 images from 35mm slides)</note></bibl></surrogates>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="INTERNET">
+                        <head>Online resources:</head>
+                        <bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/40044"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title></ref></bibl>
+                     </listBibl>
+                  </listBibl>
+               </additional>
                <msPart xml:id="MS_Bodl_864-part1">
                   <msIdentifier>
                      <altIdentifier type="partial">
@@ -72,12 +80,8 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Bodl_864-part1-item1" n="1">
-                        <author key="person_262681233">
-                           
-                           Alain Chartier
-                        
-                        </author>
+                     <msItem n="1" xml:id="MS_Bodl_864-part1-item1">
+                        <author key="person_262681233">Alain Chartier</author>
                         <title key="work_298">La vie curialle</title>
                         <textLang mainLang="fr">French</textLang>
                      </msItem>
@@ -102,12 +106,8 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Bodl_864-part2-item1" n="1">
-                        <author key="person_89860148">
-                           
-                           Peter the Chanter
-                        
-                        </author>
+                     <msItem n="1" xml:id="MS_Bodl_864-part2-item1">
+                        <author key="person_89860148">Peter the Chanter</author>
                         <title key="work_3551">Verbum abbreviatum</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
@@ -132,13 +132,9 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Bodl_864-part3-item1" n="1">
+                     <msItem n="1" xml:id="MS_Bodl_864-part3-item1">
                         <author key="person_27422497">
-                           <!-- other entries too -->
-                           
-                           Robert of Bridlington
-                        
-                        </author>
+                           <!-- other entries too --> Robert of Bridlington</author>
                         <title key="work_4406">Commentary on the seven visions of Revelation</title>
                         <bibl type="commentedOn">
                            <title>Bible, Revelation</title>
@@ -172,8 +168,8 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem xml:id="MS_Bodl_864-part4-item1" n="1" class="#biblia">
-                        <title type="desc" key="work_10092">Acts, Catholic Epistles and Apocalypse with gloss</title>
+                     <msItem class="#biblia" n="1" xml:id="MS_Bodl_864-part4-item1">
+                        <title key="work_10092" type="desc">Acts, Catholic Epistles and Apocalypse with gloss</title>
                         <textLang mainLang="la">Latin</textLang>
                         <bibl type="bible">
                            <title type="desc">Bible, Acts</title>
@@ -207,10 +203,9 @@
                </msPart>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

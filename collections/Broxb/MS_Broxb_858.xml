@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1967">
+<TEI xml:id="manuscript_1967" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -54,8 +54,8 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem xml:id="MS_Broxb_858-item1" n="1" class="#liturgica">
-                     <title type="desc" key="work_11576">Diurnale.</title>
+                  <msItem class="#liturgica" n="1" xml:id="MS_Broxb_858-item1">
+                     <title key="work_11576" type="desc">Diurnale.</title>
                      <note>Franciscan calendar (e.g. 11 Oct., octave of St Francis); Utrecht saints Odulphus and Lebuin are added.</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
@@ -64,17 +64,16 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                        <extent>ii + 138 + iv fols.
-                           <dimensions unit="mm" type="leaf">
+                        <extent>ii + 138 + iv fols. <dimensions type="leaf" unit="mm">
                               <height>148</height>
                               <width>103</width>
                            </dimensions></extent>
                      </supportDesc>
                      <layoutDesc>
-                        <layout columns="2" writtenLines="30 33">2 cols., 30-33 lines, column space <dimensions unit="mm" type="column">
-                           <height min="112" max="115">112-5</height>
-                           <width max="37" min="35">35-7</width>
-                        </dimensions></layout>
+                        <layout columns="2" writtenLines="30 33">2 cols., 30-33 lines, column space <dimensions type="column" unit="mm">
+                              <height max="115" min="112">112-5</height>
+                              <width max="37" min="35">35-7</width>
+                           </dimensions></layout>
                      </layoutDesc>
                   </objectDesc>
                   <decoDesc>
@@ -90,12 +89,12 @@
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" when="1517" cert="high">1517</origDate>
+                     <origDate calendar="Gregorian" cert="high" when="1517">1517</origDate>
                      <origPlace cert="low">
                         <country key="place_7016845">Netherlandish</country>, <settlement key="place_7006805">Gouda</settlement> (?)<!--ORIGINAL: Netherlandish, Gouda (?)--></origPlace>
                   </origin>
-                  <provenance><q><persName role="scr" key="person_3106">Frater Rufinus Goude</persName> petit Aue marie unum. conpleta sunt hec a fratre Rufino de gouda Anno domini 1517o in die dominica Infra octauam Epyphanie</q> (fol. 7v); <q>Conpleta sunt hec et conscripta per me fratrem Ruphinum de goude pater noster</q> (fol. 130v).</provenance>
-                  <provenance resp="#MLH"><persName role="fmo" key="person_53056049">Albert Ehrman (1890-1969)</persName></provenance>
+                  <provenance><q><persName key="person_3106" role="scr">Frater Rufinus Goude</persName> petit Aue marie unum. conpleta sunt hec a fratre Rufino de gouda Anno domini 1517o in die dominica Infra octauam Epyphanie</q> (fol. 7v); <q>Conpleta sunt hec et conscripta per me fratrem Ruphinum de goude pater noster</q> (fol. 130v).</provenance>
+                  <provenance resp="#MLH"><persName key="person_53056049" role="fmo">Albert Ehrman (1890-1969)</persName></provenance>
                   <acquisition resp="#MLH" when="1978">Presented to the Bodleian by his son, John Ehrman, in 1978 through the Friends of the National Libraries.</acquisition>
                </history>
                <additional>
@@ -108,11 +107,10 @@
                </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc>          
+      </fileDesc>
+      <revisionDesc>
          <change when="2019-08-08">Description revised with reference to Watson</change>
          <change when="2017-07-01">First online publication.</change>
-
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>

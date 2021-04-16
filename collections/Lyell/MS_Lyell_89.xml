@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_7825">
+<TEI xml:id="manuscript_7825" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -9,7 +9,8 @@
             <title type="collection">MSS. Lyell</title>
             <respStmt>
                <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+               <persName>Elizabeth Solopova</persName>
+               <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <editionStmt>
@@ -49,17 +50,13 @@
                   <idno type="shelfmark">MS. Lyell 89</idno>
                </msIdentifier>
                <msContents>
-                  <msItem xml:id="MS_Lyell_89-item1" n="1">
-                     <author key="person_98323479">
-                        
-                        Arzachel
-                     
-                     </author>
+                  <msItem n="1" xml:id="MS_Lyell_89-item1">
+                     <author key="person_98323479">Arzachel</author>
                      <title key="work_711">Canones ad tabulas Toletanas</title>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
-                  <msItem xml:id="MS_Lyell_89-item2" n="2" class="#astrologia_astronomia">
-						               <title type="desc" key="work_10396">Astronomical tables</title>
+                  <msItem class="#astrologia_astronomia" n="2" xml:id="MS_Lyell_89-item2">
+                     <title key="work_10396" type="desc">Astronomical tables</title>
                      <note>(Toledan tables)</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
@@ -72,9 +69,7 @@
                   </objectDesc>
                   <decoDesc>
                      <decoNote>
-                        <p>Initial on fol. 1r in red and blue with pen flourishes in blue and
-            red forming a border in the left margin. Other initials red or blue flourished
-            in blue or red. (P&amp;A i, list, p. 73)</p>
+                        <p>Initial on fol. 1r in red and blue with pen flourishes in blue and red forming a border in the left margin. Other initials red or blue flourished in blue or red. (P&amp;A i, list, p. 73)</p>
                      </decoNote>
                   </decoDesc>
                </physDesc>
@@ -85,16 +80,15 @@
                         <country key="place_1000070">French</country>
                      </origPlace>
                   </origin>
-               <provenance notBefore="1871" notAfter="1948" resp="#MMM"><persName role="fmo" key="person_64157046">James P. R. Lyell, 1871-1948</persName></provenance><acquisition when="1948" resp="#MMM">Chosen as one of the hundred manuscripts bequeathed to the Bodleian by Lyell in 1948.</acquisition></history>
+                  <provenance notAfter="1948" notBefore="1871" resp="#MMM"><persName key="person_64157046" role="fmo">James P. R. Lyell, 1871-1948</persName></provenance>
+                  <acquisition resp="#MMM" when="1948">Chosen as one of the hundred manuscripts bequeathed to the Bodleian by Lyell in 1948.</acquisition>
+               </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from A. de la Mare, <title>Catalogue of the Medieval Manuscripts Bequeathed to the Bodleian Library Oxford by James P. R. Lyell</title> (1971) 
-                            
-                            
-                            <listBibl>
-                              <bibl type="LYELL" facs="cah0299.gif">Catalogue, p. 265</bibl>
-                              <bibl type="LYELL" facs="cah0300.gif">Catalogue, p. 266</bibl>
+                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from A. de la Mare, <title>Catalogue of the Medieval Manuscripts Bequeathed to the Bodleian Library Oxford by James P. R. Lyell</title> (1971) <listBibl>
+                              <bibl facs="cah0299.gif" type="LYELL">Catalogue, p. 265</bibl>
+                              <bibl facs="cah0300.gif" type="LYELL">Catalogue, p. 266</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -102,12 +96,10 @@
                </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc><change when="2018-06-15" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName>
-      Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
-      in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.'
-    </change>          <change when="2017-07-01">First online publication.</change>
-
+      </fileDesc>
+      <revisionDesc>
+         <change when="2018-06-15" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.' </change>
+         <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-29">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>
