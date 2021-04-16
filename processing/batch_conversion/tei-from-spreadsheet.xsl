@@ -103,9 +103,6 @@
                         <note>TEI encoding programmatically created using spreadsheet data</note>
                      </respStmt>
                   </titleStmt>
-                  <editionStmt>
-                     <edition>TEI P5</edition>
-                  </editionStmt>
                   <publicationStmt>
                      <publisher>Special Collections, Bodleian Libraries</publisher>
                      <address>
