@@ -103,23 +103,13 @@
                         <note>TEI encoding programmatically created using spreadsheet data</note>
                      </respStmt>
                   </titleStmt>
-                  <editionStmt>
-                     <edition>TEI P5</edition>
-                  </editionStmt>
                   <publicationStmt>
-                     <publisher>Special Collections, Bodleian Libraries</publisher>
-                     <address>
+                     <publisher>
                         <orgName type="department">Special Collections</orgName>
                         <orgName type="unit">Bodleian Libraries</orgName>
                         <orgName type="institution">University of Oxford</orgName>
-                        <street>Weston Library, Broad Street</street>
-                        <settlement>Oxford</settlement>
-                        <postCode>OX1 3BG</postCode>
-                        <country>United Kingdom</country>
-                     </address>
-                     <distributor>
                         <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>
-                     </distributor>
+                     </publisher>
                      <availability>
                         <licence target="https://creativecommons.org/publicdomain/zero/1.0/">This summary description is released under a CC0 licence.</licence>
                         <licence target="https://creativecommons.org/share-your-work/public-domain/pdm/">The text of H. O. Coxe, <title>Catalogus codicum mss. qui in collegiis aulisque Oxoniensibus hodie adservantur</title>, is free of known copyright restrictions.</licence>
@@ -231,7 +221,7 @@
             </teiHeader>
             <text>
                <body>
-                  <p><!--Body paragraph provided for validation and future transcription--></p>
+                  <p/>
                </body>
             </text>
          </TEI>
