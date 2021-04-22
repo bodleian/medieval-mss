@@ -1,5 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1450">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xml:id="manuscript_1450" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -25,24 +27,13 @@
                <persName>J. J. G. Alexander</persName>
             </respStmt>
          </titleStmt>
-         <editionStmt>
-            <edition>TEI P5</edition>
-         </editionStmt>
          <publicationStmt>
-            <publisher>Special Collections, Bodleian Libraries</publisher>
-            <address>
+            <publisher>
                <orgName type="department">Special Collections</orgName>
                <orgName type="unit">Bodleian Libraries</orgName>
                <orgName type="institution">University of Oxford</orgName>
-               <street>Weston Library, Broad Street</street>
-               <settlement key="place_7011931">Oxford</settlement>
-               <postCode>OX1 3BG</postCode>
-               <country>United Kingdom</country>
-            </address>
-            <distributor>
                <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>
-            </distributor>
-            <!--Availability statement will be added here-->
+            </publisher>
             <idno type="msID">MS_Bodl_418</idno>
             <idno type="collection">Bodl</idno>
             <idno type="catalogue">Western</idno>
@@ -61,7 +52,7 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents resp="#DD">
-                  <msItem xml:id="MS_Bodl_418-item1" n="1">
+                  <msItem n="1" xml:id="MS_Bodl_418-item1">
                      <author key="person_191026298">Franciscus de Mayronis</author>
                      <title key="work_1567">Conflatus in primum librum sententiarum</title>
                      <textLang mainLang="la">Latin</textLang>
@@ -71,23 +62,20 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                        <extent>i + 157 fols.
-                        <dimensions unit="mm" type="leaf">
-                           <height>295</height>
-                           <width>207</width>
-                        </dimensions></extent>
+                        <extent>i + 157 fols. <dimensions type="leaf" unit="mm">
+                              <height>295</height>
+                              <width>207</width>
+                           </dimensions></extent>
                      </supportDesc>
                      <layoutDesc>
-                        <layout>2 cols., c. 58-70 lines, column space <dimensions unit="mm" type="column">
-                           <height>210</height>
-                           <width>60</width>
-                        </dimensions></layout>
+                        <layout>2 cols., c. 58–70 lines, column space <dimensions type="column" unit="mm">
+                              <height>210</height>
+                              <width>60</width>
+                           </dimensions></layout>
                      </layoutDesc>
                   </objectDesc>
                   <handDesc>
-                     <handNote>Written by <persName role="scr" key="person_651">
-                           Johannes Steenhusen
-                        </persName>.</handNote>
+                     <handNote>Written by <persName key="person_651" role="scr"> Johannes Steenhusen </persName>.</handNote>
                   </handDesc>
                   <decoDesc>
                      <decoNote resp="#PA">Good initials. Written in Montpellier in 1440, fol. 157v, but the initials added later. (P&amp;A ii. 743)</decoNote>
@@ -96,7 +84,7 @@
                </physDesc>
                <history>
                   <origin resp="#PA #DD">
-                     <origDate calendar="Gregorian" when="1440" cert="high">1440</origDate>, <origDate calendar="Gregorian" type="additions" notBefore="1470" notAfter="1480">added decoration c. 1475</origDate>
+                     <origDate calendar="Gregorian" cert="high" when="1440">1440</origDate>, <origDate calendar="Gregorian" notAfter="1480" notBefore="1470" type="additions">added decoration c. 1475</origDate>
                      <origPlace cert="low">
                         <country key="place_1000070">French</country>, <settlement key="place_7009369">Montpellier</settlement> (script)</origPlace>
                      <origPlace>
@@ -105,20 +93,18 @@
                   <provenance notBefore="1440">Fol. 157v: <q type="colophon">explicit reportacio ... per manus Johannis steenhusen in montepessulano in ordine uel conuentu minorum pro fratre <persName key="person_2967">matheo de ficecko</persName> ordinis fratrum minorum. Anno domini Millesimo quadringentesimo quadragesimo <sic>altra</sic> die post conuersionem sancti pauli etc.</q></provenance>
                   <provenance notAfter="1475">Fol. 160 (flyleaf): <q type="exLibris">Iste liber est mei magistri <persName key="person_2968">francisci de careto</persName> ordinis minorum Asignatum fratri Francisco <add>de Sax<ex>el</ex>lo</add> dissipullo meo sibi Asignatum pro sui studi<damage><gap/></damage> papie [Pavia] incoati anno domini MoCCCColxxv die die vero decima quarta madij</q>.</provenance>
                   <provenance notBefore="1475">Fol. 157v: <q type="exLibris">iste liber est ad vsum fratris <persName key="person_2969">franciscj de saxello</persName> ordinis minorum prouincie Janue [Genoa] et conuentus cultismilij [Cortemilia] Asignatum sibi per magistrum franciscum de Careto euisdem conuentus ac prouincie cuius anima requiescat in pace et hoc anno domini 1475. papie</q>.</provenance>
-                  <acquisition when="1603">Presented by <persName role="dnr" key="person_2966">Sir Richard Fermor of Somerton</persName> in 1603.</acquisition>
+                  <acquisition when="1603">Presented by <persName key="person_2966" role="dnr">Sir Richard Fermor of Somerton</persName> in 1603.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Description adapted (2018) from the following sources: 
-                           <listBibl>
-                              <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 85 [contents, physical description, origin, provenance]</bibl>
+                        <source>Description adapted (2018) from the following sources: <listBibl>
+                              <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435–1600 in Oxford Libraries</title> (Oxford, 1984), no. 85 [contents, physical description, origin, provenance]</bibl>
                               <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, II (1970), no. 743 [decoration]</bibl>
                               <bibl>Summary Catalogue (1922) [flyleaves, acquisition]</bibl>
-                           </listBibl>      
-                            
-                            <listBibl>
-                              <bibl type="SC" facs="aap0326.gif">Summary Catalogue, vol. 2, part 1, p. 305</bibl>
+                           </listBibl>
+                           <listBibl>
+                              <bibl facs="aap0326.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 305</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -126,24 +112,16 @@
                </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      
-      <revisionDesc>         
-         
-         <change who="#MLH" when="2018-11-23">Revised to incorporate all information in Watson, P&amp;A, and SC.</change>
+      </fileDesc>
+      <revisionDesc>
+         <change when="2018-11-23" who="#MLH">Revised to incorporate all information in Watson, P&amp;A, and SC.</change>
          <change when="2017-07-01">First online publication.</change>
-
-         <change when="2017-05-29">
-            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
-         </change>
-         <change when="2017-05-25">
-            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
-         </change>
+         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>
    </teiHeader>
    <text>
       <body>
-         <p><!--Body paragraph provided for validation and future transcription--></p>
+         <p/>
       </body>
    </text>
 </TEI>

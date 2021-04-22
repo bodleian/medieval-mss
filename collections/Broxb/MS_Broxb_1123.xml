@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1949">
+<TEI xml:id="manuscript_1949" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -15,24 +16,13 @@
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
-         <editionStmt>
-            <edition>TEI P5</edition>
-         </editionStmt>
          <publicationStmt>
-            <publisher>Special Collections, Bodleian Libraries</publisher>
-            <address>
+            <publisher>
                <orgName type="department">Special Collections</orgName>
                <orgName type="unit">Bodleian Libraries</orgName>
                <orgName type="institution">University of Oxford</orgName>
-               <street>Weston Library, Broad Street</street>
-               <settlement key="place_7011931">Oxford</settlement>
-               <postCode>OX1 3BG</postCode>
-               <country>United Kingdom</country>
-            </address>
-            <distributor>
                <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>
-            </distributor>
-            <!--Availability statement will be added here-->
+            </publisher>
             <idno type="msID">MS_Broxb_1123</idno>
             <idno type="collection">Broxbourne</idno>
             <idno type="catalogue">Western</idno>
@@ -54,8 +44,8 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem xml:id="MS_Broxb_1123-item1" n="1" class="#historica">
-						               <title type="desc" key="work_11000">Chronicle roll of the Kings of <placeName key="place_7002445">England</placeName>, Ethelbert to Edward II</title>
+                  <msItem class="#historica" n="1" xml:id="MS_Broxb_1123-item1">
+                     <title key="work_11000" type="desc">Chronicle roll of the Kings of <placeName key="place_7002445">England</placeName>, Ethelbert to Edward II</title>
                      <note>Original text runs to the burial of Henry III, late 1272; Edward (I) not shown crowned or with any epithet of kingship. An added membrane continues the genealogy to Edward II.</note>
                      <textLang mainLang="fr">French</textLang>
                   </msItem>
@@ -65,8 +55,8 @@
                      <supportDesc material="perg">
                         <support>parchment</support>
                         <extent>
-                           <dimensions unit="mm" type="roll">
-                              <height quantity="5280" precision="medium">c. 5280</height>
+                           <dimensions type="roll" unit="mm">
+                              <height precision="medium" quantity="5280">c. 5280</height>
                               <width>260</width>
                            </dimensions>
                         </extent>
@@ -75,42 +65,45 @@
                   <decoDesc>
                      <decoNote type="miniature">Illuminated portrait miniatures.</decoNote>
                   </decoDesc>
-               
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notBefore="1272" notAfter="1280" cert="high">soon after 1272 (?)</origDate>;<origDate calendar="Gregorian" notAfter="1400" notBefore="1300">additions, 14th century</origDate>
+                     <origDate calendar="Gregorian" cert="high" notAfter="1280" notBefore="1272">soon after 1272 (?)</origDate>;<origDate calendar="Gregorian" notAfter="1400" notBefore="1300">additions, 14th century</origDate>
                      <origPlace>
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
-                  <provenance resp="#MLH"><persName role="fmo" key="person_53056049">Albert Ehrman (1890-1969)</persName></provenance>
+                  <provenance resp="#MLH"><persName key="person_53056049" role="fmo">Albert Ehrman (1890–1969)</persName></provenance>
                   <acquisition resp="#MLH" when="1978">Presented to the Bodleian by his son, John Ehrman, in 1978 through the Friends of the National Libraries.</acquisition>
                </history>
-               <additional><adminInfo>
+               <additional>
+                  <adminInfo>
                      <recordHist>
-                        <source>Description adapted (August 2019) from <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 135</bibl>
+                        <source>Description adapted (August 2019) from <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435–1600 in Oxford Libraries</title> (Oxford, 1984), no. 135</bibl>
                         </source>
                      </recordHist>
-                  </adminInfo><surrogates><bibl type="digital-facsimile" subtype="partial"><ref target="https://digital.bodleian.ox.ac.uk/objects/d48f7754-4ed7-460d-b716-cad21f44c903/"><title>Digital Bodleian</title></ref> <note>(1 image from 35mm slides)</note></bibl></surrogates><listBibl type="WRAPPER"><listBibl type="INTERNET"><head>Online resources:</head><bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/81320"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title></ref></bibl></listBibl></listBibl></additional>
+                  </adminInfo>
+                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/d48f7754-4ed7-460d-b716-cad21f44c903/"><title>Digital Bodleian</title></ref>
+                        <note>(1 image from 35mm slides)</note></bibl></surrogates>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="INTERNET">
+                        <head>Online resources:</head>
+                        <bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/81320"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title></ref></bibl>
+                     </listBibl>
+                  </listBibl>
+               </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc>         
-         <change when="2019-08-08">Description revised with reference to Watson.</change> 
+      </fileDesc>
+      <revisionDesc>
+         <change when="2019-08-08">Description revised with reference to Watson.</change>
          <change when="2017-07-01">First online publication.</change>
-
-         <change when="2017-05-29">
-            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
-         </change>
-         <change when="2017-05-25">
-            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
-         </change>
+         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>
    </teiHeader>
    <text>
       <body>
-         <p><!--Body paragraph provided for validation and future transcription--></p>
+         <p/>
       </body>
    </text>
 </TEI>

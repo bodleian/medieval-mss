@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2378">
+<TEI xml:id="manuscript_2378" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -20,24 +20,13 @@
                <persName>H. O. Coxe</persName>
             </respStmt>
          </titleStmt>
-         <editionStmt>
-            <edition>TEI P5</edition>
-         </editionStmt>
          <publicationStmt>
-            <publisher>Special Collections, Bodleian Libraries</publisher>
-            <address>
+            <publisher>
                <orgName type="department">Special Collections</orgName>
                <orgName type="unit">Bodleian Libraries</orgName>
                <orgName type="institution">University of Oxford</orgName>
-               <street>Weston Library, Broad Street</street>
-               <settlement key="place_7011931">Oxford</settlement>
-               <postCode>OX1 3BG</postCode>
-               <country>United Kingdom</country>
-            </address>
-            <distributor>
                <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>
-            </distributor>
-            <!--Availability statement will be added here-->
+            </publisher>
             <idno type="msID">MS_Canon_Class_Lat_62</idno>
             <idno type="collection">Canon Class Lat</idno>
             <idno type="catalogue">Western</idno>
@@ -57,14 +46,14 @@
                </msIdentifier>
                <msContents resp="#Q">
                   <textLang mainLang="la">Latin</textLang>
-                  <msItem xml:id="MS_Canon_Class_Lat_62-item1" n="1">
+                  <msItem n="1" xml:id="MS_Canon_Class_Lat_62-item1">
                      <author key="person_8194433">Virgil</author>
                      <title key="work_4920">Aeneid</title>
                      <note>With argumenta.</note>
                      <note type="annotation">With interlinear glosses.</note>
                      <colophon resp="#DD"><locus>(fol. 147)</locus> ... liber duodecimus explicit τέλος dεο γραγιας αμιn Die lune 4<hi rend="superscript">or</hi> decembris hora xvj d' m<hi rend="superscript">o</hi>iiii<hi rend="superscript">o</hi>lvij per me antonium urso de uenezijs</colophon>
                   </msItem>
-                  <msItem xml:id="MS_Canon_Class_Lat_62-item2" n="2">
+                  <msItem n="2" xml:id="MS_Canon_Class_Lat_62-item2">
                      <locus>(fols. 147v-152r)</locus>
                      <author key="person_78782481">Guarino of Verona</author>
                      <title key="work_1887">Carmina differentialia</title>
@@ -77,21 +66,20 @@
                   <objectDesc form="codex">
                      <supportDesc material="mixed">
                         <support>paper and parchment mixed</support>
-                        <extent>152 fols.
-                           <dimensions unit="mm" type="leaf">
+                        <extent>152 fols. <dimensions type="leaf" unit="mm">
                               <height>290</height>
                               <width>200</width>
                            </dimensions></extent>
                      </supportDesc>
                      <layoutDesc>
-                        <layout columns="1" writtenLines="33 36">1 col., 33-36 lines, written space <dimensions unit="mm" type="written">
-                           <height>210</height>
-                           <width quantity="90" precision="medium">c. 90</width>
-                        </dimensions></layout>
+                        <layout columns="1" writtenLines="33 36">1 col., 33–36 lines, written space <dimensions type="written" unit="mm">
+                              <height>210</height>
+                              <width precision="medium" quantity="90">c. 90</width>
+                           </dimensions></layout>
                      </layoutDesc>
                   </objectDesc>
                   <handDesc>
-                     <handNote>Fols. 85-147 written by <persName role="scr" key="person_3154">Antonius Urso of Venice</persName>. Fols. 1-84 written by one or more other scribes whose hands, distinct at beginning and end, merge of fol. 68.</handNote>
+                     <handNote>Fols. 85–147 written by <persName key="person_3154" role="scr">Antonius Urso of Venice</persName>. Fols. 1–84 written by one or more other scribes whose hands, distinct at beginning and end, merge of fol. 68.</handNote>
                   </handDesc>
                   <decoDesc>
                      <decoNote type="unfilled">Spaces left for initials.</decoNote>
@@ -99,54 +87,43 @@
                </physDesc>
                <history>
                   <origin resp="#DD">
-                     <origDate calendar="Gregorian" when="1457" cert="high">1457</origDate>; <origDate type="additions" notAfter="1500" notBefore="1457" calendar="Gregorian">additions, 15th century, second half</origDate>
+                     <origDate calendar="Gregorian" cert="high" when="1457">1457</origDate>; <origDate calendar="Gregorian" notAfter="1500" notBefore="1457" type="additions">additions, 15th century, second half</origDate>
                      <origPlace cert="low">
-                        <country key="place_1000080">Italian</country>, <settlement key="place_7018159" cert="medium">Venice (?)</settlement> <!--ORIGINAL: Italian, Venice (?)--></origPlace>
+                        <country key="place_1000080">Italian</country>, <settlement cert="medium" key="place_7018159">Venice (?)</settlement>
+                        <!--ORIGINAL: Italian, Venice (?)--></origPlace>
                   </origin>
-               <provenance notBefore="1727" notAfter="1805" resp="#MMM"><persName role="fmo" key="person_2384880">Matteo Luigi Canonici, 1727-1805</persName></provenance><provenance notAfter="1807" resp="#MMM"><persName role="fmo" key="person_446">Giuseppe Canonici , -1807</persName></provenance><acquisition when="1817" resp="#MMM">Purchased by the Bodleian in 1817</acquisition></history>
+                  <provenance notAfter="1805" notBefore="1727" resp="#MMM"><persName key="person_2384880" role="fmo">Matteo Luigi Canonici, 1727–1805</persName></provenance>
+                  <provenance notAfter="1807" resp="#MMM"><persName key="person_446" role="fmo">Giuseppe Canonici , -1807</persName></provenance>
+                  <acquisition resp="#MMM" when="1817">Purchased by the Bodleian in 1817</acquisition>
+               </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Description adapted (Nov. 2019) from the following sources:
-                           
-                           <listBibl>
-                              <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 159 [colophon, physical description, origin, date]</bibl>
-                              <bibl>(H. O. Coxe,  <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854) [contents]</bibl>
+                        <source>Description adapted (Nov. 2019) from the following sources: <listBibl>
+                              <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435–1600 in Oxford Libraries</title> (Oxford, 1984), no. 159 [colophon, physical description, origin, date]</bibl>
+                              <bibl>(H. O. Coxe, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854) [contents]</bibl>
                            </listBibl>
-                           
-                           
-                        <listBibl>
-                              <bibl type="QUARTO" facs="abz0075.gif">
-                              Quarto Catalogue, vol. 3, col. 137
-                           </bibl>
-                              <bibl type="SC" facs="aaz0337.gif">Summary Catalogue, vol. 4, p. 318</bibl>
+                           <listBibl>
+                              <bibl facs="abz0075.gif" type="QUARTO"> Quarto Catalogue, vol. 3, col. 137 </bibl>
+                              <bibl facs="aaz0337.gif" type="SC">Summary Catalogue, vol. 4, p. 318</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
                </additional>
-              
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
+      </fileDesc>
       <revisionDesc>
          <change when="2019-11-20">Revised to include all information in Watson, P&amp;A, and Quarto catalogue.</change>
-         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName>
-      Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
-      in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.'
-    </change>          <change when="2017-07-01">First online publication.</change>
-
-         <change when="2017-05-29">
-            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
-         </change>
-         <change when="2017-05-25">
-            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
-         </change>
+         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
+         <change when="2017-07-01">First online publication.</change>
+         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>
    </teiHeader>
    <text>
       <body>
-         <p><!--Body paragraph provided for validation and future transcription--></p>
+         <p/>
       </body>
    </text>
 </TEI>

@@ -1,38 +1,28 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_7845">
+<TEI xml:id="manuscript_7845" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Lyell empt. 9</title>
             <title type="collection">MSS. Lyell</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="DLM">
+               <resp when="1971">Cataloguer</resp>
+               <persName>Albinia de la Mare</persName>
+            </respStmt>
+            <respStmt xml:id="ANJD">
+               <resp when="2020">Encoding</resp>
+               <persName>Andrew Dunning</persName>
             </respStmt>
          </titleStmt>
-         <editionStmt>
-            <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
-         </editionStmt>
          <publicationStmt>
-            <publisher>Special Collections, Bodleian Libraries</publisher>
-            <address>
+            <publisher>
                <orgName type="department">Special Collections</orgName>
                <orgName type="unit">Bodleian Libraries</orgName>
                <orgName type="institution">University of Oxford</orgName>
-               <street>Weston Library, Broad Street</street>
-               <settlement key="place_7011931">Oxford</settlement>
-               <postCode>OX1 3BG</postCode>
-               <country>United Kingdom</country>
-            </address>
-            <distributor>
                <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>
-            </distributor>
-            <!--Availability statement will be added here-->
+            </publisher>
             <idno type="msID">MS_Lyell_empt_9</idno>
             <idno type="collection">Lyell</idno>
             <idno type="catalogue">Western</idno>
@@ -47,51 +37,164 @@
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Lyell empt. 9</idno>
                </msIdentifier>
+               <head>Ambrosiaster; Ambrose, letters, etc.</head>
                <msContents>
-                  <msItem xml:id="MS_Lyell_empt_9-item1" n="1">
-                     <author key="person_281829495">
-                        
-                        Ambrosiaster
-                     
-                     </author>
+                  <textLang mainLang="la">Latin</textLang>
+                  <msItem n="1">
+                     <author key="person_281829495">Ambrosiaster</author>
                      <title key="work_487">Commentaries on the Epistles of St. Paul</title>
                      <bibl type="commentedOn">
                         <title>Bible, Pauline Epistles</title>
                      </bibl>
-                     <textLang mainLang="la">Latin</textLang>
+                     <msItem n="a">
+                        <msItem>
+                           <locus>(fol. 1ra)</locus>
+                           <bibl>Preface</bibl>
+                           <rubric>Incipit tractatus sancti Ambrosii episcopi in epistolas beati Pauli apostoli</rubric>
+                           <incipit>Ut rerum noticia habeatur plenior</incipit>
+                           <explicit><locus>(fol. 1 recto b)</locus> doceat sic incipit</explicit>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 1 recto b)</locus>
+                           <rubric>Incipit explanacio epistole ad Romanos</rubric>
+                           <incipit><q>Paulus servus Ihesu Christi.</q> Apud veteres nostros racione</incipit>
+                           <explicit><locus>(fol. 30vb)</locus> ad consummacionem seculi. Amen.</explicit>
+                           <finalRubric>Explicit tractatus sancti Ambrosii Episcopi in Epistolam beati Pauli apostoli ad Romanos deo gratias.</finalRubric>
+                        </msItem>
+                        <note>Ed. H. J. Vogels, <title>C.S.E.L.</title>
+                           <hi rend="smallcaps">lxxxi,</hi> 1, 1966. Our MS. belongs to a first type of the second recension of the commentary on Romans and is the only known surviving MS. of the second recension to contain the complete commentary on all the Pauline epistles (Vogels, ed. cit., p. xl. He describes our MS. on p. xlii).</note>
+                     </msItem>
+                     <msItem n="b">
+                        <locus>(fols. 30vb–69ra)</locus>
+                        <title type="desc">Commentary on I and II Corinthians</title>
+                        <note>Pr. PL 17 col. 183–338.</note>
+                        <msItem>
+                           <note>Vogels says that our MS. is unusual among MSS. of the second recension in having the genuine ending of I Cor. and beginning of II Cor. and the genuine preface to II Cor.</note>
+                           <incipit><locus>(fol. 53r)</locus> Sciens sanctus apostolus Paulus profecisse epistolam</incipit>
+                           <explicit>sic scribit ad eos</explicit>
+                           <note>Pr. A. Souter, <title>Journal of Theol. Studies</title> 4 (1902–3), 90).</note>
+                        </msItem>
+                        <note>It is also the only known MS. to have an interpolation to I Cor. vi. 18 taken from Eugippius, <locus>(fol. 38rb)</locus>: <q>quia cetera peccata … <sic>concupiscende</sic> carnalis</q>, which is found in all the early editions. The text of the commentary is apparently a mixed version, based on recension <q>a</q> but with lacunae supplied from <q>y</q>. (Vogels, <foreign>ed. cit.</foreign> pp. xliii, xlv, xlvi).</note>
+                     </msItem>
+                     <msItem n="c">
+                        <title type="desc">Commentaries on the remaining Epistles</title>
+                        <msItem>
+                           <locus>(fol. 69r)</locus>
+                           <bibl>Galatians</bibl>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 78v)</locus>
+                           <bibl>Ephesians</bibl>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 87r)</locus>
+                           <bibl>Philippians</bibl>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 91v)</locus>
+                           <bibl>I and II Thessalonians</bibl>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 97r)</locus>
+                           <bibl>Colossians</bibl>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 102v)</locus>
+                           <bibl>I and II Timothy</bibl>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 112v)</locus>
+                           <bibl>Titus</bibl>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 114r)</locus>
+                           <bibl>Philemon</bibl>
+                        </msItem>
+                     </msItem>
+                     <explicit><locus>(fol. 114vb)</locus> confirmantis epistolam missam.</explicit>
+                     <finalRubric>Explicit sancci Ambrosii episcopi tractatus in epistolas beati Pauli apostoli. Excepta ad hebreos.</finalRubric>
+                     <note>Pr. PL 17 col. 337–508.</note>
+                     <note>Vogels, ed. cit., p. xix, notes the dose textual connections of our MS. with the <foreign>editio princeps</foreign> of Ambrosiaster in vol. il of the works of Ambrose, ed. Amorbach, Basle, 1492.</note>
                   </msItem>
-                  <msItem xml:id="MS_Lyell_empt_9-item2" n="2">
-                     <author key="person_100227669">
-                        
-                        Ambrose
-                     
-                     </author>
+                  <msItem n="2">
+                     <locus>(fol. 119r)</locus>
+                     <author key="person_100227669">Ambrose</author>
                      <title key="work_482">Letters</title>
-                     <textLang mainLang="la">Latin</textLang>
+                     <note>Pr. PL 16. 82 numbered items beginning with Ep. 7, and ending fol. 177rb with Ep. 22 (on Sts. Gervasius and Prothasius) written as two items (nos. 81–2). Ep. 37 (with letter of Calanus to Alexander), 56 (with <title>De Bonoso episcopo</title>) and 17 (with <title>Relado Symmachi prefecti</title>) are also written as two items each. The letters are followed <locus>(fol. 177rb–178ra)</locus> by an alphabetical index of correspondents. Nos. 1–80 are in the same order as the series in MS. Vat. Lat. 264, 11th–12th cent., fol. 231–95, including (no. 80) <q>De morte Theodosii imperatoris</q> (PL 16 col. 1385–1406). Most of fol. 178 has been cut away.</note>
                   </msItem>
-                  <msItem xml:id="MS_Lyell_empt_9-item3" n="3">
-                     <author key="person_2290">
-                        
-                        Ps.-Ambrose
-                     
-                     </author>
-                     <title key="work_3833">works</title>
-                     <textLang mainLang="la">Latin</textLang>
+                  <msItem n="3">
+                     <author key="person_2290">Ps.-Ambrose</author>
+                     <note>Items added by the contemporary hand <hi rend="italic">b</hi> filling leaves left blank in the last quire of Ambrosiaster:</note>
+                     <msItem n="a">
+                        <locus>(fol. 115r)</locus>
+                        <author key="person_2290">Ps.-Ambrose</author>
+                        <title key="work_6558">De dignitate sacerdotali</title>
+                        <rubric>Sermo sancti Ambrosii Mediolanensis episcopi de pastorali dignitate</rubric>
+                        <incipit>Si quis fratres oraculi reminiscitur domini</incipit>
+                        <explicit><locus>(fol. 116va)</locus> in regna seculorum dare promisisti. Amen.</explicit>
+                        <finalRubric>Explicit sermo <add place="above">opusculum</add> sancti Ambrosii episcopi qui pastoralis dicitur.</finalRubric>
+                        <note>Pr. PL 17 col. 567–80; cf. ibid. 139 col. 169–78. <title>Clavis Pat. Lat.,</title> no. 171a.</note>
+                     </msItem>
+                     <msItem n="b">
+                        <locus>(fol. 116vb)</locus>
+                        <author key="person_2290">Ps.-Ambrose</author>
+                        <rubric>Passio sanctorum martirum ab invencio Gervasii et Prothasii</rubric>
+                        <incipit>Ambrosius servus Christi fratribus per omnem Italiam … In divinis voluminibus reus subscribitur</incipit>
+                        <explicit><locus>(fol. 117rb)</locus> sepelivi, credens me orationibus eorum consequi misericordiam d.n.J.C. qui …</explicit>
+                        <note><title>B.H.L.,</title> 3514. <title>Clavis Pat. Lat.,</title> no. 2195.</note>
+                     </msItem>
+                     <msItem n="c">
+                        <locus>(fol. 117va)</locus>
+                        <rubric>Altercacio sancti Ambrosii contra eos qui animam non confitentur esse facturam</rubric>
+                        <incipit>Sic enim dicit deus. A me exiit spiritus</incipit>
+                        <explicit><locus>(fol. 117vb)</locus> corporibus figuratis.</explicit>
+                        <note>Ed. C. P. Caspari, <title>Kirchenhistorische Anecdota</title> I, 1883, pp. 227–9; <title>PL, Suppl.</title> 1,1958, col. 611. See <title>Clavis Pat. Lat.,</title> no. 170.</note>
+                     </msItem>
+                     <msItem n="d">
+                        <locus>(fol. 118ra)</locus>
+                        <author key="person_291862125">Pseudo Jerome</author>
+                        <title key="work_4042">Epistulae</title>
+                        <bibl>33</bibl>
+                        <rubric>Incipit Ambrosii epistola ad hominem qui se dicit penitentem et in seculo conversatur</rubric>
+                        <incipit>Ad te surgo hominem</incipit>
+                        <explicit><locus>(fol. 118va)</locus> et peccatores in ignem eternum.</explicit>
+                        <note>Pr. PL 30 col. 242–5. Ps.-Jerome Ep. 33. Probably by Pelagius: see <title>Clavis Pat. Lat.</title>, no. 743. The rest of fol. 118v is blank.</note>
+                     </msItem>
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>i + 180 leaves (fol. 159 is double, fol. i, 179 are flyleaves), <dimensions type="leaf" unit="mm">
+                              <height>345</height>
+                              <width>240</width>
+                           </dimensions></extent>
+                        <collation>1¹⁰ (1 canc. and replaced by original scribe in style of hand he used towards the end of Ambrosiaster), 2¹⁰–11¹⁰, 12⁸, 13¹⁰–18¹⁰, 1 leaf forming bifolium with pastedown; catchwords, the first scribe uses quire signatures a–m, a–c for quires 1–15; <secFol>adiecit gratiam</secFol></collation>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2" ruledLines="54 55">c. <dimensions type="ruled" unit="mm">
+                              <height max="253" min="249">249–53</height>
+                              <width>177</width>
+                           </dimensions>): 2 cols., 54–5 lines ruled with a hard point</layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <handDesc>
+                     <summary>Written in Germany in the mid–15th cent, in skilful hybrid script apparently by three scribes:</summary>
+                     <handNote n="a" script="hybrida">fol. 1–114v and 119–148v;</handNote>
+                     <handNote n="b" script="hybrida">fol. 115–118v;</handNote>
+                     <handNote n="c" script="hybrida">fol. 149–78.</handNote>
+                  </handDesc>
                   <decoDesc>
-                     <decoNote>
-                        <p>Decorated initials and border on fol. 1r. Decorated initials,
-            initials with penwork, simple red and blue initials. (P&amp;A i. 163, pl.
-            XII)</p>
-                     </decoNote>
+                     <decoNote type="decInit">Decorated initials and border on fol. 1r. Decorated initials, initials with penwork, simple red and blue initials. (P&amp;A i. 163, pl. XII)</decoNote>
+                     <decoNote type="decInit">On fol. 1 the first initial is in blue and gold infilled with flowers and foliage drawn in red and purple ink, with a background in green and blue. A gold bar border, ending in a blue floral spray and with purple pen decoration touched in green and blue, extends in the left-hand border. The second initial is in blue and red flourished in purple and red with a red bar border ending in an elaborate scrolling of flowers in red and blue. On fol. 87 is a painted initial in blue, scrolled in white and outlined in orange and red-brown, infilled with a spray of flowers in yellow and white on a divided orange and deep-red ground.</decoNote>
+                     <decoNote type="flourInit">Other large initials are in red and blue, flourished in red and blue, or purple, sometimes with red bar borders. The initial on fol. 102v is infilled with flowers drawn in pen, partly washed in yellow and outlined in green. Smaller initials are in red and blue. Paragraph marks, also in red or blue, are often extended into the margins to form grotesques, etc.: e.g. fol. 28v, 39v, 40v, 74v, no, 113 and on fol. 59 and 56v flowers have been drawn independently. Pächt-Alexander i, no. 163 and Pl. xii <locus>(fol. 1, much reduced)</locus>.</decoNote>
                   </decoDesc>
+                  <bindingDesc>
+                     <binding contemporary="true" notAfter="1500" notBefore="1440">
+                        <p>Original binding in wooden boards covered with white suede, squares projecting, original sewing, head and tail band sewn through the spine; coloured parchment knobs used as place-finders.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
                   <origin>
@@ -100,38 +203,39 @@
                         <country key="place_7000084">German</country>
                      </origPlace>
                   </origin>
+                  <provenance>On the front pastedown is a 15th-cent. list of contents preceded by the number <q>A. 46</q> and a line of text <hi rend="italic">ex-libris</hi> which has been cut out. There is an erasure at the top of fol. 1, and three labels have been removed from the spine.</provenance>
+                  <provenance>From the library of the <orgName key="org_150122851" role="fmo">Carthusians of St. Barbara, Cologne</orgName>, identifiable as no. O.39 in the catalogue of 1748: see K. Löffler, <title>Kölnische Bibliotheksgeschichte in Umriss,</title> Cologne, 1923, pp. 7–8, 73 n. 265.</provenance>
+                  <provenance>Later belonged to <persName key="person_34580474" role="fmo">Leander van Ess</persName> of Darmstadt: no. 133 in his sale catalogue of 1823.</provenance>
+                  <provenance>Bought 1824 by <persName key="person_73979081" role="fmo">Sir Thomas Phillipps</persName>: MS. Phillipps 518 (erased from lower comer of fol. 1r): lot 16 in Phillipps sale, Sotheby’s 24–8 April 1911.</provenance>
+                  <provenance>Bernard Quaritch, <title>Cat</title>. 321, December 1912, no. 144 with plate of fol. 1. Bought from them by <persName key="person_168027631" role="fmo">Wilfred Merton</persName> (see accompanying letter).</provenance>
+                  <provenance>Acquired by Lyell as an exchange in July 1944 from Davis and Orioli.</provenance>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from A. de la Mare, <title>Catalogue of the Medieval Manuscripts Bequeathed to the Bodleian Library Oxford by James P. R. Lyell</title> (1971) 
-                            
-                            
-                            <listBibl>
-                              <bibl type="LYELL" facs="cah0327.gif">Catalogue, p. 293</bibl>
-                              <bibl type="LYELL" facs="cah0328.gif">Catalogue, p. 294</bibl>
-                              <bibl type="LYELL" facs="cah0329.gif">Catalogue, p. 295</bibl>
+                        <source>Description adapted from A. de la Mare, <title>Catalogue of the Medieval Manuscripts Bequeathed to the Bodleian Library Oxford by James P. R. Lyell</title> (1971); with additions by Andrew Dunning. <listBibl>
+                              <bibl facs="cah0327.gif" type="LYELL">Catalogue, p. 293</bibl>
+                              <bibl facs="cah0328.gif" type="LYELL">Catalogue, p. 294</bibl>
+                              <bibl facs="cah0329.gif" type="LYELL">Catalogue, p. 295</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
-               <surrogates><bibl type="digital-facsimile" subtype="partial"><ref target="https://digital.bodleian.ox.ac.uk/objects/041183b0-9d8d-4c68-ab10-aa73c6ebac28/"><title>Digital Bodleian</title></ref> <note>(1 image from 35mm slides)</note></bibl></surrogates></additional>
+                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/inquire/p/041183b0-9d8d-4c68-ab10-aa73c6ebac28"><title>Digital Bodleian</title></ref>
+                        <note>(1 image from 35mm slides)</note></bibl></surrogates>
+               </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
-         <change when="2017-05-29">
-            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
-         </change>
-         <change when="2017-05-25">
-            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
-         </change>
+      </fileDesc>
+      <revisionDesc>
+         <change when="2020-12-16"><persName>Andrew Dunning</persName> Revised from description by <persName>Albinia de la Mare</persName>.</change>
+         <change when="2017-07-01">First online publication.</change>
+         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>
    </teiHeader>
    <text>
       <body>
-         <p><!--Body paragraph provided for validation and future transcription--></p>
+         <p/>
       </body>
    </text>
 </TEI>

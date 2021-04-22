@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8519">
+<TEI xml:id="manuscript_8519" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -24,24 +25,13 @@
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
-         <editionStmt>
-            <edition>TEI P5</edition>
-         </editionStmt>
          <publicationStmt>
-            <publisher>Special Collections, Bodleian Libraries</publisher>
-            <address>
+            <publisher>
                <orgName type="department">Special Collections</orgName>
                <orgName type="unit">Bodleian Libraries</orgName>
                <orgName type="institution">University of Oxford</orgName>
-               <street>Weston Library, Broad Street</street>
-               <settlement key="place_7011931">Oxford</settlement>
-               <postCode>OX1 3BG</postCode>
-               <country>United Kingdom</country>
-            </address>
-            <distributor>
                <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>
-            </distributor>
-            <!--Availability statement will be added here-->
+            </publisher>
             <idno type="msID">MS_Rawl_G_14</idno>
             <idno type="collection">Rawl G</idno>
             <idno type="catalogue">Western</idno>
@@ -60,15 +50,11 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem xml:id="MS_Rawl_G_14-item1" n="1" class="#biblia">
-                     <title type="desc" key="work_10455">Bible</title>
+                  <msItem class="#biblia" n="1" xml:id="MS_Rawl_G_14-item1">
+                     <title key="work_10455" type="desc">Bible</title>
                      <msItem resp="#VD">
-                        <title type="desc" key="work_16033">Epistle and Gospel list, Use of Sarum</title>
-                        <note>Added. Temporale (fol. 531), ending with the dedication; short sanctorale
-                           (fol. 533<hi rend="superscript">ra</hi>); common (fol. 533<hi rend="superscript">va</hi>) and votive
-                           masses (fol. 533<hi rend="superscript">vb</hi>). Incipits only. By another hand: verses with
-                           all the maiora duplicia, minora and samiduplicia (534) as observed by the Friars
-                           Minor.</note>
+                        <title key="work_16033" type="desc">Epistle and Gospel list, Use of Sarum</title>
+                        <note>Added. Temporale (fol. 531), ending with the dedication; short sanctorale (fol. 533<hi rend="superscript">ra</hi>); common (fol. 533<hi rend="superscript">va</hi>) and votive masses (fol. 533<hi rend="superscript">vb</hi>). Incipits only. By another hand: verses with all the maiora duplicia, minora and samiduplicia (534) as observed by the Friars Minor.</note>
                      </msItem>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
@@ -77,19 +63,19 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                        <extent resp="#SC">ii + 536 leaves <dimensions type="leaf" unit="mm" resp="#VD">
-                           <height>170</height>
-                           <width>117</width>
-                        </dimensions>
-                           <dimensions type="written" unit="mm" resp="#VD">
+                        <extent resp="#SC">ii + 536 leaves <dimensions resp="#VD" type="leaf" unit="mm">
+                              <height>170</height>
+                              <width>117</width>
+                           </dimensions>
+                           <dimensions resp="#VD" type="written" unit="mm">
                               <height>145</height>
                               <width>85</width>
                            </dimensions>
                         </extent>
-                      
-                     </supportDesc>  <layoutDesc resp="#VD">
-                           <layout columns="2" writtenLines="57">2 col. of 57 lines</layout>
-                        </layoutDesc>
+                     </supportDesc>
+                     <layoutDesc resp="#VD">
+                        <layout columns="2" writtenLines="57">2 col. of 57 lines</layout>
+                     </layoutDesc>
                   </objectDesc>
                   <decoDesc resp="#PA">
                      <decoNote>Good borders, historiated and other initials. (P&amp;A iii.494)</decoNote>
@@ -101,22 +87,23 @@
                      <origPlace cert="low">
                         <country key="place_7002445">English</country> (?)</origPlace>
                   </origin>
-                  <provenance resp="#SC"><q type="exLibris">Liber <orgName role="fmo" key="org_158172799">co<supplied>lleg</supplied>ij Lincolniensis</orgName> in Oxonia ex dono magistri <persName role="dnr" key="person_2778">Johannis Kend<supplied>al</supplied></persName> baccallarij in sacra Theologia</q> (before 1474, when this MS. is no. 1 in the college catalogue).</provenance>
-                  <provenance resp="#SC"><persName role="fmo" key="person_1203">Thomas Rawlinson</persName>, no. 893 in his sale March 1733/4.</provenance>
-                  <provenance resp="#SC" notAfter="1755" notBefore="1690"><persName role="fmo" key="person_47563478">Richard Rawlinson, 1690-1755</persName></provenance>
+                  <provenance resp="#SC"><q type="exLibris">Liber <orgName key="org_158172799" role="fmo">co<supplied>lleg</supplied>ij Lincolniensis</orgName> in Oxonia ex dono magistri <persName key="person_2778" role="dnr">Johannis Kend<supplied>al</supplied></persName> baccallarij in sacra Theologia</q> (before 1474, when this MS. is no. 1 in the college catalogue).</provenance>
+                  <provenance resp="#SC"><persName key="person_1203" role="fmo">Thomas Rawlinson</persName>, no. 893 in his sale March 1733/4.</provenance>
+                  <provenance notAfter="1755" notBefore="1690" resp="#SC"><persName key="person_47563478" role="fmo">Richard Rawlinson, 1690–1755</persName></provenance>
                   <acquisition>Bequeathed by him to the Bodleian.</acquisition>
                </history>
-               <additional><adminInfo>
+               <additional>
+                  <adminInfo>
                      <recordHist>
-                        <source>S. J. P. Van Dijk, <title>Handlist of the Latin Liturgical Manuscripts in the Bodleian Library Oxford : Vol. 1: Mass Books</title> (typescript, 1957); Pächt and Alexander (see Bibliography). Previously described in the Summary Catalogue. 
-                            
-                            <listBibl>
-                              <bibl type="SC" facs="aas0357.gif">Summary Catalogue, Vol. 3, p.  342</bibl>
+                        <source>S. J. P. Van Dijk, <title>Handlist of the Latin Liturgical Manuscripts in the Bodleian Library Oxford : Vol. 1: Mass Books</title> (typescript, 1957); Pächt and Alexander (see Bibliography). Previously described in the Summary Catalogue. <listBibl>
+                              <bibl facs="aas0357.gif" type="SC">Summary Catalogue, Vol. 3, p. 342</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
-                  <surrogates><bibl type="digital-facsimile" subtype="partial"><ref target="https://digital.bodleian.ox.ac.uk/objects/f84deaaf-47c8-48a5-b986-4e4a6e4fa844/"><title>Digital Bodleian</title></ref> <note>(1 image from 35mm slides)</note></bibl></surrogates><listBibl type="WRAPPER">
+                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/f84deaaf-47c8-48a5-b986-4e4a6e4fa844/"><title>Digital Bodleian</title></ref>
+                        <note>(1 image from 35mm slides)</note></bibl></surrogates>
+                  <listBibl type="WRAPPER">
                      <listBibl>
                         <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, III (1973), no. 494</bibl>
                      </listBibl>
@@ -128,23 +115,19 @@
                            </ref>
                         </bibl>
                      </listBibl>
-                  </listBibl></additional>
+                  </listBibl>
+               </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
-         <change when="2017-05-29">
-            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
-         </change>
-         <change when="2017-05-25">
-            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
-         </change>
+      </fileDesc>
+      <revisionDesc>
+         <change when="2017-07-01">First online publication.</change>
+         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>
    </teiHeader>
    <text>
       <body>
-         <p><!--Body paragraph provided for validation and future transcription--></p>
+         <p/>
       </body>
    </text>
 </TEI>

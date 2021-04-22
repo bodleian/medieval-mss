@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_7996">
+<TEI xml:id="manuscript_7996" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -17,24 +17,13 @@
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
-         <editionStmt>
-            <edition>TEI P5</edition>
-         </editionStmt>
          <publicationStmt>
-            <publisher>Special Collections, Bodleian Libraries</publisher>
-            <address>
+            <publisher>
                <orgName type="department">Special Collections</orgName>
                <orgName type="unit">Bodleian Libraries</orgName>
                <orgName type="institution">University of Oxford</orgName>
-               <street>Weston Library, Broad Street</street>
-               <settlement key="place_7011931">Oxford</settlement>
-               <postCode>OX1 3BG</postCode>
-               <country>United Kingdom</country>
-            </address>
-            <distributor>
                <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>
-            </distributor>
-            <!--Availability statement will be added here-->
+            </publisher>
             <idno type="msID">MS_Rawl_B_193</idno>
             <idno type="collection">Rawl B</idno>
             <idno type="catalogue">Western</idno>
@@ -53,7 +42,7 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem xml:id="MS_Rawl_B_193-item1" n="1">
+                  <msItem n="1" xml:id="MS_Rawl_B_193-item1">
                      <locus>(fols. 1r-111r)</locus>
                      <author key="person_90633533">Ranulf Higden</author>
                      <title key="work_4214">Polychronicon</title>
@@ -67,12 +56,11 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                        <extent>ii + ii + 111 + ii + i
-                           <dimensions unit="mm" type="leaf">
+                        <extent>ii + ii + 111 + ii + i <dimensions type="leaf" unit="mm">
                               <height>250</height>
                               <width>175</width>
                            </dimensions>
-                           <dimensions unit="mm" type="written">
+                           <dimensions type="written" unit="mm">
                               <height quantity="175">c. 175</height>
                               <width quantity="125">c. 125</width>
                            </dimensions>
@@ -99,14 +87,15 @@
                      </origPlace>
                   </origin>
                   <provenance>Dating after K. Scott, <title>An index of images in English manuscripts from the time of Chaucer to Henry VIII c.1380 - c.1509</title> II (2002) no. 818</provenance>
-               <provenance notBefore="1690" notAfter="1755" resp="#MMM"><persName role="fmo" key="person_47563478">Richard Rawlinson, 1690-1755</persName></provenance><acquisition when="1755" resp="#MMM">Bequeathed to the Bodleian in 1755</acquisition></history>
+                  <provenance notAfter="1755" notBefore="1690" resp="#MMM"><persName key="person_47563478" role="fmo">Richard Rawlinson, 1690–1755</persName></provenance>
+                  <acquisition resp="#MMM" when="1755">Bequeathed to the Bodleian in 1755</acquisition>
+               </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Description adapted from the Quarto Catalogue (W. D. Macray, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ...viri munificentissimi Ricardi Rawlinson, J.C.D., codicum...complectens</title>, Quarto Catalogues V, 5 fascicles, 1862-1900), with limited additional description (dimensions, layout) by Matthew Holford, June 2019, and with reference to published literature cited in the description. 
-                            <listBibl>
-                              <bibl type="SC" facs="aas0212.gif">Summary Catalogue, Vol. 3, p.  197</bibl>
-                               <bibl type="QUARTO" facs="acv0267.gif">Quarto Catalogue, Col. 526</bibl>
+                        <source>Description adapted from the Quarto Catalogue (W. D. Macray, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ...viri munificentissimi Ricardi Rawlinson, J.C.D., codicum...complectens</title>, Quarto Catalogues V, 5 fascicles, 1862–1900), with limited additional description (dimensions, layout) by Matthew Holford, June 2019, and with reference to published literature cited in the description. <listBibl>
+                              <bibl facs="aas0212.gif" type="SC">Summary Catalogue, Vol. 3, p. 197</bibl>
+                              <bibl facs="acv0267.gif" type="QUARTO">Quarto Catalogue, Col. 526</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -114,20 +103,16 @@
                </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc><change when="2019-10-31" xml:id="MMM"><persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>          <change when="2017-07-01">First online publication.</change>
-
-         <change when="2017-05-29">
-            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
-         </change>
-         <change when="2017-05-25">
-            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
-         </change>
+      </fileDesc>
+      <revisionDesc>
+         <change when="2019-10-31" xml:id="MMM"><persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
+         <change when="2017-07-01">First online publication.</change>
+         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>
    </teiHeader>
    <text>
       <body>
-         <p><!--Body paragraph provided for validation and future transcription--></p>
+         <p/>
       </body>
    </text>
 </TEI>

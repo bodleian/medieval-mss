@@ -1,5 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xml:id="manuscript_2" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -24,24 +26,13 @@
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
-         <editionStmt>
-            <edition>TEI P5</edition>
-         </editionStmt>
          <publicationStmt>
-            <publisher>Special Collections, Bodleian Libraries</publisher>
-            <address>
+            <publisher>
                <orgName type="department">Special Collections</orgName>
                <orgName type="unit">Bodleian Libraries</orgName>
                <orgName type="institution">University of Oxford</orgName>
-               <street>Weston Library, Broad Street</street>
-               <settlement key="place_7011931">Oxford</settlement>
-               <postCode>OX1 3BG</postCode>
-               <country>United Kingdom</country>
-            </address>
-            <distributor>
                <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>
-            </distributor>
-            <!--Availability statement will be added here-->
+            </publisher>
             <idno type="msID">MS_Add_A_100</idno>
             <idno type="collection">Add A</idno>
             <idno type="catalogue">Western</idno>
@@ -60,13 +51,12 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem xml:id="MS_Add_A_100-item1" n="1" resp="#SC">
-                     <title key="work_15479">Vita Sancti Honorati archiepiscopi
-              Arelatensis</title>
+                  <msItem n="1" resp="#SC" xml:id="MS_Add_A_100-item1">
+                     <title key="work_15479">Vita Sancti Honorati archiepiscopi Arelatensis</title>
                      <note resp="#MLH">(<bibl type="repertory">
-                        <abbr>BHL</abbr> 
-                        <citedRange unit="number">3976</citedRange>
-                     </bibl>)</note>
+                           <abbr>BHL</abbr>
+                           <citedRange unit="number">3976</citedRange>
+                        </bibl>)</note>
                      <incipit>Cum dyabolus pronus et sollicitus humagni generis inimicus</incipit>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
@@ -75,12 +65,11 @@
                   <objectDesc form="codex" resp="#DD">
                      <supportDesc material="chart">
                         <support>paper</support>
-                        <extent>v + 76 fols.
-                           <dimensions unit="mm" type="leaf">
+                        <extent>v + 76 fols. <dimensions type="leaf" unit="mm">
                               <height>220</height>
                               <width>150</width>
                            </dimensions>
-                           <dimensions unit="mm" type="written">
+                           <dimensions type="written" unit="mm">
                               <height>145</height>
                               <width>110</width>
                            </dimensions>
@@ -91,58 +80,50 @@
                      </layoutDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote resp="#PA">
-                        Good initial (rubbed). Written with calligraphic flourishes, by
-            <persName role="scr" key="person_1230">Vincentius Marun</persName> at the college of <orgName key="org_116">St. Martial, in Avignon</orgName>. (P&amp;A i.
-            671)
-                     </decoNote>
+                     <decoNote resp="#PA"> Good initial (rubbed). Written with calligraphic flourishes, by <persName key="person_1230" role="scr">Vincentius Marun</persName> at the college of <orgName key="org_116">St. Martial, in Avignon</orgName>. (P&amp;A i. 671)</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin resp="#DD">
-                     <origDate calendar="Gregorian" when="1449" cert="high">1449</origDate>
+                     <origDate calendar="Gregorian" cert="high" when="1449">1449</origDate>
                      <origPlace>
                         <country key="place_1000070">French</country>, <settlement key="place_7008799">Avignon</settlement>
                         <!--ORIGINAL: French, Avignon-->
                      </origPlace>
                   </origin>
                   <provenance resp="#DD">Fol. 75v: 'Explicit uita beati honorati scripta per me dompnum Vincencium marum Religiosum studentem in collegio sancti marcialis auinione ob reuerenciam dicti sancti nec non domini burgensis Iacobi pharandis [<hi rend="italic">corrected from</hi> pharandii?] auinione sui benefactorum singularissimi Anno domini millesimo cccc.mo xlix et finita et completa in prima ebdomada maij'.</provenance>
-                  <provenance resp="#DD">Fol. iv, written over another name: '<persName role="fmo" key="person_2748">f. G. Champeheuryoulx carme d'Orleans docteur et predicateur a Rouen</persName> 1599'.</provenance>
-                  <provenance resp="#SC"><persName role="fmo" key="person_2749">Robert Le Tellyer</persName>, 1610, fol. 76.</provenance>
-                  <provenance resp="#SC"><persName role="fmo" key="person_2750">John Calder</persName>, at Lisbon, Apr. 16 1766, who then presented it <persName role="fmo" key="person_2751">rev. Gavin Mitchell, minister of Kineller</persName>, fol. iii.</provenance>
+                  <provenance resp="#DD">Fol. iv, written over another name: '<persName key="person_2748" role="fmo">f. G. Champeheuryoulx carme d'Orleans docteur et predicateur a Rouen</persName> 1599'.</provenance>
+                  <provenance resp="#SC"><persName key="person_2749" role="fmo">Robert Le Tellyer</persName>, 1610, fol. 76.</provenance>
+                  <provenance resp="#SC"><persName key="person_2750" role="fmo">John Calder</persName>, at Lisbon, Apr. 16 1766, who then presented it <persName key="person_2751" role="fmo">rev. Gavin Mitchell, minister of Kineller</persName>, fol. iii.</provenance>
                   <acquisition resp="#SC">Purchased 1869.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Adapted (2017) from A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts</title>; Pächt and Alexander; and the Summary Catalogue (1905). 
-                            <listBibl>
-                              <bibl type="SC" facs="aam0568.gif">Summary Catalogue, Vol. 5, p.  533</bibl>
+                        <source>Adapted (2017) from A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts</title>; Pächt and Alexander; and the Summary Catalogue (1905). <listBibl>
+                              <bibl facs="aam0568.gif" type="SC">Summary Catalogue, Vol. 5, p. 533</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
-                  <listBibl type="WRAPPER"><listBibl>
-                     <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 4</bibl>
-                     <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, I (1966), no. 671</bibl>
-                  </listBibl></listBibl>
+                  <listBibl type="WRAPPER">
+                     <listBibl>
+                        <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435–1600 in Oxford Libraries</title> (Oxford, 1984), no. 4</bibl>
+                        <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, I (1966), no. 671</bibl>
+                     </listBibl>
+                  </listBibl>
                </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
-         <change when="2017-05-29">
-            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
-         </change>
-         <change when="2017-05-25">
-            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
-         </change>
+      </fileDesc>
+      <revisionDesc>
+         <change when="2017-07-01">First online publication.</change>
+         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>
    </teiHeader>
    <text>
       <body>
-         <p><!--Body paragraph provided for validation and future transcription--></p>
+         <p/>
       </body>
    </text>
 </TEI>

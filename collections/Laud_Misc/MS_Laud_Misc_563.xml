@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_7363">
+<TEI xml:id="manuscript_7363" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -32,24 +33,13 @@
                <persName>J. J. G. Alexander</persName>
             </respStmt>
          </titleStmt>
-         <editionStmt>
-            <edition>TEI P5</edition>
-         </editionStmt>
          <publicationStmt>
-            <publisher>Special Collections, Bodleian Libraries</publisher>
-            <address>
+            <publisher>
                <orgName type="department">Special Collections</orgName>
                <orgName type="unit">Bodleian Libraries</orgName>
                <orgName type="institution">University of Oxford</orgName>
-               <street>Weston Library, Broad Street</street>
-               <settlement key="place_7011931">Oxford</settlement>
-               <postCode>OX1 3BG</postCode>
-               <country>United Kingdom</country>
-            </address>
-            <distributor>
                <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>
-            </distributor>
-            <!--Availability statement will be added here-->
+            </publisher>
             <idno type="msID">MS_Laud_Misc_563</idno>
             <idno type="collection">Laud Misc</idno>
             <idno type="catalogue">Western</idno>
@@ -69,10 +59,11 @@
                </msIdentifier>
                <head>Albertus Aquensis; Germany (Eberbach?), 12th century, end</head>
                <msContents>
-                  <msItem xml:id="MS_Laud_Misc_563-item1" n="1">
+                  <msItem n="1" xml:id="MS_Laud_Misc_563-item1">
                      <locus>(fols. 1r-119r)</locus>
                      <author key="person_35250042">Albertus Aquensis</author>
-                     <title key="work_326">Historia Hierosolymitana expeditionis</title><note>(bks. 7-12)</note>
+                     <title key="work_326">Historia Hierosolymitana expeditionis</title>
+                     <note>(bks. 7–12)</note>
                      <msItem>
                         <locus>(fols. 1r-119r)</locus>
                         <note>Capitula to bk. 7 (incomplete, beginning at c. 29)</note>
@@ -80,7 +71,7 @@
                         <explicit> cum captivis Christianis cum spoliis Christianorum immissi sunt. </explicit>
                         <note>Added note in another, contemporary hand at the end of the text: Anno milleno centeno quo minus uno Iherusalem Franci capiunt virtute potenti. </note>
                      </msItem>
-                     <note>Part 2 (containing books 7-12) of a 2 volume set. For the first part, see MS. Laud Misc. 561. </note>
+                     <note>Part 2 (containing books 7–12) of a 2 volume set. For the first part, see MS. Laud Misc. 561. </note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -88,12 +79,11 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                        <extent>119 leaves
-                           <dimensions unit="mm" type="leaf">
+                        <extent>119 leaves <dimensions type="leaf" unit="mm">
                               <height>256</height>
                               <width>168</width>
                            </dimensions>
-                           <dimensions unit="mm" type="written">
+                           <dimensions type="written" unit="mm">
                               <height>179</height>
                               <width>123</width>
                            </dimensions>
@@ -111,70 +101,65 @@
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notBefore="1175" notAfter="1200">12th century, end</origDate>
+                     <origDate calendar="Gregorian" notAfter="1200" notBefore="1175">12th century, end</origDate>
                      <!--was #PA<origDate calendar="Gregorian" when="1200">c. 1200</origDate>-->
                      <origPlace>
                         <country key="place_7000084">German</country>, possibly <orgName key="org_133214228">Eberbach, Cistercian abbey (?)</orgName>
                      </origPlace>
                   </origin>
                   <provenance resp="#NFP">Possibly made at the <orgName key="org_133214228">Cistercian monastery of Eberbach</orgName> (Palmer, p. 296).</provenance>
-                  <provenance><persName key="person_4237">Petrus von Lautern</persName>: name inscribed in Greek letters, πετρυσ δει λυτρου, fol. 119r.</provenance> 
+                  <provenance><persName key="person_4237">Petrus von Lautern</persName>: name inscribed in Greek letters, πετρυσ δει λυτρου, fol. 119r.</provenance>
                   <provenance resp="#NFP" when="1502">Identifiable as f 16 in the <orgName key="org_133214228" role="fmo">Eberbach</orgName> library catalogue of 1502.</provenance>
-                  <provenance resp="#Q2" when="1637"><persName role="fmo" key="person_54940373">William Laud, 1573-1645</persName>, 1637.
-                  </provenance><acquisition when="1639" resp="#Q2">Part of his third donation to the Bodleian, 1639.</acquisition>
+                  <provenance resp="#Q2" when="1637"><persName key="person_54940373" role="fmo">William Laud, 1573–1645</persName>, 1637. </provenance>
+                  <acquisition resp="#Q2" when="1639">Part of his third donation to the Bodleian, 1639.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Description adapted by Tuija Ainonen (November 2019) from the following sources (with additional description of contents):
-                           <listBibl>
+                        <source>Description adapted by Tuija Ainonen (November 2019) from the following sources (with additional description of contents): <listBibl>
                               <bibl>Nigel F. Palmer, <title>Zisterzienser und ihre Bücher: die mittelalterliche Bibliotheksgeschichte von Kloster Eberbach im Rheingau</title> (Regensburg, 1998), pp. 147, 272, 296 [physical description, date, origin, provenance]</bibl>
-                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, 3 vols. (1966-1973) I, no. 108.</bibl>                    
-                              <bibl>H. O. Coxe, <title>Laudian Manuscripts</title>, Quarto Catalogues II, repr. with corrections, 1969, from the original ed. of 1858-1885 [contents, acquisition]</bibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, 3 vols. (1966–1973) I, no. 108.</bibl>
+                              <bibl>H. O. Coxe, <title>Laudian Manuscripts</title>, Quarto Catalogues II, repr. with corrections, 1969, from the original ed. of 1858–1885 [contents, acquisition]</bibl>
                            </listBibl>
-                           
-                            <listBibl>
-                              <bibl type="QUARTO" facs="aby0250.gif">Quarto Catalogue, col. 404</bibl>
-                              <bibl type="QUARTO" facs="aby0351.gif">Quarto Catalogue, p. 571</bibl>
-                              <bibl type="SC" facs="aap0068.gif">Summary Catalogue, vol. 2, part 1, p. 47</bibl>
+                           <listBibl>
+                              <bibl facs="aby0250.gif" type="QUARTO">Quarto Catalogue, col. 404</bibl>
+                              <bibl facs="aby0351.gif" type="QUARTO">Quarto Catalogue, p. 571</bibl>
+                              <bibl facs="aap0068.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 47</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
                   <surrogates>
-                     <bibl type="digital-facsimile" subtype="full">
+                     <bibl subtype="full" type="digital-facsimile">
                         <ref target="https://digital.bodleian.ox.ac.uk/objects/6a3678e0-2152-469a-b8fd-0cfe667cca2b/">
-                        <title>Digital Bodleian</title></ref> <note>(full digital facsimile)</note>
+                           <title>Digital Bodleian</title></ref>
+                        <note>(full digital facsimile)</note>
                      </bibl>
-                     <bibl type="digital-facsimile" subtype="partial">
-                     <ref target="https://digital.bodleian.ox.ac.uk/objects/4a4e5e42-c0aa-45cf-8ebd-204140bc82df/">
-                        <title>Digital Bodleian</title></ref> <note>(1 image from 35mm slides)</note>
+                     <bibl subtype="partial" type="digital-facsimile">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/4a4e5e42-c0aa-45cf-8ebd-204140bc82df/">
+                           <title>Digital Bodleian</title></ref>
+                        <note>(1 image from 35mm slides)</note>
                      </bibl>
-               </surrogates>
-               <listBibl type="WRAPPER">
+                  </surrogates>
+                  <listBibl type="WRAPPER">
                      <listBibl type="INTERNET">
                         <head>Online resources:</head>
                         <bibl><ref target="https://hab.bodleian.ox.ac.uk/en/"><title>Manuscripts from German-Speaking Lands – A Polonsky Foundation Digitization Project</title></ref></bibl>
                      </listBibl>
-               </listBibl>
-              </additional>
+                  </listBibl>
+               </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc>          
+      </fileDesc>
+      <revisionDesc>
          <change when="2019-11-21">Description revised for Polonsky digitization project to include additional information from printed descriptions.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-29">
-            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
-         </change>
-         <change when="2017-05-25">
-            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
-         </change>
+         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>
    </teiHeader>
    <text>
       <body>
-         <p><!--Body paragraph provided for validation and future transcription--></p>
+         <p/>
       </body>
    </text>
 </TEI>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2037">
+<TEI xml:id="manuscript_2037" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -20,24 +20,13 @@
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
-         <editionStmt>
-            <edition>TEI P5</edition>
-         </editionStmt>
          <publicationStmt>
-            <publisher>Special Collections, Bodleian Libraries</publisher>
-            <address>
+            <publisher>
                <orgName type="department">Special Collections</orgName>
                <orgName type="unit">Bodleian Libraries</orgName>
                <orgName type="institution">University of Oxford</orgName>
-               <street>Weston Library, Broad Street</street>
-               <settlement key="place_7011931">Oxford</settlement>
-               <postCode>OX1 3BG</postCode>
-               <country>United Kingdom</country>
-            </address>
-            <distributor>
                <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>
-            </distributor>
-            <!--Availability statement will be added here-->
+            </publisher>
             <idno type="msID">MS_Canon_Bibl_Lat_19</idno>
             <idno type="collection">Canon Bibl Lat</idno>
             <idno type="catalogue">Western</idno>
@@ -57,8 +46,8 @@
                </msIdentifier>
                <msContents>
                   <textLang mainLang="la">Latin</textLang>
-                  <msItem xml:id="MS_Canon_Bibl_Lat_19-item1" n="1" class="#biblia">
-                     <title type="desc" key="work_12098">Gospels</title>
+                  <msItem class="#biblia" n="1" xml:id="MS_Canon_Bibl_Lat_19-item1">
+                     <title key="work_12098" type="desc">Gospels</title>
                   </msItem>
                   <msItem>
                      <locus>(fol. 179)</locus>
@@ -71,9 +60,9 @@
                      <supportDesc material="chart">
                         <support>paper</support>
                         <extent> i + 189 + 1 fol.<dimensions type="leaf" unit="mm">
-                           <height>156</height>
-                           <width>108</width>
-                        </dimensions>
+                              <height>156</height>
+                              <width>108</width>
+                           </dimensions>
                            <dimensions type="written" unit="mm">
                               <height>111</height>
                               <width>72</width>
@@ -90,10 +79,10 @@
                   <bindingDesc>
                      <binding notAfter="1550" notBefore="1475">
                         <p>15th century, late, or 16th century, first half, <placeName key="place_1000080">Italian</placeName>: thin pasteboards; dark brown leather, blind-tooled with lines, stamps, punches, and strapwork; spine cross-hatched with blind double lines and punches, and lined with small fragments of medieval script; formerly with four pairs of dark-brown textile ties, all lost. <dimensions type="binding" unit="mm">
-                           <height min="160" max="161">160-161</height>
-                           <width min="109" max="110">109-110</width>
-                           <depth quantity="31" precision="medium">c. 31</depth>
-                        </dimensions> (book closed).</p>
+                              <height max="161" min="160">160–161</height>
+                              <width max="110" min="109">109–110</width>
+                              <depth precision="medium" quantity="31">c. 31</depth>
+                           </dimensions> (book closed).</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
@@ -102,17 +91,20 @@
                      <origPlace><country key="place_1000080">Italy</country></origPlace>
                      <origDate calendar="Gregorian" notAfter="1500" notBefore="1450">15th century, second half</origDate>
                   </origin>
-               <provenance notBefore="1727" notAfter="1805" resp="#MMM"><persName role="fmo" key="person_2384880">Matteo Luigi Canonici, 1727-1805</persName></provenance><provenance notAfter="1807" resp="#MMM"><persName role="fmo" key="person_446">Giuseppe Canonici , -1807</persName></provenance><acquisition when="1817" resp="#MMM">Purchased by the Bodleian in 1817</acquisition></history>
+                  <provenance notAfter="1805" notBefore="1727" resp="#MMM"><persName key="person_2384880" role="fmo">Matteo Luigi Canonici, 1727–1805</persName></provenance>
+                  <provenance notAfter="1807" resp="#MMM"><persName key="person_446" role="fmo">Giuseppe Canonici , -1807</persName></provenance>
+                  <acquisition resp="#MMM" when="1817">Purchased by the Bodleian in 1817</acquisition>
+               </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Description adapted (April 2020) from the following sources: <listBibl><bibl>S. J. P. Van Dijk, <title>Handlist of the Latin Liturgical Manuscripts in the Bodleian Library Oxford : Vol. 1: Mass Books</title> (typescript, 1957)</bibl><bibl>B. C. Barker-Benfield, <title>Bookbindings of Canonici manuscripts : a survey of early and non-standard bindings, mostly Italian, in the Canonici collection of the Bodleian Library, University of Oxford</title> (Oxford, privately printed, 2020) [binding]</bibl></listBibl> Previously described in the Quarto Catalogue (H. O. Coxe,  <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854). 
-                            
-                            
-                            <listBibl>
-                              <bibl type="QUARTO" facs="abz0134.gif">Quarto Catalogue, col. 256</bibl>
-                              <bibl type="QUARTO" facs="abz0135.gif">Quarto Catalogue, col. 257</bibl>
-                              <bibl type="SC" facs="aaz0343.gif">Summary Catalogue, vol. 4, p. 324</bibl>
+                        <source>Description adapted (April 2020) from the following sources: <listBibl>
+                              <bibl>S. J. P. Van Dijk, <title>Handlist of the Latin Liturgical Manuscripts in the Bodleian Library Oxford : Vol. 1: Mass Books</title> (typescript, 1957)</bibl>
+                              <bibl>B. C. Barker-Benfield, <title>Bookbindings of Canonici manuscripts : a survey of early and non-standard bindings, mostly Italian, in the Canonici collection of the Bodleian Library, University of Oxford</title> (Oxford, privately printed, 2020) [binding]</bibl>
+                           </listBibl> Previously described in the Quarto Catalogue (H. O. Coxe, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854). <listBibl>
+                              <bibl facs="abz0134.gif" type="QUARTO">Quarto Catalogue, col. 256</bibl>
+                              <bibl facs="abz0135.gif" type="QUARTO">Quarto Catalogue, col. 257</bibl>
+                              <bibl facs="aaz0343.gif" type="SC">Summary Catalogue, vol. 4, p. 324</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -120,25 +112,17 @@
                </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
+      </fileDesc>
       <revisionDesc>
          <change when="2020-04">Binding description added.</change>
-         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName>
-      Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
-      in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.'
-    </change>          <change when="2017-07-01">First online publication.</change>
-
-         <change when="2017-05-29">
-            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
-         </change>
-         <change when="2017-05-25">
-            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
-         </change>
+         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
+         <change when="2017-07-01">First online publication.</change>
+         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>
    </teiHeader>
    <text>
       <body>
-         <p><!--Body paragraph provided for validation and future transcription--></p>
+         <p/>
       </body>
    </text>
 </TEI>

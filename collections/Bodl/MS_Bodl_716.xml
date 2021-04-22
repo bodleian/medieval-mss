@@ -1,5 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1705">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xml:id="manuscript_1705" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -24,24 +26,13 @@
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
-         <editionStmt>
-            <edition>TEI P5</edition>
-         </editionStmt>
          <publicationStmt>
-            <publisher>Special Collections, Bodleian Libraries</publisher>
-            <address>
+            <publisher>
                <orgName type="department">Special Collections</orgName>
                <orgName type="unit">Bodleian Libraries</orgName>
                <orgName type="institution">University of Oxford</orgName>
-               <street>Weston Library, Broad Street</street>
-               <settlement key="place_7011931">Oxford</settlement>
-               <postCode>OX1 3BG</postCode>
-               <country>United Kingdom</country>
-            </address>
-            <distributor>
                <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>
-            </distributor>
-            <!--Availability statement will be added here-->
+            </publisher>
             <idno type="msID">MS_Bodl_716</idno>
             <idno type="collection">Bodl</idno>
             <idno type="catalogue">Western</idno>
@@ -61,12 +52,12 @@
                </msIdentifier>
                <msContents resp="#DD #SC">
                   <textLang mainLang="la">Latin</textLang>
-                  <msItem xml:id="MS_Bodl_716-item1" n="1">
-                    <locus>(fol. 1)</locus>
+                  <msItem n="1" xml:id="MS_Bodl_716-item1">
+                     <locus>(fol. 1)</locus>
                      <author key="person_68939042">John Wyclif</author>
                      <title key="work_2789">Postilla super nouum testamentum</title>
                   </msItem>
-                  <msItem xml:id="MS_Bodl_716-item2" n="2">
+                  <msItem n="2" xml:id="MS_Bodl_716-item2">
                      <locus>(fol. 173)</locus>
                      <author key="person_2297">Ps.-Hugh of Saint-Cher</author>
                      <title key="work_4024">Commentary on Revelation</title>
@@ -77,78 +68,80 @@
                      <colophon>Explicit etcetera Scriptus oxonie Anno domini m<hi rend="superscript">o</hi> cccc<hi rend="superscript">o</hi> 3<hi rend="superscript">o</hi></colophon>
                   </msItem>
                   <msItem>
-                     <note>Fols. 247-255v contain tables in a later hand.</note>
+                     <note>Fols. 247–255v contain tables in a later hand.</note>
                   </msItem>
                </msContents>
                <physDesc resp="#DD">
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                        <extent>i + <num type="leaf">255</num> + i fols.
-                           <dimensions unit="mm" type="leaf">
+                        <extent>i + <num type="leaf">255</num> + i fols. <dimensions type="leaf" unit="mm">
                               <height>345</height>
                               <width>245</width>
                            </dimensions>
                         </extent>
                      </supportDesc>
                      <layoutDesc>
-                        <layout columns="2" writtenLines="53 56">2 cols., 53-c. 56 lines, column space <dimensions unit="mm" type="column">
-                           <height max="250" min="240">240-50</height>
-                           <width>80</width>
-                        </dimensions></layout>
+                        <layout columns="2" writtenLines="53 56">2 cols., 53-c. 56 lines, column space <dimensions type="column" unit="mm">
+                              <height max="250" min="240">240–50</height>
+                              <width>80</width>
+                           </dimensions></layout>
                      </layoutDesc>
                   </objectDesc>
                   <handDesc hands="2">
-                     <handNote>Two hands: (1) fols. 1-69v, 133v-246v; (2) fols. 73-133.</handNote>
+                     <handNote>Two hands: (1) fols. 1–69v, 133v-246v; (2) fols. 73–133.</handNote>
                   </handDesc>
                   <decoDesc>
-                     <decoNote type="flourInit" resp="#PA">Penwork (P&amp;A, addenda)</decoNote>
+                     <decoNote resp="#PA" type="flourInit">Penwork (P&amp;A, addenda)</decoNote>
                      <decoNote type="colInit">Coloured initials.</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin resp="#DD">
-                     <origDate calendar="Gregorian" when="1403" cert="high">1403</origDate>
+                     <origDate calendar="Gregorian" cert="high" when="1403">1403</origDate>
                      <origPlace>
                         <country key="place_7002445">English</country>, <settlement key="place_7011931">Oxford</settlement>
                      </origPlace>
                   </origin>
-                  <provenance resp="#DD"><orgName role="fmo" key="org_150107857">Benedictine abbey of Bury St Edmunds</orgName>, purchased by fr. <persName key="person_3056">John Cranewys</persName>: <q>Secunda pars postillatoris super sacram scripturam de empcione fratris Johannis Cranewys precij iii marcarum</q> (fol. iii verso).</provenance>
-                  <provenance resp="#SC"><orgName role="fmo" key="org_159532915">Pembroke College, Cambridge</orgName>, pressmark <q>A. 8. 1</q></provenance>
-                  <acquisition when="1613" cert="low" resp="#SC">Perhaps purchased from John Edwards, bookseller, London, 1613.</acquisition><!-- not marked up, as bookseller, but check -->
+                  <provenance resp="#DD"><orgName key="org_150107857" role="fmo">Benedictine abbey of Bury St Edmunds</orgName>, purchased by fr. <persName key="person_3056">John Cranewys</persName>: <q>Secunda pars postillatoris super sacram scripturam de empcione fratris Johannis Cranewys precij iii marcarum</q> (fol. iii verso).</provenance>
+                  <provenance resp="#SC"><orgName key="org_159532915" role="fmo">Pembroke College, Cambridge</orgName>, pressmark <q>A. 8. 1</q></provenance>
+                  <acquisition cert="low" resp="#SC" when="1613">Perhaps purchased from John Edwards, bookseller, London, 1613.</acquisition>
+                  <!-- not marked up, as bookseller, but check -->
                </history>
-               <additional><adminInfo>
+               <additional>
+                  <adminInfo>
                      <recordHist>
-                        <source>Description adapted (March 2019) from the following sources, and with reference to published sources cited in the description: 
-                           <listBibl>
-                              <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 111 [contents, physical description, origin, provenance]</bibl>
+                        <source>Description adapted (March 2019) from the following sources, and with reference to published sources cited in the description: <listBibl>
+                              <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435–1600 in Oxford Libraries</title> (Oxford, 1984), no. 111 [contents, physical description, origin, provenance]</bibl>
                               <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, addenda (by B. Barker-Benfield) (1974), p. 10 [decoration]</bibl>
-                              <bibl>Summary Catalogue (1922) [contents, provenance, acquisition]</bibl></listBibl>
-                            <listBibl>
-                              <bibl type="SC" facs="aap0479.gif">Summary Catalogue, vol. 2, part 1, p. 458</bibl>
-                              <bibl type="SC" facs="aap0480.gif">Summary Catalogue, vol. 2, part 1, p. 459</bibl>
+                              <bibl>Summary Catalogue (1922) [contents, provenance, acquisition]</bibl>
+                           </listBibl>
+                           <listBibl>
+                              <bibl facs="aap0479.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 458</bibl>
+                              <bibl facs="aap0480.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 459</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
-                  </adminInfo><listBibl type="WRAPPER"><listBibl type="INTERNET"><head>Online resources:</head><bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/817"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl></listBibl></listBibl></additional>
+                  </adminInfo>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="INTERNET">
+                        <head>Online resources:</head>
+                        <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/817"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl>
+                     </listBibl>
+                  </listBibl>
+               </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      
-      <revisionDesc>        
-         <change who="#MLH" when="2019-03-25">Revised to incorporate all information in Watson and SC.</change>
+      </fileDesc>
+      <revisionDesc>
+         <change when="2019-03-25" who="#MLH">Revised to incorporate all information in Watson and SC.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-29">
-            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
-         </change>
-         <change when="2017-05-25">
-            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
-         </change>
+         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>
    </teiHeader>
    <text>
       <body>
-         <p><!--Body paragraph provided for validation and future transcription--></p>
+         <p/>
       </body>
    </text>
 </TEI>

@@ -1,37 +1,28 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_7837">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xml:id="manuscript_7837" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Lyell empt. 2</title>
             <title type="collection">MSS. Lyell</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="DLM">
+               <resp when="1971">Cataloguer</resp>
+               <persName>Albinia de la Mare</persName>
+            </respStmt>
+            <respStmt xml:id="ANJD">
+               <resp when="2020">Encoding</resp>
+               <persName>Andrew Dunning</persName>
             </respStmt>
          </titleStmt>
-         <editionStmt>
-            <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
-         </editionStmt>
          <publicationStmt>
-            <publisher>Special Collections, Bodleian Libraries</publisher>
-            <address>
+            <publisher>
                <orgName type="department">Special Collections</orgName>
                <orgName type="unit">Bodleian Libraries</orgName>
                <orgName type="institution">University of Oxford</orgName>
-               <street>Weston Library, Broad Street</street>
-               <settlement key="place_7011931">Oxford</settlement>
-               <postCode>OX1 3BG</postCode>
-               <country>United Kingdom</country>
-            </address>
-            <distributor>
                <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>
-            </distributor>
-            <!--Availability statement will be added here-->
+            </publisher>
             <idno type="msID">MS_Lyell_empt_2</idno>
             <idno type="collection">Lyell</idno>
             <idno type="catalogue">Western</idno>
@@ -46,45 +37,268 @@
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Lyell empt. 2</idno>
                </msIdentifier>
+               <head>Medical tracts</head>
                <msContents>
-                  <msItem xml:id="MS_Lyell_empt_2-item1" n="1" class="#medica">
-						               <title type="desc" key="work_13232">Medical treatises</title>
-                     
-                     <note>(several based on <persName role="aut" key="person_226497544">
-                           Bernard de Gordon
-                        </persName>)</note>
-                     <textLang mainLang="la">Latin</textLang>
+                  <summary>Compilation of medical tracts, often in an abbreviated form, many of them taken from Bernardus de Gordonio.</summary>
+                  <textLang mainLang="la">Latin</textLang>
+                  <msItem n="1">
+                     <locus>(fol. 8–28v)</locus>
+                     <title type="desc">Tables of medicines showing their bases, properties, make up, dose, and uses</title>
+                     <rubric>Tabula de electuariis</rubric>
+                     <note>(title in original list of contents)</note>
+                     <msItem>
+                        <note>Preceded <locus>(fol. 7r)</locus> by an explanatory text</note>
+                        <incipit><supplied>Q</supplied>uatinus ea que in antidotario Nicolai tradita sunt, quatinus sub quodam conpendio seu conpilacione prae <sic>occulis</sic> nostris simplici</incipit>
+                        <explicit><locus>(fol. 7v)</locus> et istum ordinem tenebimus de omnibus electuariis et medicinis.</explicit>
+                     </msItem>
+                     <msItem>
+                        <note>The first table</note>
+                        <rubric>Sequitur primo de sirupis que habent materiam digerere</rubric>
+                        <incipit>Oximel simplex. Acetum et mel</incipit>
+                     </msItem>
+                     <msItem>
+                        <note>The last table</note>
+                        <rubric>Nomina oleorum</rubric>
+                        <note>(a note on oils)</note>
+                        <explicit>calefaciendo nervos. Similiter oleum cerebentinum.</explicit>
+                     </msItem>
                   </msItem>
-                  <msItem xml:id="MS_Lyell_empt_2-item2" n="2">
-                     <author key="person_22494859">
-                        
-                        Gerardus de Solo
-                     
-                     </author>
+                  <msItem n="2">
+                     <locus>(fol. 29r)</locus>
+                     <rubric>Incipit tabula de simplicibus medicinis et primo de hiis que habent materiam digerere …</rubric>
+                     <incipit>Peionia. Bethonica. Menta Ruta</incipit>
+                     <explicit><locus>(fol. 41Ara)</locus> Aqua lupinorum. Lac. Amigdala(?).</explicit>
+                     <finalRubric>Explicit tabula electa et bona.</finalRubric>
+                     <note>Possibly the same as the item cited Thorndike–Kibre, <title>Incipits</title>², col. 1031.</note>
+                  </msItem>
+                  <msItem n="3">
+                     <locus>(fol. 41Arb)</locus>
+                     <note>On a doctor’s behaviour to his patient</note>
+                     <incipit><supplied>C</supplied>um o medice ad egrotum vocaberis</incipit>
+                     <explicit defective="true"><locus>(fol. 42rb)</locus> Si vero tempus cibandi … propter digestionem et quietem.</explicit>
+                     <note>The equivalent of pp. 74–5 1. 34 of the edition in Renzi, <title>Coll. Salernitana</title> 11. Thorndike–Kibre, <title>Incipits</title>², col. 323.</note>
+                     <msItem>
+                        <locus>(fol. 42rb)</locus>
+                        <note>Followed by</note>
+                        <rubric>Nota de inspeccione urine</rubric>
+                        <incipit>De urinarum iudido debent quattuor interrogari</incipit>
+                        <explicit><locus>(fol. 42vb)</locus> an sit fetus ignoro.</explicit>
+                     </msItem>
+                  </msItem>
+                  <msItem n="4">
+                     <locus>(fol. 43r)</locus>
+                     <rubric>Incipit tractatus quidam brevis et utilis de pulsibus</rubric>
+                     <incipit>Quoniam quilibet pulsus multis modis variatur … Unde posuerunt genera pulsuum de quibus sigillatim et de eorundem speciebus breviter est dicendum. Primum genus sumitur ex quantitate alacionis</incipit>
+                     <explicit><locus>(fol. 47rb:)</locus> et de signatis generalibus dicta sufficiunt.</explicit>
+                  </msItem>
+                  <msItem n="5">
+                     <locus>(fol. 47v)</locus>
+                     <incipit>Passiones puerorum adhuc in cunabulis existencium</incipit>
+                     <explicit><locus>(fol. 48vb)</locus> confert fl’is et valet et mulieribus epilentie.</explicit>
+                     <finalRubric>Explicit tractatus brevis de passionibus puerorum.</finalRubric>
+                     <note>Thorndike–Kibre, <title>Incipits</title>², col. 1028.</note>
+                  </msItem>
+                  <msItem n="6">
+                     <locus>(fol. 48vb)</locus>
+                     <incipit>Quoniam ea que sunt utilia in curacionibus medicine</incipit>
+                     <explicit><locus>(fol. 51va)</locus> pro Zepon medicaminis medullam cervi.</explicit>
+                     <finalRubric>Explicit tractatus quit pro quo etcetera etc.</finalRubric>
+                     <note>Thorndike–Kibre, <title>Incipits</title>², col. 1274. One of the MSS. cited is Admont 254, 13th cent.</note>
+                  </msItem>
+                  <msItem n="7">
+                     <locus>(fol. 51va)</locus>
+                     <author key="person_22494859">Gerardus de Solo</author>
                      <title key="work_1719">Directorium siue Introductorium iuuenum</title>
-                     <textLang mainLang="la">Latin</textLang>
+                     <incipit>Regimen corporis humani est quintuplex</incipit>
+                     <explicit><locus>(fol. 61ra)</locus> de quinque regiminibus dicta sufficiant.</explicit>
+                     <finalRubric>Expliciunt compilaciones quinque regiminum corporis humani recollecte in preclaro studio Montispessul. etc.</finalRubric>
+                     <note>Thorndike–Kibre, <title>Incipits</title>², col. 1344.</note>
+                     <msItem>
+                        <note>Followed by verses</note>
+                        <incipit>Tres lucis primas noctis tres sanguinis ymas.</incipit>
+                        <note>4 lines. Walther, <title>Initia,</title> no. 19396.</note>
+                     </msItem>
                   </msItem>
-                  <msItem xml:id="MS_Lyell_empt_2-item3" n="3">
-                     <author key="person_226497544">
-                        
-                        Bernard de Gordon
-                     
-                     </author>
+                  <msItem n="8">
+                     <locus>(fol. 61rb)</locus>
+                     <title type="desc">Compilation on bloodletting</title>
+                     <msItem>
+                        <bibl>Preface</bibl>
+                        <incipit>Quoniam q<supplied>uantum</supplied> l<supplied>ibet</supplied> inter omnia instrumenta cum quibus medicus operatur</incipit>
+                        <explicit><locus>(fol. 61va)</locus>: Ideoque proposui brevem tractatum et utilem de flebotomia ex dictis diversorum actorum colligere seu coadiunare distinguendo ipsum in decem capitula.</explicit>
+                     </msItem>
+                     <msItem>
+                        <bibl>Text</bibl>
+                        <incipit>Flebotomia est evacuatio universalis … Hec descriptio ponitur ab Avie.</incipit>
+                        <explicit><locus>(fol. 74va)</locus> sic de ventosis sanguisugis et cauteriis deo gracias.</explicit>
+                        <finalRubric>Explicit tractatus brevis et utilis de cauteriis.</finalRubric>
+                     </msItem>
+                     <note>This is to be distinguished from the treatise of Bernardus de Gordonio with the similar incipit upon which it is based, at least in part (see item 12, end).</note>
+                  </msItem>
+                  <msItem n="9">
+                     <locus>(fol. 74va)</locus>
+                     <author key="person_226497544">Bernard de Gordon</author>
+                     <rubric>Incipit tractatus magistri Bernhardi de Gordonio de regimine morborum acutorum</rubric>
+                     <incipit>Regimen morborum acutorum consistit in tribus</incipit>
+                     <explicit><locus>(fol. 81vb)</locus> in ore tenendo. Hec autem omnia facta sunt post lecturam annorum continuatam <locus>(fol. 82ra)</locus> undecim.</explicit>
+                     <finalRubric>Explicit tractatus…</finalRubric>
+                     <note>Thorndike–Kibre, <title>Incipits</title>², col. 1344. Our MS. omits the last section, <q>De Recapitulatione</q>.</note>
+                  </msItem>
+                  <msItem n="10">
+                     <title type="desc">Compilations largely deriving from treatises by <persName key="person_226497544" role="aut">Bernardus de Gordonio</persName></title>
+                     <note>(see end of item 12 below)</note>
+                     <msItem n="a">
+                        <locus>(fol. 82ra)</locus>
+                        <author key="person_226497544">Bernard de Gordon</author>
+                        <rubric>Incipit tractatus de urina cum curacione quorundam morborum magistri Bernhardi de Gordonio abreviatus</rubric>
+                        <msItem>
+                           <bibl>preface</bibl>
+                           <incipit>In multis libris copiose et suffidenter de disposicionibus urine tractatur … Ego autem de ea aliud dicturus longitudini peperd et quedam non parum utilia de urine significatis ex diversis actoribus agregavi</incipit>
+                           <explicit>de quorum curacione minus suffidenter in Lilio dictum erat</explicit>
+                        </msItem>
+                        <msItem>
+                           <bibl>text</bibl>
+                           <incipit><locus>(fol. 82v)</locus> Primus magistrorum omnium Ypocras docuit pronosticare</incipit>
+                           <explicit><locus>(fol. 110vb)</locus> de curacione yctericie. Deo gracias.</explicit>
+                           <finalRubric>Explicit tractatus …</finalRubric>
+                        </msItem>
+                     </msItem>
+                     <msItem n="b">
+                        <locus>(fol. 110vb)</locus>
+                        <author key="person_226497544">Bernard de Gordon</author>
+                        <rubric>Incipit preciosus tractatus de pronosticacione magistri Bernhardi de Gordonio abreviatus in Monte Peslano collectus summa cum diligentia</rubric>
+                        <msItem>
+                           <bibl>preface</bibl>
+                           <incipit>Sicut testatur primus magister omnium medicorum</incipit>
+                        </msItem>
+                        <msItem>
+                           <bibl>text</bibl>
+                           <incipit><locus>(fol. 111va)</locus> Intelligendum est primo quod clavis todus pronosticacionis</incipit>
+                           <explicit><locus>(fol. 141va)</locus> fundere iussit aquas.</explicit>
+                           <finalRubric>Explicit preciosus tractatus … abreviatus tamen subtiliter.</finalRubric>
+                        </msItem>
+                     </msItem>
+                  </msItem>
+                  <msItem n="11">
+                     <locus>(fol. 141va)</locus>
+                     <author key="person_226497544">Bernard de Gordon</author>
+                     <title>De decem ingeniis curandorum</title>
+                     <rubric>Incipiunt tabule ingeniorum eiusdem</rubric>
+                     <incipit>Ingenia curacionis morborum</incipit>
+                     <explicit><locus>(fol. 149vb)</locus> et de cretids diebus breviter, et cum integritate sicud scitis. Expliciunt tabule ingeniorum.</explicit>
+                     <note>Thorndike–Kibre, <title>Incipits</title>², col. 743.</note>
+                  </msItem>
+                  <msItem n="12">
+                     <locus>(fol. 149vb)</locus>
+                     <author key="person_226497544">Bernard de Gordon</author>
+                     <rubric>Incipit tractatus eius de reumate abreviatus</rubric>
+                     <msItem>
+                        <bibl>preface</bibl>
+                        <incipit>Quia de reumate sepe et frequenter in causa</incipit>
+                     </msItem>
+                     <msItem>
+                        <bibl>text</bibl>
+                        <incipit><locus>(fol. 150r)</locus> Galienus in libro suo ad Glauconem tres sunt spedes reumatis. The work</incipit>
+                        <explicit><locus>(fol. 158v)</locus> sicud et feci tractatibus aliis scilicet de pronosticacione et de crisi de flebotomia et de urinis. Isti tamen tractatus omnes attribui merito <sic>debentur</sic>
+                           <locus>(fol. 158rb)</locus> venerabili domino et magistro Bernhardo de Gordonio qui diligenter eos collegit quos <sic>abreviatu</sic> de quibus sit deo laus per infinita seculorum secula. Amen.</explicit>
+                     </msItem>
+                     <note>The three other treatises referred to are presumably items 8, 10a, b.</note>
+                  </msItem>
+                  <msItem n="13">
+                     <locus>(fol. 158vb)</locus>
+                     <author key="person_226497544">Bernard de Gordon</author>
+                     <incipit>De remediis venenorum et contra morsum eorundem aliqua hic collegi ex dictis Arnoldi. Primo contra morsum camis rabii</incipit>
+                     <explicit><locus>(fol. 160v)</locus> debet precedere interfectionem allium.</explicit>
+                     <finalRubric>Explicit tractatus de veneno.</finalRubric>
+                  </msItem>
+                  <msItem n="14">
+                     <locus>(fol. 160r)</locus>
+                     <author key="person_226497544">Bernard de Gordon</author>
                      <title key="work_1019">Lilium medicinae</title>
-                     <textLang mainLang="la">Latin</textLang>
+                     <bibl>part vi</bibl>
+                     <rubric>Hic incipit viª particula huius Lilii in qua agitur de passionibus secunde(?) digestive et incipit a passionibus epatis</rubric>
+                     <note>There follows a list of chapters.</note>
+                     <bibl>Text</bibl>
+                     <incipit><locus>(fol. 160v)</locus> Epar est membrum primum et principium</incipit>
+                     <explicit><locus>(fol. 202ra)</locus> ut dictum est superius.</explicit>
+                     <finalRubric>Explicit liber viᵘˢ de passionibus epatis.</finalRubric>
+                     <note>For MSS. and editions of the Lilium medicinae see Thorndike–Kibre, <title>Incipits,</title> col. 772.</note>
                   </msItem>
-                  <msItem xml:id="MS_Lyell_empt_2-item4" n="4" class="#medica">
-						               <title type="desc" key="work_13207">Medical recipes</title>
-                     
+                  <msItem n="15">
+                     <locus>(fol. 202rb)</locus>
+                     <rubric>Incipit regimen bonum et utile de nefretica passione a magistro Iohanne compilatum</rubric>
+                     <incipit>Regimen passionis nefretice qua dominus iste periodace vexatur duplex est</incipit>
+                     <explicit><locus>(fol. 205v)</locus> tucius erit propter ardorem.</explicit>
+                     <finalRubric>Explicit regimen bonum et utile de lapide conglutinante in vesica et renibus.</finalRubric>
+                  </msItem>
+                  <msItem n="16">
+                     <author key="person_226497544">Bernard de Gordon</author>
+                     <title key="work_1019">Lilium medicinae</title>
+                     <note>(Extracts)</note>
+                     <msItem n="a">
+                        <locus>(fol. 205v)</locus>
+                        <bibl>part v</bibl>
+                        <rubric>Incipit liber quintus qui est de passionibus membrorum nutritivorum prime digestive…</rubric>
+                        <note>There follows a list of chapters.</note>
+                        <msItem>
+                           <bibl>Text</bibl>
+                           <incipit><locus>(fol. 206ra)</locus> Transglucio cibi est motus</incipit>
+                           <explicit><locus>(fol. 265v)</locus> et idem cum diversis diversa agit imo etc.</explicit>
+                        </msItem>
+                        <note>See above, item 14. The rest of the column was originally blank.</note>
+                     </msItem>
+                     <msItem n="b">
+                        <locus>(fol. 265vb)</locus>
+                        <bibl>end of part. iii</bibl>
+                        <incipit>Et si apostema fuerit frigidum addatur hiis allumen</incipit>
+                        <explicit><locus>(fol. 266v)</locus> sanguinem draconis apponere. Hec igitur dicta pertinent ad finem terdi libelli huius Lilii.</explicit>
+                        <note>Pp. 3361. 27–337 in the edition of Lyons, 1574.</note>
+                     </msItem>
+                  </msItem>
+                  <msItem n="17">
+                     <locus>(fol. 266rb)</locus>
+                     <title type="desc">Two recipes for medicines</title>
+                     <msItem n="a">
+                        <incipit>Nota hoc electuarium laxativum quod solo odoratu laxat</incipit>
+                     </msItem>
+                     <msItem n="b">
+                        <incipit>Item alliud quod capud alleviat, stomachum purgat, appetitum confortat et visum clarificat.</incipit>
+                        <note>Ends fol. 266va.</note>
+                     </msItem>
+                  </msItem>
+                  <msItem>
+                     <title key="work_13207" type="desc">Medical recipes</title>
                      <textLang mainLang="la" otherLangs="de">Latin and German</textLang>
+                     <note>Further medical recipes in Latin and German have been added in several contemporary hands (including the hand which made the index and list of contents) on the front pastedown, fol. <hi rend="smallcaps">i–iv</hi> (parchment flyleaf), 2–2v, 5–6, 205va–266va, 206v, 276v, 278 (end pastedown).</note>
+                  </msItem>
+                  <msItem>
+                     <note>There is an original list of contents (numbered i–xvii) on the front pastedown, written in two hands, the first of which may be the scribe of the MS. There is an alphabetical index in the near contemporary hand which foliated the MS. <locus>(fol. 267–76, completed on fol. 3–4v)</locus> and a list of contents in the same hand, with the items numbered continuously up to cxlvij (<hi rend="italic">beg. imperf.</hi> fol. 6v at no. xlv <locus>(fol. cxi)</locus>, continued and completed on fol. 276–278).</note>
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="chart">
-                        <support>paper</support>
+                        <support>paper, <watermark>watermarks in main part of MS., a human head, cf. Briquet nos. 15600–3; spectacles, close to Briquet 10622 (last 3 quires only); watermark in the first, added quire <locus>(fol. 2–6)</locus> not clearly visible.</watermark></support>
+                        <extent>284 leaves <locus>(fol. 1, 32, 71, 78, 132, 163, 220 are double, fol. 1, ia, 277 are flyleaves, etc.)</locus>, <dimensions type="leaf" unit="mm">
+                              <height>297</height>
+                              <width>210</width>
+                           </dimensions></extent>
+                        <foliation>fol. 7–266 are foliated i–cclxiiij in an almost contemporary hand.</foliation>
+                        <collation>1 original flyleaf, 1⁸ (6–8 canc.), 2¹²–24¹², 1 original flyleaf: a thin parchment strip reinforces the middle of each quire; quires 2–24 numbered 1–24 (the numbering skips from 22 to 24) in red in a contemporary hand in the centre of the upper margin of each first folio; <secFol>(additions) <q>Si autem</q>; (text) <q>Sequitur</q></secFol>
+                        </collation>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2" ruledLines="27 34">2 cols., 27–34 lines ruled in ink</layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <handDesc>
+                     <handNote script="cursiva">Written in Austria in the 15th cent, in a fine set cursive hand.</handNote>
+                  </handDesc>
+                  <bindingDesc>
+                     <binding contemporary="true" notAfter="1500" notBefore="1460">
+                        <p>Binding, late 15th cent, in puce dyed leather on bevelled wooden boards with corner bosses (2 missing); clasps on lower cover; lined tooling with triple fillets; plaited headbands. A small rectangular piece has been cut out of the upper cover.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
                   <origin>
@@ -93,18 +307,18 @@
                         <country key="place_1000062">Austrian</country>
                      </origPlace>
                   </origin>
+                  <provenance>Formerly no. 313 in the library of <orgName key="org_128466393" role="fmo">Admont abbey</orgName> (see book stamp of the library on fol. 2; paper label on spine and 15th–cent. description pasted inside front cover).</provenance>
+                  <provenance>Sold by Admont in or after 1934 to L. and A. Brecher of Brünn (Möser–Mersky, op. cit., p. 9).</provenance>
+                  <provenance>Bought by Lyell in January 1941 from Davis and Orioli: see their <title>Cat.</title> 78 no. 2; 93 no. 53.</provenance>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from A. de la Mare, <title>Catalogue of the Medieval Manuscripts Bequeathed to the Bodleian Library Oxford by James P. R. Lyell</title> (1971) 
-                            
-                            
-                            <listBibl>
-                              <bibl type="LYELL" facs="cah0314.gif">Catalogue, p. 280</bibl>
-                              <bibl type="LYELL" facs="cah0315.gif">Catalogue, p. 281</bibl>
-                              <bibl type="LYELL" facs="cah0316.gif">Catalogue, p. 282</bibl>
-                              <bibl type="LYELL" facs="cah0317.gif">Catalogue, p. 283</bibl>
+                        <source>Description adapted from A. de la Mare, <title>Catalogue of the Medieval Manuscripts Bequeathed to the Bodleian Library Oxford by James P. R. Lyell</title> (1971); with additions by Andrew Dunning. <listBibl>
+                              <bibl facs="cah0314.gif" type="LYELL">Catalogue, p. 280</bibl>
+                              <bibl facs="cah0315.gif" type="LYELL">Catalogue, p. 281</bibl>
+                              <bibl facs="cah0316.gif" type="LYELL">Catalogue, p. 282</bibl>
+                              <bibl facs="cah0317.gif" type="LYELL">Catalogue, p. 283</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -112,20 +326,16 @@
                </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc>          <change when="2017-07-01">First online publication.</change>
-
-         <change when="2017-05-29">
-            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
-         </change>
-         <change when="2017-05-25">
-            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
-         </change>
+      </fileDesc>
+      <revisionDesc>
+         <change when="2020-12-16"><persName>Andrew Dunning</persName> Revised from description by <persName>Albinia de la Mare</persName>.</change>
+         <change when="2017-07-01">First online publication.</change>
+         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>
    </teiHeader>
    <text>
       <body>
-         <p><!--Body paragraph provided for validation and future transcription--></p>
+         <p/>
       </body>
    </text>
 </TEI>

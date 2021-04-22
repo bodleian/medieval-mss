@@ -1,5 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1884">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xml:id="manuscript_1884" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -20,24 +22,13 @@
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
-         <editionStmt>
-            <edition>TEI P5</edition>
-         </editionStmt>
          <publicationStmt>
-            <publisher>Special Collections, Bodleian Libraries</publisher>
-            <address>
+            <publisher>
                <orgName type="department">Special Collections</orgName>
                <orgName type="unit">Bodleian Libraries</orgName>
                <orgName type="institution">University of Oxford</orgName>
-               <street>Weston Library, Broad Street</street>
-               <settlement key="place_7011931">Oxford</settlement>
-               <postCode>OX1 3BG</postCode>
-               <country>United Kingdom</country>
-            </address>
-            <distributor>
                <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>
-            </distributor>
-            <!--Availability statement will be added here-->
+            </publisher>
             <idno type="msID">MS_Bodl_920</idno>
             <idno type="collection">Bodl</idno>
             <idno type="catalogue">Western</idno>
@@ -56,11 +47,10 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents resp="#SC">
-                  <msItem xml:id="MS_Bodl_920-item1" n="1" class="#monastica #bibliographica">
-                     <title type="desc" key="work_10828">Catalogue of the library of <orgName key="org_239193232">St. Martin's priory, Dover</orgName>
-                     </title>
+                  <msItem class="#monastica #bibliographica" n="1" xml:id="MS_Bodl_920-item1">
+                     <title key="work_10828" type="desc">Catalogue of the library of <orgName key="org_239193232">St. Martin's priory, Dover</orgName></title>
                      <note resp="#MLH"><bibl>Ed. W. P. Stoneman, Corpus of British Medieval Library Catalogues 5 (1999)</bibl>.</note>
-                     <note>Two leaves of a Latin vocabulary formerly in this volume are now <bibl type="ms" subtype="internal">MS. Lat. misc. b. 3, fols. 97-8</bibl>.</note>
+                     <note>Two leaves of a Latin vocabulary formerly in this volume are now <bibl subtype="internal" type="ms">MS. Lat. misc. b. 3, fols. 97–8</bibl>.</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -68,8 +58,7 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                        <extent resp="#DD #SC">ii + <num type="page">204</num> pages
-                           <dimensions unit="mm" type="leaf">
+                        <extent resp="#DD #SC">ii + <num type="page">204</num> pages <dimensions type="leaf" unit="mm">
                               <height>247</height>
                               <width>165</width>
                            </dimensions>
@@ -77,62 +66,64 @@
                      </supportDesc>
                      <layoutDesc>
                         <layout columns="1">1 col., lines and written space vary.</layout>
-                     </layoutDesc>                  
+                     </layoutDesc>
                   </objectDesc>
                   <handDesc>
-                     <handNote>Compiled and written by <persName role="scr" key="person_3071">John Whitfield</persName>, precentor of Dover Abbey, who also wrote <bibl type="ms" subtype="external">Canterbury Cathedral MS. 71 (Lit. E. 3)</bibl>.</handNote>
+                     <handNote>Compiled and written by <persName key="person_3071" role="scr">John Whitfield</persName>, precentor of Dover Abbey, who also wrote <bibl subtype="external" type="ms">Canterbury Cathedral MS. 71 (Lit. E. 3)</bibl>.</handNote>
                   </handDesc>
                   <decoDesc>
                      <decoNote type="colInit">Coloured initials.</decoNote>
                   </decoDesc>
                   <bindingDesc resp="#SC">
-                     <binding notAfter="1625" notBefore="1600" calendar="Gregorian">
+                     <binding calendar="Gregorian" notAfter="1625" notBefore="1600">
                         <p>Stamped leather on pasteboard, English provincial binding, early 17th century (?), rebacked.</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
                <history>
                   <origin resp="#DD">
-                     <origDate calendar="Gregorian" when="1389" cert="high">1389</origDate>
+                     <origDate calendar="Gregorian" cert="high" when="1389">1389</origDate>
                      <origPlace>
                         <country key="place_7002445">English</country>, <settlement key="place_7011554">Dover</settlement>, <orgName key="org_239193232">Benedictine Priory of St. Martin</orgName>
                      </origPlace>
                   </origin>
                   <provenance resp="#DD"><q>Presens. hec Matricula. bibliotece. prioratus Douerre. Anno incarnacionis. dominice. <subst><del>1289</del><add>1389</add></subst>. sub regimine. Fratris Iohannis Neunam. prioris. euisdem. ecclesie. professi compilata.</q> (p. 1). </provenance>
-                  <provenance resp="#MLH">Presumably at  <orgName key="org_239193232">Dover Priory</orgName> until the Dissolution: fifteenth-century additions and annotations (Stoneman, op. cit., p. 10).</provenance>
-                  <provenance when="1614" resp="#SC">Probably acquired about 1614.</provenance>
+                  <provenance resp="#MLH">Presumably at <orgName key="org_239193232">Dover Priory</orgName> until the Dissolution: fifteenth-century additions and annotations (Stoneman, op. cit., p. 10).</provenance>
+                  <provenance resp="#SC" when="1614">Probably acquired about 1614.</provenance>
                </history>
-               <additional><adminInfo>
+               <additional>
+                  <adminInfo>
                      <recordHist>
-                        <source>Description adapted (May 2019) from the following sources, with additional reference to published literature cited in the description: 
+                        <source>Description adapted (May 2019) from the following sources, with additional reference to published literature cited in the description: <listBibl>
+                              <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435–1600 in Oxford Libraries</title> (Oxford, 1984), no. 122 [physical description, origin]</bibl>
+                              <bibl>Summary Catalogue (1922) [contents, binding, acquisition]</bibl>
+                           </listBibl>
                            <listBibl>
-                              <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 122 [physical description, origin]</bibl>
-                              <bibl>Summary Catalogue (1922) [contents, binding, acquisition]</bibl></listBibl>
-                            <listBibl>
-                              <bibl type="SC" facs="aap0587.gif">Summary Catalogue, vol. 2, part 1, p. 566</bibl>
-                              <bibl type="SC" facs="aap0588.gif">Summary Catalogue, vol. 2, part 1, p. 567</bibl>
+                              <bibl facs="aap0587.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 566</bibl>
+                              <bibl facs="aap0588.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 567</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
-                  </adminInfo><listBibl type="WRAPPER"><listBibl type="INTERNET"><head>Online resources:</head><bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6522"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl></listBibl></listBibl></additional>
+                  </adminInfo>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="INTERNET">
+                        <head>Online resources:</head>
+                        <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6522"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl>
+                     </listBibl>
+                  </listBibl>
+               </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      
-      <revisionDesc>        
-         <change who="#MLH" when="2019-05-13">Revised to incorporate all information in Watson and SC</change>
+      </fileDesc>
+      <revisionDesc>
+         <change when="2019-05-13" who="#MLH">Revised to incorporate all information in Watson and SC</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-29">
-            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
-         </change>
-         <change when="2017-05-25">
-            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
-         </change>
+         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>
    </teiHeader>
    <text>
       <body>
-         <p><!--Body paragraph provided for validation and future transcription--></p>
+         <p/>
       </body>
    </text>
 </TEI>

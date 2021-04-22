@@ -1,39 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_7796">
+<TEI xml:id="manuscript_7796" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Lyell 62</title>
             <title type="collection">MSS. Lyell</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName><persName>Matthew Holford</persName>
+            <respStmt xml:id="DLM">
+               <resp when="1971">Cataloguer</resp>
+               <persName>Albinia de la Mare</persName>
+            </respStmt>
+            <respStmt xml:id="ANJD">
+               <resp when="2020">Encoding</resp>
+               <persName>Andrew Dunning</persName>
             </respStmt>
          </titleStmt>
-         <editionStmt>
-            <edition>TEI P5</edition>
-            <respStmt>
-               <resp>Conversion to TEI based on earlier work for the ENRICH project (enrich@oucs.ox.ac.uk; http://tei.oucs.ox.ac.uk/ENRICH/)</resp>
-               <persName>Matthew Holford</persName>
-            </respStmt>
-         </editionStmt>
          <publicationStmt>
-            <publisher>Special Collections, Bodleian Libraries</publisher>
-            <address>
+            <publisher>
                <orgName type="department">Special Collections</orgName>
                <orgName type="unit">Bodleian Libraries</orgName>
                <orgName type="institution">University of Oxford</orgName>
-               <street>Weston Library, Broad Street</street>
-               <settlement key="place_7011931">Oxford</settlement>
-               <postCode>OX1 3BG</postCode>
-               <country>United Kingdom</country>
-            </address>
-            <distributor>
                <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>
-            </distributor>
-            <!--Availability statement will be added here-->
+            </publisher>
             <idno type="msID">MS_Lyell_62</idno>
             <idno type="collection">Lyell</idno>
             <idno type="catalogue">Western</idno>
@@ -48,31 +37,89 @@
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Lyell 62</idno>
                </msIdentifier>
+               <head>Johannes Climacus</head>
                <msContents>
-                  <msItem xml:id="MS_Lyell_62-item1" n="1">
-                     <author key="person_268286342">
-                        
-                        Johannes Climacus
-                     
-                     </author>
-                     <title key="work_2469">Scala paradisi</title>
-                     <note>(tr. <persName role="trl" key="person_29617842">
-                           Ambrogio Traversari
-                        </persName>; includes Sermo ad pastorem)</note>
-                     <textLang mainLang="la">Latin</textLang>
+                  <textLang mainLang="la">Latin</textLang>
+                  <msItem>
+                     <author key="person_268286342">St. John Scholasticus, called Climacus</author>
+                     <title>Scala spiritualis and Sermo ad pastorem</title>
+                     <note>Revision made c. 1418 by <persName key="person_29617842" role="trl">Ambrogio Traversari</persName> of an earlier translation into Latin. The contents are in the same order as in the first edition, Toledo, 1505.</note>
+                     <msItem n="a">
+                        <locus>(fol. 1r)</locus>
+                        <title type="desc">Traversari’s dedicatory letter to Fra Matteo Guidoni, prior of S. Maria degli Angeli, Florence (d. 1421)</title>
+                        <incipit>Domino amantissimo et merito venerabili patri Matheo Ambrosius. Hortatus es domine amantissime</incipit>
+                        <note>Pr. <title>Amb. Trau. Epist.</title> ed. P. Canneto, Florence, 1759, Lib. xxiii, 7, col. 962–4.</note>
+                     </msItem>
+                     <msItem n="b">
+                        <locus>(fol. 1v)</locus>
+                        <rubric>Vita sancti Iohannis Scolastici sub compendio a Daniele monacho scripta</rubric>
+                        <incipit>Quenam hunc divinum virum civitas tulerit</incipit>
+                        <note><title>B.H.L.</title> 4381.</note>
+                     </msItem>
+                     <msItem n="c">
+                        <locus>(fol. 3v)</locus>
+                        <rubric>Epistola Iohannis abbatis Raithunensis ad Iohannem abbatem montis Synay Scolasticum cognominatum</rubric>
+                        <incipit>Domino singulariter mirabili equali angelis</incipit>
+                     </msItem>
+                     <msItem n="d">
+                        <locus>(fol. 4r)</locus>
+                        <rubric>Prefacio Iohannis Scolastiri in librum qui Climax dicitur. Responsio: Iohannes Iohanni salutem</rubric>
+                        <incipit>Accepi convenientissimam honestissimo tuo atque impassibili instituto</incipit>
+                     </msItem>
+                     <msItem n="e">
+                        <locus>(fol. 4v)</locus>
+                        <title key="work_2469">Scala Spiritualis</title>
+                        <rubric>Incipit sermo primus De inanis vite abrenunciacione</rubric>
+                        <incipit>Cum summe <sic>incomphensibilis</sic> atque incircumscripte bonitatis deus noster</incipit>
+                        <explicit><locus>(fol. 68r)</locus> et erit in infinita secula Amen.</explicit>
+                        <finalRubric>Explicit Gradus trigesimus et ultimus <sic>spiritalis</sic> scale a Iohanne Scolastico edite feliciter;</finalRubric>
+                        <msItem>
+                           <locus>(fol. 68r)</locus>
+                           <rubric>Eiusdem sermo ad pastorem incipit in quo docetur qualis esse debeat racionalium ovium pastor</rubric>
+                           <incipit>In inferiori quidem libro extremum</incipit>
+                           <explicit><locus>(fol. 71v)</locus> et perfeccione sua beata est.</explicit>
+                           <finalRubric>Finit sermo ad pastorem Deo gracias</finalRubric>
+                        </msItem>
+                     </msItem>
+                     <msItem n="g">
+                        <locus>(fol. 71v)</locus>
+                        <rubric>Commendacio eiusdem Iohannis Scolastici librique a se editi a Iohanne abbate Raithensis monasterii, ubi liber fere totus brevissime ac mistice exponitur laudaturque scribens in hunc modum ut sequitur</rubric>
+                        <incipit>Qualem me esse oportere scripsisti</incipit>
+                        <explicit><locus>(fol. 72v)</locus> Caritas autem Deus est Amen.</explicit>
+                        <finalRubric>Explicit feliciter Deo gratias qui dedit incipere et finire. Sub anno domini <hi rend="smallcaps">mcccclv</hi> die lune in festo Sancti Mauritii xxi die mensis Septembris, Venedis, in Murano, in monasterio sancti Cipriani ordinis Sancti Benedicti per fratrem Iacobum de Polonia ordinis predicti Crac<supplied>oviensis</supplied> diocesis</finalRubric>
+                        <note>(PL XXVc)</note>
+                     </msItem>
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="chart">
-                        <support>paper</support>
+                        <support>paper, <watermark>watermarks, steer’s head with flower above and cross strokes and triangular shield below, close to Briquet no. 14872</watermark></support>
+                        <extent>iv+76 leaves <locus>(fol. i-iv, 73–6 are flyleaves)</locus>, <dimensions type="leaf" unit="mm">
+                              <height>215</height>
+                              <width>150</width>
+                           </dimensions></extent>
+                        <foliation>contemporary foliation up to fol. 17</foliation>
+                        <collation>1¹²–6¹², quires generally signed <q>Primus</q>, etc. at the beginning and sometimes also at the end; <secFol>celestem simplicitatem</secFol></collation>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="1" ruledLines="39 58"><dimensions type="ruled" unit="mm">
+                              <height max="170" min="140">140–70</height>
+                              <width max="122" min="108">108–22</width>
+                           </dimensions>): 39–58 long lines, ruled in ink with bounding lines in pencil up to fol. 36v, thereafter ruled entirely in pencil</layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <handDesc>
+                     <handNote execution="currens" script="hybrida">Written in Venice in 1455 by frater Jacobus de Polonia in a current gothic hybrid hand.</handNote>
+                  </handDesc>
                   <decoDesc>
-                     <decoNote>
-                        <p>Plain red initials.</p>
-                     </decoNote>
+                     <decoNote type="colInit">Plain red initials.</decoNote>
                   </decoDesc>
+                  <bindingDesc>
+                     <binding notAfter="1950" notBefore="1800">
+                        <p>Modern parchment binding.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
                   <origin>
@@ -82,16 +129,17 @@
                         <!--ORIGINAL: Italian, Venice-->
                      </origPlace>
                   </origin>
-               <provenance notBefore="1871" notAfter="1948" resp="#MMM"><persName role="fmo" key="person_64157046">James P. R. Lyell, 1871-1948</persName></provenance><acquisition when="1948" resp="#MMM">Chosen as one of the hundred manuscripts bequeathed to the Bodleian by Lyell in 1948.</acquisition></history>
+                  <provenance>Formerly in the library of the <orgName key="org_154518343" role="fmo">Abbey of Melk</orgName> in Austria as MS. 862 (olim 843), with fols. 74–222 (library stamp on fol. 1r).</provenance>
+                  <provenance>Bought by Lyell in November 1938 from E. P. Goldschmidt and Co.: see his <title>Cat.</title> 47 (1938) no. v.</provenance>
+                  <provenance notAfter="1948" notBefore="1871" resp="#MMM"><persName key="person_64157046" role="fmo">James P. R. Lyell, 1871–1948</persName></provenance>
+                  <acquisition resp="#MMM" when="1948">Chosen as one of the hundred manuscripts bequeathed to the Bodleian by Lyell in 1948.</acquisition>
+               </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from A. de la Mare, <title>Catalogue of the Medieval Manuscripts Bequeathed to the Bodleian Library Oxford by James P. R. Lyell</title> (1971) 
-                            
-                            
-                            <listBibl>
-                              <bibl type="LYELL" facs="cah0224.gif">Catalogue, p. 190</bibl>
-                              <bibl type="LYELL" facs="cah0225.gif">Catalogue, p. 191</bibl>
+                        <source>Description adapted from A. de la Mare, <title>Catalogue of the Medieval Manuscripts Bequeathed to the Bodleian Library Oxford by James P. R. Lyell</title> (1971); with additions by Andrew Dunning. <listBibl>
+                              <bibl facs="cah0224.gif" type="LYELL">Catalogue, p. 190</bibl>
+                              <bibl facs="cah0225.gif" type="LYELL">Catalogue, p. 191</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -99,23 +147,17 @@
                </additional>
             </msDesc>
          </sourceDesc>
-      </fileDesc>       
-      <revisionDesc><change when="2018-06-15" xml:id="MMM"><persName>Mitch Fraas/Mapping Manuscript Migrations</persName>
-      Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
-      in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.'
-    </change>          <change when="2017-07-01">First online publication.</change>
-
-         <change when="2017-05-29">
-            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
-         </change>
-         <change when="2017-05-25">
-            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
-         </change>
+      </fileDesc>
+      <revisionDesc>
+         <change when="2020-12-16"><persName>Andrew Dunning</persName> Revised from description by <persName>Albinia de la Mare</persName>.</change>
+         <change when="2018-06-15" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
+         <change when="2017-07-01">First online publication.</change>
+         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>
    </teiHeader>
    <text>
       <body>
-         <p><!--Body paragraph provided for validation and future transcription--></p>
+         <p/>
       </body>
    </text>
 </TEI>
