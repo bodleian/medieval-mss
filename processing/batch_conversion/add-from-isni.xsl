@@ -16,7 +16,7 @@
          calls to the ISNI API saved locally in a temporary folder (done separately via curl as username/password is required) -->
     
     <!-- Queries to send to ISNI API can be generated with this XPath:
-         /TEI/text/body/*/(person|org)[not(note/list/item/ref[contains(@target, 'isni.org')])]/note/list/item/ref[contains(@target, 'viaf.org')]/@target/concat('pica.cn+%3D+%22VIAF%2B', substring-after(., '/viaf/'), '%22')
+         /TEI/text/body/*/(person|org)[not(note/list/item/ref[contains(@target, 'isni.org')])]/note/list/item/ref[contains(@target, 'viaf.org')]/@target/concat('pica.cn+%3D+%22VIAF%2B', tokenize(., '/')[5], '%22')
          The output of that can then be passed to a Bash command like:
          xargs -I {} bash -c 'curl -k -o "/tmp/isni/output/{}.xml" "https://isni-m.oclc.nl/sru/username=____/password=____/DB=1.3/?query={}"; sleep 2;'
          Finally transform either persons.xml or places.xml using this stylesheet, and it will retrieve the ISNI API responses to add to the authority file. -->
