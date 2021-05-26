@@ -7,9 +7,22 @@
          <titleStmt>
             <title>MS. Laud Lat. 112</title>
             <title type="collection">MSS. Laud Lat. (Latin)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="Q">
+               <resp when="1858">Cataloguer</resp>
+               <persName>H. O. Coxe</persName>
+            </respStmt>
+            <respStmt xml:id="Q2">
+               <resp when="1969">Cataloguer</resp>
+               <persName>R. W. Hunt</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2021-05">Cataloguer</resp>
+               <resp when="2021-05">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -39,8 +52,10 @@
                </msIdentifier>
                <msContents>
                   <msItem n="1" xml:id="MS_Laud_Lat_112-item1">
+                     <locus>(fols. 1r-180v)</locus>
                      <author key="person_99942145">Livy</author>
-                     <title key="work_2986">First, third and fourth decades</title>
+                     <title key="work_2986">Ab urbe condita</title><bibl> (first, third and fourth decades)</bibl>
+                     <note>The third begins at fol. 68r and the fourth at fol. 132r.</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -48,12 +63,36 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>
+                           ii (modern paper) + 181 + ii (modern paper) folios
+                           <dimensions unit="mm" type="leaf">
+                              <height>450</height>
+                              <width>290</width>
+                           </dimensions>
+                        </extent>
+                        <foliation>i-ii, 1-50, 51a, 51b, 52-182 </foliation>
+                        <collation><catchwords>Catchwords</catchwords> suggest 1(10)-6(10), 7(eight) (fols. 1-67 including 51a, b) | 8(10)-13(10), 14(four) (fols. 68-131) | 15(10)-18(10), 19(nine) (fols. 132-180)</collation>
+                        <condition>Mould damage, especially at the beginning and end; extensive 19th-century repairs.</condition>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2" ruledLines="73 75" rulingMedium="leadpoint">Ruled in plummet for 2 columns of c. 73-75 lines. Ruled space <dimensions unit="mm" type="ruled">
+                           <height>315</height>
+                           <width>185</width>
+                        </dimensions></layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <handDesc><handNote script="gothicoAntiqua">Fere-humanistic bookhand.</handNote></handDesc>
                   <decoDesc>
-                     <decoNote type="miniature">Fine miniature (defaced).</decoNote>
-                     <decoNote type="histInit">Historiated initials. (P&amp;A ii. 628, pl. LXI)</decoNote>
+                     <decoNote type="miniature">Fine miniature (defaced), fol. 1r.</decoNote>
+                     <decoNote type="histInit">Historiated initials at the beginning of decades, fol. 68r, fol. 132r.</decoNote>
+                     <decoNote type="flourInit">Alternating red and blue initials flourished in the opposite colour: 7-line at the beginning of books, 3-line at the beginning of chapters. </decoNote>
                   </decoDesc>
+                  <bindingDesc>
+                     <binding notAfter="1639" notBefore="1637">
+                        <p>Laudian binding, sewn on five bands. Rebacked.</p>
+                     </binding>
+                  </bindingDesc>
+                  <accMat>Fragment of 17th-century English shorthand between fols. 63 and 64.</accMat>
                </physDesc>
                <history>
                   <origin>
@@ -61,11 +100,18 @@
                      <origPlace cert="low">
                         <country key="place_1000080">Italian</country>, <settlement key="place_7003262">Verona</settlement> (?)<!--ORIGINAL: Italian, Verona (?)--></origPlace>
                   </origin>
+                  <provenance><persName key="person_54940373" role="fmo">William Laud</persName>, 1573–1645: 1637</provenance>
+                  <acquisition when="1639">Part of his third donation to the Bodleian, 1639. Former shelfmark D. 127.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (H. O. Coxe, <title>Laudian Manuscripts</title>, Quarto Catalogues II, repr. with corrections, 1969, from the original ed. of 1858–1885). Decoration, localization and date follow Pächt and Alexander (1970). <listBibl>
+                        <source>Description adapted (May 2021) from the following sources, with additional physical description and description of decoration: 
+                           <listBibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, II (1970), no. 628 and pl. LXI (localization, date)</bibl>
+                              <bibl>Quarto Catalogue (H. O. Coxe, <title>Laudian Manuscripts</title>, Quarto Catalogues II, repr. with corrections, 1969, from the original ed. of 1858–1885)</bibl>
+                           </listBibl>
+                            <listBibl>
                               <bibl facs="aby0074.gif" type="QUARTO"> Quarto Catalogue, col. 51 </bibl>
                            </listBibl>
                            <listBibl>
@@ -81,6 +127,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2021-05" who="#MLH">Record revised with reference to manuscript and published descriptions</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>
