@@ -3,7 +3,8 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
 declare option saxon:output "indent=yes";
 
 (: Read authority file :)
-declare variable $authorityentries := doc("../works.xml")/tei:TEI/tei:text/tei:body//tei:listBibl/tei:bibl[@xml:id];
+declare variable $worksdoc := doc("../works.xml");
+declare variable $authorityentries := $worksdoc/tei:TEI/tei:text/tei:body//tei:listBibl/tei:bibl[@xml:id];
 declare variable $authorsinworksauthority := true();
 
 (: Read persons authority file to be able to link from works to 
@@ -76,7 +77,9 @@ declare variable $allinstances :=
         let $bibrefs := for $b in $work/tei:bibl return bod:italicizeTitles($b)
         let $repertories := for $n in $work/tei:bibl[@type='repertory'] return normalize-space($n/string())
         let $notes := for $n in $work/tei:note[not(@type=('links','shelfmark','language','subject'))] return bod:italicizeTitles($n)
-        let $subjects := distinct-values($work/tei:note[@type='subject']/string())
+        let $oldsubjects := $work/tei:note[@type='subject']/string()
+        let $newsubjects := for $ref in $work/tei:term[@ref]/tokenize(@ref, '\s*#')[string-length() gt 0] return $worksdoc/tei:TEI/tei:teiHeader/tei:encodingDesc/tei:classDecl/tei:taxonomy/tei:category[@xml:id = $ref]/tei:catDesc/string()
+        let $subjects := distinct-values(($oldsubjects, $newsubjects))
         let $lang := $work/tei:textLang
         
         (: Get info in all the instances in the manuscript description files :)
