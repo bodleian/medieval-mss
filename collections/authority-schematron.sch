@@ -27,7 +27,7 @@
    </pattern>
    <pattern>
       <rule context="tei:text/tei:body/tei:listBibl/tei:bibl[not(tei:author)]">
-         <assert test="tei:note[@type = 'subject']">Works without an author should have one or more subject headings</assert>
+         <assert test="tei:term[@ref]">Works without an author should have one or more terms</assert>
       </rule>
    </pattern>
 </schema>
