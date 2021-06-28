@@ -6,11 +6,12 @@ declare variable $collection := collection('../collections/?select=*.xml;recurse
 declare variable $countryauthorities := doc('../places.xml')/tei:TEI/tei:text/tei:body//tei:listPlace/tei:place[@xml:id and @type='country'];
 declare variable $worksauthority := doc("../works.xml");
 
-declare function local:origin($keys as xs:string*, $solrfield as xs:string) as element()*
+declare function local:origin($countrykeyatts as attribute()*, $solrfield as xs:string) as element()*
 {
     (: Lookup place keys, which are specific to medieval-mss :)
-    if (count($keys) gt 0) then 
-        let $countries := $countryauthorities[@xml:id = distinct-values($keys)]
+    let $countrykeys as xs:string* := distinct-values(for $att in $countrykeyatts return tokenize($att/data(), '\s+')[string-length() gt 0])
+    return if (count($countrykeys) gt 0) then 
+        let $countries := $countryauthorities[@xml:id = $countrykeys]
         return if (count($countries) gt 0) then
             (
             for $country in $countries
@@ -160,7 +161,7 @@ declare function local:buildSummary($msdescorpart as element()) as xs:string
                     { bod:trueIfExists($ms//tei:sourceDesc//tei:decoDesc/tei:decoNote[not(@type='none')], 'ms_deconote_b') }
                     { bod:digitized($ms//tei:sourceDesc//tei:surrogates//tei:bibl, 'ms_digitized_s') }
                     { bod:languages($ms//tei:sourceDesc//tei:textLang, 'lang_sm') }
-                    { local:origin($ms//tei:sourceDesc//tei:origPlace/tei:country/string(@key), 'ms_origin_sm') }
+                    { local:origin($ms//tei:sourceDesc//tei:origPlace/tei:country/@key, 'ms_origin_sm') }
                     { bod:centuries($ms//tei:origin//tei:origDate, 'ms_date_sm') }
                     { local:workSubjects($ms//tei:msItem/tei:title/@key, 'wk_subjects_sm') }
                     { bod:strings2many(local:buildSummaries($ms), 'ms_summary_sm') }
