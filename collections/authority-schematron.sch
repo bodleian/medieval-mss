@@ -26,8 +26,13 @@
       </rule>
    </pattern>
    <pattern>
-      <rule context="tei:text/tei:body/tei:listBibl/tei:bibl[not(tei:author)]">
-         <assert test="tei:note[@type = 'subject']">Works without an author should have one or more subject headings</assert>
+      <rule context="tei:text/tei:body/tei:listBibl/tei:bibl">
+         <assert test="tei:term">All works should have one or more terms</assert>
+      </rule>
+       <rule context="tei:text/tei:body/tei:listBibl/tei:bibl/tei:term">
+         <let name="categoryids" value="/tei:TEI/tei:teiHeader/tei:encodingDesc/tei:classDecl/tei:taxonomy/tei:category/@xml:id"/>
+         <assert test="@ref">Terms should reference a category defined in the header</assert>
+         <assert test="every $r in tokenize(@ref, '\s*#')[string-length() gt 0] satisfies $r = $categoryids">Term does not reference the ID of a category in the header</assert>
       </rule>
    </pattern>
 </schema>
