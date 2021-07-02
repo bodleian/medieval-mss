@@ -77,9 +77,7 @@ declare variable $allinstances :=
         let $bibrefs := for $b in $work/tei:bibl return bod:italicizeTitles($b)
         let $repertories := for $n in $work/tei:bibl[@type='repertory'] return normalize-space($n/string())
         let $notes := for $n in $work/tei:note[not(@type=('links','shelfmark','language','subject'))] return bod:italicizeTitles($n)
-        let $oldsubjects := $work/tei:note[@type='subject']/string()
-        let $newsubjects := for $ref in $work/tei:term[@ref]/tokenize(@ref, '\s*#')[string-length() gt 0] return $worksdoc/tei:TEI/tei:teiHeader/tei:encodingDesc/tei:classDecl/tei:taxonomy/tei:category[@xml:id = $ref]/tei:catDesc/string()
-        let $subjects := distinct-values(($oldsubjects, $newsubjects))
+        let $subjects := for $ref in $work/tei:term[@ref]/tokenize(@ref, '\s*#')[string-length() gt 0] return normalize-space($worksdoc/tei:TEI/tei:teiHeader/tei:encodingDesc/tei:classDecl/tei:taxonomy/tei:category[@xml:id = $ref][1]/tei:catDesc[1]/string())
         let $lang := $work/tei:textLang
         
         (: Get info in all the instances in the manuscript description files :)
@@ -145,7 +143,7 @@ declare variable $allinstances :=
                 {
                 (: Subjects (Medieval only) :)
                 for $subject in $subjects
-                    return <field name="wk_subjects_sm">{ normalize-space($subject) }</field>
+                    return <field name="wk_subjects_sm">{ $subject }</field>
                 }
                 {
                 (: See also links to other entries in the same authority file :)
