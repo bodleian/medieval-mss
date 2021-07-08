@@ -161,6 +161,15 @@ declare variable $allinstances :=
                         bod:logging('info', 'Cannot create see-also link', ($id, $relatedid))
                 }
                 {
+                (: See also links to search for works with the same subjects :)
+                for $subject in $subjects
+                    let $url := concat('/?f[type][]=work;f[wk_subjects_sm][]=', $subject)
+                    let $linktext := concat("Other works with the subject '", $subject, "'")
+                    let $link := concat($url, "|", $linktext)
+                    order by $subject
+                    return <field name="link_related_smni">{ $link }</field>
+                }
+                {
                 (: Links to the authors of the work :)
                 let $authorids := 
                     if ($authorsinworksauthority) then distinct-values($work/tei:author[not(@role)]/@key/data())
