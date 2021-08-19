@@ -39,9 +39,14 @@ declare function local:workSubjects($workkeyatts as attribute()*, $solrfield as 
 
 declare function local:buildSummaries($ms as document-node()) as xs:string*
 {
-    if ($ms//tei:msDesc/(tei:head|tei:history/tei:origin|tei:msContents/tei:summary) or not($ms//tei:msPart/(tei:head|tei:history/tei:origin|tei:msContents/tei:summary))) then
+    if ($ms/tei:TEI/@type = 'stub') then
+        (: No summaries for stub records :)
+        ()
+    else if ($ms//tei:msDesc/(tei:head|tei:history/tei:origin|tei:msContents/tei:summary) or not($ms//tei:msPart/(tei:head|tei:history/tei:origin|tei:msContents/tei:summary))) then
+        (: For manuscripts without parts, or composite manuscripts with an overall head/summary/origin, index with a single summary :)
         local:buildSummary($ms//tei:msDesc[1])
     else
+        (: For composite manuscripts, index a summary for each part (but only up to the first 15 parts) :)
         (
         for $part in $ms//tei:msPart[count(preceding::tei:msPart) lt 10]
             return
