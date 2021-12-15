@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_1684" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1684">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -48,10 +48,12 @@
                </msIdentifier>
                <msContents resp="#SC">
                   <msItem class="#sermones #miscellanea" n="1" xml:id="MS_Bodl_692-item1">
-                     <title key="work_13490" type="desc">Notebook of <persName key="person_233502730" role="aut">Dr. John Lawerne monk of Worcester, D.D. of Gloucester College, Oxford</persName></title>
+                     <title key="work_13490" type="desc">Notebook of <persName key="person_233502730" role="aut">Dr. John Lawerne monk of Worcester, D.D. of Gloucester College, Oxford</persName>
+                     </title>
                      <note>Miscellaneous contents including:</note>
                      <msItem>
-                        <note><title key="work_14583" type="desc">Sermons</title>, including one preached before the king at Oxford.</note>
+                        <note>
+                           <title key="work_14583" type="desc">Sermons</title>, including one preached before the king at Oxford.</note>
                      </msItem>
                      <msItem>
                         <note>Scholastic exercises and disputations.</note>
@@ -66,10 +68,12 @@
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
-                        <extent><num type="leaf">165</num> fols. <dimensions type="leaf" unit="mm">
+                        <extent>
+                           <num type="leaf">165</num> fols. <dimensions type="leaf" unit="mm">
                               <height>303</height>
                               <width>225</width>
-                           </dimensions></extent>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
                      <layoutDesc>
                         <layout columns="1">1 col., variable number of lines, written space usually occupies the whole page, <dimensions type="written" unit="mm">
@@ -79,13 +83,21 @@
                      </layoutDesc>
                   </objectDesc>
                </physDesc>
-               <history resp="#DD">
+               <history>
                   <origin>
-                     <origDate calendar="Gregorian" cert="high" notAfter="1449" notBefore="1442">c. 1442–1449</origDate>
+                     <origDate calendar="Gregorian"
+                               cert="high"
+                               notAfter="1449"
+                               notBefore="1442">c. 1442–1449</origDate>
                      <origPlace>
                         <country key="place_7002445">English</country>, <settlement key="place_7011931">Oxford</settlement>
                      </origPlace>
                   </origin>
+                  <provenance type="MLGB3_provenance_evidence"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6006">
+                     <orgName role="fmo" key="org_148943477">Worcester, Worcestershire, Benedictine cathedral priory of St Mary the Virgin</orgName>: John Lawerne, monk of Worcester, D. at Gloucester College, Oxford, Elemosinarius at Worcester 1448 and 1455.     (fol. 38v) Versus: "... in circuitu ... tumbe m. Th. Ledbury prioris quondam huius loci" (sc. Worcester 1438--44) (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6006">MLGB3</ref>: evidence from an inscription of ownership by an individual member of a religious house (which may not, however, be evidence for institutional ownership)). </provenance>
+                  <provenance type="MLGB3_laterOwners"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6006">Acquired between 1605 and 1611. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6006">MLGB3</ref>)</provenance>
                   <provenance>Entries cover the years c. 1442-c. 1449 while the writer was a student monk at Gloucester College, Oxford.</provenance>
                   <acquisition notAfter="1611" notBefore="1605" resp="#SC">Probably acquired between 1605 and 1611.</acquisition>
                </history>
@@ -93,7 +105,9 @@
                   <adminInfo>
                      <recordHist>
                         <source>Description adapted (2019) from the following sources, with reference to other published literature cited in the description: <listBibl>
-                              <bibl>A. G. Watson, <title><ref target="https://catalog.hathitrust.org/Record/000310664">Catalogue of Dated and Datable Manuscripts c.435–1600 in Oxford Libraries</ref></title> (Oxford, 1984), no. 110 [physical description, origin, provenance]</bibl>
+                              <bibl>A. G. Watson, <title>
+                                    <ref target="https://catalog.hathitrust.org/Record/000310664">Catalogue of Dated and Datable Manuscripts c.435–1600 in Oxford Libraries</ref>
+                                 </title> (Oxford, 1984), no. 110 [physical description, origin, provenance]</bibl>
                               <bibl>Summary Catalogue (1922) [contents, acquisition]</bibl>
                            </listBibl>
                            <listBibl>
@@ -106,7 +120,11 @@
                   <listBibl type="WRAPPER">
                      <listBibl type="INTERNET">
                         <head>Online resources:</head>
-                        <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6006"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl>
+                        <bibl>
+                           <ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6006">
+                              <title>MLGB3: Medieval Libraries of Great Britain</title>
+                           </ref>
+                        </bibl>
                      </listBibl>
                   </listBibl>
                </additional>
@@ -114,9 +132,12 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2021-12-14">Add provenance information from MLGB3.</change>
          <change when="2019-03-27" who="#MLH">Revised to incorporate all information in Watson and SC.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>

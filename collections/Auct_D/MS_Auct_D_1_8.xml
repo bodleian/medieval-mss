@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_419" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_419">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -42,7 +42,9 @@
                      <title key="work_15406" type="desc">Unum ex quattuor</title>
                      <note>(Gospel Harmony)</note>
                      <note>with gloss</note>
-                     <bibl type="repertory"><ref target="http://www.repbib.uni-trier.de/cgi-bin/rebiIndex.tcl?ac=searchlist&amp;tlnr=10109">Stegmüller, <title>Bibl.</title> 10109</ref></bibl>
+                     <bibl type="repertory">
+                        <ref target="http://www.repbib.uni-trier.de/cgi-bin/rebiIndex.tcl?ac=searchlist&amp;tlnr=10109">Stegmüller, <title>Bibl.</title> 10109</ref>
+                     </bibl>
                      <bibl type="related">Bible, Gospels</bibl>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
@@ -64,11 +66,17 @@
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
+                  <provenance type="MLGB3_provenance_evidence"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4049">
+                     <orgName role="fmo">Northampton, Northamptonshire, Cluniac priory of St Andrew</orgName>: "Iste liber constat domo sancti Andree de Northamton" (flyleaf formerly front pastedown, fol. i recto), s. xiv ex.      ".E. z." (top of fol. 1r), s. xv--xvi.     "liber sancti andree norh't." (top of fol. 1r), large bookhand, ? s. xiii.     "Iohannes vnum ex .iiij. or " (top flyleaf fol. ii verso), s. xiv. The hand in which this title is written appears to be that of the title in Oriel 53, fol. 1r.     (Medieval binding.) (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4049">MLGB3</ref>: evidence from an ex-libris inscription or note of gift to an institution). </provenance>
+                  <provenance type="MLGB3_laterOwners"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4049">Presented by Sir Walter Cope 1602. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4049">MLGB3</ref>)</provenance>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
+                        <source>
+                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
                               <bibl facs="aap0552.gif" type="SC">Summary Catalogue, Vol. 2, part 1, p. 531</bibl>
                               <bibl facs="aap0553.gif" type="SC">Summary Catalogue, Vol. 2, part 1, p. 532</bibl>
                            </listBibl>
@@ -78,7 +86,11 @@
                   <listBibl type="WRAPPER">
                      <listBibl type="INTERNET">
                         <head>Online resources:</head>
-                        <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4049"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl>
+                        <bibl>
+                           <ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4049">
+                              <title>MLGB3: Medieval Libraries of Great Britain</title>
+                           </ref>
+                        </bibl>
                      </listBibl>
                   </listBibl>
                </additional>
@@ -341,8 +353,11 @@
          </classDecl>
       </encodingDesc>
       <revisionDesc>
+         <change when="2021-12-14">Add provenance information from MLGB3.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>
