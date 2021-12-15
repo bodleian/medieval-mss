@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_8054" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8054">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -38,7 +38,9 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem class="#historica #topographica #liturgica #biblia" n="1" xml:id="MS_Rawl_B_484-item1">
+                  <msItem class="#historica #topographica #liturgica #biblia"
+                          n="1"
+                          xml:id="MS_Rawl_B_484-item1">
                      <title key="work_11059" type="desc">Collectanea of <persName key="person_37790832">Sir James Ware</persName>, comprising fragments, extracts and notes mostly on <placeName key="place_1000078">Ireland</placeName> but including (fol. 85) cutting without text from a Psalter, English, Winchester, 10th century, second quarter.</title>
                      <textLang mainLang="la" otherLangs="fr en ga">Latin, French, English, and Irish</textLang>
                   </msItem>
@@ -72,13 +74,22 @@
                      <origPlace>
                         <country key="place_7002445">English</country>, <settlement key="place_7011375">Winchester</settlement> (in part)<!--ORIGINAL: English, Winchester--></origPlace>
                   </origin>
-                  <provenance notAfter="1755" notBefore="1690" resp="#MMM"><persName key="person_47563478" role="fmo">Richard Rawlinson, 1690–1755</persName></provenance>
+                  <provenance type="MLGB3_provenance_evidence"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5781">
+                     <orgName role="fmo" key="org_154916541">Winchester, Hampshire, Benedictine cathedral priory of St Peter, St Paul, and St Swithun</orgName>: An illuminated fragment removed from Cotton Galba A.xviii. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5781">MLGB3</ref>: inferred evidence). </provenance>
+                  <provenance type="MLGB3_generalNotes"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5781">v. Millar, Engl. Illum. MSS. s. x--xiii. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5781">MLGB3</ref>)
+                                             </provenance>
+                  <provenance notAfter="1755" notBefore="1690" resp="#MMM">
+                     <persName key="person_47563478" role="fmo">Richard Rawlinson, 1690–1755</persName>
+                  </provenance>
                   <acquisition resp="#MMM" when="1755">Bequeathed to the Bodleian in 1755</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (W. D. Macray, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ...viri munificentissimi Ricardi Rawlinson, J.C.D., codicum...complectens</title>, Quarto Catalogues V, 5 fascicles, 1862–1900). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
+                        <source>
+                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (W. D. Macray, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ...viri munificentissimi Ricardi Rawlinson, J.C.D., codicum...complectens</title>, Quarto Catalogues V, 5 fascicles, 1862–1900). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
                               <bibl facs="aas0218.gif" type="SC">Summary Catalogue, Vol. 3, p. 203</bibl>
                               <bibl facs="acv0354.gif" type="QUARTO">Quarto Catalogue, Col. 700</bibl>
                               <bibl facs="acv0355.gif" type="QUARTO">Quarto Catalogue, Cols. 701–2</bibl>
@@ -86,12 +97,22 @@
                         </source>
                      </recordHist>
                   </adminInfo>
-                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/90b15877-8a2d-40b0-b92c-7f90ab1978d7/"><title>Digital Bodleian</title></ref>
-                        <note>(1 image from 35mm slides)</note></bibl></surrogates>
+                  <surrogates>
+                     <bibl subtype="partial" type="digital-facsimile">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/90b15877-8a2d-40b0-b92c-7f90ab1978d7/">
+                           <title>Digital Bodleian</title>
+                        </ref>
+                        <note>(1 image from 35mm slides)</note>
+                     </bibl>
+                  </surrogates>
                   <listBibl type="WRAPPER">
                      <listBibl type="INTERNET">
                         <head>Online resources:</head>
-                        <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5781"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl>
+                        <bibl>
+                           <ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5781">
+                              <title>MLGB3: Medieval Libraries of Great Britain</title>
+                           </ref>
+                        </bibl>
                      </listBibl>
                   </listBibl>
                </additional>
@@ -99,9 +120,13 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
-         <change when="2019-10-31" xml:id="MMM"><persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
+         <change when="2021-12-14">Add provenance information from MLGB3.</change>
+         <change when="2019-10-31" xml:id="MMM">
+            <persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>
