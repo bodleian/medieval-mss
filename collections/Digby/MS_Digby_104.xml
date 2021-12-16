@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_4226" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4226">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -41,13 +41,24 @@
                   <p n="composite">Composite: fols. 1–20 || B || C || D || E || F || G || H || I || J || K || L || M</p>
                </physDesc>
                <history>
-                  <provenance notAfter="1634" notBefore="1603" resp="#MMM"><persName key="person_49357645" role="fmo">Kenelm Digby, 1603–1665</persName></provenance>
+                  <provenance type="MLGB3_provenance_evidence"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5914">
+                     Fols. 21-60: <orgName role="fmo" key="org_198876802">Witham, Somerset, Charterhouse of Saint Mary the Virgin</orgName>: "Liber domus beate Marie de Witham ordinis Carthusiensis ex dono magistri Iohannis Blacman" (fol. 21r), s. xv. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5914">MLGB3</ref>: evidence from an ex-libris inscription or note of gift to an institution). </provenance>
+                  <provenance type="MLGB3_laterOwners"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5914">Thomas Allen 23 (A 87). (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5914">MLGB3</ref>)</provenance>
+                  <provenance type="MLGB3_generalNotes"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5914">Parts of this volume, made up of many books, came from Coventry, q.v. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5914">MLGB3</ref>)
+                                             </provenance>
+                  <provenance notAfter="1634" notBefore="1603" resp="#MMM">
+                     <persName key="person_49357645" role="fmo">Kenelm Digby, 1603–1665</persName>
+                  </provenance>
                   <acquisition resp="#MMM" when="1634">Donated to the Bodleian, 1634.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (W. D. Macray, <title>Bodleian Library Quarto Catalogues IX: Digby Manuscripts</title>, repr. with addenda by R. W. Hunt and A. G. Watson, 1999). <listBibl>
+                        <source>
+                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (W. D. Macray, <title>Bodleian Library Quarto Catalogues IX: Digby Manuscripts</title>, repr. with addenda by R. W. Hunt and A. G. Watson, 1999). <listBibl>
                               <bibl facs="abw0068.gif" type="QUARTO">Quarto Catalogue, col. 118</bibl>
                               <bibl facs="abw0069.gif" type="QUARTO">Quarto Catalogue, cols. 119–20</bibl>
                               <bibl facs="abw0070.gif" type="QUARTO">Quarto Catalogue, cols. 121–2</bibl>
@@ -64,9 +75,21 @@
                      <listBibl type="INTERNET">
                         <head>Online resources:</head>
                         <!--Existing bibliography in place: check sorting of entries-->
-                        <bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/77768"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title></ref></bibl>
-                        <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1811"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl>
-                        <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5914"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl>
+                        <bibl>
+                           <ref target="http://jonas.irht.cnrs.fr/manuscrit/77768">
+                              <title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title>
+                           </ref>
+                        </bibl>
+                        <bibl>
+                           <ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1811">
+                              <title>MLGB3: Medieval Libraries of Great Britain</title>
+                           </ref>
+                        </bibl>
+                        <bibl>
+                           <ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5914">
+                              <title>MLGB3: Medieval Libraries of Great Britain</title>
+                           </ref>
+                        </bibl>
                      </listBibl>
                   </listBibl>
                </additional>
@@ -175,7 +198,9 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem class="#historica #astrologia_astronomia" n="1" xml:id="MS_Digby_104-part4-item1">
+                     <msItem class="#historica #astrologia_astronomia"
+                             n="1"
+                             xml:id="MS_Digby_104-part4-item1">
                         <title key="work_10318" type="desc">Astrological and historical notes</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
@@ -230,7 +255,9 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem class="#astrologia_astronomia" n="1" xml:id="MS_Digby_104-part6-item1">
+                     <msItem class="#astrologia_astronomia"
+                             n="1"
+                             xml:id="MS_Digby_104-part6-item1">
                         <title key="work_10409" type="desc">Astrological treatises</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
@@ -291,7 +318,9 @@
                         <title key="work_4945">De potentiis anime</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem class="#astrologia_astronomia" n="2" xml:id="MS_Digby_104-part8-item2">
+                     <msItem class="#astrologia_astronomia"
+                             n="2"
+                             xml:id="MS_Digby_104-part8-item2">
                         <title key="work_10319" type="desc">Astrological and mathematical notes</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
@@ -462,7 +491,8 @@
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                      <msItem class="#bibliographica" n="2" xml:id="MS_Digby_104-part12-item2">
-                        <title key="work_12817" type="desc">Library catalogue of <orgName key="org_311465280"> Coventry cathedral priory </orgName></title>
+                        <title key="work_12817" type="desc">Library catalogue of <orgName key="org_311465280"> Coventry cathedral priory </orgName>
+                        </title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                      <msItem class="#legalia" n="3" xml:id="MS_Digby_104-part12-item3">
@@ -518,9 +548,13 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
-         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
+         <change when="2021-12-14">Add provenance information from MLGB3.</change>
+         <change when="2018-10-14" xml:id="MMM">
+            <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>
