@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_3069" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_3069">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -64,7 +64,8 @@
                         <extent>iii + 438 leaves <dimensions type="leaf" unit="in">
                               <height>16</height>
                               <width>11.5</width>
-                           </dimensions></extent>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
                      <layoutDesc>
                         <layout columns="2">2 cols.</layout>
@@ -94,8 +95,12 @@
                   </origin>
                   <provenance resp="#PA">Made probably for an Augustinian house in Venice.</provenance>
                   <provenance resp="#PA">'Armellinae familiae' (16th cent), fol. i: <persName key="person_3431" role="fmo" type="family">Armellini family of Venice</persName>. A note on the family by Canonici is at fol. ii.</provenance>
-                  <provenance notAfter="1805" notBefore="1727" resp="#SC"><persName key="person_2384880" role="fmo">Matteo Luigi Canonici, 1727–1805</persName></provenance>
-                  <provenance notAfter="1807" resp="#SC"><persName key="person_446" role="fmo">Giuseppe Canonici, -1807</persName></provenance>
+                  <provenance notAfter="1805" notBefore="1727" resp="#SC">
+                     <persName key="person_2384880" role="fmo">Matteo Luigi Canonici, 1727–1805</persName>
+                  </provenance>
+                  <provenance notAfter="1807" resp="#SC">
+                     <persName key="person_446" role="fmo">Giuseppe Canonici, -1807</persName>
+                  </provenance>
                   <acquisition resp="#SC" when="1817">Purchased by the Bodleian in 1817</acquisition>
                </history>
                <additional>
@@ -103,7 +108,9 @@
                      <recordHist>
                         <source>Description adapted (March 2021) from the following sources: <listBibl>
                               <bibl>B. C. Barker-Benfield, <title>Bookbindings of Canonici manuscripts : a survey of early and non-standard bindings, mostly Italian, in the Canonici collection of the Bodleian Library, University of Oxford</title> (Oxford, privately printed, 2020) [binding]</bibl>
-                              <bibl>Otto Pächt and J. J. G. Alexander, <title><ref target="https://catalog.hathitrust.org/Record/000468709">Illuminated Manuscripts in the Bodleian Library, Oxford</ref></title>, II (1970), no. 735 [decoration, date, origin, provenance]</bibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>
+                                    <ref target="https://catalog.hathitrust.org/Record/000468709">Illuminated Manuscripts in the Bodleian Library, Oxford</ref>
+                                 </title>, II (1970), no. 735 [decoration, date, origin, provenance]</bibl>
                               <bibl>The Summary Catalogue (1897) [contents, physical description, provenance, acquisition]</bibl>
                            </listBibl>
                            <listBibl>
@@ -112,20 +119,34 @@
                         </source>
                      </recordHist>
                   </adminInfo>
-                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/0960de10-49ee-4d80-a5d8-cacaed77b73a/"><title>Digital Bodleian</title></ref>
-                        <note>(24 images from 35mm slides)</note></bibl></surrogates>
-                  <listBibl type="WRAPPER"><listBibl type="PRINT">
-                     <bibl> Tammaro de Marinis, <title>La legatura artistica in Italia nei secoli XV e XVI</title>, 3 vols., Florence 1960, II no. 2267 bis (under Venice).</bibl>
-                  </listBibl></listBibl>
+                  <surrogates>
+                     <bibl subtype="partial" type="digital-facsimile">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/0960de10-49ee-4d80-a5d8-cacaed77b73a/">
+                           <title>Digital Bodleian</title>
+                        </ref>
+                        <note>(24 images from 35mm slides)</note>
+                     </bibl>
+                  </surrogates>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="PRINT">
+                        <head>Printed descriptions:</head>
+                        <bibl> Tammaro de Marinis, <title>La legatura artistica in Italia nei secoli XV e XVI</title>, 3 vols., Florence 1960, II no. 2267 bis (under Venice).</bibl>
+                        <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 2: Office Books</title> (typescript, 1957), <citedRange unit="page" from="248" to="248">p. 248</citedRange>
+                        </bibl>
+                     </listBibl>
+                  </listBibl>
                </additional>
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
-         <change when="2021-03">Description revised to incorporate all information in SC and <ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref></change>
+         <change when="2021-03">Description revised to incorporate all information in SC and <ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref>
+         </change>
          <change when="2020-08-20">Binding description added.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>
