@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_6012" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6012">
    <teiHeader>
       <fileDesc>
          <!-- TODO: written space -->
@@ -53,7 +53,8 @@
                         <layout columns="1" writtenLines="29 32">1 col., c. 29–32 lines, written space <dimensions type="written" unit="mm">
                               <height max="173" min="168">168–73</height>
                               <width>105</width>
-                           </dimensions></layout>
+                           </dimensions>
+                        </layout>
                         <!-- added from Watson -->
                      </layoutDesc>
                   </objectDesc>
@@ -72,9 +73,13 @@
                      <origPlace>
                         <country key="place_7000084">German</country>, <settlement key="place_7024031">Erfurt</settlement>, <orgName role="fmo" key="org_415145858126223022295">Charterhouse of Salvatorberg</orgName></origPlace>
                   </origin>-->
-                  <provenance><orgName key="org_415145858126223022295" role="fmo">Charterhouse of Salvatorberg</orgName>: in its medieval catalogue with the signature <q>C 94</q> (also labelled on the upper board), as printed by P. Lehmann, <title>MBDS</title> ii. 232–593; <q>Carthusienses prope Erffordiam</q> (15th century, fol. 1r)</provenance>
-                  <provenance notAfter="1831" notBefore="1760"><persName key="person_24953683" role="fmo">Friedrich Gottlieb Julius von Bülow, 1760–?1831</persName>, identifiable as no. 301 in the catalogue of part 3 of his sale, 10 Oct. 1836 (<q>Expositio epistolar. dominical: et officiorum missae per circulum anni (a. 1456. scr.) — AUGUSTINI Liber de spiritu et littera etc.</q>).</provenance>
-                  <provenance notAfter="1856" notBefore="1841"><persName key="person_54195353" role="fmo">Sir William Hamilton, 1788–1856</persName></provenance>
+                  <provenance>
+                     <orgName key="org_415145858126223022295" role="fmo">Charterhouse of Salvatorberg</orgName>: in its medieval catalogue with the signature <q>C 94</q> (also labelled on the upper board), as printed by P. Lehmann, <title>MBDS</title> ii. 232–593; <q>Carthusienses prope Erffordiam</q> (15th century, fol. 1r)</provenance>
+                  <provenance notAfter="1831" notBefore="1760">
+                     <persName key="person_24953683" role="fmo">Friedrich Gottlieb Julius von Bülow, 1760–?1831</persName>, identifiable as no. 301 in the catalogue of part 3 of his sale, 10 Oct. 1836 (<q>Expositio epistolar. dominical: et officiorum missae per circulum anni (a. 1456. scr.) — AUGUSTINI Liber de spiritu et littera etc.</q>).</provenance>
+                  <provenance notAfter="1856" notBefore="1841">
+                     <persName key="person_54195353" role="fmo">Sir William Hamilton, 1788–1856</persName>
+                  </provenance>
                   <acquisition when="1857">Presented to the Bodleian Library by his sons and received in 1857.</acquisition>
                </history>
                <additional>
@@ -90,14 +95,24 @@
                   <surrogates>
                      <bibl subtype="full" type="digital-facsimile">
                         <ref target="https://digital.bodleian.ox.ac.uk/objects/3e0bba46-3e92-4a46-929b-f10b200c6a76/">
-                           <title>Digital Bodleian</title></ref>
+                           <title>Digital Bodleian</title>
+                        </ref>
                         <note>(full digital facsimile)</note>
                      </bibl>
                   </surrogates>
                   <listBibl type="WRAPPER">
                      <listBibl type="INTERNET">
                         <head>Online resources:</head>
-                        <bibl><ref target="https://hab.bodleian.ox.ac.uk/en/"><title>Manuscripts from German-Speaking Lands – A Polonsky Foundation Digitization Project</title></ref></bibl>
+                        <bibl>
+                           <ref target="https://hab.bodleian.ox.ac.uk/en/">
+                              <title>Manuscripts from German-Speaking Lands – A Polonsky Foundation Digitization Project</title>
+                           </ref>
+                        </bibl>
+                     </listBibl>
+                     <listBibl type="PRINT">
+                        <head>Printed descriptions:</head>
+                        <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 5: Fragments - Mass Books</title> (typescript, 1957), <citedRange unit="page" from="132" to="132">p. 132</citedRange>
+                        </bibl>
                      </listBibl>
                   </listBibl>
                </additional>
@@ -175,9 +190,14 @@
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" cert="high" notAfter="1460" notBefore="1456">late 1450s (see rubrics)</origDate>
+                        <origDate calendar="Gregorian"
+                                  cert="high"
+                                  notAfter="1460"
+                                  notBefore="1456">late 1450s (see rubrics)</origDate>
                         <origPlace>
-                           <country key="place_7000084">German</country>, <settlement key="place_7024031">Erfurt</settlement>, <orgName key="org_415145858126223022295" role="fmo">Charterhouse of Salvatorberg</orgName><!--: inscribed, <q>Carthusienses prope Erffordiam</q> (15th century, fol. 1r). --></origPlace>
+                           <country key="place_7000084">German</country>, <settlement key="place_7024031">Erfurt</settlement>, <orgName key="org_415145858126223022295" role="fmo">Charterhouse of Salvatorberg</orgName>
+                           <!--: inscribed, <q>Carthusienses prope Erffordiam</q> (15th century, fol. 1r). -->
+                        </origPlace>
                      </origin>
                   </history>
                </msPart>
@@ -248,7 +268,8 @@
                            <extent>The lower portions of four leaves. Fols. 363–366 were formerly pastedowns; lifted when the volume was rebacked, with remnants of ink leaving a reverse image on the wooden boards. Strips of binding waste from the same manuscript are between most quires, at fols. 2–3, 32–33, 91–92, etc. <dimensions type="fragment" unit="mm">
                                  <height>205</height>
                                  <width max="160" min="150">150–60</width>
-                              </dimensions></extent>
+                              </dimensions>
+                           </extent>
                         </supportDesc>
                         <layoutDesc>
                            <layout columns="1">Ruled in ink. 1 column. Width of the column <dimensions type="ruled" unit="mm">
@@ -270,7 +291,9 @@
                   <history>
                      <origin>
                         <origDate calendar="Gregorian" notAfter="1100" notBefore="1050">11th century, second half</origDate>
-                        <origPlace><country key="place_7000084">German</country></origPlace>
+                        <origPlace>
+                           <country key="place_7000084">German</country>
+                        </origPlace>
                      </origin>
                   </history>
                </msPart>
@@ -278,9 +301,12 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
-         <change when="2021-01-13"><persName>Andrew Dunning</persName> New description from consultation of original.</change>
+         <change when="2021-01-13">
+            <persName>Andrew Dunning</persName> New description from consultation of original.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>
