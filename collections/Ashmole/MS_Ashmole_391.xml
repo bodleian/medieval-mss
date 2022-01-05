@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_339" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_339">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -58,7 +58,8 @@
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (W. H. Black, <title>A descriptive, analytical, and critical catalogue of the manuscripts bequeathed unto the University of Oxford by Elias Ashmole Esq....</title>, Quarto Catalogues X, 1845). Decoration, localization and date follow Pächt and Alexander (1973). Additional description of decoration by Elizabeth Solopova, c. 2000. <listBibl>
+                        <source>
+                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (W. H. Black, <title>A descriptive, analytical, and critical catalogue of the manuscripts bequeathed unto the University of Oxford by Elias Ashmole Esq....</title>, Quarto Catalogues X, 1845). Decoration, localization and date follow Pächt and Alexander (1973). Additional description of decoration by Elizabeth Solopova, c. 2000. <listBibl>
                               <bibl facs="aeh0153.gif" type="QUARTO">Quarto Catalogue, cols. 295–6</bibl>
                               <bibl facs="aeh0154.gif" type="QUARTO">Quarto Catalogue, cols. 297–8</bibl>
                               <bibl facs="aeh0155.gif" type="QUARTO">Quarto Catalogue, col. 299</bibl>
@@ -69,13 +70,33 @@
                         </source>
                      </recordHist>
                   </adminInfo>
-                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/82a37a79-d751-41bb-b080-538e7039f048/"><title>Digital Bodleian</title></ref>
-                        <note>(3 images from 35mm slides) [part 2]</note></bibl><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/9cb2e1c8-131f-400c-aff1-0d05c21afe8a/"><title>Digital Bodleian</title></ref>
-                        <note>(2 images from 35mm slides) [part 5]</note></bibl></surrogates>
+                  <surrogates>
+                     <bibl subtype="partial" type="digital-facsimile">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/82a37a79-d751-41bb-b080-538e7039f048/">
+                           <title>Digital Bodleian</title>
+                        </ref>
+                        <note>(3 images from 35mm slides) [part 2]</note>
+                     </bibl>
+                     <bibl subtype="partial" type="digital-facsimile">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/9cb2e1c8-131f-400c-aff1-0d05c21afe8a/">
+                           <title>Digital Bodleian</title>
+                        </ref>
+                        <note>(2 images from 35mm slides) [part 5]</note>
+                     </bibl>
+                  </surrogates>
                   <listBibl type="WRAPPER">
                      <listBibl type="INTERNET">
                         <head>Online resources:</head>
-                        <bibl><ref target="https://www.medievalscribes.com/index.php?navtype=manuscripts&amp;navlocation=Oxford&amp;browse=manuscripts&amp;navlibrary=Bodleian+Library&amp;id=29&amp;nav=off"><title>Late Medieval English Scribes</title></ref></bibl>
+                        <bibl>
+                           <ref target="https://www.medievalscribes.com/index.php?navtype=manuscripts&amp;navlocation=Oxford&amp;browse=manuscripts&amp;navlibrary=Bodleian+Library&amp;id=29&amp;nav=off">
+                              <title>Late Medieval English Scribes</title>
+                           </ref>
+                        </bibl>
+                     </listBibl>
+                     <listBibl type="PRINT">
+                        <head>Printed descriptions:</head>
+                        <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 3: Rituals and Directories</title> (typescript, 1957), <citedRange unit="page" from="188" to="188">p. 188</citedRange>
+                        </bibl>
                      </listBibl>
                   </listBibl>
                </additional>
@@ -86,7 +107,9 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem class="#medica #astrologia_astronomia" n="1" xml:id="MS_Ashmole_391-part1-item1">
+                     <msItem class="#medica #astrologia_astronomia"
+                             n="1"
+                             xml:id="MS_Ashmole_391-part1-item1">
                         <title key="work_13172" type="desc">Medical and astrological treatises</title>
                         <textLang mainLang="en" otherLangs="la">English and Latin</textLang>
                      </msItem>
@@ -179,7 +202,9 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem class="#astrologia_astronomia" n="1" xml:id="MS_Ashmole_391-part4-item1">
+                     <msItem class="#astrologia_astronomia"
+                             n="1"
+                             xml:id="MS_Ashmole_391-part4-item1">
                         <title key="work_13429">The Nativity of Sir Robert Holborne of Lincolnes Inn.</title>
                         <textLang mainLang="en">English</textLang>
                      </msItem>
@@ -272,7 +297,9 @@
       </fileDesc>
       <revisionDesc>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>

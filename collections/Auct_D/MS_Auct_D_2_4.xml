@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_436" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_436">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -65,8 +65,12 @@
                   <adminInfo>
                      <recordHist>
                         <source>Description adapted (2018) from the following sources: <listBibl>
-                              <bibl>A. G. Watson, <title><ref target="https://catalog.hathitrust.org/Record/000310664">Catalogue of Dated and Datable Manuscripts c.435–1600 in Oxford Libraries</ref></title> (Oxford, 1984), no. 41</bibl>
-                              <bibl>Otto Pächt and J. J. G. Alexander, <title><ref target="https://catalog.hathitrust.org/Record/000468709">Illuminated Manuscripts in the Bodleian Library, Oxford</ref></title>, III (1973), no. 129</bibl>
+                              <bibl>A. G. Watson, <title>
+                                    <ref target="https://catalog.hathitrust.org/Record/000310664">Catalogue of Dated and Datable Manuscripts c.435–1600 in Oxford Libraries</ref>
+                                 </title> (Oxford, 1984), no. 41</bibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>
+                                    <ref target="https://catalog.hathitrust.org/Record/000468709">Illuminated Manuscripts in the Bodleian Library, Oxford</ref>
+                                 </title>, III (1973), no. 129</bibl>
                               <bibl>Summary Catalogue (1922)</bibl>
                            </listBibl>
                            <listBibl>
@@ -75,12 +79,27 @@
                         </source>
                      </recordHist>
                   </adminInfo>
-                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/bf962aa4-6dc0-4ae1-a81f-a954219aaafb/"><title>Digital Bodleian</title></ref>
-                        <note>(9 images from 35mm slides)</note></bibl></surrogates>
+                  <surrogates>
+                     <bibl subtype="partial" type="digital-facsimile">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/bf962aa4-6dc0-4ae1-a81f-a954219aaafb/">
+                           <title>Digital Bodleian</title>
+                        </ref>
+                        <note>(9 images from 35mm slides)</note>
+                     </bibl>
+                  </surrogates>
                   <listBibl type="WRAPPER">
                      <listBibl type="INTERNET">
                         <head>Online resources:</head>
-                        <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5769"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl>
+                        <bibl>
+                           <ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5769">
+                              <title>MLGB3: Medieval Libraries of Great Britain</title>
+                           </ref>
+                        </bibl>
+                     </listBibl>
+                     <listBibl type="PRINT">
+                        <head>Printed descriptions:</head>
+                        <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 3: Rituals and Directories</title> (typescript, 1957), <citedRange unit="page" from="128" to="128">p. 128</citedRange>
+                        </bibl>
                      </listBibl>
                   </listBibl>
                </additional>
@@ -114,7 +133,8 @@
                            <layout columns="1" writtenLines="30 35">1 col., 30–35 lines, written space <dimensions type="written" unit="mm">
                                  <height max="210" min="180">c. 180–210</height>
                                  <width max="150" min="120">120–150</width>
-                              </dimensions></layout>
+                              </dimensions>
+                           </layout>
                         </layoutDesc>
                      </objectDesc>
                      <decoDesc>
@@ -123,7 +143,10 @@
                   </physDesc>
                   <history>
                      <origin resp="#DD">
-                        <origDate calendar="Gregorian" cert="high" notAfter="1173" notBefore="1161">1161 × 1173, or 1168?</origDate>
+                        <origDate calendar="Gregorian"
+                                  cert="high"
+                                  notAfter="1173"
+                                  notBefore="1161">1161 × 1173, or 1168?</origDate>
                         <origPlace>
                            <country key="place_7002445">English</country>, <settlement key="place_7011375">Winchester</settlement>, <orgName key="org_151542893">Hyde abbey</orgName>
                            <!--ORIGINAL: English, Winchester-->
@@ -162,7 +185,8 @@
                         <origDate calendar="Gregorian" notAfter="1160" notBefore="1140">12th century, middle</origDate>
                         <origPlace>
                            <country key="place_7002445">English</country>, <settlement key="place_7011375">Winchester</settlement>
-                        </origPlace><!-- note/check: decoration attributed to the Entangled figures master -->
+                        </origPlace>
+                        <!-- note/check: decoration attributed to the Entangled figures master -->
                      </origin>
                   </history>
                </msPart>
@@ -172,7 +196,9 @@
       <revisionDesc>
          <change when="2020-05-19">Description revised with reference to SC and Watson.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>
