@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_9010" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_9010">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -65,13 +65,21 @@
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1400" notBefore="1290">13th century, end, and 14th century</origDate>
                   </origin>
-                  <provenance notAfter="1735" notBefore="1674" resp="#MMM"><persName key="person_11058091" role="fmo">Thomas Tanner, 1674–1735</persName></provenance>
+                  <provenance type="MLGB3_provenance_evidence"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6688">
+                     <orgName role="fmo" key="org_144679410">Durham, Benedictine cathedral priory of St Cuthbert</orgName>: 'Iste liber constat [ . . . ] Ricardo byllyngham ex dono domini W. Seton' (fol. 4r). On fol. 177v in the top margin is 'Domino Ricardo Byllyngham monacho ecclesie cathedralis Dunelm' Oxon' studenti'. Both inscriptions erased and read under ultra-violet light. Richard Bellingham was at Durham College, Oxford, 1446/7--1456/7 (BRUO 189).     (Medieval stamped binding, late 15th cent.; no chain-mark.) (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6688">MLGB3</ref>: evidence from an inscription of ownership by an individual member of a religious house (which may not, however, be evidence for institutional ownership)). </provenance>
+                  <provenance type="MLGB3_laterOwners"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6688">Sancroft.     Tanner. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6688">MLGB3</ref>)</provenance>
+                  <provenance notAfter="1735" notBefore="1674" resp="#MMM">
+                     <persName key="person_11058091" role="fmo">Thomas Tanner, 1674–1735</persName>
+                  </provenance>
                   <acquisition resp="#MMM" when="1735">Bequeathed by him to the Bodleian in 1735.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (A. Hackman, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars quarta codices viri admodum reverendi Thomæ Tanneri, S.T.P., episcopi Asaphensis, complectens</title>, Quarto Catalogues IV, repr. 1966, with corrections, from the ed. of 1860). <listBibl>
+                        <source>
+                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (A. Hackman, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars quarta codices viri admodum reverendi Thomæ Tanneri, S.T.P., episcopi Asaphensis, complectens</title>, Quarto Catalogues IV, repr. 1966, with corrections, from the ed. of 1860). <listBibl>
                               <bibl facs="aas0097.gif" type="SC">Summary Catalogue, Vol. 3, p. 82</bibl>
                            </listBibl>
                            <listBibl>
@@ -89,7 +97,16 @@
                   <listBibl type="WRAPPER">
                      <listBibl type="INTERNET">
                         <head>Online resources:</head>
-                        <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6688"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl>
+                        <bibl>
+                           <ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6688">
+                              <title>MLGB3: Medieval Libraries of Great Britain</title>
+                           </ref>
+                        </bibl>
+                     </listBibl>
+                     <listBibl type="PRINT">
+                        <head>Printed descriptions:</head>
+                        <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 5: Fragments - Mass Books</title> (typescript, 1957), <citedRange unit="page" from="185" to="185">p. 185</citedRange>
+                        </bibl>
                      </listBibl>
                   </listBibl>
                </additional>
@@ -97,9 +114,13 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
-         <change when="2018-08-15" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
+         <change when="2021-12-14">Add provenance information from MLGB3.</change>
+         <change when="2018-08-15" xml:id="MMM">
+            <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_7066" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_7066">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -79,9 +79,11 @@
                         <layout columns="2" writtenLines="42">2 col. of 42 lines</layout>
                      </layoutDesc>
                   </objectDesc>
-                  <musicNotation><p>Square notation on 13–4 staves of 4 red lines.</p></musicNotation>
+                  <musicNotation>
+                     <p>Square notation on 13–4 staves of 4 red lines.</p>
+                  </musicNotation>
                   <decoDesc>
-                     <decoNote resp="#PA"> Fine borders, initials. (P&amp;A iii. 1103)</decoNote>
+                     <decoNote resp="#PA"> Fine borders, initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 1103)</decoNote>
                      <decoNote>Coloured initials and borders (fols. 11, 13, 31, 123, etc.), some cut out (fols. 37, 135, 210, 233); so is the beginning of the canon.</decoNote>
                   </decoDesc>
                   <!-- a different flourisher, f. 51-8 (quire e), fol. 87 ?. the two styles together, f. 109v; -->
@@ -105,7 +107,8 @@
                   <provenance resp="#VD">'Pertinet domine <persName key="person_2875" role="fmo">margarete Carew</persName>', fol. 267: probably Margaret (d. 1525), widow of Sir William Carew.</provenance>
                   <provenance resp="#Q1">Birth of <persName key="person_2877" role="sgn">Francis Clovyle</persName> noted in the calendar, March 1: Francis Cloyvle (d. 1562) of West Hanningfield, the son of William Clovyle, who (William) married Mary, daughter of Sir William Carew (<title>Visitations of Essex...</title>, ed. W. C. Metcalfe (1878), p. 37).</provenance>
                   <!-- no relevant info in Francis's will, PROB 11/45/169. His IPM: C 142/133/139.  C142/45/91, perh. IPM of William -->
-                  <provenance from="1638" resp="#Q2"><persName key="person_54940373" role="fmo">William Laud</persName>, by 1638.</provenance>
+                  <provenance from="1638" resp="#Q2">
+                     <persName key="person_54940373" role="fmo">William Laud</persName>, by 1638.</provenance>
                   <acquisition when="1639">Part of his third donation to the Bodleian, sent 28 June 1639.</acquisition>
                </history>
                <additional>
@@ -118,15 +121,30 @@
                         </source>
                      </recordHist>
                   </adminInfo>
-                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/99080775-653c-404f-8637-0f341b811a54/"><title>Digital Bodleian</title></ref>
-                        <note>(3 images from 35mm slides)</note></bibl></surrogates>
+                  <surrogates>
+                     <bibl subtype="partial" type="digital-facsimile">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/99080775-653c-404f-8637-0f341b811a54/">
+                           <title>Digital Bodleian</title>
+                        </ref>
+                        <note>(3 images from 35mm slides)</note>
+                     </bibl>
+                  </surrogates>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="PRINT">
+                        <head>Printed descriptions:</head>
+                        <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 5: Fragments - Mass Books</title> (typescript, 1957), <citedRange unit="page" from="215" to="215">p. 215</citedRange>
+                        </bibl>
+                     </listBibl>
+                  </listBibl>
                </additional>
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>

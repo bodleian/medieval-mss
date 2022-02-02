@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_7938" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_7938">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -54,7 +54,8 @@
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                   <msItem class="#oratio" n="4" xml:id="MS_Rawl_A_389-item4">
-                     <title key="work_13973" type="desc">Prayers revealed to <persName key="person_51685861">St. Bridget</persName></title>
+                     <title key="work_13973" type="desc">Prayers revealed to <persName key="person_51685861">St. Bridget</persName>
+                     </title>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                   <msItem n="5" xml:id="MS_Rawl_A_389-item5">
@@ -81,8 +82,10 @@
                      <textLang mainLang="en">English</textLang>
                   </msItem>
                   <msItem class="#theologica #devotiones" n="10" xml:id="MS_Rawl_A_389-item10">
-                     <title key="work_14332" type="desc">Religious meditations</title>
-                     <textLang mainLang="en">English</textLang>
+                     <locus>(fols. 99ra-104va)</locus>
+                     <title key="work_14332">Stimulus conscientie minor</title>
+                     <rubric>Consciende to clere þis lessoun I rede þou lere</rubric>
+                     <textLang mainLang="en" otherLangs="la">Middle English with Latin</textLang>
                   </msItem>
                </msContents>
                <physDesc>
@@ -99,13 +102,21 @@
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
-                  <provenance notAfter="1755" notBefore="1690" resp="#MMM"><persName key="person_47563478" role="fmo">Richard Rawlinson, 1690–1755</persName></provenance>
+                  <provenance type="MLGB3_provenance_evidence"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/3599">
+                     <orgName role="fmo" key="org_127830403">Lichfield, Staffordshire, Cathedral church of St Mary the Virgin and St Chad</orgName>: Rawlinson A.389 belonged to two prebendaries of Lichfield in s. xv ex. At end: 'Liber magistri Thome Rynold' and 'Liber Magistri Iohannis Redhill'; both were prebendaries of Lichfield in s. xv 2 .     No. 73 in Patrick Young's catatlogue of the Lichfield cathedral manuscripts, 1622--3.      The flyleaf, fol. iii, is from a 13th-cent. MS of Isidore of Seville's Etymologiae.     Mark of chain (?) shows at foot of fols. iii recto and i recto. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/3599">MLGB3</ref>: evidence from an inscription of ownership by an individual member of a religious house (which may not, however, be evidence for institutional ownership)). </provenance>
+                  <provenance type="MLGB3_laterOwners"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/3599">John Langley of the Amies, Broseley, whose arms are on the binding.     Somers. Somers-Jekyll sale, March 1739--40, no. 112. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/3599">MLGB3</ref>)</provenance>
+                  <provenance notAfter="1755" notBefore="1690" resp="#MMM">
+                     <persName key="person_47563478" role="fmo">Richard Rawlinson, 1690–1755</persName>
+                  </provenance>
                   <acquisition resp="#MMM" when="1755">Bequeathed to the Bodleian in 1755</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (W. D. Macray, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ...viri munificentissimi Ricardi Rawlinson, J.C.D., codicum...complectens</title>, Quarto Catalogues V, 5 fascicles, 1862–1900). <listBibl>
+                        <source>
+                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (W. D. Macray, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ...viri munificentissimi Ricardi Rawlinson, J.C.D., codicum...complectens</title>, Quarto Catalogues V, 5 fascicles, 1862–1900). <listBibl>
                               <bibl facs="acv0197.gif" type="QUARTO">Quarto Catalogue, col. 386</bibl>
                               <bibl facs="acv0198.gif" type="QUARTO">Quarto Catalogue, cols. 387–8</bibl>
                               <bibl facs="acv0199.gif" type="QUARTO">Quarto Catalogue, col. 389</bibl>
@@ -114,13 +125,27 @@
                         </source>
                      </recordHist>
                   </adminInfo>
-                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/feee4221-54bc-49c8-a4a0-721a304ac2e1/"><title>Digital Bodleian</title></ref>
-                        <note>(3 images from 35mm slides)</note></bibl></surrogates>
+                  <surrogates>
+                     <bibl subtype="partial" type="digital-facsimile">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/feee4221-54bc-49c8-a4a0-721a304ac2e1/">
+                           <title>Digital Bodleian</title>
+                        </ref>
+                        <note>(3 images from 35mm slides)</note>
+                     </bibl>
+                  </surrogates>
                   <listBibl type="WRAPPER">
                      <listBibl type="INTERNET">
                         <head>Online resources:</head>
-                        <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/3599"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl>
-                        <bibl><ref target="https://www.dhi.ac.uk/mwm/browse?type=ms&amp;id=129"><title>MWM: Manuscripts of the West Midlands</title></ref></bibl>
+                        <bibl>
+                           <ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/3599">
+                              <title>MLGB3: Medieval Libraries of Great Britain</title>
+                           </ref>
+                        </bibl>
+                        <bibl>
+                           <ref target="https://www.dhi.ac.uk/mwm/browse?type=ms&amp;id=129">
+                              <title>MWM: Manuscripts of the West Midlands</title>
+                           </ref>
+                        </bibl>
                      </listBibl>
                   </listBibl>
                </additional>
@@ -128,9 +153,13 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
-         <change when="2019-10-31" xml:id="MMM"><persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
+         <change when="2021-12-14">Add provenance information from MLGB3.</change>
+         <change when="2019-10-31" xml:id="MMM">
+            <persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>

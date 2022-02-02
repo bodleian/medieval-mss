@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_4521" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4521">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -51,7 +51,7 @@
                   </objectDesc>
                   <decoDesc>
                      <decoNote>Important miniatures and drawings, borders, initials. By at least five hands, the calendar pictures by the <persName key="person_316450919" role="art">Master of Étienne Loypeau</persName>
-                        <!-- as Maitre de Lucon -->, the full page miniatures by the <persName key="person_1524070" role="art">Boucicaut</persName> and <persName key="person_73763752" role="art">Bedford Masters</persName>, the silver-point drawings probably by one of the <persName role="art">Limbourg brothers</persName>, and the marginal droleries by a minor illuminator. (P&amp;A i. 641, pl. XLIX-XL)</decoNote>
+                        <!-- as Maitre de Lucon -->, the full page miniatures by the <persName key="person_1524070" role="art">Boucicaut</persName> and <persName key="person_73763752" role="art">Bedford Masters</persName>, the silver-point drawings probably by one of the <persName role="art">Limbourg brothers</persName>, and the marginal droleries by a minor illuminator. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 641, pl. XLIX-XL)</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
@@ -62,13 +62,16 @@
                         <!--ORIGINAL: French, Paris-->
                      </origPlace>
                   </origin>
-                  <provenance notAfter="1834" notBefore="1757" resp="#MMM"><persName key="person_69848690" role="fmo">Francis Douce, 1757–1834</persName></provenance>
+                  <provenance notAfter="1834" notBefore="1757" resp="#MMM">
+                     <persName key="person_69848690" role="fmo">Francis Douce, 1757–1834</persName>
+                  </provenance>
                   <acquisition resp="#MMM" when="1834">Bequeathed to the Bodleian in 1834</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1966). <listBibl>
+                        <source>
+                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1966). <listBibl>
                               <bibl facs="aaz0555.gif" type="SC">Summary Catalogue, vol. 4, p. 536</bibl>
                               <bibl facs="aaz0556.gif" type="SC">Summary Catalogue, vol. 4, p. 537</bibl>
                            </listBibl>
@@ -78,12 +81,27 @@
                         <p>To ensure its availability to future readers, access to this item is restricted, and readers are asked to work from reproductions and published descriptions as far as possible. To apply to see the original, please send a message to <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>, outlining the subject of your research, the importance of this item to that research, and the resources you have already consulted.</p>
                      </availability>
                   </adminInfo>
-                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/342f4ed5-d93c-4d1b-bf7e-310c24c91dcb/"><title>Digital Bodleian</title></ref>
-                        <note>(201 images from 35mm slides)</note></bibl></surrogates>
+                  <surrogates>
+                     <bibl subtype="partial" type="digital-facsimile">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/342f4ed5-d93c-4d1b-bf7e-310c24c91dcb/">
+                           <title>Digital Bodleian</title>
+                        </ref>
+                        <note>(201 images from 35mm slides)</note>
+                     </bibl>
+                  </surrogates>
                   <listBibl type="WRAPPER">
                      <listBibl type="INTERNET">
                         <head>Online resources:</head>
-                        <bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/78813"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title></ref></bibl>
+                        <bibl>
+                           <ref target="http://jonas.irht.cnrs.fr/manuscrit/78813">
+                              <title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title>
+                           </ref>
+                        </bibl>
+                     </listBibl>
+                     <listBibl type="PRINT">
+                        <head>Printed descriptions:</head>
+                        <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 4: Books of Hours</title> (typescript, 1957), <citedRange unit="page" from="64" to="64">p. 64</citedRange>
+                        </bibl>
                      </listBibl>
                   </listBibl>
                </additional>
@@ -91,9 +109,12 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
-         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
+         <change when="2018-10-14" xml:id="MMM">
+            <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>

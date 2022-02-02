@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_1256" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1256">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -100,14 +100,15 @@
                         <extent>ii + 180 leaves <dimensions type="leaf" unit="in">
                               <height>13.625</height>
                               <width>10</width>
-                           </dimensions></extent>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
                      <layoutDesc>
                         <layout columns="2">2 cols.</layout>
                      </layoutDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote type="decInit">Good decorative initials. (P&amp;A i. 230)</decoNote>
+                     <decoNote type="decInit">Good decorative initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 230)</decoNote>
                   </decoDesc>
                   <bindingDesc>
                      <binding contemporary="true">
@@ -122,8 +123,10 @@
                         <country key="place_7016845">Dutch</country>
                      </origPlace>
                   </origin>
-                  <provenance notAfter="1500" notBefore="1450"><orgName key="org_268217466" role="fmo">Doesburg, Holland, Brothers of the Common Life (Domus Clericorum)</orgName>: 'Liber domus Clericorum in Doesborch', 15th cent.</provenance>
-                  <provenance when="1586"><persName key="person_45435991" role="fmo">William James, -1617</persName>: 'The bott of me <persName key="person_3222" role="fmo">John Gybson</persName> in Doisberow and sent to Doctear James Deanne of Christ Cherche in Oxford the 3 of September 1586.'</provenance>
+                  <provenance notAfter="1500" notBefore="1450">
+                     <orgName key="org_268217466" role="fmo">Doesburg, Holland, Brothers of the Common Life (Domus Clericorum)</orgName>: 'Liber domus Clericorum in Doesborch', 15th cent.</provenance>
+                  <provenance when="1586">
+                     <persName key="person_45435991" role="fmo">William James, -1617</persName>: 'The bott of me <persName key="person_3222" role="fmo">John Gybson</persName> in Doisberow and sent to Doctear James Deanne of Christ Cherche in Oxford the 3 of September 1586.'</provenance>
                   <provenance when="1600"> 'Liber <persName key="person_3220" role="fmo">Cudbertj Ridlej Ædis Christi Oxon:</persName> ex Dono <persName key="person_3221" role="fmo">Guilielmi James in Artibus magistrj</persName> anno 1600. Junij 25º.' This William James was a son of bishop William James above.</provenance>
                   <acquisition notAfter="1602"> Cuthbert Ridley presented four MSS. in 1601, two of which are described in the Benefactors' Register as 'Diuersa opuscula Ambros. fo. MS.', and 'Diuersa opuscula August. fo. MS.', which are at present believed to be nos. 1904, 2475 (which are otherwise unaccounted for). It is possible that the present volume is represented by the two entries above, but probable that it was an independent or additional gift not later than 1602.</acquisition>
                </history>
@@ -131,7 +134,9 @@
                   <adminInfo>
                      <recordHist>
                         <source>Description adapted (March 2020) from the following sources: <listBibl>
-                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, I (1966), no. 230 [decoration, date, localization]</bibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>
+                                    <ref target="https://catalog.hathitrust.org/Record/000468709">Illuminated Manuscripts in the Bodleian Library, Oxford</ref>
+                                 </title>, I (1966), no. 230 [decoration, date, localization]</bibl>
                               <bibl>Summary Catalogue (1922) [contents, physical description, provenance, acquisition, endleaf]</bibl>
                            </listBibl>
                            <listBibl>
@@ -140,8 +145,21 @@
                         </source>
                      </recordHist>
                   </adminInfo>
-                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/5c5c9320-4ed4-4a68-baf9-54d8af537904/"><title>Digital Bodleian</title></ref>
-                        <note>(2 images from 35mm slides)</note></bibl></surrogates>
+                  <surrogates>
+                     <bibl subtype="partial" type="digital-facsimile">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/5c5c9320-4ed4-4a68-baf9-54d8af537904/">
+                           <title>Digital Bodleian</title>
+                        </ref>
+                        <note>(2 images from 35mm slides)</note>
+                     </bibl>
+                  </surrogates>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="PRINT">
+                        <head>Printed descriptions:</head>
+                        <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 5: Fragments - Mass Books</title> (typescript, 1957), <citedRange unit="page" from="141" to="141">p. 141</citedRange>
+                        </bibl>
+                     </listBibl>
+                  </listBibl>
                </additional>
                <msPart xml:id="MS_Bodl_199_endleaf">
                   <msIdentifier>
@@ -177,7 +195,9 @@
       <revisionDesc>
          <change when="2020-03-30">Revised to incorporate all information in SC.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>

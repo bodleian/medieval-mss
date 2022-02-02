@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_1227" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1227">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -101,14 +101,15 @@
                         <extent>ii + 67 leaves, in double columns <dimensions type="leaf" unit="in">
                               <height>11.25</height>
                               <width>8.375</width>
-                           </dimensions></extent>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
                      <layoutDesc>
                         <layout columns="2">2 cols.</layout>
                      </layoutDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote type="decInit">Good initials. Good initial added, 15th century, end, fol. i verso. (P&amp;A iii. 139)</decoNote>
+                     <decoNote type="decInit">Good initials. Good initial added, 15th century, end, fol. i verso. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 139)</decoNote>
                   </decoDesc>
                   <bindingDesc>
                      <binding notAfter="1400" notBefore="1150">
@@ -118,19 +119,25 @@
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1175" notBefore="1150">12th century, third quarter</origDate>; <origDate calendar="Gregorian" notAfter="1500" notBefore="1490" type="addition">added initial, 15th century, end</origDate>
+                     <origDate calendar="Gregorian" notAfter="1175" notBefore="1150">12th century, third quarter</origDate>; <origDate calendar="Gregorian"
+                               notAfter="1500"
+                               notBefore="1490"
+                               type="addition">added initial, 15th century, end</origDate>
                      <origPlace>
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
-                  <provenance><orgName key="org_272891581" role="fmo">Bordesley, Worcestershire, Cistercian abbey</orgName>: 'Liber Sancte Marie de Bordesleia', with a list of contents (contemporary with the text: MLGB) and a 15th cent. figure of a dragon on fol. ii verso.</provenance>
+                  <provenance>
+                     <orgName key="org_272891581" role="fmo">Bordesley, Worcestershire, Cistercian abbey</orgName>: 'Liber Sancte Marie de Bordesleia', with a list of contents (contemporary with the text: MLGB) and a 15th cent. figure of a dragon on fol. ii verso.</provenance>
                   <provenance> 'Liber ex dono <persName key="person_3269" role="dnr">Guilielmj Willowghby equitis aurati</persName> 25º Maij 1615.'</provenance>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
                         <source>Description adapted (April 2020) from the following sources: <listBibl>
-                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, III (1973), no. 139 [decoration, origin, date]</bibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>
+                                    <ref target="https://catalog.hathitrust.org/Record/000468709">Illuminated Manuscripts in the Bodleian Library, Oxford</ref>
+                                 </title>, III (1973), no. 139 [decoration, origin, date]</bibl>
                               <bibl>Summary Catalogue (1922) [contents, physical description, provenance and acquisition, endleaves]</bibl>
                            </listBibl>
                            <listBibl>
@@ -140,12 +147,27 @@
                         </source>
                      </recordHist>
                   </adminInfo>
-                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/0b70eeff-1f7b-4c03-9ab6-0ad5d85276fb/"><title>Digital Bodleian</title></ref>
-                        <note>(16 images from 35mm slides)</note></bibl></surrogates>
+                  <surrogates>
+                     <bibl subtype="partial" type="digital-facsimile">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/0b70eeff-1f7b-4c03-9ab6-0ad5d85276fb/">
+                           <title>Digital Bodleian</title>
+                        </ref>
+                        <note>(16 images from 35mm slides)</note>
+                     </bibl>
+                  </surrogates>
                   <listBibl type="WRAPPER">
                      <listBibl type="INTERNET">
                         <head>Online resources:</head>
-                        <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/458"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl>
+                        <bibl>
+                           <ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/458">
+                              <title>MLGB3: Medieval Libraries of Great Britain</title>
+                           </ref>
+                        </bibl>
+                     </listBibl>
+                     <listBibl type="PRINT">
+                        <head>Printed descriptions:</head>
+                        <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 5: Fragments - Mass Books</title> (typescript, 1957), <citedRange unit="page" from="159" to="159">p. 159</citedRange>
+                        </bibl>
                      </listBibl>
                   </listBibl>
                </additional>
@@ -205,7 +227,9 @@
       <revisionDesc>
          <change when="2020-04-21">Description revised to incorporate all information in SC.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>

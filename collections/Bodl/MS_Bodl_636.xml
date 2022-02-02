@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_1640" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1640">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -49,7 +49,8 @@
                         <extent>ii + 224 leaves <dimensions type="leaf" unit="in">
                               <height>8.125</height>
                               <width>5.875</width>
-                           </dimensions></extent>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
                   </objectDesc>
                   <decoDesc>
@@ -66,6 +67,13 @@
                         </source>
                      </recordHist>
                   </adminInfo>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="PRINT">
+                        <head>Printed descriptions:</head>
+                        <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 2: Office Books</title> (typescript, 1957), <citedRange unit="page" from="186b" to="186b">p. 186b</citedRange>
+                        </bibl>
+                     </listBibl>
+                  </listBibl>
                </additional>
                <msPart xml:id="MS_Bodl_636-part1">
                   <msIdentifier>
@@ -79,7 +87,7 @@
                         <author key="person_105133420">Vincent de Beauvais</author>
                         <title key="work_4915">Speculum historiale</title>
                         <note>(extract: the vision of Tundale)</note>
-                        <rubric>Extracta a XXV libro Speculi Historialis de raptu anime Tundali &#x0026; eius visione</rubric>
+                        <rubric>Extracta a XXV libro Speculi Historialis de raptu anime Tundali &amp; eius visione</rubric>
                         <note>Fifteen chapters.</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
@@ -116,11 +124,15 @@
                         <incipit>Usu notissimum habetur</incipit>
                         <note>Ten leaves are wanting after fol. 37.</note>
                      </msItem>
-                     <msItem class="#christologia #devotiones" n="2" xml:id="MS_Bodl_636-part2-item2">
+                     <msItem class="#christologia #devotiones"
+                             n="2"
+                             xml:id="MS_Bodl_636-part2-item2">
                         <locus>(fol. 80v)</locus>
                         <title key="work_15124" type="desc">Treatise on the Passion</title>
                         <incipit>Passio Christi fuit ex dolore amara</incipit>
-                        <note>Cf. <bibl type="repertory">Stegmüller 151,9</bibl>, <persName key="person_100198644" role="aut">Jacobus de Voragine</persName>, <title key="work_2330">Legenda Aurea</title>, c. 53(51) De passione domini.</note>
+                        <note>Cf. <bibl type="repertory">
+                              <ref target="http://www.repbib.uni-trier.de/cgi-bin/rebiIndex.tcl?ac=searchlist&amp;tlnr=151,9">Stegmüller, <title>Bibl.</title> 151,9</ref>
+                           </bibl>, <persName key="person_100198644" role="aut">Jacobus de Voragine</persName>, <title key="work_2330">Legenda Aurea</title>, c. 53(51) De passione domini.</note>
                      </msItem>
                      <msItem class="#apocrypha" n="3" xml:id="MS_Bodl_636-part2-item3">
                         <locus>(fol. 91v)</locus>
@@ -139,7 +151,7 @@
                      <msItem class="#auctoritates" n="5" xml:id="MS_Bodl_636-part2-item5">
                         <locus>(fol. 126)</locus>
                         <title key="work_13730" type="desc">Patristic extracts</title>
-                        <rubric>De fide catholica &#x0026; regulari obediencia</rubric>
+                        <rubric>De fide catholica &amp; regulari obediencia</rubric>
                         <incipit>Agustinus. Non appellanda fides</incipit>
                         <note>A selection of Dicta Patrum: followed by a few clauses about benedictions and about heretics.</note>
                      </msItem>
@@ -171,7 +183,9 @@
                         <incipit>Frater Ambrosius tua mihi'</incipit>
                         <note>Migne's <title>Patrol. Lat.</title> xxii. 540): but there is some confusion in the text on fol. 182v and elsewhere: some theological notes follow, on fol. 187.</note>
                      </msItem>
-                     <msItem class="#liturgica #vitae_sanctorum" n="10" xml:id="MS_Bodl_636-part2-item10">
+                     <msItem class="#liturgica #vitae_sanctorum"
+                             n="10"
+                             xml:id="MS_Bodl_636-part2-item10">
                         <locus>(fol. 188)</locus>
                         <title type="desc">Lections</title>
                         <note> St. Thomas of Canterbury (six), st. Andrew (three), and for the five Feasts of the Virgin (fifteen).</note>
@@ -220,7 +234,9 @@
       <revisionDesc>
          <change when="2020-04-09">Revised to incorporate all information in SC.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>
