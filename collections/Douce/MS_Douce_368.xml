@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_4690" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4690">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -51,7 +51,7 @@
                      </supportDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>Fine historiated and other initials. (P&amp;A iii. 104, pl. X)</decoNote>
+                     <decoNote>Fine historiated and other initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 104, pl. X)</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
@@ -62,24 +62,45 @@
                         <!--ORIGINAL: English, Winchcomb-->
                      </origPlace>
                   </origin>
-                  <provenance notAfter="1834" notBefore="1757" resp="#MMM"><persName key="person_69848690" role="fmo">Francis Douce, 1757–1834</persName></provenance>
+                  <provenance type="MLGB3_provenance_evidence"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5713">
+                     <orgName role="fmo" key="org_153760063">Winchcombe, Gloucestershire, Benedictine abbey of St Kenelm</orgName>: "In hoc volumine continetur liber uenerabilis bede presbiteri in libro ecclesiastice historie gentis anglorum quod quidem volumen pertinet ad monasterium Winchelcombense" (s. xv); inscription on a label now pasted to fol. ii verso but formerly fastened by 12 nails to one of the covers of the old binding (present binding of s. xviii). (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5713">MLGB3</ref>: evidence from an ex-libris inscription or note of gift to an institution). </provenance>
+                  <provenance type="MLGB3_laterOwners"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5713">Thomas Rawlinson (sale cat. 1721, no. 399, bought by "West" for £4).     Philip Carterel Webb.     G. Brander sale. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5713">MLGB3</ref>)</provenance>
+                  <provenance type="MLGB3_generalNotes"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5713">Cf. Plummer, Baedae Op. Hist., 1. cxv. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5713">MLGB3</ref>)
+                                             </provenance>
+                  <provenance notAfter="1834" notBefore="1757" resp="#MMM">
+                     <persName key="person_69848690" role="fmo">Francis Douce, 1757–1834</persName>
+                  </provenance>
                   <acquisition resp="#MMM" when="1834">Bequeathed to the Bodleian in 1834</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
+                        <source>
+                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
                               <bibl facs="aaz0628.gif" type="SC">Summary Catalogue, vol. 4, p. 609</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
-                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/281c0835-393d-4e3c-8f39-36d4e95a0849/"><title>Digital Bodleian</title></ref>
-                        <note>(3 images from 35mm slides)</note></bibl></surrogates>
+                  <surrogates>
+                     <bibl subtype="partial" type="digital-facsimile">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/281c0835-393d-4e3c-8f39-36d4e95a0849/">
+                           <title>Digital Bodleian</title>
+                        </ref>
+                        <note>(3 images from 35mm slides)</note>
+                     </bibl>
+                  </surrogates>
                   <listBibl type="WRAPPER">
                      <listBibl type="INTERNET">
                         <head>Online resources:</head>
-                        <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5713"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl>
+                        <bibl>
+                           <ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5713">
+                              <title>MLGB3: Medieval Libraries of Great Britain</title>
+                           </ref>
+                        </bibl>
                      </listBibl>
                   </listBibl>
                </additional>
@@ -87,9 +108,13 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
-         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
+         <change when="2021-12-14">Add provenance information from MLGB3.</change>
+         <change when="2018-10-14" xml:id="MMM">
+            <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_1669" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1669">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -40,13 +40,24 @@
                <physDesc>
                   <p n="composite">Composite: two parts</p>
                   <decoDesc>
-                     <decoNote>Illuminated capitals.</decoNote>
+                     <decoNote type="flourInit">Illuminated capitals.</decoNote>
                   </decoDesc>
                </physDesc>
+               <history>
+                  <provenance type="MLGB3_provenance_evidence"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1925">
+                     <orgName role="fmo" key="org_239193232">Dover, Kent, Benedictine priory of St Mary the Virgin and St Martin; cell of Canterbury cathedral priory</orgName>: ": C [inscribed:] 3 : VII : elucidarius folio .i o . a. [below] excerpta de pluribus 42. a" (fol. ii verso, flyleaf), s. xiv.     Below, almost obliterated: "... — clxxxiiii." At foot of fol. 2r: ": C [inscribed:] 3 : VII : Elucidarius ... ratur. Illa itaque [= 2 o  folio] ... 100 ... 2" (s. xiv). (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1925">MLGB3</ref>: inferred evidence). </provenance>
+                  <provenance type="MLGB3_laterOwners"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1925">Brian  Twyne (1581--1644),  antiquary, presented to the library, 1612. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1925">MLGB3</ref>)</provenance>
+                  <provenance type="MLGB3_generalNotes"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1925">C.VII.3 in the Dover catalogue (James, ALCD, p. 452, no. 119, not identified by James).     The number of leaves incorrect, omitting the last flyleaf (fol. 101).     Medieval pink-skin binding; nail mark for strap fastening on back. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1925">MLGB3</ref>)
+                    </provenance>
+               </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). <listBibl>
+                        <source>
+                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). <listBibl>
                               <bibl facs="aap0464.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 443</bibl>
                            </listBibl>
                         </source>
@@ -55,8 +66,16 @@
                   <listBibl type="WRAPPER">
                      <listBibl type="INTERNET">
                         <head>Online resources:</head>
-                        <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/194"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl>
-                        <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1925"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl>
+                        <bibl>
+                           <ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/194">
+                              <title>MLGB3: Medieval Libraries of Great Britain</title>
+                           </ref>
+                        </bibl>
+                        <bibl>
+                           <ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1925">
+                              <title>MLGB3: Medieval Libraries of Great Britain</title>
+                           </ref>
+                        </bibl>
                      </listBibl>
                   </listBibl>
                </additional>
@@ -95,7 +114,9 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem class="#biblia #auctoritates" n="1" xml:id="MS_Bodl_678-part2-item1">
+                     <msItem class="#biblia #auctoritates"
+                             n="1"
+                             xml:id="MS_Bodl_678-part2-item1">
                         <title key="work_11037" type="desc">Classical and Biblical extracts</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
@@ -119,8 +140,11 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2021-12-14">Add provenance information from MLGB3.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>

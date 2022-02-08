@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_1588" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1588">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -54,7 +54,8 @@
                         <extent>iii + 219 leaves <dimensions type="leaf" unit="in">
                               <height>7.375</height>
                               <width>5.625</width>
-                           </dimensions></extent>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
                   </objectDesc>
                   <decoDesc>
@@ -68,7 +69,8 @@
                         <country key="place_7002445">England</country>, <orgName key="org_313198488" role="fmo">Leicester Abbey</orgName>
                      </origPlace>
                   </origin>
-                  <provenance><orgName key="org_313198488" role="fmo">Leicester Abbey</orgName>: evidence of contents.</provenance>
+                  <provenance>
+                     <orgName key="org_313198488" role="fmo">Leicester Abbey</orgName>: evidence of contents.</provenance>
                   <provenance>A nearly erased inscription on fol. a 213v shows that this MS. was owned by <persName key="person_55215473" role="fmo">Henry Jackson of Corpus Christi college, Oxford</persName>, on May 21, 1600.</provenance>
                   <acquisition notAfter="1620" notBefore="1619"> Apparently acquired by purchase from him about 1619–20.</acquisition>
                </history>
@@ -87,8 +89,21 @@
                      <listBibl type="INTERNET">
                         <head>Online resources:</head>
                         <!--Existing bibliography in place: check sorting of entries-->
-                        <bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/39988"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title></ref></bibl>
-                        <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/3549"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl>
+                        <bibl>
+                           <ref target="http://jonas.irht.cnrs.fr/manuscrit/39988">
+                              <title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title>
+                           </ref>
+                        </bibl>
+                        <bibl>
+                           <ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/3549">
+                              <title>MLGB3: Medieval Libraries of Great Britain</title>
+                           </ref>
+                        </bibl>
+                     </listBibl>
+                     <listBibl type="PRINT">
+                        <head>Printed descriptions:</head>
+                        <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 2: Office Books</title> (typescript, 1957), <citedRange unit="page" from="185" to="185">p. 185</citedRange>
+                        </bibl>
                      </listBibl>
                   </listBibl>
                </additional>
@@ -135,8 +150,12 @@
                         </msItem>
                         <msItem>
                            <locus>(fol. 20)</locus>
-                           <author key="person_29676447"><supplied>Alanus, ab Insulis</supplied></author>
-                           <title key="work_6281"><supplied>Rhythmus de incarnatione Christi et de septem artibus</supplied></title>
+                           <author key="person_29676447">
+                              <supplied>Alanus, ab Insulis</supplied>
+                           </author>
+                           <title key="work_6281">
+                              <supplied>Rhythmus de incarnatione Christi et de septem artibus</supplied>
+                           </title>
                            <note>Latin verses on the Trivium and Quadrivium, Arithmetic being omitted</note>
                            <incipit>Exceptiuam accionem uerbum patris suscipit</incipit>
                         </msItem>
@@ -262,7 +281,11 @@
                            <textLang mainLang="la">Latin</textLang>
                         </msItem>
                         <msItem>
-                           <note> At fol. 102v is a short English poem (<bibl type="repertory">DIMEV 6331, IMEV 3961</bibl>)</note>
+                           <note> At fol. 102v is a short English poem (<bibl type="repertory">
+                                 <ref target="https://www.dimev.net/record.php?recID=6331">
+                                    <title>DIMEV</title> 6331</ref>, <ref target="https://www.dimev.net/Results.php?imev=3961">
+                                    <title>IMEV</title> 3961</ref>
+                              </bibl>)</note>
                            <incipit>Vven i.o. the rode se <lb/> Faste nailed to the tre</incipit>
                            <textLang mainLang="en">English</textLang>
                         </msItem>
@@ -439,7 +462,9 @@
       <revisionDesc>
          <change when="2020-04-09">Revised to incorporate all information in SC.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_6550" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6550">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -51,7 +51,7 @@
                      </supportDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote type="decInit">Fine initials. (P&amp;A iii. 818)</decoNote>
+                     <decoNote type="decInit">Fine initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 818)</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
@@ -60,6 +60,11 @@
                      <origPlace>
                         <country key="place_7002445">English</country>, <settlement key="place_7011995">York (?)</settlement>, <orgName key="org_135211427">St Mary's Abbey</orgName> (?) </origPlace>
                   </origin>
+                  <provenance type="MLGB3_provenance_evidence"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4923">
+                     <orgName role="fmo">St Bees, Cumberland, Benedictine priory of St Bee; cell of St Mary's, York</orgName> (?) : H. M. Bannister supposes it to have been written for St Mary's York or for one of its cells, most probably the priory of St Bee's (S.C. 6, corrigenda). (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4923">MLGB3</ref>: Liturgical evidence, often to be found in the kalendar). </provenance>
+                  <provenance type="MLGB3_laterOwners"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4923">W m  Lawrence Adye.     E. H. Lawrence sale (Sotheby's, lot 535) 11 May 1892 to Bodley. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4923">MLGB3</ref>)</provenance>
                </history>
                <additional>
                   <adminInfo>
@@ -70,13 +75,32 @@
                         </source>
                      </recordHist>
                   </adminInfo>
-                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/dbf730d1-d7c3-4c93-ad1d-445e53cd0019/"><title>Digital Bodleian</title></ref>
-                        <note>(5 images from 35mm slides)</note></bibl></surrogates>
+                  <surrogates>
+                     <bibl subtype="partial" type="digital-facsimile">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/dbf730d1-d7c3-4c93-ad1d-445e53cd0019/">
+                           <title>Digital Bodleian</title>
+                        </ref>
+                        <note>(5 images from 35mm slides)</note>
+                     </bibl>
+                  </surrogates>
                   <listBibl type="WRAPPER">
                      <listBibl type="INTERNET">
                         <head>Online resources:</head>
-                        <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4923"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl>
-                        <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6332"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl>
+                        <bibl>
+                           <ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4923">
+                              <title>MLGB3: Medieval Libraries of Great Britain</title>
+                           </ref>
+                        </bibl>
+                        <bibl>
+                           <ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6332">
+                              <title>MLGB3: Medieval Libraries of Great Britain</title>
+                           </ref>
+                        </bibl>
+                     </listBibl>
+                     <listBibl type="PRINT">
+                        <head>Printed descriptions:</head>
+                        <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 2: Office Books</title> (typescript, 1957), <citedRange unit="page" from="27" to="27">p. 27</citedRange>
+                        </bibl>
                      </listBibl>
                   </listBibl>
                </additional>
@@ -84,8 +108,11 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2021-12-14">Add provenance information from MLGB3.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_8582" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8582">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -74,7 +74,7 @@
                      </supportDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>Decoration<p>Fine historiated border, historiated and other initials. By the <persName key="person_69838853" role="art"> Master of the Vitae Imperatorum </persName>. Written in humanistic script. (P&amp;A ii. 696, pl. LXVIII)</p>
+                     <decoNote>Decoration<p>Fine historiated border, historiated and other initials. By the <persName key="person_69838853" role="art"> Master of the Vitae Imperatorum </persName>. Written in humanistic script. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 696, pl. LXVIII)</p>
                      </decoNote>
                   </decoDesc>
                </physDesc>
@@ -86,25 +86,43 @@
                         <!--ORIGINAL: Italian, Milan-->
                      </origPlace>
                   </origin>
-                  <provenance notAfter="1755" notBefore="1690" resp="#MMM"><persName key="person_47563478" role="fmo">Richard Rawlinson, 1690–1755</persName></provenance>
+                  <provenance type="MLGB3_provenance_evidence"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4277">
+                     <orgName role="fmo" key="org_143023731">Oxford, Oxfordshire, All Souls' College</orgName>: '[Liber Collegii Animarum omnium dei fidelium defunctorum de Oxon' ex dono Reverendi patris iacobi istius] Goldwell nuper Norwicensis episcopi [et olim istius Collegii socii]' (foot of fol. 4r, erased).     'Resarcitus per Gressopum' (foot of fol. 4r, s. xvi ex.).     2 o  folio 'habet quod aut figuram' = Vellum inventory fol. 27v 'Tractatus de ira dei 2 o  fo habet quod figuram'. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4277">MLGB3</ref>: evidence from an ex-libris inscription or note of gift to an institution). </provenance>
+                  <provenance type="MLGB3_laterOwners"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4277">Coat of arms and 'N. I.' on fol. 3r, part of the illuminated title.     'Sum Nicholai liber ...' (fol. 80v).     No. 534 in Thos. Rawlinson sale March 1734. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4277">MLGB3</ref>)</provenance>
+                  <provenance notAfter="1755" notBefore="1690" resp="#MMM">
+                     <persName key="person_47563478" role="fmo">Richard Rawlinson, 1690–1755</persName>
+                  </provenance>
                   <acquisition resp="#MMM" when="1755">Bequeathed to the Bodleian in 1755</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1895). Decoration, localization and date follow Pächt and Alexander (1970). <listBibl>
+                        <source>
+                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1895). Decoration, localization and date follow Pächt and Alexander (1970). <listBibl>
                               <bibl facs="aas0365.gif" type="SC">Summary Catalogue, Vol. 3, p. 350</bibl>
                               <bibl facs="aas0366.gif" type="SC">Summary Catalogue, Vol. 3, p. 351</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
-                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/e7f9c140-8735-4750-aebc-9cc6d10faa57/"><title>Digital Bodleian</title></ref>
-                        <note>(3 images from 35mm slides)</note></bibl></surrogates>
+                  <surrogates>
+                     <bibl subtype="partial" type="digital-facsimile">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/e7f9c140-8735-4750-aebc-9cc6d10faa57/">
+                           <title>Digital Bodleian</title>
+                        </ref>
+                        <note>(3 images from 35mm slides)</note>
+                     </bibl>
+                  </surrogates>
                   <listBibl type="WRAPPER">
                      <listBibl type="INTERNET">
                         <head>Online resources:</head>
-                        <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4277"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl>
+                        <bibl>
+                           <ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4277">
+                              <title>MLGB3: Medieval Libraries of Great Britain</title>
+                           </ref>
+                        </bibl>
                      </listBibl>
                   </listBibl>
                </additional>
@@ -112,9 +130,13 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
-         <change when="2019-10-31" xml:id="MMM"><persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
+         <change when="2021-12-14">Add provenance information from MLGB3.</change>
+         <change when="2019-10-31" xml:id="MMM">
+            <persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>

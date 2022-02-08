@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_298" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_298">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -58,17 +58,25 @@
                   <decoDesc>
                      <decoNote type="border">Fine borders.</decoNote>
                      <decoNote type="histInit">Historiated initials.</decoNote>
-                     <decoNote type="decInit">Other initials. Partly defaced. (P&amp;A iii. 537, pl. LII, fols. 1–168).</decoNote>
-                     <decoNote> Fols. 169–258: fine borders, historiated and other initials. In four different styles. Additions to a Psalter of 14th century beginning. Line endings also added throughout. On fol. 212v '<persName cert="low" key="person_2705" role="art">Wils' sad</persName>', possibly one of the artists. (P&amp;A iii. 982)</decoNote>
+                     <decoNote type="decInit">Other initials. Partly defaced. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 537, pl. LII, fols. 1–168).</decoNote>
+                     <decoNote> Fols. 169–258: fine borders, historiated and other initials. In four different styles. Additions to a Psalter of 14th century beginning. Line endings also added throughout. On fol. 212v '<persName cert="low" key="person_2705" role="art">Wils' sad</persName>', possibly one of the artists. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 982)</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1310" notBefore="1300">14th century, beginning;</origDate>
-                     <origDate calendar="Gregorian" notAfter="1460" notBefore="1440" type="additions">additions, 15th century, middle</origDate>
+                     <origDate calendar="Gregorian"
+                               notAfter="1460"
+                               notBefore="1440"
+                               type="additions">additions, 15th century, middle</origDate>
                      <origPlace>
                         <country key="place_7002445">English</country>, <region>East Anglia</region>, probably <settlement key="place_7012005">Norwich</settlement>; additions, English<!--MULTIPLE PLACES OF ORIGIN--></origPlace>
                   </origin>
+                  <provenance type="MLGB3_provenance_evidence"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/508">
+                     <orgName role="fmo" key="org_163769189">Bromholm, Norfolk, Cluniac priory of St Andrew</orgName>: Cluniac kalendar. At 15 June 'Dedicacio ecclesie S. Andree de Bromholmia et altaris in capella noua'. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/508">MLGB3</ref>: Liturgical evidence, often to be found in the kalendar). </provenance>
+                  <provenance type="MLGB3_laterOwners"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/508">'Ex dono Edmundi Wymondham militis amico suo Ricardo Southwell militi xmo. die Septembris 1562'. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/508">MLGB3</ref>)</provenance>
                </history>
                <additional>
                   <adminInfo>
@@ -81,12 +89,27 @@
                         </source>
                      </recordHist>
                   </adminInfo>
-                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/7f9e58ea-2b0e-4bb5-a9c9-f8529ba3d5b6/"><title>Digital Bodleian</title></ref>
-                        <note>(38 images from 35mm slides)</note></bibl></surrogates>
+                  <surrogates>
+                     <bibl subtype="partial" type="digital-facsimile">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/7f9e58ea-2b0e-4bb5-a9c9-f8529ba3d5b6/">
+                           <title>Digital Bodleian</title>
+                        </ref>
+                        <note>(38 images from 35mm slides)</note>
+                     </bibl>
+                  </surrogates>
                   <listBibl type="WRAPPER">
                      <listBibl type="INTERNET">
                         <head>Online resources:</head>
-                        <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/508"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl>
+                        <bibl>
+                           <ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/508">
+                              <title>MLGB3: Medieval Libraries of Great Britain</title>
+                           </ref>
+                        </bibl>
+                     </listBibl>
+                     <listBibl type="PRINT">
+                        <head>Printed descriptions:</head>
+                        <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 2: Office Books</title> (typescript, 1957), <citedRange unit="page" from="22" to="22">p. 22</citedRange>
+                        </bibl>
                      </listBibl>
                   </listBibl>
                </additional>
@@ -94,8 +117,11 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2021-12-14">Add provenance information from MLGB3.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>
