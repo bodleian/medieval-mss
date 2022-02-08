@@ -172,7 +172,6 @@ declare function local:buildSummary($msdescorpart as element()) as xs:string
                     { bod:strings2many(local:buildSummaries($ms), 'ms_summary_sm') }
                     { bod:indexHTML($htmldoc, 'ms_textcontent_tni') }
                     { bod:displayHTML($htmldoc, 'display') }
-                    { bod:requesting($ms/tei:TEI) }
                 </doc>
 
             else

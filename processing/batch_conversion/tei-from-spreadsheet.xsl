@@ -411,7 +411,7 @@
                         <listBibl>
                             <bibl facs="{ $catalogueimage }">H. O. Coxe, <title>Catalogus codicum mss. qui in collegiis aulisque Oxoniensibus hodie adservantur</title> (1852)</bibl>
                             <xsl:if test="string-length($decoration) gt 0">
-                                <bibl>J. J. G. Alexander and Elzbieta Temple, <title><ref target="https://catalog.hathitrust.org/Record/000387352">Illuminated manuscripts in Oxford college libraries, the University Archives and the Taylor Institution</ref></title> (Oxford, 1985) [information on decoration and origin]</bibl>
+                                <bibl>J. J. G. Alexander and Elzbieta Temple, <title>Illuminated manuscripts in Oxford college libraries, the University Archives and the Taylor Institution</title> (Oxford, 1985) [information on decoration and origin]</bibl>
                             </xsl:if>
                         </listBibl>
                     </source>
