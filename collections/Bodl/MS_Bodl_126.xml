@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_1190" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1190">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -74,11 +74,12 @@
                         <extent>iv + 62 leaves <dimensions type="leaf" unit="in">
                               <height>10</height>
                               <width>7.75</width>
-                           </dimensions></extent>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote type="decInit">Fine initials. (P&amp;A iii. 52)</decoNote>
+                     <decoNote type="decInit">Fine initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 52)</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
@@ -88,14 +89,17 @@
                         <country key="place_7002445">English</country>, <settlement key="place_7011375">Winchester</settlement>, <orgName key="org_154916527">Old Minster</orgName> (?)</origPlace>
                   </origin>
                   <provenance>Date, origin, see Gneuss-Lapidge 548.</provenance>
-                  <provenance><orgName key="org_165174766">Canterbury, St. Augustine's</orgName> (?) (Barker-Benfield III.1833).</provenance>
+                  <provenance>
+                     <orgName key="org_165174766">Canterbury, St. Augustine's</orgName> (?) (Barker-Benfield III.1833).</provenance>
                   <acquisition when="1602">Presented by <persName key="person_2677">sir Walter Cope</persName> in 1602.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
                         <source>Description adapted (April 2020) from the following sources, with additional reference to published literature as cited: <listBibl>
-                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, III (1973), no. 52 [decoration, origin, date]</bibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>
+                                    <ref target="https://catalog.hathitrust.org/Record/000468709">Illuminated Manuscripts in the Bodleian Library, Oxford</ref>
+                                 </title>, III (1973), no. 52 [decoration, origin, date]</bibl>
                               <bibl>Summary Catalogue (1922) [contents, physical description, provenance and acquisition, endleaves]</bibl>
                            </listBibl>
                            <listBibl>
@@ -105,12 +109,20 @@
                         </source>
                      </recordHist>
                   </adminInfo>
-                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/abdaf44e-9c7b-4af8-9f0c-e385963b9734/"><title>Digital Bodleian</title></ref>
-                        <note>(1 image from 35mm slides)</note></bibl></surrogates>
+                  <surrogates>
+                     <bibl subtype="partial" type="digital-facsimile">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/abdaf44e-9c7b-4af8-9f0c-e385963b9734/">
+                           <title>Digital Bodleian</title>
+                        </ref>
+                        <note>(1 image from 35mm slides)</note>
+                     </bibl>
+                  </surrogates>
                   <listBibl type="WRAPPER">
                      <listBibl type="PRINT">
                         <head>Printed descriptions:</head>
                         <bibl>H. Gneuss and M. Lapidge, <title>Anglo-Saxon Manuscripts : A Bibliographical Handlist of Manuscripts and Manuscript Fragments Written or Owned in England up to 1100</title> (2014), nos. 548, 548.1</bibl>
+                        <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 6: Fragments - Office Books, Rituals, Directories</title> (typescript, 1957), <citedRange unit="page" from="81" to="81">p. 81</citedRange>
+                        </bibl>
                      </listBibl>
                   </listBibl>
                </additional>
@@ -140,7 +152,8 @@
                   <history>
                      <origin>
                         <origDate calendar="Gregorian" notAfter="1100" notBefore="1040">11th century, middle or second half</origDate>
-                        <origPlace><country key="place_7002445">English</country>, <settlement key="place_7011375">Winchester</settlement>, <orgName key="org_154916527">Old Minster</orgName> (?) (Gneuss-Lapidge)</origPlace>
+                        <origPlace>
+                           <country key="place_7002445">English</country>, <settlement key="place_7011375">Winchester</settlement>, <orgName key="org_154916527">Old Minster</orgName> (?) (Gneuss-Lapidge)</origPlace>
                      </origin>
                   </history>
                </msPart>
@@ -150,7 +163,9 @@
       <revisionDesc>
          <change when="2020-04-07">Revised to incorporate all information from SC.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>

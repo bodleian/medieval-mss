@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_1779" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1779">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -40,13 +40,24 @@
                <physDesc>
                   <p n="composite">Composite: four parts</p>
                   <decoDesc>
-                     <decoNote type="decInit">Initials close in style to MS Bodley 535 fols. 39–93. Text copied in part from MS. Digby 112. (P&amp;A iii.119)</decoNote>
+                     <decoNote type="decInit">Initials close in style to MS Bodley 535 fols. 39–93. Text copied in part from MS. Digby 112. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii.119)</decoNote>
                   </decoDesc>
                </physDesc>
+               <history>
+                  <provenance type="MLGB3_provenance_evidence"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1830">
+                     <orgName role="fmo" key="org_55">Crediton, Devon, Collegiate church of Holy Cross</orgName>: 'Liber Johannis Lynd...'.     For the provenance see BLR 2 (1941--49) 91. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1830">MLGB3</ref>: inferred evidence). </provenance>
+                  <provenance type="MLGB3_laterOwners"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1830">'Guilihelmi Muggi liber ex dono Magistri Georgii Mason' at head of fol. 2r.     Given by William Ballow in 1604 or 1605. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1830">MLGB3</ref>)</provenance>
+                  <provenance type="MLGB3_generalNotes"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1830">Notes in the hand of John Lyndon: cf. Bodl. 383, 159 and Univ. Coll. 91. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1830">MLGB3</ref>)
+                    </provenance>
+               </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
+                        <source>
+                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
                               <bibl facs="aap0487.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 466</bibl>
                            </listBibl>
                         </source>
@@ -55,7 +66,11 @@
                   <listBibl type="WRAPPER">
                      <listBibl type="INTERNET">
                         <head>Online resources:</head>
-                        <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1830"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl>
+                        <bibl>
+                           <ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1830">
+                              <title>MLGB3: Medieval Libraries of Great Britain</title>
+                           </ref>
+                        </bibl>
                      </listBibl>
                   </listBibl>
                </additional>
@@ -66,7 +81,9 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem class="#vitae_sanctorum #miracula" n="1" xml:id="MS_Bodl_793-part1-item1">
+                     <msItem class="#vitae_sanctorum #miracula"
+                             n="1"
+                             xml:id="MS_Bodl_793-part1-item1">
                         <title key="work_13044" type="desc">Lives and miracles of St Germain of Auxerre</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
@@ -177,8 +194,11 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2021-12-14">Add provenance information from MLGB3.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>

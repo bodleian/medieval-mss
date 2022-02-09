@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_4309" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4309">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -41,13 +41,22 @@
                   <p n="composite">Composite</p>
                </physDesc>
                <history>
-                  <provenance notAfter="1634" notBefore="1603" resp="#MMM"><persName key="person_49357645" role="fmo">Kenelm Digby, 1603–1665</persName></provenance>
+                  <provenance type="MLGB3_provenance_evidence"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4365">
+                     <orgName role="fmo" key="org_152199147">Oxford, Oxfordshire, Merton College</orgName>: The entry '19 fflowr' shows that the book came to Merton. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4365">MLGB3</ref>: evidence from locally specific contents, including obits, scribbles, etc.). </provenance>
+                  <provenance type="MLGB3_generalNotes"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4365">2 o  folio: 'testimonium horrens'. Powicke, Merton Books, no. 562: 'Liber M. Willelmi Reed Episcopi Cicestrensis quem emit a domino Thome (recte: Thoma) Tryllek Episcopo Roffensi. Oretis igitur pro utroque' (fol. 1r). (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4365">MLGB3</ref>)
+                                             </provenance>
+                  <provenance notAfter="1634" notBefore="1603" resp="#MMM">
+                     <persName key="person_49357645" role="fmo">Kenelm Digby, 1603–1665</persName>
+                  </provenance>
                   <acquisition resp="#MMM" when="1634">Donated to the Bodleian, 1634.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (W. D. Macray, <title>Bodleian Library Quarto Catalogues IX: Digby Manuscripts</title>, repr. with addenda by R. W. Hunt and A. G. Watson, 1999). Decoration follows Pächt and Alexander (1973). <listBibl>
+                        <source>
+                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (W. D. Macray, <title>Bodleian Library Quarto Catalogues IX: Digby Manuscripts</title>, repr. with addenda by R. W. Hunt and A. G. Watson, 1999). Decoration follows Pächt and Alexander (1973). <listBibl>
                               <bibl facs="abw0016.gif" type="QUARTO">Quarto Catalogue, col. 14</bibl>
                               <bibl facs="abw0017.gif" type="QUARTO">Quarto Catalogue, col. 15</bibl>
                               <bibl facs="abw0190.gif" type="QUARTO">Quarto Catalogue (addenda), p. 13</bibl>
@@ -57,12 +66,22 @@
                         </source>
                      </recordHist>
                   </adminInfo>
-                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/06cd9209-9a1b-4be6-9a68-c654be931955/"><title>Digital Bodleian</title></ref>
-                        <note>(1 image from 35mm slides)</note></bibl></surrogates>
+                  <surrogates>
+                     <bibl subtype="partial" type="digital-facsimile">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/06cd9209-9a1b-4be6-9a68-c654be931955/">
+                           <title>Digital Bodleian</title>
+                        </ref>
+                        <note>(1 image from 35mm slides)</note>
+                     </bibl>
+                  </surrogates>
                   <listBibl type="WRAPPER">
                      <listBibl type="INTERNET">
                         <head>Online resources:</head>
-                        <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4365"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl>
+                        <bibl>
+                           <ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4365">
+                              <title>MLGB3: Medieval Libraries of Great Britain</title>
+                           </ref>
+                        </bibl>
                      </listBibl>
                   </listBibl>
                </additional>
@@ -86,7 +105,7 @@
                         </supportDesc>
                      </objectDesc>
                      <decoDesc>
-                        <decoNote type="decInit">Initials. (P&amp;A iii. 268)</decoNote>
+                        <decoNote type="decInit">Initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 268)</decoNote>
                      </decoDesc>
                   </physDesc>
                   <history>
@@ -131,9 +150,13 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
-         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
+         <change when="2021-12-14">Add provenance information from MLGB3.</change>
+         <change when="2018-10-14" xml:id="MMM">
+            <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>
