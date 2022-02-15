@@ -20,7 +20,7 @@
                   
          To run, convert the spreadsheet to a tab-separated-value text file, and specify that as a parameter, e.g.:
     
-         java -Xmx1G -cp ../saxon/saxon9he.jar net.sf.saxon.Transform -it:Main -xsl:tei-from-spreadsheet.xsl infile=./jesus_college_metadata.tsv nextmsid=10550
+         java -Xmx1G -cp ../saxon/saxon9he.jar net.sf.saxon.Transform -it:Main -xsl:tei-from-simple-spreadsheet.xsl infile=./jesus_college_metadata.tsv nextmsid=10550
           
          Optionally, you can also specify the Solr server for a Digital Bodleian instance to attempt to lookup 
          shelfmarks against UUIDs, and create surrogates links for any it finds.
@@ -31,7 +31,7 @@
     <xsl:param name="nextmsid" as="xs:integer" required="yes"/>
     <xsl:param name="digbodsolr" as="xs:anyURI?" required="no"/>
     
-    <!-- Lookups -->
+    <!-- Lookup languages (tailor list to what is in each spreadsheet) -->
     <xsl:variable name="iso639codes" as="map(xs:string, xs:string)">
         <xsl:map>
             <xsl:map-entry key="'Latin'" select="'la'"/>
