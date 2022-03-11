@@ -164,6 +164,7 @@ declare function local:buildSummary($msdescorpart as element()) as xs:string
                     <field name="filename_s">{ substring-after(base-uri($ms), 'collections/') }</field>
                     { bod:materials($ms//tei:msDesc//tei:physDesc//tei:supportDesc[@material], 'ms_materials_sm') }
                     { bod:trueIfExists($ms//tei:sourceDesc//tei:decoDesc/tei:decoNote[not(@type='none')], 'ms_deconote_b') }
+                    { bod:trueIfExists($ms//tei:sourceDesc//tei:physDesc/tei:musicNotation, 'ms_music_b') }
                     { bod:digitized($ms//tei:sourceDesc//tei:surrogates//tei:bibl, 'ms_digitized_s') }
                     { bod:languages($ms//tei:sourceDesc//tei:textLang, 'lang_sm') }
                     { local:origin($ms//tei:sourceDesc//tei:origPlace/tei:country/@key, 'ms_origin_sm') }
@@ -172,6 +173,7 @@ declare function local:buildSummary($msdescorpart as element()) as xs:string
                     { bod:strings2many(local:buildSummaries($ms), 'ms_summary_sm') }
                     { bod:indexHTML($htmldoc, 'ms_textcontent_tni') }
                     { bod:displayHTML($htmldoc, 'display') }
+                    { bod:requesting($ms/tei:TEI) }
                 </doc>
 
             else

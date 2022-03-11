@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_610" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_610">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -115,7 +115,8 @@
                   <msItem n="7" xml:id="MS_Auct_F_2_14-item7">
                      <locus>(fol. 90)</locus>
                      <title key="work_11729">Epitome Iliadis</title>
-                     <rubric><gap reason="editorial"/> Homerus poeta de Troiano Bello</rubric>
+                     <rubric>
+                        <gap reason="editorial"/> Homerus poeta de Troiano Bello</rubric>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                   <msItem n="8">
@@ -146,7 +147,12 @@
                      <msItem>
                         <locus>(fol. 110v)</locus>
                         <title key="work_14986" type="desc">A poem on Chess</title>
-                        <incipit><choice><sic><supplied>T</supplied>elli</sic> <corr>Belli</corr></choice> cupit instrumentum qui ludendo fingere</incipit>
+                        <incipit>
+                           <choice>
+                              <sic>
+                                 <supplied>T</supplied>elli</sic> 
+                              <corr>Belli</corr>
+                           </choice> cupit instrumentum qui ludendo fingere</incipit>
                         <bibl>Printed in Thomas Hyde <title>De ludis Orientalibus</title>, 1694, pt. 1, p. 179.</bibl>
                      </msItem>
                      <textLang mainLang="la">Latin</textLang>
@@ -176,8 +182,11 @@
                         </extent>
                      </supportDesc>
                   </objectDesc>
+                  <musicNotation>
+                     <p>Notation on staves (see van Dijk 1957).</p>
+                  </musicNotation>
                   <decoDesc resp="#PA">
-                     <decoNote type="decInit">Initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 60)</decoNote>
+                     <decoNote type="decInit">Initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 60)</decoNote>
                   </decoDesc>
                   <bindingDesc>
                      <binding notAfter="1500" notBefore="1400">
@@ -191,7 +200,8 @@
                      <origPlace cert="low">
                         <country key="place_7002445">English</country> (<settlement key="place_7011277">Sherborne</settlement>, <orgName key="org_158711466">Benedictine abbey</orgName> (?))<!--ORIGINAL: English, Sherborne (?)--></origPlace>
                   </origin>
-                  <provenance resp="#MLH"><orgName key="org_158711466" role="fmo">Sherborne, Benedictine abbey</orgName>: "Marginal notes by <persName key="person_14849374">Leland</persName>. He saw 'Vita Swithuni carmine heroico' at Sherborne (<title>De Script. Britt.</title> 164, <title>Coll.</title> 3. 255, 4. 150) and gives quotations in <title>Collectanea</title> 1. 149, evidently from this MS" (MLGB3).</provenance>
+                  <provenance resp="#MLH">
+                     <orgName key="org_158711466" role="fmo">Sherborne, Benedictine abbey</orgName>: "Marginal notes by <persName key="person_14849374">Leland</persName>. He saw 'Vita Swithuni carmine heroico' at Sherborne (<title>De Script. Britt.</title> 164, <title>Coll.</title> 3. 255, 4. 150) and gives quotations in <title>Collectanea</title> 1. 149, evidently from this MS" (MLGB3).</provenance>
                   <acquisition notAfter="1620" notBefore="1618">Probably acquired about A.D. 1618-20.</acquisition>
                </history>
                <additional>
@@ -199,7 +209,9 @@
                      <recordHist>
                         <source>Description adapted (Oct. 2021) from the following sources, with additional reference to other publications as cited: <listBibl>
                               <bibl>Summary Catalogue (1922)</bibl>
-                              <bibl>Otto Pächt and J. J. G. Alexander, <title><ref target="https://catalog.hathitrust.org/Record/000468709">Illuminated Manuscripts in the Bodleian Library, Oxford</ref></title>, III (1973), no. 60 (decoration, origin, date)</bibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>
+                                    <ref target="https://catalog.hathitrust.org/Record/000468709">Illuminated Manuscripts in the Bodleian Library, Oxford</ref>
+                                 </title>, III (1973), no. 60 (decoration, origin, date)</bibl>
                            </listBibl>
                            <listBibl>
                               <bibl facs="aap0496.gif" type="SC">Summary Catalogue, Vol. 2, part 1, p. 475</bibl>
@@ -208,16 +220,46 @@
                         </source>
                      </recordHist>
                   </adminInfo>
-                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/2821f4b7-5c81-4bee-a5be-7dbe30648348/"><title>Digital Bodleian</title></ref>
-                        <note>(2 images from 35mm slides)</note></bibl></surrogates>
+                  <surrogates>
+                     <bibl subtype="partial" type="digital-facsimile">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/2821f4b7-5c81-4bee-a5be-7dbe30648348/">
+                           <title>Digital Bodleian</title>
+                        </ref>
+                        <note>(2 images from 35mm slides)</note>
+                     </bibl>
+                  </surrogates>
                   <listBibl type="WRAPPER">
                      <listBibl type="INTERNET">
                         <head>Online resources:</head>
                         <!--Existing bibliography in place: check sorting of entries-->
-                        <bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/39836"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title></ref></bibl>
-                        <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5219"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl>
-                        <bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/39836"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title></ref></bibl>
-                        <bibl><ref target="https://www.le.ac.uk/english/em1060to1220/mss/EM.Ox.Auct.F.2.14.htm"><title>The Production and Use of English Manuscripts 1060 to 1220</title></ref></bibl>
+                        <bibl>
+                           <ref target="http://jonas.irht.cnrs.fr/manuscrit/39836">
+                              <title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title>
+                           </ref>
+                        </bibl>
+                        <bibl>
+                           <ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5219">
+                              <title>MLGB3: Medieval Libraries of Great Britain</title>
+                           </ref>
+                        </bibl>
+                        <bibl>
+                           <ref target="http://jonas.irht.cnrs.fr/manuscrit/39836">
+                              <title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title>
+                           </ref>
+                        </bibl>
+                        <bibl>
+                           <ref target="https://www.le.ac.uk/english/em1060to1220/mss/EM.Ox.Auct.F.2.14.htm">
+                              <title>The Production and Use of English Manuscripts 1060 to 1220</title>
+                           </ref>
+                        </bibl>
+                     </listBibl>
+                     <listBibl type="PRINT">
+                        <head>Printed descriptions:</head>
+                        <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 5: Fragments - Mass Books</title> (typescript, 1957), pp.
+                        <citedRange unit="page" from="103" to="103">103</citedRange>, <citedRange unit="page" from="118" to="118">118</citedRange>
+                        </bibl>
+                        <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 6: Fragments - Office Books, Rituals, Directories</title> (typescript, 1957), <citedRange unit="page" from="57" to="57">p. 57</citedRange>
+                        </bibl>
                      </listBibl>
                   </listBibl>
                </additional>
@@ -243,7 +285,9 @@
                   <history>
                      <origin>
                         <origDate calendar="Gregorian" notAfter="1210" notBefore="1200">13th century, early</origDate>
-                        <origPlace><country key="place_7002445">English</country></origPlace>
+                        <origPlace>
+                           <country key="place_7002445">English</country>
+                        </origPlace>
                      </origin>
                   </history>
                </msPart>
@@ -329,9 +373,12 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
-         <change when="2021-10-13">Revised to incorporate all information in Summary Catalogue and <ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref></change>
+         <change when="2021-10-13">Revised to incorporate all information in Summary Catalogue and <ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref>
+         </change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>

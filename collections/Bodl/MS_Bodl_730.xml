@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_1720" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1720">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -62,7 +62,7 @@
                      </supportDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>Penwork and other initials.</decoNote>
+                     <decoNote type="flourInit">Penwork and other initials.</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
@@ -72,25 +72,49 @@
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
+                  <provenance type="MLGB3_provenance_evidence"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/552">
+                     <orgName role="fmo" key="org_158596637">Buildwas, Shropshire, Savigniac and (1147) Cistercian abbey of St Mary the Virgin and St Chad</orgName> (?) : Medieval binding, with nailmarks for bosses at each corner and in centre of front cover (cf. Bodley 371, 395); style of initials (cf. Bodley 395) suggests provenance; inscription in alternate green and black words 'Liber sancte marie [. . . .]' at foot of verso of flyleaf facing first leaf of text. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/552">MLGB3</ref>: evidence from binding or pastedowns and from the style of script or illumination). </provenance>
+                  <provenance type="MLGB3_provenance_evidence"
+                     source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/3837">Later belonged to the <orgName key="org_234">London Carmelites</orgName>: "Conventus Carmelitorum Londonie ex assignacione fratris Thome Walden." (fol. 1r, at top).     <q type="pressmark">I 66 m</q> (fol. 1r, at top, above right side of 1st col.).  (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/3837">MLGB3</ref>: evidence from an ex-libris inscription or note of gift to an institution)</provenance>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). <listBibl>
+                        <source>
+                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). <listBibl>
                               <bibl facs="aap0528.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 507</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
-                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/854264b4-301c-490a-997c-7ab3e17feac0/"><title>Digital Bodleian</title></ref>
-                        <note>(14 images from 35mm slides)</note></bibl></surrogates>
+                  <surrogates>
+                     <bibl subtype="partial" type="digital-facsimile">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/854264b4-301c-490a-997c-7ab3e17feac0/">
+                           <title>Digital Bodleian</title>
+                        </ref>
+                        <note>(14 images from 35mm slides)</note>
+                     </bibl>
+                  </surrogates>
                   <listBibl type="WRAPPER">
                      <listBibl type="INTERNET">
                         <head>Online resources:</head>
                         <!--Existing bibliography in place: check sorting of entries-->
-                        <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/552"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl>
-                        <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/3837"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl>
-                        <bibl><ref target="https://www.le.ac.uk/english/em1060to1220/mss/EM.Ox.Bodl.730.htm"><title>The Production and Use of English Manuscripts 1060 to 1220</title></ref></bibl>
+                        <bibl>
+                           <ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/552">
+                              <title>MLGB3: Medieval Libraries of Great Britain</title>
+                           </ref>
+                        </bibl>
+                        <bibl>
+                           <ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/3837">
+                              <title>MLGB3: Medieval Libraries of Great Britain</title>
+                           </ref>
+                        </bibl>
+                        <bibl>
+                           <ref target="https://www.le.ac.uk/english/em1060to1220/mss/EM.Ox.Bodl.730.htm">
+                              <title>The Production and Use of English Manuscripts 1060 to 1220</title>
+                           </ref>
+                        </bibl>
                      </listBibl>
                   </listBibl>
                </additional>
@@ -98,8 +122,11 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2021-12-14">Add provenance information from MLGB3.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>

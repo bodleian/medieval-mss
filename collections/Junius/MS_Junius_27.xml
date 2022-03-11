@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_6322" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6322">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -53,7 +53,7 @@
                      </supportDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>Fine historiated and other initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 21, pl. II)</decoNote>
+                     <decoNote>Fine historiated and other initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 21, pl. II)</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
@@ -63,7 +63,14 @@
                         <country key="place_7002445">English</country>, <settlement key="place_7011375">Winchester</settlement> (?) <!--ORIGINAL: English, Winchester-->
                      </origPlace>
                   </origin>
-                  <provenance notAfter="1677" notBefore="1589" resp="#MMM"><persName key="person_59225563" role="fmo">Franciscus Junius, 1589–1677</persName></provenance>
+                  <provenance type="MLGB3_provenance_evidence"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5780">
+                     <orgName role="fmo" key="org_154916527">Winchester, Hampshire, Benedictine cathedral priory of St Peter, St Paul, and St Swithun</orgName>: Script and decoration are closely similar to those in CCCC 173 fols. 16v--25v, and in the Helmingham Orosius. Se also the note for London, BL, Add. 47967.     Obits of King Alfred and Queen Ealhswith. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5780">MLGB3</ref>: evidence from the style of script or illumination and from contents). </provenance>
+                  <provenance type="MLGB3_laterOwners"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5780">Isaac Voss. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5780">MLGB3</ref>)</provenance>
+                  <provenance notAfter="1677" notBefore="1589" resp="#MMM">
+                     <persName key="person_59225563" role="fmo">Franciscus Junius, 1589–1677</persName>
+                  </provenance>
                   <acquisition resp="#MMM" when="1677">Received by the Bodleian by 1677</acquisition>
                </history>
                <additional>
@@ -79,12 +86,27 @@
                         <p>To ensure its availability to future readers, access to this item is restricted, and readers are asked to work from reproductions and published descriptions as far as possible. To apply to see the original, please send a message to <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>, outlining the subject of your research, the importance of this item to that research, and the resources you have already consulted.</p>
                      </availability>
                   </adminInfo>
-                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/b29ff397-89fd-44ad-ad28-e7db3896edc5/"><title>Digital Bodleian</title></ref>
-                        <note>(143 images from 35mm slides)</note></bibl></surrogates>
+                  <surrogates>
+                     <bibl subtype="partial" type="digital-facsimile">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/b29ff397-89fd-44ad-ad28-e7db3896edc5/">
+                           <title>Digital Bodleian</title>
+                        </ref>
+                        <note>(143 images from 35mm slides)</note>
+                     </bibl>
+                  </surrogates>
                   <listBibl type="WRAPPER">
                      <listBibl type="INTERNET">
                         <head>Online resources:</head>
-                        <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5780"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl>
+                        <bibl>
+                           <ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5780">
+                              <title>MLGB3: Medieval Libraries of Great Britain</title>
+                           </ref>
+                        </bibl>
+                     </listBibl>
+                     <listBibl type="PRINT">
+                        <head>Printed descriptions:</head>
+                        <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 2: Office Books</title> (typescript, 1957), <citedRange unit="page" from="5" to="5">p. 5</citedRange>
+                        </bibl>
                      </listBibl>
                   </listBibl>
                </additional>
@@ -92,9 +114,13 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
-         <change when="2019-10-31" xml:id="MMM"><persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
+         <change when="2021-12-14">Add provenance information from MLGB3.</change>
+         <change when="2019-10-31" xml:id="MMM">
+            <persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>

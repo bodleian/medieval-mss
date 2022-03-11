@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_4634" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4634">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -50,7 +50,11 @@
                      </supportDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>Important miniature, borders, historiated and other initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 43, pl. V)</decoNote>
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 43, pl. V:</summary>
+                     <decoNote type="miniature">Important miniature.</decoNote>
+                     <decoNote type="border">Important borders.</decoNote>
+                     <decoNote type="histInit">Important historiated initials.</decoNote>
+                     <decoNote type="decInit">Important other initials.</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
@@ -59,7 +63,15 @@
                      <origPlace cert="low">
                         <country key="place_7002445">English</country>, probably <region>East Anglia</region>, perhaps <settlement key="place_7012190">Ely</settlement>, <settlement key="place_7010809">Peterborough</settlement>, or <settlement key="place_7010739">Crowland</settlement> (?)<!--ORIGINAL: English, Crowland (?)--></origPlace>
                   </origin>
-                  <provenance notAfter="1834" notBefore="1757" resp="#MMM"><persName key="person_69848690" role="fmo">Francis Douce, 1757–1834</persName></provenance>
+                  <provenance type="MLGB3_provenance_evidence"
+                     source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1848">
+                     <orgName key="org_144471224" role="fmo">Crowland, Lincolnshire, Benedictine abbey of St Mary the Virgin, St Bartholomew, and St Guthlac</orgName>: provenance inferred from liturgical details. Original ascriptions to Peterborough and Ely (Summary Cat. IV, &amp;amp; V Corrigenda) disproved and Croyland suggested in Archaeologia 78 (1928), p. 222, no. 5. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1848">MLGB3</ref>: liturgical evidence, often to be found in the kalendar). </provenance>
+                  <provenance type="MLGB3_provenance_evidence"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/3589">
+                     <orgName role="fmo" key="org_312953155">Lewes, Sussex, Cluniac priory of St Pancras</orgName> (?) : Originated at Crowland, q.v. Obits of the 12th century suggest that it was then at Lewes. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/3589">MLGB3</ref>: evidence from locally specific contents, including obits, scribbles, etc.). </provenance>
+                  <provenance notAfter="1834" notBefore="1757" resp="#MMM">
+                     <persName key="person_69848690" role="fmo">Francis Douce, 1757–1834</persName>
+                  </provenance>
                   <acquisition resp="#MMM" when="1834">Bequeathed to the Bodleian in 1834</acquisition>
                </history>
                <additional>
@@ -74,13 +86,32 @@
                         <p>To ensure its availability to future readers, access to this item is restricted, and readers are asked to work from reproductions and published descriptions as far as possible. To apply to see the original, please send a message to <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>, outlining the subject of your research, the importance of this item to that research, and the resources you have already consulted.</p>
                      </availability>
                   </adminInfo>
-                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/86dd3006-88da-4777-9dc9-5ff71fc10c59/"><title>Digital Bodleian</title></ref>
-                        <note>(5 images from 35mm slides)</note></bibl></surrogates>
+                  <surrogates>
+                     <bibl subtype="partial" type="digital-facsimile">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/86dd3006-88da-4777-9dc9-5ff71fc10c59/">
+                           <title>Digital Bodleian</title>
+                        </ref>
+                        <note>(5 images from 35mm slides)</note>
+                     </bibl>
+                  </surrogates>
                   <listBibl type="WRAPPER">
                      <listBibl type="INTERNET">
                         <head>Online resources:</head>
-                        <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1848"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl>
-                        <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/3589"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl>
+                        <bibl>
+                           <ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1848">
+                              <title>MLGB3: Medieval Libraries of Great Britain</title>
+                           </ref>
+                        </bibl>
+                        <bibl>
+                           <ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/3589">
+                              <title>MLGB3: Medieval Libraries of Great Britain</title>
+                           </ref>
+                        </bibl>
+                     </listBibl>
+                     <listBibl type="PRINT">
+                        <head>Printed descriptions:</head>
+                        <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 2: Office Books</title> (typescript, 1957), <citedRange unit="page" from="7" to="7">p. 7</citedRange>
+                        </bibl>
                      </listBibl>
                   </listBibl>
                </additional>
@@ -88,9 +119,13 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
-         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
+         <change when="2021-12-14">Add provenance information from MLGB3.</change>
+         <change when="2018-10-14" xml:id="MMM">
+            <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>

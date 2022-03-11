@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_3061" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_3061">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -47,6 +47,9 @@
                         <support>parchment</support>
                      </supportDesc>
                   </objectDesc>
+                  <musicNotation>
+                     <p>Notation on staves (see van Dijk 1957).</p>
+                  </musicNotation>
                   <bindingDesc resp="#BCBB">
                      <binding notAfter="1800" notBefore="1722">
                         <p>18th century, after 1722, <placeName key="place_1000080">Italian</placeName>, either an archaizing binding all of that date, or a major resewing and rebind incorporating elements from an earlier binding; each of the two parts (from the church of <orgName>S. Miniato fra le Torri, Florence</orgName>) had lost leaves at its end before this binding’s resewing. Wood boards, outside edges rounded; brown leather, blind-tooled with multiple lines and a thin roll to form an empty central panel; spine plain except for quadruple lines around the five cords, no label; no clear signs of clasps; traces of 4+1 large circular bosses on each cover, all lost; endleaf watermarks dated 1722; edges stained yellow. <dimensions type="binding" unit="mm">
@@ -60,7 +63,8 @@
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1970), with additional reference to published literature as cited in the description. Binding: <bibl>B. C. Barker-Benfield, <title>Bookbindings of Canonici manuscripts : a survey of early and non-standard bindings, mostly Italian, in the Canonici collection of the Bodleian Library, University of Oxford</title> (Oxford, privately printed, 2020).</bibl>
+                        <source>
+                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1970), with additional reference to published literature as cited in the description. Binding: <bibl>B. C. Barker-Benfield, <title>Bookbindings of Canonici manuscripts : a survey of early and non-standard bindings, mostly Italian, in the Canonici collection of the Bodleian Library, University of Oxford</title> (Oxford, privately printed, 2020).</bibl>
                            <listBibl>
                               <bibl facs="aaz0414.gif" type="SC">Summary Catalogue, vol. 4, p. 395</bibl>
                            </listBibl>
@@ -75,6 +79,15 @@
                         <note>(1 image from 35mm slides)</note>
                      </bibl>
                   </surrogates>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="PRINT">
+                        <head>Printed descriptions:</head>
+                        <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 2: Office Books</title> (typescript, 1957), <citedRange unit="page" from="234" to="234">p. 234</citedRange>
+                        </bibl>
+                        <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 6: Fragments - Office Books, Rituals, Directories</title> (typescript, 1957), <citedRange unit="page" from="151" to="151">p. 151</citedRange>
+                        </bibl>
+                     </listBibl>
+                  </listBibl>
                </additional>
                <msPart>
                   <msIdentifier>
@@ -91,14 +104,17 @@
                   </msContents>
                   <physDesc>
                      <decoDesc>
-                        <decoNote>Decoration<p>Fine borders, historiated initials on fols. 1–20. Related to the style of <persName key="person_3382892" role="art">Zanobi Strozzi</persName>. Written in 1452 by <persName key="person_760" role="scr">Leonardo Francisci de Orto, rector of the church of San Miniato fra le Torri</persName>, fol. 16v, as an addition to an earlier Breviary. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 261, pl. XXIV)</p>
+                        <decoNote>Decoration<p>Fine borders, historiated initials on fols. 1–20. Related to the style of <persName key="person_3382892" role="art">Zanobi Strozzi</persName>. Written in 1452 by <persName key="person_760" role="scr">Leonardo Francisci de Orto, rector of the church of San Miniato fra le Torri</persName>, fol. 16v, as an addition to an earlier Breviary. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 261, pl. XXIV)</p>
                         </decoNote>
                      </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
                         <origDate calendar="Gregorian" when="1452">1452</origDate>
-                        <origPlace><country key="place_1000080">Italian</country>, <settlement key="place_7000457">Florence</settlement><!--ORIGINAL: Italian, Florence--></origPlace>
+                        <origPlace>
+                           <country key="place_1000080">Italian</country>, <settlement key="place_7000457">Florence</settlement>
+                           <!--ORIGINAL: Italian, Florence-->
+                        </origPlace>
                      </origin>
                   </history>
                </msPart>
@@ -118,7 +134,9 @@
                   <history>
                      <origin>
                         <origDate calendar="Gregorian" notAfter="1310" notBefore="1290">c. 1300</origDate>
-                        <origPlace><country key="place_1000080">Italian</country></origPlace>
+                        <origPlace>
+                           <country key="place_1000080">Italian</country>
+                        </origPlace>
                      </origin>
                   </history>
                </msPart>
@@ -127,9 +145,11 @@
       </fileDesc>
       <revisionDesc>
          <change when="2020-08-20">Binding description added.</change>
-         <change when="2020-02-20"><persName ref="https://orcid.org/0000-0003-0464-5036">Andrew Dunning</persName> based on corrections by <persName>Bruce Barker-Benfield</persName>.</change>
+         <change when="2020-02-20">
+            <persName ref="https://orcid.org/0000-0003-0464-5036">Andrew Dunning</persName> based on corrections by <persName>Bruce Barker-Benfield</persName>.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>
       </revisionDesc>
    </teiHeader>
