@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_6310" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6310">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -50,7 +50,7 @@
                      </supportDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>Decoration<p>Fine border, initials. Written by or for John Wycham, monk of St. Leonard's priory, Norwich. (P&amp;A iii. 970, pl. XCII)</p>
+                     <decoNote>Decoration<p>Fine border, initials. Written by or for John Wycham, monk of St. Leonard's priory, Norwich. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 970, pl. XCII)</p>
                      </decoNote>
                   </decoDesc>
                </physDesc>
@@ -60,7 +60,12 @@
                      <origPlace cert="low">
                         <country key="place_7002445">English</country>, <region>East Anglia</region> (?)<!--ORIGINAL: English, East Anglia (?)--></origPlace>
                   </origin>
-                  <provenance notAfter="1707" resp="#MMM"><persName key="person_2867" role="fmo">Henry Jones, -1707</persName></provenance>
+                  <provenance type="MLGB3_provenance_evidence"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4163">
+                     <orgName role="fmo" key="org_167950876">Norwich, Norfolk, Benedictine priory of St Leonard; cell of Norwich</orgName> (?) : For evidence of provenance see SC 8954. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4163">MLGB3</ref>: Liturgical evidence, often to be found in the kalendar). </provenance>
+                  <provenance notAfter="1707" resp="#MMM">
+                     <persName key="person_2867" role="fmo">Henry Jones, -1707</persName>
+                  </provenance>
                   <acquisition resp="#MMM" when="1708">Received by the Bodleian, 1708.</acquisition>
                </history>
                <additional>
@@ -72,12 +77,27 @@
                         </source>
                      </recordHist>
                   </adminInfo>
-                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/537fd51a-1290-4678-99a1-623054e4ea7f/"><title>Digital Bodleian</title></ref>
-                        <note>(2 images from 35mm slides)</note></bibl></surrogates>
+                  <surrogates>
+                     <bibl subtype="partial" type="digital-facsimile">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/537fd51a-1290-4678-99a1-623054e4ea7f/">
+                           <title>Digital Bodleian</title>
+                        </ref>
+                        <note>(2 images from 35mm slides)</note>
+                     </bibl>
+                  </surrogates>
                   <listBibl type="WRAPPER">
                      <listBibl type="INTERNET">
                         <head>Online resources:</head>
-                        <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4163"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl>
+                        <bibl>
+                           <ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4163">
+                              <title>MLGB3: Medieval Libraries of Great Britain</title>
+                           </ref>
+                        </bibl>
+                     </listBibl>
+                     <listBibl type="PRINT">
+                        <head>Printed descriptions:</head>
+                        <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 4: Books of Hours</title> (typescript, 1957), <citedRange unit="page" from="152" to="152">p. 152</citedRange>
+                        </bibl>
                      </listBibl>
                   </listBibl>
                </additional>
@@ -85,9 +105,13 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
-         <change when="2018-08-15" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
+         <change when="2021-12-14">Add provenance information from MLGB3.</change>
+         <change when="2018-08-15" xml:id="MMM">
+            <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>

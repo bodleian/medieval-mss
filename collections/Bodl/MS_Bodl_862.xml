@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_1853" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1853">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -55,7 +55,9 @@
                   <msItem class="#theologica #commentarii" n="1" xml:id="MS_Bodl_862-item1">
                      <title key="work_14130" type="desc">Psalter with gloss</title>
                      <incipit type="prologue">Dauid rex Hebreorum librum Psalmorum composuit prophetans de Christo</incipit>
-                     <note>The text, differing in some respect from the usual gloss, is catalogued in <bibl type="repertory">Stegmüller 4839</bibl> as by John of Pagham (but see below, Provenance).</note>
+                     <note>The text, differing in some respect from the usual gloss, is catalogued in <bibl type="repertory">
+                           <ref target="http://www.repbib.uni-trier.de/cgi-bin/rebiIndex.tcl?ac=searchlist&amp;tlnr=4839">Stegmüller, <title>Bibl.</title> 4839</ref>
+                        </bibl> as by John of Pagham (but see below, Provenance).</note>
                      <note>Former endleaves containing music now kept as <bibl subtype="internal" type="MS">MS. Lat. liturg. d. 20, fols. 23–25</bibl>.</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
@@ -67,20 +69,22 @@
                         <extent>ii + 202 + i medieval folios <dimensions type="leaf" unit="mm">
                               <height>288</height>
                               <width>195</width>
-                           </dimensions></extent>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
                      <layoutDesc>
                         <layout>3 cols., column space <dimensions type="column" unit="mm">
                               <height quantity="150">c. 150</height>
                               <width>190</width>
-                           </dimensions></layout>
+                           </dimensions>
+                        </layout>
                      </layoutDesc>
                   </objectDesc>
                   <handDesc>
                      <handNote resp="#DD #MLH">Gloss and text in different hands: the former regarded by Thomson as French, the latter as English (R. Thomson, <title>Manuscripts from St Albans Abbey 1066–1235</title> (1982), I.96).</handNote>
                   </handDesc>
                   <decoDesc>
-                     <decoNote resp="#MLH #PA" type="decInit">Fine initials. (P&amp;A iii. 228, pl. XXIII) Attributed to the <persName key="person_31153593638851670131" role="art">Simon Master</persName> (Thomson, op. cit.).</decoNote>
+                     <decoNote resp="#MLH #PA" type="decInit">Fine initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 228, pl. XXIII) Attributed to the <persName key="person_31153593638851670131" role="art">Simon Master</persName> (Thomson, op. cit.).</decoNote>
                      <decoNote type="colInit">Coloured initials.</decoNote>
                      <decoNote type="rubrication">Rubrics</decoNote>
                   </decoDesc>
@@ -92,23 +96,37 @@
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" cert="high" notAfter="1157" notBefore="1150" resp="#DD #PA">12th century, second half (before 1157 (?))</origDate>
+                     <origDate calendar="Gregorian"
+                               cert="high"
+                               notAfter="1157"
+                               notBefore="1150"
+                               resp="#DD #PA">12th century, second half (before 1157 (?))</origDate>
                      <origPlace resp="#DD #MLH">
                         <country key="place_7002445">English</country>, <settlement cert="unknown" key="place_7015155">Worcester</settlement> (?) </origPlace>
                   </origin>
-                  <provenance resp="#DD #MLH"><q type="exLibris">psalterium Johannis de pagah<ex>am</ex></q>, fol. v, 12th century (Watson) or c. 1300 (Pächt and Alexander): identified by Watson and others as <persName cert="medium" key="person_3070" role="fmo">John de Pagham</persName>, bishop of Worcester 1151–7, although some scholars have rejected the identification and argued for a later date for the manuscript (Carley, ‘Sir Thomas Bodley's library and its acquisitions’, 371; cf. Ker, <title>MLGB</title>).</provenance>
-                  <provenance resp="#DD"><orgName key="org_148943477" role="fmo">Worcester Cathedral Priory</orgName>: 14th-century Worcester litany, fols. 201v-202v.</provenance>
-                  <provenance notAfter="1500" notBefore="1400" resp="#DD"><orgName key="org_148943477" role="fmo">Worcester Cathedral Priory</orgName>: <q type="exLibris">Liber monasterij Wygnorie</q>, fol. 1, fifteenth century (Watson) or sixteenth century (Ker, <title>MLGB</title>).</provenance>
-                  <provenance notAfter="1547" resp="#SC"><persName key="person_172419710" role="fmo">Henry VIII</persName>: evidence of the binding.</provenance>
-                  <provenance resp="#SC"><persName key="person_76469410" role="fmo">Charles Howard, earl of Nottingham</persName>.</provenance>
+                  <provenance resp="#DD #MLH">
+                     <q type="exLibris">psalterium Johannis de pagah<ex>am</ex>
+                     </q>, fol. v, 12th century (Watson) or c. 1300 (Pächt and Alexander): identified by Watson and others as <persName cert="medium" key="person_3070" role="fmo">John de Pagham</persName>, bishop of Worcester 1151–7, although some scholars have rejected the identification and argued for a later date for the manuscript (Carley, ‘Sir Thomas Bodley's library and its acquisitions’, 371; cf. Ker, <title>MLGB</title>).</provenance>
+                  <provenance resp="#DD">
+                     <orgName key="org_148943477" role="fmo">Worcester Cathedral Priory</orgName>: 14th-century Worcester litany, fols. 201v-202v.</provenance>
+                  <provenance notAfter="1500" notBefore="1400" resp="#DD">
+                     <orgName key="org_148943477" role="fmo">Worcester Cathedral Priory</orgName>: <q type="exLibris">Liber monasterij Wygnorie</q>, fol. 1, fifteenth century (Watson) or sixteenth century (Ker, <title>MLGB</title>).</provenance>
+                  <provenance notAfter="1547" resp="#SC">
+                     <persName key="person_172419710" role="fmo">Henry VIII</persName>: evidence of the binding.</provenance>
+                  <provenance resp="#SC">
+                     <persName key="person_76469410" role="fmo">Charles Howard, earl of Nottingham</persName>.</provenance>
                   <acquisition when="1604">Presented by him in 1604.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
                         <source>Description adapted (May 2019) from the following sources, with additional reference to published literature cited in the description: <listBibl>
-                              <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435–1600 in Oxford Libraries</title> (Oxford, 1984), no. 120 [physical description, origin, provenance]</bibl>
-                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, III (1973), no. 228 [decoration]</bibl>
+                              <bibl>A. G. Watson, <title>
+                                    <ref target="https://catalog.hathitrust.org/Record/000310664">Catalogue of Dated and Datable Manuscripts c.435–1600 in Oxford Libraries</ref>
+                                 </title> (Oxford, 1984), no. 120 [physical description, origin, provenance]</bibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>
+                                    <ref target="https://catalog.hathitrust.org/Record/000468709">Illuminated Manuscripts in the Bodleian Library, Oxford</ref>
+                                 </title>, III (1973), no. 228 [decoration]</bibl>
                               <bibl>Summary Catalogue (1922) [contents, acquisition]</bibl>
                            </listBibl>
                            <listBibl>
@@ -117,13 +135,32 @@
                         </source>
                      </recordHist>
                   </adminInfo>
-                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/4ba00326-8858-4be9-a1ab-db197b0c6931/"><title>Digital Bodleian</title></ref>
-                        <note>(5 images from 35mm slides)</note></bibl></surrogates>
+                  <surrogates>
+                     <bibl subtype="partial" type="digital-facsimile">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/4ba00326-8858-4be9-a1ab-db197b0c6931/">
+                           <title>Digital Bodleian</title>
+                        </ref>
+                        <note>(5 images from 35mm slides)</note>
+                     </bibl>
+                  </surrogates>
                   <listBibl type="WRAPPER">
                      <listBibl type="INTERNET">
                         <head>Online resources:</head>
-                        <bibl><ref target="https://www.diamm.ac.uk/sources/499/"><title>DIAMM: Digital Image Archive of Medieval Music</title></ref></bibl>
-                        <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6009"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl>
+                        <bibl>
+                           <ref target="https://www.diamm.ac.uk/sources/499/">
+                              <title>DIAMM: Digital Image Archive of Medieval Music</title>
+                           </ref>
+                        </bibl>
+                        <bibl>
+                           <ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6009">
+                              <title>MLGB3: Medieval Libraries of Great Britain</title>
+                           </ref>
+                        </bibl>
+                     </listBibl>
+                     <listBibl type="PRINT">
+                        <head>Printed descriptions:</head>
+                        <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 2: Office Books</title> (typescript, 1957), <citedRange unit="page" from="374" to="374">p. 374</citedRange>
+                        </bibl>
                      </listBibl>
                   </listBibl>
                </additional>
@@ -131,9 +168,11 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
-         <change when="2019-05-10" who="#MLH">Revised to incorporate all information in Watson, SC and P&amp;A.</change>
+         <change when="2019-05-10" who="#MLH">Revised to incorporate all information in Watson, SC and <ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref>.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>

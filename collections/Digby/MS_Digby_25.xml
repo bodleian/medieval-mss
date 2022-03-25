@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_4360" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4360">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -59,10 +59,14 @@
                         <support>parchment</support>
                      </supportDesc>
                   </objectDesc>
+                  <musicNotation>
+                     <p>Beneventan notation. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 23)</p>
+                  </musicNotation>
                   <decoDesc>
-                     <decoNote>
-                        <p>Initials. Diagrams. Beneventan notation. (P&amp;A ii. 23)</p>
-                     </decoNote>
+                     <summary>
+                        <ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 23</summary>
+                     <decoNote type="decInit">Initials.</decoNote>
+                     <decoNote type="diagram"> Diagrams. </decoNote>
                   </decoDesc>
                </physDesc>
                <history>
@@ -73,13 +77,16 @@
                         <!--ORIGINAL: Italian, Central-->
                      </origPlace>
                   </origin>
-                  <provenance notAfter="1634" notBefore="1603" resp="#MMM"><persName key="person_49357645" role="fmo">Kenelm Digby, 1603–1665</persName></provenance>
+                  <provenance notAfter="1634" notBefore="1603" resp="#MMM">
+                     <persName key="person_49357645" role="fmo">Kenelm Digby, 1603–1665</persName>
+                  </provenance>
                   <acquisition resp="#MMM" when="1634">Donated to the Bodleian, 1634.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (W. D. Macray, <title>Bodleian Library Quarto Catalogues IX: Digby Manuscripts</title>, repr. with addenda by R. W. Hunt and A. G. Watson, 1999). Decoration follows Pächt and Alexander (1970). <listBibl>
+                        <source>
+                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (W. D. Macray, <title>Bodleian Library Quarto Catalogues IX: Digby Manuscripts</title>, repr. with addenda by R. W. Hunt and A. G. Watson, 1999). Decoration follows Pächt and Alexander (1970). <listBibl>
                               <bibl facs="abw0019.gif" type="QUARTO">Quarto Catalogue, col. 20</bibl>
                               <bibl facs="abw0020.gif" type="QUARTO">Quarto Catalogue, col. 21</bibl>
                               <bibl facs="abw0193.gif" type="QUARTO">Quarto Catalogue (addenda), p. 16</bibl>
@@ -88,20 +95,39 @@
                         </source>
                      </recordHist>
                   </adminInfo>
-                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/2625e03a-02f3-4f0f-b30d-13ba966b67bb/"><title>Digital Bodleian</title></ref>
-                        <note>(1 image from 35mm slides)</note></bibl></surrogates>
-                  <listBibl>
-                     <head>Online resources:</head>
-                     <bibl><ref target="http://musmed.fr/RISM/rismindex01.htm">Christian Meyer, <title>Les Sources manuscrites de la théorie de la musique (S. IX-XVI)</title></ref></bibl>
+                  <surrogates>
+                     <bibl subtype="partial" type="digital-facsimile">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/2625e03a-02f3-4f0f-b30d-13ba966b67bb/">
+                           <title>Digital Bodleian</title>
+                        </ref>
+                        <note>(1 image from 35mm slides)</note>
+                     </bibl>
+                  </surrogates>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="INTERNET">
+                        <head>Online resources:</head>
+                        <bibl>
+                           <ref target="http://musmed.fr/RISM/rismindex01.htm">Christian Meyer, <title>Les Sources manuscrites de la théorie de la musique (S. IX-XVI)</title>
+                           </ref>
+                        </bibl>
+                     </listBibl>
+                     <listBibl type="PRINT">
+                        <head>Printed descriptions:</head>
+                        <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 3: Rituals and Directories</title> (typescript, 1957), <citedRange unit="page" from="232" to="232">p. 232</citedRange>
+                        </bibl>
+                     </listBibl>
                   </listBibl>
                </additional>
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
-         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
+         <change when="2018-10-14" xml:id="MMM">
+            <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>

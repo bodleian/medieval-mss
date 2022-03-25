@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_1671" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1671">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -49,13 +49,14 @@
                         <extent>ii + 50 leaves <dimensions type="leaf" unit="in">
                               <height>7.125</height>
                               <width>5</width>
-                           </dimensions></extent>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
                   </objectDesc>
                </physDesc>
                <history>
                   <provenance>On fol. iiv is 'Iste liber constat <persName key="person_3330" role="fmo">Johanni Enderby de Louth capellano</persName>' (15th cent.)</provenance>
-                  <provenance> 'Coldynggayam [?] abba &#x0026; Colshamme [??, or Calstrume] abba' (late 15th cent.?)</provenance>
+                  <provenance> 'Coldynggayam [?] abba &amp; Colshamme [??, or Calstrume] abba' (late 15th cent.?)</provenance>
                   <provenance> 'Sum liber <persName key="person_3331" role="fmo">Johannis Chaunteler de Oxon</persName>' (early 16th cent.?)</provenance>
                   <acquisition when="1605"> Probably received by the Library in 1605.</acquisition>
                </history>
@@ -69,12 +70,27 @@
                         </source>
                      </recordHist>
                   </adminInfo>
-                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/28c3d53c-9c9b-4668-8c72-9cf12d8eddb1/"><title>Digital Bodleian</title></ref>
-                        <note>(3 images from 35mm slides)</note></bibl></surrogates>
+                  <surrogates>
+                     <bibl subtype="partial" type="digital-facsimile">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/28c3d53c-9c9b-4668-8c72-9cf12d8eddb1/">
+                           <title>Digital Bodleian</title>
+                        </ref>
+                        <note>(3 images from 35mm slides)</note>
+                     </bibl>
+                  </surrogates>
                   <listBibl type="WRAPPER">
                      <listBibl type="INTERNET">
                         <head>Online resources:</head>
-                        <bibl><ref target="https://www.medievalscribes.com/index.php?navtype=manuscripts&amp;navlocation=Oxford&amp;browse=manuscripts&amp;navlibrary=Bodleian+Library&amp;id=32&amp;nav=off"><title>Late Medieval English Scribes</title></ref></bibl>
+                        <bibl>
+                           <ref target="https://www.medievalscribes.com/index.php?browse=manuscripts&amp;&amp;id=32&amp;nav=off">
+                              <title>Late Medieval English Scribes</title>
+                           </ref>
+                        </bibl>
+                     </listBibl>
+                     <listBibl type="PRINT">
+                        <head>Printed descriptions:</head>
+                        <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 3: Rituals and Directories</title> (typescript, 1957), <citedRange unit="page" from="136" to="136">p. 136</citedRange>
+                        </bibl>
                      </listBibl>
                   </listBibl>
                </additional>
@@ -89,7 +105,8 @@
                         <locus>(fol. 1)</locus>
                         <author key="person_93809061">Richard Maidstone (?)</author>
                         <title key="work_4266">Treatise on the 'Anulus'</title>
-                        <rubric><gap reason="editorial"/> Prologus super Canonem cuiusdam instrumenti dicti Anuli</rubric>
+                        <rubric>
+                           <gap reason="editorial"/> Prologus super Canonem cuiusdam instrumenti dicti Anuli</rubric>
                         <incipit type="prol.">Quamuis celi terre conditor</incipit>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
@@ -127,7 +144,9 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem class="#astrologia_astronomia" n="1" xml:id="MS_Bodl_68-part2-item1">
+                     <msItem class="#astrologia_astronomia"
+                             n="1"
+                             xml:id="MS_Bodl_68-part2-item1">
                         <title key="work_15360">'Tractatus ad faciendum astrolabium'</title>
                         <incipit>Astrolabium ita construitur. Recipe tabulas</incipit>
                         <note>One table is 'secundum fratrem <persName key="person_79450930" role="aut">Johannem Somer</persName>', and has 'anno Domini 1403' added hardly later (fol. 34).</note>
@@ -160,7 +179,9 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem class="#astrologia_astronomia" n="1" xml:id="MS_Bodl_68-part3-item1">
+                     <msItem class="#astrologia_astronomia"
+                             n="1"
+                             xml:id="MS_Bodl_68-part3-item1">
                         <locus>(fol. 35)</locus>
                         <title key="work_15087" type="desc">Treatise on making an astronomical instrument 'Navicula de venetiis'</title>
                         <incipit>Ad constructionem Nauicule de Veneciis, tria ad minus</incipit>
@@ -193,7 +214,9 @@
       <revisionDesc>
          <change when="2020-06">Description revised to incorporate all information in SC.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>

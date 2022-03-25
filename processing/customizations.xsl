@@ -29,7 +29,7 @@
     
     <!-- TODO: Move these templates to msdesc2html.xsl if applicable to all catalogues? -->
     
-    <xsl:template match="msDesc/msIdentifier/altIdentifier[@type='former']">
+    <xsl:template match="msDesc/msIdentifier/altIdentifier[@type='former' and child::idno[not(@subtype)]]">
         <p>
             <xsl:text>Former shelfmark: </xsl:text>
             <xsl:apply-templates/>

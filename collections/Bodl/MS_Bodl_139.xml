@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_1201" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1201">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -60,7 +60,7 @@
                      <author key="person_39386818">Aelred of Rievaulx</author>
                      <title key="work_264">De spirituali amicitia</title>
                      <rubric>Explicit liber tertius domini Æ. abbatis de spirituali amicitia</rubric>
-                     <note>The first part, to the words 'fruendum; per quem &#x0026; fruitur', is lost: one leaf is also lost after fol. 125.</note>
+                     <note>The first part, to the words 'fruendum; per quem &amp; fruitur', is lost: one leaf is also lost after fol. 125.</note>
                   </msItem>
                   <msItem>
                      <note type="annotation">There are some marginal notes and scribblings.</note>
@@ -73,14 +73,15 @@
                         <extent>i + 150 leaves <dimensions type="leaf" unit="in">
                               <height>11.375</height>
                               <width>8.375</width>
-                           </dimensions></extent>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
                      <layoutDesc>
                         <layout columns="2">2 cols.</layout>
                      </layoutDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote type="decInit">Good initials (most are unfinished). (P&amp;A iii. 285)</decoNote>
+                     <decoNote type="decInit">Good initials (most are unfinished). (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 285)</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
@@ -90,13 +91,23 @@
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
+                  <provenance type="MLGB3_provenance_evidence"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5583">
+                     <orgName role="fmo" key="org_251947988">Warden, Bedfordshire, Cistercian abbey of St Mary the Virgin</orgName> (?) : (fol. 1r) top right: '[...] de Ward ...' (s. xiii in.). (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5583">MLGB3</ref>: evidence from an ex-libris inscription or note of gift to an institution). </provenance>
+                  <provenance type="MLGB3_laterOwners"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5583">Sir Walter Cope. His no. '62' at head of fol. 1r. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5583">MLGB3</ref>)</provenance>
+                  <provenance type="MLGB3_generalNotes"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5583">Inscription much damaged by damp.     The usual ex libris inscription is 'Liber sancte Marie de Ward'. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5583">MLGB3</ref>)
+                                             </provenance>
                   <acquisition when="1602">Presented by <persName key="person_2677" role="dnr">sir Walter Cope</persName> in 1602.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
                         <source>Description adapted (March 2020) from the following sources: <listBibl>
-                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, III (1973), no. 285 [decoration, date, localization]</bibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>
+                                    <ref target="https://catalog.hathitrust.org/Record/000468709">Illuminated Manuscripts in the Bodleian Library, Oxford</ref>
+                                 </title>, III (1973), no. 285 [decoration, date, localization]</bibl>
                               <bibl>Summary Catalogue (1922) [contents, physical description, acquisition]</bibl>
                            </listBibl>
                            <listBibl>
@@ -108,7 +119,11 @@
                   <listBibl type="WRAPPER">
                      <listBibl type="INTERNET">
                         <head>Online resources:</head>
-                        <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5583"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl>
+                        <bibl>
+                           <ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5583">
+                              <title>MLGB3: Medieval Libraries of Great Britain</title>
+                           </ref>
+                        </bibl>
                      </listBibl>
                   </listBibl>
                </additional>
@@ -116,9 +131,12 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2021-12-14">Add provenance information from MLGB3.</change>
          <change when="2020-03-28">Revised to incorporate all information in SC.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>

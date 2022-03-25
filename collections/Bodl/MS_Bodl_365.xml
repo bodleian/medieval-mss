@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_1396" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1396">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -43,7 +43,8 @@
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
+                        <source>
+                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
                               <bibl facs="aap0409.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 388</bibl>
                               <bibl facs="aap0410.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 389</bibl>
                            </listBibl>
@@ -53,7 +54,16 @@
                   <listBibl type="WRAPPER">
                      <listBibl type="INTERNET">
                         <head>Online resources:</head>
-                        <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4357"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl>
+                        <bibl>
+                           <ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4357">
+                              <title>MLGB3: Medieval Libraries of Great Britain</title>
+                           </ref>
+                        </bibl>
+                     </listBibl>
+                     <listBibl type="PRINT">
+                        <head>Printed descriptions:</head>
+                        <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 5: Fragments - Mass Books</title> (typescript, 1957), <citedRange unit="page" from="194" to="194">p. 194</citedRange>
+                        </bibl>
                      </listBibl>
                   </listBibl>
                </additional>
@@ -84,6 +94,12 @@
                            <country key="place_7002445">English</country>
                         </origPlace>
                      </origin>
+                     <provenance type="MLGB3_provenance_evidence"
+                                 source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4357">
+                        <orgName role="fmo" key="org_152199147">Oxford, Oxfordshire, Merton College</orgName>: 2o  folio: 'nostre plenam' = Cat. T., no. 184. Powicke no. 42. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4357">MLGB3</ref>: evidence of dicta probatoria, usually a secundo folio). </provenance>
+                     <provenance type="MLGB3_generalNotes"
+                                 source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4357">Fols. 1--12 have column numbering and line numbering by tens.     Bound in Oxford c. 1600 (Gibson rolls xi, xix) with Epistole Ieronimi, s. xii (imperfect at beginning).     '2 o  ffo' is written above the words 'nostre plenam'. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4357">MLGB3</ref>)
+                     </provenance>
                   </history>
                </msPart>
                <msPart xml:id="MS_Bodl_365-part2">
@@ -106,7 +122,7 @@
                         </supportDesc>
                      </objectDesc>
                      <decoDesc>
-                        <decoNote>Good and other initials. Related in style to MSS Digby 112 and Bodley 793, probably from <placeName key="place_7011375">Winchester</placeName>. (P&amp;A iii. 161)</decoNote>
+                        <decoNote>Good and other initials. Related in style to MSS Digby 112 and Bodley 793, probably from <placeName key="place_7011375">Winchester</placeName>. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 161)</decoNote>
                      </decoDesc>
                   </physDesc>
                   <history>
@@ -150,14 +166,18 @@
                            <country key="place_7002445">English</country>
                         </origPlace>
                      </origin>
+                     <acquisition when="1601">Presented to the Bodleian by <persName key="person_3220" role="fmo">Cuthbert Ridley</persName> in 1601.</acquisition>
                   </history>
                </msPart>
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2021-12-14">Add provenance information from MLGB3.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>

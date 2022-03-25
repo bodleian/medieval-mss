@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_3006" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_3006">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -43,7 +43,8 @@
                </msIdentifier>
                <msContents>
                   <msItem class="#liturgica" n="1" xml:id="MS_Canon_Liturg_323-item1">
-                     <title key="work_11573" type="desc">Diurnal, Use of <orgName key="org_141608775">St. Mark's, Venice</orgName></title>
+                     <title key="work_11573" type="desc">Diurnal, Use of <orgName key="org_141608775">St. Mark's, Venice</orgName>
+                     </title>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -53,9 +54,12 @@
                         <support>parchment</support>
                      </supportDesc>
                   </objectDesc>
+                  <musicNotation>
+                     <p>Notation (see van Dijk 1957).</p>
+                  </musicNotation>
                   <decoDesc>
                      <decoNote type="border">Good historiated border (defaced).</decoNote>
-                     <decoNote type="decInit"> Good initials. The date 1514 is written in the calendrial tables, fol. 7v, by the original hand. On fol. 7 the date 1568 added. (P&amp;A ii. 994)</decoNote>
+                     <decoNote type="decInit"> Good initials. The date 1514 is written in the calendrial tables, fol. 7v, by the original hand. On fol. 7 the date 1568 added. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 994)</decoNote>
                   </decoDesc>
                   <bindingDesc resp="#BCBB">
                      <binding notAfter="1560" notBefore="1540">
@@ -79,13 +83,21 @@
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1970). Binding: <bibl>B. C. Barker-Benfield, <title>Bookbindings of Canonici manuscripts : a survey of early and non-standard bindings, mostly Italian, in the Canonici collection of the Bodleian Library, University of Oxford</title> (Oxford, privately printed, 2020).</bibl>
+                        <source>
+                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1970). Binding: <bibl>B. C. Barker-Benfield, <title>Bookbindings of Canonici manuscripts : a survey of early and non-standard bindings, mostly Italian, in the Canonici collection of the Bodleian Library, University of Oxford</title> (Oxford, privately printed, 2020).</bibl>
                            <listBibl>
                               <bibl facs="aaz0400.gif" type="SC">Summary Catalogue, vol. 4, p. 381</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="PRINT">
+                        <head>Printed descriptions:</head>
+                        <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 2: Office Books</title> (typescript, 1957), <citedRange unit="page" from="337" to="337">p. 337</citedRange>
+                        </bibl>
+                     </listBibl>
+                  </listBibl>
                </additional>
             </msDesc>
          </sourceDesc>
@@ -93,7 +105,9 @@
       <revisionDesc>
          <change when="2020-08-20">Binding description added.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>

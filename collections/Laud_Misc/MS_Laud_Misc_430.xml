@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_7231" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_7231">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -70,7 +70,8 @@
                   </bindingDesc>
                </physDesc>
                <history>
-                  <provenance resp="#Q2" when="1638"><persName key="person_54940373" role="fmo">William Laud, 1573–1645</persName>, 1638. </provenance>
+                  <provenance resp="#Q2" when="1638">
+                     <persName key="person_54940373" role="fmo">William Laud, 1573–1645</persName>, 1638. </provenance>
                   <acquisition resp="#Q2" when="1639">Part of his third donation to the Bodleian, 1639.</acquisition>
                </history>
                <additional>
@@ -78,7 +79,9 @@
                      <recordHist>
                         <source>Description adapted (November 2019) by Matthew Holford from the following sources, with additional description (content, dimensions, decoration): <listBibl>
                               <bibl>Nigel F. Palmer, <title>Zisterzienser und ihre Bücher: die mittelalterliche Bibliotheksgeschichte von Kloster Eberbach im Rheingau</title> (Regensburg, 1998), pp. 188, 242, 292, 315 (fragment 35) [physical description, date, origin, provenance]</bibl>
-                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, 3 vols. (1966–1973) I, no. 142 [part C: decoration].</bibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>
+                                    <ref target="https://catalog.hathitrust.org/Record/000468709">Illuminated Manuscripts in the Bodleian Library, Oxford</ref>
+                                 </title>, 3 vols. (1966–1973) I, no. 142 [part C: decoration].</bibl>
                               <bibl>H. O. Coxe, <title>Laudian Manuscripts</title>, Quarto Catalogues II, repr. with corrections, 1969, from the original ed. of 1858–1885 [contents, acquisition]</bibl>
                            </listBibl>
                            <listBibl>
@@ -92,19 +95,30 @@
                   <surrogates>
                      <bibl subtype="full" type="digital-facsimile">
                         <ref target="https://digital.bodleian.ox.ac.uk/objects/bc68a536-56a0-4397-a499-ac2552cb44a1/">
-                           <title>Digital Bodleian</title></ref>
+                           <title>Digital Bodleian</title>
+                        </ref>
                         <note>(full digital facsimile)</note>
                      </bibl>
                      <bibl subtype="partial" type="digital-facsimile">
                         <ref target="https://digital.bodleian.ox.ac.uk/objects/441ba286-675a-4b4b-847b-bdfe55482812/">
-                           <title>Digital Bodleian</title></ref>
+                           <title>Digital Bodleian</title>
+                        </ref>
                         <note>(1 image from 35mm slides)</note>
                      </bibl>
                   </surrogates>
                   <listBibl type="WRAPPER">
                      <listBibl type="INTERNET">
                         <head>Online resources:</head>
-                        <bibl><ref target="https://hab.bodleian.ox.ac.uk/en/"><title>Manuscripts from German-Speaking Lands – A Polonsky Foundation Digitization Project</title></ref></bibl>
+                        <bibl>
+                           <ref target="https://hab.bodleian.ox.ac.uk/en/">
+                              <title>Manuscripts from German-Speaking Lands – A Polonsky Foundation Digitization Project</title>
+                           </ref>
+                        </bibl>
+                     </listBibl>
+                     <listBibl type="PRINT">
+                        <head>Printed descriptions:</head>
+                        <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 2: Office Books</title> (typescript, 1957), <citedRange unit="page" from="350" to="350">p. 350</citedRange>
+                        </bibl>
                      </listBibl>
                   </listBibl>
                </additional>
@@ -120,29 +134,43 @@
                         <locus>(fols. 1r-3v)</locus>
                         <author key="person_95147024">Jerome</author>
                         <title key="work_2430">Vita S. Hilarionis</title>
-                        <incipit defective="true"><note>(c. 16)</note> Delatus ergo in lectulo. Cum solam lignam</incipit>
+                        <incipit defective="true">
+                           <note>(c. 16)</note> Delatus ergo in lectulo. Cum solam lignam</incipit>
                         <explicit>illum locum dilexerat</explicit>
                         <finalRubric>Explicit vita beati hylarionis</finalRubric>
                         <note>Imperfect at beginning.</note>
                      </msItem>
-                     <msItem class="#vitae_sanctorum" n="2" xml:id="MS_Laud_Misc_430-part1-item2">
+                     <msItem class="#vitae_sanctorum"
+                             n="2"
+                             xml:id="MS_Laud_Misc_430-part1-item2">
                         <locus>(fols. 3v-6v)</locus>
                         <title key="work_15464">Vita Carilephi abbatis</title>
                         <rubric>Incipit vita beati carilephi abbatis</rubric>
                         <incipit>Vitam beatissimi carilephi sacerdotis Anisolensis cenobii narraturus sanctum inuoco spiritum</incipit>
                         <explicit>sanctam etiam congregacionem <unclear>qui</unclear>
-                           <sic>a</sic> beatissimi sacerdotis carilephi reliquias <sic>excubat</sic> quasi prostratus eorum sanctis vestigiis suppliciter deprecor ut mei memores esse dignentur et suis me precibus omnipotenti domino commendare non desinant. Quatenus et hic ab emulorum insidiis merear liberari et in diuino examine meorum consequi veniam delictorum. Christo prestante qui uiuus et uerus est deus cum patre et spiritu sancto <gap reason="editorial"/></explicit>
+                           <sic>a</sic> beatissimi sacerdotis carilephi reliquias <sic>excubat</sic> quasi prostratus eorum sanctis vestigiis suppliciter deprecor ut mei memores esse dignentur et suis me precibus omnipotenti domino commendare non desinant. Quatenus et hic ab emulorum insidiis merear liberari et in diuino examine meorum consequi veniam delictorum. Christo prestante qui uiuus et uerus est deus cum patre et spiritu sancto <gap reason="editorial"/>
+                        </explicit>
                         <note>Followed by a note that the deposition of the saint is celebrated on the kalends of July.</note>
-                        <note>Cf. <bibl type="repertory">BHL 1568</bibl></note>
+                        <note>Cf. <bibl type="repertory">
+                              <ref target="https://clavis.brepols.net/clacla/OA/link.aspx?clavis=BHL&amp;number=1568">
+                                 <title>BHL</title> 1568</ref>
+                           </bibl>
+                        </note>
                      </msItem>
-                     <msItem class="#vitae_sanctorum" n="3" xml:id="MS_Laud_Misc_430-part1-item3">
+                     <msItem class="#vitae_sanctorum"
+                             n="3"
+                             xml:id="MS_Laud_Misc_430-part1-item3">
                         <locus>(fols. 7r-9v)</locus>
                         <title key="work_15472">Vita S. Ivonis Trecorensis</title>
                         <rubric>Incipit vita sancti yuonis confessoris</rubric>
                         <incipit>Cum nostris temporibus quandam stellam nouam in celi celorum firmamento produxerit altissimus per cuius splendorem decoraretur celestia</incipit>
-                        <explicit>hylarescat et tripudiat Britania de qua tam inclita soboles et co<ex>mmun</ex>is est assumpta et in regno paradisi collocata. Cuius meritis et precibus ad ipsum paradisum christus dei filius nos perducat qui <gap reason="editorial"/></explicit>
+                        <explicit>hylarescat et tripudiat Britania de qua tam inclita soboles et co<ex>mmun</ex>is est assumpta et in regno paradisi collocata. Cuius meritis et precibus ad ipsum paradisum christus dei filius nos perducat qui <gap reason="editorial"/>
+                        </explicit>
                         <finalRubric>Explici<add place="above">un</add>t vita miracula et canonizacio beati yuonis presibiteri de Brytania et Incipit officium in festo ipsius decantandum</finalRubric>
-                        <note>Cf. <bibl type="repertory">BHL 4631</bibl>, longer than the printed text</note>
+                        <note>Cf. <bibl type="repertory">
+                              <ref target="https://clavis.brepols.net/clacla/OA/link.aspx?clavis=BHL&amp;number=4631">
+                                 <title>BHL</title> 4631</ref>
+                           </bibl>, longer than the printed text</note>
                      </msItem>
                      <msItem n="4">
                         <locus>(fols. 9v-10r)</locus>
@@ -174,7 +202,8 @@
                            <layout>Written space <dimensions type="written" unit="mm">
                                  <height max="230" min="225" precision="medium">c. 225–30</height>
                                  <width precision="medium" quantity="170">c. 170</width>
-                              </dimensions></layout>
+                              </dimensions>
+                           </layout>
                         </layoutDesc>
                      </objectDesc>
                      <handDesc resp="#MLH">
@@ -200,15 +229,23 @@
                   </msIdentifier>
                   <msContents resp="#MLH">
                      <textLang mainLang="la">Latin</textLang>
-                     <msItem class="#vitae_sanctorum" n="1" xml:id="MS_Laud_Misc_430-part2-item1">
+                     <msItem class="#vitae_sanctorum"
+                             n="1"
+                             xml:id="MS_Laud_Misc_430-part2-item1">
                         <locus>(fols. 11r-20r)</locus>
                         <title key="work_12883">Life of St. Katherine</title>
                         <incipit>Incipit prologus in passione beate katerine uirginis et martiris</incipit>
                         <incipit>Cum sanctorum forcia gesta ad memoriam posterorum transcribimus</incipit>
                         <rubric>Incipit passio</rubric>
                         <incipit>Tradunt annales historie quod Constantinus</incipit>
-                        <explicit>ad passionem properauit. Cui est honor <gap reason="editorial"/></explicit>
-                        <note><bibl type="repertory">BHL 1663</bibl></note>
+                        <explicit>ad passionem properauit. Cui est honor <gap reason="editorial"/>
+                        </explicit>
+                        <note>
+                           <bibl type="repertory">
+                              <ref target="https://clavis.brepols.net/clacla/OA/link.aspx?clavis=BHL&amp;number=1663">
+                                 <title>BHL</title> 1663</ref>
+                           </bibl>
+                        </note>
                         <note>Correction and insertions, fols. 12r margin, 11v margin, 12v margin, by the hand of fols. 1r-10r </note>
                         <!-- note insertions, corrections:
                         parts of cc. (7) - (10) inserted, fols. 12r margin, 11v margin, 12v margin
@@ -220,29 +257,43 @@
                      <msItem>
                         <note>Followed by hymns for St Katherine:</note>
                         <msItem>
-                           <incipit><locus>(fol. 10r)</locus> Aue gemma claritatis ad instar carbunculi <gap reason="editorial"/> Katerina uirgo felix </incipit>
-                           <note><bibl type="repertory">Chevalier 1807</bibl></note>
+                           <incipit>
+                              <locus>(fol. 10r)</locus> Aue gemma claritatis ad instar carbunculi <gap reason="editorial"/> Katerina uirgo felix </incipit>
+                           <note>
+                              <bibl type="repertory">Chevalier 1807</bibl>
+                           </note>
                         </msItem>
                         <msItem>
                            <incipit>Katerine collaudemus uirtutum insignia</incipit>
-                           <note><bibl type="repertory">Chevalier 2693</bibl>; AH 52.245</note>
+                           <note>
+                              <bibl type="repertory">Chevalier 2693</bibl>; AH 52.245</note>
                         </msItem>
                         <msItem>
-                           <incipit><locus>(fol. 10v)</locus> Pange lingua gloriose uirginis martirium</incipit>
-                           <note><bibl type="repertory">Chevalier 14454</bibl>; AH 52.246</note>
+                           <incipit>
+                              <locus>(fol. 10v)</locus> Pange lingua gloriose uirginis martirium</incipit>
+                           <note>
+                              <bibl type="repertory">Chevalier 14454</bibl>; AH 52.246</note>
                         </msItem>
                         <msItem>
                            <incipit>Presens dies expendatur in eius preconium</incipit>
-                           <note><bibl type="repertory">Chevalier 15310</bibl>; AH 52.247</note>
+                           <note>
+                              <bibl type="repertory">Chevalier 15310</bibl>; AH 52.247</note>
                         </msItem>
                      </msItem>
-                     <msItem class="#vitae_sanctorum" n="2" xml:id="MS_Laud_Misc_430-part2-item2">
+                     <msItem class="#vitae_sanctorum"
+                             n="2"
+                             xml:id="MS_Laud_Misc_430-part2-item2">
                         <locus>(fol. 21r-23v)</locus>
                         <title key="work_12844">Life of St. Blaise</title>
                         <rubric>Incipit passio sancti Blasii martiris</rubric>
                         <incipit>Ex sabastia quidem capadocie martyres sibi elegit dominus</incipit>
                         <explicit>Audiens uero beata illa senex transitum sancti martyris <gap reason="editorial"/> Passus est enim beatissimus christi martyr blasius in sebastia ciuitate inperante agricolao. Regnante domino nostri iesu christo, cui est honor et gloria in secula seculorum.</explicit>
-                        <note><bibl type="repertory">BHL 1370</bibl></note>
+                        <note>
+                           <bibl type="repertory">
+                              <ref target="https://clavis.brepols.net/clacla/OA/link.aspx?clavis=BHL&amp;number=1370">
+                                 <title>BHL</title> 1370</ref>
+                           </bibl>
+                        </note>
                      </msItem>
                   </msContents>
                   <physDesc resp="#NFP">
@@ -299,33 +350,56 @@
                            <incipit>Cvm de vita et moribus et morte miraculisque beate Elyzabeth perscrutari</incipit>
                         </msItem>
                         <msItem>
-                           <rubric><locus>(fol. 24v)</locus> Incipit distinctio librorum</rubric>
+                           <rubric>
+                              <locus>(fol. 24v)</locus> Incipit distinctio librorum</rubric>
                         </msItem>
                         <msItem>
-                           <rubric><locus>(fol. 26v)</locus> Incipit liber primus de nobilitate parentum beate Elyzabeth primum capitulum</rubric>
+                           <rubric>
+                              <locus>(fol. 26v)</locus> Incipit liber primus de nobilitate parentum beate Elyzabeth primum capitulum</rubric>
                            <incipit>Eo tempore quo Philipus sueuorum dux </incipit>
-                           <explicit><locus>(fol. 61v)</locus> sed nulla uel tam leuis cui facilime resistebat</explicit>
-                           <note><bibl type="repertory">BHL 2498</bibl>, as pr. G. Pray, <title>Vita Elisabethae Viduae</title> (1770), 33–163</note>
+                           <explicit>
+                              <locus>(fol. 61v)</locus> sed nulla uel tam leuis cui facilime resistebat</explicit>
+                           <note>
+                              <bibl type="repertory">
+                                 <ref target="https://clavis.brepols.net/clacla/OA/link.aspx?clavis=BHL&amp;number=2498">
+                                    <title>BHL</title> 2498</ref>
+                              </bibl>, as pr. G. Pray, <title>Vita Elisabethae Viduae</title> (1770), 33–163</note>
                         </msItem>
                         <msItem>
-                           <rubric><locus>(fol. 61v)</locus> Incipit de miraculis</rubric>
+                           <rubric>
+                              <locus>(fol. 61v)</locus> Incipit de miraculis</rubric>
                            <incipit>Tunc nimirum et alia que non fidelibus</incipit>
                            <rubric>Registrum miraculorum</rubric>
-                           <rubric><locus>(fol. 62r)</locus> Incipiunt miracula a sede apostolica approbata et primo de diuersis languoribus curatis</rubric>
+                           <rubric>
+                              <locus>(fol. 62r)</locus> Incipiunt miracula a sede apostolica approbata et primo de diuersis languoribus curatis</rubric>
                            <incipit>Guta de gydenkap moguntinensi dycesis</incipit>
-                           <explicit><locus>(fol. 78v)</locus> iuratus per totum concordat cum markolfo</explicit>
-                           <note><bibl type="repertory">BHL 2499</bibl>, as pr. Pray, pp. 163–218.</note>
+                           <explicit>
+                              <locus>(fol. 78v)</locus> iuratus per totum concordat cum markolfo</explicit>
+                           <note>
+                              <bibl type="repertory">
+                                 <ref target="https://clavis.brepols.net/clacla/OA/link.aspx?clavis=BHL&amp;number=2499">
+                                    <title>BHL</title> 2499</ref>
+                              </bibl>, as pr. Pray, pp. 163–218.</note>
                         </msItem>
                         <msItem>
-                           <rubric><locus>(fol. 78v)</locus> Epistola examinatorum miraculorum ad dominum papam trasmissam</rubric>
+                           <rubric>
+                              <locus>(fol. 78v)</locus> Epistola examinatorum miraculorum ad dominum papam trasmissam</rubric>
                            <incipit>Sanctissimo patri ac domino Gregorio ... Sifridus miseracione diuina archiepiscopus Mog’ ... Paternitatis uestrae litteras accepimus</incipit>
                            <explicit>uel supplendum</explicit>
-                           <note>Cf. <bibl type="repertory">BHL 2491</bibl></note>
+                           <note>Cf. <bibl type="repertory">
+                                 <ref target="https://clavis.brepols.net/clacla/OA/link.aspx?clavis=BHL&amp;number=2491">
+                                    <title>BHL</title> 2491</ref>
+                              </bibl>
+                           </note>
                         </msItem>
                         <msItem>
-                           <note>Followed by bk. VIII, cc. 8–15, of the first recension of Dietrich von Apolda's life (<bibl type="repertory">BHL 2496</bibl>), as pr. Surius, <title>De probatis sanctorum vitis</title>, Nov. (1618), 438–440.</note>
+                           <note>Followed by bk. VIII, cc. 8–15, of the first recension of Dietrich von Apolda's life (<bibl type="repertory">
+                                 <ref target="https://clavis.brepols.net/clacla/OA/link.aspx?clavis=BHL&amp;number=2496">
+                                    <title>BHL</title> 2496</ref>
+                              </bibl>), as pr. Surius, <title>De probatis sanctorum vitis</title>, Nov. (1618), 438–440.</note>
                            <!-- https://archive.org/details/bub_gb_VZkrY2lu4dsC/page/n468 -->
-                           <rubric><locus>(fol. 79r)</locus> De examinacione miraculorum</rubric>
+                           <rubric>
+                              <locus>(fol. 79r)</locus> De examinacione miraculorum</rubric>
                            <incipit>Igitur pater sanctissimus gregorius papa nonus de transmissis</incipit>
                            <!-- <rubric><locus>(fol. 79v)</locus> De sollempni canonizacione beate Ely</rubric>
                            <incipit>Die itaque magno festiuitatis penthecostes</incipit>
@@ -337,48 +411,88 @@
                            <incipit>Exspectabant autem et affectabant</incipit>
                            <rubric><locus>(fol. 80r)</locus> De sublimibus personis qui aderant oblacioni</rubric>
 <incipit>Aderant proinde</incipit>                        -->
-                           <rubric><locus>(fol. 81v)</locus> Epylogus breuis</rubric>
+                           <rubric>
+                              <locus>(fol. 81v)</locus> Epylogus breuis</rubric>
                            <incipit>Porro sicut electa deu famula</incipit>
                            <finalRubric>Expliciunt libri de uita et morte et miraculis beate Elyzabeth</finalRubric>
                         </msItem>
                         <!-- http://digital.onb.ac.at/OnbViewer/viewer.faces?doc=ABO_%2BZ16530010X -->
-                        <msItem class="#vitae_sanctorum" n="4" xml:id="MS_Laud_Misc_430-part2-item4">
-                           <rubric><locus>(fol. 82r)</locus> Incipit sermo angeli qui instruxit beatam Elyzabeth de statu perfectionis</rubric>
+                        <msItem class="#vitae_sanctorum"
+                                n="4"
+                                xml:id="MS_Laud_Misc_430-part2-item4">
+                           <rubric>
+                              <locus>(fol. 82r)</locus> Incipit sermo angeli qui instruxit beatam Elyzabeth de statu perfectionis</rubric>
                            <incipit>Apparuit sancte Elizabeth angelus</incipit>
                            <explicit>uestros oculos auertatis</explicit>
-                           <note><bibl type="repertory">BHL 2500</bibl></note>
+                           <note>
+                              <bibl type="repertory">
+                                 <ref target="https://clavis.brepols.net/clacla/OA/link.aspx?clavis=BHL&amp;number=2500">
+                                    <title>BHL</title> 2500</ref>
+                              </bibl>
+                           </note>
                         </msItem>
                         <msItem>
-                           <rubric><locus>(fol. 82v)</locus> Epistola gregorii pape de canonizacione beate elyza</rubric>
+                           <rubric>
+                              <locus>(fol. 82v)</locus> Epistola gregorii pape de canonizacione beate elyza</rubric>
                            <incipit>Gregorius episcopus ... Gloriosus deus in maiestate sua </incipit>
-                           <note><bibl type="repertory">BHL 2492</bibl>; <bibl type="repertory">Jaffé 9929</bibl></note>
+                           <note>
+                              <bibl type="repertory">
+                                 <ref target="https://clavis.brepols.net/clacla/OA/link.aspx?clavis=BHL&amp;number=2492">
+                                    <title>BHL</title> 2492</ref>
+                              </bibl>; <bibl type="repertory">Jaffé 9929</bibl>
+                           </note>
                            <!-- CHECK -->
                         </msItem>
                         <msItem>
-                           <rubric><locus>(fol. 84r)</locus> Littera domini innocencii quarti de translacione beate elyzabeth</rubric>
+                           <rubric>
+                              <locus>(fol. 84r)</locus> Littera domini innocencii quarti de translacione beate elyzabeth</rubric>
                            <incipit>Innocentius episcopus ... Dilectorum filiorum magistri et fratrum theutonicorum hospitalis sancte marie Ierosolimitam</incipit>
-                           <note><bibl type="repertory">BHL 2501</bibl>; <bibl type="repertory">Jaffé 13856</bibl></note>
+                           <note>
+                              <bibl type="repertory">
+                                 <ref target="https://clavis.brepols.net/clacla/OA/link.aspx?clavis=BHL&amp;number=2501">
+                                    <title>BHL</title> 2501</ref>
+                              </bibl>; <bibl type="repertory">Jaffé 13856</bibl>
+                           </note>
                            <!-- check -->
                         </msItem>
                         <msItem>
-                           <incipit><locus>(fol. 84v)</locus> Huius igitur mandati auctoritate</incipit>
+                           <incipit>
+                              <locus>(fol. 84v)</locus> Huius igitur mandati auctoritate</incipit>
                            <explicit>Ad hoc in predicto religiosorum loco <gap reason="editorial"/> qui est benedictus in secula seculorum amen</explicit>
-                           <note><bibl type="repertory">BHL 2502</bibl></note>
+                           <note>
+                              <bibl type="repertory">
+                                 <ref target="https://clavis.brepols.net/clacla/OA/link.aspx?clavis=BHL&amp;number=2502">
+                                    <title>BHL</title> 2502</ref>
+                              </bibl>
+                           </note>
                         </msItem>
                         <msItem>
-                           <rubric><locus>(fol. 85r)</locus> De uiro religioso cui in die mortis sue beata elyzabet apparuit</rubric>
+                           <rubric>
+                              <locus>(fol. 85r)</locus> De uiro religioso cui in die mortis sue beata elyzabet apparuit</rubric>
                            <incipit>Est in thuringia cenobium</incipit>
                            <explicit>pro curatrice dominum benedixit</explicit>
-                           <note><bibl type="repertory">BHL 2503</bibl></note>
+                           <note>
+                              <bibl type="repertory">
+                                 <ref target="https://clavis.brepols.net/clacla/OA/link.aspx?clavis=BHL&amp;number=2503">
+                                    <title>BHL</title> 2503</ref>
+                              </bibl>
+                           </note>
                         </msItem>
                         <msItem>
-                           <rubric><locus>(fol. 85v)</locus> De conrado lantgrauio</rubric>
+                           <rubric>
+                              <locus>(fol. 85v)</locus> De conrado lantgrauio</rubric>
                            <incipit>Dulcis memorie frater conradus</incipit>
                            <explicit>et regnat deus per infinita secula seculorum amen</explicit>
-                           <note><bibl type="repertory">BHL 2504</bibl></note>
+                           <note>
+                              <bibl type="repertory">
+                                 <ref target="https://clavis.brepols.net/clacla/OA/link.aspx?clavis=BHL&amp;number=2504">
+                                    <title>BHL</title> 2504</ref>
+                              </bibl>
+                           </note>
                         </msItem>
                         <msItem>
-                           <rubric><locus>(fol. 86r)</locus> Genealogia sancte elyzabeth diletricis christi</rubric>
+                           <rubric>
+                              <locus>(fol. 86r)</locus> Genealogia sancte elyzabeth diletricis christi</rubric>
                            <incipit>Anno incarnacionis uerbi Mo CCo septimo</incipit>
                            <explicit>qui accepit vxorem regis Vngarie filiam Elyzabeth</explicit>
                         </msItem>
@@ -399,7 +513,8 @@
                            <layout>Ruled space <dimensions type="ruled" unit="mm">
                                  <height>205</height>
                                  <width>155</width>
-                              </dimensions></layout>
+                              </dimensions>
+                           </layout>
                         </layoutDesc>
                      </objectDesc>
                      <handDesc resp="#MLH">
@@ -417,7 +532,8 @@
                            <country key="place_7000084">German</country>
                         </origPlace>
                      </origin>
-                     <provenance notAfter="1505" notBefore="1495" resp="#NFP"><orgName key="org_133214228" role="fmo">Eberbach, Cistercian abbey</orgName>: ex libris, fol. 86r, 'comparatus per dominum Nycolaum Abbatem', probably <persName key="person_3157">Nikolaus II von Boppard (1392–1407)</persName>, perhaps Nikolaus III (-1447).</provenance>
+                     <provenance notAfter="1505" notBefore="1495" resp="#NFP">
+                        <orgName key="org_133214228" role="fmo">Eberbach, Cistercian abbey</orgName>: ex libris, fol. 86r, 'comparatus per dominum Nycolaum Abbatem', probably <persName key="person_3157">Nikolaus II von Boppard (1392–1407)</persName>, perhaps Nikolaus III (-1447).</provenance>
                      <provenance resp="#NFP" when="1502">Probably identifiable as h 6 in the <orgName key="org_133214228" role="fmo">Eberbach</orgName> library catalogue of 1502.</provenance>
                      <provenance resp="#NFP">Annotated probably by the Eberbach monk <persName key="person_3158">Johannes Carbo von Mainz</persName> (-1616).</provenance>
                   </history>
@@ -428,7 +544,9 @@
       <revisionDesc>
          <change when="2019-11-20">Description revised for Polonsky German project</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>

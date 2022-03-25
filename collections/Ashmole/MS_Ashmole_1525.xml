@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_300" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_300">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -58,16 +58,25 @@
                      <decoNote type="miniature">Fine miniatures (calendar pictures).</decoNote>
                      <decoNote type="border">Borders.</decoNote>
                      <decoNote type="histInit">Historiated initials.</decoNote>
-                     <decoNote type="decInit">Other initials. (P&amp;A iii. 355, pl. XXX) Fine borders, historiated and other initials added to a Psalter of 13th century, first quarter. From fol. 140v script also 14th century. (P&amp;A iii. 551, pl. LV)</decoNote>
+                     <decoNote type="decInit">Other initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 355, pl. XXX) Fine borders, historiated and other initials added to a Psalter of 13th century, first quarter. From fol. 140v script also 14th century. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 551, pl. LV)</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1220" notBefore="1200">13th century, first quarter (before 1220);</origDate>
-                     <origDate calendar="Gregorian" notAfter="1310" notBefore="1300" type="additions">additions, 14th century, beginning</origDate>
+                     <origDate calendar="Gregorian"
+                               notAfter="1310"
+                               notBefore="1300"
+                               type="additions">additions, 14th century, beginning</origDate>
                      <origPlace>
                         <country key="place_7002445">English</country>, <settlement key="place_7012044">Canterbury</settlement>; additions, English<!--MULTIPLE PLACES OF ORIGIN--></origPlace>
                   </origin>
+                  <provenance type="MLGB3_provenance_evidence"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1293">
+                     <orgName role="fmo" key="org_158353196">Canterbury, Kent, Benedictine cathedral priory of Holy Trinity or Christ Church</orgName> (?) : Has obits of "Thomas Golstone Prior" (i. e. of Canterbury) and of "Dominus Gervasius de Crambrok" (s. xv). (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1293">MLGB3</ref>: evidence from locally specific contents, including obits, scribbles, etc.). </provenance>
+                  <provenance type="MLGB3_generalNotes"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1293">Wormald treats it as a St Augustine's Canterbury calendar, see Engl. Ben. Kalendars after A. D. 1100, HBS 1 (1938) 47. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1293">MLGB3</ref>)
+                                             </provenance>
                </history>
                <additional>
                   <adminInfo>
@@ -80,12 +89,29 @@
                         </source>
                      </recordHist>
                   </adminInfo>
-                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/75eb66ab-23f8-46af-8754-551ce4badcf2/"><title>Digital Bodleian</title></ref>
-                        <note>(68 images from 35mm slides)</note></bibl></surrogates>
+                  <surrogates>
+                     <bibl subtype="partial" type="digital-facsimile">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/75eb66ab-23f8-46af-8754-551ce4badcf2/">
+                           <title>Digital Bodleian</title>
+                        </ref>
+                        <note>(68 images from 35mm slides)</note>
+                     </bibl>
+                  </surrogates>
                   <listBibl type="WRAPPER">
                      <listBibl type="INTERNET">
                         <head>Online resources:</head>
-                        <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1293"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl>
+                        <bibl>
+                           <ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1293">
+                              <title>MLGB3: Medieval Libraries of Great Britain</title>
+                           </ref>
+                        </bibl>
+                     </listBibl>
+                     <listBibl type="PRINT">
+                        <head>Printed descriptions:</head>
+                        <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 2: Office Books</title> (typescript, 1957), <citedRange unit="page" from="15" to="15">p. 15</citedRange>
+                        </bibl>
+                        <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 5: Fragments - Mass Books</title> (typescript, 1957), <citedRange unit="page" from="183" to="183">p. 183</citedRange>
+                        </bibl>
                      </listBibl>
                   </listBibl>
                </additional>
@@ -93,8 +119,11 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2021-12-14">Add provenance information from MLGB3.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>

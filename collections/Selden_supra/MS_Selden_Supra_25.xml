@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_8898" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8898">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -41,7 +41,14 @@
                   <p n="composite">Composite: fols. 1–44 || fols. 45–75, 76–93 || fols. 94–129 || fols. 130–174 || fols. 175–211 || fols. 212–244</p>
                </physDesc>
                <history>
-                  <provenance notAfter="1654" notBefore="1584" resp="#MMM"><persName key="person_51728429" role="fmo">John Selden, 1584–1654</persName></provenance>
+                  <provenance type="MLGB3_provenance_evidence"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1611">
+                     <orgName role="fmo" key="org_165174766">Canterbury, Kent, Benedictine abbey of St Augustine (originally of St Peter and St Paul)</orgName>: "Distinctione 13 a  Gradu 3 a  [sic]' (top of fol. 1r), s. xv.     (Medieval binding.) (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1611">MLGB3</ref>: inferred evidence). </provenance>
+                  <provenance type="MLGB3_laterOwners"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1611">W. Patten. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1611">MLGB3</ref>)</provenance>
+                  <provenance notAfter="1654" notBefore="1584" resp="#MMM">
+                     <persName key="person_51728429" role="fmo">John Selden, 1584–1654</persName>
+                  </provenance>
                   <acquisition resp="#MMM" when="1659">Acquired by the Bodleian in 1659</acquisition>
                </history>
                <additional>
@@ -54,12 +61,22 @@
                         </source>
                      </recordHist>
                   </adminInfo>
-                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/8d4f8d3d-bbc2-4f4f-ac6e-88e7384f9447/"><title>Digital Bodleian</title></ref>
-                        <note>(6 images from 35mm slides)</note></bibl></surrogates>
+                  <surrogates>
+                     <bibl subtype="partial" type="digital-facsimile">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/8d4f8d3d-bbc2-4f4f-ac6e-88e7384f9447/">
+                           <title>Digital Bodleian</title>
+                        </ref>
+                        <note>(6 images from 35mm slides)</note>
+                     </bibl>
+                  </surrogates>
                   <listBibl type="WRAPPER">
                      <listBibl type="INTERNET">
                         <head>Online resources:</head>
-                        <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1611"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl>
+                        <bibl>
+                           <ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1611">
+                              <title>MLGB3: Medieval Libraries of Great Britain</title>
+                           </ref>
+                        </bibl>
                      </listBibl>
                   </listBibl>
                </additional>
@@ -84,7 +101,7 @@
                      </objectDesc>
                      <decoDesc>
                         <decoNote type="decInit">Good initials.</decoNote>
-                        <decoNote type="diagram">Good diagrams. (P&amp;A iii. 202)</decoNote>
+                        <decoNote type="diagram">Good diagrams. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 202)</decoNote>
                      </decoDesc>
                   </physDesc>
                   <history>
@@ -117,7 +134,7 @@
                      </objectDesc>
                      <decoDesc>
                         <decoNote type="diagram">Good diagrams.</decoNote>
-                        <decoNote type="decInit">Initials added, 14th century. (P&amp;A iii. 121)</decoNote>
+                        <decoNote type="decInit">Initials added, 14th century. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 121)</decoNote>
                      </decoDesc>
                   </physDesc>
                   <history>
@@ -136,7 +153,9 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem class="#astrologia_astronomia #mathematica" n="1" xml:id="MS_Selden_Supra_25-part3-item1">
+                     <msItem class="#astrologia_astronomia #mathematica"
+                             n="1"
+                             xml:id="MS_Selden_Supra_25-part3-item1">
                         <title key="work_10366" type="desc">Astronomical and mathematical treatises</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
@@ -178,7 +197,7 @@
                         </supportDesc>
                      </objectDesc>
                      <decoDesc>
-                        <decoNote type="decInit">Fine and good initials. (P&amp;A iii. 203, pl. XX)</decoNote>
+                        <decoNote type="decInit">Fine and good initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 203, pl. XX)</decoNote>
                      </decoDesc>
                   </physDesc>
                   <history>
@@ -257,9 +276,13 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
-         <change when="2019-10-31" xml:id="MMM"><persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
+         <change when="2021-12-14">Add provenance information from MLGB3.</change>
+         <change when="2019-10-31" xml:id="MMM">
+            <persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>

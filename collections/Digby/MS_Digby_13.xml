@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_4247" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4247">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -75,8 +75,8 @@
                      </supportDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>
-                        <p>Good border on fol. 1 added, 13th century, end, to MS. of the 12th century. (P&amp;A iii. 485)</p>
+                     <decoNote type="border">
+                        <p>Good border on fol. 1 added, 13th century, end, to MS. of the 12th century. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 485)</p>
                      </decoNote>
                   </decoDesc>
                </physDesc>
@@ -87,13 +87,22 @@
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
-                  <provenance notAfter="1634" notBefore="1603" resp="#MMM"><persName key="person_49357645" role="fmo">Kenelm Digby, 1603–1665</persName></provenance>
+                  <provenance type="MLGB3_provenance_evidence"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1319">
+                     <orgName role="fmo" key="org_158353196">Canterbury, Kent, Benedictine cathedral priory of Holy Trinity or Christ Church</orgName> (?) : Mark "GE" at top right corner of fol. 1r. Later at Dover, q. v. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1319">MLGB3</ref>: inferred evidence). </provenance>
+                  <provenance type="MLGB3_provenance_evidence"
+                     source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1926">
+                     <orgName role="fmo" key="org_239193232">Dover, Kent,  Kent, Benedictine priory of St Mary the Virgin and St Martin; cell of Canterbury cathedral priory</orgName>: script of fols. 23-39 suits Christ Church Canterbury. Farm accounts (s. xiii: ? Dover) on flyleaves at end. Epitaph of William, prior of Dover, ? de Dovoria (or de Staunford), prior 1229-35. <q>9J. IIII Lapidarius Monachorum ... muscis expositum corpus ... 93 ... 3</q> (at foot of fol. 3r, of which "muscis expositum corpus" are the opening words). <q type="pressmark">: 9J : IIII :</q> (on flyleaf (fol. iii verso) above table of contents. Medieval catalogue, BM1.415 (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1926">MLGB3</ref>: inferred evidence). </provenance>
+                  <provenance notAfter="1634" notBefore="1603" resp="#MMM">
+                     <persName key="person_49357645" role="fmo">Kenelm Digby, 1603–1665</persName>
+                  </provenance>
                   <acquisition resp="#MMM" when="1634">Donated to the Bodleian, 1634.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (W. D. Macray, <title>Bodleian Library Quarto Catalogues IX: Digby Manuscripts</title>, repr. with addenda by R. W. Hunt and A. G. Watson, 1999). Decoration follows Pächt and Alexander (1973). <listBibl>
+                        <source>
+                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (W. D. Macray, <title>Bodleian Library Quarto Catalogues IX: Digby Manuscripts</title>, repr. with addenda by R. W. Hunt and A. G. Watson, 1999). Decoration follows Pächt and Alexander (1973). <listBibl>
                               <bibl facs="abw0014.gif" type="QUARTO">Quarto Catalogue, cols. 9–10</bibl>
                               <bibl facs="abw0188.gif" type="QUARTO">Quarto Catalogue (addenda), p. 11</bibl>
                               <bibl facs="aap0091.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 70</bibl>
@@ -105,9 +114,21 @@
                      <listBibl type="INTERNET">
                         <head>Online resources:</head>
                         <!--Existing bibliography in place: check sorting of entries-->
-                        <bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/40191"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title></ref></bibl>
-                        <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1319"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl>
-                        <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1926"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl>
+                        <bibl>
+                           <ref target="http://jonas.irht.cnrs.fr/manuscrit/40191">
+                              <title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title>
+                           </ref>
+                        </bibl>
+                        <bibl>
+                           <ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1319">
+                              <title>MLGB3: Medieval Libraries of Great Britain</title>
+                           </ref>
+                        </bibl>
+                        <bibl>
+                           <ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1926">
+                              <title>MLGB3: Medieval Libraries of Great Britain</title>
+                           </ref>
+                        </bibl>
                      </listBibl>
                   </listBibl>
                </additional>
@@ -115,9 +136,13 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
-         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
+         <change when="2021-12-14">Add provenance information from MLGB3.</change>
+         <change when="2018-10-14" xml:id="MMM">
+            <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>
