@@ -1,77 +1,915 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6042">
-   <teiHeader>
-      <fileDesc>
-         <titleStmt>
-            <title>MS. Hatton 116</title>
-            <title type="collection">MSS. Hatton</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
-            </respStmt>
-         </titleStmt>
-         <publicationStmt>
-            <publisher>
-               <orgName type="department">Special Collections</orgName>
-               <orgName type="unit">Bodleian Libraries</orgName>
-               <orgName type="institution">University of Oxford</orgName>
-               <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>
-            </publisher>
-            <idno type="msID">MS_Hatton_116</idno>
-            <idno type="collection">Hatton</idno>
-            <idno type="catalogue">Western</idno>
-         </publicationStmt>
-         <sourceDesc>
-            <msDesc xml:id="MS_Hatton_116" xml:lang="en">
-               <msIdentifier>
-                  <country>United Kingdom</country>
-                  <region type="county">Oxfordshire</region>
-                  <settlement>Oxford</settlement>
-                  <institution>University of Oxford</institution>
-                  <repository>Bodleian Library</repository>
-                  <idno type="shelfmark">MS. Hatton 116</idno>
-                  <altIdentifier type="internal">
-                     <idno type="SCN">5136</idno>
-                  </altIdentifier>
-               </msIdentifier>
-               <msContents>
-                  <msItem n="1" xml:id="MS_Hatton_116-item1">
-                     <title key="work_12286">Homilies</title>
-                     <textLang mainLang="ang" otherLangs="la">Old English and Latin</textLang>
-                  </msItem>
-               </msContents>
-               <physDesc>
-                  <objectDesc form="codex">
-                     <supportDesc material="perg">
-                        <support>parchment</support>
-                     </supportDesc>
-                  </objectDesc>
-               </physDesc>
-               <history>
-                  <origin>
-                     <origDate calendar="Gregorian" notAfter="1200" notBefore="1150">12th century, second half</origDate>
-                     <origPlace cert="low">
-                        <country key="place_7002445">English</country>, <settlement key="place_7015155">Worcester</settlement> (?)</origPlace>
-                  </origin>
-                  <provenance type="MLGB3_provenance_evidence"
-                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6023">
-                     <orgName role="fmo" key="org_148943477">Worcester, Worcestershire, Benedictine cathedral priory of St Mary the Virgin</orgName>: Cambridge, UL, Kk.3.18; Clare Coll. 30, CCC 12; 162 pp. 139--160; 178; 198; 391; 557; Glasgow, UL, Hunterian 431; Lawrence, Univ. of Kansas, Y.103, Y 104; London, BL, Cotton Otho B.x fols. 29, 30; Otho C.i, part ii; Harley 55; Oxford, Bodl., Hatton 20; 76; 113; 114; 115; 116; Junius 121; Laud Misc. 482; Worcester Cathedral F.174: contain annotations in a tremulous hand, probably of s. xiii in. (see C. H. Turner, Early Worcester MSS, p. lvi; N. R. Ker in Leeds Studies in English 7 (1937), p. 28. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6023">MLGB3</ref>: inferred evidence). </provenance>
-                  <provenance type="MLGB3_laterOwners"
-                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6023">Christopher, Lord Hatton 1644. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6023">MLGB3</ref>)</provenance>
-               </history>
-               <additional>
-                  <adminInfo>
-                     <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1937). <listBibl>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"  xml:id="manuscript_6042">
+	<teiHeader>
+		<fileDesc>
+			<titleStmt>
+				<title>MS. Hatton 116</title>
+				<title type="collection">MSS. Hatton</title>
+				<respStmt>
+					<resp when="2022-03">Cataloguer</resp>
+					<resp when="2023-03">Encoding</resp>
+					<persName>Matthew Holford</persName>
+					<note>Revisions to the markup of the original description to conform to Bodleian ODD.</note>
+				</respStmt>
+				<respStmt>
+					<resp from="2010" to="2013">Cataloguer</resp>
+					<persName>Elaine Treharne</persName>
+					<note>Original description encoded for <title>The Production and Use of English Manuscripts: 1060 to 1220</title>.</note>
+				</respStmt>
+				<respStmt>
+					<resp from="2010" to="2013">Cataloguer</resp>
+					<persName>Hollie Morgan</persName>
+					<note>Original description encoded for <title>The Production and Use of English Manuscripts: 1060 to 1220</title>.</note>
+				</respStmt>
+				<respStmt>
+					<resp from="2010" to="2013">Cataloguer</resp>
+					<persName>George Younge</persName>
+					<note>Original description encoded for <title>The Production and Use of English Manuscripts: 1060 to 1220</title>.</note>
+				</respStmt>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>
+					<orgName type="department">Special Collections</orgName>
+					<orgName type="unit">Bodleian Libraries</orgName>
+					<orgName type="institution">University of Oxford</orgName>
+					<email>specialcollections.enquiries@bodleian.ox.ac.uk</email>
+				</publisher>
+				<availability>
+					<licence target="http://creativecommons.org/licenses/by-nc/3.0/"><p>Both the original description for <title>The Production and Use of English Manuscripts: 1060 to 1220</title> and any modifications to the encoding made here are licenced CC BY-NC 3.0.</p></licence>
+				</availability>
+				<idno type="msID">MS_Hatton_116</idno>
+				<idno type="collection">Hatton</idno>
+				<idno type="catalogue">Western</idno>
+			</publicationStmt>
+			<sourceDesc>
+				<p>The original encoded descriptions for <title>The Production and Use of English Manuscripts: 1060 to 1220</title> are available via <bibl>https://purl.stanford.edu/mt606ky7205</bibl>.</p>
+			</sourceDesc>
+			<sourceDesc>
+				<msDesc xml:id="MS_Hatton_116" >
+					<msIdentifier>
+						<country>United Kingdom</country>
+						<region type="county">Oxfordshire</region>
+						<settlement>Oxford</settlement>
+						<institution>University of Oxford</institution>
+						<repository>Bodleian Library</repository>
+						<idno type="shelfmark">MS. Hatton 116</idno>
+						<altIdentifier type="internal">
+							<idno type="SCN">5136</idno>
+						</altIdentifier>
+					</msIdentifier>
+					<head>
+					<title>Homilies </title>; England (Worcester), s. xii<hi
+							rend="superscript">med</hi>; s. xiii<hi rend="superscript">1</hi>
+				</head>
+				<msContents>
+					<summary>
+						A collection of homilies datable to the second quarter of the twelfth
+							century (perhaps about 1140 or so). Begins with a homily on <title>St.
+								Chad</title> (pp. 1-18), which is unique. Fols 18-152, 179-252,
+							279-90 are homilies for Saints' Days from 24 June to 30 November, from
+								Ælfric's First Series of <title>Sermones
+									Catholici</title>. Pages 253-78, 290-395 are
+							catechetical and mainly Ælfrician, and most also occur in MS. Hatton 115. Glosses in
+							Latin and English throughout are in the Tremulous
+								Hand.
+					</summary>
+
+
+
+					<msItem>
+						<locus from="1/1" to="18/15">(pp. 1/1-18/15)</locus>
+						<title type="desc" key="work_16329">Anonymous Homilies, Homilies for
+							Specified Occasions, Sanctorale: Saint Chad (Cameron B.3.3.3)</title>
+						<rubric  type="initial">
+							<locus>(1r/2)</locus> IN NAT<ex>A</ex>L<ex>E</ex> S<ex>AN</ex>C<ex>T</ex>I
+							CEADDE EP<ex>ISCOP</ex>I. ˥ C<ex>ON</ex>F<ex>ESSORIS</ex>
+						</rubric>
+						<incipit > MEN þa leofestan. ic eow onginnu secgan </incipit>
+						<explicit > se leofað ˥ rixað mid þa<ex>m</ex> feder ˥ mid þam
+							haligan gasta in eallre worulda woruld. AMEN. </explicit>
+						<textLang mainLang="ang">Old English</textLang>
+						<listBibl>
+							<bibl>
+								Vleeskruyer 1953, 162-84 </bibl>
+						</listBibl>
+					</msItem>
+
+
+					<msItem>
+						<locus from="18/15" to="34/12">(pp. 18/15-34/12)</locus>
+						<author key="person_169463285">Ælfric</author>
+						<title type="desc" key="work_249">First Series of Homilies
+							[Catholic Homilies I]: John the Baptist (Cameron B.1.1.27)</title>
+						<rubric  type="initial">
+							 Natiuitas s<ex>an</ex>c<ex>t</ex>i Ioh<ex>ann</ex>is Baptistę </rubric>
+						<incipit >
+							 SE GODSPELLERE LUCAS awrat on cristes béc </incipit>
+						<explicit >
+							 þa<ex>m</ex> sy wuldor ˥ lof mid fæder ˥ mid halgu<ex>m</ex>
+							gaste a on ecnesse. AMEN. </explicit>
+						<textLang mainLang="ang">Old English</textLang>
+						<listBibl>
+							<bibl>
+								Clemoes 1997, 379-87 </bibl>
+						</listBibl>
+					</msItem>
+
+					<msItem>
+						<locus from="34/12" to="41/9">(pp. 34/12-41/9)</locus>
+						<author key="person_169463285">Ælfric</author>
+						<title type="desc" key="work_249">First Series of Homilies
+							[Catholic Homilies I]: Peter and Paul (Cameron B.1.1.28)</title>
+						<rubric  type="initial">
+							 Passio s<ex>an</ex>c<ex>t</ex>or<ex>um</ex>
+								ap<ex>osto</ex>lor<ex>um</ex> petri. ˥ pavli </rubric>
+						<incipit >
+							 Venit ie<ex>su</ex>s in partes cęsarere philippi. Et
+								r<ex>e</ex>l<ex>iqua</ex>. MATHEVS. se godspellere awrat on þæra
+							godspellican gesetnesse </incipit>
+						<explicit >
+							 þ<ex>æt</ex> h<ex>im</ex> ne bið getiþod naþor ne synna
+							forgifenes. ne infær þæs heofonlican rices </explicit>
+						<textLang mainLang="ang">Old English</textLang>
+						<listBibl>
+							<bibl>
+								Clemoes 1997, 388-91, ll. 1-96 </bibl>
+						</listBibl>
+					</msItem>
+
+					<msItem>
+						<locus from="41/9" to="55/11">(pp. 41/9-51/11)</locus>
+						<author key="person_169463285">Ælfric</author>
+						<title type="desc" key="work_249">First Series of Homilies
+							[Catholic Homilies I]: Passion of Peter and Paul (Cameron B.1.1.28.1)</title>
+						<rubric  type="initial">
+							 De passione beator<ex>um</ex> ap<ex>osto</ex>lor<ex>um</ex>
+							Petri. ˥ pauli. </rubric>
+						<incipit >
+							 WE willað æft<ex>er</ex> þisu<ex>m</ex> godspelle eow gereccan </incipit>
+						<explicit >
+							 þurh þes hælendes tiðe. þa<ex>m</ex> si wuldor ˥ lof. a on
+							ecnesse AMEN </explicit>
+						<textLang mainLang="ang">Old English</textLang>
+						<listBibl>
+							<bibl>
+								Clemoes 1997, 301-9, ll. 99-295 </bibl>
+						</listBibl>
+					</msItem>
+
+					<msItem>
+						<locus from="55/11" to="73/6">(pp. 55/11-73/6)</locus>
+						<author key="person_169463285">Ælfric</author>
+						<title type="desc" key="work_249">First Series of Homilies
+							[Catholic Homilies I]: Paul (Cameron B.1.1.29)</title>
+						<rubric  type="initial">
+							 Com<ex>m</ex>emoratio s<ex>an</ex>c<ex>t</ex>i pauli
+								ap<ex>osto</ex>li. </rubric>
+						<incipit >
+							 GODES gelaþung wurðaþ þysne dæg </incipit>
+						<explicit >
+							 þ<ex>æt</ex> hi mid hi<ex>m</ex> ˥ mid gode þ<ex>æt</ex> ece
+							lif habban moton. AM<ex>EN</ex>
+						</explicit>
+						<textLang mainLang="ang">Old English</textLang>
+						<listBibl>
+							<bibl>
+								Clemoes 1997, 400-9 </bibl>
+						</listBibl>
+					</msItem>
+
+					<msItem>
+						<locus from="73/6" to="92/12">(pp. 73/6-92/12)</locus>
+						<author key="person_169463285">Ælfric</author>
+						<title type="desc" key="work_249">First Series of Homilies
+							[Catholic Homilies I]: Laurence (Cameron B.1.1.31)</title>
+						<rubric  type="initial">
+							 Passio s<ex>an</ex>c<ex>t</ex>i Lavrentii.
+								m<ex>arty</ex>r<ex>is</ex>
+						</rubric>
+						<incipit >
+							 ON DECIES dagu<ex>m</ex> þes welhreowan caseres </incipit>
+						<explicit >
+							 he þrowode mid cenu<ex>m</ex> mode mænifealde tintregu. mid
+								þa<ex>m</ex> he orsorhlice on ecnesse wuldraþ. AM<ex>EN</ex>
+						</explicit>
+						<textLang mainLang="ang">Old English</textLang>
+						<listBibl>
+							<bibl>
+								Clemoes 1997, 418-28 </bibl>
+						</listBibl>
+					</msItem>
+
+
+
+					<msItem>
+						<locus from="92/12" to="112/1">(pp. 92/12-112/1)</locus>
+						<author key="person_169463285">Ælfric</author>
+						<title type="desc" key="work_249">First Series of Homilies
+							[Catholic Homilies I]: Assumption of the Virgin (Cameron B.1.1.32)</title>
+						<rubric  type="initial">
+							 Assu<ex>m</ex>ptio s<ex>ancte</ex> marie. v<ex>irginis</ex>. </rubric>
+						<incipit >
+							 Heironim<ex>us</ex> se halga sacerd awrat ænne pistol </incipit>
+						<explicit >
+							 Se þe leofað ˥ rixað mid fæder ˥ halgu<ex>m</ex> gasta on ealra
+							worulda woruld. AM<ex>EN</ex>
+						</explicit>
+						<textLang mainLang="ang">Old English</textLang>
+						<listBibl>
+							<bibl>
+								Clemoes 1997, 429-38 </bibl>
+						</listBibl>
+					</msItem>
+
+					<msItem>
+						<locus from="112/1" to="136/5">(pp. 112/1-136/5)</locus>
+						<author key="person_169463285">Ælfric</author>
+						<title type="desc" key="work_249">First Series of Homilies
+							[Catholic Homilies I]: Bartholomew (Cameron B.1.1.33)</title>
+						<rubric  type="initial">
+							 Passio s<ex>ancti</ex> Bartholomei. ap<ex>osto</ex>li. </rubric>
+						<incipit >
+							 Wyrdwriteras secgað þ<ex>æt</ex> þry leodscipas synd gehatene
+							india </incipit>
+						<explicit >
+							 Sy hi<ex>m</ex> wuldor ˥ lof on ealra worulda woruld. AMEN </explicit>
+						<textLang mainLang="ang">Old English</textLang>
+						<listBibl>
+							<bibl>
+								Clemoes 1997, 439-50 </bibl>
+						</listBibl>
+					</msItem>
+
+
+					<msItem>
+						<locus from="136/6" to="152/11">(pp. 136/6-132/11)</locus>
+						<author key="person_169463285">Ælfric</author>
+						<title type="desc" key="work_249">First Series of Homilies
+							[Catholic Homilies I]: Decollation of St John the Baptist (Cameron B.1.1.34)</title>
+						<rubric  type="initial">
+							 Decollatio Sancti Iohannis Baptiste. </rubric>
+						<incipit >
+							 Misit herodes <ex>et</ex> tenuit iohanne<ex>m</ex>. ET
+								RELIQ<ex>VA</ex>. MARCVS se godspellere awrat on cristes bec </incipit>
+						<explicit >
+							 Se þe leofað ˥ rixað mid feder ˥ mid halgu<ex>um</ex> gaste áá
+							butan ende. AMEN </explicit>
+						<textLang mainLang="ang">Old English</textLang>
+						<listBibl>
+							<bibl>
+								Clemoes 1997, 451-8 </bibl>
+						</listBibl>
+					</msItem>
+
+
+					<msItem>
+						<locus from="152/12" to="155/1">(pp. 152/12-155/1)</locus>
+						<author key="person_169463285">Ælfric</author>
+						<title type="desc" key="work_249">Remaining Homilies by
+							Ælfric: Homily for the Nativity of the Blessed Virgin [first
+							part] (Cameron B.1.5.8)</title><!-- check -->
+						<rubric  type="initial">
+							 Natiuitas s<ex>ncte</ex> marie. v<ex>irginis</ex>. </rubric>
+						<incipit >
+							 MEN þa leofostan. we synd gemungode </incipit>
+						<explicit >
+							 ˥ hire deopnesse on diglu<ex>m</ex> andgite underniman willað
+							on incundre heortan </explicit>
+						<textLang mainLang="ang">Old English</textLang>
+						<listBibl>
+							<bibl>
+								Assmann 1889, 24-6, ll. 1-53 (no. 3) </bibl>
+						</listBibl>
+					</msItem>
+
+					<msItem>
+						<locus from="155/1" to="179/12">(pp. 155/1-179/12)</locus>
+						<author key="person_169463285">Ælfric</author>
+						<title type="desc" key="work_249">Remaining Homilies by
+							Ælfric: Homily for the Nativity of the Blessed Virgin [second
+							part] (Cameron B.1.5.8)</title>
+						<rubric  type="initial">
+							 Incipit de s<ex>an</ex>c<ex>t</ex>a virginitate. </rubric>
+						<incipit >
+							 SE halga hælend crist. ˥ se heofonlica æþeling </incipit>
+						<explicit >
+							 þ<ex>am</ex> is wuldor ˥ wurðmynt a to worulde. AMEN </explicit>
+						<textLang mainLang="ang">Old English</textLang>
+						<listBibl>
+							<bibl>
+								Assmann 1889, 26-48, ll. 53-597 (no. 3) </bibl>
+						</listBibl>
+					</msItem>
+
+
+
+					<msItem>
+						<locus from="179/12" to="198/18">(pp. 179/12-198/18)</locus>
+						<author key="person_169463285">Ælfric</author>
+						<title type="desc" key="work_249">First Series of Homilies
+							[Catholic Homilies I]: Dedicatio ecclesiae sancti Michaelis (Cameron B.1.1.36)</title>
+						<rubric  type="initial">
+							 Dedicatio s<ex>ancti</ex> Michaelis archangl<ex>i</ex>. </rubric>
+						<incipit >
+							 MANEGVM is cúð se hálige stow s<ex>an</ex>c<ex>t</ex>e
+							michaeles </incipit>
+						<explicit >
+							 se þe leofað ˥ rixaþ á on ecnesse. AMEN </explicit>
+						<textLang mainLang="ang">Old English</textLang>
+						<listBibl>
+							<bibl>
+								Clemoes 1997, 465-75 </bibl>
+						</listBibl>
+					</msItem>
+
+
+					<msItem>
+						<locus from="198/18" to="219/6">(pp. 198/18-219/6)</locus>
+						<author key="person_169463285">Ælfric</author>
+						<title type="desc" key="work_249">First Series of Homilies
+							[Catholic Homilies I]: All Saints (Cameron B.1.1.38)</title>
+						<rubric  type="initial">
+							 In Nat<ex>a</ex>l<ex>e</ex> Om<ex>n</ex>ium
+								s<ex>an</ex>c<ex>t</ex>oru<ex>m</ex>
+						</rubric>
+						<incipit >
+							 HALIGE lareowas ræddon þ<ex>æt</ex> se geleaffulle gelaþung </incipit>
+						<explicit >
+							 mid fæder. ˥ mid halgu<ex>m</ex> gaste. áá on ecnesse.
+								AM<ex>EN</ex>
+						</explicit>
+						<textLang mainLang="ang">Old English</textLang>
+						<listBibl>
+							<bibl>
+								Clemoes 1997, 486-96 </bibl>
+						</listBibl>
+					</msItem>
+
+
+					<msItem>
+						<locus from="219/7" to="239/20">(pp. 219/7-239/20)</locus>
+						<author key="person_169463285">Ælfric</author>
+						<title type="desc" key="work_249">First Series of Homilies
+							[Catholic Homilies I]: Clement (Cameron B.1.1.39)</title>
+						<rubric  type="initial">
+							 IN N<ex>A</ex>T<ex>A</ex>L<ex>E</ex> S<ex>ANCTI</ex> CLEMENTIS.
+								M<ex>ARTYRIS</ex>
+						</rubric>
+						<incipit >
+							 MEN ÐA leofestan. eower geleafa biþ þe tru<ex>m</ex>ra </incipit>
+						<explicit >
+							 se þe leofað ˥ rixaþ a butan ende. AMEN </explicit>
+						<textLang mainLang="ang">Old English</textLang>
+						<listBibl>
+							<bibl>
+								Clemoes 1997, 497-506 </bibl>
+						</listBibl>
+					</msItem>
+
+
+
+					<msItem>
+						<locus from="239/20" to="290/17">(pp. 239/20-252/20, 279/1-290/17)</locus>
+						<author key="person_169463285">Ælfric</author>
+						<title type="desc" key="work_249">First Series of Homilies
+							[Catholic Homilies I]: Andrew (Cameron B.1.1.40)</title>
+						<rubric  type="initial">
+							 In n<ex>a</ex>t<ex>a</ex>l<ex>e</ex> s<ex>an</ex>c<ex>t</ex>i
+							ANDREE. ap<ex>osto</ex>li. </rubric>
+						<incipit >
+							 Ambulans ie<ex>su</ex>s iuxta mare galileę. ET
+								R<ex>E</ex>L<ex>I</ex>Q<ex>VA</ex>. Crist on sumere tide ferde wið
+							þære galileiscan sǽ </incipit>
+						<explicit >
+							 Sy þa<ex>m</ex> ælmihtigan drihtne wurðmynt. ˥ lof á on
+							ecnesse. AM<ex>EN</ex>. </explicit>
+						<textLang mainLang="ang">Old English</textLang>
+						<note type="main"> The present quire XII (pp. 253-278) originally came after
+							the present quire XIII (pp. pp. 279-94) </note>
+						<listBibl>
+							<bibl>
+								Clemoes 1997, 507-19 </bibl>
+						</listBibl>
+					</msItem>
+
+
+					<msItem>
+						<locus from="290/17" to="261/1">(pp. 290/17-294/20, 253/1-261/21)</locus>
+						<author key="person_169463285">Ælfric</author>
+						<title type="desc" key="work_249">Remaining Homilies by
+							Ælfric: Homily for the Common of a Confessor (Cameron B.1.5.11)</title>
+						<rubric  type="initial">
+							 SERMO IN
+								N<ex>A</ex>T<ex>A</ex>L<ex>E</ex> UNIUS
+							CONFESSORIS </rubric>
+						<incipit >
+							 Vigilate ergo. MATHEVS se godspellere us sæde on þysum
+							godspelle. </incipit>
+						<explicit >
+							 þe ealle þing gescop. se þe ana rixað on ecnesse.
+								AM<ex>EN</ex>
+						</explicit>
+						<textLang mainLang="ang">Old English</textLang>
+						<note type="main"> Displaced quire </note>
+						<listBibl>
+							<bibl>
+								Assmann 1889, 49-64 (no. 4) </bibl>
+						</listBibl>
+					</msItem>
+
+
+					<msItem>
+						<locus from="261/21" to="300/21">(pp. 261/21-278/21, 295/1-300/21)</locus>
+						<author key="person_169463285">Ælfric</author>
+						<title type="desc" key="work_249">Remaining Homilies by
+							Ælfric: Hexameron (Cameron B.1.5.13)</title>
+						<rubric  type="initial">
+							 De Exameron; þ<ex>æt</ex> is. BE GODES SIX DAGA
+								weorcu<ex>m</ex>. </rubric>
+						<incipit >
+							 ON sumu<ex>m</ex> oðru<ex>m</ex> spelle we sædon hwilon ǽr </incipit>
+						<explicit >
+							 on anre godcundnesse. ána soð scyppend eallra. 'þinga'
+								AM<ex>EN</ex>
+						</explicit>
+						<textLang mainLang="ang">Old English</textLang>
+						<note type="main"> Displaced quire. </note>
+						<listBibl>
+							<bibl>
+								Crawford 1921, 33-74 </bibl>
+						</listBibl>
+					</msItem>
+
+					<msItem>
+						<locus from="300/21" to="329/6">(pp. 300/21-329/6)</locus>
+						<author key="person_169463285">Ælfric</author>
+						<title type="desc" key="work_6704">Tracts: Interrogationes
+							Sigewulfi in Genesin (Cameron B.1.6.1)</title><!-- Kleist 2.1.1 -->
+						<rubric  type="initial">
+							 INTERROGATIONES SIGEWULPHI PRESBITERI </rubric>
+						<incipit >
+							 SVM geþungen lareaw wæs on engla lande albinus gehaten </incipit>
+						<explicit >
+							 þa<ex>m</ex> is anwurðmynt mid þa<ex>m</ex> halgan gaste on
+							ealra worulda woruld. we cweðaþ AM<ex>EN</ex>
+						</explicit>
+						<textLang mainLang="ang">Old English</textLang>
+						<listBibl>
+							<bibl>
+								MacLean 1884, 2-56 </bibl>
+						</listBibl>
+					</msItem>
+
+					<msItem>
+						<locus from="329/6" to="347/11">(pp. 329/6-347/11)</locus>
+						<author key="person_169463285">Ælfric</author>
+						<title type="desc" key="work_6704">Tracts: De Duodecim
+							Abusivis (Cameron B.1.6.2)</title>
+						<!-- Kleist 2.1.3 -->
+						<rubric  type="initial">
+							 DE OCTO UITIIS ET DE XIIci<ex>m.</ex> ABVSIVIS. </rubric>
+						<incipit >
+							 OMNIA nimia nocent <ex>et</ex> te<ex>m</ex>mperantia
+								mat<ex>er</ex> uirtutu<ex>m</ex> dicit<ex>ur</ex>. Þæt is on
+							englisc. Ealle oferdone þing deriað </incipit>
+						<explicit >
+							 Si hi<ex>m</ex> ǽ wuldor ˥ wurðmynt. AMEN </explicit>
+						<textLang mainLang="ang">Old English</textLang>
+						<listBibl>
+							<bibl>
+								Morris 1867, 296-304 (appendix 2) </bibl>
+						</listBibl>
+					</msItem>
+
+					<msItem>
+						<locus from="347/11" to="365/8">(pp. 347/11-365/8)</locus>
+						<author key="person_169463285">Ælfric</author>
+						<title type="desc" key="work_253">Third Series of Homilies
+							[Lives of Saints]: On Augeries (Cameron B.1.3.18)</title><!-- Kleist 3.1.2 -->
+						<rubric  type="initial">
+							 DE AUGURIIS. </rubric>
+						<incipit >
+							 SE APOSTOL paulus ealra þeoda lareow manode þa cristenan </incipit>
+						<explicit >
+							 mid hi<ex>m</ex> æfre to wuni'g'enne on þa<ex>m</ex> ecum
+								witu<ex>m</ex> a buton ende </explicit>
+						<textLang mainLang="ang">Old English</textLang>
+						<listBibl>
+							<bibl>
+								Skeat 1881-1900, 364-82 (no. 17) </bibl>
+							<bibl>
+								Pope 1967-68, 790-6 (no. 29) </bibl>
+						</listBibl>
+					</msItem>
+
+					<msItem>
+						<locus from="365/8" to="373/13">(pp. 365/8-373/13)</locus>
+						<author key="person_169463285">Ælfric</author>
+						<title type="desc" key="work_249">Homilies of Ælfric: De
+							Falsis Diis (Cameron B.1.4.22)</title>
+						<rubric  type="initial">
+							 DE FALSI<ex>S</ex> DIIS </rubric>
+						<incipit >
+							 O FR<ex>ATR</ex>ES dilectissimi diuina scriptura </incipit>
+						<incipit >
+							<locus>(365/13)</locus> EAla ge gebroðra þa leofestan. þ<ex>æt</ex>
+							godcunde gewrit us tæhte </incipit>
+						<explicit >
+							 Þa<ex>m</ex> si wuldor ˥ lof a to worulde AM<ex>EN</ex>
+						</explicit>
+						<textLang mainLang="ang">Old English</textLang>
+						<listBibl>
+							<bibl>
+								Pope 1967-68, 676-85, 711-12, ll. 150,
+								645-76 (no. 21) </bibl>
+						</listBibl>
+					</msItem>
+
+					<msItem>
+						<locus from="373/14" to="377/18">(pp. 373/14-377/18)</locus>
+						<author key="person_169463285">Ælfric</author>
+						<title type="desc" key="work_6704">Tracts: De Septiformi Spiritu
+							[Be þam halgan gaste] (Cameron B.1.6.3)</title><!-- Kleist 2.1.4 -->
+						<rubric  type="initial">
+							 DE SEPTI. FORMI SPIRITV. </rubric>
+						<incipit >
+							 Sp<ex>iritu</ex>s s<ex>an</ex>c<ex>tu</ex>s p<ex>ro</ex>
+							septenaria op<ex>er</ex>atione </incipit>
+						<incipit >
+							<locus>(374/9)</locus> Þæt ilce on englisc. ISAIAS se witega awrát on his
+							witegunge. be þa<ex>m</ex> halgu<ex>m</ex> gaste. ˥ be his
+								seofonfealdu<ex>m</ex> gifu<ex>m</ex>
+						</incipit>
+						<explicit >
+							 hi<ex>m</ex> godes gast on wunige oððe þæs gramlican deofles </explicit>
+						<textLang mainLang="ang">Old English</textLang>
+						<listBibl>
+							<bibl>
+								Napier 1883, 50, 56-60 (nos 7-8) </bibl>
+						</listBibl>
+					</msItem>
+
+					<msItem>
+						<locus from="377/18" to="379/1">(pp. 377/18-379/1)</locus>
+						<author key="person_169463285">Ælfric</author>
+						<title type="desc" key="work_6439">Letter to Brother Edward (Cameron B.6.2)</title><!-- Kleist 4.3.1 -->
+						<rubric  type="initial">
+							 DE SANGUINE </rubric>
+						<incipit >
+							 Her geswultelað on þisu<ex>m</ex> gewrite. hu god ælmihtig
+							forbead mancynne ælces cynnes blod to etenne </incipit>
+						<explicit >
+							 hit bið swa þeah to astorfenu<ex>m</ex> geteald </explicit>
+						<textLang mainLang="ang">Old English</textLang>
+						<listBibl>
+							<bibl>M. Clayton, 'Letter to Brother Edward: A Student Edition,' Old English Newsletter, vol. 40, no. 3 (Spring 2007), 31-46.</bibl>
+							<!-- 
+       
+       <bibl>Clayton 2007</bibl>
+       <bibl><ref target="#">Clayton 2002</ref></bibl>
+    	
+    	-->
+						</listBibl>
+					</msItem>
+
+					<msItem>
+						<locus from="379/1" to="380/15">(pp. 379/1-380/15)</locus>
+						<title type="desc" key="work_16329">Anonymous Homilies [for unspecified
+							occasions, published]: Napier 1888, 154: 'De infantibus non
+							baptizandis' (Cameron B.3.4.51)</title><!-- Kleist 7.9 -->
+						<rubric  type="initial">
+							 DE INFANTIBUS </rubric>
+						<incipit >
+							 WE biddaþ eow men ˥ beodaþ on godes naman </incipit>
+						<explicit >
+							 ˥ hæfð þon<ex>ne</ex> hellewite gif hit hæþen acwylð </explicit>
+						<textLang mainLang="ang">Old English</textLang>
+						<listBibl>
+							<bibl>
+								Napier 1888, 154-55 </bibl>
+						</listBibl>
+					</msItem>
+
+					<msItem>
+						<locus from="380/15" to="381/21">(pp. 380/15-381/21)</locus>
+						<title type="desc"  key="work_16329">Anonymous Homilies [for unspecified
+							occasions, published]: Napier 1888, 155: 'De cognitatione' (Cameron B.3.4.52)</title>
+						<!-- Kleist 7.3 -->
+						<rubric  type="initial">
+							 De cogitatione </rubric>
+						<incipit >
+							 SE swicola deofol þe syrwð ymbe mancynn asent yfele geþohtas </incipit>
+						<explicit >
+							 swa he lufode forþa<ex>m</ex> þe crist agylt ælcu<ex>m</ex> be
+							his dædæ </explicit>
+						<textLang mainLang="ang">Old English</textLang>
+						<listBibl>
+							<bibl>
+								Pope 1967-68, 325, 330-31 (No. 6) </bibl>
+						</listBibl>
+					</msItem>
+
+					<msItem>
+						<locus from="382/1" to="395/16">(pp. 382/1-395/16)</locus>
+						<title type="desc"  key="work_16329">Anonymous Homilies, Homilies for
+							Specified Occasions, Temporale: In Letania Maiore (Cameron B.3.2.33)</title>
+						<incipit >
+							 MEN þa leofestan þis sinden dagas mid eallu<ex>m</ex>
+								cristnu<ex>m</ex> folce </incipit>
+						<explicit >
+							 se þe leofað ˥ rixað mid suna ˥ mid þa<ex>m</ex> halgan gaste á
+							butan æghwylcu<ex>m</ex> ende. AMEN. </explicit>
+						<textLang mainLang="ang">Old English</textLang>
+						<listBibl>
+							<bibl>
+								Bazire and Cross 1982, 47-54 (no. 3) </bibl>
+						</listBibl>
+					</msItem>
+
+					<msItem>
+						<locus from="395/17" to="395/21">(pp. 395/17-395/21)</locus>
+						<title type="desc"> Collect and antiphon for Saint Catherine's Day (25
+							November) </title>
+						<incipit >
+							 Deus q<ex>u</ex>i dedisti lege<ex>m</ex> moisi </incipit>
+						<textLang mainLang="la" >Latin</textLang>
+						<note type="main"> Added in a later 12th century hand </note>
+					</msItem>
+
+					<msItem>
+						<locus from="397" to="397">(p. 397)</locus>
+						<title type="desc" xml:id="D.61.EM"> Latin-English Glossary </title>
+						<incipit >
+							 ceac. vrceus... iþingþe m<ex>er</ex>itu<ex>m</ex>
+						</incipit>
+						<textLang mainLang="en" otherLangs="la">Middle English and Latin</textLang>
+						<note type="main"> Attributed to the 'tremulous hand of Worcester' </note>
+						<listBibl>
+							<bibl>
+								Franzen 1991, 196 </bibl>
+						</listBibl>
+					</msItem>
+
+					<msItem>
+						<locus from="398" to="398">(p. 398)</locus>
+						<title type="desc" xml:id="A.56.EM"> Single line of Middle English Verse </title>
+						<incipit >
+							 ic am nout for þisse þingc wo </incipit>
+						<textLang mainLang="en">Middle English</textLang>
+						<listBibl>
+							<bibl><ref target="https://www.dimev.net/record.php?recID=2123">DIMEV 2123</ref></bibl>
+							<bibl>
+								Franzen 1991, 196 </bibl>
+						</listBibl>
+					</msItem>
+
+
+				</msContents>
+
+				<physDesc>
+					<objectDesc form="codex">
+						<supportDesc material="perg">
+							<support> Pages i-vi, 403-8 are paper leaves of the date of binding.
+								Pages 399-402 are parchment end-leaves taken over from the medieval
+								binding <!--(see above)-->. </support>
+							<extent> iii + 201 + v leaves
+								<dimensions type="leaves" unit="mm">
+									<height>260</height>
+									<width>180</width>
+								</dimensions>
+								<dimensions type="written" unit="mm">
+									<height max="203" min="195">ca. 195-203</height>
+									<width>135</width>
+								</dimensions>
+							</extent>
+
+							<foliation>Paginated i-vi, 1-84, 84a, b, 85-160, 160a, b,
+									161-408. Another pagination, 1-396, of s. xvi(?), is on rectos
+									only.</foliation>
+
+							<collation>
+								1-10<hi rend="superscript">12</hi>, 11-12<hi
+										rend="superscript">8</hi> (pp. 237-52, 279-94), 13<hi
+										rend="superscript">12</hi> + one leaf before 1 (pp. 253-78),
+										14<hi rend="superscript">14</hi>, 15-16<hi
+										rend="superscript">12</hi>, 17<hi rend="superscript">8</hi>,
+										18<hi rend="superscript">10</hi> wants 7-10, probably blank,
+									after p. 398. Quire 12 (pp. 279-94) has been bound wrongly after
+									Quire 13 (pp. 253-78).
+							</collation>
+						</supportDesc>
+						<layoutDesc>
+							<layout columns="1" writtenLines="20" rulingMedium="hardpoint">20 long lines (21 on pp. 255-78, 295-395) with
+								blind-ruled double bounding lines. Pages 96-8 are blank, except for
+								scribbles in the Tremulous Hand and some
+								musical notes. </layout>
+						</layoutDesc>
+					</objectDesc>
+					<handDesc hands="2">
+						<handNote script="minusculeVernacular"
+							scope="sole">
+							<p n="desc">
+								<locus from="1" to="395">Pages 1-395</locus>: 'A
+								handsome, round, large hand of a type found commonly in West of England manuscripts of s. xii' (Ker 1957, p. 406). This Worcester hand is rounded, but degrees of angularity are
+								also creeping in. The general aspect is slightly backward-leaning.
+								The bodies of the letters are large in relation to the ascenders and
+								descenders. The manuscript is blind-ruled.
+									Worcester manuscripts (which this is)
+								are crayon-ruled from about the 1130s and 40s. Treharne (2000) dates this hand and manuscript to s.
+									xii<hi rend="superscript">2/4</hi> (pp. 25-26). That dating is
+								re-confirmed here, probably closer to the middle of the century than
+								earlier, even though the ruling is blind. Palaeographical affinities
+								can be found with the Worcester
+								manuscripts, Worcester Cathedral Libary F. 82 and F. 83, both
+								datable to s. xii<hi rend="superscript">med</hi>. Small extracts of
+								these manuscripts appear in Thomson 2001
+								(pl. 42 (a)-(f)). See Ker 1957, p.
+									406; Treharne 2000, pp. 25-26
+							</p>
+							<p n="char">
+								<seg type="character">
+									<q type="character">a</q> is Caroline, where the bow sometimes
+									touches the preceding letter. </seg>
+								<seg type="character"> The <q type="character">e</q> of <q
+										type="character">æ</q> is very slightly taller than the top
+									of <q type="character">a</q>. </seg>
+								<seg type="character"> Insular, rounded <q type="character">d</q> is
+									used in English, but with relatively high back, slightly shorter
+									than that of <q type="character">ð</q>; straight-backed <q
+										type="character">d</q> with an oblique serif to the right is
+									used in Latin. </seg>
+								<seg type="character">
+									<q type="character">f</q> is Caroline and sits on the line, with
+									the mid-stroke often touching the following letter in ligature.
+									The head of <q type="character">f</q> is occasionally slightly
+									flattened. </seg>
+								<seg type="character">
+									<q type="character">g</q> is Caroline with a closed bowl, and is
+									thus eight-shaped, one of <ref target="#ker44">Ker</ref>'s
+									(1957) defining characteristics of s. xii<hi rend="superscript"
+										>med</hi> hands. From its top bow, it often ligatures with
+									the following letter. </seg>
+								<seg type="character">
+									<q type="character">h</q> is Caroline. </seg>
+								<seg type="character">
+									<q type="character">p</q> has a well-defined horizontal foot
+									(again, typical of mid-twelfth-century hands). </seg>
+								<seg type="character">
+									<q type="character">r</q> is consistently Caroline, with a
+									curved serif. </seg>
+								<seg type="character">
+									<q type="character">s</q> is Caroline, with a determined onset
+									stroke. Its head is occasionally slightly flattened. </seg>
+								<seg type="character"> The cross-bar of the <q type="character"
+										>t</q> is often pierced by the stem, a feature seen in
+									mid-twelfth-century script. </seg>
+								<seg type="character">
+									<q type="character">þ</q> has a large bowl, and a descender that
+									is slightly short in relation to the rest of the graph. </seg>
+								<seg type="character"> The ascender of <q type="character">ð</q> is
+									higher than other ascenders, and the cross-bar curves up on the
+									right. </seg>
+								<seg type="character">
+									<q type="character">ƿ</q> has a large pointed bowl, and short,
+									straight descender. </seg>
+								<seg type="character">
+									<q type="character">y</q> is rounded, sits just on the line, or
+									slightly below, and is consistently dotted in the middle of the
+									v-shaped limbs. </seg>
+								<seg type="character">
+									<q type="character">ascenders</q> end in oblique serif rising
+									from the left to the right or have a wedge. </seg>
+								<seg type="character">
+									<q type="character">descenders</q> are generally short and
+									straight, with the exception of <q type="character">p</q>, which
+									has a straight foot across the descender. Occasionally,
+									descenders curve gently to the left. </seg>
+							</p>
+							<p n="punctuation">
+								<seg type="character">Punctuation in the form of a <q
+										type="character">semicolon</q> at the end of a sentence
+									occurs regularly up to p. 19, but seldom after that.</seg>
+								<seg type="character">The <q type="character">punctus</q> is
+									frequently used, and sits on the line. </seg>
+								<seg type="character"><q type="character">hyphens</q> are used
+									throughout at line ends, and at placed at a slight angle.</seg>
+							</p>
+							<p n="abbreviations">
+								<seg type="character">Abbreviation marks are curved at the right,
+									ending in a blob. </seg>
+								<seg type="character">The abbreviation for <q>that</q> consists of a
+										<q type="character">þ</q> with the abbreviation mark to the
+									right of the ascender.</seg>
+								<seg type="character"><q>Men</q> is abbreviated to <q
+										type="character">M</q> (often uncial in shape) with a macron
+									above it.</seg>
+								<seg type="character"><q>leofestan</q> is usually abbreviated simply
+									to <q type="character">l</q> with a line through it.</seg>
+								<seg type="character"><q>Drihten</q> is abbreviated with a macron
+									over the <q type="character">t</q>. </seg>
+								<seg type="character">The <q type="character">˥</q> is formed with a
+									45º angle between headstroke and descender, and usually with a
+									pronounced upward tick to the left of the headstroke.The tail
+									tends to curve just below the line to the left.</seg>
+							</p>
+							<p n="ligature">
+								<seg type="character">The <q type="character">st</q> ligature is
+									used but not consistently.</seg>
+								<seg type="character">The <q type="character">or</q> ligature where
+									the <q type="character">r</q> is 2-shaped is used but not
+									consistently.</seg>
+							</p>
+							<p n="nota">
+								<seg type="character">The <q type="character">Litterae
+										Notabiliores</q> are closely related to those seen in other
+										<name type="place">Worcester</name> manuscripts of this
+									date, and slightly earlier. They are red, pen-drawn, and display
+									little roundels in the leg or the bowl.</seg>
+							</p>
+						</handNote>
+						<handNote>
+							<p n="desc"> There are several layers of glosses by the <persName key="person_3305">Tremulous
+								Hand</persName>. <date>s. xiii<hi rend="superscript">1</hi></date></p>
+						
+					</handNote>
+					</handDesc>
+					<musicNotation>
+						<p>Pages 96-8 are blank, except for
+							scribbles in the Tremulous Hand and some
+							musical notes. </p>
+					</musicNotation>
+
+					<decoDesc>
+						<decoNote type="colInit">Initials and titles in red. Titles in rustic capitals or minuscules.</decoNote>
+					</decoDesc>
+					<additions>
+						<p> The collect <q>Deus qui dedisti legem Moisi in summitate montis Sinay.
+								et illic / per angelum tuum corpus Katerine uirginis. mirabiliter /
+								collocasti. tribue quesumus. ut eius meritis et intercessione ad
+								montem qui Cristus est ualeamus peruenire. </q> and antiphon <q>Ecce
+								crucem domini. fugite partes aduerse de tribu Juda radix David.
+								Alleluia.</q> were added slightly later in s. xii in the five lines
+							remaining blank on p. 395. A note in Thomas
+							Barlow's hand identifies the collect with that in Roman and
+							Sarum service-books for 25<hi rend="superscript">th</hi> November, St.
+							Katherine's day, specifically concerning her reception by angels. The
+							antiphon was used as an exorcism or healing formula. It is interesting
+							to note this addition for St. Katherine in a
+							manuscript associated with the region that produced the early
+							thireenth-century manuscript, Oxford, Bodleian Library, Bodley 34,
+							containing the Katherine-Group of Saints' lives and other texts. </p>
+					</additions>
+
+
+					<bindingDesc>
+						<binding notAfter="1725" notBefore="1675">
+							<p>Bound in s. xvii/xviii uniformly with MS. Hatton 115. The rust-mark from a nail
+							which held the strap of an earlier binding in position shows on pp.
+							391-402.</p></binding>
+					</bindingDesc>
+					<accMat>
+						<p> Pages 399-402 are two waste leaves, a bifolium of a copy of a Summa of
+							the <title key="work_1806">Decretum</title> of <persName role="aut" key="person_33242385">Gratian</persName>, s. xii<hi
+								rend="superscript">ex</hi>, used as a pastedown and flyleaf. </p>
+					</accMat>
+				</physDesc>
+
+				<history>
+					<origin>
+						<origDate notBefore="1125" notAfter="1150" calendar="Gregorian">12th century, second quarter</origDate>, with added glosses, <origDate type="additions" calendar="Gregorian" notAfter="1250" notBefore="1200">13th century, first half</origDate>
+						<origPlace><country key="place_7002445">England</country>, west, almost certainly <settlement key="place_7015155">Worcester</settlement>, <orgName role="fmo" key="org_148943477">Benedictine cathedral priory of St Mary the Virgin</orgName></origPlace>
+						<p>Written in the West of England, almost
+							certainly at Worcester. Whilst the manuscript
+							shows characteristics common with manuscripts produced at Worcester, McIntyre
+								1978 points out that the style is regional, not just belonging
+							to a single scriptorium (pp. 36-37). It must be borne in mind, however,
+							that there are also many shared features with manuscripts produced in
+							other centres in the West of England (Treharne 2000, p. 27).</p>
+					</origin>
+
+					<provenance>
+						At <orgName key="org_148943477">Worcester Priory</orgName> in the first half of the
+						thirteenth century, as it was glossed by the <persName key="person_3305">Tremulous
+								Hand</persName>. Remained there 
+							until at least 1622, as it is mentioned in Young's
+							catalogue. 
+					</provenance><provenance>Belonged to <persName role="fmo" key="person_37729288">Christopher, Lord Hatton</persName> in 1644.</provenance>
+					<acquisition>Given to the Bodleian by Hatton's son in 1675. Subsequently lent to <persName key="person_138999790">Dr Thomas Marshall</persName> and by him to <persName key="person_59225563">Franciscus Junius</persName> and returned to the Bodleian as part of the Junius collection after his death in 1678. Former shelfmark MS. Junius 24.</acquisition>
+				</history>
+				<additional>
+					<adminInfo>
+						<recordHist>
+							<source>Adapted (March 2022) from description created for <title>The Production and Use of English Manuscripts 1060 to 1220</title> by Elaine Treharne with the assistance of
+								Hollie Morgan and George Younge (2010; 2013). Previously described in the Summary Catalogue.
+								<listBibl>
                               <bibl facs="aaq0328.gif" type="SC">Summary Catalogue, Vol. 2 Part 2, p. 969</bibl>
                            </listBibl>
-                        </source>
-                     </recordHist>
-                  </adminInfo>
-                  <surrogates>
+							</source>
+						</recordHist>
+					</adminInfo>
+ 					<surrogates>
                      <bibl subtype="partial" type="digital-facsimile">
                         <ref target="https://digital.bodleian.ox.ac.uk/objects/30e32f3f-c7e3-464d-8c86-e37066c66fbd/">
                            <title>Digital Bodleian</title>
@@ -79,37 +917,126 @@
                         <note>(15 images from 35mm slides)</note>
                      </bibl>
                   </surrogates>
+					
+                 
                   <listBibl type="WRAPPER">
                      <listBibl type="INTERNET">
                         <head>Online resources:</head>
-                        <!--Existing bibliography in place: check sorting of entries-->
-                        <bibl>
-                           <ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6023">
-                              <title>MLGB3: Medieval Libraries of Great Britain</title>
-                           </ref>
-                        </bibl>
-                        <bibl>
-                           <ref target="https://www.le.ac.uk/english/em1060to1220/mss/EM.Ox.Hatt.116.htm">
-                              <title>The Production and Use of English Manuscripts 1060 to 1220</title>
-                           </ref>
-                        </bibl>
-                     </listBibl>
+					<bibl>
+						<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6023">
+							<title>MLGB3: Medieval Libraries of Great Britain</title>
+						</ref>
+					</bibl>
+					<bibl>
+						<ref target="https://www.le.ac.uk/english/em1060to1220/mss/EM.Ox.Hatt.116.htm">
+							<title>The Production and Use of English Manuscripts 1060 to 1220</title>
+						</ref>
+					</bibl>
+					</listBibl>
+					<listBibl>
+						<head>Printed:</head>
+
+						<bibl xml:id="ass389">Assmann, Bruno, ed., <title>Angelsächsischen Homilien
+								und Heiligenleben</title>, Bibliotek der angelsächsischen Prosa, 13
+							(Kassel: Wigand, 1889; repr. 1964)</bibl>
+						<bibl xml:id="baz390">Bazire, J., and J. E. Cross, eds, <title>Eleven Old
+								English Rogationtide Homilies</title>, Toronto Old English Series
+							(Toronto: University of Toronto Press, 1982)</bibl>
+
+
+						<bibl xml:id="cle112">Clemoes, Peter, ed., <title>Ælfric's Catholic
+								Homilies: The First Series, Text</title>, EETS, SS 17 (London:
+							Oxford University Press, 1997)</bibl>
+
+
+						<bibl xml:id="cra497">Crawford, S. J., <title>Exameron Anglice, or the Old
+								English Hexameron</title>, Bibliotek der angelsachsischen Prosa
+							(Hamburg: H. Grand 1921), vol. 10</bibl>
+
+						<bibl xml:id="cra654">---, 'The Worcester Marks and Glosses of the Old
+							English Manuscripts in the Bodleian, together with the Worcester Version
+							of the Nicene Creed', <title>Anglia</title>, 52 (1928), 1-25</bibl>
+
+						<bibl xml:id="for1058">Förster, Max, 'Der Vercelli-Codex CXVII nebst Abdruck
+							einiger altenglischer Homilien der Handschrift', <title>Studien zur
+								englischen Philologie</title>, 1 (1913), 20</bibl>
+
+						<bibl xml:id="fra188">Franzen, Christine, <title>The Tremulous Hand of
+								Worcester: A Study of Old English in the Thirteenth Century</title>
+							(Oxford: Clarendon Press, 1991)</bibl>
+
+
+						<bibl xml:id="ker44">Ker, N. R., <title>Catalogue of Manuscripts Containing
+								Anglo-Saxon</title> (Oxford: Clarendon Press, 1957; repr. 1990) item
+							333</bibl>
+						<bibl xml:id="ker48">---, <title>English Manuscripts in the Century After
+								the Norman Conquest</title>, The Lyell Lectures, 1952-53 (Oxford:
+							Clarendon Press, 1960)</bibl>
+
+						<bibl xml:id="klu1057">Kluge, F., <title>Angelsächsiches Lesebuch</title>,
+							2nd edn (1885; 1897)</bibl>
+
+						<bibl xml:id="mac493">MacLean, G. E., <title>Ælfric's Version of Alcuini
+								Interrogationes Sigeuulfi in Genesin </title>, Anglia (1883-1884),
+							vol. 6, 7</bibl>
+						<bibl xml:id="mci177">McIntyre, E. A., 'Early-Twelfth-Century Worcester
+							Cathedral Priory, with Special Reference to the Manuscripts Written
+							There' (unpublished DPhil dissertation, University of Oxford,
+							1978)</bibl>
+						<bibl xml:id="mor580">Morris, Richard, ed., <title>Old English Homilies of
+								the 12th and 13th Centuries</title>, EETS, 29, 34 (London: Oxford
+							University Press, 1867-68; repr. as one volume, 1988)</bibl>
+						<bibl xml:id="nap506">Napier, Arthur Sampson, 'Ein altenglisches Leben des
+							heiligen Chad', <title>Anglia</title>, 10 (1888), 131-56</bibl>
+						<bibl xml:id="nap123">---, ed., <title>Wulfstan: Sammlung der ihm
+								zugeschriebenen Homilien nebst Untersuchungen uber ihre
+								Echtheit</title>, Sammlung englischer Denkmaeler in Kritischen
+							Ausgaben, 4 (Berlin: Weidmannsche Buchhandlung, 1883)</bibl>
+						<bibl xml:id="pel39">Pelteret, D. A. E., <title>Catalogue of English
+								Post-Conquest Vernacular Documents</title> (Woodbridge: D. S.
+							Brewer, 1990)</bibl>
+						<bibl xml:id="pop87">Pope, John C., ed., <title>Homilies of Ælfric: A
+								Supplementary Collection</title>, EETS, 259, 260 (London: Oxford
+							University Press, 1967-68)</bibl>
+						<bibl xml:id="rob335">Roberts, Jane, <title>Guide to Scripts Used in English
+								Writings up to 1500</title> (London: British Library, 2005)</bibl>
+						<bibl xml:id="ske153">Skeat, W. W., ed., <title>Ælfric’s Lives of
+								Saints</title>, EETS, OS 76, 82, 94, 114 (London and Oxford: Kegan
+							Paul, Trench, Trübner, 1881-1900; repr. as 2 vols, 1966)</bibl>
+						<bibl xml:id="tho977">Thomson, R. M., <title>A Descriptive Catalogue of the
+								Medieval Manuscripts in Worcester Cathedral Library</title>
+							(Woodbridge: Brewer, 2001)</bibl>
+						<bibl xml:id="tho57">Thorpe, B., ed., <title>The Sermones Catholici or
+								Homilies of Ælfric</title>, Ælfric Society, 2 vols (London: Ælfric
+							Society, 1844- 46)</bibl>
+						<bibl xml:id="tre52">Treharne, Elaine M., 'The Production and Script of
+							Manuscripts containing English Religious Texts in the First Half of the
+							Twelfth Century', in <title>Rewriting Old English in the Twelfth
+								Century</title>, ed. by Mary Swan and Elaine M. Treharne (Cambridge:
+							Cambridge University Press, 2000), pp. 11-39</bibl>
+						<bibl xml:id="vle1059">Vleeskruyer, R., 'The Life of St. Chad' (unpublished
+							thesis, Amsterdam, 1953)</bibl>
+						<bibl xml:id="wan470">Wanley, Humfrey, <title>Antique Literature
+								Septentrionalis Liber Alter</title> (Oxford: Sheldonian Theatre,
+							1705)</bibl>
+					</listBibl>
                   </listBibl>
-               </additional>
-            </msDesc>
-         </sourceDesc>
-      </fileDesc>
-      <revisionDesc>
-         <change when="2021-12-14">Add provenance information from MLGB3.</change>
-         <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25">
-            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
-         </change>
-      </revisionDesc>
-   </teiHeader>
-   <text>
-      <body>
-         <p/>
-      </body>
-   </text>
+				</additional>
+				</msDesc>
+			</sourceDesc>
+		</fileDesc>
+		<revisionDesc>
+			<change when="2022-03-29">Converted description from English Manuscripts 1060-1220.</change>
+			<change when="2021-12-14">Add provenance information from MLGB3.</change>
+			<change when="2017-07-01">First online publication.</change>
+			<change when="2017-05-25">
+				<persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+			</change>
+		</revisionDesc>
+	</teiHeader>
+	<text>
+		<body>
+			<p/>
+		</body>
+	</text>
 </TEI>
