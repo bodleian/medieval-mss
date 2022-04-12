@@ -165,9 +165,16 @@ declare function local:buildSummary($msdescorpart as element()) as xs:string
                     { bod:many2one($ms//tei:msIdentifier/tei:msName, 'ms_name_sm') }
                     <field name="filename_s">{ substring-after(base-uri($ms), 'collections/') }</field>
                     { bod:materials($ms//tei:msDesc//tei:physDesc//tei:supportDesc[@material], 'ms_materials_sm') }
-                    { bod:trueIfExists($ms//tei:sourceDesc//tei:decoDesc/tei:decoNote[not(@type='none')], 'ms_deconote_b') }
-                    { bod:trueIfExists($ms//tei:sourceDesc//tei:physDesc/tei:musicNotation, 'ms_music_b') }
-                    { bod:digitized($ms//tei:sourceDesc//tei:surrogates//tei:bibl, 'ms_digitized_s') }
+                    {
+                    if (not($ms/tei:TEI/@type = 'stub')) then
+                        (
+                        bod:trueIfExists($ms//tei:sourceDesc//tei:decoDesc/tei:decoNote[not(@type='none')], 'ms_deconote_b'),
+                        bod:trueIfExists($ms//tei:sourceDesc//tei:physDesc/tei:musicNotation, 'ms_music_b'),
+                        bod:digitized($ms//tei:sourceDesc//tei:surrogates//tei:bibl, 'ms_digitized_s')
+                        )
+                    else
+                        ()
+                    }
                     { bod:languages($ms//tei:sourceDesc//tei:textLang, 'lang_sm') }
                     { local:origin($ms//tei:sourceDesc//tei:origPlace/tei:country/@key, 'ms_origin_sm') }
                     { bod:centuries($ms//tei:origin//tei:origDate, 'ms_date_sm') }
