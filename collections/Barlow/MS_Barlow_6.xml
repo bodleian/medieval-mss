@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_918" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_918">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -59,48 +59,69 @@
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
-               <physDesc resp="#DD">
+               <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
                         <extent>209 fols. <dimensions type="leaf" unit="mm">
                               <height>325</height>
                               <width>240</width>
-                           </dimensions></extent>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
                      <layoutDesc>
                         <layout columns="2" writtenLines="39 40">2 cols., 39–40 lines, column space <dimensions type="column" unit="mm">
                               <height max="250" min="243">243–50</height>
                               <width>65</width>
-                           </dimensions></layout>
+                           </dimensions>
+                        </layout>
                      </layoutDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote resp="#PA">Fine historiated and other initials, added in the second quarter of the 13th century. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 368, pl. XXXII)</decoNote>
-                     <decoNote>Illuminated initials (some historiated), coloured initials, rubrics.</decoNote>
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 368, pl. XXXII ('fine historiated and other initials, added in the second quarter of the 13th century'):</summary>
+                     <decoNote resp="#PA" type="histInit">Historiated initials.</decoNote><decoNote resp="#PA" type="decInit"> Other initials. </decoNote>
+                     <decoNote type="colInit">Coloured initials, rubrics.</decoNote>
                   </decoDesc>
+                  <bindingDesc>
+                     <binding notAfter="1700" notBefore="1675">
+                        <p>Stamped brown leather, late 17th-cent. English work, rebacked.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
                   <origin resp="#DD #PA">
-                     <origDate calendar="Gregorian" cert="high" notAfter="1205" notBefore="1187">1187 × 1205</origDate>; <origDate calendar="Gregorian" notAfter="1250" notBefore="1225">decoration added, 13th century, second quarter</origDate>
+                     <origDate calendar="Gregorian"
+                               cert="high"
+                               notAfter="1205"
+                               notBefore="1187">1187 × 1205</origDate>; <origDate calendar="Gregorian" notAfter="1250" notBefore="1225">decoration added, 13th century, second quarter</origDate>
                      <origPlace>
                         <country key="place_7002445">English</country>, <settlement key="place_7011217">Malmesbury</settlement>, <orgName key="org_134872490" role="fmo">Benedictine Abbey</orgName>
                         <!--ORIGINAL: English, Malmesbury-->
                      </origPlace>
                   </origin>
                   <provenance resp="#DD">Written at Malmesbury Abbey by <persName key="person_2944" role="scr">Salomon</persName> under Abbot Robert of Meldon (1187–1205); inscription, fol. 209: <q type="colophon">Explicit Policraticus per Salomonem sub Abbate Roberto .iiº</q>.</provenance>
-                  <provenance notAfter="1600" notBefore="1500" resp="#DD">Fol. 142r-v: <q type="inscription"><persName key="person_2945" role="sgn">Thomas Lonwell</persName></q> or <q type="inscription">Lonewell</q>. 16th century (?).</provenance>
-                  <provenance notAfter="1560" notBefore="1540" resp="#DD">Fol. 209 : <q type="exLibris"><persName key="person_2946" role="fmo">Richardus Ramsaeus</persName> possidet</q>, mid-16th century.</provenance>
-                  <provenance notAfter="1560" notBefore="1540" resp="#DD">Fol. 209v: <q type="inscription"><persName key="person_2947" role="sgn">Wyllyam Fyttz</persName></q>, mid-16th century.</provenance>
-                  <provenance from="1633" resp="#SC" to="1691"><persName key="person_465" role="fmo">Thomas Barlow, 1607–1691</persName>: acquired 1633, inscription fol. 1.</provenance>
+                  <provenance notAfter="1600" notBefore="1500" resp="#DD">Fol. 142r-v: <q type="inscription">
+                        <persName key="person_2945" role="sgn">Thomas Lonwell</persName>
+                     </q> or <q type="inscription">Lonewell</q>. 16th century (?).</provenance>
+                  <provenance notAfter="1560" notBefore="1540" resp="#DD">Fol. 209 : <q type="exLibris">
+                        <persName key="person_2946" role="fmo">Richardus Ramsaeus</persName> possidet</q>, mid-16th century.</provenance>
+                  <provenance notAfter="1560" notBefore="1540" resp="#DD">Fol. 209v: <q type="inscription">
+                        <persName key="person_2947" role="sgn">Wyllyam Fyttz</persName>
+                     </q>, mid-16th century.</provenance>
+                  <provenance from="1633" resp="#SC" to="1691">
+                     <persName key="person_465" role="fmo">Thomas Barlow, 1607–1691</persName>: acquired 1633, inscription fol. 1.</provenance>
                   <acquisition resp="#SC" when="1691">Bequeathed by him in 1691.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
                         <source> Description adapted (2018) from the following sources: <listBibl>
-                              <bibl>A. G. Watson, <title><ref target="https://catalog.hathitrust.org/Record/000310664">Catalogue of Dated and Datable Manuscripts c.435–1600 in Oxford Libraries</ref></title> (Oxford, 1984), no. 65 [physical description, origin, provenance]</bibl>
-                              <bibl>Otto Pächt and J. J. G. Alexander, <title><ref target="https://catalog.hathitrust.org/Record/000468709">Illuminated Manuscripts in the Bodleian Library, Oxford</ref></title>, III (1973), no. 368 [decoration]</bibl>
+                              <bibl>A. G. Watson, <title>
+                                    <ref target="https://catalog.hathitrust.org/Record/000310664">Catalogue of Dated and Datable Manuscripts c.435–1600 in Oxford Libraries</ref>
+                                 </title> (Oxford, 1984), no. 65 [physical description, origin, provenance]</bibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>
+                                    <ref target="https://catalog.hathitrust.org/Record/000468709">Illuminated Manuscripts in the Bodleian Library, Oxford</ref>
+                                 </title>, III (1973), no. 368 [decoration]</bibl>
                               <bibl>Summary Catalogue (1937) [contents, provenance]</bibl>
                            </listBibl>
                            <listBibl>
@@ -110,12 +131,22 @@
                         </source>
                      </recordHist>
                   </adminInfo>
-                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/73b89e3c-c884-4826-b146-8e21caec92ac/"><title>Digital Bodleian</title></ref>
-                        <note>(2 images from 35mm slides)</note></bibl></surrogates>
+                  <surrogates>
+                     <bibl subtype="partial" type="digital-facsimile">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/73b89e3c-c884-4826-b146-8e21caec92ac/">
+                           <title>Digital Bodleian</title>
+                        </ref>
+                        <note>(2 images from 35mm slides)</note>
+                     </bibl>
+                  </surrogates>
                   <listBibl type="WRAPPER">
                      <listBibl type="INTERNET">
                         <head>Online resources:</head>
-                        <bibl><ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/3915"><title>MLGB3: Medieval Libraries of Great Britain</title></ref></bibl>
+                        <bibl>
+                           <ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/3915">
+                              <title>MLGB3: Medieval Libraries of Great Britain</title>
+                           </ref>
+                        </bibl>
                      </listBibl>
                   </listBibl>
                </additional>
@@ -123,9 +154,12 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
-         <change when="2018-10-24" who="#MLH">Fully revised to incorporate all information in Watson, <ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref>, and SC.</change>
+         <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
+         <change when="2018-10-24" who="#MLH">Fully revised to incorporate all information in Watson, <ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref>, and SC.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>

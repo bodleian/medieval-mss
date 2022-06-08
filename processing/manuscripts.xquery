@@ -134,6 +134,7 @@ declare function local:buildSummary($msdescorpart as element()) as xs:string
             if (string-length($msid) ne 0) then
                 let $mainshelfmark := ($ms/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:msDesc/tei:msIdentifier/tei:idno[@type='shelfmark'])[1]
                 let $allshelfmarks := $ms//tei:msIdentifier//tei:idno[(@type, parent::tei:altIdentifier/@type)=('shelfmark','part','former')]
+                let $oldshelfmarks := $ms//tei:msIdentifier/tei:altIdentifier[@type='former']/tei:idno[not(@subtype)]
                 let $subfolders := string-join(tokenize(substring-after(base-uri($ms), 'collections/'), '/')[position() lt last()], '/')
                 let $htmlfilename := concat($msid, '.html')
                 let $htmldoc := doc(concat('html/', $subfolders, '/', $htmlfilename))
@@ -156,6 +157,7 @@ declare function local:buildSummary($msdescorpart as element()) as xs:string
                     { bod:one2one($ms//tei:msDesc/tei:msIdentifier/tei:institution, 'institution_sm') }
                     { bod:many2one($ms//tei:msDesc/tei:msIdentifier/tei:repository, 'ms_repository_s') }
                     { bod:strings2many(bod:shelfmarkVariants($allshelfmarks), 'shelfmarks') (: Non-tokenized field :) }
+                    { bod:many2many($oldshelfmarks, 'ms_oldshelfmarks_smni') }
                     { bod:many2many($allshelfmarks, 'ms_shelfmarks_sm') (: Tokenized field :) }
                     { bod:one2one($mainshelfmark, 'ms_shelfmark_sort') }
                     { bod:many2many($ms//tei:msIdentifier/tei:altIdentifier[@type='internal']/tei:idno[not(starts-with(text(), 'Not in'))], 'ms_altid_sm') }
@@ -163,9 +165,16 @@ declare function local:buildSummary($msdescorpart as element()) as xs:string
                     { bod:many2one($ms//tei:msIdentifier/tei:msName, 'ms_name_sm') }
                     <field name="filename_s">{ substring-after(base-uri($ms), 'collections/') }</field>
                     { bod:materials($ms//tei:msDesc//tei:physDesc//tei:supportDesc[@material], 'ms_materials_sm') }
-                    { bod:trueIfExists($ms//tei:sourceDesc//tei:decoDesc/tei:decoNote[not(@type='none')], 'ms_deconote_b') }
-                    { bod:trueIfExists($ms//tei:sourceDesc//tei:physDesc/tei:musicNotation, 'ms_music_b') }
-                    { bod:digitized($ms//tei:sourceDesc//tei:surrogates//tei:bibl, 'ms_digitized_s') }
+                    {
+                    if (not($ms/tei:TEI/@type = 'stub')) then
+                        (
+                        bod:trueIfExists($ms//tei:sourceDesc//tei:decoDesc/tei:decoNote[not(@type='none')], 'ms_deconote_b'),
+                        bod:trueIfExists($ms//tei:sourceDesc//tei:physDesc/tei:musicNotation, 'ms_music_b'),
+                        bod:digitized($ms//tei:sourceDesc//tei:surrogates//tei:bibl, 'ms_digitized_s')
+                        )
+                    else
+                        ()
+                    }
                     { bod:languages($ms//tei:sourceDesc//tei:textLang, 'lang_sm') }
                     { local:origin($ms//tei:sourceDesc//tei:origPlace/tei:country/@key, 'ms_origin_sm') }
                     { bod:centuries($ms//tei:origin//tei:origDate, 'ms_date_sm') }
