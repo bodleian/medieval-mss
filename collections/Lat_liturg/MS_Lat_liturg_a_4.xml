@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_6442" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6442">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -75,7 +75,8 @@
                         <layout>1 col., 7 lines of script and 7 staves of music, <dimensions type="written" unit="mm">
                               <height max="370" min="360">360–70</height>
                               <width>65</width>
-                           </dimensions></layout>
+                           </dimensions>
+                        </layout>
                      </layoutDesc>
                   </objectDesc>
                   <handDesc resp="#DD #VD">
@@ -85,7 +86,8 @@
                      <p>Square notation on 7 staves of 4 black lines and coloured F and C lines, <dimensions type="written" unit="mm">
                            <height>380</height>
                            <width>275</width>
-                        </dimensions></p>
+                        </dimensions>
+                     </p>
                   </musicNotation>
                   <decoDesc>
                      <decoNote resp="#PA">Fine miniature (partly damaged), historiated borders, initials. Penwork initials with grotesque faces. By <persName key="person_95692277" role="art">Anovelo da Imbonate</persName>. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 186, pl. XVII)</decoNote>
@@ -100,7 +102,7 @@
                </physDesc>
                <history>
                   <origin resp="#DD">
-                     <origDate calendar="Gregorian" when="1399">1399</origDate>
+                     <origDate calendar="Gregorian" when="1399" cert="high">1399</origDate>
                      <origPlace>
                         <country key="place_1000080">Italian</country>, <settlement key="place_7005903">Milan</settlement>
                         <!--ORIGINAL: Italian, Milan-->
@@ -108,7 +110,9 @@
                   </origin>
                   <provenance resp="#DD">Fol. 380<hi rend="superscript">v</hi>: 'Expletum anno domini Millesimo trecentesimo nonagesimo nono Vltimo Januarii per presbyterum Fatium de Castoldis bene<ex>fitiatum</ex> ecclesie sancte eufymie m<ex>edio</ex>l<ex>an</ex>i. Factum in honore sancti ambrosij maioris m<ex>edio</ex>l<ex>an</ex>i. Eram annorum xxxx quando conpleui hunc librum.'</provenance>
                   <provenance resp="#DD">Arms of <persName key="person_2824" role="fmo">Bossi of Milan</persName>, with initials 'B.B.', perhaps over earlier arms.</provenance>
-                  <provenance resp="#SC"><persName key="person_38033406" role="fmo">Rev. G. J. Chester</persName></provenance>
+                  <provenance resp="#SC">
+                     <persName key="person_38033406" role="fmo">Rev. G. J. Chester</persName>
+                  </provenance>
                   <acquisition when="1889">Bought from him, 25 July, 1889, for £12.</acquisition>
                </history>
                <additional>
@@ -121,12 +125,22 @@
                         </source>
                      </recordHist>
                   </adminInfo>
-                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/6bfcc67a-a650-4056-b497-5d8c1dbd9c67/"><title>Digital Bodleian</title></ref>
-                        <note>(7 images from 35mm slides)</note></bibl></surrogates>
+                  <surrogates>
+                     <bibl subtype="partial" type="digital-facsimile">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/6bfcc67a-a650-4056-b497-5d8c1dbd9c67/">
+                           <title>Digital Bodleian</title>
+                        </ref>
+                        <note>(7 images from 35mm slides)</note>
+                     </bibl>
+                  </surrogates>
                   <listBibl type="WRAPPER">
                      <listBibl type="PRINT">
-                        <bibl>A. G. Watson, <title><ref target="https://catalog.hathitrust.org/Record/000310664">Catalogue of Dated and Datable Manuscripts c.435–1600 in Oxford Libraries</ref></title> (Oxford, 1984), no. 543</bibl>
-                        <bibl>Otto Pächt and J. J. G. Alexander, <title><ref target="https://catalog.hathitrust.org/Record/000468709">Illuminated Manuscripts in the Bodleian Library, Oxford</ref></title>, II (1970), no. 186</bibl>
+                        <bibl>A. G. Watson, <title>
+                              <ref target="https://catalog.hathitrust.org/Record/000310664">Catalogue of Dated and Datable Manuscripts c.435–1600 in Oxford Libraries</ref>
+                           </title> (Oxford, 1984), no. 543</bibl>
+                        <bibl>Otto Pächt and J. J. G. Alexander, <title>
+                              <ref target="https://catalog.hathitrust.org/Record/000468709">Illuminated Manuscripts in the Bodleian Library, Oxford</ref>
+                           </title>, II (1970), no. 186</bibl>
                      </listBibl>
                   </listBibl>
                </additional>
@@ -135,7 +149,9 @@
       </fileDesc>
       <revisionDesc>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>
