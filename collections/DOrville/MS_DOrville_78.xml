@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_4180" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4180">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -57,7 +57,7 @@
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" when="1418">1418 (?)</origDate>
+                     <origDate calendar="Gregorian" when="1418" cert="high">1418 (?)</origDate>
                      <origPlace>
                         <country key="place_1000080">Italian</country>, <settlement key="place_7000457">Florence</settlement>
                         <!--ORIGINAL: Italian, Florence-->
@@ -74,15 +74,32 @@
                         </source>
                      </recordHist>
                   </adminInfo>
-                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/44f06165-e6cf-4e6f-a6cb-e3f94cc6897f/"><title>Digital Bodleian</title></ref>
-                        <note>(2 images from 35mm slides)</note></bibl></surrogates>
+                  <surrogates>
+                     <bibl subtype="partial" type="digital-facsimile">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/44f06165-e6cf-4e6f-a6cb-e3f94cc6897f/">
+                           <title>Digital Bodleian</title>
+                        </ref>
+                        <note>(2 images from 35mm slides)</note>
+                     </bibl>
+                  </surrogates>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="PRINT">
+                        <head>Printed descriptions:</head>
+                        <bibl>A. Watson, <title>Catalogue of Dated and Datable Manuscripts in Oxford Libraries</title> (1984), <citedRange unit="entry" from="437" to="437">
+                              <ref target="https://hdl.handle.net/2027/mdp.39015008982863?urlappend=%3Bseq=98">no. 437</ref>
+                           </citedRange>
+                        </bibl>
+                     </listBibl>
+                  </listBibl>
                </additional>
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>

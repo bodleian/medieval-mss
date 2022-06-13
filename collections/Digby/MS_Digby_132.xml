@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_4250" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4250">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -39,7 +39,8 @@
                </msIdentifier>
                <msContents>
                   <msItem class="#astrologia_astronomia" n="1" xml:id="MS_Digby_132-item1">
-                     <title key="work_10402" type="desc">Astronomical tables and texts collected by <persName key="person_89485131" role="scr">Johann Verner of Nuremberg</persName></title>
+                     <title key="work_10402" type="desc">Astronomical tables and texts collected by <persName key="person_89485131" role="scr">Johann Verner of Nuremberg</persName>
+                     </title>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -52,18 +53,21 @@
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1525" notBefore="1500">16th century, first quarter</origDate>
+                     <origDate calendar="Gregorian" notAfter="1525" notBefore="1500" cert="high">16th century, first quarter (in part 1521)</origDate>
                      <origPlace>
                         <country key="place_7000084">German</country>
                      </origPlace>
                   </origin>
-                  <provenance notAfter="1634" notBefore="1603" resp="#MMM"><persName key="person_49357645" role="fmo">Kenelm Digby, 1603–1665</persName></provenance>
+                  <provenance notAfter="1634" notBefore="1603" resp="#MMM">
+                     <persName key="person_49357645" role="fmo">Kenelm Digby, 1603–1665</persName>
+                  </provenance>
                   <acquisition resp="#MMM" when="1634">Donated to the Bodleian, 1634.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (W. D. Macray, <title>Bodleian Library Quarto Catalogues IX: Digby Manuscripts</title>, repr. with addenda by R. W. Hunt and A. G. Watson, 1999). <listBibl>
+                        <source>
+                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (W. D. Macray, <title>Bodleian Library Quarto Catalogues IX: Digby Manuscripts</title>, repr. with addenda by R. W. Hunt and A. G. Watson, 1999). <listBibl>
                               <bibl facs="abw0078.gif" type="QUARTO">Quarto Catalogue, col. 138</bibl>
                               <bibl facs="abw0241.gif" type="QUARTO">Quarto Catalogue (addenda), p. 64</bibl>
                               <bibl facs="aap0095.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 74</bibl>
@@ -71,14 +75,26 @@
                         </source>
                      </recordHist>
                   </adminInfo>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="PRINT">
+                        <head>Printed descriptions:</head>
+                        <bibl>A. Watson, <title>Catalogue of Dated and Datable Manuscripts in Oxford Libraries</title> (1984), <citedRange unit="entry" from="425" to="425">
+                              <ref target="https://hdl.handle.net/2027/mdp.39015008982863?urlappend=%3Bseq=96">no. 425</ref>
+                        </citedRange> (fols. 1-64)
+                        </bibl> 
+                     </listBibl>
+                  </listBibl>
                </additional>
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
-         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
+         <change when="2018-10-14" xml:id="MMM">
+            <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>
