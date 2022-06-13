@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_2761" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2761">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -39,7 +39,8 @@
                </msIdentifier>
                <msContents>
                   <msItem class="#collectiones" n="1" xml:id="MS_Canon_Ital_50-item1">
-                     <title key="work_11313" type="desc">Common-place book (zibaldone) of <persName key="person_80" role="scr">Antonio di Cecco Rosso de' Petrucci da Siena</persName></title>
+                     <title key="work_11313" type="desc">Common-place book (zibaldone) of <persName key="person_80" role="scr">Antonio di Cecco Rosso de' Petrucci da Siena</persName>
+                     </title>
                      <textLang mainLang="it" otherLangs="la">Italian and Latin</textLang>
                   </msItem>
                </msContents>
@@ -52,19 +53,27 @@
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
+                     <origDate calendar="Gregorian"
+                               notAfter="1465"
+                               notBefore="1464"
+                               cert="high">1464-1465</origDate>
                      <origPlace>
-                        <country key="place_1000080">Italian</country>
+                        <country key="place_1000080">Italian</country>, <settlement key="place_7003994">Urbino</settlement>
                      </origPlace>
                   </origin>
-                  <provenance notAfter="1805" notBefore="1727" resp="#MMM"><persName key="person_2384880" role="fmo">Matteo Luigi Canonici, 1727–1805</persName></provenance>
-                  <provenance notAfter="1807" resp="#MMM"><persName key="person_446" role="fmo">Giuseppe Canonici , -1807</persName></provenance>
+                  <provenance notAfter="1805" notBefore="1727" resp="#MMM">
+                     <persName key="person_2384880" role="fmo">Matteo Luigi Canonici, 1727–1805</persName>
+                  </provenance>
+                  <provenance notAfter="1807" resp="#MMM">
+                     <persName key="person_446" role="fmo">Giuseppe Canonici , -1807</persName>
+                  </provenance>
                   <acquisition resp="#MMM" when="1817">Purchased by the Bodleian in 1817</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (A. Mortara, <title>Catalogo dei manoscritti italiani che sotto la denominazione di Codici Canoniciani Italici si conservano nella Biblioteca Bodleiana a Oxford</title>, Quarto Catalogues XI, 1864). <listBibl>
+                        <source>
+                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (A. Mortara, <title>Catalogo dei manoscritti italiani che sotto la denominazione di Codici Canoniciani Italici si conservano nella Biblioteca Bodleiana a Oxford</title>, Quarto Catalogues XI, 1864). <listBibl>
                               <bibl facs="acp0044.gif" type="QUARTO">Quarto Catalogue, col. 56</bibl>
                               <bibl facs="acp0045.gif" type="QUARTO">Quarto Catalogue, cols. 57–8</bibl>
                               <bibl facs="acp0046.gif" type="QUARTO">Quarto Catalogue, cols. 59–60</bibl>
@@ -81,7 +90,18 @@
                   <listBibl type="WRAPPER">
                      <listBibl type="INTERNET">
                         <head>Online resources:</head>
-                        <bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/40107"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title></ref></bibl>
+                        <bibl>
+                           <ref target="http://jonas.irht.cnrs.fr/manuscrit/40107">
+                              <title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title>
+                           </ref>
+                        </bibl>
+                     </listBibl>
+                     <listBibl type="PRINT">
+                        <head>Printed descriptions:</head>
+                        <bibl>A. Watson, <title>Catalogue of Dated and Datable Manuscripts in Oxford Libraries</title> (1984), <citedRange unit="entry" from="222" to="222">
+                              <ref target="https://hdl.handle.net/2027/mdp.39015008982863?urlappend=%3Bseq=65">no. 222</ref>
+                           </citedRange>
+                        </bibl>
                      </listBibl>
                   </listBibl>
                </additional>
@@ -89,9 +109,13 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
-         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
+         <change when="2022-06">Revised origin with reference to Watson.</change>
+         <change when="2018-10-14" xml:id="MMM">
+            <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>

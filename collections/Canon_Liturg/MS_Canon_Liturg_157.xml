@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_2856" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2856">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -38,7 +38,9 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem class="#biblia #commentarii" n="1" xml:id="MS_Canon_Liturg_157-item1">
+                  <msItem class="#biblia #commentarii"
+                          n="1"
+                          xml:id="MS_Canon_Liturg_157-item1">
                      <title key="work_11273" type="desc">Commentary on Psalms</title>
                      <bibl type="commentedOn">
                         <title type="desc">Bible, Psalms</title>
@@ -55,7 +57,7 @@
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" when="1525">1525 (?)</origDate>
+                     <origDate calendar="Gregorian" when="1525" cert="high">1525 (?)</origDate>
                      <origPlace cert="low">
                         <country key="place_1000080">Italian</country>, <settlement key="place_7018159">Venice</settlement> (?)<!--ORIGINAL: Italian, Venice (?)--></origPlace>
                   </origin>
@@ -63,19 +65,31 @@
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). <listBibl>
+                        <source>
+                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). <listBibl>
                               <bibl facs="aaz0368.gif" type="SC">Summary Catalogue, vol. 4, p. 349</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="PRINT">
+                        <head>Printed descriptions:</head>
+                        <bibl>A. Watson, <title>Catalogue of Dated and Datable Manuscripts in Oxford Libraries</title> (1984), <citedRange unit="entry" from="258" to="258">
+                              <ref target="https://hdl.handle.net/2027/mdp.39015008982863?urlappend=%3Bseq=70">no. 258</ref>
+                           </citedRange>
+                        </bibl>
+                     </listBibl>
+                  </listBibl>
                </additional>
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>
