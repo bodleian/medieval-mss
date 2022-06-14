@@ -1,15 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_4563" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4563">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Douce 199</title>
             <title type="collection">MSS. Douce</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="DL">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. C. de la Mare</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1966">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2022">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -38,20 +50,43 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                 
+                  <textLang mainLang="fr">French</textLang>
                   <msItem class="#romances" n="1" xml:id="MS_Douce_199-item1">
-                     <title key="work_12495" type="desc">Lancelot Cycle, Branches 3, 4</title>
-                     <textLang mainLang="fr">French</textLang>
+                     <title key="work_12491" type="desc">Lancelot de Lac</title>
+                     <rubric>Ici commence li contes a parler dagrauain le bon chevalier</rubric><incipit>Ci endroit dit li contes que quant Agrauains se fu de ses compegnons partis</incipit>
+                     <note>Comprising the second part of the Romance proper</note>
+                  </msItem>
+                  <msItem class="#romances" n="1" xml:id="MS_Douce_199-item2">
+                     <locus>(fol. 300)</locus>
+                     <title key="work_12495" type="desc">la Queste del saint Graal</title>
+                     <rubric><gap reason="editorial"/> commence ici endroit listoire del Saint Graal &#x0026; dit en itele maniere</rubric>
+                     <incipit> A la ueille de Pentecoste quant li compeignen de la Table Ronde</incipit>
+                     <note>As far as 'si trouue li hermites' in the episode of Gawain and the hermit: the MS. was left unfinished. The work is here, as usual, attributed to Walter Mape.</note>
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>iv + 325 leaves
+                           <dimensions type="leaf" unit="mm">
+                              <height quantity="350">c. 350</height>
+                              <width>255</width>
+                           </dimensions></extent>
                      </supportDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>Good miniatures, some defaced, by two different hands, borders, initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 592,pl. XLV)</decoNote>
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 592,pl. XLV</summary>
+                     <decoNote type="miniature">Good miniatures, some defaced, by two different hands</decoNote>
+                     <decoNote type="border">Good borders.</decoNote>
+                     <decoNote type="decInit">Good initials. </decoNote>
                   </decoDesc>
+                  <bindingDesc>
+                     <binding notAfter="1834" notBefore="1757">
+                        <p>Red velvet for Francis Douce.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
                   <origin>
@@ -60,24 +95,43 @@
                         <country key="place_1000070">French</country>
                      </origPlace>
                   </origin>
-                  <provenance notAfter="1834" notBefore="1757" resp="#MMM"><persName key="person_69848690" role="fmo">Francis Douce, 1757–1834</persName></provenance>
+                  <provenance>Erased coat of arms, fol. 1.</provenance>
+                  <provenance notAfter="1834" notBefore="1757" resp="#MMM">
+                     <persName key="person_69848690" role="fmo">Francis Douce, 1757–1834</persName>
+                  </provenance>
                   <acquisition resp="#MMM" when="1834">Bequeathed to the Bodleian in 1834</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1966). <listBibl>
+                        <source>Description adapted (May 2022) from the following sources:
+                           <listBibl>
+                              <bibl><title>The Douce Legacy</title> [exh. cat.] (1984), <ref target="https://hdl.handle.net/2027/mdp.39015036877796?urlappend=%3Bseq=84%3Bownerid=13510798883845507-88">no. 95</ref></bibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, I (1966), <ref target="https://hdl.handle.net/2027/uc1.32106006446410?urlappend=%3Bseq=68%3Bownerid=9007199272351231-72">no. 592</ref></bibl>
+                              <bibl></bibl>
+                           </listBibl>
+                           abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1966). <listBibl>
                               <bibl facs="aaz0571.gif" type="SC">Summary Catalogue, vol. 4, p. 552</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
-                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/bba87f74-2f14-423a-9cf2-f95fa4b37ed0/"><title>Digital Bodleian</title></ref>
-                        <note>(96 images from 35mm slides)</note></bibl></surrogates>
+                  <surrogates>
+                     <bibl subtype="partial" type="digital-facsimile">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/bba87f74-2f14-423a-9cf2-f95fa4b37ed0/">
+                           <title>Digital Bodleian</title>
+                        </ref>
+                        <note>(96 images from 35mm slides)</note>
+                     </bibl>
+                  </surrogates>
                   <listBibl type="WRAPPER">
                      <listBibl type="INTERNET">
                         <head>Online resources:</head>
-                        <bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/40261"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title></ref></bibl>
+                        <bibl>
+                           <ref target="http://jonas.irht.cnrs.fr/manuscrit/40261">
+                              <title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title>
+                           </ref>
+                        </bibl>
                      </listBibl>
                   </listBibl>
                </additional>
@@ -85,9 +139,14 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
-         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
+         <change when="2022-05-20">Revised to include all information from Summary Catalogue.</change>
+         <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
+         <change when="2018-10-14" xml:id="MMM">
+            <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>

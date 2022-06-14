@@ -1,25 +1,30 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_1315" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1315">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Bodl. 264</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
+            <!-- Sandler: R.Pal.18.286 -->
             <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+               <resp when="2022-04">Cataloguer</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
          <publicationStmt>
-            <publisher>
+            <publisher>Special Collections, Bodleian Libraries</publisher>
+            <address>
                <orgName type="department">Special Collections</orgName>
                <orgName type="unit">Bodleian Libraries</orgName>
                <orgName type="institution">University of Oxford</orgName>
+               <street>Weston Library, Broad Street</street>
+               <settlement key="place_7011931">Oxford</settlement>
+               <postCode>OX1 3BG</postCode>
+               <country>United Kingdom</country>
+            </address>
+            <distributor>
                <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>
-            </publisher>
+            </distributor>
+            <!--Availability statement will be added here-->
             <idno type="msID">MS_Bodl_264</idno>
             <idno type="collection">Bodl</idno>
             <idno type="catalogue">Western</idno>
@@ -37,143 +42,376 @@
                      <idno type="SCN">2464</idno>
                   </altIdentifier>
                </msIdentifier>
+               <head>A Alexander cycle (<title>Roman d'Alexandre</title> etc.); Flanders (probably Tournai), 1338-1344. B <title>Alexander and Dindimus</title>, <title>Marco Polo</title>; England (perhaps London), early 15th century</head>
                <physDesc>
-                  <p n="composite">Composite: fols. 3–208 || fols. 1, 209–215 and fols. 2, 218–274</p>
+                  <p n="composite">Composite: fols. 3-208 || fols. 1-2, 209-273</p>
+                  <objectDesc>
+                     <supportDesc>
+                        <extent>i (parchment, former pastedown) + iv (paper, modern notes) + iii (paper, modern notes) + ii (parchment, early endleaves)  + 273 (2 + 206 + 65) + i (early parchment endleaf) <!-- check -->
+                           <dimensions unit="mm" type="leaf">
+                              <height>420</height>
+                              <width>295</width><!-- check: Ross says 318 -->
+                           </dimensions>
+                        </extent>
+                        <foliation>i-x, 1-274, in modern pencil and 16th(?)-century pen</foliation>
+                        <!-- why is 217 bottom left on 217v upside down? -->
+                     </supportDesc>
+                  </objectDesc>
+                  <bindingDesc>
+                     <binding notAfter="1700" notBefore="1600">
+                        <p>Late 17th-century or 18th-century binding of speckled calf with narrow blind-roll tooling around the edges of the covers.</p>
+                     </binding>
+                     <binding notAfter="1500" notBefore="1400">
+                        <p>Traces of the 15th-century binding survive in its former parchment pastedown and endleaves (fols. i, ix-x, 274) and in the sewing on ten bands. Two nail-holes at the upper fore-edge of fol. i are the characteristic staple-marks of 17th-century chaining at the Bodleian.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
-               <additional>
-                  <adminInfo>
+               <history>
+                  <provenance>Part A modified and combined with parts Bi, Bii in England (perhaps London) in the early 15th century.</provenance>
+                  <provenance>Erased inscription, fol. 274r.</provenance>
+                  <provenance>Kathleen Scott's association of the manuscript with Humfrey duke of Gloucester (<title>Later Gothic MSS.</title>, cat. 13) derives from a misprint (A. C. de la Mare, 'Duke Humfrey's English Palladius', <title>BLR</title> 12 (1985), 39-51 at 48 n. 2, where the shelfmark should be MS. Bodl. 294, ex inf. David Rundle)</provenance>
+                  <provenance><persName role="fmo" key="person_3505">Richard Woodville, first earl Rivers, d. 1469</persName>: ex libris, fol. 274r, recording that he acquired ('acetast') the book on the first day of the year 1466 and the fifth year of King Edward (i.e. 1 Jan. 1466) at London. Khalaf suggests with plausibility that the book may have been a new year's gift.</provenance>
+                  <provenance><persName key="person_3506" role="fmo">Anthony Woodville, second earl Rivers, d. 1483</persName>: incomplete poem apparently written by him, fol. 274r (O. Khalaf, 'An unedited fragmentary poem by Anthony Woodville', <title>Notes and Queries</title> n.s. 58 (2011), 487-90).</provenance>
+                  <!-- ARyverys,
+                     sujet to hym that hat no peregal
+                        remember the kyngis
+                     that [now?] byen al
+                        not desprysyng I ...tt
+                        nor to non lay blamys
+                        but say the t
+                        uis the tr. . .-->
+                  <provenance><q><persName role="sgn" key="person_3507">Thomas Smythe</persName></q>, sixteenth(?) century, unidentified; with monogram (?or notarial mark), fol. 215v; the same monogram on fol. 208r, next to <q>Laus tibi sit Christe quoniam liber explicit iste <lb/> Nomen scriptoris est Thomas plenus amoris <lb/> Qui ultra querit</q> </provenance>
+                  <provenance><q><persName role="fmo" key="person_3508">Jasper Fyloll</persName> ys owner off thys boke</q>, fol. i verso, sixteenth century: Consuelo Dutschke, ‘The Truth in the Book: The Marco Polo Texts in Royal 19.D.i and Bodley 264’, <title>Scriptorium</title>, 52.2 (1998), p. 299n, surveys possible identifications including Jasper Fyloll of London, Essex and Dorset, c. 1467-1536, on whom see <ref target="https://www.historyofparliamentonline.org/volume/1509-1558/member/fyloll-jasper-1467-1536-or-later">History of Parliament</ref>.</provenance><!-- jaspter F aslo  and https://www.jstor.org/stable/2671186?seq=14#metadata_info_tab_contents -->
+                  <provenance><q>Thys ys <persName role="fmo" key="person_3509">Gyles Strangwayes</persName> boke</q>, <q>G. Strangwayes</q>, sixteenth century, fol. x recto, cf. fol. i verso and fol. 52r. Possibly Giles Strangways (1486-1546), and/or his grandson Giles Strangways (1528-1562), both of Melbury Sampford, Dorset.</provenance>
+                  <acquisition notAfter="1605" notBefore="1603">'The book seems to have reached the library, probably from sir Thomas Bodley, in 1603, 1604, or the first half of 1605' (Summary Catalogue)</acquisition>
+                  <!-- the 'sainct more' referred to is apparenlty Marius of Avranches 'Marii ep. Aventicen. 31 Dec at Lausanne (Grotefend/Bollandistes)'. bizarre. -->
+                  <!-- for other text here see https://www.academia.edu/764007/An_Unedited_Fragmentary_Poem_by_Anthony_Woodville_Earl_Rivers_in_Oxford_Bodleian_Library_MS_Bodley_264  -->
+                  <!-- also https://www.thefreelibrary.com/Lord+Rivers+and+Oxford%2C+Bodleian+Library%2C+Ms+Bodley+264%3A+a+speculum...-a0280967031  -->
+               </history>
+               <additional><adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
-                              <bibl facs="aap0402.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 381</bibl>
-                              <bibl facs="aap0403.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 382</bibl>
+                        <source>Description by Matthew Holford (May 2022), with grateful acknowledgement to Bruce Barker-Benfield for assistance on several points. Previously described in the Summary Catalogue. 
+                            <listBibl>
+                              <bibl type="SC" facs="aap0402.gif">Summary Catalogue, vol. 2, part 1, p. 381</bibl>
+                              <bibl type="SC" facs="aap0403.gif">Summary Catalogue, vol. 2, part 1, p. 382</bibl>
                            </listBibl>
                         </source>
-                     </recordHist>
-                     <availability status="restricted">
-                        <p>To ensure its availability to future readers, access to this item is restricted, and readers are asked to work from reproductions and published descriptions as far as possible. To apply to see the original, please send a message to <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>, outlining the subject of your research, the importance of this item to that research, and the resources you have already consulted.</p>
-                     </availability>
+                     </recordHist><availability status="restricted"><p>To ensure its availability to future readers, access to this item is restricted, and readers are asked to work from reproductions and published descriptions as far as possible. To apply to see the original, please send a message to <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>, outlining the subject of your research, the importance of this item to that research, and the resources you have already consulted.</p></availability>
                   </adminInfo>
-                  <surrogates>
-                     <bibl subtype="full" type="digital-facsimile">
-                        <ref target="https://digital.bodleian.ox.ac.uk/objects/ae9f6cca-ae5c-4149-8fe4-95e6eca1f73c/">
-                           <title>Digital Bodleian</title>
-                        </ref>
-                        <note>(full digital facsimile, added to Digital Bodleian in 2018)</note>
-                     </bibl>
-                     <bibl subtype="full" type="digital-facsimile">
-                        <ref target="https://digital.bodleian.ox.ac.uk/objects/60834383-7146-41ab-bfe1-48ee97bc04be/">
-                           <title>Digital Bodleian</title>
-                        </ref>
-                        <note>(full digital facsimile, added to Digital Bodleian in 2015)</note>
-                     </bibl>
-                     <bibl subtype="partial" type="digital-facsimile">
-                        <ref target="https://digital.bodleian.ox.ac.uk/objects/8d17bc13-14b6-4a56-b3b5-d2e1a935c60d/">
-                           <title>Digital Bodleian</title>
-                        </ref>
-                        <note>(802 images from 35mm slides) [part 1]</note>
-                     </bibl>
-                     <bibl subtype="partial" type="digital-facsimile">
-                        <ref target="https://digital.bodleian.ox.ac.uk/objects/228cfdeb-ef20-46f2-8dd0-21467ed7428e/">
-                           <title>Digital Bodleian</title>
-                        </ref>
-                        <note>(15 images from 35mm slides) [part 2]</note>
-                     </bibl>
-                     <bibl subtype="partial" type="digital-facsimile">
-                        <ref target="https://digital.bodleian.ox.ac.uk/objects/300f251d-1d9e-4212-b8e0-1a483bb26c43/">
-                           <title>Digital Bodleian</title>
-                        </ref>
-                        <note>(48 images from 35mm slides) [part 3]</note>
-                     </bibl>
-                  </surrogates>
+                  <surrogates><bibl type="digital-facsimile" subtype="full"><ref target="https://digital.bodleian.ox.ac.uk/inquire/p/ae9f6cca-ae5c-4149-8fe4-95e6eca1f73c"><title>Digital Bodleian</title> <note>(full digital facsimile)</note></ref></bibl><bibl type="digital-facsimile" subtype="partial"><ref target="https://digital.bodleian.ox.ac.uk/inquire/p/8d17bc13-14b6-4a56-b3b5-d2e1a935c60d"><title>Digital Bodleian</title></ref> <note>(802 images from 35mm slides) [part 1]</note></bibl><bibl type="digital-facsimile" subtype="partial"><ref target="https://digital.bodleian.ox.ac.uk/inquire/p/228cfdeb-ef20-46f2-8dd0-21467ed7428e"><title>Digital Bodleian</title></ref> <note>(15 images from 35mm slides) [part 2]</note></bibl><bibl type="digital-facsimile" subtype="partial"><ref target="https://digital.bodleian.ox.ac.uk/inquire/p/300f251d-1d9e-4212-b8e0-1a483bb26c43"><title>Digital Bodleian</title></ref> <note>(48 images from 35mm slides) [part 3]</note></bibl></surrogates>
                   <listBibl type="WRAPPER">
-                     <listBibl type="PRINT">                         <bibl>A. G. Watson, <title><ref target="https://catalog.hathitrust.org/Record/000310664">Catalogue of Dated and Datable Manuscripts c.435–1600 in Oxford Libraries</ref></title> (Oxford, 1984), no. 74 (fols. 3–208 = part 1)</bibl>
-                     </listBibl>
-                     <listBibl type="INTERNET">
-                        <head>Online resources:</head>
-                        <bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/39999"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title></ref></bibl>
-                     </listBibl>
-                  </listBibl>
-               </additional>
+                        <listBibl type="PRINT">
+                           <head>Main published descriptions and facsimiles:</head>
+                           <bibl>D. J. A. Ross, <title>Illustrated Medieval Alexander-Books in French Verse</title>, ed. Maud Pérez-Simon and Alison Stones with Martine Meuwese (Turnhout, 2019), 74-94, 135-141, 149-150, 169-171</bibl>
+                           <bibl><title>Il manoscritto Bodley 264. Il Romanzo di Alessandro, I viaggi di Marco Polo</title>, 2 vols., Edizione facsimile and Saggi e Commenti, ed. Laura Lucchetti and others (Rome: Istituto della Enciclopedia Italiana fondata da Giovanni Treccani, 2014)</bibl>
+                           <bibl>Mark Cruse, <title>Illuminating the Roman d'Alexandre : Oxford, Bodleian Library, MS Bodley 264: the manuscript as monument</title> (2011)</bibl>
+                           <bibl>Kathleen L. Scott, <title>Later Gothic manuscripts, 1390-1490</title> (1996), cat. 13.</bibl>
+                           <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts c.435-1600 in Oxford Libraries</title> (Oxford, 1984), no. 74 (fols. 3-208 = part A)</bibl>
+                           <bibl><title>The Romance of Alexander. A Collotype Facsimile of MS. Bodley 264</title>, ed. M. R. James (Oxford, 1933)</bibl>
+                        </listBibl>
+                     <listBibl type="INTERNET"><head>Online resources:</head><bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/39999"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title></ref></bibl></listBibl></listBibl></additional>
                <msPart xml:id="MS_Bodl_264-part1">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Bodl. 264 – Part 1</idno>
+                        <idno type="part">MS. Bodl. 264 - Part A (fols. 3-208)</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem class="#romances" n="1" xml:id="MS_Bodl_264-part1-item1">
-                        <title key="work_14437">Romance of Alexander</title>
-                        <textLang mainLang="fr">French</textLang>
+                     <msItem xml:id="MS_Bodl_264-part1-item1" n="1" class="#romances">
+                        <locus>(fols. 3r-208r)</locus>
+                        <title key="work_14437">Le Roman d'Alexandre</title>
+                        <note>The Old French Roman d'Alexandre, in the redaction by Alexandre de Paris, supplemented by the Prise de Defur, the Voeux du Paon, the Restor du Paon, and the Venjance Alixandre; for similar combinations of these texts see for example BNF fr. 790 and fr. 1375, and for a convenient summary of the development of the text see G. Cary, <title>The Medieval Alexander</title>, ed. D. Ross (1956), 29-33.</note>
+                        <msItem>
+                           <note>For fols. 1-2, with added prefatory miniatures, see part B.</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 3r-100v)</locus>
+                           <author key="person_36892794">Alexandre de Paris</author>
+                           <title key="work_6707">Roman d'Alexandre</title>
+                           <incipit>Qui uers de riche estoire</incipit>
+                           <explicit>Deuoit porter coroune lendemain hautement</explicit>
+                           <note><title>The medieval French Roman d'Alexandre</title>, ed. E. C. Armstrong et al., vols. 2-3, 5-7 (siglum P), branches 1-3 (see III.30, VI.19 for full details of text and order); fols. 22-37 also printed from the present manuscript in <title>The Buik of Alexander</title>, ed. R. L. Graeme Ritchie, Scottish Text Society 12, 17, 21, 25 (1921-9), vol. I.</note><note> Fol. 21r is blank; fol. 21v with a full-page miniature; branch 2 begins fol. 22r.</note>
+                           <note>Fol. 43r blank; fol. 43v with full-page miniature; fol. 44r branch 2, stanza 111.</note>
+                           <note>Fol. 51r part blank; fol. 51v with full-page miniature; fol. 52r branch 3, stanza 30.</note>
+                           <note>Fol. 67r part blank; fol. 67v full-page miniature; fol. 68r branch 3, stanza 172.</note>
+                           <note>Fol. 88r part blank; fol. 88v full-page miniature; fol. 89r branch 3, stanza 352.</note><!--see III.30, VI.19, VII.7-->
+                           <note>Fol. 101r blank. For branch 4 see fols. 189r-195v.</note>
+                        </msItem>
+                        
+                        <!-- fol. 21 is the Fuerre de Gardes of Eustache ??? (Roman d'Alexandre vol. IV?  -->
+                        
+                        <msItem>
+                           <locus>(fols. 101v-109v)</locus>
+                           <title key="work_16479">Prise de Defur</title>
+                           <incipit><locus>(fol. 102r)</locus> Alixandres ceuauche a loi dempereor</incipit>
+                           <explicit>Quatorze rois en fist ains que morust li ber</explicit>
+                           <note> <title>La prise de Defur and Le voyage d'Alexandre au paradis terrestre</title>, ed. Lawton P.G. Peckham and Milan S. La Du (Princeton, 1935), pp. 1-73, siglum P, ending at l. 1204 (incomplete, due to the loss of a leaf after fol. 109).</note><!-- check: the edition impies that P has lines 1205-1211 at some point -->
+                           <note>See also below fols. 182vb-185ra.</note>
+                           <!-- Dutschke calls this 'De duc melchis' and says it also occ. fol. 192v -->
+                        </msItem>
+                       
+                        <msItem>
+                           <locus>(fols. 110r-163v)</locus><!-- check -->
+                           <author key="person_46677481">Jacques de Longuyon</author>
+                           <title key="work_2349">Voeux du paon</title>
+                           <incipit>Apres che qualixandres ot dedefur conquis <lb/> Et a force despee occis le duc melchis</incipit>
+                           <explicit>Au palais dephezon sen repairent atant</explicit>
+                           <finalRubric>Chi finent le veu du pauon</finalRubric>
+                           <bibl>ed. R. L. Graeme Ritchie, Scottish Text Society (see above, fols. 3r-100v), odd pages, II.107-IV.432  (line 8255), siglum P, desc. II.xxvi-xxix and III.xvii-xxi. A leaf is lost after fol. 134, but with the loss of only 19 lines (3793-3811 in Ritchie's edition); the recto of the missing leaf presumably in large part blank, the verso perhaps with a full-page miniature.</bibl>
+                           <note>Fol. 164r blank.</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 164v-182vb)</locus>
+                           <author key="person_36981342"><supplied>Jean Brisebarre</supplied></author>
+                           <title key="work_6709">Le Restor du Paon</title>
+                           <incipit><locus>(fol. 165ra)</locus> Seignor prince et baron et dames et borgois</incipit>
+                           <explicit>Du bien doit on bien dire choi dire piecha</explicit>
+                           <bibl>Jean Brisebarre, <title>Li restor du paon</title>, ed. Enid Donkin (London, 1980), sig. P (desc. pp. 14-16 and the base manuscript for the edition); part 2 begins fol. 175ra.</bibl>
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 182vb-185ra)</locus>
+                           <title key="work_16479">Prise de Defur</title>
+                           <incipit>Au quinzime ior mut li rois et si senuait</incipit>
+                           <explicit>Au matin mut li rois qui maluestie ne daigne</explicit>
+                           <note>Pr. <title>La prise de Defur and Le voyage d'Alexandre au paradis terrestre</title>, pp. 1-73, beg. at line 1302 and ending at line 1599. Continues without  break from the previous item.</note>
+                           <note>See above fols. 101v-109v.</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 185ra-188rb)</locus>
+                           <title key="work_16480">Voyage d'Alexandre au Paradis Terrestre</title>
+                           <incipit>Or en vait li bons rois qui maint en gentillise</incipit>
+                           <explicit>A ioie le rechurent en la cite demaine</explicit>
+                           <note>Pr. <title>La prise de Defur and Le voyage d'Alexandre au paradis terrestre</title>, pp. 73-90. Continues without a break from the preceding item.</note><note>Rest of fol. 188rb blank.</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fols. 188v-196r)</locus>
+                           <author key="person_36892794">Alexandre de Paris</author>
+                           <title key="work_6707">Roman d'Alexandre</title>
+                           <incipit><locus>(fol. 189ra)</locus> Al issue de May tout droit en cel termine</incipit>
+                           <explicit>En letres de greiois el mur escrit les as</explicit>
+                           <finalRubric><locus>(fol. 196r)</locus> Chi finent les regres dalixandre</finalRubric>
+                           <note><title>The medieval French Roman d'Alexandre</title>, branch 4, lines 1-1597 = stanzas 1-69 (see VII.7 for full details of text and order). Fol. 188v is a full-page miniature.</note><!--see III.30, VI.19, VII.7--><note>Fol. 196r blank except for the final rubric.</note>
+                        </msItem>
+                        
+                        <msItem>
+                           <locus>(fols. 196v-208r)</locus>
+                           <author key="person_76671686">Jean le Nevelon</author>
+                           <title key="work_6708">Venjance Alixandre</title>
+                           <incipit><locus>(fol. 197r)</locus> Seignor or faites pais vn petit mescoutes</incipit>
+                           <explicit>Cist qui cest romans fist nen uolt auant plus dire</explicit>
+                           <finalRubric>Chi fenist la uengance du boin Roy Alixandre</finalRubric>
+                           <bibl><title>La venjance Alixandre</title>, ed. Edward Billings Ham (1931), siglum P, desc. pp. xxii-v).</bibl>
+                           <note>Fol. 196v is a full-page miniature.</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 208r)</locus>
+                           <colophon>Chi define li romans du boin roi Alixandre <lb/> Et les veus du pauon . les acomplissemens . <lb/> Le Restor du pauon . et le pris . qui fu perescript <lb/> Le .xviij<hi rend="superscript">e</hi>. ior de decembre . lan .M.CCC.xxxviij. <note type="editorial">[following an erased earlier colophon, damaged by the application of a chemical reagent, without the date]</note></colophon>
+                           <colophon>Explicit iste liber scriptor sit crimine liber <lb/> Xpristus scriptorem custodiat ac det honorem <note type="editorial">[in a smaller cursive script]</note></colophon>
+                           <colophon>Che liure fu perfais de le enluminure <lb/> au xviij<hi rend="superscript">e</hi> Jour . dauryl . Per iehan de <lb/> grise .. Lan de grace .M.CCC.xliiij. <note type="editorial">[in gold]</note></colophon>
+                           <note>For a 16th(?)-century addition on this page see under Provenance.</note>
+                           <note>Fol. 208v blank.</note>
+                        </msItem>
+                        <textLang mainLang="fr">French (Picardy; on the scribal language see Jean Brisebarre, <title>Li restor du paon</title>, pp. 47-9)</textLang>
+                        <msItem>
+                           <note>Additions were made to this part when it was combined with the second part of the manuscript:
+                              <list>
+                                 <item>Rubrics were added by the scribe of part B beneath miniatures and elsewhere where space was available. (The following rubrics are part of the original production: fols. 21v, 43v, 49r, 59r, 72v, 132v, 133r, and 164v).</item>
+                                 <item>A note was added by the same scribe in blank space on fol. 67r: <q>Here fayleth a prossesse of þis rommance of alixand<ex>re</ex> þe wheche prossesse þat fayleth ȝe schulle fynde at þe ende of þis bok ywrete in engelyche ryme and whanne ȝe han radde it to þe ende turneþ hedur aȝen and turneþ ouyr þis lef and bygynneþ at þis reson Che fu el mois de may que li tans renouele and so rede forþ þe rommance to þe ende whylis þe frenche lasteþ</q>.</item>
+                              </list>
+                           </note>
+                        </msItem>
                      </msItem>
                   </msContents>
                   <physDesc>
                      <objectDesc form="codex">
                         <supportDesc material="perg">
                            <support>parchment</support>
+                           <collation>1(8-1)(wants 1) (fols. 3-9), 2(8)-13(8) (fols. 10-105), 14(8-1)(wants 5, after fol. 109, with loss of text) (fols. 106-112), 15(8)-16(8) (fols. 113-128), 17(8-1)(wants 7 after fol. 134, with loss of text, see above) (fols. 129-135), 18(8)-21(8) (fols. 136-167), 22(8)(wants 8 after fol. 174, no loss of text) (fols. 168-174), 23(8)-25(8) (fols. 175-198), 26(10) (fols. 199-208). Catchwords for most quires. <!--(James, p. 6, omitting the preliminary quire 'which contains no part of the original work').--> </collation>
                         </supportDesc>
+                        <layoutDesc>
+                           <layout columns="2" writtenLines="45">2 cols., 45 lines, column space <dimensions unit="mm" type="column">
+                              <height max="315" min="305">305-15</height>
+                              <width>115</width>
+                           </dimensions></layout>
+                        </layoutDesc>
                      </objectDesc>
+                     <handDesc hands="1">
+                        <handNote script="textualisNorthern" execution="formata">Formal gothic bookhand (textualis formata) by one scribe.</handNote><!-- one scribe? -->
+                     </handDesc>
+                     <musicNotation>
+                        <p>Notation on staves of five lines, fol. 181v, for the rondeau in the <title>Restor du paon</title>.</p>
+                     </musicNotation>
                      <decoDesc>
-                        <decoNote>Important miniatures, borders, initials. Finished by the scribe in 1338 and by the illuminator, <persName key="person_597" role="art">Jehan de Grise</persName>
-                           <!-- not found VIAF -->, in 1344. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 297, pl. XXIII)</decoNote>
+                        <summary>
+                           <p>At least four artists collaborated on the decoration; see A. Stones, 'Les manuscrits du Roman d'Alexandre en vers français et leurs contextes artistiques', in <title>Alexandre le Grand à la lumière des manuscrits et des  premiers imprimés en Europe (XIIe-XVIe siècle)</title>, ed. C. Gaullier-Bougassas (Turnhout, 2015), 269-84 at 276-80:</p>
+                           <list><item>Alison Stones has dubbed the artist of fols. 3r-25v the 'Maître d'Éracle' and has identified his work in five other manuscripts including a pontifical made for Gui de Boulogne, bishop of Tournai (1301-24) and Cambrai (1324-36).</item>
+                              <item> The work of <persName role="art" key="person_96479063">Pierart dou Tielt</persName> was first identified in our manuscript by François Avril; Stones suggests that he may have collaborated with the first artist on fols. 20v and 42v, and is responsible for miniatures on fols. 50r, 80r, perhaps 49r, 54v-57r, and contributed to fols. 66r, 67v, 72v, and numerous marginal scenes. Pierart's work has been identified in a number of other manuscripts, perhaps most notably BnF, Arsenal 5218.</item>  
+                              <item>The other two (or more) artists (and assistants?) are found above all in quires 11-25 where they seem to have collaborated closely; one of these was presumably the <persName role="art" key="person_597">Jehan de Grise</persName> who signs on fol. 208r.</item></list> 
+                           <p>For fuller descriptions of the miniatures and marginal scenes see <title>The Romance of Alexander. A Collotype Facsimile of MS. Bodley 264</title>, ed. M. R. James (Oxford, 1933), and D. J. A. Ross, <title>Illustrated Medieval Alexander-Books in French Verse</title>, ed. Maud Pérez-Simon and Alison Stones with Martine Meuwese (Turnhout, 2019), 74-94, 135-141, 149-150, 169-171. In addition the digital images from the Bodleian's old 35 mm. slides (see links below) include detailed descriptions by Rigmor Batsvik.</p>
+                        </summary>
+                        <!--<decoNote>Important miniatures, borders, initials. Finished by the scribe in 1338 and by the illuminator, <persName role="art" key="person_597">Jehan de Grise</persName>
+                           <!-\- not found VIAF -\->, in 1344. (P&amp;A i. 297, pl. XXIII)</decoNote>-->
+                        <!--<decoNote>Illumination in three main styles, by an anonymous artist (and assistants?), , and a third hand identified as (and assistants?). See most fully Domenic Leo, <title>Images, texts and marginalia in a 'Vows of the Peacock' manuscript ...</title> (Brill, 2013), 264-6 and 270-1.</decoNote>-->
+                        <!-- https://www.academia.edu/16293303/Les_manuscrits_du_Roman_dAlexandre_en_vers_fran%C3%A7ais_et_leurs_contextes_artistiques?email_work_card=view-paper -->
+                        
+                     
+                     <!-- f 171v what is the marginal note? -->
+                        <decoNote type="miniature">Miniatures illustrating the narrative of <term type="iconography" ref="http://www.iconclass.org/rkd/98B%28ALEXANDER%20THE%20GREAT%29/">Alexander the Great</term>: 12 full-page miniatures and numerous column miniatures.</decoNote>
+                        <decoNote type="border">Numerous full and partial borders.</decoNote>
+                        <decoNote type="bas-de-page">Numerous bas-de-page scenes of courtly and rural life, games, grotesques.</decoNote>
+                        <decoNote type="decInit">8- to 6-line decorated initials at major text divisions typically with foliate motifs on gold ground; 2-line decorated initials at lesser divisions, either foliate motifs on gold ground or human heads on gold ground; marginal extensions frequently supporting both grotesques and naturalistic birds.</decoNote>
+                        <decoNote type="instructions">Instructions to the illuminator (often cropped) occasionally survive in the upper or lower margins: eg. fol. 22r, and in the final ten quires (eg. fol. 182r, fol. 184v); Cruse, pp. 186, 188.</decoNote>
                      </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1344" notBefore="1338">1338–1344</origDate>
+                        <origDate calendar="Gregorian" notAfter="1344" notBefore="1338" cert="high">1338-1344</origDate><!-- rubrics added later in England? -->
                         <origPlace>
-                           <country key="place_7024097">Flemish</country>
+                           <country key="place_7024097">Flanders</country>, probably <settlement key="place_7008002">Tournai</settlement>
                         </origPlace>
                      </origin>
+                     <provenance>Colophons, fol. 208r, for the completion of the text on 18 Dec. 1338, and for the completion of the illumination on 18 April 1344. The main ground for attributing the manuscript to Tournai is the involvement of Pierart dou Tielt in the decoration (see above and Stones, 278-9) </provenance>
+                     <provenance>Medieval provenance uncertain. Possible patrons include Philip VI of France (Cruse), David II of Scotland (Ross, p. 70), and Edward III of England or his queen Philippa (Dutschke, p. 298; Barber, pp. 60-1). The volume has been identified (e.g. by Dutschke, op. cit.) with that listed in the 1397 inventory of the forfeited goods of <persName role="fmo" cert="low" key="person_60503019">Thomas of Woodstock, duke of Gloucester</persName>: 'un large liverre en Ffraunceis tresbien esluminez de la Rymaunce de Alex. et de les avowes al poun' (Viscount Dillon and W. H. St John Hope, 'Inventory of the goods and chattels belonging to Thomas, duke of Gloucester...', <title>Archaeological Journal</title> 54 (1897), 275-308 at 301). The volume was certainly in England by the early fifteenth century when it was extended with parts Bi and Bii.</provenance>
                   </history>
                </msPart>
                <msPart xml:id="MS_Bodl_264-part2">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Bodl. 264 – Part 2</idno>
+                        <idno type="part">MS. Bodl. 264 - Part B (fols. 1-2, 209-273)</idno>
                      </altIdentifier>
                   </msIdentifier>
-                  <msContents>
-                     <msItem class="#romances" n="1" xml:id="MS_Bodl_264-part2-item1">
-                        <title key="work_10164">Alexander and Dindimus</title>
-                        <textLang mainLang="en">English</textLang>
-                     </msItem>
-                     <msItem n="2" xml:id="MS_Bodl_264-part2-item2">
-                        <author key="person_173430120">Marco Polo</author>
-                        <title key="work_3081">Li livres du Graunt Caam</title>
-                        <textLang mainLang="fr">French</textLang>
-                     </msItem>
-                  </msContents>
                   <physDesc>
                      <objectDesc form="codex">
                         <supportDesc material="perg">
                            <support>parchment</support>
+                           <foliation>Fols. 218-273 with incomplete separate pencil foliation beginning 1 in the lower corner (e.g '13', fol. 230r).</foliation>
+                           <collation mainStructures="8"><p>fol. 1, a singleton (hooked round with its own free-standing stub), fol. 2, a singleton (now attached with a parchment joint to the former pastedown at fol. i, and in the correct position to replace the missing first leaf of part A quire 1); 27(8) (fols. 209-216) | 28(8+1) (fols. 217-225, blank leaf added at the beginning of the quire), 29(8)-34(8) (fols. 226-273). Decorative catchwords in quires 28-33. Bifolium numbering apparently in both arabic (i-iiij) and roman (1-4) frequently visible in the bottom corner. </p>
+                              <p>This section of the manuscript is comprised of two distinct codicological units (fols. 1, 209-16 and fols. 2, 217-273) with a blank leaf at the end of the first unit and an inserted blank leaf at the beginning of the second. The two units are the work of the same scribe, share the same layout (evidently modelled on the layout of part A), and have the same minor decoration of gold trefoils on sprays extending from decorated initials. At the same time the major decoration is the work of different artists, with part B noticeably higher in quality; the decorated initials are in different styles; the leaves are slightly narrower and the parchment of slightly lower quality. Although Scott argued (p. 69) that the two parts 'were produced and added to the original manuscript at the same time', it is also possible that two units represent distinct campaigns, perhaps separated by a few years, to expand the original manuscript (part A); this could also account for the added reference in part A, fol. 67r (in the lighter ink characteristic of fols. 209r-215v) to <title>Alexander and Dindimus</title> being 'at þe ende of þis bok'.</p></collation>
                         </supportDesc>
+                        <layoutDesc>
+                           <layout columns="2" writtenLines="45">2 columns usually of 45 lines; overall ruled space c. <dimensions type="ruled" unit="mm">
+                              <height>315</height>
+                              <width>225</width>
+                           </dimensions></layout>
+                        </layoutDesc>
                      </objectDesc>
+                     <handDesc hands="1">
+                        <handNote script="textualisNorthern" execution="formata">Formal gothic bookhand (textualis formata) by one scribe.</handNote>
+                     </handDesc>
                      <decoDesc>
-                        <decoNote>Fols. 1, 209–15: one fine (fol. 1, no text), other good miniatures. By the same scribe as fols. 218–74. Added to an earlier Flemish MS. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 793, pl. LXXV) Fols. 2, 218–74: some important, many fine miniatures, borders, initials. By <persName key="person_612" role="art">Johannes</persName>
-                           <!-- not found VIAF --> (signs fol. 220) and his school. Written by the same scribe as fols. 209–15. Additions to an earlier Flemish MS. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 792, pl. LXXV)</decoNote>
+                        <decoNote type="summary">Scott (1996, cat. 13) distinguishes six artists: <list>
+                           <item>A: miniatures on fols. 1r, 209r-215v</item>
+                           <item>B: miniature on fol. 2v</item>
+                           <item>C (signing '<persName role="art" key="person_612">iohannes</persName>', fol. 220r): miniatures on fols. 218r, 219r, 220r, 222r, 222v (?, 'probably by a close follower' according to Scott), 223v. Other manuscripts associated with this artist are listed by Scott, pp. 71-2.</item>
+                           <item>D: miniatures on fols. 224v-270r; Scott identifies this artist's work in Oxford, Oriel College, MS. 75 and related manuscripts, probably from Western England.</item>
+                           <item>Border artist A, throughout except fols. 220r-223v.</item>
+                           <item>Border artist B: fols. 220r-223v</item>
+                        </list> 
+                           </decoNote>
                      </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" when="1400">c. 1400</origDate>
+                        <origDate calendar="Gregorian" notBefore="1400" notAfter="1410">c. 1400-1410</origDate>
                         <origPlace>
-                           <country key="place_7002445">English</country>
-                        </origPlace>
+                           <country key="place_7002445">England</country>, perhaps <settlement key="place_7011781">London</settlement>
+                        </origPlace> (Scott)
                      </origin>
+                     <provenance>See the entries above relating to the volume as a whole. The miniature on fol. 1r contains the arms <heraldry>gules on a chevron argent a lion rampant (?) sable</heraldry> on a shield above the gateway.</provenance>
                   </history>
-               </msPart>
+                  <msPart>
+                     <msIdentifier>
+                        <altIdentifier type="partial">
+                           <idno type="part">MS. Bodl. 264 - Part B(i) (fols. 1, 209-216)</idno>
+                        </altIdentifier>
+                     </msIdentifier>
+                     <msContents>
+                     <msItem>
+                        <locus>(fol. 1r)</locus>
+                        <note>Full page miniature, see Decoration.</note>
+                     </msItem>
+                     <msItem>
+                        <note>Fol. 1v blank.</note>
+                     </msItem>
+                     <msItem xml:id="MS_Bodl_264-part2-item1" class="#romances">
+                        <locus>(fols. 209r-215v)</locus>
+                        <title key="work_10164">Alexander and Dindimus</title>
+                        <rubric>How alixandre partyd þennys</rubric>
+                        <incipit>Whan þis weith at his wil weduring hadde</incipit>
+                        <explicit>&amp; alle meven his men fro þe marke euene</explicit>
+                        <finalRubric>How alixandre picht a pelyr of marbyl þere</finalRubric>
+                        <note>The unique manuscript; most recently edited by Omar Khalaf, Heidelberg, 2017.</note>
+                        <note>Fol. 216r-v blank.</note>
+                        <textLang mainLang="en">Middle English</textLang>
+                     </msItem>
+                  </msContents>
+                  <physDesc>
+                     <decoDesc>
+                       
+                        <decoNote type="miniature">Fol. 1r: full page miniature of Babylon (?) with palace of Nectanebus (?)</decoNote>
+                        <decoNote type="miniature">Fols. 209r-215v: nine column miniatures illustrating the Alexander narrative.</decoNote>
+                        <decoNote type="decInit">Fols. 209r-215v: 5- to 3-line decorated initials in gold, red, blue, and green.</decoNote>
+                     </decoDesc>
+                  </physDesc>
+                 </msPart>
+               
+               <msPart>
+                  <msIdentifier>
+                     <altIdentifier type="partial">
+                        <idno type="part">MS. Bodl. 264 - Part B(ii) (fols. 2, 217-273)</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  <msContents>
+                     <msItem>
+                        <note>Fol. 2r blank.</note>
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 2v)</locus>
+                        <note>Full page miniature, see Decoration.</note>
+                     </msItem>
+                     <msItem xml:id="MS_Bodl_264-part2ii-item2">
+                        <locus>(fols. 218r-271v)</locus>
+                        <author key="person_173430120">Marco Polo</author>
+                        <title key="work_3081">Le devisement du monde</title>
+                        <rubric>Ci commence li liures du graunt Caam qui parole de la graunt Ermenie de persse et des tartars et dynde. Et des granz merueille qui per le monde sont.</rubric>
+                        <incipit>Pour sauoir la pure verite des diuerses regions du monde. si prenez cest liure si trouuerez les grandesimes merueilles</incipit>
+                        <explicit>&amp; la portoit deuant son pere . &amp; ce faisoit elle souuent</explicit>
+                        <finalRubric>Explicit le liure noumme du grant Kaan de la graunt cite de Cambaluc. Dieux ayde amen.</finalRubric>
+                        <note>The 'Court French' version of the narrative of <persName key="person_173430120">Marco Polo</persName>.</note>
+                        <note>C. Dutschke established that the text was copied directly from <bibl type="ms">British Library, Royal MS. 19 D. i</bibl> made in Paris in the second quarter of the fourteenth century but evidently in England by the beginning of the fifteenth century, perhaps already part of the royal library as it probably was in 1535. (Consuelo Dutschke, ‘The Truth in the Book: The Marco Polo Texts in Royal 19.D.i and Bodley 264’, <title>Scriptorium</title>, 52.2 (1998), 278–300).</note>
+                        <note>Fols. 272r-273v blank.</note>
+                        <textLang mainLang="fr">French</textLang>
+                     </msItem>
+                  </msContents>
+                  <physDesc>
+                     <decoDesc>
+                        <decoNote type="miniature">Fol. 2v: full page miniature in four compartments with scenes from the life of Alexander.</decoNote>
+                        <decoNote type="miniature">Fols. 218r-271v: half-page miniature of Marco Polo's departure from Venice, fol. 218r; 37 column miniatures illustrating the narrative (Dutschke, pp. 292-3, shows that the subjects are often drawn from the chapter preceding rather than following the miniatures).</decoNote>
+                        <decoNote type="border">Fols. 218r-271v: full border on fol. 218r; partial borders on most other pages with miniatures.</decoNote>
+                        <decoNote type="decInit">Fols. 218r-271v: usually a 5-line decorated and inhabited initial after each miniature; at other chapter divisions usually 2-line decorated initials.</decoNote> 
+                        <decoNote type="flourInit">Fols. 218r-271v: 2-line blue initials with red pen-flourishing at chapter divisions on fol. 220r-223v.</decoNote>
+                     </decoDesc>
+                  </physDesc>
+               </msPart></msPart>
             </msDesc>
          </sourceDesc>
-      </fileDesc>
-      <revisionDesc>
+      </fileDesc>       
+      
+      <revisionDesc>        
+         <change when="2022-05">Description fully revised.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+
+         <change when="2017-05-29">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>
       <body>
-         <p/>
+         <p><!--Body paragraph provided for validation and future transcription--></p>
       </body>
    </text>
 </TEI>

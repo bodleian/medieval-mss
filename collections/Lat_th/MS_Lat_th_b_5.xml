@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_6690" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6690">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -42,7 +42,8 @@
                      <locus>(p.1)</locus>
                      <author key="person_8870917">Hugh of St. Cher</author>
                      <title key="work_2117">Postillae in Bibliam (Isaiah)</title>
-                     <note><bibl type="repertory">Stegmüller, <title>Rep. biblicum</title>, no.3688</bibl>.</note>
+                     <note>
+                        <bibl type="repertory">Stegmüller, <title>Rep. biblicum</title>, no.3688</bibl>.</note>
                      <incipit type="prologue">Habemus firmionem sermonem</incipit>
                      <incipit type="text">Visio Ysaie. Hic est titulus</incipit>
                      <explicit>sub planta pedum vestrorum. Deo gracias. Laus honor et gloria Iesu.</explicit>
@@ -64,7 +65,8 @@
                   <msItem n="3" xml:id="MS_Lat_th_b_5-item3">
                      <author key="person_2297">Ps.-Hugh of Saint-Cher</author>
                      <title key="work_4024">Commentary on the Apocalypse</title>
-                     <note><bibl type="repertory">Stegmüller, <title>Rep. biblicum</title>, no. 3771</bibl>.</note>
+                     <note>
+                        <bibl type="repertory">Stegmüller, <title>Rep. biblicum</title>, no. 3771</bibl>.</note>
                      <incipit type="prologue">Vidit Iacob scalam. Gen.xxviii. Quatuor sunt cause</incipit>
                      <incipit type="text">Apocalypsis etc. Liber iste dividitur</incipit>
                      <explicit>quicquid viderit corrigendum. Benedictus sit Iesus. Amen. Laus honor et gloria Iesu.</explicit>
@@ -98,7 +100,7 @@
                      </layoutDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>Fine borders, initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 1056, pl. XCVIII)</decoNote>
+                     <decoNote>Fine borders, initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 1056, pl. XCVIII)</decoNote>
                      <decoNote>Illuminated initials at beginning of each work, blue, rose, green and orange acanthus leaves, picked out with white, on a gold ground, with ivy leaf floriation on inner and upper margin, English work (that on p.601 is reproduced in <title>Bodleian Library, Annual Report of the Curators</title>, 1951–2, 1951–2, facing p.9), at beginnings of chapters blue initials flourished with red, lemmata underlined in red</decoNote>
                   </decoDesc>
                   <additions> There are a few marginalia partly taken over from the exemplar (e.g.pp.711sqq., 732sqq.) and partly by a contemporary reader (e.g.pp.745, 748). </additions>
@@ -110,7 +112,10 @@
                </physDesc>
                <history>
                   <origin><!--Complex date:  markup manually-->
-                     <origDate calendar="Gregorian" notAfter="1456" notBefore="1455">1455–1456</origDate>
+                     <origDate calendar="Gregorian"
+                               notAfter="1456"
+                               notBefore="1455"
+                               cert="high">1455–1456</origDate>
                      <origPlace>
                         <country key="place_7002445">English</country>
                      </origPlace>
@@ -128,15 +133,32 @@
                         <source>Typescript description by Bodleian Library staff, revised by Peter Kidd, late 1990s </source>
                      </recordHist>
                   </adminInfo>
-                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/5a4bcc32-dc75-4adb-95c0-87adddba8664/"><title>Digital Bodleian</title></ref>
-                        <note>(3 images from 35mm slides)</note></bibl></surrogates>
+                  <surrogates>
+                     <bibl subtype="partial" type="digital-facsimile">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/5a4bcc32-dc75-4adb-95c0-87adddba8664/">
+                           <title>Digital Bodleian</title>
+                        </ref>
+                        <note>(3 images from 35mm slides)</note>
+                     </bibl>
+                  </surrogates>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="PRINT">
+                        <head>Printed descriptions:</head>
+                        <bibl>A. Watson, <title>Catalogue of Dated and Datable Manuscripts in Oxford Libraries</title> (1984), <citedRange unit="entry" from="566" to="566">
+                              <ref target="https://hdl.handle.net/2027/mdp.39015008982863?urlappend=%3Bseq=83021">no. 566</ref>
+                           </citedRange>
+                        </bibl>
+                     </listBibl>
+                  </listBibl>
                </additional>
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>

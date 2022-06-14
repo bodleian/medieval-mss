@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_4084" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4084">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -70,13 +70,16 @@
                      </layoutDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>Decoration<p>Penwork initials. The various texts were written in humanistic script by three scribes (the last is probably <persName key="person_71445653" role="scr">Felice Feliciano</persName>) at Cremona, Brescia (?), and Bologna in 1460 and 1465, fols. 51v, 106v, 202r. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 664)</p>
+                     <decoNote>Decoration<p>Penwork initials. The various texts were written in humanistic script by three scribes (the last is probably <persName key="person_71445653" role="scr">Felice Feliciano</persName>) at Cremona, Brescia (?), and Bologna in 1460 and 1465, fols. 51v, 106v, 202r. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 664)</p>
                      </decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1465" notBefore="1460">1460–1465</origDate>
+                     <origDate calendar="Gregorian"
+                               notAfter="1465"
+                               notBefore="1460"
+                               cert="high">1460–1465</origDate>
                      <origPlace cert="low">
                         <country key="place_1000080">Italian</country>, <settlement key="place_7005868">Cremona</settlement>, <settlement key="place_7005764">Brescia</settlement> and <settlement key="place_7004847">Bologna</settlement> (?)<!--ORIGINAL: Italian, Cremona, Brescia (?) and Bologna--></origPlace>
                   </origin>
@@ -91,15 +94,32 @@
                         </source>
                      </recordHist>
                   </adminInfo>
-                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/57301bcf-d3df-409b-960c-9b2c847152b7/"><title>Digital Bodleian</title></ref>
-                        <note>(2 images from 35mm slides)</note></bibl></surrogates>
+                  <surrogates>
+                     <bibl subtype="partial" type="digital-facsimile">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/57301bcf-d3df-409b-960c-9b2c847152b7/">
+                           <title>Digital Bodleian</title>
+                        </ref>
+                        <note>(2 images from 35mm slides)</note>
+                     </bibl>
+                  </surrogates>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="PRINT">
+                        <head>Printed descriptions:</head>
+                        <bibl>A. Watson, <title>Catalogue of Dated and Datable Manuscripts in Oxford Libraries</title> (1984), <citedRange unit="entry" from="441" to="441">
+                              <ref target="https://hdl.handle.net/2027/mdp.39015008982863?urlappend=%3Bseq=99">no. 441</ref>
+                           </citedRange>
+                        </bibl>
+                     </listBibl>
+                  </listBibl>
                </additional>
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>
