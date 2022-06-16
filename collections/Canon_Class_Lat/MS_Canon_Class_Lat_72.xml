@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_2389" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2389">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -41,20 +41,34 @@
                   <p n="composite">Composite: fols. 1–20 || fols. 21–59 || fols. 60–98</p>
                </physDesc>
                <history>
-                  <provenance notAfter="1805" notBefore="1727" resp="#MMM"><persName key="person_2384880" role="fmo">Matteo Luigi Canonici, 1727–1805</persName></provenance>
-                  <provenance notAfter="1807" resp="#MMM"><persName key="person_446" role="fmo">Giuseppe Canonici , -1807</persName></provenance>
+                  <provenance notAfter="1805" notBefore="1727" resp="#MMM">
+                     <persName key="person_2384880" role="fmo">Matteo Luigi Canonici, 1727–1805</persName>
+                  </provenance>
+                  <provenance notAfter="1807" resp="#MMM">
+                     <persName key="person_446" role="fmo">Giuseppe Canonici , -1807</persName>
+                  </provenance>
                   <acquisition resp="#MMM" when="1817">Purchased by the Bodleian in 1817</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (H. O. Coxe, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854). <listBibl>
+                        <source>
+                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (H. O. Coxe, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854). <listBibl>
                               <bibl facs="abz0077.gif" type="QUARTO"> Quarto Catalogue, vol. 3, cols. 141–2 </bibl>
                               <bibl facs="aaz0338.gif" type="SC">Summary Catalogue, vol. 4, p. 319</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="PRINT">
+                        <head>Printed descriptions:</head>
+                        <bibl>A. Watson, <title>Catalogue of Dated and Datable Manuscripts in Oxford Libraries</title> (1984), <citedRange unit="entry" from="addenda_1" to="addenda_1">
+                           <ref target="https://hdl.handle.net/2027/mdp.39015008982863?urlappend=%3Bseq=204">addenda, no. 1</ref>
+                           </citedRange> (fols. 60-91, i)
+                        </bibl>
+                     </listBibl>
+                  </listBibl>
                </additional>
                <msPart xml:id="MS_Canon_Class_Lat_72-part1">
                   <msIdentifier>
@@ -79,7 +93,10 @@
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1300" notBefore="1200">13th century</origDate>
+                        <origDate calendar="Gregorian"
+                                  notAfter="1300"
+                                  notBefore="1200"
+                                  >13th century</origDate>
                      </origin>
                   </history>
                </msPart>
@@ -108,7 +125,10 @@
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1300" notBefore="1200">13th century</origDate>
+                        <origDate calendar="Gregorian"
+                                  notAfter="1300"
+                                  notBefore="1200"
+                                  >13th century</origDate>
                      </origin>
                   </history>
                </msPart>
@@ -119,12 +139,16 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem class="#grammatica" n="1" xml:id="MS_Canon_Class_Lat_72-part3-item1">
+                     <msItem class="#grammatica"
+                             n="1"
+                             xml:id="MS_Canon_Class_Lat_72-part3-item1">
                         <title key="work_13396">Monosticha Catonis</title>
                         <note>(with gloss)</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem class="#grammatica" n="2" xml:id="MS_Canon_Class_Lat_72-part3-item2">
+                     <msItem class="#grammatica"
+                             n="2"
+                             xml:id="MS_Canon_Class_Lat_72-part3-item2">
                         <title key="work_11562">Disticha Catonis</title>
                         <note>(with gloss)</note>
                         <textLang mainLang="la">Latin</textLang>
@@ -144,7 +168,10 @@
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1300" notBefore="1200">13th century</origDate>
+                        <origDate calendar="Gregorian"
+                                  notAfter="1300"
+                                  notBefore="1200"
+                                  cert="high">13th century (in part 1274)</origDate>
                      </origin>
                   </history>
                </msPart>
@@ -152,9 +179,12 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
-         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
+         <change when="2018-10-14" xml:id="MMM">
+            <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>
