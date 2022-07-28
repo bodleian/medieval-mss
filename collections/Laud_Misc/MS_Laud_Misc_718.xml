@@ -7,9 +7,16 @@
          <titleStmt>
             <title>MS. Laud Misc. 718</title>
             <title type="collection">MSS. Laud Misc. (Laud miscellaneous)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+           <respStmt xml:id="Q1">
+              <resp from="1858" to="1885">Cataloguer</resp>
+              <persName>H. O. Coxe</persName>
+           </respStmt>
+            <respStmt xml:id="Q2">
+               <resp when="1969">Cataloguer</resp>
+               <persName>R. W. Hunt</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2022">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -25,7 +32,7 @@
             <idno type="catalogue">Western</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc xml:id="MS_Laud_Misc_718" xml:lang="en">
+            <msDesc xml:id="MS_Laud_Misc_718" xml:lang="en" resp="#Q1">
                <msIdentifier>
                   <country>United Kingdom</country>
                   <region type="county">Oxfordshire</region>
@@ -39,27 +46,61 @@
                </msIdentifier>
                <msContents>
                   <msItem n="1" xml:id="MS_Laud_Misc_718-item1">
+                     <locus>(fols. 1r-33r)</locus>
                      <author key="person_27092943">Flavio Biondo</author>
                      <title key="work_1529">De origine et gestis Venetorum siue Consultatio an bellum uel pax cum Turcis magis reipublicae Venetae expediat</title>
+                     <incipit>Magnum, Francisce Foscari, princeps Serenissime</incipit>
+                     <incipit>Venetam urbem ad annum salutis
+                        sextum quinquagesimum et quadragesimum</incipit>
+                     <explicit>gubernationis forma qua est parta.
+                        illam regere et amministrare pergetis</explicit>
+                     <note resp="#Q2 #MLH">The text dates from 1452-4 and was first printed in 1481-2 (<ref target="https://data.cerl.org/istc/ib00702000">ISTC ib00702000</ref>); see D. Hay, 'Flavio Biondo and the Middle Ages', <title>Proc. British Academy</title> 45 (1959), appendix no. 5d.</note>
+                     <note>Fols. 33v-38v blank.</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
-                     <supportDesc material="chart">
-                        <support>paper</support>
+                     <supportDesc material="chart" resp="#MLH">
+                        <support>paper, folded in quarto; watermark <watermark>two crossed arrows with plumes</watermark> (type Piccard Online 123340-123362)</support>
+                        <extent>i + 38 + 1 leaves
+                        <dimensions unit="mm" type="leaf">
+                           <height>237</height>
+                           <width>170</width>
+                        </dimensions></extent>
                      </supportDesc>
+                     <layoutDesc resp="#MLH">
+                        <layout columns="1" writtenLines="27" topLine="above">1 col., 27 lines; ruled space c. <dimensions unit="mm" type="written">
+                           <height>148</height>
+                           <width>115</width>
+                        </dimensions>; written above top line.</layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <handDesc resp="#MLH">
+                     <handNote script="humanistica">Formal humanistic script; one hand.</handNote>
+                  </handDesc>
+                  <decoDesc resp="#MLH">
+                     <decoNote type="unfilled">Space for initials (6-line, fol. 1r; 4-line, fol. 1v) not filled in.</decoNote>
+                  </decoDesc>
+                  <bindingDesc resp="#Q2">
+                     <binding notAfter="1600">
+                        <p>Limp vellum binding.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
-                  <origin>
-                     <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
+                  <origin resp="#MLH">
+                     <origDate calendar="Gregorian" notAfter="1500" notBefore="1452">15th century (after 1452)</origDate>
+                     <origPlace>northern <country key="place_1000080">Italy</country></origPlace>
                   </origin>
+                  <provenance resp="#Q2">One of eight manuscripts in their original Italian bindings from an unidentified collection, acquired for William Laud perhaps in Venice, and with a number on the front cover, here <q>54</q> (Quarto Catalogue, pp. xx-xxi)</provenance>
+                  <provenance from="1635" to="1636"><persName role="fmo" key="person_54940373">William Laud, 1573-1645</persName>: acquired 1635.</provenance>
+                  <acquisition when="1636">Part of his second donation to the Bodleian, 1636.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (H. O. Coxe, <title>Laudian Manuscripts</title>, Quarto Catalogues II, repr. with corrections, 1969, from the original ed. of 1858–1885). <listBibl>
+                        <source>Description adapted by Matthew Holford (July 2022) from the Quarto Catalogue (H. O. Coxe, <title>Laudian Manuscripts</title>, Quarto Catalogues II, repr. with corrections, 1969, from the original ed. of 1858–1885), with additional physical description. <listBibl>
                               <bibl facs="aby0303.gif" type="QUARTO">Quarto Catalogue, col. 510</bibl>
                               <bibl facs="aby0361.gif" type="QUARTO">Quarto Catalogue, p. 581</bibl>
                               <bibl facs="aap0089.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 68</bibl>
@@ -72,6 +113,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2022-07">Description revised for publication on Digital Bodleian.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>
