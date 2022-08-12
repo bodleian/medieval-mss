@@ -7,9 +7,13 @@
          <titleStmt>
             <title>MS. Canon. Misc. 131</title>
             <title type="collection">MSS. Canon. Misc. (Canonici Miscellaneous)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="DD">
+               <resp when="1854">Cataloguer</resp>
+               <persName>H. O. Coxe</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2022">Cataloguer</resp>
+               <resp when="2022">Encoding </resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -41,30 +45,70 @@
                   <msItem n="1" xml:id="MS_Canon_Misc_131-item1">
                      <author key="person_64002165">Giovanni Boccaccio</author>
                      <title key="work_1767">De montibus</title>
+                     <note>Epilogue omitted.</note>
                      <textLang mainLang="la">Latin</textLang>
+                     <!-- Codex chartaceus, in 4to, ff. 162, sec. xv. ; olim .
+Jouawxwis Boccacorr pg CgRgrArpo de montibus, sil- vis, fontibus, lacubus, fluminibus, stagnis seu paludibus, et de nominibus maris liber; epi- logo omisso.
+Swpius prodiit eum Genealogiarum Opere, ed. Venet. 1497, etc -->
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="chart">
-                        <support>paper</support>
+                        <support>paper, folded in quarto</support>
+                        <extent>162 leaves <dimensions unit="mm" type="leaf">
+                              <height>217</height>
+                              <width>140</width>
+                           </dimensions>
+                           <dimensions unit="mm" type="written">
+                              <height>145</height>
+                              <width>90</width>
+                           </dimensions></extent>
                      </supportDesc>
                   </objectDesc>
+                  <handDesc>
+                     <handNote script="humanisticaCursiva">Humanistic cursive.</handNote>
+                  </handDesc>
+                  <decoDesc>
+                     <decoNote type="colInit">Coloured initials, rubrics.</decoNote>
+                     <decoNote type="unfilled">Spaces for larger initials unfilled.</decoNote>
+                  </decoDesc>
+                  <bindingDesc>
+                     <binding notAfter="1800" notBefore="1700">
+                        <p>Red leather over boards, with narrow gilt tooling around the edge of each cover; 18th century, Italian.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
+                     <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th
+                        century</origDate>
+                     <origPlace><country key="place_1000080">Italy</country></origPlace>
                   </origin>
-                  <provenance notAfter="1805" notBefore="1727" resp="#MMM"><persName key="person_2384880" role="fmo">Matteo Luigi Canonici, 1727–1805</persName></provenance>
-                  <provenance notAfter="1807" resp="#MMM"><persName key="person_446" role="fmo">Giuseppe Canonici , -1807</persName></provenance>
-                  <acquisition resp="#MMM" when="1817">Purchased by the Bodleian in 1817</acquisition>
+                  <provenance>Unidentified ownership stamps, fol. 1r, underneath one stamp letter 'C' above letters 'MF'; the same letters on the tail.</provenance>
+                  <provenance><q><persName role="fmo" key="person_3549">Bartholomaeus <add>de Lanfranchis</add></persName></q>, 15th
+                     century, fol. 162v</provenance>
+                  <provenance><q><persName role="fmo" key="person_3550">Iste liber est Ursi de Ursinis</persName></q>, 16th century, fol. 162v</provenance>
+                  <provenance><q>Matthaei Palmerii de Captiuitate Pisarum</q>, fol. 162v, probably a reference to the text of that name.</provenance>
+                  <provenance notAfter="1805" notBefore="1727" resp="#MMM"><persName
+                        key="person_2384880" role="fmo">Matteo Luigi Canonici,
+                     1727–1805</persName></provenance>
+                  <provenance notAfter="1807" resp="#MMM"><persName key="person_446" role="fmo"
+                        >Giuseppe Canonici , -1807</persName></provenance>
+                  <acquisition resp="#MMM" when="1817">Purchased by the Bodleian in
+                     1817</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (H. O. Coxe, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854) <listBibl>
-                              <bibl facs="abz0264.gif" type="QUARTO">Quarto Catalogue, col. 515</bibl>
-                              <bibl facs="aaz0421.gif" type="SC">Summary Catalogue, vol. 4, p. 402</bibl>
+                        <source>Adapted (August 2022) from the Quarto Catalogue (H. O. Coxe,
+                              <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars
+                              tertia codices Græcos et Latinos Canonicianos complectens</title>,
+                           Quarto Catalogues III, 1854), with additional physical description.<listBibl>
+                              <bibl facs="abz0264.gif" type="QUARTO">Quarto Catalogue, col.
+                                 515</bibl>
+                              <bibl facs="aaz0421.gif" type="SC">Summary Catalogue, vol. 4, p.
+                                 402</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -74,9 +118,18 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
-         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
+         <change when="2022-08">Description revised for publication on Digital Bodleian.</change>
+         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and
+            acquisition information added using <ref
+               target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb"
+               >https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
+            in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping
+               Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using
+               <ref
+               target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl"
+               >https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>
    </teiHeader>
    <text>
