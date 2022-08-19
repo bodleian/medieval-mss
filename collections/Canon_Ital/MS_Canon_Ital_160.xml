@@ -7,9 +7,12 @@
          <titleStmt>
             <title>MS. Canon. Ital. 160</title>
             <title type="collection">MSS. Canon. Ital. (Canonici Italian)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+          <respStmt xml:id="Q">
+             <resp when="1864">Cataloguer</resp>
+             <persName>A. Mortara</persName>
+          </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2022">Encoding </resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -39,18 +42,47 @@
                </msIdentifier>
                <msContents>
                   <msItem n="1" xml:id="MS_Canon_Ital_160-item1">
+                     <locus>(fols. 1r-75r)</locus>
                      <author key="person_88342447">Ovid</author>
                      <title key="work_3416">Ars amatoria</title>
-                     <note>(Italian translation)</note>
+                     <note>(anonymous Italian translation in terza rima, attributed to <persName role="trl" key="person_3534">Troilo Avenanti</persName>, cf. <ref target="https://gesamtkatalogderwiegendrucke.de/docs/OVIDPUB.htm#M28651">GW M28651</ref>)</note>
+                     <incipit type="prol.">Amor che per dolceza il del choregie</incipit>
+                     <incipit><locus>(fol. 1v)</locus> Se algun di questo popol segue lorma </incipit>
+                     <explicit>Che uan per non saper pel mondo spersi</explicit>
+                     <colophon>Scripto io to me Nichollo Justinian<ex>n</ex>o <lb/> Le nobelissimo de mia propria man<ex>n</ex>o </colophon>
+                     <note>Fols. 75v-85v originally ruled but blank; a 15th-century addition in Italian on fol. 78v and later additions on fols. 75v, 77v (mentioning Vicenza).</note>
                      <textLang mainLang="it">Italian</textLang>
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="chart">
-                        <support>paper</support>
+                        <support>paper folded in octavo</support>
+                        <extent>i + 78 + i leaves
+                           <dimensions type="leaf" unit="mm">
+                              <height>193</height>
+                              <width>140</width>
+                           </dimensions></extent>
+                        <foliation>1-78; endleaves not foliated. Fols. 1-75 with 18th-century foliation.</foliation>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="1" writtenLines="23">1 col., 23 lines; ruled space <dimensions type="ruled" unit="mm">
+                           <height>120</height>
+                           <width>80</width>
+                        </dimensions></layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <handDesc hands="1">
+                     <handNote script="cursiva">Gothic cursive; one hand, <persName key="person_3535" role="scr">Niccolò Giustiniano</persName> (colophon).</handNote>
+                  </handDesc>
+                  <decoDesc>
+                     <decoNote type="flourInit">3-line blue initials with penwork in red.</decoNote>
+                  </decoDesc>
+                  <bindingDesc>
+                     <binding notAfter="1800" notBefore="1700">
+                        <p>Parchment over pasteboards, with carta bassanese endpapers, for Jacopo Soranzo.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
                   <origin>
@@ -59,6 +91,7 @@
                         <country key="place_1000080">Italian</country>
                      </origPlace>
                   </origin>
+                  <provenance><persName role="fmo" key="person_308770014">Jacopo Soranzo</persName>: his binding; identified by J. B. Mitchell as MS. 465 in quarto in Soranzo's catalogue (unpublished card catalogue, Bodleian Library).</provenance>
                   <provenance notAfter="1805" notBefore="1727" resp="#MMM"><persName key="person_2384880" role="fmo">Matteo Luigi Canonici, 1727–1805</persName></provenance>
                   <provenance notAfter="1807" resp="#MMM"><persName key="person_446" role="fmo">Giuseppe Canonici , -1807</persName></provenance>
                   <acquisition resp="#MMM" when="1817">Purchased by the Bodleian in 1817</acquisition>
@@ -66,7 +99,7 @@
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (A. Mortara, <title>Catalogo dei manoscritti italiani che sotto la denominazione di Codici Canoniciani Italici si conservano nella Biblioteca Bodleiana a Oxford</title>, Quarto Catalogues XI, 1864). <listBibl>
+                        <source>Description adapted by Matthew Holford (July 2022), with additional physical description, from the Quarto Catalogue (A. Mortara, <title>Catalogo dei manoscritti italiani che sotto la denominazione di Codici Canoniciani Italici si conservano nella Biblioteca Bodleiana a Oxford</title>, Quarto Catalogues XI, 1864). <listBibl>
                               <bibl facs="acp0100.gif" type="QUARTO">Quarto Catalogue, col. 168</bibl>
                               <bibl facs="acp0101.gif" type="QUARTO">Quarto Catalogue, col. 169</bibl>
                               <bibl facs="aaz0434.gif" type="SC">Summary Catalogue, vol. 4, p. 415</bibl>
@@ -74,11 +107,18 @@
                         </source>
                      </recordHist>
                   </adminInfo>
+                  <surrogates>
+                     <bibl subtype="full" type="digital-facsimile">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/7ba5b8a1-54b3-4cc6-b9b6-4a9621978cce/">
+                        <title>Digital Bodleian</title></ref> <note>(full digital facsimile)</note>
+                     </bibl>
+                  </surrogates>
                </additional>
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2022-07">Description revised for publication on Digital Bodleian.</change>
          <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>

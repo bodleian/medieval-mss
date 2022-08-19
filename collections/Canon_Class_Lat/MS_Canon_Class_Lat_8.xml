@@ -7,9 +7,18 @@
          <titleStmt>
             <title>MS. Canon. Class. Lat. 8</title>
             <title type="collection">MSS. Canon. Class. Lat. (Canonici Latin Classical)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="Q">
+               <resp when="1854">Cataloguer</resp>
+               <persName>H. O. Coxe</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2022">Encoding</resp>
+               <resp when="2022">Cataloguer</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -41,6 +50,8 @@
                   <msItem n="1" xml:id="MS_Canon_Class_Lat_8-item1">
                      <author key="person_88342447">Ovid</author>
                      <title key="work_3421">Heroides</title>
+                     <note>Ep. 15 is omitted; ep. 14 ends in l. 12.</note>
+                     <finalRubric>Explicit liber Ovidii epistolarum</finalRubric>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -48,26 +59,33 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>48 leaves
+                           <dimensions unit="mm" type="leaf">
+                              <height>265</height>
+                              <width>175</width>
+                           </dimensions></extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="1" writtenLines="36">1 col., 36 lines; ruled space <dimensions unit="mm" type="ruled">
+                           <height>187</height>
+                           <width>105</width>
+                        </dimensions></layout>
+                     </layoutDesc>
                   </objectDesc>
                   <handDesc>
-                     <handNote> Written by <persName key="person_1226" role="scr"> Vianinus </persName>. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 775)</handNote>
+                     <handNote script="textualisSouthern">Southern textualis; apparently written by <persName key="person_1226" role="scr">Vianinus de Rampinis</persName> (see provenance; <ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 775)</handNote>
                   </handDesc>
                   <decoDesc>
                      <decoNote type="border">Good border.</decoNote>
-                     <decoNote type="histInit">Good historiated initial. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 775) <list type="gloss">
-                           <head>fol. 1r</head>
-                           <label>Type</label>
-                           <item>
-                              <seg type="genreform">initial H</seg>
-                           </item>
-                           <label>Subject</label>
-                           <item>
-                              <seg type="subject">Half-figure of a young woman.</seg>
-                           </item>
-                        </list>
-                     </decoNote>
+                     <decoNote type="histInit">Good historiated initial. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 775):  
+                           fol. 1r, initial H, half-figure of a young woman (Penelope)</decoNote>
+                     <decoNote type="colInit">Coloured red initials, rubrics.</decoNote>
                   </decoDesc>
+                  <bindingDesc>
+                     <binding notBefore="1400" notAfter="1800">
+                        <p>Red leather over bevelled wooden (medieval?) boards, with thin gilt roll around the edges; Italian, 18th century.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
                   <origin>
@@ -77,6 +95,11 @@
                         <!--ORIGINAL: Italian, North-west-->
                      </origPlace>
                   </origin>
+                  <provenance><q>Iste liber est mei <persName key="person_3543" role="fmo">Johannis Antonii</persName> necnon <persName role="fmo" key="person_1226" >Vianini de Rampinis</persName>, qui pergimus ad scolas domini magistri <persName key="person_3544">Antonii de Nigris</persName>, qui est bonus magister in sua Gramaticha et in sua Loyca necnon in ejus scientia, ete.</q>; Antonio de Nigris was master of a grammar school at <placeName key="place_7006031">Voghera</placeName>, near Pavia, in the early 15th century (G. Casalis, <title>Dizionario geografico-storico-statistico-commerciale degli stati</title>, XXVI (1854), p. 309).</provenance>
+                  <!-- not seen: Manfredi Giuseppe, Storia di
+Voghera , Voghera 1908 
+                     index to that work: https://www.comune.voghera.pv.it/s3prod/uploads/ckeditor/attachments/5/5/1/2/7/MANFREDI__Indice_dei_nomi_e_dei_toponimi_2.pdf 
+                  refers to Nigris and also to the Rampini family -->
                   <provenance notAfter="1805" notBefore="1727" resp="#MMM"><persName key="person_2384880" role="fmo">Matteo Luigi Canonici, 1727–1805</persName></provenance>
                   <provenance notAfter="1807" resp="#MMM"><persName key="person_446" role="fmo">Giuseppe Canonici , -1807</persName></provenance>
                   <acquisition resp="#MMM" when="1817">Purchased by the Bodleian in 1817</acquisition>
@@ -84,18 +107,28 @@
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (H. O. Coxe, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854). Decoration, localization and date follow Pächt and Alexander (1970). <listBibl>
+                        <source>Description adapted by Matthew Holford (August 2022) from the following sources, with additional physical description and reference to published literature as cited:
+                           <listBibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, II (1970), no. 775</bibl>
+                              <bibl>H. O. Coxe, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854). </bibl></listBibl> <listBibl>
                               <bibl facs="abz0063.gif" type="QUARTO"> Quarto Catalogue, vol. 3, col. 113 </bibl>
                               <bibl facs="aaz0336.gif" type="SC">Summary Catalogue, vol. 4, p. 317</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
+                  <surrogates>
+                     <bibl type="digital-facsimile" subtype="full">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/2297dac8-16d8-4d94-9283-927d81725d4f/">
+                           <title>Digital Bodleian</title></ref> <note>(full digital facsimile)</note>
+                     </bibl>
+                  </surrogates>
                </additional>
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2022-08">Description revised for digitization.</change>
          <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
