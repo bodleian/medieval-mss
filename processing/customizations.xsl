@@ -47,14 +47,21 @@
                     <xsl:text> italic</xsl:text>
                 </xsl:if>
             </xsl:attribute>
-            <a>
-                <xsl:attribute name="href">
-                    <xsl:value-of select="$website-url"/>
-                    <xsl:text>/catalog/</xsl:text>
-                    <xsl:value-of select="tokenize(@key, ' ')[1]"/>
-                </xsl:attribute>
-                <xsl:apply-templates/>
-            </a>
+            <xsl:choose>
+                <xsl:when test="not(@key='')">
+                    <a>
+                        <xsl:attribute name="href">
+                            <xsl:value-of select="$website-url"/>
+                            <xsl:text>/catalog/</xsl:text>
+                            <xsl:value-of select="tokenize(@key, ' ')[1]"/>
+                        </xsl:attribute>
+                        <xsl:apply-templates/>
+                    </a>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:apply-templates/>
+                </xsl:otherwise>
+            </xsl:choose>
         </span>
         <xsl:if test="following-sibling::*[1][self::note and not(matches(., '^\s*[A-Z(,]')) and not(child::*[1][self::lb and string-length(normalize-space(preceding-sibling::text())) = 0])]">
             <xsl:text>, </xsl:text>

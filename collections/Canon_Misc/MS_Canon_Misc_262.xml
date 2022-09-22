@@ -7,9 +7,18 @@
          <titleStmt>
             <title>MS. Canon. Misc. 262</title>
             <title type="collection">MSS. Canon. Misc. (Canonici Miscellaneous)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="Q">
+               <resp when="1854">Cataloguer</resp>
+               <persName>H. O. Coxe</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Paecht</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2022">Encoding</resp>
+               <resp when="2022">Cataloguer</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -25,7 +34,7 @@
             <idno type="catalogue">Western</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc xml:id="MS_Canon_Misc_262" xml:lang="en">
+            <msDesc xml:id="MS_Canon_Misc_262" xml:lang="en" resp="#Q">
                <msIdentifier>
                   <country>United Kingdom</country>
                   <region type="county">Oxfordshire</region>
@@ -42,38 +51,78 @@
                      <author key="person_2072">Jacobus de Montebrandono</author>
                      <!-- not found -->
                      <title key="work_2311">Compendium theologiae moralis</title>
-                     <note>(written in 1442 according to a colophon, fol. 196v. Partly based on Peter Quesnel)</note>
-                     <bibl type="related">
-                        <author key="person_259499752">Peter Quesnel</author>
-                     </bibl>
+                     <note>(written in 1442 according to a colophon, fol. 196v. Partly based on <persName role="aut" key="person_259499752">Peter Quesnel</persName>)</note>
+                     <incipit type="pref.">Si quis ignorat, ignorabitur i. Cor. 14, ut expresse ponitur Di. 38</incipit>
+                     <incipit type="text">Absolutio peccatorum secundum Petrum Casuelem [Quesuelum] ordinis Minorum, magistrum in sacra theologia</incipit>
+                     <finalRubric>Et sic die 17 Aprilis 1442 opus istud in Monticulo provintie Marchie Anconitane finitum et expletum est per me fratrem Jacobum de Montebrandono, ordinis minorum perscrutando et legendo plures doctores, et maxime eximium et gloriosum doctorem Petrum Quesueleus; in virtute Domini nostri Yhesu Christi, cui laus sit et gloria per infinita secula seculorum ; Amen</finalRubric>
+                     <colophon>Per me Johannem Antonium de Arigonibus de Cremona hoc opus scriptum est</colophon>
+                    
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
-                  <msItem class="#legalia" n="2" xml:id="MS_Canon_Misc_262-item2">
+                  <msItem resp="#MLH">
+                     <locus>(fols. 203r-217r)</locus>
+                     <title key="work_16511">De usuris</title>
+                     <incipit>Primo videndum est de usurariis et de speciebus usurarum </incipit>
+                     <explicit>nihil sibi remaneret</explicit>
+                     <note>The foliation skips 218-222, or leaves 218-222 are missing.</note>
+                     <textLang mainLang="la">Latin</textLang>
+                  </msItem>
+                 <msItem> 
+                    <locus>(fol. 223)</locus>
+                   
+                    <msItem class="#legalia" n="2" xml:id="MS_Canon_Misc_262-item2">
                      <title key="work_1153">Liber sextus decretalium</title>
                      <note>(extracts)</note>
-                     <textLang mainLang="la">Latin</textLang>
+                     
                   </msItem>
                   <msItem class="#legalia" n="3" xml:id="MS_Canon_Misc_262-item3">
                      <title key="work_11343">Constitutiones Clementinae</title>
                      <note>(extracts)</note>
-                     <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                    <rubric>Episcopus Ytalie non potest ordinare clericos ultramontanos</rubric>
+                    <textLang mainLang="la">Latin</textLang></msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>236 leaves
+                           <dimensions unit="mm" type="leaf" resp="#MLH">
+                              <height>145</height>
+                              <width>105</width>
+                           </dimensions></extent>
                      </supportDesc>
+                     <layoutDesc resp="#MLH">
+                        <layout columns="2" writtenLines="28 43">Fols. 1-197: 2 cols., c. 28-43 lines, ruled space <dimensions unit="mm" type="ruled">
+                           <height max="95" min="90">90-5</height>
+                           <width>80</width>
+                        </dimensions></layout>
+                        <layout columns="2" writtenLines="33 41">Fols. 203-217: 2 cols., c. 33-41 lines, ruled space <dimensions unit="mm" type="ruled">
+                           <height>100</height>
+                           <width>80</width>
+                        </dimensions></layout>
+                        <layout columns="2" writtenLines="32 36">Fols. 223-232: 2 cols., c. 32-6 lines, ruled space <dimensions unit="mm" type="ruled">
+                           <height>100</height>
+                           <width>80</width>
+                        </dimensions> </layout>
+                     </layoutDesc>
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote>
-                        <p>Good border and initials. Written by <persName key="person_619" role="scr">Johannes Antonius de Arigonibus de Cremona</persName>, fol. 197. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 786)</p>
+                  <handDesc>
+                     <handNote>Written by <persName key="person_619" role="scr">Johannes Antonius de Arigonibus de Cremona</persName>, fol. 197.</handNote>
+                  </handDesc>
+                  <decoDesc resp="#PA">
+                     <decoNote type="border">Good borders.</decoNote><decoNote type="decInit"> Good initials.  (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 786)
                      </decoNote>
                   </decoDesc>
+                  <bindingDesc resp="#MLH">
+                     <binding notAfter="1800" notBefore="1700">
+                        <p>18th-century Italian binding of red leather over pasteboards, each cover with gilt-tooled frame.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
-                  <origin>
-                     <origDate calendar="Gregorian" notAfter="1500" notBefore="1442">after 1442</origDate>
+                  <origin resp="#PA">
+                     <origDate calendar="Gregorian" notAfter="1500" notBefore="1442">15th century (after 1442)</origDate>
                      <origPlace>
                         <country key="place_1000080">Italian</country>, <settlement key="place_7005868">Cremona</settlement>
                         <!--ORIGINAL: Italian, Cremona-->
@@ -86,7 +135,12 @@
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (1854). Decoration, localization and date follow Pächt and Alexander (1970). <listBibl>
+                        <source>Description adapted (Sept. 2022) from the following sources, with limited additional physical description:
+                           <listBibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, II (1970), no. 786 </bibl>
+                              <bibl>Quarto Catalogue (1854)</bibl>
+                           </listBibl>
+                           <listBibl>
                               <bibl facs="abz0322.gif" type="QUARTO">Quarto Catalogue, col. 632</bibl>
                               <bibl facs="abz0323.gif" type="QUARTO">Quarto Catalogue, col. 633</bibl>
                               <bibl facs="aaz0423.gif" type="SC">Summary Catalogue, vol. 4, p. 404</bibl>
@@ -99,6 +153,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2022-09">Description revised to incorporate all information in Quarto catalogue, with limited additional physical description.</change>
          <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
