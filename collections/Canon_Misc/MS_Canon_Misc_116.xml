@@ -1,15 +1,25 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_3134">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_3134">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Canon. Misc. 116</title>
             <title type="collection">MSS. Canon. Misc. (Canonici Miscellaneous)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
+            <respStmt xml:id="Q">
+               <resp when="1854">Cataloguer</resp>
+               <persName>H. O Coxe</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Paecht</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2022">Encoding </resp>
+               <resp when="2022">Cataloguer</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -37,67 +47,182 @@
                      <idno type="SCN">19592</idno>
                   </altIdentifier>
                </msIdentifier>
+               <head>Medical compilation; Italy (Padua), 1463</head>
                <msContents>
+                  <!-- ZEcri [Corboliensis] de pulsibus Carmen, cum [Gzwrius pg Furerivzis ?] commentario. fol. 1. B Tit. * ." Incip. comment. *€ ." Habemus commentarios fere eosdem in bibl. nostra, in cod. Laud. Lat. 106, sign. exvi.
+2. Ejusdem /Ecrpu de urinis Carmen eum ejusdem [Gzwrizis ?] commentariis. . Tit. * ." Incip. comment. * Iste liber nove institu- tionis." " Exstant comment. in MS. eodem, sign. cviii.
+3. Tractatulus de modo judicandi urinas. fol. 84 b. Tit. * ." Ineip. * ."
+D
+
+
+4. De Zodiaci signis, scilicet de temporibus faustis et infaustis seeundum eorundem dominia, versus triginta sex heroici. fol. 86 b.
+Tit. * .
+Ineip. ** ." 5. Anonymi eujusdam de medicinis simplicibus et compositis liber. fol. 87.
+Ineip. * 
+6. * '." fol. 113.
+Ineip. ** ;" etc. -->
+                  <textLang mainLang="la">Latin</textLang>
                   <msItem n="1" xml:id="MS_Canon_Misc_116-item1">
-                     <author key="person_71543640">Giles de Corbeil</author>
-                     <title key="work_1748">De pulsibus</title>
-                     <note>(with commentary)</note>
-                     <textLang mainLang="la">Latin</textLang>
+                     <locus>(fol. 1r)</locus>
+                     <rubric>Carmina Egidii de pulsibus cum comento</rubric>
+                     <msItem>
+                        <author key="person_71543640">Giles de Corbeil</author>
+                        <title key="work_1748">De pulsibus</title>
+                     </msItem>
+                     <msItem>
+                        <title type="desc" key="work_7161">Commentary on Giles de Corbeil, De
+                           pulsibus</title>
+                        <incipit>Quatuor sunt membra principalia</incipit>
+                     </msItem>
+
                   </msItem>
                   <msItem n="2" xml:id="MS_Canon_Misc_116-item2">
-                     <author key="person_71543640">Giles de Corbeil</author>
-                     <title key="work_1751">De urinis</title>
-                     <note>(with commentary)</note>
-                     <textLang mainLang="la">Latin</textLang>
+                     <locus>(fol. 35r)</locus>
+                     <rubric>Carmina Egidi Romani de urinis cum commento ejusdem</rubric>
+                     <msItem>
+                        <author key="person_71543640">Giles de Corbeil</author>
+                        <title key="work_1751">De urinis</title>
+                     </msItem>
+                     <msItem>
+                        <title type="desc" key="work_7387">Commentary on Giles de Corbeil, De
+                           urinis</title>
+                        <incipit>In libro isto auctor iste intendens doctrinam tradere </incipit>
+                     </msItem>
                   </msItem>
                   <msItem class="#medica" n="3" xml:id="MS_Canon_Misc_116-item3">
-                     <title key="work_13232" type="desc">Medical treatises</title>
-                     <textLang mainLang="la">Latin</textLang>
+                     <locus>(fol. 84v)</locus>
+                     <title type="desc" key="work_15194">On urines</title>
+                     <rubric>Modus judicandi urinas feliciter incipit</rubric>
+                     <incipit>Iste est modus judicandi urinas, unde sic est procedendum, primo de
+                        colore</incipit>
+                     <note>eTK 0785K</note>
                   </msItem>
-                  <msItem n="4" xml:id="MS_Canon_Misc_116-item4">
-                     <author key="person_2124">Mundinus de Foro Iulio<!-- VIAF equates with M. de Lentiis d. 1326 --></author>
-                     <title key="work_3222">De accidentibus</title>
-                     <note>(TK 1700)</note>
-                     <textLang mainLang="la">Latin</textLang>
+
+                  <msItem class="#medica" n="4" xml:id="MS_Canon_Misc_116-item4">
+                     <locus>(fol. 86v)</locus>
+                     <title type="desc" key="work_15447">Verses on the Zodiac</title>
+                     <rubric>Signa supercelestia in hec inferiora influunt, quod istis carminibus
+                        declaratur</rubric>
+                     <incipit>Aries igneus : Nil capiti facias aries cum luna refulget</incipit>
+                     <explicit>Ambris contemptus epilencus essit ab illo</explicit>
+                     <finalRubric>Et sic est finis</finalRubric>
+                     <note>36 verses; <ref target="http://webserver.erwin-rauner.de/php_ancarm/ancarm_refwerke.php?opus=1000&amp;var=WIC&amp;nr_char=11780">Walther 11780</ref></note>
+                     <!--  <title key="work_13232" type="desc">Medical treatises</title>
+                     <textLang mainLang="la">Latin</textLang>-->
                   </msItem>
-                  <msItem n="5" xml:id="MS_Canon_Misc_116-item5">
-                     <author key="person_2040">Bartholomaeus de Sancta Sophia</author>
-                     <!-- not found in VIAF -->
-                     <title key="work_891">Commentarium in nonum Almansoris</title>
-                     <textLang mainLang="la">Latin</textLang>
+
+                  <msItem class="#medica" n="5" xml:id="MS_Canon_Misc_116-item5">
+                     <locus>(fols. 87r-111v)</locus>
+
+                     <title type="desc" key="work_13232">Medical compilation</title>
+                     <incipit>Virtus medicine est <sic>ponenda</sic> naturalis, quia ipsa medicina
+                        corpori humano interius vel exterius applicata ipsum habet permutare ad
+                        aliquam qualitatem. Hec autem virtus est quadruplex <gap reason="editorial"/> quarum prima vocatur complexio</incipit>
+                     <rubric>Capitulum primum huius libelli de medicinis distemperatis</rubric>
+                     <note>Capitula covering fols. 88r-99r, followed by 'Temperata et primo de
+                        herbis'.</note>
+                     <rubric><locus>(fol. 91v)</locus> Explicit de gradibus incipit 2us tractatus de
+                        uirtutibus medicinarum <gap reason="editorial"/></rubric>
+                     <rubric><locus>(fol. 99v)</locus> Incipit tractatus de rebus ex quibus
+                        conficiuntur medicine que in antidotario sunt reperte</rubric>
+                     <rubric><locus>(fol. 101r)</locus> Explicit de uirtutibus simplicium quibus
+                        utimur. Incipit de uirtutibus medicinarum que sunt in antidotario <gap reason="editorial"/></rubric>
+                     <explicit>non super locum unde exit, sed circa locum: Deo laudes:
+                        Amen</explicit>
+                     <note>Listed eTK 1700L as <persName role="aut" key="person_2124">Mundinus de
+                           Foro Iulio</persName>, <title key="work_3222">De accidentibus</title>,
+                        but the eTK entry appears to combine a number of different texts, while the
+                        attribution seems to derive from a misreading of the printed catalogue for
+                        Vatican Library, Vat. lat. 10213 (M. Vattasso and H. Carusi, Rome, 1914, pp.
+                        541-3) </note>
                   </msItem>
                   <msItem n="6" xml:id="MS_Canon_Misc_116-item6">
+                     <locus>(fol. 113)</locus>
                      <author key="person_2040">Bartholomaeus de Sancta Sophia</author>
-                     <title key="work_892">Tractatus de febribus</title>
-                     <textLang mainLang="la">Latin</textLang>
+                     <title key="work_891">Commentarium in nonum Almansoris</title>
+                     <rubric>Tractatus super Nono Almansoris antiquioris Bartholomei de sancta
+                        sophia</rubric>
+                     <incipit>In nomine Dei misericordis, cujus nutu sermo recipit gratiam et
+                        doctrina perfectionem. Demum ordinem Rasis viijo Almansoris in
+                        sequendo</incipit>
+                     <explicit>et similes medicine; et hec sufficiant ad laudem omnipotentis Dei
+                        ejusque virginis matris Marie </explicit>
+                     <colophon>Laus tibi sit Christe. quoniam liber explicit iste. Compilatus per
+                        eximium artium et medicine doctorem d. M. Bartholomeum antiquiorem de Sancta
+                        Sophia et scriptus ac et complectus per me Franciscum de Eneaxio, Patavum,
+                        artium doctorem et medicine, scolarem excellentissimi artium et medicine
+                        doctoris d. M. Bartholomei junioris de Sancta Sophia, anno 1463, die xij.
+                        Setembris hora xxij. Amen.</colophon>
                   </msItem>
                   <msItem n="7" xml:id="MS_Canon_Misc_116-item7">
-                     <author key="person_98417711">Gentilis de Fulgineo</author>
-                     <title key="work_1657">De vulneribus</title>
-                     <textLang mainLang="la">Latin</textLang>
+                     <locus>(fol. 213)</locus>
+                     <author key="person_2040">Bartholomaeus de Sancta Sophia</author>
+                     <title key="work_892">Tractatus de febribus</title>
+                     <rubric>Tractatus de febribus antiquioris Bartholomei de Sancta Sophia</rubric>
+                     <incipit>Humane nature dignoscitur gloriosum, cum se scire sit, que alta
+                        sunt</incipit>
+                     <explicit>et sic sit finis cure febrium putridarum communiter occurrentium,
+                        secundum mei modici intellectus capacitatem sic scienter complectus sit ad
+                        laudem omnipotentis Dei ejusque gloriose virginis Marie anno 1412, quando
+                        rex Panonium suum in Italiam exercitum missit contra dominum nostrum
+                        Venetorum die dominico xxvij. Decembris mensis</explicit>
+                     <colophon>Et ego Franciscus de Eneaxio hoc opus scripsi et nonis Maii 1463
+                        complevi, ad laudem supradictorum et Sancti Jeronimi ; Amen. Deo Maximo
+                        iterum laudes.</colophon>
                   </msItem>
                   <msItem n="8" xml:id="MS_Canon_Misc_116-item8">
-                     <author key="person_19688718">Averroes</author>
-                     <title key="work_852">De venenis</title>
-                     <textLang mainLang="la">Latin</textLang>
+                     <locus>(fol. 270)</locus>
+                     <author key="person_98417711">Gentilis de Fulgineo</author>
+                     <title key="work_1657">De vulneribus</title>
+                     <rubric>Gentilis de Fulgineo tractatus de vulneribus</rubric>
+                     <incipit>Hoc est emplastrum sive unguentum dignum laude, quia mirabiliter
+                        operatur</incipit>
                   </msItem>
                   <msItem n="9" xml:id="MS_Canon_Misc_116-item9">
+                     <locus>(fol. 272)</locus>
+                     <author key="person_19688718">Averroes</author>
+                     <title key="work_852">De venenis</title>
+                     <rubric>Opusculum de venenis Aueroys feliciter incipit</rubric>
+                     <incipit>Omnes species mortiferorum</incipit>
+                  </msItem>
+                  <msItem n="10" xml:id="MS_Canon_Misc_116-item10">
+                     <locus>(fol. 274)</locus>
                      <author key="person_2376">Theophilus</author>
                      <title key="work_4738">De urinis</title>
                      <note>(TK 393)</note>
-                     <textLang mainLang="la">Latin</textLang>
+                     <rubric>De urinis a voce Theophili</rubric>
+                     <incipit>De urinarum differentia negocium</incipit>
+                     <colophon>Explicit liber urinarum a voce Theophili; ad laudem Dei omnipotentis
+                        et beate virginis, et sic est finis.</colophon>
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
+                        <extent>292 leaves <dimensions unit="mm" type="leaf">
+                              <height>213</height>
+                              <width>110</width>
+                           </dimensions></extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="1" writtenLines="42">1 col., 42 lines; <dimensions unit="mm" type="written">
+                              <height>162</height>
+                              <width>60</width>
+                           </dimensions></layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <handDesc>
+                     <handNote>Written by <persName key="person_366" role="scr">Franciscus de
+                           Eneaxio, doctor artium</persName>, at Padua in 1463 for his own use,
+                        fols. 212v, 284v. For another MS by this scribe see <title>Colophons de
+                           mss</title>, ii, no. 4245.</handNote>
+                  </handDesc>
                   <decoDesc>
-                     <decoNote>
-                        <p>Initial. Written by <persName key="person_366" role="scr">Franciscus de Eneaxio, doctor artium</persName>, at Padua in 1463 for his own use, fols. 212v, 284v. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 609)</p>
+                     <decoNote type="decInit">
+                        <p>Initial. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 609)</p>
                      </decoNote>
+                     <decoNote type="rubrication">Rubrics.</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
@@ -108,42 +233,56 @@
                         <!--ORIGINAL: Italian, Padua-->
                      </origPlace>
                   </origin>
+                  <provenance> Fol. 284v: 'Liber mej <persName key="person_366" role="fmo">francisci
+                        de <sic>aniaxio</sic></persName> artium Doctoris.'</provenance>
                   <provenance notAfter="1805" notBefore="1727" resp="#MMM">
-                     <persName key="person_2384880" role="fmo">Matteo Luigi Canonici, 1727–1805</persName>
+                     <persName key="person_2384880" role="fmo">Matteo Luigi Canonici,
+                        1727–1805</persName>
                   </provenance>
                   <provenance notAfter="1807" resp="#MMM">
                      <persName key="person_446" role="fmo">Giuseppe Canonici , -1807</persName>
                   </provenance>
-                  <acquisition resp="#MMM" when="1817">Purchased by the Bodleian in 1817</acquisition>
+                  <acquisition resp="#MMM" when="1817">Purchased by the Bodleian in
+                     1817</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (1854). Decoration, localization and date follow Pächt and Alexander (1970). <listBibl>
-                              <bibl facs="abz0259.gif" type="QUARTO">Quarto Catalogue, col. 506</bibl>
-                              <bibl facs="abz0260.gif" type="QUARTO">Quarto Catalogue, col. 507</bibl>
-                              <bibl facs="aaz0420.gif" type="SC">Summary Catalogue, vol. 4, p. 401</bibl>
+                        <source>Description adapted (Sept. 2022) from the following sources, with
+                           additional description of art. 5 (fols. 87r-111v). <listBibl>
+                              <bibl>A. Watson, <title>Catalogue of Dated and Datable Manuscripts in
+                                    Oxford Libraries</title> (1984), <citedRange unit="entry" from="298" to="298">
+                                    <ref target="https://hdl.handle.net/2027/mdp.39015008982863?urlappend=%3Bseq=76">no. 298</ref>
+                                 </citedRange>
+                              </bibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated
+                                    Manuscripts in the Bodleian Library Oxford</title>, II (1970),
+                                 no. 609 </bibl>
+                              <bibl>Quarto Catalogue (1854)</bibl>
+                           </listBibl>
+                           <listBibl>
+                              <bibl facs="abz0259.gif" type="QUARTO">Quarto Catalogue, col.
+                                 506</bibl>
+                              <bibl facs="abz0260.gif" type="QUARTO">Quarto Catalogue, col.
+                                 507</bibl>
+                              <bibl facs="aaz0420.gif" type="SC">Summary Catalogue, vol. 4, p.
+                                 401</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
-                  <listBibl type="WRAPPER">
-                     <listBibl type="PRINT">
-                        <head>Printed descriptions:</head>
-                        <bibl>A. Watson, <title>Catalogue of Dated and Datable Manuscripts in Oxford Libraries</title> (1984), <citedRange unit="entry" from="298" to="298">
-                              <ref target="https://hdl.handle.net/2027/mdp.39015008982863?urlappend=%3Bseq=76">no. 298</ref>
-                           </citedRange>
-                        </bibl>
-                     </listBibl>
-                  </listBibl>
+
                </additional>
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2022-09">Description revised to include all information from printed
+            catalogues.</change>
          <change when="2018-10-14" xml:id="MMM">
-            <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
+            <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
+            in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping
+               Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
