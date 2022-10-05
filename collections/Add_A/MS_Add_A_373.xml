@@ -7,9 +7,16 @@
          <titleStmt>
             <title>MS. Add. A. 373</title>
             <title type="collection">MSS. Add. (Additional) A</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+          <respStmt xml:id="VD">
+             <resp when="1954">Cataloguer</resp>
+             <persName>S. J. P. van Dijk</persName>
+          </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2022">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -25,7 +32,7 @@
             <idno type="catalogue">Western</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc xml:id="MS_Add_A_373" xml:lang="en">
+            <msDesc xml:id="MS_Add_A_373" xml:lang="en" resp="#SC">
                <msIdentifier>
                   <country>United Kingdom</country>
                   <region type="county">Oxfordshire</region>
@@ -40,8 +47,12 @@
                <msContents>
                   <msItem class="#sacramenta #ecclesiastica"
                           n="1"
-                          xml:id="MS_Add_A_373-item1">
-                     <title key="work_15156" type="desc">Treatise on the rites and offices and on the sacraments of the Church, chiefly by question and answer</title>
+                          xml:id="MS_Add_A_373-item1" resp="#SC #MLH">
+                     <title key="work_15156">Liber Quare</title>
+                     <rubric>Ratio eorum que frunt in ecclesia per circulum anni <locus>(fol. 1)</locus></rubric>
+                     <rubric>Incipiunt Sacramenta <objectType>(fol. 74)</objectType></rubric>
+                     <incipit>Consideranda est causa singulorum</incipit><incipit>Cum multa sint sacramenta</incipit><explicit>peccatorum nostrorum uulnera</explicit>
+                     <bibl>ed. G. P. Götz, CCCM 60, this MS. siglum Oa.</bibl>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -49,42 +60,89 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>i + 100 leaves
+                           <dimensions type="binding" unit="in">
+                              <height>8.75</height>
+                              <width>5.375</width>
+                           </dimensions></extent>
                      </supportDesc>
                   </objectDesc>
-                  <musicNotation>
-                     <p>Neums (see van Dijk 1957).</p>
-                  </musicNotation>
+                 
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1200" notBefore="1190">12th century, late</origDate>
                      <origPlace>
-                        <country key="place_7000084">German</country>
+                        <country key="place_7000084">German (?)</country>
                      </origPlace>
                   </origin>
+                  <provenance>Fol. i once bore an early record of possession, beginning 'Liber ...', but almost all the leaf is cut off.</provenance>
+                  <provenance> 'Fol. 99. d. 1 April 1835. <persName role="fmo" key="person_24953683">Bibl. Bülov Beyern<supplied>aumburg</supplied></persName>, G. H. Sc̄hr.'</provenance>
+                  <!-- but not apparently under that number in the catalogue?  -->
+                  <provenance> Lot 878 in the Carnaby sale on Nov. 26, 1886.</provenance>
+                  <acquisition when="1886">Bought for the Library for £2 8s.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
+                        <source>Description adapted (Oct. 2022) from the following sources  with additional reference to published literature as cited:
+                           <listBibl>
+                              <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 5: Fragments - Mass Books</title> (typescript, 1957), <citedRange unit="page" from="130" to="130">p. 130</citedRange> (endleaf)
+                              </bibl>
+                              <bibl>Summary Catalogue (1922) </bibl>
+                           </listBibl> <listBibl>
                               <bibl facs="aam0694.gif" type="SC">Summary Catalogue, Vol. 5, p. 659</bibl>
                               <bibl facs="aam0695.gif" type="SC">Summary Catalogue, Vol. 5, p. 660</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
-                  <listBibl type="WRAPPER">
-                     <listBibl type="PRINT">
-                        <head>Printed descriptions:</head>
-                        <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 5: Fragments - Mass Books</title> (typescript, 1957), <citedRange unit="page" from="130" to="130">p. 130</citedRange>
-                        </bibl>
-                     </listBibl>
-                  </listBibl>
                </additional>
+               <msPart xml:id="MS_Add_A_373-endleaf" type="fragment" resp="#VD">
+                  <msIdentifier>
+                     <altIdentifier type="partial">
+                        <idno type="part">MS. Add. A. 373, endleaf (fol. 100)</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  <msContents>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem xml:id="MS_Add_A_373-endleaf-item1">
+                        <title type="desc" key="work_13355">Missal</title>
+                        <note>Fragment of the temporale: portions of the mass of Maundy Thursday and the Washing of the Feet.</note>
+                     </msItem>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="perg">
+                           <support>parchment</support>
+                           <extent>upper part of a leaf
+                              <dimensions type="fragment" unit="mm">
+                                 <height>137</height>
+                                 <width>215</width>
+                              </dimensions></extent>
+                        </supportDesc>
+                        <layoutDesc>
+                           <layout columns="1">long lines, originally about 193 mm. width</layout>
+                        </layoutDesc>
+                     </objectDesc>
+                     <musicNotation>
+                        <p>Half-diastematic (Aquitanian?) point neums in one place only.</p>
+                     </musicNotation>
+                  </physDesc>
+                  <history>
+                     <origin>
+                        <origDate calendar="Gregorian" notAfter="1050" notBefore="1000">11th century (first half (?))</origDate>
+                        <origPlace>
+                           <country key="place_1000070">France (?)</country>
+                        </origPlace>
+                     </origin>
+                  </history>
+               </msPart>
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2022-10">Revised to incorporate all information in printed catalogues.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
