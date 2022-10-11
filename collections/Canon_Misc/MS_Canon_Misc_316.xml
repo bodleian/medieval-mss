@@ -7,9 +7,17 @@
          <titleStmt>
             <title>MS. Canon. Misc. 316</title>
             <title type="collection">MSS. Canon. Misc. (Canonici Miscellaneous)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="Q">
+               <resp when="1854">Cataloguer</resp>
+               <persName>H. O. Coxe</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2022">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -25,7 +33,7 @@
             <idno type="catalogue">Western</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc xml:id="MS_Canon_Misc_316" xml:lang="en">
+            <msDesc xml:id="MS_Canon_Misc_316" xml:lang="en" resp="#Q">
                <msIdentifier>
                   <country>United Kingdom</country>
                   <region type="county">Oxfordshire</region>
@@ -39,25 +47,37 @@
                </msIdentifier>
                <msContents>
                   <msItem class="#alchimia" n="1" xml:id="MS_Canon_Misc_316-item1">
-                     <title key="work_10130" type="desc">Alchemical collection</title>
-                     <textLang mainLang="la" otherLangs="it">Latin and Italian</textLang>
+                     <title key="work_10154" type="desc">Alchemical collection</title>
+                     <note>Sources named include '<persName role="aut" key="person_2241">Hermes Trismegistus</persName>', '<persName role="aut" key="person_100189814">Arnaldus de Villanova</persName>', etc.</note>
+                     <note type="index"> Preceded by alphabetical table:</note>
+                     <rubric type="index">In nomine Dei misericordis, cujus nutu sermo recipit gratiam et doctrina perfectionem, tabula capitulorum per ordinem alphabeti <gap unit="char" extent="14"/> 1484, adi primo Marzo</rubric>
+                     <rubric>In nomine Domini nostri Yesu Christi trini et veri Dei, qui hominem ad sui imaginem et formam composuit, et cui subtilitates et modos totarum artium relevavit, Incipit doctrina sive ars Hermetis sapientissimi fratris sancti et catolici Christiani de transmutatione metallorum</rubric>
+                     <incipit>Primo enim sciendum quod <sic>est</sic> vij. sunt planete, per quorum omnium inferiorum corpora reguntur</incipit>
+                     <note resp="#MLH">The opening incipit is eTK 1112L.</note>
+                     <textLang mainLang="la">Latin</textLang>
+                  </msItem>
+                  <msItem class="#alchimia" n="2" xml:id="MS_Canon_Misc_316-item2">
+                     <title key="work_13947" type="desc">Prayers to the Virgin</title>
+                     <incipit>In Chomenza la sette alegieza di Madona Senta Maria</incipit>
+                     <textLang mainLang="la" otherLangs="it">Italian</textLang>
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
+                        <extent>316 leaves, small quarto</extent>
                      </supportDesc>
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote>
-                        <p>Borders, initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 566)</p>
-                     </decoNote>
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 566:</summary>
+                     <decoNote type="border">Borders.</decoNote>
+                     <decoNote type="decInit">Initials. </decoNote>
                   </decoDesc>
                </physDesc>
                <history>
-                  <origin>
-                     <origDate calendar="Gregorian" when="1484">c. 1484</origDate>
+                  <origin resp="#PA">
+                     <origDate calendar="Gregorian" when="1484" cert="high">c. 1484</origDate>
                      <origPlace cert="low">
                         <country key="place_1000080">Italian</country>, <settlement key="place_7018159">Venice</settlement> (?)<!--ORIGINAL: Italian, Venice (?)--></origPlace>
                   </origin>
@@ -68,7 +88,12 @@
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (1854). Decoration, localization and date follow Pächt and Alexander (1970). <listBibl>
+                        <source>Description adapted (2022) from the following sources, with additional reference to published literature as cited:
+                           <listBibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, II (1970), no. 566</bibl>
+                              <bibl>Quarto Catalogue (1854)</bibl>
+                           </listBibl>
+                          <listBibl>
                               <bibl facs="abz0344.gif" type="QUARTO">Quarto Catalogue, col. 676</bibl>
                               <bibl facs="aaz0424.gif" type="SC">Summary Catalogue, vol. 4, p. 405</bibl>
                            </listBibl>
@@ -80,6 +105,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2022-09">Revised to include all information in printed catalogues.</change>
          <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
