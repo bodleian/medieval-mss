@@ -7,11 +7,24 @@
          <titleStmt>
             <title>MS. Bodl. 341</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2022">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt> 
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -41,38 +54,77 @@
                   <msItem n="1" xml:id="MS_Bodl_341-item1">
                      <author key="person_90633533">Ranulf Higden</author>
                      <title key="work_4214">Polychronicon</title>
-                     <note>(to 1327)</note>
+                     <rubric>Liber primus in historiam policronicam</rubric>
+                     <explicit>mare tranquillitatem, Scocia concordiam, ecclesia libertatem. Explicit Historia policronica</explicit>
+                     <note>With three prefaces; ends at 1327</note>
+                     <note type="annotation">There are notes in the margins</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                   <msItem class="#romances" n="2" xml:id="MS_Bodl_341-item2">
+                     <locus>(fol. 137)</locus>
                      <title key="work_12226">Historia de proeliis Alexandri magni</title>
+                     <rubric>Hystoria magni regis Alexandri de proeliis</rubric>
+                     <incipit>Sapientissimi namque Egyptij</incipit>
+                     <explicit>uox plangencium quasi tonitruum</explicit>
                      <note>(version J2)</note>
+                     <note>Catchwords 'ita quod totam'</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
+               
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>
+                           i + 160 leaves
+                           
+                           <dimensions unit="in" type="binding">
+                              <height>14.75</height>
+                              <width>9</width>
+                           </dimensions>
+                           
+                        </extent>
+                        
+                        <condition>
+                           A leaf or two is lost near the end
+                        </condition>
+                        
                      </supportDesc>
+                     
+                     <layoutDesc>
+                        <layout columns="2">2 cols</layout>
+                     </layoutDesc>
+                     
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote>Good borders, initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 637)</decoNote>
+                  
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 637
+                     </summary>
+                     
+                     <decoNote type="border">Good borders</decoNote>
+                     <decoNote type="decInit">Good initials</decoNote> 
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1360" notBefore="1340">14th century, middle</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
+                  <provenance>'Edo. Orwell. 17. Martij 1577.': <persName role="fmo" key="person_3561">Edward Orwell, -1591/2</persName>, owner also of Lambeth Palace MSS. 174 and 371, and the 1462 Mainz bible at Peterhouse Cambridge (Perne Library, shelfmark S. 10b) </provenance>
+                  <acquisition>Probably acquired 1618-1620</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
-                              <bibl facs="aap0389.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 368</bibl>
+                        <source>
+                           Description adapted (January 2022) by Stewart J. Brookes from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973)
+                           <listBibl>
+                        <bibl facs="aap0389.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 368</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -80,10 +132,12 @@
                   <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/813fe15b-c985-4864-87ba-5b7a0732d266/"><title>Digital Bodleian</title></ref>
                         <note>(1 image from 35mm slides)</note></bibl></surrogates>
                </additional>
+               
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2023-01-03">Description revised to incorporate all the information in the Summary Catalogue (1922)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>

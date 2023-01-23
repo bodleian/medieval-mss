@@ -7,11 +7,18 @@
          <titleStmt>
             <title>MS. Bodl. 536</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+           
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
             </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2022">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+           
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -39,41 +46,72 @@
                </msIdentifier>
                <msContents>
                   <msItem class="#medica" n="1" xml:id="MS_Bodl_536-item1">
+                    <locus>(fol. 1)</locus>
                      <title key="work_13232" type="desc">Medical manual</title>
-                     <textLang mainLang="la">Latin</textLang>
+                     <rubric>Peritia medicorum</rubric>
+                     <incipit>In nomine Patris ... Opus supra vires aggrediar</incipit>
+                     <note>Mainly recipes</note>
+                     <textLang mainLang="la">Latin</textLang><!-- ?cf  1017B eTK, Peterus Hispanus Thesaurus Pauperum -->
                   </msItem>
+                  
                   <msItem class="#medica" n="2" xml:id="MS_Bodl_536-item2">
-                     <title key="work_12205" type="desc">Herbal</title>
-                     <note>(parts of an alphabetical herbal, C-M and M-S)</note>
-                     <note>(Four leaves covering A-B are at MS. Bodl. 1031)</note>
-                     <textLang mainLang="en" otherLangs="la">English and Latin</textLang>
+                     <title key="work_12203" type="desc">Herbal 'Agnus Castus'</title>
+                     <incipit>Calamyntum id est Calamynt. The vertue of this erbe</incipit>
+                     <explicit>Scafysacra</explicit>
+                     <note>Parts of an alphabetical herbal: C-M (starting at fol. 13) and M-S (starting at fol. 29, written in a different hand).</note>
+                     <note>Fols 21-28 should precede fol. 13. 'AκέΦαλος and μείουρος as the old catalogues term it</note>
+                     <bibl>IPMEP 38</bibl>
+                     <note>(Four leaves covering A-B are at <ref target="https://medieval.bodleian.ox.ac.uk/catalog/manuscript_1178">MS. Bodl. 1031</ref>)</note>
+                     <textLang mainLang="enm" otherLangs="la">Middle English and Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
+                        
+                        <extent>
+                           38 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>8.25</height>
+                              <width>5.875</width>
+                           </dimensions>
+                        </extent>
+                        
+                        <condition>
+                           The last few leaves are damaged by damp.
+                        </condition>
                      </supportDesc>
-                     <layoutDesc>
-                        <p n="composite">three parts</p>
-                     </layoutDesc>
                   </objectDesc>
+                  <handDesc hands="3">
+                     <handNote>Three hands: A, art. 1; B, C art. 2.</handNote>
+                  </handDesc>
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1500" notBefore="1450">15th century, second half</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
+                  <provenance><persName role="fmo" key="person_37266689">John Twyne of Canterbury</persName>: his hand on fol. 12v (Andrew G. Watson, 'John Twyne of Canterbury (d. 1581) as a Collector of Medieval Manuscripts: a Preliminary Investigation', <title>The Library</title> 6th ser. 8 (1986), 133-151, no. 36. Earlier provenance not known.</provenance>
+                  <acquisition 
+                     source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5805" when="1612">Presented by <persName key="person_15121578" role="dnr">Thomas Twyne</persName> in 1612
+                  </acquisition>
+                  
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). <listBibl>
+                        
+                        <source>
+                           Description adapted (December 2022) by Stewart J. Brookes from the Summary Catalogue (1922) with additional reference to published literature as cited.
+                           <listBibl>
                               <bibl facs="aap0303.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 282</bibl>
                            </listBibl>
                         </source>
+                        
                      </recordHist>
                   </adminInfo>
                </additional>
@@ -81,6 +119,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2022-12-06">Description revised to incorporate all the information in the Summary Catalogue (1922)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>

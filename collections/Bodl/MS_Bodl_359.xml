@@ -7,11 +7,24 @@
          <titleStmt>
             <title>MS. Bodl. 359</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+           
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2022">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -42,6 +55,11 @@
                      <author key="person_90633533">Ranulf Higden</author>
                      <title key="work_4214">Polychronicon</title>
                      <note>(part)</note>
+                     <rubric>Prologus primus in Historiam Policronicam</rubric>
+                     <note>Followed by three prefaces (Book I, chapters 1-4)</note>
+                     <note>Ends with 'Mortuo Vortimero' in Book V, chapter 1, the rest being lost</note>
+                    <note type="index">An alphabetical index of subjects and two chronological notes precede at fol. 1</note>
+                     
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -49,33 +67,57 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        
+                        <extent>
+                           i + 97 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>14.125</height>
+                              <width>9.75</width>
+                           </dimensions>
+                        </extent>
+                        
+                        
                      </supportDesc>
+                     
+                     <layoutDesc>
+                        <layout columns="2">2 cols</layout>
+                     </layoutDesc>
+                     
+                     
                   </objectDesc>
-                  <musicNotation>
-                     <p>Notation on staves (see van Dijk 1957).</p>
-                  </musicNotation>
-                  <decoDesc>
-                     <decoNote>Fine penwork borders, initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 660)</decoNote>
+               
+               
+                  <decoDesc resp="#PA">
+               
+                  <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 660</summary>
+                        
+                     <decoNote type="border">Fine penwork borders</decoNote>
+                     <decoNote type="decInit">Initials</decoNote><!-- does this mean penwork: check -->
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1375" notBefore="1350">14th century, third quarter</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
+                  <provenance>'<persName  role="fmo" key="person_2771">Ranulphi Barlow</persName> liber'</provenance>
+                  <acquisition when="1606">Presented to the Bodleian by <persName role="fmo" key="person_2771">Ranulph Barlow</persName>, 1606</acquisition>
+                  
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
-                              <bibl facs="aap0396.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 375</bibl>
-                           </listBibl>
+                              Description adapted (November 2022) by Stewart J. Brookes from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973).
+                              <listBibl>
+                                 <bibl facs="aap0396.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 375</bibl>
+                              </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
+                  
                   <surrogates>
                      <bibl subtype="partial" type="digital-facsimile">
                         <ref target="https://digital.bodleian.ox.ac.uk/objects/a505b5a3-4777-42a5-9be7-994b76a1879d/">
@@ -92,10 +134,52 @@
                      </listBibl>
                   </listBibl>
                </additional>
+            
+            <msPart xml:id="Bodl_359_flyleaves">
+               <msIdentifier>
+                  <altIdentifier>
+                     <idno>MS. Bodl. 359, flyleaves</idno>
+                  </altIdentifier>
+               </msIdentifier>
+               
+               <msContents>
+                  
+                  <msItem>
+                     <locus>(Fols i, 97)</locus> 
+                     <title key="work_10207">Latin antiphoner: rhymed office of <persName key="person_315944519">St Edmund, Archbishop</persName>
+                     </title>
+                     <textLang mainLang="la">Latin</textLang>
+                  </msItem>
+                  
+               </msContents>
+               <physDesc>
+                  <objectDesc form="codex">
+                     <supportDesc material="perg">
+                        <support>Parchment</support>
+                     </supportDesc>
+                     
+                  </objectDesc>
+                  <musicNotation>
+                     <p>Notation on staves (see van Dijk 1957).</p>
+                  </musicNotation>
+               </physDesc>
+               <history>
+                  
+                  <origin>
+                     <origDate notAfter="1499" notBefore="1400" calendar="Gregorian">15th century</origDate>
+                     <origPlace><country key="place_7002445">England</country></origPlace>
+                     
+                  </origin>
+                  
+               </history>
+            </msPart>
+            
             </msDesc>
+            
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2022-10-14">Description revised to incorporate all the information in the Summary Catalogue (1922)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
