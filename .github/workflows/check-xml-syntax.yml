@@ -1,0 +1,12 @@
+name: Check XML syntax
+on: [push]
+jobs:
+  Check-XML-syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+
+      - name: Check XML syntax
+        run: |
+          find . -name '*.xml' -print0 | xargs -0 xmllint --noout
