@@ -1,0 +1,15 @@
+name: Check XML syntax
+on: [push]
+jobs:
+  Check-XML-syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+      - name: Install xmllint
+        run: |
+          sudo apt-get update
+          sudo apt-get install --no-install-recommends -y libxml2-utils
+      - name: Check XML syntax
+        run: |
+          find . -name '*.xml' -print0 | xargs -0 xmllint --noout
