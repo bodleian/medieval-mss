@@ -10,6 +10,8 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install --no-install-recommends -y libxml2-utils
+      - name: Log errors from xmllint
+        uses: korelstar/xmllint-problem-matcher@v1
       - name: Check XML syntax
         run: |
           find . -name '*.xml' -print0 | xargs -0 xmllint --noout
