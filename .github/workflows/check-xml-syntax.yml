@@ -4,14 +4,13 @@ jobs:
   Check-XML-syntax:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repository code
+      - name: Check out repository
         uses: actions/checkout@v3
       - name: Install dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y libxml2-utils
-      - name: Log errors from xmllint
-        uses: korelstar/xmllint-problem-matcher@v1
       - name: Check XML syntax
+        uses: korelstar/xmllint-problem-matcher@v1
         run: |
           find . -name '*.xml' -print0 | xargs -0 xmllint --noout
