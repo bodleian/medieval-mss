@@ -1,7 +1,7 @@
 """
 Check entity keys
 
-Verifies that every @key in the XML descriptions
+Verifies that every @key in TEI XML manuscript descriptions
 corresponds to an @xml:id in the authority files.
 """
 
@@ -12,7 +12,7 @@ from multiprocessing import Pool
 from lxml import etree
 
 
-def get_xml_ids(file_path: str) -> set:
+def get_authority_ids(file_path: str) -> set:
     """
     Returns a set of all xml:id attributes on <person>, <place>, <org>, and <bibl> elements
     in the metadata XML file.
@@ -31,14 +31,17 @@ def get_xml_ids(file_path: str) -> set:
     return xml_ids
 
 
-def check_key_presence(authority_ids: set, file_path: str) -> bool:
+def find_key_errors(authority_ids: set, file_path: str) -> bool:
     """
     Validates that every @key in the XML descriptions in the file_path directory
     corresponds to an @xml:id in the metadata_files.
 
-    Prints an error message to stderr for each @key that is not found in the metadata files.
+    Args:
+        authority_ids: all xml:id attributes in the authority files
+        file_path: the path to the XML file to check
 
-    Returns True if any errors are found, False if all keys are valid.
+    Returns:
+        True if any errors are found, False otherwise
     """
     with open(file_path, "rb") as f:
         tree = etree.parse(f)
@@ -69,8 +72,8 @@ def check_key_presence(authority_ids: set, file_path: str) -> bool:
 if __name__ == "__main__":
     authority_ids = set()
     for file_path in ["./persons.xml", "./places.xml", "./works.xml"]:
-        authority_ids |= get_xml_ids(file_path)
-    xml_files = {
+        authority_ids |= get_authority_ids(file_path)
+    manuscript_descriptions = {
         os.path.join(root, file)
         for root, dirs, files in os.walk("./collections")
         for file in files
@@ -78,8 +81,8 @@ if __name__ == "__main__":
     }
     with Pool() as p:
         errors = p.starmap(
-            check_key_presence,
-            [(authority_ids, file_path) for file_path in xml_files],
+            find_key_errors,
+            [(authority_ids, file_path) for file_path in manuscript_descriptions],
         )
 
     # Check if any errors were found
