@@ -16,6 +16,12 @@ def get_authority_ids(file_path: str) -> set:
     """
     Returns a set of all xml:id attributes on <person>, <place>, <org>, and <bibl> elements
     in the metadata XML file.
+
+    Args:
+        file_path: the path of the authority file to analyse
+
+    Returns:
+        a set of all xml:id attributes in the file
     """
     parser = etree.XMLParser(ns_clean=True)
     tree = etree.parse(file_path, parser)
@@ -89,5 +95,5 @@ if __name__ == "__main__":
     if any(errors):
         sys.exit(1)
     else:
-        print("\nAll keys are valid.")
+        print("All keys are valid.")
         sys.exit(0)
