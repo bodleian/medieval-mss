@@ -1,16 +1,19 @@
-name: Check entity keys
+name: Check TEI entity keys
 
 on: [push]
 
 jobs:
-  check-keys:
+  Check-keys:
 
     runs-on: ubuntu-latest
 
     steps:
-        - uses: actions/checkout@v3
-        - uses: actions/setup-python@v4
+        - name: Check out repository
+          uses: actions/checkout@v3
+        - name: Set up Python
+          uses: actions/setup-python@v4
           with:
             python-version: '3.x'
             cache: 'pip'
-        - run: python processing/check_entity_keys.py
+        - name: Check keys in TEI descriptions
+          run: python processing/check_entity_keys.py
