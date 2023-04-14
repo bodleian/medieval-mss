@@ -15,5 +15,7 @@ jobs:
           with:
             python-version: '3.x'
             cache: 'pip'
+        - name: Install dependencies
+          run: pip install -r processing/requirements.txt
         - name: Check keys in TEI descriptions
           run: python processing/check_entity_keys.py
