@@ -1,0 +1,28 @@
+name: Check XML
+
+on: 
+  push
+
+jobs:
+  check-xml:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+        cache: 'pip'
+
+    - name: Install dependencies
+      run: pip install -r processing/requirements.txt
+
+    - name: Validate XML using Relax NG
+      run: python processing/validate.py
+
+    - name: Check entity keys in descriptions
+      run: python processing/check_entity_keys.py
