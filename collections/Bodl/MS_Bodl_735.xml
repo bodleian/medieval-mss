@@ -7,11 +7,24 @@
          <titleStmt>
             <title>MS. Bodl. 735</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2023">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+        
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -41,6 +54,9 @@
                   <msItem n="1" xml:id="MS_Bodl_735-item1">
                      <author key="person_51797933">Peter Lombard</author>
                      <title key="work_3507">Commentary on the Psalter</title>
+                     <rubric>Cum omnes Prophetas</rubric>
+                     <incipit type="text">Beatua cui omnia optata succedunt</incipit>
+                     <note>Much of the text occurs in the lemmata</note>
                      <bibl type="commentedOn">
                         <title>Bible, Psalms</title>
                      </bibl>
@@ -51,14 +67,31 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+
+                        <extent>
+                           241 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>12.5</height>
+                              <width>8.75</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     
+                     <layoutDesc>
+                        <layout columns="2">2 cols</layout>
+                     </layoutDesc>
+                     
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote>Fine and good initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 373)</decoNote>
+
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 373
+                     </summary> 
+                     <decoNote type="decInit">Fine initials</decoNote>
+                     <decoNote type="decInit">Good initials</decoNote>
                   </decoDesc>
                   <bindingDesc>
                      <binding notBefore="1400" notAfter="1500">
-                        <p>White leather on boards, clasps lost, English 15th cent. work..</p>
+                        <p>'White leather on boards, clasps lost, English 15th century work' (Summary Catalogue); 'Contemporary white leather binding on boards. Medieval book-markers' (Pächt and Alexander)</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
@@ -66,18 +99,25 @@
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1250" notBefore="1225">13th century, second quarter</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
                   <provenance type="MLGB3_provenance_evidence"
                               source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5875">
-                     <orgName role="fmo" key="org_2142145857037522921207">Windsor, Berkshire, Royal collegiate chapel of St George</orgName>: Medieval binding (s. xv). Usual chain mark. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5875">MLGB3</ref>: inferred evidence). </provenance>
+                     <orgName role="fmo" key="org_2142145857037522921207">Windsor, Berkshire, Royal collegiate chapel of St George</orgName>: Medieval binding (s. xv). Usual chain mark 
+                     (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5875">MLGB3</ref>)</provenance>
+              
+                  <provenance>'Precium istius libri . x . marc.'</provenance> 
+                  
+                  <acquisition when="1612">Presented by the dean and canons of Windsor in 1612</acquisition>
+               
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
+                           Description adapted (March 2023) by Stewart J. Brookes from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973)
+                           <listBibl>                              
                               <bibl facs="aap0537.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 516</bibl>
                            </listBibl>
                         </source>
@@ -98,6 +138,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2023-03-27">Description revised to incorporate all the information in the Summary Catalogue (1922)</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2021-12-14">Add provenance information from MLGB3.</change>
          <change when="2017-07-01">First online publication.</change>
