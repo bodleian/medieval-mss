@@ -422,7 +422,7 @@
                 <surrogates>
                     <bibl type="digital-facsimile">
                         <xsl:attribute name="subtype" select="if (str[@name='completeness_s']/text() = 'complete') then 'full' else 'partial'"/>
-                        <ref target="https://digital.bodleian.ox.ac.uk/inquire/p/{ str[@name='object_id']/text() }">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/{ str[@name='object_id']/text() }">
                             <title>Digital Bodleian</title>
                         </ref>
                         <note>(<xsl:value-of select="if (str[@name='completeness_s']/text() = 'complete') then 'full digital facsimile' else 'selected images only'"/>)</note>
