@@ -94,7 +94,7 @@ def process_tei_file(file_path):
             file.write(processed_xml)
 
 
-def main():
+if __name__ == "__main__":
     """
     Recursively processes all TEI files in the 'collections' directory.
     """
@@ -104,7 +104,3 @@ def main():
                 file_path = os.path.join(dirpath, filename)
                 process_tei_file(file_path)
     print("All files processed.")
-
-
-if __name__ == "__main__":
-    main()
