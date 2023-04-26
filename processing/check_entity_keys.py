@@ -6,6 +6,7 @@ corresponds to an @xml:id in the authority files.
 """
 
 import os
+import re
 import sys
 from multiprocessing import Pool
 
@@ -54,19 +55,19 @@ def find_key_errors(authority_ids: set, file_path: str) -> bool:
     KeyError = False
     for element in tree.iter():
         if "key" in element.attrib:
-            # if the key is empty, print an error message
+            # is the key empty?
             if element.attrib["key"] == "":
                 sys.stderr.write(
                     f"Error: empty key in {file_path}:{element.sourceline}\n"
                 )
                 KeyError = True
-            # if the key contains a space, print an error message
-            elif " " in element.attrib["key"]:
+            # is the key in the form of `prefix_1234`?
+            elif not re.match(r"\w+_\d+", element.attrib["key"]):
                 sys.stderr.write(
-                    f"Error: {element.attrib['key']} contains a space in {file_path}:{element.sourceline}\n"
+                    f"Error: {element.attrib['key']} is invalid in {file_path}:{element.sourceline}\n"
                 )
                 KeyError = True
-            # if the key is not found in the authority files, print an error message
+            # is the key in the authority files?
             elif element.attrib["key"] not in authority_ids:
                 sys.stderr.write(
                     f"Error: {element.attrib['key']} in {file_path}:{element.sourceline} not found in authority files\n"
@@ -77,11 +78,11 @@ def find_key_errors(authority_ids: set, file_path: str) -> bool:
 
 if __name__ == "__main__":
     authority_ids = set()
-    for file_path in ["./persons.xml", "./places.xml", "./works.xml"]:
+    for file_path in ["persons.xml", "places.xml", "works.xml"]:
         authority_ids |= get_authority_ids(file_path)
     manuscript_descriptions = {
         os.path.join(root, file)
-        for root, dirs, files in os.walk("./collections")
+        for root, dirs, files in os.walk("collections")
         for file in files
         if file.endswith(".xml")
     }
