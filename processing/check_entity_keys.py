@@ -76,7 +76,7 @@ def find_key_errors(authority_ids: set, file_path: str) -> bool:
     return KeyError
 
 
-if __name__ == "__main__":
+def main() -> int:
     authority_ids = set()
     for file_path in ["persons.xml", "places.xml", "works.xml"]:
         authority_ids |= get_authority_ids(file_path)
@@ -94,7 +94,11 @@ if __name__ == "__main__":
 
     # Check if any errors were found
     if any(errors):
-        sys.exit(1)
+        return 1
     else:
         print("All keys are valid.")
-        sys.exit(0)
+        return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

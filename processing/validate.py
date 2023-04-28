@@ -71,11 +71,15 @@ def get_xml_files(directory: str) -> list[str]:
     return xml_files
 
 
-if __name__ == "__main__":
+def main() -> int:
     schema_url = "https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng"
     schema = download_schema(schema_url)
     if not validate_xml_files("./collections", schema):
-        sys.exit(1)
+        return 1
     else:
         print("All XML files are valid.")
-        sys.exit(0)
+        return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
