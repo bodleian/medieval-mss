@@ -19,9 +19,19 @@ from lxml import etree
 NS: dict[str, str] = {"tei": "http://www.tei-c.org/ns/1.0"}
 
 
-class XMLFile(str):
+class XMLFile:
+    """Represents an XML file, with methods for reading and writing."""
+
     def __init__(self, file_path: str):
-        self.file_path = file_path
+        self.file_path: str = file_path
+        self.tree: etree.ElementTree = self.read_tree()
+
+    def read_tree(self) -> etree.ElementTree:
+        """Create an XML tree from a file."""
+        return etree.parse(
+            self.file_path,
+            parser=etree.XMLParser(ns_clean=True, recover=True, encoding="utf-8"),
+        )
 
     def write_tree(self, tree: etree.ElementTree) -> None:
         """Write the XML tree to the file with minimal changes to formatting."""
@@ -43,31 +53,21 @@ class XMLFile(str):
             file.truncate()
 
 
-class XMLTree:
-    """The XML tree of the file."""
-
-    def __init__(self, file_path: str):
-        self.works_file_path: str = file_path
-
-    def create_tree(self) -> etree.ElementTree:
-        """Create an XML tree from a file."""
-        return etree.parse(
-            self.works_file_path,
-            parser=etree.XMLParser(ns_clean=True, recover=True, encoding="utf-8"),
-        )
-
-
 @dataclass
-class Bibl:
-    """A <bibl> element."""
+class Work:
+    """Represents a <bibl> element, with a method for adding a <term> element."""
 
     bibl_element: etree.Element
+    title: str = ""
+
+    def __post_init__(self) -> None:
+        self.title = self._get_title()
 
     def add_term(self, category: str) -> None:
         """Add a <term> element to a <bibl> element, with a reference to a category."""
         self.bibl_element.append(etree.Element("term", ref=f"#{category}", nsmap=NS))
 
-    def title(self) -> str:
+    def _get_title(self) -> str:
         """Return a title from the <bibl> element."""
         return ", ".join(
             title.text
@@ -75,10 +75,16 @@ class Bibl:
         )
 
 
-class Categories(dict):
-    """A dictionary of <category> elements."""
+class Categories(dict[str, str]):
+    """Provides a dictionary of <category> elements."""
 
-    def create_categories(self, works_tree: etree.ElementTree) -> dict[str, str]:
+    def __init__(self, works_tree: etree.ElementTree):
+        self.dict: dict[str, str] = self._create_categories(works_tree)
+
+    def __call__(self) -> dict[str, str]:
+        return self.dict
+
+    def _create_categories(self, works_tree: etree.ElementTree) -> dict[str, str]:
         """Create a dictionary of <category> elements."""
         return {
             category.get("{http://www.w3.org/XML/1998/namespace}id"): category.findtext(
@@ -97,7 +103,10 @@ class CategorySelector(list[str]):
         self.categories = categories
         self.bibl_title = bibl_title
 
-    def print_categories(self) -> None:
+    def __call__(self) -> list[str]:
+        return self.get_selection()
+
+    def _print_categories(self) -> None:
         """Print the available categories in three columns."""
         for index, category in enumerate(self.categories.values()):
             if index % 3 == 0:
@@ -105,67 +114,56 @@ class CategorySelector(list[str]):
             print(f"{index+1}. {category:<25}", end="")
         print()
 
-    def validate_selection(self, selection: str) -> bool:
-        """Check that the selection can be converted to a list of integers."""
-        if not selection:
-            return True  # valid not to make a selection
-        elif all(
-            int(index) - 1 in range(len(self.categories)) for index in selection.split()
-        ):
-            return True  # all indices are valid
-        else:
-            print("Please enter one of more numbers separated by spaces.")
-            return False
-
-    def convert_index_to_category(self, index: int) -> str:
-        """Convert an index to a category."""
-        return list(self.categories.keys())[index]
-
     def get_selection(self) -> list[str]:
         """Return category keys from the user's selection."""
         while True:
             print(f"\n{self.bibl_title}")
-            self.print_categories()
+            self._print_categories()
             selection: str = input("\nEnter one or more category numbers: ")
-            if self.validate_selection(selection):
+            try:
                 selection_indices: list[int] = [
                     int(index) - 1 for index in selection.split()
                 ]
-                selection_keys: list[str] = []
-                for index in selection_indices:
-                    selection_keys.append(self.convert_index_to_category(index))
-                return selection_keys
+            except ValueError:
+                print("Please enter one of more numbers separated by spaces.")
+                continue
+            except IndexError:
+                print("Please select from the numbers listed.")
+                continue
+
+            selection_keys: list[str] = []
+            for index in selection_indices:
+                # append the category key to the list, converting the index to a key
+                selection_keys.append(list(self.categories.keys())[index])
+
+            return selection_keys
 
 
 def main() -> int:
-    works_file: XMLFile = XMLFile("works.xml")
+    works: XMLFile = XMLFile("works.xml")
 
-    works_tree: etree.ElementTree = XMLTree(works_file).create_tree()
-
-    categories: dict[str, str] = Categories().create_categories(works_tree)
+    categories: dict[str, str] = Categories(works.tree)()
 
     # Iterate over <bibl> elements with an xml:id but no <term> child
-    for bibl_element in works_tree.xpath(
+    for bibl_element in works.tree.xpath(
         "//tei:bibl[@xml:id and not(tei:term)]", namespaces=NS
     ):
-        # Create a Bibl object from the <bibl> element
-        bibl: Bibl = Bibl(bibl_element)
+        # Create a Work object for manipulating the <bibl> element
+        bibl: Work = Work(bibl_element)
 
-        # Prompt the user for a category selection
-        selected_categories: list[str] = CategorySelector(
-            categories, bibl.title()
-        ).get_selection()
+        # Get the user's selection of categories
+        selected_categories: list[str] = CategorySelector(categories, bibl.title)()
 
         # If there is no selection, skip to the next <bibl> element
         if not selected_categories:
             continue
 
-        # Add the selection in a <term> element
+        # Add <term> elements for the selected categories
         for category in selected_categories:
             bibl.add_term(category)
 
         # Update the XML file
-        works_file.write_tree(works_tree)
+        works.write_tree(works.tree)
 
     print("\nAll works have been processed.")
     return 0
