@@ -57,38 +57,30 @@ class XMLFile:
 class Category:
     """Represents a <category> element."""
 
-    id: str
-    description: str
+    element: etree.Element
+    id: str = ""
+    description: str = ""
 
-    @classmethod
-    def from_element(cls, category_element: etree.Element) -> "Category":
-        """Create a Category object from a <category> element."""
-        return cls(
-            category_element.get("{http://www.w3.org/XML/1998/namespace}id"),
-            category_element.findtext("tei:catDesc", namespaces=NS),
-        )
+    def __post_init__(self) -> None:
+        self.id = self.element.get("{http://www.w3.org/XML/1998/namespace}id")
+        self.description = self.element.findtext("tei:catDesc", namespaces=NS)
 
 
 @dataclass
 class Work:
     """Represents a <bibl> element, with a method for adding a <term> element."""
 
-    bibl_element: etree.Element
+    element: etree.Element
     title: str = ""
 
     def __post_init__(self) -> None:
-        self.title = self._get_title()
+        self.title = ", ".join(
+            title.text for title in self.element.findall("tei:title", namespaces=NS)
+        )
 
     def add_term(self, category: str) -> None:
         """Add a <term> element to a <bibl> element, with a reference to a category."""
-        self.bibl_element.append(etree.Element("term", ref=f"#{category}", nsmap=NS))
-
-    def _get_title(self) -> str:
-        """Return a title from the <bibl> element."""
-        return ", ".join(
-            title.text
-            for title in self.bibl_element.findall("tei:title", namespaces=NS)
-        )
+        self.element.append(etree.Element("term", ref=f"#{category}", nsmap=NS))
 
 
 class WorksFile(XMLFile):
@@ -101,7 +93,7 @@ class WorksFile(XMLFile):
     def _get_categories(self) -> list[Category]:
         """Return a list of Category objects."""
         return [
-            Category.from_element(category)
+            Category(category)
             for category in self.tree.xpath("//tei:category", namespaces=NS)
         ]
 
