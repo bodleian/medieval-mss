@@ -12,11 +12,50 @@ Run from the main project directory:
 
 
 import sys
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 from lxml import etree
 
 NS: dict[str, str] = {"tei": "http://www.tei-c.org/ns/1.0"}
+
+
+@dataclass
+class XMLElement:
+    """Represents an XML element."""
+
+    element: etree.Element
+    id: str = field(default_factory=str)
+
+    def __post_init__(self) -> None:
+        self.id = self.element.get("{http://www.w3.org/XML/1998/namespace}id")
+
+
+@dataclass
+class Category(XMLElement):
+    """Represents a <category> element."""
+
+    description: str = field(default_factory=str)
+
+    def __post_init__(self) -> None:
+        super().__post_init__()
+        self.description = self.element.findtext("tei:catDesc", namespaces=NS)
+
+
+@dataclass
+class Work(XMLElement):
+    """Represents a <bibl> element, with a method for adding a <term> element."""
+
+    title: str = field(default_factory=str)
+
+    def __post_init__(self) -> None:
+        super().__post_init__()
+        self.title = ", ".join(
+            title.text for title in self.element.findall("tei:title", namespaces=NS)
+        )
+
+    def add_term(self, category: str) -> None:
+        """Add a <term> element to a <bibl> element, with a reference to a category."""
+        self.element.append(etree.Element("term", ref=f"#{category}", nsmap=NS))
 
 
 class XMLFile:
@@ -30,7 +69,7 @@ class XMLFile:
         """Create an XML tree from a file."""
         return etree.parse(
             self.file_path,
-            parser=etree.XMLParser(ns_clean=True, recover=True, encoding="utf-8"),
+            parser=etree.XMLParser(ns_clean=True),
         )
 
     def write_tree(self, tree: etree.ElementTree) -> None:
@@ -53,44 +92,11 @@ class XMLFile:
             file.truncate()
 
 
-@dataclass
-class Category:
-    """Represents a <category> element."""
-
-    element: etree.Element
-    id: str = ""
-    description: str = ""
-
-    def __post_init__(self) -> None:
-        self.id = self.element.get("{http://www.w3.org/XML/1998/namespace}id")
-        self.description = self.element.findtext("tei:catDesc", namespaces=NS)
-
-
-@dataclass
-class Work:
-    """Represents a <bibl> element, with a method for adding a <term> element."""
-
-    element: etree.Element
-    title: str = ""
-
-    def __post_init__(self) -> None:
-        self.title = ", ".join(
-            title.text for title in self.element.findall("tei:title", namespaces=NS)
-        )
-
-    def add_term(self, category: str) -> None:
-        """Add a <term> element to a <bibl> element, with a reference to a category."""
-        self.element.append(etree.Element("term", ref=f"#{category}", nsmap=NS))
-
-
 class WorksFile(XMLFile):
     """Represents the works file."""
 
-    def __init__(self, file_path: str) -> None:
-        super().__init__(file_path)
-        self.categories: list[Category] = self._get_categories()
-
-    def _get_categories(self) -> list[Category]:
+    @property
+    def categories(self) -> list[Category]:
         """Return a list of Category objects."""
         return [
             Category(category)
