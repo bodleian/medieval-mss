@@ -74,7 +74,7 @@ def get_xml_files(directory: str) -> list[str]:
 def main() -> int:
     schema_url = "https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng"
     schema = download_schema(schema_url)
-    if not validate_xml_files("./collections", schema):
+    if not validate_xml_files("collections", schema):
         return 1
     else:
         print("All XML files are valid.")
