@@ -8,96 +8,96 @@ corresponds to an @xml:id in the authority files.
 import os
 import re
 import sys
-from multiprocessing import Pool
 
 from lxml import etree
 
 
-def get_authority_ids(file_path: str) -> set:
-    """
-    Returns a set of all xml:id attributes on <person>, <place>, <org>, and <bibl> elements
-    in the metadata XML file.
+class XMLFile:
+    def __init__(self, file_path: str) -> None:
+        self.file_path: str = file_path
+        self.tree: etree.ElementTree = self.read()
 
-    Args:
-        file_path: the path of the authority file to analyse
-
-    Returns:
-        a set of all xml:id attributes in the file
-    """
-    parser = etree.XMLParser(ns_clean=True)
-    tree = etree.parse(file_path, parser)
-    xml_ids = {
-        elem.get("{http://www.w3.org/XML/1998/namespace}id")
-        for elem in tree.iter(
-            "{http://www.tei-c.org/ns/1.0}person",
-            "{http://www.tei-c.org/ns/1.0}place",
-            "{http://www.tei-c.org/ns/1.0}org",
-            "{http://www.tei-c.org/ns/1.0}bibl",
+    def read(self) -> etree.ElementTree:
+        """Create an XML tree from a file."""
+        return etree.parse(
+            self.file_path,
+            parser=etree.XMLParser(ns_clean=True),
         )
-    }
-    return xml_ids
 
 
-def find_key_errors(authority_ids: set, file_path: str) -> bool:
-    """
-    Validates that every @key in the XML descriptions in the file_path directory
-    corresponds to an @xml:id in the metadata_files.
+class AuthorityFile(XMLFile):
+    def __init__(self, file_path: str) -> None:
+        super().__init__(file_path)
+        self.keys: set[str] = self.get_keys()
 
-    Args:
-        authority_ids: all xml:id attributes in the authority files
-        file_path: the path to the XML file to check
+    def get_keys(self) -> set[str]:
+        """Returns a set of all xml:id attributes on <person>, <place>, <org>, and <bibl> elements."""
+        return {
+            elem.get("{http://www.w3.org/XML/1998/namespace}id")
+            for elem in self.tree.iter(
+                "{http://www.tei-c.org/ns/1.0}person",
+                "{http://www.tei-c.org/ns/1.0}place",
+                "{http://www.tei-c.org/ns/1.0}org",
+                "{http://www.tei-c.org/ns/1.0}bibl",
+            )
+        }
 
-    Returns:
-        True if any errors are found, False otherwise
-    """
-    with open(file_path, "rb") as f:
-        tree = etree.parse(f)
-    KeyError = False
-    for element in tree.iter():
-        if "key" in element.attrib:
+
+class MSDesc(XMLFile):
+    def check_keys(self, authority_keys: set[str]) -> bool:
+        KeysValid = True
+        for key in self.tree.xpath("//@key"):
             # is the key empty?
-            if element.attrib["key"] == "":
-                sys.stderr.write(
-                    f"Error: empty key in {file_path}:{element.sourceline}\n"
-                )
-                KeyError = True
+            if key == "":
+                sys.stderr.write(f"Error: empty key in {self.file_path}\n")
+                KeysValid = False
             # is the key in the form of `prefix_1234`?
-            elif not re.match(r"\w+_\d+", element.attrib["key"]):
-                sys.stderr.write(
-                    f"Error: {element.attrib['key']} is invalid in {file_path}:{element.sourceline}\n"
-                )
-                KeyError = True
+            elif not re.match(r"\w+_\d+", key):
+                sys.stderr.write(f"Error: {key} is invalid in {self.file_path}\n")
+                KeysValid = False
             # is the key in the authority files?
-            elif element.attrib["key"] not in authority_ids:
+            elif key not in authority_keys:
                 sys.stderr.write(
-                    f"Error: {element.attrib['key']} in {file_path}:{element.sourceline} not found in authority files\n"
+                    f"Error: {key} not found in authority files in {self.file_path}\n"
                 )
-                KeyError = True
-    return KeyError
+                KeysValid = False
+        return KeysValid
+
+
+class Collections:
+    def __init__(self, directory_path: str) -> None:
+        self.directory_path: str = directory_path
+
+    @property
+    def xml_paths(self) -> list[str]:
+        """
+        Returns a list of all XML files in the given directory.
+        """
+        return [
+            os.path.join(root, file)
+            for root, _, files in os.walk(self.directory_path)
+            for file in files
+            if file.endswith(".xml")
+        ]
 
 
 def main() -> int:
-    authority_ids = set()
-    for file_path in ["persons.xml", "places.xml", "works.xml"]:
-        authority_ids |= get_authority_ids(file_path)
-    manuscript_descriptions = {
-        os.path.join(root, file)
-        for root, dirs, files in os.walk("collections")
-        for file in files
-        if file.endswith(".xml")
-    }
-    with Pool() as p:
-        errors = p.starmap(
-            find_key_errors,
-            [(authority_ids, file_path) for file_path in manuscript_descriptions],
-        )
+    persons = AuthorityFile("persons.xml")
+    places = AuthorityFile("places.xml")
+    works = AuthorityFile("works.xml")
+    authority_keys: set[str] = persons.keys | places.keys | works.keys
 
-    # Check if any errors were found
-    if any(errors):
-        return 1
-    else:
-        print("All keys are valid.")
+    msdesc_paths: list[str] = Collections("collections").xml_paths
+
+    results: list[bool] = [
+        MSDesc(msdesc_path).check_keys(authority_keys) for msdesc_path in msdesc_paths
+    ]
+
+    if all(results):
         return 0
+    else:
+        print(f"{len(results) - sum(results)} errors found")
+        return 1
 
 
 if __name__ == "__main__":
