@@ -3,6 +3,7 @@ Validates all XML files in a directory
 against a remote RelaxNG schema.
 """
 
+import argparse
 import os
 import sys
 import urllib.request
@@ -12,6 +13,8 @@ from lxml import etree
 
 
 class XMLSchema:
+    """Represents a RelaxNG schema."""
+
     def __init__(self, url: str) -> None:
         self.url: str = url
         self.data: str = self.download()
@@ -27,6 +30,8 @@ class XMLSchema:
 
 
 class XMLFile:
+    """Base class for XML files."""
+
     def validate(self, schema: XMLSchema, file_path: str) -> bool:
         """
         Validates the given XML file against the RelaxNG schema.
@@ -50,14 +55,14 @@ class XMLFile:
 
 
 class Collections:
+    """Represents a directory of TEI XML manuscript descriptions."""
+
     def __init__(self, directory_path: str) -> None:
         self.directory_path: str = directory_path
 
     @property
     def xml_paths(self) -> list[str]:
-        """
-        Returns a list of all XML files in the given directory.
-        """
+        """Returns a list of XML files in the directory."""
         return [
             os.path.join(root, file)
             for root, _, files in os.walk(self.directory_path)
@@ -67,10 +72,38 @@ class Collections:
 
 
 def main() -> int:
-    schema_url: str = "https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng"
-    schema: XMLSchema = XMLSchema(schema_url)
+    """
+    Validates all XML files in a directory.
 
-    msdesc_paths: list[str] = Collections("collections").xml_paths
+    Returns 0 if all files pass validation, 1 otherwise.
+    """
+
+    parser = argparse.ArgumentParser(
+        description="Validate XML files against a RelaxNG schema."
+    )
+    parser.add_argument(
+        "-d",
+        "--directory",
+        dest="directory_path",
+        nargs="?",
+        default="collections",
+        help="Path to the directory containing XML files",
+        type=str,
+    )
+    parser.add_argument(
+        "-s",
+        "--schema",
+        dest="schema_url",
+        nargs="?",
+        default="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng",
+        help="URL of the RelaxNG schema",
+        type=str,
+    )
+    args: argparse.Namespace = parser.parse_args()
+
+    schema: XMLSchema = XMLSchema(args.schema_url)
+
+    msdesc_paths: list[str] = Collections(args.directory_path).xml_paths
 
     with Pool(cpu_count()) as pool:
         results = pool.starmap(
