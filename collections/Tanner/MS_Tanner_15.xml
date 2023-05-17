@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8971">
+<TEI xml:id="manuscript_8971" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Tanner 15</title>
             <title type="collection">MSS. Tanner</title>
             <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+               <resp>Description</resp>
+               <persName>Andrew Dunning</persName>
             </respStmt>
          </titleStmt>
          <publicationStmt>
@@ -38,34 +37,67 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem class="#vitae_sanctorum" n="1" xml:id="MS_Tanner_15-item1">
-                     <title key="work_10467">Nova legenda Angliae</title>
-                     <textLang mainLang="la">Latin</textLang>
+                  <textLang mainLang="la">Latin</textLang>
+                  <msItem>
+                     <locus>(pp. v–viii)</locus>
+                     <title type="desc">Alphabetical summary</title>
+                     <incipit xml:lang="la">Adrianus abbas greca pingua peritus floruit.</incipit>
+                     <explicit xml:lang="la">Wulstanus baculum in marmore fixit. qui a nullo alio anelli potuit.</explicit>
+                  </msItem>
+                  <msItem>
+                     <locus>(pp. 1–581)</locus>
+                     <author key="person_22494546">John of Tynemouth</author>
+                     <title key="work_10467">Sanctilogium Angliae Walliae Scotiae et Hiberniae</title>
+                     <incipit xml:lang="la">Adrianus nacione affricanus comes et cooperator</incipit>
+                     <explicit xml:lang="la">sed ab epantu diectus plane dixit.</explicit>
+                     <colophon xml:lang="la">Perfectum est hoc opus wlgariter intitulatum De sanctis Anglie. Ad laudem et honorem omnipotentis dei. ac sancte Cantuar’ ecclesie. ex Impensis Reuerendi in cristo patris domini Thome Goleston eiusdem ecclesie Prioris. Ac sacrarum litterarum professoris egregii. Per me Jacobum Neell’ Normannum ac Rothomagi natum. Anno verbi incarnati .1.4.9.9. Deo gracias.</colophon>
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>i (modern paper endleaf) + 4 (medieval endleaves and contents list, pp. i–viii) + 298 (pp. 1–596) + 4 (medieval endleaves) <dimensions type="leaf" unit="mm">
+                              <height>365</height>
+                              <width>270</width>
+                           </dimensions>
+                        </extent>
+                        <foliation>Early modern pagination. A nineteenth-century hand has annotated pp. 581–596 with further numbers, pp. 585–600, but the original pagination is accurate.</foliation>
+                        <collation/>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2" writtenLines="000 000">Ruled in 000 for 2 columns of 000 lines, ruled space <dimensions type="ruled" unit="mm">
+                              <height>000</height>
+                              <width>000</width>
+                           </dimensions>
+                        </layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <handDesc>
+                     <handNote/>
+                  </handDesc>
                   <decoDesc>
                      <decoNote type="border">Good border.</decoNote>
                      <decoNote type="decInit"> Good initial. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 796)</decoNote>
+                     <decoNote type="colInit"/>
+                     <decoNote type="rubrication"/>
                   </decoDesc>
+                  <bindingDesc>
+                     <binding notAfter="1900" notBefore="1800">
+                        <p>Brown tanned calf over laminated pulpboard, 19th century.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" when="1499" cert="high">1499</origDate>
+                     <origDate calendar="Gregorian" cert="high" when="1499">1499</origDate>
                      <origPlace>
                         <country key="place_1000070">French</country>
                      </origPlace>
                   </origin>
-                  <provenance type="MLGB3_provenance_evidence"
-                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1338">
-                     <orgName role="fmo" key="org_158353196">Canterbury, Kent, Benedictine cathedral priory of Holy Trinity or Christ Church</orgName> (?) : 'Perfectum est hoc opus wlgariter intitulatum De sanctis Anglie, ad laudem et honorem omnipotentis dei ac sancte Cantuariensis ecclesie ex impensis reverendi in Christo patris domini Thome Goleston, eiusdem ecclesie prioris ac sacrarum litterarum professoris egregii, per me Iacobum Neell Normannum ac Rothomagi natum anno verbi incarnati 1499 deo gratias.' (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1338">MLGB3</ref>: evidence from an inscription of ownership by an individual member of a religious house (which may not, however, be evidence for institutional ownership)). </provenance>
-                  <provenance type="MLGB3_laterOwners"
-                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1338">Cf. Horstman, Nova Legenda, 1. xv. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1338">MLGB3</ref>)</provenance>
+                  <provenance source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1338" type="MLGB3_provenance_evidence">
+                     <orgName key="org_158353196" role="fmo">Canterbury, Kent, Benedictine cathedral priory of Holy Trinity or Christ Church</orgName> (?) : (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1338">MLGB3</ref>: evidence from an inscription of ownership by an individual member of a religious house (which may not, however, be evidence for institutional ownership)). </provenance>
+                  <provenance source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1338" type="MLGB3_laterOwners">Cf. Horstman, Nova Legenda, 1. xv. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1338">MLGB3</ref>)</provenance>
                   <provenance notAfter="1735" notBefore="1674" resp="#MMM">
                      <persName key="person_11058091" role="fmo">Thomas Tanner, 1674–1735</persName>
                   </provenance>
@@ -103,7 +135,7 @@
                      </listBibl>
                      <listBibl type="PRINT">
                         <head>Printed descriptions:</head>
-                        <bibl>A. Watson, <title>Catalogue of Dated and Datable Manuscripts in Oxford Libraries</title> (1984), <citedRange unit="entry" from="704" to="704">
+                        <bibl>A. Watson, <title>Catalogue of Dated and Datable Manuscripts in Oxford Libraries</title> (1984), <citedRange from="704" to="704" unit="entry">
                               <ref target="https://hdl.handle.net/2027/mdp.39015008982863?urlappend=%3Bseq=144">no. 704</ref>
                            </citedRange>
                         </bibl>
@@ -114,6 +146,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2023-05-17"><persName>Andrew Dunning</persName> Revised with consultation of original.</change>
          <change when="2021-12-14">Add provenance information from MLGB3.</change>
          <change when="2018-08-15" xml:id="MMM">
             <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
