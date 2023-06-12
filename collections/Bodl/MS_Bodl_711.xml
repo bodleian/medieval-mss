@@ -7,11 +7,24 @@
          <titleStmt>
             <title>MS. Bodl. 711</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2023">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -39,13 +52,19 @@
                </msIdentifier>
                <msContents>
                   <msItem n="1" xml:id="MS_Bodl_711-item1">
+                     <locus>(fol. 1)</locus>
                      <author key="person_40175167">Petrus Comestor</author>
                      <title key="work_3495">Historia scholastica</title>
+                     <rubric>Hystoria scolastica theologie</rubric>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                   <msItem n="2" xml:id="MS_Bodl_711-item2">
+                     <locus>(fol. 203)</locus>
                      <author key="person_98148813">Richard of St.-Victor</author>
                      <title key="work_4328">Liber exceptionum</title>
+                     <rubric>Incipit Prologus Petri Comestoris in libro Allegoriarum</rubric>
+                     <note>Followed by the work in fourteen books</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -53,24 +72,56 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        
+                        <extent>
+                           i + 260 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>13</height>
+                              <width>8.25</width>
+                           </dimensions>
+                        </extent>
+                     
                      </supportDesc>
+                     
+                     <layoutDesc>
+                        <layout columns="2">2 cols</layout>
+                     </layoutDesc>
+                     
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote type="decInit">Fine initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 363, pl. XXIX)</decoNote>
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 363, Pl. XXIX
+                     </summary>
+                     <decoNote type="decInit">Fine initials</decoNote>
                   </decoDesc>
+                  
+                  <accMat> The binding is from the 17th century and the fly-leaves are comprised of pages from a 16th century edition of Cicero's <title>Letters</title>.
+                     Other pages from this copy of Cicero that were used as fly-leaves are found in 
+                     <ref target="https://medieval.bodleian.ox.ac.uk/catalog/manuscript_1262">MS. Bodl. 203</ref>, 
+                     <ref target="https://medieval.bodleian.ox.ac.uk/catalog/manuscript_1263">MS. Bol. 204</ref>,
+                     <ref target="https://medieval.bodleian.ox.ac.uk/catalog/manuscript_1272">MS. Bodl. 215</ref>,
+                     <ref target="https://medieval.bodleian.ox.ac.uk/catalog/manuscript_1298">MS. Bodl. 244</ref>, 
+                     <ref target="https://medieval.bodleian.ox.ac.uk/catalog/manuscript_1399">MS. Bodl. 370</ref> and
+                     <ref target="https://medieval.bodleian.ox.ac.uk/catalog/manuscript_1586">MS. Bodl. 568</ref>
+                     </accMat>
+                  
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1230" notBefore="1220">c. 1220–1230</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
+                  
+                  <provenance when="1604">Presented by <persName key="person_2617" role="dnr">William Ballow</persName> of Christ Church, Oxford in 1604</provenance>
+                  
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
+                        <source>
+                           Description adapted (March 2023) by Stewart J. Brookes from the Summary Catalogue (1922)
+                           <listBibl>                              
                               <bibl facs="aap0473.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 452</bibl>
                            </listBibl>
                         </source>
@@ -81,6 +132,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2023-01-01">Description revised to incorporate all the information in the Summary Catalogue (1922)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>

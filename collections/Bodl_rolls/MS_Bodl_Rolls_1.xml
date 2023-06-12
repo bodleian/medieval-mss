@@ -7,9 +7,19 @@
          <titleStmt>
             <title>MS. Bodl. Rolls 1</title>
             <title type="collection">MSS. Bodl. Rolls (Bodley Rolls)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>J. J. G. Alexander</persName>
+               <persName>Otto Paecht</persName>
+            </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2023">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -39,19 +49,27 @@
                </msIdentifier>
                <msContents>
                   <msItem n="1" xml:id="MS_Bodl_Rolls_1-item1">
-                     <author key="person_122334648">George Ripley (attrib.)</author>
-                     <title key="work_1690">Emblematical Scroll</title>
-                     <textLang mainLang="en" otherLangs="la">English and Latin</textLang>
+                    
+                     <title key="work_1690" type="desc">'Ripley Scroll'</title>
+                     <note>Emblematical scroll with alchemical images and texts (including <ref target="https://www.dimev.net/record.php?recID=2278">DIMEV 2278</ref>, <ref target="https://www.dimev.net/record.php?recID=2623">DIMEV 2623</ref>), attributed to <persName role="aut" key="person_122334648">George Ripley </persName> in the early modern period, but not by modern scholarship.</note>
+                     <listBibl>
+                        <bibl>Ian R. McCallum, 'Alchemical Scrolls Associated with George Ripley', in <title>Mystical Metal of Gold: Essays on Alchemy and Renaissance Culture</title>, ed. Stanton J. Linden (Brooklyn, AMS Press, 2007), 161-188, cat. 1</bibl></listBibl>
+                     <textLang mainLang="enm" otherLangs="la">Middle English and Latin</textLang>
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="roll">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>9 membranes
+                           <dimensions unit="in" type="roll">
+                              <height>104.5</height>
+                              <width>23.5</width>
+                           </dimensions></extent>
                      </supportDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>Fine miniatures (coloured drawings). Retouched in 16th century. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 1018, pl. XCV)</decoNote>
+                     <decoNote type="miniature">Fine miniatures (coloured drawings). Retouched in 16th century. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 1018, pl. XCV)</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
@@ -61,23 +79,38 @@
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
+                  <acquisition when="1605">Presented by <persName role="dnr" key="person_3697">William Dun, M.D.</persName>, in 1605.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
+                        <source>Description adapted (Feb. 2023) from the following sources, with additional reference to published literature as cited.
+                           <listBibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, III (1973), <ref target="https://hdl.handle.net/2027/uc1.31822026891838?urlappend=%3Bseq=110%3Bownerid=115191906-138">no. 1018</ref></bibl>
+                              <bibl>Summary Catalogue (1922)</bibl>
+                           </listBibl>
+                           <listBibl>
                               <bibl facs="aap0580.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 559</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
-                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/7fb51741-f1f9-42cb-b72c-bf7c402c6be5/"><title>Digital Bodleian</title></ref>
-                        <note>(10 images from 35mm slides)</note></bibl></surrogates>
+                  <surrogates>
+                     <bibl type="digital-facsimile" subtype="full">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/a7764355-8fe8-4e6b-af28-ce6e5e225c70/">
+                           <title>Digital Bodleian</title></ref> <note>(full digital facsimile)</note>
+                     </bibl>
+                     <bibl subtype="partial" type="digital-facsimile">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/7fb51741-f1f9-42cb-b72c-bf7c402c6be5/">
+                           <title>Digital Bodleian</title></ref> <note>(10 images from 35mm slides)</note>
+                     </bibl>
+                  </surrogates>
                </additional>
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2023-02">Revised to incorporated fuller information from SC and published sources.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>

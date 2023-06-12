@@ -7,11 +7,24 @@
          <titleStmt>
             <title>MS. Bodl. 533</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2022">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -37,34 +50,82 @@
                      <idno type="SCN">2251</idno>
                   </altIdentifier>
                </msIdentifier>
+               
                <msContents>
+                  <msItem>
+                  
                   <msItem class="#animalia" n="1" xml:id="MS_Bodl_533-item1">
                      <title key="work_10448" type="desc">Bestiary</title>
-                     <textLang mainLang="la">Latin</textLang>
+                     <incipit>Bestiar<supplied>i</supplied>um uocabulum proprie conuenit leonibus</incipit>
+                     <explicit>scribe in buxo</explicit>
+                     <note>A <title>Bestiarum moralizatum</title> or <title>Liber de naturis bestiarum</title>, in about 133 chapters,
+                     the last 21 of which (fol. 28) are about trees, not animals.</note>
+                     
+                     <note>There are many well-drawn and curious figures of animals, etc.</note> 
+                  </msItem>
+                  
+                  <msItem n="2" xml:id="MS_Bodl_533-item2">
+                    <locus> (fol. 29v)</locus>
+                     <author key="person_803890">Isidore</author>
+                     <title key="work_2257">Etymologies</title>
+                     <bibl> XI.i.1-147</bibl>
+                     <incipit>Natura dicta eo quod aliquid</incipit>
+                     <explicit>Quod ad hominem &#x0026; partes attinet corporis ex parte dictum est: nunc etatis eius subiungamus</explicit>
+                  </msItem>
+
+                     <textLang mainLang="la">Latin</textLang>  
                   </msItem>
                </msContents>
+               
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                     
+                     <extent>
+                        i + 35 leaves
+                        <dimensions unit="in" type="binding">
+                           <height>8</height>
+                           <width>6</width>
+                        </dimensions>
+                     </extent>
+                        
                      </supportDesc>
+                     
+                     <layoutDesc>
+                        <layout columns="2">2 cols</layout>
+                     </layoutDesc>
+                     
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote>Fine miniatures. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 433, pl. XXXVII)</decoNote>
+                  
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 433, pl. XXXVII
+                     </summary>
+                     <decoNote type="miniature">Fine miniatures</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1260" notBefore="1240">13th century, middle</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
+                  
+                  <provenance>The entry which follows this volume in the Benefactors' Register, namely 'De Fundamentis legum Angliæ, &#x0026; de Conscientia . 8. MS.' refers to a
+                  printed book, which bore the press-mark '8° F. 1 Jur.' in 1605, and still bears it</provenance>
+                  
+                  <provenance><q>Iste liber pertinet ad <persName role="fmo" key="person_3689">D<unclear>O</unclear>L</persName></q>, early 16th century</provenance>
+                     
+                  <acquisition when="1601">Presented to the Bodleian by <persName role="dnr" key="person_3326">'Edwarde Fletewoode'</persName> in 1601</acquisition>
+                  
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
+                        <source>
+                           Description adapted (January 2022) by Stewart J. Brookes from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973)
+                           <listBibl>                              
                               <bibl facs="aap0299.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 278</bibl>
                               <bibl facs="aap0300.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 279</bibl>
                            </listBibl>
@@ -78,6 +139,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2023-01-20">Description revised to incorporate all the information in the Summary Catalogue (1922)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>

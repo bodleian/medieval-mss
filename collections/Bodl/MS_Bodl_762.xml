@@ -1,17 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_1749" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1749">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Bodl. 762</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2023">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -37,24 +50,69 @@
                      <idno type="SCN">2536</idno>
                   </altIdentifier>
                </msIdentifier>
+               
                <physDesc>
                   <p n="composite">Composite: three parts</p>
-                  <decoDesc>
-                     <decoNote type="decInit">Good initials (partly mutilated). (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 138)</decoNote>
+                  <decoDesc resp="#PA">
+                     <summary>
+                        <ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 138
+                     </summary>
+                     <decoNote type="decInit">Good initials 
+                        (<ref target="https://digital.bodleian.ox.ac.uk/objects/cf4c48d2-7e0e-49d8-ab9b-f9a65798c410/surfaces/3375356e-a91d-4080-9c9c-7a13d8044af5/">partly mutilated</ref>)
+                     </decoNote>
                   </decoDesc>
+                  
                </physDesc>
+                  
+                  <history>
+                     
+                     <provenance>The contents of Part 1 are given in a 13th century hand on fol. ii verso</provenance>
+                     
+                     <provenance>
+                     <orgName role="fmo" key="org_158244517">Ely, cathedral priory</orgName>: pressmark <q type="pressmark">6.32</q> (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6807/">MLGB3</ref>).</provenance> 
+                     
+                     <provenance>In the 16th century, this volume and <ref target="https://medieval.bodleian.ox.ac.uk/catalog/manuscript_1828">MS. Bodl. 839</ref> 
+                        were owned by the same person, as the tags on that manuscript show</provenance>
+                     <provenance>
+                     <orgName role="fmo" key="org_221149196268974790758">Lambeth Palace</orgName>, as evidence by a note made by Thomas James in The Queen's College Oxford, 62.E.6 (Opera Ambrosii, Paris, 1603) in 1612 (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6807/">MLGB3</ref>).</provenance>
+                     <acquisition notAfter="1655">MS. Bodl. 762 does not occur in any Bodleian list until <hi rend="italic">c</hi>. 1655</acquisition>
+                     
+                  </history>
+                  
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
+                        <source>
+                           Description adapted (March 2023) by Stewart J. Brookes from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973)
+                           <listBibl>                              
                               <bibl facs="aap0436.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 415</bibl>
                               <bibl facs="aap0437.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 416</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
-                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/cf4c48d2-7e0e-49d8-ab9b-f9a65798c410/"><title>Digital Bodleian</title></ref>
-                        <note>(2 images from 35mm slides)</note></bibl></surrogates>
+                  <surrogates>
+                     <bibl subtype="partial" type="digital-facsimile">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/cf4c48d2-7e0e-49d8-ab9b-f9a65798c410/">
+                           <title>Digital Bodleian</title>
+                        </ref>
+                        <note>(2 images from 35mm slides)</note>
+                     </bibl>
+                  </surrogates>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="INTERNET">
+                        <head>Online resources:</head>
+                        <bibl>
+                           <ref target="https://clasp.ell.ox.ac.uk/db-latest/apmo/entry/594_5">
+                              <title>Electronic Gneuss-Lapidge</title> (entry 594.5)</ref>
+                        </bibl>
+                        <bibl>
+                           <ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6807">
+                              <title>MLGB3: Medieval Libraries of Great Britain</title>
+                           </ref>
+                        </bibl>
+                     </listBibl>
+                  </listBibl>
                </additional>
                <msPart xml:id="MS_Bodl_762-part1">
                   <msIdentifier>
@@ -63,44 +121,62 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
+                     
                      <msItem n="1" xml:id="MS_Bodl_762-part1-item1">
+                        <locus>(fol. 1)</locus>
                         <author key="person_100227669">Ambrose</author>
                         <title key="work_453">De Abraham</title>
+                        <rubric>Liber sancti Ambrosii episcopi de Abraham</rubric>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
+                     
                      <msItem n="2" xml:id="MS_Bodl_762-part1-item2">
+                        <locus>(fol. 26)</locus>
                         <author key="person_100227669">Ambrose</author>
                         <title key="work_460">De Ioseph</title>
+                        <rubric>... De sancto Ioseph</rubric>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
+                     
                      <msItem n="3" xml:id="MS_Bodl_762-part1-item3">
+                        <locus>(fol. 47)</locus>
                         <author key="person_100227669">Ambrose</author>
                         <title key="work_466">De patriarchis</title>
+                        <rubric>'... De Patriarchis', usually entitled 'De benedictionibus Patriarcharum'</rubric>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
+                     
                      <msItem n="4" xml:id="MS_Bodl_762-part1-item4">
+                        <locus>(fol. 62v)</locus>
                         <author key="person_100227669">Ambrose</author>
                         <title key="work_456">De excessu fratris sui Satyri</title>
+                        <rubric>... De excessu fratris sui</rubric>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
+                     
                      <msItem n="5" xml:id="MS_Bodl_762-part1-item5">
+                        <locus>(fol. 105)</locus>
                         <author key="person_100227669">Ambrose</author>
                         <title key="work_475">Epistula ad Vercellensem ecclesiam</title>
+                        <rubric>Epistola ... ad Vercellensem ecclesiam</rubric>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
+                     
                   </msContents>
+                  
                   <physDesc>
                      <objectDesc form="codex">
                         <supportDesc material="perg">
                            <support>parchment</support>
                         </supportDesc>
                      </objectDesc>
+                     
                   </physDesc>
                   <history>
                      <origin>
                         <origDate calendar="Gregorian" notAfter="1160" notBefore="1140">12th century, middle</origDate>
                         <origPlace cert="low">
-                           <country key="place_7002445">English</country>, <settlement key="place_7012190">Ely</settlement> (?)<!--ORIGINAL: English, Ely (?)--></origPlace>
+                           <country key="place_7002445">England</country>, <settlement key="place_7012190">Ely</settlement>, <orgName role="fmo" key="org_158244517">cathedral priory</orgName> (?)<!--ORIGINAL: English, Ely (?)--></origPlace>
                      </origin>
                   </history>
                </msPart>
@@ -111,17 +187,32 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
+                     
                      <msItem n="1" xml:id="MS_Bodl_762-part2-item1">
+                        <locus>(fol. 124)</locus>
                         <author key="person_100227669">Ambrose</author>
                         <title key="work_455">De bono mortis</title>
+                        <rubric>... De bono mortis</rubric>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
+                     
                      <msItem n="2" xml:id="MS_Bodl_762-part2-item2">
+                        <locus>(fol. 138)</locus>
                         <author key="person_66806872">Augustine</author>
                         <title key="work_758">De cura pro mortuis gerenda</title>
+                        <rubric>Aurelii Augustini doctoris liber ... de cura pro mortuis gerenda</rubric>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
+                     
+                     <msItem n="3" xml:id="MS_Bodl_762-part2-item3">
+                        <locus>(fol. 148v)</locus>
+                        <note>Two hands of <hi rend="italic">c</hi>. 1300 have added a list of the
+                           subjects of a Latin theological work in 80 (?) chapters</note>
+                        <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     
                   </msContents>
+                  
                   <physDesc>
                      <objectDesc form="codex">
                         <supportDesc material="perg">
@@ -133,7 +224,7 @@
                      <origin>
                         <origDate calendar="Gregorian" notAfter="1160" notBefore="1140">12th century, middle</origDate>
                         <origPlace cert="low">
-                           <country key="place_7002445">English</country>, <settlement key="place_7012190">Ely</settlement> (?)<!--ORIGINAL: English, Ely (?)--></origPlace>
+                           <country key="place_7002445">England</country>, <settlement key="place_7012190">Ely</settlement>, <orgName role="fmo" key="org_158244517">cathedral priory</orgName> (?)<!--ORIGINAL: English, Ely (?)--></origPlace>
                      </origin>
                   </history>
                </msPart>
@@ -143,44 +234,72 @@
                         <idno type="part">MS. Bodl. 762 – Part 3</idno>
                      </altIdentifier>
                   </msIdentifier>
+                  
                   <msContents>
+                     
                      <msItem n="1" xml:id="MS_Bodl_762-part3-item1">
+                        <locus>(fol. 150)</locus>
                         <author key="person_100227669">Ambrose</author>
                         <title key="work_457">De fide</title>
+                        <rubric>Liber primus beati Ambrosii episcopi ad Gratianum imperatorem de Fide</rubric>
+                        <note>Preceded by the <title>Epistola Gratiani</title>, and
+                        reckoned to contain six, not five, books</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
+                     
                      <msItem n="2" xml:id="MS_Bodl_762-part3-item2">
+                        <locus>(fol. 219)</locus>
                         <author key="person_100227669">Ambrose</author>
                         <title key="work_469">De spiritu sancto</title>
+                        <note>In three books here reckoned as books 7-9 of the preceding treatise, and preceded (on fol. 218v) by a short list of its
+                           main theses, and an erased rubric and commencement of some treatise of Ambrose</note> 
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
+                     
                      <msItem n="3" xml:id="MS_Bodl_762-part3-item3">
+                        <locus>(fol. 261)</locus>
                         <author key="person_100227669">Ambrose</author>
                         <title key="work_459">De incarnationis dominicae sacramento</title>
+                        <note>The scribe counts this as part of <title>De fide</title>
+                        </note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
+                     
                   </msContents>
+                  
                   <physDesc>
                      <objectDesc form="codex">
                         <supportDesc material="perg">
                            <support>parchment</support>
                         </supportDesc>
+                        
                      </objectDesc>
+                     
+                     <handDesc>
+                        <p>The hand changes on fol. 226</p>
+                     </handDesc>
+                     
                   </physDesc>
                   <history>
                      <origin>
                         <origDate calendar="Gregorian" notAfter="1160" notBefore="1140">12th century, middle</origDate>
                         <origPlace cert="low">
-                           <country key="place_7002445">English</country>, <settlement key="place_7012190">Ely</settlement> (?)<!--ORIGINAL: English, Ely (?)--></origPlace>
+                           <country key="place_7002445">England</country>, <settlement key="place_7012190">Ely</settlement>, <orgName role="fmo" key="org_158244517">cathedral priory</orgName> (?)<!--ORIGINAL: English, Ely (?)--></origPlace>
                      </origin>
+                     
+                     <provenance>On fol. 272av is written with a metal stylus 'X° Kalendas Martii feria iiiia
+                     hora diei. xia. factus est terre motus apud Ely . Anno Domini . M°. cc°. xl°vii°', i.e. Feb. 20, 1246/7</provenance>
+                     
                   </history>
                </msPart>
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
-         <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2023-03-23">Description revised to incorporate all the information in the Summary Catalogue (1922)</change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>

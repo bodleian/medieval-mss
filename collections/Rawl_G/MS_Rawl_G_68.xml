@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8603">
@@ -7,11 +8,23 @@
          <titleStmt>
             <title>MS. Rawl. G. 68</title>
             <title type="collection">MSS. Rawl. G. (Rawlinson G)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2023">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -41,7 +54,12 @@
                   <msItem n="1" xml:id="MS_Rawl_G_68-item1">
                      <author key="person_95283478">Leonardo Bruni</author>
                      <title key="work_2952">De bello Italico</title>
-                     <note>(from Procopius).</note>
+                     <rubric>Leonardi Aretini de Bello Italico Adversus Gothos gesto libri
+                     quattuor incipiunt ad reverendissimum dominum Iulianum [Caesarinum] 
+                     cardinalem S. Angeli'</rubric>
+                     <incipit>Etsi longe mihi iucundius fuisset</incipit>
+                     <note>This is Procopius's work which Leonardo Bruni of Arezzo, 
+                        thinking that he possessed the only manuscript of it, issued as his own work</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -49,15 +67,28 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        
+                        <extent>
+                           109 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>9.375</height>
+                              <width>6.5</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote>Decoration<p>Fine border, initials. Related to the style of the so-called '<persName key="person_96567629" role="art">Ippolyta Master</persName>'. Humanistic script. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 737, pl. LXXI)</p>
-                     </decoNote>
+                  
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 737, pl. LXXI
+                     Related to the style of the so-called '<persName key="person_96567629" role="art">Ippolyta Master</persName>'. Humanistic script</summary>
+                     <decoNote type="border">Fine border</decoNote>
+                     <decoNote type="decInit">Fine initials</decoNote>
+                     <decoNote type="decInit">Summary Catalogue: Fine border on fol. 2 with 
+                        erased coat of arms</decoNote>
                   </decoDesc>
                   <bindingDesc>
                      <binding contemporary="true">
-                        <p>Contemporary Italian stamped binding, with one clasp (two lost).</p>
+                        <p>Contemporary Italian stamped binding, with one clasp (two lost)</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
@@ -65,10 +96,11 @@
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1475" notBefore="1450">15th century, third quarter</origDate>
                      <origPlace>
-                        <country key="place_1000080">Italian</country>, <settlement key="place_7005903">Milan</settlement>
+                        <country key="place_1000080">Italy</country>, <settlement key="place_7005903">Milan</settlement>
                         <!--ORIGINAL: Italian, Milan-->
                      </origPlace>
                   </origin>
+                  <provenance>Erased coat of arms with crest and initials 'I. O', fol. 2; Pächt and Alexander suggested 'possibly Giovanni Ferrufini', cf. Paris, Bibl. Nat. Latin 665 with his arms and the initials 'I. O.', and MS. Auct. T. 4. 16. The same initials are also found in Princeton University Library MS. Kane 44, Holkham Hall, Norfolk, MS. 345, Berlin, Kupferstichkabinett MS. 78.C.25, and former Dyson Perrins MS. 64, all Milanese manuscripts. Suzanne Reynolds, <title>A catalogue of the manuscripts in the library at Holkham Hall</title> I (2015), p. 224, cites further literature on initials I. O. in Milanese manuscripts of this period.</provenance>
                   <provenance notAfter="1755" notBefore="1690" resp="#MMM">
                      <persName key="person_47563478" role="fmo">Richard Rawlinson, 1690–1755</persName>
                   </provenance>
@@ -78,7 +110,8 @@
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1895). Decoration, localization and date follow Pächt and Alexander (1970). <listBibl>
+                           Description adapted (January 2023) by Stewart J. Brookes from the Summary Catalogue (1895). Decoration, localization, date and early provenance follow Pächt and Alexander (1973)
+                           <listBibl>
                               <bibl facs="aas0372.gif" type="SC">Summary Catalogue, Vol. 3, p. 357</bibl>
                            </listBibl>
                         </source>
@@ -97,6 +130,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2023-01-25">Description revised to incorporate all the information in the Summary Catalogue (1895)</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2019-10-31" xml:id="MMM">
             <persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>

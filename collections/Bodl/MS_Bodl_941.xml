@@ -1,17 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_1894" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1894">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Bodl. 941</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1905">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2023">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+         
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -38,30 +41,51 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem class="#legalia" n="1" xml:id="MS_Bodl_941-item1">
                      <title key="work_14288" type="desc">Register of writs</title>
-                     <textLang mainLang="la" otherLangs="fr">Latin and French</textLang>
+                     <note>A collection of legal forms (often copies of actual documents), 
+                        useful to anyone practising in the law courts</note>
+                     <note>A few forms were added in the 15th century at fol. 290v</note>
+                     <textLang mainLang="la" otherLangs="xno">Latin and Anglo-Norman</textLang>
                   </msItem>
                </msContents>
+               
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                 
+                        <extent>
+                           i + 307 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>8.5</height>
+                              <width>6.25</width>
+                           </dimensions>
+                        </extent>
+                        
                      </supportDesc>
+                     
                   </objectDesc>
+                 
+                 
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1400" notBefore="1390">14th century, end</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
+                  <provenance notAfter="1700" notBefore="1600">Owned by <persName key="person_3780" role="fmo">'T. L.'</persName> in the 17th century.</provenance>
+                  <acquisition when="1770">Presented to the Library by <persName key="person_3781" role="dnr">(Samuel) Swire</persName> of University College on 14 November 1770.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1905). <listBibl>
+                        <source>
+                           Description adapted (May 2023) by Stewart J. Brookes from the Summary Catalogue (1905)
+                           <listBibl>                              
                               <bibl facs="aam0419.gif" type="SC">Summary Catalogue, vol. 5, p. 384</bibl>
                            </listBibl>
                         </source>
@@ -72,6 +96,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2023-05-04">Description revised to incorporate all the information in the Summary Catalogue (1905)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>

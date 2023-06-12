@@ -1,0 +1,30 @@
+name: Check TEI entity keys
+
+on:
+  push:
+    paths:
+      - '**.xml'
+  pull_request:
+    paths:
+      - '**.xml'
+
+jobs:
+  check-entity-keys:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+        cache: 'pip'
+
+    - name: Install dependencies
+      run: pip install -r processing/requirements.txt
+
+    - name: Check keys in TEI descriptions
+      run: python processing/check_entity_keys.py

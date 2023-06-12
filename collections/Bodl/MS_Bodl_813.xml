@@ -7,11 +7,24 @@
          <titleStmt>
             <title>MS. Bodl. 813</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2023">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -41,6 +54,9 @@
                   <msItem n="1" xml:id="MS_Bodl_813-item1">
                      <author key="person_66806872">Augustine</author>
                      <title key="work_800">In epistulam Iohannis ad Parthos tractatus X</title>
+                     <rubric>In hoc corpore continentur Aurelii Augustini in Epistola sancti Iohannis
+                     apostoli omeliae numero decem de Caritate</rubric>
+                     <note>Ten sermons, with prologue, on 1 John i-v.3</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -48,14 +64,43 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        
+                        <extent>
+                        v + 70 leaves
+                        <dimensions unit="in" type="binding">
+                              <height>10.875</height>
+                              <width>6.75</width>
+                           </dimensions>
+                        </extent>
+                     
                      </supportDesc>
+                     
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote>One fine, other good initials. Related in style to MSS. from <orgName key="org_123169804">Mont-Saint-Michel</orgName> and <orgName key="org_150190778">Fécamp</orgName>. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 446, pl. XXXVII)</decoNote>
+                  
+                  <decoDesc resp="#PA">
+                     <summary>
+                        <ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 446, pl. XXXVII: related in style to MSS. from <orgName key="org_123169804">Mont-Saint-Michel</orgName> and <orgName key="org_150190778">Fécamp</orgName>
+                        <p>
+                        C. R. Dodwell, <title>
+                              <ref target="https://www.zotero.org/groups/434020/bodleian_library_western_medieval_manuscripts_bibliography/tags/MS.%20Bodl.%20701/items/VJ54MXHG/item-list"> 
+                           The Canterbury School of Illumination, 1066-1200</ref>
+                           </title> (Cambridge University Press, 1954), p. 117, identifies MS. Bodl. 813 as one of a group of Exeter manuscripts from the late eleventh and 
+                        early twelfth centuries which are illuminated in the 'Carilef' style that is associated with the Norman books given to Durham by 
+                        <persName key="person_159" role="fmo">William of St Carilef</persName>, e.g. 
+                        the Carilef Bible (<ref target="https://reed.dur.ac.uk/xtf/view?docId=ark/32150_s11n79h433b.xml">Durham Cathedral Library, MS. A. II. 4</ref>). 
+                        The other manuscripts from Dodwell's group are 
+                        <ref target="https://medieval.bodleian.ox.ac.uk/catalog/manuscript_1351">MS. Bodl. 301</ref>, 
+                        <ref target="https://medieval.bodleian.ox.ac.uk/catalog/manuscript_1768">MS. Bodl. 783</ref> 
+                        and <ref target="https://medieval.bodleian.ox.ac.uk/catalog/manuscript_1697">MS. Bodl. 707</ref> [NB: Dodwell lists MS. Bodl. 701 but must have intended MS. Bodl. 707] 
+                     </p>
+                     </summary>
+                 
+                     <decoNote type="decInit">One fine initial</decoNote>
+                     <decoNote type="decInit">Other good initials</decoNote> 
                   </decoDesc>
                   <bindingDesc>
                      <binding when="1602">
-                        <p>Stamped white sheepskin (about 1602) on older sewing.</p>
+                        <p>Stamped white sheepskin (<hi rend="italic">c</hi>. 1602) on older sewing.</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
@@ -63,20 +108,22 @@
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1100" notBefore="1090">11th century, end</origDate>
                      <origPlace>
-                        <country key="place_1000070">French</country>
+                        <country key="place_1000070">France</country>
                      </origPlace>
                   </origin>
+                  <!--     <provenance>Given to Durham by <persName key="person_159" role="fmo">William of St Carilef</persName>, who was bishop at Durham from 1081-1096</provenance>-->
                   <provenance type="MLGB3_provenance_evidence"
                               source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/2807">
-                     <orgName role="fmo" key="org_127815410">Exeter, Devon, Cathedral church of St Peter</orgName>:  (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/2807">MLGB3</ref>: inferred evidence). </provenance>
-                  <provenance type="MLGB3_laterOwners"
-                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/2807">Pres. by Dean and chapter of Exeter, 1602. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/2807">MLGB3</ref>)</provenance>
+                     <orgName role="fmo" key="org_127815410">Exeter, Devon, Cathedral church of St Peter</orgName> (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/2807">MLGB3</ref>), inventory of 1327.</provenance>
+                  <acquisition when="1602" source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/2807">Presented by the Dean and chapter of Exeter in 1602.</acquisition> 
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1966). <listBibl>
+                           Description adapted (January 2023) by Stewart J. Brookes from the Summary Catalogue (1922), with additional reference to published literature as cited. 
+                           Decoration, localization and date follow Pächt and Alexander (1973)
+                           <listBibl>                              
                               <bibl facs="aap0512.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 491</bibl>
                            </listBibl>
                         </source>
@@ -94,9 +141,8 @@
                      <listBibl type="INTERNET">
                         <head>Online resources:</head>
                         <bibl>
-                           <ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/133">
-                              <title>MLGB3: Medieval Libraries of Great Britain</title>
-                           </ref>
+                           <ref target="https://clasp.ell.ox.ac.uk/db-latest/apmo/entry/602">
+                              <title>Electronic Gneuss-Lapidge</title> (entry 602)</ref>
                         </bibl>
                         <bibl>
                            <ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/2807">
@@ -110,6 +156,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2023-01-30">Description revised to incorporate all the information in the Summary Catalogue (1922)</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2021-12-14">Add provenance information from MLGB3.</change>
          <change when="2017-07-01">First online publication.</change>

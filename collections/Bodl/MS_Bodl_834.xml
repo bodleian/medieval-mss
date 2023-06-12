@@ -7,11 +7,18 @@
          <titleStmt>
             <title>MS. Bodl. 834</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
             </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2022">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -37,15 +44,36 @@
                      <idno type="SCN">2540</idno>
                   </altIdentifier>
                </msIdentifier>
+               <head>Historia Apollonii regis Tyri, Historia de rege Avemour; England, 15th century</head>
                <msContents>
                   <msItem class="#romances" n="1" xml:id="MS_Bodl_834-item1">
+                     <locus>(fol. 1)</locus>
                      <title key="work_12221">Historia Apollonii regis Tyri</title>
+                     <rubric>Incipiunt Gesta Appolonij Regis Tiri et Sidonis</rubric>
+                     <incipit>Fuit quidam rex in Antiochia</incipit>
+                     <explicit>Explicit Eventus Tyri Appolonij</explicit>
+                     <note>The riddles are ten in number (fol. 18)</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
+                  <msItem n="1a" xml:id="MS_Bodl_834-item1a">
+                     <locus>(fol. 23v)</locus>
+                     <title type="desc">Life of <persName key="person_35872894">Secundus</persName></title>
+                     <rubric>De quodam philosopho nomine Secundo</rubric>
+                     <incipit>Erat quidam philosophus qui ab antiquo tempore perpetuum silencium conseruauit</incipit>
+                  <textLang mainLang="la">Latin</textLang>
+                  </msItem>
+                     
                   <msItem n="2" xml:id="MS_Bodl_834-item2">
                      <author key="person_105133420">Vincent de Beauvais</author>
                      <title key="work_4913">Historia de rege Avemour</title>
+                     <rubric>Incipit Historia de Rege Auemour et eius dicto contra
+                     Christianos. secundum Vincencium [Bellovacensem] sexti decimi libri Speculi
+                     Historialis</rubric>
+                     <incipit>Fuit in India Rex quidam nomine Auemour, diues et potens</incipit>
                      <note>(extract from <hi rend="italic">Speculum historiale</hi>, book XVI (?))</note>
+                     <note>An abridgement by Vincent of Beauvais of the well-known story of
+                     Barlaam and Josaphat. The title in the manuscript of 'de rege Auemour' ['Aueniour'] is rare.</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -53,24 +81,40 @@
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
+                        
+                        <extent>
+                           iii + 76 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>8.625</height>
+                              <width>8.375</width>
+                           </dimensions>
+                        </extent>
+                        
+                        <condition>Fol. 12 has been damaged by fire</condition>
+                        
                      </supportDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>Illuminated capitals.</decoNote>
+                     <decoNote type="flourInit">Illuminated capitals.</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
+                  
+                  <acquisition when="1655">The manuscript first appears in Bodleian lists about 1655</acquisition>
+                  
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). <listBibl>
+                        <source>
+                        Description adapted (December 2022) by Stewart J. Brookes from the Summary Catalogue (1922)
+                        <listBibl>
                               <bibl facs="aap0440.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 419</bibl>
                            </listBibl>
                         </source>
@@ -81,6 +125,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2022-12-06">Description revised to incorporate all the information in the Summary Catalogue (1922)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>

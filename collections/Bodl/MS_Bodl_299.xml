@@ -7,11 +7,24 @@
          <titleStmt>
             <title>MS. Bodl. 299</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2022">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -41,22 +54,50 @@
                   <msItem n="1" xml:id="MS_Bodl_299-item1">
                      <author key="person_68937616">Johannes de Freiburg</author>
                      <title key="work_2557">Summa confessorum</title>
+                     <rubric>Summa Confessorum compilata a fratro [<hi rend="italic">sic</hi>] Iohanne Lectore ordinis fratrum Predicatorum' de Friburg</rubric>
+                     <note>Preceded by a prologue and list of chapters of the four books and also by the same author's 'Prologus ... in priorem
+                        libellum Questionum Casualium' with explanatory note</note>
+                     <note type="index">Followed by 'Paragrofi [<hi rend="italic">sic</hi>] summe fratris Raymundi' de Pennaforti, a list of chapters
+                        (fol. 276), 'Statuta Summe Confessorum ex Sexto Decretalium addita', with prologue (fol. 287v), and a 'Tabula super Summam', in alphabetical order of
+                        subjects, with prologue (fol. 288)</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        
+                        <extent>
+                           322 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>15.25</height>
+                              <width>10.75</width>
+                           </dimensions>
+                        </extent>
+                        
                      </supportDesc>
+                     
+                     <layoutDesc>
+                        <layout columns="2">2 cols</layout>
+                     </layoutDesc>
+                     
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote>Fine borders, historiated and other initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 574)</decoNote>
+                        
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 574
+                     </summary>
+                     <decoNote type="border">Fine borders</decoNote>
+                     
+                     <decoNote type="histInit">Historiated initials</decoNote>
+                     
+                     <decoNote type="decInit">Initials</decoNote>
+                     
                   </decoDesc>
                   <bindingDesc>
                      <binding notBefore="1500" notAfter="1600">
-                        <p>Brown leather with plain tooling (late 16th cent.) over older sewing and
-         boards.</p>
+                        <p>Brown leather with plain tooling (late 16th century) over older sewing and boards</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
@@ -64,20 +105,30 @@
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1310" notBefore="1300">14th century, beginning</origDate>
                      <origPlace>
-                        <country key="place_1000070">French</country>
+                        <country key="place_1000070">France</country>
                      </origPlace>
                   </origin>
                   <provenance type="MLGB3_provenance_evidence"
                               source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1576">
-                     <orgName role="fmo" key="org_165174766">Canterbury, Kent, Benedictine abbey of St Augustine (originally of St Peter and St Paul)</orgName>: (inner front board) "Summa uel compilacio que vocatur Summa confessorum de hiis que pertinent ad forum animarum Fratris Willelmi de biholte quondam prioris sancti Augustini Cant'".     Below: "De librario sancti Augustini Cant' ... Distinccione X   Gradu I" (s. xiv). (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1576">MLGB3</ref>: evidence from an ex-libris inscription or note of gift to an institution). </provenance>
-                  <provenance type="MLGB3_laterOwners"
-                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1576">Sir Walter Cope (?1553--1614), 1602. His no. "82" at head of fol. 1r. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1576">MLGB3</ref>)</provenance>
+                     <orgName role="fmo" key="org_165174766">Canterbury, Kent, Benedictine abbey of St Augustine (originally of St Peter and St Paul)</orgName>: 
+                     (inner front board) 'Summa uel compilacio que uocatur Summa confessorum de hiis que pertinent ad forum animarum fratris Willelmi de Biholte 
+                     quondam prioris sancti Augustini Cantuarie'.  
+                     Then after an erased sentence, is the pressmark: 'De librario sancti Augustini Cantuarie ... Distinccione X   Gradu I' (s. xiv) 
+                     (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1576">MLGB3</ref>); see M. R. James's <title>Ancient Libraries of Canterbury</title> (1903), 
+                     p. 404, where the catalogue states that there is 'in eodem libro Glossa Hostiensis super Decretales de celinus (?)'</provenance>
+               
+                  <acquisition when="1602">Presented by <persName key="person_2677" role="dnr">Sir Walter Cope</persName> in 1602. 
+                     Cope's number "82" is at the head of fol. 1r (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1576">MLGB3</ref>)
+                  </acquisition>
+                  
+               
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1966). <listBibl>
+                           Description adapted (January 2022) by Stewart J. Brookes from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973)
+                           <listBibl>
                               <bibl facs="aap0407.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 386</bibl>
                            </listBibl>
                         </source>
@@ -98,6 +149,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2023-01-20">Description revised to incorporate all the information in the Summary Catalogue (1922)</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2021-12-14">Add provenance information from MLGB3.</change>
          <change when="2017-07-01">First online publication.</change>

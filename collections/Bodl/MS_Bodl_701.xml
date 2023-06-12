@@ -7,11 +7,24 @@
          <titleStmt>
             <title>MS. Bodl. 701</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2023">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -41,7 +54,13 @@
                   <msItem n="1" xml:id="MS_Bodl_701-item1">
                      <author key="person_100184667">Gregory the Great</author>
                      <title key="work_1869">Homiliae in Ezechielem</title>
-                     <note>(imperfect)</note>
+                     
+                     <note>The first words are 'cum per intentionem cordis', in the first homily</note>
+                     
+                     <note>The quaternions are marked from I to XIV. Of I, only five leaves remain; II-IV have
+                     perished; V-XIII are complete; and XIV has lost its last two leaves, and
+                     ends 'ubi resurgens caro perseuerantiam' in the 8th homily of the second book</note>
+                     
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -49,24 +68,59 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        
+                        <extent>
+                           ii + 84 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>12.75</height>
+                              <width>9.375</width>
+                           </dimensions>
+                        </extent>
+                        
+                        <condition>
+                           Some pages are soiled or torn in margins
+                        </condition>
+
                      </supportDesc>
+                     
+                     <layoutDesc>
+                        <layout columns="2">2 cols</layout>
+                     </layoutDesc>
+                     
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote type="decInit">Initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 340)</decoNote>
+                  
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 340
+                     </summary>
+                     
+                     <decoNote type="decInit">Initials</decoNote>
                   </decoDesc>
+                  
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1210" notBefore="1200">13th century, beginning</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
+                <!--  <provenance>Possibly at <orgName role="fmo" key="org_127815410">Exeter, Devon, Cathedral church of St Peter</orgName>; see note from Dodwell, above</provenance>-->
+                  <provenance>On fol. ii verso, a 16th century note by <persName key="person_3571">William Granson of  Upton</persName>  testifies that
+                     <persName key="person_3572">(Thomas?) Stury</persName> should pay 2s. a year to 'Boulwas'  (<placeName key="place_7451906">Bolas</placeName>) manor, in the county of Salop, 
+                     for the Black Lands. In addition, <persName key="person_3566">Thomas Kerdiff</persName> (Cardiff) adds a similar note to that found in 
+                     <ref target="https://medieval.bodleian.ox.ac.uk/catalog/manuscript_1461">MS. Bodl. 428</ref>
+                     about the lord mayor of London in 1546; see also, <ref target="https://medieval.bodleian.ox.ac.uk/catalog/manuscript_1693">MS. Bodl. 702</ref></provenance>
+                  
+                  <acquisition>This manuscript first appears in Bodleian lists <hi rend="italic">c</hi>. 1655</acquisition>
+                 
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
+                        <source>
+                           Description adapted (January 2023) by Stewart J. Brookes from the Summary Catalogue (1922), with additional reference to published literature as cited. 
+                           Decoration, localization and date follow Pächt and Alexander (1973)
+                           <listBibl>                              
                               <bibl facs="aap0441.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 420</bibl>
                            </listBibl>
                         </source>
@@ -77,6 +131,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2023-01-30">Description revised to incorporate all the information in the Summary Catalogue (1922)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>

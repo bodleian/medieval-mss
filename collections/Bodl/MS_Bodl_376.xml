@@ -7,11 +7,24 @@
          <titleStmt>
             <title>MS. Bodl. 376</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2023">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -37,38 +50,86 @@
                      <idno type="SCN">2486</idno>
                   </altIdentifier>
                </msIdentifier>
+               
                <msContents>
                   <msItem n="1" xml:id="MS_Bodl_376-item1">
                      <author key="person_69105608">Huguitio of Pisa</author>
                      <title key="work_2175">Liber deriuationum</title>
+                     <incipit>Cum nostri protoplasti</incipit>
+                     <explicit>Expliciunt Magne Diriuaciones secundum Hugucionem</explicit>
+                     
+                     <note>A kind of encyclopaedia, in alphabetical order, of subjects from Augeo (under which
+                        'auctor', 'augmentum', 'auctoritas', 'auxilium', etc., are treated) up to to 'Zona' 
+                     </note>
+                     
+                     <note>The derivationes are not so much etymological as the tracing of derivatives from simple words.
+                     An index of derivative words is appended at fol. 213
+                     </note>
+                 
+                     
+                     
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  <msItem>
+                     <note>An English gloss has crept into the text at fol. 145r, Column B, until the end, 'testacius in testa coctus anglice bakingston'</note>
+                     <textLang mainLang="enm">Middle English</textLang>
+                  </msItem>
                </msContents>
+               
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        
+                        <extent>
+                           ii + 220 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>13.125</height>
+                              <width>8.625</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     
+                     <layoutDesc>
+                        <layout columns="2">2 cols</layout>
+                     </layoutDesc>
+                     
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote>Good penwork initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 591)</decoNote>
+                  
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref>  iii. 591
+                     </summary>                     
+                     <decoNote type="flourInit">Good penwork initials</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1341" notBefore="1325">14th century, second quarter (before 1341)</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
+                  
+                  <provenance when="1341" type="cautio">'<persName key="person_3709">Robertus Norwel</persName> &amp; <persName key="person_3708">Robertus Crombewel</persName>. expositus [?] in cista de Raubiri [Rothbury] [in acad. Oxoniensi] pro xx solidis 
+                     die lune proxima post festum sancte Petronille anno  Domini M° ccc° xlj° &amp; habet suplementum'</provenance> 
+                     
+                  <provenance notAfter="1500" notBefore="1450">'Constat nunc domino <persName key="person_3707">Todde</persName> codex iste Richardo' (2nd half of the 15th century).</provenance>
+                  
+                  <acquisition when="1602">'Thomas Graunnt' (16th century). 'Liber Vniuersitatis ex dono <persName key="person_3706" role="fmo">Thomæ Grant</persName> 
+                     Armigerj Waruicensis'. The name is given as Grantham in the Benefactors' Register under the year 1602.</acquisition>
+                  
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
-                              <bibl facs="aap0413.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 392</bibl>
+                        
+                        <source>
+                           Description adapted (March 2023) by Stewart J. Brookes from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973)
+                           <listBibl>
+                           <bibl facs="aap0413.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 392</bibl>
                            </listBibl>
                         </source>
+                        
                      </recordHist>
                   </adminInfo>
                </additional>
@@ -76,6 +137,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2023-01-09">Description revised to incorporate all the information in the Summary Catalogue (1922)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>

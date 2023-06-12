@@ -7,11 +7,24 @@
          <titleStmt>
             <title>MS. Bodl. 256</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2022">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -46,6 +59,10 @@
                         <author key="person_91013639">Gregory IX</author>
                         <title>Decretales</title>
                      </bibl>
+                     <finalRubric>Explicit Nouella. Iohannis Andree super quinque libris Decretalium</finalRubric>
+                     <note type="annotation">Only the commentary on Books III-V is here (see fols 146v, 182v), with some marginal notes</note>
+                   
+                     
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -53,36 +70,63 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        
+                        <extent>
+                           i + 268 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>19</height>
+                              <width>13</width>
+                           </dimensions>
+                        </extent>
+                        <condition> The lower margins of fols 254-255 have been cut off.</condition>
+                        
                      </supportDesc>
+                     
+                     
+                     <layoutDesc>
+                        <layout columns="2">2 cols</layout>
+                     </layoutDesc>
+                     
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote>Fine borders, initials. Lombards. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 763, pl. LXXIII)</decoNote>
-                  </decoDesc>
+               
+                  <decoDesc resp="#PA">
+                  
+                    <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 763, pl. LXXIII</summary>
+                     
+                     <decoNote type="border">Fine borders</decoNote>
+                     <decoNote type="decInit">Initials</decoNote>
+                     <decoNote type="colInit">Lombards</decoNote>
+             
+                    </decoDesc>
+                  
                   <bindingDesc>
                      <binding when="1602">
-                        <p>White sheepskin (about 1602) over older sewing.</p>
+                        <p>White sheepskin (<hi rend="italic">c</hi>. 1602) over older sewing</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" when="1400">c. 1400</origDate>
+                     <origDate calendar="Gregorian" notAfter="1410" notBefore="1390"><hi rend="italic">c</hi>. 1400</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
                   <provenance type="MLGB3_provenance_evidence"
                               source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/2750">
-                     <orgName role="fmo" key="org_127815410">Exeter, Devon, Cathedral church of St Peter</orgName>:  (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/2750">MLGB3</ref>: inferred evidence). </provenance>
-                  <provenance type="MLGB3_laterOwners"
-                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/2750">Pres. by the Dean and Chapter of Exeter, 1602. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/2750">MLGB3</ref>)</provenance>
+                     <orgName role="fmo" key="org_127815410">Exeter, Devon, Cathedral church of St Peter</orgName> (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/2750">MLGB3</ref>)</provenance>
+                 
+                 <acquisition when="1602">Presented by the Dean and Chapter of Exeter, 1602</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
-                              <bibl facs="aap0390.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 369</bibl>
+                    
+                           Description adapted (November 2022) by Stewart J. Brookes from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973)
+                           <listBibl>
+                           
+                           <bibl facs="aap0390.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 369</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -90,11 +134,6 @@
                   <listBibl type="WRAPPER">
                      <listBibl type="INTERNET">
                         <head>Online resources:</head>
-                        <bibl>
-                           <ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/75">
-                              <title>MLGB3: Medieval Libraries of Great Britain</title>
-                           </ref>
-                        </bibl>
                         <bibl>
                            <ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/2750">
                               <title>MLGB3: Medieval Libraries of Great Britain</title>
@@ -107,6 +146,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2022-11-10">Description revised to incorporate all the information in the Summary Catalogue (1922)</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2021-12-14">Add provenance information from MLGB3.</change>
          <change when="2017-07-01">First online publication.</change>

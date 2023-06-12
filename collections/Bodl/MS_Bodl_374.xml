@@ -7,11 +7,24 @@
          <titleStmt>
             <title>MS. Bodl. 374</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2023">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -41,37 +54,68 @@
                   <msItem n="1" xml:id="MS_Bodl_374-item1">
                      <author key="person_66806872">Augustine</author>
                      <title key="work_753">De civitate dei</title>
+                     <rubric>Aurelii Augustini Ypponiensis episcopi De Ciuitate Dei liber primus</rubric>
+                     
+                     <note>Preceded by the <title key="work_804">Retractationes</title> and ends with 'Terminus hic denis est libris cum duodenis'</note>
+                     
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
+                  <msItem n="2" xml:id="MS_Bodl_374-item2">
+                     <title type="desc">Poem on De civitate dei</title>
+                     <incipit>Munere multiplici mirabilis enituisti</incipit> 
+                     <note>Mutilated poem, 12-16 lines long. The first eight lines are intact</note>
+                     <textLang mainLang="la">Latin</textLang>
+                  </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+
+                        <extent>
+                           iii + 225 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>13.5</height>
+                              <width>10.625</width>
+                           </dimensions>
+                        </extent>
+                        
                      </supportDesc>
+                     
+                     <layoutDesc>
+                        <layout columns="2">2 cols</layout>
+                     </layoutDesc>
+                  
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote>Good and other initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 155)</decoNote>
+                  
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 155
+                     </summary>
+                     <decoNote type="decInit">Good and other initials</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1160" notBefore="1140">12th century, middle</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
                   <provenance type="MLGB3_provenance_evidence"
                               source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1721">
-                     <orgName role="fmo" key="org_125482319">Chichester, West Sussex, Cathedral church of Holy Trinity</orgName>: Identfication by pressmark.     "Augustinus de Civitate dei ij do.  fo gilium   h. vj." (fol. 1r), s. xiv. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1721">MLGB3</ref>: inferred evidence). </provenance>
-                  <provenance type="MLGB3_laterOwners"
-                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1721">Given by Ralph Barlow 1606. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1721">MLGB3</ref>)</provenance>
+                     <orgName role="fmo" key="org_125482319">Chichester, West Sussex, Cathedral church of Holy Trinity</orgName>: Identification by pressmark, according to M. R. James:  
+                     'Augustinus de Civitate dei ij do.  fo gilium   h. vj.' (fol. 1r), s. xiv. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1721">MLGB3</ref>)</provenance>
+                  <acquisition when="1606">Given by <persName role="dnr" key="person_2771">Ralph Barlow</persName> in 1606</acquisition> 
+               
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
+                           Description adapted (March 2023) by Stewart J. Brookes from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973)
+                           <listBibl>                              
                               <bibl facs="aap0412.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 391</bibl>
                            </listBibl>
                         </source>
@@ -93,10 +137,50 @@
                      </listBibl>
                   </listBibl>
                </additional>
+               
+               <msPart xml:id="Bodl_452_flyleaves" type="fragment">
+                  <msIdentifier>
+                     <altIdentifier>
+                        <idno>MS. Bodl. 452, flyleaves</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  <msContents>
+                     
+                     <msItem>
+                        <locus>(Fols ii-iii, 223-224)
+                           )</locus>
+                        <title key="work_13372" type="desc">Sarum Missal</title>
+                        
+                        <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="perg">
+                           <support>Parchment</support>
+                        </supportDesc>
+                        
+                     </objectDesc>
+                     
+                  </physDesc>
+                  <history>
+                     
+                     <origin>
+                        
+                        <origDate notAfter="1400" notBefore="1300" calendar="Gregorian">14th century</origDate>
+                        <origPlace><country key="place_7002445">England</country></origPlace>
+                        
+                     </origin>
+                     
+                  </history>
+               </msPart>
+               
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2023-01-09">Description revised to incorporate all the information in the Summary Catalogue (1922)</change>
          <change when="2021-12-14">Add provenance information from MLGB3.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
