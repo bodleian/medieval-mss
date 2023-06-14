@@ -1,17 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8935">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8935">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Selden Supra 70</title>
             <title type="collection">MSS. Selden Supra</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
-            </respStmt>
+               
+               <respStmt xml:id="SC">
+                  <resp when="1922">Cataloguer</resp>
+                  <persName>Falconer Madan</persName>
+                  <persName>H. H. E. Craster</persName>
+               </respStmt>
+               
+               <respStmt xml:id="SJB">
+                  <resp when="2023">Encoding</resp>
+                  <persName>Stewart Brookes</persName>
+               </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -38,16 +42,43 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  <textLang mainLang="fro">Old French</textLang>
                   <msItem class="#legalia" xml:id="MS_Selden_Supra_70-item1">
                      <title key="work_12478">La Coustume de <placeName key="place_7002886">Normendie</placeName>
                      </title>
-                     <textLang mainLang="fro">Old French</textLang>
+                     <note>Title given in the manuscript as 'Les drois &amp; les establissemens de Normendie par quoy les contens &amp; les quereles sunt finees' (fol. 12) and also 
+                        as 'La coustume de Normendie' (fol. 14v)</note>
+                     <incipit type="prol.">Pour cheu que nostre entencion est a esclarier en cheste euure</incipit>
+                     <note>121 chapters, and in two parts</note>
+                     
                   </msItem>
+                  
+                  
+                  <msItem xml:id="MS_Selden_Supra_70-item2">
+                     <locus>(fols. 3-9)</locus>
+                     <note>Some rather later reports of a few cases</note>
+                  </msItem>
+                  <msItem xml:id="MS_Selden_Supra_70-item3">
+                     <locus>(fol. 11v)</locus>
+                     <note>Table of the solar cycle from 1168 to the 17th century</note>
+                  </msItem>
+              
+                     <msItem>
+                        <note>Fols 131-157 are blank</note>  
+                     </msItem>
+
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>
+                           159 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>4.75</height>
+                              <width>3.5</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
                   </objectDesc>
                   <decoDesc>
@@ -55,35 +86,74 @@
                   </decoDesc>
                   <bindingDesc>
                      <binding notBefore="1400" notAfter="1500">
-                        <p>Stamped leather on renovated boards, 15th cent. N. French work.</p>
+                        <p>Stamped leather on renovated boards, 15th century Northern French work</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" cert="low" when="1300">c. 1300</origDate>
+                     <origDate calendar="Gregorian" cert="low" when="1300"><hi rend="italic">c</hi>. 1300</origDate>
                      <origPlace cert="low">
-                        <country key="place_1000070">French</country>, <region key="place_7002886">Normandy</region> (?)<!--ORIGINAL: French, Normandy (?)--></origPlace>
+                        <country key="place_1000070">France</country>, <region key="place_7002886">Normandy</region> (?)<!--ORIGINAL: French, Normandy (?)--></origPlace>
                   </origin>
+                  <provenance notBefore="1290" notAfter="1310">'<persName key="person_3782">Johan Cousin</persName> <persName key="person_3783">Johanne Lescoquentine</persName> estang' le samedi auant la seint Marc' 
+                     (<hi rend="italic">c</hi>. 1300</provenance> 
+                  <provenance notAfter="1500" notBefore="1400">'Iste liber partinet a <persName key="person_3784" role="fmo">Joannes du Viaret</persName> [?]' 15th century (fol. 158)</provenance>
                   <provenance notAfter="1654" notBefore="1584" resp="#MMM">
-                     <persName key="person_51728429" role="fmo">John Selden, 1584–1654</persName>
+                     <persName key="person_51728429" role="fmo">John Selden</persName>
                   </provenance>
                   <acquisition resp="#MMM" when="1659">Acquired by the Bodleian in 1659</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
+                        <source>Description adapted by Elizabeth Solopova, Matthew Holford and Stewart J. Brookes from the Summary Catalogue (1922); decoration and date after Otto Pächt and J. J. G. Alexander, <title><ref target="https://catalog.hathitrust.org/Record/000468709">Illuminated Manuscripts in the Bodleian Library, Oxford</ref></title>,<ref target="https://babel.hathitrust.org/cgi/pt?id=uc1.32106001487658&amp;view=1up&amp;seq=70"> addenda (by Bruce Barker-Benfield), p. 58</ref> <listBibl>
                               <bibl facs="aap0661.gif" type="SC">Summary Catalogue, Vol. 2 Part 1, p. 640</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
                </additional>
+               
+               <msPart xml:id="MS_Selden_Supra_70_flyleaves" type="fragment">
+                  <msIdentifier>
+                     <altIdentifier>
+                        <idno>MS. Selden Supra 70, flyleaves (fol. 158)</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  <msContents>
+                     
+                     <msItem>
+                        
+                        <title key="work_12580" type="desc">Legal record</title>  
+                        <note>A small fragment</note>
+                        <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="perg">
+                           <support>Parchment</support>
+                        </supportDesc>
+                        
+                     </objectDesc>
+                     
+                  </physDesc>
+                  <history>
+                     
+                     <origin>
+                        <origDate notAfter="1300" notBefore="1200" calendar="Gregorian">13th century</origDate>
+                     </origin>
+                     
+                  </history>
+               </msPart>
+               
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2023-05-04">Description revised to incorporate all the information in the Summary Catalogue (1922)</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2019-10-31" xml:id="MMM">
             <persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>

@@ -1,17 +1,27 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1885">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1885">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Bodl. 921</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+          
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2023">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+          
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -38,40 +48,96 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem class="#biblia #versus" n="1" xml:id="MS_Bodl_921-item1">
+                     <locus>(fols 1r-99v)</locus>
                      <title key="work_14127" type="desc">Psalter, English metrical version (Surtees Psalter)</title>
+                     <incipit><quote>Beatus vir qui non</quote> <gap reason="editorial"/> Seli bern þat noght is gane <lb/> In þe rede of wicked mane</incipit>
+                     <explicit>…Loues him in chimbes of mirþe and blisse <lb/> Alkyn gast loue louerd þat isse</explicit>
+                     <note>Psalms start with Latin first lines, followed by a translation into Middle English</note>
+                     
+                     <bibl type="repertory"><ref target="https://www.dimev.net/Records.php?MSS=Bod921"><title>DIMEV</title> 4803</ref></bibl>
                      <textLang mainLang="enm">Middle English</textLang>
                      <bibl type="bible">
                         <title type="desc">Bible, Psalms</title>
                      </bibl>
                   </msItem>
+                  
+                  <msItem n="2" xml:id="MS_Bodl_921-item2">
+                     <locus>(fol. 101v)</locus>
+                     <title type="desc">Prognosticon Milonis Toletani de coniunctione facta anno Domini 1357</title>
+                     <incipit>As touz les bones cristiens en queu part quels soient Mestre Milles de
+                        Tollenty ouesques les autres mestres grace perpetuele</incipit>
+                     <textLang mainLang="frm">Middle French</textLang>
+                  </msItem>
+                  
+                  <msItem>
+                     <note>There is other writing and scribbling</note>
+                  </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                 
+                        <extent>
+                           ii + 101 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>10</height>
+                              <width>6.875</width>
+                           </dimensions>
+                        </extent>
+                        
                      </supportDesc>
+                     
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote>Penwork border, initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 696)</decoNote>
+                 
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 696
+                     </summary>
+                     <decoNote type="flourInit">Penwork border</decoNote>
+                     <decoNote type="decInit">Initials</decoNote>
+                     <decoNote>Annie Sutherland notes that the first line of each psalm in Latin starts with an enlarged blue initial, decorated with flourishes that extend into the margin, 
+                        followed by the Middle English translation. The first word of subsequent verses is also supplied in Latin (marked by alternating blue and red initials) prior to the 
+                        English verse rendition (<title><ref target="https://www.zotero.org/groups/434020/bodleian_library_western_medieval_manuscripts_bibliography/tags/MS.%20Bodl.%20921/items/36H9J7CN/item-list">English Psalms 
+                           in the Middle Ages, 1300-1450</ref></title> [Oxford University Press, 2015], p. 250)</decoNote>
+                     
+                        <decoNote>The text of the Psalter in this manuscript has much in common with that of <ref target="https://medieval.bodleian.ox.ac.uk/catalog/manuscript_1458">MS. Bodl. 425</ref>. 
+                           However, there are significant differences in the layout and design of the two manuscripts. In a detailed comparison of the two, Sutherland points out that the scribe 
+                           of MS. Bodley 425 'makes a significantly more concerted effort to highlight the interactions' between the Middle English translation of Psalms and the Latin original. She argues that 
+                           the 'more emphatic system of signposting' used in MS. Bodley 425 was more conducive to following along in the 'vernacular verse rendition while simultaneously 
+                           listening to (or, conceivably, reading) the Latin original'. In particular, the verse incipits in MS. Bodl. 921 are minimal and somewhat sporadic compared to MS. Bodl. 425
+                           (<title><ref target="https://www.zotero.org/groups/434020/bodleian_library_western_medieval_manuscripts_bibliography/tags/MS.%20Bodl.%20921/items/36H9J7CN/item-list">English Psalms 
+                              in the Middle Ages, 1300-1450</ref></title> [Oxford University Press, 2015], p. 254)</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1400" notBefore="1390">14th century, end</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
-                  <provenance type="MLGB3_provenance_evidence"
-                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5621">
-                     <orgName role="fmo" key="org_124480744">Wenlock, Shropshire, Cluniac priory of St Milburga</orgName>: bears an erased ex-libris inscription with a monastic anathema. Over '[...] de [Wen?]lok' is written 'hugoni de Wolast[on?]'. There are three places called Wollaston not far from Wenlock of which that near Shrewsbury is closest and perhaps the one mentioned here. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5621">MLGB3</ref>: evidence from an ex-libris inscription or note of gift to an institution). </provenance>
+                  <provenance type="MLGB3_provenance_evidence" source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5621" notAfter="1600" notBefore="1500">
+                     <orgName role="fmo" key="org_124480744">Wenlock, Shropshire, Cluniac priory of St Milburga</orgName>. 
+                     Bears an erased ex-libris inscription with a monastic anathema: 'Iste liber constat <persName key="person_3814">Hu[goni?] de Wolast[on?]</persName>. Quicunque alienauerit Anathema sit. 
+                     Qui culpat carmen sit maledictus Amen' (16th century). There are three places called Wollaston not far from Wenlock of which that near Shrewsbury is closest and perhaps the one mentioned here 
+                     (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5621">MLGB3</ref>)</provenance> 
+                     
+                  
+                  <provenance notAfter="1600" notBefore="1500">'<persName key="person_3815" role="fmo">Thomas Palmerstoun</persName>', 16th century (fol 45)</provenance>
+                  
+                  <acquisition when="1601">'Gifte of the Lady Farmor', dame <persName key="person_3816" role="dnr">Mary Fermor</persName> of Easton Neston, to the Bodleian in 1601</acquisition>
+                  
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
+                           Description adapted (April 2023) by Stewart J. Brookes from the Summary Catalogue (1922),  with additional reference to published literature as cited. 
+                           Decoration, localization and date follow Pächt and Alexander (1973)
+                           <listBibl>                              
                               <bibl facs="aap0590.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 569</bibl>
                            </listBibl>
                         </source>
@@ -98,6 +164,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2023-02-02">Description revised to incorporate all the information in the Summary Catalogue (1922)</change>
          <change when="2021-12-14">Add provenance information from MLGB3.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
