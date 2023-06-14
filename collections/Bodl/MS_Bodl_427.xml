@@ -7,11 +7,18 @@
          <titleStmt>
             <title>MS. Bodl. 427</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
             </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2023">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -38,32 +45,70 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_Bodl_427-item1">
                      <author key="person_101584149">Nicholas de Gorran</author>
                      <title key="work_3294">Distinctiones theologicae</title>
+                     <rubric>Distinctiones fratris Nicholay de Gorham ordinis fratrum Praedicatorum</rubric>
+                     <incipit>Abeuncium per hunc mundum</incipit>
+                     <note>Theological common-places in alphabetical order of subjects</note>
+                     <note>Followed at fol. 161 by a list of the lemmata,</note>
+                     <note>After which is added a list of the texts of the same author's <title>Fundamentum aureum</title> or short Latin sermons for Saints' Days. 
+                     </note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
+                  <msItem n="2" xml:id="MS_Bodl_427-item2">
+                     <locus>(fols 163v, 164r)</locus>
+                     <title key="work_13209" type="desc">Medical recipes</title>
+                     <textLang mainLang="la">Latin</textLang>
+                  </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                    
+                        <extent>
+                           iv + 166 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>10.75</height>
+                              <width>7.25</width>
+                           </dimensions>
+                        </extent>
+                        
+                        <condition>Fols 153-164 are imperfect at the lower outer corner 
+                        </condition>
+                        
                      </supportDesc>
+                     
+                     <layoutDesc>
+                        <layout columns="2">2 cols</layout>
+                     </layoutDesc>
+                     
                   </objectDesc>
+                    
                   <decoDesc>
-                     <decoNote>Coloured capitals.</decoNote>
+                     <decoNote type="colInit">Coloured capitals</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" when="1300">c. 1300</origDate>
                   </origin>
+                  
+                  <provenance>'Iste liber constat magistro <persName role="scr">Johanni Huett</persName> de <settlement>Aldirmari</settlement>', = Aldermanbury,
+                     London, 16th century (fol. 163)</provenance>
+                  
+                  <acquisition>Acquired by the Bodleian before 1655</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). <listBibl>
+                           Description adapted (May 2023) by Stewart J. Brookes from the Summary Catalogue (1922)
+                           <listBibl>                              
                               <bibl facs="aap0426.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 405</bibl>
                            </listBibl>
                         </source>
@@ -77,10 +122,51 @@
                      </listBibl>
                   </listBibl>
                </additional>
+               
+               <msPart xml:id="MS_Bodl_427_flyleaves">
+                  <msIdentifier>
+                     <altIdentifier>
+                        <idno>MS. Bodl. 427, flyleaves</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  <msContents>
+                     
+                     <msItem>
+                        <locus> (fols iii-iv)</locus>
+                        <title key="work_10641" type="desc">Breviary</title>
+                        
+                        <note>Four leaves</note>
+                        
+                        <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="perg">
+                           <support>Parchment</support>
+                        </supportDesc>
+                        
+                     </objectDesc>
+                     
+                  </physDesc>
+                  <history>
+                     <origin>
+                        
+                        <origDate notAfter="1400" notBefore="1300" calendar="Gregorian">14th century</origDate>
+                        <origPlace><country key="place_1000070">France</country></origPlace>
+                        
+                     </origin>
+                     
+                  </history>
+               </msPart>
+               
             </msDesc>
          </sourceDesc>
+         
       </fileDesc>
       <revisionDesc>
+         <change when="2023-05-04">Description revised to incorporate all the information in the Summary Catalogue (1922)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
