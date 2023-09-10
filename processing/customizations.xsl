@@ -5,8 +5,9 @@
     xmlns:tei="http://www.tei-c.org/ns/1.0"
     xmlns:html="http://www.w3.org/1999/xhtml"
     xmlns:bod="http://www.bodleian.ox.ac.uk/bdlss"
+    xmlns:msdesc="http://www.example.org/ns/msdesc"
     xpath-default-namespace="http://www.tei-c.org/ns/1.0"
-    exclude-result-prefixes="tei html xs bod"
+    exclude-result-prefixes="tei html xs bod msdesc"
     version="2.0">
     
     
@@ -102,139 +103,139 @@
     </xsl:template>
     
     <!-- new rules for new elements in binding descriptions (drat 10 Sept. 2023) -->
-    <xsl:template match="binding/endleaves">
+    <xsl:template match="binding/msdesc:endleaves">
         <p class="{name()}">
-            <xsl:apply-templates/>
             <span class="tei-label">
                 <xsl:copy-of select="bod:standardText('Endleaves:')"/>
                 <xsl:text> </xsl:text>
             </span>
+            <xsl:apply-templates/>
         </p>
     </xsl:template>
-    <xsl:template match="binding/sewing">
+    <xsl:template match="binding/msdesc:sewing">
         <p class="{name()}">
-            <xsl:apply-templates/>
             <span class="tei-label">
                 <xsl:copy-of select="bod:standardText('Sewing:')"/>
                 <xsl:text> </xsl:text>
             </span>
+            <xsl:apply-templates/>
         </p>
     </xsl:template>
-    <xsl:template match="binding/sewing">
+    <xsl:template match="binding/msdesc:boards">
         <p class="{name()}">
-            <xsl:apply-templates/>
             <span class="tei-label">
                 <xsl:copy-of select="bod:standardText('Boards:')"/>
                 <xsl:text> </xsl:text>
             </span>
+            <xsl:apply-templates/>
         </p>
     </xsl:template>
-    <xsl:template match="binding/edges">
+    <xsl:template match="binding/msdesc:edges">
         <p class="{name()}">
-            <xsl:apply-templates/>
             <span class="tei-label">
                 <xsl:copy-of select="bod:standardText('Edges:')"/>
                 <xsl:text> </xsl:text>
             </span>
+            <xsl:apply-templates/>
         </p>
     </xsl:template>
-    <xsl:template match="binding/spine">
+    <xsl:template match="binding/msdesc:spine">
         <p class="{name()}">
-            <xsl:apply-templates/>
             <span class="tei-label">
                 <xsl:copy-of select="bod:standardText('Spine:')"/>
                 <xsl:text> </xsl:text>
             </span>
+            <xsl:apply-templates/>
         </p>
     </xsl:template>
-    <xsl:template match="binding/endBands">
+    <xsl:template match="binding/msdesc:endbands">
         <p class="{name()}">
-            <xsl:apply-templates/>
             <span class="tei-label">
                 <xsl:copy-of select="bod:standardText('Endbands:')"/>
                 <xsl:text> </xsl:text>
             </span>
+            <xsl:apply-templates/>
         </p>
     </xsl:template>
-    <xsl:template match="binding/covering">
+    <xsl:template match="binding/msdesc:covering">
         <p class="{name()}">
-            <xsl:apply-templates/>
             <span class="tei-label">
                 <xsl:copy-of select="bod:standardText('Covering:')"/>
                 <xsl:text> </xsl:text>
             </span>
+            <xsl:apply-templates/>
         </p>
     </xsl:template>
     <xsl:template match="binding/decoNote">
         <p class="{name()}">
-            <xsl:apply-templates/>
             <span class="tei-label">
                 <xsl:copy-of select="bod:standardText('Decoration:')"/>
                 <xsl:text> </xsl:text>
             </span>
+            <xsl:apply-templates/>
         </p>
     </xsl:template>
-    <xsl:template match="binding/fastenings">
+    <xsl:template match="binding/msdesc:fastenings">
         <p class="{name()}">
-            <xsl:apply-templates/>
             <span class="tei-label">
                 <xsl:copy-of select="bod:standardText('Fastening:')"/>
                 <xsl:text> </xsl:text>
             </span>
+            <xsl:apply-templates/>
         </p>
     </xsl:template>
-    <xsl:template match="binding/furniture">
+    <xsl:template match="binding/msdesc:furniture">
         <p class="{name()}">
-            <xsl:apply-templates/>
             <span class="tei-label">
                 <xsl:copy-of select="bod:standardText('Furniture:')"/>
                 <xsl:text> </xsl:text>
             </span>
+            <xsl:apply-templates/>
         </p>
     </xsl:template>
-    <xsl:template match="binding/earlierStructure">
+    <xsl:template match="binding/msdesc:earlierStructure">
         <p class="{name()}">
-            <xsl:apply-templates/>
             <span class="tei-label">
                 <xsl:copy-of select="bod:standardText('Earlier structure:')"/>
                 <xsl:text> </xsl:text>
             </span>
+            <xsl:apply-templates/>
         </p>
     </xsl:template>
     <xsl:template match="binding/condition">
         <p class="{name()}">
-            <xsl:apply-templates/>
             <span class="tei-label">
                 <xsl:copy-of select="bod:standardText('Alterations/repairs:')"/>
                 <xsl:text> </xsl:text>
             </span>
+            <xsl:apply-templates/>
         </p>
     </xsl:template>
-    <xsl:template match="binding/bookmarks">
+    <xsl:template match="binding/msdesc:bookmarks">
         <p class="{name()}">
-            <xsl:apply-templates/>
             <span class="tei-label">
                 <xsl:copy-of select="bod:standardText('Bookmarks:')"/>
                 <xsl:text> </xsl:text>
             </span>
+            <xsl:apply-templates/>
         </p>
     </xsl:template>
-    <xsl:template match="binding/chaining">
+    <xsl:template match="binding/msdesc:chaining">
         <p class="{name()}">
-            <xsl:apply-templates/>
             <span class="tei-label">
                 <xsl:copy-of select="bod:standardText('Chaining:')"/>
                 <xsl:text> </xsl:text>
             </span>
+            <xsl:apply-templates/>
         </p>
     </xsl:template>
-    <xsl:template match="binding/labels">
+    <xsl:template match="binding/msdesc:labels">
         <p class="{name()}">
-            <xsl:apply-templates/>
             <span class="tei-label">
                 <xsl:copy-of select="bod:standardText('Titles/labels:')"/>
                 <xsl:text> </xsl:text>
             </span>
+            <xsl:apply-templates/>
         </p>
     </xsl:template>
     
