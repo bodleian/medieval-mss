@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_1736" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1736">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Bodl. 75</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1937">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>N. Denholm-Young</persName>
             </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2023">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -38,48 +45,87 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_Bodl_75-item1">
                      <author key="person_22158282">John Lydgate</author>
                      <title key="work_2725">Life of Our Lady</title>
+                     
+                     <note>The first and last leaves of the first quire (after fols v, 6) are lost, so no contemporary title or
+                        author is now in the volume</note>
+                     
+                     <note>Fol. 1 begins 'The which flour preserued mann fro dethe'</note>
+                     
+                     <note>Two additional stanzas are in this manuscript as compared with Caxton's edition.</note>
+                     
                      <textLang mainLang="enm">Middle English</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
+                        <extent>
+                           v + 87 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>7.625</height>
+                              <width>5.5</width>
+                           </dimensions>
+                        </extent>
+                        <condition>Imperfect</condition>
                      </supportDesc>
+                     
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>Illuminated capitals.</decoNote>
+                     <decoNote type="flourInit">Illuminated capitals</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1475" notBefore="1450">15th century, third quarter</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
+                  
+                  <provenance notBefore="1500" notAfter="1600">The following names are written in the volume in 16th century hands: 
+                     <persName key="person_3746" role="sgn">Sir George Winter</persName> (fols 29, 76); <persName key="person_3747" role="sgn">Thomas Boynton</persName> 
+                     and <persName key="person_3748" role="sgn">Henry Boynton</persName> (fols 7, 50v, 66, 84); <persName key="person_3749" role="sgn">John Robson</persName> (fol. 75v); 
+                     '<persName key="person_3750" role="sgn">Richard Horff</persName> ...' (?, fol. 75v); and '<persName key="person_3751" role="sgn">John Clarkson</persName> in Rychmond' 
+                     (fol. 84)</provenance>
+                  
+                  <acquisition notAfter="1604" notBefore="1603">The manuscript probably reached the Library in 1603 or 1604. (<title>Summary Catalogue </title>I.90)</acquisition>
+                  
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). <listBibl>
+                        <source>
+                           Description adapted (April 2023) by Stewart J. Brookes from the Summary Catalogue (1937)
+                           <listBibl>                              
                               <bibl facs="aap0301.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 280</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
-                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/c6a7803e-e837-42c6-a67c-b1ee235d0dce/"><title>Digital Bodleian</title></ref>
-                        <note>(2 images from 35mm slides)</note></bibl></surrogates>
+                  <surrogates>MS_Bodl_84.xml
+                     <bibl subtype="partial" type="digital-facsimile">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/c6a7803e-e837-42c6-a67c-b1ee235d0dce/">
+                           <title>Digital Bodleian</title>
+                        </ref>
+                        <note>(2 images from 35mm slides)</note>
+                     </bibl>
+                  </surrogates>
                </additional>
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2023-04-24">Description revised to incorporate all the information in the Summary Catalogue (1937)</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>
