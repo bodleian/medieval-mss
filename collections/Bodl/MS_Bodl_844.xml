@@ -1,17 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_1834" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1834">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Bodl. 844</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
             </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2023">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,21 +37,57 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Bodl. 844</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0d217qp93rt</idno><idno type="crArk">ark:29072/x0cz30pt10f4</idno><altIdentifier type="internal">
                      <idno type="SCN">2577</idno>
                   </altIdentifier>
                </msIdentifier>
                <physDesc>
-                  <p n="composite">Composite: five parts</p>
+                  <p n="composite">Composite: made up of five manuscripts
+                     </p>
+                  
+                  
+                  <objectDesc form="codex">
+                     <supportDesc material="chart">
+                        <support>paper</support>
+                     
+                     <extent>
+                        iii + 233 leaves
+                        <dimensions unit="in" type="binding">
+                           <height>9</height>
+                           <width>6.75</width>
+                        </dimensions>
+                        
+                     </extent>
+                        
+                        <condition>In poor condition, torn and rubbed and mended</condition>
+                     
+                     </supportDesc>
+                     
+                  </objectDesc>
+                  
                   <decoDesc>
-                     <decoNote>Coloured capitals.</decoNote>
+                     <decoNote type="colInit">Coloured capitals</decoNote>
                   </decoDesc>
+                  
                </physDesc>
+               
+               <history>
+                  
+                  <provenance>An English memorandum on fol. 228 records that <persName role="fmo" key="person_3566">Thomas Kerdif</persName> merchant of the Staple
+                     let to a tailor his best chamber over the 'schope' (1570). This connects this manuscript with <ref target="https://medieval.bodleian.ox.ac.uk/catalog/person_3566">other 
+                        Cardiff volumes</ref></provenance>
+                     
+                  <acquisition when="1655">It first appears in Bodleian lists <hi rend="italic">c</hi>. 1655</acquisition>
+                  
+               </history>
+               
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). <listBibl>
-                              <bibl facs="aap0455.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 434</bibl>
+                        <source>
+                           Description adapted (September 2023) by Stewart J. Brookes from the Summary Catalogue (1922)
+                           <listBibl>
+                        <bibl facs="aap0455.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 434</bibl>
                               <bibl facs="aap0456.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 435</bibl>
                            </listBibl>
                         </source>
@@ -61,16 +101,24 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
+                     
                      <msItem n="1" xml:id="MS_Bodl_844-part1-item1">
+                        <locus>(fol. 1)</locus>
                         <author key="person_25900069">Quilichinus of Spoleto</author>
                         <title key="work_4158">Historia Alexandri magni</title>
+                        <rubric>Hystoria regis Alexandri</rubric>
+                        <note>The author's name is given in the last division as 'Guilleminus' de Spoleto</note>
+                        <note>See <ref target="https://medieval.bodleian.ox.ac.uk/catalog/manuscript_1530">MS. Bodl. 496</ref>, Part 1, Article 1 (fol. 25r) 
+                        </note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
+                     
                   </msContents>
                   <physDesc>
                      <objectDesc form="codex">
                         <supportDesc material="chart">
                            <support>paper</support>
+                           <condition>The two first leaves are badly damaged</condition>
                         </supportDesc>
                      </objectDesc>
                   </physDesc>
@@ -80,6 +128,7 @@
                      </origin>
                   </history>
                </msPart>
+               
                <msPart xml:id="MS_Bodl_844-part2">
                   <msIdentifier>
                      <altIdentifier type="partial">
@@ -87,17 +136,26 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
+                     
                      <msItem n="1" xml:id="MS_Bodl_844-part2-item1">
+                        <locus>(fol. 70)</locus>
                         <author key="person_16017787">Innocent III</author>
                         <title key="work_2191">De miseria humanae conditionis</title>
+                        <rubric>Liber de miseria condicionis humane editus a Lothario...
+                           qui postea Innocens papa [iii] appellatus est</rubric>
+                        <note>The text ends with 'ad pastum. Sic &amp; impii.' in Book III, chapter 9 </note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
+                     
                   </msContents>
                   <physDesc>
                      <objectDesc form="codex">
                         <supportDesc material="chart">
                            <support>paper</support>
+                           <condition>Some leaves are mended and some wanting after fol. 86
+                           </condition>
                         </supportDesc>
+                       
                      </objectDesc>
                   </physDesc>
                   <history>
@@ -113,16 +171,24 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
+                     
                      <msItem n="1" xml:id="MS_Bodl_844-part3-item1">
+                        <locus>(fol. 89)</locus>
                         <author key="person_51835136">Pierre Bersuire</author>
                         <title key="work_3577">Ouidius moralizatus</title>
+                        <incipit>In noua fert animus &amp;c. Ponit Ouidius primo &amp; ante omnia quod postquam
+                           diluuio mundus consummatus esset</incipit>
+                        <explicit>libera nos propter nomen tuum</explicit>
+                        <note>Lacks the prefatory matter</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
+                     
                   </msContents>
                   <physDesc>
                      <objectDesc form="codex">
                         <supportDesc material="chart">
                            <support>paper</support>
+                           <condition>Some leaves are worn and partly illegible</condition>
                         </supportDesc>
                      </objectDesc>
                   </physDesc>
@@ -141,6 +207,8 @@
                   <msContents>
                      <msItem n="1" xml:id="MS_Bodl_844-part4-item1">
                         <title key="work_11155">Commentary on Aristotle, Parva naturalia</title>
+                        
+                        <note>The 2nd chapter begins 'Queritur vtrum sensus sit receptiuus specierum'. It may be imperfect at the end</note>
                         <textLang mainLang="la">Latin</textLang>
                         <bibl type="commentedOn">
                            <author key="person_7524651">Aristotle</author>
@@ -152,6 +220,7 @@
                      <objectDesc form="codex">
                         <supportDesc material="chart">
                            <support>paper</support>
+                           <condition>Much of the treatise is in bad condition and partly illegible</condition>
                         </supportDesc>
                      </objectDesc>
                   </physDesc>
@@ -168,22 +237,39 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
+                     
                      <msItem n="1" xml:id="MS_Bodl_844-part5-item1">
+                        <locus>(fol. 187)</locus>
                         <title key="work_11153">Commentary on Aristotle, Meteora</title>
+                           <incipit>De ventis agitur iam &amp;c. Liber meteorologie est 4<hi rend="superscript">us</hi> in ordine
+                              librorum Naturalium</incipit>
+                        <note>Commentary on Books I-III</note>
+                        <note>The text ends in the middle of a page (in the 3rd book) with 'superficies ideo
+                           apparet quasi modica luciditas &amp; claritas'</note>
                         <textLang mainLang="la">Latin</textLang>
                         <bibl type="commentedOn">
-                           <author key="person_7524651">Aristotle</author>
-                           <title>Meteora</title>
                         </bibl>
                      </msItem>
+                     
+                     <msItem n="2" xml:id="MS_Bodl_844-part5-item2">
+                        <locus>(fol. 230v)</locus>
+                        <title>Poem to Fortune</title>
+                        <incipit>O tu Fortuna cur non es omnibus vna</incipit>
+                        <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     
                   </msContents>
                   <physDesc>
                      <objectDesc form="codex">
                         <supportDesc material="chart">
                            <support>paper</support>
+                           <condition>Parts of this treatise are in bad condition</condition>
                         </supportDesc>
+                        
                      </objectDesc>
+                     
                   </physDesc>
+                  
                   <history>
                      <origin>
                         <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
@@ -194,6 +280,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2023-09-22">Description revised to incorporate all the information in the Summary Catalogue (1922)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>
