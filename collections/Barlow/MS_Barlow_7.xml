@@ -1,17 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_919">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_919">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Barlow 7</title>
             <title type="collection">MSS. Barlow</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1937">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>N. Denholm-Young</persName>
             </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2023">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,22 +37,45 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Barlow 7</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0mg74qk871s</idno><idno type="crArk">ark:29072/x079407x94n3</idno><altIdentifier type="internal">
                      <idno type="SCN">6419</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem class="#liturgica #musica" n="1" xml:id="MS_Barlow_7-item1">
-                     <title key="work_13914" type="desc">Pontifical of the <orgName key="org_124759589"><!-- links to Evesham abbey -->Abbot of Evesham</orgName>, with music.</title>
+                     <title key="work_13914" type="desc">Pontifical of the <orgName key="org_124759589"><!-- links to Evesham abbey -->Abbot of Evesham</orgName>, with music</title>
+                  <note><p>The chief contents are:</p></note>
+                  <note>The services for baptism (p. 32); ordination and profession (p. 45); marriage (p. 63);
+                     benedictions (p. 81); processions (p. 101); and the offices of the sick and dead (p. 185)</note>
+                  <note>15th-century forms of prayers (p. iv); for the installation of a new abbot (p. v); 
+                  for confraternity (p. vii); absolution from excommunication (p. ix); for Henry IV and his queen Joanna 
+                  and for Margaret, wife of Henry VI (altered to Elizabeth, for Edward IV), and her son Edward, 
+                  prince of Wales (p. xi)</note>
+                  <note>(Edited by H. A. Wilson for the Henry Bradshaw Society (vol. vi, 1893), with the additional matter on pp. iv-xiv there printed in appendix)</note>
+                  <note><p>Also a table of contents by <persName key="person_465">Thomas Barlow</persName> (p. xiii)</p></note>
+                  
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        
+                        <extent>
+                           xiv + 276 pages
+                           <dimensions unit="in" type="binding">
+                              <height>12.75</height>
+                              <width>8.375</width>
+                           </dimensions>
+                        </extent>
+                        
                      </supportDesc>
+                     
                   </objectDesc>
+                  
                   <musicNotation>
                      <p>Notation on staves (see van Dijk 1957).</p>
                   </musicNotation>
@@ -57,33 +84,32 @@
                   </decoDesc>
                   <bindingDesc>
                      <binding notAfter="1700" notBefore="1675">
-                        <p>Stamped brown leather, late 17th-cent. English work, rebacked.</p>
+                        <p>Stamped brown leather, late 17th-century English work, rebacked.</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" when="1300">c. 1300</origDate>
+                     <origDate calendar="Gregorian" notBefore="1290" notAfter="1310">c. 1300</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
-                  <provenance type="MLGB3_provenance_evidence"
-                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/2670">
-                     <orgName role="fmo" key="org_124759589">Evesham, Worcestershire, Benedictine abbey of St Mary the Virgin and St Egwin</orgName>:  (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/2670">MLGB3</ref>: evidence from an inscription of ownership by an individual member of a religious house (which may not, however, be evidence for institutional ownership)). </provenance>
-                  <provenance type="MLGB3_generalNotes"
-                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/2670">Ed. by H.A. Wilson, HBS (1893). (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/2670">MLGB3</ref>)
-                                             </provenance>
-                  <provenance notAfter="1691" notBefore="1607" resp="#MMM">
-                     <persName key="person_465" role="fmo">Thomas Barlow, 1607–1691</persName>
-                  </provenance>
-                  <acquisition resp="#MMM" when="1691">Bequeathed to the Bodleian in 1691</acquisition>
+                  <provenance type="MLGB3_provenance_evidence" source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/2670">
+                     <orgName role="fmo" key="org_124759589">Evesham, Worcestershire, Benedictine abbey of St Mary the Virgin and St Egwin</orgName>:  
+                     (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/2670">MLGB3</ref>)</provenance>
+                
+                  <provenance>'Liber Thomae Barlow è Coll. Reg. Oxon. Anno MDCLi.'</provenance>
+                
+                  <acquisition when="1691">Bequeathed to the Bodleian in 1691 by <persName key="person_465" role="dnr">Thomas Barlow</persName> (<ref target="https://medieval.bodleian.ox.ac.uk/images/ms/aaq/aaq0402.gif">Summary Catalogue, Vol. 2 Part 2, p. 1043</ref>)</acquisition>              
+               
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1937). <listBibl>
+                           Description adapted (April 2023) by Stewart J. Brookes from the Summary Catalogue (1937)
+                           <listBibl>                              
                               <bibl facs="aaq0405.gif" type="SC">Summary Catalogue, Vol. 2 Part 2, p. 1046</bibl>
                            </listBibl>
                         </source>
@@ -109,6 +135,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2023-04-24">Description revised to incorporate all the information in the Summary Catalogue (1937)</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2021-12-14">Add provenance information from MLGB3.</change>
          <change when="2019-10-31" xml:id="MMM">

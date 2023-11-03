@@ -1,17 +1,27 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_917">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_917">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Barlow 55</title>
             <title type="collection">MSS. Barlow</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1937">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>N. Denholm-Young</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2023">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,25 +43,36 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Barlow 55</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x09593tv55ts</idno><idno type="crArk">ark:29072/x0736665281x</idno><altIdentifier type="internal">
                      <idno type="SCN">6489*****</idno>
                   </altIdentifier>
                </msIdentifier>
+               
                <head>Fragments of manuscripts taken from the bindings of the Barlow collection</head>
                <physDesc>
-                  <p>Composite: collection of fragments.</p>
+                  <p>Composite: collection of fragments</p>
+                  <objectDesc>
+                     <supportDesc>
+                        <support>Parchment, apart from fol. 1 and fols 7-13 which are  paper and were flyleaves</support>
+                        <extent>13 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>14.4</height>
+                              <width>10.4</width>
+                           </dimensions>
+                        </extent>
+                     </supportDesc>
+                  </objectDesc>
                </physDesc>
                <history>
-                  <provenance notAfter="1691" notBefore="1607" resp="#MMM">
-                     <persName key="person_465" role="fmo">Thomas Barlow, 1607–1691</persName>
-                  </provenance>
-                  <acquisition resp="#MMM" when="1691">Bequeathed to the Bodleian in 1691</acquisition>
+                  <acquisition when="1691">Bequeathed to the Bodleian in 1691 by <persName key="person_465" role="dnr">Thomas Barlow</persName> 
+                     (<ref target="https://medieval.bodleian.ox.ac.uk/images/ms/aaq/aaq0402.gif">Summary Catalogue, Vol. 2 Part 2, p. 1043</ref>)</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1937). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
+                           Description adapted (April 2023) by Stewart J. Brookes from the Summary Catalogue (1937). Decoration, localization and date follow Pächt and Alexander (1973)
+                           <listBibl>
                               <bibl facs="aaq0426.gif" type="SC">Summary Catalogue, Vol. 2 Part 2, p. 1067</bibl>
                            </listBibl>
                         </source>
@@ -62,7 +83,7 @@
                         <ref target="https://digital.bodleian.ox.ac.uk/objects/e0725faa-ecb2-4669-92a0-a82b3992693e/">
                            <title>Digital Bodleian</title>
                         </ref>
-                        <note>(1 image from 35mm slides)</note>
+                        <note>(1 image from 35mm slide)</note>
                      </bibl>
                   </surrogates>
                   <listBibl type="WRAPPER">
@@ -81,19 +102,19 @@
                      </listBibl>
                   </listBibl>
                </additional>
-               <msPart xml:id="MS_Barlow_55-part1">
+               <msPart xml:id="MS_Barlow_55-part1" type="fragment">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Barlow 55 – Part 1</idno>
+                        <idno type="part">MS. Barlow 55 – fol. 3</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem class="#miscellanea #grammatica"
-                             n="1"
-                             xml:id="MS_Barlow_55-part1-item1">
+                     <msItem class="#miscellanea #grammatica" n="1" xml:id="MS_Barlow_55-part1-item1">
                         <locus>(fol. 3)</locus>
                         <title key="work_12037" type="desc">Glossary</title>
-                        <note>(fragment)</note>
+                        <note>(Fragment)</note>
+                        <note>The last section of 'S' and the whole of 'T' (which begins 'Tartarum id est 
+                        dex vini tam albus quam rubeus')</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                   </msContents>
@@ -108,22 +129,26 @@
                      <origin>
                         <origDate calendar="Gregorian" notAfter="1300" notBefore="1200">13th century</origDate>
                         <origPlace>
-                           <country key="place_7002445">English</country>
+                           <country key="place_7002445">England</country>
                         </origPlace>
                      </origin>
                   </history>
                </msPart>
-               <msPart xml:id="MS_Barlow_55-part2">
+               <msPart xml:id="MS_Barlow_55-part2" type="fragment">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Barlow 55 – Part 2</idno>
+                        <idno type="part">MS. Barlow 55 – fols. 4-5</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
                      <msItem class="#liturgica #musica" n="1" xml:id="MS_Barlow_55-part2-item1">
-                        <locus>(fol.4).</locus>
+                        <locus>(fol.4)</locus>
                         <title key="work_12122" type="desc">Gradual</title>
                         <note>(fragment)</note>
+                        <note>With notation. At the bottom of fol. 5, there is a line of 15th century notation</note> 
+                        <note>There are at least 10 pieces, mainly three-part settings of the Ordinary of the Mass, but 
+                        also the well-known sequences <hi rend="italic">Mater, ora filium</hi> and <hi rend="italic">Alleluya. V. Post 
+                           partum virgo</hi> (Source:<ref target="https://www.diamm.ac.uk/sources/491/#/"> DIAMM</ref>)</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                   </msContents>
@@ -133,27 +158,32 @@
                            <support>parchment</support>
                         </supportDesc>
                      </objectDesc>
+                     <musicNotation>
+                        <p>Notation.</p>
+                     </musicNotation>
                   </physDesc>
                   <history>
                      <origin>
                         <origDate calendar="Gregorian" notAfter="1300" notBefore="1200">13th century</origDate>
                         <origPlace>
-                           <country key="place_7002445">English</country>
+                           <country key="place_7002445">England</country>
                         </origPlace>
                      </origin>
                   </history>
                </msPart>
-               <msPart xml:id="MS_Barlow_55-part3">
+               <msPart xml:id="MS_Barlow_55-part3" type="fragment">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Barlow 55 – Part 3</idno>
+                        <idno type="part">MS. Barlow 55 – fol. 6</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
                      <msItem class="#liturgica" n="1" xml:id="MS_Barlow_55-part3-item1">
                         <locus>(fol.6).</locus>
                         <title key="work_10664" type="desc">Breviary, Use of Sarum</title>
+                        <rubric>In die s<ex>an</ex>c<ex>t</ex>i andree ap<ex>osto</ex>li</rubric>
                         <note>(fragment)</note>
+                        <note>Lessons for the feast of Andrew</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                   </msContents>
@@ -163,17 +193,19 @@
                            <support>parchment</support>
                         </supportDesc>
                      </objectDesc>
-                     <decoDesc>
-                        <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 687, fol. 6.:</summary>
-                        <decoNote type="border">Good border. </decoNote>
-                        <decoNote type="decInit">Good initial (damaged).</decoNote>
+                     <decoDesc resp="#PA">
+                        <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 687, discussing the fragment on fol. 6
+                        </summary>
+                        <decoNote type="border">Good border</decoNote>
+                        <decoNote type="decInit"><ref target="https://digital.bodleian.ox.ac.uk/objects/e0725faa-ecb2-4669-92a0-a82b3992693e/">Good initial</ref> (damaged)</decoNote>
+                        <decoNote type="decInit">Opening word 'P(roconsul)', and band surrounding the text, decorated with stems of ivy, knotwork and two fantastic birds with dragon wings (Source: <ref target="https://digital.bodleian.ox.ac.uk/objects/e0725faa-ecb2-4669-92a0-a82b3992693e/">Digital Bodleian</ref>)</decoNote>
                      </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
                         <origDate calendar="Gregorian" notAfter="1400" notBefore="1390">14th century, end</origDate>
                         <origPlace>
-                           <country key="place_7002445">English</country>
+                           <country key="place_7002445">England</country>
                         </origPlace>
                      </origin>
                   </history>
@@ -182,6 +214,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2023-04-14">Description revised to incorporate all the information in the Summary Catalogue (1922)</change>
          <change when="2019-10-31" xml:id="MMM">
             <persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>

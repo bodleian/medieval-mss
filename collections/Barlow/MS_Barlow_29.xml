@@ -1,17 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_891" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_891">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Barlow 29</title>
             <title type="collection">MSS. Barlow</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+         
+            <respStmt xml:id="SC">
+               <resp when="1937">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>N. Denholm-Young</persName>
             </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2023">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+         
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,34 +37,57 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Barlow 29</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0kp78gg20j7</idno><idno type="crArk">ark:29072/x04j03d061zw</idno><altIdentifier type="internal">
                      <idno type="SCN">6426</idno>
                   </altIdentifier>
                </msIdentifier>
+               
                <msContents>
                   <msItem n="1" xml:id="MS_Barlow_29-item1">
+                     <locus>(fol. 1)</locus>
                      <author key="person_86920837">Robert Grosseteste</author>
                      <title key="work_4359">De cessatione legalium</title>
+                     <rubric>Lincolniensis de cessatione legalium</rubric>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                   <msItem n="2" xml:id="MS_Barlow_29-item2">
+                     <locus>(fol. 42)</locus>
                      <author key="person_79254169">Peter of Limoges</author>
                      <title key="work_3533">De oculo morali</title>
+                     <incipit>Si diligenter volumus</incipit>
+                     <note>(Imperfect at end)</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                   
+                        <extent>
+                           i + 49 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>11.9</height>
+                              <width>8.1</width>
+                           </dimensions>
+                        </extent>
+                        
                      </supportDesc>
+                     
+                     <layoutDesc>
+                        <layout columns="2">2 cols</layout>
+                     </layoutDesc>
+                     
                   </objectDesc>
+                   
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
                   <provenance notAfter="1691" notBefore="1607" resp="#MMM"><persName key="person_465" role="fmo">Thomas Barlow, 1607–1691</persName></provenance>
@@ -69,7 +96,9 @@
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1937). <listBibl>
+                        <source>
+                           Description adapted (April 2023) by Stewart J. Brookes from the Summary Catalogue (1937)
+                           <listBibl>
                               <bibl facs="aaq0409.gif" type="SC">Summary Catalogue, Vol. 2 Part 2, p. 1050</bibl>
                            </listBibl>
                         </source>
@@ -80,6 +109,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2023-04-24">Description revised to incorporate all the information in the Summary Catalogue (1937)</change>
          <change when="2019-10-31" xml:id="MMM"><persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>

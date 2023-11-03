@@ -1,17 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_908" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_908">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Barlow 44</title>
             <title type="collection">MSS. Barlow</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1937">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>N. Denholm-Young</persName>
             </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2023">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,13 +37,14 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Barlow 44</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0qz20ss02vc</idno><idno type="crArk">ark:29072/x06682x4787c</idno><altIdentifier type="internal">
                      <idno type="SCN">6427</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
                   <msItem class="#documenta" n="1" xml:id="MS_Barlow_44-item1">
-                     <title key="work_11394" type="desc">Copy of <persName key="person_262479505">Richard II</persName>'s Charter of Liberties to the City of <placeName key="place_7011781">London</placeName>, dated Westminster 26 November [1383].</title>
+                     <title key="work_11394" type="desc">Copy of <persName key="person_262479505">Richard II</persName>'s Charter of Liberties to the City of <placeName key="place_7011781">London</placeName>, dated Westminster 26 November [1383]</title>
+                     <note>For the text, see <ref target="https://archive.org/details/calendarofcharte05greauoft/page/294/mode/1up"><title>Calendar of Charter Rolls</title></ref>, v (1341-1417), p. 294</note>
                      <textLang mainLang="enm">Middle English</textLang>
                   </msItem>
                </msContents>
@@ -47,23 +52,37 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>
+                           i + 11 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>11.9</height>
+                              <width>8.1</width>
+                           </dimensions>
+                        </extent>
+                        
                      </supportDesc>
+                     
                   </objectDesc>
+
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
-                  <provenance notAfter="1691" notBefore="1607" resp="#MMM"><persName key="person_465" role="fmo">Thomas Barlow, 1607–1691</persName></provenance>
-                  <acquisition resp="#MMM" when="1691">Bequeathed to the Bodleian in 1691</acquisition>
+                  
+                  <acquisition when="1691">Bequeathed to the Bodleian in 1691 by <persName key="person_465" role="dnr">Thomas Barlow</persName> (<ref target="https://medieval.bodleian.ox.ac.uk/images/ms/aaq/aaq0402.gif">Summary Catalogue, Vol. 2 Part 2, p. 1043</ref>)</acquisition>
+                  
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1937). <listBibl>
+                        
+                        <source>
+                           Description adapted (April 2023) by Stewart J. Brookes from the Summary Catalogue (1937)
+                           <listBibl>                              
                               <bibl facs="aaq0409.gif" type="SC">Summary Catalogue, Vol. 2 Part 2, p. 1050</bibl>
                            </listBibl>
                         </source>
@@ -74,6 +93,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2023-04-24">Description revised to incorporate all the information in the Summary Catalogue (1937)</change>
          <change when="2019-10-31" xml:id="MMM"><persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>

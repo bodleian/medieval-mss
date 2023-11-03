@@ -1,16 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_880">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_880">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Barlow 15</title>
             <title type="collection">MSS. Barlow</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            <respStmt xml:id="SC">
+               
+               <resp when="1937">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>N. Denholm-Young</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2023">Encoding</resp>
+               <persName>Stewart Brookes</persName>
             </respStmt>
          </titleStmt>
          <publicationStmt>
@@ -33,7 +36,7 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Barlow 15</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x005741s74n0</idno><idno type="crArk">ark:29072/x03f462645j4</idno><altIdentifier type="internal">
                      <idno type="SCN">6422</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -41,6 +44,15 @@
                   <msItem n="1" xml:id="MS_Barlow_15-item1">
                      <author key="person_51797933">Peter Lombard</author>
                      <title key="work_3510">Sententiae</title>
+                     
+                     <note>Includes a mystical passage which begins 'Sibille omnes femine generaliter' (fol. ii verso); there is a table of 
+                        capitula for each book, with that for Book 1 beginning 'Omnis doctrina est de rebus' (fol. v); a list of heresies, 
+                        beginning abruptly due to the loss of one or more leaves (fol. vii); a preface, beginning 'Nunc inspectum libri sacramentorum' (fol. ix verso);
+                        and the usual preface which begins 'Cupientes aliquid' (fol. x)</note>
+                        
+                       <note type="annotations">The text begins 'Veteris ac noue legis' (fol. 1) and is accompanied by contemporary marginalia.
+                     </note>
+                     
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -48,14 +60,31 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+
+                        <extent>
+                           x + 221 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>12.1</height>
+                              <width>7.9</width>
+                           </dimensions>
+                        </extent>
+                        
+                        <condition>Fols ii-viii are mutilated</condition>
+                        
                      </supportDesc>
+                     
+                     <layoutDesc>
+                        <layout columns="2">2 cols</layout>
+                     </layoutDesc>
+                     
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote type="flourInit">Illuminated initials.</decoNote>
+                  
+                        <decoDesc>
+                     <decoNote type="flourInit">Illuminated initials</decoNote>
                   </decoDesc>
                   <bindingDesc>
-                     <binding>
-                        <p>Brown leather with roll-produced border.</p>
+                     <binding notAfter="1800" notBefore="1450"><!-- check -->
+                        <p>Brown leather with roll-produced border</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
@@ -63,19 +92,20 @@
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1210" notBefore="1200">13th century, early</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
-                  <provenance notAfter="1691" notBefore="1607" resp="#MMM">
-                     <persName key="person_465" role="fmo">Thomas Barlow, 1607–1691</persName>
-                  </provenance>
-                  <acquisition resp="#MMM" when="1691">Bequeathed to the Bodleian in 1691</acquisition>
+                  
+                  <provenance>There are two erased inscriptions on fol. 220v</provenance>
+                  
+                  <acquisition when="1691">Bequeathed to the Bodleian in 1691 by <persName key="person_465" role="dnr">Thomas Barlow</persName> (<ref target="https://medieval.bodleian.ox.ac.uk/images/ms/aaq/aaq0402.gif">Summary Catalogue, Vol. 2 Part 2, p. 1043</ref>)</acquisition> 
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1937). <listBibl>
+                           Description adapted (April 2023) by Stewart J. Brookes from the Summary Catalogue (1937)
+                           <listBibl>                              
                               <bibl facs="aaq0407.gif" type="SC">Summary Catalogue, Vol. 2 Part 2, p. 1048</bibl>
                            </listBibl>
                         </source>
@@ -86,6 +116,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2023-04-14">Description revised to incorporate all the information in the Summary Catalogue (1937)</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2019-10-31" xml:id="MMM">
             <persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>

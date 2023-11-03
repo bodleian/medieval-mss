@@ -1,17 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1797">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1797">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Bodl. 81</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
             </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2023">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,21 +37,35 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Bodl. 81</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x04t64gp123j</idno><idno type="crArk">ark:29072/x04q77fs28sg</idno><altIdentifier type="internal">
                      <idno type="SCN">2269</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_Bodl_81-item1">
                      <author key="person_2307">Ps-Robert Grosseteste</author>
                      <title key="work_4367">De lingua</title>
+                     <rubric>Tractatus lingue</rubric>
+                     <incipit type="prol.">Lingua congruit in duo opera</incipit>
+                     <incipit>Quod disciplina in gustu</incipit>
+                     <note>In six parts, wiht a list of the 'intitulaciones' of the chapters.</note>
+                     <note>Ten leaves are wanting after fol. 41</note>
+                     <note>On fol. 22r are two Lati prayers.</note>
+                     <note>Contemporary pagination from '1' to '3093', i.e. 393, before the volume was imperfect.</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>ii + 194 leaves
+                           <dimensions unit="in" type="leaf">
+                              <height>6.75</height>
+                              <width>5.375</width>
+                           </dimensions></extent>
                      </supportDesc>
                   </objectDesc>
                </physDesc>
@@ -55,24 +73,22 @@
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1300" notBefore="1290">13th century, late</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
-                  <provenance type="MLGB3_provenance_evidence"
-                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6001">
-                     <orgName role="fmo" key="org_148943477">Worcester, Worcestershire, Benedictine cathedral priory of St Mary the Virgin</orgName>: Label "Nonnulli tractatus de diuersis materiis quere tabulam in fine libri", in same hand as the labels in Bodley 633 and Auct. F.5.16, is now pasted to fol. 1r. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6001">MLGB3</ref>: inferred evidence). </provenance>
-                  <provenance type="MLGB3_laterOwners"
-                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6001">Probably reached the Bodleian between 1605 and 1611. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6001">MLGB3</ref>)</provenance>
-                  <provenance type="MLGB3_generalNotes"
-                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6001">Medieval pagination. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6001">MLGB3</ref>)
-                                             </provenance>
+                  <provenance type="MLGB3_provenance_evidence" source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6001">
+                     <orgName role="fmo" key="org_148943477">Worcester, Worcestershire, Benedictine cathedral priory of St Mary the Virgin</orgName>: 
+                     Label "Nonnulli tractatus de diuersis materiis quere tabulam in fine libri", in same hand as the labels in MS. Bodl. 633 
+                     and MS. Auct. F. 5. 16, is now pasted to fol. 1r (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6001">MLGB3</ref>)</provenance>
+                  <acquisition notAfter="1611" notBefore="1605">Probably acquired between 1605 and 1611.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). <listBibl>
-                              <bibl facs="aap0308.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 287</bibl>
+                           Description adapted (August 2023) by Stewart J. Brookes from the Summary Catalogue (1922)
+                           <listBibl>
+                        <bibl facs="aap0308.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 287</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -92,6 +108,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2023-08-07">Description revised to incorporate all the information in the Summary Catalogue (1922)</change>
          <change when="2021-12-14">Add provenance information from MLGB3.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">

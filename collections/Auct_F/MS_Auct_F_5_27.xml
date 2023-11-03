@@ -1,17 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_698" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_698">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Auct. F. 5. 27</title>
             <title type="collection">MSS. Auct. F. (Auctarium F.)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
             </respStmt>
+            
+            <respStmt xml:id="MLH">
+               <resp when="2020">Encoding</resp>
+               <persName>Matthew Holford</persName>
+            </respStmt> 
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,7 +35,7 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Auct. F. 5. 27</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x08s45q9448v</idno><idno type="crArk">ark:29072/x08p58pd60zn</idno><altIdentifier type="internal">
                      <idno type="SCN">2143</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -43,7 +45,7 @@
                      <title key="work_672">Politics</title>
                      <note>(tr. <persName key="person_95283478" role="trl"> Leonardo Bruni </persName>, dedicated to <persName key="person_30785585" role="dte"> Duke Humfrey of Gloucester </persName>)</note>
                      <rubric>Noua translacio libri Politicorum Aristotelis per magistrum Leonardum Arietinum poetam laureatum ad illustrissimum principem Humfridum ducem Gloucestrie ... <note>[late 15th cent.]</note></rubric>
-                     <note>The first two leaves of the text, bearing illuminated borders and capitals, have been almost entirely cut out, the next (fol. 3) beg. 'est. Cotidiana igitur societas secundum naturam constituta'.</note>
+                     <note>The first two leaves of the text, bearing illuminated borders and capitals, have been almost entirely cut out, the next (fol. 3) begins 'est. Cotidiana igitur societas secundum naturam constituta'</note>
                      <colophon>Explicit <persName key="person_3332" role="scr">W.</persName>
                         <locus>(fol. 128)</locus>.</colophon>
                      <textLang mainLang="la">Latin</textLang>
@@ -53,21 +55,32 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                   
+                        <extent>
+                           v + 133 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>7.625</height>
+                              <width>5.625</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
                   </objectDesc>
-                  <decoDesc>
+                   
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 986
+                     </summary>
                      <decoNote type="border">Fine borders</decoNote>
-                     <decoNote type="decInit">Fine initials (partly mutilated). (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 986)</decoNote>
+                     <decoNote type="decInit">Fine initials (partly mutilated)</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1460" notBefore="1438">15th century, middle (after 1438)</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
-                  <provenance>'<persName key="person_3333" role="sgn">Peter Gery</persName>', 16th cent. (fol. 128v)</provenance>
+                  <provenance>'<persName key="person_3333" role="sgn">Peter Gery</persName>', 16th century (fol. 128v)</provenance>
                   <acquisition notAfter="1611" notBefore="1605"> 'Ex dono <persName key="person_3334" role="dnr">Doctoris Kichini</persName>', who presumably gave it to the Library between 1605 and 1611.</acquisition>
                </history>
                <additional>
@@ -90,6 +103,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2023-04-24">Description revised to incorporate all the information in the Summary Catalogue (1922)</change>
          <change when="2020-06">Description revised to incorporate all information in SC.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>

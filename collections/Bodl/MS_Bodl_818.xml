@@ -1,17 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1806">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1806">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Bodl. 818</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
             </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2023">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,45 +37,69 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Bodl. 818</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x06m311q11p1</idno><idno type="crArk">ark:29072/x06h440t28c9</idno><altIdentifier type="internal">
                      <idno type="SCN">2697</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_Bodl_818-item1">
                      <author key="person_95155322">Origen</author>
                      <title key="work_3387">Commentary on St. Matthew's Gospel</title>
-                     <note>(Latin translation)</note>
+                     <incipit>Veniens autem Ihesus in partes</incipit>
+                     <explicit>poterat preses placari</explicit>
+                     <note>Latin translation: comprising the commentary on Matthew XVI.13 to XXVII.64, here arranged as homilies CLXIII-CCCXLVII</note> 
+                        <note>The Greek original is wanting after Matthew XXII.33</note> 
+                     <note>The text ends a few sentences before the end of the commentary as printed 
+                        in Migne's <title>Patrol. Græca</title>, tom. 13</note>
+                     
                      <bibl type="commentedOn">
                         <title>Bible, Matthew</title>
                      </bibl>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>
+                           iii + 241 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>11.375</height>
+                              <width>7.25</width>
+                           </dimensions>
+                        </extent>
+                        
+                        <condition>Fol. 237 is injured</condition>    
+                        
                      </supportDesc>
-                  </objectDesc>
+                     
+                  </objectDesc>  
+                  
                   <decoDesc>
-                     <decoNote>One illuminated and many coloured capitals.</decoNote>
+                     <decoNote type="decInit">One illuminated capital</decoNote>
+                     <decoNote type="colInit">Many coloured capitals</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1200" notBefore="1190">12th century, late</origDate>
                   </origin>
-                  <provenance type="MLGB3_provenance_evidence"
-                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5885">
-                     <orgName role="fmo" key="org_2142145857037522921207">Windsor, Berkshire, Royal collegiate chapel of St George</orgName> (?) : No marks of Windsor ownership. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5885">MLGB3</ref>: inferred evidence). </provenance>
+                  <provenance type="MLGB3_provenance_evidence" source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5885">
+                     <orgName role="fmo" key="org_2142145857037522921207">Windsor, Berkshire, Royal collegiate chapel of St George</orgName> (?) : No marks of Windsor ownership (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5885">MLGB3</ref>)</provenance>
+               
+               <acquisition notAfter="1620">This volume appears to correspond with 'Postillæ imperfectæ', presented by
+               the Dean and canons of Windsor in 1612. It was certainly in the Library by 1620</acquisition>
+               
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). <listBibl>
-                              <bibl facs="aap0520.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 499</bibl>
+                           Description adapted (April 2023) by Stewart J. Brookes from the Summary Catalogue (1922)
+                           <listBibl>                              <bibl facs="aap0520.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 499</bibl>
                               <bibl facs="aap0521.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 500</bibl>
                            </listBibl>
                         </source>
@@ -100,6 +128,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2023-04-14">Description revised to incorporate all the information in the Summary Catalogue (1922)</change>
          <change when="2021-12-14">Add provenance information from MLGB3.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">

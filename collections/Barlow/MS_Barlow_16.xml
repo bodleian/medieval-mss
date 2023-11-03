@@ -1,17 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_881">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_881">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Barlow 16</title>
             <title type="collection">MSS. Barlow</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1937">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>N. Denholm-Young</persName>
             </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2023">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,13 +37,20 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Barlow 16</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0hh63sv87rw</idno><idno type="crArk">ark:29072/x03j333328v0</idno><altIdentifier type="internal">
                      <idno type="SCN">6472</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
                   <msItem class="#liturgica #commentarii" n="1" xml:id="MS_Barlow_16-item1">
-                     <title key="work_13704" type="desc">Paraphrase of and commentary upon sequences, arranged according to the seasons of the Christian year.</title>
+                     <locus>(fol. 1)</locus>
+                     <title key="work_13704" type="desc">Paraphrase of and commentary upon sequences, arranged according to the seasons of the Christian year</title>
+                     <incipit>(imperfect) ista inferiora per naturam</incipit>
+                     <note>Under each heading: 'ista sequencia cantatur...'</note>
+                     <note>Followed by a list of sins along with biblical references which advise how the sins may be avoided</note>
+                     <listBibl>
+                        <bibl>E. Kihlman, <title><ref target="https://urn.kb.se/resolve?urn=urn%3Anbn%3Ase%3Asu%3Adiva-921">Expositiones Sequentiarum: Medieval Sequence Commentaries and Prologues. Editions with Introductions</ref></title>, Acta Universitatis Stockholmiensis, Studia Latina Stockholmiensia, 53 (Stockholm: Stockholm University, 2006), esp. pp. 93-108 (ed. fols. 95v-98v), p. 281 (inventory of contents)</bibl>
+                     </listBibl>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -47,11 +58,22 @@
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
+                   
+                        <extent>
+                           i + 127 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>11.9</height>
+                              <width>8.6</width>
+                           </dimensions>
+                        </extent>
+                        
                      </supportDesc>
+                     
                   </objectDesc>
+                   
                   <bindingDesc>
-                     <binding>
-                        <p>Brown leather, with roll-produced border.</p>
+                     <binding notAfter="1800" notBefore="1450"><!-- check -->
+                        <p>Brown leather, with roll-produced border</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
@@ -59,7 +81,7 @@
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1460" notBefore="1440">15th century, middle</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
                   <provenance notAfter="1691" notBefore="1607" resp="#MMM">
@@ -71,7 +93,8 @@
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1937). <listBibl>
+                            Description adapted (April 2023) by Stewart J. Brookes and Matthew Holford from the Summary Catalogue (1937) with additional reference to published literature as cited.
+                           <listBibl>
                               <bibl facs="aaq0418.gif" type="SC">Summary Catalogue, Vol. 2 Part 2, p. 1059</bibl>
                            </listBibl>
                         </source>
@@ -82,6 +105,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2023-04-14">Description revised to incorporate all the information in the Summary Catalogue (1937)</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2019-10-31" xml:id="MMM">
             <persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>

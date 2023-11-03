@@ -1,17 +1,27 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1848">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1848">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Bodl. 858</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2022">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,29 +43,55 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Bodl. 858</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0gq67jr434g</idno><idno type="crArk">ark:29072/x0gm80hv59th</idno><altIdentifier type="internal">
                      <idno type="SCN">2721</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_Bodl_858-item1">
                      <author key="person_51797933">Peter Lombard</author>
                      <title key="work_3510">Sententiarum libri IV</title>
+                     <incipit>Cupientes aliquid de penuria</incipit>
                      <textLang mainLang="la">Latin</textLang>
+                     <note>With some notes, and a few theological comments at fol. 372v. Each book has a list of chapters prefixed</note>
+                     <note>In Gerard Langbaine's time (1656–1692) there was a leaf at the beginning bearing sets of numbers in Roman and Arabic figures, see no. 8620, p. 132</note>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                   
+                        <extent>
+                           ii + 373 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>12</height>
+                              <width>7.625</width>
+                           </dimensions>
+                        </extent>
+                        
+                        <condition>
+                           Stained 
+                        </condition>
+                        
                      </supportDesc>
+                     
+                     <layoutDesc>
+                        <layout columns="2">2 cols</layout>
+                     </layoutDesc>
+                     
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote>Penwork initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 512)</decoNote>
+                   
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 512
+                     </summary>
+                     <decoNote type="flourInit">Penwork initials</decoNote>
                   </decoDesc>
                   <bindingDesc>
                      <binding notBefore="1400" notAfter="1500">
-                        <p>Red leather on oak boards, clasps lost, English 15th cent. work.</p>
+                        <p>"Red leather on oak boards, clasps lost, English 15th century work." (Summary Catalogue) "Original sewing and boards. Faded pink leather put on c. 1600" (Pächt and Alexander)</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
@@ -63,18 +99,36 @@
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1300" notBefore="1250">13th century, second half</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
-                  <provenance type="MLGB3_provenance_evidence"
-                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5889">
-                     <orgName role="fmo" key="org_2142145857037522921207">Windsor, Berkshire, Royal collegiate chapel of St George</orgName>: Binding of s. xv. Usual chain mark.     Pressmark "G L [?]" at top of fol. ii verso, facing the first leaf of text.     Decoration suggests that this may be from the same scriptorium as Auct. D.2.11. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5889">MLGB3</ref>: inferred evidence). </provenance>
+                  <provenance type="MLGB3_provenance_evidence" source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5889">
+                     <orgName role="fmo" key="org_2142145857037522921207">Windsor, Berkshire, Royal collegiate chapel of St George</orgName>: 
+                     Binding of s. xv. Usual chain mark</provenance>   
+                    <provenance> Pressmark "G L [?]" at top of fol. ii verso, facing the first leaf of text</provenance>
+                  
+                  <provenance>The decoration suggests that this may be from the same scriptorium as 
+                     <ref target="https://medieval.bodleian.ox.ac.uk/catalog/manuscript_415">Auct. D. 1. 4</ref>, 
+                     <ref target="https://medieval.bodleian.ox.ac.uk/catalog/manuscript_422">
+                     MS. Auct. D. 2. 10</ref>, 
+                     <ref target="https://medieval.bodleian.ox.ac.uk/catalog/manuscript_423">MS. Auct. D.2.11</ref> along with 
+                     <ref target="https://medieval.bodleian.ox.ac.uk/catalog/manuscript_425">MS. Auct. D. 2. 13</ref>,
+                     and <ref target="https://medieval.bodleian.ox.ac.uk/catalog/manuscript_446">MS. Auct. D. 3. 13</ref> 
+                     (see: <ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5828/">MLGB3</ref> for MS. Auct. D. 2. 11)
+                     </provenance>
+                  
+                  <provenance>'Precium xxxs iiijd' (15th century)</provenance>
+                  
+                  <acquisition when="1612">Presented by the dean and canons of Windsor in 1612</acquisition>
+                  
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
+                        
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
+                           Description adapted (April 2023) by Stewart J. Brookes from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973)
+                           <listBibl>                              
                               <bibl facs="aap0534.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 513</bibl>
                            </listBibl>
                         </source>
@@ -95,6 +149,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2023-04-14">Description revised to incorporate all the information in the Summary Catalogue (1922)</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2021-12-14">Add provenance information from MLGB3.</change>
          <change when="2017-07-01">First online publication.</change>

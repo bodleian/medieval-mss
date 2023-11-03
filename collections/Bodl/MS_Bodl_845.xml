@@ -1,17 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_1835" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1835">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Bodl. 845</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
             </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2022">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>   
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,37 +36,65 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Bodl. 845</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0d791sg60cb</idno><idno type="crArk">ark:29072/x0d504rk7721</idno><altIdentifier type="internal">
                      <idno type="SCN">2578</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_Bodl_845-item1">
                      <author key="person_89166876">Lawrence of Durham</author>
                      <title key="work_2931">Hypognosticon</title>
-                     <textLang mainLang="la">Latin</textLang>
+                     
+                     <note>A versification of biblical history in eight books</note>
+                     
+                     <note> After the prose preface, the poem begins in elegiac verse: 
+                        </note><incipit>Principium rerum sine tempore tempora formans</incipit>
+                        
+                        <note>The present copy is defective after the words 'Inter forte tamen differ[t] &amp; fortius atque' in the 5th book, in an
+                        account of Darius</note>
+
+                        <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                 
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                   
+                        <extent>
+                           ii + 38 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>9.125</height>
+                              <width>5.625</width>
+                           </dimensions>
+                        </extent>
+                        
                      </supportDesc>
+                     
                   </objectDesc>
+                   
                   <decoDesc>
-                     <decoNote>Coloured capitals.</decoNote>
+                     <decoNote type="colInit">Coloured capitals</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1250" notBefore="1200">13th century, first half</origDate>
                   </origin>
+                  
+                  <acquisition notAfter="1646">Acquired before c. 1646 (<title>Summary Catalogue</title> I. 112-13)</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). <listBibl>
-                              <bibl facs="aap0456.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 435</bibl>
+                        
+                        <source>
+                           Description adapted (April 2023) by Stewart J. Brookes from the Summary Catalogue (1922)
+                           <listBibl>
+                        
+                        <bibl facs="aap0456.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 435</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -73,6 +104,8 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2023-04-24">Description revised to incorporate all the information in the Summary Catalogue (1922)</change>
+         
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>

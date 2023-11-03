@@ -1,16 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_892" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_892">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Barlow 3</title>
             <title type="collection">MSS. Barlow</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1937">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>N. Denholm-Young</persName>
+            </respStmt>
+           
+            <respStmt xml:id="SJB">
+               <resp when="2023">Encoding</resp>
+               <persName>Stewart Brookes</persName>
             </respStmt>
          </titleStmt>
          <publicationStmt>
@@ -33,40 +36,65 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Barlow 3</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x07d278t567x</idno><idno type="crArk">ark:29072/x04m90dw458f</idno><altIdentifier type="internal">
                      <idno type="SCN">6415</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
                   <msItem n="1" xml:id="MS_Barlow_3-item1">
-                     <author key="person_4929593">Eusebius, bishop of Caesaraea</author>
+                     <locus>(fol. 1)</locus>
+                     <author key="person_4929593">Eusebius, Bishop of Caesaraea</author>
                      <title key="work_1509">Ecclesiastical History</title>
-                     <note>tr. <persName key="person_77679446" role="trl">Rufinus</persName>
+                     <note>Translated by <persName key="person_77679446" role="trl">Rufinus</persName>
                      </note>
+                     <incipit>Peritorum dicunt</incipit>
+                     <note>Opens with a prologue by Jerome. The prologue of Eusebius begins on fol. 1v: '</note><incipit>Successiones evangelorum</incipit>
+                     <incipit type="text"><locus>(fol. 3)</locus> Incipiet igitur</incipit>
+                     
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
+                   
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>
+                           ii + 105 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>12.4</height>
+                              <width>10.6</width>
+                           </dimensions>
+                        </extent>
+                        
                      </supportDesc>
+                     
+                     <layoutDesc>
+                        <layout columns="2">2 cols</layout>
+                     </layoutDesc>
+                     
                   </objectDesc>
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1260" notBefore="1240">13th century, middle</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
-                  <provenance notAfter="1691" notBefore="1607" resp="#MMM"><persName key="person_465" role="fmo">Thomas Barlow, 1607–1691</persName></provenance>
-                  <acquisition resp="#MMM" when="1691">Bequeathed to the Bodleian in 1691</acquisition>
+                  <provenance>Fol. ii verso has '... de Perschore mon<hi rend="superscript">a</hi> (15th century) and 
+
+                     'Liber domini <persName role="fmo" key="person_3734">Edmundi Pershor</persName> deliberat' domini <persName role="fmo" key="person_3735">Willemo Abbon</persName>'</provenance>
+
+                  <acquisition when="1691">Bequeathed to the Bodleian in 1691 by <persName key="person_465" role="dnr">Thomas Barlow</persName> (<ref target="https://medieval.bodleian.ox.ac.uk/images/ms/aaq/aaq0402.gif">Summary Catalogue, Vol. 2 Part 2, p. 1043</ref>)</acquisition> 
+                  
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1937). <listBibl>
+                        <source>
+                           Description adapted (April 2023) by Stewart J. Brookes from the Summary Catalogue (1937)
+                           <listBibl>                              
                               <bibl facs="aaq0403.gif" type="SC">Summary Catalogue, Vol. 2 Part 2, p. 1044</bibl>
                            </listBibl>
                         </source>
@@ -77,6 +105,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2023-04-14">Description revised to incorporate all the information in the Summary Catalogue (1937)</change>
          <change when="2019-10-31" xml:id="MMM"><persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
