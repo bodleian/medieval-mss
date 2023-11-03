@@ -1,17 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_8881" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8881">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Selden Superius 109</title>
             <title type="collection">MSS. Selden Superius</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
             </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2023">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,7 +37,7 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Selden Superius 109</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0c247ds38kv</idno><idno type="crArk">ark:29072/x06108vc132h</idno><altIdentifier type="internal">
                      <idno type="SCN">3321</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -47,14 +51,28 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                  
+                  
+                        <extent>
+                           34 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>4.125</height>
+                              <width>3.125</width>
+                           </dimensions>
+                        </extent>
+                        
+                        <condition>In parts torn and imperfect</condition>
+                        
                      </supportDesc>
+                     
                   </objectDesc>
+                  
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1600" notBefore="1500">16th century (?)</origDate>
                      <origPlace>
-                        <country key="place_7002435">Russian</country>
+                        <country key="place_7002435">Russia</country>
                      </origPlace>
                   </origin>
                   <provenance notAfter="1654" notBefore="1584" resp="#MMM"><persName key="person_51728429" role="fmo">John Selden, 1584–1654</persName></provenance>
@@ -63,17 +81,26 @@
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
-                              <bibl facs="aap0624.gif" type="SC">Summary Catalogue, Vol. 2, part 1, p. 603</bibl>
+                        <source>
+                           Description adapted (September 2023) by Stewart J. Brookes from the Summary Catalogue (1922)
+                           <listBibl>
+                        <bibl facs="aap0624.gif" type="SC">Summary Catalogue, Vol. 2, part 1, p. 603</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="PRINT">
+                        <head>Printed descriptions:</head>
+                        <bibl>Ralph Cleminson, <title>A Union Catalogue of Cyrillic Manuscripts in British and Irish Collections</title> (1988), <ref target="https://archive.org/details/SSEES0001/page/293/mode/1up">no. 191</ref></bibl>
+                     </listBibl>
+                  </listBibl>
                </additional>
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2023-09-06">Description revised to incorporate all the information in the Summary Catalogue (1922)</change>
          <change when="2019-10-31" xml:id="MMM"><persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>

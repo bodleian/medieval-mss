@@ -1,17 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8873">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8873">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Arch. Selden. B. 50</title>
             <title type="collection">MSS. Arch. Selden. (Archivum Seldenianum)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
             </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2023">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,46 +37,69 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Arch. Selden. B. 50</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0p8418m86cm</idno><idno type="crArk">ark:29072/x0z029p406bt</idno><altIdentifier type="internal">
                      <idno type="SCN">3352</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_Arch_Selden_B_50-item1">
                      <author key="person_41977794">Ognibene da Lonigo</author>
                      <title key="work_3373">Commentary on Juvenal, <hi rend="italic">Satires</hi>
                      </title>
+                     <incipit>Quoniam in exponendis auctoribus</incipit>
                      <bibl type="commentedOn">
                         <author key="person_83985148">Juvenal</author>
                         <title>Satires</title>
+                        
                      </bibl>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                  
+                        <extent>
+                           190 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>10.625</height>
+                              <width>5.125</width>
+                           </dimensions>
+                        </extent>
+                        
                      </supportDesc>
+                     
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote>Decoration<p>Fine historiated border, initials (partly defaced). Humanistic script. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 607, pl. LVIII)</p>
-                     </decoNote>
+                  
+                  <handDesc>
+                     <handNote script="humanistica">Humanistic script.</handNote>
+                  </handDesc>
+
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 607, Pl. LVIII
+                     </summary>
+                     <decoNote type="border">Fine historiated border (partly defaced)</decoNote>
+                     <decoNote type="histInit">Fine historiated initials (partly defaced)</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" when="1460">c. 1460</origDate>
+                     <origDate calendar="Gregorian" notBefore="1455" notAfter="1465">c. 1460</origDate>
                      <origPlace>
-                        <country key="place_1000080">Italian</country>, <settlement key="place_7003085">Padua</settlement>
+                        <country key="place_1000080">Italy</country>, <settlement key="place_7003085">Padua</settlement>
                         <!--ORIGINAL: Italian, Padua-->
                      </origPlace>
                   </origin>
-                  <provenance type="MLGB3_provenance_evidence"
-                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4251">
-                     <orgName role="fmo" key="org_142129514">Oxford, Oxfordshire, University</orgName>: 'Liber hic pertinet ad universitatem Oxoniensem, ut cathinetur in i [?] bibliotheca' (fol. 1v, s. xv). (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4251">MLGB3</ref>: evidence from an ex-libris inscription or note of gift to an institution). </provenance>
-                  <provenance type="MLGB3_laterOwners"
-                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4251">John Tiptoft, Earl of Gloucester (d. 1470). (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4251">MLGB3</ref>)</provenance>
+                  <provenance>At the foot of the first page of the text (<ref target="https://digital.bodleian.ox.ac.uk/objects/9cabf411-ed0c-4952-82a1-5373d975fbe6/surfaces/a234bd98-fb7b-4f18-ae10-de6a0a980f25/">fol. 3r</ref>) 
+                     are the arms of <persName role="fmo" key="person_100177277">John Tiptoft</persName>, earl of Worcester (d. 1470), with his crest, between two satyrs.                   
+                     The book was no doubt copied in Italy for that nobleman, and given by him to the old library of the University of Oxford.</provenance>
+                  <provenance type="MLGB3_provenance_evidence" source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4251">
+                     <orgName role="fmo" key="org_142129514">Oxford, Oxfordshire, University</orgName>: 'Liber hic pertinet ad vniversitatem Oxoniensem, vt cathinetur in j 
+                     [?] bibliotheca' (fol. 1v, s. xv) 
+                     (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4251">MLGB3</ref>)</provenance>
                   <provenance notAfter="1654" notBefore="1584" resp="#MMM">
                      <persName key="person_51728429" role="fmo">John Selden, 1584–1654</persName>
                   </provenance>
@@ -81,7 +108,9 @@
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
+                        <source>
+                           Description adapted (September 2023) by Stewart J. Brookes from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973)
+                           <listBibl>
                               <bibl facs="aap0635.gif" type="SC">Summary Catalogue, Vol. 2 Part 1, p. 614</bibl>
                            </listBibl>
                         </source>
@@ -110,6 +139,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2023-09-22">Description revised to incorporate all the information in the Summary Catalogue (1922)</change>
          <change when="2021-12-14">Add provenance information from MLGB3.</change>
          <change when="2019-10-31" xml:id="MMM">
             <persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>

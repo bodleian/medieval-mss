@@ -1,17 +1,27 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_903">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_903">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Barlow 4</title>
             <title type="collection">MSS. Barlow</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1937">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>N. Denholm-Young</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2023">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,7 +43,7 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Barlow 4</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0ns06457016</idno><idno type="crArk">ark:29072/x05q47rp61p3</idno><altIdentifier type="internal">
                      <idno type="SCN">6416</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -41,7 +51,12 @@
                   <msItem n="1" xml:id="MS_Barlow_4-item1">
                      <author key="person_51698488">Smaragdus</author>
                      <title key="work_4573">Collectiones epistolarum et evangeliorum de tempore et de sanctis</title>
-                     <note>(Stegmüller 7695)</note>
+                     
+                     <rubric>Collectio quedam omeliarum et sermonum per totum annum</rubric>
+                     <note>A lectionary for the whole year</note>
+                     <note>It begins with the vigil of Christmas, 'Cernens ecclesia' (p. 9), 
+                        which is preceded by a preface in a somewhat earlier hand (p. 1)</note>
+                     <note>At p. 256 are additional lections for saints, martyrs, virgins, etc.</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -49,34 +64,74 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                  
+                        <extent>
+                           vi + 486 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>14.6</height>
+                              <width>11</width>
+                           </dimensions>
+                        </extent>
+                      
                      </supportDesc>
+                     
+                     <layoutDesc>
+                        <layout columns="2">2 cols</layout>
+                     </layoutDesc>
+                     
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote type="miniature">Good miniatures (marginal sketches with a pen and with a hard point, pp. 123, 450) added in the early 11th century. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 40)</decoNote>
+                  
+                  <handDesc>
+                     <p>The rubric ('Collectio quedam omeliarum et sermonum per totum annum') is written in a mid-thirteenth-century English hand</p>
+                  </handDesc>
+                  
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 40
+                     </summary>
+                     
+                     <decoNote type="drawing">Good miniatures (marginal sketches with a pen and with a hard point, pp. 123, 450) 
+                        added in the early 11th century</decoNote>
+                  
                   </decoDesc>
                   <bindingDesc>
                      <binding>
-                        <p>Stamped brown leather, English work, rebacked.</p>
+                        <p>Stamped brown leather, English work, rebacked</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="0900" notBefore="0800">9th century</origDate>; <origDate calendar="Gregorian" notAfter="1010" notBefore="1000">decoration added, 11th century, early</origDate>
+                     <origDate calendar="Gregorian" notAfter="0900" notBefore="0800">The main text was written in the 9th century, third quarter;</origDate> 
+                     <origDate calendar="Gregorian" notAfter="1010" notBefore="1000">the decoration was added in the early 11th century</origDate>
                      <origPlace>
-                        <region type="supranational">Continental European</region>
+                        <region type="supranational">Northern France (the date and place of origin are those assigned by Bernard Bischoff, as cited by 
+                           Joyce Hill, <ref target="https://www.thebritishacademy.ac.uk/documents/2013/pba131p157.pdf">
+                              'Authority and Intertextuality in the Works of Ælfric'</ref>, <title>Proceedings of the British Academy</title>, 131 [2005], p. 166, fn. 27)</region>
                      </origPlace>
                   </origin>
-                  <provenance type="MLGB3_provenance_evidence"
-                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6000">
-                     <orgName role="fmo" key="org_148943477">Worcester, Worcestershire, Benedictine cathedral priory of St Mary the Virgin</orgName>:  (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6000">MLGB3</ref>: evidence from the style of script or illumination). </provenance>
-                  <provenance type="MLGB3_generalNotes"
-                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6000">Format similar to Worcester Cathedral MSS. F.91-94; cf. script on p. 6 (heading) with F.92 fol. 231v. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6000">MLGB3</ref>)
+                  
+                  <provenance type="MLGB3_provenance_evidence" source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6000">
+                     <orgName role="fmo" key="org_148943477">Worcester, Worcestershire, Benedictine cathedral priory of St Mary the Virgin</orgName> 
+                     (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6000">MLGB3</ref>)</provenance>
+                  <provenance>Joyce Hill speculates that this manuscript was most probably imported into England in the Benedictine Reform in the 10th century 
+                     (Joyce Hill, <ref target="https://www.thebritishacademy.ac.uk/documents/2013/pba131p157.pdf">
+                     'Authority and Intertextuality in the Works of Ælfric'</ref> [2005], p. 166, fn. 27)</provenance>
+                  <provenance type="MLGB3_generalNotes" source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6000"/>
+                     
+                  <provenance>Rosamond McKitterick argues that MS. Barlow 4 is the West Frankish exemplar for <ref target="http://www.mirabileweb.it/manuscript/worcester-cathedral-and-chapter-library-f-91-manuscript/6417">Worcester, Cathedral and Chapter Library F. 91</ref>, one of 
+                     only three examples where both the Continental exemplar and its English copy have been identified
+                     (<ref target="https://www.zotero.org/groups/434020/bodleian_library_western_medieval_manuscripts_bibliography/items/QHUTXS9C/library">'Exchanges Between the British 
+                        Isles and the Continent, <hi rend="italic">c</hi>. 450 - <hi rend="italic">c</hi>. 900'</ref>, in <title>The Cambridge History of the Book in Britain: 
+                           Volume 1: <hi rend="italic">c</hi>. 400–1100</title>, ed. by Richard Gameson [Cambridge, 2001], p. 329. 
+                     See also David N. Dumville, <title>English Caroline Script and Monastic History: Studies in Benedictinism</title> [Boydell, 1993], p. 49)</provenance> 
+                     
+                  <provenance>The format of Worcester, Cathedral and Chapter Library MSS. F.91–94 have points of commonality with MS. Barlow 4; e.g. the script on p. 6 (heading) can be compared to Worcester, Cathedral and Chapter Library F.92, fol. 231v 
+                     (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6000">MLGB3</ref>)
                                              </provenance>
-                  <provenance notAfter="1691" notBefore="1607" resp="#MMM">
-                     <persName key="person_465" role="fmo">Thomas Barlow, 1607–1691</persName>
-                  </provenance>
-                  <acquisition resp="#MMM" when="1691">Bequeathed to the Bodleian in 1691</acquisition>
+                  <provenance>There is a 12th-century inscription 'q[u]ot sunt'</provenance>
+                  <provenance>The names '<persName role="sgn" key="person_3883">Thomas Grene</persName>' and '<persName role="sgn" key="person_3878">Thomas Morer</persName>' have been scribbled in a 16th-century hand on p. v</provenance>
+                  <provenance>On p. vi there is a note by <persName key="person_465" role="fmo">Thomas Barlow</persName> that this is a Roman lectionary</provenance>
+                  <acquisition when="1691">Bequeathed to the Bodleian in 1691 by <persName key="person_465" role="dnr">Thomas Barlow</persName> (<ref target="https://medieval.bodleian.ox.ac.uk/images/ms/aaq/aaq0402.gif">Summary Catalogue, Vol. 2 Part 2, p. 1043</ref>)</acquisition>
                </history>
                <additional>
                   <adminInfo>
@@ -104,7 +159,8 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
-         <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
+         <change when="2023-04-14">Description revised to incorporate all the information in the Summary Catalogue (1937)</change>
+         <change when="2022-04-04">Add binding information from Summary Catalogue</change>
          <change when="2021-12-14">Add provenance information from MLGB3.</change>
          <change when="2019-10-31" xml:id="MMM">
             <persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
