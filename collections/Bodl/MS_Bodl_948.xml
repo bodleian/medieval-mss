@@ -1,17 +1,27 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1897">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1897">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Bodl. 948</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+           
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2023">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+           
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,42 +43,113 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Bodl. 948</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0sf268474f6</idno><idno type="crArk">ark:29072/x0sb3977914b</idno><altIdentifier type="internal">
                      <idno type="SCN">3032</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem class="#liturgica" n="1" xml:id="MS_Bodl_948-item1">
                      <title key="work_10214" type="desc">Antiphoner, Use of Sarum</title>
+                     
+                     <msItem>
+                        <locus>(fol. 1)</locus>
+                        <note>The Proprium de Tempore</note>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 173)</locus>
+                        <title type="Desc">A Calendar</title>
+                        <note>The calendar is unmistakably London in character</note>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 177)</locus>
+                        <note>The Psalter</note>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 215)</locus>
+                        <note>The Commune Sanctorum</note>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 242v)</locus>
+                        <note>The Proprium Sanctorum</note>
+                     </msItem>
+                     
+                     <note>Some liturgical benedictions before the Matins Lessons are added on fol. 340v</note>
+                        
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>
+                           ii + 345 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>18.75</height>
+                              <width>14.25</width>
+                           </dimensions>
+                        </extent>
+                        
+                        <condition>Worn and not quite perfect parchment. Two leaves are cut almost entirely out after fol. 39 (Office
+                           of Thomas of Canterbury), one after fols 176, 214, 266, 321; see W. H.
+                           Frere's <title>Bibl. Musico-Liturgica</title> (1901), <ref target="https://books.google.com/books?id=hOY7AQAAIAAJ&amp;pg=PP9&amp;lpg=PP9&amp;dq=%22Bibliotheca+Musico-liturgica:+A+Descriptive+Handlist+of+the+Musical+%26+Latin-liturgical%22&amp;source=bl&amp;ots=Yb10vLzRxH&amp;sig=ACfU3U14ge9Med3xe6XV1F7_GDAzvLoCAA&amp;hl=en&amp;sa=X&amp;ved=2ahUKEwiP4rTA9N-AAxUmmIkEHWKUBuQ4ChDoAXoECAIQAw#v=onepage&amp;q=948&amp;f=false">p. 12</ref></condition>
+                        
                      </supportDesc>
+                     
+                     <layoutDesc>
+                        <layout columns="2">2 cols</layout>
+                     </layoutDesc>
+                     
                   </objectDesc>
+                  
                   <musicNotation>
                      <p>Notation on staves (see van Dijk 1957).</p>
                   </musicNotation>
-                  <decoDesc>
-                     <decoNote>Good penwork, borders, initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 770)</decoNote>
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 770
+                     </summary>                     
+                     <decoNote type="flourInit">Good penwork borders, initials.</decoNote>
                   </decoDesc>
+                  
+                  <bindingDesc>
+                     <binding notBefore="1500" notAfter="1600">
+                        <p>'<persName key="person_3402" role="dnr">R. A.</persName>' on the sides of the plain rough brown leather binding</p>
+                     </binding>
+                  </bindingDesc>
+                  
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" when="1400">c. 1400</origDate>
+                     <origDate calendar="Gregorian" when="1400"><hi rend="italic">c</hi>. 1400</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
+                  
+                  <provenance>There are several obits in the calendar, of the 15th and 16th centuries. One (June 25) is 'Obitus Johannis Sawache rectoris istius ecclesie',
+                     which points to the church of <orgName role="fmo" key="org_290" cert="low">St. Andrew Undershaft, London</orgName>, where the
+                     rector John Savage died in 1475 [but MLGB, p. 224, rejects the identification].</provenance>
+                  
+                  <provenance>In the 1635 Appendix to the Bodleian Catalogue of 1620 the volume is entered as
+                     'Monasterii S. Albani Antiphonarium', at p. 3</provenance>
+                  
+                  <acquisition notAfter="1634" notBefore="1620">Acquired between 1620 and 1634 (<title>Summary Catalogue</title> I.108), perhaps about 1630: 
+                     the '<persName key="person_3402" role="dnr">R. A.</persName>' on the binding of this manuscript and 
+                     <ref target="https://medieval.bodleian.ox.ac.uk/catalog/manuscript_1285">MS. Bodl. 231</ref> may be the donor's initials</acquisition>
+
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
+                           Description adapted (August 2023) by Stewart J. Brookes from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973)
+                           <listBibl>
                               <bibl facs="aap0593.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 572</bibl>
                            </listBibl>
                         </source>
@@ -86,6 +167,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2023-08-07">Description revised to incorporate all the information in the Summary Catalogue (1922)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>

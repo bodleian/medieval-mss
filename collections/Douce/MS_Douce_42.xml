@@ -1,17 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_4716" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4716">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Douce 42</title>
             <title type="collection">MSS. Douce</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2023">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,51 +42,79 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Douce 42</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0xk81jj517g</idno><idno type="crArk">ark:29072/x0jw827b7692</idno><altIdentifier type="internal">
                      <idno type="SCN">21616</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem class="#devotiones" n="1" xml:id="MS_Douce_42-item1">
-                     <title key="work_15459">Vision of St. Mawdlen</title>
-                     <note>An introduction to the following item; <bibl type="edition">ed. William E. A. Axon in <title>Transactions of the Royal Society of Literature</title> 2nd ser. 27 (1907), 123–37 (126–33).</bibl>
+                     <title key="work_15459">Vision of St Mawdlen</title>
+                     <incipit>Ther was an holy woman namyd Mawdlen</incipit>
+                     <note>(Perhaps translated by <persName role="trl" key="person_528">I. S.</persName> at the text states 'quod I. S.' on fol. 45; but see below, Decoration)</note>
+                     <note>An introduction to the following item; <bibl type="edition">ed. William E. A. Axon in <title>Transactions of the Royal Society of Literature</title> 
+                        2nd ser. 27 (1907), 123–137 (126–133)</bibl>
                      </note>
                      <textLang mainLang="enm">Middle English</textLang>
                   </msItem>
+                  
                   <msItem class="#devotiones" n="2" xml:id="MS_Douce_42-item2">
                      <title key="work_12058">Golden Letany of the Lyeff and Passion of Christe</title>
+                     <rubric>Here begynneth the Golden Letany off the Lyeff &amp; Passion of Cryste...</rubric>
                      <note>English translation of <persName key="person_170585926" role="aut">Magdalena Beutler of Freiburg</persName>
                         <title>Die Goldene Litanei</title>
-                        <bibl type="edition">ed. William E. A. Axon in <title>Transactions of the Royal Society of Literature</title> 2nd ser. 27 (1907), 123–37 (126–33).</bibl>
+                        <bibl type="edition">ed. William E. A. Axon in <title>Transactions of the Royal Society of Literature</title> 2nd ser. 27 (1907), 123–137 (126–133)</bibl>
                         <!-- check this -->
                      </note>
                      <textLang mainLang="enm">Middle English</textLang>
                   </msItem>
+                  
+                  <msItem n="3" xml:id="MS_Douce_42-item3">
+                     <title key="work_13930">Prayer</title>
+                     <textLang mainLang="enm">Middle English</textLang>
+                  </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                    
+                        <extent>
+                           50 pages
+                           <dimensions unit="in" type="binding">
+                              <height>5.25</height>
+                              <width>4</width>
+                           </dimensions>
+                        </extent>
+                        
                      </supportDesc>
+                     
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote type="decInit">Initial. 'Quod <persName key="person_528" role="scr">I.S.</persName>', the scribe (?), fol. 45. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 1145)</decoNote>
+                  
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 1145
+                     </summary>
+                     <decoNote type="decInit">Initial. 'Quod <persName key="person_528" role="scr">I.S.</persName>', the scribe (?), fol. 45</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1500" notBefore="1450">15th century, second half</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
+                  <provenance>The name of '<persName role="fmo" key="person_3914">Willam Edgson</persName>' is on fol. 42v (17th century)</provenance>
                   <provenance notAfter="1834" notBefore="1757" resp="#MMM"><persName key="person_69848690" role="fmo">Francis Douce, 1757–1834</persName></provenance>
                   <acquisition resp="#MMM" when="1834">Bequeathed to the Bodleian in 1834</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
+                        <source>
+                           Description adapted (September 2023) by Stewart J. Brookes from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1973)
+                           <listBibl>
                               <bibl facs="aaz0521.gif" type="SC">Summary Catalogue, vol. 4, p. 502</bibl>
                            </listBibl>
                         </source>
@@ -88,6 +125,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2023-09-22">Description revised to incorporate all the information in the Summary Catalogue (1897)</change>
          <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>

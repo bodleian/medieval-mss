@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8931">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8931">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -12,6 +9,24 @@
                <persName>Elizabeth Solopova</persName>
                <persName>Matthew Holford</persName>
             </respStmt>
+            
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+            </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2023">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,28 +48,70 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Selden Supra 67</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0k930bw872p</idno><idno type="crArk">ark:29072/x0cn69m461rk</idno><altIdentifier type="internal">
                      <idno type="SCN">3455</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                 
                   <msItem class="#documenta" n="1" xml:id="MS_Selden_Supra_67-item1">
                      <title key="work_11663" type="desc">Dogale</title>
-                     <note>Commissio of <persName key="person_52758184">Doge Nicolò Tron (1471–73)</persName> to <persName key="person_200">Christoforo Duodo</persName>
-                     </note>
+                     <note> A copy of the Latin deed of <persName key="person_52758184">Doge Nicolò Tron (1471–1473)</persName> appointing 
+                        <persName key="person_200">Christoforo Duodo</persName> as master (rector)  of four galleys proceeding to Flanders, with 123 instructions, dated 1st August 1466 and 
+                        altered to 1472 (fol. 25v): 'Dat' in nostro ducali palatio. die primo augusti. Indictione xiiij<hi rend="superscript">ma</hi> Lxxij</note>
+                     
+                     <note>Followed at fol. 26 by seventy-four general instructions for the galleys, in Italian, 6th March, 1472/1473</note>
+                     
+                     <note>Andrew Watson notes that the correct indiction for 1466 is 'iiii' and not 'xiiij', as is given here. The Italian section of the 
+                     document begins on fol. 26 with the heading 'Mcccclxxij. die. vj. martij in rogatis' 
+                     (<title>Catalogue of Dated and Datable Manuscripts in Oxford Libraries</title> (1984),
+                     <ref target="https://hdl.handle.net/2027/mdp.39015008982863?urlappend=%3Bseq=144">no. 699</ref></note>
                      <textLang mainLang="it" otherLangs="la">Italian and Latin</textLang>
+
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                  
+                        <extent>
+                           i + 32 + i leaves
+                           <dimensions unit="in" type="binding">
+                              <height>10.25</height>
+                              <width>7.75</width>
+                           </dimensions>
+                        
+                        <dimensions type="leaf" unit="mm">
+                           <height>255</height>
+                           <width>185</width>
+                        </dimensions>
+                        
+                        </extent>
+                        
+                        <condition>Stained by damp</condition>
+                        
                      </supportDesc>
+                     
+                     <layoutDesc>
+                        <layout columns="1" writtenLines="38">1 col., 38 lines, 
+                           column space <dimensions type="column" unit="mm">
+                              <height>190</height>
+                              <width>120</width>
+                           </dimensions></layout>
+                     </layoutDesc>
+                     
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote type="border">Fine border.</decoNote>
-                     <decoNote type="histInit">Fine historiated initial. The date 1466 copied in error has been altered to 1472, fol. 25v. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 506, pl. XLVIII)</decoNote>
+                  
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 506, Pl. XLVIII
+                     </summary>
+                     
+                     <decoNote type="border">Fine border</decoNote>
+                     <decoNote type="histInit">Fine historiated initial. On fol. 2 is a fine miniature of St. Nicholas, quarter length; and at the foot of the border, the Duodo arms</decoNote>
                   </decoDesc>
+                  
                </physDesc>
                <history>
                   <origin>
@@ -72,7 +129,9 @@
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
+                        <source>Description adapted by Stewart J. Brookes from the Summary Catalogue (1922), with additional 
+                           reference to published literature as cited.  Decoration, localization and date follow Pächt and Alexander (1973)
+                           <listBibl>
                               <bibl facs="aap0660.gif" type="SC">Summary Catalogue, Vol. 2 Part 1, p. 639</bibl>
                            </listBibl>
                         </source>
@@ -92,6 +151,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2023-05-04">Description revised to incorporate all the information in the Summary Catalogue (1922)</change>
          <change when="2019-10-31" xml:id="MMM">
             <persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
