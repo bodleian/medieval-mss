@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_1514" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1514">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -43,7 +40,7 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Bodl. 481</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x08623hz44kz</idno><idno type="crArk">ark:29072/x08336h2618b</idno><altIdentifier type="internal">
                      <idno type="SCN">2045</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -69,19 +66,27 @@
                            </dimensions></extent>
                      </supportDesc>
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote type="border">Good border</decoNote>
-                     <decoNote type="initial">Initial. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 765)</decoNote>
+                  
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 765
+                     </summary>
+
+                  <decoNote type="border">Good border</decoNote>
+                     <decoNote type="decInit">Initial</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" when="1400">c. 1400</origDate>
+                     <origDate calendar="Gregorian" notAfter="1410" notBefore="1390"><hi rend="italic">c</hi>. 1400</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
-                  <acquisition when="1605">Purchased (with SC 2313 and many printed books) with £100, presented by Henry Wriothesley earl of Southampton in 1605. The letter of thanks from the University bears date May 6 in that year</acquisition>
+                  <acquisition when="1605">Purchased (along with <ref target="https://medieval.bodleian.ox.ac.uk/catalog/manuscript_1447">MS. Bodl. 415</ref> and many printed books) 
+                     with £100, presented by <persName role="dnr" key="person_35252941">Henry Wriothesley</persName> Earl of Southampton in 1605. The letter of thanks from the University bears the date 
+                     6 May 1605.</acquisition>
+                  
+                  <!-- VIAF for Henry Wriothelsy: 35252941-->
                </history>
                <additional>
                   <adminInfo>

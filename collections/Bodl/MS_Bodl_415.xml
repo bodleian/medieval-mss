@@ -1,17 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1447">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1447">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Bodl. 415</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
             </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2023">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,45 +37,96 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Bodl. 415</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0t148fg746q</idno><idno type="crArk">ark:29072/x0sx61dk90wh</idno><altIdentifier type="internal">
                      <idno type="SCN">2313</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  <textLang mainLang="enm">Middle English</textLang>
                   <msItem n="1" xml:id="MS_Bodl_415-item1">
                      <author key="person_288517115">Robert Mannyng</author>
                      <title key="work_4398">Handlyng synne</title>
-                     <textLang mainLang="enm">Middle English</textLang>
+                     <rubric>Handlyng Synne</rubric>
+                     <incipit>Here begynneth the boke that men clepen yn frenshe Manuele
+                        pecche <note type="editiorial">[i.e. de péchés]</note>, the wheche boke made yn frenshe Roberd Grosteste,
+                        Bysshope of Lyncolne</incipit>
+                     <incipit type="prol.">Fadyr and Sone &amp; holy Gost</incipit> 
+                     <note>The prologue states that 'Roberd of Brunne' made this English verse translation in 1303</note>
+                     <incipit type="text">The fyrst comaundement ys of echone</incipit> <note>The subjects are the Decalogue (fol. 1v); the seven deadly sins (fol. 19v); sacrilege (fol. 54v); 
+                        the seven Sacraments (fol. 60); and shrift (fol. 71v)</note>
+                     
+                     <note>Idelle Sullens argues that MS. Bodl. 415 is 'at least one copy beyond Mannyng's original and possibly even two or three recensions later' 
+                        (<ref target="https://www.zotero.org/groups/434020/bodleian_library_western_medieval_manuscripts_bibliography/tags/MS.%20Bodl.%20415/search/Sull/titleCreatorYear/items/SGZWXMZS/item-list                            ">Handlyng Synne</ref> (Binghamton, New York: 1983), p. xxiv)</note></msItem>
+                  <msItem n="2" xml:id="MS_Bodl_415-item2">
+                     <locus>(fol. 80)</locus>
+                     <title key="work_6816">Meditations on the Supper of Our Lord</title>
+                     <rubric>Medytacyuns of the Soper of our Lord Ihesu and also [fols 82, 85v] of hys Passyun: and eke [fol. 85] of the
+                        peynes of hys swete moder mayden Marye: the whyche made yn latyn Bonauenture Cardinall</rubric>
+                     <incipit>Almyghty God in Trinite</incipit>
+                     <listBibl><bibl><ref target="https://www.dimev.net/record.php?recID=426">DIMEV 426</ref></bibl></listBibl>
+                    
+                     
+                    
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                   
+                        <extent>
+                           vi + 93 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>11.5</height>
+                              <width>8.25</width>
+                           </dimensions>
+                        </extent>
+                        
                      </supportDesc>
+                     
+                     <layoutDesc>
+                        <layout columns="2">2 cols</layout>
+                     </layoutDesc>
                   </objectDesc>
+                   
                   <decoDesc>
-                     <decoNote>Penwork.</decoNote>
+                     <decoNote type="flourInit">Penwork</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1410" notBefore="1400">15th century, beginning</origDate>
+                     <origDate calendar="Gregorian" notAfter="1410" notBefore="1400">15th century, beginning. 
+                     </origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>, <settlement key="place_7008145">Hertfordshire</settlement>
+                        The localisation of the manuscript to Hertfordshire is by Angus McIntosh, M. L. Samuels and Michael Benskin 
+                        (<ref target="https://www.zotero.org/groups/434020/bodleian_library_western_medieval_manuscripts_bibliography/tags/MS.%20Bodl.%20415/items/GD7NII7J/item-list"><title>A 
+                           Linguistic Atlas of Late Mediaeval English</title></ref> (Aberdeen: 1986), I, p. 146). Sullens states that the manuscript was most likely written 
+                        <hi rend="italic">c</hi>. 1400, with this date supported by palaeographical analysis 
+                           (<ref target="https://www.zotero.org/groups/434020/bodleian_library_western_medieval_manuscripts_bibliography/tags/MS.%20Bodl.%20415/search/Sull/titleCreatorYear/items/SGZWXMZS/item-list                               ">Handlyng Synne</ref> (Binghamton, New York: 1983), p. xxv; cited in Yoko Iyeiri, 
+                           <ref target="https://www.zotero.org/groups/434020/bodleian_library_western_medieval_manuscripts_bibliography/items/VR3FF9SA/library">
+                              'Negative Constructions in Selected Middle English Verse Texts'</ref> (1992), p. 28)
                      </origPlace>
                   </origin>
-                  <provenance type="MLGB3_provenance_evidence"
-                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/294">
-                     <orgName role="fmo" key="org_225">Ashridge, Buckinghamshire, House of Bonshommes of St Mary the Virgin (and of the Holy Blood)</orgName>: 'Liber Domis (sic) de Assherugge (flyleaf iiiv, s. xv ex).     Erased inscription ad fin. (in the hand of the scribe, three lines, two black and one red, fol. 91v): '[et dedit(?) domus(?) de asshrugg] Qui librum fur[     ]'     Inscription legible in part under UV light; 'de asshrugg' is certain. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/294">MLGB3</ref>: evidence from an ex-libris inscription or note of gift to an institution). </provenance>
-                  <provenance type="MLGB3_laterOwners"
-                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/294">Purchased 1605. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/294">MLGB3</ref>)</provenance>
+                  <provenance type="MLGB3_provenance_evidence" source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/294">
+                     <orgName role="fmo" key="org_225">Ashridge, Buckinghamshire, House of Bonshommes of St Mary the Virgin (and of the Holy Blood)</orgName>: 
+                     'Liber Douns [domis ? = domus] de Assherugge' (flyleaf iiiv, s. xv ex)</provenance>
+                     <provenance>Erased inscription <hi rend="italic">ad fin</hi>. (in the hand of the scribe, three lines, two black and one red, fol. 91v)</provenance>
+                  <provenance>The inscription is legible in part under UV light: '[et dedit(?) domus(?) de asshrugg] Qui librum fur[     ]' -- 'de asshrugg' is certain 
+                     (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/294">MLGB3</ref>)</provenance>
+                  <acquisition when="1605">Purchased (along with <ref target="https://medieval.bodleian.ox.ac.uk/catalog/manuscript_1514">MS. Bodl. 481</ref> and many printed books) 
+                     with £100, presented by <persName key="person_35252941">Henry Wriothesley</persName> Earl of Southampton in 1605. The letter of thanks from the University bears the date 
+                     6 May 1605.</acquisition>
+               
+               
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). <listBibl>
+                           Description adapted (May 2023) by Stewart J. Brookes from the Summary Catalogue (1922), with additional reference to published literature as cited.
+                           <listBibl>                              
                               <bibl facs="aap0324.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 303</bibl>
                            </listBibl>
                         </source>
@@ -86,6 +141,14 @@
                               <title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title>
                            </ref>
                         </bibl>
+                        
+                        
+                        <bibl>
+                           <ref target="http://archive.ling.ed.ac.uk/ihd/elalme_scripts/display_lpZ.php?lpref=6620">
+                              <title>eLALME: An Electronic Version of A Linguistic Atlas of Late Mediaeval English</title>
+                           </ref>
+                        </bibl>
+                        
                         <bibl>
                            <ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/294">
                               <title>MLGB3: Medieval Libraries of Great Britain</title>
@@ -98,6 +161,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2023-05-04">Description revised to incorporate all the information in the Summary Catalogue (1922)</change>
          <change when="2021-12-14">Add provenance information from MLGB3.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">

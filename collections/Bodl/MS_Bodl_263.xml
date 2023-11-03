@@ -1,17 +1,27 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_1314" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1314">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Bodl. 263</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2023">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,38 +43,76 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Bodl. 263</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0w0892940c7</idno><idno type="crArk">ark:29072/x0vx021d572x</idno><altIdentifier type="internal">
                      <idno type="SCN">2440</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_Bodl_263-item1">
                      <author key="person_22158282">John Lydgate</author>
                      <title key="work_2724">Fall of princes</title>
+                     <incipit type="prol.">He that whilom dede his dilligence</incipit>
+                     <incipit type="text">Whan John Bochas considred hadde and souht</incipit>
+                     
+                     <note>The treatise of Boccaccio, <title>De casibus Virorum et Foeminarum illustrium</title>, in
+                        nine books, rendered into English verse (7-line stanzas, rhyming ababbcc)</note>
+                     
+                     <note>The nine books, each with a large border and (except the 5th, 6th, 7th, and 9th) with its prologue, begin on pp. 1, 87, 144, 207, 259,
+                        298, 343, 363, 405</note>
+                     
                      <textLang mainLang="enm">Middle English</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        
+                        <extent>
+                           iv + 452 pages
+                           <dimensions unit="in" type="binding">
+                              <height>18.375</height>
+                              <width>13.5</width>
+                           </dimensions>
+                        </extent>
+                        
                      </supportDesc>
+                     
+                     <layoutDesc>
+                        <layout columns="2">2 cols</layout>
+                     </layoutDesc>
+                     
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote>Fine miniature, borders, initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 892. pl. LXXXV)</decoNote>
+
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 892. Pl. LXXXV
+                     </summary>                     
+                     <decoNote type="miniature">Fine miniature. On p. 7, is a <ref target="https://digital.bodleian.ox.ac.uk/objects/8e2ec3ad-d601-4bf9-8e5d-24e9fa8d7722/surfaces/4a7e09a6-699c-420e-80dd-285621a149f5/">
+                        full-page illumination depicting thirteen historical catastrophes</ref></decoNote>
+                     <decoNote type="border">Fine borders</decoNote>
+                     <decoNote type="decInit">Fine initials</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1460" notBefore="1440">c. 1440–60</origDate>
                      <origPlace cert="low">
-                        <country key="place_7002445">English</country>, <settlement key="place_7010914">Bury St Edmunds</settlement> (?)<!--ORIGINAL: English, Bury St Edmunds (?)--></origPlace>
+                        <country key="place_7002445">England</country>, <settlement key="place_7010914">Bury St Edmunds</settlement> (?)<!--ORIGINAL: English, Bury St Edmunds (?)--></origPlace>
                   </origin>
+                  
+                  <provenance when="1549">On p. 448 is an English stanza followed by '<persName key="person_260685777" type="sgn">Iohannes Godsaluus</persName> scribebat. 1549'</provenance>
+                  <provenance notAfter="1600" notBefore="1500">On the next page is '<persName key="person_8554779" type="sgn">Sir Fraunces Englefielde knighte</persName>', 16th century. <ref target="https://www.historyofparliamentonline.org/volume/1509-1558/member/englefield-sir-francis-152122-96">Francis Englefield</ref> was the brother-in-law of <ref target="https://www.historyofparliamentonline.org/volume/1509-1558/member/godsalve-john-1505-56">John Godsalve</ref>.</provenance>
+                  <acquisition when="1608">Presented by <persName role="dnr" key="person_3194">William Burdet</persName> in 1608</acquisition>
+
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
+                        <source>
+                           Description adapted (May 2023) by Stewart J. Brookes from the Summary Catalogue (1922) with additional reference to published literature as cited. Decoration, localization and date follow Pächt and Alexander (1973)
+                           <listBibl>                              
                               <bibl facs="aap0386.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 365</bibl>
                            </listBibl>
                         </source>
@@ -77,6 +125,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2023-05-04">Description revised to incorporate all the information in the Summary Catalogue (1922)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>

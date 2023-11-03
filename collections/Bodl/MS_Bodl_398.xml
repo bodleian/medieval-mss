@@ -1,15 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1429">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1429">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Bodl. 398</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2023">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -33,15 +34,45 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Bodl. 398</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0pg15bd7514</idno><idno type="crArk">ark:29072/x0pc289h91qx</idno><altIdentifier type="internal">
                      <idno type="SCN">2229</idno>
                   </altIdentifier>
                </msIdentifier>
+               <!-- 
+              
+                  
+                </scopecontent>
+                <custodhist>
+                    <p>Manuscript 370 acquired by the Bodleian Library</p>
+                    <p>The binding raises a presumption that this belonged to Newark priory in
+                        Surrey, see no. 2085. Presented by sir George More in 1604.</p>
+                </custodhist>
+                <otherfindaid>
+                    <p>SC 2229</p>
+                </otherfindaid>
+
+            </c>
+               -->
                <physDesc>
                   <p n="composite">Composite: fols. 1–113 || fols. 114–175</p>
+                  <objectDesc form="codex">
+                     <supportDesc material="perg">
+                        <extent>ii + 176 leaves <dimensions type="binding" unit="in">
+                              <height>12.25</height>
+                              <width>8</width>
+                           </dimensions></extent>
+                        <condition>In parts injured by damp, and rubbed </condition>
+                     </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2">2 cols.</layout>
+                     </layoutDesc>
+                  </objectDesc>
                   <musicNotation>
                      <p>Notation on staves (see van Dijk 1957).</p>
                   </musicNotation>
+                  <decoDesc>
+                     <decoNote type="flourInit">Penwork.</decoNote>
+                  </decoDesc>
                   <bindingDesc>
                      <binding notBefore="1400" notAfter="1500">
                         <p>Leather stained red on boards, 15th cent. English work.</p>
@@ -49,22 +80,25 @@
                   </bindingDesc>
                </physDesc>
                <history>
-                  <provenance type="MLGB3_provenance_evidence"
-                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4019">
-                     <orgName role="fmo" key="org_23151110643437060950">Newark, Surrey, Augustinian priory of St Mary the Virgin and St Thomas the Martyr</orgName> (?) :  (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4019">MLGB3</ref>: inferred evidence). </provenance>
-                  <provenance type="MLGB3_laterOwners"
-                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4019">"Sir Geo. More gave it 1604". (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4019">MLGB3</ref>)</provenance>
-                  <provenance type="MLGB3_generalNotes"
-                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4019">The provenance of Bodl. 207 and 398 is inferred from the similarity of the medieval bindings to that of Auct. D.inf.2.10.     Red leather over boards. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4019">MLGB3</ref>)
-                    </provenance>
+                  <provenance type="MLGB3_provenance_evidence" source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4019">
+                     <orgName role="fmo" key="org_23151110643437060950">Newark, Surrey, Augustinian
+                        priory of St Mary the Virgin and St Thomas the Martyr</orgName> (?) : "the provenance of Bodl.
+                     207 and 398 is inferred from the similarity of the medieval bindings to that of
+                     Auct. D. inf. 2. 10". (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4019">MLGB3</ref>: inferred
+                     evidence). </provenance>
+                  <acquisition when="1604">"<persName role="dnr" key="person_39246400">Sir Geo. More</persName> gave it
+                     1604". (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4019">MLGB3</ref>)</acquisition>
+                 
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
-                              <bibl facs="aap0290.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 269</bibl>
-                              <bibl facs="aap0291.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 270</bibl>
+                           Description adapted (May 2023) from the Summary Catalogue (1922) with additional reference to published literature as cited. Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
+                              <bibl facs="aap0290.gif" type="SC">Summary Catalogue, vol. 2, part 1,
+                                 p. 269</bibl>
+                              <bibl facs="aap0291.gif" type="SC">Summary Catalogue, vol. 2, part 1,
+                                 p. 270</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -80,38 +114,63 @@
                      </listBibl>
                      <listBibl type="PRINT">
                         <head>Printed descriptions:</head>
-                        <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 2: Office Books</title> (typescript, 1957), <citedRange unit="page" from="149" to="149">p. 149</citedRange>
+                        <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian
+                              Library, Oxford, vol. 2: Office Books</title> (typescript, 1957),
+                              <citedRange unit="page" from="149" to="149">p. 149</citedRange>
                         </bibl>
                      </listBibl>
                   </listBibl>
                </additional>
+
                <msPart xml:id="MS_Bodl_398-part1">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Bodl. 398 – Part 1</idno>
+                        <idno type="part">MS. Bodl. 398 – fols. 1-113 </idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
+                     <textLang mainLang="la">Latin</textLang>
                      <msItem n="1" xml:id="MS_Bodl_398-part1-item1">
+                        <locus>(fol. 1v)</locus>
                         <author key="person_803890">Isidore</author>
                         <title key="work_2268">Sententiae</title>
-                        <textLang mainLang="la">Latin</textLang>
+                        <rubric>Incipit liber primus sancti Ysidori Spalensis archiepiscopi de Summo
+                           Bono</rubric>
+                        <note>Followed by the other two books, each preceded by a list of
+                           chapters.</note>
                      </msItem>
                      <msItem n="2" xml:id="MS_Bodl_398-part1-item2">
+                        <locus> (fol. 79)</locus>
                         <author key="person_803890">Isidore</author>
-                        <title key="work_2250">De differentiis rerum siue Differentiae spirituales</title>
-                        <textLang mainLang="la">Latin</textLang>
+                        <title key="work_2250">De differentiis rerum siue Differentiae
+                           spirituales</title>
+                        <rubric>Incipit liber Ysidori Iunioris de Virtutum &amp; Viciorum
+                           differentiis</rubric>
+                        <incipit>Inter Deum et Dominum</incipit>
+                        <explicit>humilitatis Christi</explicit>
+                        <note>With a short preface:</note>
+                        <incipit>Nonnulli norunt</incipit>
                      </msItem>
                      <msItem n="3" xml:id="MS_Bodl_398-part1-item3">
+                        <locus>(fol. 93, cf. 99)</locus>
                         <author key="person_72751795">Theodulf of Orleans</author>
                         <title key="work_4730">De ordine baptismatis</title>
-                        <textLang mainLang="la">Latin</textLang>
+                        <rubric>Liber de ordine baptismi</rubric>
+                        <note>With prologue omitting the author's name, and list of chapters; but
+                           the text ends abruptly in cap. xiii at the words 'legitur,
+                           preteritur'.</note>
                      </msItem>
                      <msItem n="4" xml:id="MS_Bodl_398-part1-item4">
+                        <locus>(fol. 100)</locus>
                         <author key="person_96533523">Alcuin</author>
                         <title key="work_379">De uirtutibus et uitiis</title>
-                        <textLang mainLang="la">Latin</textLang>
+                        <rubric>Liber Alchuini ad Widonem comitem</rubric>
                      </msItem>
+                     <msItem xml:id="MS_Bodl_398-part1-item4a">
+                        <note>Followed by 'Epytaphium ipsius', sc. Alcuini</note>
+                        <incipit>Hic rogo pauxillum</incipit>
+                     </msItem>
+
                   </msContents>
                   <physDesc>
                      <objectDesc form="codex">
@@ -120,12 +179,14 @@
                         </supportDesc>
                      </objectDesc>
                      <decoDesc>
-                        <decoNote type="decInit">Initials, with additions of 13th century, beginning. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 246)</decoNote>
+                        <decoNote type="decInit">Initials, with additions of 13th century,
+                           beginning. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 246)</decoNote>
                      </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1210" notBefore="1190">12th century, end; additions, 13th century, beginning</origDate>
+                        <origDate calendar="Gregorian" notAfter="1210" notBefore="1190">12th
+                           century, end; additions, 13th century, beginning</origDate>
                         <origPlace>
                            <country key="place_7002445">English</country>
                         </origPlace>
@@ -135,18 +196,81 @@
                <msPart xml:id="MS_Bodl_398-part2">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Bodl. 398 – Part 2</idno>
+                        <idno type="part">MS. Bodl. 398 – fols.114-175</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem n="1" xml:id="MS_Bodl_398-part2-item1">
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem n="5" xml:id="MS_Bodl_398-part2-item1">
+                        <locus>(fol. 114)</locus>
                         <author key="person_59199545">Odo of Cluny</author>
                         <title key="work_3366">Collationes</title>
-                        <textLang mainLang="la">Latin</textLang>
+                        <rubric>Incipit prologus beati Odonis abbatis <gap reason="editorial"/></rubric>
                      </msItem>
-                     <msItem class="#theologica" n="2" xml:id="MS_Bodl_398-part2-item2">
+                     <msItem class="#theologica" n="6" xml:id="MS_Bodl_398-part2-item2">
+                        <locus>(fol. 162)</locus>
+                        <title key="work_6368">Commonitiuncula ad sororem (?)</title><bibl> (CPL 1219)</bibl>
+                        <rubric>Cerasius fac̄ [fecit?] has .vi. historias cuilibet de obędientie
+                           bono eiusque laudibus</rubric>
+                        <incipit>Tuę non inmemor peticionis hanc comonitiunculam</incipit>
+                        <explicit>virtutem memorię commendes</explicit>
+                     </msItem>
+                     <msItem class="#theologica" n="7" xml:id="MS_Bodl_398-part2-item3">
                         <title key="work_15308" type="desc">Theological treatises</title>
-                        <textLang mainLang="la">Latin</textLang>
+                        <msItem>
+                           <locus> (fol. 165)</locus>
+                           <author key="person_58103843">Evagrius Ponticus</author>
+                           <title key="work_6815">De octo principalibus vitiis</title>
+                           <bibl> (Bloomfield 4251)</bibl>
+                           <rubric>Dicta famuli Dei Nili monachi de .viij. Viciis
+                              principalibus</rubric>
+                           <incipit>Principium fructus flores</incipit><explicit>spiritus accidię fugiet a te</explicit>
+                           <note>Perhaps
+                              unfinished.</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 166v)</locus>
+                           <author key="person_95147024">Jerome (?) (Ps.-Augustine)</author>
+                           <title key="work_5812">De obedientia</title>
+                           <rubric>Tractus sancti Augustini de obedientia</rubric>
+                           <incipit>Nichil itaque sic Deo</incipit><note>Of doubtful authorship.</note>
+                        </msItem>
+                        <msItem>
+                           <locus> (fol. 167v)</locus>
+                           <note> A few stories excerpted from the <title type="desc" key="work_13060">Lives of the
+                              Saints</title>.</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 170v)</locus>
+                           <author key="person_85061732">Ambrosius Autpertus</author>
+                           <title key="work_489"> De conflictu vitiorum et virtutum</title>
+                           <rubric>De conflictu uiciorum atque uirtutum, epistola beati
+                              Ambrosii episcopi</rubric>
+                           <incipit>Apostolica uox clamat ... atque in
+                              procinctu</incipit>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 174) </locus>
+                           <rubric>Abbas Moyses de appetenda discretionis gratia</rubric>
+                           <incipit>Omni conatu debet</incipit>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 174v)</locus>
+                           <author key="person_65344850">Ps.-Macharius</author>
+                           <title key="work_4068">Ep. ad monachos (ep. 4)</title>
+                           <rubric> Epistola beati Macharij ad monachos</rubric>
+                           <incipit>In primis quidem si cęperit</incipit>
+                        </msItem>
+                        <msItem>
+                           <locus> (fol. 175) </locus>
+                           <rubric>De diuersis uirtutibus psalmorum uel anime</rubric>
+                           <incipit>Ieronimus dicit. Quantum possunt psalmi</incipit>
+                        </msItem>
+                     </msItem>
+                     <msItem>
+                        <note>On fols. 176, 176v are Latin antiphons, a gradual and Alleluia, etc.,
+                           with musical notes, of the first half of the 13th cent. On foll. iiv,
+                           176v are a list of contents, partial index, etc.</note>
                      </msItem>
                   </msContents>
                   <physDesc>
@@ -156,12 +280,14 @@
                         </supportDesc>
                      </objectDesc>
                      <decoDesc>
-                        <decoNote type="decInit">Initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 515)</decoNote>
+                        <decoNote type="decInit">Initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and
+                              Alexander</ref> i. 515)</decoNote>
                      </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1210" notBefore="1200">13th century, beginning</origDate>
+                        <origDate calendar="Gregorian" notAfter="1210" notBefore="1200">13th
+                           century, beginning</origDate>
                         <origPlace cert="low">
                            <country key="place_1000070">French</country> (?)</origPlace>
                      </origin>
@@ -171,6 +297,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2023-05">Revised to incorporate all information from Summary Catalogue</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2021-12-14">Add provenance information from MLGB3.</change>
          <change when="2017-07-01">First online publication.</change>

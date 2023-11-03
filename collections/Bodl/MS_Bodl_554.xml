@@ -1,17 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1574">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1574">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Bodl. 554</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
             </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2023">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,32 +37,51 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Bodl. 554</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0nc580m58nd</idno><idno type="crArk">ark:29072/x0n870zq75bf</idno><altIdentifier type="internal">
                      <idno type="SCN">2326</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                 
                   <msItem class="#biblia" n="1" xml:id="MS_Bodl_554-item1">
                      <title key="work_14082" type="desc">Psalms (later Wycliffite version)</title>
-                     <note>(with marginal commentary)</note>
+                     <incipit>Ivel thouȝt, wekyt will</incipit>
+                     
+                     <note>The text is that of the second version of Wycliff with a commentary in the margins from Nicholas de Lyra, Augustine, 
+                        etc.</note> <!-- VIAF: 5300321 -->
+                       
+                    <note> At fol. 81 follow the usual Canticles and Hymns, but the commentary ceases on fol.
+                     82</note>
+                     
+                     
+                     <note>On fol. 88r a contemporary hand has written a Latin note on
+                     the Litaniae major et minor, and on fol. 88v English notes on 'Synnes of
+                     thouȝt', 'mouthe' and 'dede'</note>
+                     
                      <textLang mainLang="enm">Middle English</textLang>
-                     <bibl type="bible">
-                        <title type="desc">Bible, Psalms</title>
-                     </bibl>
                   </msItem>
+                  
                </msContents>
+               
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>
+                           i + 89 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>9.25</height>
+                              <width>6.75</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>Illuminated capitals.</decoNote>
+                     <decoNote type="flourInit">Illuminated capitals</decoNote>
                   </decoDesc>
                   <bindingDesc>
                      <binding contemporary="true">
-                        <p>Contemporary rough red leather on boards, worn and with clasps lost.</p>
+                        <p>Contemporary rough red leather on boards, worn and with clasps lost</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
@@ -66,15 +89,20 @@
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1400" notBefore="1390">14th century, late</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
+                  
+                  <acquisition when="1607">This seems to be the only manuscript corresponding to a gift of 'Liber continens expositionem vel glossam in Psalmos Anglicè. 4°. MS.' from <persName role="dnr" key="person_2956">(sir) 
+                     Richard Worseley</persName> in 1607 (cf. Summary Catalogue I. 93)</acquisition>
+                  
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). <listBibl>
+                           Description adapted (May 2023) by Stewart J. Brookes from the Summary Catalogue (1922)
+                           <listBibl>                              
                               <bibl facs="aap0332.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 311</bibl>
                            </listBibl>
                         </source>
@@ -87,10 +115,48 @@
                      </listBibl>
                   </listBibl>
                </additional>
+               
+               <msPart xml:id="MS-bodl_554_flyleaves" type="fragment">
+                  <msIdentifier>
+                     <altIdentifier>
+                        <idno>MS. Bodl. 554,  on the inner end cover</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  <msContents>
+                     
+                     <msItem>
+                        
+                        <title key="work_13203" type="desc">Medical recipe</title>
+                        
+                        <textLang mainLang="enm">Middle English</textLang>
+                     </msItem>
+                     
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="perg">
+                           <support>Parchment</support>
+                        </supportDesc>
+                        
+                     </objectDesc>
+                     
+                  </physDesc>
+                  <history>
+                     <origin>
+                        
+                        <origDate notAfter="1500" notBefore="1400" calendar="Gregorian">15th century</origDate>
+                        <origPlace><country key="place_7002445">England</country></origPlace>
+                        
+                     </origin>
+                     
+                  </history>
+               </msPart>
+               
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2023-05-04">Description revised to incorporate all the information in the Summary Catalogue (1922)</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
