@@ -1,14 +1,29 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4638">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4638">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Douce 30</title>
             <title type="collection">MSS. Douce</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1966">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2023">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -30,39 +45,74 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Douce 30</idno>
-                  <idno type="ieArk">ark:29072/x00k225c07g0</idno><idno type="crArk">ark:29072/x08w32r6285h</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x00k225c07g0</idno>
+                  <idno type="crArk">ark:29072/x08w32r6285h</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">21604</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem class="#liturgica" n="1" xml:id="MS_Douce_30-item1">
                      <title key="work_10591" type="desc">Book of Hours, Use of Utrecht</title>
+                     <note>Preceded by a calendar (fol. 1)</note>
+                     <note>Followed by: the Hours of the Cross (fol. 48); Penitential Psalms with litany (fol. 53); 
+                        Office for the Dead (fol. 66); Prayers and suffrages (fol. 93); 
+                        'Hore longiores de sancta Cruce seu Passione', the Hours of the Passion (fol. 138); 
+                        'Cursus horarum Eterne Sapientiae' (fol. 154); and 'Hore Sancti Spiritus' (fol. 166v)</note>
+                        
+                      <note>The hymn 'Ave vivens hostia' (at fol. 101) is stated to be 'edita a fratre Iohanne Pysano archiepiscopo Canthuariensi'</note>                        
+                        
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                    
+                        <extent>
+                           iv + 171 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>4.5</height>
+                              <width>3.5</width>
+                           </dimensions>
+                        </extent>
+                        
                      </supportDesc>
+                     
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote type="miniature">Fine miniatures.</decoNote>
-                     <decoNote type="border">Borders.</decoNote>
-                     <decoNote type="decInit">Initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 255, pl. XVII)</decoNote>
+                    
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 255, Pl. XVII
+                     </summary>
+                 
+                     <decoNote type="miniature">Five fine full-page miniatures 
+                        (fols <ref target="https://digital.bodleian.ox.ac.uk/objects/44998e70-7e6b-4566-93f7-95ff2c2f9095/surfaces/9a3eb79a-a182-4491-9819-23115954dce4/">17v</ref>, 
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/44998e70-7e6b-4566-93f7-95ff2c2f9095/surfaces/bb5f151b-9d32-43d3-8a63-d460ebebc21e/">47v</ref>, 
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/44998e70-7e6b-4566-93f7-95ff2c2f9095/surfaces/43f99060-235d-4082-ae9b-46485f1dbc85/">52v</ref>, 
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/44998e70-7e6b-4566-93f7-95ff2c2f9095/surfaces/cf9a5f56-6bb3-4eeb-91f1-d305d96624c7/">65v </ref>
+                        and 
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/44998e70-7e6b-4566-93f7-95ff2c2f9095/surfaces/264257cb-603d-4034-a33e-a225fd9f8286/">153v</ref>) 
+                        and several smaller miniatures, e.g. fol. <ref target="https://digital.bodleian.ox.ac.uk/objects/44998e70-7e6b-4566-93f7-95ff2c2f9095/surfaces/4b9d7076-0337-4c1f-b10f-19ac3d149814/">18r</ref></decoNote>
+                     <decoNote type="border">Borders</decoNote>
+                     <decoNote type="decInit">Initials</decoNote>
+                     
                   </decoDesc>
+                  
                   <bindingDesc>
                      <binding notBefore="1600" notAfter="1800">
-                        <p>Red leather with gold tooling (17th or 18th cent.).</p>
+                        <p>Red leather with gold tooling (17th or 18th century)</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" when="1500">c. 1500</origDate>
+                     <origDate calendar="Gregorian" notBefore="1490" notAfter="1510"><hi rend="italic">c</hi>. 1500</origDate>
                      <origPlace>
-                        <country key="place_7016845">Dutch</country>, <settlement key="place_7006926">Utrecht</settlement>
-                        <!--ORIGINAL: Dutch, Utrecht-->
+                        <country key="place_7016845">Netherlands</country>, <settlement key="place_7006926">Utrecht</settlement>
                      </origPlace>
                   </origin>
                   <provenance notAfter="1834" notBefore="1757" resp="#MMM">
@@ -73,11 +123,14 @@
                <additional>
                   <adminInfo>
                      <recordHist>
+                        
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1966). <listBibl>
+                           Description adapted (November 2023) by Stewart J. Brookes from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1966)
+                           <listBibl>
                               <bibl facs="aaz0517.gif" type="SC">Summary Catalogue, vol. 4, p. 498</bibl>
                            </listBibl>
                         </source>
+                        
                      </recordHist>
                   </adminInfo>
                   <surrogates>
@@ -87,7 +140,11 @@
                         </ref>
                         <note>(20 images from 35mm slides)</note>
                      </bibl>
+                     
+                           <bibl>H. Shaw, <title>Illuminated Ornaments</title> (1833), 
+                              <ref target="https://archive.org/details/illuminatedornam00shaw/page/n113/mode/2up?ref=ol&amp;view=theater">no. xvi</ref>, has colour images of fol. 47v, 65v </bibl>
                   </surrogates>
+                     
                   <listBibl type="WRAPPER">
                      <listBibl type="PRINT">
                         <head>Printed descriptions:</head>
@@ -100,6 +157,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2023-11-10">Description revised to incorporate all the information in the Summary Catalogue (1897)</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2018-10-14" xml:id="MMM">
             <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>

@@ -1,14 +1,23 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4717">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4717">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Douce 44</title>
             <title type="collection">MSS. Douce</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2023">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -30,7 +39,9 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Douce 44</idno>
-                  <idno type="ieArk">ark:29072/x044558f06qb</idno><idno type="crArk">ark:29072/x0k0698759mx</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x044558f06qb</idno>
+                  <idno type="crArk">ark:29072/x0k0698759mx</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">21618</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -38,35 +49,63 @@
                   <msItem n="1" xml:id="MS_Douce_44-item1">
                      <author key="person_78750420">Mechtild von Hackeborn</author>
                      <title key="work_3165">Liber specialis gratiae</title>
-                     <note>books 2, 3, 4</note>
+                     <note>Books 2, 3 and 4</note>
+                     <note>Book 2 begins 'Dit is dat ... [<hi rend="italic">tweede</hi> erased?] 
+                        boeck van Mechteldis Revelacie... Op enen saterdach'</note>
+                     <note>At fol. 58, the name of the treatise is given as 'dat boec der gheesteliker Gracien'</note>
+                     <note>Book 3 begins on fol. 59</note>
+                     <note>Book 4 begins on fol. 129v</note>
                      <textLang mainLang="dum">Middle Dutch</textLang>
+                     
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
+
+                        <extent>
+                           ii+204 leaves.
+                           <dimensions unit="in" type="binding">
+                              <height>5.625</height>
+                              <width>4.25</width>
+                           </dimensions>
+                        </extent>
+                        
                      </supportDesc>
+                     
                   </objectDesc>
+                  
+                  <handDesc>
+                     <p>Fols 197-203 are in a different hand</p>
+                  </handDesc>
+                  
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
                      <origPlace>
-                        <country key="place_7016845">Dutch</country>
+                        <country key="place_7016845">Netherlands</country>
                      </origPlace>
                   </origin>
+                  
+                  <provenance>'Dit boec hoert tot... besloten susteren van <orgName role="fmo" key="org_294">Onser Vrouwen in dai Wijngaerte Utrecht</orgName>' 
+                     (15th century)</provenance>
+
                   <provenance notAfter="1834" notBefore="1757" resp="#MMM">
                      <persName key="person_69848690" role="fmo">Francis Douce, 1757–1834</persName>
                   </provenance>
+                  
+                  
                   <acquisition resp="#MMM" when="1834">Bequeathed to the Bodleian in 1834</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). <listBibl>
-                              <bibl facs="aaz0521.gif" type="SC">Summary Catalogue, vol. 4, p. 502</bibl>
+                           <source>
+                              Description adapted (November 2023) by Stewart J. Brookes from the Summary Catalogue (1897)
+                              <listBibl>
+                                 <bibl facs="aaz0521.gif" type="SC">Summary Catalogue, vol. 4, p. 502</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -79,10 +118,84 @@
                      </listBibl>
                   </listBibl>
                </additional>
+               
+               <msPart xml:id="Douce_44_flyleaves">
+                  <msIdentifier>
+                     <altIdentifier>
+                        <idno>MS. Douce 44, flyleaves 1</idno>
+                     </altIdentifier> 
+                  </msIdentifier>
+                  <msContents>
+                     
+                     <msItem>
+                        <locus> (Fols i-ii)</locus>
+                        <title key="work_10207">Antiphoner</title>
+                        
+                        <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="perg">
+                           <support>Parchment</support>
+                        </supportDesc>
+                        
+                     </objectDesc>
+                     
+                  </physDesc>
+                  <history>
+                     
+                     <origin>
+                        
+                        
+                        <origDate notAfter="1400" notBefore="1300" calendar="Gregorian">14th century</origDate>
+                        
+                     </origin>
+                     
+                  </history>
+               </msPart>
+               
+               <msPart xml:id="Douce_44_flyleaves2">
+                  <msIdentifier>
+                     <altIdentifier>
+                        <idno>MS. Douce 44, flyleaves 2</idno>
+                     </altIdentifier> 
+                  </msIdentifier>
+                  <msContents>
+                     
+                     <msItem>
+                        <locus> (Fol. ii verso)</locus>
+                        <title type="desc">Print of the revelation to Mathildis (?)</title>
+                      
+                     </msItem>
+                     
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="chart">
+                           <support>Paper</support>
+                        </supportDesc>
+                        
+                     </objectDesc>
+                     
+                  </physDesc>
+                  <history>
+                     
+                     <origin>
+                        
+                        <origDate notAfter="1600" notBefore="1500" calendar="Gregorian">16th century</origDate>
+                        
+                     </origin>
+                     
+                  </history>
+               </msPart>
+               
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2023-11-09">Description revised to incorporate all the information in the Summary Catalogue (1897)</change>
          <change when="2018-10-14" xml:id="MMM">
             <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
