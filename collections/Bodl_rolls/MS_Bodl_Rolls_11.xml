@@ -1,17 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_1930" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1930">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Bodl. Rolls 11</title>
             <title type="collection">MSS. Bodl. Rolls (Bodley Rolls)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
             </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2023">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,35 +37,63 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Bodl. Rolls 11</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x005741s96j5</idno><idno type="crArk">ark:29072/x002870x137g</idno><altIdentifier type="internal">
                      <idno type="SCN">2988</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem class="#rhetorica" n="1" xml:id="MS_Bodl_Rolls_11-item1">
-                     <title key="work_15196" type="desc">Treatise on versification.</title>
+                     <title key="work_15196" type="desc">Treatise on versification</title>
+                     <incipit>Littera vocalis est quod per se ipsam</incipit>
+                     <note>Partly in tabular form</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="roll">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                     </supportDesc>
+                   
+                                 <extent>
+                                    A roll of three membranes (one modern)
+                                    <dimensions type="roll" unit="in">
+                                       <height>84</height>
+                                       <width>10.5</width>
+                                    </dimensions>
+                                 </extent>
+                        
+                              </supportDesc>
+                     
+                              <layoutDesc>
+                                 <layout>Written on both sides
+                                 </layout>
+                              </layoutDesc>
                   </objectDesc>
+                  
+                  <bindingDesc>
+                     <binding notBefore="1800">
+                        <p>In a cloth box 1.75 in. square × 12.5 in.</p>
+                     </binding>
+                  </bindingDesc>
+                  
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1400" notBefore="1390">14th century, late</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
+                  <acquisition when="1830">Probably acquired <hi rend="italic">c</hi>. 1630</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
+                        <source>
+                           Description adapted (August 2023) by Stewart J. Brookes from the Summary Catalogue (1922)
+                           <listBibl>                              
                               <bibl facs="aap0584.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 563</bibl>
                            </listBibl>
                         </source>
@@ -72,6 +104,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2023-08-07">Description revised to incorporate all the information in the Summary Catalogue (1922)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>

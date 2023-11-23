@@ -77,7 +77,7 @@ declare variable $allinstances :=
         let $bibrefs := for $b in $work/tei:bibl return bod:italicizeTitles($b)
         let $repertories := for $n in $work/tei:bibl[@type='repertory'] return normalize-space($n/string())
         let $notes := for $n in $work/tei:note[not(@type=('links','shelfmark','language','subject'))] return bod:italicizeTitles($n)
-        let $subjects := for $ref in $work/tei:term[@ref]/tokenize(@ref, '\s*#')[string-length() gt 0] return normalize-space($worksdoc/tei:TEI/tei:teiHeader/tei:encodingDesc/tei:classDecl/tei:taxonomy/tei:category[@xml:id = $ref][1]/tei:catDesc[1]/string())
+        let $subjects := (for $ref in $work/tei:term[@ref]/tokenize(@ref, '\s*#')[string-length() gt 0] return normalize-space($worksdoc/tei:TEI/tei:teiHeader/tei:encodingDesc/tei:classDecl/tei:taxonomy/tei:category[@xml:id = $ref][1]/tei:catDesc[1]/string()))[string-length(.) gt 0]
         let $lang := $work/tei:textLang
         
         (: Get info in all the instances in the manuscript description files :)
