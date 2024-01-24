@@ -112,6 +112,15 @@
             <xsl:apply-templates/>
         </p>
     </xsl:template>
+    <xsl:template match="binding/history/origin">
+        <p class="{name()}">
+            <span class="tei-label">
+                <xsl:copy-of select="bod:standardText('Origin:')"/>
+                <xsl:text> </xsl:text>
+            </span>
+            <xsl:apply-templates/>
+        </p>
+    </xsl:template>
     <xsl:template match="binding/msdesc:sewing">
         <p class="{name()}">
             <span class="tei-label">
@@ -193,10 +202,10 @@
             <xsl:apply-templates/>
         </p>
     </xsl:template>
-    <xsl:template match="binding/msdesc:earlierStructure">
+    <xsl:template match="binding/msdesc:tacketing">
         <p class="{name()}">
             <span class="tei-label">
-                <xsl:copy-of select="bod:standardText('Earlier structure:')"/>
+                <xsl:copy-of select="bod:standardText('Tacketing:')"/>
                 <xsl:text> </xsl:text>
             </span>
             <xsl:apply-templates/>
@@ -205,7 +214,7 @@
     <xsl:template match="binding/condition">
         <p class="{name()}">
             <span class="tei-label">
-                <xsl:copy-of select="bod:standardText('Alterations/repairs:')"/>
+                <xsl:copy-of select="bod:standardText('Alterations or repairs:')"/>
                 <xsl:text> </xsl:text>
             </span>
             <xsl:apply-templates/>
@@ -232,7 +241,7 @@
     <xsl:template match="binding/msdesc:labels">
         <p class="{name()}">
             <span class="tei-label">
-                <xsl:copy-of select="bod:standardText('Titles/labels:')"/>
+                <xsl:copy-of select="bod:standardText('Titles or labels:')"/>
                 <xsl:text> </xsl:text>
             </span>
             <xsl:apply-templates/>
