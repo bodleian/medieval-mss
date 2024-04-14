@@ -1,17 +1,27 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1706">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1706">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Bodl. 717</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+           
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1966">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2023">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+           
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,78 +43,100 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Bodl. 717</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0hq37vn7664</idno><idno type="crArk">ark:29072/x0hm50tr92w1</idno><altIdentifier type="internal">
                      <idno type="SCN">2631</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_Bodl_717-item1">
                      <author key="person_95147024">Jerome</author>
                      <title key="work_2403">Commentary on Isaiah</title>
+                     <rubric>Incipit liber primus sancti Iheronimi presbiteri super Isaiam prophetam ad
+                        Eustochium uirginem Christi</rubric>
                      <bibl type="commentedOn">
                         <title>Bible, Isaiah</title>
                      </bibl>
+                     <note>The whole treatise in eighteen books, with prologue</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                   
+                        <extent>
+                           v + 291 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>14.625</height>
+                              <width>10.25</width>
+                           </dimensions>
+                        </extent>
+                        
                      </supportDesc>
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote>Fine miniatures by <persName key="person_42927718" role="art">Hugo 'pictor'</persName> with his self-portrait, fol. 287v. Fine historiated and other initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 441, pl. XXXVI)</decoNote>
+                  
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 441, Pl. XXXVI
+                     </summary>
+                     <decoNote type="miniature">Fine miniatures by <persName key="person_42927718" role="art">Hugo 'pictor'</persName> with his self-portrait 
+                        on <ref target="https://digital.bodleian.ox.ac.uk/objects/99379ed1-a0c0-4a5d-b31a-eb9a9ed30f40/surfaces/07318d06-c5b2-4321-aa3f-fa11c80a9ab4/">fol. 287v</ref> 
+                        with the title 'Imago pictoris &amp; illuminatoris huius operis'</decoNote>
+                     <decoNote type="histInit">Fine historiated initial</decoNote>
+                     <decoNote type="decInit">Other initials</decoNote>
+                     <decoNote>From the Summary Catalogue:</decoNote>
+                     <decoNote>There are fine and elaborate capital letters to each book, and four large miniatures:</decoNote>
+                     <decoNote>Fol. v verso has a large figure of Isaiah seated within a Byzantine arch, with buildings of a city above</decoNote>
+                     <decoNote>Fol. vi recto is a picture of Jerome writing the roll of his book and Eustochium receiving it, each under a Byzantine arch</decoNote>
+                     <decoNote>fol. vi verso is the Church (?) depicted as a female between Jerome as a scribe and Isaiah, with leonine figures above, and below a burial scene, 
+                        with profusion of ornament forming an E</decoNote>
+                     <decoNote>Fol. 2r represents Christ enthroned with Isaiah exhorting the people to turn to him ('Venite ascendamus ad montem Domini...'), 
+                        the whole with lacertine ornament making up a V</decoNote> 
+                     <decoNote>Red, blue, and green are the chief colours used</decoNote>
+                     <decoNote>At fol. 227 is a marginal note 'hue usque emendatum est'</decoNote>
                   </decoDesc>
+      
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1100" notBefore="1090">11th century, end</origDate>
                      <origPlace>
-                        <country key="place_1000070">French</country>, <settlement key="place_7008926">Jumièges</settlement>
+                        <country key="place_1000070">France</country>, <settlement key="place_7008926">Jumièges</settlement>
                         <!--ORIGINAL: French, Jumièges-->
                      </origPlace>
                   </origin>
-                  <provenance type="MLGB3_provenance_evidence"
-                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/2792">
-                     <orgName role="fmo" key="org_127815410">Exeter, Devon, Cathedral church of St Peter</orgName>: ": Liber Ecclesie Exoniensis de communibus" (s. xiv); cf. fol. vi verso. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/2792">MLGB3</ref>: evidence from an ex-libris inscription or note of gift to an institution). </provenance>
-                  <provenance type="MLGB3_laterOwners"
-                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/2792">Dean and chapter of Exeter, 1602. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/2792">MLGB3</ref>)</provenance>
-                  <provenance type="MLGB3_generalNotes"
-                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/2792">(fol. 287v) Miniature of "Hugo pictor".     Facsimiles in N.P.S. 2. 190–192. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/2792">MLGB3</ref>)
-                                             </provenance>
+                  <provenance type="MLGB3_provenance_evidence" source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/2792">
+                     <orgName role="fmo" key="org_127815410">Exeter, Devon, Cathedral church of St Peter</orgName>: 
+                     'Liber Ecclesie Exoniensis de communibus' (s. xiv); cf. fol. vi verso (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/2792">MLGB3</ref>)</provenance>
+                 
+                  <acquisition when="1602">Presented by the dean and chapter of Exeter in 1602</acquisition>
+                  
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1966). <listBibl>
+                           Description adapted (August 2023) by Stewart J. Brookes from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1966)
+                           <listBibl>                              
                               <bibl facs="aap0480.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 459</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
-                     <availability status="none"><p>That this item is on loan to the exhibition <title>‘Gatekeepers to Heaven’: Religion, Knowledge and Power in Medieval Exeter</title> (Exeter, Royal Albert Memorial Museum, 27 May 2023 – 3 Sept. 2023). It cannot be requested during those dates or for a short period before and after.</p></availability>
+                   <!--  <availability status="none"><p>This item is on loan to the exhibition <title><ref target="https://rammuseum.org.uk/whats-on/gatekeepers-to-heaven-religion-knowledge-and-power-in-medieval-exeter/#:~:text=This%20landmark%20exhibition%20brings%20back,the%20founding%20collection%20of%201602.
+                        ">‘Gatekeepers to Heaven’: Religion, Knowledge and Power in Medieval Exeter</ref></title> (Exeter, Royal Albert Memorial Museum, 27 May 2023 – 3 Sept. 2023). 
+                        It cannot be requested during those dates or for a short period before and after.</p></availability>-->
                   </adminInfo>
                   <surrogates>
                      <bibl subtype="partial" type="digital-facsimile">
                         <ref target="https://digital.bodleian.ox.ac.uk/objects/99379ed1-a0c0-4a5d-b31a-eb9a9ed30f40/">
-                           <title>Digital Bodleian</title>
-                        </ref>
-                        <note>(43 images from 35mm slides)</note>
+                           <title>Digital Bodleian</title></ref><note> (43 images from 35mm slides)</note>
                      </bibl>
                   </surrogates>
                   <listBibl type="WRAPPER">
                      <listBibl type="INTERNET">
                         <head>Online resources:</head>
-                        <bibl>
-                           <ref target="https://clasp.ell.ox.ac.uk/db-latest/apmo/entry/591">
-                              <title>Electronic Gneuss-Lapidge</title> (entry 591)</ref>
-                        </bibl>
-                        <bibl>
-                           <ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/114">
-                              <title>MLGB3: Medieval Libraries of Great Britain</title>
-                           </ref>
-                        </bibl>
                         <bibl>
                            <ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/2792">
                               <title>MLGB3: Medieval Libraries of Great Britain</title>
@@ -117,6 +149,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2023-08-07">Description revised to incorporate all the information in the Summary Catalogue (1922)</change>
          <change when="2021-12-14">Add provenance information from MLGB3.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
