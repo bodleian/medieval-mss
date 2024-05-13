@@ -1,17 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_4076" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4076">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. D'Orville 14</title>
             <title type="collection">MSS. D'Orville</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1966">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,25 +42,51 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. D'Orville 14</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0g158bh37fv</idno><idno type="crArk">ark:29072/x07m01bm453t</idno><altIdentifier type="internal">
                      <idno type="SCN">16892</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_DOrville_14-item1">
                      <author key="person_24616821">Justin</author>
                      <title key="work_2887">Epitome of Pompeius Trogus</title>
+                     <rubric>Iustini Epitoma in Trogum Pompeium ...</rubric>
+                     <note>In 44 books</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                    
+                        <extent>
+                           iii + 112 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>12.875</height>
+                              <width>9.375</width>
+                           </dimensions>
+                        </extent>
+                        
                      </supportDesc>
+                     
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote>Decoration<p>Fine miniature, borders, initials. Humanistic script. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 424, pl. XLI)</p>
+                  
+                  <handDesc>
+                     <handNote script="humanistica">Humanistic script by the same scribe as MS. Canon. Class. Lat. 100 (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 424)</handNote>
+                  </handDesc>
+                  
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 424, Pl. XLI
+                     </summary>
+                     
+                     <decoNote type="miniature">Fine miniature</decoNote>
+                     
+                     <decoNote type="decInit">Fine initials at the beginning of each book</decoNote>
+                     
+                     <decoNote type="border">Fine borders
                         <list type="gloss">
                            <head>fol. 1r</head>
                            <label>Type</label>
@@ -60,7 +95,8 @@
                            </item>
                            <label>Subject</label>
                            <item>
-                              <seg type="subject">Interlaced stems growing out of elaborate vases; panels with deer and butterflies; miniature with a young man and a woman in a walled garden with putti, rabbits, peacock and other birds (damaged).</seg>
+                              <seg type="subject"><ref target="https://digital.bodleian.ox.ac.uk/objects/0548b04f-ac41-451a-ae7f-f1dfca3f6094/">A garden scene</ref>: interlaced stems growing out of elaborate vases; panels with deer and butterflies; 
+                                 miniature with a young man and a woman in a walled garden with putti, rabbits, peacock and other birds (damaged)</seg>
                            </item>
                         </list>
                      </decoNote>
@@ -70,13 +106,26 @@
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1475" notBefore="1450">15th century, third quarter</origDate>
                      <origPlace cert="low">
-                        <country key="place_1000080">Italian</country>, <settlement key="place_7004264">Ferrara</settlement> (?)<!--ORIGINAL: Italian, Ferrara (?)--></origPlace>
+                        <country key="place_1000080">Italy</country>, <settlement key="place_7004264">Ferrara</settlement> (?)<!--ORIGINAL: Italian, Ferrara (?)--></origPlace>
                   </origin>
+                  
+                  <provenance>On the outer margin of fol. 1 is a shield with <heraldry>or a plume of feathers sable</heraldry> on it [Pächt and Alexander: <heraldry>or a fleur-de-lis sable</heraldry>], and above an angel holding a scroll with the words 
+                     'HELF MIER GOT'
+                  </provenance>
+                  
+                  <provenance><persName key="person_24945908" role="fmo">Jacques Phillippe D'Orville of Amsterdam (1690–1751)</persName></provenance>
+                  <provenance><persName key="person_3392" role="fmo">Jean D'Orville, b. 1734</persName>, his son, by descent</provenance>
+                  <provenance><persName key="person_3393" role="fmo">Jean D'Orville</persName>, son of Jean, by descent</provenance>
+                  <provenance>Sold to the <persName key="person_3394" role="fmo">Rev. John Cleaver Banks (1765/1766–1845)</persName>: purchased from him by the Bodleian</provenance>
+                  <acquisition when="1804">Acquired by the Bodleian in 1804</acquisition>
+                  
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
+                        <source>
+                           Description adapted (February 2024) by Stewart J. Brookes from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1966)
+                           <listBibl> 
                               <bibl facs="aaz0060.gif" type="SC">Summary Catalogue, Vol. 4, p. 41</bibl>
                            </listBibl>
                         </source>
@@ -89,6 +138,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-02-05">Description revised to incorporate all the information in the Summary Catalogue (1897)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>

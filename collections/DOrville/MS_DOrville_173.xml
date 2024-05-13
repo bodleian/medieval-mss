@@ -1,17 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_4110" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4110">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. D'Orville 173</title>
             <title type="collection">MSS. D'Orville</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,25 +36,47 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. D'Orville 173</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0h128nd70mh</idno><idno type="crArk">ark:29072/x0bz60cw77ng</idno><altIdentifier type="internal">
                      <idno type="SCN">17051</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_DOrville_173-item1">
                      <author key="person_100902938">Lucan</author>
                      <title key="work_3001">Pharsalia</title>
+                     <incipit>Bella p<ex>er</ex> ematíos plus q<ex>uam</ex> cíuilía campos</incipit>
+                     <explicit>Obsedít murís calcantem menía magnum;,. | Deo gratias Amen.</explicit>
+                     <note>Preceded by a four-line epigram by Lucan:
+                        Corduba me genuit, rapuit nero, praelia dixi, | Que gessere pares hinc socer inde gener | 
+                        Continuo nu<ex>m</ex>q<ex>uam</ex> direxi carmina ductu, | Que tractum serpant, plus michi coma placet
+                        </note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                 
+                        <extent>
+                           i + 124 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>10</height>
+                              <width>7.375</width>
+                           </dimensions>
+                           
+                           <catchwords>Catchwords: e.g. 'Non duro' (fol. 50v); 'Querit' (fol. 60v); 'Et renouare parans.' (fol. 100v)</catchwords>
+                           
+                        </extent>
+                        
                      </supportDesc>
+                     
                   </objectDesc>
+                 
                   <decoDesc>
-                     <decoNote>Decoration<p>Illuminated initials.</p>
+                     <decoNote type="flourInit">Illuminated initials, e.g. fol. 1r, with penwork
                      </decoNote>
                   </decoDesc>
                </physDesc>
@@ -59,11 +84,32 @@
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1410" notBefore="1400">15th century, early</origDate>
                   </origin>
+                  
+                  <provenance><orgName role="fmo" key="org_266765811">Abbey of St Gall</orgName>. <!-- by 1461? -->On fol. 123r 'Sancti Galli atque Othmari' (17th century). In the Catalogue of C. J. Strackhoven (Strackhovius) is a note 'a milite 1712 in bello Helvetico ex Abbatia St Gallensi surreptus', 
+                     and a Lucan in 4° on parchment certainly occurs both in J. J. Scheuchzer's and H. Waser's catalogues of manuscripts removed from St Gall to Zurich and Bern in 1712  (F. Weidmann, <title>Geschichte der Bibliothek von St. Gallen seit ihrer Gründung um das Jahr 830 bis auf 1841</title> (1841), pp. 428 n. 64, 437)</provenance>
+                  <!-- not identifiable in the eraly modern catalogues Cod Sang 1279, 1400, 1401 which list the two surviving St Gall lucan mss, Cod. 863-4-->
+                  <provenance><orgName role="fmo" key="org_157880358">Burgerbibliothek Bern</orgName>: printed stamp of the 'Bibliotheca Bernensis' on fol. 1.</provenance>
+                  <!-- check: https://www.e-codices.ch/en/searchresult/list/one/csg/1280 and https://www.e-codices.ch/en/csg/1401/1   -->
+                  
+                  <provenance>The manuscript was certainly given to D'OrviIle by <persName key="person_64792800" role="fmo">Johann Georg Altmann</persName> (professor and librarian at Bern) on 28 Sept. 1744: see Gaisford's catalogue</provenance>
+                  
+                  <!-- I couldn't see 'Fur cave ne nostrum', etc. when I looked in the manuscript. I'll email you about this. 
+                  <provenance>On fol 123v is 'Fur cave ne nostrum rapiat tua dextra libellum | Carnificis plantæ ne tua terga premant' (16th century?)</provenance>
+                  -->
+
+                  <provenance><persName key="person_24945908" role="fmo">Jacques Phillippe D'Orville of Amsterdam (1690–1751)</persName>.</provenance>
+                  <provenance><persName key="person_3392" role="fmo">Jean D'Orville, b. 1734</persName>, his son, by descent</provenance>
+                  <provenance><persName key="person_3393" role="fmo">Jean D'Orville</persName>, son of Jean, by descent</provenance>
+                  <provenance>Sold to the <persName key="person_3394" role="fmo">Rev. John Cleaver Banks (1765/6–1845)</persName>: purchased from him by the Bodleian</provenance>
+                  <acquisition when="1804">Acquired by the Bodleian in 1804</acquisition>
+                  
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
+                        <source>
+                           Description adapted (February 2024) by Stewart J. Brookes from the Summary Catalogue (1897) with additional details from consultation of original
+                           <listBibl>
                               <bibl facs="aaz0099.gif" type="SC">Summary Catalogue, Vol. 4, p. 80</bibl>
                            </listBibl>
                         </source>
@@ -74,6 +120,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-01-05">Description revised to incorporate all the information in the Summary Catalogue (1897)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>

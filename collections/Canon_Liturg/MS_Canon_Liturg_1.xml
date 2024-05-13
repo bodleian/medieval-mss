@@ -1,16 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2815">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2815">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Canon. Liturg. 1</title>
             <title type="collection">MSS. Canon. Liturg. (Canonici Liturgical)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2024">Encoding</resp>
                <persName>Matthew Holford</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Paecht</persName>
+               <persName>J. J. G. Alexander</persName>
             </respStmt>
          </titleStmt>
          <publicationStmt>
@@ -33,13 +38,16 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Canon. Liturg. 1</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x02r36tz39vz</idno><idno type="crArk">ark:29072/x0cz30pt10kn</idno><altIdentifier type="internal">
                      <idno type="SCN">19219</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
                   <msItem class="#liturgica" n="1" xml:id="MS_Canon_Liturg_1-item1">
                      <title key="work_10656" type="desc">Breviary, Use of Rome (Franciscan)</title>
+                     <note>Calendar (fol. 1); ferial psalter (fol. 7); temporale (fol. 82); general rubrics (fol. 271), followed by the rubrica Parisiensis containing three lists of feasts (fol. 273<hi rend="superscript">v</hi>: Notandum est quod omnes festivitates), a rubrica parisina for the Sundays after Pentecost (fol. 275) and rubrice ordinate per dominum Clementem papam sextum … retracte a breviario domini cardinalis de Luna legati Ispani (fol. 275<hi rend="superscript">v</hi>); sanctorale (fol. 277); common of the saints (fol. 424) and the dedication; offices of the Virgin (fol. 447) and the dead (fol. 453<hi rend="superscript">v</hi>); ritual of the Last Sacraments (fol. 456<hi rend="superscript">v</hi>); lessons for St Louis king (fol. 463<hi rend="superscript">v</hi>); office of St Louis bishop (fol. 465) with lessons for the octave; grace before and after meals (fol. 469); blessing of holy water (fol. 471), etc.</note>
+                     <note>In the calendar (29 October): Sancti Stephani Cayaciani (Cajazzo) in red; in the litany of the Commendation (fol. 458<hi rend="superscript">v</hi>) the two Cremonese saints, St Hymerius and St Homobonus.</note>
+                     <colophon><locus>(fol. 473)</locus> Hic berbiarius est scriptus. Qui scripsit sit benedictus. Scriptor sum talis. Monstrat mea lictera <supplied>qualis</supplied></colophon>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -47,11 +55,24 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent> ii + 473 (475) + ii leaves
+                           <dimensions unit="mm" type="leaf">
+                              <height>135</height>
+                              <width>103</width>
+                           </dimensions></extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2" writtenLines="30">2 col. of 30 lines, written space <dimensions unit="mm" type="written">
+                           <height>88</height>
+                           <width>68</width>
+                        </dimensions> </layout>
+                     </layoutDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>Decoration<p>Good border, historiated and other initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 642)</p>
-                     </decoNote>
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 642:</summary>
+                     <decoNote type="border">Good border.</decoNote>
+                     <decoNote type="histInit">Good historiated initials.</decoNote>
+                     <decoNote type="decInit">Good other initials.</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
@@ -59,15 +80,16 @@
                      <origDate calendar="Gregorian" notAfter="1475" notBefore="1450">15th century, third quarter</origDate>
                      <origPlace>
                         <country key="place_1000080">Italian</country>, <settlement key="place_7003262">Verona</settlement>
-                        <!--ORIGINAL: Italian, Verona-->
                      </origPlace>
                   </origin>
+                  <provenance notAfter="1805" notBefore="1727" resp="#MMM"><persName key="person_2384880" role="fmo">Matteo Luigi Canonici, 1727–1805</persName></provenance>
+                  <provenance notAfter="1807" resp="#MMM"><persName key="person_446" role="fmo">Giuseppe Canonici , -1807</persName></provenance>
+                  <acquisition resp="#MMM" when="1817">Purchased by the Bodleian in 1817</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1970). <listBibl>
+                        <source>Adapted from van Dijk (1957) (see bibliography); decoration, localization and date follow Pächt and Alexander (1970). Previously described in the Summary Catalogue (1897). <listBibl>
                               <bibl facs="aaz0350.gif" type="SC">Summary Catalogue, vol. 4, p. 331</bibl>
                            </listBibl>
                         </source>
@@ -85,6 +107,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-01">Revised to incorporate information from van Dijk</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>

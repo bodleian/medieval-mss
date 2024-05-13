@@ -1,17 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_4103" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4103">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. D'Orville 166</title>
             <title type="collection">MSS. D'Orville</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,47 +42,86 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. D'Orville 166</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x08910jv05hb</idno><idno type="crArk">ark:29072/x0b8515n94g2</idno><altIdentifier type="internal">
                      <idno type="SCN">17044</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_DOrville_166-item1">
+                     <locus>(fol. 1)</locus>
                      <author key="person_100219266">Tibullus</author>
                      <title key="work_4867">Elegies</title>
+                     <rubric>Epistola prima Albii Tibulli ...</rubric>
+                     <note>With the usual epitaph and short life</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                   <msItem n="2" xml:id="MS_DOrville_166-item2">
+                     <locus>(fol. 48)</locus>
                      <author key="person_88342447">Ovid</author>
-                     <title key="work_3421">Heroides</title>
-                     <note>xv (epistle of Sappho to Phaon)</note>
+                     <title key="work_3421">Heroides XV (epistle of Sappho to Phaon)</title>
+                     <rubric>Saphos vatis <sic>Elsbie</sic> Mitilene ad Phaonem Siculum amatorem</rubric>
+                     <explicit>Hec epistola fuit per Ovidium de Greco in Latinum translata</explicit>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                    
+                        <extent>
+                           iii + 60 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>6.625</height>
+                              <width>4.625</width>
+                           </dimensions>
+                        </extent>
+                        
+                        <condition>In parts considerably rubbed.</condition>
+                        
                      </supportDesc>
+                     
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote type="decInit">Decoration<p>Good initials. Humanistic script. Inscription 'Munus concessum xxii Octobris 1452' erased, fol. iii recto, and copied by a later hand, fol. 59r. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 601)</p>
-                     </decoNote>
+                  
+                  <handDesc>
+                     <handNote script="humanistica">Humanistic script (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 601)</handNote>
+                  </handDesc>
+                  
+                  <decoDesc resp="#PA">
+                     <summary>Close in style to MSS. from S. Guistina, Padua, e.g. J. R. Abbey collection, J. A. 6774. <ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 601:
+                     </summary>
+                     
+                     <decoNote type="decInit">Good initials</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1460" notBefore="1440">15th century, middle (1452 (?))</origDate>
                      <origPlace>
-                        <country key="place_1000080">Italian</country>, <settlement key="place_7003085">Padua</settlement>
+                        <country key="place_1000080">Italy</country>, <settlement key="place_7003085">Padua</settlement>
                         <!--ORIGINAL: Italian, Padua-->
                      </origPlace>
                   </origin>
+                  
+                  <provenance>On fol. iii recto is 'Munus concessum xxii Octobris MCCCCLII,' with 'ex antiquissimo manuscripto' added, and the whole nearly erased and copied 
+                     by a later hand on fol. 59r. The date is a possible one for the writing as well as the gift, but the book would appear to have been written rather earlier.</provenance>
+                  
+                  <provenance><persName key="person_24945908" role="fmo">Jacques Phillippe D'Orville of Amsterdam (1690–1751)</persName></provenance>
+                  <provenance><persName key="person_3392" role="fmo">Jean D'Orville, b. 1734</persName>, his son, by descent</provenance>
+                  <provenance><persName key="person_3393" role="fmo">Jean D'Orville</persName>, son of Jean, by descent</provenance>
+                  <provenance>Sold to the <persName key="person_3394" role="fmo">Rev. John Cleaver Banks (1765/1766–1845)</persName>: purchased from him by the Bodleian</provenance>
+                  <acquisition when="1804">Acquired by the Bodleian in 1804</acquisition>
+                  
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
+                        <source>
+                           Description adapted (March 2024) by Stewart J. Brookes from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1970)
+                           <listBibl> 
                               <bibl facs="aaz0097.gif" type="SC">Summary Catalogue, Vol. 4, p. 78</bibl>
                            </listBibl>
                         </source>
@@ -86,6 +134,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-03-25">Description revised to incorporate all the information in the Summary Catalogue (1897)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>

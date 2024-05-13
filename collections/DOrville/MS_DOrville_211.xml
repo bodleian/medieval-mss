@@ -1,17 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_4138" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4138">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. D'Orville 211</title>
             <title type="collection">MSS. D'Orville</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,57 +42,100 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. D'Orville 211</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0ms35t836cp</idno><idno type="crArk">ark:29072/x0fq977v10bv</idno><altIdentifier type="internal">
                      <idno type="SCN">17089</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_DOrville_211-item1">
+                     <locus>(fol. 1)</locus>
                      <author key="person_9919481">Giovanni Pontano</author>
-                     <title key="work_1784">poems</title>
+                     <title key="work_1784">Poems</title>
+                     <colophon>Pontani poete liber explicit</colophon>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                   <msItem n="2" xml:id="MS_DOrville_211-item2">
+                     <locus>(fol. 29v)</locus>
                      <author key="person_2062">Giovanni Sagundino (?)</author>
                      <!-- not in VIAF or DBI or mirabile -->
-                     <title key="work_1786">poems</title>
+                     <title key="work_1786">Poems</title>
+                     <note>Eight poems, the name of Joannes Sagundinus heads the first.</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                   <msItem n="3" xml:id="MS_DOrville_211-item3">
-                     <author key="person_9926370">Giovanni Mario Filelfo</author>
-                     <title key="work_1780">poems</title>
+                     <locus>(fol. 34)</locus>
+                     <author key="person_9926370">Giovanni Mario Filelfo (?)</author>
+                     <title key="work_1780">Poems</title>
+                     <note>Three poems, the name 'Marius Phi<ex>losophus</ex>' heads the first poem</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                   <msItem n="4" xml:id="MS_DOrville_211-item4">
+                     <locus>(fol. 35v)</locus>
                      <author key="person_100227546">Gregorius Tiphernus</author>
-                     <title key="work_1826">poems</title>
+                     <title key="work_1826">Poems</title>
+                     <note>Five poems attributed to 'Gregorius Typhernus'.</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                   
+                        <extent>
+                           vi + 53 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>7.25</height>
+                              <width>4.5</width>
+                           </dimensions>
+                        </extent>
+                        
                      </supportDesc>
+                     
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote>Decoration<p>Fine border, initial. Humanistic script. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 582)</p>
-                     </decoNote>
+                  
+                  <handDesc>
+                     <handNote script="humanistica">Humanistic script (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 582)</handNote>
+                  </handDesc>
+                  
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 582
+                     </summary>
+                  
+                     <decoNote type="border">Fine border (fol. 1)</decoNote>
+                     <decoNote type="decInit">Fine initial</decoNote>
                   </decoDesc>
+                  
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1500" notBefore="1490">15th century, end</origDate>
                      <origPlace>
-                        <country key="place_1000080">Italian</country>, <settlement key="place_7018159">Venice</settlement>
+                        <country key="place_1000080">Italy</country>, <settlement key="place_7018159">Venice</settlement>
                         <!--ORIGINAL: Italian, Venice-->
                      </origPlace>
                   </origin>
+                  
+                  <provenance>On fol. 1 is a coat of arms <heraldry>party per fess or and azure, six cinquefoils pierced counterchanged</heraldry>: identified in Pächt and Alexander as arms of the <persName type="family" role="fmo" key="person_3132">Loredan family of Venice</persName>.</provenance>
+                  
+                  <provenance><persName key="person_24945908" role="fmo">Jacques Phillippe D'Orville of Amsterdam (1690–1751)</persName></provenance>
+                  <provenance><persName key="person_3392" role="fmo">Jean D'Orville, b. 1734</persName>, his son, by descent</provenance>
+                  <provenance><persName key="person_3393" role="fmo">Jean D'Orville</persName>, son of Jean, by descent</provenance>
+                  <provenance>Sold to the <persName key="person_3394" role="fmo">Rev. John Cleaver Banks (1765/1766–1845)</persName>: purchased from him by the Bodleian</provenance>
+                  <acquisition when="1804">Acquired by the Bodleian in 1804</acquisition>
+                  
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
+                        <source>
+                           Description adapted (February 2024) by Stewart J. Brookes from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1970)
+                           <listBibl>   
                               <bibl facs="aaz0108.gif" type="SC">Summary Catalogue, Vol. 4, p. 89</bibl>
                            </listBibl>
                         </source>
@@ -94,6 +146,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-02-01">Description revised to incorporate all the information in the Summary Catalogue (1897)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>

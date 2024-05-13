@@ -1,16 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_3095">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_3095">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Canon. Liturg. 5</title>
             <title type="collection">MSS. Canon. Liturg. (Canonici Liturgical)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2024">Encoding</resp>
                <persName>Matthew Holford</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Paecht</persName>
+               <persName>J. J. G. Alexander</persName>
             </respStmt>
          </titleStmt>
          <publicationStmt>
@@ -33,13 +38,15 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Canon. Liturg. 5</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0jw827b537n</idno><idno type="crArk">ark:29072/x07p88ch288n</idno><altIdentifier type="internal">
                      <idno type="SCN">19222</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
                   <msItem class="#liturgica" n="1" xml:id="MS_Canon_Liturg_5-item1">
                      <title key="work_10657" type="desc">Breviary, Use of Rome</title>
+                     <note>Ferial psalter (fol. 1), beginning abruptly in the matins of Monday, followed by daily canticles (fol. 54), Quicumque and Te deum; hymnal (fol. 56), divided into temporale and sanctorale; temporale of the breviary (fol. 62<hi rend="superscript">v</hi>); general rubrics (fol. 257); rubrical tables for the Sundays after Pentecost (fol. 259<hi rend="superscript">v</hi>, 260) and for the ferial antiphons before Christmas (fol. 260<hi rend="superscript">v</hi>); office of the dedication (fol. 262<hi rend="superscript">v</hi>); litany of the saints (fol. 265<hi rend="superscript">v</hi>); sanctorale (fol. 268), ending abruptly in the office of St Nicholas of Tolentino (10 September).</note>
+                     <note>In the litany St Romuald is doubled (266), while there is a versicle and prayer pro maiori nostro. Both items point to monastic (Camaldolese) influence, though the book is undoubtedly secular.</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -47,10 +54,22 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent> i + 374 (376) + i leaves <dimensions type="leaf" unit="mm">
+                           <height>145</height>
+                           <width>105</width>
+                        </dimensions>  </extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2" writtenLines="30 31">2 col. of 30-1 lines.
+                           Written space <dimensions type="written" unit="mm">
+                              <height>86</height>
+                              <width>57</width>
+                           </dimensions>
+                        </layout>
+                     </layoutDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote type="decInit">Decoration<p>Good initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 287)</p>
+                     <decoNote type="decInit">Good initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 287)
                      </decoNote>
                   </decoDesc>
                </physDesc>
@@ -62,12 +81,15 @@
                         <!--ORIGINAL: Italian, Tuscany-->
                      </origPlace>
                   </origin>
+                  <provenance notAfter="1805" notBefore="1727" resp="#MMM"><persName key="person_2384880" role="fmo">Matteo Luigi Canonici, 1727–1805</persName></provenance>
+                  <provenance notAfter="1807" resp="#MMM"><persName key="person_446" role="fmo">Giuseppe Canonici , -1807</persName></provenance>
+                  <acquisition resp="#MMM" when="1817">Purchased by the Bodleian in 1817</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1970). <listBibl>
+                        <source>Adapted from van Dijk (1957) (see bibliography); decoration, localization and date follow Pächt and Alexander (1970). Previously described in the Summary Catalogue (1897).
+                           <listBibl>
                               <bibl facs="aaz0351.gif" type="SC">Summary Catalogue, vol. 4, p. 332</bibl>
                            </listBibl>
                         </source>
@@ -85,6 +107,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-01">Revised to incorporate information from van Dijk</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>

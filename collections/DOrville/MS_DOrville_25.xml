@@ -1,17 +1,27 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4144">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4144">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. D'Orville 25</title>
             <title type="collection">MSS. D'Orville</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,48 +43,103 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. D'Orville 25</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x08p58pd38pf</idno><idno type="crArk">ark:29072/x0gb19f61065</idno><altIdentifier type="internal">
                      <idno type="SCN">16903</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_DOrville_25-item1">
                      <author key="person_100904338">Statius</author>
                      <title key="work_4603">Thebais</title>
+                     <explicit>Statij Papirij Surculj Tolosani Thebaidos Vltimus Liber feliciter explicit . Sexto kalendas Septembres 1464</explicit>
+                     <note>With glosses</note>
+                     <colophon><locus>Fol. 178:</locus> Statij ... thebaidos Vltimus Liber feliciter explicit. Sexto. kalendas septembres 1464</colophon>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
+                  
+                        <extent>
+                           iv + 181 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>12.125</height>
+                              <width>9.125</width>
+                           </dimensions>
+                           
+                           <dimensions type="leaf" unit="mm">
+                              <height>297</height>
+                              <width>220</width>
+                           </dimensions>
+                        </extent>
+                        
+                        <condition>Fols 171–178 added in 1464 (<ref target="https://babel.hathitrust.org/cgi/pt?id=uiug.30112018715075&amp;seq=110">Pächt and Alexander</ref> ii. 916)</condition>
                      </supportDesc>
+                     
+                     <layoutDesc>
+                        <layout writtenLines="28">28 lines per page
+                        </layout>
+                     </layoutDesc>
+                     
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote type="decInit">Decoration<p>Initials on fols. 1–170 (copying earlier models?). Fols. 171–178 added in 1464. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 916)</p>
+                  
+                  <handDesc>
+                     <handNote> A second scribe wrote fol. 176 line 20 to the end</handNote>
+                  </handDesc>
+                  
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://babel.hathitrust.org/cgi/pt?id=uiug.30112018715075&amp;seq=110">Pächt and Alexander</ref> ii. 916
+                     </summary>
+                     <decoNote type="decInit">Initials on fols 1–170 (copying earlier models?)
                      </decoNote>
                   </decoDesc>
+                  
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian"
-                               notAfter="1464"
-                               notBefore="1400"
-                               cert="high">c. 1400 and 1464</origDate>
+                     <origDate calendar="Gregorian" notAfter="1464" notBefore="1390" cert="high"><hi rend="italic">c</hi>. 1400 and  (fols. 171-8) 1464</origDate>
                      <origPlace>
-                        <country key="place_1000080">Italian</country>
+                        <country key="place_1000080">Italy</country>
                      </origPlace>
                   </origin>
+                  
+                  
+                  
+                  <provenance when="1726">Probably bought for D'Orville, along with <ref target="https://medieval.bodleian.ox.ac.uk/catalog/manuscript_4118">MS. D'Orville 181</ref>, by <persName key="person_39399735">Sigebertus Havercamp</persName> at Copenhagen in November 1726: see Thomas Gaisford, 
+                  <title><ref target="https://babel.hathitrust.org/cgi/pt?id=nyp.33433057514220&amp;seq=22&amp;q1=havercamp">Codices manuscripti et impressi, cum notis manuscriptis, 
+                     olim d'Orvilliani, qui in Bibliotheca Bodleiana apud Oxonienses adservantur</ref></title> (Oxford, 1806), p. 6. See also 'amico meo Hafniensi' in <ref target="https://archives.bodleian.ox.ac.uk/repositories/2/archival_objects/169029">Bodl. d'Orville 486</ref>, fol. 63, 
+                  as cited by M. D. Reeve, 'Statius' Silvae in the Fifteenth Century', <title>The Classical Quarterly</title>, 27 (1977), p. 216</provenance>
+                  <provenance><persName key="person_24945908" role="fmo">Jacques Phillippe D'Orville of Amsterdam (1690–1751)</persName>.</provenance>
+                  <provenance><persName key="person_3392" role="fmo">Jean D'Orville, b. 1734</persName>, his son, by descent</provenance>
+                  <provenance><persName key="person_3393" role="fmo">Jean D'Orville</persName>, son of Jean, by descent</provenance>
+                  <provenance>Sold to the <persName key="person_3394" role="fmo">Rev. John Cleaver Banks (1765/6–1845)</persName>: purchased from him by the Bodleian.</provenance>
+                  <acquisition when="1804">Acquired by the Bodleian in 1804.</acquisition>
+                  
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
+                        <source>
+                           Description adapted (January 2024) by Stewart J. Brookes from the Summary Catalogue (1897) with additional reference to published literature as cited. Decoration, localization and date follow Pächt and Alexander (1973)
+                           <listBibl>                              
                               <bibl facs="aaz0063.gif" type="SC">Summary Catalogue, Vol. 4, p. 44</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
+                  
+                  <surrogates>
+                     
+                     <bibl>
+                        Black-and-white detail of fol. 176 in  A. Watson, <ref target="https://babel.hathitrust.org/cgi/pt?id=mdp.39015008982871&amp;seq=261">
+                           <title>Catalogue of Dated and Datable Manuscripts in Oxford Libraries</title></ref> (1984), vol. 2, Pl. 623
+                     </bibl>
+                  </surrogates>
+                  
                   <listBibl type="WRAPPER">
                      <listBibl type="PRINT">
                         <head>Printed descriptions:</head>
@@ -82,13 +147,17 @@
                               <ref target="https://hdl.handle.net/2027/mdp.39015008982863?urlappend=%3Bseq=98">no. 433</ref>
                            </citedRange>
                         </bibl>
+                        
                      </listBibl>
+                        
                   </listBibl>
+                  
                </additional>
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-01-05">Description revised to incorporate all the information in the Summary Catalogue (1897)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>

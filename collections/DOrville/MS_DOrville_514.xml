@@ -1,17 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4157">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4157">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. D'Orville 514</title>
             <title type="collection">MSS. D'Orville</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,30 +42,59 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. D'Orville 514</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0qf85n985xt</idno><idno type="crArk">ark:29072/x0hm50tr9375</idno><altIdentifier type="internal">
                      <idno type="SCN">17392</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_DOrville_514-item1">
+                     <locus>(fol. 1)</locus>
                      <author key="person_39382430">Petrarch</author>
                      <title key="work_3561">Il Canzoniere</title>
+                     <rubric>... Sonectorum &amp; Cantilenarum liber incipit</rubric>
+                     <note>367 Italian poems.</note><note type="index">With index of first lines.</note>
                      <textLang mainLang="it">Italian</textLang>
                   </msItem>
+                  
                   <msItem n="2" xml:id="MS_DOrville_514-item2">
+                     <locus>(fol. 137)</locus>
                      <author key="person_39382430">Petrarch</author>
                      <title key="work_3568">Trionfi</title>
+                     <rubric>... Triomphorum liber feliciter incipit ...</rubric>
                      <textLang mainLang="it">Italian</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                     
+                        <extent>
+                           ix + 174 leaves:
+                           <dimensions unit="in" type="binding">
+                              <height>9.5</height>
+                              <width>5.875</width>
+                           </dimensions>
+                        </extent>
+                        
                      </supportDesc>
+                     
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote>Decoration<p>Fine border, historiated and other initials. Humanistic script. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 270, pl. XXIV)</p>
+                     
+                  <handDesc>
+                     <handNote script="humanistica">Humanistic script (<ref target="https://babel.hathitrust.org/cgi/pt?id=uc1.32106006446402&amp;seq=45">Pächt and Alexander</ref> ii. 270)</handNote>
+                  </handDesc>
+                  
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://babel.hathitrust.org/cgi/pt?id=uc1.32106006446402&amp;seq=45">Pächt and Alexander</ref> ii. 270, <ref target="https://babel.hathitrust.org/cgi/pt?id=uc1.32106006446402&amp;seq=206">Pl. XXIV, no. 270</ref>
+                     </summary>
+                     
+                     <decoNote type="border">Fine border</decoNote>
+                     <decoNote type="histInit">Historiated initials</decoNote>
+                     <decoNote type="decInit">Other initials</decoNote>
+                     <decoNote> 
                         <list type="gloss">
                            <head>fol. 1r</head>
                            <label>Type</label>
@@ -65,30 +103,41 @@
                            </item>
                            <label>Subject</label>
                            <item>
-                              <seg type="subject">Initial: profile half-figure of the author, holding a book. Border: interlace, floral designs, gold disks, birds, seated winged putto. In the lower margin two winged putti support a medallion left blank to be filled with a coat of arms.</seg>
+                              <seg type="subject"><ref target="https://digital.bodleian.ox.ac.uk/objects/94a8a9f1-ee02-453e-b2bd-c002dd3e8f0c/">Initial</ref>: 
+                                 profile half-figure of the author, holding a book. Border: interlace, floral designs, gold disks, birds, seated winged putto. 
+                                 In the lower margin two winged putti support a medallion left blank to be filled with a coat of arms.</seg>
                            </item>
                         </list>
                      </decoNote>
                   </decoDesc>
                   <bindingDesc>
                      <binding notBefore="1500" notAfter="1600">
-                        <p>Black leather with gold tooling (16th cent.?).</p>
+                        <p>Black leather with gold tooling (16th century)</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1475" notBefore="1450">15th century, third quarter (c. 1450–60)</origDate>
+                     <origDate calendar="Gregorian" notAfter="1475" notBefore="1450">15th century, third quarter (<hi rend="italic">c</hi>. 1450–1460)</origDate>
                      <origPlace>
-                        <country key="place_1000080">Italian</country>, <settlement key="place_7000457">Florence</settlement>
+                        <country key="place_1000080">Italy</country>, <settlement key="place_7000457">Florence</settlement>
                         <!--ORIGINAL: Italian, Florence-->
                      </origPlace>
                   </origin>
+                  
+                  <provenance><persName key="person_24945908" role="fmo">Jacques Phillippe D'Orville of Amsterdam (1690–1751)</persName></provenance>
+                  <provenance><persName key="person_3392" role="fmo">Jean D'Orville, b. 1734</persName>, his son, by descent</provenance>
+                  <provenance><persName key="person_3393" role="fmo">Jean D'Orville</persName>, son of Jean, by descent</provenance>
+                  <provenance>Sold to the <persName key="person_3394" role="fmo">Rev. John Cleaver Banks (1765/1766–1845)</persName>: purchased from him by the Bodleian</provenance>
+                  <acquisition when="1804">Acquired by the Bodleian in 1804</acquisition>
+                  
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
+                        <source>
+                           Description adapted (January 2024) by Stewart J. Brookes from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (197o)
+                           <listBibl>                              
                               <bibl facs="aaz0151.gif" type="SC">Summary Catalogue, Vol. 4, p. 132</bibl>
                            </listBibl>
                         </source>
@@ -107,6 +156,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-01-05">Description revised to incorporate all the information in the Summary Catalogue (1897)</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">

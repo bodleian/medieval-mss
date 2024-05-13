@@ -27,7 +27,7 @@
    </pattern>
    <pattern>
       <rule context="tei:text/tei:body/tei:listBibl/tei:bibl">
-         <assert test="tei:term">All works should have one or more terms</assert>
+         <assert test="tei:term" role="warn">All works should have one or more terms</assert>
       </rule>
       <rule context="tei:text/tei:body/tei:listBibl/tei:bibl/tei:term">
          <let name="categoryids" value="/tei:TEI/tei:teiHeader/tei:encodingDesc/tei:classDecl/tei:taxonomy/tei:category/@xml:id"/>

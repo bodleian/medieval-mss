@@ -1,17 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_4173" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4173">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. D'Orville 71</title>
             <title type="collection">MSS. D'Orville</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,54 +36,89 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. D'Orville 71</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0p2676v19ff</idno><idno type="crArk">ark:29072/x0k643b1266g</idno><altIdentifier type="internal">
                      <idno type="SCN">16949</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_DOrville_71-item1">
+                     <locus>(fol. 1)</locus>
                      <author key="person_122220717">Hesiod</author>
                      <title key="work_2040">Works and days</title>
-                     <note>with scholia</note>
+                     <note>The ῍Εργα καì ῾Hμέραι, with scholia, preceded by a long introduction</note>
                      <textLang mainLang="grc">Greek</textLang>
                   </msItem>
+                  
                   <msItem n="2" xml:id="MS_DOrville_71-item2">
+                     <locus>(fol. 61v)</locus>
                      <author key="person_100181310">Pindar</author>
                      <title key="work_3685">Olympia</title>
-                     <note>with scholia</note>
+                     <note>'Πινδάρου'ολνμπιόνικαι, with a preface and scholia</note>
+                     <note>On fols 119v-120r are some notes on Greek metre</note>
                      <textLang mainLang="grc">Greek</textLang>
                   </msItem>
+                  
                   <msItem n="3" xml:id="MS_DOrville_71-item3">
+                     <locus>(fol. 121r)</locus>
                      <author key="person_95161348">Theocritus</author>
                      <title key="work_4682">Idylls</title>
-                     <note> i-viii, x.</note>
-                     <note>with scholia</note>
+                     <note>i-viii and x, with scholia, but <title>Idylls</title> iv occurs twice (fols 129v, 135r)</note>
                      <textLang mainLang="grc">Greek</textLang>
                   </msItem>
+                  
                   <msItem class="#versus" n="4" xml:id="MS_DOrville_71-item4">
+                     <locus>(fol. 144r)</locus>
                      <title key="work_13879" type="desc">Poems</title>
-                     <note>Poems written in the shapes of an altar and an axe.</note>
-                     <note>with scholia</note>
+                     <incipit>'Ολύς οΰ με λιβρòς ίρών', 'Αυδροθέα δώρον</incipit>
+                     <note>Two poems written in the shapes of an altar and an axe.</note>
+                     <note>The latter poem is ascribed to <persName role="aut" key="person_50021597">Simmias of Rhodes</persName>, with scholia</note>
+                     <note>This folio was formerly part of Vatican, BAV gr. 1824: see Guillermo Galán Vioque, 'A missing Vatican manuscript page at Oxford: Holobolus' commentary on the Ara Ionica and the Securis', <title>Byzantinische Zeitschrift</title> 102/2 (2010), 627-638</note>
                      <textLang mainLang="grc">Greek</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
+                  
+                        <extent>
+                           iii + 157 Leaves
+                           <dimensions unit="in" type="binding">
+                              <height>9</height>
+                              <width>5.875</width>
+                           </dimensions>
+                        </extent>
+                        
                      </supportDesc>
+                     
                   </objectDesc>
+                  
+                  <handDesc><handNote>In several hands</handNote></handDesc>
+                  
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1400" notBefore="1300">14th century (?)</origDate>
                   </origin>
+                  
+                  <provenance>See <ref target="https://archives.bodleian.ox.ac.uk/repositories/2/archival_objects/168836">MS. D'Orville 293</ref> for a copy, in D'Orville's hand, of <persName key="person_95302161">Nicolaas Heinsius's</persName> 
+                     edition of Theocritus, Moschus, Bion and Simmias (1604), including collation from this manuscript</provenance>
+                  <provenance><persName key="person_24945908" role="fmo">Jacques Phillippe D'Orville of Amsterdam (1690–1751)</persName></provenance>
+                  <provenance><persName key="person_3392" role="fmo">Jean D'Orville, b. 1734</persName>, his son, by descent</provenance>
+                  <provenance><persName key="person_3393" role="fmo">Jean D'Orville</persName>, son of Jean, by descent</provenance>
+                  <provenance>Sold to the <persName key="person_3394" role="fmo">Rev. John Cleaver Banks (1765/1766–1845)</persName>: purchased from him by the Bodleian</provenance>
+                  <acquisition when="1804">Acquired by the Bodleian in 1804</acquisition>
+                  
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
-                              <bibl facs="aaz0074.gif" type="SC">Summary Catalogue, Vol. 4, p. 55</bibl>
+                        <source>
+                           Description adapted (February 2024) by Stewart J. Brookes from the Summary Catalogue (1897)
+                           <listBibl> 
+                        <bibl facs="aaz0074.gif" type="SC">Summary Catalogue, Vol. 4, p. 55</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -96,6 +134,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-02-28">Description revised to incorporate all the information in the Summary Catalogue (1897)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>
