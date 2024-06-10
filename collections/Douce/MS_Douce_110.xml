@@ -1,9 +1,16 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4488">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4488">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Douce 110</title>
             <title type="collection">MSS. Douce</title>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
             <respStmt>
                <resp>Summary description</resp>
                <persName>Elizabeth Solopova</persName>
@@ -30,7 +37,9 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Douce 110</idno>
-                  <idno type="ieArk">ark:29072/x0hx11xf20m4</idno><idno type="crArk">ark:29072/x0rf55z741nc</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0hx11xf20m4</idno>
+                  <idno type="crArk">ark:29072/x0rf55z741nc</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">21684</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -64,13 +73,28 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent resp="#DD">ii + 90 fols.<dimensions unit="mm" type="leaf">
+                              <height>215</height>
+                              <width>140</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc resp="#DD">
+                        <layout writtenLines="20" columns="1">1 col., 20
+lines, <dimensions unit="mm" type="written">
+                              <height>137</height>
+                              <width>80</width>
+                           </dimensions>
+                        </layout>
+                     </layoutDesc>
                   </objectDesc>
                   <handDesc>
                      <handNote script="humanistica">Written in humanistic script by <persName key="person_65390607" role="scr"> Peter Meghen </persName> for <persName key="person_295806067" role="pat"> Christopher Urswick dean of Windsor </persName>.</handNote>
                   </handDesc>
                   <decoDesc>
-                     <summary>Imitating Flemish style. <ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 1173, pl. CVIII:</summary><decoNote type="border">Good borders. </decoNote><decoNote type="decInit">Good initials.  </decoNote>
+                     <summary>Imitating Flemish style. <ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 1173, pl. CVIII:</summary>
+                     <decoNote type="border">Good borders. </decoNote>
+                     <decoNote type="decInit">Good initials.  </decoNote>
                   </decoDesc>
                </physDesc>
                <history>
@@ -82,7 +106,8 @@
                   </origin>
                   <provenance>Written for <persName key="person_295806067" role="fmo"> Christopher Urswick dean of Windsor </persName>.</provenance>
                   <provenance>Owned in the 16th cent. by '<persName role="fmo" key="person_4850">Philipe Morice</persName>' (fol. 3).</provenance>
-                  <provenance><persName role="fmo" key="person_25551179">Michael Lort</persName>: his sale, April 1791, lot 6659 (<title>Douce Legacy</title>, no. 86).</provenance>
+                  <provenance>
+                     <persName role="fmo" key="person_25551179">Michael Lort</persName>: his sale, April 1791, lot 6659 (<title>Douce Legacy</title>, no. 86).</provenance>
                   <provenance>Owned in 1797 by <persName role="fmo" key="person_38088759">Michael Wodhull</persName>, whose arms are on the binding. Lot 359 in his sale of duplicates, 3 March 1801, bought by Cumming for 5s. 6d. (<title>Douce Legacy</title>, no. 86).</provenance>
                   <provenance notAfter="1834" notBefore="1757" resp="#MMM">
                      <persName key="person_69848690" role="fmo">Francis Douce, 1757–1834</persName>
@@ -122,6 +147,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-05">Add extent, leaf dimensions and layout from Watson, Dated and Datable.</change>
          <change when="2018-10-14" xml:id="MMM">
             <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
