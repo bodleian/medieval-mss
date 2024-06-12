@@ -1,9 +1,16 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4671">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4671">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Douce 339</title>
             <title type="collection">MSS. Douce</title>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
             <respStmt>
                <resp>Summary description</resp>
                <persName>Elizabeth Solopova</persName>
@@ -30,7 +37,9 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Douce 339</idno>
-                  <idno type="ieArk">ark:29072/x01831ck90sq</idno><idno type="crArk">ark:29072/x0db78tc4417</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x01831ck90sq</idno>
+                  <idno type="crArk">ark:29072/x0db78tc4417</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">21914</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -44,17 +53,34 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent resp="#DD">ii + 33 + ii fols.<dimensions unit="mm" type="leaf">
+                              <height>206</height>
+                              <width>235</width>
+                              <!-- sic, check -->
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc resp="#DD">
+                        <layout writtenLines="22" columns="1">1 col., 22 lines, <dimensions unit="mm" type="written">
+                              <height>170</height>
+                              <width>135</width>
+                           </dimensions>
+                        </layout>
+                     </layoutDesc>
                   </objectDesc>
                   <decoDesc>
-                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 435, pl. XLII:</summary>
+                     <summary>
+                        <ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 435, pl. XLII:</summary>
                      <decoNote type="border">Fine borders.</decoNote>
                      <decoNote type="decInit">Fine initials.</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1401" notBefore="1380" cert="high">before 1401</origDate>
+                     <origDate calendar="Gregorian"
+                               notAfter="1401"
+                               notBefore="1380"
+                               cert="high">before 1401</origDate>
                      <origPlace>
                         <country key="place_1000080">Italian</country>, <settlement key="place_7018159">Venice</settlement>
                         <!--ORIGINAL: Italian, Venice-->
@@ -89,6 +115,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-05">Add extent, leaf dimensions and layout from Watson, Dated and Datable.</change>
          <change when="2018-10-14" xml:id="MMM">
             <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>

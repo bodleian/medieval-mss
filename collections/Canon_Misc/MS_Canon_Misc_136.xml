@@ -1,9 +1,16 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_3152">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_3152">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Canon. Misc. 136</title>
             <title type="collection">MSS. Canon. Misc. (Canonici Miscellaneous)</title>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
             <respStmt>
                <resp>Summary description</resp>
                <persName>Elizabeth Solopova</persName>
@@ -30,7 +37,9 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Canon. Misc. 136</idno>
-                  <idno type="ieArk">ark:29072/x00k225c0712</idno><idno type="crArk">ark:29072/x0dr26xx773g</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x00k225c0712</idno>
+                  <idno type="crArk">ark:29072/x0dr26xx773g</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">19612</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -40,7 +49,9 @@
                      <title key="work_3086">Quadragesimale</title>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
-                  <msItem class="#christologia #devotiones" n="2" xml:id="MS_Canon_Misc_136-item2">
+                  <msItem class="#christologia #devotiones"
+                          n="2"
+                          xml:id="MS_Canon_Misc_136-item2">
                      <title key="work_15124" type="desc">Treatise on the passion</title>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
@@ -59,6 +70,9 @@
                <history>
                   <origin>
                      <origDate calendar="Gregorian" when="1433" cert="high">1433</origDate>
+                     <origPlace resp="#DD">
+                        <settlement>Passignano</settlement> &amp; <settlement>Borgo San Sepolcro</settlement>, <country key="place_1000080">Italy</country>
+                     </origPlace>
                   </origin>
                   <provenance notAfter="1805" notBefore="1727" resp="#MMM">
                      <persName key="person_2384880" role="fmo">Matteo Luigi Canonici, 1727–1805</persName>
@@ -94,6 +108,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-06">Add origin from Watson, Dated and Datable.</change>
          <change when="2018-10-14" xml:id="MMM">
             <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
