@@ -1,9 +1,16 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4626">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4626">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Douce 287</title>
             <title type="collection">MSS. Douce</title>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
             <respStmt>
                <resp>Summary description</resp>
                <persName>Elizabeth Solopova</persName>
@@ -30,7 +37,9 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Douce 287</idno>
-                  <idno type="ieArk">ark:29072/x02r36tz40hc</idno><idno type="crArk">ark:29072/x07p88ch28fj</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x02r36tz40hc</idno>
+                  <idno type="crArk">ark:29072/x07p88ch28fj</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">21861</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -67,19 +76,36 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent resp="#DD">i + 108 + ii fols.<dimensions unit="mm" type="leaf">
+                              <height quantity="188">c. 188</height>
+                              <width>130</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc resp="#DD">
+                        <layout writtenLines="36 37" columns="2">2 cols., 36-7 lines, column space <dimensions unit="mm" type="column">
+                              <height min="140" max="145">c. 140-145</height>
+                              <width min="50" max="55">50-5</width>
+                           </dimensions>
+                        </layout>
+                     </layoutDesc>
                   </objectDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1300" notBefore="1176" cert="high">after 1176</origDate>
+                     <origDate calendar="Gregorian"
+                               notAfter="1300"
+                               notBefore="1176"
+                               cert="high">after 1176</origDate>
                      <origPlace>
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
-                  <provenance type="MLGB3_provenance_evidence" source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/3581">
+                  <provenance type="MLGB3_provenance_evidence"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/3581">
                      <orgName role="fmo" key="org_167280156">Lessness Or Westwood, Kent, Augustinian abbey of St Thomas the Martyr</orgName>: 'Hic est liber ecclesie beati Thome martiris de Lesnes. Quem qui ei abstulerit aut illi super eo fraudem fecerit nisi eidem ecclesie satisfecerit plene anathema sit maranatha'. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/3581">MLGB3</ref>: evidence from an ex-libris inscription or note of gift to an institution). </provenance>
-                  <provenance type="MLGB3_laterOwners" source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/3581">'Edoardo Luidio donavit d. David Wyn rector ecclesie Lh. Vihangel Lhyn Myvyr (sc. Llanfihangel Glyn-y-Myvyr) Anno 1699.' (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/3581">MLGB3</ref>)</provenance>
+                  <provenance type="MLGB3_laterOwners"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/3581">'Edoardo Luidio donavit d. David Wyn rector ecclesie Lh. Vihangel Lhyn Myvyr (sc. Llanfihangel Glyn-y-Myvyr) Anno 1699.' (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/3581">MLGB3</ref>)</provenance>
                   <provenance notAfter="1834" notBefore="1757" resp="#MMM">
                      <persName key="person_69848690" role="fmo">Francis Douce, 1757–1834</persName>
                   </provenance>
@@ -125,6 +151,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-05">Add extent, leaf dimensions and layout from Watson, Dated and Datable.</change>
          <change when="2021-12-14">Add provenance information from MLGB3.</change>
          <change when="2018-10-14" xml:id="MMM">
             <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>

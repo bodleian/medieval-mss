@@ -1,9 +1,16 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2749">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2749">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Canon. Ital. 4</title>
             <title type="collection">MSS. Canon. Ital. (Canonici Italian)</title>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
             <respStmt>
                <resp>Summary description</resp>
                <persName>Elizabeth Solopova</persName>
@@ -30,7 +37,9 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Canon. Ital. 4</idno>
-                  <idno type="ieArk">ark:29072/x0cj82k754mv</idno><idno type="crArk">ark:29072/x05d86p1123z</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0cj82k754mv</idno>
+                  <idno type="crArk">ark:29072/x05d86p1123z</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">20056</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -52,13 +61,27 @@
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
+                        <extent resp="#DD">i + 59 + ii fols.<dimensions unit="mm" type="leaf">
+                              <height>273</height>
+                              <width>205</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc resp="#DD">
+                        <layout writtenLines="25 28" columns="2">2 cols., c. 25-8 lines, column space <dimensions unit="mm" type="column">
+                              <height min="175" max="180">175-180</height>
+                              <width min="65" max="70">65-70</width>
+                           </dimensions>
+                        </layout>
+                     </layoutDesc>
                   </objectDesc>
                   <handDesc>
                      <handNote>Written by <persName key="person_817" role="scr">Marinus Galazi</persName> (?) (erased), fol. 59v.</handNote>
                   </handDesc>
                   <decoDesc>
-                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 495, pl. XLVII:</summary><decoNote type="miniature">Fine miniatures (coloured drawings). </decoNote>
+                     <summary>
+                        <ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 495, pl. XLVII:</summary>
+                     <decoNote type="miniature">Fine miniatures (coloured drawings). </decoNote>
                   </decoDesc>
                </physDesc>
                <history>
@@ -111,6 +134,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-05">Add extent, leaf dimensions and layout from Watson, Dated and Datable.</change>
          <change when="2018-10-14" xml:id="MMM">
             <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>

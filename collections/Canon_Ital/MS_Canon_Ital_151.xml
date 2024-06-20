@@ -1,9 +1,16 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2585">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2585">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Canon. Ital. 151</title>
             <title type="collection">MSS. Canon. Ital. (Canonici Italian)</title>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
             <respStmt>
                <resp>Summary description</resp>
                <persName>Elizabeth Solopova</persName>
@@ -30,7 +37,9 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Canon. Ital. 151</idno>
-                  <idno type="ieArk">ark:29072/x0zp38wb67bv</idno><idno type="crArk">ark:29072/x0m613mx5930</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0zp38wb67bv</idno>
+                  <idno type="crArk">ark:29072/x0m613mx5930</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">20203</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -46,7 +55,19 @@
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
+                        <extent resp="#DD">264 fols.<dimensions unit="mm" type="leaf">
+                              <height>332</height>
+                              <width>235</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc resp="#DD">
+                        <layout writtenLines="52" columns="2">2 cols., 52 lines, column space <dimensions unit="mm" type="column">
+                              <height>225</height>
+                              <width min="70" max="75">70-5</width>
+                           </dimensions>
+                        </layout>
+                     </layoutDesc>
                   </objectDesc>
                   <decoDesc>
                      <decoNote type="decInit">Good initial in style of 15th century, first half (painted over penwork initial and possibly a much later fake). Written in 1461 (not 1361, watermarks are 15th century, middle) by <persName key="person_960" role="scr">Pietro di Bonaghuida di Martino</persName> 'al presente venditore in doghana di Firenze' for <persName key="person_351" role="pat">Francesco ....</persName>, partly erased inscription, fol. 264v. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 279)</decoNote>
@@ -94,6 +115,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-05">Add extent, leaf dimensions and layout from Watson, Dated and Datable.</change>
          <change when="2018-10-14" xml:id="MMM">
             <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>

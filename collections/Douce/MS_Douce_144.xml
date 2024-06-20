@@ -1,9 +1,16 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4521">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4521">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Douce 144</title>
             <title type="collection">MSS. Douce</title>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
             <respStmt>
                <resp>Summary description</resp>
                <persName>Elizabeth Solopova</persName>
@@ -30,7 +37,9 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Douce 144</idno>
-                  <idno type="ieArk">ark:29072/x0rj430402cp</idno><idno type="crArk">ark:29072/x0vq27zm90wk</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0rj430402cp</idno>
+                  <idno type="crArk">ark:29072/x0vq27zm90wk</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">21718</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -44,11 +53,23 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent resp="#DD">140 fols.<dimensions unit="mm" type="leaf">
+                              <height>216</height>
+                              <width>163</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc resp="#DD">
+                        <layout writtenLines="14" columns="1">1 col., 14 lines, <dimensions unit="mm" type="written">
+                              <height min="100" max="117">100-117</height>
+                              <width>70</width>
+                           </dimensions>
+                        </layout>
+                     </layoutDesc>
                   </objectDesc>
                   <decoDesc>
                      <summary>By at least five hands, the calendar pictures by the <persName key="person_316450919" role="art">Master of Étienne Loypeau</persName>
-                        <!-- as Maitre de Lucon -->, the full page miniatures by the <persName key="person_1524070" role="art">Boucicaut</persName> and <persName key="person_73763752" role="art">Bedford Masters</persName>, the silver-point drawings probably by one of the <persName role="art" ref="https://viaf.org/viaf/192149106324668492651">Limbourg brothers</persName>, and the marginal droleries by a minor illuminator. <ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 641, pl. XLIX-XL:</summary>
+                        <!-- as Maitre de Lucon -->, the full page miniatures by the <persName key="person_1524070" role="art">Boucicaut</persName> and <persName key="person_73763752" role="art">Bedford Masters</persName>, the silver-point drawings probably by one of the <persName key="org_192149106324668492651" role="art">Limbourg brothers</persName>, and the marginal droleries by a minor illuminator. <ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 641, pl. XLIX-XL:</summary>
                      <decoNote type="miniature">Important miniatures and drawings. </decoNote>
                      <decoNote type="border">Important borders. </decoNote>
                      <decoNote type="decInit">Important initials. </decoNote>
@@ -118,6 +139,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-05">Add extent, leaf dimensions and layout from Watson, Dated and Datable.</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2018-10-14" xml:id="MMM">
             <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
