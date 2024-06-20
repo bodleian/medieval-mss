@@ -1,4 +1,4 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4489">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4489">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -30,7 +30,9 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Douce 111</idno>
-                  <idno type="ieArk">ark:29072/x0td96k185b7</idno><idno type="crArk">ark:29072/x0rj430424zf</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0td96k185b7</idno>
+                  <idno type="crArk">ark:29072/x0rj430424zf</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">21685</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -44,7 +46,9 @@
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
-                        <support>parchment</support>
+                        <support>parchment</support><extent>i + <measure type="leaf" quantity="11">11</measure> leaves
+                           <dimensions type="binding" unit="in"><height>9</height><width>5.875</width></dimensions>
+                        </extent>
                      </supportDesc>
                   </objectDesc>
                   <decoDesc>
@@ -65,6 +69,12 @@
                         <country key="place_1000070">French</country>
                      </origPlace>
                   </origin>
+                  <provenance>
+                     <persName role="fmo" key="person_49653138">L. J. Gaignat</persName> (Douce's note ).</provenance>
+                  <provenance>
+                     <persName role="fmo" key="person_41883842">Louis César de La Baume le Blanc (1708-1780)</persName>, Duke de la Vallière (Douce's note).</provenance>
+                  <provenance>
+                     <persName role="fmo" key="person_99891587">P. A. Crevenna</persName> (<title>Douce Legacy</title>, p. 136).</provenance>
                   <provenance notAfter="1834" notBefore="1757" resp="#MMM">
                      <persName key="person_69848690" role="fmo">Francis Douce, 1757–1834</persName>
                   </provenance>
@@ -95,6 +105,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-05">Add extent and leaf dimensions from Summary Catalogue.</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2018-10-14" xml:id="MMM">
             <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>

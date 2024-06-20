@@ -1,9 +1,16 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2650">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2650">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Canon. Ital. 213</title>
             <title type="collection">MSS. Canon. Ital. (Canonici Italian)</title>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
             <respStmt>
                <resp>Summary description</resp>
                <persName>Elizabeth Solopova</persName>
@@ -30,7 +37,9 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Canon. Ital. 213</idno>
-                  <idno type="ieArk">ark:29072/x0rj4304020h</idno><idno type="crArk">ark:29072/x0tm70mt748n</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0rj4304020h</idno>
+                  <idno type="crArk">ark:29072/x0tm70mt748n</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">20265</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -44,7 +53,19 @@
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
+                        <extent resp="#DD">i+177 + ii fols.<dimensions unit="mm" type="leaf">
+                              <height>218</height>
+                              <width>145</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc resp="#DD">
+                        <layout writtenLines="32 36" columns="2">2 cols., c. 32-6 lines, column space <dimensions unit="mm" type="column">
+                              <height min="125" max="130">125-130</height>
+                              <width>40</width>
+                           </dimensions>
+                        </layout>
+                     </layoutDesc>
                   </objectDesc>
                </physDesc>
                <history>
@@ -87,6 +108,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-05">Add extent, leaf dimensions and layout from Watson, Dated and Datable.</change>
          <change when="2022-06">Revised origin with reference to Watson.</change>
          <change when="2018-10-14" xml:id="MMM">
             <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>

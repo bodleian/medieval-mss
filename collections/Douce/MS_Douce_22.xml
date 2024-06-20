@@ -1,4 +1,4 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4578">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4578">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -44,7 +44,9 @@
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
-                        <support>parchment</support>
+                        <support>parchment</support><extent>i + <measure type="leaf" quantity="115">115</measure> leaves
+                           <dimensions type="binding" unit="in"><height>5.125</height><width>3.625</width></dimensions>
+                        </extent>
                      </supportDesc>
                   </objectDesc>
                   <musicNotation>
@@ -60,6 +62,7 @@
                   </origin>
                   <provenance type="MLGB3_provenance_evidence" source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/449">
                      <orgName role="fmo" key="org_38">Bodmin, Cornwall, Benedictine (later Augustinian) priory of St Petroc</orgName> (?) : Provenance inferred from doubling of Petroc and Augustine in the litany. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/449">MLGB3</ref>: Liturgical evidence, often to be found in the kalendar). </provenance>
+                  <provenance notBefore="1500" notAfter="1600">Owned by '<persName key="person_4852" role="fmo">Rycharde Baker</persName>' and '<persName key="person_4853" role="fmo">Wyllyam Bery</persName>' in the 16th cent. (foll. 91v, 92).</provenance>
                   <provenance notAfter="1834" notBefore="1757" resp="#MMM">
                      <persName key="person_69848690" role="fmo">Francis Douce, 1757–1834</persName>
                   </provenance>
@@ -95,6 +98,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-05">Add extent and leaf dimensions from Summary Catalogue.</change>
          <change when="2021-12-14">Add provenance information from MLGB3.</change>
          <change when="2018-10-14" xml:id="MMM">
             <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>

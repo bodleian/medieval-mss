@@ -1,4 +1,4 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4670">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4670">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -30,7 +30,9 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Douce 335</idno>
-                  <idno type="ieArk">ark:29072/x0ws859d84tn</idno><idno type="crArk">ark:29072/x0d217qp943z</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0ws859d84tn</idno>
+                  <idno type="crArk">ark:29072/x0d217qp943z</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">21910</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -44,11 +46,14 @@
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
-                        <support>parchment</support>
+                        <support>parchment</support><extent>iv + <measure type="leaf" quantity="77">77</measure> leaves
+                           <dimensions type="binding" unit="in"><height>11.375</height><width>8</width></dimensions>
+                        </extent>
                      </supportDesc>
                   </objectDesc>
                   <decoDesc>
-                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 1000, pl. XCIII:</summary>
+                     <summary>
+                        <ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 1000, pl. XCIII:</summary>
                      <decoNote type="miniature">Good miniatures.</decoNote>
                      <decoNote type="histInit">Good historiated initials.</decoNote>
                      <decoNote type="flourInit"> Penwork initials.</decoNote>
@@ -66,6 +71,8 @@
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
+                  <provenance>With the armorial bookplate of '<persName role="fmo" key="person_316792878">Charles Chauncy M.D.</persName>' (d. 1777).</provenance>
+                  <provenance>Chauncy sale, April 1790; bought by Douce (<title>Douce Legacy</title>, p. 135).</provenance>
                   <provenance notAfter="1834" notBefore="1757" resp="#MMM">
                      <persName key="person_69848690" role="fmo">Francis Douce, 1757–1834</persName>
                   </provenance>
@@ -94,6 +101,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-05">Add extent and leaf dimensions from Summary Catalogue.</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2018-10-14" xml:id="MMM">
             <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>

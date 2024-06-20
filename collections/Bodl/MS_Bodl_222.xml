@@ -4,11 +4,17 @@
          <titleStmt>
             <title>MS. Bodl. 222</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1905">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -35,24 +41,39 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_Bodl_222-item1">
                      <author key="person_2060">Giambattista Binaro of Modica or Motyca (priest of the church at Sciacca in the south of Sicily) <!-- not in VIAF --></author>
                      <title key="work_1733">Commentary on the Psalms</title>
+                     <rubric>... Enarrationes in Psalmos, quas delectationis causa conscripsi... Io. Bapt. Binar. Mut. ecclesiae Saccen. antis. Anno Salutis MDLXV</rubric>
+                     <note>The author and this text are not otherwise known.</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
+                     
+                        <extent>
+                           ii + 138 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>13.125</height>
+                              <width>9.25</width>
+                           </dimensions>
+                        </extent>
+                        
                      </supportDesc>
+                     
                   </objectDesc>
+                  
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" when="1565">1565</origDate>
+                     <origDate calendar="Gregorian" when="1565" cert="high">1565</origDate>
                      <origPlace>
-                        <country key="place_1000080">Italian</country>, <region key="place_7030363">Sicily</region>
+                        <country key="place_1000080">Italy</country>, <region key="place_7030363">Sicily</region>
                         <!--ORIGINAL: Italian, Sicily-->
                      </origPlace>
                   </origin>
@@ -61,12 +82,14 @@
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1905). <listBibl>
+                           Description adapted (April 2024) by Stewart J. Brookes from the Summary Catalogue (1905)
+                           <listBibl>   
                               <bibl facs="aam0347.gif" type="SC">Summary Catalogue, vol. 5, p. 312</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
+                  
                   <listBibl type="WRAPPER">
                      <listBibl type="PRINT">
                         <head>Printed descriptions:</head>
@@ -75,10 +98,49 @@
                      </listBibl>
                   </listBibl>
                </additional>
+               
+               <msPart xml:id="Bodl_222_flyleaves">
+                  <msIdentifier>
+                     <altIdentifier>
+                        <idno>MS. Bodl. 222, flyleaves</idno> 
+                     </altIdentifier> 
+                  </msIdentifier>
+                  <msContents>
+                     
+                     <msItem>
+                        <title key="work_10641" type="desc">Fragment of a Breviary</title>
+                        
+                        <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="perg">
+                           <support>Parchment</support>
+                        </supportDesc>
+                        
+                     </objectDesc>
+                     
+                  </physDesc>
+                  <history>
+                     
+                     <origin>
+                        
+                        <origDate notAfter="1400" notBefore="1300" calendar="Gregorian">14th century</origDate>
+                        <origPlace><country key="place_1000080">Italy</country></origPlace>
+                        
+                     </origin>
+                     
+                  </history>
+               </msPart>
+               
             </msDesc>
          </sourceDesc>
+    
       </fileDesc>
       <revisionDesc>
+         <change when="2024-04-08">Description revised to incorporate all the information in the Summary Catalogue (1905)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>

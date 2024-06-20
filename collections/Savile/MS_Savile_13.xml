@@ -1,13 +1,18 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8810">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8810">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Savile 13</title>
             <title type="collection">MSS. Savile</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            <respStmt xml:id="SC">
+               <resp when="1937">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>N. Denholm-Young</persName>
+            </respStmt>
+            <respStmt xml:id="SJB">
+               <resp when="2023">Encoding</resp>
+               <persName>Stewart Brookes</persName>
             </respStmt>
          </titleStmt>
          <publicationStmt>
@@ -30,7 +35,9 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Savile 13</idno>
-                  <idno type="ieArk">ark:29072/x01v53jx90wx</idno><idno type="crArk">ark:29072/x03n204013mb</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x01v53jx90wx</idno>
+                  <idno type="crArk">ark:29072/x03n204013mb</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">6560</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -38,42 +45,78 @@
                   <msItem n="1" xml:id="MS_Savile_13-item1">
                      <author key="person_176184097">Euclid</author>
                      <title key="work_1480">Elementa</title>
-                     <note>books 1–15</note>
+                     <rubric>Εύκλείδου στοιχείων πρω̑τον</rubric>
+                     <note>The 1st book of Euclid's Elements of Geometry, followed by the 2nd to the
+                        15th books: the last two leaves injured.</note>
+                     <note>There are diagrams and scholia. </note>
                      <textLang mainLang="grc">Greek</textLang>
                   </msItem>
+                  
                   <msItem n="2" xml:id="MS_Savile_13-item2">
+                     <locus>(fols. 2-3</locus>
                      <author key="person_98118283">Joannes Philoponus</author>
                      <title key="work_2442">Scholia on Aristotle, Analytica priora</title>
+                     <rubric>Φιλοπόνου σχόλια εις τα' πρότερα τω̑ν δευτέρων α'ναλυτικω̑ν
+                        Άριστοτελους</rubric>
+                     <note>Cf. fol. 314, in parts damaged, ending with a circle of the winds.</note>
                      <bibl type="commentedOn">
                         <author key="person_7524651">Aristotle</author>
                         <title/>
                      </bibl>
                      <textLang mainLang="grc">Greek</textLang>
                   </msItem>
+                  <msItem>
+                     <note>Fol. iv bears a Greek note which appears to be dated A.D. 1335.</note>
+                     <textLang mainLang="grc">Greek</textLang>
+                  </msItem>
+                  <msItem>
+                     <note> Latin 15th-cent. notes written in Italy are on fol. 315.</note>
+                     <textLang mainLang="la">Latin</textLang>
+                  </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
+
+                        <extent> 315 leaves <dimensions unit="in" type="binding">
+                              <height>10.125</height>
+                              <width>7</width>
+                           </dimensions>
+                        </extent>
+
+                        <condition>In parts damaged</condition>
+
                      </supportDesc>
+
                   </objectDesc>
+                  <decoDesc>
+                     <decoNote type="diagram">Diagrams.</decoNote>
+                  </decoDesc>
                   <bindingDesc>
                      <binding notBefore="1400" notAfter="1500">
-                        <p>Brown stamped leather on boards, worn, with bosses (except one) and clasps
-         lost, 15th-cent. work.</p>
+                        <p>Brown stamped leather on boards, worn, with bosses (except one) and
+                           clasps lost, 15th-century work</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1400" notBefore="1300">14th century (?)</origDate>
+                     <origDate calendar="Gregorian" notAfter="1400" notBefore="1300">14th century
+                        (?)</origDate>
                   </origin>
+                  <provenance>In Italy in the 15th century (see above).</provenance>
+                  <provenance><persName role="fmo" key="person_100218411">Henry Savile (d. 1622)</persName></provenance>
+                  <provenance>Bequeathed by <persName role="fmo" key="person_860159248596504870003">Dr Peter Turner</persName>, who died in January 1650/1651</provenance>
+                  <acquisition when="1680">About 1680 it was 'challenged by Dr Wallis' and carried off to the Savilian library.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
-                              <bibl facs="aaq0460.gif" type="SC">Summary Catalogue, Vol. 2 Part 2, p. 1101</bibl>
+                        <source> Description adapted (December 2023) by Stewart J. Brookes from the
+                           Summary Catalogue (1937) <listBibl>
+                              <bibl facs="aaq0460.gif" type="SC">Summary Catalogue, Vol. 2 Part 2,
+                                 p. 1101</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -93,10 +136,14 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2023-12-12">Description revised to incorporate all the information in the
+            Summary Catalogue (1937)</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
-            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+            <persName>James Cummings</persName> Up-converted the markup using <ref
+               target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl"
+               >https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>
       </revisionDesc>
    </teiHeader>
