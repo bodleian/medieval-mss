@@ -4,11 +4,23 @@
          <titleStmt>
             <title>MS. Rawl. G. 116</title>
             <title type="collection">MSS. Rawl. G. (Rawlinson G)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1895">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -35,41 +47,69 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_Rawl_G_116-item1">
+                     <locus>(fol. 3)</locus>
                      <author key="person_246763674">Claudian</author>
                      <title key="work_1283">In Rufinum</title>
+                     <rubric>Claudii Claudiani in Ruffinum liber primus [&amp;c.] incipit</rubric>
+                     <note>2 books, with a prologue to the first</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                   <msItem n="2" xml:id="MS_Rawl_G_116-item2">
+                     <locus>(fol. 31)</locus>
                      <author key="person_246763674">Claudian</author>
                      <title key="work_1282">De raptu Proserpinae</title>
+                     <rubric>Claudii Claudiani de Raptu Proserpinae liber primus [&amp;c.] incipit</rubric>
+                     <note>3 books, with a preface to each</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        
+                        <extent source="SC">i + <measure type="leaf" quantity="68">68
+                        </measure> leaves
+                           <dimensions type="binding" unit="in">
+                              <height>5.5</height>
+                              <width>3.5</width>
+                           </dimensions>
+                        </extent>
+                        
                      </supportDesc>
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote type="flourInit">Good penwork initials added in the 16th century, first half, at <placeName key="place_7004474">Naples</placeName> (?). (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 1013)</decoNote>
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 1013
+                     </summary>
+                  <decoNote type="flourInit">Good penwork initials added in the 16th century, first half, at <placeName key="place_7004474">Naples</placeName> (?)</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1500" notBefore="1450">15th century, second half</origDate>
                      <origPlace>
-                        <country key="place_1000080">Italian</country>
+                        <country key="place_1000080">Italy</country>
                      </origPlace>
                   </origin>
+                  
+                  <provenance>'<persName role="fmo">Paulus Franciscus Nuptius</persName> inter suos habuit die 3 mensis Martij 1640.'
+                  </provenance>
+                  
+                  <!-- Add authority record -->                  
+
                   <provenance notAfter="1755" notBefore="1690" resp="#MMM"><persName key="person_47563478" role="fmo">Richard Rawlinson, 1690–1755</persName></provenance>
                   <acquisition resp="#MMM" when="1755">Bequeathed to the Bodleian in 1755</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1895). Decoration, localization and date follow Pächt and Alexander (1970). <listBibl>
+                        <source>
+                           Description adapted (July 2024) by Stewart J. Brookes from the Summary Catalogue (1895). Decoration, localization and date follow Pächt and Alexander (1970)
+                           <listBibl>
                               <bibl facs="aas0378.gif" type="SC">Summary Catalogue, Vol. 3, p. 363</bibl>
                            </listBibl>
                         </source>
@@ -80,6 +120,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-07-05">Description revised to incorporate all the information in the Summary Catalogue (1895)</change>
          <change when="2019-10-31" xml:id="MMM"><persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
