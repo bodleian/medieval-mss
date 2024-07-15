@@ -4,11 +4,23 @@
          <titleStmt>
             <title>MS. Rawl. G. 161</title>
             <title type="collection">MSS. Rawl. G. (Rawlinson G)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1895">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1966">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -35,20 +47,62 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem class="#biblia" n="1" xml:id="MS_Rawl_G_161-item1">
                      <title key="work_10455" type="desc">Bible</title>
+                     <note>With prologues</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
+                  <msItem n="2" xml:id="MS_Rawl_G_161-item2">
+                     <locus>(fol. 507)</locus>
+                     <author key="person_95147024">Jerome</author>
+                     <title key="work_2427">Liber interpretationis hebraicorum nominum</title>
+                     <rubric>Incipiunt Interpretaciones nominum Hebraicorum tocius Biblie</rubric>
+                     <note>As far as 'Senaab'</note>
+                     <textLang mainLang="la">Latin</textLang>
+                  </msItem>
+
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        
+                        <extent source="SC">i + <measure type="leaf" quantity="537">537</measure> leaves
+                           <dimensions type="binding" unit="in">
+                              <height>13.375</height>
+                              <width>10</width>
+                           </dimensions>
+                        </extent>
+                        
+                        <condition>Imperfect at end. Fol. 180 is torn</condition>
+                        
                      </supportDesc>
+                     
+                     <layoutDesc>
+                        <layout columns="2">2 cols
+                        </layout>
+                     </layoutDesc>
+                     
                   </objectDesc>
-                  <decoDesc>
-                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 151, pl. X:</summary>
-                     <decoNote type="border">Fine borders.</decoNote><decoNote type="histInit"> Fine historiated initials. </decoNote><decoNote type="decInit">Fine other initials. </decoNote>
+                  
+                  <handDesc>
+                     <handNote>
+                        The illumination is Italian, but the writing apparently French   
+                  </handNote>
+                  </handDesc>
+                  
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 151, Pl. X
+                     </summary>
+                     <decoNote>Decoration related to that by <persName role="art">Heinrich Aurhaym</persName> in <ref target="https://kdih.badw.de/datenbank/handschrift/35/0/2?css=a%5Bhref%24%3D%22/reg/5713%22%5D%20%7Bbackground%3A%23ffffa0%7D">Klosterneuburg, Stiftsbibliothek, MS. 4</ref></decoNote>
+                     
+                  <!-- Add authority record -->                  
+
+                     <decoNote type="border">Fine borders</decoNote>
+                     <decoNote type="histInit"><ref target="https://babel.hathitrust.org/cgi/pt?id=uc1.32106006446410&amp;seq=140&amp;q1=Aurenhaym">Fine historiated initials</ref></decoNote>
+                     <decoNote type="decInit">Fine other initials</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
@@ -58,13 +112,18 @@
                         <country key="place_1000062">Austria</country>
                      </origPlace>
                   </origin>
+                  
+                  <provenance>On fol. 507: 'Explicit liber Biblie per manus [?] Vene Anno Domini Mºcccºlxxxxixº die vltima mensis Aprilis.' The mention of 'Vene' may possibly represent 'Venetiis'</provenance>
+                  
                   <provenance notAfter="1755" notBefore="1690" resp="#MMM"><persName key="person_47563478" role="fmo">Richard Rawlinson, 1690–1755</persName></provenance>
                   <acquisition resp="#MMM" when="1755">Bequeathed to the Bodleian in 1755</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1895). Decoration, localization and date follow Pächt and Alexander (1966). <listBibl>
+                        <source>
+                           Description adapted (July 2024) by Stewart J. Brookes from the Summary Catalogue (1895). Decoration, localization and date follow Pächt and Alexander (1966)
+                           <listBibl>
                               <bibl facs="aas0385.gif" type="SC">Summary Catalogue, Vol. 3, p. 370</bibl>
                               <bibl facs="aas0386.gif" type="SC">Summary Catalogue, Vol. 3, p. 371</bibl>
                            </listBibl>
@@ -76,6 +135,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-07-08">Description revised to incorporate all the information in the Summary Catalogue (1895)</change>
          <change when="2019-10-31" xml:id="MMM"><persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>

@@ -4,11 +4,23 @@
          <titleStmt>
             <title>MS. Rawl. G. 166</title>
             <title type="collection">MSS. Rawl. G. (Rawlinson G)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1895">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1966">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -35,43 +47,86 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_Rawl_G_166-item1">
                      <author key="person_264344179">Thomas Aquinas</author>
-                     <title key="work_4753">Catena aurea on Gospels of Saints Matthew and Mark</title>
+                     <title key="work_4753">Catena aurea on Gospel of Matthew</title>
                      <bibl type="commentedOn">
                         <title>Bible, Matthew</title>
                      </bibl>
+                     <textLang mainLang="la">Latin</textLang>
+                  </msItem>
+                  
+                  <msItem n="2" xml:id="MS_Rawl_G_166-item2">
+                     <locus>(fol. 195)</locus>
+                     <author key="person_264344179">Thomas Aquinas</author>
+                     <title key="work_4753">Catena aurea on Gospel of Mark</title>
                      <bibl type="commentedOn">
                         <title>Bible, Mark</title>
                      </bibl>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        
+                        <extent source="SC">i + <measure type="leaf" quantity="266">266</measure> leaves
+                           <dimensions type="binding" unit="in">
+                              <height>14.5</height>
+                              <width>10.5</width>
+                           </dimensions>
+                        </extent>
+                        
                      </supportDesc>
+
+                     <layoutDesc>
+                        <layout columns="2">2 cols
+                        </layout>
+                     </layoutDesc>
+                     
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote type="flourInit">Good penwork initial, 14th century, middle (replacement, fols. 1–28). Fols. 29r-193v perhaps not English. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 643)
+                  
+                  <handDesc>
+                     <handNote>Fols 1-28 are in an earlier hand than the rest of the volume. The Gospel of Mark is in a different hand from that of Matthew</handNote>
+                  </handDesc>
+                  
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 643
+                     </summary>
+                     
+                     <decoNote type="flourInit">Good penwork initial, 14th century, middle (replacement, fols 1–28). Fols 29r-193v perhaps not of English origin
                      </decoNote>
+                  
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1400" notBefore="1300">14th century</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
+                  
+                  <provenance>'Sum <persName role="fmo">Roberti Woode</persName> aldermanni Norwici et amicorum' (17th century)</provenance>
+                  
+                  <!-- Add authority record -->                  
+
+                  <provenance>Owned by <persName role="fmo">Robert Sadler</persName> in 1683 (fol. 4v)</provenance>
+                  
+                  <!-- Add authority record -->                  
+
                   <provenance notAfter="1755" notBefore="1690" resp="#MMM"><persName key="person_47563478" role="fmo">Richard Rawlinson, 1690–1755</persName></provenance>
                   <acquisition resp="#MMM" when="1755">Bequeathed to the Bodleian in 1755</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1895). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
+                        <source>
+                           Description adapted (July 2024) by Stewart J. Brookes from the Summary Catalogue (1895). Decoration, localization and date follow Pächt and Alexander (1966)
+                           <listBibl>
                               <bibl facs="aas0387.gif" type="SC">Summary Catalogue, Vol. 3, p. 372</bibl>
                            </listBibl>
                         </source>
@@ -82,6 +137,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-07-12">Description revised to incorporate all the information in the Summary Catalogue (1895)</change>
          <change when="2019-10-31" xml:id="MMM"><persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
