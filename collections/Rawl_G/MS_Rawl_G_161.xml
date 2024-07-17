@@ -10,6 +10,11 @@
                <persName>Falconer Madan</persName>
             </respStmt>
             
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
+            
             <respStmt xml:id="PA">
                <resp when="1966">Cataloguer</resp>
                <persName>Otto Pächt</persName>
@@ -46,7 +51,7 @@
                      <idno type="SCN">14885</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <msContents resp="#SC">
                   
                   <msItem class="#biblia" n="1" xml:id="MS_Rawl_G_161-item1">
                      <title key="work_10455" type="desc">Bible</title>
@@ -64,56 +69,59 @@
                   </msItem>
 
                </msContents>
-               <physDesc>
+               <physDesc resp="#DD">
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
                         
-                        <extent source="SC">i + <measure type="leaf" quantity="537">537</measure> leaves
-                           <dimensions type="binding" unit="in">
+                        <extent source="SC">i + <measure type="leaf" quantity="536">536</measure> + i leaves
+                           <dimensions unit="mm" type="leaf">
+                              <height>335</height>
+                              <width>240</width>
+                           </dimensions>
+                           <dimensions type="binding" unit="in" resp="#SC">
                               <height>13.375</height>
                               <width>10</width>
                            </dimensions>
                         </extent>
                         
-                        <condition>Imperfect at end. Fol. 180 is torn</condition>
+                        <condition resp="#SC">Imperfect at end. Fol. 180 is torn</condition>
                         
                      </supportDesc>
                      
                      <layoutDesc>
-                        <layout columns="2">2 cols
+                        <layout columns="2" writtenLines="50">Fols. 1-506: 2 cols, 50 lines, column space <dimensions unit="mm" type="column">
+                           <height max="235" min="230">230-5</height>
+                           <width>65</width>
+                        </dimensions>
                         </layout>
+                        <layout columns="3" writtenLines="50">Fols. 507-536: 3 cols., 50 lines, column space <dimensions unit="mm" type="column">
+                           <height min="230" max="235">230-5</height>
+                           <width>43</width>
+                        </dimensions> </layout>
                      </layoutDesc>
                      
                   </objectDesc>
                   
-                  <handDesc>
-                     <handNote>
-                        The illumination is Italian, but the writing apparently French   
-                  </handNote>
-                  </handDesc>
-                  
                   <decoDesc resp="#PA">
                      <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 151, Pl. X
                      </summary>
-                     <decoNote>Decoration related to that by <persName role="art">Heinrich Aurhaym</persName> in <ref target="https://kdih.badw.de/datenbank/handschrift/35/0/2?css=a%5Bhref%24%3D%22/reg/5713%22%5D%20%7Bbackground%3A%23ffffa0%7D">Klosterneuburg, Stiftsbibliothek, MS. 4</ref></decoNote>
+                     <decoNote>Decoration related to that by <persName role="art" key="person_88909350">Heinrich Aurhaym</persName> in <ref target="https://kdih.badw.de/datenbank/handschrift/35/0/2?css=a%5Bhref%24%3D%22/reg/5713%22%5D%20%7Bbackground%3A%23ffffa0%7D">Klosterneuburg, Stiftsbibliothek, MS. 4</ref></decoNote>
                      
-                  <!-- Add authority record -->                  
 
                      <decoNote type="border">Fine borders</decoNote>
                      <decoNote type="histInit"><ref target="https://babel.hathitrust.org/cgi/pt?id=uc1.32106006446410&amp;seq=140&amp;q1=Aurenhaym">Fine historiated initials</ref></decoNote>
                      <decoNote type="decInit">Fine other initials</decoNote>
                   </decoDesc>
                </physDesc>
-               <history>
+               <history resp="#DD">
                   <origin>
-                     <origDate calendar="Gregorian" when="1399">1399</origDate>
+                     <origDate calendar="Gregorian" when="1399" cert="high">1399</origDate>
                      <origPlace>
                         <country key="place_1000062">Austria</country>
                      </origPlace>
                   </origin>
-                  <!-- TODO: check Watson D&D -->
-                  <provenance>On fol. 507: 'Explicit liber Biblie per manus [?] Vene Anno Domini Mºcccºlxxxxixº die vltima mensis Aprilis.' The mention of 'Vene' may possibly represent 'Venetiis'</provenance>
+                  <provenance>On fol. 507: 'Explicit liber Biblie per manus Vene Anno Domini Mºcccºlxxxxixº die vltima mensis Aprilis.'  Fols. 507-536v are in the same hand, probably written at the same time.</provenance>
                   
                   <provenance notAfter="1755" notBefore="1690" resp="#MMM"><persName key="person_47563478" role="fmo">Richard Rawlinson, 1690–1755</persName></provenance>
                   <acquisition resp="#MMM" when="1755">Bequeathed to the Bodleian in 1755</acquisition>
@@ -122,7 +130,12 @@
                   <adminInfo>
                      <recordHist>
                         <source>
-                           Description adapted (July 2024) by Stewart J. Brookes from the Summary Catalogue (1895). Decoration, localization and date follow Pächt and Alexander (1966)
+                           Description adapted (July 2024) by Stewart J. Brookes from the following sources. 
+                           <listBibl>
+                              <bibl>A. G. Watson, <title>Catalogue of Dated and Datable Manuscripts in Oxford Libraries</title> (1984), no. 685</bibl>
+                              <bibl>Pächt and Alexander (1966)</bibl>
+                              <bibl>Summary Catalogue (1895)</bibl>
+                           </listBibl>
                            <listBibl>
                               <bibl facs="aas0385.gif" type="SC">Summary Catalogue, Vol. 3, p. 370</bibl>
                               <bibl facs="aas0386.gif" type="SC">Summary Catalogue, Vol. 3, p. 371</bibl>
@@ -135,7 +148,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
-         <change when="2024-07-08">Description revised to incorporate all the information in the Summary Catalogue (1895)</change>
+         <change when="2024-07-08">Description revised to incorporate all information in printed catalogues.</change>
          <change when="2019-10-31" xml:id="MMM"><persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
