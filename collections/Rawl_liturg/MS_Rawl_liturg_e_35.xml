@@ -1,13 +1,26 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8666">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8666">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Rawl. liturg. e. 35</title>
             <title type="collection">MSS. Rawl. liturg. (Rawlinson liturgical)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2024">Encoding</resp>
                <persName>Matthew Holford</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1966">Cataloguer</resp>
+               <persName>Otto Paecht</persName>
+               <persName>J. J. G. Alexander</persName>
             </respStmt>
          </titleStmt>
          <publicationStmt>
@@ -30,13 +43,45 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Rawl. liturg. e. 35</idno>
-                  <idno type="ieArk">ark:29072/x04t64gp1395</idno><idno type="crArk">ark:29072/x04q77fs3009</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x04t64gp1395</idno>
+                  <idno type="crArk">ark:29072/x04q77fs3009</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">30678</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem class="#liturgica" n="1" xml:id="MS_Rawl_liturg_e_35-item1">
+                  <msItem class="#liturgica" xml:id="MS_Rawl_liturg_e_35-item1">
                      <title key="work_10551" type="desc">Book of Hours, Use of Paris</title>
+                     <msItem>
+                        <note>Kalendar in French (fol. 1), a saint for each date</note>
+                     </msItem>
+                     <msItem>
+                        <note>Pericopes from the gospels (fol. 13)</note>
+                     </msItem>
+                     <msItem>
+                        <note>Obsecro te (fol. 17)</note>
+                     </msItem>
+                     <msItem>
+                        <note>Fifteen Joys (fol. 21), Quicumque vult (fol. 25v), and Seven Requests
+                           (fol. 26), all in French</note>
+                     </msItem>
+                     <msItem>
+                        <note>Commemorations (fol. 29v)</note>
+                     </msItem>
+                     <msItem>
+                        <note>Office of the Virgin (fol. 32)</note>
+                     </msItem>
+                     <msItem>
+                        <note>Offices of the Cross (fol. 80) and the Holy Ghost (fol. 83v)</note>
+                     </msItem>
+                     <msItem>
+                        <note>Penitential Psalms (fol. 88) with litany (fol. 100)</note>
+                     </msItem>
+                     <msItem>
+                        <note>Roman office of the dead (fol. 105v). Additions: notes and
+                           instructions on the hearing of mass (fols. 134, 147) in French</note>
+                     </msItem>
+                    
                      <textLang mainLang="la" otherLangs="frm">Latin, Middle French</textLang>
                   </msItem>
                </msContents>
@@ -44,11 +89,26 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent> 1 + 149 (=fol. 151) + 2 fol.<dimensions type="leaf" unit="mm">
+                           <height>288</height>
+                           <width>140</width>
+                        </dimensions>
+                           <dimensions type="written" unit="mm">
+                              <height>105</height>
+                              <width>74</width>
+                           </dimensions>
+                        </extent>
+                       
                      </supportDesc>
+                     <layoutDesc>
+                           <layout columns="1" writtenLines="15">15 long lines</layout>
+                        </layoutDesc>
                   </objectDesc>
                   <decoDesc>
-                     <summary>School of the <persName key="person_15561332" role="art">Master of Jouvenel des Oursins</persName>. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 716)
-                     </summary>
+                     <summary>School of the <persName key="person_15561332" role="art">Master of
+                           Jouvenel des Oursins</persName>. (<ref
+                           target="https://catalog.hathitrust.org/Record/000468709">Pächt and
+                              Alexander</ref> i. 716) Half-page miniatures, illuminated initials and borders at the beginning of the main parts of the original book and of the Hours of the Lady office.</summary>
                      <decoNote type="miniature">Good miniatures. </decoNote>
                      <decoNote type="border">Good borders. </decoNote>
                      <decoNote type="decInit">Good initials. </decoNote>
@@ -56,7 +116,7 @@
                   <bindingDesc>
                      <binding notBefore="1600" notAfter="1700">
                         <p>Dark leather with gold ornament and stamp of the Crucifixion on each side
-         with 'P. Menard' and S. Crassot' above, French 17th cent. work.</p>
+                           with 'P. Menard' and S. Crassot' above, French 17th cent. work.</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
@@ -64,51 +124,76 @@
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1464">before 1464</origDate>
                      <origPlace>
-                        <country key="place_1000070">French</country>, <settlement key="place_7008323">Tours</settlement>
+                        <country key="place_1000070">French</country>, <settlement
+                           key="place_7008323">Tours</settlement>
                         <!--ORIGINAL: French, Tours-->
                      </origPlace>
                   </origin>
+                  <provenance> On fol.147 ‘maitre Jaques dep solempnes maistre en theologie’ is mentioned.</provenance>
+                  <provenance> In the binding (fol. 151v) are French notes of the children of mr. Pellier, born 1464-8.</provenance>
+                  <provenance>Apparently bound for 'P[ierre] Menard' of Tours and 'S. Crassot' (17th cent.), see above.</provenance>
                   <provenance notAfter="1755" notBefore="1690" resp="#MMM">
-                     <persName key="person_47563478" role="fmo">Richard Rawlinson, 1690–1755</persName>
+                     <persName key="person_47563478" role="fmo">Richard Rawlinson,
+                        1690–1755</persName> (?)
                   </provenance>
-                  <acquisition resp="#MMM" when="1755">Bequeathed to the Bodleian in 1755</acquisition>
+                  
+                  <acquisition notAfter="1888">Referenced in the Rawlinson collection about 1888 but lacking direct evidence of belonging to the collection.</acquisition>
+                  
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1895). Decoration, localization and date follow Pächt and Alexander (1966). <listBibl>
-                              <bibl facs="aam0904.gif" type="SC">Summary Catalogue, Vol. 5, p. 867</bibl>
+                        <source>Adapted (July 2024) from the following sources: 
+                           <listBibl><bibl>Pächt and Alexander (1966)</bibl>
+                           <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian
+                              Library, Oxford, vol. 4: Books of Hours</title> (typescript, 1957),
+                              <citedRange unit="page" from="95" to="95">p. 95</citedRange>
+                           </bibl>
+                          <bibl>Summary Catalogue (1895).</bibl></listBibl>
+                           <listBibl>
+                              <bibl facs="aam0904.gif" type="SC">Summary Catalogue, Vol. 5, p.
+                                 867</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
                   <surrogates>
                      <bibl subtype="partial" type="digital-facsimile">
-                        <ref target="https://digital.bodleian.ox.ac.uk/objects/035c36cc-4d17-4c5d-80c8-ee47a421a9dc/">
+                        <ref
+                           target="https://digital.bodleian.ox.ac.uk/objects/035c36cc-4d17-4c5d-80c8-ee47a421a9dc/">
                            <title>Digital Bodleian</title>
                         </ref>
                         <note>(1 image from 35mm slides)</note>
                      </bibl>
                   </surrogates>
-                  <listBibl type="WRAPPER">
+                <!--  <listBibl type="WRAPPER">
                      <listBibl type="PRINT">
                         <head>Printed descriptions:</head>
-                        <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 4: Books of Hours</title> (typescript, 1957), <citedRange unit="page" from="95" to="95">p. 95</citedRange>
+                        <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian
+                              Library, Oxford, vol. 4: Books of Hours</title> (typescript, 1957),
+                              <citedRange unit="page" from="95" to="95">p. 95</citedRange>
                         </bibl>
                      </listBibl>
-                  </listBibl>
+                  </listBibl>-->
                </additional>
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-07">Incorporate all information from printed descriptions.</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2019-10-31" xml:id="MMM">
-            <persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
+            <persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and
+            acquisition information added using <ref
+               target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb"
+               >https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref>
+            in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping
+               Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
-            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+            <persName>James Cummings</persName> Up-converted the markup using <ref
+               target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl"
+               >https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>
       </revisionDesc>
    </teiHeader>

@@ -4,11 +4,17 @@
          <titleStmt>
             <title>MS. Rawl. G. 125</title>
             <title type="collection">MSS. Rawl. G. (Rawlinson G)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1895">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -35,34 +41,70 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem class="#biblia" n="1" xml:id="MS_Rawl_G_125-item1">
                      <title key="work_10455" type="desc">Bible</title>
+                     <!--<rubric>Fratres ambrosius</rubric>
+                     <incipit>tua michi munuscula perfere<ex>n</ex>s detulit</incipit>-->
+                     <note>With prologues</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
+                  <msItem n="2" xml:id="MS_Rawl_G_125-item2">
+                     <locus>(fol. 449)</locus>
+                  <author key="person_7385506">Stephen Langton</author>
+                  <title key="work_4622">Interpretaciones nominum hebraicorum</title>
+                   <!--  <rubric>Hic Int<ex>er</ex>pretac<ex>io</ex>nes hebraícor<ex>um</ex> nomínum p<ex>er</ex> .a. litemj.</rubric>-->
+                     <textLang mainLang="la">Latin</textLang>
+                  </msItem>
+
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        
+                        <extent source="SC">i + <measure type="leaf" quantity="489">489</measure> leaves
+                           <dimensions type="binding" unit="in">
+                              <height>9.375</height>
+                              <width>7</width>
+                           </dimensions>
+                        </extent>
+                     
                      </supportDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote type="colInit">Coloured initials.
+                     <decoNote type="flourInit">Decorative initials (e.g. fol. 439v and fols 415v-416r)
                      </decoNote>
+                     <decoNote type="colInit">Coloured initials</decoNote>
+                     <decoNote type="drawing">With some later sketches (e.g. of a monk on fol. 447r and a face drawn between the columns on fol. 446v)</decoNote>
                   </decoDesc>
                   <bindingDesc>
                      <binding notBefore="1700" notAfter="1800">
-                        <p>Red leather with gold tooling (18th cent.).</p>
+                        <p>Red leather with gold tooling (18th century)</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" when="1300">c. 1300</origDate>
+                     <origDate calendar="Gregorian" notBefore="1290" notAfter="1310"><hi rend="italic">c</hi>. 1300</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
+                  
+                  <provenance>
+                     Fol. 1r: 'Su<ex>m</ex> <persName role="fmo" key="person_4951">Arthuri Darcei</persName>' (16th century?)
+                     
+                  <!-- Add authority record -->
+                  </provenance>
+                  
+                  <provenance>
+                     '<persName key="person_4952" role="sgn">T. B.</persName>, 1751.' written on the front cover in ink
+                  </provenance>
+                  
+                  <!-- is that just a reference to the library or is likely to be a person? -->
+                  
                   <provenance notAfter="1755" notBefore="1690" resp="#MMM">
                      <persName key="person_47563478" role="fmo">Richard Rawlinson, 1690–1755</persName>
                   </provenance>
@@ -72,7 +114,8 @@
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1895). <listBibl>
+                           Description adapted (July 2024) by Stewart J. Brookes from the Summary Catalogue (1895) with additional description of decoration.
+                           <listBibl>
                               <bibl facs="aas0379.gif" type="SC">Summary Catalogue, Vol. 3, p. 364</bibl>
                            </listBibl>
                         </source>
@@ -83,6 +126,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-07-22">Description revised to incorporate all the information in the Summary Catalogue (1895)</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2019-10-31" xml:id="MMM">
             <persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>

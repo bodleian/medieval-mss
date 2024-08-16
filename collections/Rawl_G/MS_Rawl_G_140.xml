@@ -4,11 +4,23 @@
          <titleStmt>
             <title>MS. Rawl. G. 140</title>
             <title type="collection">MSS. Rawl. G. (Rawlinson G)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1895">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -35,44 +47,70 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_Rawl_G_140-item1">
+                     <locus>(fol. 1)</locus>
                      <author key="person_104162705">Sallust</author>
                      <title key="work_4480">Catilina</title>
+                     <rubric>... Crispi Salustij De coniuratione Catiline</rubric>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                   <msItem n="2" xml:id="MS_Rawl_G_140-item2">
+                     <locus>(fol. 33</locus>
                      <author key="person_104162705">Sallust</author>
                      <title key="work_4482">Jugurtha</title>
+                     <rubric>... eiusdem de bello gesto... cum Iugurtha rege Numidarum</rubric>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
+                        
+                        <extent source="SC">v + <measure type="leaf" quantity="99">99</measure> leaves
+                           <dimensions type="binding" unit="in">
+                              <height>12.5</height>
+                              <width>9</width>
+                           </dimensions>
+                        </extent>
+                        
                      </supportDesc>
                   </objectDesc>
+                  
                   <handDesc>
-                     <handNote script="humanistica">Humanistic script.</handNote>
+                     <handNote script="humanistica">Humanistic script (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 659)</handNote>
                   </handDesc>
-                  <decoDesc>
-                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 659</summary>
-                     <decoNote type="border">Good historiated border. </decoNote><decoNote type="decInit">Good initial.  </decoNote>
+                  
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 659
+                     </summary>
+                     <decoNote type="border">Good historiated border</decoNote>
+                     <decoNote type="decInit">Good initial</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1450" notBefore="1425">15th century, second quarter</origDate>
                      <origPlace cert="low">
-                        <country key="place_1000080">Italian</country>, <settlement key="place_7004847">Bologna</settlement> (?)<!--ORIGINAL: Italian, Bologna (?)--></origPlace>
+                        <country key="place_1000080">Italy</country>, <settlement key="place_7004847">Bologna</settlement> (?)<!--ORIGINAL: Italian, Bologna (?)--></origPlace>
                   </origin>
+                  
+                  <provenance>Arms, fol. 1: <heraldry>argent (?) a horse sable bridled gules, in sinister chief an escalop sable</heraldry> 
+                  </provenance>
+                  <provenance>'Pertinet Francisco de Busleyden liber iste' (16th century), fol. iv [<persName role="fmo" key="person_100577675">François de Busleyden, d. 1502</persName> (?)]</provenance>
+
                   <provenance notAfter="1755" notBefore="1690" resp="#MMM"><persName key="person_47563478" role="fmo">Richard Rawlinson, 1690–1755</persName></provenance>
                   <acquisition resp="#MMM" when="1755">Bequeathed to the Bodleian in 1755</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1895). Decoration, localization and date follow Pächt and Alexander (1970). <listBibl>
+                        <source>
+                           Description adapted (July 2024) by Stewart J. Brookes from the Summary Catalogue (1895). Decoration, localization and date follow Pächt and Alexander (1966)
+                           <listBibl>
                               <bibl facs="aas0383.gif" type="SC">Summary Catalogue, Vol. 3, p. 368</bibl>
                            </listBibl>
                         </source>
@@ -83,6 +121,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-07-08">Description revised to incorporate all the information in the Summary Catalogue (1895)</change>
          <change when="2019-10-31" xml:id="MMM"><persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
