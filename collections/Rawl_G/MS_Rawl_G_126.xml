@@ -4,11 +4,23 @@
          <titleStmt>
             <title>MS. Rawl. G. 126</title>
             <title type="collection">MSS. Rawl. G. (Rawlinson G)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1895">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -35,23 +47,50 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem class="#biblia" n="1" xml:id="MS_Rawl_G_126-item1">
                      <title key="work_10455" type="desc">Bible</title>
+                     <explicit>Explicit Bibliotheca</explicit>
+                     <note>With prologues</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
+                  <msItem n="2" xml:id="MS_Rawl_G_126-item2">
+                     <locus>(fol. 493)</locus>
+                     <author key="person_7385506">Stephen Langton</author>
+                     <title key="work_4622">Interpretaciones nominum hebraicorum</title>
+                     <rubric>Interpretationes hebraycorum nominum</rubric>
+                     <textLang mainLang="la">Latin</textLang>
+                  </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        
+                        <extent source="SC">iii + <measure type="leaf" quantity="539">539</measure> leaves
+                           <dimensions type="binding" unit="in">
+                              <height>10</height>
+                              <width>7</width>
+                           </dimensions>
+                        </extent>
+                        
                      </supportDesc>
                   </objectDesc>
+                  
                   <handDesc>
-                     <handNote> 'Iste Bibliotheca finita est ... a <persName key="person_1006" role="scr">Ricardulo de Samforde</persName>', fol. 536v.</handNote>
+                     <handNote>'Iste Bibliotheca finita est ... a <persName key="person_1006" role="scr">Ricardulo de Samforde</persName>', fol. 536v 
+                        (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 495)</handNote>
                   </handDesc>
-                  <decoDesc>
-                     <summary>(<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 495, pl. XLIX:</summary>
-                     <decoNote type="border">Good borders. </decoNote><decoNote type="histInit">Good historiated initials. </decoNote><decoNote type="decInit">Good other initials. 
+              
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 495, Pl. XLIX
+                     </summary>
+                     
+                     <decoNote type="border">Good borders</decoNote>
+                     <decoNote type="histInit"><ref target="https://digital.bodleian.ox.ac.uk/objects/40f8bc1e-aaea-4c25-aaa9-3b0c14f33274/surfaces/098bb052-3644-426b-ae02-0ab0e3a53918/">Good historiated initials</ref></decoNote>
+                     <decoNote type="decInit">Good other initials 
                      </decoNote>
                   </decoDesc>
                </physDesc>
@@ -59,16 +98,20 @@
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1300" notBefore="1290">13th century, end</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
+                  
+                  <provenance>'Ista Bibliotheca finita est in die Sanctorum Fabiani &amp; Sebastiani [January 20] a <persName key="person_1006" role="scr">Ricardulo de Samforde</persName>', fol. 536v</provenance>
                   <provenance notAfter="1755" notBefore="1690" resp="#MMM"><persName key="person_47563478" role="fmo">Richard Rawlinson, 1690–1755</persName></provenance>
                   <acquisition resp="#MMM" when="1755">Bequeathed to the Bodleian in 1755</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1895). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
+                        <source>
+                           Description adapted (July 2024) by Stewart J. Brookes from the Summary Catalogue (1895). Decoration, localization and date follow Pächt and Alexander (1973)
+                           <listBibl>
                               <bibl facs="aas0379.gif" type="SC">Summary Catalogue, Vol. 3, p. 364</bibl>
                            </listBibl>
                         </source>
@@ -81,6 +124,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-07-12">Description revised to incorporate all the information in the Summary Catalogue (1895)</change>
          <change when="2019-10-31" xml:id="MMM"><persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
