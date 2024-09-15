@@ -1,9 +1,16 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_911">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_911">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Barlow 47</title>
             <title type="collection">MSS. Barlow</title>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
             <respStmt>
                <resp>Summary description</resp>
                <persName>Elizabeth Solopova</persName>
@@ -30,7 +37,9 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Barlow 47</idno>
-                  <idno type="ieArk">ark:29072/x08c97kq89d9</idno><idno type="crArk">ark:29072/x06h440t2851</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x08c97kq89d9</idno>
+                  <idno type="crArk">ark:29072/x06h440t2851</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">6489</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -45,7 +54,19 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent resp="#VD"> 24 + 147 + 3 fol.<dimensions type="leaf" unit="mm">
+                              <height>108</height>
+                              <width>78</width>
+                           </dimensions>
+                           <dimensions type="written" unit="mm">
+                              <height>60</height>
+                              <width>35</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc resp="#VD">
+                        <layout columns="1" writtenLines="16">16 lines</layout>
+                     </layoutDesc>
                   </objectDesc>
                   <bindingDesc>
                      <binding>
@@ -101,6 +122,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-09">Add extent, leaf dimensions and layout from van Dijk, Latin Liturgical Manuscripts in the Bodleian Library, Oxford.</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2019-10-31" xml:id="MMM">
             <persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
