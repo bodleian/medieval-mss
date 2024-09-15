@@ -1,9 +1,16 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6549">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6549">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Lat. liturg. f. 9</title>
             <title type="collection">MSS. Lat. liturg. (Latin liturgical)</title>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
             <respStmt>
                <resp>Summary description</resp>
                <persName>Elizabeth Solopova</persName>
@@ -30,12 +37,29 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Lat. liturg. f. 9</idno>
-                  <idno type="ieArk">ark:29072/x0dj52w5115v</idno><idno type="crArk">ark:29072/x0df65v827vs</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0dj52w5115v</idno>
+                  <idno type="crArk">ark:29072/x0df65v827vs</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">31537</idno>
                   </altIdentifier>
                </msIdentifier>
                <physDesc>
                   <p n="composite">fols. 1–78 and 123–143 || fols. 79–122</p>
+                  <objectDesc>
+                     <supportDesc><extent resp="#DD">141 fols.<dimensions unit="mm" type="leaf">
+                        <height>130</height>
+                        <width>95</width>
+                     </dimensions>
+                     </extent></supportDesc>
+                     <layoutDesc resp="#DD">
+                        <layout writtenLines="15" columns="1">1 col., 15
+                           lines, <dimensions unit="mm" type="written">
+                              <height>58</height>
+                              <width>45</width>
+                           </dimensions>
+                        </layout>
+                     </layoutDesc>
+                  </objectDesc>
                </physDesc>
                <additional>
                   <adminInfo>
@@ -92,7 +116,8 @@
                         </supportDesc>
                      </objectDesc>
                      <decoDesc>
-                        <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 659:</summary>
+                        <summary>
+                           <ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 659:</summary>
                         <decoNote type="border">Fine borders.</decoNote>
                         <decoNote type="histInit">Fine historiated initial, fol. 60.</decoNote>
                         <decoNote type="decInit">Fine other initials.</decoNote>
@@ -144,6 +169,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-09">Add extent, leaf dimensions and layout from Watson, Dated and Datable.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
