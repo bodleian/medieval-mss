@@ -4,11 +4,23 @@
          <titleStmt>
             <title>MS. Douce 73</title>
             <title type="collection">MSS. Douce</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -40,6 +52,12 @@
                   <msItem n="1" xml:id="MS_Douce_73-item1">
                      <author key="person_2357">Christoforo Barzizza of Brescia<!-- in VIAF not sure if same person --></author>
                      <title key="work_1233">Montyriana collatio</title>
+                     <rubric>Christophori Barzizii Montyriana collatio ... 
+                        ad clarissimum virum Jo. Franciscum Æmilium, equitem conspicuum ac civilis Pontificiique juris consultum
+                     </rubric>
+                     <note>With a preface by Johannes Britannicus to Thomas Aemilius, besides Barzizius's own preface</note>
+                     <incipit>Quam multa saepe mortalibus eveniunt</incipit>
+                     <incipit>Collocutores, Jo. Franciscus: Christophorus. Videntur mihi humanæ omnes scientiæ initio cum ipso homine fuisse</incipit>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -54,20 +72,23 @@
                   <handDesc>
                      <handNote script="humanistica">Humanistic script</handNote>
                   </handDesc>
-                  <decoDesc>
-                     <summary>
-                        <ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 1052, pl. LXXXV:</summary>
-                     <decoNote type="border">Fine border.  </decoNote>
-                     <decoNote type="decInit">Fine initials.  </decoNote>
+                  
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 1052, Pl. LXXXV
+                     </summary>
+                     
+                     <decoNote type="border">Fine border</decoNote>
+                     <decoNote type="decInit">Fine initials</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1510" notBefore="1500">16th century, beginning</origDate>
                      <origPlace cert="low">
-                        <country key="place_1000080">Italian</country> or <country key="place_1000070">French</country> (?)</origPlace>
+                        <country key="place_1000080">Italy</country> or <country key="place_1000070">France</country> (?)</origPlace>
                   </origin>
-                  <provenance> On fol. 4 are the arms, party per pale, on the dexter side or an eagle displayed sable langued gules, dimidiated, on the sinister side party per bend or and gules a bend sable.</provenance>
+                  <provenance>On fol. 4 are the arms, party per pale, on the dexter side or an eagle displayed sable langued gules, dimidiated, on the sinister side party 
+                     per bend or and gules a bend sable (Amizo, Padua, and Venice (?)).</provenance>
                   <provenance notAfter="1834" notBefore="1757" resp="#MMM">
                      <persName key="person_69848690" role="fmo">Francis Douce, 1757–1834</persName>
                   </provenance>
@@ -76,10 +97,21 @@
                <additional>
                   <adminInfo>
                      <recordHist>
+                        
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1970). <listBibl>
+                           Description adapted (August 2024) by Stewart J. Brookes from the Summary Catalogue (1897) and the Catalogue of the Printed Books and Manuscripts Bequeathed by Francis Douce, esq. to the Bodleian Library (1840). 
+                           Decoration, localization and date follow Pächt and Alexander (1970)
+                           <listBibl>
+                              
                               <bibl facs="aaz0531.gif" type="SC">Summary Catalogue, vol. 4, p. 512</bibl>
                            </listBibl>
+                           
+                           <listBibl>
+                              <bibl>
+                                 <ref target="https://archive.org/details/catalogueofprint00bodluoft/page/9/mode/1up">Catalogue of the Printed Books and Manuscripts Bequeathed by Francis Douce, esq. to the Bodleian Library, p. 9</ref>
+                              </bibl>
+                           </listBibl>
+                           
                         </source>
                      </recordHist>
                   </adminInfo>
@@ -88,6 +120,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-08-30">Description revised to incorporate all the information in the Summary Catalogue (1897)</change>
          <change when="2024-05">Add extent and leaf dimensions from Summary Catalogue.</change>
          <change when="2018-10-14" xml:id="MMM">
             <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
