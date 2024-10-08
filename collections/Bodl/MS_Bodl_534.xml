@@ -1,12 +1,17 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1557">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1557">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Bodl. 534</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2024">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -30,12 +35,23 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Bodl. 534</idno>
-                  <idno type="ieArk">ark:29072/x0j098zb2634</idno><idno type="crArk">ark:29072/x0hx11xf42sb</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0j098zb2634</idno>
+                  <idno type="crArk">ark:29072/x0hx11xf42sb</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">2252</idno>
                   </altIdentifier>
                </msIdentifier>
                <physDesc>
                   <p n="composite">Composite: four parts</p>
+                  <objectDesc>
+                     <supportDesc>
+                        <extent>ii + 75 leaves
+                        <dimensions type="binding" unit="in">
+                           <height>8</height>
+                           <width>6.125</width>
+                        </dimensions></extent>
+                     </supportDesc>
+                  </objectDesc>
                   <bindingDesc>
                      <binding notBefore="1600" notAfter="1700">
                         <p>Stamped leather on older boards, Oxford early 17th cent. work.</p>
@@ -43,23 +59,27 @@
                   </bindingDesc>
                </physDesc>
                <history>
-                  <acquisition when="1603">This appears to be the only MS. which corresponds to 'Regulæ Spirituales
-                     [error for pastorales?] Gregorij. 8. [i.e. octavo] MS.', presented by <persName role="dnr" key="person_2966">sir
-                        Richard Fermor</persName> in 1603: this MS. was certainly in the Library not later than
-                     1605.</acquisition>
+                  <acquisition when="1603">This appears to be the only MS. which corresponds to
+                     'Regulæ Spirituales [error for pastorales?] Gregorij. 8. [i.e. octavo] MS.',
+                     presented by <persName role="dnr" key="person_2966">sir Richard
+                        Fermor</persName> in 1603: this MS. was certainly in the Library not later
+                     than 1605.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). <listBibl>
-                              <bibl facs="aap0300.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 279</bibl>
-                              <bibl facs="aap0301.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 280</bibl>
+                           Description adapted (2024) from the Summary Catalogue (1922). <listBibl>
+                              <bibl facs="aap0300.gif" type="SC">Summary Catalogue, vol. 2, part 1,
+                                 p. 279</bibl>
+                              <bibl facs="aap0301.gif" type="SC">Summary Catalogue, vol. 2, part 1,
+                                 p. 280</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
                </additional>
+
                <msPart xml:id="MS_Bodl_534-part1">
                   <msIdentifier>
                      <altIdentifier type="partial">
@@ -67,9 +87,16 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
+
                      <msItem class="#virtutes_et_vitia" n="1" xml:id="MS_Bodl_534-part1-item1">
-                        <title key="work_15167" type="desc">Treatise on the seven deadly sins</title>
-                        <note>(<persName key="person_47" role="aut">Alexander of Stainsby</persName>, De septem criminibus (?))</note>
+                        <locus>(fol. 1)</locus>
+                        <title key="work_15167" type="desc">Treatise on the seven deadly sins and on
+                           the penance appropriate to particular sins</title>
+                        <incipit>Septem sunt criminalia peccata</incipit>
+                        <incipit>Cum penitentia consistat in tribus</incipit>
+                        <note>Imperfect at end.</note>
+                        <note>(<persName key="person_47" role="aut">Alexander of
+                           Stainsby</persName>, De septem criminibus (?))</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                   </msContents>
@@ -80,12 +107,13 @@
                         </supportDesc>
                      </objectDesc>
                      <decoDesc>
-                        <decoNote>Illuminated capitals.</decoNote>
+                        <decoNote type="flourInit">Illuminated capitals.</decoNote>
                      </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1300" notBefore="1200">13th century</origDate>
+                        <origDate calendar="Gregorian" notAfter="1300" notBefore="1200">13th
+                           century</origDate>
                         <origPlace>
                            <country key="place_7002445">English</country>
                         </origPlace>
@@ -100,9 +128,15 @@
                   </msIdentifier>
                   <msContents>
                      <msItem class="#theologica" n="1" xml:id="MS_Bodl_534-part2-item1">
+                        <locus from="9">(fol. 9)</locus>
                         <title key="work_15273" type="desc">Theological manual</title>
                         <note>(imperfect)</note>
-                        <note>(<persName key="person_47" role="aut">Alexander of Stainsby</persName>, De confessionibus (?))</note>
+                        <note>Part of a short theological manual (or Summa theologica) treating of
+                           penance, the Decalogue, casual sins, etc.: imperfect at beginning (beg.
+                           'satisfaccio, &amp; quelibet istorum est penitentia') and unfinished at
+                           end. On fol. 20v is 'precium iiis &amp; iiijd'.</note>
+                        <note>(<persName key="person_47" role="aut">Alexander of
+                           Stainsby</persName>, De confessionibus (?))</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                   </msContents>
@@ -115,7 +149,8 @@
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1300" notBefore="1200">13th century</origDate>
+                        <origDate calendar="Gregorian" notAfter="1300" notBefore="1200">13th
+                           century</origDate>
                         <origPlace>
                            <country key="place_7002445">English</country>
                         </origPlace>
@@ -129,12 +164,25 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem n="1" xml:id="MS_Bodl_534-part3-item1">
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem n="3" xml:id="MS_Bodl_534-item-3">
+                        <locus from="21">(fol. 21)</locus>
                         <author key="person_100184667">Gregory the Great</author>
                         <title key="work_1862">De cura pastorali</title>
                         <note>(incomplete)</note>
-                        <textLang mainLang="la">Latin</textLang>
+                        <rubric>... Regule pastorals Gregorii pape urbis Rome scripte ad Iohannem
+                           episcopum Rauenne vrbis</rubric>
+                        <note>The first three parts of the Pastorale and part of the short 4th part,
+                           preceded by a list of chapters: the text ends, a leaf being lost,
+                           'sollicitus infirmitatis tue'.</note>
                      </msItem>
+                     <msItem xml:id="MS_Bodl_534-item-3a"><locus>(fols. 56-7) </locus>
+                        <title type="desc" key="work_15014">Dictamen</title>
+                        <note>Two leaves containing some formulae
+                           epistolarum, under the headings narrationes, petitiones, conclusiones,
+                           and salutationes.</note>
+                     </msItem>
+
                   </msContents>
                   <physDesc>
                      <objectDesc form="codex">
@@ -143,12 +191,13 @@
                         </supportDesc>
                      </objectDesc>
                      <decoDesc>
-                        <decoNote>Illuminated capitals.</decoNote>
+                        <decoNote type="flourInit">Illuminated capitals.</decoNote>
                      </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1300" notBefore="1200">13th century</origDate>
+                        <origDate calendar="Gregorian" notAfter="1300" notBefore="1200">13th
+                           century</origDate>
                         <origPlace>
                            <country key="place_7002445">English</country>
                         </origPlace>
@@ -162,15 +211,34 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem n="1" xml:id="MS_Bodl_534-part4-item1">
+                     <textLang mainLang="la">Latin</textLang>
+
+
+
+
+                     <msItem n="4" xml:id="MS_Bodl_534-item-4">
+                        <locus from="58">(fol. 58)</locus>
                         <author key="person_7386286">Ps.-Augustine</author>
                         <title key="work_3880">De spiritu et anima</title>
-                        <textLang mainLang="la">Latin</textLang>
+                        <note>The shorter form ending 'aliud non sit quam racio', with a list of
+                           chapters. </note>
+                     </msItem>
+                     <msItem xml:id="MS_Bodl_534-item-4a">
+                        <locus>(fol. 70)</locus>
+                        <rubric>Sermo beati Augustini de caritate</rubric>
+                        <incipit>Diuinarum scripturarum</incipit>
+                     </msItem>
+                     <msItem xml:id="MS_Bodl_534-item-4b">
+                        <note>Then in a different hand some theological notes.</note>
                      </msItem>
                      <msItem n="2" xml:id="MS_Bodl_534-part4-item2">
+                        <locus>(fol. 71v) </locus>
                         <author key="person_306415749">Ps.-Bernard</author>
                         <title key="work_3952">Meditationes piissimae</title>
                         <note>(part)</note>
+                        <rubric>Meditaciones beati Bernardi</rubric>
+                        <note>The three first chapters of the De Cognitione humanae conditionis,
+                           ending 'laruales facies tortorum</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                   </msContents>
@@ -179,17 +247,50 @@
                         <supportDesc material="perg">
                            <support>parchment</support>
                         </supportDesc>
+                        <layoutDesc>
+                           <layout columns="2">2 cols.</layout>
+                        </layoutDesc>
                      </objectDesc>
                      <decoDesc>
-                        <decoNote>Illuminated capitals.</decoNote>
+                        <decoNote type="flourInit">Illuminated capitals.</decoNote>
                      </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1300" notBefore="1200">13th century</origDate>
+                        <origDate calendar="Gregorian" notAfter="1300" notBefore="1200">13th
+                           century</origDate>
                         <origPlace>
                            <country key="place_7002445">English</country>
                         </origPlace>
+                     </origin>
+                  </history>
+               </msPart>
+               <msPart xml:id="MS_Bodl_534-endleaves" type="fragment">
+                  <msIdentifier>
+                     <altIdentifier type="partial">
+                        <idno type="part">MS. Bodl. 534 - endleaves (fols. i-ii, 74-5)</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  <msContents>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem xml:id="MS_Bodl_534-item-">
+                        <title type="desc" key="work_11036">Civil law</title>
+                     </msItem>
+
+
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="perg">
+                           <support>parchment</support>
+                           <extent>two leaves</extent>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+                  <history>
+                     <origin>
+                        <origDate calendar="Gregorian" notAfter="1300" notBefore="1200">13th
+                           century</origDate>
                      </origin>
                   </history>
                </msPart>
@@ -197,11 +298,14 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-09">Description revised to incorporate all information from Summary Catalogue.</change>
          <change when="2023-05">Add provenance information from Summary Catalogue.</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
-            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+            <persName>James Cummings</persName> Up-converted the markup using <ref
+               target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl"
+               >https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>
       </revisionDesc>
    </teiHeader>
