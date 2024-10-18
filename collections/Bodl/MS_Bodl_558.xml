@@ -1,12 +1,17 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1577">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1577">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Bodl. 558</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2024">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -30,52 +35,105 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Bodl. 558</idno>
-                  <idno type="ieArk">ark:29072/x0nz805z58h2</idno><idno type="crArk">ark:29072/x0nv9352756f</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0nz805z58h2</idno>
+                  <idno type="crArk">ark:29072/x0nv9352756f</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">2342</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem n="1" xml:id="MS_Bodl_558-item1">
+                  <textLang mainLang="la">Latin</textLang>
+                  <msItem  xml:id="MS_Bodl_558-item1">
                      <author key="person_64002165">Boccaccio</author>
                      <title key="work_1095">Bucolicum carmen</title>
-                     <textLang mainLang="la">Latin</textLang>
+                     <rubric>Johannis Boccaccij de Certaldo comitatus Florentie poete eximij
+                        Bucolicum carmen incipit</rubric>
                   </msItem>
-                  <msItem n="2" xml:id="MS_Bodl_558-item2">
+                  <msItem xml:id="MS_Bodl_558-item1b">
+                     <locus>(fol. 58v)</locus>
                      <author key="person_64002165">Boccaccio</author>
-                     <title key="work_1102">Epistle to Petrarch</title>
-                     <textLang mainLang="la">Latin</textLang>
+                     <title key="work_1102">Epitaph (Carm. 10)</title>
+                     <rubric>Epytaphium</rubric>
+                     <incipit>Conspicuj sub mole iacent</incipit>
+                  </msItem>
+                  <msItem xml:id="MS_Bodl_558-item1c">
+                     <locus>(fol. 59)</locus>
+                     <author key="person_64002165">Boccaccio</author>
+                     <title key="work_5487">Ep. 23, to Martino da Signa</title>
+                     <rubric> Epistola per ipsum dominum Johannem poetam eximium transmissa ...
+                        Reuerendo viro fratri Martino de Signa ordinis Heremitarum ... </rubric>
+                     <colophon>Scriptum per
+                        ser Dominicum Siluestricum cui reddatur</colophon>
+                     <note>This is an account or summary of the Eclogues.</note>
+                  </msItem>
+                  <msItem xml:id="MS_Bodl_558-item1d">
+                     <locus>(fol. 63)</locus>
+                     <note>A few verses by the scribe, ser Dominicus</note>
+                     <incipit>Hunc michi qui scripsi librum</incipit>
+                  </msItem>
+                  <msItem  xml:id="MS_Bodl_558-item2">
+                     <locus>(fol. 63v)</locus>
+                     <author key="person_64002165">Boccaccio</author>
+                     <title key="work_1102">Carm. 9 (Versus ad Africam, on Petrarch's Africa)</title>
+                     <rubric>Versus dominj Johannis Boccacci ad Affricam domini Francisci</rubric>
+                     <incipit>Italie sublimis honor</incipit>
                   </msItem>
                   <msItem class="#historica #miscellanea" n="3" xml:id="MS_Bodl_558-item3">
-                     <title key="work_13527" type="desc">Notes on <persName key="person_39382430">Petrarch</persName>'s tomb and his Eclogues</title>
-                     <textLang mainLang="la">Latin</textLang>
+                     <note> On fols. 67-79 are additions, apparently by the same scribe </note>
+                     <msItem>
+                        <author key="person_39382430">Petrarch</author>
+                        <title key="work_5486">Itinerarium breve de Ianua usque ad Ierusalem et Terram sanctam</title>
+                        <rubric> Itinerarium ad sepulcrum domini Francisci Petrarce</rubric><incipit>Raro
+                           admodum spei nostre rerum exitus respondet</incipit>
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 77v)</locus>
+                        <author key="person_59443057">Donato Albanzani (attrib.)</author>
+                        <title key="work_5488">Epithomata super eclogis Petrarchae </title>
+                        <rubric> Intentiones Eglogarum Francisci Petrarce</rubric><note>An account and
+                           summary of them .</note>
+                     </msItem>
+                     <!--<title key="work_13527" type="desc">Notes on <persName key="person_39382430"
+                           >Petrarch</persName>'s tomb and his Eclogues</title>-->
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
-                        <support>parchment</support>
+                        <support>parchment (many leaves are palimpsest; foll, ii, iii, are from a Latin <title type="desc" key="work_10207">antiphoner</title>, 13th
+                           cent., written in Italy)</support>
+                        <extent>iii + 81 leaves
+                        <dimensions type="binding" unit="in">
+                           <height>9.625</height>
+                           <width>6.75</width>
+                        </dimensions></extent>
                      </supportDesc>
                   </objectDesc>
+                  <handDesc>
+                     <handNote>Written by <persName role="scr" key="person_2914160364945763680005">Domenico Silvestri</persName>: Brunetti et al. 2008, pp. 289-99, with plates.</handNote>
+                  </handDesc>
                   <decoDesc>
-                     <decoNote>Coloured capitals.</decoNote>
+                     <decoNote type="colInit">Coloured capitals.</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
+                     <origDate calendar="Gregorian" notAfter="1400" notBefore="1390">14th century, late</origDate>
                      <origPlace>
-                        <country key="place_1000080">Italian</country>
-                     </origPlace>
+                        <country key="place_1000080">Italy</country>, presumably <settlement key="place_7000457">Florence</settlement>
+                     </origPlace> (see Brunetti et al.)
                   </origin>
-                  <provenance notAfter="1500" notBefore="1400">'Mej <persName key="person_3833" role="sgn">Bartolomej ser Dominicj</persName>', 15th cent. (fol. 79v).</provenance>
-                  <acquisition when="1602"> Acquired about
-                     1602.</acquisition>
+                  <provenance notAfter="1500" notBefore="1400">'Mej <persName key="person_3833"
+                        role="sgn">Bartolomej ser Dominicj</persName>' [i.e., the son of the scribe], 15th cent. (fol.
+                     79v).</provenance>
+                  <acquisition when="1602"> Acquired about 1602.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). <listBibl>
-                              <bibl facs="aap0339.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 318</bibl>
+                        <source>Description adpated from the Summary Catalogue (1922) with additional reference to published literature as cited. <listBibl>
+                              <bibl facs="aap0339.gif" type="SC">Summary Catalogue, vol. 2, part 1,
+                                 p. 318</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -85,8 +143,12 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-10">Description revised to incorporate all information from Summary Catalogue with reference to published literature.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using
+               <ref
+               target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl"
+               >https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>
    </teiHeader>
    <text>
