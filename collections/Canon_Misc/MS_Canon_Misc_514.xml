@@ -1,9 +1,16 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_3556">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_3556">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Canon. Misc. 514</title>
             <title type="collection">MSS. Canon. Misc. (Canonici Miscellaneous)</title>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
             <respStmt>
                <resp>Summary description</resp>
                <persName>Elizabeth Solopova</persName>
@@ -34,7 +41,9 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Canon. Misc. 514</idno>
-                  <idno type="ieArk">ark:29072/x0mw22v519ms</idno><idno type="crArk">ark:29072/x0sx61dk9168</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0mw22v519ms</idno>
+                  <idno type="crArk">ark:29072/x0sx61dk9168</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">19990</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -53,7 +62,19 @@
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
+                        <extent resp="#DD"> 236 + iii fols.<dimensions unit="mm" type="leaf">
+                              <height>334</height>
+                              <width>235</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc resp="#DD">
+                        <layout writtenLines="60 65" columns="2">2 cols., c. 60-5 lines, column space <dimensions unit="mm" type="column">
+                              <height>240</height>
+                              <width min="65" max="70">65-70</width>
+                           </dimensions>
+                        </layout>
+                     </layoutDesc>
                   </objectDesc>
                   <handDesc>
                      <handNote> Written by <persName key="person_799" role="scr">Magister Johannes de Villegas</persName> 'in collegio domus Sabinensis' whilst studying at Bologna in 1472, fol. 236. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 665)</handNote>
@@ -111,6 +132,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-09">Add extent, leaf dimensions and layout from Watson, Dated and Datable.</change>
          <change when="2020-09-14">Binding description added.</change>
          <change when="2018-10-14" xml:id="MMM">
             <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
