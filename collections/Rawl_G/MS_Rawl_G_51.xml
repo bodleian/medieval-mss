@@ -1,17 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_8587" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8587">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Rawl. G. 51</title>
             <title type="collection">MSS. Rawl. G. (Rawlinson G)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1895">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,11 +36,12 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Rawl. G. 51</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0pc289h930n</idno><idno type="crArk">ark:29072/x0p8418n09pv</idno><altIdentifier type="internal">
                      <idno type="SCN">14782</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_Rawl_G_51-item1">
                      <author key="person_40174477">Paulus Diaconus</author>
                      <title key="work_3462">Epitome of Sextus Pompeius Festus, De significatione uerborum</title>
@@ -47,29 +51,50 @@
                      </bibl>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
+                  
+               <extent source="SC">i + <measure type="leaf" quantity="84">84</measure> leaves
+                  <dimensions type="binding" unit="in">
+                     <height>8.375</height>
+                     <width>5.625</width>
+                  </dimensions>
+               </extent>
+                        
                      </supportDesc>
                   </objectDesc>
+
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1500" notBefore="1490">15th century, late</origDate>
                      <origPlace>
-                        <country key="place_1000080">Italian</country>
+                        <country key="place_1000080">Italy</country>
                      </origPlace>
                   </origin>
+                  
+                  <provenance>On fol. 1 '<persName role="sgn"><unclear>Othinilij</unclear></persName> sum' (16th century)</provenance>
+                  
+                  <!-- Add authority record -->     
+                  
+                  <provenance>
+                     No. 912 in the <persName role="fmo" key="person_1203">Thomas Rawlinson</persName> sale, 4 March 1733/1734
+                  </provenance>
+                  
                   <provenance notAfter="1755" notBefore="1690" resp="#MMM"><persName key="person_47563478" role="fmo">Richard Rawlinson, 1690–1755</persName></provenance>
                   <acquisition resp="#MMM" when="1755">Bequeathed to the Bodleian in 1755</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1895). <listBibl>
-                              <bibl facs="aas0367.gif" type="SC">Summary Catalogue, Vol. 3, p. 352</bibl>
+                        <source>
+                           Description adapted (July 2024) by Stewart J. Brookes from the Summary Catalogue (1895)
+                           <listBibl>
+                        <bibl facs="aas0367.gif" type="SC">Summary Catalogue, Vol. 3, p. 352</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -79,6 +104,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-07-08">Description revised to incorporate all the information in the Summary Catalogue (1895)</change>
          <change when="2019-10-31" xml:id="MMM"><persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>

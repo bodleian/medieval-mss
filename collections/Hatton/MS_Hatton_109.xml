@@ -1,15 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6037">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Hatton 109</title>
             <title type="collection">MSS. Hatton</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="SC">
+               <resp when="1937">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+               <persName>N. Denholm-Young</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2024">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -33,17 +36,65 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Hatton 109</idno>
+                  <idno type="ieArk">ark:29072/x01c18dg970b</idno>
+                  <idno type="crArk">ark:29072/x01831cm13pd</idno>
                   <altIdentifier type="internal">
                      <idno type="SCN">4049</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                
                   <msItem n="1" xml:id="MS_Hatton_109-item1">
-                     <title key="work_14746">Statutes of England</title>
+                     <locus> (fol. 7)</locus>
+                     <title key="work_14739">Statutes of England, vetera statuta, selection</title>
+                     <note>(fol. 7) 'Communes dies in banco'; (fol. 7) 'Communes dies de dote':
+                        (foll. 8, 13v) Statute of Circumspecte agatis, 1285: (fol. 8) 'Responsiones
+                        domini regis Anglie super articulis propositis ex parte prelatorum', 1280:
+                        (fol. 14v) sentence of excommunication passed upon transgressors of the
+                        Forest Charter, 1283, with the rubric 'Sentencia lata de foresta'.</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                   <msItem n="2" xml:id="MS_Hatton_109-item2">
+                     <locus>(fol. 17)</locus>
                      <title key="work_11347">Constitutions of Church councils</title>
+                     <msItem>
+                        <note>'<title key="work_11363">Constitutiones Octoboni</title>', 1268, with the omission of artt. 6 and
+                           47</note>
+                     </msItem>
+                     <msItem>
+                        <note>(foll. 46, 56v) '<title key="work_11366">Constitutiones domini Stephani quondam Cantuar:
+                           archiepiscopi apud Oxon: edite</title>', 1222 </note>
+                     </msItem>
+                     <msItem>
+                        <note>(fol. 55) 'Constitutiones episcoporum tocius Anglie apud Merton
+                           edite', 1305, incomplete </note>
+                     </msItem>
+                     <msItem>
+                        <note> (fol. 62v) 'Hec sunt sentencie quater in anno in sancta ecclesia
+                           publicande'</note></msItem><msItem><note>(fol. 64v) 'Statutum domini regis Circumspecte agatis', 1285
+                        </note>
+                     </msItem>
+                     <msItem>
+                        <note> (fol. 65v) '<title key="work_11362">Constitutiones Otonis</title>', 1237 </note>
+                     </msItem>
+                     <msItem>
+                        <note> (fol. 76v) '<title key="work_11365">Articuli editi per dominum Symonem [Mepham]
+                           Archiepiscopum Cant:</title>', 1328 </note>
+                     </msItem>
+                     <msItem>
+                        <note> (fol. 80) 'Constitutiones de Lambyhd', 1261 </note>
+                     </msItem>
+                     <msItem>
+                        <note> (fol. 91*) minor constitutions of archbishop John Pecham and pope
+                           Martin v </note>
+                     </msItem>
+                     <msItem>
+                        <note> (fol. 92v) 'Constitutiones domini Johannis de Stratford, Cant:
+                           archiepiscopi', 1342.</note>
+                     </msItem>
+                     <note>A table of the incipits and rubrics of the chapters of the Constitutions
+                        of Ottobon has been added in a 15th-cent. hand at fol. 106, and there are a
+                        few 15th-cent. <title type="desc" key="work_14973">canon-law notes</title> on foll. 1 and 2v.</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -51,6 +102,12 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent source="SC"><measure type="leaf" quantity="111">111</measure>
+                           leaves, in double columns <dimensions type="binding" unit="in">
+                              <height>5.75</height>
+                              <width>3 .875</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
                   </objectDesc>
                   <decoDesc>
@@ -59,25 +116,37 @@
                   <bindingDesc>
                      <binding contemporary="true">
                         <p>Red leather on boards, with portion of strap, contemporary English
-         work.</p>
+                           work.</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1400" notBefore="1350">14th century, second half</origDate>
+                     <origDate calendar="Gregorian" notAfter="1400" notBefore="1350">14th century,
+                        second half</origDate>
                      <origPlace>
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
+                  <provenance notAfter="1519">'Iste liber constat magistro Ricardo Salter, decretorum doctori'
+                     (early 16th cent.). <persName role="fmo" key="person_4988">Richard Salter</persName>, principal of New Inn Hall, Oxford, 1504-10 and
+                     precentor of Lichfield 1505-19.</provenance>
+                  <provenance><persName key="person_37729288" role="fmo">Christopher, first Baron
+                        Hatton (d. 1670)</persName></provenance>
+
+                  <acquisition when="1671">Bought in 1671 by the Bodleian through the London
+                     bookseller Robert Scot (b. in or before 1632, d. 1709/1710); see Summary
+                     Catalogue, vol. 2, part 2, p. 801</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1937). <listBibl>
-                              <bibl facs="aaq0169.gif" type="SC">Summary Catalogue, Vol. 2 Part 2, p. 810</bibl>
-                              <bibl facs="aaq0170.gif" type="SC">Summary Catalogue, Vol. 2 Part 2, p. 811</bibl>
+                           Description adapted (Sept. 2024) from the Summary Catalogue (1937). <listBibl>
+                              <bibl facs="aaq0169.gif" type="SC">Summary Catalogue, Vol. 2 Part 2,
+                                 p. 810</bibl>
+                              <bibl facs="aaq0170.gif" type="SC">Summary Catalogue, Vol. 2 Part 2,
+                                 p. 811</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -87,10 +156,14 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-09">Encode all information in Summary Catalogue.</change>
+         <change when="2024-05">Add extent and leaf dimensions from Summary Catalogue.</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
-            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+            <persName>James Cummings</persName> Up-converted the markup using <ref
+               target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl"
+               >https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>
       </revisionDesc>
    </teiHeader>

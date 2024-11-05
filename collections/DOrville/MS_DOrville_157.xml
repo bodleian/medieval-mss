@@ -1,17 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_4094" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4094">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. D'Orville 157</title>
             <title type="collection">MSS. D'Orville</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,39 +42,105 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. D'Orville 157</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x08g84mm724k</idno><idno type="crArk">ark:29072/x09c67wn44pk</idno><altIdentifier type="internal">
                      <idno type="SCN">17035</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_DOrville_157-item1">
                      <author key="person_100227522">Horace</author>
-                     <title key="work_2100">works</title>
+                     
+                     
+                     <msItem>
+                        <locus>(fol. 1)</locus>
+                        <title key="work_2097">Odes</title>
+                        <rubric>Q. Horatij Flacci Venusini poete clarissimi Carminum sive Odarum... liber primus [&amp;c.]</rubric>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 57)</locus>
+                        <title key="work_2096">Epodes</title>
+                        <rubric>... Liber Epodon incipit. Lege feliciter</rubric>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 68v)</locus>
+                        <title type="desc" key="work_2092">The 'Carmen Seculare', here regarded as part of the Epodes</title>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 70)</locus>
+                        <title key="work_2094">De arte poetica</title>
+                        <rubric>... Poetrie sive de Arte Poetica ... liber ...</rubric>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 79)</locus>
+                        <title key="work_2099">Satires</title>
+                        <rubric>... Sermonum liber primus [et alter]</rubric>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 117v)</locus>
+                        <title key="work_2095">Epistles</title>
+                        <rubric>... Epistolarum liber ...</rubric>
+                     </msItem>
+                     
+                     <note>This is the 'D'Orv. 2' of C. Kirchner's '<title>Novae Quaestiones Horatianae</title>' (1847). <ref target="https://medieval.bodleian.ox.ac.uk/catalog/manuscript_4095">MS. D'Orville 158</ref> is Kirchner's 'D'Orv. 1'</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                    
+                        <extent>
+                           iv + 149 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>8.75</height>
+                              <width>6.5</width>
+                           </dimensions>
+                        </extent>
+                        
                      </supportDesc>
+                     
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote>Decoration<p>Fine border, initials. Humanistic script. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 473)</p>
-                     </decoNote>
+                  
+                  <handDesc>
+                     <handNote script="humanistica">Humanistic script (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 473)</handNote>
+                  </handDesc>
+                 
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 473)
+                     </summary>
+                     
+                     <decoNote type="border">Fine border</decoNote>
+                     <decoNote type="decInit">Fine initials</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1450" notBefore="1425">15th century, second quarter</origDate>
                      <origPlace cert="low">
-                        <country key="place_1000080">Italian</country>, <settlement key="place_7018159">Venice</settlement> (?)<!--ORIGINAL: Italian, Venice (?)--></origPlace>
+                        <country key="place_1000080">Italy</country>, <settlement key="place_7018159">Venice</settlement> (?)<!--ORIGINAL: Italian, Venice (?)--></origPlace>
                   </origin>
+                  
+                  <provenance><persName key="person_24945908" role="fmo">Jacques Phillippe D'Orville of Amsterdam (1690–1751)</persName></provenance>
+                  <provenance><persName key="person_3392" role="fmo">Jean D'Orville, b. 1734</persName>, his son, by descent</provenance>
+                  <provenance><persName key="person_3393" role="fmo">Jean D'Orville</persName>, son of Jean, by descent</provenance>
+                  <provenance>Sold to the <persName key="person_3394" role="fmo">Rev. John Cleaver Banks (1765/1766–1845)</persName>: purchased from him by the Bodleian</provenance>
+                  <acquisition when="1804">Acquired by the Bodleian in 1804</acquisition>
+                  
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
+                        <source>
+                           Description adapted (March 2024) by Stewart J. Brookes from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1970)
+                           <listBibl>  
                               <bibl facs="aaz0095.gif" type="SC">Summary Catalogue, Vol. 4, p. 76</bibl>
                            </listBibl>
                         </source>
@@ -76,6 +151,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-03-25">Description revised to incorporate all the information in the Summary Catalogue (1897)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>

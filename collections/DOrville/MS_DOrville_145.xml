@@ -1,17 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_4082" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4082">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. D'Orville 145</title>
             <title type="collection">MSS. D'Orville</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,46 +36,96 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. D'Orville 145</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x08s45q9221w</idno><idno type="crArk">ark:29072/x08623hz44z4</idno><altIdentifier type="internal">
                      <idno type="SCN">17023</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_DOrville_145-item1">
+                     <locus>(fol. 1)</locus>
                      <author key="person_100956061">Hyginus</author>
                      <title key="work_2180">Astronomica</title>
-                     <note>with glosses</note>
+                     <note>With glosses</note>
+                     <note>Not divided into books, but with the preface 'Hyginus M. Fabio plurimam salutem'
+                     </note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                   <msItem class="#versus #astrologia_astronomia #musica" n="2" xml:id="MS_DOrville_145-item2">
+                     <locus>(fol. 56)</locus>
                      <title key="work_15447" type="desc">Verses on the Zodiac</title>
                      <incipit>Ad Boreae partes</incipit>
-                     <note>with added neums</note>
+                     <note>Twelve verses on the signs of the zodiac. The first three lines have neumes (added slightly later) above them. 
+                        E. W. B. Nicholson notes that it is possible that the lines with these neumes were meant to be sung four times  
+                        (<title>Introduction 
+                           to the Study of Some of the Oldest Latin Musical Manuscripts in the Bodleian Library, Oxford</title> [1913], vol. 3, p. lxxix)</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                   <msItem n="3" xml:id="MS_DOrville_145-item3">
+                     <locus>(fol. 57)</locus>
                      <author key="person_294784551">Ps.-Seneca</author>
                      <title key="work_4123">Prouerbia</title>
-                     <note>(alphabetical collection)</note>
+                     <rubric>Proverbia .A. Senecae</rubric>
+                     <incipit>Alienum est omne</incipit>
+                     <note>Presented in alphabetical order</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                     
+                        <extent>
+                           i + 67 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>6.875</height>
+                              <width>6.125</width>
+                           </dimensions>
+                        </extent>
+                        
                      </supportDesc>
+                     
                   </objectDesc>
+                  <musicNotation>
+                     <p>Nicholson notes that the neumes on fol. 56 are in a lighter ink than the main text and that an ink of the same colour was used by a corrector on 
+                     fol. 44v who seems to be roughly contemporary with the main scribe. The similarity in the colour of the ink leads Nicholson to speculate that it may have been the corrector who added the neumes. Nicholson reports H. M. Bannister's opinion that 
+                     the neumes are from Metz, with Bannister noting the similarity with those found in a 12th century antiphon in honour of the Belgian saint Lambert on fol. 155 of <ref target="https://medieval.bodleian.ox.ac.uk/catalog/manuscript_774">MS. Auct. T. 2. 23</ref>. 
+                        Bannister compares MS. D'Orville 145 to Vatican MS. <ref target="https://digi.vatlib.it/view/MSS_Reg.lat.1987/0005">Reg. lat. 1987</ref>, fol. 1r, also from St Peter's, Ghent, which has the same lines and 
+                        similar neumes but repeated throughout the poem (<title>Some of the Oldest Latin Musical Manuscripts in the Bodleian Library</title> [1913], vol. 3, p. lxxix). 
+                        
+                        
+                        See also Henry Marriott Bannister, <title>Monumenti vaticani di paleografia musicale latina</title> (Lipsia, 1913), p. 101, note 2
+                     </p>
+                  </musicNotation>
+                  <decoDesc>
+                     <decoNote type="colInit">With coloured capitals</decoNote></decoDesc>
+                     
                </physDesc>
+               
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1100" notBefore="1000">11th century (?)</origDate>
+                     <origDate calendar="Gregorian" notAfter="1100" notBefore="1000">11th century (?) or the beginning of the 12th</origDate>
                   </origin>
+                  
+                  <provenance>'Liber <orgName key="org_172327788">Sancti Petri Gandavensis ecclesie</orgName>. Seruanti benedictio. Tollenti maledictio. Qui folium ex eo tulerit, uel cretauerit, anahema sit.' (12th century)
+                  </provenance>
+                  <provenance><persName key="person_24945908" role="fmo">Jacques Phillippe D'Orville of Amsterdam (1690–1751)</persName></provenance>
+                  <provenance><persName key="person_3392" role="fmo">Jean D'Orville, b. 1734</persName>, his son, by descent</provenance>
+                  <provenance><persName key="person_3393" role="fmo">Jean D'Orville</persName>, son of Jean, by descent</provenance>
+                  <provenance>Sold to the <persName key="person_3394" role="fmo">Rev. John Cleaver Banks (1765/1766–1845)</persName>: purchased from him by the Bodleian</provenance>
+                  <acquisition when="1804">Acquired by the Bodleian in 1804</acquisition>
+                  
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
+                        <source>
+                           Description adapted (July 2024) by Stewart J. Brookes from the Summary Catalogue (1897), with additional reference to published literature as cited
+                           <listBibl>  
                               <bibl facs="aaz0091.gif" type="SC">Summary Catalogue, Vol. 4, p. 72</bibl>
                            </listBibl>
                         </source>
@@ -83,6 +136,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-07-31">Description revised to incorporate all the information in the Summary Catalogue (1897)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>

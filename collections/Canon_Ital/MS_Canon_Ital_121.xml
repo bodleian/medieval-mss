@@ -1,15 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_2555" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2555">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Canon. Ital. 121</title>
             <title type="collection">MSS. Canon. Ital. (Canonici Italian)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            
+            <respStmt xml:id="AM">
+               <resp when="1864">Cataloguer</resp>
+               <persName>Alessandro Mortara</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2024">Cataloguer</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -33,30 +34,57 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Canon. Ital. 121</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0gf06g270mb</idno><idno type="crArk">ark:29072/x0h702q659sz</idno><altIdentifier type="internal">
                      <idno type="SCN">20173</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <msContents resp="#AM">
                   <msItem class="#historica" n="1" xml:id="MS_Canon_Ital_121-item1">
                      <title key="work_11826">Fiore di Antiche Istorie</title>
+                     <note>Edition in progress by Dr. David P. Bénéteau (notified September 2023).</note>
+                     <incipit>Qui comincia di <del>The</del> la cittade di tebes. R. cxviii. uNo. Re. era allora in quel tempo in thebes ricco e possente. Laius era appellato. Elli auea moglie del suo linguaggio Ke. Jocasta auea nome. Quel re ebbe un figliuolo</incipit><explicit>[Dei Re di macedonia ke regnaro infin attempo dallexandro. R. cclxx] ma inanzi ke io dilui nulla ui dica vi diro io de fatti del Re philippo suo padre una parte. e dela reina Olimpia sua madre lamollie del re phylippo et di qual terra ella fu nata. q di qual lignaggio.</explicit>
                      <textLang mainLang="it">Italian</textLang>
                   </msItem>
                </msContents>
-               <physDesc>
+               <physDesc resp="#MLH">
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>ii + 84 + ii leaves
+                           <dimensions unit="mm" type="leaf">
+                              <height>295</height>
+                              <width>220</width>
+                           </dimensions></extent>
+                        <foliation>modern, 1-84 (endleaves unfoliated); earlier (18th-century) foliation 56-139. </foliation>
+                        <collation mainStructures="8">1(8)-10(8), 11(4)</collation>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2" writtenLines="41 46" rulingMedium="leadpoint">Ruled in leadpoint; 2 cols., c. 41-46 lines; ruled space <dimensions unit="mm" type="ruled">
+                           <height max="205" min="200">c. 200-205</height>
+                           <width min="160" max="167">c. 160-167 (76 + 15 + 76)</width>
+                        </dimensions></layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <handDesc>
+                     <handNote script="textualisSouthern">Southern textualis.</handNote>
+                  </handDesc>
+                  <decoDesc>
+                     <decoNote type="unfilled">Spaces left for miniatures and initials.</decoNote>
+                  </decoDesc>
+                  <bindingDesc>
+                     <binding notAfter="1800" notBefore="1700">
+                        <p>18th-century parchment over pasteboards, a typical style of the Canonici collection.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
-                  <origin>
+                  <origin resp="#AM">
                      <origDate calendar="Gregorian" notAfter="1310" notBefore="1300">14th century, early</origDate>
                      <origPlace>
                         <country key="place_1000080">Italian</country>
                      </origPlace>
                   </origin>
+                  <provenance><persName role="fmo" key="person_308770014">Jacopo Soranzo</persName>: endleaves and foliation typical of his manuscripts; his ms. 326 in folio. </provenance>
                   <provenance notAfter="1805" notBefore="1727" resp="#MMM"><persName key="person_2384880" role="fmo">Matteo Luigi Canonici, 1727–1805</persName></provenance>
                   <provenance notAfter="1807" resp="#MMM"><persName key="person_446" role="fmo">Giuseppe Canonici , -1807</persName></provenance>
                   <acquisition resp="#MMM" when="1817">Purchased by the Bodleian in 1817</acquisition>
@@ -64,7 +92,7 @@
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (A. Mortara, <title>Catalogo dei manoscritti italiani che sotto la denominazione di Codici Canoniciani Italici si conservano nella Biblioteca Bodleiana a Oxford</title>, Quarto Catalogues XI, 1864). <listBibl>
+                        <source>Description adapted by Matthew Holford (Sept. 2024) from the Quarto Catalogue (A. Mortara, <title>Catalogo dei manoscritti italiani che sotto la denominazione di Codici Canoniciani Italici si conservano nella Biblioteca Bodleiana a Oxford</title>, Quarto Catalogues XI, 1864), with limited additional physical description. <listBibl>
                               <bibl facs="acp0084.gif" type="QUARTO">Quarto Catalogue, col. 136</bibl>
                               <bibl facs="acp0085.gif" type="QUARTO">Quarto Catalogue, col. 137</bibl>
                               <bibl facs="aaz0433.gif" type="SC">Summary Catalogue, vol. 4, p. 414</bibl>
@@ -77,6 +105,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-09">Description revised.</change>
          <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>

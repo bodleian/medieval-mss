@@ -1,17 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_4139" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4139">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. D'Orville 212</title>
             <title type="collection">MSS. D'Orville</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1966">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,40 +42,81 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. D'Orville 212</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0qr46r035n7</idno><idno type="crArk">ark:29072/x0ft848q93nj</idno><altIdentifier type="internal">
                      <idno type="SCN">17090</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem class="#biblia" n="1" xml:id="MS_DOrville_212-item1">
                      <title key="work_10455" type="desc">Bible</title>
+                     <note>With the prologues of Jerome</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
+                  <msItem class="#biblia" n="2" xml:id="MS_DOrville_212-item2">
+                     <locus>(fol. 532)</locus>
+                     <title key="work_4622">Interpretationes Hebraicorum nominum</title>
+                     <note>Wanting all after 'Godolias'</note>
+                     <textLang mainLang="la">Latin</textLang>
+                  </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                    
+                        <extent>
+                           557 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>6.25</height>
+                              <width>4.25</width>
+                           </dimensions>
+                        </extent>
+                        
+                        <condition>Some leaves injured; with strings (bookmarks)</condition>
+                        
                      </supportDesc>
+                     
+                     <layoutDesc>
+                        <layout columns="2">2 cols</layout>
+                     </layoutDesc>
+                     
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote>Decoration<p>Good historiated borders, historiated and other initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 553)</p>
-                     </decoNote>
+                  
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 553
+                     </summary>
+                  
+                  <decoNote type="border">Good historiated borders</decoNote>
+                  <decoNote type="histInit">Good historiated initials</decoNote>
+                  <decoNote type="decInit">Good initials</decoNote>
                   </decoDesc>
+                  
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1275" notBefore="1250">13th century, third quarter</origDate>
                      <origPlace>
-                        <country key="place_1000070">French</country>, <settlement key="place_7008038">Paris</settlement>
+                        <country key="place_1000070">France</country>, <settlement key="place_7008038">Paris</settlement>
                         <!--ORIGINAL: French, Paris-->
                      </origPlace>
                   </origin>
+                  
+                  <provenance><persName key="person_24945908" role="fmo">Jacques Phillippe D'Orville of Amsterdam (1690–1751)</persName></provenance>
+                  <provenance><persName key="person_3392" role="fmo">Jean D'Orville, b. 1734</persName>, his son, by descent</provenance>
+                  <provenance><persName key="person_3393" role="fmo">Jean D'Orville</persName>, son of Jean, by descent</provenance>
+                  <provenance>Sold to the <persName key="person_3394" role="fmo">Rev. John Cleaver Banks (1765/1766–1845)</persName>: purchased from him by the Bodleian</provenance>
+                  <acquisition when="1804">Acquired by the Bodleian in 1804</acquisition>
+                  
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
+                        <source>
+                           Description adapted (February 2024) by Stewart J. Brookes from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1966)
+                           <listBibl>   
                               <bibl facs="aaz0108.gif" type="SC">Summary Catalogue, Vol. 4, p. 89</bibl>
                            </listBibl>
                         </source>
@@ -79,6 +129,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-02-01">Description revised to incorporate all the information in the Summary Catalogue (1897)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>

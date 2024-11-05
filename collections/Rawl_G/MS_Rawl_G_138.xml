@@ -1,17 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_8517" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8517">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Rawl. G. 138</title>
             <title type="collection">MSS. Rawl. G. (Rawlinson G)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1895">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,14 +42,93 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Rawl. G. 138</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x06h440t29jj</idno><idno type="crArk">ark:29072/x06d56zx467g</idno><altIdentifier type="internal">
                      <idno type="SCN">14863</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_Rawl_G_138-item1">
                      <author key="person_78769600">Cicero</author>
                      <title key="work_1272">Orations</title>
+                     
+                     <msItem>
+                        <locus>(fol. 1)</locus>
+                        <title key="work_5416">De Lege Manilia</title>
+                        <rubric>... Pro Magno Pompeio...</rubric>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 11)</locus>
+                        <title key="work_1269">Pro Marcello</title>
+                        <rubric>... Pro M. Marcello...</rubric>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 16)</locus>
+                        <title key="work_1267">Pro Deiotaro</title>
+                        <rubric>... Pro Rege Deiotaro ...</rubric>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 22)</locus>
+                        <title key="work_1268">Pro Ligario</title>
+                        <rubric>... Pro Quinto Ligario ...</rubric>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 28)</locus>
+                        <rubric>... De exilio eius...</rubric>
+                        <note>A spurious work</note>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 32)</locus>
+                        <title key="work_5439">Post reditum ad Quirites</title>
+                        <rubric>... De congratulatione sui ...</rubric>
+                     </msItem>
+                     
+                     <msItem>
+                        <title key="work_5438">Post reditum suum in Senatu</title>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 34v)</locus>
+                        <title key="work_1266">Pro Archia</title>
+                        <rubric>... Pro Archia ...</rubric>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 39v)</locus>
+                        <title key="work_5435">Pro Sulla</title>
+                        <rubric>... Pro P. Silla... </rubric>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 53v)</locus>
+                        <title key="work_5434">Pro Milone</title>
+                        <rubric>... Pro Milone ...</rubric>
+                        <note>See note on fol. 52</note>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 67)</locus>
+                        <title key="work_5436">Pro Plancio</title>
+                        <rubric>... Pro Plancio...</rubric>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 82)</locus>
+                        <title key="work_5437">Pro Flacco</title>
+                        <rubric>... Pro Lucio Flacco ...</rubric>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 95)</locus>
+                        <title key="work_5433">Pro P. Quintio</title>
+                        <rubric>... Pro P. Quintio...</rubric>
+                     </msItem>
+                     
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -48,31 +136,50 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        
+                        <extent source="SC">i + <measure type="leaf" quantity="110">100</measure> leaves
+                           <dimensions type="binding" unit="in">
+                              <height>12.75</height>
+                              <width>9.5</width>
+                           </dimensions>
+                        </extent>
+                        
                      </supportDesc>
                   </objectDesc>
+                  
                   <handDesc>
-                     <handNote script="humanistica"> Humanistic script.</handNote>
+                     <handNote script="humanistica">Humanistic script (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 349)</handNote>
                   </handDesc>
-                  <decoDesc>
-                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 349, pl. XXXIII:</summary>
-                     <decoNote type="border">Fine border. </decoNote><decoNote type="decInit">Fine initials. </decoNote>
+                  
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 349, Pl. XXXIII
+                     </summary>
+                     
+                     <decoNote type="border">Fine border</decoNote>
+                     <decoNote type="decInit">Fine initials, e.g. <ref target="https://digital.bodleian.ox.ac.uk/objects/088585f3-9feb-4045-93f4-4817cc708765/">fol. 67r</ref>, 
+                        with gold 5-line initial "C" with white vine-stem interlace part border</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1475" notBefore="1450">15th century, third quarter</origDate>
                      <origPlace>
-                        <country key="place_1000080">Italian</country>, <settlement key="place_7000874">Rome</settlement>
+                        <country key="place_1000080">Italy</country>, <settlement key="place_7000874">Rome</settlement>
                         <!--ORIGINAL: Italian, Rome-->
                      </origPlace>
                   </origin>
+                  <provenance>On fol. 1 is a coat of arms, gules 3 branches couped argent (?), <persName role="fmo" key="person_4943" cert="low">Leni of Rome</persName> (?)</provenance>
+                  <provenance>'<persName role="sgn" key="person_4944">Domenico Bogouani</persName> Romano' (17th century) is scribbled on fol. 109</provenance>
+                  
                   <provenance notAfter="1755" notBefore="1690" resp="#MMM"><persName key="person_47563478" role="fmo">Richard Rawlinson, 1690–1755</persName></provenance>
                   <acquisition resp="#MMM" when="1755">Bequeathed to the Bodleian in 1755</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1895). Decoration, localization and date follow Pächt and Alexander (1970). <listBibl>
+                        <source>
+                           Description adapted (July 2024) by Stewart J. Brookes from the Summary Catalogue (1895). Decoration, localization and date follow Pächt and Alexander (1970)
+                           <listBibl>
                               <bibl facs="aas0382.gif" type="SC">Summary Catalogue, Vol. 3, p. 367</bibl>
                               <bibl facs="aas0383.gif" type="SC">Summary Catalogue, Vol. 3, p. 368</bibl>
                            </listBibl>
@@ -86,6 +193,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-07-11">Description revised to incorporate all the information in the Summary Catalogue (1895)</change>
          <change when="2019-10-31" xml:id="MMM"><persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>

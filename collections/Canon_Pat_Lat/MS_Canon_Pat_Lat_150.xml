@@ -1,15 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_3724">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_3724">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Canon. Pat. Lat. 150</title>
             <title type="collection">MSS. Canon. Pat. Lat. (Canonici Latin Patristic)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1854">Cataloguer</resp>
+               <persName>H. O. Coxe</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2024">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -33,15 +42,14 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Canon. Pat. Lat. 150</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x04f16c35645</idno><idno type="crArk">ark:29072/x0cj82k777fm</idno><altIdentifier type="internal">
                      <idno type="SCN">19136</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem class="#sermones #liturgica"
-                          n="1"
-                          xml:id="MS_Canon_Pat_Lat_150-item1">
-                     <title key="work_12282" type="desc">Homiliary.</title>
+                  <msItem class="#sermones #liturgica" n="1" xml:id="MS_Canon_Pat_Lat_150-item1">
+                     <title key="work_12282" type="desc">Homiliary (temporale, summer part)</title>
+                     <note>From Easter Sunday to the end of the liturgical year, ending abruptly in the homily for Friday after the 23rd Sunday after Pentecost. There are sermons and homilies for the Wednesdays and Fridays after Pentecost. Some divisions into lessons are added in the margin.</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -49,7 +57,19 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent> ii + 199 + ii fol.<dimensions type="leaf" unit="mm">
+                           <height>375</height>
+                           <width>260</width>
+                        </dimensions>
+                           <dimensions type="written" unit="mm">
+                              <height>280</height>
+                              <width>175</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2" writtenLines="36">2 col. of 36 lines</layout>
+                     </layoutDesc>
                   </objectDesc>
                   <decoDesc>
                      <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 38, pl. IV:</summary>
@@ -76,7 +96,11 @@
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (H. O. Coxe, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854). Decoration, localization and date follow Pächt and Alexander (1970). <listBibl>
+                           <listBibl>
+                              <bibl>H. O. Coxe, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854</bibl>
+                              <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 2: Office Books</title> (typescript, 1957), p. 155</bibl>
+                              <bibl>Pächt and Alexander (1970).</bibl>
+                           </listBibl>   <listBibl>
                               <bibl facs="abz0195.gif" type="QUARTO">Quarto Catalogue, cols. 377–8</bibl>
                               <bibl facs="aaz0348.gif" type="SC">Summary Catalogue, vol. 4, p. 329</bibl>
                            </listBibl>
@@ -95,6 +119,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-05">Revised to include all information in printed catalogues.</change>
          <change when="2018-10-14" xml:id="MMM">
             <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>

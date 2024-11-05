@@ -1,17 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_8516" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8516">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Rawl. G. 137</title>
             <title type="collection">MSS. Rawl. G. (Rawlinson G)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1895">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,22 +36,60 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Rawl. G. 137</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x06969z162xh</idno><idno type="crArk">ark:29072/x06682x479mw</idno><altIdentifier type="internal">
                      <idno type="SCN">14862</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_Rawl_G_137-item1">
                      <author key="person_78769600">Cicero</author>
                      <title key="work_1272">Orations</title>
-                     <note>Pro Marcello, Pro rege Deiotaro, Pro lege Manilia, Pro Milone Pro Cn. Plancio</note>
+                     
+                     <msItem>
+                        <locus>(fol. 1)</locus>
+                        <title key="work_1269">Pro Marcello</title>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 10)</locus>
+                        <title key="work_1267">Pro Deiotaro</title>
+                     </msItem>
+                     
+                     <msItem>
+                     <locus>(fol. 27)</locus>
+                     <title key="work_5416">Pro Lege Manilia</title>
+                  </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 53v)</locus>
+                        <title key="work_5434">Pro Milone</title>
+                        
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 67)</locus>
+                        <title key="work_5436">Pro Plancio</title>
+                     <note>As far as ch. ix. 'in illum ordinem summa', with catchword 'officij', some leaves being lost.</note>
+                        
+                     </msItem>
+                     
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
+                        
+                        <extent source="SC">i + <measure type="leaf" quantity="87">87</measure> leaves
+                           <dimensions type="binding" unit="in">
+                              <height>12.25</height>
+                              <width>9</width>
+                           </dimensions>
+                        </extent>
+                        
                      </supportDesc>
                   </objectDesc>
                </physDesc>
@@ -56,13 +97,20 @@
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1500" notBefore="1450">15th century, second half</origDate>
                   </origin>
+                  
+                  <provenance>
+                  Probably no. 145 in the <persName role="fmo" key="person_1203">Thomas Rawlinson</persName> sale, 4 March 1733/1734
+                  </provenance>
+                 
                   <provenance notAfter="1755" notBefore="1690" resp="#MMM"><persName key="person_47563478" role="fmo">Richard Rawlinson, 1690–1755</persName></provenance>
                   <acquisition resp="#MMM" when="1755">Bequeathed to the Bodleian in 1755</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1895). <listBibl>
+                        <source>
+                           Description adapted (July 2024) by Stewart J. Brookes from the Summary Catalogue (1895)
+                           <listBibl>
                               <bibl facs="aas0382.gif" type="SC">Summary Catalogue, Vol. 3, p. 367</bibl>
                            </listBibl>
                         </source>
@@ -73,6 +121,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-07-12">Description revised to incorporate all the information in the Summary Catalogue (1895)</change>
          <change when="2019-10-31" xml:id="MMM"><persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>

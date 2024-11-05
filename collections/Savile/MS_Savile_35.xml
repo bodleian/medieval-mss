@@ -1,17 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8823">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8823">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Savile 35</title>
             <title type="collection">MSS. Savile</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            <respStmt xml:id="SC">
+               <resp when="1937">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>N. Denholm-Young</persName>
             </respStmt>
+            <respStmt xml:id="SJB">
+               <resp when="2023">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+           
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,22 +35,36 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Savile 35</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0jh343s20sd</idno><idno type="crArk">ark:29072/x04x51hj96n7</idno><altIdentifier type="internal">
                      <idno type="SCN">6581</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem class="#astrologia_astronomia" n="1" xml:id="MS_Savile_35-item1">
-                     <title key="work_10377" type="desc">Astronomical calendar, apparently based on that made in 1263 by <persName key="person_120688673" role="aut"> Roger Bacon </persName>.</title>
+                     <locus>(fol. 4)</locus>
+                     <title key="work_10377" type="desc">Astronomical calendar, made for use in 1521 at Oxford, apparently based on that made in 1263 by <persName key="person_120688673" role="aut">Roger Bacon</persName>.</title>
+                     <note>Preceded by a table for the conversion of degrees into minutes and hours (fol. 1v), and an explanation (fol. 2)</note>
+                     <note>Followed by multiplication tables (fol. 17v) and then tables of the equation of days and nights verified for 1456 (fol. 27v)</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>
+                           30 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>7.5</height>
+                              <width>4.9</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     
                   </objectDesc>
+                   
                   <bindingDesc>
                      <binding>
                         <p>White parchment.</p>
@@ -57,17 +73,21 @@
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" when="1521">1521</origDate>
+                     <origDate calendar="Gregorian" when="1521" cert="high">1521</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>, <settlement key="place_7011931">Oxford</settlement>
+                        <country key="place_7002445">England</country>, <settlement key="place_7011931">Oxford</settlement>
                         <!--ORIGINAL: English, Oxford-->
                      </origPlace>
                   </origin>
+                  <provenance><persName role="fmo" key="person_100218411">Henry Savile (d. 1622)</persName></provenance>
+                  <acquisition when="1620">Given by him in 1620</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
+                        <source>
+                           Description adapted (December 2023) by Stewart J. Brookes from the Summary Catalogue (1937)
+                           <listBibl>
                               <bibl facs="aaq0468.gif" type="SC">Summary Catalogue, Vol. 2 Part 2, p. 1109</bibl>
                            </listBibl>
                         </source>
@@ -78,6 +98,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2023-12-12">Description revised to incorporate all the information in the Summary Catalogue (1937)</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">

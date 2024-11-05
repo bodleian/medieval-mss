@@ -1,17 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_4092" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4092">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. D'Orville 155</title>
             <title type="collection">MSS. D'Orville</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,42 +42,119 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. D'Orville 155</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0d217qp7186</idno><idno type="crArk">ark:29072/x09593tv7823</idno><altIdentifier type="internal">
                      <idno type="SCN">17033</idno>
                   </altIdentifier>
                </msIdentifier>
+              
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_DOrville_155-item1">
                      <author key="person_66462384">Terence</author>
                      <title key="work_4666">Comedies</title>
-                     <note>with glosses</note>
+                     <incipit>De Terrentii vita in antiquis libris</incipit>
+                     <note>With glosses</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
+               <msItem>
+                  <locus>(fol. 3)</locus>
+                  <title key="work_4665">Andria</title> 
+               </msItem>
+               
+               <msItem>
+                  <locus>(fol. 26v)</locus>
+                  <title key="work_7600">Eunuchus</title>
+               </msItem>
+               
+               <msItem>
+                  <locus>(fol. 52)</locus>
+                  <title key="work_7601">Heauton timorumenos</title>
+               </msItem>
+               
+               <msItem>
+                  <locus>(fol. 75v)</locus>
+                  <title key="work_7602">Adelphi</title>
+               </msItem>
+                  
+                  <msItem>
+                     <locus>(fol. 98v)</locus>
+                     <title key="work_7605">Phormio</title>
+                  </msItem>
+               
+               <msItem>
+                  <locus>(fol. 123)</locus>
+                  <title key="work_7603">Hecyra</title>
+                  <colophon>(fol. 142): Terrentij Afri comici poete Hechira explicit. Terrentius finit. Transcriptus est ab exemplari senioris 
+                     Laurentij de Monacis Crete cancelarii. secundum modum metrorum reductus Sicut fuit Compositus quam potui correcte. B B.</colophon> 
+                  <note>There are similar colophons to the other plays</note>
+               </msItem>
+                  
+                  <msItem>
+                     <locus>(fol. 143v)</locus>
+                     <author key="person_88342447">Ovid</author>
+                     <title key="work_3421">Heroides</title>
+                     <rubric>Lamentabiles Hetu decoro poete Saphos uersus elegi <hi rend="italic">or</hi> Epistola Saphos poetisse Mitilene</rubric>
+                     <note>XV (Epistle of Sappho to Phaon)</note>
+                     <textLang mainLang="la">Latin</textLang>
+                  </msItem>
+                     
                </msContents>
+               
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
+                     
+                        <extent>
+                           151 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>8</height>
+                              <width>6.125</width>
+                           </dimensions>
+                        </extent>
+                        
+                        <condition>Imperfect at end. Many leaves are palimpsest, the erased writing being itself apparently of late date</condition>
+                        
                      </supportDesc>
+                     
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote>Decoration<p>Fine borders, initials. Attrib. to <persName key="person_295100876" role="art">Cristoforo Cortese</persName>. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 475, pl. XLVI)</p>
+                  
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 475, Pl. XLVI
+                     </summary>
+                     
+                     <decoNote type="border"><ref target="https://digital.bodleian.ox.ac.uk/objects/e3c8e5ac-ad02-4cef-8579-cdb328d0beb0/">Fine borders</ref>, initials. Attributed to <persName key="person_58996889" role="art">Cristoforo Cortese</persName>
                      </decoNote>
+                     <decoNote type="decInit">Illuminated capitals</decoNote>
                   </decoDesc>
+                  
                </physDesc>
+                  
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" when="1420">c. 1420</origDate>
+                     <origDate calendar="Gregorian" when="1420"><hi rend="italic">c</hi>. 1420</origDate>
                      <origPlace>
-                        <country key="place_1000080">Italian</country>, <settlement key="place_7018159">Venice</settlement>
+                        <country key="place_1000080">Italy</country>, <settlement key="place_7018159">Venice</settlement>
                         <!--ORIGINAL: Italian, Venice-->
                      </origPlace>
                   </origin>
+                  
+                  <provenance><ref target="https://archives.bodleian.ox.ac.uk/repositories/2/archival_objects/169045">MS. D'Orville 502</ref>, pp. 49-200, contains a collation of this manuscript by C. J. Strackhovius in the second half of the 18th century</provenance>
+                  
+                  <provenance><persName key="person_24945908" role="fmo">Jacques Phillippe D'Orville of Amsterdam (1690–1751)</persName></provenance>
+                  <provenance><persName key="person_3392" role="fmo">Jean D'Orville, b. 1734</persName>, his son, by descent</provenance>
+                  <provenance><persName key="person_3393" role="fmo">Jean D'Orville</persName>, son of Jean, by descent</provenance>
+                  <provenance>Sold to the <persName key="person_3394" role="fmo">Rev. John Cleaver Banks (1765/1766–1845)</persName>: purchased from him by the Bodleian</provenance>
+                  <acquisition when="1804">Acquired by the Bodleian in 1804</acquisition>
+                  
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
+                        <source>
+                           Description adapted (May 2024) by Stewart J. Brookes from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1970)
+                           <listBibl> 
                               <bibl facs="aaz0094.gif" type="SC">Summary Catalogue, Vol. 4, p. 75</bibl>
                            </listBibl>
                         </source>
@@ -81,6 +167,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-05-03">Description revised to incorporate all the information in the Summary Catalogue (1897)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>

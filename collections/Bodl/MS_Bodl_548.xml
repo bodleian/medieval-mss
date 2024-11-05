@@ -1,15 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1567">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1567">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Bodl. 548</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2024">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -33,27 +39,50 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Bodl. 548</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0m039k49298</idno><idno type="crArk">ark:29072/x0kw52j8090q</idno><altIdentifier type="internal">
                      <idno type="SCN">2296</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  <textLang mainLang="la">Latin</textLang>
                   <msItem class="#sermones" n="1" xml:id="MS_Bodl_548-item1">
                      <title key="work_14583" type="desc">Sermons</title>
-                     <textLang mainLang="la">Latin</textLang>
+                     <note>Seventy-six anonymous Latin sermons, preceded (fol. ii) by a 14th cent. list,
+                        which shows that they are a miscellaneous collection adapted for saints'
+                        days, sundays, classes of clergy, and general use. The first three are:</note>
+                     <msItem><locus> 
+                        (fol. 1) </locus><rubric>De potestate prelatorum</rubric><incipit> Dicit apostolus Paulus, Non est potestas
+                           nisi a Deo ... Audite fratres carissimi, quid apostolus</incipit></msItem><msItem><locus> (fol. 3) </locus><rubric>Ad
+                              pastores ecclesie. </rubric><incipit>Fecit Deus duo magna luminaria ... Sic uoluit Deus,
+                                 fratres karissimi</incipit></msItem><msItem><locus> (fol. 5)</locus><rubric>Item ad sacerdotes</rubric><incipit>Labia sacerdotis ...
+                        Andite fratres dilectissimi quantum thesaurum</incipit></msItem><note>Two (foll. 26v, 145) are
+                           attributed to <persName role="aut" key="person_84971682">Ivo Carnotensis</persName>, by added notes. Foll. 87, 122, 123 have the
+                        outer margin cut off, fol. 164 is torn.</note>
+                     <note>According to Schneyer (IV.876) there is a sermon by <persName role="aut" key="person_243736676">Praepositanus of Cremona</persName> on fol. 3, and sermons by <persName role="aut" key="person_54538580">Geoffrey Babion</persName> (II.158)</note>
+                  </msItem>
+                  <msItem class="#sermones" xml:id="MS_Bodl_548-item1a"><note> At the end of the list of sermons in
+                        the same (14th cent.) hand is a note of the duties of novices,
+                        perhaps at Kenilworth, to which Salford Prior's (see below) belonged.</note>
+                     <incipit>Doceantur Nouicii. Maioribus &amp; maxime prelato reuerenciam exibere</incipit>
+                     
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>iii + 167 leaves
+                        <dimensions type="binding" unit="in">
+                           <height>9.75</height>
+                           <width>6.5</width>
+                        </dimensions></extent>
                      </supportDesc>
                   </objectDesc>
                   <decoDesc>
                      <decoNote type="decInit">Initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 272)</decoNote>
                   </decoDesc>
                   <bindingDesc>
-                     <binding when="1602">
+                     <binding notBefore="1300" notAfter="1602">
                         <p>Old boards and sewing, re-covered at Oxford about 1602.</p>
                      </binding>
                   </bindingDesc>
@@ -73,7 +102,7 @@
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
+                           Description adapted (2024) from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
                               <bibl facs="aap0315.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 294</bibl>
                            </listBibl>
                         </source>
@@ -90,10 +119,73 @@
                      </listBibl>
                   </listBibl>
                </additional>
+               <msPart xml:id="MS_Bodl_548-endleaves1">
+                  <msIdentifier>
+                     <altIdentifier type="partial">
+                        <idno type="part">MS. Bodl. 548, endleaves (fol. i)</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  <msContents>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem xml:id="MS_Bodl_548-endleaves1-item1">
+                        <note>Part of a leaf, of which the verso contains two (13th cent.)
+                           Sanctus, with later musical notes, and the recto a (14th cent.) troped
+                           Benedicamus Domino with musical notes for three voices.</note>
+                     </msItem>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="perg">
+                           <support>parchment</support>
+                        </supportDesc>
+                     </objectDesc>
+                     <musicNotation>
+                        <p>Notation, partly polyphonic.</p>
+                     </musicNotation>
+                  </physDesc>
+                  <history>
+                     <origin>
+                        <origDate calendar="Gregorian" notAfter="1400" notBefore="1200">13th-14th centuries</origDate>
+                        
+                     </origin>
+                  </history>
+               </msPart>
+               <msPart xml:id="MS_Bodl_548-endleaves2">
+                  <msIdentifier>
+                     <altIdentifier type="partial">
+                        <idno type="part">MS. Bodl. 548, endleaves (fols. 165-7)</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  <msContents>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem xml:id="MS_Bodl_548-endleaves2-item1">
+                        <note>(fol. 165) part of a
+                           'Compotus Henrici Byschop balliui ...', Mich. 1394-Mich. 1395, accounts
+                           relating to 'Saltford' (<placeName>Salford Prior's, or Abbot's, in Warwickshire</placeName>): on
+                           the verso are 'John Braben' (15th cent.), 'Joh: Lychfeld' (16th cent.):
+                           (fol. 166), amid much scribbling is a worn late 14th cent. Latin note on the
+                           old nunnery of Coventry 'quod J. R.', repeated on fol. 167.</note>
+                     </msItem>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="perg">
+                           <support>parchment</support>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+                  <history>
+                     <origin>
+                        <origDate calendar="Gregorian" notBefore="1394" notAfter="1395">1394-5</origDate>
+                        
+                     </origin>
+                  </history>
+               </msPart>
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-10">Description revised to incorporate all information from Summary Catalogue.</change>
          <change when="2022-04-04">Add provenance information from Summary Catalogue.</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2017-07-01">First online publication.</change>

@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1450">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1450">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -47,7 +44,7 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Bodl. 418</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0tm70mt742c</idno><idno type="crArk">ark:29072/x0th83kx90r5</idno><altIdentifier type="internal">
                      <idno type="SCN">2317</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -55,6 +52,7 @@
                   <msItem n="1" xml:id="MS_Bodl_418-item1">
                      <author key="person_191026298">Franciscus de Mayronis</author>
                      <title key="work_1567">Conflatus in primum librum sententiarum</title>
+                     <incipit>Circa Prohemium primi libri</incipit>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -69,7 +67,7 @@
                         </extent>
                      </supportDesc>
                      <layoutDesc>
-                        <layout>2 cols., c. 58–70 lines, column space <dimensions type="column" unit="mm">
+                        <layout columns="2" writtenLines="58 70">2 cols., c. 58–70 lines, column space <dimensions type="column" unit="mm">
                               <height>210</height>
                               <width>60</width>
                            </dimensions>
@@ -77,24 +75,21 @@
                      </layoutDesc>
                   </objectDesc>
                   <handDesc>
-                     <handNote>Written by <persName key="person_651" role="scr"> Johannes Steenhusen </persName>.</handNote>
+                     <handNote>Written by <persName key="person_651" role="scr"> Johannes Steenhusen</persName>.</handNote>
                   </handDesc>
                   <decoDesc>
-                     <decoNote resp="#PA">Good initials. Written in Montpellier in 1440, fol. 157v, but the initials added later. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 743)</decoNote>
+                     <decoNote resp="#PA" type="decInit">Good initials. Written in Montpellier in 1440, fol. 157v, but the initials added later. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 743)</decoNote>
                   </decoDesc>
                   <bindingDesc>
                      <binding notBefore="1600" notAfter="1700">
                         <p>Stamped leather on boards, Oxford early 17th cent. work.</p>
                      </binding>
                   </bindingDesc>
-                  <accMat>Fols. i, 160 are fly-leaves from a 15th-century Latin manuscript of canon law.</accMat>
+                 
                </physDesc>
                <history>
                   <origin resp="#PA #DD">
-                     <origDate calendar="Gregorian" cert="high" when="1440">1440</origDate>, <origDate calendar="Gregorian"
-                               notAfter="1480"
-                               notBefore="1470"
-                               type="additions">added decoration c. 1475</origDate>
+                     <origDate calendar="Gregorian" cert="high" when="1440">1440</origDate>, <origDate calendar="Gregorian" notAfter="1480" notBefore="1470" type="additions">added decoration c. 1475</origDate>
                      <origPlace cert="low">
                         <country key="place_1000070">French</country>, <settlement key="place_7009369">Montpellier</settlement> (script)</origPlace>
                      <origPlace>
@@ -127,10 +122,39 @@
                      </recordHist>
                   </adminInfo>
                </additional>
+               <msPart xml:id="MS_Bodl_418-endleaves" type="fragment">
+                  <msIdentifier>
+                     <altIdentifier type="partial">
+                        <idno type="part">MS. Bodl. 418 - endleaves (fols. i, 160)</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  <msContents>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem xml:id="MS_Bodl_418-endleaves-item1">
+                        <title type="desc" key="work_14973">Canon law</title>
+                     </msItem>
+                     
+                     
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="perg">
+                           <support>parchment</support>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+                  <history>
+                     <origin>
+                        <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
+                        
+                     </origin>
+                  </history>
+               </msPart>
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-10">Improve markup.</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2018-11-23" who="#MLH">Revised to incorporate all information in Watson, <ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref>, and SC.</change>
          <change when="2017-07-01">First online publication.</change>

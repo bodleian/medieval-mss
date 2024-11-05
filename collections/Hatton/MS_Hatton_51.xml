@@ -1,17 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6076">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6076">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Hatton 51</title>
             <title type="collection">MSS. Hatton</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1937">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+               <persName>N. Denholm-Young</persName>
             </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,47 +38,81 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Hatton 51</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x08w32r628k2</idno><idno type="crArk">ark:29072/x08s45q94586</idno><altIdentifier type="internal">
                      <idno type="SCN">4099</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_Hatton_51-item1">
                      <author key="person_120695167">John Gower</author>
                      <title key="work_2706">Confessio Amantis</title>
+                     <rubric>Confessio Amantis... by Johan Gower squyer</rubric>
+                     <note>In eight books, preceded by a table of contents (fol. i) and prologue (fol. 2v)</note>
+                     <note>The text begins on fol. 9v and is imperfect through the loss of fols 60, 82, 121, 131 and of five or six leaves at the end, finishing with 'There ben full many yeres stole' (viii. 2408)</note>
+                     <note>There are some 17th-century notes about Virginia, etc., on the margins of fols 5v, 6</note>
+                     <note>Copied from Caxton's printed edition of 1483 as is made clear by the scribe reproducing the compositorial misprint 'otherwkse' (on the penultimate line of fol. 181r) from Caxton's printed text 
+                        and also attempting to mirror the two-column layout and pagination of the printed volume (see Aditi Nafde, <ref target="https://www.zotero.org/groups/434020/bodleian_library_western_medieval_manuscripts_bibliography/search/Gower%20From%20Print%20to%20Manuscript%3A%20Copying%20Caxton%20in%20Oxford%2C%20Bodleian%20Library%2C%20MS%20Hatton%2051/titleCreatorYear">'Gower From Print to Manuscript: 
+                           Copying Caxton in Oxford, Bodleian Library, MS Hatton 51'</ref>, in <title>John Gower in Manuscripts and Early Printed Books</title> [2020], p. 189, and N. F. Blake, 
+                        <title><ref target="https://www.zotero.org/groups/434020/bodleian_library_western_medieval_manuscripts_bibliography/search/Blake%20English%20Literary/titleCreatorYear/items/Z8AI4UXM/item-list">William Caxton and English Literary Culture</ref></title> [1991], p. 291)</note>
+                     
                      <textLang mainLang="enm">Middle English</textLang>
                   </msItem>
+         
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent source="SC">iv + '205' (really 202) leaves
+                           <dimensions type="binding" unit="in">
+                              <height>12.5</height>
+                              <width>9</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     
+                     <layoutDesc>
+                        <layout columns="2">2 cols</layout>
+                     </layoutDesc>
+                     
                   </objectDesc>
                   <decoDesc>
                      <decoNote type="colInit">Coloured capitals.</decoNote>
                   </decoDesc>
                   <bindingDesc>
                      <binding contemporary="true">
-                        <p>Stamped brown leather on boards, with two clasps, in poor condition,
-         contemporary English work.</p>
+                        <p>Stamped brown leather on boards, with two clasps, in poor condition, contemporary English work</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" when="1500">c. 1500</origDate>
+                     <origDate calendar="Gregorian" notBefore="1490" notAfter="1510"><hi rend="italic">c</hi>. 1500</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
+                  
+                  <provenance>'Thys ys <persName role="fmo" key="person_4878">Harry Fawkener</persName> boke, T. Andria Fawkner', early 16th century (fol. 189v)</provenance>
+                  
+                  <provenance>'<persName role="sgn" key="person_4879">Edwarde Stanley</persName> 1556' (fol. 186, compare fol. 200)</provenance> 
+                     
+                  <provenance>The name of '<persName role="sgn" key="person_4880">Wylliam Blacker</persName>' occurs twice in a 16th-century hand on fol. 167</provenance>
+                  
+                  <provenance><persName key="person_37729288" role="fmo">Christopher, first Baron Hatton (d. 1670)</persName></provenance>
+                  
+                  <acquisition when="1671">Bought in 1671 by the Bodleian through the London bookseller Robert Scot (b. in or before 1632, d. 1709/1710); see Summary Catalogue, vol. 2, part 2, p. 801</acquisition>
+                     
+                  
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1937). <listBibl>
-                              <bibl facs="aaq0199.gif" type="SC">Summary Catalogue, Vol. 2 Part 2, p. 840</bibl>
+                           <source>
+                              Description adapted (May 2024) by Stewart J. Brookes from the Summary Catalogue (1937), with additional reference to published literature as cited
+                              <listBibl>
+                                 <bibl facs="aaq0199.gif" type="SC">Summary Catalogue, Vol. 2 Part 2, p. 840</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -87,12 +126,18 @@
                            </ref>
                         </bibl>
                      </listBibl>
+                     <listBibl type="PRINT">
+                        <head>Printed descriptions:</head>
+                        <bibl>Derek Pearsall et al., <title>A Descriptive Catalogue of the English Manuscripts of John Gower’s Confessio Amantis</title> (Cambridge: D.S. Brewer, 2021), cat. 28</bibl>
+                     </listBibl>
                   </listBibl>
                </additional>
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-05-13">Description revised to incorporate all the information in the Summary Catalogue (1937)</change>
+         <change when="2024-05">Add extent and leaf dimensions from Summary Catalogue.</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">

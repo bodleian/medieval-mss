@@ -1,17 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_4552" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4552">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Douce 182</title>
             <title type="collection">MSS. Douce</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1966">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,33 +42,49 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Douce 182</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x04q77fs06m8</idno><idno type="crArk">ark:29072/x0zs25x773hq</idno><altIdentifier type="internal">
                      <idno type="SCN">21756</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem class="#documenta #miscellanea" n="1" xml:id="MS_Douce_182-item1">
                      <title key="work_13665" type="desc">Ordinances of <persName key="person_280649480">Charles VI of France</persName> for the regulation of single combat, issued in 1406</title>
+                     <!-- JONAS says issued by Philip IV ...  http://jonas.irht.cnrs.fr/oeuvre/17931 - need to check-->
+                     <rubric>Sensieut la chartre de Gaige de Bataille</rubric>
+                     <incipit>Charles, par la grace de Dieu, roy de France a tous ceulx, qui ces presentes lettres verront salut. Savoir faisons, que comere ca en arriere 
+                        pour nos guerres et autres justes causes pour le commun prouffit de nostre royaulme nous eussions deffendu generalment a tous noz subgetz toutes manieres 
+                        de guerres et de tous gaige de bataille.</incipit>
+                     <explicit>Cest a dire, que se les lettres des noms des bataillans quilz apporterent de baptesme prins en latin se remenvent pares en per on en nomper 
+                        le demandeur sera vaineu. / Cy fine la chartre de gaige de bataille.</explicit>
+                     <note>Fols cxlii-cli of a larger volume</note>
                      <textLang mainLang="frm">Middle French</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
-                        <support>parchment</support>
+                        <support>parchment</support><extent><measure type="leaf" quantity="12">12</measure> leaves
+                           <dimensions type="binding" unit="in"><height>14.375</height><width>10.875</width></dimensions>
+                        </extent>
                      </supportDesc>
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote type="miniature">Good miniature.</decoNote>
-                     <decoNote type="border">Border.</decoNote>
-                     <decoNote type="decInit">Initial. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 718, pl. LV)</decoNote>
+                 
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 718, Pl. LV
+                     </summary>
+                     
+                     <decoNote type="miniature">Good miniature: <ref target="https://digital.bodleian.ox.ac.uk/objects/5b8aae07-4543-4e4d-a44d-36989311059e/">fol. 2 has a double miniature</ref> of fighting on horseback and on foot</decoNote>
+                     <decoNote type="border">Border</decoNote>
+                     <decoNote type="decInit">Initial</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1470" notBefore="1460">c. 1460–1470</origDate>
+                     <origDate calendar="Gregorian" notAfter="1470" notBefore="1460"><hi rend="italic">c</hi>. 1460–1470</origDate>
                      <origPlace>
-                        <country key="place_1000070">French</country>
+                        <country key="place_1000070">France</country>
                      </origPlace>
                   </origin>
                   <provenance notAfter="1834" notBefore="1757" resp="#MMM"><persName key="person_69848690" role="fmo">Francis Douce, 1757–1834</persName></provenance>
@@ -68,19 +93,36 @@
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1966). <listBibl>
-                              <bibl facs="aaz0566.gif" type="SC">Summary Catalogue, vol. 4, p. 547</bibl>
+                        
+                        <source>
+                           Description adapted (August 2024) by Stewart J. Brookes from the Summary Catalogue (1897) and the Catalogue of the Printed Books and Manuscripts 
+                           Bequeathed by Francis Douce, esq. to the Bodleian Library (1840). Decoration, localization and date follow Pächt and Alexander (1966)
+                           <listBibl>
+                              
+                              <bibl facs="aaz0566.gif" type="SC">Summary Catalogue, vol. 4, p. 547</bibl>    <bibl>
+                                 <ref target="https://archive.org/details/catalogueofprint00bodluoft/page/30/mode/1up">Printed Books and Manuscripts Bequeathed by Francis Douce, p. 30</ref>
+                              </bibl>
                            </listBibl>
+                           
+                           
                         </source>
                      </recordHist>
                   </adminInfo>
                   <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/5b8aae07-4543-4e4d-a44d-36989311059e/"><title>Digital Bodleian</title></ref>
                         <note>(1 image from 35mm slides)</note></bibl></surrogates>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="ONLINE">
+                        <head>Online resources:</head>
+                        <bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/82952">JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</ref></bibl>
+                     </listBibl>
+                  </listBibl>
                </additional>
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-08-30">Description revised to incorporate all the information in the Summary Catalogue (1897)</change>
+         <change when="2024-05">Add extent and leaf dimensions from Summary Catalogue.</change>
          <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>

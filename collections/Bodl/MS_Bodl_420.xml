@@ -1,15 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1453">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1453">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Bodl. 420</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2024">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -33,21 +34,45 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Bodl. 420</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0s1784j78qk</idno><idno type="crArk">ark:29072/x0v405s890mg</idno><altIdentifier type="internal">
                      <idno type="SCN">2319</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
+               <msContents>  <textLang mainLang="la">Latin</textLang>
                   <msItem n="1" xml:id="MS_Bodl_420-item1">
                      <author key="person_49234321">Odo of Cheriton</author>
-                     <title key="work_3365">Sermones</title>
-                     <textLang mainLang="la">Latin</textLang>
+                     <title key="work_3365">Sermones</title><rubric>Omelie bone memorie magistri Odonis de Cant. super Ewangelia
+                        Dominicalia <locus>(fol. 204)</locus></rubric>
+                     <note>First sermon on the 1st Sunday in Advent. The Sanctorale
+                        begins on fol. 204. A long table of
+                        contents is at fol. 1, and includes two sermons on fols. 2v-5 and one at fol. 305</note><note>
+                        The table makes it probable that there were originally four more treatises
+                        in the volume copied from, or possibly in the present MS. 'Tractatus de
+                        confessione, penitencia,' etc., 'de excommunicatione,' and two sermons.</note>
+                     <incipit>Cum appropinquasset Iesus ... Presens euangelium </incipit>
+                     <incipit>Misit
+                        Dominus angelum suum Actuum 12° ad triplicem utilitatem nostram</incipit>
+                     <incipit>Ipsa est
+                        mulier quam preparauit Dominus'</incipit><incipit><locus>(fol. 305)</locus> Eice ancillam
+                        ... Si rex in regno</incipit>
+                     <listBibl><bibl>Schneyer IV. 498, listing this manuscript.</bibl></listBibl>
+                   </msItem>
+                  <msItem xml:id="MS_Bodl_420-item1a">
+                     <locus>(fol. 307)</locus>
+                     <author key="person_49234321">Odo of Cheriton</author>
+                     <title key="work_5833">Commentary on the Lord's Prayer</title><incipit>Eloquia Domini eloquia casta, etc. Eloquia Domini ad tria</incipit>
+                     <listBibl><bibl>Sharpe, <title>Latin Writers</title></bibl><bibl>Bloomfield 8240, 8275</bibl></listBibl>
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
+                        <extent>i + 318 leaves
+                        <dimensions type="binding" unit="in">
+                           <height>12.375</height>
+                           <width>8.875</width>
+                        </dimensions></extent>
                      </supportDesc>
                   </objectDesc>
                   <bindingDesc>
@@ -58,17 +83,18 @@
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" when="1500">c. 1500</origDate>
+                     <origDate calendar="Gregorian" notAfter="1510" notBefore="1490">c. 1500</origDate>
                      <origPlace>
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
+                  <acquisition notAfter="1604" notBefore="1603">The MS. appears to have reached the Library in 1603 or 1604.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). <listBibl>
+                           Description adapted (2024) from the Summary Catalogue (1922) with additional reference to published literature as cited. <listBibl>
                               <bibl facs="aap0327.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 306</bibl>
                               <bibl facs="aap0328.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 307</bibl>
                            </listBibl>
@@ -80,6 +106,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-10">Description revised to incorporate all information from Summary Catalogue.</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">

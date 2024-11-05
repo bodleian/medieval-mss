@@ -1,15 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_1580" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1580">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Bodl. 561</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2024">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -33,17 +34,33 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Bodl. 561</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0pk02c958cc</idno><idno type="crArk">ark:29072/x0pg15bd752h</idno><altIdentifier type="internal">
                      <idno type="SCN">2345</idno>
                   </altIdentifier>
                </msIdentifier>
                <physDesc>
                   <p n="composite">Composite</p>
+                  <objectDesc>
+                     <supportDesc>
+                        <extent>iii + 159 leaves
+                        <dimensions type="binding" unit="in">
+                           <height>9.5</height>
+                           <width>7</width>
+                        </dimensions></extent>
+                     </supportDesc>
+                  </objectDesc>
+                  <decoDesc>
+                     <decoNote type="flourInit">Some illuminated capitals.</decoNote>
+                  </decoDesc>
                </physDesc>
+               <history>
+                  <provenance>'At least seven distinct sections ... Two versions of an early list of contents on the fly-leaves show that the miscellany had taken more or less its present form by c.1200' (M. Brett, 'The Collectio Lanfranci and its Competitors', in <title>Intellectual Life in the Middle Ages: Essays Presented to Margaret Gibson</title>, ed. L. Smith and B. Ward (London, 1992), p. 157). For the date of parts 2-4 see <title>Memorials of St. Anselm</title>, ed. R. W. Southern and F. S. Schmitt (1969), p. 304.</provenance>
+                  <acquisition when="1604">Presented by <persName role="dnr" key="person_39246400">sir George More</persName> in 1604.</acquisition>
+               </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). <listBibl>
+                        <source>Description adapted (2024) from the Summary Catalogue (1922) with additional reference to published literature as cited.. <listBibl>
                               <bibl facs="aap0341.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 320</bibl>
                               <bibl facs="aap0342.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 321</bibl>
                            </listBibl>
@@ -58,9 +75,14 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem class="#legalia" n="1" xml:id="MS_Bodl_561-part1-item1">
-                        <title key="work_11477" type="desc">Decretals</title>
-                        <note>(Canon law collection, preceded by <persName key="person_84971682" role="aut">Ivo of Chartres</persName>, Prologus (to Decretum or Panormia))</note>
+                     <msItem class="#legalia" xml:id="MS_Bodl_561-part1-item1">
+                        <locus from="2">(fol. 2)</locus>
+                        <title key="work_10730" type="desc">Collectio canonum</title>
+                        <rubric>Incipit Prologus Iuonis Carnotensis episcopi de conuenientia
+                           &amp; dispensatione regularum ęcclesiasticarum</rubric>
+                        <incipit>Exceptiones
+                           ecclesiasticarum regularum</incipit>
+                        <note>Fols. 1-33 comprise the preface of <persName role="aut" key="person_84971682">Ivo of Chartres</persName>, followed by canons derived mostly from the <title key="work_2288">Tripartita B</title> collection and from <persName key="person_306342567" role="aut">Pseudo-Isidore</persName>, <title type="desc" key="work_4031">longer form</title>, in the version brought by Lanfranc from Bec, the <title key="work_5490">Collectio Lanfranci</title>. Fols 35-60 are essentially a text of Tripartita  B,  xxix, cc.  8-283A. The collection is analysed in more detail by M. Brett, 'The Collectio Lanfranci and its Competitors'.</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                   </msContents>
@@ -71,14 +93,14 @@
                         </supportDesc>
                      </objectDesc>
                      <decoDesc>
-                        <decoNote>Initials.</decoNote>
+                        <decoNote type="decInit">Initials.</decoNote>
                      </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1200" notBefore="1150">12th century, second half</origDate>
+                        <origDate calendar="Gregorian" notAfter="1110" notBefore="1100">12th century, early</origDate>
                         <origPlace>
-                           <country key="place_7002445">English</country>
+                           <country key="place_7002445">English</country> (see Brett)
                         </origPlace>
                      </origin>
                   </history>
@@ -90,20 +112,43 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem n="1" xml:id="MS_Bodl_561-part2-item1">
+                     <textLang mainLang="la">Latin</textLang>
+                    <msItem>
+                       <note>Texts relating to the debate on whether monks should be priests, all surviving uniquely in this manuscript, and printed with discussion by R. Foreville and  J. Leclercq, 'Un débat sur le sacerdoce des moines au XIIe siècle', in <title>Studia Anselmiana</title> 41 (Analecta Monastica, 4th ser.) (1957)</note>
+                       <msItem  xml:id="MS_Bodl_561-part2-item1">
+                        <locus from="61">(fol. 61)</locus>
                         <author key="person_125016407">Theobald of Étampes</author>
                         <title key="work_4680">Improperium cuiusdam in monachos</title>
-                        <note>(with the reply, 'Responsio cuiusdam pro monachis')</note>
-                        <textLang mainLang="la">Latin</textLang>
+                        <rubric>Improperium cuiusdam in Monachos</rubric>
+                        <incipit>Turstano Dei gratia ... In primis
+                           si uales</incipit>
+                        <listBibl><bibl>Foreville and  Leclercq, 'Un débat sur le sacerdoce', text at pp. 52-3</bibl></listBibl>
+                        <note>Followed by the reply:</note>
                      </msItem>
-                     <msItem class="#satirica #versus #ecclesiastica" n="2" xml:id="MS_Bodl_561-part2-item2">
-                        <title key="work_13837" type="desc">Poem against the luxury of priests</title>
-                        <textLang mainLang="la">Latin</textLang>
+                     <msItem xml:id="MS_Bodl_561-part2-item1b">
+                        <locus>(fol. 62)</locus>
+                        <title key="work_5491">Rescriptum cuiusdam pro monachis</title>
+                        <rubric>Rescriptum cuiusdam pro monachis</rubric>
+                        <incipit>Sicut ex supradictis
+                           conicere possumus</incipit>
+                        <listBibl><bibl>Foreville and  Leclercq, 'Un débat sur le sacerdoce', text at pp. 54-103</bibl></listBibl>
                      </msItem>
-                     <msItem class="#monastica" n="3" xml:id="MS_Bodl_561-part2-item3">
-                        <title key="work_15100" type="desc">Treatise on monasticism</title>
-                        <textLang mainLang="la">Latin</textLang>
+                     <msItem  xml:id="MS_Bodl_561-item-3">
+                        <locus from="87v">(fol. 87v)</locus>     
+                        <incipit>Scribere
+                           decreui quia ludum fingere sueui</incipit>
+                     <note>Poem against priests.</note>
+                        <listBibl><bibl>Foreville and  Leclercq, 'Un débat sur le sacerdoce', text at pp. 103-108</bibl></listBibl>
                      </msItem>
+                     <msItem  xml:id="MS_Bodl_561-item-4">
+                        <locus from="90v">(fol. 90v)</locus>   
+                        <rubric>Quod ex auctoritate ueterum scripturarum sanctorumque canonum
+                           monasticus ordo predicare &amp; promoueri ualeat</rubric>
+                        <incipit>Quotienscumque
+                           fideles ęcclesię</incipit>
+                        <listBibl><bibl>Foreville and  Leclercq, 'Un débat sur le sacerdoce', text at pp. 108-111</bibl></listBibl>
+                    </msItem><msItem xml:id="MS_Bodl_561-item-4a">    <note>Fols. 96v-97r: fragments from the school of <persName role="aut" key="person_100187025">Anselm of Canterbury</persName>, pr. <title>Memorials of St. Anselm</title>, ed. R. W. Southern and F. S. Schmitt (1969), pp. 305-8.</note>
+                     </msItem></msItem>
                   </msContents>
                   <physDesc>
                      <objectDesc form="codex">
@@ -114,7 +159,7 @@
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1200" notBefore="1150">12th century, second half</origDate>
+                        <origDate calendar="Gregorian" notAfter="1150" notBefore="1100">12th century, first half</origDate>
                         <origPlace>
                            <country key="place_7002445">English</country>
                         </origPlace>
@@ -128,9 +173,33 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem class="#sermones #theologica" n="1" xml:id="MS_Bodl_561-part3-item1">
-                        <title key="work_14594" type="desc">Sermons and theological notes</title>
-                        <textLang mainLang="la">Latin</textLang>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem xml:id="MS_Bodl_561-item-5">
+                        <locus from="98">(fol. 98)</locus>
+                        <title type="desc" key="work_14583">Sermon</title>
+                        <incipit><quote>Homo quidam erat diues qui habebat
+                           uillicum</quote> Dominus noster Ihesus Christus discipulos suos</incipit>
+                        <note></note></msItem>
+                     <msItem xml:id="MS_Bodl_561-item-5i">
+                        <locus>(fol. 106)</locus>
+                        <note>Theological notes, including a short poem on the Christmas liturgy</note>
+                        <incipit>In Natale sacro</incipit>
+                     </msItem>
+                     <msItem xml:id="MS_Bodl_561-item-5a">
+                        <locus>(fol. 107)</locus>
+                        <title type="desc" key="work_14583">Sermon</title>
+                        <rubric>In dedicatione ecclesię</rubric>
+                        <incipit>Quia sancta
+                           dedicationis</incipit>
+                        <note>Pr. <title>Memorials of St. Anselm</title>, pp. 310-19; an enlarged version of <persName role="aut" key="person_78673926">Alexander of Canterbury</persName>, <title key="work_5492">Dicta Anselmi</title>, c. 20.</note>
+                     </msItem>
+                     <msItem xml:id="MS_Bodl_561-item-5b">
+                        <locus>(fols. 115v-118)</locus>
+                        <rubric>De cimiterio</rubric>
+                        <note>A continuation of the preceding  (<title>Memorials of St. Anselm</title>, p. 304)</note></msItem>
+                     <msItem xml:id="MS_Bodl_561-item-5c">
+                        <locus>(fol. 118r-v)</locus>
+                        <note>Fragments from the school of <persName role="aut" key="person_100187025">Anselm of Canterbury</persName>, pr. <title>Memorials of St. Anselm</title>,  pp. 308-9</note>
                      </msItem>
                   </msContents>
                   <physDesc>
@@ -142,7 +211,7 @@
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1200" notBefore="1150">12th century, second half</origDate>
+                        <origDate calendar="Gregorian" notAfter="1150" notBefore="1100">12th century, first half</origDate>
                         <origPlace>
                            <country key="place_7002445">English</country>
                         </origPlace>
@@ -156,28 +225,35 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem class="#theologica" n="1" xml:id="MS_Bodl_561-part4-item1">
-                        <title key="work_10169" type="desc">Allegorical discourse</title>
+                     <msItem class="#theologica" xml:id="MS_Bodl_561-part4-item1">
+                        <note>Allegories and moralizations from the school of <persName role="aut" key="person_100187025">Anselm of Canterbury</persName> (<title>Memorials of St. Anselm</title>, pp. 304-5)</note>
                         <msItem xml:id="MS_Bodl_561-part4-item1-item1">
+                           <locus>(fols. 119r-129r)</locus>
                            <rubric>De aratro et carro</rubric>
                            <incipit>Homo cum in honore esset</incipit>
                         </msItem>
                         <msItem xml:id="MS_Bodl_561-part4-item1-item2">
+                           <locus>(fols. 129r-139v)</locus>
                            <rubric>De naui</rubric>
                            <incipit>Sicut ex uerbis euangelicę lectionis</incipit>
+                           <note>The second part is based on <persName role="aut" key="person_78673926">Alexander of Canterbury (?)</persName>, <title key="work_5613">Liber Anselmi de humanis moribus per similitudines</title>, cc. 41-2.</note>
                         </msItem>
                         <msItem xml:id="MS_Bodl_561-part4-item1-item3">
+                           <locus>(fols. 139v-147r)</locus>
                            <rubric>De molendino</rubric>
                            <incipit>Sciamus quoniam si terrestris domus</incipit>
                         </msItem>
                         <msItem xml:id="MS_Bodl_561-part4-item1-item4">
+                           <locus>(fols. 147v-149r)</locus>
                            <rubric>De Milite temporali et spirituali</rubric>
                            <incipit>Sicut miles temporalis</incipit>
+                           <note>A version of <persName role="aut" key="person_78673926">Alexander of Canterbury (?)</persName>, <title key="work_5613">Liber Anselmi de humanis moribus per similitudines</title>, c. 193 (<title>Memorials of St Anselm</title>, pp. 97ff:).</note>
                         </msItem>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem class="#theologica" n="2" xml:id="MS_Bodl_561-part4-item2">
-                        <title key="work_15266" type="desc">Theological extracts</title>
+                     <msItem class="#theologica"  xml:id="MS_Bodl_561-part4-item2">
+                        <locus>(fols. 149v-150r)</locus>
+                        <note>Fragments from the school of <persName role="aut" key="person_100187025">Anselm of Canterbury</persName>, (partly?) pr. <title>Memorials of St. Anselm</title>, ed. R. W. Southern and F. S. Schmitt (1969), pp. 309-10</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                   </msContents>
@@ -190,7 +266,7 @@
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1200" notBefore="1150">12th century, second half</origDate>
+                        <origDate calendar="Gregorian" notAfter="1150" notBefore="1100">12th century, first half</origDate>
                         <origPlace>
                            <country key="place_7002445">English</country>
                         </origPlace>
@@ -201,6 +277,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-10">Description revised to incorporate all information from Summary Catalogue with reference to literature as cited.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>

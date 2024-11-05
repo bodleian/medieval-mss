@@ -1,17 +1,28 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6097">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6097">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Hatton 81</title>
             <title type="collection">MSS. Hatton</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1937">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+               <persName>N. Denholm-Young</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,46 +44,72 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Hatton 81</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0f1881m27mh</idno><idno type="crArk">ark:29072/x0dz010q4492</idno><altIdentifier type="internal">
                      <idno type="SCN">4060</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_Hatton_81-item1">
-                     <title key="work_14758">Statutes of England to 4 Henry VI.</title>
-                     <note>(ends incomplete)</note>
+                     <title key="work_14730" type="desc">Statutes of England, nova statuta, 1 Henry IV to 4 Henry VI</title>
+                     <note>Statutes from the first year of the reign of king Henry IV, and then Henry V up until the fourth year of Henry VI, ch. VI, 
+                        'ne nulle manere ressue' (one or more gatherings being lost).  Includes 'ordinaciones scaccarii' of 9 Henry IV (fol. 25) and 
+                        an 'ordinacio facta... de resumptione prioratuum alienigenarum' of 2 Henry V (fol. 38v, cf. fol. 32v)
+                     </note>
                      <textLang mainLang="xno">Anglo-Norman</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
-                        <support>parchment</support>
+                        <support>parchment</support><extent source="SC"><measure type="leaf" quantity="45">45</measure> leaves
+                           <dimensions type="binding" unit="in">
+                              <height>11.75</height>
+                              <width>8.25</width>
+                           </dimensions>
+                        </extent>
+                        
+                        <condition>Fol. 45 is particularly worn</condition>
                      </supportDesc>
+                     
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote type="decInit">Decoration<p>Good initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 884)</p>
+                  
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 884
+                     </summary>
+                     
+                     <decoNote type="decInit">Good initials
                      </decoNote>
                   </decoDesc>
                   <bindingDesc>
-                     <binding>
-                        <p>Of white sheepskin on boards, clasp lost.</p>
+                     <binding contemporary="true">
+                        <p>Contemporary, white sheepskin on boards, clasp lost</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1450" notBefore="1425">15th century, second quarter (after 1425/6)</origDate>
+                     <origDate calendar="Gregorian" notAfter="1450" notBefore="1425">15th century, second quarter (after 1425/1426)</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
+                  
+                  <provenance>The name '<persName role="fmo" key="person_4881">John Savile</persName>' (early 17th century) is on fol. 45</provenance>
+                  
+                  <provenance><persName key="person_37729288" role="fmo">Christopher, first Baron Hatton (d. 1670)</persName></provenance>
+                  
+                  <acquisition when="1671">Bought in 1671 by the Bodleian through the London bookseller Robert Scot (b. in or before 1632, d. 1709/1710); see Summary Catalogue, vol. 2, part 2, p. 801</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1937). Decoration, localization and date follow Pächt and Alexander (1973).  <listBibl>
+                           Description adapted (May 2024) by Stewart J. Brookes from the Summary Catalogue (1937), with further details from 
+                           <ref target="https://www.diamm.ac.uk/sources/518/">DIAMM: Digital Image Archive of Medieval Music</ref>. 
+                           Decoration, localization and date follow Pächt and Alexander (1973)
+                           <listBibl>
                               <bibl facs="aaq0178.gif" type="SC">Summary Catalogue, Vol. 2 Part 2, p. 819</bibl>
                            </listBibl>
                         </source>
@@ -89,10 +126,59 @@
                      </listBibl>
                   </listBibl>
                </additional>
+               
+               <msPart xml:id="Hatton_81_flyleaves">
+                  <msIdentifier>
+                     <altIdentifier>
+                        <idno>MS. Hatton 81, flyleaves</idno> 
+                     </altIdentifier> 
+                  </msIdentifier>
+                  <msContents>
+                     
+                     <msItem>
+                        <locus>(fols 1-2, 44-45)</locus>
+                        <title key="work_13415" type="desc">Motets and conductus (fragments)</title>
+                        <note>Polyphonic music of pre-Ars Nova type. There are <ref target="https://www.diamm.ac.uk/sources/518/">two motets and three conductus</ref>, by the same composer</note>
+                        <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="perg">
+                           <support>Parchment</support>
+                           <extent>Fol. 1  belongs with fol. 44 and fol. 45 belongs with fol. 2: these were originally 4 consecutive leaves
+                                 <dimensions unit="mm">
+                                    <height>297</height>
+                                    <width>210</width>
+                                 </dimensions>
+                           </extent>
+                           
+                        </supportDesc>
+                        
+                     </objectDesc>
+                     <musicNotation>
+                        <p>Notation.</p>
+                     </musicNotation>
+                  </physDesc>
+                  <history>
+                     
+                     <origin>
+                        
+                        <origDate notAfter="1400" notBefore="1300" calendar="Gregorian">14th century</origDate>
+                        
+                     </origin>
+                     
+                  </history>
+               </msPart>
+               
             </msDesc>
+     
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-05-13">Description revised to incorporate all the information in the Summary Catalogue (1937)</change>
+         <change when="2024-05">Add extent and leaf dimensions from Summary Catalogue.</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">

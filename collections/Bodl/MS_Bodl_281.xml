@@ -1,15 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1331">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1331">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Bodl. 281</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2024">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -33,32 +39,89 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Bodl. 281</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x00v838179k9</idno><idno type="crArk">ark:29072/x00r9674968f</idno><altIdentifier type="internal">
                      <idno type="SCN">2331</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem n="1" xml:id="MS_Bodl_281-item1">
-                     <author key="person_95179953">William of Auvergne</author>
-                     <title key="work_5057">works</title>
-                     <textLang mainLang="la">Latin</textLang>
-                  </msItem>
+                  <textLang mainLang="la">Latin</textLang>
+                     
+                     <msItem n="1" xml:id="MS_Bodl_281-item-1">
+                        <locus from="1">(fol. 1)</locus>
+                        <author key="person_95179953">William of Auvergne</author>
+                        <title key="work_5047">De causis cur deus homo</title>
+                        <rubric>Tractatus domini Parisiensis Cur Deus homo</rubric>
+                     </msItem>
+                     <msItem n="2" xml:id="MS_Bodl_281-item-2">
+                        <locus from="8">(fol. 8)</locus>
+                        <author key="person_95179953">William of Auvergne</author>
+                        <title key="work_5052">De sacramentis</title>
+                        <rubric>Prologue magistri Willelmi episcopi Parisiensis in opus suum de
+                           Sacramentos</rubric>
+                        <note>Followed by the work itself. An index is at fol. 156.</note>
+                     </msItem>
+                    <msItem>
+                       <author key="person_95179953">William of Auvergne</author>
+                       <title key="work_5055">De virtutibus et vitiis</title>
+                       <msItem n="3" xml:id="MS_Bodl_281-item-3">
+                        <locus from="73">(fol. 73)</locus>
+                       
+                        <rubric>Liber de virtutibus eiusdem Parisiensis</rubric>
+                        <note>Fols. 73 and 74 are
+                           transposed in the binding.</note>     
+                     </msItem>
+                     <msItem n="4" xml:id="MS_Bodl_281-item-4">
+                        <locus from="117">(fol. 117)</locus>
+                        <rubric>Tractatus de peccatis &amp; uicijs magistri Willelmi de
+                           Aluernia doctoris Parisiensis</rubric>
+                        <note>Gerard Langbaine thought he recognized Brian
+                           Twyne's hand in a note on fol. 123v.</note>      
+                     </msItem></msItem>
+                     <msItem n="5" xml:id="MS_Bodl_281-item-5">
+                        <locus from="150">(fol. 150)</locus>
+                        <author key="person_95179953">William of Auvergne</author>
+                        <title key="work_5048">De faciebus mundi</title>
+                        <rubric>Libri de faciebus mundi a Willelmo de Aluernia episcopo
+                           Parisiensi editus</rubric>      
+                     </msItem>
+                     <msItem n="6" xml:id="MS_Bodl_281-item-6">
+                        <locus from="162v">(fol. 162v)</locus>
+                        <title key="work_15135">Ars praedicandi</title>
+                        <incipit>Octo sunt modi dilatandi sermones</incipit>
+                        <note>The first part of a treatise on the preparation of sermons:
+                           ends abruptly on fol. 163v, some
+                           leaves being lost, 'Aristoteles. Qui permittit'.</note>    
+                     </msItem>
+               
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                     </supportDesc>
+                        <extent>i + 165 leaves
+                        <dimensions type="binding" unit="in">
+                           <height>15.5</height>
+                           <width>11.875</width>
+                        </dimensions></extent>
+                     </supportDesc>      
+                     <layoutDesc>
+                              <layout columns="2">2 cols.</layout>
+                           </layoutDesc>
                   </objectDesc>
+                  <handDesc hands="2">
+                     <handNote>Fols. 1–122 written by <persName key="person_495" role="scr">Henry Mere</persName>
+                        <!-- not found VIAF -->, with his initials, fols. 72v, 116v (cf. M. B. Parkes, "A Fifteenth-Century Scribe: Henry Mere", in Scribes, Scripts and Readers: Studies in the Communication, Presentation and Dissemination of Medieval Texts (London, 1991), pp. 249-56). The second scribe also wrote MS. Auct. F. 5. 26. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 987, pl. XCII)</handNote>
+                  </handDesc>
                   <decoDesc>
-                     <decoNote>Fine borders, initials. Fols. 1–122 written by <persName key="person_495" role="scr">Henry Mere</persName>
-                        <!-- not found VIAF -->, with his initials, fols. 72v, 116v. The second scribe also wrote MS. Auct. F. 5. 26. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 987, pl. XCII)</decoNote>
+                     <summary>(<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 987, pl. XCII)</summary>
+                     <decoNote type="border">Fine borders. </decoNote><decoNote type="decInit">Fine initials. </decoNote>
                   </decoDesc>
                   <bindingDesc>
                      <binding notBefore="1400" notAfter="1800">
                         <p>Elaborate stamped-leather sides (English 15th cent. work, of Canterbury, see
          no. 2291, an imitation of a 12th cent. design), pasted on an 18th cent. binding: 'Time
-         Deum' and 'bien' are among the stamps.</p>
+         Deum' and 'bien' are among the stamps. Attribute to <persName role="bnd" key="person_3029">John Kemsyn</persName> (the Canterbury binder).</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
@@ -70,20 +133,16 @@
                         <!--ORIGINAL: English, Canterbury-->
                      </origPlace>
                   </origin>
-                  <provenance type="MLGB3_provenance_evidence"
-                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1307">
-                     <orgName role="fmo" key="org_158353196">Canterbury, Kent, Benedictine cathedral priory of Holy Trinity or Christ Church</orgName>: On fol. 1r in an initial letter are the arms of the priory of Christ Church, Canterbury. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1307">MLGB3</ref>: inferred evidence). </provenance>
-                  <provenance type="MLGB3_laterOwners"
-                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1307">Given by Abraham, Isaac, and Jacob Colfe, 1616. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1307">MLGB3</ref>)</provenance>
-                  <provenance type="MLGB3_generalNotes"
-                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1307">On the scribe, Henry Mere, see M. B. Parkes, "A Fifteenth-Century Scribe: Henry Mere", in Scribes, Scripts and Readers: Studies in the Communication, Presentation and Dissemination of Medieval Texts (London, 1991), pp. 249-56. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1307">MLGB3</ref>)
-                                             </provenance>
+                  <provenance type="MLGB3_provenance_evidence" source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1307">
+                     <orgName role="fmo" key="org_158353196">Canterbury, Kent, Benedictine cathedral priory of Holy Trinity or Christ Church</orgName>: On fol. 1r in an initial letter are the arms of the priory of Christ Church, Canterbury (azure, a cross argent, charged with the letter X in the fesse
+                     point and the letter I in the honour point, both sable for Christi). (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1307">MLGB3</ref>: inferred evidence). </provenance>
+                  <acquisition when="1616">Presented by <persName role="dnr" key="person_67932423">Abraham</persName>, <persName role="dnr" key="person_2919">Isaac</persName>, and <persName role="dnr" key="person_2920">Jacob Colfe</persName> in 1616.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
+                           Description adapted (2024) from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
                               <bibl facs="aap0335.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 314</bibl>
                            </listBibl>
                         </source>
@@ -104,6 +163,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-09">Description revised to incorporate all information from Summary Catalogue.</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2021-12-14">Add provenance information from MLGB3.</change>
          <change when="2017-07-01">First online publication.</change>

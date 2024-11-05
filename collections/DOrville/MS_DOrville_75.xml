@@ -1,17 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_4177" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4177">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. D'Orville 75</title>
             <title type="collection">MSS. D'Orville</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,39 +42,80 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. D'Orville 75</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x08049g555jd</idno><idno type="crArk">ark:29072/x0kk91fk59f6</idno><altIdentifier type="internal">
                      <idno type="SCN">16953</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  <textLang mainLang="la">Latin</textLang>
                   <msItem n="1" xml:id="MS_DOrville_75-item1">
                      <author key="person_78769600">Cicero</author>
                      <title key="work_1254">Epistolae ad familiares</title>
-                     <textLang mainLang="la">Latin</textLang>
+                     <rubric>Marci Tulii Ciceronis Epistolarum familiarium...</rubric>
+                     <note>Libri xvi, preceded by a list of the letters</note>
+                    
                   </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 153v)</locus>
+                        <note>In a different hand is a genealogy of the Zabarella family from <hi rend="italic">c</hi>. 1200 to <hi rend="italic">c</hi>. 1450, 
+                           compiled by <persName cert="medium" key="person_61622575" role="fmo">Jacobus Zabarella</persName> (d. 1589).</note>
+                     </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                
+                        <extent>
+                           x + 156 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>10.875</height>
+                              <width>5.625</width>
+                           </dimensions>
+                        </extent>
+                        
                      </supportDesc>
+                     
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote>Decoration<p>Fine border, initial. Other initials in a different style. Humanistic script. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 417, pl. XLI)</p>
-                     </decoNote>
+                  
+                  <handDesc>
+                     <handNote script="humanistica">Humanistic script (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 417)</handNote>
+                  </handDesc>
+                  
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 417, Pl. XLI
+                     </summary>
+                     
+                     <decoNote type="border">Fine border</decoNote>
+                     
+                     <decoNote type="decInit">Fine initial</decoNote>
+                     
+                     <decoNote type="initial">Other initials in a different style</decoNote>
+                     
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1475" notBefore="1450">15th century, third quarter</origDate>
                      <origPlace cert="low">
-                        <country key="place_1000080">Italian</country>, <settlement key="place_7004264">Ferrara</settlement> (?)<!--ORIGINAL: Italian, Ferrara (?)--></origPlace>
+                        <country key="place_1000080">Italy</country>, <settlement key="place_7004264">Ferrara</settlement> (?)<!--ORIGINAL: Italian, Ferrara (?)--></origPlace>
                   </origin>
+                  <provenance>Zabarella family of Padua: arms, fol. 1r, and cf. fol. 154r. Genealogy compiled by <persName cert="medium" key="person_61622575" role="fmo">Jacobus Zabarella</persName> (d. 1589).</provenance>
+                  
+                  <provenance><persName key="person_24945908" role="fmo">Jacques Phillippe D'Orville of Amsterdam (1690–1751)</persName></provenance>
+                  <provenance><persName key="person_3392" role="fmo">Jean D'Orville, b. 1734</persName>, his son, by descent</provenance>
+                  <provenance><persName key="person_3393" role="fmo">Jean D'Orville</persName>, son of Jean, by descent</provenance>
+                  <provenance>Sold to the <persName key="person_3394" role="fmo">Rev. John Cleaver Banks (1765/1766–1845)</persName>: purchased from him by the Bodleian</provenance>
+                  <acquisition when="1804">Acquired by the Bodleian in 1804</acquisition>
+                  
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
+                        <source>
+                           Description adapted (March 2024) by Stewart J. Brookes from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1970)
+                           <listBibl>  
                               <bibl facs="aaz0075.gif" type="SC">Summary Catalogue, Vol. 4, p. 56</bibl>
                               <bibl facs="aaz0076.gif" type="SC">Summary Catalogue, Vol. 4, p. 57</bibl>
                            </listBibl>
@@ -79,6 +129,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-03-25">Description revised to incorporate all the information in the Summary Catalogue (1897)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>

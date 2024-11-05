@@ -1,15 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1573">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1573">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Bodl. 553</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2024">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -33,26 +39,69 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Bodl. 553</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0n583xt921k</idno><idno type="crArk">ark:29072/x0n296wz08qp</idno><altIdentifier type="internal">
                      <idno type="SCN">2314</idno>
                   </altIdentifier>
                </msIdentifier>
+               <msContents>
+                  <msItem n="1" xml:id="MS_Bodl_553-part2-item1">
+                     <author key="person_289073048">Willelmus de Congenis</author>
+                     <title key="work_4994">Cyrurgia</title>
+                     <note>(with notulae by a pupil)</note>
+                     <rubric>Incipit cyrurgia domini &amp; magistri Willehelmi de Congenis</rubric>
+                     <incipit type="pref.">In hoc opusculo domino meo O. duci</incipit><incipit type="text">De vvlnere capitis ... De gutta rosea. Fit quandoque uulnus in
+                        capite</incipit>
+                     <explicit>sic loco superponantur</explicit>
+                     <note>Composed as the preface states by a pupil of
+                        Willehelmus. The treatise is divided into five parts, each preceded by a
+                        list of chapters. There are many notes, some (in an
+                        Italian hand) later. One of the contemporary notes states that W. de
+                        Congenis was a physician of Montpellier. </note>
+                     <textLang mainLang="la">Latin</textLang>
+                  </msItem>
+                  <msItem>
+                     <locus>(fol. 39v)</locus>
+                     <title>Perilous days</title>
+                     <incipit>Les mestres ky cest art controuverent i anumbrerent les mauves jours et les perillous qui sunt en l'an ; et ki unkes en nul de ces jours en enfermeté cherra, ja ne resourdra</incipit>
+                     <note>Followed by three memorial Latin verses</note><incipit>Lux lune prior </incipit>
+                     <textLang mainLang="xno" otherLangs="la">Anglo-Norman and Latin</textLang>
+                  </msItem>
+               </msContents>
                <physDesc>
-                  <p n="composite">Composite: fols. i, 43 || fols. 1–41</p>
-                  <musicNotation>
-                     <p>Notation on staves (see van Dijk 1957).</p>
-                  </musicNotation>
+                  <objectDesc form="codex">
+                     <supportDesc material="perg">
+                        <support>parchment</support>
+                        <extent>iii + 44 leaves
+                        <dimensions type="binding" unit="in">
+                           <height>9.75</height>
+                           <width>7</width>
+                        </dimensions></extent>
+                     </supportDesc>
+                  </objectDesc>
+                  <decoDesc>
+                     <decoNote type="decInit">Good initial. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 488)</decoNote>
+                  </decoDesc>
                   <bindingDesc>
                      <binding notBefore="1500" notAfter="1600">
                         <p>Old boards re-covered in London late in the 16th cent.</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
+               <history>
+                  <origin>
+                     <origDate calendar="Gregorian" notAfter="1200" notBefore="1150">12th century, second half</origDate>
+                     <origPlace>
+                        <country key="place_1000070">French</country>, <region>South</region>
+                        <!--ORIGINAL: French, South-->
+                     </origPlace>
+                  </origin>
+                  <acquisition when="1601">Presented by '<persName role="dnr" key="person_3326">Edwarde Fletewoode</persName>' in 1601.</acquisition>
+               </history>
                <additional>
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
+                           Description adapted (2024) from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
                               <bibl facs="aap0325.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 304</bibl>
                            </listBibl>
                         </source>
@@ -66,10 +115,10 @@
                      </listBibl>
                   </listBibl>
                </additional>
-               <msPart xml:id="MS_Bodl_553-part1">
+               <msPart xml:id="MS_Bodl_553-part1" type="fragment">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Bodl. 553 – Part 1</idno>
+                        <idno type="part">MS. Bodl. 553 – endleaves (fols. i, 43)</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
@@ -84,9 +133,12 @@
                         <supportDesc material="perg">
                            <support>parchment</support>
                         </supportDesc>
-                     </objectDesc>
+                       
+                     </objectDesc> <musicNotation>
+                           <p>Notation on staves (see van Dijk 1957).</p>
+                        </musicNotation>
                      <decoDesc>
-                        <decoNote>Good historiated initial (defaced). (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 555)</decoNote>
+                        <decoNote type="histInit">Good historiated initial (defaced). (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 555)</decoNote>
                      </decoDesc>
                   </physDesc>
                   <history>
@@ -97,50 +149,11 @@
                      </origin>
                   </history>
                </msPart>
-               <msPart xml:id="MS_Bodl_553-part2">
-                  <msIdentifier>
-                     <altIdentifier type="partial">
-                        <idno type="part">MS. Bodl. 553 – Part 2</idno>
-                     </altIdentifier>
-                  </msIdentifier>
-                  <msContents>
-                     <msItem n="1" xml:id="MS_Bodl_553-part2-item1">
-                        <author key="person_289073048">Willelmus de Congenis</author>
-                        <title key="work_4994">Cyrurgia</title>
-                        <note>(with notulae by a pupil)</note>
-                        <textLang mainLang="la">Latin</textLang>
-                     </msItem>
-                     <msItem>
-                        <locus>(fol. 39v)</locus>
-                        <title>Perilous days</title>
-                        <incipit>Les mestres ky cest art controuverent i anumbrerent les mauves jours et les perillous qui sunt en l'an ; et ki unkes en nul de ces jours en enfermeté cherra, ja ne resourdra</incipit>
-                        <textLang mainLang="xno">Anglo-Norman</textLang>
-                     </msItem>
-                  </msContents>
-                  <physDesc>
-                     <objectDesc form="codex">
-                        <supportDesc material="perg">
-                           <support>parchment</support>
-                        </supportDesc>
-                     </objectDesc>
-                     <decoDesc>
-                        <decoNote type="decInit">Good initial. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 488)</decoNote>
-                     </decoDesc>
-                  </physDesc>
-                  <history>
-                     <origin>
-                        <origDate calendar="Gregorian" notAfter="1200" notBefore="1150">12th century, second half</origDate>
-                        <origPlace>
-                           <country key="place_1000070">French</country>, <region>South</region>
-                           <!--ORIGINAL: French, South-->
-                        </origPlace>
-                     </origin>
-                  </history>
-               </msPart>
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-09">Description revised to incorporate all information from Summary Catalogue.</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">

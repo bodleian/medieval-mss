@@ -1,17 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_8536" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8536">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Rawl. G. 165</title>
             <title type="collection">MSS. Rawl. G. (Rawlinson G)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1895">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,45 +42,86 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Rawl. G. 165</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0b8515n95bw</idno><idno type="crArk">ark:29072/x0b5644s1216</idno><altIdentifier type="internal">
                      <idno type="SCN">15569</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_Rawl_G_165-item1">
                      <author key="person_51797933">Peter Lombard</author>
                      <title key="work_3509">Commentary on St. Paul's Epistles</title>
+                     <note>Romans, 1 and 2 Corinthians, Galatians, Ephesians, Philippians, Colossians, 1 and 2 Thessalonians, Titus, Philemon, Hebrews. 
+                        with a continuous commentary or catena from Ambrose, Origen, Haymo, Augustine, etc.</note>
+                     <note>On fol. 276 follows (without commentary) the Epistola ad Laodicenses, and a general note on the Epistles</note>
                      <bibl type="commentedOn">
                         <title>Bible, Pauline epistles</title>
                      </bibl>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        
+                        <extent source="SC">i + <measure type="leaf" quantity="279">279</measure> leaves
+                           <dimensions type="binding" unit="in">
+                              <height>14.625</height>
+                              <width>10.75</width>
+                           </dimensions>
+                        </extent>
+
                      </supportDesc>
+                     
+                     <layoutDesc>
+                        <layout columns="2">2 cols
+                        </layout>
+                     </layoutDesc>
+                     
                   </objectDesc>
-                  <decoDesc>
-                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 365, pl. XXXI:</summary>
-                     <decoNote type="histInit">One fine historiated initial. </decoNote><decoNote type="decInit">Fine and good initials. </decoNote>
+                  
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 365, Pl. XXXI
+                     </summary>
+                     
+                     <decoNote type="histInit">One fine historiated initial</decoNote>
+                     <decoNote type="decInit">Fine initials</decoNote>
+                     <decoNote type="decInit"><ref target="https://digital.bodleian.ox.ac.uk/objects/56a49a66-d982-42a0-9356-96dff83cc7a7/surfaces/b94020c0-ae53-435a-8bbf-8b25d5a4455a/">Good initials</ref></decoNote>
                   </decoDesc>
+                  
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1230" notBefore="1220">c. 1220–1230</origDate>
+                     <origDate calendar="Gregorian" notAfter="1230" notBefore="1220"><hi rend="italic">c</hi>. 1220–1230</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
+                  
+                  <provenance>
+                     On fol. 1v 'Hic est liber <persName role="fmo" key="person_4980">magistri Ricardi rectoris ecclesie de Hanewrth'</persName>. 
+                     On fol. 278v are transcribed 3 formal deeds showing that this Richard lived in about 1240-1260, and that the Hanworth is Cold Hanworth in the county of Lincoln.</provenance>
+
+                  <provenance>On fol. 1v (badly mutilated) is '<persName key="person_4981">Gilbertus Haralby</persName> tenetur <persName key="person_4982">Petro de Tumba sancti Hugonis</persName> in iij solidis per iij septimanas a die Lune proxima ante 
+                     Assumptionem beate Marie anno gratie M.ccº.<supplied>x</supplied>º. octauo. [i.e. Monday 11 August 1298] infra xxx dies a die predicta reddendis. sed librum istum isti [?] liberatum [?] 
+                     eidem Petro renunciat, si [secus?] fecerit idem Gilbertus in presentia sua, sicut predictum est. Testibus Willelmo de Fet [or Fec]. &amp; 
+                     Willelmo de Lutreuell [?] tunc presentibus'. [The reference is to the tomb of St Hugh in Lincoln Cathedral.]</provenance>
+                  
+                  <provenance>'Suum cuique. <persName role="fmo" key="person_29543710">Tho: Hearne</persName> Maij 10, 1724. Ex dono amicissimi doctissimique viri 
+                     <persName role="fmo" key="person_3385">Richardi Graves</persName> de Mickleton in agro Gloucestriensi, armigeri.'
+                  </provenance>
+                  
                   <provenance notAfter="1755" notBefore="1690" resp="#MMM"><persName key="person_47563478" role="fmo">Richard Rawlinson, 1690–1755</persName></provenance>
                   <acquisition resp="#MMM" when="1755">Bequeathed to the Bodleian in 1755</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1895). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
+                        <source>
+                           Description adapted (July 2024) by Stewart J. Brookes from the Summary Catalogue (1895). Decoration, localization and date follow Pächt and Alexander (1973)
+                           <listBibl>
                               <bibl facs="aas0454.gif" type="SC">Summary Catalogue, Vol. 3, p. 439</bibl>
                            </listBibl>
                         </source>
@@ -84,6 +134,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-07-08">Description revised to incorporate all the information in the Summary Catalogue (1895)</change>
          <change when="2019-10-31" xml:id="MMM"><persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>

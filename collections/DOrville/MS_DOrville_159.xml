@@ -1,17 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_4096" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4096">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. D'Orville 159</title>
             <title type="collection">MSS. D'Orville</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,48 +36,82 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. D'Orville 159</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x01544bq075r</idno><idno type="crArk">ark:29072/x09k41zf119h</idno><altIdentifier type="internal">
                      <idno type="SCN">17037</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_DOrville_159-item1">
                      <author key="person_8194433">Virgil</author>
                      <title key="work_4921">Eclogues</title>
                      <note>(with some glosses)</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                   <msItem n="2" xml:id="MS_DOrville_159-item2">
+                     <locus>(fol. 18)</locus>
                      <author key="person_8194433">Virgil</author>
                      <title key="work_4922">Georgics</title>
                      <note>(with some glosses)</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                   <msItem class="#versus" n="3" xml:id="MS_DOrville_159-item3">
+                     <locus>(fol. 63)</locus>
                      <title key="work_13881" type="desc">Poem</title>
-                     <note>(poem in Italian added in 1511)</note>
-                     <textLang mainLang="it">Italian</textLang>
+                     <incipit>Dolor pianto</incipit>
+                     <note>13 line poem, added in 1511</note>
+                     <note>Compare fol. 2</note>
+                     <textLang mainLang="ita">Italian</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
+                    
+                        <extent>
+                           ii + 66 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>8.75</height>
+                              <width>5.875</width>
+                           </dimensions>
+                        </extent>
+                        
                      </supportDesc>
+                     
                   </objectDesc>
+                  
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1511" notBefore="1450">15th century, second half, and 1511</origDate>
+                     <origDate calendar="Gregorian" notAfter="1511" notBefore="1450" cert="high">15th century, second half, and 1511</origDate>
                      <origPlace>
-                        <country key="place_1000080">Italian</country>
+                        <country key="place_1000080">Italy</country>
                      </origPlace>
                   </origin>
+                  
+                  <provenance>
+                     From the scribbling on fols 64-65, the volume seems to have belonged to <persName role="fmo" key="person_3976">Bartolomeo Lioni of Florence</persName> (early 16th century ?)
+                  </provenance>
+                  
+                  <!-- Add authority record -->
+                  
+                  <provenance><persName key="person_24945908" role="fmo">Jacques Phillippe D'Orville of Amsterdam (1690–1751)</persName></provenance>
+                  <provenance><persName key="person_3392" role="fmo">Jean D'Orville, b. 1734</persName>, his son, by descent</provenance>
+                  <provenance><persName key="person_3393" role="fmo">Jean D'Orville</persName>, son of Jean, by descent</provenance>
+                  <provenance>Sold to the <persName key="person_3394" role="fmo">Rev. John Cleaver Banks (1765/1766–1845)</persName>: purchased from him by the Bodleian</provenance>
+                  <acquisition when="1804">Acquired by the Bodleian in 1804</acquisition>
+                  
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
+                        <source>
+                           Description adapted (March 2024) by Stewart J. Brookes from the Summary Catalogue (1897)
+                           <listBibl>                               
                               <bibl facs="aaz0096.gif" type="SC">Summary Catalogue, Vol. 4, p. 77</bibl>
                            </listBibl>
                         </source>
@@ -85,6 +122,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-03-25">Description revised to incorporate all the information in the Summary Catalogue (1897)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>

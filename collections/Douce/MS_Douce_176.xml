@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_4546" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4546">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -19,6 +16,10 @@
                <resp when="1966">Cataloguer</resp>
                <persName>Otto Pächt</persName>
                <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="DL">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. C. de la Mare</persName>
             </respStmt>
             <respStmt xml:id="MLH">
                <resp when="2017">Encoding and markup</resp>
@@ -45,7 +46,7 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Douce 176</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0br86b388hs</idno><idno type="crArk">ark:29072/x0z603qw73nx</idno><altIdentifier type="internal">
                      <idno type="SCN">21750</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -53,7 +54,7 @@
                   <msItem class="#liturgica" n="1" resp="#VD" xml:id="MS_Douce_176-item1">
                      <title key="work_12069" type="desc">Gospel lectionary</title>
                      <note>Benedictine use.</note>
-                     <note>Combined temporale and sanctorale (De circulo anni): Christmas tide (fol. 1<hi rend="superscript">v</hi>), the months January-March (fols. 6, 16<hi rend="superscript">v</hi>, 21<hi rend="superscript">v</hi>), Septuagesima-Easter (fol. 22<hi rend="superscript">v</hi>), Easter tide (fol. 62), the months May-December (fols. 68<hi rend="superscript">v</hi>, 77, 84, 91, 101<hi rend="superscript">v</hi>, 110, 111, 118); gospels for votive masses (fol. 121: De diversis causis) and masses of the dead (fol. 116<hi rend="superscript">v</hi>); two additions.</note>
+                     <note>Combined temporale and sanctorale (De circulo anni): Christmas tide (fol. 1<hi rend="superscript">v</hi>), the months January-March (fols. 6, 16<hi rend="superscript">v</hi>, 21<hi rend="superscript">v</hi>), Septuagesima-Easter (fol. 22<hi rend="superscript">v</hi>), Easter tide (fol. 62), the months May-December (fols. 68<hi rend="superscript">v</hi>, 77, 84, 91, 101<hi rend="superscript">v</hi>, 110, 111, 118); gospels for votive masses (fol. 121: De diversis causis) and masses of the dead (fol. 126<hi rend="superscript">v</hi>); two additions.</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -81,27 +82,37 @@
                   </decoDesc>
                   <bindingDesc resp="#PA #VD">
                      <binding notAfter="1800" notBefore="0800">
-                        <p>18th-century leather, with inset ivory, 'Ada school', 212 × 125 mm., early 9th century.</p>
+                        <p>French binding of 18th-century leather, with inset ivory (so-called 'Ada school', 212 × 125 mm., c. 800). Central panel, Christ trampling on a lion and serpent; framed with smaller scenes from the life of Christ (see Kahsnitz 1999). 'It is not certain ... whether [the ivory] formed part of the original binding' (<title>Douce Legacy</title>), although the balance of scholarly opinion is probably that manuscript and ivory were associated from the outset, with the ivory being a gift to Gisla (Gisela), abbess of Chelles and sister of Charlemagne.</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
                <history>
                   <origin resp="#PA">
-                     <origDate calendar="Gregorian" when="0800">c. 800</origDate>
+                     <origDate calendar="Gregorian" notAfter="0810" notBefore="0790">c. 800</origDate>
                      <origPlace>
-                        <country key="place_1000070">French</country>, <orgName key="org_131247511">Chelles, Benedictine nunnery</orgName>
-                        <!--ORIGINAL: French, Chelles-->
+                        <country key="place_1000070">France</country>, <orgName key="org_131247511">Chelles, Benedictine nunnery</orgName>
+                     </origPlace>
+                     <origPlace>ivory, 
+                        <country key="place_7000084">Germany</country>, probably <settlement key="place_7004799">Aachen</settlement>
                      </origPlace>
                   </origin>
-                  <provenance notAfter="1800" notBefore="1700" resp="#PA"><orgName key="org_141000452" role="fmo">St Faron, Meaux</orgName>, 18th century (fol. 1)</provenance>
-                  <provenance notAfter="1833" resp="#SC">Bought by Payne of London on 27 May 1833 at the sale of m. <persName key="person_19683296" role="fmo">Abel Remusat</persName>.</provenance>
-                  <provenance from="1833" resp="#MLH"><persName key="person_69848690" role="fmo">Francis Douce</persName>, acquired by November 1833 (<title>Douce Legacy</title>, no. 39).</provenance>
+                  <provenance>The attribution to Chelles was made by Bischoff in 1957 ('Die Kölner Nonnenhandschriften und das Scriptorium von Chelles', repr. in his <title>Mittelalterliche Studien</title> (1966), I.16-34, this ms. at 21, 23-4), followed by all subsequent scholarship.</provenance>
+                  <provenance notAfter="1800" notBefore="1700" resp="#PA"><orgName key="org_141000452" role="fmo">St Faron, Meaux</orgName>, according to an 18th century note signed 'Gosselin'(fol. 1)</provenance>
+                  <provenance notAfter="1833" resp="#SC">Bought by Payne of London on 27 May 1833 at the sale of m. <persName key="person_19683296" role="fmo">Abel Remusat</persName> (lot 8).</provenance>
+                  <provenance from="1833" resp="#MLH"><persName key="person_69848690" role="fmo">Francis Douce</persName>, acquired by November 1833 (<title>Douce Legacy</title>, no. 39), bought from Payne. Price, £31 10s., fol. iv recto.</provenance>
                   <acquisition when="1834">Bequeathed by him to the Bodleian in 1834.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Adapted (2018) from S. J. P. Van Dijk, <title>Handlist of the Latin Liturgical Manuscripts in the Bodleian Library Oxford : Vol. 1: Mass Books</title> (typescript, 1957); Pächt and Alexander (see Bibliography); and the Summary Catalogue (1897). <listBibl>
+                        <source>Adapted (2018, rev. 2024) from the following sources, with additional reference to published literature as cited:
+                           <listBibl>
+                              <bibl><title>The Douce Legacy</title> (1984), cat. 39</bibl>
+                              <bibl>Pächt and Alexander I no. 412</bibl>
+                              <bibl>S. J. P. Van Dijk, <title>Handlist of the Latin Liturgical Manuscripts in the Bodleian Library Oxford : Vol. 1: Mass Books</title> (typescript, 1957)</bibl>
+                              <bibl>Summary Catalogue (1897)</bibl>
+                           </listBibl>
+                           <listBibl>
                               <bibl facs="aaz0564.gif" type="SC">Summary Catalogue, vol. 4, p. 545</bibl>
                            </listBibl>
                         </source>
@@ -111,6 +122,10 @@
                      </availability>
                   </adminInfo>
                   <surrogates>
+                     <bibl type="digital-facsimile" subtype="full">
+                        <ref target="https://digital.bodleian.ox.ac.uk/objects/39e5f45b-e996-4960-acca-e73e2f0de695/">
+                           <title>Digital Bodleian</title></ref> <note>(full digital facsimile)</note>
+                     </bibl>
                      <bibl subtype="partial" type="digital-facsimile">
                         <ref target="https://digital.bodleian.ox.ac.uk/objects/e3408f3e-42e5-48ea-88fa-3f4da7765ecf/">
                            <title>Digital Bodleian</title>
@@ -123,10 +138,17 @@
                         </ref>
                         <note>(1 image of binding from 35mm slides)</note>
                      </bibl>
-                  </surrogates>
+                  <bibl type="microfilm">Microfilm available in the open shelf collections in the Weston Library (R. Films 101)</bibl></surrogates>
                   <listBibl type="WRAPPER">
                      <listBibl type="PRINT">
+                        <head>Select bibliography:</head>
+                        <bibl>Lawrence Nees, ‘Early Carolingian Manuscripts and Ivories’, in <title>Les Manuscrits Carolingiens: Actes Du Colloque de Paris, Bibliothèque Nationale de France, Le 4 Mai 2007</title>, eds. Jean-Pierre Caillet and Marie-Pierre Laffitte, Turnhout: Brepols, 2009.</bibl>
+                        <bibl>B. Bischoff, <title>Katalog der festländischen Handschriften des neunten Jahrhunderts</title> II (2004), no. 3795</bibl>
+                        <bibl><title>799. Kunst Und Kultur Der Karolingerzeit: Karl Der Grosse Und Papst Leo III. in Paderborn</title> (von Zabern, 1999), cat. X.7 [R. Kahsnitz]
+                        </bibl>
+                        <bibl><title>Codices Latini Antiquiores</title>, II(2) (1972), no. 238</bibl>
                         <bibl>Otto Pächt and J. J. G. Alexander, <title><ref target="https://catalog.hathitrust.org/Record/000468709">Illuminated Manuscripts in the Bodleian Library, Oxford</ref></title>, I (1966), no. 412</bibl>
+                        
                      </listBibl>
                      <listBibl type="WRAPPER">
                         <listBibl type="INTERNET">
@@ -140,6 +162,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-07">Revisions to description for Digital Bodleian publication.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>

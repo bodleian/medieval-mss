@@ -1,4 +1,5 @@
 import module namespace bod = "http://www.bodleian.ox.ac.uk/bdlss" at "lib/msdesc2solr.xquery";
+import module namespace functx = "http://www.functx.com" at "functx.xquery";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 declare option saxon:output "indent=yes";
 
@@ -116,6 +117,23 @@ declare function local:buildSummary($msdescorpart as element()) as xs:string
     return string-join(($summary1, string-join(($summary2, $summary3), '; '))[string-length(.) gt 0], ' — ')
 };
 
+declare function bod:decoTypeLookup($decotype as xs:string) as xs:string
+{
+    switch(lower-case($decotype))
+        case 'decinit' return "Decorated initial"
+        case 'border' return "Border"
+        case 'flourinit' return "Flourishing"
+        case 'miniature' return "Miniature or coloured drawing"
+        case 'colinit' return "Plain initial"
+        case 'histinit' return "Historiated initial"
+        case 'diagram' return "Diagram"
+        case 'drawing' return "Drawing"
+        case 'headpiece' return "Headpiece"
+        case 'plaininit' return "Plain initial"
+        case 'map' return "Map"
+        default return "Other"
+};
+
 <add>
 {
     comment{concat(' Indexing started at ', current-dateTime(), ' using files in ', substring-before(substring-after(base-uri($collection[1]), 'file:'), 'collections/'), ' ')}
@@ -138,6 +156,9 @@ declare function local:buildSummary($msdescorpart as element()) as xs:string
                 let $subfolders := string-join(tokenize(substring-after(base-uri($ms), 'collections/'), '/')[position() lt last()], '/')
                 let $htmlfilename := concat($msid, '.html')
                 let $htmldoc := doc(concat('html/', $subfolders, '/', $htmlfilename))
+                let $deconotes := $ms//tei:sourceDesc//tei:decoDesc/tei:decoNote[not(@type='none')]
+                let $decotypes := $deconotes/@type
+                let $latestoriginyear := max(for $dateattr in $ms//tei:origin//tei:origDate[not(@type = ('additions', 'addition'))]/(@when|@notBefore|@notAfter|@from|@to) return functx:get-matches($dateattr, $bod:yearregex)[1])
                 (:
                     Guide to Solr field naming conventions:
                         ms_ = manuscript index field
@@ -170,14 +191,38 @@ declare function local:buildSummary($msdescorpart as element()) as xs:string
                         (
                         bod:trueIfExists($ms//tei:sourceDesc//tei:decoDesc/tei:decoNote[not(@type='none')], 'ms_deconote_b'),
                         bod:trueIfExists($ms//tei:sourceDesc//tei:physDesc/tei:musicNotation, 'ms_music_b'),
-                        bod:digitized($ms//tei:sourceDesc//tei:surrogates//tei:bibl, 'ms_digitized_s')
+                        bod:digitized($ms//tei:sourceDesc//tei:surrogates//tei:bibl, 'ms_digitized_s'),
+                        bod:centuries($ms//tei:origin//tei:origDate, 'ms_date_sm', 'Undated'),
+                        bod:years($ms//tei:origin//tei:origDate),
+                        if ($ms//tei:physDesc/tei:bindingDesc//tei:binding[@when or @notBefore or @notAfter or @from or @to]) then
+                            bod:centuries($ms//tei:physDesc/tei:bindingDesc//tei:binding, 'ms_bindingdate_sm')
+                        else if ($ms//tei:physDesc/tei:bindingDesc//tei:binding[@contemporary eq 'true']) then
+                            bod:centuries($ms//tei:origin//tei:origDate[not(@type = ('additions', 'addition')) and (contains(@when, $latestoriginyear) or contains(@notBefore, $latestoriginyear) or contains(@notAfter, $latestoriginyear) or contains(@from, $latestoriginyear) or contains(@to, $latestoriginyear))], 'ms_bindingdate_sm', 'Undated')
+                        else if ($ms//tei:physDesc/tei:bindingDesc//tei:binding) then
+                            bod:string2one('Undated', 'ms_bindingdate_sm')
+                        else
+                            (),
+                        if (count($ms//tei:origin//tei:origDate[(@when|@notBefore|@notAfter|@from|@to)]) eq 0) then
+                            ()
+                        else if (every $date in $ms//tei:origin//tei:origDate satisfies $date/@cert eq 'high') then
+                            bod:string2one('Known', 'ms_datecert_s')
+                        else if (some $date in $ms//tei:origin//tei:origDate satisfies $date/@cert eq 'high') then
+                            bod:string2one('Partially known', 'ms_datecert_s')
+                        else    
+                            bod:string2one('Estimated', 'ms_datecert_s'),
+                        if (count($deconotes) eq 0) then
+                            bod:string2one('None', 'ms_decotype_sm')
+                        else if (count($decotypes) eq 0) then
+                            bod:string2one('Other', 'ms_decotype_sm')
+                        else
+                            for $decotype in distinct-values($decotypes)
+                                return bod:string2one(bod:decoTypeLookup($decotype), 'ms_decotype_sm')
                         )
                     else
                         ()
                     }
                     { bod:languages($ms//tei:sourceDesc//tei:textLang, 'lang_sm') }
                     { local:origin($ms//tei:sourceDesc//tei:origPlace/tei:country/@key, 'ms_origin_sm') }
-                    { bod:centuries($ms//tei:origin//tei:origDate, 'ms_date_sm') }
                     { local:workSubjects($ms//tei:msItem/tei:title/@key, 'wk_subjects_sm') }
                     { bod:strings2many(local:buildSummaries($ms), 'ms_summary_sm') }
                     { bod:indexHTML($htmldoc, 'ms_textcontent_tni') }

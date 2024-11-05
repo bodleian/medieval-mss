@@ -1,15 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_1648" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1648">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Bodl. 645</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2024">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -33,30 +39,56 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Bodl. 645</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x04f16c378t2</idno><idno type="crArk">ark:29072/x04b29b695h6</idno><altIdentifier type="internal">
                      <idno type="SCN">2264</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
-                  <msItem n="1" xml:id="MS_Bodl_645-item1">
+          
+               <msContents> <textLang mainLang="la">Latin</textLang>
+                  <msItem n="1" xml:id="MS_Bodl_645-item-1">
+                     <locus from="1">(fol. 1)</locus>
                      <author key="person_2306">Ps.-Raymond Lull</author>
                      <title key="work_4102">Liber de secretis naturae seu de quinta essentia</title>
-                     <textLang mainLang="la">Latin</textLang>
+                     <note>In two books, with the
+                        prologue by Monaldus, here without title: but after the ordinary ending
+                        'sufficiant cause breuitatis' comes (at fol. 45) a Tertia Distinctio (seu
+                        liber) 'De metallorum cura &amp; illorum magisterio in composicionem
+                        Lapidis Philosophorum', which, though sixteen leaves are lost after fol. 48,
+                        seems to continue to fol. 72v, where a colophon occurs: </note><finalRubric>Finiuit Remundus
+                        librum istum Parisius anno ab Incarnacione Domini. m°. ccc°. xix°. In
+                        monasterio sancti Benedicti Canturien' [sic] extra ciuitatem</finalRubric>
                   </msItem>
-                  <msItem n="2" xml:id="MS_Bodl_645-item2">
+                  <msItem n="2" xml:id="MS_Bodl_645-item-2">
+                     <locus from="74">(fol. 74)</locus>
                      <author key="person_2306">Ps.-Raymond Lull</author>
                      <title key="work_4101">Anima transmutatoriae artis metallorum</title>
-                     <textLang mainLang="la">Latin</textLang>
+                     <rubric>Anima artis transmutatorie metallorum</rubric>
+                     <finalRubric>Finiuit Remundus librum istum in
+                        Monte Pessulano ... anno ab Incarnacione Domini m°. ccc°. xxj°</finalRubric>
+                     <note>With a dedication to
+                        King 'Rubertus' in two parts: at end a
+                        catchword for another (lost) quire, 'Vas in quo ponitur aqua'.</note>
+                  </msItem>
+                  <msItem xml:id="MS_Bodl_645-item-">
+                     <note>A 16th cent. hand has annotated the volume, see esp. fol. 62, and on fol. 73
+                        a 16th cent. draft of a letter, in Latin from Nicolaüs Caliginarius to
+                        'archepiscopus de Voymestre' about an executorship.</note>
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
+                        <extent>97 leaves
+                        <dimensions type="binding" unit="in">
+                           <height>8.375</height>
+                           <width>6</width>
+                        </dimensions></extent>
                      </supportDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>Diagrams. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 1324)</decoNote>
+                     <decoNote type="diagram">Diagrams. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 1324)</decoNote>
+                     <decoNote type="colInit">Coloured capitals.</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
@@ -71,7 +103,7 @@
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
+                        <source>Description adapted (2024) from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
                               <bibl facs="aap0305.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 284</bibl>
                            </listBibl>
                         </source>
@@ -82,6 +114,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-09">Description revised to incorporate all information from Summary Catalogue.</change>
          <change when="2023-05">Add provenance information from S.C.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>

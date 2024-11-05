@@ -1,15 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_1372" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1372">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Bodl. 334</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2024">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -33,15 +39,33 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Bodl. 334</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x08w32r627q7</idno><idno type="crArk">ark:29072/x08s45q944dc</idno><altIdentifier type="internal">
                      <idno type="SCN">2333</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem n="1" xml:id="MS_Bodl_334-item1">
+                  <msItem xml:id="MS_Bodl_334-item1">
                      <author key="person_154144782727969775144">Clement of Llantony</author>
                      <title key="work_1293">Vnum ex quattuor</title>
                      <note>(parts 7–9, text and commentary)</note>
+                     <msItem n="1" xml:id="MS_Bodl_334-item-1">
+                        <locus from="1">(fol. 1)</locus>
+                        <note>Text: here called
+                           'Series collecta' or in the prologue 'Concordia quatuor Euangelistarum'
+                           comprising in parts 7-9 the Harmony from Christ's going up to Jerusalem
+                           (John vii. 2) to the treachery of Judas (Luke xxii. 6): with prologue and
+                           lists of chapters.</note>
+                     </msItem>
+                     <msItem n="2" xml:id="MS_Bodl_334-item-2">
+                        <locus from="9">(fol. 9)</locus>
+                        <rubric>Seriei collecte Explanacio</rubric>
+                        <incipit type="prol.">Clemens Lanthoniensis
+                           ... Contemplatiue uite partem</incipit><incipit>Erat autem in proximo ...
+                           Appropinquante scenophegia</incipit>
+                        <note>A long commentary on the whole of
+                           the 3rd part (= parts 7-9), with prologue: part 8 begins at fol. 82, part 9 at fol. 151v.
+                           At fol. 180 the hand changes.</note>
+                     </msItem>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -49,10 +73,19 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>iii + 330 leaves
+                        <dimensions type="binding" unit="in">
+                           <height>14.375</height>
+                           <width>11</width>
+                        </dimensions></extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2">2 cols.</layout>
+                     </layoutDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>Fine initials. Good fleuronnée initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 456, pl. XXXVIII)</decoNote>
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 456, pl. XXXVIII</summary>
+                     <decoNote type="decInit">Fine initials. </decoNote><decoNote type="flourInit">Good fleuronnée initials. </decoNote>
                   </decoDesc>
                </physDesc>
                <history>
@@ -62,11 +95,16 @@
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
+                  <provenance>'<persName role="fmo" key="person_5007">Frater Johannes Warner ordinis Minorum fratrum</persName>', '<persName role="sgn" key="person_5008">Thomas Best</persName>', both 15th
+                     cent. (fols. 328v, 329r).</provenance>
+                  <acquisition when="1609"> 'Liber bibliothecæ Bodleianæ ex dono <persName role="fmo" key="person_5006">Johannis
+                     Lloyd</persName> artium magistri et Collegij Oriell socij 15° Septembris anno Christi
+                     1609.'</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
+                        <source>Description adapted (2024) from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
                               <bibl facs="aap0335.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 314</bibl>
                               <bibl facs="aap0336.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 315</bibl>
                            </listBibl>
@@ -78,6 +116,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-09">Description revised to incorporate all information from Summary Catalogue.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>

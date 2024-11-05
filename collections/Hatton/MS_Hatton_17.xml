@@ -1,17 +1,28 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_6048" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6048">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Hatton 17</title>
             <title type="collection">MSS. Hatton</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1937">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+               <persName>N. Denholm-Young</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,40 +44,79 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Hatton 17</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x03b59196367</idno><idno type="crArk">ark:29072/x037720d79w8</idno><altIdentifier type="internal">
                      <idno type="SCN">4108</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_Hatton_17-item1">
+                     <locus>(fol. 1)</locus>
                      <author key="person_100227669">Ambrose</author>
                      <title key="work_457">De fide</title>
+                     <rubric>Liber beati Ambrosii Mediolanensis archiepiscopi de Fide ad Gratianum imperatorem</rubric>
+                     <note>In five books, with preface.</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                   <msItem n="2" xml:id="MS_Hatton_17-item2">
+                     <locus>(fol. 56v)</locus>
                      <author key="person_100227669">Ambrose</author>
                      <title key="work_469">De spiritu sancto</title>
+                     <rubric>S. Ambrosius de Spiritu Sancto</rubric>
+                     <note>In three books, here reckoned as books 7-9 of the preceding treatise</note>
+                     <note>Preceded (fol. 56) by the 'Epistola Gratiani imperatoris' to Ambrose, and by a list of chapters.
+                     </note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                   <msItem n="3" xml:id="MS_Hatton_17-item3">
+                     <locus>(fol. 94)</locus>
                      <author key="person_100227669">Ambrose</author>
                      <title key="work_459">De incarnationis dominicae sacramento</title>
+                     <rubric>Sermo eiusdem de Incarnatione Domini</rubric>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
-                  <msItem n="34" xml:id="MS_Hatton_17-item4">
+                  
+                  <msItem n="4" xml:id="MS_Hatton_17-item4">
+                     <locus>(fol. 102)</locus>
                      <author key="person_100227669">Ambrose</author>
                      <title key="work_458">De Helia et ieiunio</title>
+                     <rubric>Sermo eiusdem de Helya &amp; de ieiunio</rubric>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
+                  <msItem n="5" xml:id="MS_Hatton_17-item5">
+                     <locus>(fol. 112)</locus>
+                     <title key="work_13484">De trinubio Annae</title>
+                     <incipit>Anna &amp; Emeria sorores fuerunt</incipit>
+                     <note>Added in a slightly later hand</note>
+                     <textLang mainLang="la">Latin</textLang>
+                  </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
-                        <support>parchment</support>
+                        <support>parchment</support><extent source="SC">xii + <measure type="leaf" quantity="124">124</measure> leaves.
+                           <note>Fols ii-xii, 113-123 are paper leaves inserted by a 17th-century binder, all blank except fol. ii</note>
+                           <dimensions type="binding" unit="in">
+                              <height>12.25</height>
+                              <width>8.25</width></dimensions>
+                        </extent>
                      </supportDesc>
+                     
+                     <layoutDesc>
+                        <layout columns="2">2 cols</layout>
+                     </layoutDesc>
+                     
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote type="decInit">Decoration<p>Initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 269)</p>
+                  
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 269
+                     </summary>
+                     
+                     <decoNote type="decInit">Initials
                      </decoNote>
                   </decoDesc>
                </physDesc>
@@ -74,14 +124,21 @@
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1150" notBefore="1125">12th century, second quarter</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
+                  
+                  <provenance><persName key="person_37729288" role="fmo">Christopher, first Baron Hatton (d. 1670)</persName></provenance>
+                  
+                  <acquisition when="1671">Bought in 1671 by the Bodleian through the London bookseller Robert Scot (b. in or before 1632, d. 1709/1710); see Summary Catalogue, vol. 2, part 2, p. 801</acquisition>             
+                  
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1937). Decoration, localization and date follow Pächt and Alexander (1973).  <listBibl>
+                        <source>
+                           Description adapted (May 2024) by Stewart J. Brookes from the Summary Catalogue (1937). Decoration, localization and date follow Pächt and Alexander (1973)
+                           <listBibl>
                               <bibl facs="aaq0203.gif" type="SC">Summary Catalogue, Vol. 2 Part 2, p. 844</bibl>
                            </listBibl>
                         </source>
@@ -92,6 +149,8 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-05-13">Description revised to incorporate all the information in the Summary Catalogue (1937)</change>
+         <change when="2024-05">Add extent and leaf dimensions from Summary Catalogue.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>

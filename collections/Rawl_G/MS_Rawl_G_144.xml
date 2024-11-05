@@ -1,17 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8524">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8524">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Rawl. G. 144</title>
             <title type="collection">MSS. Rawl. G. (Rawlinson G)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1895">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,39 +36,66 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Rawl. G. 144</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x07w62f895wd</idno><idno type="crArk">ark:29072/x07s75dd12kq</idno><altIdentifier type="internal">
                      <idno type="SCN">14868</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_Rawl_G_144-item1">
                      <author key="person_100219162">Pliny</author>
                      <title key="work_3702">Historia naturalis</title>
+                     <rubric>Incipit liber primus [&amp;c.] Naturalis Hystorie Plinij Secundi...</rubric>
+                     <note>The rubrics are very inaccurate</note>
+                     <note>Ending in the list of Capitula of the 9th book, the rest being lost</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        
+                        
+               <extent source="SC">iii + <measure type="leaf" quantity="93">93</measure> leaves
+                  <dimensions type="binding" unit="in">
+                     <height>14</height>
+                     <width>10.375</width>
+                  </dimensions>
+               </extent>
+                        <condition>Fols 89-90 are damaged</condition>
                      </supportDesc>
+                     
+                     <layoutDesc>
+                        <layout columns="2">2 cols
+                        </layout>
+                     </layoutDesc>
+                     
                   </objectDesc>
                   <decoDesc>
-                     <decoNote type="colInit"><p>Coloured capitals.</p>
+                     <decoNote type="colInit">Coloured capitals
                      </decoNote>
                   </decoDesc>
                   <bindingDesc>
                      <binding when="1700">
-                        <p>Red leather with gold tooling, English (about A.D. 1700).</p>
+                        <p>Red leather with gold tooling, English (<hi rend="italic">c</hi>. 1700)</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" when="1200">c. 1200 (?)</origDate>
+                     <origDate calendar="Gregorian" notBefore="1190" notAfter="1210"><hi rend="italic">c</hi>. 1200 (?)</origDate>
                      <origPlace cert="low">
-                        <country key="place_1000070">French</country> (?)</origPlace>
+                        <country key="place_1000070">France</country> (?)</origPlace>
                   </origin>
+                  
+                  <provenance>'Liber Vallis...' (conceivably 'Sancti Lamberti')</provenance>
+                  
+                  <provenance>
+                     No. 156 in the <persName role="fmo" key="person_1203">Thomas Rawlinson</persName> sale, 4 March 1733/1734
+                  </provenance>
+                  
                   <provenance notAfter="1755" notBefore="1690" resp="#MMM">
                      <persName key="person_47563478" role="fmo">Richard Rawlinson, 1690–1755</persName>
                   </provenance>
@@ -75,7 +105,8 @@
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1895). <listBibl>
+                           Description adapted (June 2024) by Stewart J. Brookes from the Summary Catalogue (1895)
+                           <listBibl>
                               <bibl facs="aas0384.gif" type="SC">Summary Catalogue, Vol. 3, p. 369</bibl>
                            </listBibl>
                         </source>
@@ -86,6 +117,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-06-21">Description revised to incorporate all the information in the Summary Catalogue (1895)</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2019-10-31" xml:id="MMM">
             <persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>

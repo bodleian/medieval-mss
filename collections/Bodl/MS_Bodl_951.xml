@@ -1,16 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_1899" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1899">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Bodl. 951</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2024">Encoding</resp>
                <persName>Matthew Holford</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Paecht</persName>
+               <persName>J. J. G. Alexander</persName>
             </respStmt>
          </titleStmt>
          <publicationStmt>
@@ -33,14 +39,22 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Bodl. 951</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0st74cq07p3</idno><idno type="crArk">ark:29072/x0sq87bt24c7</idno><altIdentifier type="internal">
                      <idno type="SCN">2871</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
                   <msItem n="1" xml:id="MS_Bodl_951-item1">
-                     <author key="person_2153">Ps.-Appollonius <!-- not found in VIAF --></author>
-                     <title key="work_3845">Flores aurei</title>
+                    <!-- <author key="person_2153">Ps.-Appollonius (Ps.-Solomon)</author>-->
+                     <title key="work_3845">Ars notoria</title>
+                     <note>(with gloss)</note>
+                     <incipit type="text"> Alpha et O Deus omnipotens</incipit>
+                     <incipit type="commentary">In principio operationis istius</incipit>
+                     <note> Leaves appear to be missing after fol. 8 and at end. </note>
+                     <note>There are some later annotations.</note>
+                     <listBibl>
+                        <bibl>ed. Julien Véronèse, <title>L'Ars notoria au Moyen Age</title> (Florence, 2007) (sigl. O2 in the edition of the gloss)</bibl>
+                     </listBibl>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -48,33 +62,54 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>i + 21 leaves
+                              <dimensions unit="in" type="binding">
+                                 <height>17.125</height>
+                                 <width>12.125</width>
+                              </dimensions>
+                           </extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2">2 cols.</layout>
+                     </layoutDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>Miniatures (drawings), diagrams. Copying an earlier model (?). (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 1092, pl. CII)</decoNote>
+                     <summary>Copying an earlier model (?). (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 1092, pl. CII):</summary>
+                     <decoNote type="miniature">Miniatures (drawings)</decoNote>
+                     <decoNote type="diagram">Diagrams. </decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1475" notBefore="1450">15th century, third quarter</origDate>
+                     <origDate calendar="Gregorian" notAfter="1425" notBefore="1400">15th century, beginning</origDate>
                      <origPlace cert="low">
-                        <country key="place_7002445">English</country> (?)</origPlace>
+                        <country key="place_7024097">Flanders</country> or region (Véronèse, op. cit., p. 136)</origPlace>
                   </origin>
+                  <provenance>Owned by 'Symon Maydeston', i.e. <persName role="fmo" key="person_3219">Simon Maidstone, fl. 1445-75, monk of St Augustine's Canterbury</persName>; perhaps a mark of personal rather than institutional ownership, so not necessarily indicating ownership by <orgName role="fmo" key="org_165174766" cert="low">St Augustine's</orgName> (Barker-Benfield, CBMLC 13, III. pp. 1803, 1862). </provenance>
+                  <provenance><persName role="fmo" cert="low" key="person_39386049">John Dee</persName> (?): annotations possibly in his hand (Barker-Benfield, CBMLC 13, III pp. 1923-4).</provenance>
+                  <provenance><persName role="fmo" cert="low" key="person_2677">Walter Cope</persName> (?): perhaps his number '88' fol. 1r, top centre (ibid. III p. 1803).</provenance>
+                  <acquisition notAfter="1615" notBefore="1613">Apparently acquired between 1613 and 1615.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
+                        <source>Description adapted (March 2024) from the Summary Catalogue (1922) with additional reference to published literature as cited.  <listBibl>
                               <bibl facs="aap0565.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 544</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
+                  <listBibl type="WRAPPER">
+                     <listBibl type="PRINT">
+                        <bibl><title>St Augustine's Abbey, Canterbury</title>, ed. B. C. Barker-Benfield, CBMLC 13 (2008), III, p. 1803 (description of manuscript)</bibl>
+                     </listBibl>
+                  </listBibl>
                </additional>
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-03">Revised to incorporate all information in Summary Catalogue.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>

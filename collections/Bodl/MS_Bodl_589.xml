@@ -1,15 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1605">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1605">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Bodl. 589</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2024">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -33,7 +34,7 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Bodl. 589</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0v405s890nv</idno><idno type="crArk">ark:29072/x0v118rd07b9</idno><altIdentifier type="internal">
                      <idno type="SCN">2361</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -41,6 +42,12 @@
                   <msItem n="1" xml:id="MS_Bodl_589-item1">
                      <author key="person_100187638">Giles of Rome</author>
                      <title key="work_248">De regimine principum</title>
+                     <rubric>Liber de Regimine Principum editus a fratre Egidio Romano ordinis fratrum
+                        Heremitarum sancti Augustini</rubric>
+                     <colophon>... quod Burgh [then, added, 'Quod pica quod
+                        bubo quod sithacus [?] est uel yrundo | Hoc liber est iste. Simulator namque
+                        Sophiste]</colophon>
+                     <note>Each part of each book has a preceding list of chapters. </note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -48,8 +55,16 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>iv + 185 leaves
+                        <dimensions type="binding" unit="in">
+                           <height>9.625</height>
+                           <width>6.625</width>
+                        </dimensions></extent>
                      </supportDesc>
                   </objectDesc>
+                  <handDesc>
+                     <handNote>Written by '<persName role="scr" key="person_5012">Burgh</persName>' (colophon).</handNote>
+                  </handDesc>
                   <bindingDesc>
                      <binding contemporary="true">
                         <p>White leather on boards, with part of leather clasp, English contemporary
@@ -64,12 +79,20 @@
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
+                  <provenance>On fol.
+                     i is a late 15th cent. note 'Memorandum quod Robertus Thystilton debet
+                     rectori de Rothwell xvij d.': on fol. 182 is a copy of the will of William
+                     Kyghtone of 'Brigeforde at the Brige Ende' [Bridgford], Apr. 30, 1528: he leaves
+                     to the 'ij orders of frehers at Nottingham ij stryke barly', among other
+                     bequests.</provenance>
+                  <acquisition when="1611">This seems to be the Aegidius presented by <persName role="dnr" key="person_2822">William Harwood, prebendary of
+                     Winchester</persName>, in 1611.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). <listBibl>
+                           Description adapted (2024) from the Summary Catalogue (1922). <listBibl>
                               <bibl facs="aap0350.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 329</bibl>
                            </listBibl>
                         </source>
@@ -80,6 +103,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-10">Description revised to incorporate all information from Summary Catalogue.</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">

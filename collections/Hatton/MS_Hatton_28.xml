@@ -1,15 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_6056" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6056">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Hatton 28</title>
             <title type="collection">MSS. Hatton</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="SC">
+               <resp when="1937">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+               <persName>N. Denholm-Young</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2024">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -33,19 +36,38 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Hatton 28</idno>
+                  <idno type="ieArk">ark:29072/x04x51hj965x</idno>
+                  <idno type="crArk">ark:29072/x04t64gp12vw</idno>
                   <altIdentifier type="internal">
                      <idno type="SCN">4066</idno>
                   </altIdentifier>
                </msIdentifier>
                <physDesc>
                   <p n="composite">Composite: three parts</p>
+                  <objectDesc form="codex">
+                     <supportDesc>
+                        <extent>i + <measure type="leaf" quantity="100">100</measure> leaves
+                              <dimensions unit="in" type="binding">
+                              <height>9.5</height>
+                              <width>6.625</width>
+                           </dimensions></extent>
+                     </supportDesc>
+                  </objectDesc>
                </physDesc>
+               <history>
+                  <provenance>An entry of a 'curia prioris de Thornholm tenta apud Appilby' occurs at fol. 42v, i.e. the prior of the house of <orgName key="org_241899093">Austin canons at Thorneholme </orgName>in Lincolnshire. Thornholme provenance rejected, MLGB.</provenance>
+                  <provenance><persName
+                        key="person_37729288" role="fmo">Christopher, Lord Hatton</persName>.</provenance>
+                  <acquisition when="1675">Given to the Bodleian by Hatton's son in 1675.</acquisition>
+               </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1937). <listBibl>
-                              <bibl facs="aaq0182.gif" type="SC">Summary Catalogue, Vol. 2 Part 2, p. 823</bibl>
-                              <bibl facs="aaq0183.gif" type="SC">Summary Catalogue, Vol. 2 Part 2, p. 824</bibl>
+                        <source>Description adapted (Sept. 2024) from the Summary Catalogue (1937) with additional reference to published literatur as cited. <listBibl>
+                              <bibl facs="aaq0182.gif" type="SC">Summary Catalogue, Vol. 2 Part 2,
+                                 p. 823</bibl>
+                              <bibl facs="aaq0183.gif" type="SC">Summary Catalogue, Vol. 2 Part 2,
+                                 p. 824</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -59,12 +81,95 @@
                   </msIdentifier>
                   <msContents>
                      <msItem n="1" xml:id="MS_Hatton_28-part1-item1">
-                        <title key="work_14743">Statutes of England</title>
+                        <locus>(fol. 1)</locus>
+                        <title key="work_14739">Statutes of England (statuta vetera)</title>
+                        <note>(fol. 1) Magna Carta as confirmed by Henry iii, 1217: (fol. 3v) Carta
+                           de Foresta as confirmed by Henry iii, 1224-5: (fol. 5) Statutum de
+                           Merton: (fol. 6v) Statutum de Marleberga: (fol. 11) Statutum
+                           Westmonasteriense primum, in French: (fol. 19v) Statuta Gloucestrensia,
+                           in French: (fol. 22) Statuta Westmonasteriensia secunda: (fol. 40v)
+                           Statutum de empcione terrarum: (fol. 41) Statutum de religiosis: (fol.
+                           41v) Statutum de juratis et recognitionibus assisarum: (fol. 42)
+                           Districciones scaccarii, in French: (fol. 42v) Statutum de scaccario, in
+                           French: (fol. 44) Statutum Wintoniense, in French: (fol. 45v) Modus
+                           inquirendi de Statutis Wynton.': (fol. 46) Statutum de mercatoribus, in
+                           French: (fol. 46v) Statutum de bigamis: (foll. 47v, 60v) Statutum de
+                           conspiratoribus. A list of chapters in foll. 1-40 is at fol. 61v.</note>
                         <textLang mainLang="la" otherLangs="xno">Latin and Anglo-Norman</textLang>
                      </msItem>
                      <msItem n="2" xml:id="MS_Hatton_28-part1-item2">
-                        <title key="work_12595">Legal treatises</title>
+                        <locus>(fol. 48)</locus>
+                        <note>Short legal treatises:</note>
+                        <msItem>
+                           <locus>(fol. 48)</locus>
+                           <title key="work_5447">Summa bastardiae</title>
+                           <incipit>Nota quod si bastardus</incipit>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 51) )</locus>
+                           <title key="work_14808">Summa que vocatur Cadit Assisa</title>
+                           <incipit>Cadit assisa si petatur</incipit>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 55)</locus>
+                           <author key="person_109991026">Ralph Hengham</author>
+                           <title key="work_4182">Summa parua</title>
+                           <rubric>Parva Heyngham</rubric>
+                           <incipit>Notandum quod quinque sunt essoniae</incipit>
+                        </msItem>
+                        <msItem>
+                           <locus>((fol. 60)</locus>
+                           <title key="work_5449">Seneschaucie</title>
+                           <note>An anonymous description of the office of seneschal, as in miss
+                              Lamond's <title>Walter of Henley</title>, pp. 84-8</note>
+                           <incipit><supplied>L</supplied>ome qe veot bon aprendre de terres
+                              garder </incipit>
+                           <bibl>Dean and Boulton, no. 393</bibl>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 60v)</locus>
+                           <rubric>Compositio monete</rubric>
+                           <note> 'In French:</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 60v )</locus>
+                           <title>Statutum de chaumpartie</title>
+                           <note>In French:</note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 61)</locus>
+                           <rubric>Modus exceptionis</rubric>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 61)</locus>
+                           <rubric>Articuli contra regis prohibicionem</rubric>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 61)</locus>
+                           <title>Circumspecte agatis</title>
+                           <rubric>Articuli de curia Christianitatis</rubric>
+                        </msItem>
+                        <msItem>
+                           <note>On fol. 62v are some <title type="desc" key="work_11870">forms of letters</title> in Latin (noted Polak, <title>Medieval and Renaissance letter treatises and form letters</title> II.373).</note>
+                        </msItem>
                         <textLang mainLang="la" otherLangs="xno">Latin and Anglo-Norman</textLang>
+                     </msItem>
+                     <msItem n="3" xml:id="MS_Hatton_28-part1-item3">
+                        <locus> (fol. 63)</locus>
+                        <title key="work_14739">Statutes of England (statuta vetera), further statutes</title>
+                        <note> (fol. 63) Visus franciplegii:
+                           (fol. 64) 'Noui Articuli' super chartas: (fol. 66v) Statute of Exeter,
+                           here called Statutum Oxonie, all in French.</note>
+                        <textLang mainLang="xno">Anglo-Norman</textLang>
+                     </msItem>
+                     <msItem n="4" xml:id="MS_Hatton_28-part1-item4">
+                        <locus>(fol. 69)</locus>
+                        <author key="person_109991026">Ralph Hengham</author>
+                        <title key="work_4181">Summa magna</title>
+                        <incipit>Licet ordo
+                           placitandi in curia</incipit>
+                        <finalRubric>Explicit ista summa que vocatur Hengeham</finalRubric>
+                        <textLang mainLang="la">Latin</textLang>
                      </msItem>
                   </msContents>
                   <physDesc>
@@ -76,7 +181,8 @@
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1310" notBefore="1300">14th century, beginning</origDate>
+                        <origDate calendar="Gregorian" notAfter="1310" notBefore="1300">14th
+                           century, beginning</origDate>
                         <origPlace>
                            <country key="place_7002445">English</country>
                         </origPlace>
@@ -90,8 +196,10 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem n="1" xml:id="MS_Hatton_28-part2-item1">
-                        <title key="work_12519">Law reports of pleadings in the courts of Common Pleas and King's Bench</title>
+                     <msItem n="5" xml:id="MS_Hatton_28-part2-item1">
+                        <locus>(fol. 83)</locus>
+                        <title key="work_12519" type="desc">Law reports of pleadings in the courts of Common
+                           Pleas and King's Bench, temp. Edward i and ii, including some of 30 Edw. i, with other law notes.</title>
                         <textLang mainLang="xno">Anglo-Norman</textLang>
                      </msItem>
                   </msContents>
@@ -104,7 +212,8 @@
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1350" notBefore="1300">14th century, first half</origDate>
+                        <origDate calendar="Gregorian" notAfter="1350" notBefore="1300">14th
+                           century, first half</origDate>
                         <origPlace>
                            <country key="place_7002445">English</country>
                         </origPlace>
@@ -118,10 +227,15 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem n="1" xml:id="MS_Hatton_28-part3-item1">
+                     <msItem n="6" xml:id="MS_Hatton_28-part3-item1"><locus>(fol. 90)</locus>
                         <title key="work_13115">Manual for preachers</title>
                         <note>(fragment)</note>
+                        <note>Without beginning or end, consisting of 'Auctoritates' or passages suitable for sermons on such subjects as Avaritia, Accidia, Superbia. </note>
                         <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     <msItem>
+                        <note>A French theological note occurs at the foot of fol. 95v.</note>
+                        <textLang mainLang="xno">Anglo-Norman</textLang>
                      </msItem>
                   </msContents>
                   <physDesc>
@@ -136,7 +250,8 @@
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1300" notBefore="1290">13th century, late</origDate>
+                        <origDate calendar="Gregorian" notAfter="1300" notBefore="1290">13th
+                           century, late</origDate>
                         <origPlace>
                            <country key="place_7002445">English</country>
                         </origPlace>
@@ -147,8 +262,12 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-09">Encode all information in Summary Catalogue.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using
+               <ref
+               target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl"
+               >https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>
    </teiHeader>
    <text>

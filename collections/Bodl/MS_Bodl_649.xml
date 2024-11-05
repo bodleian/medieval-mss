@@ -1,15 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1652">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1652">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Bodl. 649</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2024">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -33,25 +39,51 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Bodl. 649</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x05712m7459n</idno><idno type="crArk">ark:29072/x05425kb620s</idno><altIdentifier type="internal">
                      <idno type="SCN">2293</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem class="#sermones" n="1" xml:id="MS_Bodl_649-item1">
+                  <msItem class="#sermones" xml:id="MS_Bodl_649-item1">
                      <title key="work_14580" type="desc">Sermons</title>
-                     <note>(some perhaps by <persName key="person_729" role="aut">John Swetstock, monk of St. Albans<!-- not in VIAF --></persName>)</note>
-                     <textLang mainLang="la" otherLangs="enm">Latin and Middle English</textLang>
+                           <msItem xml:id="MS_Bodl_649-item-1">
+                              <locus from="1">(fol. 1)</locus>
+                              <note> Twenty-five sermons of which 23 are macaronic Latin-English and 2 Latin. The English is introduced
+                                 sparingly, but at any part of the sermons: on fol. 82 is a description,
+                                 chiefly in English, of Blindman's buff, in a sermon on Confession. The first
+                                 sermon begins </note><incipit>Nunc dies salutis. 2a ad Corinth vj. Anglice Alle seke
+                                 &amp; woful come to weele ... Lego in scriptura</incipit>
+                              <note>Ed. and tr. P. Horner, <title>A Macaronic Sermon Collection from Late Medieval England: Oxford, MS. Bodley 649</title> (2006), with brief description of the manuscript, including a collation, at p. 3</note>
+                              <note>Horner notes that four sermons are also found in MS. Laud Misc. 706, which belonged by <persName key="person_717">John Paunteley, monk of Gloucester</persName>, and suggests that Pauntley may be the author of the present collection. The Summary Catalogue suggested an attribution to <persName key="person_729">John Swetstock, monk of St. Albans<!-- not in VIAF --></persName>, on the evidence of the 1602 catalogue (see Provenance), but Horner and Wenzel (cited below) suggest that Swetstock (whose name is also on fol. 48) may have been the scribe rather than the author.</note>
+                              <textLang mainLang="la" otherLangs="enm">Latin and Middle English </textLang>
+                           </msItem>
+                           <msItem  xml:id="MS_Bodl_649-item-2">
+                              <locus from="145">(fol. 145)</locus>
+                              <note>Twenty sermon, in colloquial style, the first
+                                 of which begins:</note><incipit>Ascendens Ihesus in nauiculam ... Beati homines in hac
+                                 peregrinacione</incipit><note>In these sermons there is little or no English in the
+                                 text.</note>
+                             <listBibl> <bibl>This collection discussed S. Wenzel, <title>Latin Sermon Collections from Later Medieval England</title> (2005), pp. 86-7, and the contents of both collections inventoried ibid., pp. 550-555.</bibl>
+                 </listBibl>          </msItem>
+                       
+                     <textLang mainLang="la" otherLangs="enm">Latin with very little Middle English</textLang>
+                    
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>ii + 220 leaves
+                        <dimensions type="binding" unit="in">
+                           <height>8.625</height>
+                           <width>6.5</width>
+                        </dimensions></extent>
                      </supportDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>Good border, initial. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 780)</decoNote>
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 780</summary>
+                     <decoNote type="border">Good border. </decoNote><decoNote type="decInit">Good initial. </decoNote>
                   </decoDesc>
                   <bindingDesc>
                      <binding notBefore="1600" notAfter="1700">
@@ -61,9 +93,9 @@
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" when="1400">c. 1400</origDate>
+                     <origDate calendar="Gregorian" notBefore="1415" notAfter="1450">15th century, first half (after 1415, perhaps after 1421: see Horner, p. 4)</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>, perhaps <settlement key="place_7011931">Oxford</settlement> (Horner, p. 3) 
                      </origPlace>
                   </origin>
                   <provenance notBefore="1500" notAfter="1600">There is some 16th cent. scribbling on several leaves, among which are
@@ -72,7 +104,9 @@
                      111, 157, 194, 205. </provenance>
                   <!-- dictionary of hte placenames of wales, Taylor DA734 OWE 2007
 Basement Celtic LC Class
- -->
+ -->   <provenance>This volume must be the one described as 'Jo. Swetstock sermones anglico-lat.
+                                 MS. in 4to' in the 1602 catalogue, and that name is in a nearly erased entry
+                                 on fol. 8. </provenance>
                   <acquisition notBefore="1602" notAfter="1604">The entry in the 1602 catalogue may be an addition, but
                      in any case the volume undoubtedly came to the Library not later than
                      1604.</acquisition>
@@ -80,18 +114,48 @@ Basement Celtic LC Class
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
+                        <source>Description adapted (Oct. 2024) from the following sources, with additional reference to published literature as cited:
+                           <listBibl><bibl><bibl>Pächt and Alexander III (1973) 780 </bibl>
+                           Summary Catalogue (1922)</bibl></listBibl><listBibl>
                               <bibl facs="aap0314.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 293</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
                </additional>
+               <msPart xml:id="MS_Bodl_649-endleaves" type="fragment">
+                  <msIdentifier>
+                     <altIdentifier type="partial">
+                        <idno type="part">MS. Bodl. 649, endleaves (fols. i, 230)</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  <msContents>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem xml:id="MS_Bodl_649-endleaves-item1">
+                        <title type="desc" key="work_10641">Breviary</title>
+                     </msItem>
+                     
+                     
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="perg">
+                           <support>parchment</support>
+                        </supportDesc>
+                     </objectDesc>
+                  </physDesc>
+                  <history>
+                     <origin>
+                        <origDate calendar="Gregorian" notAfter="1400" notBefore="1300">14th century</origDate>
+                        
+                     </origin>
+                  </history>
+               </msPart>
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-10">Description revised to incorporate all information from Summary Catalogue.</change>
          <change when="2022-04-04">Add provenance information from Summary Catalogue.</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2017-07-01">First online publication.</change>

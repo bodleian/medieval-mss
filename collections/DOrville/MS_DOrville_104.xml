@@ -1,17 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_4056" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4056">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. D'Orville 104</title>
             <title type="collection">MSS. D'Orville</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,37 +36,64 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. D'Orville 104</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0k356942037</idno><idno type="crArk">ark:29072/x05m60qs78w5</idno><altIdentifier type="internal">
                      <idno type="SCN">16982</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_DOrville_104-item1">
                      <author key="person_6297311">Herennius Philo Byblius</author>
                      <title key="work_2012">Commentary on Aristotle, Metaphysica</title>
+                     <note>Herennius, exactly as <ref target="https://medieval.bodleian.ox.ac.uk/catalog/manuscript_4055">MS. D'Orville 103</ref>. 
+                        
+                     </note>
                      <bibl type="commentedOn">
                         <author key="person_7524651">Aristotle</author>
                         <title>Metaphysica</title>
                      </bibl>
                      <textLang mainLang="grc">Greek</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
+                     
+                        <extent>
+                           i + 115 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>9.75</height>
+                              <width>6.875</width>
+                           </dimensions>
+                        </extent>
+                        
                      </supportDesc>
+                     
                   </objectDesc>
+                     <handDesc>
+                        <handNote>Script attributed to  <persName role="scr" key="person_4864">Jacobus Episcopoulos</persName> (RGK I no. 144), as MS. D'Orville 103, although the Summary Catalogue thought the two manuscripts were by different scribes.</handNote>
+                     </handDesc>
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1600" notBefore="1500">16th century (?)</origDate>
                   </origin>
+                  
+                  <provenance><persName key="person_24945908" role="fmo">Jacques Phillippe D'Orville of Amsterdam (1690–1751)</persName></provenance>
+                  <provenance><persName key="person_3392" role="fmo">Jean D'Orville, b. 1734</persName>, his son, by descent</provenance>
+                  <provenance><persName key="person_3393" role="fmo">Jean D'Orville</persName>, son of Jean, by descent</provenance>
+                  <provenance>Sold to the <persName key="person_3394" role="fmo">Rev. John Cleaver Banks (1765/1766–1845)</persName>: purchased from him by the Bodleian</provenance>
+                  <acquisition when="1804">Acquired by the Bodleian in 1804</acquisition>
+                  
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
+                        <source>
+                           Description adapted (May 2024) by Stewart J. Brookes from the Summary Catalogue (1897) with additional reference to published literature as cited.
+                           <listBibl> 
                               <bibl facs="aaz0081.gif" type="SC">Summary Catalogue, Vol. 4, p. 62</bibl>
                            </listBibl>
                         </source>
@@ -80,6 +110,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-05-03">Description revised to incorporate all the information in the Summary Catalogue (1897)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>

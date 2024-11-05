@@ -1,17 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_8614" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8614">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Rawl. G. 98</title>
             <title type="collection">MSS. Rawl. G. (Rawlinson G)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1895">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,7 +42,7 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Rawl. G. 98</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0vq27zm91rd</idno><idno type="crArk">ark:29072/x0vm40xr08fz</idno><altIdentifier type="internal">
                      <idno type="SCN">14825</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -48,32 +57,52 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                     
+                     
+               <extent source="SC">ii + <measure type="leaf" quantity="69">69</measure> leaves
+                  <dimensions type="binding" unit="in">
+                     <height>9.25</height>
+                     <width>6.25</width>
+                  </dimensions>
+               </extent>
+                        
+               <condition>In places rubbed</condition>
+                        
                      </supportDesc>
-                  </objectDesc><handDesc><handNote script="humanistica">Humanistic script. </handNote></handDesc>
-                  <decoDesc>
-                     <summary>By the <persName key="person_69838853" role="art">Master of the Vitae Imperatorum</persName>. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 705, pl. LXIX)
+                     
+                  </objectDesc>
+
+                  
+                  <handDesc>
+                     <handNote script="humanistica">Humanistic script.  (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 705)</handNote>
+                  </handDesc>
+                  
+                  <decoDesc resp="#PA">
+                     <summary>By the <persName key="person_69838853" role="art">Master of the Vitae Imperatorum</persName>. Each book is preceded by a miniature (ploughing, arboriculture, care of herds, bee-keeping), and an illuminated capital; see also, fols 63r and <ref target="https://digital.bodleian.ox.ac.uk/objects/120ef54d-0129-4314-9b62-6a2b754fe1d1/surfaces/f3beed76-11f3-43b9-9643-ce29f1e9066b/">63v</ref>. <ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 705, Pl. LXIX
                      </summary>
-                     <decoNote type="miniature">Fine miniatures. </decoNote>
-                     <decoNote type="border">Fine borders. </decoNote>
-                     <decoNote type="histInit">Fine historiated initials. </decoNote>
+                     <decoNote type="miniature"><ref target="https://digital.bodleian.ox.ac.uk/objects/120ef54d-0129-4314-9b62-6a2b754fe1d1/surfaces/c8b6f438-eb66-44d0-afcd-86676329555a/">Fine miniatures</ref></decoNote>
+                     <decoNote type="border">Fine borders</decoNote>
+                     <decoNote type="histInit">Fine historiated initials</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1460" notBefore="1440">15th century, middle</origDate>
                      <origPlace>
-                        <country key="place_1000080">Italian</country>, <settlement key="place_7005903">Milan</settlement>
+                        <country key="place_1000080">Italy</country>, <settlement key="place_7005903">Milan</settlement>
                         <!--ORIGINAL: Italian, Milan-->
                      </origPlace>
                   </origin>
+                  <provenance><persName role="fmo" key="person_2857">Walter Clavell</persName>, 8o, MS. 11 (Enright, 'Rawlinson', app. B).</provenance>
                   <provenance notAfter="1755" notBefore="1690" resp="#MMM"><persName key="person_47563478" role="fmo">Richard Rawlinson, 1690–1755</persName></provenance>
                   <acquisition resp="#MMM" when="1755">Bequeathed to the Bodleian in 1755</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1895). Decoration, localization and date follow Pächt and Alexander (1970). <listBibl>
-                              <bibl facs="aas0375.gif" type="SC">Summary Catalogue, Vol. 3, p. 360</bibl>
+                        <source>
+                           Description adapted (July 2024) by Stewart J. Brookes from the Summary Catalogue (1895). Decoration, localization and date follow Pächt and Alexander (1970)
+                           <listBibl>  <bibl facs="aas0375.gif" type="SC">Summary Catalogue, Vol. 3, p. 360</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -82,12 +111,13 @@
                      </availability>
                   </adminInfo>
                   <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/120ef54d-0129-4314-9b62-6a2b754fe1d1/"><title>Digital Bodleian</title></ref>
-                        <note>(13 images from 35mm slides)</note></bibl></surrogates>
+                        <note>(13 images from 35mm slides)</note></bibl><bibl type="microfilm">Microfilm available in the open shelf collections in the Weston Library (R. Films 101)</bibl></surrogates>
                </additional>
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-07-05">Description revised to incorporate all the information in the Summary Catalogue (1895)</change>
          <change when="2019-10-31" xml:id="MMM"><persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>

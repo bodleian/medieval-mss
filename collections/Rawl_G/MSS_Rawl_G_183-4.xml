@@ -1,17 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_8479" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8479">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MSS. Rawl. G. 183–4</title>
             <title type="collection">MSS. Rawl. G. (Rawlinson G)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1895">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1966">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,7 +42,7 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MSS. Rawl. G. 183-4</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0z029p407vv</idno><idno type="crArk">ark:29072/x0xw42n724j0</idno><altIdentifier type="internal">
                      <idno type="SCN">14900</idno>
                   </altIdentifier>
                   <altIdentifier type="internal">
@@ -47,43 +56,85 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem class="#biblia" n="1" xml:id="MSS_Rawl_G_183-4-item1">
                      <title key="work_13771" type="desc">Pentateuch, with gloss</title>
+                     <note>With a commentary chiefly consisting of a gloss from the Church Fathers</note>
+                     
+                     <msItem><note>MS. Rawl. G. 183 ends with Exodus xxxiii.33 ('delebo eum')</note></msItem>
+                     
+                     <msItem><note>MS. Rawl. G. 184 begins with Leviticus xxii.12 ('-dotis cuilibet ex populo')</note></msItem>
+                     
                      <bibl type="bible">
                         <title>Bible, Pentateuch</title>
                      </bibl>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                   
+                        <extent source="SC">ii + <measure type="leaf" quantity="185">185</measure> leaves in MS. Rawl. G. 183 and 
+                           ii + <measure type="leaf" quantity="169">169</measure> leaves in MS. Rawl. G. 184  
+                  <dimensions type="binding" unit="in">
+                     <height>16.75</height>
+                     <width>11.125</width>
+                  </dimensions>
+               </extent>
+                
+                     <condition>Leaves are lost after fols 176 and 180 of MS. Rawl. G. 183, and perhaps elsewhere</condition>
+                        
                      </supportDesc>
                   </objectDesc>
-                  <decoDesc><summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 518, pl. XL:</summary>
-                     <decoNote type="border">Fine historiated border. </decoNote><decoNote type="histInit">Fine historiated initials. </decoNote><decoNote type="decInit">Fine other initials. </decoNote>
+                  
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 518, Pl. XL
+                     </summary>
+
+                     <decoNote type="border">Fine historiated border</decoNote>
+                     
+                     <decoNote type="histInit">Fine historiated initials (e.g. <ref target="https://digital.bodleian.ox.ac.uk/objects/0c603153-2615-4250-8390-d535e7661892/surfaces/302f826a-0190-409f-a9d6-4622a1f8ccc1/">MS. Rawl. G. 184, fol. 111v</ref>, showing Moses putting the tablets of the Law into the ark</decoNote>
+                     
+                     <decoNote type="decInit">Fine other initials</decoNote>
                   </decoDesc>
+                  
                </physDesc>
+               
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1250" notBefore="1225">13th century, second quarter</origDate>
                      <origPlace>
-                        <country key="place_1000070">French</country>, <settlement key="place_7008038">Paris</settlement>
+                        <country key="place_1000070">France</country>, <settlement key="place_7008038">Paris</settlement>
                         <!--ORIGINAL: French, Paris-->
                      </origPlace>
                   </origin>
-                  <provenance type="MLGB3_provenance_evidence"
-                     source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/3996"><orgName role="fmo" key="org_171322298">Mottisfont, Hampshire. Augustinian priory of Holy Trinity: </orgName>: 'Istum librum contulit magister Albericus de Vitriaco ecclesie de Motesfunt' (MS. Rawl. G. 184, fol. 168r), s. xiii ex (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/3996">MLGB3</ref>: evidence from an ex-libris inscription or note of gift to an institution).</provenance>
-                  <provenance type="MLGB3_laterOwners"
-                     source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/3996">'Secreta mea mihi T. Holland' (MS. Rawl. G. 183, fol. 3r). (MLGB3)</provenance>
+                  <provenance>'tradidi <persName key="person_25981391">Roberto Anglico</persName> x sol. Turonensium, item x Turonensium, tercio c sol. Parisiensium, quarto x sol. Turonensium' (MS. Rawl. G. 183, fol. 183r, late 13th century?)</provenance>
+                  
+                  <provenance type="MLGB3_provenance_evidence" source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/3996"><orgName role="fmo" key="org_171322298">Mottisfont, Hampshire. Augustinian priory of Holy Trinity</orgName>:  
+                     'Istum librum contulit magister <persName role="fmo">Albericus de Vitriaco</persName> ecclesie de Motesfunt' 
+                     (MS. Rawl. G. 184, fol. 168r), s. xiii ex (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/3996">MLGB3</ref>)</provenance>
+                  
+                  <!-- Add authority record -->                  
+
+                  
+                  <provenance type="MLGB3_laterOwners" source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/3996">Holland family of Quidenham, Norfolk: 'Secreta mea mihi <persName role="fmo">T. Holland</persName>' (MS. Rawl. G. 183, fol. 3r) (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/3996">MLGB3</ref>); sale of the library of Sir John Holland (approximately 1669-approximately 1724), <ref target="https://books.google.co.uk/books?id=6IdaAAAAcAAJ"><title>Bibliotheca Hollandiana</title></ref>, Norwich, 1730, Folio, no. 4 (p. 3).</provenance>
+                  <provenance><persName role="fmo" key="person_25708606">James Brydges, Duke of Chandos</persName> (Enright, 'Rawlinson', app. B) </provenance>
+                  <!-- check if T Holland or J Holland. Motto is that of the Hollands of Norfolk. cf Tanner 326. -->
+                  
                   <provenance notAfter="1755" notBefore="1690" resp="#MMM"><persName key="person_47563478" role="fmo">Richard Rawlinson, 1690–1755</persName></provenance>
+                  
                   <acquisition resp="#MMM" when="1755">Bequeathed to the Bodleian in 1755</acquisition>
+                  
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1895). Decoration, localization and date follow Pächt and Alexander (1966). <listBibl>
+                        <source>
+                           Description adapted (July 2024) by Stewart J. Brookes from the Summary Catalogue (1895). Decoration, localization and date follow Pächt and Alexander (1966)
+                           <listBibl>  
                               <bibl facs="aas0389.gif" type="SC">Summary Catalogue, Vol. 3, p. 374</bibl>
                               <bibl facs="aas0390.gif" type="SC">Summary Catalogue, Vol. 3, p. 375</bibl>
                            </listBibl>
@@ -103,6 +154,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-07-26">Description revised to incorporate all the information in the Summary Catalogue (1895)</change>
          <change when="2022-03-30">Add provenance information from MLGB3.</change>
          <change when="2019-10-31" xml:id="MMM"><persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>

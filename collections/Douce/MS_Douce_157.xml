@@ -1,17 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_4534" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4534">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Douce 157</title>
             <title type="collection">MSS. Douce</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,70 +42,94 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Douce 157</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x05h73pw733p</idno><idno type="crArk">ark:29072/x0x059c673x6</idno><altIdentifier type="internal">
                      <idno type="SCN">21731</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <textLang mainLang="enm">Middle English</textLang>
                   <msItem>
                      <locus>(fols. i recto–xi verso)</locus>
-                     <note>Notes by Douce and <persName key="person_51566395">Edward Umfreville</persName>.</note>
+                     <note>Notes by <persName key="person_69848690" role="fmo">Francis Douce</persName> and <persName key="person_51566395">Edward Umfreville</persName></note> 
                   </msItem>
+                  
                   <msItem>
                      <locus>(fol. xii verso)</locus>
                      <note>Inscription, <q>He that this boke did furst …</q></note>
                   </msItem>
+                  
                   <msItem class="#theologica  #devotiones" n="1" xml:id="MS_Douce_157-item1">
                      <locus>(fols. 1r–114v)</locus>
                      <title key="work_13981">The Prick of Conscience</title>
+                     
+                     <note>(<ref target="https://www.dimev.net/record.php?recID=5398"><title>DIMEV</title> 5398-11</ref>), 
+                        </note>
+                     
                      <rubric>Incipit stimulus consciencie De trinitate prima pars qualiter factus est mundus et omnia per ipsum</rubric>
                      <incipit>The myghte of þe fader almyghtty</incipit>
                      <explicit>Þat of nouƿt made alle þynge. Amen.</explicit>
                      <finalRubric>Explicit stimulus consciencie</finalRubric>
+                     
                      <note>Added in a sixteenth-century hand:</note>
+                     <note>(<ref target="https://www.dimev.net/record.php?recID=1901"><title>DIMEV</title> 1901-1)</ref>, 
+                     </note>
+                     
                      <colophon>
-                        <quote>
-                           <l>He that to this wyll take good hed</l>
-                           <l>And stoddy therin it dellygentlly</l>
-                           <l>He shall haf heuen bles thell he sued</l>
-                           <l>That shall laste perpetuall Amen</l>
-                        </quote>
+                        He that to this wyll take good hed / And stoddy therin it dellygentlly / He shall haf heuen bles thell he sued / That shall laste perpetuall Amen
                      </colophon>
                   </msItem>
+                  
                   <msItem>
-                     <locus>(fol. 118r–v)</locus>
-                     <note>Note by Douce.</note>
+                     <locus>(fol. 118r–118v)</locus>
+                     <note>Note by Douce</note>
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
-                        <support>parchment</support>
+                        <support>parchment</support><extent>xiii + <measure type="leaf" quantity="119">119</measure> leaves
+                           <dimensions type="binding" unit="in"><height>10.25</height><width>7.375</width></dimensions>
+                        </extent>
                      </supportDesc>
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote type="decInit">Good initial (defaced). (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 771)</decoNote>
+
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 771
+                     </summary>
+                     
+                     <decoNote type="decInit">Good initial (defaced)</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" when="1400">c. 1400</origDate>
+                     <origDate calendar="Gregorian" notAfter="1410" notBefore="1390"><hi rend="italic">c</hi>. 1400</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
-                  <provenance notAfter="1786" notBefore="1702"><persName key="person_51566395">Edward Umfreville</persName>: inscribed, fol. 1r.</provenance>
+                  <provenance notAfter="1786" notBefore="1702"><persName key="person_51566395">Eduardi Umfreville</persName>: inscribed, fol. 1r.</provenance>
                   <provenance notAfter="1834" notBefore="1757" resp="#MMM"><persName key="person_69848690" role="fmo">Francis Douce, 1757–1834</persName></provenance>
                   <acquisition resp="#MMM" when="1834">Bequeathed to the Bodleian in 1834</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
+                        
+                        <source>
+                           Description adapted (August 2024) by Stewart J. Brookes from the Summary Catalogue (1897) and the Catalogue of the Printed Books and Manuscripts Bequeathed by Francis Douce, esq. to the Bodleian Library (1840). Decoration, localization and date follow Pächt and Alexander (1973)
+                           <listBibl>
                               <bibl facs="aaz0559.gif" type="SC">Summary Catalogue, vol. 4, p. 540</bibl>
                            </listBibl>
+                           
+                           <listBibl>
+                              <bibl>
+                                 <ref target="https://archive.org/details/catalogueofprint00bodluoft/page/27/mode/1up">Printed Books and Manuscripts Bequeathed by Francis Douce, p. 27</ref>
+                              </bibl>
+                           </listBibl>
+                           
                         </source>
+                        
                      </recordHist>
                   </adminInfo>
                </additional>
@@ -104,6 +137,8 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-08-23">Description revised to incorporate all the information in the Summary Catalogue (1897)</change>
+         <change when="2024-05">Add extent and leaf dimensions from Summary Catalogue.</change>
          <change when="2021-05-31"><persName>Andrew Dunning</persName> Updated contents with consultation of original.</change>
          <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>

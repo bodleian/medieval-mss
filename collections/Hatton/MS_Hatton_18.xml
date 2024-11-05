@@ -1,17 +1,28 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6049">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6049">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Hatton 18</title>
             <title type="collection">MSS. Hatton</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1937">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+               <persName>N. Denholm-Young</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,45 +44,69 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Hatton 18</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x03j333329tz</idno><idno type="crArk">ark:29072/x03f462646h3</idno><altIdentifier type="internal">
                      <idno type="SCN">4109</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_Hatton_18-item1">
                      <author key="person_16248546">William of Nassington</author>
                      <title key="work_5080">Speculum vitae</title>
+                     <note>(<ref target="https://www.dimev.net/record.php?recID=423#wit-423-6"><title>IMEV</title> 423-6</ref>)</note>
+                     <note>The text is incomplete through the loss of the first leaf and begins 'That 3e han most of usage | That can euery man undyrstande'</note>
                      <textLang mainLang="enm">Middle English</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="chart">
-                        <support>paper</support>
+                        <support>paper</support><extent source="SC">
+                           <measure type="leaf" quantity="211">211</measure> leaves
+                           <dimensions type="binding" unit="in">
+                              <height>12.375</height><width>8.5</width></dimensions>
+                        </extent>
                      </supportDesc>
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote><p>Miniatures (drawings), historiated initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 1131)</p>
-                     </decoNote>
+                 
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 1131
+                     </summary>
+                     
+                     <decoNote type="miniature">Miniatures (drawings)</decoNote>
+                     
+                     <decoNote type="histInit">Historiated initials</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1500" notBefore="1490">15th century, end</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
-                  <provenance type="MLGB3_provenance_evidence"
-                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1879">
-                     <orgName role="fmo" key="org_152906198">Denny, Cambridgeshire, Abbey of St James and St Leonard, of Franciscan nuns</orgName>: "Iste liber est venerabilis domine dompne Elesabeth Throgkmorton abbatisse de Denney teste Thoma gylberd in eodem monastio olim manenti" (fol. 210v), s. xvi in. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1879">MLGB3</ref>: evidence from an inscription of ownership by an individual member of a religious house (which may not, however, be evidence for institutional ownership)). </provenance>
-                  <provenance type="MLGB3_laterOwners"
-                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1879">"Iste liber pertinet ... ad me Bartholomew Swalow." (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1879">MLGB3</ref>)</provenance>
+                  
+                  <provenance type="MLGB3_laterOwners" source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1879">'Iste liber pertinet ... ad me <persName role="fmo" key="person_4889">Bartholomew Swalow</persName>', s. xvi in. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1879">MLGB3</ref>)</provenance>
+                  
+                  <provenance type="MLGB3_provenance_evidence" source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1879">
+                     <orgName role="fmo" key="org_152906198">Denny or Denney, Cambridgeshire, Abbey of St James and St Leonard, of Franciscan nuns</orgName>: 
+                     'Iste liber est venerabilis domine dompne <persName role="fmo" key="person_4890">Elesabeth Throgkmorton</persName> abbatisse de Denney teste Thoma Gylberd in eodem monastio olim manenti' (fol. 210v), 
+                     s. xvi in. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1879">MLGB3</ref>: evidence from an inscription of ownership by an individual member of a religious house (which may not, however, be evidence for institutional ownership)). For Throckmorton (d. 1547) see D. N. Bell, <title>What Nuns Read</title> (1995), ppp. 134-5.</provenance>
+                  
+                  <provenance>'Hic fuit frater <persName role="sgn" key="person_4891"><sic>Johannes</sic> Fakun</persName>': presumably the vice-warden of the Franciscans, who signed the surrender of Denny (Bell, ibid.)</provenance>
+              
+                  <provenance><persName key="person_37729288" role="fmo">Christopher, first Baron Hatton (d. 1670)</persName></provenance>
+                  
+                  <acquisition when="1671">Bought in 1671 by the Bodleian through the London bookseller Robert Scot (b. in or before 1632, d. 1709/1710); see Summary Catalogue, vol. 2, part 2, p. 801</acquisition>             
+               
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1937). Decoration, localization and date follow Pächt and Alexander (1973).  <listBibl>
+                        <source>
+                           Description adapted (May 2024) by Stewart J. Brookes from the Summary Catalogue (1937) with additional reference to published literature as cited. Decoration, localization and date follow Pächt and Alexander (1973)
+                           <listBibl>
                               <bibl facs="aaq0203.gif" type="SC">Summary Catalogue, Vol. 2 Part 2, p. 844</bibl>
                            </listBibl>
                         </source>
@@ -92,6 +127,8 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-05-13">Description revised to incorporate all the information in the Summary Catalogue (1937)</change>
+         <change when="2024-05">Add extent and leaf dimensions from Summary Catalogue.</change>
          <change when="2021-12-14">Add provenance information from MLGB3.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">

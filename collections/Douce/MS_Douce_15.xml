@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_4527" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4527">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Douce 15</title>
             <title type="collection">MSS. Douce</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2024">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -33,24 +33,43 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Douce 15</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0rr171w691m</idno><idno type="crArk">ark:29072/x0w9504z90rj</idno><altIdentifier type="internal">
                      <idno type="SCN">21589</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem class="#apocrypha" n="1" xml:id="MS_Douce_15-item1">
-                     <title key="work_14929">Treatise of Adam and Eve</title>
+                  <textLang mainLang="enm">Middle English</textLang>
+                    <msItem class="#apocrypha" n="1" xml:id="MS_Douce_15-item1">
+                     <locus>(fol. 1)</locus>
+                     <rubric>Here bigynneth the Making of the Worlde</rubric><incipit>In the biginnynge God made of noughte</incipit>
+                       <note>Extracts from the book of Genesis in the <title type="desc" key="work_13609">later Wycliffite version</title> (<title>Gilte Legende</title>, ed. Richard Hamer (EETS), III.43).</note>
                      <textLang mainLang="enm">Middle English</textLang>
                   </msItem>
+                  
                   <msItem class="#apocrypha" n="2" xml:id="MS_Douce_15-item2">
-                     <title key="work_11831">The Five Wiles of King Pharaoh</title>
+                     <locus>(fol. 8v)</locus>
+                     <title key="work_14929">Life of Adam and Eve (IPMEP 25)</title>
+                     <rubric><locus>(fol. 8v)</locus> ... the Lyf of Adam &#x0026; of Eue</rubric>
+                     <incipit>Now takith heede that whanne oure Lord God</incipit>
+                     <note>With rubrics at foll. 23, 42v, 77v.</note>
+                     <note>On the text (later incorporated into the Gilte Legende) see <title>Gilte Legende</title>, ed. Hamer, III.19-20 and 42-6; edited II. 991-1014.</note>
                      <textLang mainLang="enm">Middle English</textLang>
                   </msItem>
+                  <msItem class="#apocrypha" n="3" xml:id="MS_Douce_15-item3">
+                     <title key="work_11831">The Five Wiles of King Pharaoh</title>
+                     <rubric><locus>(fol 77v)</locus> ... now sueth the fyue Wilis that king Pharao vsid aghein the Children of Israel...</rubric>
+                     <incipit>The firste wile was that king Pharao grauntid</incipit>
+                     <note>On the text (later incorporated into the Gilte Legende) see <title>Gilte Legende</title>, ed. Hamer, III.19-20 and 42-6; edited II. 1015-1036.</note>
+                     <textLang mainLang="enm">Middle English</textLang>
+                  </msItem>
+                
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
-                        <support>parchment</support>
+                        <support>parchment</support><extent><measure type="leaf" quantity="141">141</measure> leaves
+                           <dimensions type="binding" unit="in"><height>4.625</height><width>3.375</width></dimensions>
+                        </extent>
                      </supportDesc>
                   </objectDesc>
                </physDesc>
@@ -67,7 +86,7 @@
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). <listBibl>
+                        <source>Description adapted (2024) from the Summary Catalogue (1897) with additional reference to published literature as cited. <listBibl>
                               <bibl facs="aaz0512.gif" type="SC">Summary Catalogue, vol. 4, p. 493</bibl>
                               <bibl facs="aaz0513.gif" type="SC">Summary Catalogue, vol. 4, p. 494</bibl>
                            </listBibl>
@@ -79,6 +98,8 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-10">Incorporate all information in SC with reference to published literature.</change>
+         <change when="2024-05">Add extent and leaf dimensions from Summary Catalogue.</change>
          <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>

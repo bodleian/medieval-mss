@@ -1,17 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_8540" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8540">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Rawl. G. 169</title>
             <title type="collection">MSS. Rawl. G. (Rawlinson G)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1895">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,27 +42,46 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Rawl. G. 169</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0c247ds61t1</idno><idno type="crArk">ark:29072/x0bz60cw78h9</idno><altIdentifier type="internal">
                      <idno type="SCN">14892</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem class="#biblia" n="1" xml:id="MS_Rawl_G_169-item1">
-                     <title key="work_14699" type="desc">Gospel of St. Matthew</title>
+                     <title key="work_12085" type="desc">Gospel of St. Matthew with gloss</title>
+                     <note>With prologue and copious notes</note>
                      <bibl type="bible">
                         <title>Bible, Matthew</title>
                      </bibl>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                 
+               <extent source="SC">iii + <measure type="leaf" quantity="99">99</measure> leaves
+                  <dimensions type="binding" unit="in">
+                     <height>13.75</height>
+                     <width>9.625</width>
+                  </dimensions>
+               </extent>
+                        
+                        <condition>The first leaf of the text and notes, containing i.1, is cut out</condition>
+                        
                      </supportDesc>
+                     
                   </objectDesc>
-                  <decoDesc><summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 466:</summary>
-                     <decoNote type="decInit">Good initials. </decoNote><decoNote type="flourInit">Later fleuronnée work added to some. 
+
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 466
+                     </summary>
+                     
+                     <decoNote type="decInit">Good initials</decoNote>
+                     <decoNote type="flourInit">Later fleuronnée work added to some
                      </decoNote>
                   </decoDesc>
                </physDesc>
@@ -61,16 +89,24 @@
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1175" notBefore="1150">12th century, third quarter</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
+                  
+                  <provenance>'Iste liber est magistri <persName role="fmo" key="person_4965">Michael</persName> rectoris ecclesie de Cropthorne &amp; traditur <persName key="person_4966" role="fmo">Ade de Furches</persName> 
+                     diacono usque ad Festum sancti Johannis Baptiste anno Domini mº ccº lxxº nono' (altered from ... lxxvº?). (For (a later?) Adam de Fourches of Cropthorne, ordained subdeacon in 1306, see <title>Register of Bishop William Ginsborough, 1303 to 1307</title>, p. 156).</provenance>
+
+                  <provenance>On fol. 95v '<persName key="person_4964">Ledbury</persName> scripcit' (16th century)</provenance>
+                  
                   <provenance notAfter="1755" notBefore="1690" resp="#MMM"><persName key="person_47563478" role="fmo">Richard Rawlinson, 1690–1755</persName></provenance>
                   <acquisition resp="#MMM" when="1755">Bequeathed to the Bodleian in 1755</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1895). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
+                        <source>
+                           Description adapted (July 2024) by Stewart J. Brookes from the Summary Catalogue (1895). Decoration, localization and date follow Pächt and Alexander (1973)
+                           <listBibl>  
                               <bibl facs="aas0388.gif" type="SC">Summary Catalogue, Vol. 3, p. 373</bibl>
                            </listBibl>
                         </source>
@@ -81,6 +117,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-07-31">Description revised to incorporate all the information in the Summary Catalogue (1895)</change>
          <change when="2019-10-31" xml:id="MMM"><persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>

@@ -1,17 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_4168" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4168">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. D'Orville 59</title>
             <title type="collection">MSS. D'Orville</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,39 +37,94 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. D'Orville 59</idno>
+                  <idno type="ieArk">ark:29072/x0gq67jr20q8</idno>
+                  <idno type="crArk">ark:29072/x0jq085k09nb</idno>
                   <altIdentifier type="internal">
                      <idno type="SCN">16937</idno>
                   </altIdentifier>
                </msIdentifier>
+               <head>Orations, dissertations, etc.</head>
                <msContents>
+
                   <msItem class="#rhetorica" n="1" xml:id="MS_DOrville_59-item1">
-                     <title key="work_13633" type="desc">Orations, dissertations, etc.</title>
-                     <note>by Italian authors, including <persName key="person_95283478" role="aut"> Leonardo Bruni </persName> (Aretinus), <persName key="person_9867884" role="aut"> Angelo Poliziano </persName>, <persName key="person_19722038" role="aut"> Poggio </persName> and <persName key="person_5000255" role="aut"> Francesco Philelpho </persName>
-                     </note>
+                     <note>Thirty-eight Latin orations, dissertations, etc. by Italian authors,
+                        including the following:</note>
+                     <msItem>
+                        <locus> (fols 26r, 27r)</locus>
+                        <note>Two by<persName key="person_95283478" role="aut"> Leonardo Bruni
+                           </persName> (Aretinus);</note>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols 28r, 28v, 135v)</locus>
+                        <note> Three by <persName key="person_9867884" role="aut"> Angelo
+                              Poliziano</persName> ;</note>
+                        <note>The text on fol. 28v is in verse;</note>
+                        <rubric>Silua in Buccolicon Vergilij enarratione recitata</rubric>
+                        <incipit type="preface">Stabat adhuc rudibus </incipit>
+                        <incipit>Est dea que uacuo</incipit>
+                     </msItem>
+                     <msItem>
+                        <locus>(fols 72v, 78v, 96r, 103r, 127r)</locus>
+                        <note>Five by <persName key="person_19722038" role="aut"> Poggio </persName>.</note>
+                     </msItem>
+                     <msItem>
+                        <locus> (fol. 181v)</locus>
+                        <note>One by <persName key="person_5000255" role="aut"> Francesco
+                              Philelpho</persName> </note>
+                     </msItem>
+                     <note>There is a complete list on fol. 236</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
+
+                        <extent> ii + 243 leaves <dimensions unit="in" type="binding">
+                              <height>8.75</height>
+                              <width>8.625</width>
+                           </dimensions>
+                        </extent>
+
                      </supportDesc>
+
                   </objectDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1500" notBefore="1490">15th century, late</origDate>
+                     <origDate calendar="Gregorian" notAfter="1500" notBefore="1490">15th century,
+                        late</origDate>
                      <origPlace>
-                        <country key="place_1000080">Italian</country>
+                        <country key="place_1000080">Italy</country>
                      </origPlace>
                   </origin>
+
+                  <provenance>'<persName>Horatij Sanch[i]nij'(?) [Sanclinii?]</persName>, 16th
+                     century</provenance>
+
+                  <provenance><persName key="person_24945908" role="fmo">Jacques Phillippe D'Orville
+                        of Amsterdam (1690–1751)</persName></provenance>
+                  <provenance><persName key="person_3392" role="fmo">Jean D'Orville, b.
+                        1734</persName>, his son, by descent</provenance>
+                  <provenance><persName key="person_3393" role="fmo">Jean D'Orville</persName>, son
+                     of Jean, by descent</provenance>
+                  <provenance>Sold to the <persName key="person_3394" role="fmo">Rev. John Cleaver
+                        Banks (1765/1766–1845)</persName>: purchased from him by the
+                     Bodleian</provenance>
+                  <acquisition when="1804">Acquired by the Bodleian in 1804</acquisition>
+
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
-                              <bibl facs="aaz0071.gif" type="SC">Summary Catalogue, Vol. 4, p. 52</bibl>
-                              <bibl facs="aaz0072.gif" type="SC">Summary Catalogue, Vol. 4, p. 53</bibl>
+                        <source> Description adapted (February 2024) by Stewart J. Brookes from the
+                           Summary Catalogue (1897) <listBibl>
+                              <bibl facs="aaz0071.gif" type="SC">Summary Catalogue, Vol. 4, p.
+                                 52</bibl>
+                              <bibl facs="aaz0072.gif" type="SC">Summary Catalogue, Vol. 4, p.
+                                 53</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -75,8 +134,13 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-02-28">Description revised to incorporate all the information in the
+            Summary Catalogue (1897)</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using
+               <ref
+               target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl"
+               >https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>
    </teiHeader>
    <text>

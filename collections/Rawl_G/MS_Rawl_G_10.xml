@@ -1,17 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_8480" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8480">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Rawl. G. 10</title>
             <title type="collection">MSS. Rawl. G. (Rawlinson G)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1895">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1966">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,41 +42,82 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Rawl. G. 10</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0z603qw74gc</idno><idno type="crArk">ark:29072/x0z316q0915r</idno><altIdentifier type="internal">
                      <idno type="SCN">14743</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                   <textLang mainLang="la">Latin</textLang>
                   <msItem class="#biblia" n="1" xml:id="MS_Rawl_G_10-item1">
                      <title key="work_10455" type="desc">Bible</title>
-                     <note>(part: Pentateuch to Kings)</note>
-                     <textLang mainLang="la">Latin</textLang>
+                     <note>Containing the Pentateuch, Joshua, Judges, Ruth, Job, Tobit, Judith, Esther, Machabees I, II and Kings I-IV</note>
                   </msItem>
+                  
+                  
+                  <msItem>
+                     <locus>(fol. 326)</locus>
+                     <title type="desc" key="work_14583">A sermon on the Song of Songs, vi. 10</title>
+                     <incipit>Que est ista ... Si misisset Dominus</incipit>
+                  </msItem>
+                  
+                  <msItem>
+                     <locus>(fol. 334)</locus>
+                     <title type="desc" key="work_14583">A few sermons</title>
+                  </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                    
+                        <extent source="SC"><measure type="leaf" quantity="342">342</measure> leaves
+                           <dimensions type="binding" unit="in">
+                              <height>6.75</height>
+                              <width>4.5</width>
+                           </dimensions>
+                        </extent>
+                        
                      </supportDesc>
+                     
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote type="decInit">Decoration<p>Minor initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 280)</p>
+                  
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 280:
+                     </summary>
+                     
+                     <decoNote type="decInit">Minor initials
                      </decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" when="1200">c. 1200</origDate>
+                     <origDate calendar="Gregorian" notBefore="1190" notAfter="1210"><hi rend="italic">c</hi>. 1200</origDate>
                      <origPlace cert="low">
-                        <country key="place_7024097">Flemish</country> or <country key="place_1000070">French</country> (?)</origPlace>
+                        <country key="place_7024097">Flanders</country> or <country key="place_1000070">France</country> (?)</origPlace>
                   </origin>
+                  
+                  <provenance>'C. G.' (14th century ?)</provenance>
+                     
+                     
+                  <provenance>'Liber domus domini <persName role="fmo" key="person_4915">Hugonis Goutsmit</persName> in Harlem' ('hrłm')</provenance>
+                     
+                  <!-- Add authority record; 
+                     see: https://www.google.com/search?as_q=&as_epq=Hugonis+Goutsmit&as_oq=&as_eq=&as_nlo=&as_nhi=&lr=&cr=&as_qdr=all&as_sitesearch=&as_occt=any&as_filetype=&tbs= -->
+                  
+                  <provenance>
+                     No. 104 in the <persName role="fmo" key="person_1203">Thomas Rawlinson</persName> sale, 4 March 1733/1734
+                  </provenance>
+               
                   <provenance notAfter="1755" notBefore="1690" resp="#MMM"><persName key="person_47563478" role="fmo">Richard Rawlinson, 1690–1755</persName></provenance>
                   <acquisition resp="#MMM" when="1755">Bequeathed to the Bodleian in 1755</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1895). Decoration, localization and date follow Pächt and Alexander (1966). <listBibl>
+                        <source>
+                           Description adapted (June 2024) by Stewart J. Brookes from the Summary Catalogue (1895). Decoration, localization and date follow Pächt and Alexander (1966)
+                           <listBibl>
                               <bibl facs="aas0357.gif" type="SC">Summary Catalogue, Vol. 3, p. 342</bibl>
                            </listBibl>
                         </source>
@@ -78,6 +128,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-06-03">Description revised to incorporate all the information in the Summary Catalogue (1895)</change>
          <change when="2019-10-31" xml:id="MMM"><persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>

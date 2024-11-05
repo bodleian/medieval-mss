@@ -1,17 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8580">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8580">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Rawl. G. 45</title>
             <title type="collection">MSS. Rawl. G. (Rawlinson G)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+      
+            <respStmt xml:id="SC">
+               <resp when="1895">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1966">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,14 +42,32 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Rawl. G. 45</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0n009w226ng</idno><idno type="crArk">ark:29072/x0mw22v543bm</idno><altIdentifier type="internal">
                      <idno type="SCN">14776</idno>
                   </altIdentifier>
                </msIdentifier>
                <physDesc>
-                  <p n="composite">Composite: fols. 3–63 || fols. 64–163</p>
+                  <p n="composite">Composite, made up of two manuscripts: fols 3–63 || fols 64–163</p>
+                  
+                  <objectDesc form="codex">
+                     <supportDesc material="perg">
+                        <support>parchment</support>
+                        
+                        <extent source="SC">iii + <measure type="leaf" quantity="133">133</measure> leaves
+                           <dimensions type="binding" unit="in">
+                              <height>9.5</height>
+                              <width>6.75</width>
+                           </dimensions>
+                        </extent>
+                        
+                     </supportDesc>
+                  </objectDesc>
+                  
                </physDesc>
                <history>
+                  
+                  <provenance>'Christus non deseret. <persName role="fmo" key="person_15117440">Geo: Salteren</persName>', twice (early 17th century)</provenance>
+                  
                   <provenance notAfter="1755" notBefore="1690" resp="#MMM">
                      <persName key="person_47563478" role="fmo">Richard Rawlinson, 1690–1755</persName>
                   </provenance>
@@ -50,7 +77,8 @@
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1895). Decoration, localization and date follow Pächt and Alexander (1966). <listBibl>
+                           Description adapted (July 2024) by Stewart J. Brookes from the Summary Catalogue (1895). Decoration, localization and date follow Pächt and Alexander (1966)
+                           <listBibl>  
                               <bibl facs="aas0365.gif" type="SC">Summary Catalogue, Vol. 3, p. 350</bibl>
                            </listBibl>
                         </source>
@@ -64,6 +92,7 @@
                      </listBibl>
                   </listBibl>
                </additional>
+               
                <msPart xml:id="MS_Rawl_G_45-part1">
                   <msIdentifier>
                      <altIdentifier type="partial">
@@ -71,11 +100,24 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
+                     
                      <msItem n="1" xml:id="MS_Rawl_G_45-part1-item1">
+                        <locus>(fol. 3)</locus>
                         <author key="person_51672454">Solinus</author>
                         <title key="work_4577">Polyhistor</title>
+                        <explicit>Julius Solinus explicit feliciter</explicit>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
+                     
+                     <msItem n="2" xml:id="MS_Rawl_G_45-part1-item2">
+                        <locus>(fol. 63v)</locus>
+                        <title type="desc" key="work_14034">Prophetic verses</title>
+                        <rubric>Versus Merlini</rubric>
+                        <incipit>Bruti posteritas</incipit>
+                        <note>8 lines</note>
+                        <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     
                   </msContents>
                   <physDesc>
                      <objectDesc form="codex">
@@ -83,15 +125,17 @@
                            <support>parchment</support>
                         </supportDesc>
                      </objectDesc>
-                     <decoDesc>
-                        <decoNote type="decInit">Good initial. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 281)</decoNote>
+                     <decoDesc resp="#PA">
+                        <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 281
+                        </summary>
+                        <decoNote type="decInit">Good initial</decoNote>
                      </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" when="1200">c. 1200</origDate>
+                        <origDate calendar="Gregorian" notBefore="1190" notAfter="1210"><hi rend="italic">c</hi>. 1200</origDate>
                         <origPlace cert="low">
-                           <country key="place_7024097">Flemish</country> or <country key="place_1000070">French</country>
+                           <country key="place_7024097">Flanders</country> or <country key="place_1000070">France</country>
                         </origPlace>
                      </origin>
                   </history>
@@ -103,40 +147,94 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
+                     
                      <msItem n="1" xml:id="MS_Rawl_G_45-part2-item1">
+                        <locus>(fol. 64)</locus>
                         <author key="person_89203537">Sidonius Apollinaris</author>
                         <title key="work_4529">Epistulae</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
+                     
                      <msItem n="2" xml:id="MS_Rawl_G_45-part2-item2">
+                        <locus>(fol. 109v)</locus>
                         <author key="person_89203537">Sidonius Apollinaris</author>
                         <title key="work_4528">Carmina</title>
+                        <note>In double columns</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
+                     
                   </msContents>
                   <physDesc>
                      <objectDesc form="codex">
                         <supportDesc material="perg">
                            <support>parchment</support>
+                    
                         </supportDesc>
+                        <layoutDesc>
+                           <layout columns="1 2">Partly in two columns.</layout>
+                        </layoutDesc>
                      </objectDesc>
-                     <decoDesc>
-                        <decoNote type="decInit">Good initial. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 278)</decoNote>
+
+                     <decoDesc resp="#PA">
+                        <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 278
+                        </summary>
+
+                        <decoNote type="decInit">Good initial</decoNote>
+                        
                      </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
                         <origDate calendar="Gregorian" notAfter="1200" notBefore="1190">12th century, end</origDate>
                         <origPlace cert="low">
-                           <country key="place_7024097">Flemish</country> or <country key="place_1000070">French</country>
+                           <country key="place_7024097">Flanders</country> or <country key="place_1000070">France</country>
                         </origPlace>
                      </origin>
                   </history>
                </msPart>
+               
+               <msPart xml:id="Rawl_G_45_flyleaves">
+                  <msIdentifier>
+                     <altIdentifier>
+                        <idno>MS. Rawl. G. 45, flyleaves (fols 1-2)</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  <msContents>
+                     
+                     <msItem>
+                        
+                        <title key="work_10641" type="desc">Breviary </title>
+                        
+                        <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="perg">
+                           <support>Parchment</support>
+                        </supportDesc>
+                        
+                     </objectDesc>
+                     
+                  </physDesc>
+                  <history>
+                     
+                     <origin>
+                        
+                        <origDate notAfter="1300" notBefore="1200" calendar="Gregorian">13th century</origDate>
+                        
+                     </origin>
+                     
+                  </history>
+               </msPart>
+               
             </msDesc>
          </sourceDesc>
+            
       </fileDesc>
       <revisionDesc>
+         <change when="2024-07-29">Description revised to incorporate all the information in the Summary Catalogue (1895)</change>
          <change when="2019-10-31" xml:id="MMM">
             <persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>

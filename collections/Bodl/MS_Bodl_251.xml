@@ -1,15 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1306">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1306">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Bodl. 251</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2024">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -33,7 +39,7 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Bodl. 251</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0td96k207dg</idno><idno type="crArk">ark:29072/x0tb09j52431</idno><altIdentifier type="internal">
                      <idno type="SCN">2332</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -41,7 +47,10 @@
                   <msItem n="1" xml:id="MS_Bodl_251-item1">
                      <author key="person_95296771">Nicholas de Lyra</author>
                      <title key="work_3304">Postilla</title>
-                     <note>(part I, Genesis to Ecclesiasticus)</note>
+                     <note>(part I, Genesis to Ecclesiasticus)</note><rubric>Prima pars postille super Bibliam compilate per fratrem Nicholaum de Lyra
+                        sacre theologie professorem ordinis fratrum Minorum</rubric>
+                     <note>The first two leaves have been torn out, the text
+                        beginning 'teria possit distingui'.</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -49,10 +58,18 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                <extent>iii + 399 leaves
+                        <dimensions type="binding" unit="in">
+                           <height>18.875</height>
+                           <width>13.625</width>
+                        </dimensions></extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2">2 cols.</layout>
+                     </layoutDesc>
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote>Fine coloured drawings and diagrams, borders, initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 614, pl. XLVI)</decoNote>
+                  <decoDesc><summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 614, pl. XLVI</summary>
+                     <decoNote type="miniature">Fine coloured drawings. </decoNote><decoNote type="diagram">Fine coloured diagrams. </decoNote><decoNote type="border">Fine borders. </decoNote><decoNote type="decInit">Fine initials. </decoNote>
                   </decoDesc>
                </physDesc>
                <history>
@@ -62,20 +79,26 @@
                         <country key="place_1000070">French</country>
                      </origPlace>
                   </origin>
-                  <provenance type="MLGB3_provenance_evidence"
-                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1305">
-                     <orgName role="fmo" key="org_158353196">Canterbury, Kent, Benedictine cathedral priory of Holy Trinity or Christ Church</orgName>: "Prima pars Lyre Willelmi Cowrtenay Cantuariensis archiepiscopi [s. xiv ex.] Prima pars lyre quam Willelmus Courtenay dedit ecclesie Christi Cantuariensi", s. xv (flyleaf ii verso, facing fol. 1r of text).     Christ Church signs in margins passim. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1305">MLGB3</ref>: evidence from an ex-libris inscription or note of gift to an institution). </provenance>
-                  <provenance type="MLGB3_laterOwners"
-                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1305">Given by Abraham, Isaac, and Jacob Colfe, 1616. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1305">MLGB3</ref>)</provenance>
-                  <provenance type="MLGB3_generalNotes"
-                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1305">Before this the book had been to Oxford -- see the cauciones in it, cf. S.C. 2332. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1305">MLGB3</ref>)
-                                             </provenance>
+                  <provenance  source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1305" notAfter="1396">
+                     <persName role="fmo" key="person_92144648496325415366">William Courtenay</persName>: "Prima pars Lyre Willelmi Cowrtenay Cantuariensis archiepiscopi" [s. xiv ex.]. The
+                     volume was left by the Archbishop to his nephew Richard Courtenay with
+                     reversion to Canterbury on his death (1415).</provenance>
+                  <provenance type="cautio" notAfter="1403" notBefore="1402">On fol. 398 are four notes of
+                     the MS. having been deposited in the Waugham chest of Oxford University: two
+                     are almost illegible (dated 1401, 1403), but the third runs 'Caucio magistri
+                     Johannis Blew, Ricardi Courtenay, Roberti Newby, Wileimi Oldeni [?],
+                     Philippi Morgan, magistri Thome ... , exposita in cista Waugham Hussy pro
+                     xviij marcis in festo Sancti Thome martiris anno Domini M° CCCC° ij°'. (See
+                     Bodleian Quarterly Record, Vol. II, no. 17.) </provenance><provenance type="MLGB3_provenance_evidence" source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1305"><orgName role="fmo" key="org_158353196">Canterbury, Kent, Benedictine cathedral priory of Holy Trinity or Christ Church</orgName> Prima pars lyre quam Willelmus Courtenay dedit ecclesie Christi Cantuariensi", s. xv (flyleaf ii verso, facing fol. 1r of text).  Christ Church signs in margins passim. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1305">MLGB3</ref>: evidence from an ex-libris inscription or note of gift to an institution). Catalogue of  1508 (M. R. James, <title>Ancient Libraries of
+                        Canterbury</title>, etc. (1903), p. 152).</provenance>
+                 
+                  <acquisition when="1616">Given by <persName role="dnr" key="person_67932423">Abraham</persName>, <persName role="dnr" key="person_2919">Isaac</persName>, and <persName role="dnr" key="person_2920">Jacob Colfe</persName>, 1616. </acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1966). <listBibl>
+                           Description adapted (2024) from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1966). <listBibl>
                               <bibl facs="aap0335.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 314</bibl>
                            </listBibl>
                         </source>
@@ -104,6 +127,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-09">Description revised to incorporate all information from Summary Catalogue.</change>
          <change when="2021-12-14">Add provenance information from MLGB3.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">

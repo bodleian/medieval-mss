@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4501">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4501">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -33,7 +30,7 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Douce 125</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0td96k1858g</idno><idno type="crArk">ark:29072/x0sq87bt24pn</idno><altIdentifier type="internal">
                      <idno type="SCN">21699</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -47,7 +44,9 @@
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
-                        <support>parchment</support>
+                        <support>parchment</support><extent>vi + <measure type="leaf" quantity="74">74</measure> pages
+                           <dimensions type="binding" unit="in"><height>9.5</height><width>8.5</width></dimensions>
+                        </extent>
                      </supportDesc>
                   </objectDesc>
                   <decoDesc>
@@ -62,14 +61,11 @@
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
-                  <provenance type="MLGB3_provenance_evidence"
-                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5779">
+                  <provenance type="MLGB3_provenance_evidence" source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5779">
                      <orgName role="fmo" key="org_154916527">Winchester, Hampshire, Benedictine cathedral priory of St Peter, St Paul, and St Swithun</orgName>: "Liber ecclesie ... Swithuni Wynton" (fol. 1r, at foot), ? s. xv; erased, but legible by u. v. light.     "H B" (fol. 68v). (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5779">MLGB3</ref>: evidence from an ex-libris inscription or note of gift to an institution). </provenance>
-                  <provenance type="MLGB3_laterOwners"
-                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5779">F. Douce. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5779">MLGB3</ref>)</provenance>
-                  <provenance type="MLGB3_generalNotes"
-                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5779">Morton (s. xv) is on fol. 68v; cf. John Morton, monk of Winchester, BL, Harley 328.     Binding of the Bibliotheca Swaniana. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5779">MLGB3</ref>)
-                                             </provenance>
+                  <provenance>'H B' is on p. 68 (13th or 14th cent.).</provenance>
+                  <provenance>'Morton', 15th cent., perhaps identifiable with John Morton, monk of Winchester, who owned British Library Harl. MS. 328.</provenance>
+                  <provenance><persName role="fmo" key="person_236">David Swan</persName> ('Bibliotheca Swaniana'), evidence of binding and flyleaves. Price, '34. 4. 4' (?) on end flyleaf (<title>Douce Legacy</title>, no. 88).</provenance>
                   <provenance notAfter="1834" notBefore="1757" resp="#MMM">
                      <persName key="person_69848690" role="fmo">Francis Douce, 1757–1834</persName>
                   </provenance>
@@ -112,6 +108,8 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-05">Add extent and leaf dimensions from Summary Catalogue.</change>
+         <change when="2024-05">Add provenance information from SC and Douce Legacy.</change>
          <change when="2021-12-14">Add provenance information from MLGB3.</change>
          <change when="2018-10-14" xml:id="MMM">
             <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>

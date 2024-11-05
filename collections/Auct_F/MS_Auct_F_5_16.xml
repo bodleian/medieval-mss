@@ -1,15 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_687">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Auct. F. 5. 16</title>
             <title type="collection">MSS. Auct. F. (Auctarium F.)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2024">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -33,25 +35,49 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Auct. F. 5. 16</idno>
+                  <idno type="ieArk">ark:29072/x06t053g7825</idno>
+                  <idno type="crArk">ark:29072/x06q182k94rz</idno>
                   <altIdentifier type="internal">
                      <idno type="SCN">2581</idno>
                   </altIdentifier>
                </msIdentifier>
                <physDesc>
-                  <p>Composite: four parts</p>
+                  <p>Composite: at least four parts</p>
+                  <objectDesc form="codex">
+                     <supportDesc>
+                        <extent>ii + '23' - '228' pages <dimensions type="binding" unit="in">
+                              <height>7.125</height>
+                              <width>4.75</width>
+                           </dimensions>
+                        </extent>
+                     </supportDesc>
+                  </objectDesc>
                </physDesc>
                <history>
+                  <provenance>A parchment label with a late 14th
+                     cent. list of contents is now on p. 226 </provenance>
                   <provenance type="MLGB3_provenance_evidence"
-                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5999">
-                     <orgName role="fmo" key="org_148943477">Worcester, Worcestershire, Benedictine cathedral priory of St Mary the Virgin</orgName>: Bodleian, Auct. F. 1. 9, Auct. F. 5. 16 and Bodley 633 have been idenitified as Worcester books by the script of the parchment label of contents. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5999">MLGB3</ref>: inferred evidence). </provenance>
+                     source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5999">
+                     <orgName role="fmo" key="org_148943477">Worcester, Worcestershire, Benedictine
+                        cathedral priory of St Mary the Virgin</orgName>: Bodleian, Auct. F. 1. 9,
+                     Auct. F. 5. 16 and Bodley 633 have been idenitified as Worcester books by the
+                     script of the parchment label of contents. (<ref
+                        target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5999">MLGB3</ref>: inferred
+                     evidence). </provenance>
+                  <provenance>[The earliest pagination of the volume seems to run: 23-134 (artt.
+                     1-3), 201-246 (?) and 305-20 (arit. 4, 5), 567-88 (art. 6). Cr.]</provenance>
+                  <acquisition when="1607"> Acquired by the Library probably about 1607.
+                  </acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). <listBibl>
-                              <bibl facs="aap0457.gif" type="SC">Summary Catalogue, Vol. 2, part 1, p. 436</bibl>
-                              <bibl facs="aap0458.gif" type="SC">Summary Catalogue, Vol. 2, part 1, p. 437</bibl>
+                        <source> Description adapted (Sept. 2024) from the Summary Catalogue (1922),
+                           with additional reference to published literature as cited.. <listBibl>
+                              <bibl facs="aap0457.gif" type="SC">Summary Catalogue, Vol. 2, part 1,
+                                 p. 436</bibl>
+                              <bibl facs="aap0458.gif" type="SC">Summary Catalogue, Vol. 2, part 1,
+                                 p. 437</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -75,14 +101,25 @@
                   </msIdentifier>
                   <msContents>
                      <msItem n="1" xml:id="MS_Auct_F_5_16-part1-item1">
+                        <locus from="23" scheme="page">(p. 23)</locus>
                         <author key="person_282035032">Hildebert of Lavardin</author>
                         <title key="work_2057">Vita metrica S. Mariae Aegyptiacae</title>
+                        <rubric>Vita sancte Marie</rubric>
+                        <incipit>Sicud hiemps laurum</incipit>
+                        <note>One leaf is wanting, the place of which is taken (pp. 47-8) by part of
+                           leaf of a 14th cent. French religious poem about matrimony. Before this
+                           piece the pagination shows that eleven leaves are missing.</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                      <msItem class="#proverbia" n="2" xml:id="MS_Auct_F_5_16-part1-item2">
-                        <title key="work_14067" type="desc">Proverbs and moral sayings</title>
+                        <locus from="52" scheme="page">(p. 52)</locus>
+                        <title key="work_16342" type="desc">Proverbial compendium</title>
+                        <incipit>Venditur arbitrium dum vivitur ex alieno | Sumptu pane tuo vescere liber eris | Lector deciperis si mundi <subst><del>gloriam</del><add>gaudia</add></subst> queris | Es quod eram quod eris ego sum precedo sequeris</incipit>
+                        <note>A long series of Latin proverbs and moral sayings, partly from Ovid
+                           and Horace. 'Versus differenciales' is the old title on p. 226.</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
+
                   </msContents>
                   <physDesc>
                      <objectDesc form="codex">
@@ -93,7 +130,8 @@
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1310" notBefore="1300">14th century, early</origDate>
+                        <origDate calendar="Gregorian" notAfter="1310" notBefore="1300">14th
+                           century, early</origDate>
                         <origPlace>
                            <country key="place_7002445">English</country>
                         </origPlace>
@@ -107,8 +145,17 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem class="#biblia #versus" n="1" xml:id="MS_Auct_F_5_16-part2-item1">
-                        <title key="work_15449" type="desc">Versus super notabilia Biblia</title>
+                     <msItem class="#biblia #versus" n="3" xml:id="MS_Auct_F_5_16-part2-item1">
+                        <locus from="117" scheme="page">(p. 117)</locus>
+                        <author key="person_7775900">Guido Vicentinus</author>
+                        <title key="work_15449">Versus de Veteri et Novo Testamento </title>
+                        <rubric>Versus super notabilia Biblie [a later title on p. 226]</rubric>
+                        <incipit>Qui mundanam machinam potenter creasti</incipit>
+                        <incipit>Jesu qui de uirgine [p. 126, New Testament]</incipit>
+                        <note>With some drawings of grotesques, and at end four lines on 'Phelip
+                           Seggebarwe', i.e. Sedgeberrow, in English: on p. 132 is written the
+                           beginning of a short analysis of the chapters of the Old
+                           Testament.</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                   </msContents>
@@ -121,7 +168,8 @@
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1310" notBefore="1300">14th century, early</origDate>
+                        <origDate calendar="Gregorian" notAfter="1310" notBefore="1300">14th
+                           century, early</origDate>
                         <origPlace>
                            <country key="place_7002445">English</country>
                         </origPlace>
@@ -135,9 +183,14 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem n="1" xml:id="MS_Auct_F_5_16-part3-item1">
-                        <author key="person_267277950">Alberic of London</author>
+                     <msItem n="4" xml:id="MS_Auct_F_5_16-part3-item1">
+                        <locus from="133" scheme="page">(p. 133)</locus>
+                        <author key="person_267277950">Alberic of London (Mythographus Vaticanus III)</author>
                         <title key="work_317">Scintillarium poetarum</title>
+                        <incipit>Fuit in Egypto</incipit>
+                        <note>Here without title or author.</note>
+                        <note>Preceded by a few extracts from L. Annaeus Seneca, de moribus,
+                           etc.</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                   </msContents>
@@ -150,7 +203,8 @@
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1310" notBefore="1300">14th century, early</origDate>
+                        <origDate calendar="Gregorian" notAfter="1310" notBefore="1300">14th
+                           century, early</origDate>
                         <origPlace>
                            <country key="place_7002445">English</country>
                         </origPlace>
@@ -164,16 +218,36 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem n="1" xml:id="MS_Auct_F_5_16-part4-item1">
+                     <msItem n="5" xml:id="MS_Auct_F_5_16-part4-item1">
+                        <locus from="161" scheme="page">(p. 161)</locus>
                         <author key="person_64042540">John of Garland</author>
                         <title key="work_2831">Integumenta Ouidii</title>
+                        <rubric>Incipit Liber Integumentorum Fabularum a Johanne Anglico
+                           compositus</rubric>
+                        <incipit>Paruus maiori paret</incipit>
+                        <incipit>Macrobius in principio</incipit>
+                        <note> [Pp. 203-4 should come between pp. 172, 173, and the text ends at p.
+                           202 'Phineas cum nepote Polidemonis' in lib. viii. It is without lacunae,
+                           but, as now bound, is interrupted after p. 173 by the interpolation of
+                           theological notes, beginning 'quidam literatus ut fertur legens in
+                           Scripturis' (pp. 179-90) and two blank leaves (pp. 191-4). Cr.]</note>
+
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem n="1" xml:id="MS_Auct_F_5_16-part4-item2">
+                     <msItem n="6" xml:id="MS_Auct_F_5_16-part4-item2">
+                        <locus from="205" scheme="page">(p. 205)</locus>
                         <author key="person_100251470">Ps.-Clement of Rome</author>
                         <title key="work_3979">Recognitiones</title>
+                        <rubric>Incipit Itinerarium Clementis</rubric>
+                        <note>With the preface to Gaudentius: unfinished (ending 'purgati: denique
+                           &amp; hoc').</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
+
+
+
+
+
                   </msContents>
                   <physDesc>
                      <objectDesc form="codex">
@@ -184,7 +258,44 @@
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1310" notBefore="1300">14th century, early</origDate>
+                        <origDate calendar="Gregorian" notAfter="1310" notBefore="1300">14th
+                           century, early</origDate>
+                        <origPlace>
+                           <country key="place_7002445">English</country>
+                        </origPlace>
+                     </origin>
+                  </history>
+               </msPart>
+               <msPart xml:id="MS_Auct_F_5_16-pp47-48">
+                  <msIdentifier>
+                     <altIdentifier type="partial">
+                        <idno type="part">MS. Auct. F. 5. 16 – pp. 47-48</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  <msContents>
+                     <msItem xml:id="MS_Auct_F_5_16-pp47-48-item1">
+                        <author key="person_38264089">William of Waddington</author>
+                        <title key="work_5104">Le Manuel des pechiez</title>
+                        <note>Lines 2216-2121, 2144-2144* (p. 48), 2166-2180, 2203-2217 (p. 47)</note>
+                        <note>Part of a leaf, bound in sideways. From the same manuscript of the Manuel as the endleaves to Worcester Cathedral MS. Q.35, according to R.M. Thomson and Michael Gullick, <title>A descriptive catalogue of the medieval manuscripts in Worcester Cathedral Library</title> (2001)</note>
+                        <textLang mainLang="xno">Anglo-Norman</textLang>
+                     </msItem>
+                     
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="perg">
+                           <support>parchment</support>
+                        </supportDesc>
+                        <layoutDesc>
+                           <layout columns="2">2 cols.</layout>
+                        </layoutDesc>
+                     </objectDesc>
+                  </physDesc>
+                  <history>
+                     <origin>
+                        <origDate calendar="Gregorian" notAfter="1310" notBefore="1300">14th
+                           century, first half </origDate>
                         <origPlace>
                            <country key="place_7002445">English</country>
                         </origPlace>
@@ -194,266 +305,15 @@
             </msDesc>
          </sourceDesc>
       </fileDesc>
-      <encodingDesc xml:base="../tolkien-classDecl.xml" xml:id="encodingDesc">
-         <classDecl>
-            <taxonomy>
-               <bibl>
-                  <title>Corpus of British Medieval Library Catalogues</title>
-                  <note>(volumes 4, 13, 16)</note>
-               </bibl>
-               <category xml:id="allegoriae">
-                  <catDesc xml:lang="la">Allegoriae</catDesc>
-               </category>
-               <category xml:id="apocrypha">
-                  <catDesc xml:lang="la">Apocrypha, Pseudepigraphia</catDesc>
-               </category>
-               <category xml:id="arbores">
-                  <catDesc xml:lang="la">Arbores</catDesc>
-               </category>
-               <category xml:id="auctoritates">
-                  <catDesc xml:lang="la">Auctoritates, Compilationes, Dicta, Excerta, Excerptiones, Flores, Notabilia, Notabilitates, Sententiae</catDesc>
-               </category>
-               <category xml:id="biblia">
-                  <catDesc xml:lang="la">Biblia</catDesc>
-               </category>
-               <category xml:id="bibliographica">
-                  <catDesc xml:lang="la">Bibliographica</catDesc>
-               </category>
-               <!-- <category xml:id="cantus">
-                  <catDesc xml:lang="lat">Cantus</catDesc>
-               </category>
-              
-              Not a separate heading in v. 13, cross-referenced to Versus
-              
-              -->
-               <category xml:id="christologia">
-                  <catDesc xml:lang="la">Christologia</catDesc>
-                  <!-- not much used? -->
-               </category>
-               <category xml:id="collectiones">
-                  <catDesc xml:lang="la">Collectiones</catDesc>
-                  <!-- use for commonplace books, zibaldone, etc. -->
-               </category>
-               <category xml:id="commentarii">
-                  <catDesc xml:lang="la">Commentarii, Conclusiones, Expositiones, Glosae, Lecturae, Notulae, Proemia, Quaestiones, Scholia, Scripta</catDesc>
-                  <!-- query if should be used for biblical commentaries or are they just biblia? -->
-               </category>
-               <category xml:id="computistica">
-                  <catDesc xml:lang="la">Computistica</catDesc>
-               </category>
-               <!-- <category xml:id="concilia">
-                  <catDesc xml:lang="lat">Concilia</catDesc>
-                  <!-\- not a category in vol. 13 -\->
-               </category>-->
-               <category xml:id="concordantiae">
-                  <catDesc xml:lang="la">Concordantiae</catDesc>
-               </category>
-               <category xml:id="constitutiones">
-                  <catDesc xml:lang="la">Constitutiones</catDesc>
-                  <!-- not a category in vol. 13: cross refs to Legalia, Monastica, Theologica -->
-               </category>
-               <category xml:id="contemplationes">
-                  <catDesc xml:lang="la">Contemplationes, Meditationes</catDesc>
-               </category>
-               <category xml:id="credo">
-                  <catDesc xml:lang="la">Credo</catDesc>
-               </category>
-               <category xml:id="crux">
-                  <catDesc xml:lang="la">Crux</catDesc>
-               </category>
-               <category xml:id="decem_praecepta">
-                  <catDesc xml:lang="la">Decem Praecepta</catDesc>
-               </category>
-               <category xml:id="dictamen">
-                  <catDesc xml:lang="la">Dictamen</catDesc>
-               </category>
-               <category xml:id="distinctiones">
-                  <catDesc xml:lang="la">Distinctiones</catDesc>
-               </category>
-               <category xml:id="documenta">
-                  <catDesc xml:lang="la">Documenta</catDesc>
-                  <!-- currenlty used for Statutes of Garter (etc) which may not be helpful -->
-                  <!-- check at some stage whether Documenta need other class (e.g. ecclesiastica, monastica) and likewise whether those need xref to Documenta  -->
-               </category>
-               <category xml:id="ecclesiastica">
-                  <catDesc xml:lang="la">Ecclesiastica</catDesc>
-               </category>
-               <category xml:id="exempla">
-                  <catDesc xml:lang="la">Exempla, Narrationes</catDesc>
-               </category>
-               <category xml:id="formularia">
-                  <catDesc xml:lang="la">Formularia</catDesc>
-               </category>
-               <!-- the following are hardly necessary given that language is recorded separately -->
-               <!-- <category xml:id="gallica">
-                  <catDesc xml:lang="lat">Gallica</catDesc>
-               </category>
-               <category xml:id="graeca">
-                  <catDesc xml:lang="lat">Graeca</catDesc>
-               </category>-->
-               <category xml:id="grammatica">
-                  <catDesc xml:lang="la">Grammatica</catDesc>
-                  <!-- ok for Disticha Catonis? -->
-               </category>
-               <category xml:id="historica">
-                  <catDesc xml:lang="la">Historica</catDesc>
-                  <!-- also used for 'political' content (e.g. poems) -->
-                  <!-- also includes e.g. biographies of Virgil -->
-               </category>
-               <category xml:id="legalia">
-                  <catDesc xml:lang="la">Legalia</catDesc>
-                  <!-- worth subdividing? -->
-                  <!-- ?include ecclesiastical constitutions, currently in Ecclesiastica? -->
-               </category>
-               <category xml:id="liturgica">
-                  <catDesc xml:lang="la">Liturgica</catDesc>
-                  <!-- query if Psalters should be both liturgica and biblia -->
-               </category>
-               <category xml:id="logica">
-                  <catDesc xml:lang="la">Logica</catDesc>
-                  <!-- merge with Philosophica, and/or check for consistency? -->
-               </category>
-               <category xml:id="mariologica">
-                  <catDesc xml:lang="la">Mariologica</catDesc>
-               </category>
-               <category xml:id="mathematica">
-                  <catDesc xml:lang="la">Mathematica</catDesc>
-                  <!-- includes geometry -->
-               </category>
-               <category xml:id="medica">
-                  <catDesc xml:lang="la">Medica</catDesc>
-                  <!-- includes herbals (so Corpus, vol. 13) -->
-               </category>
-               <category xml:id="miracula">
-                  <catDesc xml:lang="la">Miracula</catDesc>
-               </category>
-               <category xml:id="monastica">
-                  <catDesc xml:lang="la">Monastica</catDesc>
-               </category>
-               <category xml:id="musica">
-                  <catDesc xml:lang="la">Musica</catDesc>
-               </category>
-               <category xml:id="oratio_orationes_devotiones">
-                  <!-- check for consistency and check whether separate categories needed -->
-                  <category xml:id="oratio">
-                     <catDesc xml:lang="la">Oratio, Orationes</catDesc>
-                  </category>
-                  <category xml:id="devotiones">
-                     <catDesc xml:lang="la">Devotiones</catDesc>
-                     <!-- used for 'religious poems', etc. Cf. contemplationes above -->
-                  </category>
-               </category>
-               <category xml:id="pastoralia">
-                  <catDesc xml:lang="la">Pastoralia</catDesc>
-                  <!-- used for Poor Caitiff and similar texts (which may additionally be classified as Devotiones and/or Theologica) -->
-                  <!-- check for consistency -->
-               </category>
-               <category xml:id="pater_noster">
-                  <catDesc xml:lang="la">Pater Noster</catDesc>
-               </category>
-               <category xml:id="philosophica">
-                  <catDesc xml:lang="la">Philosophica</catDesc>
-               </category>
-               <category xml:id="prognostica">
-                  <catDesc xml:lang="la">Prognostica, Prophetiae</catDesc>
-                  <!-- geomancy goes here -->
-               </category>
-               <category xml:id="proverbia">
-                  <catDesc xml:lang="la">Proverbia</catDesc>
-               </category>
-               <category xml:id="regula">
-                  <catDesc xml:lang="la">Regula</catDesc>
-               </category>
-               <category xml:id="rhetorica">
-                  <catDesc xml:lang="la">Rhetorica</catDesc>
-               </category>
-               <category xml:id="romances">
-                  <catDesc xml:lang="la">Romances</catDesc>
-                  <!-- also used for 'novella' -->
-               </category>
-               <category xml:id="sacramenta">
-                  <catDesc xml:lang="la">Sacramenta</catDesc>
-               </category>
-               <category xml:id="satirica">
-                  <catDesc xml:lang="la">Satirica, Parodiae</catDesc>
-               </category>
-               <category xml:id="scientifica">
-                  <!-- to include (and categories could be added for: alchemy; astronomy/astrology; animals/birds (bestiaries); lapidaries; magic; weather -->
-                  <!-- cf. separate heading Veterinaria below -->
-                  <catDesc xml:lang="la">Scientifica</catDesc>
-                  <category xml:id="alchimia">
-                     <catDesc xml:lang="la">Alchimia</catDesc>
-                  </category>
-                  <category xml:id="animalia">
-                     <catDesc xml:lang="la">Animalia</catDesc>
-                     <!-- used for Bestiaries. ?Use also for Fables? -->
-                  </category>
-                  <category xml:id="astrologia_astronomia">
-                     <catDesc xml:lang="la">Astrologia, astronomia</catDesc>
-                  </category>
-                  <category xml:id="lapidaria">
-                     <catDesc xml:lang="la">Lapidaria</catDesc>
-                  </category>
-                  <category xml:id="magica">
-                     <catDesc xml:lang="la">Magica</catDesc>
-                  </category>
-               </category>
-               <category xml:id="sermones">
-                  <catDesc xml:lang="la">Sermones</catDesc>
-               </category>
-               <!-- the following is not a separate heading in Corpus, vol. 13, but is there cross-referenced to Monastica and Legalia -->
-               <!--<category xml:id="statuta">
-                  <catDesc xml:lang="lat">Statuta</catDesc>
-                  
-               </category>-->
-               <category xml:id="tabulae">
-                  <catDesc xml:lang="la">Tabulae</catDesc>
-               </category>
-               <category xml:id="theologica">
-                  <catDesc xml:lang="la">Theologica</catDesc>
-                  <!-- Chastising of God's Ch. under this heading in 'Carthusians' -->
-               </category>
-               <category xml:id="topographica">
-                  <catDesc xml:lang="la">Topographica</catDesc>
-               </category>
-               <category xml:id="versus">
-                  <catDesc xml:lang="la">Versus</catDesc>
-               </category>
-               <category xml:id="veterinaria">
-                  <catDesc xml:lang="la">Veterinaria</catDesc>
-                  <!-- not used? use Animalia instead? -->
-               </category>
-               <category xml:id="virtutes_et_vitia">
-                  <catDesc xml:lang="la">Virtutes et Vitia</catDesc>
-               </category>
-               <category xml:id="vitae_sanctorum">
-                  <catDesc xml:lang="la">Vitae Sanctorum</catDesc>
-               </category>
-               <category xml:id="vitas_patrum">
-                  <catDesc xml:lang="la">Vitas Patrum</catDesc>
-               </category>
-            </taxonomy>
-            <taxonomy>
-               <!-- categories not in corpus: need to be analysed further?-->
-               <category xml:id="drama">
-                  <catDesc xml:lang="en">Drama</catDesc>
-               </category>
-               <category xml:id="heraldica">
-                  <catDesc xml:lang="la">Heraldica</catDesc>
-               </category>
-               <category xml:id="miscellanea">
-                  <catDesc xml:lang="la">Miscellanea</catDesc>
-                  <!-- culinary recipes go here for the moment -->
-                  <!-- some material here to go into 'collectiones'? -->
-               </category>
-            </taxonomy>
-         </classDecl>
-      </encodingDesc>
       <revisionDesc>
+         <change when="2024-09">Description revised to incorporate all information from Summary
+            Catalogue.</change>
          <change when="2021-12-14">Add provenance information from MLGB3.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
-            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+            <persName>James Cummings</persName> Up-converted the markup using <ref
+               target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl"
+               >https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>
       </revisionDesc>
    </teiHeader>

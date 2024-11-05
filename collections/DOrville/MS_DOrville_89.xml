@@ -1,17 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4191">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4191">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. D'Orville 89</title>
             <title type="collection">MSS. D'Orville</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1966">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,31 +42,55 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. D'Orville 89</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x07w62f87299</idno><idno type="crArk">ark:29072/x0n009w225sn</idno><altIdentifier type="internal">
                      <idno type="SCN">16967</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_DOrville_89-item1">
+                     <locus>(fol. 1)</locus>
                      <author key="person_104162705">Sallust</author>
                      <title key="work_4480">Catilina</title>
+                     <rubric>Salustij Crispi de coniuratione Cateline liber ...</rubric>
+                    
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                   <msItem n="2" xml:id="MS_DOrville_89-item2">
+                     <locus>(fol. 19)</locus>
                      <author key="person_104162705">Sallust</author>
                      <title key="work_4482">Jugurtha</title>
+                     <rubric>Salustij Crispi de bello Jugurtino liber ...</rubric>
+                     <colophon><locus>(fol. 53)</locus> liber explicit completusque die decima mensis decembris anni Mccccxvij. Deo gratias Amen.</colophon>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
-                  <p>Formerly bound with MS. D'Orville 79</p>
+                  <p>Formerly bound with <ref target="https://medieval.bodleian.ox.ac.uk/catalog/manuscript_4181">MS. D'Orville 79</ref></p>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                  
+                        <extent>
+                           i + 55 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>10.375</height>
+                              <width>7.25</width>
+                           </dimensions>
+                        </extent>
+                        
                      </supportDesc>
+                     
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote>Decoration<p>Good penwork borders and initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 919)</p>
+                  
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 919
+                     </summary>
+                  
+                     <decoNote type="decInit">Good initials</decoNote>
+                     <decoNote type="flourInit">Good penwork borders
                         <list type="gloss">
                            <head>fol. 1r</head>
                            <label>Type</label>
@@ -66,7 +99,7 @@
                            </item>
                            <label>Subject</label>
                            <item>
-                              <seg type="subject">Penwork.</seg>
+                              <seg type="subject">Penwork</seg>
                            </item>
                         </list>
                         <list type="gloss">
@@ -77,7 +110,7 @@
                            </item>
                            <label>Subject</label>
                            <item>
-                              <seg type="subject">Floral designs, laurel wreath with erased coat of arms.</seg>
+                              <seg type="subject">Floral designs, laurel wreath with erased coat of arms</seg>
                            </item>
                         </list>
                         <list type="gloss">
@@ -88,7 +121,7 @@
                            </item>
                            <label>Subject</label>
                            <item>
-                              <seg type="subject">Prneork, floral designs.</seg>
+                              <seg type="subject">Prneork, floral designs</seg>
                            </item>
                         </list>
                      </decoNote>
@@ -98,13 +131,22 @@
                   <origin>
                      <origDate calendar="Gregorian" when="1417" cert="high">1417</origDate>
                      <origPlace cert="low">
-                        <country key="place_1000080">Italian</country>, <settlement key="place_7000457">Florence</settlement> (?)<!--ORIGINAL: Italian, Florence (?)--></origPlace>
+                        <country key="place_1000080">Italy</country>, <settlement key="place_7000457">Florence</settlement> (?)<!--ORIGINAL: Italian, Florence (?)--></origPlace>
                   </origin>
+                  <provenance>Erased arms in a wreath, fol. 1r.</provenance>
+                  <provenance><persName key="person_24945908" role="fmo">Jacques Phillippe D'Orville of Amsterdam (1690–1751)</persName></provenance>
+                  <provenance><persName key="person_3392" role="fmo">Jean D'Orville, b. 1734</persName>, his son, by descent</provenance>
+                  <provenance><persName key="person_3393" role="fmo">Jean D'Orville</persName>, son of Jean, by descent</provenance>
+                  <provenance>Sold to the <persName key="person_3394" role="fmo">Rev. John Cleaver Banks (1765/1766–1845)</persName>: purchased from him by the Bodleian</provenance>
+                  <acquisition when="1804">Acquired by the Bodleian in 1804</acquisition>
+                  
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
+                        <source>
+                           Description adapted (March 2024) by Stewart J. Brookes from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1966) and Watson (1984)
+                           <listBibl>  
                               <bibl facs="aaz0078.gif" type="SC">Summary Catalogue, Vol. 4, p. 59</bibl>
                            </listBibl>
                         </source>
@@ -124,6 +166,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-03-06">Description revised to incorporate all the information in the Summary Catalogue (1897)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>

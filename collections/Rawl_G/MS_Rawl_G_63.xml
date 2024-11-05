@@ -1,17 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_8600" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8600">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Rawl. G. 63</title>
             <title type="collection">MSS. Rawl. G. (Rawlinson G)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+
+            <respStmt xml:id="SC">
+               <resp when="1895">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,39 +42,56 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Rawl. G. 63</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0rx913p592b</idno><idno type="crArk">ark:29072/x0rv042s75rj</idno><altIdentifier type="internal">
                      <idno type="SCN">14794</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_Rawl_G_63-item1">
                      <author key="person_41839141">Diogenes Laertius</author>
                      <title key="work_1397">Lives of the philosophers</title>
-                     <note>(tr. <persName key="person_29617842" role="trl"> Ambrogio Traversari </persName>)</note>
+                     <rubric>Laertii Diogenis Vite atque sententiae eorum qui in philosophia claruerunt liber primus [&amp;c.] incipit</rubric>
+                     <note>Translated by <persName key="person_29617842" role="trl"> Ambrogio Traversari </persName></note>
+                     <note>Preceded by a preface by Camaldolese (Traversari) to <persName key="person_67260733">Cosimo de' Medici</persName>, in Latin, showing that Ambrogio was the translator of the work</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                   
+               <extent source="SC">ii + <measure type="leaf" quantity="214">214</measure> leaves
+                  <dimensions type="binding" unit="in">
+                     <height>9.75</height>
+                     <width>7</width>
+                  </dimensions>
+               </extent>
+                        
                      </supportDesc>
                   </objectDesc>
+
                   <handDesc>
-                     <handNote script="humanistica">Humanistic script. Annotations by <persName key="person_122351851"> Ludovico Carbone </persName>. </handNote>
+                     <handNote script="humanistica">Humanistic script. Annotations by <persName key="person_122351851"> Ludovico Carbone </persName> (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 408)</handNote>
                   </handDesc>
-                  <decoDesc>
-                     <decoNote>The lower strip of border, fol. 2, which had arms originally (offprint, fol. 1v) cut out. A replacement from another MS. written on paper pasted on, also Ferrara, 15th century, third quarter. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 408, pl. XXXIX)
+                  
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 408, Pl. XXXIX
+                     </summary>
+                     
+                     <decoNote>The lower strip of border, fol. 2, which had arms originally (offprint, fol. 1v) cut out. A replacement from another manuscript written on paper pasted on, also Ferrara, 15th century, third quarter
                      </decoNote>
-                     <decoNote type="border">Fine border.</decoNote>
-                     <decoNote type="decInit">Fine initials.</decoNote>
+                     <decoNote type="border"><ref target="https://digital.bodleian.ox.ac.uk/objects/2dbb9a5d-cd03-4ac4-9c85-1458acb671b2/surfaces/20bfa230-a6fc-4391-ad27-c5b562182a82/">Fine border</ref>, fol. 2r</decoNote>
+                     <decoNote type="decInit">Fine initials, e.g. <ref target="https://digital.bodleian.ox.ac.uk/objects/2dbb9a5d-cd03-4ac4-9c85-1458acb671b2/surfaces/0177dfb7-48b9-41e1-879b-5fdf7576d712/">fol. 111r</ref></decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1475" notBefore="1450">15th century, third quarter</origDate>
                      <origPlace>
-                        <country key="place_1000080">Italian</country>, <settlement key="place_7004264">Ferrara</settlement>
+                        <country key="place_1000080">Italy</country>, <settlement key="place_7004264">Ferrara</settlement>
                         <!--ORIGINAL: Italian, Ferrara-->
                      </origPlace>
                   </origin>
@@ -75,7 +101,9 @@
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1895). Decoration, localization and date follow Pächt and Alexander (1970). <listBibl>
+                        <source>
+                           Description adapted (July 2024) by Stewart J. Brookes from the Summary Catalogue (1895). Decoration, localization and date follow Pächt and Alexander (1970)
+                           <listBibl>  
                               <bibl facs="aas0371.gif" type="SC">Summary Catalogue, Vol. 3, p. 356</bibl>
                            </listBibl>
                         </source>
@@ -88,6 +116,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-07-31">Description revised to incorporate all the information in the Summary Catalogue (1895)</change>
          <change when="2019-10-31" xml:id="MMM"><persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>

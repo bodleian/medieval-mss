@@ -1,15 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1566">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1566">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Bodl. 547</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+            </respStmt>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2024">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -33,13 +38,45 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Bodl. 547</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0ks65hc25ph</idno><idno type="crArk">ark:29072/x0kp78gg42cn</idno><altIdentifier type="internal">
                      <idno type="SCN">2286</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
                   <msItem class="#liturgica" n="1" xml:id="MS_Bodl_547-item1">
                      <title key="work_10664" type="desc">Breviary, Use of Sarum</title>
+                     <msItem >
+                        <note>Calendar (fol. 3) in two columns, with additional feasts and obits</note>
+                     </msItem>
+                     <msItem >
+                        <note>Easter table (fol. 6)</note>
+                     </msItem>
+                     <msItem >
+                        <note>Temporale (fol. 7), beginning abruptly in the matins of the fourth Sunday in Advent (wanting first eight leaves)</note>
+                     </msItem>
+                     <msItem>
+                        <note>Sanctorale (fol. 79), from the feast of St Sylvester to that of St Thomas apostle. Wanting three leaves after fol. 115, one after fol. 117, and ten
+                           (?) after fol. 119 (fol. 79)</note>
+                     </msItem>
+                     <msItem >
+                        <note>Common of the saints (fol. 125)</note>
+                     </msItem>
+                     <msItem>
+                        <note>Votive office of All Saints (fol. 137)</note>
+                     </msItem>
+                     <msItem >
+                        
+                        <note>Preces in itinere (fol. 137v). </note>
+                     </msItem>
+                     <note>A few rubrics.</note>
+                     <note> Additions: </note>
+                     <msItem><title type="desc" key="work_11227">A commentary on the
+                        Lord's Prayer</title><incipit>Pater noster ... Sapientia . Superbia. Pax mentis</incipit></msItem>
+                     <msItem><note>Some texts in French (fols. 2v, 138v).</note><textLang mainLang="xno">Anglo-Norman</textLang></msItem>
+                     <msItem>
+                   
+                     <note>Some rather
+                        later <title type="desc" key="work_15283">theological notes</title> are on foll. 1, 137</note></msItem>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -47,10 +84,22 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                     </supportDesc>
+                        <extent> i + 138 + i fol.<dimensions type="leaf" unit="mm">
+                           <height>200</height>
+                           <width>140</width>
+                        </dimensions>
+                           <dimensions type="written" unit="mm">
+                              <height  max="160" min="155">155/60</height>
+                              <width min="95" max="100">95/100</width>
+                           </dimensions>
+                        </extent>
+                      
+                     </supportDesc>  <layoutDesc>
+                           <layout columns="1 2" writtenLines="37 40">37-40 long lines calendar in 2 cols.</layout>
+                        </layoutDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>Coloured capitals.</decoNote>
+                     <decoNote type="colInit">Plain red initials, from fol. 116 onwards alternately in red and green</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
@@ -60,13 +109,16 @@
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
+                  <provenance>The feast of St Augustine of Hippo has an octave in the kalendar and his Translation on 11 October in the book is a proper Office. SS. Ethelbert and Kyneburga point to Hereford. Van Dijk suggested an origin at Beckford Priory, Gloucestershire, referring to fol. 137v. </provenance>
+                  <provenance>In the kalendar the dedication was added against 16 October (see also fol. 137v)</provenance>
+                     
                   <provenance>MLGB rejects a provenace from the parish church of Rochford. Cf. Summary Catalogue: "From additions to the calendar on fol. 5v it is clear that this Breviary
                      belonged in the 13th cent. to the chapel of 'Racheford', i. e. Rochford in
                      Herefordshire: William Boni, vicar of Rochford, died on 16 Nov., 1262 (fol.
                      5v). Among the other obits are some of the family of 'dominus Warinus'
                      (foll. 3v, 4, 5), of Anne de Lacy (fol. 3v). and of R. priest of Birford
                      (Burford near Rochford, in Shropshire: fol. 4). 'Henricus de Bradel' died in
-                     1255 (fol. 5v). All these entries are additions. "
+                     1255 (fol. 5v). All these entries are additions. "; also obit of M. persorie, and see 25 Jan.
                      <!-- MLGB p. 224 rejects prov from Rochford par ch Worcs--></provenance>
                      <acquisition notBefore="1613" notAfter="1620">Apparently acquired between
                         1613 and 1620.</acquisition>
@@ -75,7 +127,12 @@
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). <listBibl>
+                           Description adapted (Oct. 2024) from the following sources, with additional reference to published literature as cited: 
+                           
+                           <listBibl>
+                              <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 2: Office Books</title> (typescript, 1957), <citedRange unit="page" from="277b" to="277b">p. 277b</citedRange>
+                              </bibl>
+                              <bibl>Summary Catalogue (1922)</bibl></listBibl> <listBibl>
                               <bibl facs="aap0311.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 290</bibl>
                            </listBibl>
                         </source>
@@ -93,6 +150,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-09">Description revised to incorporate all information from printed catalogues.</change>
          <change when="2023-05">Add provenance information from S.C.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">

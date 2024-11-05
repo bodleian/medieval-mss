@@ -1,15 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2986">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2986">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Canon. Liturg. 3</title>
             <title type="collection">MSS. Canon. Liturg. (Canonici Liturgical)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+           <respStmt xml:id="DD">
+              <resp when="1984">Cataloguer</resp>
+              <persName>A. G. Watson</persName>
+           </respStmt>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2024">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -33,13 +37,15 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Canon. Liturg. 3</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0zw12z433r5</idno><idno type="crArk">ark:29072/x0x633f040c7</idno><altIdentifier type="internal">
                      <idno type="SCN">19221</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
                   <msItem class="#liturgica" n="1" xml:id="MS_Canon_Liturg_3-item1">
                      <title key="work_10627" type="desc">Breviary (Cistercian)</title>
+                     <note>Kalendar (fol. 1), January-March missing; canon of the mass (fol. 5<hi rend="superscript">v</hi>); ferial psalter (fol. 7), often only the opening words of the psalms or psalm verses, Te deum and canticles (fol. 28); hymnal (fol. 30); temporale (fol. 36); sanctorale (fol. 122), beginning with the feast of St Stephen; common of the saints (fol. 180) and the dedication; rhythmical office of St Benedict (fol. 199<hi rend="superscript">v</hi>: Preclarum late); masses of Our Lady (fol. 201<hi rend="superscript">v</hi>), of the dead, the holy Cross, the Five Wounds and Corpus Christi. Additional offices of St Ann (fol. 204<hi rend="superscript">v</hi>), rhythmical, and Our Lady’s Conception (fol. 206<hi rend="superscript">v</hi>); blessing of holy water (fol. 209<hi rend="superscript">v</hi>); order of the thirteen masses of a pope Clemens to obtain any grace asked for (fol. 210).</note>
+                     <colophon>Explicit liber feria tercia in uigilia sancti bartholomei apostoli Anno domini mmocccmo lxxmo tercio per manus fratris kphbnnks [Iohannis] Ach wy. zu arch yst dy kunst Amen <locus>(fol. 210va)</locus></colophon>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -47,22 +53,40 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent> 210 leaves 
+                              <dimensions unit="mm" type="leaf">
+                                 <height>137</height>
+                                 <width>100</width>
+                              </dimensions></extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2" writtenLines="27 32">2 cols., 27-32 lines.
+                           Column space <dimensions unit="mm" type="column">
+                              <height>120</height>
+                              <width>35</width>
+                           </dimensions>
+                        </layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <decoDesc>
+                     <decoNote type="colInit">Coloured initials.</decoNote><decoNote type="rubrication">Rubrics.</decoNote>
+                  </decoDesc>
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" when="1373" cert="high">1373</origDate>
-                     <origPlace>
-                        <country key="place_7000084">German</country>
+                     <origPlace><country key="place_7006278">Hungary</country> or <country key="place_1000062">Lower Austria</country> (feasts of SS Benedict and 'Sorardus' (17 July) and Stephen, king of Hungary (20 Aug.) in the calendar)
                      </origPlace>
                   </origin>
+                  <provenance notAfter="1805" notBefore="1727" resp="#MMM"><persName key="person_2384880" role="fmo">Matteo Luigi Canonici, 1727–1805</persName></provenance>
+                  <provenance notAfter="1807" resp="#MMM"><persName key="person_446" role="fmo">Giuseppe Canonici , -1807</persName></provenance>
+                  <acquisition resp="#MMM" when="1817">Purchased by the Bodleian in 1817</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). <listBibl>
+                        <source>Adapted from Watson (1984) and van Dijk (1957) (see bibliography). Previously described in the Summary Catalogue (1897).
+                           <listBibl>
                               <bibl facs="aaz0350.gif" type="SC">Summary Catalogue, vol. 4, p. 331</bibl>
                               <bibl facs="aaz0351.gif" type="SC">Summary Catalogue, vol. 4, p. 332</bibl>
                            </listBibl>
@@ -85,6 +109,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-01">Revised to incorporate information from van Dijk and Watson</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>

@@ -1,17 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8527">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8527">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Rawl. G. 155</title>
             <title type="collection">MSS. Rawl. G. (Rawlinson G)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1895">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,26 +36,45 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Rawl. G. 155</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x08g84mm95r2</idno><idno type="crArk">ark:29072/x08c97kr12fc</idno><altIdentifier type="internal">
                      <idno type="SCN">14879</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_Rawl_G_155-item1">
+                     
                      <author key="person_803890">Isidore of Seville</author>
                      <title key="work_2257">Etymologiae</title>
-                     <note>with the preliminary letters between Isidore and Braulio</note>
+                     <note>With <locus>(fol. 2)</locus> the preliminary letters between Isidore and Braulio</note>
+                     <note>Books I-II and III.i-xix, ending with 'siue in flatu siue', a leaf being lost, after which follows a blank leaf</note>
+                     <note>These books contain 'De grammatica', 'de rhetorica et dialectica', 'de arithmetica', 'geometria' and 'musica'</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        
+                        <extent source="SC">iv + <measure type="leaf" quantity="63">63</measure> leaves
+                           <dimensions type="binding" unit="in">
+                              <height>13.875</height>
+                              <width>10.25</width>
+                           </dimensions>
+                        </extent>
+                        
                      </supportDesc>
+                     
+                     <layoutDesc>
+                        <layout columns="2">2 cols
+                        </layout>
+                     </layoutDesc>
+                     
                   </objectDesc>
                   <bindingDesc>
-                     <binding>
+                     <binding notBefore="1700" notAfter="1725">
                         <p>Red leather, with some gold tooling.</p>
                      </binding>
                   </bindingDesc>
@@ -61,6 +83,15 @@
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1200" notBefore="1100">12th century</origDate>
                   </origin>
+                  
+                  <provenance>'... [erased] in Leodio pro iiij libris alborum...'</provenance>
+                  
+                  <provenance>The volume probably belonged to a religious house in <settlement key="place_7007945">Liège</settlement></provenance>
+                  
+                  <provenance>
+                     No. 84 in the <persName role="fmo" key="person_1203">Thomas Rawlinson</persName> sale, 4 March 1733/1734
+                  </provenance>
+                  
                   <provenance notAfter="1755" notBefore="1690" resp="#MMM">
                      <persName key="person_47563478" role="fmo">Richard Rawlinson, 1690–1755</persName>
                   </provenance>
@@ -70,7 +101,8 @@
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1895). <listBibl>
+                           Description adapted (July 2024) by Stewart J. Brookes from the Summary Catalogue (1895)
+                           <listBibl>
                               <bibl facs="aas0385.gif" type="SC">Summary Catalogue, Vol. 3, p. 370</bibl>
                            </listBibl>
                         </source>
@@ -81,6 +113,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-07-11">Description revised to incorporate all the information in the Summary Catalogue (1895)</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2019-10-31" xml:id="MMM">
             <persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>

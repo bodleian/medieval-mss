@@ -1,17 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_6390" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6390">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Lat. class. d. 8</title>
             <title type="collection">MSS. Lat. class. (Latin classical)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1924">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
             </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,40 +37,79 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Lat. class. d. 8</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0cc08hg11dx</idno><idno type="crArk">ark:29072/x0c821gk2839</idno><altIdentifier type="internal">
                      <idno type="SCN">31665</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_Lat_class_d_8-item1">
                      <author key="person_88342447">Ovid</author>
                      <title key="work_3421">Heroides</title>
+                     <explicit>Explicit liber Ouidij epistolarum. Deo Gratias. Amen</explicit>
+                     <colophon>Qui legit hunc librum scriptorem nouerit esse | Baptistam Pataui Sansonis nomine dictum</colophon>
+                     <note>Ending in the last Epistle at line 12 ('ne uelit esse michi')</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                    
+               <extent source="SC"><measure type="leaf" quantity="62">62</measure> leaves
+                  <dimensions type="binding" unit="in">
+                     <height>11</height>
+                     <width>7.625</width>
+                  </dimensions>
+               </extent>
+                        
                      </supportDesc>
-                  </objectDesc><handDesc><handNote>Written by <persName key="person_142" role="scr"><!-- not found -->Battista Sansone of Padua</persName>, fol. 62.</handNote></handDesc>
+                  
+                  </objectDesc>
+
+                  <handDesc>
+                     <handNote>Written by <persName key="person_142" role="scr"><!-- not found -->Battista Sansone of Padua</persName>, fol. 62</handNote></handDesc>
                   <decoDesc>
-                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 595, pl. LVII:</summary><decoNote type="border">Fine border. </decoNote><decoNote type="decInit">Fine initial. </decoNote> 
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 595, pl. LVII:</summary>
+                     
+                     <decoNote type="border"><ref target="https://digital.bodleian.ox.ac.uk/objects/f698a883-02b5-49c9-ba7e-95376a7bf26c/">Fine border</ref></decoNote>
+                     
+                     <decoNote type="decInit">Fine initial</decoNote> 
                   </decoDesc>
+                  
+                  <bindingDesc>
+                     <binding contemporary="true">
+                        <p>Stamped leather binding with metal bosses, Venice (?), saec. XVI (?). Original sewing. Originally four clasps (one remains)</p>
+                     </binding>
+                  </bindingDesc>
+                  
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" when="1400">c. 1400</origDate>
+                     <origDate calendar="Gregorian" when="1400"><hi rend="italic">c</hi>. 1400</origDate>
                      <origPlace>
-                        <country key="place_1000080">Italian</country>, <settlement key="place_7003085">Padua</settlement>
+                        <country key="place_1000080">Italy</country>, <settlement key="place_7003085">Padua</settlement>
                         <!--ORIGINAL: Italian, Padua-->
                      </origPlace>
                   </origin>
+                  
+                  <provenance>'<persName role="fmo">Vincentii Remigii Meliorati</persName> et suorum amicorum' (16th century?, fol. 1)</provenance>
+                  
+                  <!-- Add authority record -->                  
+
+                  <acquisition when="1894">Bought from <persName role="fmo">H. T. Wake</persName> (Catalogue 234, no. 116, where it is wrongly asserted that the manuscript was in the Sunderland sale) in September 1894</acquisition>
                </history>
+               
+                  <!-- Add authority record -->                  
+
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1924). Decoration, localization and date follow Pächt and Alexander (1970). <listBibl>
+                        <source>
+                           Description adapted (July 2024) by Stewart J. Brookes from the Summary Catalogue (1924). Decoration, localization and date follow Pächt and Alexander (1970)
+                           <listBibl> 
                               <bibl facs="abj0123.gif" type="SC">Summary Catalogue, vol. 6, p. 85</bibl>
                            </listBibl>
                         </source>
@@ -79,6 +122,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-07-05">Description revised to incorporate all the information in the Summary Catalogue (1924)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>

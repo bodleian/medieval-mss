@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_1920" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1920">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Bodl. 985</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="SC">
+               <resp when="1905">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2024">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -33,28 +33,34 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Bodl. 985</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x05138jf59dd</idno><idno type="crArk">ark:29072/x0xg94hn905k</idno><altIdentifier type="internal">
                      <idno type="SCN">27699</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
                   <msItem class="#legalia" n="1" xml:id="MS_Bodl_985-item1">
-                     <title key="work_14743" type="desc">Statutes of <placeName key="place_7002445">England</placeName></title>
+                     <title key="work_14739" type="desc">Statutes of England (vetera statuta)</title>
+                     <note>Magna Charta, as confirmed on March 28, 1299/1300, Charta de Foresta, Statutes of Merton, Marlborough, Westminster I, Gloucester, Westminster 2 &#x0026; 3, de Religiosis, de Bigamis, de Justiciariis assignatis, de Quo Warranto, de vasto facto, etc., etc., ending with a Statute of York. At fol. 219 is added in an early 15th cent. hand a short Latin piece on 'Prerogatiua Regis', beg. 'Dominus Rex habet custodiam.' Foll. 1-2 are a copy of a conditional writ of summons issued apparently on May 11, 1462 against 'Thomas Eeuerardus' living in the neighbourhood of Marden ('Mawardyn') in Herefordshire. </note>
                      <textLang mainLang="la" otherLangs="xno">Latin and Anglo-Norman</textLang>
                   </msItem>
-                  <msItem class="#legalia" n="2" xml:id="MS_Bodl_985-item2">
+               <!--   <msItem class="#legalia" n="2" xml:id="MS_Bodl_985-item2">
                      <title key="work_12595" type="desc">Legal texts</title>
                      <textLang mainLang="la" otherLangs="xno">Latin and Anglo-Norman</textLang>
-                  </msItem>
+                  </msItem>-->
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>iii + 222 leaves
+                           <dimensions unit="in" type="leaf">
+                              <height>4.875</height>
+                              <width>3.5</width>
+                           </dimensions></extent>
                      </supportDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>Illuminated capitals.</decoNote>
+                     <decoNote type="flourInit">Illuminated capitals.</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
@@ -64,11 +70,15 @@
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
+                  <provenance>'<persName role="fmo" key="person_4984">Wms Babington</persName> est verus possessor huius libri'.</provenance>
+                  <provenance> 'Ex dono cognati me magistri Theophilj Cave die ... Januarij 1610.' [?<persName role="fmo" cert="low" key="person_4985">Theophilus Cave of Barrow upon Soar, 1584-1656</persName>]</provenance>
+                  <acquisition resp="#SC" when="1745">Bequeathed in 1745 by <persName key="person_3073" role="dnr">Nathaniel Crynes</persName> M.A. of St John's College, Oxford.</acquisition>
+                  
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1905). <listBibl>
+                        <source>Description adapted (September 2024) from the Summary Catalogue (1905). <listBibl>
                               <bibl facs="aam0376.gif" type="SC">Summary Catalogue, vol. 5, p. 341</bibl>
                               <bibl facs="aam0377.gif" type="SC">Summary Catalogue, vol. 5, p. 342</bibl>
                            </listBibl>
@@ -80,6 +90,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-09">Include all information from SC.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>

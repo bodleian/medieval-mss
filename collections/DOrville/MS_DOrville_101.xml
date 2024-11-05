@@ -1,17 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_4053" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4053">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. D'Orville 101</title>
             <title type="collection">MSS. D'Orville</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1966">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,51 +42,89 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. D'Orville 101</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x07p88ch05kd</idno><idno type="crArk">ark:29072/x05999n428zs</idno><altIdentifier type="internal">
                      <idno type="SCN">16979</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_DOrville_101-item1">
                      <author key="person_8194433">Virgil</author>
                      <title key="work_4920">Aeneid</title>
-                     <note>(fragment)</note>
+                     <note>Fragment: ii. 310 ('Insidie')-v. 359, v. 494- vi. 129 ('corpus amici')</note>
+                     <note>With scholia and the 10-line arguments</note>
+                     <note>This is the 'Codex Wallianus' of Burmann's edition</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+              
+                        <extent>
+                           ii + 23 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>10.625</height>
+                              <width>4.625</width>
+                           </dimensions>
+                        </extent>
+                        
                      </supportDesc>
+                     
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote type="decInit">Decoration<p>Good initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 482)</p>
-                     </decoNote>
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 482:</summary>
+                     
+                     <decoNote type="decInit">Good initials.</decoNote>
+                     
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1160" notBefore="1140">12th century, middle</origDate>
                      <origPlace>
-                        <country key="place_1000070">French</country>
+                        <country key="place_1000070">France</country>
                      </origPlace>
                   </origin>
+                  
+                  <provenance>Owned by <persName role="fmo" key="person_280472019">Harmannus van de Wall</persName> of Amsterdam; <title>Catalogus variorum et insignum librorum ... quos ... collegit et reliquit Hermannus van de Wall, quorum publica auctio habebitur ... 1734</title>, libri manuscripti in folio Q.</provenance>
+                  
+                  <provenance><persName key="person_24945908" role="fmo">Jacques Phillippe D'Orville of Amsterdam (1690–1751)</persName></provenance>
+                  <provenance><persName key="person_3392" role="fmo">Jean D'Orville, b. 1734</persName>, his son, by descent</provenance>
+                  <provenance><persName key="person_3393" role="fmo">Jean D'Orville</persName>, son of Jean, by descent</provenance>
+                  <provenance>Sold to the <persName key="person_3394" role="fmo">Rev. John Cleaver Banks (1765/1766–1845)</persName>: purchased from him by the Bodleian</provenance>
+                  <acquisition when="1804">Acquired by the Bodleian in 1804</acquisition>
+                  
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
+                        <source>
+                           Description adapted (March 2024) by Stewart J. Brookes from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1966)
+                           <listBibl>  
                               <bibl facs="aaz0081.gif" type="SC">Summary Catalogue, Vol. 4, p. 62</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
+                  
+                  <surrogates>
+                     
+                     <bibl>
+                        A facsimile of a page is given in R. Ellis's <title>XX facsimiles from Latin MSS</title> (1891)
+                       
+                     </bibl>
+                     
+                  </surrogates>
+                  
                </additional>
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-03-25">Description revised to incorporate all the information in the Summary Catalogue (1897)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>

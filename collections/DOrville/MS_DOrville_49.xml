@@ -1,17 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_4153" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4153">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. D'Orville 49</title>
             <title type="collection">MSS. D'Orville</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+           
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+           
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,41 +36,67 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. D'Orville 49</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x05x21tg061t</idno><idno type="crArk">ark:29072/x0h702q6600f</idno><altIdentifier type="internal">
                      <idno type="SCN">16927</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_DOrville_49-item1">
                      <author key="person_2041">Bartolomeo de Grandis</author>
-                     <!-- not in VIAF -->
                      <title key="work_909">Bellorum Syracusanorum et antiquitatum Sicilie libri tres</title>
+                     <rubric>Bellorum Syracusanorum et antiquitatum Sicilie libri tres, auctore Bartholomeo de Grandis V. I. D. Syracusano</rubric>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                   <msItem class="#versus" n="2" xml:id="MS_DOrville_49-item2">
-                     <title key="work_13881" type="desc">Poems</title>
+                     <locus>(fol. 106v)</locus>
+                     <title key="work_13881" type="desc">Two short poems</title>
+                     <incipit>Ecelsa donna</incipit><incipit>Si donna quasi'</incipit>
                      <textLang mainLang="it">Italian</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
+                    
+                        <extent>
+                           iii + 107 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>12.5</height>
+                              <width>8.5</width>
+                           </dimensions>
+                        </extent>
+                        
                      </supportDesc>
+                     
                   </objectDesc>
+                    
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1600" notBefore="1500">16th century</origDate>
                      <origPlace>
-                        <country key="place_1000080">Italian</country>
+                        <country key="place_1000080">Italy</country>
                      </origPlace>
                   </origin>
+                  
+                  <provenance>'Seruatum in Bibliotheca <persName role="fmo" key="person_3948">Francisci Marie Sanctiglia V. I. D. Siculi et Patritij Messanensis</persName>' (16th century?)</provenance>
+                  <provenance><persName key="person_24945908" role="fmo">Jacques Phillippe D'Orville of Amsterdam (1690–1751)</persName></provenance>
+                  <provenance><persName key="person_3392" role="fmo">Jean D'Orville, b. 1734</persName>, his son, by descent</provenance>
+                  <provenance><persName key="person_3393" role="fmo">Jean D'Orville</persName>, son of Jean, by descent</provenance>
+                  <provenance>Sold to the <persName key="person_3394" role="fmo">Rev. John Cleaver Banks (1765/1766–1845)</persName>: purchased from him by the Bodleian</provenance>
+                  <acquisition when="1804">Acquired by the Bodleian in 1804</acquisition>
+                  
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
+                        <source>
+                           Description adapted (February 2024) by Stewart J. Brookes from the Summary Catalogue (1897)
+                           <listBibl>  
                               <bibl facs="aaz0069.gif" type="SC">Summary Catalogue, Vol. 4, p. 50</bibl>
                            </listBibl>
                         </source>
@@ -78,6 +107,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-02-28">Description revised to incorporate all the information in the Summary Catalogue (1897)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>

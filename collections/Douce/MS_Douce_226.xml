@@ -1,17 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_4582" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4582">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Douce 226</title>
             <title type="collection">MSS. Douce</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+ 
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,20 +36,33 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Douce 226</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0cz30ps888w</idno><idno type="crArk">ark:29072/x03484zh965n</idno><altIdentifier type="internal">
                      <idno type="SCN">21800</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem class="#vitae_sanctorum" n="1" xml:id="MS_Douce_226-item1">
                      <title key="work_12868" type="desc">Life of St. Hilary</title>
+                     <rubric>Vita vel translatio Sancti Hilarii, confessoris eximii, filioli videlicet Sancti Hilarii, Pictavensis episcopi, 
+                        que clarescentibus signis sollempniter et canonicæ acta est a Baldrico Cænomanicæ, urbis episcopo, ortante clero et populo, 
+                        xi. kl. octobris [841 CE]</rubric>
+                     <incipit>Magnas sanctorum percelsasque virtutes humilis attenuat potius quam explicat sermo</incipit>
+                     <explicit>quo in loco, auxiliante domino, multa fiunt miracula; nam ibi coeci iliuminantur, claudi restituuntur, dæmonia ejiciuntur, 
+                        surdi auditum recipiunt; debiles et egroti variis languoribus contriti sanantur, et maximæ tam corporis quam et animæ omnes sanitatem 
+                        recipiunt; ad laudem et gloriam domini nostri Ihesu Christi, qui cum Patre et Spiritu Sancto vivit el regnat in secula seculorum. Amen.</explicit>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
-                        <support>parchment</support>
+                        <support>parchment</support><extent>i + <measure type="leaf" quantity="27">27</measure> pages
+                           <dimensions type="binding" unit="in">
+                              <height>6.375</height>
+                              <width>4.75</width></dimensions>
+                        </extent>
                      </supportDesc>
                   </objectDesc>
                </physDesc>
@@ -54,15 +70,33 @@
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1110" notBefore="1100">12th century, early</origDate>
                   </origin>
+                  
+                  <provenance>Owned by '<persName role="fmo" key="person_4992">Philippus Lepinus Deshayes</persName>' (early 18th century)</provenance>
+                  
+                  <!-- Add authority record: not in SDBM, Bibale or Biblissima -->  
+                  
+                  <provenance>
+                     No. 195 in the <persName role="fmo" key="person_1203">Thomas Rawlinson</persName> sale, 4 March 1733/1734</provenance><provenance>Bought by <persName role="fmo" key="person_26959343">Henry Hare (d. 1749), Lord Coleraine</persName>
+                  </provenance>
+                  
                   <provenance notAfter="1834" notBefore="1757" resp="#MMM"><persName key="person_69848690" role="fmo">Francis Douce, 1757–1834</persName></provenance>
                   <acquisition resp="#MMM" when="1834">Bequeathed to the Bodleian in 1834</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). <listBibl>
+                        <source>
+                           Description adapted (August 2024) by Stewart J. Brookes from the Summary Catalogue (1897) and the Catalogue of the Printed Books and Manuscripts Bequeathed by Francis Douce, esq. to the Bodleian Library (1840). 
+                           <listBibl>                              
                               <bibl facs="aaz0580.gif" type="SC">Summary Catalogue, vol. 4, p. 561</bibl>
                            </listBibl>
+                           
+                           <listBibl>
+                              <bibl>
+                                 <ref target="https://archive.org/details/catalogueofprint00bodluoft/page/37/mode/1up">Printed Books and Manuscripts Bequeathed by Francis Douce, p. 37</ref>
+                              </bibl>
+                           </listBibl>
+                           
                         </source>
                      </recordHist>
                   </adminInfo>
@@ -71,6 +105,8 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-08-30">Description revised to incorporate all the information in the Summary Catalogue (1897)</change>
+         <change when="2024-05">Add extent and leaf dimensions from Summary Catalogue.</change>
          <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>

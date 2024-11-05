@@ -1,17 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4140">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4140">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. D'Orville 213</title>
             <title type="collection">MSS. D'Orville</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1966">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -33,30 +42,88 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. D'Orville 213</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0cn69m4380q</idno><idno type="crArk">ark:29072/x0fx719m76zd</idno><altIdentifier type="internal">
                      <idno type="SCN">17091</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem class="#liturgica" n="1" xml:id="MS_DOrville_213-item1">
                      <title key="work_10590" type="desc">Book of Hours, Use of Utrecht</title>
+                     
+                     <msItem>
+                        <locus>(fol. 2)</locus>
+                        <note>Calendar</note>
+                     </msItem>
+                     
+                     <msItem>
+                        
+                        <rubric>... Die Vrouwe Ghetijde</rubric>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 44v)</locus>
+                        <rubric>Penitential Psalms and Litany</rubric>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 59)</locus>
+                        <rubric>... die Vighelie</rubric>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 95v)</locus>
+                        <rubric>... Die Ghetide vander Ewigher Wijsheit</rubric>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 117v))</locus>
+                        <rubric>... die grote Ghetide vanden Heilighen Cruce</rubric>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 141v)</locus>
+                        <rubric>... die Ghetide vanden Heilighen Gheest</rubric>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 154v)</locus>
+                        <rubric>Prayers</rubric>
+                     </msItem>
+                     
                      <textLang mainLang="dum">Middle Dutch</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                  
+                        <extent>
+                           165 leaves
+                           <dimensions unit="in" type="binding">
+                              <height>5</height>
+                              <width>3.75</width>
+                           </dimensions>
+                        </extent>
+                        
                      </supportDesc>
+                     
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote>Decoration<p>Good borders, initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 231)</p>
-                     </decoNote>
+                  
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 231
+                     </summary>
+                     
+                     <decoNote type="borders">Good borders</decoNote>
+                     
+                     <decoNote type="decInit"><ref target="https://digital.bodleian.ox.ac.uk/objects/8b7c98de-fb8a-4fde-904b-66ef3114ab38/surfaces/30dfc5e5-a5a9-4360-ab36-a49e58de7e95/">Good initials</ref></decoNote>
+                     
                   </decoDesc>
                   <bindingDesc>
                      <binding contemporary="true">
-                        <p>Contemporary brown leather with blind tooling in straight lines, the clasps
-         are lost.</p>
+                        <p>Contemporary brown leather with blind tooling in straight lines, the clasps are lost</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
@@ -64,14 +131,27 @@
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1500" notBefore="1450">15th century, second half</origDate>
                      <origPlace>
-                        <country key="place_7016845">Dutch</country>
+                        <country key="place_7016845">Netherlands</country>, probably <settlement key="place_7006926">Utrecht</settlement> 
+                        
                      </origPlace>
                   </origin>
+                  
+                  <provenance>The honour paid to Saints Odulphus, Willibrord and Lebuinus (Livinus) in the Calendar and Litany point to Utrecht or its neighbourhood. 
+                     See also <ref target="https://medieval.bodleian.ox.ac.uk/catalog/manuscript_4141">MS. D'Orville 214</ref>.</provenance>
+                  
+                  <provenance><persName key="person_24945908" role="fmo">Jacques Phillippe D'Orville of Amsterdam (1690–1751)</persName></provenance>
+                  <provenance><persName key="person_3392" role="fmo">Jean D'Orville, b. 1734</persName>, his son, by descent</provenance>
+                  <provenance><persName key="person_3393" role="fmo">Jean D'Orville</persName>, son of Jean, by descent</provenance>
+                  <provenance>Sold to the <persName key="person_3394" role="fmo">Rev. John Cleaver Banks (1765/1766–1845)</persName>: purchased from him by the Bodleian</provenance>
+                  <acquisition when="1804">Acquired by the Bodleian in 1804</acquisition>
+                  
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
+                        <source>
+                           Description adapted (February 2024) by Stewart J. Brookes from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1966)
+                           <listBibl>   
                               <bibl facs="aaz0108.gif" type="SC">Summary Catalogue, Vol. 4, p. 89</bibl>
                               <bibl facs="aaz0109.gif" type="SC">Summary Catalogue, Vol. 4, p. 90</bibl>
                            </listBibl>
@@ -94,6 +174,13 @@
                               <title>Handschriftencensus: Eine Bestandsaufnahme der handschriftlichen Überlieferung deutschsprachiger Texte des Mittelalters</title>
                            </ref>
                         </bibl>
+                        
+                        <bibl>
+                           <ref target="https://iiif.biblissima.fr/collections/manifest/a5ab81c058b6080779ed28c730caf11d59c1da72">
+                              <title>Biblissima</title>
+                           </ref>
+                        </bibl>
+                        
                      </listBibl>
                      <listBibl type="PRINT">
                         <head>Printed descriptions:</head>
@@ -106,6 +193,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-02-01">Description revised to incorporate all the information in the Summary Catalogue (1897)</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">

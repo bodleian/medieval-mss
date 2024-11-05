@@ -1,15 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_1610" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1610">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Bodl. 597</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2024">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -33,17 +34,29 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Bodl. 597</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0w3763623rv</idno><idno type="crArk">ark:29072/x0w0892940f0</idno><altIdentifier type="internal">
                      <idno type="SCN">2377</idno>
                   </altIdentifier>
                </msIdentifier>
                <physDesc>
                   <p n="composite">Composite: two parts</p>
+                  <objectDesc>
+                     <supportDesc>
+                        <extent>ii + 337 leaves
+                        <dimensions type="binding" unit="in">
+                           <height>10.25</height>
+                           <width>8</width>
+                        </dimensions></extent>
+                     </supportDesc>
+                  </objectDesc>
                </physDesc>
+               <history>
+                  <acquisition when="1601">Given by <persName role="dnr" key="person_3816">dame Mary Fermor of Easton Neston</persName>, 1601.</acquisition>
+               </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). <listBibl>
+                        <source>Description adapted (2024) from the Summary Catalogue (1922) with additional reference to published literature as cited. <listBibl>
                               <bibl facs="aap0358.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 337</bibl>
                            </listBibl>
                         </source>
@@ -57,24 +70,38 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem n="1" xml:id="MS_Bodl_597-part1-item1">
-                        <author key="person_54152998">Ptolemy</author>
-                        <title key="work_4152">Quadripartitum</title>
-                        <note>(with the commentary of <persName key="person_100198249" role="aut">Haly ibn Ridwan</persName>, both in the Latin translation by <persName key="person_50292125" role="trl">Aegidius de Tebaldis</persName>)</note>
-                        <bibl type="related">
+                     <msItem n="1" xml:id="MS_Bodl_597-part1-item1">  
+                        <locus from="1">(fol. 1)</locus>
+                        <note>Ptolemy, Quadripartitum, with the commentary of Haly ibn Ridwan, both in the Latin translation by <persName key="person_50292125" role="trl">Aegidius de Tebaldis</persName></note>
+                        <rubric>... Glosa Aly aben Rudiani super prima [secunda, etc.] parte
+                           libri Quadripertiti Ptholomei Pheludiani</rubric>
+                        <note>With the Latin preface of
+                           'Egideus de Tabaldis Lonbardus de ciuitate Parmensi', who caused this Latin
+                           translation to be made from the Spanish under the patronage of Alfonso king
+                           of Spain, who had previously caused it to be translated from Arabic into
+                           Spanish. The 2nd, 3rd and 4th parts begin on foll. 28v, 53, 82, and
+                           at the end (fol. 100) are examinations of three Egyptian horoscopes, ending
+                           with 'Explicit quod Kayll Quadripertitus Tholomei cum commento Aly'.</note>
+                        
+                       <msItem> <author key="person_54152998">Ptolemy</author>
+                        <title key="work_4152">Quadripartitum</title></msItem>
+                        <msItem>
                            <author key="person_100198249">Haly ibn Ridwan</author>
-                           <title>Commentary on Ptolemy, Quadripartitum</title>
-                        </bibl>
+                           <title key="work_5489">Commentary on Ptolemy, Quadripartitum</title>
+                        </msItem>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                      <msItem n="2" xml:id="MS_Bodl_597-part1-item2">
-                        <author key="person_31816106">Ps.-Ptolemy</author>
-                        <title key="work_4096">Centiloquium</title>
-                        <note>(with the commentary of <persName key="person_100198249" role="aut">Haly ibn Ridwan</persName>, both in the Latin translation by <persName key="person_85061277" role="trl">John of Seville</persName>)</note>
-                        <bibl type="related">
-                           <author key="person_100198249">Haly ibn Ridwan</author>
-                           <title>Commentary on Ptolemy, Centiloquium</title>
-                        </bibl>
+                        <locus from="103">(fol. 103)</locus>
+                        <note>Ps.-Ptolemy, Centiloquium, not quite complete, ending in the
+                           93rd saying, a leaf being lost: with the commentary of Aḥmad ibn Yūsuf (see Juste, 2021)</note>
+                        
+                        <msItem><author key="person_31816106">Ps.-Ptolemy</author>
+                        <title key="work_4096">Centiloquium</title></msItem>
+<msItem>                        
+   <author key="person_5607152200833514400004">Aḥmad ibn Yūsuf</author>
+   <title key="work_1957">Commentary on Ptolemy, Centiloquium</title>
+                        </msItem>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                   </msContents>
@@ -90,6 +117,11 @@
                         <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
                      </origin>
                   </history>
+                  <additional>
+                     <listBibl>
+                        <bibl>David Juste, ‘MS Oxford, Bodleian Library, Bodley 597’ (update: 23.11.2021), Ptolemaeus Arabus et Latinus. Manuscripts, URL = http://ptolemaeus.badw.de/ms/399.</bibl>
+                     </listBibl>
+                  </additional>
                </msPart>
                <msPart xml:id="MS_Bodl_597-part2">
                   <msIdentifier>
@@ -98,9 +130,20 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem n="1" xml:id="MS_Bodl_597-part2-item1">
+                     <msItem n="3" xml:id="MS_Bodl_597-part2-item1">
+                        <locus from="112">(fol. 112)</locus>
                         <author key="person_100201449">Alphonsus de Cartagena</author>
                         <title key="work_446">Doctrinal de los cavalleros</title>
+                       <rubric>Aqui Comença la
+                           tabla de los Titulos que se llama del dotri<supplied>nal</supplied></rubric>
+                        <note>Followed by a list of
+                           contents: then 'Leyes'. The books begin at foll. 115,
+                           192, 254, 298. </note>
+                        <incipit>Los famosos caualleros muy noble
+                           senor condestable que en los tiempos antigos</incipit>
+                        <note>There is scribbling in Spanish on foll. 112r (which is in bad
+                           condition) and 335v. The name of the author, don Alonso de Cartagena, bp. of
+                           Burgos, does not occur in the volume.</note>
                         <textLang mainLang="es">Spanish</textLang>
                      </msItem>
                   </msContents>
@@ -121,6 +164,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-10">Description revised to incorporate all information from Summary Catalogue.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>
