@@ -1,9 +1,16 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4923">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4923">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Gough Liturg. 15</title>
             <title type="collection">MSS. Gough</title>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
             <respStmt>
                <resp>Summary description</resp>
                <persName>Elizabeth Solopova</persName>
@@ -30,7 +37,9 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Gough Liturg. 15</idno>
-                  <idno type="ieArk">ark:29072/x0kh04dp5390</idno><idno type="crArk">ark:29072/x0n296wz096b</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0kh04dp5390</idno>
+                  <idno type="crArk">ark:29072/x0n296wz096b</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">18329</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -44,7 +53,19 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent resp="#VD"> 2 + 132 (131) + 1 + 2 fol.<dimensions type="leaf" unit="mm">
+                              <height>125</height>
+                              <width>90</width>
+                           </dimensions>
+                           <dimensions type="written" unit="mm">
+                              <height>79</height>
+                              <width>48</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc resp="#VD">
+                        <layout columns="1" writtenLines="19">19 long lines</layout>
+                     </layoutDesc>
                   </objectDesc>
                   <decoDesc>
                      <summary>Related to <persName key="person_95985256" role="art">Philippe de Mazerolles</persName> (<persName key="person_21734506" role="art">Liévin van Lathem</persName>?) partly copying <persName key="person_79411629" role="art">Simon Marmion</persName>. <ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 353, pl. XXVII:</summary>
@@ -90,6 +111,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-09">Add extent, leaf dimensions and layout from van Dijk, Latin Liturgical Manuscripts in the Bodleian Library, Oxford.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
