@@ -1,12 +1,30 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4151">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4151">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. D'Orville 45</title>
             <title type="collection">MSS. D'Orville</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+           <respStmt xml:id="PA">
+              <resp when="1973">Cataloguer</resp>
+              <persName>Otto Pächt</persName>
+              <persName>J. J. G. Alexander</persName>
+           </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+            </respStmt>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. van. Dijk</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2025">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -30,55 +48,223 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. D'Orville 45</idno>
-                  <idno type="ieArk">ark:29072/x05t34sk22r0</idno><idno type="crArk">ark:29072/x0h128nd93ch</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x05t34sk22r0</idno>
+                  <idno type="crArk">ark:29072/x0h128nd93ch</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">16923</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
-                  <msItem class="#liturgica #biblia" n="1" xml:id="MS_DOrville_45-item1">
-                     <title key="work_14114" type="desc">Psalter</title>
-                     <bibl type="bible">
-                        <title>Bible, Psalms</title>
-                     </bibl>
+               <msContents resp="#VD">
+                  <msItem class="#liturgica #biblia" xml:id="MS_DOrville_45-item1">
+                     <msItem>
+                        <locus>(fol. 2v)</locus>
+                        <note>Additional preces</note>
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 3v)</locus>
+                        <note>Kalendar March, November-December missing, with coloured kalendarial
+                           tables, February, October-November missing, December left blank</note>
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 12v)</locus>
+                        <note>Litany of the saints in which many of the original names have been
+                           erased and rewritten</note>
+                     </msItem>
+                     <msItem>
+                        <note>Loca embolismorum, computus Grecorum et Latinorum, etc. with an Easter
+                           table for the period 1026-1557 (fols. 14-7), written on a large folding
+                           sheet, Greek letters being used for the dates, Letters and prefaces
+                           concerning the psalter (fol. 18), titles of the psalms (fol. 20v), etc.
+                           Private prayers (fol. 26v), Penitential Psalms (fol. 27v) with versicles
+                           and a collect after each psalm</note>
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 28v)</locus>
+                        <note>Litany</note>
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 29v)</locus>
+                        <note>Orationes speciales consisting of a series of prayers, psalms,
+                           versicles and collects</note>
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 33)</locus>
+                        <note>A similar set of prayers Si te presens vita fastidiosa sit</note>
+                     </msItem>
+                     <msItem>
+                        <locus>(fol.34 )</locus>
+                        <note>Practical applications of the psalms</note>
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 36v)</locus>
+                        <note>Prayers to the persons of the holy Trinity the Virgin (fol. 37v), St
+                           Michael (fol. 39), St John the baptist, Sts Peter and Paul, Martyrs, St
+                           Benedict, Virgins</note>
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 41v)</locus>
+                        <note>Other long prayers.</note>
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 51)</locus>
+                        <note>Psalter with psalter collects (Spanish series), followed by the
+                           apocryphal psalm Pusillus eram, weekly and daily canticles, Gloria, Te
+                           deum (fol. 150v: canticum s. Hilarii), Pater with a short explanation,
+                           Credo, Quicumque, each with a collect</note>
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 154)</locus>
+                        <note>Oratio post expletionem psalmorum</note>
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 155)</locus>
+                        <note>Common of the saints </note>
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 167)</locus>
+                        <note>Hymnal beginning with the ferial hymns of the week, each hymn preceded
+                           or followed by the order of the office (Psalmista) and, partly, with
+                           interlinear glosses</note>
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 188v)</locus>
+                        <note>Canticles for the greater feasts</note>
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 197)</locus>
+                        <note>Abbreviated psalter of St Prudentius.</note>
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 210)</locus>
+                        <note>Orationale with the opening words and often musical cues of the
+                           Benedictus and Magnificat antiphons</note>
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 231)</locus>
+                        <note>Orationes pro peccatis per oras diei, matutinales, in matutinis
+                           laudibus, vespertinales, pro peccatis</note>
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 233)</locus>
+                        <note>Capitulary</note>
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 237)</locus>
+                        <note> Ritual for the Last Sacraments with burial service and order of the
+                           office of the dead (fol. 242)</note>
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 242v)</locus>
+                        <note>Blessing of holy water and prayers for the sprinkling in various
+                           places of the monastery, ordo ad monachum benedicendum (fol. 244v);
+                        </note>
+                     </msItem>
+                     <msItem>
+                        <locus>(fol. 246)</locus>
+                        <note>Some prayers the beginning of which is wanting, identical with those
+                           of fol. 41-2. Rubrics in the ritual of the Last Sacraments.</note>
+
+                     </msItem>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
                <physDesc>
-                  <objectDesc form="codex">
+                  <objectDesc form="codex" resp="#DD">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>245 fols. <dimensions type="leaf" unit="mm">
+                              <height>307</height>
+                              <width>205</width>
+                           </dimensions>
+                        </extent>
+                        <collation> A leaf missing after fols. 4, 11, 50, 245.</collation>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="1" writtenLines="25">1 col., 25 lines; written space
+                              <dimensions type="written" unit="mm">
+                              <height max="220" min="210">210-20</height>
+                              <width min="130" max="135">130-5</width>
+                           </dimensions>
+                        </layout>
+                     </layoutDesc>
                   </objectDesc>
-                  <musicNotation>
-                     <p>Neums (see van Dijk 1957).</p>
+                  <handDesc resp="#DD">
+                     <handNote>Five hands are to be distinguished. </handNote>
+                  </handDesc>
+                  <musicNotation resp="#VD">
+                     <p>Occasional diastematic Aquitanian point neum notation (fols. 157, 187, 215v ff.).</p>
                   </musicNotation>
-                  <decoDesc>
-                     <decoNote>Decoration<p>Fine coloured initials and tables. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 432, pl. XXXV)</p>
+                  <decoDesc resp="#PA #VD">
+                     <decoNote type="decInit">Fine coloured initials (fols. 18, 63, 71v, 80, 89, 99, 109v, 119, 123v, 167, 188v) and tables. (<ref
+                              target="https://catalog.hathitrust.org/Record/000468709">Pächt and
+                              Alexander</ref> i. 432, pl. XXXV)
                      </decoNote>
                   </decoDesc>
                </physDesc>
-               <history>
+               <history  resp="#DD #VD #SC">
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1068" notBefore="1067" cert="high">c. 1067–1068 (?)</origDate>
+                     <origDate calendar="Gregorian" notAfter="1068" notBefore="1067" cert="high">c.
+                        1067–1068 (?)</origDate>
                      <origPlace>
-                        <country key="place_1000070">French</country>, <settlement key="place_7017203">Moissac</settlement>
+                        <country key="place_1000070">French</country>, <settlement
+                           key="place_7017203">Moissac</settlement>, <orgName key="org_262702350">Cluniac abbey</orgName>
                         <!--ORIGINAL: French, Moissac-->
                      </origPlace>
                   </origin>
+                  <provenance>Fols. 14-17 (the bifolia sewn together to open out into a large
+                     square) contain a paschal cycle from 1026 to 1557. A red dot before the year
+                     1068 suggests that the table was transcribed between Easter 1067 and Easter
+                     1068; on this means of dating see Bannister, <title>Mélanges Chatelain</title>. The
+                     Benedictine abbey of Moissac, from which the MS evidently comes, became Cluniac
+                     in 1053 and the kalendar is decidedly Cluniac in character. An original
+                     connection with Moissac is shown by comparison with other books from there and
+                     by liturgical evidence.</provenance>
+                  <provenance>On fol. 246 is a note 'que yeu Raimon de beluese ay reliat [bound]
+                     aquest libre . . .' (s.xiv?). This binding does not survive. </provenance>
+                  <provenance>At <orgName role="fmo" key="org_262702350">Moissac</orgName> until the 16th or 17th century: fol. 246v: 'Aquest libre es del couuen de moysac. . .' (s.xiv/xv). Fly leaves from 14th and 15th-cent. monastic records. Fol. 2: 'ex Abbatia Moissiacensi' (s.xvi or xvii).</provenance>
+                  <provenance><persName role="fmo" key="person_2622547">N. J. Foucault</persName>: his armorial bookplate.</provenance>
+                  <provenance><persName key="person_24945908" role="fmo">Jacques Phillippe D'Orville of Amsterdam (1690–1751)</persName></provenance>
+                  <provenance><persName key="person_3392" role="fmo">Jean D'Orville, b. 1734</persName>, his son, by descent</provenance>
+                  <provenance><persName key="person_3393" role="fmo">Jean D'Orville</persName>, son of Jean, by descent</provenance>
+                  <provenance>Sold to the <persName key="person_3394" role="fmo">Rev. John Cleaver Banks (1765/1766–1845)</persName>: purchased from him by the Bodleian</provenance>
+                  <acquisition when="1804">Acquired by the Bodleian in 1804</acquisition>
                </history>
+               <!-- 
+               D'Orville 45 (SC 16923) Breviarium. [1067?] [Moissac, France] Parch. Illum. inits., col. inits., rubrics.  Pächt & Alexander, i, no. 432 (pl. xxxv illus. detail fol. 109, reduced); J. Dufour, La Bibliothèque et le scriptorium de Moissac (Hautes Études médiévales et modernes, 15, 1972), 108-9; van Dijk, Latin Liturgical MSS, ii. 236; Exh., Latin Liturgical MSS, no. 43 (pl. vi illus. part fol. 123v); Exh., MSS at Oxford, xxx. 3 (fig. 102 illus. part fol. 123v). Pl. 28 (a, b) 437. 
+               -->
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
-                              <bibl facs="aaz0067.gif" type="SC">Summary Catalogue, Vol. 4, p. 48</bibl>
-                              <bibl facs="aaz0068.gif" type="SC">Summary Catalogue, Vol. 4, p. 49</bibl>
+                        <source>Description adapted (2025) from the following sources:
+                           <listBibl>
+                              <bibl>A. Watson, <title>Catalogue of Dated and Datable Manuscripts in Oxford
+                                 Libraries</title> (1984), <citedRange unit="entry" from="436" to="436">
+                                    <ref
+                                       target="https://hdl.handle.net/2027/mdp.39015008982863?urlappend=%3Bseq=98"
+                                       >no. 436</ref>
+                                 </citedRange>
+                              </bibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, I (1966), no. 432</bibl>
+                              <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian
+                                 Library, Oxford, vol. 2: Office Books</title> (typescript, 1957),
+                                 <citedRange unit="page" from="236" to="236">p. 236</citedRange>
+                              </bibl>
+                              <bibl>Summary Catalogue (1897)</bibl>
+                           </listBibl>
+                           
+                           <listBibl>
+                              <bibl facs="aaz0067.gif" type="SC">Summary Catalogue, Vol. 4, p.
+                                 48</bibl>
+                              <bibl facs="aaz0068.gif" type="SC">Summary Catalogue, Vol. 4, p.
+                                 49</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
                   <surrogates>
                      <bibl subtype="partial" type="digital-facsimile">
-                        <ref target="https://digital.bodleian.ox.ac.uk/objects/3b1c82c1-e61b-4f24-8a66-b8e72c70b8d3/">
+                        <ref
+                           target="https://digital.bodleian.ox.ac.uk/objects/3b1c82c1-e61b-4f24-8a66-b8e72c70b8d3/">
                            <title>Digital Bodleian</title>
                         </ref>
                         <note>(1 image from 35mm slides)</note>
@@ -87,11 +273,16 @@
                   <listBibl type="WRAPPER">
                      <listBibl type="PRINT">
                         <head>Printed descriptions:</head>
-                        <bibl>A. Watson, <title>Catalogue of Dated and Datable Manuscripts in Oxford Libraries</title> (1984), <citedRange unit="entry" from="436" to="436">
-                              <ref target="https://hdl.handle.net/2027/mdp.39015008982863?urlappend=%3Bseq=98">no. 436</ref>
+                        <bibl>A. Watson, <title>Catalogue of Dated and Datable Manuscripts in Oxford
+                              Libraries</title> (1984), <citedRange unit="entry" from="436" to="436">
+                              <ref
+                                 target="https://hdl.handle.net/2027/mdp.39015008982863?urlappend=%3Bseq=98"
+                                 >no. 436</ref>
                            </citedRange>
                         </bibl>
-                        <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 2: Office Books</title> (typescript, 1957), <citedRange unit="page" from="236" to="236">p. 236</citedRange>
+                        <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian
+                              Library, Oxford, vol. 2: Office Books</title> (typescript, 1957),
+                              <citedRange unit="page" from="236" to="236">p. 236</citedRange>
                         </bibl>
                      </listBibl>
                   </listBibl>
@@ -102,7 +293,9 @@
       <revisionDesc>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
-            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+            <persName>James Cummings</persName> Up-converted the markup using <ref
+               target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl"
+               >https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>
       </revisionDesc>
    </teiHeader>
