@@ -1,4 +1,5 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1213">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xml:id="manuscript_1213" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -13,6 +14,10 @@
                <resp when="2020">Encoding</resp>
                <resp when="2020">Catalogue updates and corrections</resp>
                <persName>Matthew Holford</persName>
+            </respStmt>
+            <respStmt>
+               <resp when="2023">Description</resp>
+               <persName>Andrew Dunning</persName>
             </respStmt>
          </titleStmt>
          <publicationStmt>
@@ -35,36 +40,65 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Bodl. 151</idno>
-                  <idno type="ieArk">ark:29072/x06m311q11jh</idno><idno type="crArk">ark:29072/x06h440t287s</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x06m311q11jh</idno>
+                  <idno type="crArk">ark:29072/x06h440t287s</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">1929</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem n="1" xml:id="MS_Bodl_151-item1">
-                     <author key="person_50904931"><supplied>William of Saint-Amour</supplied></author>
+                  <textLang mainLang="la">Latin</textLang>
+                  <msItem>
+                     <locus>(fols. 1r–193v)</locus>
+                     <author key="person_50904931">William of Saint-Amour</author>
                      <title key="work_5092">Collectiones catholicae et canonicae scripturae</title>
-                     <rubric>Collectio catholice &amp; canonice scripture ad instructionem &amp; preparationem simplicium fidelium Christi contra pericula imminencia ecclesie generali per ypocritas pseudo-predicatores &amp; penetrantes domos &amp; ociosos &amp; curiosos &amp; gerouagos</rubric>
-                     <incipit>Sapienciam antiquorum omnium</incipit>
-                     <note>In four distinctiones, see foll. 50v, 98v, 117: at fol. 192v are the fifty signa pseudo-predicatorum, a kind of index to part 4.</note>
-                     <textLang mainLang="la">Latin</textLang>
+                     <rubric>Collectio catholice et canonice scripture ad instructionem et preparationem simplicium fidelium cristi contra pericula imminencia ecclesie generali per ypocritas pseudo predicatores et penetrantes domos. et ociosos et curiosos. et gerouagos.</rubric>
+                     <incipit><quote><hi rend="underline">Sapienciam antiquorum omnium exquiret sapiens in prophetis uacabit narrationem uirorum nominatorum conseruabit.</hi></quote> Ecclesiasticus .xxxix. .a. Secundum <quote><hi rend="underline">sapienciam antiquorum</hi></quote>. Glosa. scilicet. prophetarum. <quote><hi rend="underline">Et narrationem</hi></quote> id est doctrinam. <quote><hi rend="underline">uirorum nominatorum</hi></quote>. Glosa. id est apostolorum et euangelistarum</incipit>
+                     <note>In four <foreign rend="italic">distinctiones</foreign>: see fols. 50v, 98v, 117r.</note>
+                     <msItem>
+                        <locus>(fols. 192v–193v)</locus>
+                        <rubric>Hec sunt signa quibus pseudo predicatores a ueris predicatoribus possunt discerni.</rubric>
+                        <note>Fifty entries, with folio references, functioning as an index to the fourth distinction.</note>
+                     </msItem>
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                        <extent>i + 194 leaves <dimensions type="binding" unit="in">
-                              <height>10.5</height>
-                              <width>7.5</width>
-                           </dimensions></extent>
+                        <extent>i (early modern flyleaf) + 193 + i (early modern flyleaf) leaves <dimensions type="leaf" unit="mm">
+                              <height>260</height>
+                              <width>185</width>
+                           </dimensions>
+                        </extent>
+                        <foliation>Contemporary foliation in red.</foliation>
+                        <collation>
+                           <catchwords>Catchwords.</catchwords>
+                           <secFol>Qualiter apostolus</secFol>
+                        </collation>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="1" writtenLines="26">Ruled in ink for 26 long lines, written below the top line, ruled space <dimensions type="ruled" unit="mm">
+                              <height>180</height>
+                              <width>130</width>
+                           </dimensions>
+                        </layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <handDesc>
+                     <handNote script="textualisNorthern">Gothic textualis.</handNote>
+                  </handDesc>
                   <decoDesc>
-                     <decoNote type="flourInit">Penwork.</decoNote>
+                     <decoNote type="flourInit">Red and blue pen-flourished initials with foliage infill, 4–8 lines.</decoNote>
+                     <decoNote type="flourInit">Pen-flourished initials coloured in red or blue, 2–3 lines.</decoNote>
+                     <decoNote type="rubrication">Rubrics and running heads in red; textual quotations underlined in red.</decoNote>
                   </decoDesc>
                   <bindingDesc>
                      <binding notAfter="1600" notBefore="1575">
-                        <p>Brown leather with plain tooling (late 16th cent.) perhaps over older sewing and boards.</p>
+                        <p>Brown leather with plain tooling, late 16th century.</p>
+                     </binding>
+                     <binding contemporary="true">
+                        <p>Earlier sewing and wooden boards.</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
@@ -72,16 +106,16 @@
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1310" notBefore="1300">14th century, early</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
-                  <provenance notBefore="1330">Given to <orgName key="org_167950876" role="fmo">Norwich Cathedral</orgName> by <persName key="person_74242715" role="dnr">Adam Easton</persName>: 'Liber ecclesie Norwycensis per magistrum Adam de Estone <sic>monachcum</sic> dicti loci' and pressmark in red <q type="pressmark">x xl. vi</q>, 2nd half of the 14th cent.</provenance>
-                  <acquisition when="1602"> Presented by <persName key="person_2677" role="dnr">sir Walter Cope</persName> in 1602.</acquisition>
+                  <provenance notBefore="1330">Given to <orgName key="org_167950876" role="fmo">Norwich Cathedral</orgName> by <persName key="person_74242715" role="dnr">Adam Easton</persName>: inscribed, <quote>Liber ecclesie Norwycensis per magistrum Adam de Estone <sic>monachcum</sic> dicti loci</quote>, with pressmark in red, <quote type="pressmark">x xl. vi</quote> (fol. 1r), 2nd half of the 14th century.</provenance>
+                  <acquisition when="1602">Presented by <persName key="person_2677" role="dnr">Sir Walter Cope</persName> in 1602.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Description adapted (April 2020) from the Summary Catalogue (1922). <listBibl>
+                        <source>Description by Andrew Dunning (November 2023), drawing on the Summary Catalogue (1922). <listBibl>
                               <bibl facs="aap0143.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 122</bibl>
                            </listBibl>
                         </source>
@@ -98,6 +132,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2023-11-30"><persName>Andrew Dunning</persName> revised with consultation of original.</change>
          <change when="2020-04-01">Description revised to include all information in SC.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>

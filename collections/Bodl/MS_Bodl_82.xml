@@ -1,12 +1,16 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1808">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1808">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Bodl. 82</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2024">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -36,49 +40,136 @@
                </msIdentifier>
                <msContents>
                   <textLang mainLang="xno">Anglo-Norman</textLang>
+                  <msItem><note>For fols. 1-2 see below.</note></msItem>
                   <msItem class="#proverbia" n="1" xml:id="MS_Bodl_82-item1">
-                     <title key="work_14073" type="desc">Proverbs of Solomon</title>
+                     <locus from="3">(fol. 3)</locus>
+                     <title key="work_14073" type="desc">Les aprises Salamon</title>
+                     <rubric>Ces sunt les aprises Salamon li sages, quii enseyna a ses amys</rubric>
+                     <incipit>Seynors. e barons. ore escutez</incipit>
+                     <bibl>Dean and Boulton 262; this ms. only; unpr.</bibl>
                   </msItem>
-                  <msItem class="#theologica #miscellanea" n="2" xml:id="MS_Bodl_82-item2">
-                     <title key="work_11505" type="desc">Description of purgatory</title>
-                  </msItem>
-                  <msItem class="#devotiones" n="3" xml:id="MS_Bodl_82-item3">
-                     <title key="work_13945" type="desc">Prayers</title>
+                  <msItem n="2" xml:id="MS_Bodl_82-item-2">
+                     <locus from="7">(fol. 7)</locus>
+                     <note>Prayers to be said at the time of Mass, in French and Latin
+                        prose.</note>
                      <textLang mainLang="xno" otherLangs="la">Anglo-Norman and Latin</textLang>
                   </msItem>
-                  <msItem class="#theologica #sacramenta #virtutes_et_vitia" n="4" xml:id="MS_Bodl_82-item4">
-                     <title key="work_15302" type="desc">Theological treatises</title>
-                     <note>(on the sacraments, confession, and the seven deadly sins)</note>
+                  <msItem n="3" xml:id="MS_Bodl_82-item-3">
+                     <locus from="11v">(fol. 11v)</locus>
+                     <title key="work_11505" type="desc">Les peines de purgatorie</title>
+                     <incipit>Nus entendons par la grace</incipit>
+                     <note>A 'compeleysun' or 'sarmon de purgatorie'. Leaf wanting after fol. 16, at least one leaf wanting after fol. 28: at fol. 24r is an English sentence.</note>
+                    <listBibl> <bibl>Dean and Boulton 645</bibl>
+                     <bibl>ed. and tr. Hunt and Bliss (2010), 393-421 (based on MS. Bodl. 654 with variants from the present ms.)</bibl></listBibl>
                   </msItem>
-                  <msItem class="#apocrypha" n="5" xml:id="MS_Bodl_82-item5">
-                     <title key="work_10246" type="desc">Apocryphal legend of events before the birth of Christ</title>
+                  
+                  <msItem n="4" xml:id="MS_Bodl_82-item-4">
+                     <locus from="29">(fol. 29)</locus>
+                     <title key="work_13945" type="desc">Prayers</title>
+                     <incipit>Duz Deus, duz Peres, e Seynt Trinite</incipit>
+                     <note>After a short discourse come thirty prayers to Christ and to the
+                        Virgin: a leaf is
+                        missing after fol. 29.</note>
+                     <listBibl><bibl>Dean and Boulton, nos. 851 (Seven Requests, fols. 30-33), 766 (15 [here 13] Joys of the Virgin, fols. 33-36, = Sonet 458),   731 (Elevation prayer, fol. 35 (?)), 893 (7 Aves, fols. 37-8).</bibl>
+                     <bibl>ed. and tr. Hunt and Bliss (2010), 149-153 (fols. 33-36)</bibl></listBibl>
                   </msItem>
+                  
+                  <msItem class="#theologica #sacramenta #virtutes_et_vitia" n="5" xml:id="MS_Bodl_82-item4">
+                      
+                     <msItem >
+                        <locus from="39">(fol. 39)</locus>
+                        <title type="desc" key="work_5471">On the seven sacraments</title>
+                        <incipit>Bapteme fet le alme necte de tuz pechez. Cest sacrement ne poest nul receyuere</incipit><!-- check D&B for incipit -->
+                        <note>Not listed as a separate text in Dean and Boulton (but cf. 666 (?)). Also (fragmentary) in Brussels, Bibliothèque royale de Belgique,  IV 00852
+                           (see <ref target="http://jonas.irht.cnrs.fr/oeuvre/22684">http://jonas.irht.cnrs.fr/oeuvre/22684</ref> [1 Oct. 2024]).</note>
+                     </msItem>
+                     <msItem >
+                        <locus from="41">(fol. 41)</locus>
+                        <title type="desc" key="work_5472">On penance</title>
+                      <listBibl>  <bibl>Dean and Boulton 672, not listing the present manuscript</bibl>
+                        <bibl>ed. and tr. Hunt and Bliss (2010), 294-319, not listing the present manuscript</bibl></listBibl>
+                        <note>Begins imperfect at 'frez mie de co penitence' (Hunt and Bliss, p. 300 l. 14) and ends 'e orez e issi ditez', cf. ibid., p. 312, the text here varying; pp. 306-310 omitted in this version.</note>
+                     </msItem>
+                     <msItem >
+                        <locus from="50">(fol. 50)</locus>
+                        <title type="desc" key="work_13530">On the seven
+                           deadly sins.</title>
+                        <incipit>Set mortel peches sunt orgeyl envye </incipit>
+                        <listBibl>
+                           <bibl>ed. and tr. Hunt and Bliss (2010), 277-285, from MS. Rawl. C. 46</bibl><bibl>Cf. Dean and Boulton 666, not listing the present manuscript.</bibl>
+                        </listBibl>
+                        <note> Also (fragmentary) in Brussels, Bibliothèque royale de Belgique,  IV 00852
+                           (see <ref target="http://jonas.irht.cnrs.fr/oeuvre/22684">http://jonas.irht.cnrs.fr/oeuvre/22684</ref> [1 Oct. 2024]).</note>
+                     </msItem>
+                  </msItem>
+                  <msItem class="#apocrypha" n="6" xml:id="MS_Bodl_82-item5">
+                     <locus from="58">(fol. 58)</locus>
+                     <title key="work_10246" type="desc">De infantia saluatoris (Gospel of Ps.-Matthew)</title><note>(Anglo-Norman version of a Continental French translation)</note>
+                     <note>A legend of the events preceding the birth of Christ,
+                        introducing Joseph, st. Mary the Virgin, Abiachar, Joachim and angels: the
+                        first leaf is lost, and the text beg. abruptly, 'estre entre les sacrifices
+                        Deu: pur co ke Deu ne tei benesquit tant ke il donast engendrure de
+                        Israel'.</note>
+                     <listBibl><bibl>ed. and tr. Hunt and Bliss (2010), 129-147, referring to four other Continental manuscripts.</bibl>
+                     <bibl>Noted in Dean and Boulton, as part of the entry for 645.</bibl></listBibl>
+                  </msItem>
+                  <msItem>
+                     <note>Followed (fols. 72v-73r) by a text on the ten commandments, apparently breaking off incomplete after the third.</note>
+                     <incipit>Dampne deue dona diz comandemens en la ley</incipit>
+                     <note>Not in Dean and Boulton.</note>
+                  </msItem>
+            
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
-                        <support>parchment</support>
+                        <support>parchment</support><extent>iv + <measure type="leaf" quantity="77">77</measure> leaves
+                           <!--<dimensions type="binding" unit="in"><height>7.75</height><width>5</width></dimensions>-->
+                           <dimensions unit="mm" type="leaf">
+                              <height>188</height>
+                              <width quantity="115">c. 115</width>
+                           </dimensions>
+                        </extent>
+                        <collation>a(2) (fols. 1-2), 2(14) (fols. 3-16), [leaf lost], 3(12) (fols. 17-28), [1 (?) leaf lost], 4(8-3+1: wanting 1, 3 and 4, with fol. 34 added after 8) (fols. 29-34), 5(6) (fols. 35-40), 6(three, structure uncertain) (fols. 41-3), 7 (6) (fols. 44-9), 8(8) (fols. 50-8), 9(6+1, fol. 64 added at the end of the quire) (fols. 58-64), 10(4+1, fol. 68 added after 3, fol. 67) (fols. 65-9), 11(4) (fols. 70-3) </collation>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="1" writtenLines="16 24" rulingMedium="leadpoint">1 col., c. 16-24 lines (typically 17-18), ruled in leadpoint, ruled space <dimensions unit="mm" type="ruled">
+                           <height max="160" min="130">c. 130-160</height>
+                           <width quantity="90">c. 90</width>
+                        </dimensions></layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <handDesc hands="1">
+                     <handNote script="textualisNorthern">Textualis; one scribe.</handNote>
+                  </handDesc>
+                  <musicNotation>
+                     <p>Staves of five lines are drawn on fols. 36v-37r, 49v (?) and 73v, that on 73v with a little (polyphonic (?)) notation.</p>
+                  </musicNotation>
                   <decoDesc>
-                     <decoNote>Coloured capitals.</decoNote>
+                     <decoNote type="colInit">Coloured capitals; many letters (not just initials) touched in red.</decoNote>
                   </decoDesc>
+                  <bindingDesc>
+                     <binding notBefore="1500" notAfter="1700">
+                        <p>Limp parchment binding, 16th or 17th century.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1360" notBefore="1340">14th century, middle</origDate>
                      <origPlace cert="low">
-                        <country key="place_7002445">English</country> (?)</origPlace>
+                        <country key="place_7002445">England</country></origPlace>
                   </origin>
-                  <provenance>'Secre &amp; loial. Moresby | Erlee: 'appilton of hampton', both 15th
+                  <provenance>'Secre &amp; loial. Moresby | Erlee'; 'appilton of hampton', both 15th
                      cent. (fol. 73v). </provenance>
-                  <acquisition>The volume appears to have reached the Library in 1603,
-                     1604, or the first half of 1605.</acquisition>
+                  <acquisition notAfter="1605" notBefore="1603">The volume appears to have reached the Library in 1603
+                   or 1604 (catalogue of 1603-4: Summary Catalogue I, p. 89).</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). <listBibl>
+                        <source>Description adapted (Sept. 2024) by Matthew Holford from the Summary Catalogue (1922), with reference to published literature as cited, and with limited additional description.. <listBibl>
                               <bibl facs="aap0309.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 288</bibl>
                            </listBibl>
                         </source>
@@ -89,12 +180,57 @@
                         <head>Online resources:</head>
                         <bibl><ref target="http://jonas.irht.cnrs.fr/manuscrit/39990"><title>JONAS: Répertoire des textes et des manuscrits médiévaux d'oc et d'oïl</title></ref></bibl>
                      </listBibl>
+                     <listBibl>
+                        <head>Other bibliography:</head>
+                        <bibl>Hunt, Tony, Jane Bliss, and Henrietta Leyser, <title>‘Cher Alme’: Texts of Anglo-Norman Piety</title>, Medieval and Renaissance Texts and Studies ; v. 385 (Arizona Center for Medieval and Renaissance Studies, 2010)
+                        </bibl>
+                     </listBibl>
                   </listBibl>
                </additional>
+               <msPart xml:id="MS_Bodl_82-endleaves" type="fragment">
+                  <msIdentifier>
+                     <altIdentifier>
+                        <idno>MS. Bodl. 82 - endleaves (fols. 1-2)</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  
+                  <msContents>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem n="" xml:id="MS_Bodl_82-item-">
+                        <title key="work_5473">Demi-ami</title>
+                        <note>(fragments)</note>
+                      <listBibl>  <bibl>Dean and Boulton 694 (version of an exemplum found in Disciplina Clericalis and elsewhere)</bibl><bibl>ed. Meyer, <title>Romania</title> 137 (1906 ) 22-67 at 47-53.</bibl></listBibl>
+                     </msItem>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="perg">
+                           <support>parchment</support>
+                           <extent>two nearly complete leaves</extent>
+                        </supportDesc>
+                        <layoutDesc>
+                           <layout columns="2">2 cols. of more than 29 lines</layout>
+                        </layoutDesc>
+                     </objectDesc>
+                     <handDesc>
+                        <handNote script="textualisNorthern">Textualis</handNote>
+                     </handDesc>
+                     <decoDesc>
+                        <decoNote type="flourInit">Alternating red and green initials flourished in the contrasting colour.</decoNote>
+                     </decoDesc>
+                  </physDesc>
+                  <history>
+                     <origin>
+                        <origDate calendar="Gregorian" notBefore="1200" notAfter="1300">13th century</origDate>
+                        <origPlace><country key="place_7002445">England</country></origPlace>
+                     </origin>
+                  </history>
+               </msPart>
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-10">Revised to incorporate all information in published catalogues with limited additional description.</change>
          <change when="2023-05">Add provenance information from S.C.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>

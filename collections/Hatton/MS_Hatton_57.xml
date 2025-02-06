@@ -1,14 +1,25 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6081">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6081">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Hatton 57</title>
             <title type="collection">MSS. Hatton</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+
+            <respStmt xml:id="SC">
+               <resp when="1937">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+               <persName>N. Denholm-Young</persName>
             </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -30,20 +41,66 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Hatton 57</idno>
-                  <idno type="ieArk">ark:29072/x09w032361p5</idno><idno type="crArk">ark:29072/x09s161678cf</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x09w032361p5</idno><idno type="crArk">ark:29072/x09s161678cf</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">4063</idno>
                   </altIdentifier>
                </msIdentifier>
+               <msContents>
+                  
+                  <msItem n="1" xml:id="MS_Hatton_57-part1-item1">
+                     <author key="person_235103162">Thomas Wimbledon</author>
+                     <title key="work_4835">Sermon 'Redde rationem villicationis tue'</title>
+                     
+                     <incipit>Redde racionem villicacionis tue ... My dere fryndis 3e schullyn undyrstandyn</incipit>
+                     <note>In London dialect and preached at St. Paul's Cross, London, in Quinquagesima Sunday, 1388 
+                        (according to an early 17th century note on p. 35)</note>
+                     <note>Includes the quatrain <note>(<ref target="https://www.dimev.net/record.php?recID=5349#wit-5349-2"><title>IMEV</title> 5349-2</ref>)</note></note>
+                     <textLang mainLang="enm">Middle English</textLang>
+                     
+                  </msItem>
+               </msContents>
+           
                <physDesc>
-                  <p n="composite">Composite: two parts</p>
-                  <musicNotation>
-                     <p>Notation on staves (see van Dijk 1957).</p>
-                  </musicNotation>
+                
+                     <objectDesc form="codex">
+                        <supportDesc material="perg">
+                           <support>parchment</support>
+                           
+                           <extent source="SC">ii + <measure type="leaf" quantity="38">38</measure> leaves
+                              <dimensions type="binding" unit="in">
+                                 <height>8.625</height>
+                                 <width>5</width>
+                              </dimensions>
+                           </extent>
+                        </supportDesc>
+                     </objectDesc>
+                  
                </physDesc>
+               
+               <history>
+                  
+                     <origin>
+                        <origDate calendar="Gregorian" when="1400"><hi rend="italic">c</hi>. 1400</origDate>
+                        <origPlace>
+                           <country key="place_7002445">England</country>
+                        </origPlace>
+                     </origin>
+                  
+                  <provenance>'Cantelowe' (15th century): <persName role="fmo" key="person_36772034">Nicholas Cantlow or Cantelupe, -1441</persName> (?) (cf. MS. Rawl. C. 16).</provenance>
+                  <provenance><persName key="person_37729288" role="fmo">Christopher, first Baron Hatton (d. 1670)</persName></provenance>
+                  
+                  <acquisition when="1671">Bought in 1671 by the Bodleian through the London bookseller Robert Scot (b. in or before 1632, d. 1709/1710); see Summary Catalogue, vol. 2, part 2, p. 801</acquisition>             
+                  
+               </history>
+               
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1937). <listBibl>
+                        
+                        <source>
+                           Description adapted (May 2023) by Stewart J. Brookes from the Summary Catalogue (1937)
+                           <listBibl>
                               <bibl facs="aaq0181.gif" type="SC">Summary Catalogue, Vol. 2 Part 2, p. 822</bibl>
                            </listBibl>
                         </source>
@@ -57,68 +114,42 @@
                      </listBibl>
                   </listBibl>
                </additional>
-               <msPart xml:id="MS_Hatton_57-part1">
+             
+               <msPart xml:id="MS_Hatton_57-endleaves" type="fragment">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Hatton 57 – Part 1</idno>
-                     </altIdentifier>
-                  </msIdentifier>
-                  <msContents>
-                     <msItem n="1" xml:id="MS_Hatton_57-part1-item1">
-                        <author key="person_235103162">Thomas Wimbledon</author>
-                        <title key="work_4835">Sermon 'Redde rationem villicationis tue'</title>
-                        <textLang mainLang="enm">Middle English</textLang>
-                     </msItem>
-                  </msContents>
-                  <physDesc>
-                     <objectDesc form="codex">
-                        <supportDesc material="perg">
-                           <support>parchment</support>
-                        </supportDesc>
-                     </objectDesc>
-                  </physDesc>
-                  <history>
-                     <origin>
-                        <origDate calendar="Gregorian" when="1400">c. 1400</origDate>
-                        <origPlace>
-                           <country key="place_7002445">English</country>
-                        </origPlace>
-                     </origin>
-                  </history>
-               </msPart>
-               <msPart xml:id="MS_Hatton_57-part2">
-                  <msIdentifier>
-                     <altIdentifier type="partial">
-                        <idno type="part">MS. Hatton 57 – Part 2</idno>
+                        <idno type="part">MS. Hatton 57 – endleaves</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
                      <msItem n="1" xml:id="MS_Hatton_57-part2-item1">
-                        <title key="work_10647">Breviary, noted</title>
-                        <note>(fragments)</note>
+                        <locus>(pages 33-36)</locus>
+                        <title key="work_10647" type="desc">Breviary, noted</title>
+                        <note>Two leaves from a breviary with musical notes (not Sarum, York or Hereford)</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                   </msContents>
                   <physDesc>
-                     <objectDesc form="codex">
-                        <supportDesc material="perg">
-                           <support>parchment</support>
-                        </supportDesc>
-                     </objectDesc>
+                     <musicNotation>
+                        <p>Notation on staves (see van Dijk 1957)</p>
+                     </musicNotation>
                   </physDesc>
                   <history>
                      <origin>
                         <origDate calendar="Gregorian" notAfter="1210" notBefore="1200">13th century, early</origDate>
                         <origPlace>
-                           <country key="place_7002445">English</country>
+                           <country key="place_7002445">England</country>
                         </origPlace>
                      </origin>
+                     
+                
                   </history>
                </msPart>
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-05-13">Description revised to incorporate all the information in the Summary Catalogue (1937)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>

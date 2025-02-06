@@ -1,12 +1,22 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1604">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1604">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Bodl. 587</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+            </respStmt>
+            <respStmt xml:id="DH">
+               <resp when="1970">Cataloguer</resp>
+               <persName>A. C. de la Mare</persName>
+               <persName>R. W. Hunt</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2024">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -30,21 +40,37 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Bodl. 587</idno>
-                  <idno type="ieArk">ark:29072/x0g732d86491</idno><idno type="crArk">ark:29072/x0tx31qh241f</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0g732d86491</idno>
+                  <idno type="crArk">ark:29072/x0tx31qh241f</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">2359</idno>
                   </altIdentifier>
                </msIdentifier>
                <physDesc>
                   <p n="composite">Composite: six parts</p>
+                  <objectDesc>
+                     <supportDesc>
+                        <extent>i + 231 leaves <dimensions type="binding" unit="in">
+                              <height>8.625</height>
+                              <width>6.5</width>
+                           </dimensions></extent>
+                     </supportDesc>
+                  </objectDesc>
                </physDesc>
                <history>
-                  <acquisition when="1612">Presented by <persName role="dnr" key="person_15121578">Thomas Twyne</persName> in 1612.</acquisition>
+                  <provenance/>
+                  <acquisition when="1612">Presented by <persName role="dnr" key="person_15121578"
+                        >Thomas Twyne</persName> in 1612.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). <listBibl>
-                              <bibl facs="aap0349.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 328</bibl>
+                        <source>Description adapted (2024) from the following sources:
+                           <listBibl><bibl><title>Duke Humfrey and English Humanism</title> (Oxford, 1970), no. 82</bibl><bibl> Summary Catalogue (1922) </bibl></listBibl>
+                          
+                           <listBibl>
+                              <bibl facs="aap0349.gif" type="SC">Summary Catalogue, vol. 2, part 1,
+                                 p. 328</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -53,36 +79,40 @@
                <msPart xml:id="MS_Bodl_587-part1">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Bodl. 587 – Part 1</idno>
+                        <idno type="part">MS. Bodl. 587 – Part 1 (fols. 1-57)</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
+                     <textLang mainLang="la">Latin</textLang>
                      <msItem n="1" xml:id="MS_Bodl_587-part1-item1">
+                        <locus>(fol. 1)</locus>
                         <author key="person_16066263">Chirius Fortunatianus</author>
                         <title key="work_1229">Ars rhetorica</title>
-                        <note>(imperfect)</note>
-                        <textLang mainLang="la">Latin</textLang>
+                        <note>(imperfect at beginning)</note>
                      </msItem>
                      <msItem n="2" xml:id="MS_Bodl_587-part1-item2">
+                        <locus>(fol. 37)</locus>
                         <author key="person_7386286">Ps.-Augustine</author>
                         <title key="work_3899">Principia rhetorices</title>
-                        <textLang mainLang="la">Latin</textLang>
                      </msItem>
                      <msItem n="3" xml:id="MS_Bodl_587-part1-item3">
+                        <locus>(fol. 42)</locus>
                         <author key="person_95152094">Martianus Capella</author>
                         <title key="work_3105">Liber de arte rhetorica</title>
                         <note>(book 5 of De nuptiis)</note>
                         <note>(cc. 31–38)</note>
-                        <textLang mainLang="la">Latin</textLang>
                      </msItem>
                      <msItem n="4" xml:id="MS_Bodl_587-part1-item4">
+                        <locus>(fol. 46)</locus>
                         <author key="person_7386286">Ps.-Augustine</author>
                         <title key="work_3898">Principia dialectica</title>
-                        <textLang mainLang="la">Latin</textLang>
+                        <rubric>Dialectica est bene disputandi scientia</rubric>
                      </msItem>
-                     <msItem class="#miscellanea #rhetorica" n="5" xml:id="MS_Bodl_587-part1-item5">
-                        <title key="work_13513" type="desc">Notes on classical passages</title>
-                        <textLang mainLang="la">Latin</textLang>
+                     <msItem>
+                        <note>The later rubric 'Gunthorpi Rhetorica' (by Brian Twyne) misled the
+                           Summary Catalogue regarding the authorship of these items, for which see
+                           Marie Schütt, 'Bishop Gunthorpe', <title>The Modern Language
+                              Review</title>, Vol. 23, No. 1 (Jan., 1928), pp. 43-44.</note>
                      </msItem>
                   </msContents>
                   <physDesc>
@@ -91,27 +121,52 @@
                            <support>paper</support>
                         </supportDesc>
                      </objectDesc>
+                     <handDesc>
+                        <handNote>Written by <persName role="scr" key="person_263359959">John Free</persName>.</handNote>
+                     </handDesc>
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1600" notBefore="1400">15th and 16th centuries</origDate>
-                        <origPlace>
-                           <country key="place_7002445">English</country>
-                        </origPlace>
+                        <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th
+                           century</origDate>
                      </origin>
                   </history>
                </msPart>
                <msPart xml:id="MS_Bodl_587-part2">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Bodl. 587 – Part 2</idno>
+                        <idno type="part">MS. Bodl. 587 – Part 2 (fols 58-93)</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem n="1" xml:id="MS_Bodl_587-part2-item1">
+                     <msItem n="5" xml:id="MS_Bodl_587-part2-item1">
+                        <locus from="58">(fol. 58)</locus>
                         <author key="person_305360068">Ps.-Cicero</author>
                         <title key="work_3977">Synonyma</title>
+                        <rubric>Sinonomorum Ciceronis liber ... scriptus atque editus ad Lucium
+                           Veturium</rubric>
+                        <finalRubric>Expliciunt Sinonoma Ciceronis Quod Gunthorpe</finalRubric>
                         <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+
+
+
+                     <msItem n="6" xml:id="MS_Bodl_587-part3-item1">
+                        <locus from="73">(fol. 73)</locus>
+                        <author key="person_231851090">John Gunthorpe</author>
+                        <title key="work_2711">Orations</title>
+                        <!-- P.Chaplais, English Medieval Diplomatic
+Practice (London, 1982) i, pp.234-53 -->
+
+                        <note>Five or more orationes legatinae of Gunthorpe when English ambassador
+                           abroad: two are dated Oct. 23, 1466 and July 8, 1465. These are
+                           unfinished but revised copies. </note>
+                        <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     <msItem xml:id="MS_Bodl_587-part3-item1b">
+                        <note>At fol. 94a are some English notes of stories illustrating the
+                           Decalogue (16th cent.).</note>
+                        <textLang mainLang="en">English</textLang>
                      </msItem>
                   </msContents>
                   <physDesc>
@@ -120,26 +175,52 @@
                            <support>paper</support>
                         </supportDesc>
                      </objectDesc>
+                     <handDesc>
+                        <handNote>Fols. 58-93 written by <persName role="scr" key="person_231851090"
+                              >John Gunthorpe</persName>.</handNote>
+                     </handDesc>
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1600" notBefore="1400">15th and 16th centuries</origDate>
-                        <origPlace>
-                           <country key="place_7002445">English</country>
-                        </origPlace>
+                        <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th
+                           century</origDate>
                      </origin>
                   </history>
                </msPart>
                <msPart xml:id="MS_Bodl_587-part3">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Bodl. 587 – Part 3</idno>
+                        <idno type="part">MS. Bodl. 587 – Part 3 (fols. 95-136)</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem n="1" xml:id="MS_Bodl_587-part3-item1">
-                        <author key="person_231851090">John Gunthorpe</author>
-                        <title key="work_2711">Orations</title>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem n="7"  xml:id="MS_Bodl_587-part4-item1">
+                        <locus from="95">(fol. 95)</locus>
+                        <author key="person_2323">Thaddaeus de Bononia
+                           <!-- not found in VIAF --></author>
+                        <title key="work_4668">Medical treatise</title>
+                        <rubric>Compilacio magistri Thadei de Bononia de aquis et oleis
+                           medicinalibus</rubric>
+                        <incipit>Testante propheta scientia</incipit>
+                        <listBibl>
+                           <bibl>eTK 1567L</bibl>
+                        </listBibl>
+                     </msItem>
+                     <msItem n="8" xml:id="MS_Bodl_587-part4-item1b">
+                        <note>Followed by some recipes (fol. 120v) and a treatise 'de vinis
+                           medicinalibus ', perhaps by the same author.</note>
+                        <incipit>Vinum roris marini </incipit>
+                        <listBibl>
+                           <bibl>eTK  1698A </bibl>
+                        </listBibl>
+                     </msItem>
+                     <msItem n="9" class="#medica"  xml:id="MS_Bodl_587-part4-item2">
+                        <locus from="132">(fol. 132)</locus>
+                        <title key="work_13232" type="desc">Medical treatise</title>
+                        <rubric>Liber de transformacionibus qui fertur ab Egiptijs
+                           adinuentus</rubric>
+                        <incipit>Vt cucumeri nascantur </incipit>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                   </msContents>
@@ -152,28 +233,39 @@
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1600" notBefore="1400">15th and 16th centuries</origDate>
+                        <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th
+                           century</origDate>
                         <origPlace>
-                           <country key="place_7002445">English</country>
+                           <country key="place_1000080">Italy (?)</country>
                         </origPlace>
                      </origin>
                   </history>
                </msPart>
+
                <msPart xml:id="MS_Bodl_587-part4">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Bodl. 587 – Part 4</idno>
+                        <idno type="part">MS. Bodl. 587 – Part 4 (fols. 137-190)</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem n="1" xml:id="MS_Bodl_587-part4-item1">
-                        <author key="person_2323">Thaddaeus de Bononia <!-- not found in VIAF --></author>
-                        <title key="work_4668">Medical treatise</title>
-                        <textLang mainLang="la">Latin</textLang>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem n="10" xml:id="MS_Bodl_587-item-7">
+                        <locus from="137" to="155">(fols. 137-155)</locus>
+                        <author key="person_263359959">John Free</author>
+                        <note>Notes of lectures on Virgil, Horace, Terence etc.</note>
                      </msItem>
-                     <msItem class="#medica" n="2" xml:id="MS_Bodl_587-part4-item2">
-                        <title key="work_13232" type="desc">Medical treatise</title>
-                        <textLang mainLang="la">Latin</textLang>
+                     <msItem n="11"  xml:id="MS_Bodl_587-item-7b">
+                        <locus from="156">(fol. 156)</locus>
+                        <author key="person_263359959">John Free</author>
+                        <note>Copies of some letters from John Phreas or Free, followed by some
+                           diagrams, some of them published in the Journal of Comparative
+                           Literature, vol. i, no. 1, Jan. 1903.</note>
+                     </msItem>
+                     <msItem n="12" xml:id="MS_Bodl_587-item-7c">
+                        <locus from="175" to="190">(fols. 175-190)</locus>
+                        <author key="person_263359959">John Free</author>
+                        <note>Lecture notes, as fols. 137-55.</note>
                      </msItem>
                   </msContents>
                   <physDesc>
@@ -182,26 +274,33 @@
                            <support>paper</support>
                         </supportDesc>
                      </objectDesc>
+                     <handDesc>
+                        <handNote>Written by <persName role="scr" key="person_263359959">John Free</persName>.</handNote>
+                     </handDesc>
+                     <decoDesc>
+                        <decoNote type="diagram">Diagrams.</decoNote>
+                     </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1600" notBefore="1400">15th and 16th centuries</origDate>
-                        <origPlace>
-                           <country key="place_7002445">English</country>
-                        </origPlace>
+                        <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
                      </origin>
                   </history>
                </msPart>
                <msPart xml:id="MS_Bodl_587-part5">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Bodl. 587 – Part 5</idno>
+                        <idno type="part">MS. Bodl. 587 – Part 5 (fols. 191-200)</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem n="1" xml:id="MS_Bodl_587-part5-item1">
+                     <msItem n="13"  xml:id="MS_Bodl_587-part5-item1">
+                        <locus>(fol. 191)</locus>
                         <author key="person_100571068">Pius II</author>
                         <title key="work_3690">Bullae</title>
+                        <note>Two bulls, one dated Jan. 14, 1459/60, the other imperfect at end,
+                           both against the Turks. Foll. 202-3 are some 17th cent. medical notes
+                           pasted in.</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                   </msContents>
@@ -211,13 +310,15 @@
                            <support>paper</support>
                         </supportDesc>
                      </objectDesc>
+                     <handDesc>
+                        <handNote>Written by the scribe '<persName role="scr" key="person_1223">V.f.L.</persName>' who worked for John
+                           Tiptoft.</handNote>
+                     </handDesc>
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1600" notBefore="1400">15th and 16th centuries</origDate>
-                        <origPlace>
-                           <country key="place_7002445">English</country>
-                        </origPlace>
+                        <origDate calendar="Gregorian" notAfter="1600" notBefore="1400">15th
+                           century</origDate>
                      </origin>
                   </history>
                </msPart>
@@ -225,8 +326,12 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-09">Description revised to incorporate all information in printed catalogues.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using
+               <ref
+               target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl"
+               >https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>
    </teiHeader>
    <text>

@@ -1,9 +1,16 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8268">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8268">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Rawl. C. 553</title>
             <title type="collection">MSS. Rawl. C (Rawlinson C)</title>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
             <respStmt>
                <resp>Summary description</resp>
                <persName>Elizabeth Solopova</persName>
@@ -30,7 +37,9 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Rawl. C. 553</idno>
-                  <idno type="ieArk">ark:29072/x08g84mm82vv</idno><idno type="crArk">ark:29072/x0th83kx91zs</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x08g84mm82vv</idno>
+                  <idno type="crArk">ark:29072/x0th83kx91zs</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">12399</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -44,16 +53,30 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent resp="#VD"> i + 148 + i fol.<dimensions type="leaf" unit="mm">
+                              <height>176</height>
+                              <width>126</width>
+                           </dimensions>
+                           <dimensions type="written" unit="mm">
+                              <height>112</height>
+                              <width>78</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc resp="#VD">
+                        <layout columns="1" writtenLines="18">18 long lines</layout>
+                     </layoutDesc>
                   </objectDesc>
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
                   </origin>
-                  <provenance type="MLGB3_provenance_evidence" source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6333">
+                  <provenance type="MLGB3_provenance_evidence"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6333">
                      <orgName role="fmo" key="org_135211427">York, Yorkshire, Benedictine abbey of Saint Mary the Virgin</orgName>:  (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6333">MLGB3</ref>: Liturgical evidence, often to be found in the kalendar). </provenance>
-                  <provenance type="MLGB3_generalNotes" source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6333">See Trans. Cumberland and Westmorland Arch. Soc. 80 (1980) 33, n. 15. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6333">MLGB3</ref>)
+                  <provenance type="MLGB3_generalNotes"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6333">See Trans. Cumberland and Westmorland Arch. Soc. 80 (1980) 33, n. 15. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/6333">MLGB3</ref>)
                                              </provenance>
                   <provenance notAfter="1755" notBefore="1690" resp="#MMM">
                      <persName key="person_47563478" role="fmo">Richard Rawlinson, 1690–1755</persName>
@@ -99,6 +122,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-09">Add extent, leaf dimensions and layout from van Dijk, Latin Liturgical Manuscripts in the Bodleian Library, Oxford.</change>
          <change when="2021-12-14">Add provenance information from MLGB3.</change>
          <change when="2019-10-31" xml:id="MMM">
             <persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>

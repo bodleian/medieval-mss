@@ -1,14 +1,22 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6085">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6085">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Hatton 61</title>
             <title type="collection">MSS. Hatton</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1937">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+               <persName>N. Denholm-Young</persName>
             </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -35,24 +43,34 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_Hatton_61-item1">
                      <author key="person_154144782727969775144">Clement of Llanthony</author>
                      <title key="work_1293">Unum ex quatuor</title>
+                     <rubric>Concordia quattuor Euangelistarum. Euangelicę Historię ordo. &amp; Euangeliorum manuale breuiarium</rubric>
+                     <note>In twelve parts, with prologue, list of chapters, 'rationes ordinis' 
+                        (fol. 124) or digests of each part.</note><note>Many marginal notes</note>
+                     <incipit>Huius operis fili karissime</incipit>
+                     <incipit>In principio erat uerbum &amp;c. Ordo necessitatis est</incipit>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
-                        <support>parchment</support>
+                        <support>parchment</support><extent source="SC"><measure type="leaf" quantity="133">133</measure> leaves
+                           <dimensions type="binding" unit="in"><height>9</height><width>5.875</width></dimensions>
+                        </extent>
                      </supportDesc>
-                  </objectDesc>
+                  </objectDesc>                                       
+
                   <decoDesc>
-                     <decoNote type="colInit">Coloured capitals.</decoNote>
+                     <decoNote type="colInit">Coloured capitals</decoNote>
                   </decoDesc>
                   <bindingDesc>
                      <binding>
-                        <p>Brown leather, stamped in gold with the arms of Windsor of Stanwell.</p>
+                        <p>Brown leather, stamped in gold with the heraldic arms of <persName role="fmo" key="person_2747">Thomas Windsor of Stanwell</persName></p>
                      </binding>
                   </bindingDesc>
                </physDesc>
@@ -60,15 +78,21 @@
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1200" notBefore="1190">12th century, late</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
+                  <provenance><persName role="fmo" key="person_2747">Thomas Windsor of Stanwell</persName> (d. 1641) (binding)</provenance>
+                  <provenance><persName key="person_37729288" role="fmo">Christopher, first Baron Hatton (d. 1670)</persName></provenance>
+                  
+                  <acquisition when="1671">Bought in 1671 by the Bodleian through the London bookseller Robert Scot (b. in or before 1632, d. 1709/1710); see Summary Catalogue, vol. 2, part 2, p. 801</acquisition>
+                  
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1937). <listBibl>
+                           Description adapted (August 2024) by Stewart J. Brookes from the Summary Catalogue (1937)
+                           <listBibl>
                               <bibl facs="aaq0192.gif" type="SC">Summary Catalogue, Vol. 2 Part 2, p. 833</bibl>
                               <bibl facs="aaq0193.gif" type="SC">Summary Catalogue, Vol. 2 Part 2, p. 834</bibl>
                            </listBibl>
@@ -80,6 +104,8 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-08-23">Description revised to incorporate all the information in the Summary Catalogue (1937)</change>
+         <change when="2024-05">Add extent and leaf dimensions from Summary Catalogue.</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">

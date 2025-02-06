@@ -1,14 +1,20 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4551">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4551">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Douce 181</title>
             <title type="collection">MSS. Douce</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            <respStmt xml:id="SC">
+               
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -36,14 +42,22 @@
                </msIdentifier>
                <msContents>
                   <msItem class="#documenta" n="1" xml:id="MS_Douce_181-item1">
-                     <title key="work_12311" type="desc">Household account of <persName key="person_84075206">Charles the Bold, Duke of Burgundy</persName>, drawn up by <persName key="person_76407605" role="aut">Olivier de La Marche</persName> in 1474</title>
+                     <title key="work_12311" type="desc">Household account of <persName key="person_84075206">Charles the Bold, Duke of Burgundy</persName>, 
+                        drawn up by <persName key="person_76407605" role="aut">Olivier de La Marche</persName> in 1474</title>
+                     <rubric>L'estat de la maison du duc Charles de Bourgoingne, dict le Hardij, composé par messire Olivier de la Marche chevallier, 
+                        conseiller et maitre d'hotel de monseigneur le duc, en 1474</rubric>
+                     
                      <textLang mainLang="frm">Middle French</textLang>
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="chart">
-                        <support>paper</support>
+                        <support>paper</support><extent><measure type="leaf" quantity="61">61</measure> leaves
+                           <dimensions type="binding" unit="in">
+                              <height>12</height>
+                              <width>8.125</width></dimensions>
+                        </extent>
                      </supportDesc>
                   </objectDesc>
                </physDesc>
@@ -51,18 +65,35 @@
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1600" notBefore="1500">16th century</origDate>
                      <origPlace>
-                        <country key="place_1000070">French</country>
+                        <country key="place_1000070">France</country>
                      </origPlace>
                   </origin>
+                  <provenance>An 18th century note states 'Cet état a esté imprime pour la premiere fois en 1645, et joint aux memoires du même autheur, 
+                     que Velpius publia pour lors a Louvain. Mais ce manuscript, qui est ancien et fort exact peut servir à corriger plusieurs fautes, qui se 
+                     sont glisseés dans l'imprimé  dailleurs il contient le petit prologue, que l'imprimé n'a pas, comme aussy la signature et les titres de 
+                     l'autheur mis à la fin. Cet exemplaire vient de la maison de <persName role="fmo">la Laing, comtes d'Hooghstraeten</persName>.'</provenance>
+                  
+                  <!-- Add authority record -->                  
+
                   <provenance notAfter="1834" notBefore="1757" resp="#MMM"><persName key="person_69848690" role="fmo">Francis Douce, 1757–1834</persName></provenance>
                   <acquisition resp="#MMM" when="1834">Bequeathed to the Bodleian in 1834</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). <listBibl>
+                        <source>
+                           Description adapted (September 2024) by Stewart J. Brookes from the Summary Catalogue (1897) and the Catalogue of the Printed Books and 
+                           Manuscripts Bequeathed by Francis Douce, esq. to the Bodleian Library (1840)
+                           <listBibl>
                               <bibl facs="aaz0566.gif" type="SC">Summary Catalogue, vol. 4, p. 547</bibl>
                            </listBibl>
+                           
+                           <listBibl>
+                              <bibl>
+                                 <ref target="https://archive.org/details/catalogueofprint00bodluoft/page/30/mode/1up">Printed Books and Manuscripts Bequeathed by Francis Douce, p. 30</ref>
+                              </bibl>
+                           </listBibl>
+                           
                         </source>
                      </recordHist>
                   </adminInfo>
@@ -77,6 +108,8 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-09-21">Description revised to incorporate all the information in the Summary Catalogue (1897) and other printed sources</change>
+         <change when="2024-05">Add extent and leaf dimensions from Summary Catalogue.</change>
          <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>

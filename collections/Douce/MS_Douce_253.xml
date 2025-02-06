@@ -1,14 +1,31 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4604">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4604">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Douce 253</title>
             <title type="collection">MSS. Douce</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1966">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+     
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
+       
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -35,34 +52,67 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem class="#liturgica" n="1" xml:id="MS_Douce_253-item1">
                      <title key="work_10568" type="desc">Book of Hours, Use of Rouen</title>
+                  
+                     <note>French calendar (fol. 1); Capitula from the Gospels (fol. 13); genealogy of Christ (with Jesse tree miniature: fol. 18); and prayers Obsecro te (fol. 20) and O intemerata (fol. 23v); Office of the Virgin (fol. 28)
+                     Hours of the Cross (fol. 75); Hours of the Holy Spirit (fol. 78); the Penitential psalms  (fol. 82) with litany (fol. 94); 
+                     Office for the Dead (fol. 100); the Fifteen Joyes in French (fol. 134); the Seven Requestes in French (fol. 140). 
+                     Added devotions: for the Holy Souls (fol. 143), <sic>Salve</sic> Mater dolorosa (fol. 146v) and suffrages (fol. 148v), etc.
+                  </note>
+                     
                      <textLang mainLang="la" otherLangs="frm">Latin and Middle French</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
-                        <support>parchment</support>
-                     </supportDesc>
+                        <support>parchment</support><extent>iii + <measure type="leaf" quantity="153">153</measure> leaves
+                           <dimensions type="binding" unit="in"><height>7.25</height><width>5.5</width></dimensions><dimensions type="leaf" unit="mm">
+            <height>180</height>
+            <width>127</width>
+         </dimensions>
+         <dimensions type="written" unit="mm">
+            <height>90</height>
+            <width>65</width>
+         </dimensions>
+                        </extent>
+                        
+                        <condition>Fol. 142 is mutilated</condition>
+                        
+                     </supportDesc><layoutDesc>
+         <layout columns="1" writtenLines="15">15 long lines</layout>
+      </layoutDesc>
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote type="miniature">Fine miniatures (glazed over). Related to the group of MSS. attributed by Durrieu to <persName key="person_96572081" role="art">Jacques de Besançon</persName> made for <persName key="person_5023695" role="pat">Jacques d'Armagnac</persName> (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 753, pl. LVIII). Attributed to the <persName key="person_300956628" role="art">Master of the Echevinage de Rouen</persName>, also known as the <persName key="person_95761237" role="art">Master of the Geneva Latini</persName>, in Avril, François and Reynaud, Nicole, <hi rend="italic">Les manuscrits à peintures en France: 1440–1520</hi> (Paris: Flammarion; Bibliothèque nationale, 1995).</decoNote>
+                  
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 753, Pl. LVIII. Related to the group of manuscripts attributed by <ref target="https://arthistorians.info/durrieup/">Paul Durrieu</ref> to <persName key="person_96572081" role="art">Jacques de Besançon</persName> made for 
+                        <persName key="person_5023695" role="pat">Jacques d'Armagnac</persName>, such as <ref target="https://gallica.bnf.fr/ark:/12148/btv1b9007413g/f4.item.r=%22Francais%202629%22">Bibliothèque nationale de France, Français 2629</ref>
+                        (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 753, Pl. LVIII). Attributed to the <persName key="person_300956628" role="art">Master of the Echevinage de Rouen</persName>, 
+                        also known as the <persName key="person_95761237" role="art">Master of the Geneva Latini</persName>, in François Avril and Nicole Reynaud <title>Les manuscrits à peintures en France: 1440–1520</title> (Paris: Flammarion; Bibliothèque nationale, 1995). See also <ref target="https://medieval.bodleian.ox.ac.uk/catalog/manuscript_4738">MS. Douce 77</ref>.
+                     </summary>
+                     <decoNote type="miniature"><ref target="https://digital.bodleian.ox.ac.uk/objects/22865c28-c6b7-47c6-8791-0f8360811662/surfaces/4cfc879b-c3cf-43cd-807a-fe6db2889907/">Fine miniatures</ref> (glazed over). </decoNote>
+                  
                   </decoDesc>
                   <bindingDesc>
                      <binding notBefore="1700" notAfter="1800">
-                        <p>Red leather with gold ornament, 18th cent. work.</p>
+                        <p>Red leather with gold ornament (18th century work)</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" when="1480">c. 1480</origDate>
+                     <origDate calendar="Gregorian" when="1480"><hi rend="italic">c</hi>. 1480</origDate>
                      <origPlace>
-                        <country key="place_1000070">French</country>, <settlement key="place_7008929">Rouen</settlement>
+                        <country key="place_1000070">France</country>, <settlement key="place_7008929">Rouen</settlement>
                         <!--ORIGINAL: French, Rouen-->
                      </origPlace>
                   </origin>
+                  
+                  <provenance>Written for a lady who is kneeling before the Virgin and holding a scroll which reads 'O mater. dei. memento. mei.', <ref target="https://digital.bodleian.ox.ac.uk/objects/22865c28-c6b7-47c6-8791-0f8360811662/surfaces/c99b791b-7602-4a30-86de-bdeb4baaa9f3/">fol. 134r</ref></provenance>
+                  
                   <provenance notAfter="1834" notBefore="1757" resp="#MMM">
                      <persName key="person_69848690" role="fmo">Francis Douce, 1757–1834</persName>
                   </provenance>
@@ -72,10 +122,20 @@
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1966). <listBibl>
+                           Description adapted (September 2024) by Stewart J. Brookes from the following sources:
+                           <listBibl>
+                              <bibl>Pächt and Alexander (1966)</bibl>
+                              <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 4: Books of Hours</title> (typescript, 1957), <citedRange unit="page" from="99" to="99">p. 99</citedRange>
+                              </bibl>
+                              <bibl>Summary Catalogue (1897)</bibl>
+                              <bibl>Catalogue of the Printed Books and Manuscripts Bequeathed by Francis Douce, esq. to the Bodleian Library (1840), <ref target="https://archive.org/details/catalogueofprint00bodluoft/page/40/mode/1up">p. 40</ref></bibl>
+                           </listBibl>
+                           <listBibl>
                               <bibl facs="aaz0587.gif" type="SC">Summary Catalogue, vol. 4, p. 568</bibl>
                               <bibl facs="aaz0588.gif" type="SC">Summary Catalogue, vol. 4, p. 569</bibl>
                            </listBibl>
+                           
+
                         </source>
                      </recordHist>
                   </adminInfo>
@@ -99,6 +159,8 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-09-19">Description revised to incorporate all the information in the Summary Catalogue (1897) and other printed catalogues</change>
+         <change when="2024-05">Add extent and leaf dimensions from Summary Catalogue.</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2018-10-14" xml:id="MMM">
             <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>

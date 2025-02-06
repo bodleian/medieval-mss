@@ -1,14 +1,30 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4738">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4738">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Douce 77</title>
             <title type="collection">MSS. Douce</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1966">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -35,35 +51,58 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem class="#liturgica" n="1" xml:id="MS_Douce_77-item1">
                      <title key="work_10504" type="desc">Book of Hours</title>
-                     <note>(fragment)</note>
+                     <note>Fragment of a Book of Hours, containing:</note>
+                     <note>The Office for the Dead (fol. 1: wanting the last leaf); Prayers to the Virgin, in French (imperfect, fol. 44); the Fifteen Joys, in French (fol. 47); 
+                        the Seven Requests, in French (fol. 52: wanting the last leaf); [Jacobi de Benedictis] hymn, 'Stabat mater' (imperfect at beginning); and suffrages</note>
+                     
                      <textLang mainLang="la" otherLangs="frm">Latin and Middle French</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
-                        <support>parchment</support>
-                     </supportDesc>
+                        <support>parchment</support><extent>i + <measure type="leaf" quantity="69">69</measure> leaves
+                           <dimensions type="binding" unit="in">
+                              <height>8.375</height>
+                              <width>6.25</width></dimensions>
+                          <dimensions type="leaf" unit="mm">
+                              <height>205</height>
+                              <width>150</width>
+                           </dimensions>
+                              <dimensions type="written" unit="mm">
+                                 <height>106</height>
+                                 <width>63</width>
+                              </dimensions>
+                           </extent>
+                     </supportDesc>  <layoutDesc>
+                              <layout columns="1" writtenLines="15">15 lines</layout>
+                           </layoutDesc>
                   </objectDesc>
-                  <decoDesc>
-                     <summary>From the circle of <persName key="person_57406287" role="art">Maître François</persName> and assistants. Belonging to the group attributed by Durrieu to <persName key="person_96572081" role="art">Jacques de Besançon</persName>. <ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 709, pl. LIV:</summary>
-                     <decoNote type="miniature">Fine miniatures. </decoNote>
-                     <decoNote type="border">Fine historiated borders. </decoNote>
-                     <decoNote type="decInit">Fine initials. </decoNote>
+                  
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 709, Pl. LIV.  
+                        From the circle of <persName key="person_57406287" role="art">Maître François</persName> and assistants. Belonging to the group attributed by <ref target="https://arthistorians.info/durrieup/">Paul Durrieu</ref> to <persName key="person_96572081" role="art">Jacques de Besançon</persName> and
+                        closely related in style to <ref target="https://www.e-codices.unifr.ch/en/bge/fr0160/82r">Bibliothèque de Genève, MS. fr. 160</ref>. See also, <ref target="https://medieval.bodleian.ox.ac.uk/catalog/manuscript_4604">MS. Douce 253</ref>
+                     </summary>
+                     <decoNote type="miniature"><ref target="https://digital.bodleian.ox.ac.uk/objects/ee0e2c09-fe1b-42f3-ae26-76d4d1ddb729/surfaces/b9329c3a-5e5e-476c-bdb8-2f4bd24fa7f8/">Fine miniatures</ref></decoNote>
+                     <decoNote type="border"><ref target="https://digital.bodleian.ox.ac.uk/objects/ee0e2c09-fe1b-42f3-ae26-76d4d1ddb729/surfaces/22708d76-51fc-4cac-b8ae-a875bdebd6e4/">Fine historiated borders</ref> Every page has an elaborate border with grotesques, birds, and flowers. Nearly every leaf has the same illumination on the verso as on the recto, but reversed.</decoNote>
+                     <decoNote type="decInit">Fine initials</decoNote>
                   </decoDesc>
                   <bindingDesc>
                      <binding>
-                        <p>Red velvet, rebacked.</p>
+                        <p>Red velvet, rebacked</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1470" notBefore="1450">c. 1450–70</origDate>
+                     <origDate calendar="Gregorian" notAfter="1470" notBefore="1450"><hi rend="italic">c</hi>. 1450–1470</origDate>
                      <origPlace>
-                        <country key="place_1000070">French</country>
+                        <country key="place_1000070">France</country>
                      </origPlace>
                   </origin>
                   <provenance notAfter="1834" notBefore="1757" resp="#MMM">
@@ -74,8 +113,18 @@
                <additional>
                   <adminInfo>
                      <recordHist>
+
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1966). <listBibl>
+                           Description adapted (September 2024) by Stewart J. Brookes from the following sources:
+                           <listBibl><bibl> Pächt and Alexander (1966)</bibl>
+                              <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 4: Books of Hours</title> (typescript, 1957), <citedRange unit="page" from="326" to="326">p. 326</citedRange>
+                              </bibl>
+                              <bibl>Summary Catalogue (1897) </bibl>
+                              <bibl>Catalogue of the Printed Books and Manuscripts 
+                                 Bequeathed by Francis Douce, esq. to the Bodleian Library (1840), <ref  target="https://archive.org/details/catalogueofprint00bodluoft/page/9/mode/1up">p. 9</ref></bibl></listBibl>
+                           . Decoration, localization and date follow
+                           <listBibl>
+                              
                               <bibl facs="aaz0532.gif" type="SC">Summary Catalogue, vol. 4, p. 513</bibl>
                            </listBibl>
                         </source>
@@ -109,6 +158,8 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-09-19">Description revised to incorporate all the information in the Summary Catalogue (1897)</change>
+         <change when="2024-05">Add extent and leaf dimensions from Summary Catalogue.</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2018-10-14" xml:id="MMM">
             <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>

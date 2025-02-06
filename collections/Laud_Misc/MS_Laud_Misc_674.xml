@@ -1,9 +1,16 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_7456">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_7456">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Laud Misc. 674</title>
             <title type="collection">MSS. Laud Misc. (Laud miscellaneous)</title>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
             <respStmt>
                <resp>Summary description</resp>
                <persName>Elizabeth Solopova</persName>
@@ -30,12 +37,16 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Laud Misc. 674</idno>
-                  <idno type="ieArk">ark:29072/x0hq37vn53t9</idno><idno type="crArk">ark:29072/x0tq57nq58gm</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0hq37vn53t9</idno>
+                  <idno type="crArk">ark:29072/x0tq57nq58gm</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">504</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem class="#astrologia_astronomia #mathematica #historica" n="1" xml:id="MS_Laud_Misc_674-item1">
+                  <msItem class="#astrologia_astronomia #mathematica #historica"
+                          n="1"
+                          xml:id="MS_Laud_Misc_674-item1">
                      <title key="work_10386" type="desc">Astronomical, mathematical and historical texts and tables mostly collected by <persName key="person_5284082" role="scr">William Worcester</persName>
                      </title>
                      <textLang mainLang="la">Latin</textLang>
@@ -45,7 +56,9 @@
                      <title key="work_2782">Tabulae et canones</title>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
-                  <msItem class="#astrologia_astronomia" n="3" xml:id="MS_Laud_Misc_674-item3">
+                  <msItem class="#astrologia_astronomia"
+                          n="3"
+                          xml:id="MS_Laud_Misc_674-item3">
                      <title key="work_14867">Tabulae Alphonsi regis</title>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
@@ -54,12 +67,32 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent resp="#DD">i+ 116 fols.<dimensions unit="mm" type="leaf">
+                              <height>135</height>
+                              <width>87</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc resp="#DD">
+                        <layout writtenLines="29 31" columns="1">1 col., c. 29-31 lines, <dimensions unit="mm" type="written">
+                              <height quantity="93">c. 93</height>
+                              <width>60</width>
+                           </dimensions>
+                        </layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <bindingDesc>
+                     <binding notBefore="1400" notAfter="1425">
+                        <p>Early-15th-century binding, repaired. .</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1463" notBefore="1437" cert="high">15th century (1437-8 and 1463)</origDate>
+                     <origDate calendar="Gregorian"
+                               notAfter="1463"
+                               notBefore="1437"
+                               cert="high">15th century (1437-8 and 1463)</origDate>
                   </origin>
                </history>
                <additional>
@@ -89,6 +122,8 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-09">Add extent, leaf dimensions and layout from Watson, Dated and Datable.</change>
+         <change when="2024-08">Add binding information from Quarto Catalogue.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>

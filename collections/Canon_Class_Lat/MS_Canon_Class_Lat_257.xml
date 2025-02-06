@@ -1,9 +1,16 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2282">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2282">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Canon. Class. Lat. 257</title>
             <title type="collection">MSS. Canon. Class. Lat. (Canonici Latin Classical)</title>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
             <respStmt>
                <resp>Summary description</resp>
                <persName>Elizabeth Solopova</persName>
@@ -30,7 +37,9 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Canon. Class. Lat. 257</idno>
-                  <idno type="ieArk">ark:29072/x0k3569419x4</idno><idno type="crArk">ark:29072/x0jh343s42sq</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0k3569419x4</idno>
+                  <idno type="crArk">ark:29072/x0jh343s42sq</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">18838</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -52,7 +61,19 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent resp="#DD">36+1 fols.<dimensions unit="mm" type="leaf">
+                              <height>345</height>
+                              <width>242</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc resp="#DD">
+                        <layout writtenLines="50 54" columns="2">2 cols., 50-4 lines, <dimensions unit="mm" type="column">
+                              <height min="237" max="255">237-255</height>
+                              <width min="163" max="175">163-175</width>
+                           </dimensions>
+                        </layout>
+                     </layoutDesc>
                   </objectDesc>
                   <decoDesc>
                      <decoNote type="miniature">Fine miniatures. <list type="gloss">
@@ -131,7 +152,7 @@
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (H. O. Coxe, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854). Decoration, localization and date follow Pächt and Alexander (1970). <listBibl>
+                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (H. O. Coxe, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854). Decoration, localization and date follow Pächt and Alexander (1970). Extent, dimensions and layout from Watson (1984). <listBibl>
                               <bibl facs="abz0114.gif" type="QUARTO"> Quarto Catalogue, vol. 3, col. 216 </bibl>
                               <bibl facs="abz0115.gif" type="QUARTO"> Quarto Catalogue, vol. 3, col. 217 </bibl>
                               <bibl facs="aaz0342.gif" type="SC">Summary Catalogue, vol. 4, p. 323</bibl>
@@ -161,6 +182,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-05">Add extent, leaf dimensions and layout from Watson, Dated and Datable.</change>
          <change when="2018-10-14" xml:id="MMM">
             <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>

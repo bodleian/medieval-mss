@@ -1,14 +1,21 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4575">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4575">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Douce 216</title>
             <title type="collection">MSS. Douce</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -35,16 +42,30 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem class="#romances" n="1" xml:id="MS_Douce_216-item1">
                      <title key="work_10251">Apollonius of Tyre</title>
-                     <note>(two fragments of a Middle English verse translation: about 140 lines in quatrains)</note>
+                     <note>(<ref target="https://www.dimev.net/Records.php?MSS=BodDou216"><title>IMEV</title> 4829-1</ref> and 
+                        <ref target="https://www.dimev.net/Records.php?MSS=BodDou216"><title>IMEV</title> 4829-2</ref>)</note>
+                     <note>Two leaves containing two fragments of a Middle English verse translation of <title>Apollonius king of Tyre</title>, <hi rend="italic">c</hi>. 140 lines 
+                        in quatrains</note>
+                     <note>The first fragment begins: 'sche is þe fairest of alle | þe kyng gan [ ] &amp; on his knees byfore hire falle...'</note>
+                     <note>The first fragment ends: '[ ]ollet deye for ȝou y wys raþer þan my man schal ȝou greue | [Str]angulion my douȝter ytok. &amp; deuyse that hys hys wyf'</note>
+                     <note>The second fragment begins: 'þat þe citesaynes wit gret deol hadde write hit to fore oure eyȝe | Appolyn gan to calle tarse douȝter wher euere þou be...'</note>
+                     <note>The second fragment ends: 'Voide the payne of helle, O God, Lord, and persones threo. The blysse of heuene dwelle. amen por charite. | [Ex]plicit Appollonius Tyrus rex nobilis &amp; virtuosus'
+                     </note>
                      <textLang mainLang="enm">Middle English</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
-                        <support>parchment</support>
+                        <support>parchment</support><extent><measure type="leaf" quantity="32">32</measure> leaves. Fols 1-14, 19-end are blank paper
+                           <dimensions type="binding" unit="in">
+                              <height>12.5</height>
+                              <width>8.75</width></dimensions>
+                        </extent>
                      </supportDesc>
                   </objectDesc>
                </physDesc>
@@ -52,18 +73,35 @@
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
+                  
+                  <provenance>A note by <persName role="fmo" key="person_50024557">Richard Farmer</persName> is on fol. 1 v, and he may have owned the book</provenance>
+                  <provenance when="1830">At fol. 15 is a letter from <persName role="fmo" key="person_34808813">Samuel Weller Singer, bookseller</persName>, sending the fragments to Douce, January 7, 1830</provenance>
+                  
+                  <!-- Add authority record -->                  
+                                  
                   <provenance notAfter="1834" notBefore="1757" resp="#MMM"><persName key="person_69848690" role="fmo">Francis Douce, 1757–1834</persName></provenance>
                   <acquisition resp="#MMM" when="1834">Bequeathed to the Bodleian in 1834</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). <listBibl>
-                              <bibl facs="aaz0577.gif" type="SC">Summary Catalogue, vol. 4, p. 558</bibl>
+                        
+                        <source>
+                           Description adapted (September 2024) by Stewart J. Brookes from the Summary Catalogue (1897) and the Catalogue of the Printed Books and Manuscripts Bequeathed by Francis Douce, esq. to the Bodleian Library (1840). 
+                           <listBibl>
+
+                        <bibl facs="aaz0577.gif" type="SC">Summary Catalogue, vol. 4, p. 558</bibl>
                            </listBibl>
+                           
+                           <listBibl>
+                              <bibl>
+                                 <ref target="https://archive.org/details/catalogueofprint00bodluoft/page/36/mode/1up">Printed Books and Manuscripts Bequeathed by Francis Douce, p. 36</ref>
+                              </bibl>
+                           </listBibl>
+                           
                         </source>
                      </recordHist>
                   </adminInfo>
@@ -74,6 +112,8 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-09-21">Description revised to incorporate all the information in the Summary Catalogue (1897) and other printed sources</change>
+         <change when="2024-05">Add extent and leaf dimensions from Summary Catalogue.</change>
          <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>

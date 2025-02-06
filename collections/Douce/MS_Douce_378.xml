@@ -1,14 +1,20 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4698">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4698">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Douce 378</title>
             <title type="collection">MSS. Douce</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -35,18 +41,29 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_Douce_378-item1">
                      <author key="person_90770122">John Hardyng</author>
                      <title key="work_2715">Chronicle</title>
-                     <note>(second version)</note>
-                     <note>(imperfect: 62 leaves)</note>
+                     <note>(<ref target="https://www.dimev.net/Records.php?MSS=BodDou378"><title>DIMEV</title> 1174-5</ref>)</note>
+                     <note>A fragment of the <title>Chronicle</title>, beginning with the last three lines of the stanzas on Condage and breaking off in the reign of Richard II</note>
+                     <note>Begins: 'Ffor the peple to serue the goddes there' 
+                        (see <title>The Chronicle of Iohn Hardynge</title>, ed. Henry Ellis [1812], <ref target="https://babel.hathitrust.org/cgi/pt?id=mdp.39015000531577&amp;seq=88">p. 56)</ref>
+                     </note>
+                     <note>Ends: 'Wentt he wold to huntyng &amp; to haukyng | All gentyll disportt as to alord appentt' 
+                        (see <title>Chronicle</title>, ed.  Ellis [1812], <ref target="https://babel.hathitrust.org/cgi/pt?id=mdp.39015000531577&amp;seq=372">p. 340)</ref></note>
                      <textLang mainLang="enm">Middle English</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="chart">
-                        <support>paper</support>
+                        <support>paper</support><extent>iii + <measure type="leaf" quantity="67">67</measure> leaves
+                           <dimensions type="binding" unit="in">
+                              <height>12.625</height>
+                              <width>10</width></dimensions>
+                        </extent>
                      </supportDesc>
                   </objectDesc>
                </physDesc>
@@ -54,17 +71,28 @@
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
+                  
+                  <provenance>This appears to have come to Francis Douce 'from an old family library in the country' (see <title>Chronicle</title>, ed. Ellis, <ref target="https://babel.hathitrust.org/cgi/pt?id=mdp.39015000531577&amp;seq=24">p. xvi</ref>)
+                  </provenance>
+                  
                   <provenance notAfter="1834" notBefore="1757" resp="#MMM"><persName key="person_69848690" role="fmo">Francis Douce, 1757–1834</persName></provenance>
                   <acquisition resp="#MMM" when="1834">Bequeathed to the Bodleian in 1834</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). <listBibl>
-                              <bibl facs="aaz0632.gif" type="SC">Summary Catalogue, vol. 4, p. 613</bibl>
+                        <source>
+                           Description adapted (September 2024) by Stewart J. Brookes from the following sources:
+                           
+                           <listBibl>
+                              <bibl>Catalogue of the Printed Books and Manuscripts Bequeathed by Francis Douce, esq. to the Bodleian Library (1840), <ref target="https://archive.org/details/catalogueofprint00bodluoft/page/66/mode/1up">p. 66</ref></bibl>
+                              <bibl>Summary Catalogue (1897)</bibl>
+                           </listBibl>
+                           <listBibl>
+                        <bibl facs="aaz0632.gif" type="SC">Summary Catalogue, vol. 4, p. 613</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -74,6 +102,8 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-09-21">Description revised to incorporate all the information in the Summary Catalogue (1897) and other printed sources</change>
+         <change when="2024-05">Add extent and leaf dimensions from Summary Catalogue.</change>
          <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>

@@ -1,13 +1,20 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8992">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8992">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Tanner 201</title>
             <title type="collection">MSS. Tanner</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="MWM">
+               <resp when="2004">Cataloguing and encoding</resp>
+               <persName>Rebecca Farnham</persName>
+               <persName>Orietta da Rold</persName>
+               <note>Catalogued and encoded for the Manuscripts of the West Midlands project. Original XML description</note>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2024">Encoding, corrections, updates</resp>
                <persName>Matthew Holford</persName>
+               <note>Conversion of the original encoding to conform with TEI P5 and the Bodleian ODD. Minor updates and corrections to the description.</note>
             </respStmt>
          </titleStmt>
          <publicationStmt>
@@ -30,61 +37,249 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Tanner 201</idno>
-                  <idno type="ieArk">ark:29072/x0zp38wb70t2</idno><idno type="crArk">ark:29072/x0nc580m59z5</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0zp38wb70t2</idno>
+                  <idno type="crArk">ark:29072/x0nc580m59z5</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">10027</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem class="#versus" n="1" xml:id="MS_Tanner_201-item1">
+
+                  <summary>
+                     <p>A late fifteenth-century manuscript of the <hi rend="italic">Memoriale
+                           Credencium</hi>, a sophisticated manual of religious instruction, with
+                        shorter theological prose treatises.</p>
+                  </summary>
+
+                  <msItem n="1">
+                     <locus from="2r" to="3v">ff. 2r-3v</locus>
+                     <title type="desc" key="work_15165">Seven Deadly Sins</title>
+                     <rubric>Here begynnyth the knowledge of the vii dedly synnes</rubric>
+                     <incipit>Pryde wroth and envy be synnes of the feynde</incipit>
+                     <explicit>that the wille of god be doon before thyne owne will so be hit amen
+                        deo gracias</explicit>
+                     <note>Prose treatise on the seven deadly sins incorporating the seven virtues
+                        contrary to the sins and the seven works of bodily and spiritual mercy.
+                        Glossed by a later c. seventeenth-century owner?</note>
+                   
+                     <note resp="#MLH">Preceded by two verses (DIMEV 3171, DIMEV 3765.5) for which see Martha Powell Harley, 'A Reconsideration of the Middle English Verses in Bodleian Library MS. Tanner 201', <title>Bodleian Library Record</title> 13.3 (1989), 195-201</note>
+                     <textLang mainLang="enm">Middle English</textLang>
+                  </msItem>
+
+                  <msItem n="2">
+                     <locus from="4r" to="4r">f. 4r</locus>
+                     <title type="desc">Ten Commandments</title>
+                     <incipit>There by x commaundementis of the which</incipit>
+                     <explicit>and on cristyn forth beleue thou stodfastly amen</explicit>
+                     <textLang mainLang="enm">Middle English</textLang>
+                  </msItem>
+
+                  <msItem n="3">
+                     <locus from="4v" to="6r">ff. 4v-6r</locus>
+                     <title type="desc">Prose prayer</title>
+                     <incipit>O blyssed lord that madyst all thing of nought</incipit>
+                     <explicit>and presyng be to this for all thy grace amen</explicit>  <listBibl><bibl resp="#MLH">Fols. 2r-6r ed. as one text, Marta Powell Harley, 'A Fifteenth-Century Manual of Religious Instruction in Bodleian Library, MS. Tanner 201', <title>Fifteenth Century Studies</title> 15 (1989), 147-64</bibl></listBibl>
+                     <textLang mainLang="enm">Middle English</textLang>
+                  </msItem>
+
+
+
+
+                  <msItem n="4">
+                     <locus from="7r" to="106v">ff. 7r-106v</locus>
+                     <title type="desc" key="work_13273">Memoriale Credencium (IPMEP 448)</title>
+                     <rubric>Man and woman þit wilneþ to fle synne and lede clene lyf taketh hede to
+                        þis litul tretys þat ys write in englisch tong for lewed men þat konne not
+                        vnderstonde latyne ne frenssche and þis ys ydrawe out of holy wrytt and þe
+                        techyng of holy doctoures to fore þis tyme</rubric>
+                     <incipit>þisse tyme þat moyses and aaron were ysend thurgh goddes owne mouthe
+                        to kyng pharao þat was kyng of egypt</incipit>
+                     <explicit>Thys tretys ys ymade to ensample of þe commune puple þat can nouȝt
+                        vnderstonde latyn ne frensh and for cristenmen þat leueþ in god shuld haue
+                        þynges þat here beþ wrytt ofte yn mynde and hit is yclepyd memoriale
+                        credencium</explicit>
+                     <textLang mainLang="enm">Middle English</textLang>
+                     <listBibl>
+                        <bibl resp="#MLH">ed. from this MS. by J. H. L. Kengen, <title>Memoriale credencium: A
+                              Late Middle English Manual of Theology for Lay
+                           People</title>(Nijmegen: Department of Middle English, University of
+                           Nijmegen, 1979/1980</bibl>
+                     </listBibl>
+                  </msItem>
+
+                  <msItem n="5">
+                     <locus from="106v" to="106v">f. 106v</locus>
+                     <title type="desc">Prayer</title>
+                     <incipit>Oure swete lorde ihesus cryste ȝyue vs grace to worship god</incipit>
+                     <explicit>þat graunte vs god þat sytt in trynyte. Amen</explicit>
+                     <note>Prayer appended to the <hi rend="italic">Memoriale</hi> in the same
+                        hand.</note>
+                     <finalRubric>Explicit tractatus qui vocatur memoriale
+                        credencium</finalRubric>
+                     <textLang mainLang="enm">Middle English</textLang>
+                  </msItem>
+
+
+               <!--   <msItem class="#versus" n="1" xml:id="MS_Tanner_201-item1">
                      <title key="work_15431" type="desc">Verses</title>
                      <incipit>O man beholde...</incipit>
                      <textLang mainLang="enm">Middle English</textLang>
                   </msItem>
                   <msItem class="#theologica" n="2" xml:id="MS_Tanner_201-item2">
-                     <title key="work_13273">Memoriale credencium</title>
-                     <note>(ed. from this MS. by J. H. L. Kengen, <title>Memoriale credencium: A Late Middle English Manual of Theology for Lay People</title>(Nijmegen: Department of Middle English, University of Nijmegen, 1979/1980)</note>
+                     <title key=">Memoriale credencium</title>
                      <textLang mainLang="enm">Middle English</textLang>
-                  </msItem>
+                  </msItem>-->
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent> i + 105 + vii. i and i-vii are flyleaves. F. 113 (vii) is the back pastedown.
+                           <dimensions type="leaf" scope="all" unit="mm">
+                              <height>210</height>
+                              <width>145</width>
+                           </dimensions>
+                        </extent>
+                        <foliation>Modern pencil foliation replacing earlier erroneous foliation. Ff. 1-113.  
+                        </foliation>
+                        <collation mainStructures="8">
+                           <p>1<hi rend="superscript">6</hi>, ff. 1r-6v; 2<hi rend="superscript"
+                                 >16</hi>, ff. 7r-22v, catchword; 3<hi rend="superscript">16</hi>,
+                              ff. 23r-38v, catchword; 4<hi rend="superscript">8</hi>, ff. 39r-46v,
+                              catchword; 5<hi rend="superscript">8</hi>, ff. 47r-54v, catchword;
+                                 6<hi rend="superscript">8</hi>, ff. 55r-62v, catchword; 7<hi
+                                 rend="superscript">8</hi>, ff. 63r-70v, catchword; 8<hi
+                                 rend="superscript">8</hi>, ff. 71r-78v, catchword; 9<hi
+                                 rend="superscript">8</hi>, ff. 79r-86v, catchword; 10<hi
+                                 rend="superscript">10</hi>, ff. 87r-96v, <catchwords>catchword in
+                                 large well-drawn scroll</catchwords>; 11<hi rend="superscript"
+                                 >10</hi>, ff. 97r-106v end of text; 12<hi rend="superscript">8</hi>
+                              (wants ii), ff. 107r-113v. </p>
+                        </collation>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="1" writtenLines="32">Pricking: Round holes visible on edge
+                           of fore edge, some cropped off. Ruling not visible. Texts
+                           1-3, c. 32 lines, <dimensions unit="mm" type="written">
+                              <height>160</height>
+                              <width>100</width>
+                           </dimensions>
+                        </layout>
+                        <layout columns="1" writtenLines="32"> Text 4 - c. 23/24 lines, <dimensions
+                              unit="mm" type="written">
+                              <height quantity="150">c. 150</height>
+                              <width>100</width>
+                           </dimensions></layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <handDesc>
+                     <handNote script="cursivaAntiquior" medium="ink" scope="minor">Scribe 1 (ff.
+                        2r-6r) writing in a small cursive hand. Characteristics: double compartment
+                           <hi rend="italic">g</hi>; 2-shaped <hi rend="italic">r</hi>; B-shaped <hi
+                           rend="italic">w</hi>; double compartment <hi rend="italic">a</hi>. Body
+                        height: 1 mm. </handNote>
+
+
+                     <handNote script="cursivaAntiquior" medium="ink" scope="major"> Scribe 2 (ff.
+                        7r-86r) writing in a cursive hand. Characteristics: B-shaped <hi
+                           rend="italic">w</hi>; double compartment <hi rend="italic">a</hi>;
+                        B-shaped <hi rend="italic">s</hi> in final position; long <hi rend="italic"
+                           >s</hi> in medial position; 2-shaped <hi rend="italic">r</hi>; double
+                        compartment <hi rend="italic">g</hi>; hooked <hi rend="italic">l</hi>, <hi
+                           rend="italic">h</hi>; frequent use of þ. Body height: 2-3mm. </handNote>
+                     <handNote script="cursivaAntiquior" execution="formata" scope="minor"> Scribe 3
+                        (ff. 87r-end) writing in a large Anglicana Formata hand with Textura
+                        influences. Characteristics: double compartment <hi rend="italic">a</hi>;
+                        open B-shaped <hi rend="italic">w</hi> with small feet at the top of the
+                        backstrokes; rounded <hi rend="italic">s</hi> in initial and final position,
+                        in final position alternates with the B-shape variant; long <hi
+                           rend="italic">s</hi> in medial and initial position; 2-shaped and short
+                           <hi rend="italic">r</hi> used regularly with the short form also in final
+                        position; rounded open and closed 8-shaped <hi rend="italic">g</hi> used
+                        regularly; rounded <hi rend="italic">d</hi> with oblique upper stroke, with
+                        a variant terminating with a looped ascender; frequent use of <hi
+                           rend="italic">ȝ</hi> and <hi rend="italic">þ</hi>; descenders extend in
+                        otiose hairlines but not much below the line of writing. Body height: 2mm. </handNote>
+
+                  </handDesc>
                   <decoDesc>
-                     <decoNote type="decInit">Decoration<p>Good initial. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 1164)</p>
+                     <decoNote type="decInit">Good initial. (<ref
+                           target="https://catalog.hathitrust.org/Record/000468709">Pächt and
+                           Alexander</ref> iii. 1164). Illuminated initial for <hi rend="italic"
+                           >Memoriale credencium</hi> f. 7r. Four-line capital <hi rend="italic"
+                           >M</hi> in gold on a quartered ground of rose and blue with white line
+                        decoration. Sprays of feathering grow from the three corners sporting green
+                        tinted oval lobes with pairs of gold balls and terminating in a gold
+                        elongated cone with spikes and a green tinted 'feather'. Two-line blue
+                        initials with red pen-work flourishing forming a border. </decoNote>
+                     <decoNote type="flourInit">Three-line blue initials with red pen-work
+                        flourishing forming a border.</decoNote>
+                     <decoNote type="drawing">Later drawings: Inside front cover on pastedown -
+                        crude drawing of a knight in armour and side view of leg of armour.
                      </decoNote>
                   </decoDesc>
+                   <additions><p>Fol. 1r - 6 lines of text c. fifteenth century. Very small hand c. 1mm. Short devotional tract regarding sin. Fol. 112r - 4 lines of Latin in ?two later hands.
+                  </p></additions>
+                  <bindingDesc>
+                     <binding notBefore="1450" notAfter="1500"><p>Medieval binding, 1450-1500. Size: 210 x 145 mm. Undecorated white leather, mitred and pasted on 5 mm thick oak boards with 10 mm bevelled edge, cushion bevel. Boards cut flush with quires. Original sewing. Six double thongs across the spine. Remains of two leather straps on fore edge attached by round headed 'proud' nails. Pewter catches remain on the back cover. Inside back board is visible. </p></binding>
+                  </bindingDesc>
+                  
+                  
+               
+                  
+                 
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1500" notBefore="1450">15th century, second half</origDate>
+                     <origDate calendar="Gregorian" notAfter="1500" notBefore="1450">15th century,
+                        second half / late</origDate>
                      <origPlace>
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
-                  <provenance notAfter="1735" notBefore="1674" resp="#MMM"><persName key="person_11058091" role="fmo">Thomas Tanner, 1674–1735</persName></provenance>
-                  <acquisition resp="#MMM" when="1735">Bequeathed by him to the Bodleian in 1735.</acquisition>
+                  <provenance> Fol. 107r: various inscriptions by <persName key="person_5004" role="fmo">Richard Horne</persName> -
+                     'Thys ys Rycharde ____ ys boke', 'Thys ys Rychard Horne/ Boke ____' in a
+                     sixteenth-century hand. </provenance>
+                  
+                  <provenance>Fol. 107r: <persName key="person_5005" role="fmo">John Robinson</persName> wrote 'Iohannes
+                     Robinsonus me possidet' in a c. sixteenth/seventeenth-century hand. </provenance>
+                  <provenance> Fol. 2r: '<persName role="fmo" key="person_32342661">W. Sancroft</persName>' written on top fore edge. </provenance>
+                  <provenance notAfter="1735" notBefore="1674" resp="#MMM"><persName
+                        key="person_11058091" role="fmo">Thomas Tanner,
+                     1674–1735</persName></provenance>
+                  <acquisition resp="#MMM" when="1735">Bequeathed by him to the Bodleian in
+                     1735.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (A. Hackman, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars quarta codices viri admodum reverendi Thomæ Tanneri, S.T.P., episcopi Asaphensis, complectens</title>, Quarto Catalogues IV, repr. 1966, with corrections, from the ed. of 1860). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
-                              <bibl facs="aas0102.gif" type="SC">Summary Catalogue, Vol. 3, p. 87</bibl>
+                        <source>Adapted (2024) from description by Rebecca Farnham and Orietta Da Rold for the <ref target="https://www.dhi.ac.uk/mwm/">Manuscripts of the West Midlands</ref> project, August 2003-June 2004 with reference to additional literature as cited. 
+                           
+                           Previously described in the Quarto Catalogue (A. Hackman,
+                              <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars
+                              quarta codices viri admodum reverendi Thomæ Tanneri, S.T.P., episcopi
+                              Asaphensis, complectens</title>, Quarto Catalogues IV, repr. 1966,
+                           with corrections, from the ed. of 1860). <!--Decoration, localization and
+                           date follow Pächt and Alexander (1973).--> <listBibl>
+                              <bibl facs="aas0102.gif" type="SC">Summary Catalogue, Vol. 3, p.
+                                 87</bibl>
                            </listBibl>
                            <listBibl>
-                              <bibl facs="ace0327.gif" type="QUARTO">Quarto Catalogue, Col. 637</bibl>
+                              <bibl facs="ace0327.gif" type="QUARTO">Quarto Catalogue, Col.
+                                 637</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
-                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/d0f14dbb-58a2-4919-a080-de9200cd855c/"><title>Digital Bodleian</title></ref>
+                  <surrogates><bibl subtype="partial" type="digital-facsimile"><ref
+                           target="https://digital.bodleian.ox.ac.uk/objects/d0f14dbb-58a2-4919-a080-de9200cd855c/"
+                              ><title>Digital Bodleian</title></ref>
                         <note>(1 image from 35mm slides)</note></bibl></surrogates>
                   <listBibl type="WRAPPER">
                      <listBibl type="INTERNET">
                         <head>Online resources:</head>
-                        <bibl><ref target="https://www.dhi.ac.uk/mwm/browse?type=ms&amp;id=137"><title>MWM: Manuscripts of the West Midlands</title></ref></bibl>
+                        <bibl><ref target="https://www.dhi.ac.uk/mwm/browse?type=ms&amp;id=137"
+                                 ><title>MWM: Manuscripts of the West Midlands</title></ref></bibl>
                      </listBibl>
                   </listBibl>
                </additional>
@@ -92,9 +287,18 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
-         <change when="2018-08-15" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
+         <change when="2024-10">Encoded description from MWM with reference to additional bibliography.</change>
+         <change when="2018-08-15" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and
+            acquisition information added using <ref
+               target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb"
+               >https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
+            in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping
+               Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using
+               <ref
+               target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl"
+               >https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>
    </teiHeader>
    <text>

@@ -1,9 +1,16 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_3552">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_3552">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Canon. Misc. 510</title>
             <title type="collection">MSS. Canon. Misc. (Canonici Miscellaneous)</title>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
             <respStmt>
                <resp>Summary description</resp>
                <persName>Elizabeth Solopova</persName>
@@ -30,7 +37,9 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Canon. Misc. 510</idno>
-                  <idno type="ieArk">ark:29072/x07w62f87231</idno><idno type="crArk">ark:29072/x0sj139157zb</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x07w62f87231</idno>
+                  <idno type="crArk">ark:29072/x0sj139157zb</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">19986</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -49,18 +58,37 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent resp="#DD">170 fols.<dimensions unit="mm" type="leaf">
+                              <height>320</height>
+                              <width>240</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc resp="#DD">
+                        <layout writtenLines="35 37" columns="2">2 cols., 35-7 lines, column space <dimensions unit="mm" type="column">
+                              <height>215</height>
+                              <width min="70" max="75">70-5</width>
+                           </dimensions>
+                        </layout>
+                     </layoutDesc>
                   </objectDesc>
                   <handDesc>
                      <handNote>Written with calligraphic flourishes by <persName key="person_599" role="scr">Jehanin de Costimont</persName>.</handNote>
                   </handDesc>
                   <decoDesc>
-                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 667:</summary><decoNote type="miniature">Good miniatures. </decoNote><decoNote type="border">Good borders. </decoNote><decoNote type="decInit">Good initials. </decoNote>
+                     <summary>
+                        <ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 667:</summary>
+                     <decoNote type="miniature">Good miniatures. </decoNote>
+                     <decoNote type="border">Good borders. </decoNote>
+                     <decoNote type="decInit">Good initials. </decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1439" notBefore="1438" cert="high">1438–9</origDate>
+                     <origDate calendar="Gregorian"
+                               notAfter="1439"
+                               notBefore="1438"
+                               cert="high">1438–9</origDate>
                      <origPlace cert="low">
                         <country key="place_1000070">French</country>, <settlement key="place_7007868">Brussels</settlement> (?)<!--ORIGINAL: French, Brussels (?)--></origPlace>
                   </origin>
@@ -105,6 +133,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-09">Add extent, leaf dimensions and layout from Watson, Dated and Datable.</change>
          <change when="2018-10-14" xml:id="MMM">
             <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>

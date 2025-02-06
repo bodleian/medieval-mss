@@ -1,4 +1,4 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6068">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6068">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -44,7 +44,9 @@
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
-                        <support>parchment</support>
+                        <support>parchment</support><extent source="SC">i + <measure type="leaf" quantity="182">182</measure> leaves
+                           <dimensions type="binding" unit="in"><height>11.375</height><width>8.5</width></dimensions>
+                        </extent>
                      </supportDesc>
                   </objectDesc>
                   <decoDesc>
@@ -70,13 +72,23 @@
                         </source>
                      </recordHist>
                   </adminInfo>
-                  <surrogates>
+                  <surrogates>\
+                     
                      <bibl subtype="partial" type="digital-facsimile">
                         <ref target="https://digital.bodleian.ox.ac.uk/objects/7850a308-0dd6-4d9a-b5b5-cbd6085b18dd/">
                            <title>Digital Bodleian</title>
                         </ref>
                         <note>(4 images from 35mm slides)</note>
+                        
                      </bibl>
+                     
+                     <bibl subtype="partial" type="digital-facsimile">
+                        Daniel Paul O’Donnell, ed. <ref target="https://caedmon.seenet.org/htm/transcription/h/facsimile.html">Cædmon’s Hymn: A Multimedia Study, Edition and Archive</ref> 
+                        (2005. 1.1 Internet Reprint, vol. A.8, SEENET, 2018)
+                        
+                        <note>(Fol. 129r)</note>
+                     </bibl>
+                     
                   </surrogates>
                   <listBibl type="WRAPPER">
                      <listBibl type="INTERNET">
@@ -86,10 +98,16 @@
                               <title>Electronic Gneuss-Lapidge</title> (entry 630)</ref>
                         </bibl>
                         <bibl>
-                           <ref target="https://www.le.ac.uk/english/em1060to1220/mss/EM.Ox.Hatt.43.htm">
+                           <ref target="https://em1060.stanford.edu/manuscript/oxford-bodleian-library-hatton-43-4106">
                               <title>The Production and Use of English Manuscripts 1060 to 1220</title>
                            </ref>
                         </bibl>
+                        
+                        <bibl>
+                           Daniel Paul O’Donnell, ed. <ref target="https://caedmon.seenet.org/htm/transcription/h/index.html">Cædmon’s Hymn: A Multimedia Study, Edition and Archive</ref> 
+                           (2005; 1.1 Internet Reprint, vol. A.8, SEENET, 2018)
+                        </bibl>
+                        
                      </listBibl>
                   </listBibl>
                </additional>
@@ -97,6 +115,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-05">Add extent and leaf dimensions from Summary Catalogue.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>

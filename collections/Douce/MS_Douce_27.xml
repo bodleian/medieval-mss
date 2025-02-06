@@ -1,4 +1,4 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4617">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4617">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -30,24 +30,30 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Douce 27</idno>
-                  <idno type="ieArk">ark:29072/x0tb09j501zv</idno><idno type="crArk">ark:29072/x06m311q1215</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0tb09j501zv</idno>
+                  <idno type="crArk">ark:29072/x06m311q1215</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">21601</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
                   <msItem class="#legalia" n="1" xml:id="MS_Douce_27-item1">
-                     <title key="work_14749" type="desc">Statutes of England, c. 1327–77</title>
+                     <title key="work_14749" type="desc">Statutes of England, nova statuta, Edward III (1327–77)</title>
+                     <note>Some leaves are lost at beginning, and one after fol. 35. On fol. 176v is the 'iudicium Hugonis le Despenser' (earl of Winchester, beheaded 1326) in French.</note>
                      <textLang mainLang="xno">Anglo-Norman</textLang>
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
-                        <support>parchment</support>
+                        <support>parchment</support><extent>i + <measure type="leaf" quantity="178">178</measure> leaves
+                           <dimensions type="binding" unit="in"><height>5</height><width>4</width></dimensions>
+                        </extent>
                      </supportDesc>
                   </objectDesc>
                   <decoDesc>
-                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 706:</summary>
+                     <summary>
+                        <ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 706:</summary>
                      <decoNote type="border">Borders.</decoNote>
                      <decoNote type="decInit">Initials.</decoNote>
                   </decoDesc>
@@ -59,13 +65,22 @@
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
-                  <provenance notAfter="1834" notBefore="1757" resp="#MMM"><persName key="person_69848690" role="fmo">Francis Douce, 1757–1834</persName></provenance>
+                  <provenance notAfter="1610" notBefore="1590">Owned perhaps by <persName key="person_4854" role="fmo">Henry Martin</persName> (fol. i) and <persName key="person_4855" role="fmo">William Wild</persName> (fol. 177v) in about A.D. 1600.</provenance>
+                  <provenance>'<persName key="person_51566395" role="fmo">E. Umfreville</persName>'</provenance>
+                  <provenance>
+                     <persName role="fmo" key="person_63873133">John Ives</persName> (1771)</provenance>
+                  <provenance>
+                     <persName role="fmo" key="person_56951183">Gustavus Brander</persName>, at whose sale in 1790 Douce bought the book.</provenance>
+                  <provenance notAfter="1834" notBefore="1757" resp="#MMM">
+                     <persName key="person_69848690" role="fmo">Francis Douce, 1757–1834</persName>
+                  </provenance>
                   <acquisition resp="#MMM" when="1834">Bequeathed to the Bodleian in 1834</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
+                        <source>
+                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
                               <bibl facs="aaz0516.gif" type="SC">Summary Catalogue, vol. 4, p. 497</bibl>
                            </listBibl>
                         </source>
@@ -76,9 +91,13 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
-         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
+         <change when="2024-05">Add extent and leaf dimensions from Summary Catalogue.</change>
+         <change when="2018-10-14" xml:id="MMM">
+            <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25">
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+         </change>
       </revisionDesc>
    </teiHeader>
    <text>

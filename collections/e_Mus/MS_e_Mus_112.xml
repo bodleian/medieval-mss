@@ -1,9 +1,16 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_9075">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_9075">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. e Mus. 112</title>
             <title type="collection">MSS. e Mus. (e Musaeo)</title>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
             <respStmt>
                <resp>Summary description</resp>
                <persName>Elizabeth Solopova</persName>
@@ -30,7 +37,9 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. e Mus. 112</idno>
-                  <idno type="ieArk">ark:29072/x0hq37vn76mp</idno><idno type="crArk">ark:29072/x0hm50tr939x</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0hq37vn76mp</idno>
+                  <idno type="crArk">ark:29072/x0hm50tr939x</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">3578</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -53,7 +62,20 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent resp="#DD">vi + 336 + ii pages
+      <dimensions unit="mm" type="leaf">
+                              <height>230</height>
+                              <width>168</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc resp="#DD">
+                        <layout writtenLines="30" columns="1">1 col., 30 lines, <dimensions unit="mm" type="written">
+                              <height>173</height>
+                              <width>100</width>
+                           </dimensions>
+                        </layout>
+                     </layoutDesc>
                   </objectDesc>
                   <decoDesc>
                      <decoNote type="decInit">Decoration<p>Fine initial (defaced). (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 106, pl. X)</p>
@@ -68,15 +90,20 @@
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1126" notBefore="1108" cert="high">12th century (between 1108 and 1126)</origDate>
+                     <origDate calendar="Gregorian"
+                               notAfter="1126"
+                               notBefore="1108"
+                               cert="high">12th century (between 1108 and 1126)</origDate>
                      <origPlace>
                         <country key="place_7002445">English</country>, <settlement key="place_7010914">Bury St. Edmunds</settlement>
                         <!--ORIGINAL: English, Bury St. Edmunds-->
                      </origPlace>
                   </origin>
-                  <provenance type="MLGB3_provenance_evidence" source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/839">
+                  <provenance type="MLGB3_provenance_evidence"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/839">
                      <orgName role="fmo" key="org_150107857">Bury St Edmunds, Suffolk, Benedictine abbey of St Edmund, King and Martyr</orgName>: 'Baldewinus prior sancti Edmundi fecit scribi hunc librum, in quo continentur. . .' (flyleaf, p. iii, s. xiv).     'J 13' (top right-hand corner of first leaf, p.1).     Medieval binding (white leather over square boards; formerly one clasp, flaps projecting at head and foot of spine). (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/839">MLGB3</ref>: evidence from an ex-libris inscription or note of gift to an institution). </provenance>
-                  <provenance type="MLGB3_laterOwners" source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/839">John Parry, 1653–4. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/839">MLGB3</ref>)</provenance>
+                  <provenance type="MLGB3_laterOwners"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/839">John Parry, 1653–4. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/839">MLGB3</ref>)</provenance>
                </history>
                <additional>
                   <adminInfo>
@@ -110,6 +137,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-09">Add extent, leaf dimensions and layout from Watson, Dated and Datable.</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2021-12-14">Add provenance information from MLGB3.</change>
          <change when="2017-07-01">First online publication.</change>

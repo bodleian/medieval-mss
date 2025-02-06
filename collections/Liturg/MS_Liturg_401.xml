@@ -1,9 +1,16 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_7722">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_7722">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Liturg. 401</title>
             <title type="collection">MSS. Liturg. (Liturgical)</title>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
             <respStmt>
                <resp>Summary description</resp>
                <persName>Elizabeth Solopova</persName>
@@ -30,7 +37,9 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Liturg. 401</idno>
-                  <idno type="ieArk">ark:29072/x0gm80hv60v3</idno><idno type="crArk">ark:29072/x0gh93gz77jc</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0gm80hv60v3</idno>
+                  <idno type="crArk">ark:29072/x0gh93gz77jc</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">29450</idno>
                   </altIdentifier>
                   <altIdentifier type="former">
@@ -47,11 +56,25 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent resp="#VD"> i + 213 + i fol.<dimensions type="leaf" unit="mm">
+                              <height>198</height>
+                              <width>130</width>
+                           </dimensions>
+                           <dimensions type="written" unit="mm">
+                              <height>112</height>
+                              <width>67</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc resp="#VD">
+                        <layout columns="1" writtenLines="18">18 long lines</layout>
+                     </layoutDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>Decoration<p>Good miniatures, historiated and other initials. Written in England. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 348, pl. XXVII)</p>
-                     </decoNote>
+                     <summary>Flemish decoratoin, Written in England. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 348, pl. XXVII)</summary>
+                     <decoNote type="miniature">Good miniatures. </decoNote>
+                     <decoNote type="histInit">Good historiated initials. </decoNote>
+                     <decoNote type="decInit">Good other initials. </decoNote>
                   </decoDesc>
                </physDesc>
                <history>
@@ -71,9 +94,9 @@
                            </listBibl>
                         </source>
                      </recordHist>
-                     <availability>
-                        <p>This item will be on display in the exhibition "Chaucer Here and Now", Bodleian Libraries, Weston Library, 8 December 2023 – 28 April 2024. It will not be orderable between those dates or for a short period before or afterwards.</p>
-                     </availability>
+                     <!--  <availability status="none">
+                        <p>This item is on display in the exhibition "Chaucer Here and Now", Bodleian Libraries, Weston Library, 8 December 2023 – 28 April 2024. It will not be orderable between those dates or for a short period before or afterwards.</p>
+                     </availability>-->
                   </adminInfo>
                   <surrogates>
                      <bibl subtype="partial" type="digital-facsimile">
@@ -95,6 +118,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-09">Add extent, leaf dimensions and layout from van Dijk, Latin Liturgical Manuscripts in the Bodleian Library, Oxford.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>

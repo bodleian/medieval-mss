@@ -1,14 +1,21 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8539">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8539">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Rawl. G. 168</title>
             <title type="collection">MSS. Rawl. G. (Rawlinson G)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+
+            <respStmt xml:id="SC">
+               <resp when="1895">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -30,47 +37,109 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Rawl. G. 168</idno>
-                  <idno type="ieArk">ark:29072/x0bv73c0956p</idno><idno type="crArk">ark:29072/x0br86b411wn</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0bv73c0956p</idno>
+                  <idno type="crArk">ark:29072/x0br86b411wn</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">14891</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+
                   <msItem class="#biblia" n="1" xml:id="MS_Rawl_G_168-item1">
-                     <title key="work_12064" type="desc">Gospel Harmony</title>
+                     <title key="work_12064" type="desc">Gospel Harmony, with gloss</title>
+                     <rubric>Euuangelium Domini nostri Ihesu Christi secundum quatuor
+                        Euuangelistas</rubric>
+                     <note>The Eusebian sections (698 in all) woven into a continuous narrative or
+                        Diatessaron, with notes</note>
                      <bibl type="bible">
                         <title>Bible, Gospels</title>
                      </bibl>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
-                  <msItem n="2" xml:id="MS_Rawl_G_168-item2">
-                     <author key="person_27803630">Senatus, monk of Worcester (?)</author>
-                     <title key="work_4493">Discourse</title>
+
+                  <msItem>
+                     <note>Prefatory texts:</note>
+                     <msItem n="2" xml:id="MS_Rawl_G_168-item2">
+                        <locus>(fols. 164v-165v)</locus>
+                        <author key="person_27803630">Senatus, monk of Worcester</author>
+                        <title key="work_4495">Ep. 2 (Tractatus de concordia et dispensatione
+                           canonum euangeliorum)</title>
+                        <incipit>Amonius quidam Alexandrinus </incipit>
+                        <explicit>cum aliis reperiri potest</explicit>
+                        <bibl>C. H. Turner, <title>Early Worcester MSS.</title> (1916), pp. xlv-l
+                           sig. L (starting at line line 27)</bibl>
+
+                     </msItem>
+                     <msItem n="3">
+                        <locus>(fol. 165v-166r)</locus>
+                        <incipit>Nouum opus facere me cogis</incipit>
+                        <explicit>uel uicina dixerunt. Opto ut in Christo valeas et memineris mei
+                           papa beatissime</explicit>
+                        <bibl>Stegmüller 595 (Jerome, Ep. ad Damasum)</bibl>
+                     </msItem>
+                     <msItem n="4">
+                        <locus>(fol. 166r)</locus>
+                        <incipit>Sciendum etiam ne quis ignarum</incipit>
+                        <explicit> quod solum est. Opto ut in Christo valeas et memineris mei
+                           beatissime papa </explicit>
+                        <bibl>Stegmüller 601</bibl>
+
+                     </msItem>
+
+                     <msItem n="6">
+                        <locus>(fol. 166r-v)</locus>
+                        <incipit>Plures fuisse qui euangelia scripserunt</incipit>
+                        <explicit>Vltimus Iohannes apostolus et euangelista quem Ihesus amauit
+                           plurimum</explicit>
+                        <bibl>Stegmüller 596 (extract)</bibl>
+                     </msItem>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+
+                        <extent source="SC">i + <measure type="leaf" quantity="167">167</measure>
+                           leaves <dimensions type="binding" unit="in">
+                              <height>12.5</height>
+                              <width>9.5</width>
+                           </dimensions>
+                        </extent>
+
                      </supportDesc>
                   </objectDesc>
+
                   <decoDesc>
-                     <decoNote type="colInit"><p>Coloured capitals.</p>
-                     </decoNote>
+                     <decoNote type="colInit">Coloured capitals </decoNote>
                   </decoDesc>
+
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1210" notBefore="1200">13th century, early</origDate>
+                     <origDate calendar="Gregorian" notAfter="1210" notBefore="1200">13th century,
+                        early</origDate>
                   </origin>
-                  <provenance notAfter="1755" notBefore="1690" resp="#MMM"><persName key="person_47563478" role="fmo">Richard Rawlinson, 1690–1755</persName></provenance>
-                  <acquisition resp="#MMM" when="1755">Bequeathed to the Bodleian in 1755</acquisition>
+                  <provenance notAfter="1225" notBefore="1200">At <placeName key="place_7010723">Lincoln</placeName> in the early 13th century: 'liber iste <persName role="fmo" key="person_4975">Simonis de Biham</persName> [Bytham] scolaris <persName key="person_4136834">magistri Willemi cancellarii
+                     Lincolnensis</persName>, traditus <persName key="person_4978">magistro R. Scoto</persName> per manum Garini de Colevill.
+                     Restituendus ei Linc' siue <persName key="person_4979">magistro Willelmo filio Galfridi</persName> persone ecclesie
+                     sancti Petri ad Archas' [St Peter at Arches, Lincoln] (fol. 130v: <title>Early Worcester MSS.</title>, p.
+                     xliv n. 1). </provenance>
+                  <provenance notAfter="1755" notBefore="1690" resp="#MMM"><persName
+                        key="person_47563478" role="fmo">Richard Rawlinson,
+                     1690–1755</persName></provenance>
+                  <acquisition resp="#MMM" when="1755">Bequeathed to the Bodleian in
+                     1755</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1895). <listBibl>
-                              <bibl facs="aas0388.gif" type="SC">Summary Catalogue, Vol. 3, p. 373</bibl>
+                        <source> Description adapted (August 2024) by Stewart J. Brookes and Matthew Holford from the
+                           Summary Catalogue (1895), with additional reference to published literature as cited, and additional description of fols. 164v-166v. <listBibl>
+                              <bibl facs="aas0388.gif" type="SC">Summary Catalogue, Vol. 3, p.
+                                 373</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -80,9 +149,19 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
-         <change when="2019-10-31" xml:id="MMM"><persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
+         <change when="2024-08-01">Description revised to incorporate all the information in the
+            Summary Catalogue (1895)</change>
+         <change when="2019-10-31" xml:id="MMM"><persName>Toby Burrows/Mapping Manuscript
+               Migrations</persName>Provenance and acquisition information added using <ref
+               target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb"
+               >https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref>
+            in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping
+               Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using
+               <ref
+               target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl"
+               >https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>
    </teiHeader>
    <text>
