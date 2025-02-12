@@ -11,9 +11,17 @@
                <resp when="1984">Cataloguer</resp>
                <persName>A. G. Watson</persName>
             </respStmt>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="Q">
+               <resp when="1854">Cataloguer</resp>
+               <persName>H. O. Coxe</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2025">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
             <respStmt xml:id="BCBB">
@@ -51,6 +59,8 @@
                   <msItem n="1" xml:id="MS_Canon_Class_Lat_168-item1">
                      <author key="person_191439325">Apicius</author>
                      <title key="work_611">De re coquinaria</title>
+                     <colophon>Seriptum per me Petrum Antonium Sallandum, Reginensem, die vigesimo septimo Maii M.cccc.lxxxx. <locus>(fol. 78r)</locus></colophon>
+                     <note>Capitula precede each book.</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -58,7 +68,7 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                        <extent resp="#DD">ii + 78 + iv fols.<dimensions unit="mm" type="leaf">
+                        <extent resp="#DD">ii + <measure type="leaf">78</measure> + iv fols.<dimensions unit="mm" type="leaf">
                               <height>204</height>
                               <width>125</width>
                            </dimensions>
@@ -73,11 +83,11 @@
                      </layoutDesc>
                   </objectDesc>
                   <handDesc>
-                     <handNote script="humanistica"> Written in humanistic script by <persName key="person_280960981" role="scr"> Pierantonio Sallando of Reggio </persName>, fol. 78. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 668)</handNote>
+                     <handNote script="humanistica">Written in humanistic script by <persName key="person_280960981" role="scr"> Pierantonio Sallando of Reggio </persName>, fol. 78. </handNote>
                   </handDesc>
                   <decoDesc>
                      <decoNote type="border">Fine borders.</decoNote>
-                     <decoNote type="decInit">Initials. Written in humanistic script by <persName key="person_280960981" role="scr"> Pierantonio Sallando of Reggio </persName>, fol. 78. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 668, pl. LXIV) <list type="gloss">
+                     <decoNote type="decInit">Initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 668, pl. LXIV) <list type="gloss">
                            <head>fol. 1r</head>
                            <label>Type</label>
                            <item>
@@ -108,6 +118,8 @@
                         <!--ORIGINAL: Italian, Bologna-->
                      </origPlace>
                   </origin>
+                  <provenance>Arms of <persName role="fmo" key="person_5052">Rossi of Bologna</persName>.</provenance>
+                  <provenance>'<damage>A<gap unit="char" quantity="3"></gap><unclear>le</unclear> Marescotti</damage>',  erased, 16th century, fol. 1</provenance>
                   <provenance notAfter="1805" notBefore="1727" resp="#MMM">
                      <persName key="person_2384880" role="fmo">Matteo Luigi Canonici, 1727–1805</persName>
                   </provenance>
@@ -119,8 +131,16 @@
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (H. O. Coxe, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854). Decoration, localization and date follow Pächt and Alexander (1970). Extent, dimensions and layout from Watson (1984). Additional description of decoration by Elizabeth Solopova, c. 2000. Binding: <bibl>B. C. Barker-Benfield, <title>Bookbindings of Canonici manuscripts : a survey of early and non-standard bindings, mostly Italian, in the Canonici collection of the Bodleian Library, University of Oxford</title> (Oxford, privately printed, 2020).</bibl>
+                        <source>Adapted (Feb. 2025) from the following sources, with additional description of decoration by Elizabeth Solopova, c. 2000:
+                           <listBibl>
+                              <bibl>B. C. Barker-Benfield, <title>Bookbindings of Canonici manuscripts : a survey of early and non-standard bindings, mostly Italian, in the Canonici collection of the Bodleian Library, University of Oxford</title> (Oxford, privately printed, 2020).</bibl>
+                              <bibl>A. Watson, <title>Catalogue of Dated and Datable Manuscripts in Oxford Libraries</title> (1984), <citedRange unit="entry" from="176" to="176">
+                                 <ref target="https://hdl.handle.net/2027/mdp.39015008982863?urlappend=%3Bseq=59">no. 176</ref>
+                              </citedRange>
+                              </bibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, II (1970), no. 668</bibl>
+                              <bibl>H. O. Coxe, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854)</bibl>
+                           </listBibl>
                            <listBibl>
                               <bibl facs="abz0098.gif" type="QUARTO"> Quarto Catalogue, vol. 3, col. 184 </bibl>
                               <bibl facs="aaz0340.gif" type="SC">Summary Catalogue, vol. 4, p. 321</bibl>
@@ -154,6 +174,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-02">Encode all information from printed catalogues.</change>
          <change when="2024-05">Add extent, leaf dimensions and layout from Watson, Dated and Datable.</change>
          <change when="2020-04">Binding description added.</change>
          <change when="2018-10-14" xml:id="MMM">

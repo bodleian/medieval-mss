@@ -11,9 +11,17 @@
                <resp when="1984">Cataloguer</resp>
                <persName>A. G. Watson</persName>
             </respStmt>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="Q">
+               <resp when="1854">Cataloguer</resp>
+               <persName>H. O. Coxe</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2025">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -47,6 +55,9 @@
                   <msItem n="1" xml:id="MS_Canon_Class_Lat_148-item1">
                      <author key="person_24616821">Justinus</author>
                      <title key="work_2887">Epitome of Pompeius Trogus</title>
+                     <colophon><locus>(fol. 183)</locus> Finis MCCCCLXVIII</colophon>
+                     <note>With preface.</note>
+                     <note>Glosses added by a later hand.</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -54,7 +65,7 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                        <extent resp="#DD"> 183 +i fols.<dimensions unit="mm" type="leaf">
+                        <extent resp="#DD"> <measure type="leaf">183</measure> + i fols.<dimensions unit="mm" type="leaf">
                               <height>205</height>
                               <width>145</width>
                            </dimensions>
@@ -83,6 +94,7 @@
                         <!--ORIGINAL: Italian, Lombardy-->
                      </origPlace>
                   </origin>
+                  <provenance>'Assigned to Lombardy on stylistic grounds by Pächt &amp; Alexander; the script is of Milanese appearance.' (Watson)</provenance>
                   <provenance notAfter="1805" notBefore="1727" resp="#MMM">
                      <persName key="person_2384880" role="fmo">Matteo Luigi Canonici, 1727–1805</persName>
                   </provenance>
@@ -94,8 +106,15 @@
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (H. O. Coxe, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854). Decoration, localization and date follow Pächt and Alexander (1970). Extent, dimensions and layout from Watson (1984). <listBibl>
+                        <source>Description adapted (Feb. 2025) from the following sources:
+                          <listBibl> <bibl>A. Watson, <title>Catalogue of Dated and Datable Manuscripts in Oxford Libraries</title> (1984), <citedRange unit="entry" from="172" to="172">
+                              <ref target="https://hdl.handle.net/2027/mdp.39015008982863?urlappend=%3Bseq=58">no. 172</ref>
+                           </citedRange>
+                           </bibl>
+                           <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, II (1970), no. 733</bibl>
+                           <bibl>H. O. Coxe, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854</bibl></listBibl>
+                           
+                           <listBibl>
                               <bibl facs="abz0093.gif" type="QUARTO"> Quarto Catalogue, vol. 3, col. 173 </bibl>
                               <bibl facs="aaz0339.gif" type="SC">Summary Catalogue, vol. 4, p. 320</bibl>
                            </listBibl>
@@ -124,6 +143,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-02">Encode all information from printed catalogues.</change>
          <change when="2024-05">Add extent, leaf dimensions and layout from Watson, Dated and Datable.</change>
          <change when="2018-10-14" xml:id="MMM">
             <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
