@@ -1,9 +1,16 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8685">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8685">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Rawl. liturg. e. 9</title>
             <title type="collection">MSS. Rawl. liturg. (Rawlinson liturgical)</title>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
             <respStmt>
                <resp>Summary description</resp>
                <persName>Elizabeth Solopova</persName>
@@ -30,7 +37,9 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Rawl. liturg. e. 9</idno>
-                  <idno type="ieArk">ark:29072/x08k71nh793n</idno><idno type="crArk">ark:29072/x08g84mm95sf</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x08k71nh793n</idno>
+                  <idno type="crArk">ark:29072/x08g84mm95sf</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">15777</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -47,10 +56,23 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent resp="#VD"> ii + 84 + ii fol.<dimensions type="leaf" unit="mm">
+                              <height>175</height>
+                              <width>115</width>
+                           </dimensions>
+                           <dimensions type="written" unit="mm">
+                              <height>108</height>
+                              <width>65</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc resp="#VD">
+                        <layout columns="1" writtenLines="18">18 long lines</layout>
+                     </layoutDesc>
                   </objectDesc>
                   <decoDesc>
-                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 865:</summary>
+                     <summary>
+                        <ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 865:</summary>
                      <decoNote type="border">Good borders</decoNote>
                      <decoNote type="histInit">One good historiated initials.
                         <list type="gloss">
@@ -63,7 +85,8 @@
                            <item>
                               <seg type="subject">Kneeling cleric (John Wakering, bp. of Norwich (?)) with Trinity.</seg>
                            </item>
-                        </list></decoNote>
+                        </list>
+                     </decoNote>
                      <decoNote type="decInit">Good other initials. </decoNote>
                   </decoDesc>
                </physDesc>
@@ -110,6 +133,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-09">Add extent, leaf dimensions and layout from van Dijk, Latin Liturgical Manuscripts in the Bodleian Library, Oxford.</change>
          <change when="2019-10-31" xml:id="MMM">
             <persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>

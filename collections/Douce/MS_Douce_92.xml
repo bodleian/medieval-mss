@@ -1,14 +1,26 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4750">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4750">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Douce 92</title>
             <title type="collection">MSS. Douce</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1966">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -35,47 +47,96 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem class="#historica" n="1" xml:id="MS_Douce_92-item1">
-                     <title key="work_15175" type="desc">Treatise on <orgName key="org_126179587">St. Denis</orgName> and the Kings of <placeName key="place_1000070">France</placeName>
-                     </title>
-                     <rubric>Pelerinaiges, processions, prieres et oraisons faictes monsr. Sainct Denis en France par les trescrestiens Roys de France</rubric>
+                     <locus>(fols. I r - XXV r)</locus>
+                     <author key="person_5014">Louis le Blanc (attrib.)</author>
+                     <title key="work_15175">Brief recit des roys de France</title>
+                     <rubric>Sensuivent les noms des xii roys de France, dont mencion est faicte en ce present traictie, 
+                        qui ont este rendre graces à monseigneur sainct Denis en son eglise et abbaye en France des victoires 
+                        par eulx obtenues en leurs personnes à l'encontre de leurs ennemys</rubric>
+                     <rubric>Pelerinaiges, processions, prieres et oraisons faictes mons<hi rend="superscript">r</hi> Sainct Denis en France par les trescrestiens Roys de France ...</rubric>
+                     <incipit>Charlemagne apres ce quil ot accorde</incipit>
+                     <explicit>a demonstrer que ledit roy loys est bon pasteur et que bien il garde conduit et gouuerne les subgectz qui est le plus grant honneur et gloire que puisse acquerir noble roy chretien</explicit>
+                     
+                     <note>The twelve kings are listed on fols 1r-1v and are: Charlemagne, Robert, Philippe Dieu donné, Louis VII, Saint Louis, Philippe III, Philippe le Bel, Philippe VI, 
+                        Charles VI, Charles VII, Charles VIII and Louis XII (who died in 1515 and was on the throne when the book was written). The last event mentioned in the text is the battle of Agnadello in May 1509.</note>
+                     <note>On the text see Franck Collard, “<ref target="https://books.openedition.org/psorbonne/22280?lang=en ">Ranimer l’oriflamme. Les relations des rois de France avec l’abbaye de Saint-Denis à la fin du XVe siècle</ref>”, in <title>Saint-Denis et la royauté</title>, ed. Françoise Autrand et al. (Éditions de la Sorbonne, 1999). Four other manuscripts (BnF Fr. 5706, 5868, 5870, and 24948) present a different version of the text; the present manuscript (referred to at n. 21) seems to be a different redaction.</note>
+                     <note>Fols. i r-v, XXVIr-XXIXv blank; fol. [XXX], blank, is a pastedown..</note>
+                     <!-- other mss: BnF Fr 5706, Fr. 5868 (both digitized), Fr 5870, Fr 24948
+                        
+                        literature https://books.openedition.org/psorbonne/22280?lang=en 
+                        Louis XII: les dérèglements de l'image royale, 1498-1515
+By Nicole Hochner 149ff.
+                        
+                     -->
                      <textLang mainLang="frm">Middle French</textLang>
                   </msItem>
+
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
-                        <support>parchment</support>
+                        <support>parchment</support><extent>
+                           1 + <measure type="leaf" quantity="30">xxx</measure> leaves
+                           <dimensions type="binding" unit="in">
+                              <height>8.625</height>
+                              <width>6</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote type="miniature">Fine miniatures.</decoNote>
-                     <decoNote type="border">Borders.</decoNote>
-                     <decoNote type="decInit">Initials. Related to the style of the MSS. made for <persName key="person_15012552" role="pat">Cardinal Amboise</persName> in the region of <placeName key="place_7008929">Rouen</placeName>. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 824, pl. LX)</decoNote>
+                  
+                  <handDesc>
+                     <handNote script="humanistica">French Humanistic script (Douce Legacy [1984], no. 83)</handNote>
+                  </handDesc>
+                  
+                  <decoDesc resp="#PA">
+                     <summary>Related to the style of the manuscripts made for <persName key="person_15012552" role="pat">Cardinal Georges d'Amboise</persName> in 
+                        the region of <placeName key="place_7008929">Rouen</placeName> <ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 824, Pl. LX. Illuminated between May 1509 and May 1510 (Douce Legacy [1984], no. 83). Attributed by Caroline Zöhl (<title>Jean Pichore : Buchmaler, Graphiker und Verleger in Paris um 1500</title> (Brepols, 2004), p. 188) to <persName role="art" key="person_51982741">Jean Pichore</persName>, on whom see also F. Avril and N. Reynaud, <title>Les manuscrits à peintures en France : 1440-1520</title> (1993), 411-18.
+                     </summary>
+                     
+                     <decoNote type="miniature">Fine miniatures. Two portraits of Louis XII: on <ref target="https://digital.bodleian.ox.ac.uk/objects/14c6db62-69d4-455c-af73-b4f077055425/surfaces/e110af73-e648-4694-bca1-209ba11e8200/">fol. 2r</ref>, he is represented on his knees, 
+                        in front of an open book in front of the high altar of Saint Denis. There is a cardinal on the king's right who is probably <persName key="person_15012552" role="pat">Georges d'Amboise</persName> 
+                        (Louis XII's adviser) who died May 1510; in the other portrait, at <ref target="https://digital.bodleian.ox.ac.uk/objects/14c6db62-69d4-455c-af73-b4f077055425/surfaces/e110af73-e648-4694-bca1-209ba11e8200/">fol. 18v</ref>, Louis XII is seated on his throne of state
+                     </decoNote>
+                     <decoNote type="border">Borders</decoNote>
+                     <decoNote type="decInit">Initials. </decoNote>
                   </decoDesc>
                   <bindingDesc>
                      <binding>
-                        <p>Red velvet.</p>
+                        <p>Bound in pasteboard and covered with red velvet</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1510" notBefore="1509">1509–1510</origDate>
+                     <origDate calendar="Gregorian" notAfter="1510" notBefore="1509" cert="high">1509–1510</origDate>
                      <origPlace>
-                        <country key="place_1000070">French</country>
+                        <country key="place_1000070">France</country>
                      </origPlace>
                   </origin>
                   <provenance notAfter="1834" notBefore="1757" resp="#MMM">
                      <persName key="person_69848690" role="fmo">Francis Douce, 1757–1834</persName>
                   </provenance>
-                  <acquisition resp="#MMM" when="1834">Bequeathed to the Bodleian in 1834</acquisition>
+                  <provenance>Made for <persName key="person_15012552" role="pat">Georges d'Amboise</persName> (?).</provenance>
+                  <provenance>There is no evidence to show where or when Douce acquired this manuscript.</provenance>
+                  <acquisition resp="#MMM" when="1834">Bequeathed to the Bodleian in 1834.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
+              
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1966). <listBibl>
+                           Description adapted (September 2024) by Stewart J. Brookes and Matthew Holford from the following sources and published literature as cited, with additional description of content:
+                           
+                           <listBibl>
+                              <bibl>Douce Legacy (1984), no. 83</bibl>
+                              <bibl>Pächt and Alexander (1966), <ref target="https://babel.hathitrust.org/cgi/pt?id=mdp.39015008409479&amp;seq=86&amp;q1=Amboise">i. 824</ref></bibl>
+                              <bibl>Catalogue of the Printed Books and Manuscripts Bequeathed by Francis Douce, esq. to the Bodleian Library (1840), <ref target="https://archive.org/details/catalogueofprint00bodluoft/page/12/mode/1up">p. 12</ref></bibl>
+                              <bibl>Summary Catalogue (1897)</bibl>
+                           </listBibl>
+                           <listBibl>
                               <bibl facs="aaz0537.gif" type="SC">Summary Catalogue, vol. 4, p. 518</bibl>
                            </listBibl>
                         </source>
@@ -104,6 +165,8 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-09-21">Description revised to incorporate all the information in the Summary Catalogue (1897) and other printed sources, with additional description.</change>
+         <change when="2024-05">Add extent and leaf dimensions from Summary Catalogue.</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2018-10-14" xml:id="MMM">
             <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>

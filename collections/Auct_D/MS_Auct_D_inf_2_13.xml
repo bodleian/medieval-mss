@@ -1,9 +1,16 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_505">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_505">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Auct. D. inf. 2. 13</title>
             <title type="collection">MSS. Auct. D. (Auctarium D.)</title>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
             <respStmt>
                <resp>Summary description</resp>
                <persName>Elizabeth Solopova</persName>
@@ -30,7 +37,9 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Auct. D. inf. 2. 13</idno>
-                  <idno type="ieArk">ark:29072/x06m311q11d0</idno><idno type="crArk">ark:29072/x06h440t2838</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x06m311q11d0</idno>
+                  <idno type="crArk">ark:29072/x06h440t2838</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">3083</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -44,10 +53,26 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                     </supportDesc>
+                        <extent resp="#VD"> ii + 33 + 230 (225) + 2 + ii fol.<dimensions type="leaf" unit="mm">
+                           <height>207</height>
+                           <width>150</width>
+                        </dimensions>
+                           <dimensions type="written" unit="mm">
+                              <height>103</height>
+                              <width>72</width>
+                           </dimensions>
+                        </extent>
+                     </supportDesc><layoutDesc  resp="#VD">
+                           <layout columns="1" writtenLines="15">15 lines.</layout>
+                        </layoutDesc>
                   </objectDesc>
                   <decoDesc>
-                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 221, pl. XVI; <ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 1115:</summary><decoNote type="border">Fine English borders. </decoNote><decoNote type="decInit">Fine English initials. </decoNote><decoNote type="miniature">Important Dutch grisaille miniatures. </decoNote><decoNote type="histInit">Important Dutch historiated grisaille initials.</decoNote>
+                     <summary>
+                        <ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 221, pl. XVI; <ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 1115:</summary>
+                     <decoNote type="border">Fine English borders. </decoNote>
+                     <decoNote type="decInit">Fine English initials. </decoNote>
+                     <decoNote type="miniature">Important Dutch grisaille miniatures. </decoNote>
+                     <decoNote type="histInit">Important Dutch historiated grisaille initials.</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
@@ -78,6 +103,7 @@
                         </ref>
                         <note>(26 images from 35mm slides)</note>
                      </bibl>
+                     <bibl type="microfilm">Microfilm available in the open shelf collections in the Weston Library (R. Films 101)</bibl>
                   </surrogates>
                   <listBibl type="WRAPPER">
                      <listBibl type="PRINT">
@@ -346,6 +372,7 @@
          </classDecl>
       </encodingDesc>
       <revisionDesc>
+         <change when="2024-09">Add extent, leaf dimensions and layout from van Dijk, Latin Liturgical Manuscripts in the Bodleian Library, Oxford.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>

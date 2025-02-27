@@ -1,14 +1,25 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1334">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1334">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Bodl. 284</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2024">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -30,59 +41,115 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Bodl. 284</idno>
-                  <idno type="ieArk">ark:29072/x01c18dg964h</idno><idno type="crArk">ark:29072/x01831cm12tk</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x01c18dg964h</idno>
+                  <idno type="crArk">ark:29072/x01831cm12tk</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">2339</idno>
                   </altIdentifier>
                </msIdentifier>
+               <head>Psalms and Athansian Creed with commentaries of Alexander Nequam</head>
                <msContents>
+                  <textLang mainLang="la">Latin</textLang>
                   <msItem class="#biblia #liturgica" n="1" xml:id="MS_Bodl_284-item1">
-                     <title key="work_14155" type="desc">Psalter with commentary of <persName key="person_71420958" role="aut"> Alexander Nequam </persName>
-                     </title>
-                     <textLang mainLang="la">Latin</textLang>
+                     <msItem>
+                        <title type="desc" key="work_14130">Psalms</title>
+                     </msItem>
+                     <msItem>
+                        <author key="person_71420958"> Alexander Nequam </author>
+                        <title type="desc" key="work_5484">Commentary on Psalms</title>
+                        <incipit>De orto deliciarum quatuor emanant flumina</incipit><incipit>Licet psalmus iste
+                           exponatur</incipit>
+                        </msItem>
+                        <note>The text of the Psalms, with the commentary on them by Alexander
+                           Neckam, the latter by the side or round the former, with prologue. Pss.
+                           cxlvii-1 are wanting, but the MS. is not imperfect. A 16th cent. index of
+                           the titles of the Psalms is on fol. 296. </note>
+                     
+                  </msItem>
+                  <msItem>
+                     <locus>(fol. 297)</locus>
+                     <msItem>
+                        <author key="person_71420958"> Alexander Nequam </author>
+                        <title type="desc" key="work_5485">Commentary on Athanasian Creed</title>
+                        <incipit type="prol.">Caput aquile uisum</incipit><incipit>Hec est enim uictoria</incipit>
+                     </msItem>
+                     <note>Neckam's commentary on the Athanasian creed, with the
+                        text, similarly arranged. The
+                        author's name does not occur anywhere in the volume.</note>
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>iii + 308 leaves
+                        <dimensions type="binding" unit="in">
+                           <height>16.75</height>
+                           <width>12.5</width>
+                        </dimensions></extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2 3">In treble or double columns</layout>
+                     </layoutDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote>Fine borders, historiated initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 359, pl. XXX)</decoNote>
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt
+                           and Alexander</ref> iii. 359, pl. XXX</summary>
+                     <decoNote type="border">Fine borders. </decoNote>
+                     <decoNote type="histInit">Fine historiated initials. </decoNote>
                   </decoDesc>
                   <bindingDesc>
                      <binding when="1840">
-                        <p>Modern style about A.D. 1840-50.</p>
+                        <p>Modern style about A.D. 1840-50. About 1655 Langbaine describes the
+                           volume as 'holosericatus, nigro tegmine, bullis æreis munitus'.</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1225" notBefore="1200">13th century, first quarter</origDate>
+                     <origDate calendar="Gregorian" notAfter="1225" notBefore="1200">13th century,
+                        first quarter</origDate>
                      <origPlace cert="low">
-                        <country key="place_7002445">English</country>, <settlement key="place_7011127">Cirencester</settlement> or <settlement key="place_7011931">Oxford</settlement> (?)<!--ORIGINAL: English, Cirencester (?) or Oxford (?)--></origPlace>
+                        <country key="place_7002445">English</country>, <settlement
+                           key="place_7011127">Cirencester</settlement> or <settlement
+                           key="place_7011931">Oxford</settlement>
+                        (?)<!--ORIGINAL: English, Cirencester (?) or Oxford (?)--></origPlace>
                   </origin>
-                  <provenance type="MLGB3_provenance_evidence" source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1759">
-                     <orgName role="fmo" key="org_211447911">Cirencester, Gloucestershire, Augustinian abbey of St Mary the Virgin</orgName>: "Cirencestrie" (fols. iii recto, 119r, 153r, 294r); s. xvi. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1759">MLGB3</ref>: evidence from an ex-libris inscription or note of gift to an institution). </provenance>
-                  <provenance type="MLGB3_generalNotes" source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1759">Title in Leland's hand (?) (fol. iii recto), later than the "Cirencestrie" inscription. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1759">MLGB3</ref>)
-                                             </provenance>
-                  <provenance> It was owned by <persName role="fmo" key="person_172419710">king Henry VIII</persName>, see <ref target="https://medieval.bodleian.ox.ac.uk/catalog/manuscript_1275">MS Bodl. 218 (S.C. 2054)</ref>.
-                  </provenance><acquisition when="1604">Presented by <persName role="dnr" key="person_76469410">Charles Howard, earl of Nottingham</persName>, in 1604.</acquisition>
-                 
+                  <provenance type="MLGB3_provenance_evidence"
+                     source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1759">
+                     <orgName role="fmo" key="org_211447911">Cirencester, Gloucestershire,
+                        Augustinian abbey of St Mary the Virgin</orgName>: "Cirencestrie" (fols. iii
+                     recto, 119r, 153r, 294r); s. xvi. (<ref
+                        target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1759">MLGB3</ref>: evidence
+                     from an ex-libris inscription or note of gift to an institution). </provenance>
+                  <provenance type="MLGB3_generalNotes"
+                     source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1759">Title in Leland's hand
+                     (?) (fol. iii recto), later than the "Cirencestrie" inscription. (<ref
+                        target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/1759">MLGB3</ref>) </provenance>
+                  <provenance> It was owned by <persName role="fmo" key="person_172419710">king
+                        Henry VIII</persName>, see <ref
+                        target="https://medieval.bodleian.ox.ac.uk/catalog/manuscript_1275">MS Bodl.
+                        218 (S.C. 2054)</ref>. </provenance>
+                  <acquisition when="1604">Presented by <persName role="dnr" key="person_76469410"
+                        >Charles Howard, earl of Nottingham</persName>, in 1604.</acquisition>
+
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
-                              <bibl facs="aap0338.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 317</bibl>
+                           Description adapted (2024) from the Summary Catalogue (1922).
+                           Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
+                              <bibl facs="aap0338.gif" type="SC">Summary Catalogue, vol. 2, part 1,
+                                 p. 317</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
                   <surrogates>
                      <bibl subtype="partial" type="digital-facsimile">
-                        <ref target="https://digital.bodleian.ox.ac.uk/objects/58143738-39b4-4556-9fdf-38d4e920937e/">
+                        <ref
+                           target="https://digital.bodleian.ox.ac.uk/objects/58143738-39b4-4556-9fdf-38d4e920937e/">
                            <title>Digital Bodleian</title>
                         </ref>
                         <note>(13 images from 35mm slides)</note>
@@ -103,11 +170,14 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-10">Description revised to incorporate all information from Summary Catalogue.</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2021-12-14">Add provenance information from MLGB3.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
-            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+            <persName>James Cummings</persName> Up-converted the markup using <ref
+               target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl"
+               >https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>
       </revisionDesc>
    </teiHeader>

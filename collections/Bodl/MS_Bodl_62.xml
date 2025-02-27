@@ -1,9 +1,16 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1626">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1626">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Bodl. 62</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
             
             <respStmt xml:id="SC">
                <resp when="1922">Cataloguer</resp>
@@ -49,7 +56,9 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Bodl. 62</idno>
-                  <idno type="ieArk">ark:29072/x008612p79s8</idno><idno type="crArk">ark:29072/x005741s96gd</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x008612p79s8</idno>
+                  <idno type="crArk">ark:29072/x005741s96gd</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">2028</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -96,8 +105,8 @@
                            <title type="desc">Commendatio Animarum</title>
                            <textLang mainLang="la">Latin</textLang>
                         </msItem>
-                 
-                 <note>There are many 15th century Bridgettine additions or substitutions at fols. 29 (memoriae), 63–80, 102–11, 116, 149 and 150 ('Preces Capitulares', disciplinares, etc.)</note>
+                     <!-- Hours of the Holy Ghost (1: Spiritus domini replevit orbem) with many later corrections; Sarum kalendar (8), with Bridgettine additions; Sarum office of the Virgin (14), with the Hours of the Cross (32) and Our Lady’s Compassion (33: Matris cor) worked in; corrections and additions by Bridgettine nuns (29, 63); Penitential (80) and Gradual (87<hi rend="superscript">v</hi>) Psalms, with the Sarum litany (89) for each day of the week (corrected); additional prayers (102); Sarum office of the dead (112) with some additions (116, 136); commendation (136<hi rend="superscript">v</hi>); additions (149), among which preces capitulares and disciplinares (150), and votive collects (151<hi rend="superscript">v</hi>). -->
+                     <note>There are many 15th century Bridgettine additions or substitutions at fols. 29 (memoriae), 63–80, 102–11, 116, 149 and 150 ('Preces Capitulares', disciplinares, etc.)</note>
                      
                         <textLang mainLang="la">Latin</textLang>
                 
@@ -107,17 +116,31 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                        <extent>ii + 153 leaves <dimensions type="binding" unit="in">
+                        <extent>ii + 153 (2 + 153 + i ) leaves <dimensions type="binding" unit="in">
                               <height>7.375</height>
                               <width>5.5</width>
                            </dimensions>
+                           <dimensions type="leaf" unit="mm" resp="#VD">
+                              <height>175</height>
+                              <width>120</width>
+                           </dimensions>
+                           <dimensions type="written" unit="mm" resp="#VD">
+                                 <height>112</height>
+                                 <width>70</width>
+                              </dimensions>
+                           
+                          
                         </extent>
                      </supportDesc>
+                     <layoutDesc resp="#VD">
+                              <layout columns="1" writtenLines="19">19 lines</layout>
+                           </layoutDesc>
                   </objectDesc>
                   
                   <decoDesc>
                      
-                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 690:</summary>
+                     <summary>
+                        <ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 690:</summary>
                      <decoNote type="border">Fine borders</decoNote>
                      <decoNote type="decInit">Initials</decoNote>
                  
@@ -191,6 +214,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-09">Add extent, leaf dimensions and layout from van Dijk, Latin Liturgical Manuscripts in the Bodleian Library, Oxford.</change>
          <change when="2022-10-07">Layout and encoding updates</change>
          <change when="2020-04-21">Description revised to incorporate all information in SC.</change>
          <change when="2017-07-01">First online publication.</change>

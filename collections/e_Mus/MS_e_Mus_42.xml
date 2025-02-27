@@ -1,9 +1,16 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_9146">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_9146">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. e Mus. 42</title>
             <title type="collection">MSS. e Mus. (e Musaeo)</title>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
             <respStmt>
                <resp>Summary description</resp>
                <persName>Elizabeth Solopova</persName>
@@ -30,7 +37,9 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. e Mus. 42</idno>
-                  <idno type="ieArk">ark:29072/x00c483k63j5</idno><idno type="crArk">ark:29072/x008612p807d</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x00c483k63j5</idno>
+                  <idno type="crArk">ark:29072/x008612p807d</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">3646</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -44,11 +53,20 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent resp="#DD">i  + 32 + i double leaves (roll bound up into codex form)
+      <dimensions unit="mm" type="leaf">
+                              <height quantity="340">c. 340</height>
+                              <width>215</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc resp="#DD">
+                        <layout columns="2 3">2 and 3 horizontal columns of variable
+         width.</layout>
+                     </layoutDesc>
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote>Decoration<p>Good miniature, diagrams, initials. Roll bound up into codex form. Includes only two of Edward IV's children. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 1070, pl. XCIX)</p>
-                     </decoNote>
+                  <decoDesc><summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 1070, pl. XCIX</summary>
+                     <decoNote type="miniature">Good miniature. </decoNote><decoNote type="diagram">Good  diagrams. </decoNote><decoNote type="diagram">Good initials. </decoNote>
                   </decoDesc>
                   <bindingDesc>
                      <binding notBefore="1600" notAfter="1700">
@@ -58,10 +76,13 @@
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1469" notBefore="1467" cert="high">c. 1467–1469</origDate>
+                     <origDate calendar="Gregorian"
+                               notAfter="1469"
+                               notBefore="1467"
+                               cert="high">c. 1467–1469</origDate>
                      <origPlace>
                         <country key="place_7002445">English</country>
-                     </origPlace>
+                     </origPlace>  Includes only two of Edward IV's children. 
                   </origin>
                </history>
                <additional>
@@ -101,6 +122,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-09">Add extent, leaf dimensions and layout from Watson, Dated and Datable.</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">

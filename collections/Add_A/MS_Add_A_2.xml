@@ -4,11 +4,23 @@
          <titleStmt>
             <title>MS. Add. A. 2</title>
             <title type="collection">MSS. Add. (Additional) A</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1905">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -35,21 +47,41 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_Add_A_2-item1">
                      <author key="person_84975906">Johannes de Sacro Bosco</author>
                      <title key="work_2592">Tractatus de sphera</title>
+                     <rubric>Incipit spera secundum M. Joannem Gallicum de Sacra Busco</rubric>
+                     <incipit><supplied>T</supplied>ractatum de sp<supplied>er</supplied>a quatuor capitulis distinguimus</incipit>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
+                        
+                        <extent source="SC">i + <measure type="leaf" quantity="56">56</measure> leaves
+                           <dimensions type="binding" unit="in">
+                              <height>7.25</height>
+                              <width>5</width>
+                           </dimensions>
+                        </extent>
+                        
                      </supportDesc>
                   </objectDesc>
-                  <decoDesc>
+                  
+                  <handDesc>
+                     <handNote script="humanistica">Humanistic script (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 820)</handNote>
+                  </handDesc>
+                                   
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 820
+                     </summary>
+                     
                      <decoNote type="diagram">
-                        <p>Diagrams, one representational. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 820)</p>
+                        Geometric diagrams (e.g. fols 8r and 49v). A representational diagram on
                         <list type="gloss">
                            <head>fol. 10r</head>
                            <label>Type</label>
@@ -58,26 +90,48 @@
                            </item>
                            <label>Subject</label>
                            <item>
-                              <seg type="subject">Geometric diagram with walled city and boat on water.</seg>
+                              <seg type="subject">Geometric diagram with walled city and boat on water</seg>
                            </item>
                         </list>
                      </decoNote>
                   </decoDesc>
+                  
+                  <additions>With notes in the margins in various hands, from differing dates, and some correction of the main text; e.g. fol. 7v and fol. 28r</additions>
+                  
+                  <bindingDesc>
+                     <binding notBefore="1400" notAfter="1500">
+                        <p>Red leather on boards with blind tooling, brass bosses and fore-edge clasp fittings (15th century)</p>
+                     </binding>
+                  </bindingDesc>
+                  
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1460" notBefore="1440">15th century, middle</origDate>
                      <origPlace>
-                        <country key="place_1000080">Italian</country>
+                        <country key="place_1000080">Italy</country>
                         <region>North</region>
                         <!--ORIGINAL: Italian, North-->
                      </origPlace>
                   </origin>
+                  
+                  <provenance>Fol. 56v: '1452 (?) Visto; per mi Zohanne de Ipesoadan (?)'. For similar inscriptions, see 
+                     <ref target="https://medieval.bodleian.ox.ac.uk/catalog/manuscript_3524">MS. Canon. Misc. 486</ref>, <ref target="https://medieval.bodleian.ox.ac.uk/catalog/manuscript_4149">MS. D'Orville 36</ref>, 
+                     and <ref target="https://medieval.bodleian.ox.ac.uk/catalog/manuscript_7622">MS. Laud Lat. 48</ref>; also Edinburgh, Nat. Lib. Scotland, MS. Adv. 18. 3. 15. 
+                     Apparently to be read as <persName>Giovanni dei Pescadori</persName>: see Giuseppe Billanovich, 'Il testo di Livio', <title>Italia medioevale e umanistica</title> 32 (1989), 53-99 at 85 and n. 93.</provenance>
+                  
+                  <!-- Add authority record -->                  
+                  
+                  <provenance>'V. g. 51', 'Pº xix. f. 3', 'V. E. 6'</provenance>
+                  <acquisition when="1860">Bought for 6s. at Sotheby's 20-1 June 1860, lot. 245, among lots 'formerly in the archives of two princely Roman families'.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
+                        
+                        <source>
+                           Description adapted (November 2024) by Stewart J. Brookes from the Summary Catalogue (1905). Decoration, localization and date follow Pächt and Alexander (1970)
+                           <listBibl>
                               <bibl facs="aam0537.gif" type="SC">Summary Catalogue, Vol. 5, p. 502</bibl>
                            </listBibl>
                         </source>
@@ -88,6 +142,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-11-13">Description revised to incorporate all the information in the Summary Catalogue (1905)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>

@@ -1,14 +1,20 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4538">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4538">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Douce 160</title>
             <title type="collection">MSS. Douce</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+   
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -35,16 +41,23 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem class="#biblia #versus" n="1" xml:id="MS_Douce_160-item1">
                      <title key="work_11720">Epistre de Ysaac: Enuoyee a sa mere Sarra</title>
-                     <note>(verse account of the sacrifice of Isaac)</note>
+                     <rubric>Epistre de Ysaac: Enuoyée a sa mere Sarra</rubric>
+                     <incipit>Ton filz Ysaac, Sarra treschere mere / Pour tadvertir de sa douleur amere. / Vers toy envoye ceste dolente epistre / Qua bien ose de son gros danger tixtre</incipit>
+                     <explicit>De ladventure de laigneau macule / Fut adone prins et soudain decole / Feu allume et joye unestimée, / Dont jusque au ciel en monte la fumée</explicit>
+                     <note>Verse account of the binding of Isaac</note><!-- not in JONAS -->
                      <textLang mainLang="frm">Middle French</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
-                        <support>parchment</support>
+                        <support>parchment</support><extent><measure type="leaf" quantity="16">16</measure> leaves
+                           <dimensions type="binding" unit="in"><height>10.25</height><width>6.875</width></dimensions>
+                        </extent>
                      </supportDesc>
                   </objectDesc>
                </physDesc>
@@ -58,9 +71,18 @@
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). <listBibl>
+                        <source>
+                           Description adapted (August 2024) by Stewart J. Brookes from the Summary Catalogue (1897) and the Catalogue of the Printed Books and Manuscripts Bequeathed by Francis Douce, esq. to the Bodleian Library (1840)
+                           <listBibl>
                               <bibl facs="aaz0560.gif" type="SC">Summary Catalogue, vol. 4, p. 541</bibl>
                            </listBibl>
+                           
+                           <listBibl>
+                              <bibl>
+                                 <ref target="https://archive.org/details/catalogueofprint00bodluoft/page/27/mode/1up">Printed Books and Manuscripts Bequeathed by Francis Douce, p. 27</ref>
+                              </bibl>
+                           </listBibl>
+                           
                         </source>
                      </recordHist>
                   </adminInfo>
@@ -69,6 +91,8 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-08-30">Description revised to incorporate all the information in the Summary Catalogue (1897)</change>
+         <change when="2024-05">Add extent and leaf dimensions from Summary Catalogue.</change>
          <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>

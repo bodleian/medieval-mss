@@ -1,9 +1,16 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6722">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6722">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Lat. th. d. 1</title>
             <title type="collection">MSS. Lat. th. (Latin theology)</title>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
             <respStmt>
                <resp>Summary description</resp>
                <persName>Elizabeth Solopova</persName>
@@ -30,7 +37,9 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Lat. th. d. 1</idno>
-                  <idno type="ieArk">ark:29072/x0k069876056</idno><idno type="crArk">ark:29072/x0jw827b76v4</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0k069876056</idno>
+                  <idno type="crArk">ark:29072/x0jw827b76v4</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">29746</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -45,21 +54,39 @@
                   <objectDesc form="codex">
                      <supportDesc material="mixed">
                         <support>parchment, paper</support>
+                        <extent resp="#DD">181 fols. <dimensions type="leaf" unit="mm">
+                              <height>218</height>
+                              <width quantity="150">c. 150</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc resp="#DD">
+                        <layout writtenLines="40 50" columns="1">1 col., c.40-50 lines, <dimensions type="written" unit="mm">
+                              <height>175</height>
+                              <width>c. 115</width>
+                           </dimensions>
+                        </layout>
+                     </layoutDesc>
                   </objectDesc>
                </physDesc>
                <history>
                   <origin><!--Complex date:  markup manually-->
-                     <origDate calendar="Gregorian" notAfter="1436" notBefore="1430" cert="high">1430–1436</origDate>
+                     <origDate calendar="Gregorian"
+                               notAfter="1436"
+                               notBefore="1430"
+                               cert="high">1430–1436</origDate>
                      <origPlace>
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
-                  <provenance type="MLGB3_provenance_evidence" source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/3891">
+                  <provenance type="MLGB3_provenance_evidence"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/3891">
                      <orgName key="org_235" role="fmo">King's Lynn, Norfolk, Franciscan convent</orgName>: on fol. 90r is a musical cipher, reading "Liber fratris Nicholai Phillip de custodia Cantebrigie et conventus Lennie". Philip's name occurs in several places with dates in the 1440s. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/3891">MLGB3</ref>: evidence from an inscription of ownership by an individual member of a religious house (which may not, however, be evidence for institutional ownership)).</provenance>
-                  <provenance type="MLGB3_provenance_evidence" source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/313">
+                  <provenance type="MLGB3_provenance_evidence"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/313">
                      <orgName role="fmo" key="org_236" when="1538">Babwell (Bury St Edmunds), Suffolk, Franciscan convent</orgName>: A note written at Norwich in 1538 records that it was to go Babwell after the death of Fr. Thomas Goddard; it belonged earlier to a friar of Lynn (see above): 'Liber iste post decessum fratris et fratris Thome Goddard bachalarii spectat ad conuentum fratrum minorum Babwellie exaratum Norwici a.d. 1538'.      (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/313">MLGB3</ref>: inferred evidence). </provenance>
-                  <provenance type="MLGB3_laterOwners" source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/313">Sherbrook sale, 19 May 1887, lot 536. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/313">MLGB3</ref>)</provenance>
+                  <provenance type="MLGB3_laterOwners"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/313">Sherbrook sale, 19 May 1887, lot 536. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/313">MLGB3</ref>)</provenance>
                </history>
                <additional>
                   <adminInfo>
@@ -97,6 +124,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-09">Add extent, leaf dimensions and layout from Watson, Dated and Datable.</change>
          <change when="2021-12-14">Add provenance information from MLGB3.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">

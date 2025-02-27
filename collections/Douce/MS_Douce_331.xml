@@ -1,14 +1,26 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4667">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4667">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Douce 331</title>
             <title type="collection">MSS. Douce</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1966">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -35,39 +47,73 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_Douce_331-item1">
                      <author key="person_64002165">Boccaccio</author>
                      <title key="work_1105">Filostrato</title>
                      <note>French translation by <persName key="person_76325055" role="trl">Louis de Beauvau</persName>
                      </note>
+                     
+                     <incipit>Cil celluy temps estoit Troye assiegee des Grecz ou il y avoit mains grans et puissans roys, duez, contes et barons, preux et vaillans, 
+                        hardis et esprouvez en armes.</incipit>
+                     <note>On fol. 2r has the later title: 'Le Roman de Troÿle, fils du Roy Priam, et comment il l'enamoura de la belle Criseida pendant que les Grecs tenoient Troyes assiegée, 
+                        là ou l'on verra aussi comment elle changea son amour pour Diomedes de Grece. Translaté en françois par <persName key="person_76325055" role="trl">N. Beauveau, Senechal d'Anjou</persName>.'</note>
                      <textLang mainLang="frm">Middle French</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
-                        <support>parchment</support>
+                        <support>parchment</support><extent>i + <measure type="leaf" quantity="77">77</measure> leaves
+                           <dimensions type="binding" unit="in">
+                              <height>11.375</height>
+                              <width>8.75</width></dimensions>
+                           
+                        </extent>
+                        
                      </supportDesc>
+                     
+                     <layoutDesc>
+                        <layout columns="2">2 cols
+                        </layout>
+                     </layoutDesc>
+                     
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote type="miniature">Good miniatures.</decoNote>
-                     <decoNote type="border">Borders.</decoNote>
-                     <decoNote type="decInit">Initials. Imitation of the style of the MSS. of <persName key="person_18017604" role="pat">René d'Anjou</persName>. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 729, pl. LVII)</decoNote>
+                  
+                  <decoDesc resp="#PA">
+                     <summary>Imitation of the style of the manuscripts of <persName key="person_18017604" role="pat">René d'Anjou</persName>. <ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 729, Pl. LVII
+                     </summary>
+                     
+                     <decoNote type="miniature"><ref target="https://digital.bodleian.ox.ac.uk/objects/455c2f84-791e-4c13-a1b1-4f6915f3ca67/surfaces/8113cbd0-2320-4e0e-b446-b6bdfd488191/">Good miniatures</ref></decoNote>
+                     <decoNote type="border">Borders</decoNote>
+                     <decoNote type="decInit">Initials. </decoNote>
                   </decoDesc>
+                  
                   <bindingDesc>
-                     <binding>
-                        <p>Red velvet, rebacked.</p>
+                     <binding notAfter="1500" notBefore="1450">
+                        <p>Contemporary red velvet, rebacked</p>
                      </binding>
                   </bindingDesc>
+                  
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1475" notBefore="1450">15th century, third quarter</origDate>
                      <origPlace>
-                        <country key="place_1000070">French</country>, <region>West</region>
+                        <country key="place_1000070">France</country>, <region>West</region>
                         <!--ORIGINAL: French, West-->
                      </origPlace>
                   </origin>
+                  
+                  <provenance>Arms on fol. 2v, partly defaced, of a member of the family of <persName role="fmo" key="person_5002">Albret d'Orval</persName></provenance>
+                  
+                  <!-- Add authority record -->    
+                  
+                  <provenance>A note states that this manuscript was no. 2342 in the <persName role="fmo" key="person_49653138">Gaignat</persName> sale in 1769</provenance>
+
+                  <provenance when="1783"><persName role="fmo" key="person_41883842">Louis César de la Baume-le-Blanc (1708-1780), duc de la Vallière</persName>; sale, 1783/17844, no. 3617; cf. Guillaume de Bure, <title>Catalogue des livres de la bibliothèque de feu M. le duc de la Vallière</title> (Paris: Guillaume de Bure, 1783)</provenance>
+                  
                   <provenance notAfter="1834" notBefore="1757" resp="#MMM">
                      <persName key="person_69848690" role="fmo">Francis Douce, 1757–1834</persName>
                   </provenance>
@@ -77,9 +123,15 @@
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1966). <listBibl>
-                              <bibl facs="aaz0616.gif" type="SC">Summary Catalogue, vol. 4, p. 597</bibl>
+                           Description adapted (September 2024) by Stewart J. Brookes from the Summary Catalogue (1897) and the Catalogue of the Printed Books and Manuscripts Bequeathed by Francis Douce, esq. to the Bodleian Library (1840). 
+                           Decoration, localization and date follow Pächt and Alexander (1966)
+                           <listBibl>
+                              
+                              <bibl facs="aaz0616.gif" type="SC">Summary Catalogue, vol. 4, p. 597</bibl>  <bibl>
+                                 <ref target="https://archive.org/details/catalogueofprint00bodluoft/page/58/mode/1up">Printed Books and Manuscripts Bequeathed by Francis Douce, p. 58</ref>
+                              </bibl>
                            </listBibl>
+                           
                         </source>
                      </recordHist>
                   </adminInfo>
@@ -106,6 +158,8 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-09-21">Description revised to incorporate all the information in the Summary Catalogue (1897) and other printed sources</change>
+         <change when="2024-05">Add extent and leaf dimensions from Summary Catalogue.</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2018-10-14" xml:id="MMM">
             <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>

@@ -1,12 +1,22 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2115">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2115">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Canon. Class. Lat. 104</title>
             <title type="collection">MSS. Canon. Class. Lat. (Canonici Latin Classical)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
+            <respStmt xml:id="Q">
+               <resp when="1854">Cataloguer</resp>
+               <persName>H. O. Coxe</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2025">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -30,7 +40,9 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Canon. Class. Lat. 104</idno>
-                  <idno type="ieArk">ark:29072/x02227mq56n5</idno><idno type="crArk">ark:29072/x000000129zj</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x02227mq56n5</idno>
+                  <idno type="crArk">ark:29072/x000000129zj</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">18685</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -38,6 +50,16 @@
                   <msItem n="1" xml:id="MS_Canon_Class_Lat_104-item1">
                      <author key="person_66462384">Terence</author>
                      <title key="work_4666">Comedies</title>
+                     <note>With epitaph and arguments.</note>
+                     <note>With interlinear glosses.</note>
+                     <colophon> Terencii Afri comici explicit Phormio feliciter die Mercurii decimo septimo mensis Decembri, 1448, indicione undecima</colophon>
+                     <note>The date 1391 appears after an earlier comedy.</note>
+                     <textLang mainLang="la">Latin</textLang>
+                  </msItem>
+                  <msItem>
+                     <title type="desc">Verses</title>
+                     <incipit>Quid pejus damno? Vulnus. Quid vulnere? morbus <note>[six lines]</note></incipit>
+                     <incipit>Creverunt et opes, et opum furiosa cupido <note>[eight elegiacs]</note></incipit>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -45,7 +67,19 @@
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
+                        <extent resp="#DD"> <measure type="leaf">139</measure> + ii fols.<dimensions unit="mm" type="leaf">
+                              <height>235</height>
+                              <width>167</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc resp="#DD">
+                        <layout writtenLines="27" columns="1">1 col., 27 lines, <dimensions unit="mm" type="written">
+                              <height quantity="155">c. 155</height>
+                              <width>95</width>
+                           </dimensions>
+                        </layout>
+                     </layoutDesc>
                   </objectDesc>
                </physDesc>
                <history>
@@ -56,6 +90,7 @@
                         <!--ORIGINAL: Italian, North-->
                      </origPlace>
                   </origin>
+                  <provenance>On fol. 140, the first of two parchment flyleaves, is a document dated March 1451 recording that 'Antonius filius ser delaidj[?] de caprino de sancto <damage>zenone</damage> ord' Veron'.' was created a notary: 'creatus fui publieus et autenticus notarius a prudentibus viris domino Antonio Donato de Canodasino [2] et ἃ Johanne Donato de d.donibus et ab Antonio Viella et a Johanne Michaele a Falcibus, et a Pasio de Turi et a Johanne Simone et a...... oniecho de ordine decano, omnibus examinatoribus ; die Jovis decimo octavo mensis Martii 1451 indicione quartadecima'. Also three documents relating to <placeName key="place_7003262">Verona</placeName>, and the note '1485 die 16 Madii incepi examinare Petrum Antonium de Fuscis, pro quoque mense quatuor marcas' </provenance>
                   <provenance notAfter="1805" notBefore="1727" resp="#MMM">
                      <persName key="person_2384880" role="fmo">Matteo Luigi Canonici, 1727–1805</persName>
                   </provenance>
@@ -68,7 +103,16 @@
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (H. O. Coxe, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854). <listBibl>
+                           Description adapted (Feb. 2025) from the following sources:
+                           <listBibl>
+                              <bibl>A. Watson, <title>Catalogue of Dated and Datable Manuscripts in Oxford Libraries</title> (1984), <citedRange unit="entry" from="165" to="165">
+                                 <ref target="https://hdl.handle.net/2027/mdp.39015008982863?urlappend=%3Bseq=57">no. 165</ref>
+                              </citedRange>
+                              </bibl>
+                              <bibl>H. O. Coxe, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854</bibl>
+                              
+                           </listBibl>
+                           <listBibl>
                               <bibl facs="abz0082.gif" type="QUARTO"> Quarto Catalogue, vol. 3, col. 152 </bibl>
                               <bibl facs="aaz0338.gif" type="SC">Summary Catalogue, vol. 4, p. 319</bibl>
                            </listBibl>
@@ -89,6 +133,8 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-02">Encode all information from printed catalogues.</change>
+         <change when="2024-05">Add extent, leaf dimensions and layout from Watson, Dated and Datable.</change>
          <change when="2018-10-14" xml:id="MMM">
             <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>

@@ -1,14 +1,25 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4585">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4585">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Douce 229</title>
             <title type="collection">MSS. Douce</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -35,38 +46,101 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_Douce_229-item1">
+                     <locus>(fols 1-6v)</locus>
                      <author key="person_22158282">John Lydgate (?)</author>
                      <title key="work_2736">Calendar</title>
+                     <note>(<ref target="https://www.dimev.net/Records.php?MSS=BodDou229"><title>DIMEV</title> 2863-2</ref>)</note>
+                     
+                     <incipit>O ihesu lord, for thi circumsision, |
+                     In the beginnynge of the newe iere, |
+                     Kepe me ever from alle confusion, |
+                     When that I shal stonde at myn answere.</incipit>
+                     
+                     <explicit>...now saue us fadre with oute flech thi word|
+                     for seint Siluester loue atte ende last end</explicit>
+                     
+                     <note>Rhyming calendar, each line fitting into the place of a day in the framework of an ordinary calendar. 
+                        Fifty-one stanzas rhyme royal and concluding 8-line stanza (ababbcbc)</note>
+ 
+                     <msItem n="2" xml:id="MS_Douce_229-item2">
+                        <locus>(fol. 8)</locus>
+                        <author key="person_22158282">John Lydgate (?)</author>
+                        <title>In manus tuas</title>
+                        
+                  <!-- Add authority record -->                  
+
+                        <note>(<ref target="https://www.dimev.net/Records.php?MSS=BodDou229"><title>DIMEV</title> 2684-2</ref>)</note>
+                        <incipit>[IN] to thi handes lord y betake my soule |
+                           Whom thou boughtest with thi bytter passione...</incipit>
+                        
+                        <explicit>Into thi handes lord y betake my soule. |
+                           Whom thou boughtest with thi bytter passione, | 
+                           Assoile me for Marie and John, for seint Peter and
+                           Paule, |
+                           And all thyne holie seintes supplicacione. |
+                           And, be vertue of thi woundrefull ascencione, |
+                           Save me froo peyne and fro the fende, |
+                           And bryng me to blisse that never shal end.</explicit>
+                        
+                     </msItem>
+         
                      <textLang mainLang="enm">Middle English</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
-                        <support>parchment</support>
+                        <support>parchment</support><extent>xiii + <measure type="leaf" quantity="18">18</measure> leaves. Fos i-xiii and 8-end are blank paper
+                           <dimensions type="binding" unit="in">
+                              <height>6.375</height>
+                              <width>4.375</width></dimensions>
+                           
+                        </extent>
                      </supportDesc>
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote type="decInit">Initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 928)</decoNote>
+                 
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 928
+                     </summary>
+                     
+                     <decoNote type="decInit">Initials</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1450" notBefore="1425">15th century, second quarter</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
+                  
+                  <provenance>'<persName role="sgn">Richard Wynne</persName>' and '<persName role="sgn">Thomas Shepery</persName>' ('Sheaperdy'?) (16th century?), fol. 7</provenance>
+                  
+                  <!-- Add authority records -->                  
+                  
                   <provenance notAfter="1834" notBefore="1757" resp="#MMM"><persName key="person_69848690" role="fmo">Francis Douce, 1757–1834</persName></provenance>
                   <acquisition resp="#MMM" when="1834">Bequeathed to the Bodleian in 1834</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
+                        
+                        <source>
+                           Description adapted (September 2024) by Stewart J. Brookes from the Summary Catalogue (1897) and the Catalogue of the Printed Books 
+                           and Manuscripts Bequeathed by Francis Douce, esq. to the Bodleian Library (1840). Decoration, localization and date follow Pächt and Alexander (1973)
+                           <listBibl>
                               <bibl facs="aaz0581.gif" type="SC">Summary Catalogue, vol. 4, p. 562</bibl>
                            </listBibl>
+                           
+                           <listBibl>
+                              <bibl>
+                                 <ref target="https://archive.org/details/catalogueofprint00bodluoft/page/37/mode/1up">Printed Books and Manuscripts Bequeathed by Francis Douce, p. 37</ref>
+                              </bibl>
+                           </listBibl>
+                           
                         </source>
                      </recordHist>
                   </adminInfo>
@@ -75,6 +149,8 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-09-19">Description revised to incorporate all the information in the Summary Catalogue (1897) and other printed catalogues</change>
+         <change when="2024-05">Add extent and leaf dimensions from Summary Catalogue.</change>
          <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>

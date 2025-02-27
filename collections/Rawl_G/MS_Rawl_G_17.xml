@@ -4,11 +4,23 @@
          <titleStmt>
             <title>MS. Rawl. G. 17</title>
             <title type="collection">MSS. Rawl. G. (Rawlinson G)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+          
+            <respStmt xml:id="SC">
+               <resp when="1895">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1966">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -35,22 +47,37 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem class="#biblia" n="1" xml:id="MS_Rawl_G_17-item1">
                      <title key="work_12445" type="desc">Job with gloss</title>
+                     <note>With prologue, commentary in the margins and interlinear notes</note>
                      <bibl type="bible">
                         <title>Bible, Job</title>
                      </bibl>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                   
+                        <extent source="SC">i + <measure type="leaf" quantity="107">87</measure> leaves
+                           <dimensions type="binding" unit="in">
+                              <height>8.5</height>
+                              <width>6.25</width>
+                           </dimensions>
+                        </extent>
+
                      </supportDesc>
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote type="decInit">Decoration<p>Good initial. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 470)</p>
+                  
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 470
+                     </summary>
+                     
+                     <decoNote type="decInit">Good initial
                      </decoNote>
                   </decoDesc>
                </physDesc>
@@ -58,15 +85,19 @@
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1110" notBefore="1100">12th century, beginning</origDate>
                      <origPlace cert="low">
-                        <country key="place_1000070">French</country>, <region>West</region> (<settlement key="place_7010220">Laon</settlement>?)</origPlace>
+                        <country key="place_1000070">France</country>, <region>West</region> (<settlement key="place_7010220">Laon</settlement>?)</origPlace>
                   </origin>
+                  
+                  <provenance>'Memorandum. Habui hunc librum ex mutuo a <persName role="fmo" key="person_4923">m<ex>agister</ex> j. Redynge</persName>' (15th century) (perhaps John Redyng, fl. 1449-1471, M.A. Oxon. 1454, for whom see Emden, <title>BRUO</title> III.1562).</provenance>
                   <provenance notAfter="1755" notBefore="1690" resp="#MMM"><persName key="person_47563478" role="fmo">Richard Rawlinson, 1690–1755</persName></provenance>
                   <acquisition resp="#MMM" when="1755">Bequeathed to the Bodleian in 1755</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1895). Decoration, localization and date follow Pächt and Alexander (1966). <listBibl>
+                        <source>
+                              Description adapted (June 2024) by Stewart J. Brookes from the Summary Catalogue (1895). 
+                              Decoration, localization and date follow Pächt and Alexander (1966)<listBibl>
                               <bibl facs="aas0358.gif" type="SC">Summary Catalogue, Vol. 3, p. 343</bibl>
                            </listBibl>
                         </source>
@@ -77,6 +108,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-06-03">Description revised to incorporate all the information in the Summary Catalogue (1895)</change>
          <change when="2019-10-31" xml:id="MMM"><persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>

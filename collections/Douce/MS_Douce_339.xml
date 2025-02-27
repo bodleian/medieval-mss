@@ -1,14 +1,34 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4671">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4671">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Douce 339</title>
             <title type="collection">MSS. Douce</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -30,36 +50,64 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Douce 339</idno>
-                  <idno type="ieArk">ark:29072/x01831ck90sq</idno><idno type="crArk">ark:29072/x0db78tc4417</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x01831ck90sq</idno>
+                  <idno type="crArk">ark:29072/x0db78tc4417</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">21914</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
                   <msItem class="#legalia" n="1" xml:id="MS_Douce_339-item1">
                      <title key="work_14728" type="desc">Statutes of the Council of Forty at <placeName key="place_7018159">Venice</placeName> with additions up to 1401</title>
+                     <rubric>Incipit Capitulare Dominorum XL</rubric>
+                     <incipit>Tempore vero, quo ero xl., non accipiam aliquod aliud officium nisi de voluntate majoris nostrum xl.</incipit>
+                     <note>Chapter 5: 'Quod. xl. non possint accipere aliquod officium nisi de voluntate majoris partis de xl'</note>
+                     <note>With additions dated 1309–1395</note>
+                     <note>Fol. 16: 'Capitulare Dominorum Capitum de quadraginta,' with additions dated 1306–1401</note>
                      <textLang mainLang="la">Latin</textLang>
+                     
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent resp="#DD">ii + 33 + ii fols.<dimensions unit="mm" type="leaf">
+                              <height>260</height><!-- was 206 -->
+                              <width>235</width>
+                              <!-- sic, check -->
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc resp="#DD">
+                        <layout writtenLines="22" columns="1">1 col., 22 lines, <dimensions unit="mm" type="written">
+                              <height>170</height>
+                              <width>135</width>
+                           </dimensions>
+                        </layout>
+                     </layoutDesc>
                   </objectDesc>
-                  <decoDesc>
-                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 435, pl. XLII:</summary>
-                     <decoNote type="border">Fine borders.</decoNote>
-                     <decoNote type="decInit">Fine initials.</decoNote>
+                  
+                  
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 435, Pl. XLII
+                     </summary>
+                     <decoNote type="border">Fine borders</decoNote>
+                     <decoNote type="decInit">Fine initials</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1401" notBefore="1380" cert="high">before 1401</origDate>
+                     <origDate calendar="Gregorian"
+                               notAfter="1401"
+                               notBefore="1380"
+                               cert="high">before 1401 (1394?)</origDate>
                      <origPlace>
-                        <country key="place_1000080">Italian</country>, <settlement key="place_7018159">Venice</settlement>
+                        <country key="place_1000080">Italy</country>, <settlement key="place_7018159">Venice</settlement>
                         <!--ORIGINAL: Italian, Venice-->
                      </origPlace>
                   </origin>
+                  <provenance>'On fol. 12 the last entry in the original hand is for 1393, 5 January; on fol. 35v the last entry in the original hand is for 1392, 12 December' (Watson).</provenance>
                   <provenance notAfter="1834" notBefore="1757" resp="#MMM">
                      <persName key="person_69848690" role="fmo">Francis Douce, 1757–1834</persName>
                   </provenance>
@@ -69,9 +117,15 @@
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1970). <listBibl>
-                              <bibl facs="aaz0618.gif" type="SC">Summary Catalogue, vol. 4, p. 599</bibl>
-                           </listBibl>
+                           Description adapted (September 2024) by Stewart J. Brookes from the Summary Catalogue (1897) and the Catalogue of the Printed Books and Manuscripts Bequeathed by Francis Douce, esq. to the Bodleian Library (1840). 
+                           Decoration, localization and date follow Pächt and Alexander (1970)
+                           <listBibl>
+                              <bibl facs="aaz0618.gif" type="SC">Summary Catalogue, vol. 4, p. 599</bibl>   <bibl>
+                                 <ref target="https://archive.org/details/catalogueofprint00bodluoft/page/59/mode/1up">Printed Books and Manuscripts Bequeathed by Francis Douce, p. 59</ref>
+                              </bibl>
+                           </listBibl> 
+                           
+                           
                         </source>
                      </recordHist>
                   </adminInfo>
@@ -89,6 +143,8 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-09-21">Description revised to incorporate all the information in the Summary Catalogue (1897) and other printed sources</change>
+         <change when="2024-05">Add extent, leaf dimensions and layout from Watson, Dated and Datable.</change>
          <change when="2018-10-14" xml:id="MMM">
             <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>

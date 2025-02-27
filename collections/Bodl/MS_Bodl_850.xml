@@ -1,9 +1,16 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1841">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1841">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Bodl. 850</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
             <respStmt>
                <resp>Summary description</resp>
                <persName>Elizabeth Solopova</persName>
@@ -30,7 +37,9 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Bodl. 850</idno>
-                  <idno type="ieArk">ark:29072/x0ff3655603d</idno><idno type="crArk">ark:29072/x0fb494876sb</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0ff3655603d</idno>
+                  <idno type="crArk">ark:29072/x0fb494876sb</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">2604</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -45,10 +54,22 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent> 11 + 110 fol.<dimensions type="leaf" unit="mm">
+                              <height>205</height>
+                              <width>150</width>
+                           </dimensions>
+                           <dimensions type="written" unit="mm">
+                              <height>140</height>
+                              <width>100</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2" writtenLines="22">2 col. of 22 lines</layout>
+                     </layoutDesc>
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote>Good miniatures, borders, historiated and other initials (defaced). (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 1087, pl. CI)</decoNote>
+                  <decoDesc><summary>Defaced. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 1087, pl. CI)</summary>
+                     <decoNote type="miniature">Good miniatures. </decoNote><decoNote type="border">Good borders. </decoNote><decoNote type="histInit">Good historiated initials. </decoNote><decoNote type="decInit">Good other initials </decoNote>
                   </decoDesc>
                   <bindingDesc>
                      <binding notBefore="1500" notAfter="1600">
@@ -101,6 +122,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-09">Add extent, leaf dimensions and layout from van Dijk, Latin Liturgical Manuscripts in the Bodleian Library, Oxford.</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">

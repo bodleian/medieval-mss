@@ -1,9 +1,16 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_7353">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_7353">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Laud Misc. 551</title>
             <title type="collection">MSS. Laud Misc. (Laud miscellaneous)</title>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
             <respStmt>
                <resp>Summary description</resp>
                <persName>Elizabeth Solopova</persName>
@@ -30,7 +37,9 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Laud Misc. 551</idno>
-                  <idno type="ieArk">ark:29072/x02514nm40h9</idno><idno type="crArk">ark:29072/x0gh93gz77h0</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x02514nm40h9</idno>
+                  <idno type="crArk">ark:29072/x0gh93gz77h0</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">1376</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -45,11 +54,28 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent resp="#DD">ii+ 163 fols.<dimensions unit="mm" type="leaf">
+                              <height>260</height>
+                              <width>182</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc resp="#DD">
+                        <layout writtenLines="37" columns="2">2 cols., 37 lines, column space <dimensions unit="mm" type="column">
+                              <height min="175" max="185">175-185</height>
+                              <width>55</width>
+                           </dimensions>
+                        </layout>
+                     </layoutDesc>
                   </objectDesc>
                   <decoDesc>
                      <decoNote type="decInit"> Good initials. Dated at end, fol. 164.</decoNote>
                   </decoDesc>
+                  <bindingDesc>
+                     <binding notBefore="1500" notAfter="1525">
+                        <p>Early 16th-century binding, roll-tooled in blind.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
                   <origin>
@@ -85,6 +111,8 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-09">Add extent, leaf dimensions and layout from Watson, Dated and Datable.</change>
+         <change when="2024-08">Add binding information from Quarto Catalogue.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>

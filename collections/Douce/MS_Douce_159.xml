@@ -1,14 +1,26 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4536">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4536">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Douce 159</title>
             <title type="collection">MSS. Douce</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -35,40 +47,90 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem class="#legalia" n="1" xml:id="MS_Douce_159-item1">
-                     <title key="work_12373" type="desc">Index to the Statutes of <placeName key="place_7002445">England</placeName> to 1444/5</title>
+                     <title key="work_12373" type="desc">Abbreviamentum statutorum 1444/1445</title>
+                     
+                     <note>Index to the Statutes passed in the reigns of Edward III to 23 Henry VI, 1444-1445, in alphabetical order of subjects</note>
+                     
+                     <note>Douce owned least ten manuscript copies of the Statutes of England which probably interested him as a result of his legal studies at 
+                        Gray's Inn. In <ref target="https://archives.bodleian.ox.ac.uk/repositories/2/archival_objects/203034">MS. Douce d. 57</ref>, fol. 49, is a list of his manuscripts of the Statutes</note>
+                     
+                     <note>Prefixed by <persName key="person_69848690" role="fmo">Frances Douce</persName> is the following note: 
+                        'This is an index to the <title>Nova Statuta</title>. It seems to have been afterwards printed in an enlarged form by Machlinia, 
+                        and by Pynson, under the title of 'Abbreviamentum statutorum.'
+                     </note>
                      <textLang mainLang="xno">Anglo-Norman</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
-                        <support>parchment</support>
+                        <support>parchment</support><extent>iii + <measure type="leaf" quantity="51">51</measure> leaves
+                           <dimensions type="binding" unit="in">
+                              <height>10.25</height>
+                              <width>7.625</width></dimensions>
+                        </extent>
                      </supportDesc>
                   </objectDesc>
-                  <decoDesc>
-                     <summary>In two styles (partly unfinished). <ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 997, pl. XCII:</summary>
-                     <decoNote type="border">Fine borders. </decoNote>
-                     <decoNote type="histInit">Fine historiated initials . </decoNote>
-                     <decoNote type="decInit">Fine other initials. </decoNote>
+                  
+                  <decoDesc resp="#PA">
+                     <summary>In two styles (partly unfinished). <ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 997, Pl. XCII
+                     </summary>
+                     
+                     <decoNote type="border"><ref target="https://digital.bodleian.ox.ac.uk/objects/540f5114-63db-4453-8b9d-42fa6e305cde/surfaces/5640a2eb-89a6-43e9-87c2-4d1e0336b8f1/">Fine borders</ref></decoNote>
+                     <decoNote type="histInit"><ref target="https://digital.bodleian.ox.ac.uk/objects/540f5114-63db-4453-8b9d-42fa6e305cde/surfaces/9baff04f-5c9d-4337-9d84-a763390b9ebe/">Fine historiated initials</ref></decoNote>
+                     <decoNote type="decInit">Fine other initials</decoNote>
                   </decoDesc>
+                  
+                  <bindingDesc>
+                     <binding notBefore="1750" notAfter="1800">
+                        <p>Red morocco binding made for <persName role="fmo" key="person_33157045">Count Justin MacCarthy Reagh</persName> in Toulouse in <hi rend="italic">c</hi>. 1774 by <persName role="bnd" key="person_44081081">David Wier</persName> (or Weir) of London</p>
+                     </binding>
+                  </bindingDesc>
+                  
+                  <!-- Add authority record -->                  
+                  
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1460" notBefore="1440">15th century, middle</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
-                  <provenance notAfter="1834" notBefore="1757" resp="#MMM"><persName key="person_69848690" role="fmo">Francis Douce, 1757–1834</persName></provenance>
+                  
+                  <provenance>'<persName role="fmo" key="person_4991">Thomas Grenehalghe</persName> socius de Greys Inne doyt cest lyure' (fols 32v and 33r: early 16th century ?)</provenance>
+                  
+                  <!-- Add authority record -->                  
+
+                  <provenance notAfter="1834" notBefore="1757" resp="#MMM"><persName key="person_69848690" role="fmo">Francis Douce, 1757–1834</persName>. 
+                     Identifiable with Douce's manuscript no. 2 which he 'Bought at <persName role="fmo" key="person_33157045">Count Macarthy</persName>'s sale' (lot 1613) for 6s in the MacCarthy sale, Leigh and Sotheby, May 1789. 
+                     The catalogue describes the manuscript as 'Various tracts on jurisprudence French with initials and ornaments illuminated. 4º red morocco...'</provenance>
+                     
+                  <provenance>The marks in Douce's own copy of the MacCarthy sale catlaogue (Oxford, Bodleian Library, Douce CC 301 [1]) show that he bought eighteen manuscripts 
+                     at this sale, including <ref target="https://medieval.bodleian.ox.ac.uk/catalog/manuscript_4561">MS. Douce 196</ref>, <ref target="https://archives.bodleian.ox.ac.uk/repositories/2/archival_objects/171657">MS. Douce 197</ref> and <ref target="https://medieval.bodleian.ox.ac.uk/catalog/manuscript_4562">MS. Douce 198</ref>, for a total of £26. 18s. 6d 
+                  </provenance>
+                  
                   <acquisition resp="#MMM" when="1834">Bequeathed to the Bodleian in 1834</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
+                        
+                        <source>
+                           Description adapted (August 2024) by Stewart J. Brookes from the following sources:
+                           
+                           <listBibl>
+                              <bibl><title>The Douce Legacy</title> (1984)</bibl>
+                              <bibl>Pächt and Alexander (1973)</bibl>
+                              <bibl>Summary Catalogue (1897)</bibl><bibl>Catalogue of the Printed Books and Manuscripts Bequeathed by Francis Douce, esq. to the Bodleian Library (1840)  <ref target="https://archive.org/details/catalogueofprint00bodluoft/page/27/mode/1up"> p. 27</ref></bibl></listBibl>
+                           <listBibl>
                               <bibl facs="aaz0560.gif" type="SC">Summary Catalogue, vol. 4, p. 541</bibl>
                            </listBibl>
+                           
+                           
                         </source>
                      </recordHist>
                   </adminInfo>
@@ -79,6 +141,8 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-08-30">Description revised to incorporate all the information in the printed catalogues.</change>
+         <change when="2024-05">Add extent and leaf dimensions from Summary Catalogue.</change>
          <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>

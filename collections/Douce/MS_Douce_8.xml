@@ -1,9 +1,16 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4741">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4741">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Douce 8</title>
             <title type="collection">MSS. Douce</title>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
             <respStmt>
                <resp>Summary description</resp>
                <persName>Elizabeth Solopova</persName>
@@ -30,7 +37,9 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Douce 8</idno>
-                  <idno type="ieArk">ark:29072/x0b2773w059x</idno><idno type="crArk">ark:29072/x0nc580m5929</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0b2773w059x</idno>
+                  <idno type="crArk">ark:29072/x0nc580m5929</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">21582</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -44,7 +53,24 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>xxix + <measure type="leaf" quantity="457">457</measure> pages
+                           <dimensions type="binding" unit="in">
+                              <height>4</height>
+                              <width>3</width>
+                           </dimensions>
+                           <dimensions type="leaf" unit="mm">
+                              <height>94</height>
+                              <width>70</width>
+                           </dimensions>
+                           <dimensions type="written" unit="mm">
+                              <height>52</height>
+                              <width>40</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc resp="#VD">
+                        <layout columns="1" writtenLines="12">12 long lines.</layout>
+                     </layoutDesc>
                   </objectDesc>
                   <decoDesc>
                      <decoNote type="miniature">Some fine, many good miniatures.</decoNote>
@@ -101,6 +127,8 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-09">Add extent, leaf dimensions and layout from van Dijk, Latin Liturgical Manuscripts in the Bodleian Library, Oxford.</change>
+         <change when="2024-05">Add extent and leaf dimensions from Summary Catalogue.</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2018-10-14" xml:id="MMM">
             <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
