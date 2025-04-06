@@ -1,9 +1,16 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6310">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6310">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Jones 46</title>
             <title type="collection">MSS. Jones</title>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
             <respStmt>
                <resp>Summary description</resp>
                <persName>Elizabeth Solopova</persName>
@@ -30,7 +37,9 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Jones 46</idno>
-                  <idno type="ieArk">ark:29072/x05q47rp4029</idno><idno type="crArk">ark:29072/x0vm40xr082s</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x05q47rp4029</idno>
+                  <idno type="crArk">ark:29072/x0vm40xr082s</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">8954</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -44,7 +53,19 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent resp="#VD"> i + 116 + 2 + i fol.<dimensions type="leaf" unit="mm">
+                              <height>180</height>
+                              <width>125</width>
+                           </dimensions>
+                           <dimensions type="written" unit="mm">
+                              <height>105</height>
+                              <width>71</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc resp="#VD">
+                        <layout columns="1" writtenLines="17">17 long lines.</layout>
+                     </layoutDesc>
                   </objectDesc>
                   <decoDesc>
                      <decoNote>Decoration<p>Fine border, initials. Written by or for John Wycham, monk of St. Leonard's priory, Norwich. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 970, pl. XCII)</p>
@@ -57,7 +78,8 @@
                      <origPlace cert="low">
                         <country key="place_7002445">English</country>, <region>East Anglia</region> (?)<!--ORIGINAL: English, East Anglia (?)--></origPlace>
                   </origin>
-                  <provenance type="MLGB3_provenance_evidence" source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4163">
+                  <provenance type="MLGB3_provenance_evidence"
+                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4163">
                      <orgName role="fmo" key="org_167950876">Norwich, Norfolk, Benedictine priory of St Leonard; cell of Norwich</orgName> (?) : For evidence of provenance see SC 8954. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/4163">MLGB3</ref>: Liturgical evidence, often to be found in the kalendar). </provenance>
                   <provenance notAfter="1707" resp="#MMM">
                      <persName key="person_2867" role="fmo">Henry Jones, -1707</persName>
@@ -101,6 +123,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-09">Add extent, leaf dimensions and layout from van Dijk, Latin Liturgical Manuscripts in the Bodleian Library, Oxford.</change>
          <change when="2021-12-14">Add provenance information from MLGB3.</change>
          <change when="2018-08-15" xml:id="MMM">
             <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>

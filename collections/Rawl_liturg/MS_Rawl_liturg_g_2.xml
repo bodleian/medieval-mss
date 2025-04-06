@@ -1,9 +1,16 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8732">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8732">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Rawl. liturg. g. 2</title>
             <title type="collection">MSS. Rawl. liturg. (Rawlinson liturgical)</title>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
             <respStmt>
                <resp>Summary description</resp>
                <persName>Elizabeth Solopova</persName>
@@ -30,7 +37,9 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Rawl. liturg. g. 2</idno>
-                  <idno type="ieArk">ark:29072/x0m039k493kn</idno><idno type="crArk">ark:29072/x0kw52j8108z</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0m039k493kn</idno>
+                  <idno type="crArk">ark:29072/x0kw52j8108z</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">15834</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -48,10 +57,22 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent resp="#VD">i + 2 + 274 + 3 + i fol.
+         <dimensions type="leaf" unit="mm">
+                              <height>105</height>
+                              <width>75</width>
+                           </dimensions>
+                           <!-- composite -->
+                           <!--<dimensions type="written" unit="mm">
+            <height/>
+            <width/>
+         </dimensions>-->
+                        </extent>
                      </supportDesc>
                   </objectDesc>
                   <decoDesc>
-                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 729, pl. LXXII:</summary>
+                     <summary>
+                        <ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 729, pl. LXXII:</summary>
                      <decoNote type="border">Fine borders.</decoNote>
                      <decoNote type="decInit">Fine initials. 
                         <list type="gloss">
@@ -75,12 +96,14 @@
                         </list>
                         <p>Pink and blue initials on gold background and borders made of gold, pink and blue bars, decorated with sprays of vine leaves and gold disks on fols. 93v, 98r, 101r, 104r, 108v, 146v and 188r.</p>
                         <p>Gold initials on pink and blue background with white arabesque and geometric designs; sprays of gold vine leaves extending into margins.</p>
-                        </decoNote><decoNote type="flourInit">Blue and gold initials decorated with red and purple penwork.</decoNote><decoNote type="lineFill">Gold and blue line-endings.
+                        </decoNote>
+                     <decoNote type="flourInit">Blue and gold initials decorated with red and purple penwork.</decoNote>
+                     <decoNote type="lineFill">Gold and blue line-endings.
                      </decoNote>
                   </decoDesc>
                   <bindingDesc>
-                     <binding>
-                        <p>Stamped leather on boards, injured.</p>
+                     <binding notAfter="1500" notBefore="1470">
+                        <p>Stamped leather on boards, injured. Original cover decorated with stamps associated with the Rood and Hunt Binder. Fragments of original binding applied to new cover. See Isabelle Pingree, ‘A Catalogue of the Bindings of the Fifteenth-Century Bookbinder Called the Rood and Hunt Binder’, <hi rend="superscript">The Library</hi>, 4.4 (2003), p. 387.</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
@@ -99,7 +122,7 @@
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1895). Decoration, localization and date follow Pächt and Alexander (1973). Additional description of decoration by Elizabeth Solopova, <hi rend="italic">c.</hi> 2000. <listBibl>
+                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1895), with reference to published literature as cited. Decoration, localization and date follow Pächt and Alexander (1973). Additional description of decoration by Elizabeth Solopova, <hi rend="italic">c.</hi> 2000. <listBibl>
                               <bibl facs="aas0528.gif" type="SC">Summary Catalogue, Vol. 3, p. 513</bibl>
                            </listBibl>
                         </source>
@@ -128,6 +151,8 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-02-07"><persName>Jemima Bennett</persName>: Updated binding description.</change>
+         <change when="2024-09">Add extent, leaf dimensions and layout from van Dijk, Latin Liturgical Manuscripts in the Bodleian Library, Oxford.</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2019-10-31" xml:id="MMM">
             <persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
