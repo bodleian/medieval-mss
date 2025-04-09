@@ -1,14 +1,29 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1934">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xml:id="manuscript_1934" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Bodl. Rolls 19</title>
             <title type="collection">MSS. Bodl. Rolls (Bodley Rolls)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1905">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2025">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -30,50 +45,112 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Bodl. Rolls 19</idno>
-                  <idno type="ieArk">ark:29072/x0fx719m146h</idno><idno type="crArk">ark:29072/x00r967496dz</idno><altIdentifier type="internal">
+                  <altIdentifier type="internal">
                      <idno type="SCN">27814</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem class="#documenta" n="1" xml:id="MS_Bodl_Rolls_19-item1">
-                     <title key="work_14826" type="desc">Survey of the property of <orgName key="org_134870077">Glastonbury abbey</orgName> in the form of a certificate from <persName key="person_1028"><!-- not found -->Richard Pollard</persName> and <persName key="person_1195"><!-- not found -->Thomas Moyle</persName>.</title>
+                     <title key="work_14826" type="desc">Survey of the property of <orgName key="org_134870077">Glastonbury abbey</orgName> 
+                        in the form of a certificate from <persName key="person_1028"><!-- not found -->Richard Pollard</persName> and 
+                        <persName key="person_1195"><!-- not found -->Thomas Moyle</persName></title>
+                     
+                     <note>An original survey of all the possessions, spiritual and temporal, of the Benedictine abbey of St Mary at Glastonbury 
+                        after its dissolution in September 1539
+                        
+                     </note>
                      <textLang mainLang="en">English</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
+                  
                   <objectDesc form="roll">
                      <supportDesc material="perg">
                         <support>parchment</support>
+
+                        <extent>
+                           Made up of thirteen membranes
+                           <dimensions type="roll" unit="in">
+                              <height>325.75</height>
+                              <width>8.25</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote>Fine historiated initials (pen drawings). (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 1185, pls. CX-CXI)</decoNote>
+                  
+                  <handDesc>
+                     <handNote script="secretary">Written in an elaborate secretary script</handNote>
+                  </handDesc>
+                  
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 1185, Pls CX-CXI
+                     </summary>
+                     
+                     <decoNote>Fine historiated and interlace initials</decoNote>
+                     <decoNote type="drawing"><ref target="https://digital.bodleian.ox.ac.uk/objects/ec71b325-93db-4aa2-95cf-db862e2c6e58/">Pen drawings</ref></decoNote>
+                     
                   </decoDesc>
+                  
+                  <bindingDesc>
+                     <binding>
+                        <p>Kept in a blue cloth case, 20.125" x 3.25" x 3.25"</p>
+                     </binding></bindingDesc>
+                     
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" when="1539">c. 1539</origDate>
+                     <origDate calendar="Gregorian" when="1539"><hi rend="italic">c</hi>. 1539</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
+                  
+                  <provenance>Has the royal arms, pictures of Veritas, 'Solymon Turscher' (the Grand Turk), &amp;c.</provenance>
+                  
+                  <acquisition notAfter="1751" notBefore="1749">Presented by <persName role="dnr">Charles Gray, MP for Colchester</persName>, on 2 March 1750/1751, together with a Phoenician inscription on stone from Citium</acquisition>
+                  
+                  <!-- Add authority record -->                  
+
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
+                        <source>
+                           Description adapted (March 2025) by Stewart J. Brookes from the Summary Catalogue (1905). Decoration, localization and date follow Pächt and Alexander (1973)
+                           <listBibl>
                               <bibl facs="aam0396.gif" type="SC">Summary Catalogue, vol. 5, p. 361</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
                   <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/ec71b325-93db-4aa2-95cf-db862e2c6e58/"><title>Digital Bodleian</title></ref>
-                        <note>(1 image from 35mm slides)</note></bibl></surrogates>
+                        <note>(1 image from 35mm slides)</note></bibl>
+                  
+                  <bibl>
+                     Black-and-white detail of part of the roll in <title>The Bodleian Library and its treasures ... [Exh. Cat.] [September 17 - October 14, 1990</title> (Tokyo Fuji Art Museum
+                     (1990), no. 41
+                  </bibl>
+                     
+                  </surrogates>
+                  
+                  <listBibl type="WRAPPER">
+                     <listBibl type="PRINT">
+                        <head>Editions:</head>
+                        <bibl>Printed in full in Thomas Hearne's edition of <title>Langtoft's Chronicle</title> (Oxford, 1735), <ref target="https://archive.org/details/bim_eighteenth-century_peter-langtofts-chronic_peter-of-langtoft_1725_2/page/343/mode/1up">II, p. 343</ref>, 
+                           based on this manuscript. Hearne's transription can be found in MS. Somerset Rolls 10</bibl>
+                     </listBibl>
+                     
+                     
+                  </listBibl>
+                 
                </additional>
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-03-31">Description revised to incorporate all the information in the Summary Catalogue (1905)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>
