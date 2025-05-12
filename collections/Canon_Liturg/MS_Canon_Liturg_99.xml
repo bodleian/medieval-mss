@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_3113">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_3113">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -11,14 +8,18 @@
                <resp when="1957">Cataloguer</resp>
                <persName>S. J. P. van Dijk</persName>
             </respStmt>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
             <respStmt xml:id="BCBB">
                <resp when="2020">Cataloguer</resp>
                <persName>B. C. Barker-Benfield</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1966">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
             </respStmt>
          </titleStmt>
          <publicationStmt>
@@ -48,8 +49,47 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem class="#liturgica" n="1" xml:id="MS_Canon_Liturg_99-item1">
+                  <msItem class="#liturgica" xml:id="MS_Canon_Liturg_99-item1">
                      <title key="work_10530" type="desc">Book of Hours, Use of Bourges</title>
+                     <msItem>
+                        <locus from="1v">(fol. 1v)</locus>
+                        <note>Additional prayers in French</note>
+                     </msItem>
+                     <msItem>
+                        <locus from="5">(fol. 5)</locus>
+                        <note>Calendar in French, a saint for every day</note>
+                     </msItem>
+                     <msItem>
+                        <locus from="17">(fol. 17)</locus>
+                        <note>Pericopes from the gospels </note>
+                     </msItem>
+                     <msItem>
+                        <locus from="24">(fol. 24)</locus>
+                        <note>Office of the Virgin </note>
+                     </msItem>
+                     <msItem>
+                        <locus from="66">(fol. 66)</locus>
+                        <note>Offices of the Cross and the Holy Ghost (fol. 69)</note>
+                     </msItem>
+                     <msItem>
+                        <locus from="72">(fol. 72)</locus>
+                        <note>Penitential Psalms with litany (fol. 81)</note>
+                     </msItem>
+                     <msItem>
+                        <locus from="84v">(fol. 84v)</locus>
+                        <note>Office of the dead </note>
+                     </msItem>
+                     <msItem>
+                        <locus from="108">(fol. 108)</locus>
+                        <note>Obsecro te and O intemerata (fol. 111v)</note>
+                     </msItem>
+                     <msItem>
+                        <locus from="113">(fol. 113)</locus>
+                        <note>Commemorations </note>
+                     </msItem>
+                     <msItem>
+                        <locus from="122">(fol. 122)</locus>
+                        <note>Prayers to the Virgin on Saturday (Missus est Gabriel angelus). </note></msItem>
                      <textLang mainLang="la" otherLangs="frm">Latin and Middle French</textLang>
                   </msItem>
                </msContents>
@@ -57,7 +97,7 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                        <extent resp="#VD"> <seg type="leaf"><measure type="laterEndleaf" quantity="3">iii</measure> + <measure type="leaf" quantity="127">127 (130)</measure> + <measure type="laterEndleaf" quantity="4">iv</measure></seg> fol.<dimensions type="leaf" unit="mm">
+                        <extent resp="#VD"> <seg type="leaf"><measure type="laterEndleaf" quantity="3">iii (paper, fols. i-iii)</measure> + <measure type="leaf" quantity="130">130</measure> + <measure type="laterEndleaf" quantity="4">iv (paper, fols. 127b-130)</measure></seg> leaves<dimensions type="leaf" unit="mm">
                               <height>203</height>
                               <width>125</width>
                            </dimensions>
@@ -66,18 +106,18 @@
                               <width>80</width>
                            </dimensions>
                         </extent>
+                        <foliation>i-iii, 1-3, 4a-4c, 5-22, 23a-b, 24-126, 127a-b, 128-130</foliation>
                      </supportDesc>
                      <layoutDesc resp="#VD">
                         <layout columns="1" writtenLines="17">17 lines</layout>
                      </layoutDesc>
                   </objectDesc>
-                  <musicNotation>
-                     <p>Notation on staves (see van Dijk 1957).</p>
-                  </musicNotation>
                   <decoDesc>
-                     <decoNote type="miniature">Good miniatures.</decoNote>
+                     <summary>By various hands. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 813, pl. LX)</summary>
+                     <decoNote type="miniature">Good miniatures. (At the beginning of each part, and Hours of the Lady office; in the calendar the labours of the months)</decoNote>
                      <decoNote type="border"> Good borders.</decoNote>
-                     <decoNote type="decInit">Good initials. By various hands. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 813, pl. LX)</decoNote>
+                     <decoNote type="decInit">Good initials. </decoNote>
+                     <!-- description of decoration in DB is incomplete -->
                   </decoDesc>
                   <bindingDesc resp="#BCBB">
                      <binding notAfter="1600" notBefore="1500">
@@ -97,12 +137,23 @@
                         <!--ORIGINAL: French, Bourges-->
                      </origPlace>
                   </origin>
+                  <provenance> On fol.72 a coat of arms: <heraldry>azure, on a fess argent, between three staves raguly or, three roses gules (?)</heraldry>.</provenance>
+                  <provenance><persName key="person_2384880" role="fmo">Matteo Luigi Canonici of Venice (1727 – c. 1806)</persName>, but not from the
+                     libraries of Soranzo or Trevisan. </provenance>
+                  <provenance notAfter="1807" resp="#MMM"><persName key="person_446" role="fmo">Giuseppe Canonici , -1807</persName></provenance>
+                  <acquisition when="1817">Bodleian Library: bought in 1817 from Canonici’s nephew
+                     Giovanni Perissinotti.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1966). Binding: <bibl>B. C. Barker-Benfield, <title>Bookbindings of Canonici manuscripts : a survey of early and non-standard bindings, mostly Italian, in the Canonici collection of the Bodleian Library, University of Oxford</title> (Oxford, privately printed, 2020).</bibl>
+                        <source>Adapted (May 2025) from the following sources:
+                           <listBibl>
+                              <bibl>B. C. Barker-Benfield, <title>Bookbindings of Canonici manuscripts : a survey of early and non-standard bindings, mostly Italian, in the Canonici collection of the Bodleian Library, University of Oxford</title> (Oxford, privately printed, 2020).</bibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title><ref target="https://catalog.hathitrust.org/Record/000468709">Illuminated Manuscripts in the Bodleian Library, Oxford</ref></title>, I (1966), no. no. 813, pl. LX</bibl>
+                              <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 4: Books of Hours</title> (typescript, 1957), <citedRange unit="page" from="40b" to="40b">p. 40b</citedRange></bibl>
+                              <bibl>Summary Catalogue (1897)</bibl>
+                           </listBibl>
                            <listBibl>
                               <bibl facs="aaz0360.gif" type="SC">Summary Catalogue, vol. 4, p. 341</bibl>
                            </listBibl>
@@ -129,6 +180,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-05">Incorporate all information from printed catalogues.</change>
          <change when="2024-09">Add extent, leaf dimensions and layout from van Dijk, Latin Liturgical Manuscripts in the Bodleian Library, Oxford.</change>
          <change when="2020-07-24">Binding description added.</change>
          <change when="2017-07-01">First online publication.</change>
