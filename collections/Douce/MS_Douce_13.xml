@@ -4,11 +4,17 @@
          <titleStmt>
             <title>MS. Douce 13</title>
             <title type="collection">MSS. Douce</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2025">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -35,37 +41,73 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem class="#theologica #devotiones" n="1" xml:id="MS_Douce_13-item1">
+                  
+                  <msItem class="#liturgica #computistica" n="1" xml:id="MS_Douce_13-item1">
+                     <locus>(fols 1r-1v)</locus>
+                     <title key="work_10687" type="desc">Calendar</title>
+                     <textLang mainLang="la">Latin</textLang>
+                  </msItem>
+                  
+                  <msItem class="#theologica #devotiones" n="2" xml:id="MS_Douce_13-item2">
                      <title key="work_13918">Poor Caitiff</title>
-                     <note>(extracts)</note>
+                     
+                   <msItem>
+                      <locus>(fol. 2)</locus>
+                     <rubric>The charter of heuene</rubric>
+                     <incipit>Everie wise man that that deynieth his heritage</incipit>
+                   </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 15v)</locus>
+                        <rubric>The rule of mannis bodi</rubric>
+                        <incipit>Almighti God seith bi holi ioob: that al mannis lyf up on erthe in figtyng</incipit>
+                        <note>Sometimes called <title>The Horse or Armour of Heaven</title></note>
+                     </msItem>
+                     
+                     <note>Extracts from the <title> Poor Caitiff</title></note>
                      <textLang mainLang="enm">Middle English</textLang>
                   </msItem>
-                  <msItem class="#theologica #devotiones" n="2" xml:id="MS_Douce_13-item2">
+                  
+                  <msItem class="#theologica #devotiones" n="3" xml:id="MS_Douce_13-item3">
+                     <locus>(fol. 33v)</locus>
                      <title key="work_15346">Three Arrows of Domesday</title>
                      <note>(theological treatise)</note>
+                     <rubric>Of thre arowis in the dome</rubric>
+                     <incipit>Tho that wole haue in mynde the dreedful dau of dome</incipit>
+                    
                      <textLang mainLang="enm">Middle English</textLang>
                   </msItem>
-                  <msItem n="3" xml:id="MS_Douce_13-item3">
+                  
+                  <msItem n="4" xml:id="MS_Douce_13-item4">
+                     <locus>(fol. 49)</locus>
                      <author key="person_306415749">Ps.-Bernard</author>
                      <title key="work_3943">Speculum peccatoris</title>
+                     <rubric>The mirour of synners</rubric>
+                     <incipit>For that we ben in the weye of this failynge liif and oure daies passen as a schadowe</incipit>
                      <note>(English translation)</note>
                      <textLang mainLang="enm">Middle English</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
-                        <support>parchment</support><extent><measure type="leaf" quantity="65">65</measure> leaves
-                           <dimensions type="binding" unit="in"><height>4.5</height><width>3.125</width></dimensions>
+                        <support>parchment</support><extent>
+                           <measure type="leaf" quantity="65">65</measure> leaves
+                           <dimensions type="binding" unit="in">
+                              <height>4.5</height>
+                              <width>3.125</width></dimensions>
                         </extent>
                      </supportDesc>
+                     
                   </objectDesc>
+                     
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1400" notBefore="1300">14th century</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
                   <provenance notAfter="1834" notBefore="1757" resp="#MMM"><persName key="person_69848690" role="fmo">Francis Douce, 1757–1834</persName></provenance>
@@ -74,7 +116,15 @@
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). <listBibl>
+                        <source>
+                           Description adapted (May 2025) by Stewart J. Brookes from the following sources:
+                           
+                           <listBibl>
+                              <bibl>Catalogue of the Printed Books and Manuscripts Bequeathed by Francis Douce, esq. to the Bodleian Library (1840), 
+                                 <ref target="https://archive.org/details/catalogueofprint00bodluoft/page/2/mode/1up">p. 2</ref></bibl>
+                              <bibl>Summary Catalogue (1897)</bibl>
+                           </listBibl>
+                           <listBibl>
                               <bibl facs="aaz0512.gif" type="SC">Summary Catalogue, vol. 4, p. 493</bibl>
                            </listBibl>
                         </source>
@@ -87,6 +137,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-05-22">Description revised to incorporate all the information in the Summary Catalogue (1897) and other printed sources</change>
          <change when="2024-05">Add extent and leaf dimensions from Summary Catalogue.</change>
          <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
