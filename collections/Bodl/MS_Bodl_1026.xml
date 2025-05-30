@@ -4,11 +4,23 @@
          <titleStmt>
             <title>MS. Bodl. 1026</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1905">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2025">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+         
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -35,15 +47,20 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem class="#theologica" n="1" xml:id="MS_Bodl_1026-item1">
                      <title key="work_15376">Trattato dello compendio de salute</title>
-                     <note>(abridged from Niccolò Osimo, <title>Quadriga Spirituale</title>, written in 1442).</note>
+                     <note>(abridged from <persName key="person_95333965">Niccolò Osimo</persName>, <title>Quadriga Spirituale</title>, written in 1442)</note>
+                     <rubric>... Lo tratato delo Compendio de Salute</rubric>
+                     <incipit type="prologue">Per dare breue introductione</incipit>
+                     <incipit type="text">Ad intellecto dela fede</incipit>
                      <bibl type="related">
                         <author key="person_95333965">Niccolò Osimo</author>
                         <title>Quadriga Spirituale</title>
                      </bibl>
                      <textLang mainLang="it">Italian</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
@@ -51,21 +68,31 @@
                         <support>parchment</support>
                      </supportDesc>
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote type="decInit">Good initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 465)</decoNote>
+                  
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 465
+                     </summary>
+                     <decoNote type="decInit">Good initials</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1500" notBefore="1442">after 1442</origDate>
                      <origPlace cert="low">
-                        <country key="place_1000080">Italian</country>, <settlement key="place_7018159">Venice</settlement> or <settlement key="place_7004847">Bologna</settlement> (?)<!--ORIGINAL: Italian, Venice or Bologna (?)--></origPlace>
+                        <country key="place_1000080">Italy</country>, <settlement key="place_7018159">Venice</settlement> or <settlement key="place_7004847">Bologna</settlement> (?)<!--ORIGINAL: Italian, Venice or Bologna (?)--></origPlace>
                   </origin>
+                  
+                  <acquisition when="1859">Purchased by the Bodleian at Sotheby's on 4 April 1859 from the collection of <persName key="person_19743305" role="fmo">Guillaume Libri</persName>. 
+                     1015 in the <ref target="https://archive.org/details/CatalogueLibriSothebys/page/n286/mode/1up">sale catalogue</ref>
+                  </acquisition>
+
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1905). Decoration, localization and date follow Pächt and Alexander (1970). <listBibl>
+                        <source>
+                           Description adapted (May 2025) by Stewart J. Brookes from the Summary Catalogue (1905). Decoration, localization and date follow Pächt and Alexander (1970)
+                           <listBibl>
                               <bibl facs="aam0104.gif" type="SC">Summary Catalogue, vol. 5, p. 69</bibl>
                            </listBibl>
                         </source>
@@ -76,6 +103,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-05-29">Description revised to incorporate all the information in the Summary Catalogue (1905) and other printed sources</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>
