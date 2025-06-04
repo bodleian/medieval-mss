@@ -12,6 +12,18 @@
                <resp when="2025">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
+            <respStmt xml:id="EO">
+               <resp when="2025">Cataloguer</resp>
+               <persName>Ella Osbourne</persName>
+            </respStmt>
+            <respStmt xml:id="KD">
+               <resp when="2025">Cataloguer</resp>
+               <persName>Kris Darby</persName>
+            </respStmt>
+            <respStmt xml:id="SDM">
+               <resp when="2025">Encoding</resp>
+               <persName>Sebastian Dows-Miller</persName>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -60,9 +72,43 @@
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
-                        <extent><seg type="leaf"><measure type="leaf" quantity="42">42 leaves</measure></seg></extent>
+                        <extent resp="#EO #KD #SDM">
+                           <seg type="leaf">
+                              <measure type="laterEndleaf" quantity="4">iv</measure> + <measure type="leaf" quantity="42">42</measure> + <measure type="laterEndleaf" quantity="2">ii</measure> leaves
+                           </seg>
+                           <dimensions type="binding" unit="mm">
+                              <height>277</height>
+                              <width>204</width>
+                              <depth>20</depth>
+                           </dimensions>
+                           <dimensions type="leaf" unit="mm">
+                              <height>268</height>
+                              <width>200</width>
+                           </dimensions>
+                        </extent>
+                        <foliation resp="#EO #KD #SDM">Contemporary foliation on recto folios in red ink, with modern foliation in pencil.</foliation>
                      </supportDesc>
+                     <layoutDesc resp="#EO #KD #SDM">
+                        <layout columns="1" ruledLines="28 32" rulingMedium="drypoint" topLine="below" writtenLines="28 32">
+                           <dimensions type="written" unit="mm">
+                              <height min="190" max="193">190–193</height>
+                              <width min="106" max="109">106–109</width>
+                           </dimensions>
+                        </layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <handDesc hands="2" resp="#EO #KD #SDM">
+                     <handNote>Two hands.</handNote>
+                  </handDesc>
+                  <decoDesc resp="#EO #KD #SDM">
+                     <decoNote type="flourInit">Frequent flourished initials in red and black ink of <height unit="line" quantity="3">three lines in height</height>.</decoNote>
+                     <decoNote type="cadel">Cadels in brown ink of <height unit="line" quantity="3">three lines in height</height> on fols. <locus from="19r" to="19r">19r</locus> and <locus from="43v" to="43v">43v</locus>.</decoNote>
+                     <decoNote type="rubrication">Rubrication commonly used to mark the beginning or end of a poem.</decoNote>
+                     <decoNote type="initial">Lesser initials commonly stroked in red, particularly on fols. <locus from="5v" to="6r">5v–6r</locus> and <locus from="8v" to="9r">8v–9r</locus>.</decoNote>
+                     <decoNote type="drawing">Sketches, doodles, pen trials, and later flourishings found on fols. <locus from="1r" to="1r">1r</locus>, <locus from="4v" to="4v">4v</locus>, <locus from="13v" to="13v">13v</locus>, <locus from="17v" to="17v">17v</locus>, <locus from="23v" to="23v">23v</locus>, <locus from="32r" to="33r">32r–33r</locus>, and <locus from="37v" to="38r">37v–38r</locus>.</decoNote>
+                     <decoNote type="marginal">Marginal manicula in ink on fols. <locus from="4v" to="4v">4v</locus>, <locus from="7r" to="7r">7r</locus>, <locus from="9v" to="9v">9v</locus>, <locus from="10v" to="10v">10v</locus>, <locus from="17r" to="17r">17r</locus>, <locus from="19r" to="19r">19r</locus>, <locus from="26v" to="26v">26v</locus>, <locus from="30v" to="30v">30v</locus>, and <locus from="34v" to="34v">34v</locus>.</decoNote>
+                     <decoNote type="unfilled">Empty space at <height unit="line" quantity="3">three lines in height</height> left for initial on fol. <locus from="13v" to="13v">13v</locus>.</decoNote>
+                  </decoDesc>
                </physDesc>
                <history>
                   <origin>
@@ -81,6 +127,7 @@
                               <bibl facs="aaz0336.gif" type="SC">Summary Catalogue, vol. 4, p. 317</bibl>
                            </listBibl>
                         </source>
+                        <change when="2025-05-16">Additional data collected by Ella Osbourne and Kris Darby as part of the 'Big Data' and Medieval Manuscripts workshop held at the Bodleian Libraries, Oxford on <date when="2025-05-29">29th May 2025</date>. Data encoded in TEI-XML by Sebastian Dows-Miller on <date when="2025-06-04">4th June 2025</date>.</change>
                      </recordHist>
                   </adminInfo>
                </additional>
@@ -88,6 +135,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-05-16">Additional data collected by <persName>Ella Osbourne</persName> and <persName>Kris Darby</persName> as part of the <name type="event">'Big Data' and Medieval Manuscripts</name> workshop held at the <placeName>Bodleian Libraries, Oxford</placeName> on <date when="2025-05-29">29th May 2025</date>. Data encoded in TEI-XML by <persName>Sebastian Dows-Miller</persName> on <date when="2025-06-04">4th June 2025</date>.</change>
          <change when="2025-05">Incorporate all information from printed catalogue.</change>
          <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
