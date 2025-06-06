@@ -17,6 +17,18 @@
                <persName>Otto Pächt</persName>
                <persName>J. J. G. Alexander</persName>
             </respStmt>
+            <respStmt xml:id="TR">
+               <resp when="2025">Cataloguer</resp>
+               <persName>Tom Revell</persName>
+            </respStmt>
+            <respStmt xml:id="SW">
+               <resp when="2025">Cataloguer</resp>
+               <persName>Shaw Worth</persName>
+            </respStmt>
+            <respStmt xml:id="SDM">
+               <resp when="2025">Encoding</resp>
+               <persName>Sebastian Dows-Miller</persName>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -70,11 +82,43 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                        <extent><seg type="leaf"><measure type="leaf" quantity="102">102</measure> leaves</seg></extent>
+                        <extent resp="#TR #SW #SDM">
+                           <seg type="leaf">
+                              <measure type="laterEndleaf" quantity="6">vi (paper)</measure> + <measure type="laterEndleaf" quantity="2">ii (early-modern paper, tipped into quire 1)</measure> + <measure type="leaf" quantity="102">102</measure> + <measure type="laterEndleaf" quantity="38">xxxviii (paper)</measure> leaves
+                           </seg>
+                           <dimensions type="binding" unit="mm">
+                              <height>320</height>
+                              <width>215</width>
+                              <depth>45</depth>
+                           </dimensions>
+                           <dimensions type="leaf" unit="mm">
+                              <height>311</height>
+                              <width>210</width>
+                           </dimensions>
+                        </extent>
+                        <collation mainStructures="8">
+                           Usually quires of 8 leaves.
+                        </collation>
                      </supportDesc>
+                     <layoutDesc resp="#TR #SW #SDM">
+                        <layout columns="2" ruledLines="45" rulingMedium="crayon" topLine="below" writtenLines="45">
+                           <dimensions type="column" unit="mm">
+                              <height>216</height>
+                              <width>65</width>
+                           </dimensions>
+                           <dimensions type="intercolumn" unit="mm">
+                              <width>13</width>
+                           </dimensions>
+                        </layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <handDesc resp="#TR #SW #SDM">
+                     <handNote script="anglicana" execution="formata">Anglicana formata.</handNote>
+                  </handDesc>
                   <decoDesc>
-                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 845:</summary><decoNote type="border">Good border. </decoNote><decoNote type="decInit">Good initials. </decoNote>
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 845:</summary>
+                     <decoNote type="border">Good border. </decoNote>
+                     <decoNote type="decInit">Good initials. </decoNote>
                   </decoDesc>
                </physDesc>
                <history>
@@ -101,6 +145,7 @@
                               <bibl facs="aas0222.gif" type="SC">Summary Catalogue, vol. 3, p. 207</bibl>
                            </listBibl>
                         </source>
+                        <change when="2025-05-16">Additional data collected by Tom Revell and Shaw Worth as part of the 'Big Data' and Medieval Manuscripts workshop held at the Bodleian Libraries, Oxford on <date when="2025-05-29">29th May 2025</date>. Data encoded in TEI-XML by Sebastian Dows-Miller on <date when="2025-06-04">4th June 2025</date>.</change>
                      </recordHist>
                   </adminInfo>
                   <surrogates>
@@ -126,6 +171,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-05-16">Additional data collected by <persName>Tom Revell</persName> and <persName>Shaw Worth</persName> as part of the <name type="event">'Big Data' and Medieval Manuscripts</name> workshop held at the <placeName>Bodleian Libraries, Oxford</placeName> on <date when="2025-05-29">29th May 2025</date>. Data encoded in TEI-XML by <persName>Sebastian Dows-Miller</persName> on <date when="2025-06-04">4th June 2025</date>.</change>
          <change when="2021-12-14">Add provenance information from MLGB3.</change>
          <change when="2019-10-31" xml:id="MMM">
             <persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
