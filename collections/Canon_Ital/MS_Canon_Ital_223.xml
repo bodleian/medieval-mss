@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2660">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2660">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -11,9 +8,12 @@
                <resp when="1984">Cataloguer</resp>
                <persName>A. G. Watson</persName>
             </respStmt>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+           <respStmt xml:id="SC">
+              <resp when="1864">Cataloguer</resp>
+              <persName>A. Mortara</persName>
+           </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2025">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -45,8 +45,54 @@
                </msIdentifier>
                <msContents>
                   <msItem n="1" xml:id="MS_Canon_Ital_223-item1">
-                     <author key="person_2063">Giovanni de Lusa <!-- not found VIAF --></author>
+                     <author key="person_658">Giovanni de Lusa</author>
                      <title key="work_1790">Fiore dell'Arte Rettorica</title>
+                     <msItem>
+                        <locus from="1r" to="9v">(fols. 1r-9v)</locus>
+                        <note>Capitula to the four books.</note>
+                     </msItem>
+                     <msItem>
+                        <locus from="10r" to="57r">(fols. 10r-57r)</locus>
+                        <note>Book 1</note>
+                        <incipit>Perche tute cosse che dal summo e eterno dio prociedeno</incipit>
+                        <explicit> a la diuina gratia e gran bonta dequel summo
+                           e eterno dio el qual vive e regna in secula seculorum</explicit>
+                        <incipit>Rethorica he scientia de venusta locuzione</incipit>
+                        <explicit>e dire le suo opinione</explicit>
+                        <finalRubric>Completo el primo libro del arte de rethorica. Seguita el segondo delambasiate arrenge sermoni daltro oppinione.</finalRubric>
+                     </msItem>
+                     <msItem>
+                        <locus from="57v" to="102v">(fols. 57v-102v)</locus>
+                        <note>Book 2</note>
+                        <incipit>El comanda la diuina e humana scriptura</incipit>
+                        <explicit>a questo libro segondo</explicit>
+                        <finalRubric>Complito he el libro secondo el qual tracta delle ambasiate sermoni erenge ...</finalRubric>
+                     </msItem>
+                     <msItem>
+                        <locus from="103r" to="115r">(fols. 103r-115r)</locus>
+                        <note>Book 3</note>
+                        <incipit>Nel principio meço e fine de questo nostro terço libriçolo </incipit>
+                        <explicit>e retenerla priegadio chetel concieda</explicit>
+                        <finalRubric>Complito el terço libro del dire e taçere cum tempo ...</finalRubric>
+                     </msItem>
+                     <msItem>
+                        <locus from="115v" to="165v">(fols. 115v-165v)</locus>
+                        <note>Book 4</note>
+                        <rubric>Comença el libro quarto et ultimo el qual tracta del conseio ...</rubric>
+                        <incipit>Perche sono molti cheuile aduersita se conturbano</incipit>
+                        <explicit>E dapoi in sieme sempre fono perfecti amici. Deo
+                           gratias. Amen.</explicit>
+                     </msItem>
+                     <colophon><locus>(fol. 166r)</locus> Explicit hic liber qui quatuor continet in se <lb/>
+                        Artem rethorum ambasatas sermones arengas <lb/>
+                        Modum dicendi cum tempore atque tacendi <lb/>
+                        Et dandi consilia eadem que retinendi.<lb/>
+                        Per me Johannem delusa sic translatatus <lb/>
+                        In hoc vulgari descriptus atque conpletus. <lb/>
+                        Millequatercenturum cum quadraginta duobus <lb/>
+                        Quinto Januarij domini currentibus annis. <lb/>
+                        Deo Gratias.</colophon>
+                     <note>Fols. 166v-171v blank except for later additions: two copies of a quatrain beginning: 'Io son la morte'.</note>
                      <textLang mainLang="it">Italian</textLang>
                   </msItem>
                </msContents>
@@ -62,20 +108,34 @@
                      </supportDesc>
                      <layoutDesc resp="#DD">
                         <layout writtenLines="34" columns="1">1 col., 34 lines, <dimensions unit="mm" type="written">
-                              <height>38</height>
+                              <height>138</height><!-- checked: printed cat says 38 -->
                               <width>85</width>
                            </dimensions>
                         </layout>
                      </layoutDesc>
                   </objectDesc>
+                  <handDesc hands="1">
+                     <handNote script="hybrida">Hybrida; written by <persName role="scr" key="person_658">Giovanni de Lusa</persName>, chancellor of Kotor, who also wrote MS. Canon. Bibl. Lat. 38 (q.v.)</handNote>
+                  </handDesc>
+                  <decoDesc>
+                     <decoNote type="flourInit">Penwork initials: 10 lines (fol. 10r), otherwise 7-8 lines at the beginning of books (blue with red flourishing and heraldry (?) in red: see provenance), typically 4 lines at the beginning of chapters (alternating blue with red flourishing and red with red flourishing).</decoNote>
+                     <decoNote type="rubrication">Rubrics; alternating blue and red paraphs.</decoNote>
+                  </decoDesc>
+                  <bindingDesc>
+                     <binding notAfter="1800" notBefore="1750">
+                        <p>Standard Canonici binding of plain parchment over pasteboard.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" when="1442" cert="high">1442</origDate>
                      <origPlace>
-                        <country key="place_1000080">Italian</country> (perhaps written at <settlement>Kotor</settlement> in present-day Montenegro)
+                        <country key="place_1000080">Italian</country> (perhaps written at <settlement key="place_7015404">Kotor</settlement> in present-day Montenegro)
                      </origPlace>
                   </origin>
+                  <provenance>The griffin rampant gules in the larger initials may refer to the arms of <persName key="person_3123" role="fmo">Grifo of Venice </persName> (cf. MS. Canon. Bibl. Lat. 38).</provenance>
+                  <provenance><persName role="fmo" key="person_308770014">Jacopo Soranzo</persName>: characteristic endpapers.</provenance>
                   <provenance notAfter="1805" notBefore="1727" resp="#MMM">
                      <persName key="person_2384880" role="fmo">Matteo Luigi Canonici, 1727–1805</persName>
                   </provenance>
@@ -87,8 +147,13 @@
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (A. Mortara, <title>Catalogo dei manoscritti italiani che sotto la denominazione di Codici Canoniciani Italici si conservano nella Biblioteca Bodleiana a Oxford</title>, Quarto Catalogues XI, 1864). <listBibl>
+                        <source>Adapted by Matthew Holford (May 2025) from the following sources, with limited additional description:
+                           <listBibl> <bibl>A. Watson, <title>Catalogue of Dated and Datable Manuscripts in Oxford Libraries</title> (1984), <citedRange unit="entry" from="245" to="245">
+                                    <ref target="https://hdl.handle.net/2027/mdp.39015008982863?urlappend=%3Bseq=68">no. 245</ref>
+                           </citedRange>
+                           </bibl>
+                              <bibl>A. Mortara, <title>Catalogo dei manoscritti italiani che sotto la denominazione di Codici Canoniciani Italici si conservano nella Biblioteca Bodleiana a Oxford</title>, Quarto Catalogues XI, 1864</bibl></listBibl>
+                           <listBibl>
                               <bibl facs="acp0126.gif" type="QUARTO">Quarto Catalogue, cols. 219–20</bibl>
                               <bibl facs="aaz0436.gif" type="SC">Summary Catalogue, vol. 4, p. 417</bibl>
                            </listBibl>

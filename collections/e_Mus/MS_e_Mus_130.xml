@@ -4,11 +4,18 @@
          <titleStmt>
             <title>MS. e Mus. 130</title>
             <title type="collection">MSS. e Mus. (e Musaeo)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1937">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>N. Denholm-Young</persName>
             </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2025">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -18,7 +25,7 @@
                <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>
             </publisher>
             <idno type="msID">MS_e_Mus_130</idno>
-            <idno type="collection">e_Musaeo</idno>
+            <idno type="collection">e Musaeo</idno>
             <idno type="catalogue">Western</idno>
          </publicationStmt>
          <sourceDesc>
@@ -35,8 +42,13 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem class="#commentarii #biblia" n="1" xml:id="MS_e_Mus_130-item1">
-                     <title key="work_11396" type="desc">Corinthians ii with Jerome's commentary.</title>
+                     <locus from="1" to="139r" type="inferredEnd">(fol. 1)</locus>
+                     <title key="work_11396" type="desc">Corinthians ii with Jerome's commentary</title>
+                     <rubric>Argumentum beati Jeronimi presbiteri in 2<hi rend="superscript">am</hi> Epistolam beati Pauli apostoli ad Corinthios</rubric>
+                     <incipit>Post peractam penitenciam. In isto argumento</incipit>
+                     <incipit><quote>Paulus apostolus.</quote> In ista Epistola apostolus valde familiariter scribit</incipit>
                      <bibl type="bible">
                         <title>Bible, Corinthians</title>
                      </bibl>
@@ -46,35 +58,58 @@
                      </bibl>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                   <msItem n="2" xml:id="MS_e_Mus_130-item2">
+                     <locus from="139v" to="173" type="inferredEnd">(fol. 139v)</locus>
                      <author key="person_2465074">Richard Rolle</author>
                      <title key="work_4295">Paruum Iob siue libellus in nouem lectiones mortuorum</title>
+                     <rubric>Postille sancti Ricardi heremite de Hampulle super. 9. Lectiones Mortuorum</rubric>
+                     <incipit>Parce mihi Domine... Exprimitur autem in hijs verbis</incipit>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
+
+               <extent source="SC"><seg type="leaf"><measure type="laterEndleaf">iii</measure> + <measure type="leaf" quantity="173">173</measure></seg> leaves
+                  <dimensions type="binding" unit="in">
+                     <height>9.5</height>
+                     <width>7</width>
+                  </dimensions>
+               </extent>
+                        
                      </supportDesc>
                   </objectDesc>
+
                   <decoDesc>
-                     <decoNote>Decoration<p>Coloured capitals.</p>
+                     <decoNote type="colInit">Coloured capitals.
                      </decoNote>
                   </decoDesc>
+                  
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1500" notBefore="1450">15th century, second half</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
+                  
+                  <provenance>Apparently owned by '<persName role="fmr">Guiliel. Gardiner</persName> in Artibus magister et vicarius de Lynton. 1586'</provenance>
+                  
+                  <!-- Add authority record -->                  
+
+                  <acquisition when="1655">The volume first occurs in Bodleian lists <hi rend="italic">c</hi>. 1655</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
+                        <source>
+                           Description adapted (April 2025) by Stewart J. Brookes from the Summary Catalogue (1937)
+                           <listBibl>
                               <bibl facs="aaq0027.gif" type="SC">Summary Catalogue, Vol. 2 Part 2, p. 668</bibl>
                            </listBibl>
                         </source>
@@ -85,6 +120,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-04-29">Description revised to incorporate all the information in the Summary Catalogue (1937)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>

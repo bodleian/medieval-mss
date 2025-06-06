@@ -4,11 +4,24 @@
          <titleStmt>
             <title>MS. e Mus. 64</title>
             <title type="collection">MSS. e Mus. (e Musaeo)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1937">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>N. Denholm-Young</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2025">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -18,7 +31,7 @@
                <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>
             </publisher>
             <idno type="msID">MS_e_Mus_64</idno>
-            <idno type="collection">e_Musaeo</idno>
+            <idno type="collection">e Musaeo</idno>
             <idno type="catalogue">Western</idno>
          </publicationStmt>
          <sourceDesc>
@@ -34,24 +47,53 @@
                      <idno type="SCN">3654</idno>
                   </altIdentifier>
                </msIdentifier>
+             
                <physDesc>
-                  <p n="composite">Composite: fols. 1–132 || fols. 133–291</p>
+                  <p n="composite">Composite: fols 1–132 || fols 133–291</p>
+                  
+                  <objectDesc>
+                     <supportDesc>
+                  
+                        <extent source="SC"><seg type="leaf"><measure type="laterEndleaf" quantity="2">ii</measure> + <measure type="leaf" quantity="293">293</measure> leaves</seg>
+                     <dimensions type="binding" unit="in">
+                        <height>12.2</height>
+                        <width>8.3</width>
+                     </dimensions>
+                  </extent>
+                  
+                  <condition>Two leaves have been cut out at fols 106-107
+                  </condition>
+                  
+                     </supportDesc>
+                  </objectDesc>
+                  
                   <bindingDesc>
                      <binding notAfter="1600" notBefore="1575">
-                        <p>Brown leather blind-tooled and richly stamped, London work about 1600 or
-         earlier, bevelled boards and sewing, with binder's initials 'F. P.' on medallions on outer
-         covers, as in 3551.</p>
+                        <p>Brown leather blind-tooled and richly stamped, London work <hi rend="italic">c</hi>. 1600 or earlier, bevelled boards and sewing, 
+                           with binder's initials 'F. P.' on medallions on the outer covers, as in <ref target="https://medieval.bodleian.ox.ac.uk/catalog/manuscript_417">MS. Auct. D. 1. 6</ref></p>
                      </binding>
                   </bindingDesc>
                </physDesc>
+               <history>
+                
+                  
+                  <acquisition when="1680">'Ex dono <persName role="dnr" key="person_5090">Alexandri Fetherston</persName> vicarij de Wolverton in comitatu Bucks. et 
+                     praebendarij de Collegio in cathedrali ecclesia Lichfieldiensi. A.D. 1680' (fol. iv verso)</acquisition>
+                  
+                  <!-- Add authority record -->                  
+                  
+               </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
+                        <source>
+                           Description adapted (April 2025) by Stewart J. Brookes from the Summary Catalogue (1937). Decoration, localization and date follow Pächt and Alexander (1973)
+                           <listBibl>
                               <bibl facs="aaq0080.gif" type="SC">Summary Catalogue, Vol. 2 Part 2, p. 721</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
+                     
                   </adminInfo>
                </additional>
                <msPart xml:id="MS_e_Mus_64-part1">
@@ -63,8 +105,21 @@
                   <msContents>
                      <msItem class="#liturgica #grammatica" n="1" xml:id="MS_e_Mus_64-part1-item1">
                         <!-- check -->
-                        <title key="work_11769" type="desc">Explanation of difficult words in the Missal.</title>
-                        <textLang mainLang="la">Latin</textLang>
+                        <locus from="1" to="96" type="inferredEnd">(fol. 1)</locus>
+                        <title key="work_11775" type="desc">Explanation of difficult words in the Missal</title>
+                        <incipit>Cum plurima in missali vocabula pluribus videantur difficilia</incipit>
+                        <note>Also in MS. Lat. misc. e. 108 and in Cambridge, Trinity College, O.9.28.</note>
+                        <msItem>
+                           <locus from="97" to="136" type="inferredEnd">(fol. 97)</locus>
+                           <note>Interpretations of the names of saints and some other words in the 'legenda sanctorum'</note>
+                        </msItem>
+                        
+                        <msItem>
+                           <locus from="137" to="154" type="inferredEnd">(fol. 137)</locus>
+                           <note>A brief treatise on the quantity of syllables in the 'legenda sanctorum'</note>
+                        </msItem>
+                        
+                       <textLang mainLang="la">Latin</textLang>
                      </msItem>
                   </msContents>
                   <physDesc>
@@ -72,18 +127,32 @@
                         <supportDesc material="mixed">
                            <support>parchment, paper</support>
                         </supportDesc>
+                        
+                        <layoutDesc>
+                           <layout columns="2">2 cols
+                           </layout>
+                        </layoutDesc>
                      </objectDesc>
-                     <decoDesc>
-                        <decoNote>Good marginal drawing (pricked) with a roe deer and wall with letters 'ger' inscribed, fol. 1 (rebus for <persName key="person_1073" role="scr">Roger Walle</persName>). (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 1022)</decoNote>
+                     
+                     <decoDesc resp="#PA">
+                        <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 1022
+                        </summary>
+                        
+                        <decoNote type="drawing">Good marginal drawing (pricked) with a roe deer and wall with letters 'ger' inscribed, 
+                           fol. 1 (rebus for Roger Walle, see Provenance)</decoNote>
+                        
+                        <!-- Add "canon of Lichfield, d. 1488" to the authority record for Roger Walle? (source P&A iii.132: https://babel.hathitrust.org/cgi/pt?id=uc1.31822026891838&seq=38 ) -->                  
+
                      </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
                         <origDate calendar="Gregorian" notAfter="1460" notBefore="1440">15th century, middle</origDate>
                         <origPlace>
-                           <country key="place_7002445">English</country>
+                           <country key="place_7002445">England</country>
                         </origPlace>
                      </origin>
+                     <provenance>The signature '<persName key="person_1073" role="fmo">Rogerus Walle</persName>' occurs twice on fol. 154. Also, fol. 132 (cf. fol. 1)</provenance>
                   </history>
                </msPart>
                <msPart xml:id="MS_e_Mus_64-part2">
@@ -94,6 +163,7 @@
                   </msIdentifier>
                   <msContents>
                      <msItem class="#biblia" n="1" xml:id="MS_e_Mus_64-part2-item1">
+                        <locus from="155" to="293" type="inferredEnd">(fol. 155)</locus>
                         <title key="work_11008" type="desc">Chronicles with gloss</title>
                         <bibl type="bible">
                            <title>Bible, Chronicles</title>
@@ -105,25 +175,39 @@
                      <objectDesc form="codex">
                         <supportDesc material="perg">
                            <support>parchment</support>
+
                         </supportDesc>
+                        
+                        
+                        <layoutDesc>
+                           <layout columns="2">2 cols and occasionally 3 cols
+                           </layout>
+                        </layoutDesc>
+                        
                      </objectDesc>
-                     <decoDesc>
-                        <decoNote type="decInit">Fine initial. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 296, pl. XXVI)</decoNote>
+
+                     <decoDesc resp="#PA">
+                        <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 296, Pl. XXVI
+                        </summary>
+                        <decoNote type="decInit">Fine initial</decoNote>
                      </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" when="1200">c. 1200</origDate>
+                        <origDate calendar="Gregorian" notAfter="1210" notBefore="1190"><hi rend="italic">c</hi>. 1200</origDate>
                         <origPlace>
-                           <country key="place_7002445">English</country>
+                           <country key="place_7002445">England</country>
                         </origPlace>
                      </origin>
+
+                     
                   </history>
                </msPart>
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-04-29">Description revised to incorporate all the information in the Summary Catalogue (1937)</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">

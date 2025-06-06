@@ -1,14 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4564">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4564">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Douce 2</title>
             <title type="collection">MSS. Douce</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+      
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1966">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2025">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+      
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -35,45 +47,84 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_Douce_2-item1">
+                     <locus from="1r" to="112r">(fol. 1r-112r)</locus>
                      <author key="person_2581859">Ps.-Aristotle</author>
                      <title key="work_3861">Secretum secretorum</title>
+                     <rubric>Incipit liber secretum secretorum editus ab Aristotile ad Alexandrum regem</rubric>
+                     <colophon>Completus est ergo tractatus de signis &amp; moribus naturalibus hominum, 
+                        ad regem magnificum Alexandrum, qui dominatus fiiit tocius orbis monarchiam in Septentrioni</colophon>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                   <msItem n="2" xml:id="MS_Douce_2-item2">
+                     <locus from="106v" to="106v">(fol. 106v)</locus>
+                     <title type="desc">Couplet about weights</title>
+                     <textLang mainLang="la">Latin</textLang>
+                  </msItem>
+                  
+                  <msItem n="3" xml:id="MS_Douce_2-item3">
+                     <locus from="107">(fol. 107)</locus>
+                     <title type="desc">Extracts from Matthew and Luke concerning the baptism and circumcision of Jesus Christ</title>
+                     <textLang mainLang="la">Latin</textLang>
+                  </msItem>
+                  
+                  <msItem n="4" xml:id="MS_Douce_2-item4">
+                     <locus from="113r" to="211v">(fol. 113r-211v)</locus>
                      <author key="person_100189814">Arnold of Villanova</author>
                      <title key="work_693">Regimen sanitatis</title>
+                     <rubric>Incipit liber magistri Arnaldi summi medici de regimine sanitatis</rubric>
+                     <incipit>Prima pars uel consideratio sanitatis conseruande</incipit>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
-                  <msItem class="#medica" n="3" xml:id="MS_Douce_2-item3">
+                  
+                  <msItem class="#medica" n="5" xml:id="MS_Douce_2-item5">
+                     <locus from="220r" to="246v">(fol. 220r-246v)</locus>
                      <title key="work_13232" type="desc">Medical treatises</title>
+                     <incipit>De pulueribus. Puluis probatissimus</incipit>
+                     <note>Treatise on drugs and remedies, in short chapters</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
+                  <msItem n="6" xml:id="MS_Douce_2-item6">
+                     <locus from="246v" to="267r">(fol. 246v-267r)</locus>
+                     <title type="desc" key="work_14022">Prognostication: on lucky and unlucky days, according to the position of the moon</title>
+                     <incipit>Si die dominica Ianuarius euenerit</incipit>
+                     <note>Imperfect at the end</note>
+                     <textLang mainLang="la">Latin</textLang>
+                  </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
-                        <support>parchment</support><extent><seg type="leaf"><measure type="laterEndleaf" quantity="5">v</measure> + <measure type="leaf" quantity="265">265</measure></seg> leaves
+                        <support>parchment</support><extent>
+                           <seg type="leaf">
+                              <measure type="laterEndleaf" quantity="5">v</measure> + <measure type="leaf" quantity="265">265</measure></seg> leaves
                            <dimensions type="binding" unit="in"><height>3.25</height><width>2.125</width></dimensions>
                         </extent>
                      </supportDesc>
                   </objectDesc>
-                  <musicNotation>
-                     <p>Notation on staves (see van Dijk 1957).</p>
-                  </musicNotation>
-                  <decoDesc>
-                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 578:</summary>
-                     <decoNote type="border">Good borders.</decoNote>
-                     <decoNote type="histInit">Good historiated initials.</decoNote>
+
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 578
+                     </summary>
+                     <decoNote type="border"><ref target="https://digital.bodleian.ox.ac.uk/objects/23361680-53aa-41f5-b035-04e89a3d72f3/surfaces/b371a1bd-faf4-40d4-bbd8-4994d5718b96/">Good borders</ref></decoNote>
+                     <decoNote type="histInit"><ref target="https://digital.bodleian.ox.ac.uk/objects/23361680-53aa-41f5-b035-04e89a3d72f3/surfaces/90516bab-455d-4fba-a18d-1dc2fbb4d58b/">Good historiated initials</ref></decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1310" notBefore="1300">14th century, beginning</origDate>
                      <origPlace>
-                        <country key="place_1000070">French</country>
+                        <country key="place_1000070">France</country>
                      </origPlace>
                   </origin>
+                  
+                  <provenance>Fol. 218: 'Ce livre appartien a <persName role="fmo" key="person_5093">Anthoine Goulla</persName>'</provenance>
+                  <provenance>A similar inscription on fol. 219: 'Ce liure appartie... a <persName role="fmo" key="person_5094">Pierre Du Lac</persName> ... demourant a Sainct Lo de Rouen 1500'</provenance>
+                  
                   <provenance notAfter="1834" notBefore="1757" resp="#MMM">
                      <persName key="person_69848690" role="fmo">Francis Douce, 1757–1834</persName>
                   </provenance>
@@ -82,12 +133,24 @@
                <additional>
                   <adminInfo>
                      <recordHist>
+                        
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1966). <listBibl>
+                           Description adapted (May 2025) by Stewart J. Brookes from the following sources:
+                           
+                           <listBibl>
+                              <bibl>Decoration, localization and date follow Pächt and Alexander (1966)</bibl>
+                              <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 6: Fragments - Office Books, Rituals, Directories</title> (typescript, 1957), <citedRange unit="page" from="84" to="84">p. 84 [endleaves]</citedRange>
+                              </bibl>
+                              <bibl>Catalogue of the Printed Books and Manuscripts Bequeathed by Francis Douce, esq. to the Bodleian Library (1840), 
+                                 <ref target="https://archive.org/details/catalogueofprint00bodluoft/page/1/mode/1up">p. 1</ref></bibl>
+                              <bibl>Summary Catalogue (1897)</bibl>
+                           </listBibl>
+                              <listBibl>
                               <bibl facs="aaz0508.gif" type="SC">Summary Catalogue, vol. 4, p. 489</bibl>
                               <bibl facs="aaz0509.gif" type="SC">Summary Catalogue, vol. 4, p. 490</bibl>
                            </listBibl>
                         </source>
+                        
                      </recordHist>
                   </adminInfo>
                   <surrogates>
@@ -98,18 +161,57 @@
                         <note>(4 images from 35mm slides)</note>
                      </bibl>
                   </surrogates>
-                  <listBibl type="WRAPPER">
-                     <listBibl type="PRINT">
-                        <head>Printed descriptions:</head>
-                        <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 6: Fragments - Office Books, Rituals, Directories</title> (typescript, 1957), <citedRange unit="page" from="84" to="84">p. 84</citedRange>
-                        </bibl>
-                     </listBibl>
-                  </listBibl>
                </additional>
+               
+               <msPart xml:id="Douce_2_flyleaves">
+                  <msIdentifier>
+                     <altIdentifier>
+                        <idno>MS. Douce 2, flyleaves</idno> 
+                     </altIdentifier> 
+                  </msIdentifier>
+                  <msContents>
+                     
+                     <msItem>
+                        <locus>(in the binding)</locus>
+                        <title type="desc" key="work_10207">Antiphonal</title>
+                        
+                        <note>Fragment, with musical notes</note>
+                        <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="perg">
+                           <support>Parchment</support>
+                           <extent>two fragments, 74 x 45 mm.</extent>
+                        </supportDesc>
+                        
+                     </objectDesc>
+                     <musicNotation>
+                        <p>Square notation on staves of 4 red lines</p>
+                     </musicNotation>
+                     
+                  </physDesc>
+                  <history>
+                     
+                     <origin>
+                        
+                        <origDate notAfter="1500" notBefore="1400" calendar="Gregorian">15th century, early</origDate>
+                        <origPlace>
+                           <country key="place_1000070">France</country>
+                        </origPlace>
+                     </origin>
+                     
+                  </history>
+               </msPart>
+               
             </msDesc>
          </sourceDesc>
+         
       </fileDesc>
       <revisionDesc>
+         <change when="2025-05-22">Description revised to incorporate all the information in printed catalogues.</change>
          <change when="2024-05">Add extent and leaf dimensions from Summary Catalogue.</change>
          <change when="2018-10-14" xml:id="MMM">
             <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>

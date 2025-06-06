@@ -9,6 +9,18 @@
                <persName>Elizabeth Solopova</persName>
                <persName>Matthew Holford</persName>
             </respStmt>
+            <respStmt xml:id="LN">
+               <resp when="2025">Cataloguer</resp>
+               <persName>Lucian Ng</persName>
+            </respStmt>
+            <respStmt xml:id="NH">
+               <resp when="2025">Cataloguer</resp>
+               <persName>Niamh Hayes</persName>
+            </respStmt>
+            <respStmt xml:id="SDM">
+               <resp when="2025">Encoding</resp>
+               <persName>Sebastian Dows-Miller</persName>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -47,9 +59,42 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                        <extent><seg type="leaf"><measure type="laterEndleaf">iii</measure> + <measure type="leaf">102</measure> leaves</seg></extent>
+                        <extent resp="#LN #NH #SDM">
+                           <seg type="leaf">
+                              <measure type="laterEndleaf" quantity="3">iii (later paper)</measure> + <measure type="leaf" quantity="101">101 (parchment)</measure> + <measure type="laterEndleaf" quantity="1">i (foliated 102)</measure> leaves.
+                           </seg>
+                           <dimensions type="binding" unit="mm">
+                              <height>302</height>
+                              <width>212</width>
+                           </dimensions>
+                           <dimensions type="leaf" unit="mm">
+                              <height min="285" max="294">285–294</height>
+                              <width min="142" max="211">fols. 1–7 trimmed to 142mm; fols. 7–102 209–211mm</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc resp="#LN #NH #SDM">
+                        <layout columns="1" writtenLines="36" ruledLines="36" rulingMedium="leadpoint" topLine="below">
+                           One column of 36 lines, ruled in lead.
+                           <dimensions type="written" unit="mm">
+                              <height>201</height>
+                              <width>125</width>
+                           </dimensions>
+                        </layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <handDesc hands="1" resp="#LN #NH #SDM">
+                     <handNote script="cursivaAntiquior">One hand, Anglicana.</handNote>
+                  </handDesc>
+                  <decoDesc resp="#LN #NH #SDM">
+                     <decoNote type="flourInit">
+                        <p>Flourished initials in red and blue ink of <height min="2" max="8" unit="line">between two and eight lines</height> in height found on fols. <locus from="4v" to="4v">4v</locus>, <locus from="13r" to="13r">13r</locus>, <locus from="24r" to="24r">24r</locus>, <locus from="30v" to="30v">30v</locus>, <locus from="33v" to="33v">33v</locus>, <locus from="35r" to="35r">35r</locus>, <locus from="39r" to="39r">39r</locus>, <locus from="54v" to="54v">54v</locus>, <locus from="58r" to="58r">58r</locus>, <locus from="66v" to="66v">66v</locus>, <locus from="71r" to="71r">71r</locus>, <locus from="80r" to="80r">80r</locus>, <locus from="85v" to="85v">85v</locus>, and <locus from="89r" to="89r">89r</locus>.</p>
+                        <p><height quantity="1" unit="line">Single-line</height> pilcrows on a number of folios. Alternating between red and blue on fols. <locus from="1v" to="4v">1v–4v</locus>, <locus from="24r" to="25r">24r–25r</locus>, and <locus from="95r" to="96v">95r–96v</locus>; only red on fols. <locus from="7v" to="24v">7v–24v</locus>, <locus from="25r" to="29v">25r–29v</locus>, and <locus from="33r" to="33r">33r</locus>; only blue on fols. <locus from="29r" to="30v">29r–30v</locus>.</p>
+                     </decoNote>
+                     <decoNote type="drawing">Later sketched faces in leadpoint on fols. <locus from="39v" to="39v">39v</locus>, <locus from="47v" to="47v">47v</locus>, <locus from="54v" to="54v">54v</locus>, and <locus from="71r" to="71r">71r</locus>.</decoNote>
+                     <decoNote type="marginal">Manicula found in a variety of hands and media on fols. <locus from="52v" to="52v">52v</locus>, <locus from="59v" to="59v">59v</locus>, <locus from="73r" to="73r">73r</locus>, and <locus from="95r" to="95r">95r</locus></decoNote>
+                     <decoNote type="other">Fol. <locus from="101v" to="101v">101v</locus> filled with pen trials, sketches of people and animals, and signatures in multiple hands, in both ink and leadpoint.</decoNote>
+                  </decoDesc>
                </physDesc>
                <history>
                   <origin>
@@ -70,6 +115,7 @@
                               <bibl facs="aas0451.gif" type="SC">Summary Catalogue, Vol. 3, p. 436</bibl>
                            </listBibl>
                         </source>
+                        <change when="2025-05-16">Additional data collected by Lucian Ng and Niamh Hayes as part of the 'Big Data' and Medieval Manuscripts workshop held at the Bodleian Libraries, Oxford on <date when="2025-05-15">15th May 2025</date>. Data encoded in TEI-XML by Sebastian Dows-Miller on <date when="2025-05-16">16th May 2025</date>.</change>
                      </recordHist>
                   </adminInfo>
                   <surrogates>
@@ -90,6 +136,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-05-16">Additional data collected by <persName>Lucian Ng</persName> and <persName>Niamh Hayes</persName> as part of the <name type="event">'Big Data' and Medieval Manuscripts</name> workshop held at the <placeName>Bodleian Libraries, Oxford</placeName> on <date when="2025-05-15">15th May 2025</date>. Data encoded in TEI-XML by <persName>Sebastian Dows-Miller</persName> on <date when="2025-05-16">16th May 2025</date>.</change>
          <change when="2025-05">Incorporate all information from printed catalogue.</change>
          <change when="2019-10-31" xml:id="MMM"><persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>

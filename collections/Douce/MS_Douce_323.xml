@@ -1,12 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4659">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4659">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Douce 323</title>
             <title type="collection">MSS. Douce</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2025">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -35,24 +43,35 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem class="#historica" n="1" xml:id="MS_Douce_323-item1">
+                  <textLang mainLang="enm">Middle English</textLang>
+                  <msItem n="1" xml:id="MS_Douce_323-item-1">
+                     <locus from="1">(fol. 1)</locus>
                      <title key="work_10934" type="desc">Chronicle of <placeName key="place_7002445">England</placeName> (Brut Chronicle) to 1333</title>
-                     <textLang mainLang="enm">Middle English</textLang>
+                     <incipit>In the noble lande of Surrye</incipit>
+                     <colophon>Deo gracias</colophon>
                   </msItem>
-                  <msItem n="2" xml:id="MS_Douce_323-item2">
+                  <msItem n="2" xml:id="MS_Douce_323-item-2">
+                     <locus from="102">(fol. 102)</locus>
                      <author key="person_61560236">William Langland</author>
                      <title key="work_5016">Piers Plowman</title>
                      <note>('A' text)</note>
-                     <textLang mainLang="enm">Middle English</textLang>
+                     <finalRubric>Explicit liber Petri Plouman</finalRubric>
+                     <note>Prologue and Passus i-xi of the A-text.</note>
                   </msItem>
-                  <msItem class="#devotiones" n="3" xml:id="MS_Douce_323-item3">
+                  <msItem n="3" xml:id="MS_Douce_323-item-3">
+                     <locus from="140v">(fol. 140v)</locus>
                      <title key="work_10003">Abbey of the Holy Ghost</title>
-                     <textLang mainLang="enm">Middle English</textLang>
+                     <rubric>Here is the book that speketh of a place that is called the Abbey of the Holy Gost ...</rubric>
+                     <note>At the end is a coloured view of the abbey.</note>
                   </msItem>
-                  <msItem class="#romances" n="4" xml:id="MS_Douce_323-item4">
+                  <msItem n="4" xml:id="MS_Douce_323-item-4">
+                     <locus from="160">(fol. 160)</locus>
                      <title key="work_12417">Ipotis</title>
-                     <textLang mainLang="enm">Middle English</textLang>
+                     <rubric>Ipotyce</rubric>
+                     <incipit>Alle that will of wysdom lere</incipit>
+                     <note>Ends, abruptly, some leaves being lost, 'And thanketh God al his wille.'.</note>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
@@ -73,13 +92,15 @@
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
+                  <provenance>Fol. 101v, arms sable a saltire engrailed ermine between four roses (?) argent (the colours doubtful), with the name 'iohannes tubantisville', as though the scribe or owner (John of Trumpington?).</provenance>
+                  <provenance>Belonged to <persName role="fmo" key="person_5096">William Dupre (Du pre)</persName>, a specimen of whose intended metrical paraphrase of art. 2 in modem English is prefixed: sold by him to Douce, who has inserted notes of his own, chiefly also about art. 2.</provenance>
                   <provenance notAfter="1834" notBefore="1757" resp="#MMM"><persName key="person_69848690" role="fmo">Francis Douce, 1757–1834</persName></provenance>
                   <acquisition resp="#MMM" when="1834">Bequeathed to the Bodleian in 1834</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
+                        <source>Description adapted from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
                               <bibl facs="aaz0614.gif" type="SC">Summary Catalogue, vol. 4, p. 595</bibl>
                            </listBibl>
                         </source>
@@ -101,6 +122,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-05">Description revised to incorporate all information from printed catalogues.</change>
          <change when="2024-05">Add extent and leaf dimensions from Summary Catalogue.</change>
          <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
