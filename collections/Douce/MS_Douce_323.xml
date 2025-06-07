@@ -4,10 +4,30 @@
          <titleStmt>
             <title>MS. Douce 323</title>
             <title type="collection">MSS. Douce</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2025">Encoding</resp>
                <persName>Matthew Holford</persName>
+            </respStmt>
+            <respStmt xml:id="MS">
+               <resp when="2025">Cataloguer</resp>
+               <persName>Megan Stuart</persName>
+            </respStmt>
+            <respStmt xml:id="AB">
+               <resp when="2025">Cataloguer</resp>
+               <persName>Adam Burge</persName>
+            </respStmt>
+            <respStmt xml:id="SDM">
+               <resp when="2025">Encoding</resp>
+               <persName>Sebastian Dows-Miller</persName>
             </respStmt>
          </titleStmt>
          <publicationStmt>
@@ -34,34 +54,34 @@
                      <idno type="SCN">21897</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
-                  <msItem class="#historica" n="1" xml:id="MS_Douce_323-item1">
-                     <title key="work_10934" type="desc">Chronicle of <placeName key="place_7002445">England</placeName> (Brut Chronicle) to 1333</title>
-                     <textLang mainLang="enm">Middle English</textLang>
-                  </msItem>
-                  <msItem n="2" xml:id="MS_Douce_323-item2">
-                     <author key="person_61560236">William Langland</author>
-                     <title key="work_5016">Piers Plowman</title>
-                     <note>('A' text)</note>
-                     <textLang mainLang="enm">Middle English</textLang>
-                  </msItem>
-                  <msItem class="#devotiones" n="3" xml:id="MS_Douce_323-item3">
-                     <title key="work_10003">Abbey of the Holy Ghost</title>
-                     <textLang mainLang="enm">Middle English</textLang>
-                  </msItem>
-                  <msItem class="#romances" n="4" xml:id="MS_Douce_323-item4">
-                     <title key="work_12417">Ipotis</title>
-                     <textLang mainLang="enm">Middle English</textLang>
-                  </msItem>
-               </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="chart">
-                        <support>paper</support><extent><seg type="leaf"><measure type="laterEndleaf" quantity="6">vi</measure> + <measure type="leaf" quantity="168">168</measure></seg> leaves
-                           <dimensions type="binding" unit="in"><height>11.5</height><width>8.75</width></dimensions>
+                        <support>paper</support>
+                        <extent resp="#MS #AB #SDM">
+                           <seg type="leaf">
+                              <measure type="laterEndleaf" quantity="6">vi</measure> + <measure type="leaf" quantity="168">168</measure> + <measure type="laterEndleaf" quantity="1">i</measure> leaves
+                           </seg>
+                           <dimensions type="binding" unit="mm">
+                              <height>290</height>
+                              <width>215</width>
+                              <depth>40</depth>
+                           </dimensions>
+                           <dimensions type="leaf" unit="mm">
+                              <height>280</height>
+                              <width>210</width>
+                           </dimensions>
                         </extent>
                      </supportDesc>
                   </objectDesc>
+                  <handDesc hands="2" resp="#MS #AB #SDM">
+                     <handNote script="anglicana">
+                        Anglicana in a dark brown ink, from <locus from="1" to="160">fols. 1–160</locus>
+                     </handNote>
+                     <handNote script="anglicana">
+                        Anglicana in a dark brown ink, from <locus from="160" to="168">fols. 160–168</locus>
+                     </handNote>
+                  </handDesc>
                   <decoDesc>
                      <decoNote type="miniature">Miniature (coloured drawing). (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 1148)</decoNote>
                   </decoDesc>
@@ -73,16 +93,19 @@
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
+                  <provenance>Fol. 101v, arms sable a saltire engrailed ermine between four roses (?) argent (the colours doubtful), with the name 'iohannes tubantisville', as though the scribe or owner (John of Trumpington?).</provenance>
+                  <provenance>Belonged to <persName role="fmo" key="person_5096">William Dupre (Du pre)</persName>, a specimen of whose intended metrical paraphrase of art. 2 in modem English is prefixed: sold by him to Douce, who has inserted notes of his own, chiefly also about art. 2.</provenance>
                   <provenance notAfter="1834" notBefore="1757" resp="#MMM"><persName key="person_69848690" role="fmo">Francis Douce, 1757–1834</persName></provenance>
                   <acquisition resp="#MMM" when="1834">Bequeathed to the Bodleian in 1834</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
+                        <source>Description adapted from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
                               <bibl facs="aaz0614.gif" type="SC">Summary Catalogue, vol. 4, p. 595</bibl>
                            </listBibl>
                         </source>
+                        <change when="2025-05-16">Additional data collected by Megan Stuart and Adam Burge as part of the 'Big Data' and Medieval Manuscripts workshop held at the Bodleian Libraries, Oxford on <date when="2025-05-29">29th May 2025</date>. Data encoded in TEI-XML by Sebastian Dows-Miller on <date when="2025-06-04">4th June 2025</date>.</change>
                      </recordHist>
                      <!--<availability status="none">
                         <p>This manuscript is on display in the Bodleian Libraries exhibition <ref target="https://visit.bodleian.ox.ac.uk/event/sensational-books">Sensational Books</ref> (27 May – 4 December 2022). It cannot be ordered between those dates or for a short period before and after.</p>
@@ -97,10 +120,152 @@
                      </listBibl>
                   </listBibl>
                </additional>
+               <msPart>
+                  <msIdentifier>
+                     <altIdentifier type="partial">
+                        <idno type="part">MS. Douce 232 – part 1</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  <msContents>
+                     <msItem n="1" xml:id="MS_Douce_323-part1-item1">
+                        <locus from="1">(fol. 1)</locus>
+                        <title key="work_10934" type="desc">Chronicle of <placeName key="place_7002445">England</placeName> (Brut Chronicle) to 1333</title>
+                        <incipit>In the noble lande of Surrye</incipit>
+                        <colophon>Deo gracias</colophon>
+                        <textLang mainLang="enm">Middle English</textLang>
+                     </msItem>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc>
+                        <supportDesc resp="#MS #AB #SDM">
+                           <collation mainStructures="12">
+                              Quires of 12 leaves.
+                           </collation>
+                        </supportDesc>
+                        <layoutDesc resp="#MS #AB #SDM">
+                           <layout columns="1" ruledLines="40" rulingMedium="ink" topLine="below" writtenLines="40">
+                              <dimensions type="written" unit="mm">
+                                 <height>196</height>
+                                 <width>130</width>
+                              </dimensions>
+                           </layout>
+                        </layoutDesc>
+                     </objectDesc>
+                     <decoDesc resp="#MS #AB #SDM">
+                        <decoNote type="drawing">Coat of arms in black and red on fol. <locus from="101v" to="101v">101v</locus>.</decoNote>
+                        <decoNote type="catchword">Catchwords decorated with scroll motif in red and black ink, becoming more complex from fol. <locus from="48v">48v</locus>.</decoNote>
+                        <decoNote type="marginal">Marginal manicula in black ink on fols. <locus from="107v" to="107v">107v</locus>, <locus from="108r" to="108r">108r</locus>, and <locus from="130v" to="130v">130v</locus>.</decoNote>
+                     </decoDesc>
+                  </physDesc>
+               </msPart>
+               <msPart>
+                  <msIdentifier>
+                     <altIdentifier type="partial">
+                        <idno type="part">MS. Douce 232 – part 2</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  <msContents>
+                     <msItem n="2" xml:id="MS_Douce_323-part2-item1">
+                        <locus from="102">(fol. 102)</locus>
+                        <author key="person_61560236">William Langland</author>
+                        <title key="work_5016">Piers Plowman</title>
+                        <note>('A' text)</note>
+                        <finalRubric>Explicit liber Petri Plouman</finalRubric>
+                        <note>Prologue and Passus i-xi of the A-text.</note>
+                        <textLang mainLang="enm">Middle English</textLang>
+                     </msItem>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc>
+                        <supportDesc resp="#MS #AB #SDM">
+                           <foliation resp="#MS #AB #SDM">Modern pencil foliation on recto folios.</foliation>
+                           <collation mainStructures="12">
+                              Quires of 12 leaves.
+                           </collation>
+                        </supportDesc>
+                        <layoutDesc resp="#MS #AB #SDM">
+                           <layout columns="1" ruledLines="28" rulingMedium="ink" topLine="below" writtenLines="2">
+                              <dimensions type="written" unit="mm">
+                                 <height>193</height>
+                                 <width>132</width>
+                              </dimensions>
+                           </layout>
+                        </layoutDesc>
+                     </objectDesc>
+                     <decoDesc resp="#MS #AB #SDM">
+                        <decoNote type="catchword">Decorated catchwords in black ink.</decoNote>
+                        <decoNote type="rubrication">Large elaborate rubrication (including black ink) on fol. <locus from="140r" to="140r">140r</locus>.</decoNote>
+                        <decoNote type="decInit">Decorated initial with dragon motif in rubrication on fol. <locus from="140r" to="140r">140r</locus>.</decoNote>
+                     </decoDesc>
+                  </physDesc>
+               </msPart>
+               <msPart>
+                  <msIdentifier>
+                     <altIdentifier type="partial">
+                        <idno type="part">MS. Douce 232 – part 3</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  <msContents>
+                     <msItem n="3" xml:id="MS_Douce_323-part3-item1">
+                        <locus from="140v">(fol. 140v)</locus>
+                        <title key="work_10003">Abbey of the Holy Ghost</title>
+                        <rubric>Here is the book that speketh of a place that is called the Abbey of the Holy Gost ...</rubric>
+                        <note>At the end is a coloured view of the abbey.</note>
+                        <textLang mainLang="enm">Middle English</textLang>
+                     </msItem>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc>
+                        <layoutDesc resp="#MS #AB #SDM">
+                           <layout columns="1" ruledLines="34" rulingMedium="ink" topLine="below" writtenLines="34">
+                              <dimensions type="written" unit="mm">
+                                 <height>195</height>
+                                 <width>135</width>
+                              </dimensions>
+                           </layout>
+                        </layoutDesc>
+                     </objectDesc>
+                     <decoDesc resp="#MS #AB #SDM">
+                        <decoNote type="catchword">Decorated catchwords in black ink.</decoNote>
+                        <decoNote type="miniature">Miniature depicting the Abbey of the Holy Ghost referenced in item 3 on fol. <locus from="159v" to="159v">159v</locus>.</decoNote>
+                     </decoDesc>
+                  </physDesc>
+               </msPart>
+               <msPart>
+                  <msIdentifier>
+                     <altIdentifier type="partial">
+                        <idno type="part">MS. Douce 232 – part 4</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  <msContents>
+                     <msItem n="4" xml:id="MS_Douce_323--part4-item1">
+                        <locus from="160">(fol. 160)</locus>
+                        <title key="work_12417">Ipotis</title>
+                        <rubric>Ipotyce</rubric>
+                        <incipit>Alle that will of wysdom lere</incipit>
+                        <note>Ends, abruptly, some leaves being lost, 'And thanketh God al his wille.'.</note>
+                        <textLang mainLang="enm">Middle English</textLang>
+                     </msItem>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc>
+                        <layoutDesc resp="#MS #AB #SDM">
+                           <layout columns="1" ruledLines="31" rulingMedium="ink" topLine="below" writtenLines="31">
+                              <dimensions type="written" unit="mm">
+                                 <height>182</height>
+                                 <width>125</width>
+                              </dimensions>
+                           </layout>
+                        </layoutDesc>
+                     </objectDesc>
+                  </physDesc>
+               </msPart>
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-05-16">Additional data collected by <persName>Megan Stuart</persName> and <persName>Adam Burge</persName> as part of the <name type="event">'Big Data' and Medieval Manuscripts</name> workshop held at the <placeName>Bodleian Libraries, Oxford</placeName> on <date when="2025-05-29">29th May 2025</date>. Data encoded in TEI-XML by <persName>Sebastian Dows-Miller</persName> on <date when="2025-06-04">4th June 2025</date>.</change>
+         <change when="2025-05">Description revised to incorporate all information from printed catalogues.</change>
          <change when="2024-05">Add extent and leaf dimensions from Summary Catalogue.</change>
          <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
