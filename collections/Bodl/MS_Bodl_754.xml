@@ -4,17 +4,26 @@
          <titleStmt>
             <title>MS. Bodl. 754</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            
             <respStmt xml:id="SC">
                <resp when="1905">Cataloguer</resp>
                <persName>Falconer Madan</persName>
             </respStmt>
-            
             <respStmt xml:id="SJB">
                <resp when="2023">Encoding</resp>
                <persName>Stewart Brookes</persName>
             </respStmt>
-            
+            <respStmt xml:id="EM">
+               <resp when="2025">Cataloguer</resp>
+               <persName>Elvira Miceli</persName>
+            </respStmt>
+            <respStmt xml:id="EB">
+               <resp when="2025">Cataloguer</resp>
+               <persName>Emilie Badoux</persName>
+            </respStmt>
+            <respStmt xml:id="SDM">
+               <resp when="2025">Encoding</resp>
+               <persName>Sebastian Dows-Miller</persName>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -47,18 +56,13 @@
                      <incipit>Howe this lande was cawlled Albyon and by what encheson it wase so named. 
                      In the noble lande of Syrrye ther wase a noble kynge ... Dyoclecian</incipit>
                      <explicit>he was noble entyred at Westminster on whose soule... Amen. Explicit</explicit>
-                     
                      <note>Imperfect at beginning, and ending with the death of Henry V in 1422</note>
-                     
                      <note>One leaf is lost at the beginning, and one after fol. 9 and fol. 43. The missing text is added
                         from a rather late copy (fol. 1, cf. 22)</note>
-                     
                     <!-- <note>This chronicle agrees farily closely with the <title>Cronicles of Englond</title> printed by
                      Caxton in 1480, and so may be termed an English Brute chronicle</note>
-                     
                      <note>For a similar <title>Chronicle</title>, cf. <ref target="https://medieval.bodleian.ox.ac.uk/catalog/manuscript_1830">MS. Bodl. 840</ref>
                         which ends with the taking of Rouen in January 1418/1419</note>-->
-                     
                      <textLang mainLang="enm">Middle English</textLang>
                   </msItem>
                </msContents>
@@ -66,39 +70,53 @@
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
-                        <extent>
-                           <seg type="leaf"><measure type="laterEndleaf" quantity="1">i</measure> + <measure type="leaf" quantity="154">154</measure></seg> leaves
-                           <dimensions unit="in" type="binding">
-                              <height>12</height>
-                              <width>9</width>
+                        <extent resp="#EM #EB #SDM">
+                           <seg type="leaf"><measure type="laterEndleaf" quantity="1">i</measure> + <measure type="leaf" quantity="154">154</measure> + <measure type="laterEndleaf" quantity="1">i (attached to the final core folio)</measure> leaves</seg>
+                           <dimensions type="binding" unit="mm">
+                              <height>299</height>
+                              <width>209</width>
+                              <depth>42</depth>
+                           </dimensions>
+                           <dimensions type="leaf" unit="mm">
+                              <height>283</height>
+                              <width>205</width>
                            </dimensions>
                         </extent>
-                        
-                        <condition>Fols 22 and 154 are damaged</condition>
+                        <foliation resp="#EM #EB #SDM">Two phases of modern folation. One, older, appears every 5 folios on the recto side. The second, more recent, fills in all other folios on the recto side.</foliation>
+                        <condition resp="#EM #EB #SDM">Extensive repairs, particularly to bottom edge of folios. Fols 22 and 154 are damaged</condition>
                      </supportDesc>
+                     <layoutDesc resp="#EM #EB #SDM">
+                        <layout columns="1" ruledLines="32" rulingMedium="drypoint" writtenLines="32" topLine="above">
+                           <dimensions type="leaf" unit="mm">
+                              <height>232</height>
+                              <width>163</width>
+                           </dimensions>
+                        </layout>
+                     </layoutDesc>
                   </objectDesc>
-                  
+                  <handDesc hands="2" resp="#EM #EB #SDM">
+                     <handNote script="anglicana">Single hand for majority of text, anglicana, in dark brown ink.</handNote>
+                     <handNote script="anglicana">Additional hand on fols. <locus from="1r" to="1v">1r–v</locus> and <locus from="22r" to="22v">22r–v</locus>, anglicana, in black ink.</handNote>
+                  </handDesc>
                   <additions>There is some scribbling in the margins</additions>
-                  
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1460" notBefore="1440">15th century, middle</origDate>
                   </origin>
-                  
                   <provenance>'<persName role="sgn" key="person_3712">Martin Cotes</persName>', 16th century</provenance>
                   <acquisition when="1720">Given (with other manuscripts) by <persName role="dnr" key="person_61149196262174790703">Browne Willis of Whaddon</persName> in 1720.</acquisition>
                </history>
-               
                <additional>
                   <adminInfo>
                      <recordHist>
                         <source>
                            Description adapted (March 2023) by Stewart J. Brookes from the Summary Catalogue (1905)
                            <listBibl>
-                        <bibl facs="aam0358.gif" type="SC">Summary Catalogue, vol. 5, p. 323</bibl>
+                              <bibl facs="aam0358.gif" type="SC">Summary Catalogue, vol. 5, p. 323</bibl>
                            </listBibl>
                         </source>
+                        <change when="2025-06-05">Additional data collected by Elvira Miceli and Emilie Badoux as part of the 'Big Data' and Medieval Manuscripts workshop held at the Bodleian Libraries, Oxford on <date when="2025-06-05">5th June 2025</date>. Data encoded in TEI-XML by Sebastian Dows-Miller on <date when="2025-06-09">9th June 2025</date>.</change>
                      </recordHist>
                   </adminInfo>
                </additional>
@@ -106,6 +124,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-06-05">Additional data collected by <persName>Elvira Miceli</persName> and <persName>Emilie Badoux</persName> as part of the <name type="event">'Big Data' and Medieval Manuscripts</name> workshop held at the <placeName>Bodleian Libraries, Oxford</placeName> on <date when="2025-06-05">5th June 2025</date>. Data encoded in TEI-XML by <persName>Sebastian Dows-Miller</persName> on <date when="2025-06-09">9th June 2025</date>.</change>
          <change when="2023-03-23">Description revised to incorporate all the information in the Summary Catalogue (1905)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
