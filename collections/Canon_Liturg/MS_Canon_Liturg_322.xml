@@ -1,4 +1,4 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_3005">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_3005">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -34,7 +34,7 @@
                <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>
             </publisher>
             <idno type="msID">MS_Canon_Liturg_322</idno>
-            <idno type="collection">Canon Liturg</idno>
+            <idno type="collection">Canon_Liturg</idno>
             <idno type="catalogue">Western</idno>
          </publicationStmt>
          <sourceDesc>
@@ -55,7 +55,7 @@
                   <objectDesc>
                      <supportDesc material="perg">
                         <support>Parchment.</support>
-                        <extent> i + 2 + 134 (136) + 2 fol. <dimensions type="leaf" unit="mm">
+                        <extent> <seg type="leaf"><measure type="laterEndleaf" quantity="1">i</measure> + <measure type="leaf" quantity="2">2</measure> + <measure type="leaf" quantity="134">134 (136)</measure> + <measure type="endleaf" quantity="2">2</measure></seg> fol. <dimensions type="leaf" unit="mm">
                               <height>246</height>
                               <width>165</width>
                            </dimensions>
@@ -90,7 +90,7 @@
                      </recordHist>
                   </adminInfo>
                </additional>
-               <msPart>
+               <msPart xml:id="MS_Canon_Liturg_322-part1">
                   <msIdentifier>
                      <altIdentifier>
                         <idno>MS. Canon. Liturg. 322 – Part 1</idno>
@@ -134,7 +134,7 @@
                      </origin>
                   </history>
                </msPart>
-               <msPart resp="#SC">
+               <msPart resp="#SC" xml:id="MS_Canon_Liturg_322-part2">
                   <msIdentifier>
                      <altIdentifier>
                         <idno>MS. Canon. Liturg. 322 – Part 2 (fols. 129–34, independent contemporary leaves at the end)</idno>
@@ -143,24 +143,24 @@
                   <msContents>
                      <textLang mainLang="la">Latin</textLang>
                      <msItem>
-                        <locus>(fol. 129)</locus>
+                        <locus from="129" to="130" type="inferredEnd">(fol. 129)</locus>
                         <title key="work_14971" type="desc">Text on calendar</title>
                         <rubric>Ratio mensium kalendarum nonarum &amp; yduum</rubric>
                      </msItem>
                      <msItem>
-                        <locus>(fol. 131)</locus>
+                        <locus from="131" to="132" type="inferredEnd">(fol. 131)</locus>
                         <title key="work_14946" type="desc">Poem on Antichrist</title>
                         <incipit>Ante quam iudicii dies metuenda</incipit>
                      </msItem>
                      <msItem>
-                        <locus>(fol. 133)</locus>
+                        <locus from="133" to="134r" type="inferredEnd">(fol. 133)</locus>
                         <title key="work_11558">Disticha Catonis</title>
                         <bibl>II. 5-III. 9</bibl>
                         <incipit>Dandum etenim est aliquid cum tempus postulat aut res</incipit>
                         <note>A single leaf, presumably a former binding-fragment.</note>
                      </msItem>
                      <msItem>
-                        <locus>(fol. 134v)</locus>
+                        <locus from="134v" to="136" type="inferredEnd">(fol. 134v)</locus>
                         <title key="work_12151" type="desc">Grammatical text</title>
                         <note>Fragment. One passage begins:</note>
                         <incipit>Quid est nomen? Non est dictio per quam fit nominatio</incipit>

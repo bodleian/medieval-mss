@@ -1,5 +1,5 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_3950">
-   <teiHeader xmlns:tei="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_3950">
+   <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>Christ Church MS. 378</title>
@@ -18,7 +18,7 @@
                <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>
             </publisher>
             <idno type="msID">Christ_Church_MS_378</idno>
-            <idno type="collection">Christ Church</idno>
+            <idno type="collection">Christ_Church</idno>
             <idno type="catalogue">Western</idno>
          </publicationStmt>
          <sourceDesc>
@@ -45,7 +45,7 @@
                      </availability>
                   </adminInfo>
                </additional>
-               <msPart>
+               <msPart xml:id="Christ_Church_MS_378-part1">
                   <msIdentifier>
                      <altIdentifier>
                         <idno type="part">Fragment 1</idno>
@@ -63,7 +63,7 @@
                      <objectDesc form="codex">
                         <supportDesc material="perg">
                            <support> Parchment</support>
-                           <extent>Fol. 1 <dimensions type="leaf" unit="mm">
+                           <extent>Fol. <measure type="leaf" quantity="1">1</measure> <dimensions type="leaf" unit="mm">
                                  <height>275</height>
                                  <width>215</width>
                               </dimensions>
@@ -90,7 +90,7 @@
                      </origin>
                   </history>
                </msPart>
-               <msPart>
+               <msPart xml:id="Christ_Church_MS_378-part2">
                   <msIdentifier>
                      <altIdentifier>
                         <idno type="part">Fragment 2</idno>
@@ -101,14 +101,14 @@
                         <title key="work_13372" type="desc">Missal, Use of Sarum</title>
                         <textLang mainLang="la">Latin</textLang>
                         <msItem n="1">
-                           <locus> Fol. 1<hi rend="superscript">ra-vb</hi>
+                           <locus from="1ra" to="1vb">Fol. 1<hi rend="superscript">ra–vb</hi>
                            </locus>
                            <incipit defective="true">spiritus quia fecit nobiscum misericordia<supplied>m</supplied> suam <supplied>Secretum</supplied> Santifica quesumus domine</incipit>
                            <explicit defective="true">quo bene pastus eris Quod te santificet cristum qui te benedicet qui sic accedis</explicit>
                            <note>Services for Trinity Sunday and Corpus Christi Day, ed. Francis H. Dickinson (see MS 87 above), 454–57, with a different sequence, ‘Salua festa dies toto uenerabilis euo . . .’ of <persName key="person_88046472" role="aut">Venantius Fortunatus</persName>.</note>
                         </msItem>
                         <msItem n="2">
-                           <locus> Fol. 2<hi rend="superscript">ra-vb</hi>
+                           <locus from="2ra" to="2vb">Fol. 2<hi rend="superscript">ra–vb</hi>
                            </locus>
                            <incipit defective="true">egenum et pauperem in die mala liberauit eum dominus Alleluya</incipit>
                            <explicit defective="true">quoniam ille pro nobis animam suam posuit et nos debemus pro</explicit>
@@ -151,7 +151,7 @@
                      </origin>
                   </history>
                </msPart>
-               <msPart>
+               <msPart xml:id="Christ_Church_MS_378-part3">
                   <msIdentifier>
                      <altIdentifier>
                         <idno type="part">Fragment 3</idno>
@@ -162,7 +162,7 @@
                         <title key="work_13372" type="desc">Missal, Use of Sarum</title>
                         <textLang mainLang="la">Latin</textLang>
                         <msItem n="1">
-                           <locus> The recto-verso</locus>
+                           <locus> The recto–verso</locus>
                            <incipit defective="true">suscipe nostra hac die precata in qua es assumpta ad celi claustra</incipit>
                            <explicit>Vt in poli aula leti iubilemus alleluya</explicit>
                         </msItem>
@@ -180,7 +180,7 @@
                      <objectDesc form="codex">
                         <supportDesc material="perg">
                            <support> Parchment</support>
-                           <extent>Fol.: 1 <dimensions type="leaf" unit="mm">
+                           <extent>Fol.: <measure type="leaf" quantity="1">1</measure> <dimensions type="leaf" unit="mm">
                                  <height>270</height>
                                  <width>188</width>
                               </dimensions>
@@ -215,7 +215,7 @@
                      <provenance notAfter="1579" notBefore="1493">Formerly a pastedown, removed from printed book e.3.56, which brings together in an <placeName key="place_7011931">Oxford</placeName> binding <title>Quaestiones et decisiones physicales insignium virorum</title>, ed. George Lokert ([Paris]: Josse Badius, s.d.) with two smaller works, Antonio Trombetta, <title>Tractatus formalitatum</title> (Venice: [Jacopo Pencio], 1505) and Giles of Rome, <title>Questiones ed materia coeli et de intellectu possibili</title> (Padua: Hieronymus de Durantis, 1493) [ISTC, ia0008100]. The printed book includes a donation note to ChCh by <persName key="person_2730" role="fmo">William Watkinson</persName> (a Houseman), dated 30 March 1579 (Ker, ‘Provision, 504). The fragment is listed as Ker, <title>PD</title>, no. 1182 (110). Cf. fragment 13 below.</provenance>
                   </history>
                </msPart>
-               <msPart>
+               <msPart xml:id="Christ_Church_MS_378-part4">
                   <msIdentifier>
                      <altIdentifier>
                         <idno type="part">Fragments 4–6</idno>
@@ -224,7 +224,7 @@
                   <msContents>
                      <textLang mainLang="la">Latin</textLang>
                      <msItem>
-                        <locus>No. 5<hi rend="superscript">ra-vb</hi>, no. 6<hi rend="superscript">ra-vb</hi>, no. 4<hi rend="superscript">ra-va</hi></locus>
+                        <locus>No. 5<hi rend="superscript">ra–vb</hi>, no. 6<hi rend="superscript">ra–vb</hi>, no. 4<hi rend="superscript">ra–va</hi></locus>
                         <incipit><supplied>Q</supplied>ueratur vtrum actus habeat diffinicionem videtur quod non quia diffinicio debet significare scienciam rei</incipit>
                         <explicit defective="true">predicant in quod de eo ut argumentum est set forma accidentalis habet predicatum</explicit>
                         <incipit defective="true">habet quiditate habet difficionem quia diffinicio significat quiditatem set actus habet quiditatem</incipit>
@@ -244,7 +244,7 @@
                      <objectDesc form="codex">
                         <supportDesc material="perg">
                            <support> Parchment</support>
-                           <extent>Fols: 3<dimensions type="leaf" unit="mm">
+                           <extent>Fols: <measure type="leaf" quantity="3">3</measure><dimensions type="leaf" unit="mm">
                                  <height max="302" min="300">300–2</height>
                                  <width max="207" min="205">205–7</width>
                               </dimensions>
@@ -270,7 +270,7 @@
                      </origin>
                   </history>
                </msPart>
-               <msPart>
+               <msPart xml:id="Christ_Church_MS_378-part5">
                   <msIdentifier>
                      <altIdentifier>
                         <idno type="part">Fragments 7–8</idno>
@@ -300,7 +300,7 @@
                                  <height max="245" min="235">235–45</height>
                                  <width>70</width>
                               </dimensions>, occasionally up to 75–80 mm, with 10–13 mm between columns, in 44–47 lines, some leaves lacking the upper margin.</layout>
-                           <layout>No prickings; signs of bounds in ink, but no rules.</layout>
+                           <layout rulingMedium="ink">No prickings; signs of bounds in ink, but no rules.</layout>
                         </layoutDesc>
                      </objectDesc>
                      <handDesc>
@@ -318,7 +318,7 @@
                      <provenance>Both bifolia have signs of being used as pastedowns, and have large holes at their foot showing damage from chain-staples. The second bifolium has at the last verso ‘<persName key="person_2731" role="sgn">Thomas Jhelope</persName>’ written vertically in the margin (s. xvi; no match in <title>AO</title>), while the first has a shelfmark ‘O.1.Lib.10.Art.Sup.’, which is not now identifiable in the ChCh collection.</provenance>
                   </history>
                </msPart>
-               <msPart>
+               <msPart xml:id="Christ_Church_MS_378-part6">
                   <msIdentifier>
                      <altIdentifier>
                         <idno type="part">Fragments 9–10</idno>
@@ -368,7 +368,7 @@
                      </origin>
                   </history>
                </msPart>
-               <msPart>
+               <msPart xml:id="Christ_Church_MS_378-part7">
                   <msIdentifier>
                      <altIdentifier>
                         <idno type="part">Fragment 11</idno>
@@ -419,7 +419,7 @@
                      <provenance>The fragmentary leaf was used as the wrapper of printed book Wn.6.33, which is not now identifiable.</provenance>
                   </history>
                </msPart>
-               <msPart>
+               <msPart xml:id="Christ_Church_MS_378-part8">
                   <msIdentifier>
                      <altIdentifier>
                         <idno type="part">Fragment 12</idno>
@@ -469,7 +469,7 @@
                      </origin>
                   </history>
                </msPart>
-               <msPart>
+               <msPart xml:id="Christ_Church_MS_378-part9">
                   <msIdentifier>
                      <altIdentifier>
                         <idno type="part">Fragment 13</idno>
@@ -517,7 +517,7 @@
                      <provenance>As with fragment 3 above, removed from printed book e.3.56, where it was a front pastedown. A hole at bottom right corner from a chain staple; the verso has ink scribbles (s. xvi) of crosses, one with two steps drawn below it, on which a caption ‘deduc me in semita mandatorum tuorum’ (Ps. 119:35).</provenance>
                   </history>
                </msPart>
-               <msPart>
+               <msPart xml:id="Christ_Church_MS_378-part10">
                   <msIdentifier>
                      <altIdentifier>
                         <idno type="part">Fragments 14–15</idno>
@@ -537,7 +537,7 @@
                      <objectDesc form="codex">
                         <supportDesc material="perg">
                            <support> Parchment</support>
-                           <extent>Fols: 2<dimensions type="leaf" unit="mm">
+                           <extent>Fols: <measure type="leaf" quantity="2">2</measure><dimensions type="leaf" unit="mm">
                                  <height>310</height>
                                  <width>195</width>
                               </dimensions>
@@ -566,7 +566,7 @@
                      <provenance>Both show signs of having been pastedowns, the verso of each showing. No. 14 was at the lower board, with a hole at bottom right from a chain staple.</provenance>
                   </history>
                </msPart>
-               <msPart>
+               <msPart xml:id="Christ_Church_MS_378-part11">
                   <msIdentifier>
                      <altIdentifier>
                         <idno type="part">Fragments 16–17</idno>
@@ -615,7 +615,7 @@
                      <provenance>No. 17 was a wrapper to a part-book ‘Bassus’ with signature of ‘<persName key="person_2732" role="sgn">Tho. Kete</persName>’ (cf. no. 18 below); according to the ChCh on-line Music Catalogue, both fragments were used in binding the part-books that are now Mus. 1083–4, works of William Daman (London: W. Swayne, 1591) [accessed 1<hi rend="superscript">st</hi> February 2013].</provenance>
                   </history>
                </msPart>
-               <msPart>
+               <msPart xml:id="Christ_Church_MS_378-part12">
                   <msIdentifier>
                      <altIdentifier>
                         <idno type="part">Fragment 18</idno>
@@ -658,7 +658,7 @@
                      <provenance>The fragment was a wrapper to a part-book ‘Triplex’ with signatures of <persName key="person_2732" role="sgn">Kete</persName> (as no. 17) and ‘<persName key="person_2733" role="sgn">Robert Symons</persName>’, neither of whom appears in <hi rend="italic">AO</hi>. As with nos 16 &amp; 17, according to the ChCh on-line Music Catalogue, the fragment was used in binding the part-books that are now Mus. 1083–4, works of William Daman (London: W. Swayne, 1591) [accessed 1<hi rend="superscript">st</hi> February 2013].</provenance>
                   </history>
                </msPart>
-               <msPart>
+               <msPart xml:id="Christ_Church_MS_378-part13">
                   <msIdentifier>
                      <altIdentifier>
                         <idno type="part">Fragment 19</idno>
@@ -689,7 +689,7 @@
                         </supportDesc>
                         <layoutDesc>
                            <layout columns="2">In double columns, each column 128mm (surviving) x 65–68 mm, with 9mm between columns, in about 41 surviving lines (below top line).</layout>
-                           <layout>No signs of pricking; bounded and ruled in brown crayon.</layout>
+                           <layout rulingMedium="crayon">No signs of pricking; bounded and ruled in brown crayon.</layout>
                         </layoutDesc>
                      </objectDesc>
                      <handDesc>
@@ -708,7 +708,7 @@
                      <provenance>Removed from Mus. 345 (London, 1571), a part-book of music by Thomas Whythorne, this being (as written on front and back leaves) ‘Bassus’. For more on the printed book, see the on-line ChCh Music Catalogue [accessed 29<hi rend="superscript">th</hi> January 2013].</provenance>
                   </history>
                </msPart>
-               <msPart>
+               <msPart xml:id="Christ_Church_MS_378-part14">
                   <msIdentifier>
                      <altIdentifier>
                         <idno type="part">Fragment 20</idno>
@@ -752,7 +752,7 @@
                      <provenance> Formerly a wrapper, apparently for Mus. 343, one of the same set of part-books which is the source from our no.s 19, 21 and 22. </provenance>
                   </history>
                </msPart>
-               <msPart>
+               <msPart xml:id="Christ_Church_MS_378-part15">
                   <msIdentifier>
                      <altIdentifier>
                         <idno type="part">Fragments 21–22</idno>
@@ -794,7 +794,7 @@
                      <provenance> From Mus. 342 and 344 (London, 1571; the same printing as no. 19), respectively partbooks for ‘Tryplex’ and ‘Tenor’. No. 22 has ‘my name ys <persName key="person_2734" role="sgn">Henry Cooke</persName> 1579’; he does not appear in <title>AO</title>.</provenance>
                   </history>
                </msPart>
-               <msPart>
+               <msPart xml:id="Christ_Church_MS_378-part16">
                   <msIdentifier>
                      <altIdentifier>
                         <idno type="part">Fragments 23A-23B (olim 23 &amp; 24)</idno>
@@ -843,7 +843,7 @@
                      </origin>
                   </history>
                </msPart>
-               <msPart>
+               <msPart xml:id="Christ_Church_MS_378-part17">
                   <msIdentifier>
                      <altIdentifier>
                         <idno type="part">Fragments 24A-24D (olim 24g, i, k, l)</idno>
@@ -884,7 +884,7 @@
                      <provenance>The fragments were given their present lettering in January 2013: A = olim g, B = olim k, C = olim i; D = olim l.</provenance>
                   </history>
                </msPart>
-               <msPart>
+               <msPart xml:id="Christ_Church_MS_378-part18">
                   <msIdentifier>
                      <altIdentifier>
                         <idno type="part">Fragment 24E (olim 24h)</idno>
@@ -922,7 +922,7 @@
                      </origin>
                   </history>
                </msPart>
-               <msPart>
+               <msPart xml:id="Christ_Church_MS_378-part19">
                   <msIdentifier>
                      <altIdentifier>
                         <idno type="part">Fragments 25–26</idno>
@@ -944,7 +944,7 @@
                         </supportDesc>
                         <layoutDesc>
                            <layout columns="2">In double columns, each 121mm (surviving) x 80mm, with 18mm between columns, in 21 surviving lines.</layout>
-                           <layout>The fragments come from portions of the leaf which would not have been pricked; there are remnants of bounding lines in brown crayon, but no rules.</layout>
+                           <layout rulingMedium="crayon">The fragments come from portions of the leaf which would not have been pricked; there are remnants of bounding lines in brown crayon, but no rules.</layout>
                         </layoutDesc>
                      </objectDesc>
                      <handDesc>
@@ -963,7 +963,7 @@
                      <provenance> Removed from printed book ZT.2.6f: <title>Decimatertia centuria ecclesiasticae historiae</title> (Basel: Officina Oporiniana, 1574), which is in a <placeName key="place_7011781">London</placeName> sixteenth-century blind-stamped binding by ‘<persName key="person_2735" role="bnd">RB</persName>’ (on whom, see J. B. Oldham, <title>English Blind-Stamped Bindings</title>(Cambridge, 1952), 33). The other volumes of the <title>Centuriae</title> owned by ChCh (ZT.2.6a-e) are in later centrepiece bindings, with pastedowns, still <foreign rend="italic">in situ</foreign>, taken from a glossed Bible (German?, s. xv).</provenance>
                   </history>
                </msPart>
-               <msPart>
+               <msPart xml:id="Christ_Church_MS_378-part20">
                   <msIdentifier>
                      <altIdentifier>
                         <idno type="part">Fragment 27</idno>
@@ -1006,7 +1006,7 @@
                      </origin>
                   </history>
                </msPart>
-               <msPart>
+               <msPart xml:id="Christ_Church_MS_378-part21">
                   <msIdentifier>
                      <altIdentifier>
                         <idno type="part">Fragment 28</idno>

@@ -1,4 +1,4 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_5973">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_5973">
    <teiHeader>
       <!-- not done: hands; watermarks; could do decoration in more detail -->
       <fileDesc>
@@ -43,16 +43,16 @@
                <msContents resp="#MLH #DD">
                   <textLang mainLang="la">Latin</textLang>
                   <msItem n="1" xml:id="MS_Hamilton_13-item1">
-                     <locus>(fols. 1ra-360v)</locus>
+                     <locus from="1ra" to="360v">(fols. 1ra–360v)</locus>
                      <author key="person_264344179">Thomas Aquinas</author>
                      <title key="work_4780">Summa theologiae, Secunda Secundae</title>
                      <rubric>Utrum obiectum fidei sit veritas prima</rubric>
                      <incipit>Post communem consideracionem de virtutibus et viciis </incipit>
                      <explicit>et sempiternam requiem animarum. Ad quam nos perducat ipse qui promisit Iesus Christus dominus noster qui est super omnia deus benedictus in secula Amen</explicit>
-                     <colophon><locus>(fol. 360v)</locus> Finita est hec pars 2a2e. beati thome. :1445: in vigilia Benedicte Trinitas. Hoc anno Ego .N. huius uoluminis scriptor. fui receptus et indutus habitu carthusiensi in domo Carthusie prope Erffodiam in die sancti Jeronimi</colophon>
+                     <colophon><locus from="360v" to="360v">(fol. 360v)</locus> Finita est hec pars 2a2e. beati thome. :1445: in vigilia Benedicte Trinitas. Hoc anno Ego .N. huius uoluminis scriptor. fui receptus et indutus habitu carthusiensi in domo Carthusie prope Erffodiam in die sancti Jeronimi</colophon>
                   </msItem>
                   <msItem>
-                     <locus>(fols. 360vb-366vb)</locus>
+                     <locus from="360vb" to="366vb">(fols. 360vb–366vb)</locus>
                      <!-- d&s: fols. 360vb-361rb, 362va-366vb) -->
                      <note>Table of questions</note>
                      <rubric>Questio prima de fide quo ad eius obiectum</rubric>
@@ -66,15 +66,15 @@
                      <supportDesc material="chart">
                         <support>paper</support>
                         <!-- dondaine and schooner say the watermarks are briquet 14779 (Bulls head with seven-leafed flower above), 11785, 11786 (Dreiberg) -->
-                        <extent>1 + 368 + 1 fols. (i, 1–369) <dimensions type="leaf" unit="mm">
+                        <extent><seg type="leaf"><measure type="endleaf" quantity="1">1</measure> + <measure type="leaf" quantity="368">368</measure> + <measure type="endleaf" quantity="1">1</measure></seg> fols. (i, 1–369) <dimensions type="leaf" unit="mm">
                               <height>312</height>
                               <width>215</width>
                            </dimensions></extent>
                      </supportDesc>
                      <layoutDesc>
                         <layout columns="2" writtenLines="50">2 cols., c. 50 lines, column space <dimensions type="column" unit="mm">
-                              <height>240–5</height>
-                              <width>65–70</width>
+                              <height min="240" max="245">240–245</height>
+                              <width min="65" max="70">65–70</width>
                            </dimensions></layout>
                      </layoutDesc>
                   </objectDesc>
@@ -141,7 +141,7 @@
                      </listBibl>
                   </listBibl>
                </additional>
-               <msPart resp="#MLH">
+               <msPart resp="#MLH" xml:id="MS_Hamilton_13-part1">
                   <msIdentifier>
                      <altIdentifier>
                         <idno>MS. Hamilton 13, endleaves (fols. i, 369)</idno>
