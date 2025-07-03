@@ -1,12 +1,17 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1674">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1674">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Bodl. 682</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2025">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -30,12 +35,26 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Bodl. 682</idno>
-                  <idno type="ieArk">ark:29072/x09c67wn44bs</idno><idno type="crArk">ark:29072/x09880vr6111</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x09c67wn44bs</idno>
+                  <idno type="crArk">ark:29072/x09880vr6111</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">2696</idno>
                   </altIdentifier>
                </msIdentifier>
                <physDesc>
-                  <p n="composite">Composite: five parts</p>
+                  <p n="composite">Composite: made up of five parts in six English handwritings of
+                     the 15th cent.</p>
+                  <objectDesc>
+                     <supportDesc>
+
+                        <extent>iii + 366 ('349') leaves <dimensions type="binding" unit="in">
+                              <height>7.875</height>
+                              <width>5.625</width>
+                           </dimensions></extent>
+                        <condition> In the latter part worm-eaten and injured in the
+                           margins</condition>
+                     </supportDesc>
+                  </objectDesc>
                   <bindingDesc>
                      <binding notBefore="1400" notAfter="1500">
                         <p>Stamped brown leather on boards, clasps lost, Dutch 15th cent. work.</p>
@@ -48,15 +67,18 @@
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). <listBibl>
-                              <bibl facs="aap0519.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 498</bibl>
-                              <bibl facs="aap0520.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 499</bibl>
+                        <source> Description adapted (2025) by Matthew Holford from the Summary Catalogue (1922) with additional reference to published literature as cited. <listBibl>
+                              <bibl facs="aap0519.gif" type="SC">Summary Catalogue, vol. 2, part 1,
+                                 p. 498</bibl>
+                              <bibl facs="aap0520.gif" type="SC">Summary Catalogue, vol. 2, part 1,
+                                 p. 499</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
                </additional>
+
+
                <msPart xml:id="MS_Bodl_682-part1">
                   <msIdentifier>
                      <altIdentifier type="partial">
@@ -64,14 +86,55 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem class="#medica" n="1" xml:id="MS_Bodl_682-part1-item1">
-                        <title key="work_13232" type="desc">Medical treatises</title>
-                        <textLang mainLang="la">Latin</textLang>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem n="1" xml:id="MS_Bodl_682-item-1">
+                        <locus from="1">(fol. 1)</locus> <rubric>Tractatus de Vrinis</rubric>
+                        <msItem>
+                           <author key="person_71543640">Giles of Corbeil</author>
+                           <title key="work_1751">De urinis</title>
+                          
+                           <incipit>Dicitur vrina quoniam fit renibus vna</incipit>
+                        </msItem>
+                        <msItem>
+                           <title type="desc" key="work_7387">Commentary on Giles of Corbeil, De urinis</title>
+                           <incipit type="commentary">Vrina est colamentum sanguinis</incipit>
+                        </msItem>
+                        <note>Verses with a commentary</note>
                      </msItem>
-                     <msItem n="2" xml:id="MS_Bodl_682-part1-item2">
-                        <author key="person_1653145857004422920822">Johannes de Sancto Amando</author>
+                     <msItem n="2" xml:id="MS_Bodl_682-item-2">
+                        <locus from="31">(fol. 31)</locus>
+                        <title type="desc" key="work_15194">Urine and uroscopy</title>
+                        <incipit>Vrina alba ut aqua aut significat</incipit>
+                        <note>In prose</note>
+                        <listBibl><bibl type="repertory">eTK 1607C</bibl></listBibl>
+                     </msItem>
+                     <msItem n="3" xml:id="MS_Bodl_682-item-3">
+                        <locus from="40">(fol. 40)</locus>
+                        <author key="person_100189814">Arnaldus de Villanova</author>
+                        <title key="work_689">De medicinis simplicibus (Aureole) </title>
+                        <incipit>Cum non sit medicus nisi administrator rerum</incipit>
+                        <note>A treatise on the qualities of plants and drugs and their use in
+                           medical recipes</note>
+                        <bibl>eTK 0322H</bibl>
+                     </msItem>
+                     <msItem n="4" xml:id="MS_Bodl_682-item-4">
+                        <locus from="75">(fol. 75)</locus>
+                        <author key="person_1653145857004422920822">Johannes de Sancto
+                           Amando</author>
                         <title key="work_2593">Areolae</title>
-                        <textLang mainLang="la">Latin</textLang>
+                        <rubric>Aureole Johannis de Sancto Amando</rubric>
+                        <incipit>Sicut dicit Galienus primo Simplicis Medicine</incipit>
+                        <explicit>composite habent fieri</explicit>
+                     </msItem>
+                     <msItem n="5" xml:id="MS_Bodl_682-item-5">
+                        <locus from="124">(fol. 124)</locus>
+                        <title key="work_5477">Synonima medicinalia</title>
+                        <note>A long list of synonyms of substances used in medicine, preceded
+                           (foll. 124-146r) by an alphabetical index to the list. Thus Agates has 14
+                           synonyms (e. g. Battabre, Bernix, Botricium, etc.), each set of synonyms
+                           being in alphabetical order, and the English equivalent being usually
+                           given for each group.</note>
+                        <textLang mainLang="la" otherLangs="enm">Latin and Middle English</textLang>
                      </msItem>
                   </msContents>
                   <physDesc>
@@ -83,7 +146,8 @@
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
+                        <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th
+                           century</origDate>
                         <origPlace>
                            <country key="place_7002445">English</country>
                         </origPlace>
@@ -97,8 +161,12 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem class="#medica" n="1" xml:id="MS_Bodl_682-part2-item1">
+                     <msItem n="6" xml:id="MS_Bodl_682-item-6">
+                        <locus from="172">(fol. 172)</locus>
                         <title key="work_15391">Trotula</title>
+                        <rubric>Tractatus intitulatus Trotula mulierum</rubric>
+                        <incipit>Cum auctor vniuersitatis Deus</incipit>
+                        <note>Monica H. Green, 'A handlist of the Latin and vernacular manuscripts of the so-called Trotula texts', <title>Scriptorium</title> 50 (1996), 137-75, no. 68: her 'standardized ensemble' with additional material and removal of cosmetic passages.</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                   </msContents>
@@ -111,7 +179,8 @@
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
+                        <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th
+                           century</origDate>
                         <origPlace>
                            <country key="place_7002445">English</country>
                         </origPlace>
@@ -125,9 +194,15 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem n="1" xml:id="MS_Bodl_682-part3-item1">
-                        <author key="person_2327">Thomas de Monte Auium <!-- not found in VIAF --></author>
+                     <msItem n="7" xml:id="MS_Bodl_682-item-7">
+                        <locus from="197">(fol. 197)</locus>
+                        <author key="person_2327">Thomas de Monte Auium
+                           <!-- not found in VIAF --></author>
                         <title key="work_4839">Gemma experimentorum</title>
+                        <rubric>Deo datum munus pauperum. Thome de Monte Auium Gemma experimentorum
+                           de totidem</rubric>
+                        <incipit>Contra fleuma [flemma, phlegma ?] dulce uel intepidum Recipe ... </incipit>
+                        <note>A book of recipes: with an index.</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                   </msContents>
@@ -140,7 +215,8 @@
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
+                        <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th
+                           century</origDate>
                         <origPlace>
                            <country key="place_7002445">English</country>
                         </origPlace>
@@ -154,9 +230,19 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem class="#medica" n="1" xml:id="MS_Bodl_682-part4-item1">
-                        <title key="work_13232" type="desc">Medical treatise</title>
-                        <textLang mainLang="la">Latin</textLang>
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem n="8" xml:id="MS_Bodl_682-item-8">
+                        <locus from="255">(fol. 255)</locus>
+                        <title key="work_13232" type="desc">Medical treatise ('Practica')</title>
+                        <incipit>Expeditis virtutibus medicinarum compositarum </incipit>
+                        <finalRubric>Explicit practica amici tui</finalRubric>
+                        <note>With index.</note>
+                        <listBibl><bibl type="repertory">eTK 0542N</bibl></listBibl>
+                     </msItem>
+                     <msItem xml:id="MS_Bodl_682-item-8b">
+                        <locus>(fol. 315)</locus>
+                        <title type="desc" key="work_13209">Medical recipes</title>
+                        <incipit>Vnguentum pro dissentiria</incipit>
                      </msItem>
                   </msContents>
                   <physDesc>
@@ -168,7 +254,8 @@
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
+                        <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th
+                           century</origDate>
                         <origPlace>
                            <country key="place_7002445">English</country>
                         </origPlace>
@@ -182,10 +269,17 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem n="1" xml:id="MS_Bodl_682-part5-item1">
+                     <textLang mainLang="la">Latin</textLang>
+                     <msItem n="9" xml:id="MS_Bodl_682-item-9">
+                        <locus from="320">(fol. 320)</locus>
                         <author key="person_2278">Master B. <!-- not found VIAF --></author>
                         <title key="work_3118">Aggregationes</title>
-                        <textLang mainLang="la">Latin</textLang>
+                        <rubric>Aggregaciones de crisi et creticis diebus et de pronosticacione
+                           secundum magistrum Bernardum Pictaueensem</rubric>
+                        <incipit>Circa artem pronosticacionis</incipit>
+                        <finalRubric>Explicit etc. secundum [?] M Hert</finalRubric>
+                        <listBibl><bibl type="repertory">eTK 0204B</bibl><bibl>ed. C. O'Boyle, <title>Medieval Prognosis and Astrology</title> (1991), with discussion of authorship at 15-16.</bibl></listBibl>
+                        <!-- check All Souls 69 -->
                      </msItem>
                   </msContents>
                   <physDesc>
@@ -197,7 +291,8 @@
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
+                        <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th
+                           century</origDate>
                         <origPlace>
                            <country key="place_7002445">English</country>
                         </origPlace>
@@ -208,10 +303,14 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-06">Description revised to incorporate all information from Summary
+            Catalogue.</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
-            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+            <persName>James Cummings</persName> Up-converted the markup using <ref
+               target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl"
+               >https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>
       </revisionDesc>
    </teiHeader>
