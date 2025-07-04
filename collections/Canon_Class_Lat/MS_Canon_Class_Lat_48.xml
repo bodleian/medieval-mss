@@ -12,6 +12,18 @@
                <resp when="2025">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
+            <respStmt xml:id="AK">
+               <resp when="2025">Cataloguer</resp>
+               <persName>Ananya Kumar</persName>
+            </respStmt>
+            <respStmt xml:id="EB">
+               <resp when="2025">Cataloguer</resp>
+               <persName>Elizabeth Birch</persName>
+            </respStmt>
+            <respStmt xml:id="SDM">
+               <resp when="2025">Encoding</resp>
+               <persName>Sebastian Dows-Miller</persName>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -41,17 +53,50 @@
                   <msItem n="1" xml:id="MS_Canon_Class_Lat_48-item1">
                      <author key="person_8194433">Virgil</author>
                      <title key="work_4920">Aeneid</title>
-                     <note>Bk.i - bk. iv line 374; with arguments and glosses. </note>
+                     <note>Bk.i - bk. iv line 374; with arguments, marginal notes, and interlinear glosses. </note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
-                     <supportDesc material="chart">
-                        <support>paper</support>
-                        <extent><seg type="leaf"><measure type="leaf" quantity="40">40</measure> leaves</seg></extent>
+                     <supportDesc material="chart" resp="#AK #EB #SDM">
+                        <support>Paper in quarto format, <watermark>with watermark of a cross atop a circle, with the base of the cross bisecting the circle. Resembles <ref target="https://www.wasserzeichen-online.de/?ref=DE4860-Ms1163_310">Piccard DE4860-Ms1163_310</ref></watermark>.</support>
+                        <extent>
+                           <seg type="leaf">
+                              <measure type="laterEndleaf" quantity="1">i</measure> + <measure type="leaf" quantity="40">40</measure> + <measure type="laterEndleaf" quantity="1">i</measure> leaves.
+                           </seg>
+                           <dimensions type="binding" unit="mm">
+                              <height>285</height>
+                              <width>200</width>
+                              <depth>25</depth>
+                           </dimensions>
+                           <dimensions type="leaf" unit="mm">
+                              <height>280</height>
+                              <width>185</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc resp="#AK #EB #SDM">
+                        <layout columns="1" writtenLines="33 34" ruledLines="33 34" topLine="below" rulingMedium="leadpoint">
+                           One column of 33–34 lines, ruled in lead.
+                           <dimensions type="written" unit="mm">
+                              <height>220</height>
+                              <width>115</width>
+                           </dimensions>
+                        </layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <handDesc resp="#AK #EB #SDM" hands="2">
+                     <handNote scribe="scribe-1" script="textualisSouthern" scope="major">Southern Textualis, black ink, fols. <locus from="1r" to="37r">1r–37r</locus>.</handNote>
+                     <handNote scribe="scribe-2" script="textualisSouthern" scope="minor">Southern Textualis, black ink, fols. <locus from="37v" to="40v">37v–40v</locus>.</handNote>
+                  </handDesc>
+                  <decoDesc resp="#AK #EB #SDM">
+                     <decoNote type="colInit">Coloured initials in red ink <height min="2" max="5" unit="line">between two and five lines</height> in height found on fols. <locus from="1r" to="1r">1r</locus>, <locus from="3r" to="3r">3r</locus>, <locus from="12v" to="12v">12v</locus>, and <locus from="24v" to="24v">24v</locus>.</decoNote>
+                     <decoNote type="initial">Initials stroked with red ink on fols. <locus from="1r" to="8v">1r–8v</locus>.</decoNote>
+                     <decoNote type="catchword">Catchwords embellished in the ink of the text on fols. <locus from="8v" to="8v">8v</locus>, <locus from="16v" to="16v">16v</locus>, and <locus from="24v" to="24v">24v</locus>.</decoNote>
+                     <decoNote type="other">Enlarged, centred text found on fol. <locus from="12r" to="12r">12r</locus>.</decoNote>
+                     <decoNote type="unfilled">Unfilled space at a height of <height quantity="4" unit="line">four lines</height> left for a coloured initial on fol. <locus from="35v" to="35v">35v</locus>.</decoNote>
+                  </decoDesc>
                </physDesc>
                <history>
                   <origin>
@@ -69,6 +114,8 @@
                               <bibl facs="aaz0337.gif" type="SC">Summary Catalogue, vol. 4, p. 318</bibl>
                            </listBibl>
                         </source>
+                        
+                        <change when="2025-05-16">Additional data collected by Ananya Kumar and Elizabeth Birch as part of the <name type="event">'Big Data' and Medieval Manuscripts</name> workshop held at the Bodleian Libraries, Oxford on <date when="2025-05-22">22nd May 2025</date>. Data encoded in TEI-XML by Sebastian Dows-Miller on <date when="2025-05-28">28th May 2025</date>.</change>
                      </recordHist>
                   </adminInfo>
                </additional>
@@ -76,6 +123,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-05-16">Additional data collected by <persName>Ananya Kumar</persName> and <persName>Elizabeth Birch</persName> as part of the <name type="event">'Big Data' and Medieval Manuscripts</name> workshop held at the <placeName>Bodleian Libraries, Oxford</placeName> on <date when="2025-05-22">22nd May 2025</date>. Data encoded in TEI-XML by <persName>Sebastian Dows-Miller</persName> on <date when="2025-05-28">28th May 2025</date>.</change>
          <change when="2025-05">Incorporate all information from printed catalogue.</change>
          <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
