@@ -12,6 +12,18 @@
                <resp when="2025">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
+            <respStmt xml:id="HR">
+               <resp when="2025">Cataloguer</resp>
+               <persName>Holly Rowe</persName>
+            </respStmt>
+            <respStmt xml:id="JL">
+               <resp when="2025">Cataloguer</resp>
+               <persName>Julia Lorenz</persName>
+            </respStmt>
+            <respStmt xml:id="SDM">
+               <resp when="2025">Encoding</resp>
+               <persName>Sebastian Dows-Miller</persName>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -51,8 +63,39 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent resp="#HR #JL #SDM">
+                           <measure type="leaf" quantity="139">139</measure> leaves.
+                           <dimensions type="leaf" unit="mm">
+                              <height>178</height>
+                              <width>130</width>
+                           </dimensions>
+                        </extent>
+                        <foliation>Modern foliation.</foliation>
+                        <collation resp="#HR #JL #SDM" mainStructures="8">1–5(8); 6(4); 7–17(8); 18(7). Some quire signatures.</collation>
                      </supportDesc>
+                     <layoutDesc resp="#HR #JL #SDM">
+                        <layout columns="2" writtenLines="40" rulingMedium="crayon">
+                           <dimensions type="column" unit="mm">
+                              <height>145</height>
+                              <width>100</width>
+                           </dimensions>
+                           <dimensions type="intercolumn" unit="mm">
+                              <width>0</width>
+                           </dimensions>
+                        </layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <handDesc resp="#HR #JL #SDM">
+                     <handNote script="textualisNorthern" execution="libraria">A somewhat rounded Northern Textualis in dark brown and black ink.</handNote>
+                  </handDesc>
+                  <decoDesc resp="#HR #JL #SDM">
+                     <decoNote type="colInit">Coloured initials in red and black ink present on fols. <locus from="65r" to="68r">65r–68r</locus>.</decoNote>
+                     <decoNote type="drawing">Drawings of leaves, birds, and faces present on fols. <locus from="65r" to="68r">65r–68r</locus>.</decoNote>
+                     <decoNote type="initial">Simple initials present throughout.</decoNote>
+                     <decoNote type="rubrication">Rubrication present throughout.</decoNote>
+                     <decoNote type="marginal">Marginal annotations in a variety of hands found on fols. <locus from="39v" to="39v">39v</locus>, <locus from="45r" to="45r">45r</locus>, <locus from="45v" to="45v">45v</locus>, <locus from="48r" to="48r">48r</locus>, and <locus from="104v" to="104v">104v</locus>.</decoNote>
+                  </decoDesc>
+                  <accMat type="botanical">Pressed flower included between fols. <locus from="102v" to="103r">102v–103r</locus>.</accMat>
                </physDesc>
                <history>
                   <origin>
@@ -71,6 +114,7 @@
                               <bibl facs="aas0230.gif" type="SC">Summary Catalogue, vol. 3, p. 215</bibl>
                            </listBibl>
                         </source>
+                        <change when="2025-06-12">Additional data collected by Holly Rowe and Julia Lorenz as part of the 'Big Data' and Medieval Manuscripts workshop held at the Bodleian Libraries, Oxford on 12th June 2025. Data encoded in TEI-XML by Sebastian Dows-Miller on 3rd July 2025.</change>
                      </recordHist>
                   </adminInfo>
                   <listBibl type="WRAPPER">
@@ -87,17 +131,22 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     
                      <msItem n="1" xml:id="MS_Rawl_C_537-endleaves-item1">
                         <title type="desc" key="work_12077">Gospel of St John, with gloss</title>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     
                   </msContents>
                   <physDesc>
                      <objectDesc form="codex">
                         <supportDesc material="perg">
                            <support>parchment</support>
+                           <extent resp="#HR #JL #SDM">
+                              <measure type="endleaf" quantity="2">2</measure> leaves.
+                              <dimensions type="leaf" unit="mm">
+                                 <height min="168" max="180">168–180</height>
+                                 <width min="118" max="125">118–125</width>
+                              </dimensions>
+                           </extent>
                         </supportDesc>
                      </objectDesc>
                   </physDesc>
@@ -105,14 +154,13 @@
                      <origin>
                         <origDate calendar="Gregorian" notAfter="1200" notBefore="1100">12th century</origDate>
                      </origin>
-                     
                   </history>
-                  
                </msPart>
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-06-12">Additional data collected by <persName>Holly Rowe</persName> and <persName>Julia Lorenz</persName> as part of the <name type="event">'Big Data' and Medieval Manuscripts</name> workshop held at the <placeName>Bodleian Libraries, Oxford</placeName> on <date when="2025-06-12">12th June 2025</date>. Data encoded in TEI-XML by <persName>Sebastian Dows-Miller</persName> on <date when="2025-07-03">3rd July 2025</date>.</change>
          <change when="2025-06">Revised to incorporate all information in printed catalogue.</change>
          <change when="2019-10-31" xml:id="MMM"><persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>

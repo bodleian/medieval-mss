@@ -1,15 +1,23 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2869">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2869">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Canon. Liturg. 169</title>
             <title type="collection">MSS. Canon. Liturg. (Canonici Liturgical)</title>
+
            
             <respStmt xml:id="SC">
                <resp when="1897">Cataloguer</resp>
                <persName>Falconer Madan</persName>
+
             </respStmt>
-            
+             <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
             <respStmt xml:id="PA">
                <resp when="1973">Cataloguer</resp>
                <persName>Otto Pächt</persName>
@@ -47,7 +55,9 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Canon. Liturg. 169</idno>
-                  <idno type="ieArk">ark:29072/x0vq27zm67t9</idno><idno type="crArk">ark:29072/x0jm214p265p</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0vq27zm67t9</idno>
+                  <idno type="crArk">ark:29072/x0jm214p265p</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">19299</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -101,21 +111,23 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                        
-               <extent source="SC">ii + <measure type="leaf" quantity="528">528</measure> leaves
-                  <dimensions type="binding" unit="in">
-                     <height>6.75</height>
-                     <width>4.875</width>
-                  </dimensions>
-               </extent>
-                        
+
+                        <extent resp="#VD">
+                           <seg type="leaf"> 2 + <measure type="leaf" quantity="525">525 (526)</measure> + 2  leaves</seg>
+             .<dimensions type="leaf" unit="mm">
+                              <height>164</height>
+                              <width>115</width>
+                           </dimensions>
+                           <dimensions type="written" unit="mm">
+                              <height>102</height>
+                              <width>65</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
-                     
-                     <layoutDesc>
-                        <layout columns="2">2 cols
-                        </layout>
+                     <layoutDesc resp="#VD">
+                        <layout columns="2" writtenLines="32">2 col. of 32 lines</layout>
                      </layoutDesc>
-                     
+
                   </objectDesc>
 
                   <decoDesc resp="#PA">
@@ -123,7 +135,7 @@
                      </summary>
                      <decoNote type="border">Fine <ref target="https://digital.bodleian.ox.ac.uk/objects/9f917c1e-0083-41c7-b55b-8b2dc04ae056/">historiated borders</ref></decoNote>
                      <decoNote type="decInit">Fine initials</decoNote>
-                     <decoNote>Historiated initial <hi rend="bold">F</hi> (of 'Fratres') with St Paul holding a sword. Smaller decorated initials with penwork flourishing. 
+                     <decoNote type="histInit">Historiated initial <hi rend="bold">F</hi> (of 'Fratres') with St Paul holding a sword. Smaller decorated initials with penwork flourishing. 
                         Panel border decorated with penwork and flowers. In corners, small miniatures with birds, a stag and a monkey eating a fruit. 
                         In the right border, medallion with God holding an orb. In the lower border, a coat of arms held by putti (Based on the description created for 
                         the Bodleian slide and filmstrip collection)</decoNote>
@@ -183,7 +195,11 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+    <change when="2025-07">Add extent, leaf dimensions and layout from van Dijk, Latin Liturgical Manuscripts in the Bodleian Library, Oxford.</change>
+  
          <change when="2025-06-27">Description revised to incorporate all the information in the Summary Catalogue (1897)</change>
+
+     
          <change when="2020-07-24">Binding description added.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
