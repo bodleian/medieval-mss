@@ -1,12 +1,22 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_3043">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_3043">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Canon. Liturg. 360</title>
             <title type="collection">MSS. Canon. Liturg. (Canonici Liturgical)</title>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+            </respStmt>
             <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+               <resp when="2025">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -30,14 +40,19 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Canon. Liturg. 360</idno>
-                  <idno type="ieArk">ark:29072/x02227mq56pj</idno><idno type="crArk">ark:29072/x03t945r795c</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x02227mq56pj</idno>
+                  <idno type="crArk">ark:29072/x03t945r795c</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">19445</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
                   <msItem class="#liturgica" n="1" xml:id="MS_Canon_Liturg_360-item1">
                      <title key="work_10641" type="desc">Breviary</title>
-                     <note>(imperfect)</note>
+                     <note>(imperfect at beginning and end)</note>
+                     <note>Temporale and sanctorale not clearly divided: the eve, feast and octave of Pentecost (fol. 1); the saints’ feasts from St Petronella to St Andrew (fol. 20), the proper office of St Mary Magdalen (fols. 58-9), being a contemporary addition; lessons and responsories after Pentecost (fol. 154<hi rend="superscript">v</hi>); antiphons and homilies of the Sundays after Pentecost (fol. 344<hi rend="superscript">v</hi>); common of the saints (fol. 383) and the dedication (fol. 406<hi rend="superscript">v</hi>), the latter ending abruptly in the collects for the dedication of an altar. The legends of the sanctorale are not divided into lessons. No rubrics.</note>
+                     <note>Some folded tags.</note>
+                     <note>Among the saints are Vitus, Modestus, and Crescentia (fol. 25), Hermagoras and Fortunatus (fol. 53v).</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -45,22 +60,45 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent resp="'#VD">
+                           <seg type="leaf"> i + 2 + <measure type="leaf" quantity="412">412</measure> + 2 + i  leaves</seg>
+             .<dimensions type="leaf" unit="mm">
+                              <height>285</height>
+                              <width>195</width>
+                           </dimensions>
+                           <dimensions type="written" unit="mm">
+                              <height>216</height>
+                              <width>138</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc resp="#VD">
+                        <layout columns="1" writtenLines="26">26 long lines</layout>
+                     </layoutDesc>
                   </objectDesc>
                   <musicNotation>
-                     <p>Notation (see van Dijk 1957).</p>
+                     <p>Adiastematic, non-rhythmical notation</p>
                   </musicNotation>
+                  <decoDesc><!-- not in P&A? check -->
+                     <decoNote type="decInit">Painted initials (fols. 2, 58).</decoNote>
+                  </decoDesc>
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1200" notBefore="1150">12th century, second half</origDate>
+                     <origPlace><country key="place_1000062">Austria</country></origPlace>
                   </origin>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). <listBibl>
+                        <source>Description adapted from the following sources:
+                           <listBibl>
+                              <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 2: Office Books</title> (typescript, 1957), <citedRange unit="page" from="226" to="226">p. 226</citedRange>
+                              </bibl>
+                              <bibl> Summary Catalogue (1897) </bibl>
+                           </listBibl>
+                        <listBibl>
                               <bibl facs="aaz0410.gif" type="SC">Summary Catalogue, vol. 4, p. 391</bibl>
                            </listBibl>
                         </source>
@@ -78,6 +116,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-07">Add extent, leaf dimensions and layout from van Dijk, Latin Liturgical Manuscripts in the Bodleian Library, Oxford.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>

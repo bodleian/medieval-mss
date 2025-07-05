@@ -1,9 +1,16 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_3892">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_3892">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Canon. Pat. Lat. 93</title>
             <title type="collection">MSS. Canon. Pat. Lat. (Canonici Latin Patristic)</title>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
             <respStmt>
                <resp>Summary description</resp>
                <persName>Elizabeth Solopova</persName>
@@ -30,24 +37,37 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Canon. Pat. Lat. 93</idno>
-                  <idno type="ieArk">ark:29072/x0st74cp84z9</idno><idno type="crArk">ark:29072/x0z603qw73k5</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0st74cp84z9</idno>
+                  <idno type="crArk">ark:29072/x0z603qw73k5</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">19079</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
                   <msItem class="#biblia #sermones" n="1" xml:id="MS_Canon_Pat_Lat_93-item1">
-                     <title key="work_12293" type="desc">Homilies on Gospels according to the church year</title>
+                     <title key="work_12282" type="desc">Homiliary</title>
                      <textLang mainLang="la">Latin</textLang>
-                     <bibl type="commentedOn">
-                        <title type="desc">Bible, Gospels</title>
-                     </bibl>
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent resp="#VD">
+                           <seg type="leaf"> i + <measure type="leaf" quantity="212">212</measure> + 1 + i  leaves</seg>
+             .<dimensions type="leaf" unit="mm">
+                              <height>290</height>
+                              <width>185</width>
+                           </dimensions>
+                           <dimensions type="written" unit="mm">
+                              <height>230</height>
+                              <width>130</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc resp="#VD">
+                        <layout columns="2" writtenLines="32">2 col. of 32 lines</layout>
+                     </layoutDesc>
                   </objectDesc>
                </physDesc>
                <history>
@@ -85,6 +105,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-07">Add extent, leaf dimensions and layout from van Dijk, Latin Liturgical Manuscripts in the Bodleian Library, Oxford.</change>
          <change when="2018-10-14" xml:id="MMM">
             <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
