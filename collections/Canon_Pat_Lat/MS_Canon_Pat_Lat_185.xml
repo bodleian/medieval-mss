@@ -1,9 +1,16 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_3762">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_3762">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Canon. Pat. Lat. 185</title>
             <title type="collection">MSS. Canon. Pat. Lat. (Canonici Latin Patristic)</title>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
             <respStmt>
                <resp>Summary description</resp>
                <persName>Elizabeth Solopova</persName>
@@ -30,7 +37,9 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Canon. Pat. Lat. 185</idno>
-                  <idno type="ieArk">ark:29072/x008612p574r</idno><idno type="crArk">ark:29072/x0h989r34371</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x008612p574r</idno>
+                  <idno type="crArk">ark:29072/x0h989r34371</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">19171</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -44,7 +53,21 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent resp="#VD"> 
+                           <seg type="leaf">1 + <measure type="leaf" quantity="51">51</measure> + i fol.</seg>
+                           <dimensions type="leaf" unit="mm">
+                              <height>323</height>
+                              <width>225</width>
+                           </dimensions>
+                           <dimensions type="written" unit="mm">
+                              <height>238</height>
+                              <width>162</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc resp="#VD">
+                        <layout columns="2" writtenLines="40">2 col. of 40 lines</layout>
+                     </layoutDesc>
                   </objectDesc>
                </physDesc>
                <history>
@@ -83,6 +106,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-07">Add extent, leaf dimensions and layout from van Dijk, Latin Liturgical Manuscripts in the Bodleian Library, Oxford.</change>
          <change when="2018-10-14" xml:id="MMM">
             <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
