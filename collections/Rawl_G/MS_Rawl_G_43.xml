@@ -17,6 +17,14 @@
                <resp when="2025">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
+            <respStmt xml:id="MM">
+               <resp when="2025">Cataloguer</resp>
+               <persName>Maura McKeon</persName>
+            </respStmt>
+            <respStmt xml:id="SDM">
+               <resp when="2025">Encoding</resp>
+               <persName>Sebastian Dows-Miller</persName>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -79,17 +87,39 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                        <extent><seg type="leaf"><measure type="laterEndleaf" quantity="1">i</measure> + <measure type="leaf" quantity="58">58</measure></seg> leaves
-                        <dimensions type="binding" unit="in">
-                           <height>7.625</height>
-                           <width>5.125</width>
-                        </dimensions></extent>
+                        <extent resp="#MM #SDM">
+                           <seg type="leaf">
+                              <measure type="laterEndleaf" quantity="2">ii (paper, uncut, conjugate with pastedown)</measure> + <measure type="leaf" quantity="56">56</measure> + <measure type="laterEndleaf" quantity="2">ii (paper, uncut, conjugate with pastedown)</measure> leaves.
+                           </seg>
+                           <dimensions type="binding" unit="mm">
+                              <height>192</height>
+                              <width>129</width>
+                              <depth min="20" max="32">20–32</depth>
+                           </dimensions>
+                           <dimensions type="leaf" unit="mm">
+                              <height min="167" max="185">167–185</height>
+                              <width min="116" max="125">116–125</width>
+                           </dimensions>
+                        </extent>
+                        <foliation>Later pencil foliation on top right of recto side.</foliation>
+                        <collation resp="#MM #SDM" mainStructures="8">1–7(8)</collation>
                      </supportDesc>
+                     <layoutDesc resp="#MM #SDM">
+                        <layout columns="1" writtenLines="33" rulingMedium="mixed">
+                           <dimensions type="written" unit="mm">
+                              <height min="135" max="142">135–142</height>
+                              <width>91</width>
+                           </dimensions>
+                        </layout>
+                     </layoutDesc>
                   </objectDesc>
-                  <decoDesc>
+                  <handDesc hands="1" resp="#MM #SDM">
+                     <handNote>At least one scribe, writing in a combination of light and dark brown inks, with a possible change in scribe on f. <locus from="17r" to="17r">17r</locus>.</handNote>
+                  </handDesc>
+                  <decoDesc resp="#MM #SDM #PA">
                      <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 473:</summary>
-                     <decoNote type="decInit">Fine initial. </decoNote>
-                     <decoNote type="map">Mappa mundi. </decoNote>
+                     <decoNote type="decInit">Decorated initial in black ink depicting two birds on <locus from="1r" to="1r">1r</locus>.</decoNote>
+                     <decoNote type="map">Mappa mundi with labels found on <locus from="56v" to="56v">56v</locus>.</decoNote>
                   </decoDesc>
                   <bindingDesc>
                      <binding notBefore="1700" notAfter="1725">
@@ -118,6 +148,7 @@
                               <bibl facs="aas0365.gif" type="SC">Summary Catalogue, Vol. 3, p. 350</bibl>
                            </listBibl>
                         </source>
+                        <change when="2025-06-12">Additional data collected by Maura McKeon as part of the 'Big Data' and Medieval Manuscripts workshop held at the Bodleian Libraries, Oxford on 12th June 2025. Data encoded in TEI-XML by Sebastian Dows-Miller on 3rd July 2025.</change>
                      </recordHist>
                   </adminInfo>
                   <surrogates>
@@ -133,6 +164,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-06-12">Additional data collected by <persName>Maura McKeon</persName> as part of the <name type="event">'Big Data' and Medieval Manuscripts</name> workshop held at the <placeName>Bodleian Libraries, Oxford</placeName> on <date when="2025-06-12">12th June 2025</date>. Data encoded in TEI-XML by <persName>Sebastian Dows-Miller</persName> on <date when="2025-07-03">3rd July 2025</date>.</change>
          <change when="2025-01">Description revised to incorporate all information from printed catalogues.</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2019-10-31" xml:id="MMM">
