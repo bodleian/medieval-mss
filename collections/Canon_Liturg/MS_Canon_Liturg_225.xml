@@ -1,21 +1,25 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2917">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2917">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Canon. Liturg. 225</title>
             <title type="collection">MSS. Canon. Liturg. (Canonici Liturgical)</title>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            
             <respStmt xml:id="VD">
                <resp when="1957">Cataloguer</resp>
                <persName>S. J. P. van Dijk</persName>
             </respStmt>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2025">Encoding</resp>
+               <persName>Stewart Brookes</persName>
             </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -37,44 +41,73 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Canon. Liturg. 225</idno>
-                  <idno type="ieArk">ark:29072/x0zc77sp177f</idno>
-                  <idno type="crArk">ark:29072/x0pz50gv91t7</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0zc77sp177f</idno><idno type="crArk">ark:29072/x0pz50gv91t7</idno><altIdentifier type="internal">
                      <idno type="SCN">19337</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem class="#liturgica" n="1" xml:id="MS_Canon_Liturg_225-item1">
                      <title key="work_11572" type="desc">Diurnal, Use of Rome</title>
+                     <rubric>... Ordinarium diurni secundum ordinem: Romane Ecclesie</rubric>
+                     
+                     <msItem>
+                        <locus>(fol. 3v)</locus>
+                        <title key="work_10687" type="desc">Calendar</title>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 15)</locus>
+                        <title type="desc">Proprium de Tempore</title>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 150)</locus>
+                        <title type="desc">Proprium Sanctorum</title>
+                        <rubric>festiuitates</rubric>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 200v)</locus>
+                        <title type="desc">Commune Sanctorum</title>
+                     </msItem>
+                     
+                     <msItem>
+                        <title type="desc">Minor offices</title>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 253)</locus>
+                        <title type="desc">Inuitatoria, Antiphons, Psalms and Hymns</title>
+                        <rubric>Inuitatoria</rubric>
+                     </msItem>
+                     
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                        <extent resp="#VD">
-                           <seg type="leaf"> ii + <measure type="leaf" quantity="332">332 (330)</measure> + ii  leaves</seg>
-             .<dimensions type="leaf" unit="mm">
-                              <height>78</height>
-                              <width>55</width>
-                           </dimensions>
-                           <dimensions type="written" unit="mm">
-                              <height>48</height>
-                              <width>34</width>
-                           </dimensions>
-                        </extent>
+
+
+               <extent source="SC"><measure type="leaf" quantity="334">334</measure> leaves
+                  <dimensions type="binding" unit="in">
+                     <height>3.375</height>
+                     <width>2.75</width>
+                  </dimensions>
+               </extent>
+                        
                      </supportDesc>
-                     <layoutDesc resp="#VD">
-                        <layout columns="2" writtenLines="20">2 col. of 20 lines</layout>
-                     </layoutDesc>
                   </objectDesc>
+
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1500" notBefore="1490">15th century, late</origDate>
                      <origPlace>
-                        <country key="place_1000080">Italian</country>
+                        <country key="place_1000080">Italy</country>
                      </origPlace>
                   </origin>
                </history>
@@ -82,7 +115,8 @@
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). <listBibl>
+                           Description adapted (July 2025) by Stewart J. Brookes from the Summary Catalogue (1897)
+                           <listBibl>
                               <bibl facs="aaz0380.gif" type="SC">Summary Catalogue, vol. 4, p. 361</bibl>
                               <bibl facs="aaz0381.gif" type="SC">Summary Catalogue, vol. 4, p. 362</bibl>
                            </listBibl>
@@ -101,7 +135,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
-         <change when="2025-07">Add extent, leaf dimensions and layout from van Dijk, Latin Liturgical Manuscripts in the Bodleian Library, Oxford.</change>
+         <change when="2025-07-08">Description revised to incorporate all the information in the Summary Catalogue (1897)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
