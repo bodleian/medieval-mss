@@ -1,21 +1,31 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2906">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2906">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Canon. Liturg. 215</title>
             <title type="collection">MSS. Canon. Liturg. (Canonici Liturgical)</title>
+           
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            
             <respStmt xml:id="VD">
                <resp when="1957">Cataloguer</resp>
                <persName>S. J. P. van Dijk</persName>
             </respStmt>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
             </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2025">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -37,59 +47,94 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Canon. Liturg. 215</idno>
-                  <idno type="ieArk">ark:29072/x0c821gk04hv</idno>
-                  <idno type="crArk">ark:29072/x0nv935275dq</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0c821gk04hv</idno><idno type="crArk">ark:29072/x0nv935275dq</idno><altIdentifier type="internal">
                      <idno type="SCN">19327</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem class="#liturgica" n="1" xml:id="MS_Canon_Liturg_215-item1">
                      <title key="work_10664" type="desc">Breviary, Use of Sarum</title>
+                     
+                     <msItem>
+                        <locus>(fol. 1)</locus>
+                        <title type="desc">Proprium de Tempore</title>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 176)</locus>
+                        <title key="work_10687" type="desc">Calendar</title>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 182)</locus>
+                        <title type="desc">Psalter with Canticles and Litanies</title>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 244)</locus>
+                        <title type="desc">Commune Sanctorum</title>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 269)</locus>
+                        <title type="desc">Proprium Sanctorum</title>
+                     </msItem>
+                     
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                        <extent resp="#VD">
-                           <seg type="leaf"> i + <measure type="leaf" quantity="408">408</measure> + i  leaves</seg>
-             .<dimensions type="leaf" unit="mm">
-                              <height>147</height>
-                              <width>100</width>
-                           </dimensions>
-                           <dimensions type="written" unit="mm">
-                              <height>112</height>
-                              <width>67</width>
-                           </dimensions>
-                        </extent>
+
+               <extent source="SC"><measure type="leaf" quantity="410">410</measure> leaves
+                  <dimensions type="binding" unit="in">
+                     <height>6.25</height>
+                     <width>4.375</width>
+                  </dimensions>
+               </extent>
+                        
                      </supportDesc>
-                     <layoutDesc resp="#VD">
-                        <layout columns="2" writtenLines="34">2 col. of 34 lines</layout>
+                     
+                     <layoutDesc>
+                        <layout columns="2">2 cols
+                        </layout>
                      </layoutDesc>
+                     
                   </objectDesc>
-                  <decoDesc>
-                     <summary>
-                        <ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 834</summary>
-                     <decoNote type="border">Good borders. </decoNote>
-                     <decoNote type="histInit">Good historiated initials. </decoNote>
-                     <decoNote type="decInit">Good other initials. </decoNote>
+
+                  
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 834
+                     </summary>
+                     <decoNote type="border"><ref target="https://digital.bodleian.ox.ac.uk/objects/73bb5e50-9e5e-4dde-be3d-fb53970904dd/surfaces/bda51ae2-75ac-4753-9bc9-8bc9d0cbb887/">Good borders</ref></decoNote>
+                     <decoNote type="histInit"><ref target="https://digital.bodleian.ox.ac.uk/objects/73bb5e50-9e5e-4dde-be3d-fb53970904dd/surfaces/9f099e83-d117-457f-ab30-d808dbedae7e/">Historiated initials</ref></decoNote>
+                     <decoNote type="initial">Other initials</decoNote>
+                     
                   </decoDesc>
+                  
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1410" notBefore="1400">15th century, beginning</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
+                  
+                  <provenance>Added offices on fol. 396 for Patrick, Brigida, Columba and Finian show that the book was in use at <orgName key="org_223669083" role="fmo">Down (Dunum)</orgName> in Ireland. See also the additions to the Calendar</provenance>
+              
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
+                        
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
+                           Description adapted (July 2025) by Stewart J. Brookes from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1973)
+                           <listBibl>
                               <bibl facs="aaz0378.gif" type="SC">Summary Catalogue, vol. 4, p. 359</bibl>
                            </listBibl>
                         </source>
@@ -115,7 +160,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
-         <change when="2025-07">Add extent, leaf dimensions and layout from van Dijk, Latin Liturgical Manuscripts in the Bodleian Library, Oxford.</change>
+         <change when="2025-07-08">Description revised to incorporate all the information in the Summary Catalogue (1897)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
