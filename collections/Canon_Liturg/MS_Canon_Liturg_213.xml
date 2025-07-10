@@ -1,21 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2904">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2904">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Canon. Liturg. 213</title>
             <title type="collection">MSS. Canon. Liturg. (Canonici Liturgical)</title>
-            <respStmt xml:id="VD">
-               <resp when="1957">Cataloguer</resp>
-               <persName>S. J. P. van Dijk</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2025">Encoding</resp>
+               <persName>Stewart Brookes</persName>
             </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -37,49 +36,77 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Canon. Liturg. 213</idno>
-                  <idno type="ieArk">ark:29072/x0sj1391350d</idno>
-                  <idno type="crArk">ark:29072/x0np193908sc</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0sj1391350d</idno><idno type="crArk">ark:29072/x0np193908sc</idno><altIdentifier type="internal">
                      <idno type="SCN">19325</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem class="#liturgica" n="1" xml:id="MS_Canon_Liturg_213-item1">
                      <title key="work_10657" type="desc">Breviary, Use of Rome</title>
+                     <rubric>... Ordo breuiarii secundum consuetudinem Romane Curie</rubric>
+                     
+                     <msItem>
+                        <locus>(fol. 1)</locus>
+                        <title type="desc">Proprium de Tempore</title>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 313)</locus>
+                        <title type="desc">Proprium Sanctorum</title>
+                        <rubric>festiuitates</rubric>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 502v)</locus>
+                        <title type="desc">Commune Sanctorum</title>
+                        <note>Imperfect at end</note>
+                     </msItem>
+                     
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                        <extent resp="#VD">
-                           <seg type="leaf"> ii + <measure type="leaf" quantity="511">511</measure> + 1 + ii  leaves</seg>
-             .<dimensions type="leaf" unit="mm">
-                              <height>130</height>
-                              <width>85</width>
-                           </dimensions>
-                           <dimensions type="written" unit="mm">
-                              <height>101</height>
-                              <width>68</width>
-                           </dimensions>
-                        </extent>
+
+               <extent source="SC">ii + <measure type="leaf" quantity="514">514</measure> leaves
+                  <dimensions type="binding" unit="in">
+                     <height>5.5</height>
+                     <width>4</width>
+                  </dimensions>
+               </extent>
+                        
+                        <condition>Fol. 391 is torn</condition>
+                        
                      </supportDesc>
-                     <layoutDesc resp="#VD">
-                        <layout columns="2" writtenLines="29">2 col. of 29 lines</layout>
+                     
+                     <layoutDesc>
+                        <layout columns="2">2 cols
+                        </layout>
                      </layoutDesc>
+                     
                   </objectDesc>
+
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1400" notBefore="1350">14th century, second half</origDate>
                   </origin>
+                  <provenance>On fol. 1 is 'pertinet fratri <persName role="fmo">Petro Giprelli</persName>' (? late 15th century)</provenance>
+                  
+                  <!-- Add authority record -->                  
+
+                  <provenance>On fol. 312v is a note of a debt of six florins owed by 'Petros Marchand de moñ', 31 May 1452, to 'frater Ludouicus'</provenance>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). <listBibl>
+                           Description adapted (July 2025) by Stewart J. Brookes from the Summary Catalogue (1897)
+                           <listBibl>
                               <bibl facs="aaz0378.gif" type="SC">Summary Catalogue, vol. 4, p. 359</bibl>
                            </listBibl>
                         </source>
@@ -97,7 +124,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
-         <change when="2025-07">Add extent, leaf dimensions and layout from van Dijk, Latin Liturgical Manuscripts in the Bodleian Library, Oxford.</change>
+         <change when="2025-07-08">Description revised to incorporate all the information in the Summary Catalogue (1897)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
