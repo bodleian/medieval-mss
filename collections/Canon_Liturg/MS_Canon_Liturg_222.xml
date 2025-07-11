@@ -1,21 +1,25 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2914">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2914">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Canon. Liturg. 222</title>
             <title type="collection">MSS. Canon. Liturg. (Canonici Liturgical)</title>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            
             <respStmt xml:id="VD">
                <resp when="1957">Cataloguer</resp>
                <persName>S. J. P. van Dijk</persName>
             </respStmt>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+
+            <respStmt xml:id="SJB">
+               <resp when="2025">Encoding</resp>
+               <persName>Stewart Brookes</persName>
             </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -37,59 +41,89 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Canon. Liturg. 222</idno>
-                  <idno type="ieArk">ark:29072/x08s45q921rh</idno>
-                  <idno type="crArk">ark:29072/x0pn89d641wv</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x08s45q921rh</idno><idno type="crArk">ark:29072/x0pn89d641wv</idno><altIdentifier type="internal">
                      <idno type="SCN">19334</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem class="#liturgica" n="1" xml:id="MS_Canon_Liturg_222-item1">
                      <title key="work_11572" type="desc">Diurnal, Use of Rome</title>
+                     
+                     <msItem>
+                        <locus>(fol. iii)</locus>
+                        <title key="work_10687" type="desc">Calendar</title>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 13)</locus>
+                        <title type="desc">Proprium de Tempore</title>
+                        <note>Wanting some leaves at the beginning</note>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 97v)</locus>
+                        <rubric>Proprium Sanctorum de Diurnale</rubric>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 145)</locus>
+                        <rubric>Commune Sanctorum</rubric>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 187v)</locus>
+                        <title type="desc">Minor offices</title>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 229v)</locus>
+                        <title key="work_14114" type="desc">Psalter</title>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 291)</locus>
+                        <title key="work_12325" type="desc">Hymnal</title>
+                     </msItem>
+                     
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                        <extent resp="#VD">
-                           <seg type="leaf"> i + <measure type="leaf" quantity="313">313</measure> + i  leaves</seg>
-             .<dimensions type="leaf" unit="mm">
-                              <height>85</height>
-                              <width>68</width>
-                           </dimensions>
-           
-                        </extent>
+
+               <extent source="SC">iii + <measure type="leaf" quantity="315">315</measure> leaves
+                  <dimensions type="binding" unit="in">
+                     <height>3.75</height>
+                     <width>3.125</width>
+                  </dimensions>
+               </extent>
+                        
                      </supportDesc>
-                     <layoutDesc resp="#VD">
-                        <layout columns="1" writtenLines="19"> fol.1-178 in 19 lines,  <dimensions type="written" unit="mm">
-                              <height>46</height>
-                              <width>45</width>
-                           </dimensions>
-                        </layout>
-                        <layout columns="1" writtenLines="17"> fol.179-313 in 17 lines,  <dimensions type="written" unit="mm">
-                              <height>43</height>
-                              <width>43</width>
-                           </dimensions>
-                        </layout>
-                     </layoutDesc>
                   </objectDesc>
+
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
                      <origPlace>
-                        <country key="place_1000080">Italian</country>, <region>North</region>
+                        <country key="place_1000080">Italy</country>, <region>North</region>
                         <!--ORIGINAL: Italian, North-->
                      </origPlace>
                   </origin>
+                  
+                  <provenance>The Calendar (3 January, 7 February, 24 April, 13 November) points to North Italy</provenance>
+                  
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). <listBibl>
+                           Description adapted (July 2025) by Stewart J. Brookes from the Summary Catalogue (1897)
+                           <listBibl>
                               <bibl facs="aaz0380.gif" type="SC">Summary Catalogue, vol. 4, p. 361</bibl>
                            </listBibl>
                         </source>
@@ -107,7 +141,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
-         <change when="2025-07">Add extent, leaf dimensions and layout from van Dijk, Latin Liturgical Manuscripts in the Bodleian Library, Oxford.</change>
+         <change when="2025-07-08">Description revised to incorporate all the information in the Summary Catalogue (1897)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
