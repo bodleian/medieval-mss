@@ -4,11 +4,23 @@
          <titleStmt>
             <title>MS. Add. A. 7</title>
             <title type="collection">MSS. Add. (Additional) A</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1905">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2025">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -35,12 +47,48 @@
                   </altIdentifier>
                </msIdentifier>
                <physDesc>
-                  <p>Composite: fols. 1–45 || fols. 46–88 || fols. 89ff.</p>
+                  
+                  <p>Composite: fols 1–45 || fols 46–88 || fols 89ff.</p>
+                  <objectDesc form="codex">
+                     <supportDesc material="mixed">
+                        <support>parchment, paper</support>
+                  
+                  <extent source="SC">ii + <measure type="leaf" quantity="162">162</measure> leaves
+                     <dimensions type="binding" unit="in">
+                        <height>7.875</height>
+                        <width>5.5</width>
+                     </dimensions>
+                  </extent>
+                  
+                  </supportDesc>
+                  </objectDesc>
+                  
+                  <bindingDesc>
+                     <binding notBefore="1400" notAfter="1500">
+                        <p>Black leather on boards with blind tooling, clasp lost, Italian work (15th century). Resewn.</p>
+                     </binding>
+                  </bindingDesc>
+                  
                </physDesc>
+               
+               <history>
+                  <provenance>Fol. i verso: 'Nicolaus maior et minor [i.e. 'Antidotarium magnum et parvum'] magistri Simonis Cinozi (?) de Florentia | fl. 3 [<hi rend="italic">then, added</hi>] 
+                     et autor qui dicitur larugerina pratica bona'. Magister <persName role="fmo">Simon Cinozi</persName> (?) (14th or 15th century) seems to have owned the whole manuscript</provenance> 
+                  
+                  <!-- Add authority record -->                  
+
+                  <provenance>A series of numbers, 'no. 26', no. '27' and no. '29' (18th century) refer to a library (label on the spine)</provenance>
+                  
+                  <acquisition when="1860">Bought for £2 10<hi rend="italic">s</hi> at Sotheby's on 20-21 June 1860, lot 254, <ref target="https://medieval.bodleian.ox.ac.uk/?utf8=%E2%9C%93&amp;q=%22along+with+eight+other+manuscripts%22">along with eight other manuscripts</ref> 
+                     'formerly in the archives of two princely Roman families'</acquisition>
+               </history>
+               
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
+                        <source>
+                           Description adapted (July 2025) by Stewart J. Brookes from the Summary Catalogue (1905). Decoration, localization and date follow Pächt and Alexander (1973)
+                           <listBibl>
                               <bibl facs="aam0537.gif" type="SC">Summary Catalogue, Vol. 5, p. 502</bibl>
                               <bibl facs="aam0538.gif" type="SC">Summary Catalogue, Vol. 5, p. 503</bibl>
                            </listBibl>
@@ -55,12 +103,42 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
+                     
                      <msItem n="1" xml:id="MS_Add_A_7-part1-item1">
+                        <locus>(fol. 1)</locus>
                         <!-- <author key="person_42197041">
                            Nicolaus Praepositus of Salerno</author>-->
                         <title key="work_10205">Antidotarium Nicolai</title>
+                        <note>Annotated</note>
+                        
+                        <msItem n="2" xml:id="MS_Add_A_7-part1-item2">
+                           <locus>(fol. 34)</locus>
+                           <title type="desc">A glossary of medicinal plants</title>
+
+                           <!-- Add authority record -->   
+                           
+                           <incipit>Acantia id est sucus prunellorum</incipit>
+                           <note>With a list of drugs which may be substituted for others not obtainable</note>
+                           <note>In double columns</note>
+                        </msItem>
+                        
+                        
+                        <msItem n="3" xml:id="MS_Add_A_7-part1-item3">
+                           <locus>(fol. 38)</locus>
+                           <title type="desc">Hexameters containing medical precepts</title>
+                           
+                           <!-- Add authority record --> 
+                           
+                           <incipit>Multi splendoris antimomum melioris</incipit>
+                           <note>With a list of drugs which may be substituted for others not obtainable</note>
+                           <note>In double columns</note>
+                        </msItem>
+                        
+                        <msItem><note>Followed by a few recipes</note></msItem>
+                        
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
+                     
                   </msContents>
                   <physDesc>
                      <objectDesc form="codex">
@@ -68,8 +146,11 @@
                            <support>parchment</support>
                         </supportDesc>
                      </objectDesc>
-                     <decoDesc>
-                        <decoNote type="border">Good historiated border. <list type="gloss">
+                     
+                     <decoDesc resp="#PA">
+                        <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 164
+                        </summary>
+                        <decoNote type="border">Good historiated border <list type="gloss">
                               <head>fol. 1r</head>
                               <label>Type</label>
                               <item>
@@ -77,22 +158,23 @@
                               </item>
                               <label>Subject</label>
                               <item>
-                                 <seg type="subject">Hybrid figures and grotesques.</seg>
+                                 <seg type="subject">Hybrid figures and grotesques</seg>
                               </item>
                            </list>
                         </decoNote>
-                        <decoNote type="decInit">Good initial. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 164).</decoNote>
+                        <decoNote type="decInit">Good initial</decoNote>
                      </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
                         <origDate calendar="Gregorian" notAfter="1350" notBefore="1300">14th century, first half</origDate>
                         <origPlace>
-                           <country key="place_1000080">Italian</country>
+                           <country key="place_1000080">Italy</country>
                         </origPlace>
                      </origin>
                   </history>
                </msPart>
+               
                <msPart xml:id="MS_Add_A_7-part2">
                   <msIdentifier>
                      <altIdentifier type="partial">
@@ -100,11 +182,16 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
+                     
                      <msItem class="#medica" n="1" xml:id="MS_Add_A_7-part2-item1">
+                        <locus>(fol. 46)</locus>
                         <title key="work_16311" type="desc">Medical treatise (antidotary)</title>
-                        <incipit>Aurea Alexandrina faciens ad reuma</incipit>
+                        <incipit>Antidotum. Aurea Alexandrina faciens ad reuma capitis</incipit>
+                        <note>Ends abruptly in the section for <hi rend="italic">unguentum</hi> with 'cumque liquefacta fuerit cera ab igne', 
+                           but various later recipes have been written in the gaps in the original and on some leaves that had been left blank  at the end</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
+                     
                   </msContents>
                   <physDesc>
                      <objectDesc form="codex">
@@ -112,8 +199,12 @@
                            <support>parchment</support>
                         </supportDesc>
                      </objectDesc>
-                     <decoDesc>
-                        <decoNote type="decInit">Initial, unfinished, possibly added in the 12th century, second half. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 57) <list type="gloss">
+                     
+                     <decoDesc resp="#PA">
+                        <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 57
+                        </summary>
+                        
+                        <decoNote type="decInit">Initial, unfinished, possibly added in the 12th century, second half<list type="gloss">
                               <head>fol. 46r</head>
                               <label>Type</label>
                               <item>
@@ -121,7 +212,7 @@
                               </item>
                               <label>Subject</label>
                               <item>
-                                 <seg type="subject">Unfinished initial with acanthus-leaf designs.</seg>
+                                 <seg type="subject">Unfinished initial with acanthus-leaf designs</seg>
                               </item>
                            </list>
                         </decoNote>
@@ -131,11 +222,12 @@
                      <origin>
                         <origDate calendar="Gregorian" notAfter="1150" notBefore="1100">12th century, first half</origDate>
                         <origPlace>
-                           <country key="place_1000080">Italian</country>
+                           <country key="place_1000080">Italy</country>
                         </origPlace>
                      </origin>
                   </history>
                </msPart>
+               
                <msPart xml:id="MS_Add_A_7-part3">
                   <msIdentifier>
                      <altIdentifier type="partial">
@@ -143,16 +235,34 @@
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
+                     
                      <msItem n="1" xml:id="MS_Add_A_7-part3-item1">
+                        <locus>(fol. 89)</locus>
                         <author key="person_4371360">Roger de Baron</author>
                         <title key="work_4454">Rogerina major</title>
+                        <rubric>Incipitunum de tribus</rubric>
+                        <incipit>Sicut ab antiquis habemus auctoribus</incipit>
+                        <explicit>Explicit Rogerina. Explicit Pratica magistri Rogeri baronis</explicit>
+                        <note>With notes</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
+                     
                      <msItem n="2" xml:id="MS_Add_A_7-part3-item2">
+                        <locus>(fol. 146v)</locus>
                         <author key="person_4371360">Roger de Baron</author>
-                        <title key="work_4452">medical texts</title>
+                        <title key="work_4452">Medical texts</title>
+                        <rubric>Incipit conpendium Salerni</rubric>
+                        <incipit type="prologue">Duplici causa me cogente</incipit>
+                        <incipit type="text">Medicina est scientia</incipit>
+                        <note>A few recipes follow at the end</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 159v)</locus>
+                        <note>18 lines of Hebrew which A. E. Cowley judged to be a medical prescription in an Italian hand of about the 15th century</note>
+                     </msItem>
+                     
                   </msContents>
                   <physDesc>
                      <objectDesc form="codex">
@@ -161,14 +271,14 @@
                         </supportDesc>
                      </objectDesc>
                      <decoDesc>
-                        <decoNote type="flourInit">Red and blue initials with contrasting penwork.</decoNote>
+                        <decoNote type="flourInit">Red and blue initials with contrasting penwork</decoNote>
                      </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
                         <origDate calendar="Gregorian" notAfter="1400" notBefore="1200">13th or 14th century</origDate>
                         <origPlace>
-                           <country key="place_1000080">Italian</country>
+                           <country key="place_1000080">Italy</country>
                         </origPlace>
                      </origin>
                   </history>
@@ -177,6 +287,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-07-21">Description revised to incorporate all the information in the Summary Catalogue (1905)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>
