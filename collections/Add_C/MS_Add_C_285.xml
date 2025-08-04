@@ -4,11 +4,23 @@
          <titleStmt>
             <title>MS. Add. C. 285</title>
             <title type="collection">MSS. Add. (Additional) C</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1905">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2025">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -18,7 +30,7 @@
                <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>
             </publisher>
             <idno type="msID">MS_Add_C_285</idno>
-            <idno type="collection">Add C</idno>
+            <idno type="collection">Add_C</idno>
             <idno type="catalogue">Western</idno>
          </publicationStmt>
          <sourceDesc>
@@ -35,37 +47,89 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_Add_C_285-item1">
+                     <locus>(fol. 1)</locus>
                      <author key="person_78770305">'John Mandeville'</author>
                      <title key="work_2740">Travels</title>
+                     <rubric>Here bigynneth <damage>the boo</damage>k of John Maundevyle the knyght...</rubric>
+                     <incipit>For als moche as þe londe ouer þe see, þat is to saye the holy londe that men
+                        calleth the lond of Bethtony</incipit>
+                     <explicit>Explicit liber Iohannis Manndeuylle</explicit>
                      <textLang mainLang="enm">Middle English</textLang>
                   </msItem>
+                  
+                  <msItem n="2" xml:id="MS_Add_C_285-item2">
+                     <locus>(fol. 70)</locus>
+                     <title>Spiritus Guidonis</title>
+                     
+                  <!-- Add authority record -->                  
+
+                     <rubric>... Spiritus Guidonis de Ciuitate Alexti</rubric>
+                     <incipit>For als muche as seint Augstyn seith to Petre in þe book of bileue þat it is a myracle...</incipit>
+                     <note>The story of an apparition and its disputation with a Dominician prior about purgatory in 1333</note>
+                     <textLang mainLang="enm">Middle English</textLang>
+                  </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        
+               <extent source="SC">iii + <measure type="leaf" quantity="91">91</measure> leaves, each page mounted separately in a paper frame
+                  <dimensions type="binding" unit="in">
+                     <height>10.75</height>
+                     <width>7.5</width>
+                  </dimensions>
+                  
+                  <dimensions source="SJB" type="leaf" unit="mm">
+                     <height>228</height>
+                     <width>170</width>
+                  </dimensions>
+               </extent>
+                        
+                        <condition>Stained. A leaf or two is lost after fol. 75</condition>
+                        
                      </supportDesc>
+                     
                   </objectDesc>
-                  <decoDesc>
-                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 760:</summary>
-                     <decoNote type="border">Good borders.</decoNote>
-                     <decoNote type="decInit"> Good initials. </decoNote>
+                  
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 760
+                     </summary>
+                     <decoNote type="border">Good borders</decoNote>
+                     <decoNote type="decInit">Good initials</decoNote>
                   </decoDesc>
+                  
+                  <bindingDesc>
+                     <binding>
+                        <p>Red morocco with gold ornament (19th century English work)</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" when="1400">c. 1400</origDate>
+                     <origDate calendar="Gregorian" when="1400"><hi rend="italic">c</hi>. 1400</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
+                  
+                  <acquisition when="1886">Bought from messrs <persName role="bsl">C. T. Jefferies</persName> &amp; Sons of Bristol (Catalogue 115) on 
+                     25 June 1886, for £18</acquisition>
+                  
+                  <!-- Add authority record -->                  
+
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
-                              <bibl facs="aam0697.gif" type="SC">Summary Catalogue, Vol. 5, p. 662</bibl>
+                        <source>
+                        Description adapted (July 2025) by Stewart J. Brookes from the Summary Catalogue (1905). Decoration, localization and date follow Pächt and Alexander (1970)
+                        <listBibl>
+                           
+                        <bibl facs="aam0697.gif" type="SC">Summary Catalogue, Vol. 5, p. 662</bibl>
                               <bibl facs="aam0698.gif" type="SC">Summary Catalogue, Vol. 5, p. 663</bibl>
                            </listBibl>
                         </source>
@@ -76,6 +140,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-07-21">Description revised to incorporate all the information in the Summary Catalogue (1905)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>

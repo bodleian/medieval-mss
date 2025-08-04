@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2132">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2132">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -11,9 +8,17 @@
                <resp when="1984">Cataloguer</resp>
                <persName>A. G. Watson</persName>
             </respStmt>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="Q">
+               <resp when="1854">Cataloguer</resp>
+               <persName>H. O. Coxe</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2025">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -25,7 +30,7 @@
                <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>
             </publisher>
             <idno type="msID">MS_Canon_Class_Lat_120</idno>
-            <idno type="collection">Canon Class Lat</idno>
+            <idno type="collection">Canon_Class_Lat</idno>
             <idno type="catalogue">Western</idno>
          </publicationStmt>
          <sourceDesc>
@@ -45,13 +50,21 @@
                </msIdentifier>
                <msContents>
                   <msItem n="1" xml:id="MS_Canon_Class_Lat_120-item1">
+                     <locus from="1" to="55r" type="inferredEnd">(fol. 1)</locus>
                      <author key="person_89370852">Ubertinus Pusculus of Brescia</author>
                      <title key="work_4882">Constantinopolis</title>
+                     <incipit>Primus habet causam excidii fraudesque Pelasgum</incipit>
+                    <incipit>In magnos postquam cecidit mea musa labores</incipit>
+                     <explicit>Venditur et dominos distracta est passa superbos</explicit><incipit type="epilogue">Non ego laude pari haec magni scripsisse poetae</incipit><note>Followed by four verses: "Brixia me civem Ubertinum Puscula honesta Gens tulit haec ausus talia quae cecini ; Me Constantini studiis urbs dulcis habebat, Cum cecidit bello barbara praeda fui."</note><colophon>Finis die secundo mensis Aprilis 1479. Explicit liber quartus et ultimus Constantinopoleos.</colophon>  <textLang mainLang="la">Latin</textLang></msItem><msItem xml:id="MS_Canon_Class_Lat_120-item1a"><note>Followed by two epigrams on Pusculus by <persName role="aut" key="person_53051995">Iohannes Michael Albertus Carrariensis (Giovanni Michele Alberto Carrara)</persName></note><incipit>Constantini urbis casus, quem, Poscule, vates</incipit>
+                        <!--  Bibliografia delle opere di Giovanni Michele Alberto Carrara, in «Rinascimento», VI (1955),   -->
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                   <msItem n="2" xml:id="MS_Canon_Class_Lat_120-item2">
+                     <locus from="55v" to="79" type="inferredEnd">(fol. 55v)</locus>
                      <author key="person_89370852">Ubertinus Pusculus of Brescia</author>
                      <title key="work_4883">De laudibus Brixiae</title>
+                     <rubric>De laudibus Brixiae oratio</rubric>
+                     <incipit>Ad conspectum vestrum, viri Brixlani, accedere cum instituissem</incipit><explicit>Brixiaque ut foelix superet per secula euncta</explicit><colophon>Finis 1479 die 12 Madii</colophon>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -59,7 +72,7 @@
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
-                        <extent resp="#DD"> 79 + i fols.<dimensions unit="mm" type="leaf">
+                        <extent resp="#DD"> <seg type="leaf"><measure type="leaf" quantity="79">79</measure> + <measure type="laterEndleaf" quantity="1">i</measure></seg> fols.<dimensions unit="mm" type="leaf">
                               <height>205</height>
                               <width>153</width>
                            </dimensions>
@@ -68,7 +81,7 @@
                      <layoutDesc resp="#DD">
                         <layout writtenLines="28" columns="1">1 col., 28 lines, <dimensions type="written" unit="mm">
                               <height>133</height>
-                              <width min="80" max="90">c. 80-90</width>
+                              <width min="80" max="90">c. 80–90</width>
                            </dimensions>
                         </layout>
                      </layoutDesc>
@@ -100,7 +113,16 @@
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (H. O. Coxe, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854). Decoration, localization and date follow Pächt and Alexander (1970). Extent, dimensions and layout from Watson (1984). <listBibl>
+                           Description adapted (Feb. 2025) from the following sources:
+                           <listBibl>
+                              <bibl>A. Watson, <title>Catalogue of Dated and Datable Manuscripts in Oxford Libraries</title> (1984),  <citedRange unit="entry" from="168" to="168">
+                                 <ref target="https://hdl.handle.net/2027/mdp.39015008982863?urlappend=%3Bseq=58">no. 168</ref>
+                              </citedRange>
+                              </bibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, II (1970), no. 891</bibl>
+                              <bibl>H. O. Coxe, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854</bibl>
+                              
+                           </listBibl><listBibl>
                               <bibl facs="abz0086.gif" type="QUARTO"> Quarto Catalogue, vol. 3, cols. 159–60 </bibl>
                               <bibl facs="aaz0339.gif" type="SC">Summary Catalogue, vol. 4, p. 320</bibl>
                            </listBibl>
@@ -121,6 +143,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-02">Encode all information from printed catalogues.</change>
          <change when="2024-05">Add extent, leaf dimensions and layout from Watson, Dated and Datable.</change>
          <change when="2018-10-14" xml:id="MMM">
             <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>

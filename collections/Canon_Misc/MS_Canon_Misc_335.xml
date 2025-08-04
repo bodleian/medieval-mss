@@ -1,9 +1,16 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_3358">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_3358">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Canon. Misc. 335</title>
             <title type="collection">MSS. Canon. Misc. (Canonici Miscellaneous)</title>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
             <respStmt>
                <resp>Summary description</resp>
                <persName>Elizabeth Solopova</persName>
@@ -18,7 +25,7 @@
                <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>
             </publisher>
             <idno type="msID">MS_Canon_Misc_335</idno>
-            <idno type="collection">Canon Misc</idno>
+            <idno type="collection">Canon_Misc</idno>
             <idno type="catalogue">Western</idno>
          </publicationStmt>
          <sourceDesc>
@@ -30,7 +37,9 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Canon. Misc. 335</idno>
-                  <idno type="ieArk">ark:29072/x041687j232p</idno><idno type="crArk">ark:29072/x04b29b695rv</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x041687j232p</idno>
+                  <idno type="crArk">ark:29072/x04b29b695rv</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">19811</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -53,7 +62,9 @@
                      <title key="work_2191">De miseria humanae conditionis</title>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
-                  <msItem class="#historica #liturgica #computistica" n="5" xml:id="MS_Canon_Misc_335-item5">
+                  <msItem class="#historica #liturgica #computistica"
+                          n="5"
+                          xml:id="MS_Canon_Misc_335-item5">
                      <title key="work_10704" type="desc">Calendar with historical notes</title>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
@@ -66,7 +77,21 @@
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
+                        <extent resp="#VD">
+                           <seg type="leaf"> i + <measure type="leaf" quantity="94">94</measure> + i fol.</seg>
+                           <dimensions type="leaf" unit="mm">
+                              <height>216</height>
+                              <width>150</width>
+                           </dimensions>
+                           <dimensions type="written" unit="mm">
+                              <height>147</height>
+                              <width>95</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc resp="#VD">
+                        <layout columns="1" writtenLines="26">26 lines</layout>
+                     </layoutDesc>
                   </objectDesc>
                </physDesc>
                <history>
@@ -105,6 +130,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-07">Add extent, leaf dimensions and layout from van Dijk, Latin Liturgical Manuscripts in the Bodleian Library, Oxford.</change>
          <change when="2018-10-14" xml:id="MMM">
             <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>

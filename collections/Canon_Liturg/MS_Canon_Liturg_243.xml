@@ -1,25 +1,36 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2932">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2932">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Canon. Liturg. 243</title>
             <title type="collection">MSS. Canon. Liturg. (Canonici Liturgical)</title>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
             <respStmt xml:id="DD">
                <resp when="1984">Cataloguer</resp>
                <persName>A. G. Watson</persName>
             </respStmt>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
-            </respStmt>
+            
             <respStmt xml:id="BCBB">
                <resp when="2020">Cataloguer</resp>
                <persName>B. C. Barker-Benfield</persName>
             </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2025">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -29,7 +40,7 @@
                <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>
             </publisher>
             <idno type="msID">MS_Canon_Liturg_243</idno>
-            <idno type="collection">Canon Liturg</idno>
+            <idno type="collection">Canon_Liturg</idno>
             <idno type="catalogue">Western</idno>
          </publicationStmt>
          <sourceDesc>
@@ -48,20 +59,52 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem class="#liturgica" n="1" xml:id="MS_Canon_Liturg_243-item1">
                      <title key="work_10565" type="desc">Book of Hours, Use of Rome</title>
+                     
+                     <msItem>
+                        <locus>(fol. 1)</locus>
+                        <title key="work_10687" type="desc">Calendar</title>
+                     </msItem>
+                     
+                     <msItem>
+                        <title type="desc">Hours of the Virgin</title>
+                     </msItem>
+
+                     <msItem>
+                        <locus>(fol. 95)</locus>
+                        <title type="desc">Penitential Psalms with Litany</title>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 120)</locus>
+                        <title type="desc">Mass of the Virgin</title>
+                     </msItem>
+                     
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                        <extent resp="#DD">i + 127 + xiv fols.<dimensions unit="mm" type="leaf">
+                        <extent resp="#DD">
+                           <seg type="leaf"><measure type="laterEndleaf" quantity="1">i</measure> + 
+                              <measure type="leaf" quantity="127">127</measure> + <measure type="laterEndleaf" quantity="14">xiv</measure></seg> fols
+                           <dimensions resp="#BCBB" type="binding" unit="mm">
+                           <height quantity="101">101</height>
+                           <width max="76" min="75">75–76</width>
+                           <depth precision="medium" quantity="30">c. 30</depth>
+                           </dimensions> (book closed)
+                           <dimensions unit="mm" type="leaf">
                               <height>93</height>
                               <width>73</width>
                            </dimensions>
                         </extent>
+                        
+                        <condition>Mutilated: the two chief pieces have lost their first leaves (after fols 15 and 94)</condition>
                      </supportDesc>
                      <layoutDesc resp="#DD">
                         <layout writtenLines="13" columns="1">1 col., 13 lines, <dimensions unit="mm" type="written">
@@ -71,16 +114,23 @@
                         </layout>
                      </layoutDesc>
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote type="decInit">Initials. Written by <persName key="person_942" role="scr">Petrus de Zangrandis</persName>, fol. 119v. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 844)</decoNote>
+                  
+                  <handDesc>
+                     <handNote>Written by <persName key="person_942" role="scr">Petrus de Zangrandis</persName>, fol. 119v: 
+                        'Ego Petrus de Gangrandis scripsi hunc librum die Iunii xxiiijº M cccc lxviij'. The same hand continues to fol. 127v;
+                        the remaining written leaves are in a different hand</handNote>
+                  </handDesc>
+                  
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 844
+                     </summary>
+                     <decoNote type="decInit"><ref target="https://digital.bodleian.ox.ac.uk/objects/b6a547d5-4a20-4323-84cc-ba0e17b9e70a/">Initials</ref></decoNote>
                   </decoDesc>
                   <bindingDesc resp="#BCBB">
                      <binding notAfter="1800" notBefore="1700">
-                        <p>18th century?, <placeName key="place_1000080">Italian</placeName>: pasteboards?; grainy, dark brown leather, blind-tooled with a single line round edges of each cover and a floral tool at each corner (possibly also in spine-panels, but if so very faint); no clasps; edges stained red, for this binding. <dimensions type="binding" unit="mm">
-                              <height quantity="101">101</height>
-                              <width max="76" min="75">75–76</width>
-                              <depth precision="medium" quantity="30">c. 30</depth>
-                           </dimensions> (book closed).</p>
+                        <p>18th century?, <placeName key="place_1000080">Italy</placeName>: pasteboards?; grainy, dark brown leather, 
+                           blind-tooled with a single line round edges of each cover and a floral tool at each corner (possibly also in spine-panels, 
+                           but if so very faint); no clasps; edges stained red, for this binding</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
@@ -88,17 +138,28 @@
                   <origin>
                      <origDate calendar="Gregorian" when="1468" cert="high">1468</origDate>
                      <origPlace>
-                        <country key="place_1000080">Italian</country>, <settlement key="place_7004942">Parma</settlement>
+                        <country key="place_1000080">Italy</country>, <settlement key="place_7004942">Parma</settlement>
                         <!--ORIGINAL: Italian, Parma-->
                      </origPlace>
                   </origin>
+                  
+                  <provenance>The entry for 4 December in the calendar has 'Bernardi episcopi Parmensis et confessoris' in red</provenance>
+                  
+                  <provenance>Fol. 129v: 'Iste liber est mei <persName role="fmo">angelini de bernazonibus</persName>', erased ex libris (s. xv ex)</provenance>
+                  
+                  <!-- Add authority record -->                  
+
                </history>
                <additional>
                   <adminInfo>
-                     <recordHist>
+                     <recordHist> 
+                        
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1970). Binding: <bibl>B. C. Barker-Benfield, <title>Bookbindings of Canonici manuscripts : a survey of early and non-standard bindings, mostly Italian, in the Canonici collection of the Bodleian Library, University of Oxford</title> (Oxford, privately printed, 2020).</bibl>
+                           Description adapted (July 2025) by Stewart J. Brookes from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1970). 
+                           Binding: B. C. Barker-Benfield, <title>Bookbindings of Canonici Manuscripts: A Survey of Early and Non-standard Bindings, Mostly Italian, in the Canonici 
+                              Collection of the Bodleian Library, University of Oxford</title> (Oxford, privately printed, 2020). Extent, leaf dimensions and layout from Watson (1984)
                            <listBibl>
+                              
                               <bibl facs="aaz0383.gif" type="SC">Summary Catalogue, vol. 4, p. 364</bibl>
                            </listBibl>
                         </source>
@@ -128,6 +189,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-07-10">Description revised to incorporate all the information in the Summary Catalogue (1897)</change>
          <change when="2024-05">Add extent, leaf dimensions and layout from Watson, Dated and Datable.</change>
          <change when="2020-08-20">Binding description added.</change>
          <change when="2017-07-01">First online publication.</change>

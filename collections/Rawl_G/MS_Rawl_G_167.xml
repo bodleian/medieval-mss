@@ -1,12 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8538">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8538">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Rawl. G. 167</title>
             <title type="collection">MSS. Rawl. G. (Rawlinson G)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="SC">
+               <resp when="1895">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2024">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -18,7 +26,7 @@
                <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>
             </publisher>
             <idno type="msID">MS_Rawl_G_167</idno>
-            <idno type="collection">Rawl G</idno>
+            <idno type="collection">Rawl_G</idno>
             <idno type="catalogue">Western</idno>
          </publicationStmt>
          <sourceDesc>
@@ -35,22 +43,27 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem class="#biblia" n="1" xml:id="MS_Rawl_G_167-item1">
-                     <title key="work_12111" type="desc">Gospels of St. Luke and St. John</title>
-                     <note>(mutilated)</note>
-                     <bibl type="bible">
-                        <title>Bible, Luke</title>
-                     </bibl>
-                     <bibl type="bible">
-                        <title>Bible, John</title>
-                     </bibl>
-                     <textLang mainLang="la">Latin</textLang>
+                  <textLang mainLang="la">Latin</textLang>
+                  <msItem n="1" xml:id="MS_Rawl_G_167-item-1">
+                     <locus from="1" to="62" type="inferredEnd">(fol. 1)</locus>
+                     <title type="desc" key="work_16455">Gospel of St. Luke</title>
+                     <note>With corrections: wanting all after xxiv. 47 (remissionem peccatorum in omnes).</note>
+                  </msItem>
+                  <msItem n="2" xml:id="MS_Rawl_G_167-item-2">
+                     <locus from="63" to="109" type="inferredEnd">(fol. 63)</locus>
+                     <title type="desc" key="work_12074">Gospel of St. John</title>
+                     <note>With corrections: wanting i. 1-v. 1, and all after xxi. 16.</note>
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent><seg type="leaf"><measure type="laterEndleaf" quantity="5">v</measure> + <measure type="leaf" quantity="109">109</measure></seg> leaves
+                        <dimensions type="binding" unit="in">
+                           <height>13.375</height>
+                           <width>10.125</width>
+                        </dimensions></extent>
                      </supportDesc>
                   </objectDesc>
                   <handDesc>
@@ -69,8 +82,9 @@
                      <origPlace cert="low">
                         <country key="place_1000078">Irish</country> (?)</origPlace>
                   </origin>
+                  <provenance> The name 'Combe' occurs at fol. 106v attached to some notes (16th cent.?).</provenance>
                   <provenance notAfter="1755" notBefore="1690" resp="#MMM">
-                     <persName key="person_47563478" role="fmo">Richard Rawlinson, 1690–1755</persName>
+                     <persName key="person_47563478" role="fmo">Richard Rawlinson, 1690–1755</persName><!-- source of acquisition not recorded by Enright -->
                   </provenance>
                   <acquisition resp="#MMM" when="1755">Bequeathed to the Bodleian in 1755</acquisition>
                </history>
@@ -78,7 +92,7 @@
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1895). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
+                           Description adapted from the Summary Catalogue (1895). Decoration, localization and date follow Pächt and Alexander (1973). <listBibl>
                               <bibl facs="aas0387.gif" type="SC">Summary Catalogue, Vol. 3, p. 372</bibl>
                            </listBibl>
                         </source>
@@ -114,6 +128,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-12">Description revised to incorporate all information from Summary Catalogue.</change>
          <change when="2019-10-31" xml:id="MMM">
             <persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>

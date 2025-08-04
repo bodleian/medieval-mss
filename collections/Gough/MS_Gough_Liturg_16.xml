@@ -1,13 +1,33 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4924">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xml:id="manuscript_4924" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Gough Liturg. 16</title>
             <title type="collection">MSS. Gough</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. van Dijk</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp>Encoding</resp>
                <persName>Matthew Holford</persName>
+            </respStmt>
+            <respStmt xml:id="EC">
+               <resp when="2025">Cataloguer</resp>
+               <persName>Emma Cameron</persName>
+            </respStmt>
+            <respStmt xml:id="BHJ">
+               <resp when="2025">Cataloguer</resp>
+               <persName>Blodwyn Hall-Jones</persName>
+            </respStmt>
+            <respStmt xml:id="SDM">
+               <resp when="2025">Encoding</resp>
+               <persName>Sebastian Dows-Miller</persName>
             </respStmt>
          </titleStmt>
          <publicationStmt>
@@ -30,30 +50,66 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Gough Liturg. 16</idno>
-                  <idno type="ieArk">ark:29072/x0s7526b85br</idno><idno type="crArk">ark:29072/x0n583xt92hw</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0s7526b85br</idno>
+                  <idno type="crArk">ark:29072/x0n583xt92hw</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">18334</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
                   <msItem n="1" xml:id="MS_Gough_Liturg_16-item1">
                      <title key="work_13567">Office for the Dead, Use of Sarum (noted)</title>
+                     <note>Deportatio ad ecclesiam (fol. 3); office of the dead (fol. 7) and commendation (fol. 61v); absolutions and funeral (fol. 77); rubrics and musical notation throughout. Additions: formulas for citation (fol. lv) and suspension (fol. 2); collects for the Deposition and Translation of St. Erkenwald (fol. 2), written by magister (John ?) Ledall, curate of the church of Byrcheanger (Essex, St. Mary’s ? 1518-46)</note>
                      <textLang mainLang="la">Latin</textLang>
+                  </msItem>
+                  <msItem>
+                     <locus>(fol. 92v)</locus>
+                     <title type="desc">Added medical recipe in Middle English</title>
+                     <rubric>For burnyng heete in the <subst><del>stomak</del><add>body</add></subst></rubric>
+                     <textLang mainLang="enm">Middle English</textLang>
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent resp="#EC #BHJ #SDM">
+                           <seg type="leaf">
+                              <measure quantity="2" type="endleaf">2</measure> + <measure quantity="89" type="leaf">89</measure> + <measure quantity="1" type="endleaf">1</measure> leaves. </seg>
+                           <dimensions type="binding" unit="mm">
+                              <height>147</height>
+                              <width>100</width>
+                              <depth>40</depth>
+                           </dimensions>
+                           <dimensions type="leaf" unit="mm">
+                              <height>135</height>
+                              <width>95</width>
+                           </dimensions>
+                        </extent>
+                        <foliation>Later pencil foliation on top right of recto side (including endleaves).</foliation>
+                        <collation mainStructures="8" resp="#MLH #EC #BHJ #SDM">1(8-2) (fols. 1-6; first leaf is pasted down, third leaf cancelled?); 2(8)–11(8) (fols. 7-86); 12(8-2) (fols. 87-91 including 89a, 89b; leaves 7 and 8 cancelled); 12(4-2) (fols. 92 and pastedown; leaves 1 and 2 cancelled, leaf 4 is pasted down)</collation>
                      </supportDesc>
+                     <layoutDesc resp="#EC #BHJ #SDM">
+                        <layout columns="1" rulingMedium="ink" topLine="below" writtenLines="18">18 long lines; ruled in ink;
+                           <dimensions type="written" unit="mm">
+                              <height>76</height>
+                              <width>49</width>
+                           </dimensions>
+                        </layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <handDesc hands="1" resp="#EC #BHJ #SDM">
+                     <handNote script="textualisNorthern">One scribe writing in Northern Textualis, in a dark brown ink.</handNote>
+                  </handDesc>
                   <musicNotation>
                      <p>Square notation on long staves of 4 red lines (see van Dijk 1957).</p>
                   </musicNotation>
-                  <decoDesc>
-                     <decoNote type="colInit">
-                        <p>Coloured initials.</p>
-                     </decoNote>
+                  <decoDesc resp="#EC #BHJ #SDM">
+                     <decoNote type="flourInit">Blue initials flourished in red ink, <height max="4" min="2" unit="line">2-4 lines</height> high.<!--Flourished initials in red and blue ink of <height quantity="2" unit="line">two lines in height</height> found on fols. <locus from="7r" to="7r">7r</locus>, <locus from="8v" to="8v">8v</locus>, <locus from="9r" to="9r">9r</locus>, <locus from="10r" to="10r">10r</locus>, <locus from="11v" to="11v">11v</locus>, <locus from="12v" to="12v">12v</locus>, <locus from="15r" to="15r">15r</locus>, <locus from="15v" to="15v">15v</locus>, <locus from="16r" to="16r">16r</locus>, <locus from="17r" to="17r">17r</locus>, <locus from="17v" to="17v">17v</locus>, <locus from="18v" to="18v">18v</locus>, <locus from="21v" to="21v">21v</locus>, <locus from="23r" to="23r">23r</locus>, <locus from="24v" to="24v">24v</locus>, <locus from="26r" to="26r">26r</locus>, <locus from="26v" to="26v">26v</locus>, <locus from="28v" to="28v">28v</locus>, <locus from="30v" to="30v">30v</locus>, <locus from="31v" to="31v">31v</locus>, <locus from="33r" to="33r">33r</locus>, <locus from="34v" to="34v">34v</locus>, <locus from="36v" to="36v">36v</locus>, <locus from="38r" to="38r">38r</locus>, <locus from="39v" to="39v">39v</locus>, <locus from="41r" to="41r">41r</locus>, <locus from="42v" to="42v">42v</locus>, <locus from="47v" to="47v">47v</locus>, <locus from="49r" to="49r">49r</locus>, <locus from="50v" to="50v">50v</locus>, <locus from="51v" to="51v">51v</locus>, <locus from="53v" to="53v">53v</locus>, <locus from="54v" to="54v">54v</locus>, <locus from="55v" to="55v">55v</locus>, <locus from="56r" to="56r">56r</locus>, <locus from="57v" to="57v">57v</locus>, <locus from="58v" to="58v">58v</locus>, <locus from="59v" to="59v">59v</locus>, <locus from="60r" to="60r">60r</locus>, <locus from="60v" to="60v">60v</locus>, <locus from="61r" to="61r">61r</locus>, <locus from="61v" to="61v">61v</locus>, <locus from="62v" to="62v">62v</locus>, <locus from="64r" to="64r">64r</locus>, <locus from="65r" to="65r">65r</locus>, <locus from="66r" to="66r">66r</locus>, <locus from="67r" to="67r">67r</locus>, <locus from="70v" to="70v">70v</locus>, <locus from="71v" to="71v">71v</locus>, <locus from="72v" to="72v">72v</locus>, <locus from="74v" to="74v">74v</locus>, <locus from="76v" to="76v">76v</locus>, <locus from="77r" to="77r">77r</locus>, <locus from="77v" to="77v">77v</locus>, <locus from="78v" to="78v">78v</locus>, <locus from="79v" to="79v">79v</locus>, <locus from="80v" to="80v">80v</locus>, <locus from="81r" to="81r">81r</locus>, <locus from="81v" to="81v">81v</locus>, <locus from="82v" to="82v">82v</locus>, <locus from="83r" to="83r">83r</locus>, <locus from="83v" to="83v">83v</locus>, <locus from="84r" to="84r">84r</locus>, <locus from="85r" to="85r">85r</locus>, <locus from="86r" to="86r">86r</locus>, <locus from="86v" to="86v">86v</locus>, <locus from="87v" to="87v">87v</locus>, <locus from="88r" to="88r">88r</locus>, <locus from="89r" to="89r">89r</locus>, and <locus from="90v" to="90v">90v</locus>.--></decoNote>
+                     <decoNote type="colInit">Coloured initials in alternating red and blue ink of <height quantity="1" unit="line">one line in height</height> <!--found on fols. <locus from="7r" to="7r">7r</locus>, <locus from="7v" to="7v">7v</locus>, <locus from="8r" to="8r">8r</locus>, <locus from="8v" to="8v">8v</locus>, <locus from="9v" to="9v">9v</locus>, <locus from="10r" to="10r">10r</locus>, <locus from="10v" to="10v">10v</locus>, <locus from="11v" to="11v">11v</locus>, <locus from="14r" to="14r">14r</locus>, <locus from="18r" to="18r">18r</locus>, <locus from="18v" to="18v">18v</locus>, <locus from="26r" to="26r">26r</locus>, <locus from="26v" to="26v">26v</locus>, <locus from="27r" to="27r">27r</locus>, <locus from="27v" to="27v">27v</locus>, <locus from="28r" to="28r">28r</locus>, <locus from="29v" to="29v">29v</locus>, <locus from="30r" to="30r">30r</locus>, <locus from="35r" to="35r">35r</locus>, <locus from="35v" to="35v">35v</locus>, <locus from="36r" to="36r">36r</locus>, <locus from="37r" to="37r">37r</locus>, <locus from="37v" to="37v">37v</locus>, <locus from="38v" to="38v">38v</locus>, <locus from="39r" to="39r">39r</locus>, <locus from="47v" to="47v">47v</locus>, <locus from="48r" to="48r">48r</locus>, <locus from="49v" to="49v">49v</locus>, <locus from="50r" to="50r">50r</locus>, <locus from="52v" to="52v">52v</locus>, <locus from="53r" to="53r">53r</locus>, <locus from="55v" to="55v">55v</locus>, <locus from="56v" to="56v">56v</locus>, <locus from="58r" to="58r">58r</locus>, <locus from="62r" to="62r">62r</locus>, <locus from="64r" to="64r">64r</locus>, <locus from="64v" to="64v">64v</locus>, <locus from="65v" to="65v">65v</locus>, <locus from="66r" to="66r">66r</locus>, <locus from="67r" to="67r">67r</locus>, <locus from="67v" to="67v">67v</locus>, <locus from="67v" to="67v">67v</locus>, <locus from="68r" to="68r">68r</locus>, <locus from="72r" to="72r">72r</locus>, <locus from="73r" to="73r">73r</locus>, <locus from="73v" to="73v">73v</locus>, <locus from="74v" to="74v">74v</locus>, <locus from="75v" to="75v">75v</locus>, and <locus from="76r" to="76r">76r</locus>.--></decoNote>
+                     <decoNote type="initial">Initials in the same ink as the text of <height quantity="2" unit="line">two lines in height</height> found on fol. <locus from="3r" to="3r">3r</locus>, <locus from="4v" to="4v">4v</locus>.</decoNote>
                   </decoDesc>
+                  <additions>Six lines of text added to fol. <locus from="6v" to="6v">6v</locus> by a later hand in a more cursive script. In the same light-brown ink, a decorative flourish is added to a coloured initial at the top of the same page.</additions>
                   <bindingDesc>
                      <binding contemporary="true">
                         <p>White leather on boards, contemporary.</p>
@@ -67,22 +123,32 @@
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
-                  <provenance notAfter="1795" notBefore="1718"><persName role="fmo" key="person_41944166">William Herbert, 1718-1795</persName>; probably lot 902 in his sale, 21 Nov. 1798.</provenance>
-                  
+                  <provenance>Document (fol. 2r) referring to 'magister Ledell', rector of Birchanger, probably <persName role="fmo" key="person_5109">John Ledell B.C.L. (fl. c. 1508-1545)</persName>: Emden, <title>BRUO 1501-1540</title>, 347.</provenance>
+                  <provenance notAfter="1795" notBefore="1718"><persName key="person_41944166" role="fmo">William Herbert, 1718-1795</persName>; probably lot 902 in his sale, 21 Nov. 1798.</provenance>
+                  <provenance><persName role="fmo" key="person_41970552">Richard Gough, 1735-1809</persName></provenance>
+                  <acquisition when="1809">Bequeathed by him to the Bodleian.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
+                        <source>Description adapted (2025) from the following sources: 
+                           <listBibl>
+                              <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 3: Rituals and Directories</title> (typescript, 1957), <citedRange from="64" to="64" unit="page">p. 64</citedRange>
+                              </bibl>
+                              <bibl>Summary Catalogue (1897)</bibl>
+                           </listBibl>
+                           
+                           <listBibl>
                               <bibl facs="aaz0309.gif" type="SC">Summary Catalogue, vol. 4, p. 290</bibl>
                            </listBibl>
                         </source>
+                        <change when="2025-06-12">Additional data collected by Emma Cameron and Blodwyn Hall-Jones as part of the 'Big Data' and Medieval Manuscripts workshop held at the Bodleian Libraries, Oxford on 12th June 2025. Data encoded in TEI-XML by Sebastian Dows-Miller on 3rd July 2025.</change>
                      </recordHist>
                   </adminInfo>
                   <listBibl type="WRAPPER">
                      <listBibl type="PRINT">
                         <head>Printed descriptions:</head>
-                        <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 3: Rituals and Directories</title> (typescript, 1957), <citedRange unit="page" from="64" to="64">p. 64</citedRange>
+                        <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 3: Rituals and Directories</title> (typescript, 1957), <citedRange from="64" to="64" unit="page">p. 64</citedRange>
                         </bibl>
                      </listBibl>
                   </listBibl>
@@ -91,6 +157,8 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-07">Matthew Holford: encode additional information from printed catalogues.</change>
+         <change when="2025-06-12">Additional data collected by <persName>Emma Cameron</persName> and <persName>Blodwyn Hall-Jones</persName> as part of the <name type="event">'Big Data' and Medieval Manuscripts</name> workshop held at the <placeName>Bodleian Libraries, Oxford</placeName> on <date when="2025-06-12">12th June 2025</date>. Data encoded in TEI-XML by <persName>Sebastian Dows-Miller</persName> on <date when="2025-07-03">3rd July 2025</date>.</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">

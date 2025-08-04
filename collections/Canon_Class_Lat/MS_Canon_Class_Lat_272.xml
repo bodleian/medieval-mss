@@ -1,12 +1,15 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2299">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2299">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Canon. Class. Lat. 272</title>
             <title type="collection">MSS. Canon. Class. Lat. (Canonici Latin Classical)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+          <respStmt xml:id="SC">
+             <resp when="1854">Cataloguer</resp>
+             <persName>H. O. Coxe</persName>
+          </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2025">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -18,7 +21,7 @@
                <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>
             </publisher>
             <idno type="msID">MS_Canon_Class_Lat_272</idno>
-            <idno type="collection">Canon Class Lat</idno>
+            <idno type="collection">Canon_Class_Lat</idno>
             <idno type="catalogue">Western</idno>
          </publicationStmt>
          <sourceDesc>
@@ -35,32 +38,128 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem n="1" xml:id="MS_Canon_Class_Lat_272-item1">
-                     <author key="person_287984736">Hippocrates</author>
-                     <title key="work_2072">works</title>
-                     <textLang mainLang="la">Latin</textLang>
-                  </msItem>
-                  <msItem n="2" xml:id="MS_Canon_Class_Lat_272-item2">
+                  <textLang mainLang="la">Latin</textLang>
+                  <msItem n="1">
+                     <locus from="1r" to="53r">(fols. 1ra-53ra)</locus>
                      <author key="person_44299175">Galen</author>
-                     <title key="work_1621">Tegni</title>
-                     <textLang mainLang="la">Latin</textLang>
+                     <title key="work_5594">Commentary on Hippocrates' Aphorismata</title><note> (tr. <persName key="person_27865254" role="trl">Burgundio da Pisa</persName> and <persName key="person_76671849" role="trl">Niccolò da Reggio</persName>) </note>
+                     <incipit><quote>Vita brevis, ars vero longa, tempus acutum, experimentum vero falax, etc.</quote>: Quoniam quidem hic sermo sive unius affectus sive duo</incipit>
+                     <explicit>causam hanc aut non omnino aut vix deglutiunt</explicit>
+                     <finalRubric>Explicit commentum afforismorum secundum translacionem novam de Greco in Latinum; Trinitati gratias infinitas, Amen. Amen. Amen.</finalRubric>
+                     <listBibl><bibl>Listed Kibre, 'Hippocrates Latinus II', <title>Traditio</title> 32 (1976), 257-292, p. 290</bibl></listBibl>
                   </msItem>
-                  <msItem class="#medica" n="3" xml:id="MS_Canon_Class_Lat_272-item3">
-                     <title key="work_13232" type="desc">Medical treatises</title>
-                     <textLang mainLang="la">Latin</textLang>
+                  <msItem>
+                     <note>Followed by ten verses:</note>
+                     <incipit>Quae naturalis purgacio sive dieta</incipit>
                   </msItem>
+                  
+                  
+                  <msItem n="2">
+                     <locus from="53r" to="55r">(fols. 53rb-55ra)</locus>
+                     <msItem><author key="person_44695606">Mesue ('Johannes Damascenus')</author>
+                     <title key="work_2501">Liber aphorismorum</title>
+                     <incipit>Liberet te Deus, fili amantissime, a devio erroris</incipit></msItem>
+                     <msItem>
+                        <author key="person_3075">Ps.-Isidore</author>
+                        <title key="work_7164">Commentary on Liber aphorismorum</title>
+                        <incipit type="commentary">Johannes Damascenus tradens quosdam canones medicine</incipit></msItem>
+                  </msItem>
+                  <msItem n="3">
+                     <locus from="55r" to="55v">(fols. 55ra-55vb)</locus>
+                     <title type="desc" key="work_13232">Medicine: purgatives</title>
+                     <rubric>De purgantibus ... secundum Dioscoridem ...</rubric>
+                     <incipit><unclear>Elleborus</unclear> albus purgat fla... cerebri.</incipit>
+                     <listBibl>
+                        <bibl>eTK 0497K</bibl>
+                        <bibl>H. Diels, <title>Die Handschriften der antiken Ärzte, II. Teil: Die übrigen griechischen Ärzte außer Hippokrates und Galenos</title> (1906), 35</bibl>
+                     </listBibl>
+                  </msItem>
+                  <msItem n="4">
+                     <locus from="55" to="56v">(fol. 55v-56va)</locus>
+                     <title type="desc" key="work_13232">Medicine: weights and measures</title>
+                     <incipit>Pondera vel mensure, que in arte medica recipiuntur</incipit><finalRubric>Expliciunt pondera et mensure secundum Alse gratias Deo.</finalRubric>
+                     <listBibl><bibl>eTK 1059G, cf. eTK 1058J</bibl></listBibl>
+                     <note>Rest of fol. 56v blank.</note>
+                  </msItem>
+                  <msItem n="5">
+                     <locus from="57r" to="80r">(fols. 57ra-80rb)</locus>
+                     <author key="person_44299175">Galen</author>
+                     <title key="work_7156">Commentary on Hippocrates' Prognostica</title>
+                     <note>(tr. Gerard of Cremona?)</note>
+                     <incipit>Videtur mihi, quod de melioribus rebus est, ut medicus</incipit><incipit type="commentary">Manifestum est, quod non utitur Y. hac dictione</incipit>
+                     <explicit>et in quibusdam eorum in die lxº</explicit><finalRubric>Expliciunt commenta pronosticorum Ypocratis; Trinitati gratias</finalRubric>
+                     <listBibl><bibl>Listed Kibre, 'Hippocrates Latinus VII', <title>Traditio</title> 37 (1981), 267-289, p. 278</bibl></listBibl>
+                     <note>Fol. 80v blank.</note>
+                     </msItem>
+                  <msItem n="6">
+                     <locus from="81r" to="90v">(fol. 81ra-90vb)</locus>
+                     <author key="person_44299175">Galen</author>
+                     <title key="work_1621">Tegni</title><note>(anon. tr.)</note>
+                     <finalRubric>Explicit Tengni Galieni, Trinitati gratias</finalRubric>
+                     <note>Ends at lib. iii. cap. ccxiiii in edit. Venet.</note>
+                  </msItem>
+                  <msItem n="7">
+                     <locus from="91r" to="93r">(fol. 91ra-93ra)</locus>
+                     <author key="person_287984736">Hippocrates</author>
+                     <title key="work_2069">Prognosticorum libri tres</title>
+                     <listBibl><bibl>Listed Kibre, 'Hippocrates Latinus VII', <title>Traditio</title> 37 (1981), 267-289, p. 278</bibl></listBibl>
+                  </msItem>
+                  <msItem n="8">
+                     <locus from="93r" to="96r">(fol. 93rb-96rb)</locus>
+                     <author key="person_287984736">Hippocrates</author>
+                     <title key="work_2070">Regiminis acutorum malorum libri tres priores</title><finalRubric>Explicit liber Regiminis Acutorum Ypocratis</finalRubric>
+                     <listBibl><bibl>Listed Kibre, 'Hippocrates Latinus', <title>Traditio</title> 31 (1975), 99-126, p. 115</bibl></listBibl>
+                     <note>Fol. 96v blank.</note>
+                  </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent><seg type="leaf"><measure type="leaf" quantity="96">96</measure> leaves</seg>
+                           <dimensions unit="mm" type="leaf">
+                              <height>295</height>
+                              <width>200</width>
+                           </dimensions></extent>
+                        <collation mainStructures="8">1(8)-7(8) (fols. 1-56) | 8(8)-10(8) (fols. 57-80) | 11(8)-12(8) (fols. 81-96)</collation>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout>Frame-ruled partly in ink and partly in crayon.</layout>
+                        <layout columns="2" writtenLines="44 57">Fols. 1r-56v: 2 cols., c. 44-53 lines (c. 57 lines for art. 2); written space <dimensions unit="mm" type="written">
+                              <height max="225" min="200">200-225</height>
+                              <width min="135" max="145">135-145</width>
+                        </dimensions></layout>
+                        <layout columns="2" writtenLines="53">Fols. 57r-80r: 2 cols., c. 53 lines, written space <dimensions unit="mm" type="written">
+                              <height max="210" min="200">200-210</height>
+                              <width min="130" max="135">130-135</width>
+                        </dimensions></layout>
+                        <layout columns="2" writtenLines="43 35">Fols. 81r-96r: 2 cols., c. 43-45 lines, written space <dimensions unit="mm" type="written">
+                              <height quantity="210">c. 210</height>
+                              <width min="120" max="135">120-135</width>
+                        </dimensions></layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <handDesc>
+                     <handNote script="textualisSouthern">Southern textualis libraria.</handNote>
+                  </handDesc>
+                  <decoDesc>
+                     <decoNote type="flourInit">Penwork: red letters flourished mauve, and blue letters flourished red; unfinished from fol. 73r onwards.</decoNote>
+                  </decoDesc>
+                  <bindingDesc>
+                     <binding notAfter="1807" notBefore="1750">
+                        <p>Quarter-binding of leather over pasteboards, dyed red; a typical Canonici style.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1400" notBefore="1390">14th century, end</origDate>
+                     <origDate calendar="Gregorian" notAfter="1410" notBefore="1390">14th century, late, or 15th century, early</origDate>
+                     <origPlace><country key="place_1000080">Italy</country></origPlace>
                   </origin>
+                  <provenance><persName role="fmo" key="person_67314831">Domenico Grimani</persName> (fol. 1r)</provenance>
+                  <provenance><persName role="fmo" key="person_39728066">Bernardo Trevisan</persName> (J. B. Mitchell, card catalogue of Canonici provenances)</provenance>
+                  <provenance><persName role="fmo" key="person_308770014">Jacopo Soranzo</persName> (J. B. Mitchell, card catalogue of Canonici provenances)</provenance>
                   <provenance notAfter="1805" notBefore="1727" resp="#MMM"><persName key="person_2384880" role="fmo">Matteo Luigi Canonici, 1727–1805</persName></provenance>
                   <provenance notAfter="1807" resp="#MMM"><persName key="person_446" role="fmo">Giuseppe Canonici , -1807</persName></provenance>
                   <acquisition resp="#MMM" when="1817">Purchased by the Bodleian in 1817</acquisition>
@@ -68,7 +167,7 @@
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (H. O. Coxe, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854). <listBibl>
+                        <source>Description adapted by Matthew Holford (June 2025) from the Quarto Catalogue (H. O. Coxe, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854), with additional reference to published literature as cited, and limited additional description. <listBibl>
                               <bibl facs="abz0118.gif" type="QUARTO"> Quarto Catalogue, vol. 3, col. 224 </bibl>
                               <bibl facs="abz0119.gif" type="QUARTO"> Quarto Catalogue, vol. 3, col. 225 </bibl>
                               <bibl facs="aaz0342.gif" type="SC">Summary Catalogue, vol. 4, p. 323</bibl>
@@ -81,6 +180,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-06">Incorporate all information from printed catalogue; limited additional description.</change>
          <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>

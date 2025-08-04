@@ -1,9 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4647">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4647">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Douce 31</title>
             <title type="collection">MSS. Douce</title>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
             <respStmt>
                <resp>Summary description</resp>
                <persName>Elizabeth Solopova</persName>
@@ -30,7 +34,9 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Douce 31</idno>
-                  <idno type="ieArk">ark:29072/x00k225c07jr</idno><idno type="crArk">ark:29072/x09s161677zj</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x00k225c07jr</idno>
+                  <idno type="crArk">ark:29072/x09s161677zj</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">21605</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -43,10 +49,25 @@
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
-                        <support>parchment</support><extent>i + <measure type="leaf" quantity="242">242</measure> leaves
-                           <dimensions type="binding" unit="in"><height>5.375</height><width>4</width></dimensions>
+                        <support>parchment</support>
+                        <extent><seg type="leaf"><measure type="laterEndleaf" quantity="1">i</measure> + <measure type="leaf" quantity="242">242</measure></seg> leaves
+                           <dimensions type="binding" unit="in">
+                              <height>5.375</height>
+                              <width>4</width>
+                           </dimensions>
+                           <dimensions type="leaf" unit="mm">
+                              <height>125</height>
+                              <width>92</width>
+                           </dimensions>
+                           <dimensions type="written" unit="mm">
+                              <height>65</height>
+                              <width>43</width>
+                           </dimensions>
                         </extent>
                      </supportDesc>
+                     <layoutDesc resp="#VD">
+                        <layout columns="1" writtenLines="14">14 long lines</layout>
+                     </layoutDesc>
                   </objectDesc>
                   <decoDesc>
                      <decoNote type="miniature">Fine and good miniatures.</decoNote>
@@ -101,6 +122,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-09">Add extent, leaf dimensions and layout from van Dijk, Latin Liturgical Manuscripts in the Bodleian Library, Oxford.</change>
          <change when="2024-05">Add extent and leaf dimensions from Summary Catalogue.</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2018-10-14" xml:id="MMM">

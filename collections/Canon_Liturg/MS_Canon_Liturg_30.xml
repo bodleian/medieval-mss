@@ -4,11 +4,23 @@
          <titleStmt>
             <title>MS. Canon. Liturg. 30</title>
             <title type="collection">MSS. Canon. Liturg. (Canonici Liturgical)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2025">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -18,7 +30,7 @@
                <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>
             </publisher>
             <idno type="msID">MS_Canon_Liturg_30</idno>
-            <idno type="collection">Canon Liturg</idno>
+            <idno type="collection">Canon_Liturg</idno>
             <idno type="catalogue">Western</idno>
          </publicationStmt>
          <sourceDesc>
@@ -35,28 +47,47 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem class="#liturgica" n="1" xml:id="MS_Canon_Liturg_30-item1">
                      <title key="work_10565" type="desc">Book of Hours, Use of Rome</title>
-                     <note>(fragment)</note>
+                     <rubric>Incipit officium mortuorum: ad uesperas anti<supplied>phon</supplied>a</rubric> 
+                     <incipit>Placebo domi<supplied>n</supplied>o: Dilexi quoniam exaudiet dominus uocem or<supplied>ati</supplied>onis mee</incipit>
+                     <note>(Fragment)</note>
                      <textLang mainLang="la">Latin</textLang>
+                     
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+
+               <extent source="SC">i + <measure type="leaf" quantity="53">43</measure> leaves
+                  <dimensions type="binding" unit="in">
+                     <height>4.5</height>
+                     <width>3.125</width>
+                  </dimensions>
+               </extent>
+                        
                      </supportDesc>
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote>Decoration<p>Fine border, historiated initial. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 570, pl. LIII)</p>
+                  
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 570, Pl. LIII
+                     </summary>
+                     
+                     <decoNote type="border"><ref target="https://digital.bodleian.ox.ac.uk/objects/45e27ce3-cd58-43be-9fcb-696aba16e7a2/">Fine border</ref>. 
+                        Fol. 1r: the border frames the text on all sides and is decorated with flower and vase motifs, in gold on a black background
                      </decoNote>
+                     <decoNote type="histInit">Historiated initial <hi rend="bold">D</hi> with a skull</decoNote>
                   </decoDesc>
+                  
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1500" notBefore="1490">15th century, end</origDate>
                      <origPlace>
-                        <country key="place_1000080">Italian</country>, <settlement key="place_7018159">Venice</settlement>
+                        <country key="place_1000080">Italy</country>, <settlement key="place_7018159">Venice</settlement>
                         <!--ORIGINAL: Italian, Venice-->
                      </origPlace>
                   </origin>
@@ -65,7 +96,7 @@
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1970). <listBibl>
+                           Description adapted (June 2025) by Stewart J. Brookes from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1970)<listBibl>
                               <bibl facs="aaz0355.gif" type="SC">Summary Catalogue, vol. 4, p. 336</bibl>
                            </listBibl>
                         </source>
@@ -79,6 +110,17 @@
                         <note>(1 image from 35mm slides)</note>
                      </bibl>
                   </surrogates>
+                  
+                  <listBibl type="WRAPPER">
+                     <listBibl type="INTERNET">
+                        <head>Online resources:</head>
+                        <bibl>
+                           <ref target="https://iiif.biblissima.fr/collections/manifest/b2c35bfd6ba78805adb5389462399f03bc199c01">
+                              <title>Biblissima</title>
+                           </ref>
+                        </bibl>
+                     </listBibl>
+                     
                   <listBibl type="WRAPPER">
                      <listBibl type="PRINT">
                         <head>Printed descriptions:</head>
@@ -86,11 +128,15 @@
                         </bibl>
                      </listBibl>
                   </listBibl>
+                     
+                  </listBibl>
+                  
                </additional>
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-06-27">Description revised to incorporate all the information in the Summary Catalogue (1897)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>

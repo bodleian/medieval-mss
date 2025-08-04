@@ -1,9 +1,16 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_3529">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_3529">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Canon. Misc. 490</title>
             <title type="collection">MSS. Canon. Misc. (Canonici Miscellaneous)</title>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
             <respStmt>
                <resp>Summary description</resp>
                <persName>Elizabeth Solopova</persName>
@@ -22,7 +29,7 @@
                <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>
             </publisher>
             <idno type="msID">MS_Canon_Misc_490</idno>
-            <idno type="collection">Canon Misc</idno>
+            <idno type="collection">Canon_Misc</idno>
             <idno type="catalogue">Western</idno>
          </publicationStmt>
          <sourceDesc>
@@ -34,7 +41,9 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Canon. Misc. 490</idno>
-                  <idno type="ieArk">ark:29072/x0zk51vf83xm</idno><idno type="crArk">ark:29072/x0q811kj41ts</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0zk51vf83xm</idno>
+                  <idno type="crArk">ark:29072/x0q811kj41ts</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">19966</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -48,10 +57,25 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent resp="#VD"> 
+                           <dimensions type="leaf" unit="mm">
+                              <height>472</height>
+                              <width>315</width>
+                           </dimensions>
+                           <dimensions type="written" unit="mm">
+                              <height>347</height>
+                              <width>218</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc resp="#VD">
+                        <layout columns="2" writtenLines="30">2 col. of 30 lines</layout>
+                     </layoutDesc>
                   </objectDesc>
                   <decoDesc>
-                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 90:</summary><decoNote type="decInit">Good initials on fols. 1–153, 161–211. Good initials added 15th century, first half, fols. 227-end.</decoNote>
+                     <summary>
+                        <ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 90:</summary>
+                     <decoNote type="decInit">Good initials on fols. 1–153, 161–211. Good initials added 15th century, first half, fols. 227-end.</decoNote>
                   </decoDesc>
                   <bindingDesc resp="#BCBB">
                      <binding notAfter="1700" notBefore="1500">
@@ -104,6 +128,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-07">Add extent, leaf dimensions and layout from van Dijk, Latin Liturgical Manuscripts in the Bodleian Library, Oxford.</change>
          <change when="2020-09-14">Binding description added.</change>
          <change when="2018-10-14" xml:id="MMM">
             <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>

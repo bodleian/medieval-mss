@@ -4,11 +4,23 @@
          <titleStmt>
             <title>MS. Add. A. 174</title>
             <title type="collection">MSS. Add. (Additional) A</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1905">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2025">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -18,7 +30,7 @@
                <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>
             </publisher>
             <idno type="msID">MS_Add_A_174</idno>
-            <idno type="collection">Add A</idno>
+            <idno type="collection">Add_A</idno>
             <idno type="catalogue">Western</idno>
          </publicationStmt>
          <sourceDesc>
@@ -35,34 +47,71 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem class="#documenta" n="1" xml:id="MS_Add_A_174-item1">
                      <title key="work_11308" type="desc">Commissio of the <orgName key="org_167950502">Procurators of St. Mark</orgName></title>
+                     <rubric>Incipiunt capitula commissionis Dominorum procuratorum nostrorum Ecclesie sancti Marci apostoli et Euangeliste</rubric>
+                     <note>In fifty-four chapters, dated 1302-1401, and by additions of 1427-1473. All in one hand</note>
+                     <note>A leaf is lost after fol. 4, bearing the rubrics and text of the first two chapters</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+
+               <extent source="SC">i + <measure type="leaf" quantity="32">32</measure> leaves
+                  <dimensions type="binding" unit="in">
+                     <height>10.125</height>
+                     <width>7.1225</width>
+                  </dimensions>
+               </extent>
+                        
                      </supportDesc>
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote type="decInit">Good initials. Entries up to 1473. Humanistic script. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 508)</decoNote>
+                  
+                  <handDesc>
+                     <handNote script="humanistica">Humanistic script (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 508)</handNote>
+                  </handDesc>
+
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 508
+                     </summary>
+                     <decoNote type="decInit">Good initials. Entries up to 1473</decoNote>
                   </decoDesc>
+                  
+                  <bindingDesc>
+                     <binding notBefore="1470" notAfter="1499">
+                        <p>Stamped leather on boards, with brass clasp fittings (clasps lost), contemporary Venetian work</p>
+                     </binding>
+                  </bindingDesc>
+                  
                </physDesc>
+               
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notBefore="1473">after 1473</origDate>
                      <origPlace>
-                        <country key="place_1000080">Italian</country>, <settlement key="place_7018159">Venice</settlement>
+                        <country key="place_1000080">Italy</country>, <settlement key="place_7018159">Venice</settlement>
                         <!--ORIGINAL: Italian, Venice-->
                      </origPlace>
                   </origin>
+                  
+                  <acquisition when="1874">Bought from <persName>H. T. Wake</persName>, bookseller, in Sept. 1874 for £2 10<hi rend="italic">s</hi></acquisition>
+                  
+                  <!-- Add authority record. H.T. Wake, c. 1832-1914, Quaker bookseller of Fritchley, Derbyshire. Henry Thomas Wake appears in Bulmer's History, 
+                     topography and directory of Derbyshire (1895) as an antiquarian bookseller. Biographical dates are derived from online census and civil 
+                     registration records -->                  
+                  
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
+                        <source>
+                           Description adapted (June 2025) by Stewart J. Brookes from the Summary Catalogue (1905). Decoration, localization and date follow Pächt and Alexander (1970)
+                           <listBibl>
                               <bibl facs="aam0589.gif" type="SC">Summary Catalogue, Vol. 5, p. 554</bibl>
                            </listBibl>
                         </source>
@@ -73,6 +122,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-06-04">Description revised to incorporate all the information in the Summary Catalogue (1905)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>

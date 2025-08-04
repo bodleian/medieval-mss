@@ -1,14 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4760">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4760">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Douce b. 2</title>
             <title type="collection">MSS. Douce</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1966">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -35,37 +47,56 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem class="#scientifica" n="1" xml:id="MS_Douce_b_2-item1">
                      <title key="work_13095">Machines et utensils de guerre</title>
-                     <note>(drawings of military engines)</note>
+                     <rubric>Machines et Ustenciles de Guerre [perhaps a later title]</rubric>
+                     <note>A set of painted drawings of military engines and implements, including multiple guns, portable boats, etc.</note>
+                     <note>The arms and name of Portugal are on some of the drawings, and the <ref target="https://digital.bodleian.ox.ac.uk/objects/cc03bca2-6e0e-425c-a1e5-551a6e969fe8/surfaces/a8acd950-ac14-4991-bba3-01bc2dd46aec/">date 1582</ref> on some of the guns</note>
                      <textLang mainLang="frm">Middle French</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support><extent><measure type="leaf" quantity="152">152</measure> leaves
-                           <dimensions type="binding" unit="in"><height>16.875</height><width>12</width></dimensions>
+                           <dimensions type="binding" unit="in">
+                              <height>16.875</height>
+                              <width>12</width></dimensions>
                         </extent>
                      </supportDesc>
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote type="miniature">Good miniatures (coloured drawings). (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 899)</decoNote>
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 899
+                     </summary>
+                     <decoNote type="miniature"><ref target="https://digital.bodleian.ox.ac.uk/objects/cc03bca2-6e0e-425c-a1e5-551a6e969fe8/surfaces/a3397a05-3a3a-40fe-82f8-eb806e92b9c5/">Good miniatures</ref> (coloured drawings)</decoNote>
                   </decoDesc>
+                  
+                  <bindingDesc>
+                     <binding when="1596">
+                        <p>Brown leather with elaborate gold stamping dated 1596, worn (French work)</p>
+                     </binding>
+                  </bindingDesc>
+                  
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" when="1582">1582</origDate>
                      <origPlace cert="low">
-                        <country key="place_1000090">Portuguese</country> (?)</origPlace>
+                        <country key="place_1000090">Portugal</country> (?)</origPlace>
                   </origin>
+                  <provenance>'I Cab. T. I. A. 2' in a French library</provenance>
+                  <provenance>Sale of <persName role="fmo" key="person_66458681">Charles de Rohan</persName>, prince de Soubise, 1788, no. 3993</provenance>
                   <provenance notAfter="1834" notBefore="1757" resp="#MMM"><persName key="person_69848690" role="fmo">Francis Douce, 1757–1834</persName></provenance>
                   <acquisition resp="#MMM" when="1834">Bequeathed to the Bodleian in 1834</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1966). <listBibl>
+                        <source>
+                           Description adapted (May 2025) by Stewart J. Brookes from the Summary Catalogue (1922). Decoration, localization and date follow Pächt and Alexander (1966)
+                           <listBibl>
                               <bibl facs="aaz0639.gif" type="SC">Summary Catalogue, vol. 4, p. 620</bibl>
                            </listBibl>
                         </source>
@@ -73,11 +104,25 @@
                   </adminInfo>
                   <surrogates><bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/cc03bca2-6e0e-425c-a1e5-551a6e969fe8/"><title>Digital Bodleian</title></ref>
                         <note>(66 images from 35mm slides)</note></bibl></surrogates>
+                  
+                  <listBibl type="WRAPPER">
+                     <listBibl type="INTERNET">
+                        <head>Online resources:</head>
+                        <bibl>
+                           <ref target="https://iiif.biblissima.fr/collections/manifest/ee8874defa33061f48078cb67aa08d0cb85ee7f4">
+                              <title>Biblissima</title>
+                           </ref>
+                        </bibl>
+                  
+                     </listBibl>
+                  </listBibl>
+                  
                </additional>
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-05-22">Description revised to incorporate all the information in the Summary Catalogue (1897)</change>
          <change when="2024-05">Add extent and leaf dimensions from Summary Catalogue.</change>
          <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>

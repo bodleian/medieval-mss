@@ -1,13 +1,28 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8465">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8465">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Rawl. D. 82</title>
             <title type="collection">MSS. Rawl. D (Rawlinson D)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="SC">
+               <resp from="1862" to="1900">Cataloguer</resp>
+               <persName>W. D. Macray</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2025">Encoding</resp>
                <persName>Matthew Holford</persName>
+            </respStmt>
+            <respStmt xml:id="AB">
+               <resp when="2025">Cataloguer</resp>
+               <persName>Annabel Broderson</persName>
+            </respStmt>
+            <respStmt xml:id="HW">
+               <resp when="2025">Cataloguer</resp>
+               <persName>Hannah Wei</persName>
+            </respStmt>
+            <respStmt xml:id="SDM">
+               <resp when="2025">Encoding</resp>
+               <persName>Sebastian Dows-Miller</persName>
             </respStmt>
          </titleStmt>
          <publicationStmt>
@@ -18,7 +33,7 @@
                <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>
             </publisher>
             <idno type="msID">MS_Rawl_D_82</idno>
-            <idno type="collection">Rawl D</idno>
+            <idno type="collection">Rawl_D</idno>
             <idno type="catalogue">Western</idno>
          </publicationStmt>
          <sourceDesc>
@@ -30,32 +45,37 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Rawl. D. 82</idno>
-                  <idno type="ieArk">ark:29072/x0v118rd08jx</idno><idno type="crArk">ark:29072/x0tx31qh2572</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0v118rd08jx</idno><idno type="crArk">ark:29072/x0tx31qh2572</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">12900</idno>
                   </altIdentifier>
                </msIdentifier>
-               <msContents>
-                  <msItem class="#romances" n="1" xml:id="MS_Rawl_D_82-item1">
-                     <title key="work_14648">The siege of Thebes</title>
-                     <textLang mainLang="enm">Middle English</textLang>
-                  </msItem>
-                  <msItem class="#romances" n="2" xml:id="MS_Rawl_D_82-item2">
-                     <title key="work_14649">The siege of Troy</title>
-                     <textLang mainLang="enm">Middle English</textLang>
-                  </msItem>
-                  <msItem n="3" xml:id="MS_Rawl_D_82-item3">
-                     <author key="person_120695167">John Gower</author>
-                     <title key="work_2706">Confessio amantis</title>
-                     <note>(extract)</note>
-                     <textLang mainLang="enm">Middle English</textLang>
-                  </msItem>
-               </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
+                        <extent resp="#AB #HW #SDM">
+                           <seg type="leaf">
+                              <measure type="laterEndleaf" quantity="3">iii</measure> + <measure type="leaf" quantity="34">34</measure> + <measure type="laterEndleaf" quantity="3">iii</measure> leaves
+                           </seg>
+                           <dimensions type="binding" unit="mm">
+                              <height>288</height>
+                              <width>197</width>
+                              <depth>18</depth>
+                           </dimensions>
+                           <dimensions type="leaf" unit="mm">
+                              <height>280</height>
+                              <width>197</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
                   </objectDesc>
+                  <bindingDesc>
+                     <binding when="1986" calendar="Gregorian" contemporary="false">
+                        <p>Non-contemporary binding repaired in 1986, including replacement of spine, as per note on final pastedown.</p>
+                        <p>Earlier spine included on final pastedown.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
                   <origin>
@@ -64,19 +84,21 @@
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
+                  <!-- Enright: Mur. 661 (4) -->
                   <provenance notAfter="1755" notBefore="1690" resp="#MMM"><persName key="person_47563478" role="fmo">Richard Rawlinson, 1690–1755</persName></provenance>
                   <acquisition resp="#MMM" when="1755">Bequeathed to the Bodleian in 1755</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (W. D. Macray, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ...viri munificentissimi Ricardi Rawlinson, J.C.D., codicum...complectens</title>, Quarto Catalogues V, 5 fascicles, 1862–1900). <listBibl>
+                        <source>Description adapted from the Quarto Catalogue (W. D. Macray, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ...viri munificentissimi Ricardi Rawlinson, J.C.D., codicum...complectens</title>, Quarto Catalogues V, 5 fascicles, 1862–1900). <listBibl>
                               <bibl facs="aeo0029.gif" type="QUARTO"> Quarto Catalogue, vol. 1, col. 44 </bibl>
                            </listBibl>
                            <listBibl>
                               <bibl facs="aas0241.gif" type="SC"> Summary Catalogue, Vol. 3, p. 226</bibl>
                            </listBibl>
                         </source>
+                        <change when="2025-05-16">Additional data collected by Annabel Broderson and Hannah Wei as part of the 'Big Data' and Medieval Manuscripts workshop held at the Bodleian Libraries, Oxford on <date when="2025-05-29">29th May 2025</date>. Data encoded in TEI-XML by Sebastian Dows-Miller on <date when="2025-06-04">4th June 2025</date>.</change>
                      </recordHist>
                   </adminInfo>
                   <listBibl type="WRAPPER">
@@ -86,10 +108,118 @@
                      </listBibl>
                   </listBibl>
                </additional>
+               <msPart xml:id="MS_Rawl_D_82-part1">
+                  <msIdentifier>
+                     <altIdentifier type="partial">
+                        <idno type="part">MS. Rawl. D. 82 – Part 1</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  <msContents>
+                     <msItem class="#romances" n="1" xml:id="MS_Rawl_D_82-part1-item1">
+                        <locus from="1r" to="10v" type="inferredEnd">(fol. 1)</locus>
+                        <title key="work_14648">The siege of Thebes</title>
+                        <rubric>Here bigynnethe Sege of Thebes</rubric>
+                        <incipit>In the tyme of the fulle worthi Josue, as the story reherceth by þe writing of þe noble clerke Boas</incipit>
+                        <explicit>the which myscheues iournay and sege was iiije yere bifore Remus and Remulus bigane the fundacione of Rome</explicit>
+                        <finalRubric>Here endethe the Sege of Thebes</finalRubric>
+                        <textLang mainLang="enm">Middle English</textLang>
+                     </msItem>
+                     <msItem class="#romances" n="2" xml:id="MS_Rawl_D_82-part1-item2">
+                        <locus from="11r" to="24v" type="inferredEnd">(fol. 11)</locus>
+                        <title key="work_14649">The siege of Troy</title>
+                        <rubric>Here bigynnethe the Sege of Troye</rubric><incipit>As the noble and worthi clerke Guydo writethe</incipit>
+                        <explicit>And alwey the ende of euery tresone and falsenes to sorowe and myschef at the last. Amen.</explicit>
+                        <textLang mainLang="enm">Middle English</textLang>
+                     </msItem>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc>
+                        <supportDesc resp="#AB #HW #SDM">
+                           <foliation>No foliation.</foliation>
+                           <collation mainStructures="8">
+                              <p>Quires 1–3 (part 1): 8 folios in quarto. Quires 1, 2, and 3 bear '17', '18', and '19' respectively, indicating previous inclusion in a larger composite.</p>
+                           </collation>
+                        </supportDesc>
+                        <layoutDesc resp="#AB #HW #SDM">
+                           <layout columns="1" ruledLines="29" rulingMedium="crayon" topLine="above" writtenLines="29">
+                              <dimensions type="written" unit="mm">
+                                 <height>196</height>
+                                 <width>202</width>
+                              </dimensions>
+                           </layout>
+                        </layoutDesc>
+                     </objectDesc>
+                     <handDesc hands="1" resp="#AB #HW #SDM">
+                        <handNote script="hybrida">One hand (littera hybrida) for part 1.</handNote>
+                     </handDesc>
+                     <decoDesc resp="#AB #HW #SDM">
+                        <decoNote type="flourInit">Flourished initials in blue base with red flourishing of <height unit="line" quantity="3">three lines in height</height> on fols. <locus from="1r" to="1r">1r</locus> and <locus from="11r" to="11r">11r</locus>.</decoNote>
+                        <decoNote type="lineFill">Line fillers in red ink on fols. <locus from="1r" to="1r">1r</locus> and <locus from="10v" to="10v">10v</locus>.</decoNote>
+                        <decoNote type="rubrication">Rubrication on fols. <locus from="1r" to="1r">1r</locus> (incipit) and <locus from="10v" to="10v">10v</locus> (explicit).</decoNote>
+                     </decoDesc>
+                  </physDesc>
+               </msPart>
+               <msPart xml:id="MS_Rawl_D_82-part2">
+                  <msIdentifier>
+                     <altIdentifier type="partial">
+                        <idno type="part">MS. Rawl. D. 82 – Part 2</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  <msContents>
+                     <msItem n="3" xml:id="MS_Rawl_D_82-part2-item1">
+                        <locus from="25r" to="34r" type="inferredEnd">&gt;(fol. 25)</locus>
+                        <author key="person_120695167">John Gower</author>
+                        <title key="work_2706">Confessio amantis</title>
+                        <note>Extract: Part of the eighth book containing the description of the Court of Venus.  The lines in praise of Chaucer are omitted.</note>
+                        <incipit>Venus which stante without lawe
+                           In no certeyn but as men drawe</incipit>
+                        <explicit>Upone the poynte þat I am shryue
+                           I thenke byddi while I lyu</explicit>
+                        <textLang mainLang="enm">Middle English</textLang>
+                     </msItem>
+                     <msItem xml:id="MS_Rawl_D_82-part2-item1a">
+                        <locus from="34" to="34">(fol. 34)</locus>
+                        <note>Verse on the deceitfulness of friendship.</note>
+                        <incipit>Wo hath the conyng by wysdom or prudence To know whether his frende be feynt or stable</incipit>
+                        <listBibl>
+                           <bibl type="repertory"><ref target="https://www.dimev.net/record.php?recID=6548">DIMEV 6548</ref></bibl>
+                        </listBibl>
+                        <textLang mainLang="enm">Middle English</textLang>
+                     </msItem>
+                  </msContents>
+                  <physDesc>
+                     <objectDesc>
+                        <supportDesc resp="#AB #HW #SDM">
+                           <foliation>Modern foliation in ink on recto folios.</foliation>
+                           <collation mainStructures="10">
+                              <p>Quire 4 (part 2): 10 folios in quarto. 'MSS Rawl.' appears at the beginning of the quire in modern ink, perhaps suggesting that this part was once distinct.</p>
+                              <watermark>Faint cross watermark.</watermark>
+                           </collation>
+                        </supportDesc>
+                        <layoutDesc resp="#AB #HW #SDM">
+                           <layout columns="1" ruledLines="29" rulingMedium="ink" topLine="above" writtenLines="29">
+                              <dimensions type="written" unit="mm">
+                                 <height>140</height>
+                                 <width>135</width>
+                              </dimensions>
+                           </layout>
+                        </layoutDesc>
+                     </objectDesc>
+                     <handDesc hands="1" resp="#AB #HW #SDM">
+                        <handNote script="hybrida">One hand (littera hybrida) for part 2.</handNote>
+                        <handNote>Additional 16th-/17th-century hands found on <locus from="34" to="34">fol. 34</locus>.</handNote>
+                     </handDesc>
+                     <decoDesc resp="#AB #HW #SDM">
+                        <decoNote type="colInit">Coloured initials in red ink of <height unit="line" quantity="2">two lines in height</height> on fols. <locus from="25r" to="33v">25r–33v</locus>.</decoNote>
+                        <decoNote type="marginal">Various marginal notes and manicula on fol. <locus from="34r" to="34r">34r</locus>.</decoNote>
+                     </decoDesc>
+                  </physDesc>
+               </msPart>
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-05-16">Additional data collected by <persName>Annabel Broderson</persName> and <persName>Hannah Wei</persName> as part of the <name type="event">'Big Data' and Medieval Manuscripts</name> workshop held at the <placeName>Bodleian Libraries, Oxford</placeName> on <date when="2025-05-29">29th May 2025</date>. Data encoded in TEI-XML by <persName>Sebastian Dows-Miller</persName> on <date when="2025-06-04">4th June 2025</date>.</change>
          <change when="2019-10-31" xml:id="MMM"><persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
