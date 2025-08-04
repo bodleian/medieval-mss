@@ -1,9 +1,16 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2990">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2990">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Canon. Liturg. 306</title>
             <title type="collection">MSS. Canon. Liturg. (Canonici Liturgical)</title>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
             <respStmt>
                <resp>Summary description</resp>
                <persName>Elizabeth Solopova</persName>
@@ -22,7 +29,7 @@
                <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>
             </publisher>
             <idno type="msID">MS_Canon_Liturg_306</idno>
-            <idno type="collection">Canon Liturg</idno>
+            <idno type="collection">Canon_Liturg</idno>
             <idno type="catalogue">Western</idno>
          </publicationStmt>
          <sourceDesc>
@@ -34,7 +41,9 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Canon. Liturg. 306</idno>
-                  <idno type="ieArk">ark:29072/x0f4752g87dv</idno><idno type="crArk">ark:29072/x0xk81jj73mz</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0f4752g87dv</idno>
+                  <idno type="crArk">ark:29072/x0xk81jj73mz</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">19398</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -48,7 +57,21 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent resp="#VD">
+                           <seg type="leaf"> 1 + <measure type="leaf" quantity="416">416 (419)</measure> + 1  leaves</seg>
+             .<dimensions type="leaf" unit="mm">
+                              <height>212</height>
+                              <width>153</width>
+                           </dimensions>
+                           <dimensions type="written" unit="mm">
+                              <height>150</height>
+                              <width>103</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc resp="#VD">
+                        <layout columns="2" writtenLines="39">2 col. of 39 lines</layout>
+                     </layoutDesc>
                   </objectDesc>
                   <bindingDesc resp="#BCBB">
                      <binding notAfter="1500" notBefore="1400">
@@ -91,6 +114,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-07">Add extent, leaf dimensions and layout from van Dijk, Latin Liturgical Manuscripts in the Bodleian Library, Oxford.</change>
          <change when="2020-08-20">Binding description added.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">

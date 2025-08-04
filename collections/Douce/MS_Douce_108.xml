@@ -1,14 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4485">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4485">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Douce 108</title>
             <title type="collection">MSS. Douce</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -35,36 +41,66 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_Douce_108-item1">
                      <author key="person_10428840">John Mirk</author>
                      <title key="work_2743">Festial</title>
-                     <note>(incomplete)</note>
+                     <note>Containing forty-four sermons and prologue</note>
+                     <note>The signatures show breaks after fols 174, 190, 204, 282, but the book does not seem to be imperfect</note>
+                     <note>Incomplete</note>
                      <textLang mainLang="enm">Middle English</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="chart">
-                        <support>paper</support><extent>iv + <measure type="leaf" quantity="358">358</measure> pages
+                        <support>paper</support><extent>iv + <measure type="leaf" quantity="358">358</measure> pages. Contains two initial fly-leaves plus
+                           354 numbered pages, pp. 351-354 being the end fly-leaves. The pages really amount to 358, since pages 203 and 281 are triplicated 
+                           (Wakelin, 'The manuscripts of John Mirk's Festial' (1967) p. 105)
                            <dimensions type="binding" unit="in"><height>8.75</height><width>6.125</width></dimensions>
                         </extent>
+                        <condition>Fol. 1 is injured. There is a hole burned in pages 2-3 and a 15th-century hand has rewritten the singed words at the edges (Daniel Wakelin, 
+                           <title><ref target="https://www.zotero.org/groups/434020/bodleian_library_western_medieval_manuscripts_bibliography/tags/MS.%20Douce%20108/search/Designing%20English%3A%20Early%20Literature%20on%20the%20Page/titleCreatorYear/items/HBQKUUHG/item-list">Designing English</ref></title> (Bodleian, 2018), p. 131 and fn. 343</condition>
                      </supportDesc>
                   </objectDesc>
+                  
+                  <handDesc><handNote>
+                     In the same hand as <ref target="https://medieval.bodleian.ox.ac.uk/catalog/manuscript_4730">MS. Douce 60</ref>, the version of Mirk's <title>Instructions</title> 
+                     which is contained in <ref target="https://medieval.bodleian.ox.ac.uk/catalog/manuscript_4482">MS. Douce 103</ref> (Wakelin, 'The manuscripts of John Mirk's Festial', p. 105), 
+                  </handNote></handDesc>
+                  <decoDesc>
+                     <decoNote type="rubrication">There is some rubrication, and some of the titles and the initial letters of some homilies are in red, 
+                        but rubrication is used very sparingly between pages 65 and 112, 175 and 203, and after 270 (Wakelin, 'The manuscripts of John Mirk's Festial' (1967), p. 105)
+                     </decoNote>
+                  </decoDesc>
+                  <additions>Latin interpolations occur on pages 205 and 282. Francis Douce supplied an index of the contents</additions>
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
+                  <provenance>On fol. 204v is 'Mary mircy, quod J. M.' at the end of a contemporary addition</provenance>
                   <provenance notAfter="1834" notBefore="1757" resp="#MMM"><persName key="person_69848690" role="fmo">Francis Douce, 1757–1834</persName></provenance>
                   <acquisition resp="#MMM" when="1834">Bequeathed to the Bodleian in 1834</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). <listBibl>
+                        <source>
+                        Description adapted (May 2025) by Stewart J. Brookes from the following sources:
+                        <listBibl>
+                           <bibl>Catalogue of the Printed Books and Manuscripts Bequeathed by Francis Douce, esq. to the Bodleian Library (1840), 
+                              <ref target="https://archive.org/details/catalogueofprint00bodluoft/page/16/mode/1up">p. 16</ref></bibl>
+                           <bibl>
+                              Martyn F. Wakelin, 'The manuscripts of John Mirk's Festial', <title>Leeds Studies in English</title>, NS 1 (1967), pp. 93-118
+                           </bibl>
+                           <bibl>Summary Catalogue (1897)</bibl>
+                        </listBibl>
+                        <listBibl>
                               <bibl facs="aaz0543.gif" type="SC">Summary Catalogue, vol. 4, p. 524</bibl>
                            </listBibl>
                         </source>
@@ -75,6 +111,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-05-22">Description revised to incorporate all the information in the Summary Catalogue (1897) and other printed sources</change>
          <change when="2024-05">Add extent and leaf dimensions from Summary Catalogue.</change>
          <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>

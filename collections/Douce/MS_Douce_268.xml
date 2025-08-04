@@ -1,9 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4615">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4615">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Douce 268</title>
             <title type="collection">MSS. Douce</title>
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
             <respStmt>
                <resp>Summary description</resp>
                <persName>Elizabeth Solopova</persName>
@@ -30,7 +34,9 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Douce 268</idno>
-                  <idno type="ieArk">ark:29072/x0vq27zm68fg</idno><idno type="crArk">ark:29072/x06d56zx45d1</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0vq27zm68fg</idno>
+                  <idno type="crArk">ark:29072/x06d56zx45d1</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">21842</idno>
                   </altIdentifier>
                </msIdentifier>
@@ -43,13 +49,29 @@
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
-                        <support>parchment</support><extent>vi + <measure type="leaf" quantity="158">158</measure> leaves
-                           <dimensions type="binding" unit="in"><height>7.75</height><width>5.625</width></dimensions>
+                        <support>parchment</support>
+                        <extent><seg type="leaf"><measure type="laterEndleaf" quantity="6">vi</measure> + <measure type="leaf" quantity="158">158</measure></seg> leaves
+                           <dimensions type="binding" unit="in">
+                              <height>7.75</height>
+                              <width>5.625</width>
+                           </dimensions>
+                           <dimensions type="leaf" unit="mm">
+                              <height>185</height>
+                              <width>130</width>
+                           </dimensions>
+                           <dimensions type="written" unit="mm">
+                              <height>100</height>
+                              <width>65</width>
+                           </dimensions>
                         </extent>
                      </supportDesc>
+                     <layoutDesc resp="#VD">
+                        <layout columns="1" writtenLines="16">16 long lines</layout>
+                     </layoutDesc>
                   </objectDesc>
                   <decoDesc>
-                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 707:</summary>
+                     <summary>
+                        <ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 707:</summary>
                      <decoNote type="miniature">Good miniatures.</decoNote>
                      <decoNote type="border">Good borders.</decoNote>
                      <decoNote type="histInit">Good historiated initials.</decoNote>
@@ -108,6 +130,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-09">Add extent, leaf dimensions and layout from van Dijk, Latin Liturgical Manuscripts in the Bodleian Library, Oxford.</change>
          <change when="2024-05">Add extent and leaf dimensions from Summary Catalogue.</change>
          <change when="2018-10-14" xml:id="MMM">
             <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>

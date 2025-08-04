@@ -1,4 +1,4 @@
-<?xml-model href="https://raw.githubusercontent.com/msDesc/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/msDesc/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xml:id="manuscript_12112">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/msDesc/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/msDesc/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xml:id="manuscript_12112">
    <teiHeader xml:lang="en">
       <fileDesc>
          <titleStmt>
@@ -50,8 +50,8 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>both on vellum (the first FSOS/<term type="disposition">FHHF</term>, the second HSOS/<term type="disposition">HFFH</term>). </support>
-                        <extent>Fols. ix + <measure type="leaf" quantity="210">210</measure>
-                           (numbered fols. 1–208, x, xi) + xiii (numbered fols. xii–xxiv).
+                        <extent>Fols. <seg type="leaf"><measure type="laterEndleaf" quantity="9">ix</measure> + <measure type="leaf" quantity="210">210
+                           (numbered fols. 1–208, x, xi)</measure> + <measure type="laterEndleaf" quantity="13">xiii (numbered fols. xii–xxiv)</measure></seg>.
                               <dimensions type="leaf" unit="mm">
                               <height quantity="245">245</height>
                               <width quantity="165">165</width>
@@ -127,7 +127,7 @@
                         1375 A.D.’, in <title>Collectanea First Series</title>, OHS 5 (1885).</bibl>
                   </listBibl>
                </additional>
-               <msPart>
+               <msPart xml:id="St_Johns_College_MS_112-part1">
                   <msIdentifier>
                      <altIdentifier>
                         <idno type="part">Manuscript 1 = Fols. 1–114</idno>
@@ -151,8 +151,8 @@
                         <title key="work_6090">Alphabetum narrationum</title>
                         <note>(so designated in the prologue, <locus from="1ra" to="1ra">fol. 1<hi rend="superscript">ra</hi></locus>) <bibl>(Kaeppeli, no. 335
                               [1:131–2], where this MS is noted).</bibl> The text is unedited (other
-                           Oxford copies include <bibl type="MS">Balliol College MS 219</bibl>,
-                              <bibl type="MS">Merton College MS 84</bibl>, and <bibl type="MS">University College MS 67</bibl>), but cf. the Middle English
+                           Oxford copies include <bibl type="ms">Balliol College MS 219</bibl>,
+                              <bibl type="ms">Merton College MS 84</bibl>, and <bibl type="ms">University College MS 67</bibl>), but cf. the Middle English
                            translation, <bibl>ed. Mary M. Banks, <title>An Alphabet of
                               Tales</title>, EETS 126–7 (1904–5).</bibl> After explaining the
                            alphabetical order, Arnold comments, ‘Sic etiam iam dudum auctoritates
@@ -235,7 +235,7 @@
                      </origin>
                   </history>
                </msPart>
-               <msPart>
+               <msPart xml:id="St_Johns_College_MS_112-part2">
                   <msIdentifier>
                      <altIdentifier>
                         <idno type="part">Manuscript 2 = Fols. 115–208, X–XI</idno>
@@ -328,7 +328,7 @@
                      </origin>
                   </history>
                </msPart>
-               <msPart type="flyleaf">
+               <msPart type="flyleaf" xml:id="St_Johns_College_MS_112-part3">
                   <msIdentifier>
                      <altIdentifier>
                         <idno type="part">The flyleaves</idno>
@@ -337,12 +337,12 @@
                   <msContents>
                      <textLang mainLang="la">Latin</textLang>
                      <msItem n="a">
-                        <locus from="xiiira" to="xiiira">Fol. xiii<hi rend="superscript">ra</hi>:</locus>
+                        <locus from="xiii-ra" to="xiii-ra">Fol. xiii<hi rend="superscript">ra</hi>:</locus>
                         <incipit>Ulpianus de conditione furtiua In furtiua re solito mino competit
                            condictio <gap reason="editorial"/></incipit>
                         <note> This incipit is <persName key="person_88881722" role="aut">JUSTINIAN</persName>, <title key="work_2890">Digestum</title> 13.1
                               <bibl>(CJCiv 1:174a)</bibl>. Extensive glosses, in the main informal,
-                           but formal on fols. <locus from="ir" to="ir">i</locus> + <locus from="viiiv" to="viiiv">viii<hi rend="superscript">v</hi></locus> in
+                           but formal on fols. <locus from="ir" to="ir">i</locus> + <locus from="viii-v" to="viii-v">viii<hi rend="superscript">v</hi></locus> in
                               <placeName key="place_1000080">Italian</placeName>
                            <term type="script">textura rotunda.</term></note>
                      </msItem>
@@ -358,7 +358,7 @@
                                  <height quantity="320">The original leaves overall at least 320 </height>
                                  <width quantity="245">245</width>
                               </dimensions></extent>
-                           <collation><catchwords><locus from="vr" to="vr">Fol. v</locus> has a
+                           <collation><catchwords><locus from="v-r" to="v-r">Fol. v</locus> has a
                                  catchword.</catchwords></collation>
                         </supportDesc>
                         <layoutDesc>
@@ -377,7 +377,7 @@
                         <decoNote type="flourInit">Two-line blue lombards with modest red
                            flourishing at text divisions.</decoNote>
                         <decoNote type="paraph">Red paraphs.</decoNote>
-                        <decoNote type="flourInit">The book division on <locus from="xiiir" to="xiiir">fol. xiii</locus> is introduced by a plate incipit, the
+                        <decoNote type="flourInit">The book division on <locus from="xiii-r" to="xiii-r">fol. xiii</locus> is introduced by a plate incipit, the
                            full column width in 6-line high blue lombards on red
                            flourishing.</decoNote>
                      </decoDesc>

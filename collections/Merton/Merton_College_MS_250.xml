@@ -1,4 +1,4 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xml:id="manuscript_10348">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xml:id="manuscript_10348">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -50,7 +50,7 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>Parchment</support>
-                        <extent>253 leaves (iii + 250) <dimensions type="leaf" unit="mm">
+                        <extent>253 leaves (<seg type="leaf"><measure type="laterEndleaf" quantity="3">iii</measure> + <measure type="leaf" quantity="250">250</measure></seg>) <dimensions type="leaf" unit="mm">
                               <height>230</height>
                               <width>170</width>
                            </dimensions>
@@ -83,7 +83,7 @@
                      <bibl>Coxe, p. 99; Powicke, no. 374, 351.</bibl>
                   </listBibl>
                </additional>
-               <msPart>
+               <msPart xml:id="Merton_College_MS_250-part1">
                   <msIdentifier>
                      <altIdentifier>
                         <idno>Merton College MS. 250 – Part I (fols. 1–156)</idno>
@@ -92,7 +92,7 @@
                   <msContents>
                      <textLang mainLang="la">Latin</textLang>
                      <msItem n="1">
-                        <locus>(fols. 1–155)</locus>
+                        <locus from="1" to="155">(fols. 1–155)</locus>
                         <author key="person_283759967">GARIOPONTUS</author>
                         <title key="work_1626">Passionarius</title>
                         <rubric><supplied>I</supplied>ncipit liber primus passionarii.</rubric>
@@ -103,7 +103,7 @@
                         <note>The original hand ends at the foot of f. 152v, and the text is completed in an anglicana hand of <hi rend="italic">c.</hi> 1400, which also writes the text on the replacement leaf f. 144rv. This hand, apparently <persName key="person_96800842" role="scr">Simon Bredon</persName>’s, writes also the alphabetical subject-index, referring to folio-nos, on fols. 153–6 (<title>MMBL</title> 3. 682). </note>
                         <note>Copious but not continuous glossing as far as f. 143v by the scribe of the main text, often framed in red, beg. ‘Libri huius diuersi auctores fuerunt ...’.</note>
                         <msItem>
-                           <locus>(fols. 153–6)</locus>
+                           <locus from="153" to="156">(fols. 153–6)</locus>
                            <title type="desc">An alphabetical subject-index</title>
                            <note>Written apparently by <persName key="person_96800842" role="scr">Simon Bredon</persName>. (<title>MMBL</title> 3. 682). </note>
                         </msItem>
@@ -142,7 +142,7 @@
                      <provenance>On f. 156v ‘Liber domus scolarium de Merton’ in Oxonia quod Ric at strk’, s. xv. </provenance>
                   </history>
                </msPart>
-               <msPart>
+               <msPart xml:id="Merton_College_MS_250-part2">
                   <msIdentifier>
                      <altIdentifier>
                         <idno>Merton College MS. 250 – Part II (fols. 157–247v)</idno>
@@ -151,7 +151,7 @@
                   <msContents>
                      <textLang mainLang="la">Latin</textLang>
                      <msItem n="2">
-                        <locus>(fols. 157–247v)</locus>
+                        <locus from="157" to="247v">(fols. 157–247v)</locus>
                         <author key="person_90637919">SENECA</author>
                         <title key="work_7189">Quaestiones Naturales</title>
                         <incipit><supplied>Q</supplied>uantum inter philosophiam interest Lucili uirorum optime </incipit>
@@ -171,7 +171,7 @@
                            </extent>
                         </supportDesc>
                         <layoutDesc>
-                           <layout columns="1" writtenLines="25 30">Ruled with crayon in 25–30 long lines</layout>
+                           <layout rulingMedium="crayon" columns="1" writtenLines="25 30">Ruled with crayon in 25–30 long lines</layout>
                         </layoutDesc>
                      </objectDesc>
                      <handDesc>
