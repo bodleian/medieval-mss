@@ -1,5 +1,5 @@
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_3928">
-   <teiHeader xmlns:tei="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>Christ Church MS. 140</title>
@@ -18,7 +18,7 @@
                <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>
             </publisher>
             <idno type="msID">Christ_Church_MS_140</idno>
-            <idno type="collection">Christ Church</idno>
+            <idno type="collection">Christ_Church</idno>
             <idno type="catalogue">Western</idno>
          </publicationStmt>
          <sourceDesc>
@@ -48,7 +48,7 @@
                      </availability>
                   </adminInfo>
                </additional>
-               <msPart>
+               <msPart xml:id="Christ_Church_MS_140-part1">
                   <msIdentifier>
                      <altIdentifier>
                         <idno>Christ Church MS. 140, Part 1 - main MS.</idno>
@@ -60,19 +60,19 @@
                         <note>fol. iii<hi rend="superscript">r-v</hi>: blank </note>
                      </msItem>
                      <msItem n="1" xml:id="Christ_Church_MS_140-item2">
-                        <locus> fol. iv</locus>
+                        <locus from="iv">fol. iv</locus>
                         <rubric>SYLLOGISTICON hoc est ARGVMENTA SEV PRObationes &amp; Resolutiones in vtramque partem hinc inde ê Theologorum libris desumptae, atque in nudas Syllogismorum formas redactae De re et material Sacramenti Eucharistici. Cum Epistola ad Papistas hortatoria per Jo. Foxum.</rubric>
                         <!-- markup OK? check -->
                         <note>Title-page to following work, imitating the layout of the printed book. At bottom left, in secretary script, the publication details from the title-page: ‘Londin. excudebat Jo: Daius. cum gratia et privilegio regineae maiestatis’. </note>
                         <note>fol. iv<hi rend="superscript">v</hi>: blank</note>
                      </msItem>
                      <msItem n="2" xml:id="Christ_Church_MS_140-item3">
-                        <locus> fol. 1–66</locus>
+                        <locus from="1" to="66">fol. 1–66</locus>
                         <incipit type="preface">
                            <note>[address centred and shaped cul-de-lampe]</note> Eximio Theologo Ioan. Hardingo Collegii Χαλκορριυς .i. Titulo Ænei Nasi apud Oxonienses praefecto Io. Foxus S.</incipit>
                         <incipit type="text">Salutem in Christo Domino. Quod publice et vniversim</incipit>
                         <explicit>
-                           <locus>[fol. 65<hi rend="superscript">v</hi>]</locus> foveatque ad aeternam salutis nostrae satietatem. Amen. <note>[followed at fol. 66 by the ‘Tabula in Sextum Caput Ioan.’, placed at right-angles to text]</note>
+                           <locus from="65v" to="65v">[fol. 65<hi rend="superscript">v</hi>]</locus> foveatque ad aeternam salutis nostrae satietatem. Amen. <note>[followed at fol. 66 by the ‘Tabula in Sextum Caput Ioan.’, placed at right-angles to text]</note>
                         </explicit>
                         <author key="person_32005978">John Foxe</author>
                         <title key="work_5606">Syllogisticon</title>
@@ -84,13 +84,13 @@
                   </msContents>
                   <physDesc>
                      <p>
-                        <secFol>disputationes <locus>(fol. 3)</locus>
+                        <secFol>disputationes <locus from="3" to="3">(fol. 3)</locus>
                         </secFol>
                      </p>
                      <objectDesc form="codex">
                         <supportDesc material="chart">
                            <support>Paper (watermarks <watermark>English royal arms, surmounted by an imperial crown and within the Garter</watermark>; <watermark>pot with ‘OO’</watermark>)</support>
-                           <extent>Fols: ii + 76 + iii (numbered: i-iv, 1–75, a foliation which omits one after each of fol. 68, 69 and 70, each uncut at top and so conjoint with its preceding numbered folio). All but the first flyleaf at back (ie fol. i-ii and 74–75) are thick paper added with the binding; the first ‘flyleaf’ at back, fol. 73, is a parchment leaf, formerly the manuscript’s wrapper, tipped into place (see <hi rend="smallcaps">binding</hi>). <dimensions type="leaf" unit="mm">
+                           <extent>Fols: <seg type="leaf"><measure type="laterEndleaf" quantity="2">ii</measure> + <measure type="leaf" quantity="76">76</measure> + <measure type="laterEndleaf" quantity="3">iii</measure></seg> (numbered: i-iv, 1–75, a foliation which omits one after each of fol. 68, 69 and 70, each uncut at top and so conjoint with its preceding numbered folio). All but the first flyleaf at back (ie fol. i-ii and 74–75) are thick paper added with the binding; the first ‘flyleaf’ at back, fol. 73, is a parchment leaf, formerly the manuscript’s wrapper, tipped into place (see <hi rend="smallcaps">binding</hi>). <dimensions type="leaf" unit="mm">
                                  <height>208</height>
                                  <width>144</width>
                               </dimensions>
@@ -125,7 +125,7 @@
                      <provenance>It would, however, be legitimate to doubt whether the manuscript came to ChCh directly from him: it does not appear in the New Library catalogue or show any sign of having been given a shelfmark placing it in that arrangement or in the Wake Archive. This might suggest a late date of arrival, possibly post-1800, as additions were still being made to the New Library catalogue up to the turn of the century. The Donors’ Register (MS LR 1) does not shed light on this and we are left with the only certainty being that it had arrived in time to appear in Kitchin’s 1867 catalogue (50). </provenance>
                   </history>
                </msPart>
-               <msPart type="fragment">
+               <msPart type="fragment" xml:id="Christ_Church_MS_140-part2">
                   <msIdentifier>
                      <altIdentifier>
                         <idno subtype="alt" type="shelfmark">Christ Church MS. 140, Part 2- fol. 73 (former wrapper)</idno>

@@ -1,16 +1,28 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_7352">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_7352">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Laud Misc. 550</title>
             <title type="collection">MSS. Laud Misc. (Laud miscellaneous)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="Q">
+               <resp when="1854">Cataloguer</resp>
+               <persName>H. O. Coxe</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2025">Encoding</resp>
                <persName>Matthew Holford</persName>
+            </respStmt>
+            <respStmt xml:id="MW">
+               <resp when="2025">Cataloguer</resp>
+               <persName>Miriam Waters</persName>
+            </respStmt>
+            <respStmt xml:id="CO">
+               <resp when="2025">Cataloguer</resp>
+               <persName>Cayden Ong</persName>
+            </respStmt>
+            <respStmt xml:id="SDM">
+               <resp when="2025">Encoding</resp>
+               <persName>Sebastian Dows-Miller</persName>
             </respStmt>
          </titleStmt>
          <publicationStmt>
@@ -21,7 +33,7 @@
                <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>
             </publisher>
             <idno type="msID">MS_Laud_Misc_550</idno>
-            <idno type="collection">Laud Misc</idno>
+            <idno type="collection">Laud_Misc</idno>
             <idno type="catalogue">Western</idno>
          </publicationStmt>
          <sourceDesc>
@@ -40,7 +52,7 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem class="#historica" n="1" xml:id="MS_Laud_Misc_550-item1">
+                  <msItem class="#historica" n="1" xml:id="MS_Laud_Misc_550-item1"><locus from="1r" to="120v" type="inferred"/>
                      <title key="work_10942" type="desc">Chronicle of <placeName key="place_7002445">England</placeName> (Brut Chronicle) to 1422</title>
                      <textLang mainLang="enm">Middle English</textLang>
                   </msItem>
@@ -49,12 +61,49 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent resp="#MW #CO #SDM">
+                           <seg type="leaf"><measure type="laterEndleaf" quantity="1">i (paper)</measure> + <measure type="laterEndleaf" quantity="4">iv (parchment)</measure> + <measure type="leaf" quantity="120">120</measure> + <measure type="laterEndleaf" quantity="4">iv (parchment)</measure> + <measure type="laterEndleaf" quantity="1">i (paper)</measure> leaves</seg>
+                           <dimensions type="binding" unit="mm">
+                              <height>258</height>
+                              <width>192</width>
+                              <depth>42</depth>
+                           </dimensions>
+                           <dimensions type="leaf" unit="mm">
+                              <height>246</height>
+                              <width>183</width>
+                           </dimensions>
+                        </extent>
+                        <foliation resp="#MW #CO #SDM">Modern pencil foliation. Final endleaves foliated as fols. <locus from="121" to="125">121–125</locus>.</foliation>
+                        <collation resp="#MW #CO #SDM" mainStructures="8">
+                           <p>1–15(8); 1 additional folio appended to quire 15</p>
+                        </collation>
                      </supportDesc>
+                     <layoutDesc resp="#MW #CO #SDM">
+                        <layout columns="1" ruledLines="30" rulingMedium="unknown" writtenLines="30" topLine="below">
+                           <dimensions type="leaf" unit="mm">
+                              <height min="160" max="162">160–162</height>
+                              <width>100</width>
+                           </dimensions>
+                        </layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <handDesc hands="1" resp="#MW #CO #SDM">
+                     <handNote script="hybrida">One hand, littera hybrida, in dark brown ink.</handNote>
+                  </handDesc>
+                  <decoDesc resp="#MW #CO #SDM">
+                     <decoNote type="flourInit">Initial in blue with red flourishing of <height unit="line" quantity="2">two lines in height</height> on fol. <locus from="1r" to="1r">1r</locus>.</decoNote>
+                     <decoNote type="colInit">Initials in blue or red of <height unit="line" quantity="2">two lines in height</height> on fol. <locus from="1r" to="1r">1r</locus> and thereafter accompanying rubrication.</decoNote>
+                     <decoNote type="cadel">Top line flourishing throughout.</decoNote>
+                     <decoNote type="rubrication">Rubrication throughout, marking new sections, with contemporary marginal numbering.</decoNote>
+                     <decoNote type="catchword">Catchworeds at the end of every quire, in the same ink and hand as the text.</decoNote>
+                  </decoDesc>
+                  <additions resp="#MW #CO #SDM">Additions by various annotators.</additions>
                   <bindingDesc>
                      <binding notBefore="1500" notAfter="1600">
-                        <p>16th-century binding with centrepiece in blind; initials S.W. on both
-                        covers.</p>
+                        <p>16th-century binding with centrepiece in blind; initials S.W. on both covers.</p>
+                     </binding>
+                     <binding contemporary="true" cert="low" resp="#MW #CO #SDM">
+                        <p>Section of leather from earlier (contemporary?) binding pasted on inside rear board, displaying later owner's mark in black ink.</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
@@ -65,17 +114,21 @@
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
+                  <provenance><persName role="fmo" key="person_56550656">Richard St George</persName>, 1605</provenance>
+                  <provenance><persName role="fmo" key="person_54940373">William Laud</persName>, 1636.</provenance>
+                  <acquisition when="1636">Part of his second donation to the Bodleian, 1636.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (H. O. Coxe, <title>Laudian Manuscripts</title>, Quarto Catalogues II, repr. with corrections, 1969, from the original ed. of 1858–1885). <listBibl>
+                           Description adapted from the Quarto Catalogue (H. O. Coxe, <title>Laudian Manuscripts</title>, Quarto Catalogues II, repr. with corrections, 1969, from the original ed. of 1858–1885). <listBibl>
                               <bibl facs="aby0247.gif" type="QUARTO">Quarto Catalogue, col. 397</bibl>
                               <bibl facs="aby0350.gif" type="QUARTO">Quarto Catalogue, p. 570</bibl>
                               <bibl facs="aap0080.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 59</bibl>
                            </listBibl>
                         </source>
+                        <change when="2025-06-05">Additional data collected by Miriam Waters and Cayden Ong as part of the 'Big Data' and Medieval Manuscripts workshop held at the Bodleian Libraries, Oxford on <date when="2025-06-05">5th June 2025</date>. Data encoded in TEI-XML by Sebastian Dows-Miller on <date when="2025-06-09">9th June 2025</date>.</change>
                      </recordHist>
                   </adminInfo>
                </additional>
@@ -83,6 +136,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-06-05">Additional data collected by <persName>Miriam Waters</persName> and <persName>Cayden Ong</persName> as part of the <name type="event">'Big Data' and Medieval Manuscripts</name> workshop held at the <placeName>Bodleian Libraries, Oxford</placeName> on <date when="2025-06-05">5th June 2025</date>. Data encoded in TEI-XML by <persName>Sebastian Dows-Miller</persName> on <date when="2025-06-09">9th June 2025</date>.</change>
          <change when="2024-08">Add binding information from Quarto Catalogue.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">

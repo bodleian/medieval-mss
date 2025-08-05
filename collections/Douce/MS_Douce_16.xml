@@ -1,14 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4537">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4537">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Douce 16</title>
             <title type="collection">MSS. Douce</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2025">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -35,9 +41,13 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem class="#legalia" n="1" xml:id="MS_Douce_16-item1">
-                     <title key="work_14730" type="desc">Statutes of England, nova statuta, 1327–78</title>
-                     <note>'... Statuta edita tempore Edwardi tercij post Conquestum gratiosi ...' 1327-77, preceded by a list of titles. A rather later hand has added on foll. 215-25 the statutes of 1 Rich. II (1377-8). At fol. 1v is 'Declaracio exigendarum editum anno quintodecimo' (15 Rich. II, 1391-2 ?), in French: at fol. 235v 'Modus ad mensurandum terram', in Latin: see also fols. 13, 232v, 234v.</note>
+                  <msItem class="#legalia" n="1" xml:id="MS_Douce_16-item1"><locus from="1r" to="236v" type="inferred"/>
+                     <title key="work_14730" type="desc">Statutes of England, nova statuta, 1327–1378</title>
+                     <note>'... Statuta edita tempore Edwardi tercij post Conquestum gratiosi ...' 1327-77, preceded by a list of titles</note>
+                     <note>A rather later hand has added on fols 215-225 the statutes of 1 Richard II (1377-1378)</note>
+                     <note>At fol. 1v is a short tract in French entitled 'Declaracio exigendarum editum anno quintodecimo' (15 Richard II, 1391-1392?).
+                     It begins 'Accorde est et assentu que ceux qui sont'</note>
+                     <note>At fol. 235v 'Modus ad mensurandum terram', in Latin. See also fols 13, 232v and 234v</note>
                      <textLang mainLang="xno" otherLangs="la">Anglo-Norman and Latin</textLang>
                   </msItem>
                </msContents>
@@ -54,7 +64,7 @@
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1400" notBefore="1375">14th century, last quarter</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
                   <provenance notAfter="1834" notBefore="1757" resp="#MMM"><persName key="person_69848690" role="fmo">Francis Douce, 1757–1834</persName></provenance>
@@ -63,7 +73,15 @@
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). <listBibl>
+                           <source>
+                              Description adapted (May 2025) by Stewart J. Brookes from the following sources:
+                              
+                              <listBibl>
+                                 <bibl>Catalogue of the Printed Books and Manuscripts Bequeathed by Francis Douce, esq. to the Bodleian Library (1840), <ref target="https://archive.org/details/catalogueofprint00bodluoft/page/2/mode/1up">p. 2</ref></bibl>
+                                 <bibl>Summary Catalogue (1897)</bibl>
+                              </listBibl>
+                              
+                           <listBibl>
                               <bibl facs="aaz0513.gif" type="SC">Summary Catalogue, vol. 4, p. 494</bibl>
                            </listBibl>
                         </source>
@@ -74,6 +92,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-05-22">Description revised to incorporate all the information in the Summary Catalogue (1897) and other sources</change>
          <change when="2024-05">Add extent and leaf dimensions from Summary Catalogue.</change>
          <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
