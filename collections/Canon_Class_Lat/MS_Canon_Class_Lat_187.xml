@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2204">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2204">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -11,9 +8,17 @@
                <resp when="1984">Cataloguer</resp>
                <persName>A. G. Watson</persName>
             </respStmt>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="Q">
+               <resp when="1854">Cataloguer</resp>
+               <persName>H. O. Coxe</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2025">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
             <respStmt xml:id="BCBB">
@@ -29,7 +34,7 @@
                <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>
             </publisher>
             <idno type="msID">MS_Canon_Class_Lat_187</idno>
-            <idno type="collection">Canon Class Lat</idno>
+            <idno type="collection">Canon_Class_Lat</idno>
             <idno type="catalogue">Western</idno>
          </publicationStmt>
          <sourceDesc>
@@ -48,10 +53,13 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem n="1" xml:id="MS_Canon_Class_Lat_187-item1">
+                  <msItem n="1" xml:id="MS_Canon_Class_Lat_187-item1"><locus from="1r" to="107v" type="inferred"/>
                      <author key="person_7524651">Aristotle</author>
                      <title key="work_656">Ethics</title>
-                     <note>(tr. <persName key="person_95283478" role="trl"> Leonardo Bruni </persName>.</note>
+                     <note>(tr. <persName key="person_95283478" role="trl">Leonardo Bruni </persName>.</note>
+                     <note>With prologue and letter to Martin V.</note>
+                     <note>Premissio quedam ad evidentiam nove translationis</note>
+                     <colophon>Explicit feliciter, Deo gratias, Amen: die vero decima, Aprelis mº. ccccº. xxxiiiiº</colophon>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -59,7 +67,7 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                        <extent resp="#DD">i+ 107 + ii fols.<dimensions unit="mm" type="leaf">
+                        <extent resp="#DD"><seg type="leaf"><measure type="laterEndleaf" quantity="1">i</measure> + <measure type="leaf" quantity="107">107</measure> + <measure type="laterEndleaf" quantity="2">ii</measure></seg> fols.<dimensions unit="mm" type="leaf">
                               <height>260</height>
                               <width>172</width>
                            </dimensions>
@@ -74,7 +82,7 @@
                      </layoutDesc>
                   </objectDesc>
                   <handDesc>
-                     <handNote script="humanistica">Humanistic script attributable to <persName key="person_251" role="scr"> Domenico di Niccolò Pollini </persName>. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 218</handNote>
+                     <handNote script="humanistica">Humanistic script attributable to <persName key="person_251" role="scr">Domenico di Niccolò Pollini </persName>. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 218</handNote>
                   </handDesc>
                   <decoDesc>
                      <decoNote type="decInit">Fine initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 218, pl. XIX)</decoNote>
@@ -97,6 +105,7 @@
                         <!--ORIGINAL: Italian, Florence-->
                      </origPlace>
                   </origin>
+                  <provenance> 'Iste liber est mei <persName role="fmo">Rafael de Carena nova</persName> (?) [Canenavena (?), Canenanona (?), Canenanova (?)] qui vadit ad scolas domini Antonii de Camarino, qui est bonus magister in sua gramaticha et in sua sciencia et unum modichum famtastichus', 15th century, fol. 109v.</provenance>
                   <provenance notAfter="1805" notBefore="1727" resp="#MMM">
                      <persName key="person_2384880" role="fmo">Matteo Luigi Canonici, 1727–1805</persName>
                   </provenance>
@@ -108,8 +117,16 @@
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (H. O. Coxe, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854). Decoration, localization and date follow Pächt and Alexander (1970). Extent, dimensions and layout from Watson (1984). Binding: <bibl>B. C. Barker-Benfield, <title>Bookbindings of Canonici manuscripts : a survey of early and non-standard bindings, mostly Italian, in the Canonici collection of the Bodleian Library, University of Oxford</title> (Oxford, privately printed, 2020) </bibl>
+                        <source>Description adapted (2025) from the following sources:
+                           <listBibl>  
+                              <bibl>B. C. Barker-Benfield, <title>Bookbindings of Canonici manuscripts : a survey of early and non-standard bindings, mostly Italian, in the Canonici collection of the Bodleian Library, University of Oxford</title> (Oxford, privately printed, 2020) </bibl>
+                                 <bibl>A. Watson, <title>Catalogue of Dated and Datable Manuscripts in Oxford Libraries</title> (1984), <citedRange unit="entry" from="178" to="178">
+                                    <ref target="https://hdl.handle.net/2027/mdp.39015008982863?urlappend=%3Bseq=59">no. 178</ref>
+                                 </citedRange>
+                                 </bibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, II (1970), no. 218</bibl>
+                              <bibl>H. O. Coxe, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854</bibl>
+                           </listBibl>
                            <listBibl>
                               <bibl facs="abz0103.gif" type="QUARTO"> Quarto Catalogue, vol. 3, col. 193 </bibl>
                               <bibl facs="aaz0340.gif" type="SC">Summary Catalogue, vol. 4, p. 321</bibl>
@@ -144,6 +161,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-03">Incorporate all information from printed catalogues.</change>
          <change when="2024-05">Add extent, leaf dimensions and layout from Watson, Dated and Datable.</change>
          <change when="2020-04">Binding description added.</change>
          <change when="2018-10-14" xml:id="MMM">

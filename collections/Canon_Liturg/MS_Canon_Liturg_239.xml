@@ -1,21 +1,31 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2927">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2927">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Canon. Liturg. 239</title>
             <title type="collection">MSS. Canon. Liturg. (Canonici Liturgical)</title>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            
             <respStmt xml:id="VD">
                <resp when="1957">Cataloguer</resp>
                <persName>S. J. P. van Dijk</persName>
             </respStmt>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="PA">
+               <resp when="1966">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
             </respStmt>
+
+            <respStmt xml:id="SJB">
+               <resp when="2025">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -25,7 +35,7 @@
                <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>
             </publisher>
             <idno type="msID">MS_Canon_Liturg_239</idno>
-            <idno type="collection">Canon Liturg</idno>
+            <idno type="collection">Canon_Liturg</idno>
             <idno type="catalogue">Western</idno>
          </publicationStmt>
          <sourceDesc>
@@ -44,16 +54,63 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem class="#liturgica" n="1" xml:id="MS_Canon_Liturg_239-item1">
+                  
+                  <msItem class="#liturgica" n="1" xml:id="MS_Canon_Liturg_239-item1"><locus from="1r" to="232v" type="inferred"/>
                      <title key="work_10565" type="desc">Book of Hours, Use of Rome</title>
+                     
+                     <msItem>
+                        <locus>(fol. 1)</locus>
+                        <title key="work_10687" type="desc">Calendar</title>
+                     </msItem>
+                     
+                     <msItem>
+                        <rubric>Hore beate Marie Virginis secundum vsum Romane ecclesie</rubric>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 13)</locus>
+                        <rubric>Hore Sancte Crucis</rubric>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 22)</locus>
+                        <rubric>Missa beate Marie Virginis</rubric>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 35)</locus>
+                        <rubric>Hore Sancti Spiritus</rubric>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 42)</locus>
+                        <rubric>Hore Passionis...</rubric>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 156)</locus>
+                        <title type="desc">Penitential Psalms with Litany</title>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 179)</locus>
+                        <title type="desc">Vigilie Mortuorum</title>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 232)</locus>
+                        <title type="desc">Memoria de s. Katherina</title>
+                     </msItem>
+                     
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                        <extent resp="#VD"> ii + 1 + 232 + 3 + ii fol.<dimensions type="leaf" unit="mm">
+                        <extent resp="#VD"> <seg type="leaf"><measure type="laterEndleaf" quantity="2">ii</measure> + <measure type="endleaf" quantity="1">1</measure> + <measure type="leaf" quantity="232">232</measure> + <measure type="endleaf" quantity="3">3</measure> + <measure type="laterEndleaf" quantity="2">ii</measure></seg> fol.<dimensions type="leaf" unit="mm">
                               <height>95</height>
                               <width>68</width>
                            </dimensions>
@@ -67,24 +124,37 @@
                         <layout columns="1" writtenLines="14">14 lines</layout>
                      </layoutDesc>
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote>Decoration<p>Good borders, initials. Italian script. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 341)</p>
-                     </decoNote>
+                  
+                  <handDesc>
+                     <handNote script="humanistica">Italian script (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 341)</handNote>
+                  </handDesc>
+                  
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 341
+                     </summary>
+                     
+                     <decoNote type="border">Good borders</decoNote>
+                     
+                     <decoNote type="initial">Initials</decoNote>
+                     
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1475" notBefore="1450">15th century, third quarter</origDate>
                      <origPlace>
-                        <country key="place_7024097">Flemish</country>
+                        <country key="place_7024097">Flanders</country>
                      </origPlace>
                   </origin>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
+                        
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1966). <listBibl>
+                           Description adapted (July 2025) by Stewart J. Brookes from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1966). 
+                           Extent, leaf dimensions and layout from van Dijk (1957)
+                           <listBibl>
                               <bibl facs="aaz0382.gif" type="SC">Summary Catalogue, vol. 4, p. 363</bibl>
                            </listBibl>
                         </source>
@@ -102,6 +172,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-07-08">Description revised to incorporate all the information in the Summary Catalogue (1897)</change>
          <change when="2024-09">Add extent, leaf dimensions and layout from van Dijk, Latin Liturgical Manuscripts in the Bodleian Library, Oxford.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">

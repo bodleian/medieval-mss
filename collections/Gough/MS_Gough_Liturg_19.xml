@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4927">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4927">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -11,10 +8,18 @@
                <resp when="1957">Cataloguer</resp>
                <persName>S. J. P. van Dijk</persName>
             </respStmt>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+           <respStmt xml:id="SC">
+              <resp when="1897">Cataloguer</resp>
+              <persName>Falconer Madan</persName>
+           </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2025">Encoding</resp>
                <persName>Matthew Holford</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
             </respStmt>
          </titleStmt>
          <publicationStmt>
@@ -44,17 +49,49 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+
                   <msItem n="1" xml:id="MS_Gough_Liturg_19-item1">
-                     <title key="work_13964">Prayers, etc.</title>
-                     <note>(written for <persName key="person_1117" role="fmo">Sir John Iwardby</persName>)</note>
-                     <textLang mainLang="enm" otherLangs="la">Middle English and Latin</textLang>
+                    <locus from="1r" to="114v" type="inferred"/>
+                     <title type="desc" key="work_13960">Prayers and offices</title>
+                     
+                     <msItem n="1">
+                        <locus>(fol. 3)</locus>
+                        <note>Calendar</note>
+                     </msItem>
+                     <msItem n="2">
+                        <locus>(fol. 16)</locus>
+                        <note>Prayer for the living and the dead; prayers, among which devotions to the passion (fol. 19: O domine J.C. adoro te), the Five Wounds (fol. 22), the Seven Joys (fol. fol. 24v)</note>
+                     </msItem>
+                     <msItem n="3">
+                        <locus>(fol. 26)</locus>
+                        <note>Commemorations and devotions to various saints (fol. 29) among whom Erasmus, Henry VI, John Shorne and St Wilgefortis or Uncommer; with other prayers.</note>
+                     </msItem>
+                     <msItem n="4">
+                        <locus>(fol. 42)</locus>
+                        <note>Penitential and Gradual (fol. 50) Psalms with the litany (fol. 53)</note>
+                     </msItem>
+                     <msItem n="5">
+                        <locus>(fol. 62)</locus>
+                        <note>Psalms of the passion </note>
+                     </msItem>
+                     <msItem n="6">
+                        <locus>(fol. 69)</locus>
+                        <note>Pericopes from the gospel of St John </note>
+                     </msItem>
+                     <msItem n="7">
+                        <locus>(fols. 70v-114r)</locus>
+                        <note>Office of the dead  and commendation (fol. 99). Fols. 114v-115v blank.</note>
+                     </msItem>
+                    
+                     <textLang mainLang="la" otherLangs="enm">Latin, with English items and rubrics on fols. 16r, 19r, 21v (including a version of DIMEV 2840), 23v-24r, 26r, 29r-v, 114r</textLang>
+
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                        <extent resp="#VD"> i + 114 (113) + 1 + i fol.<dimensions type="leaf" unit="mm">
+                        <extent resp="#VD"> <seg type="leaf"><measure type="laterEndleaf" quantity="1">i</measure> + <measure type="laterEndleaf" quantity="1">i</measure> (inserted miniature) + <measure type="leaf" quantity="113">113</measure> + <measure type="laterEndleaf" quantity="1">i</measure></seg> leaves <dimensions type="leaf" unit="mm">
                               <height>99</height>
                               <width>62</width>
                            </dimensions>
@@ -63,32 +100,56 @@
                               <width>40</width>
                            </dimensions>
                         </extent>
+                        <foliation>1 (modern endleaf), 2 (inserted miniature), 3-115, 116 (modern endleaf)</foliation>
                      </supportDesc>
                      <layoutDesc resp="#VD">
                         <layout columns="1" writtenLines="16">16 long lines</layout>
                      </layoutDesc>
                   </objectDesc>
+                  <handDesc>
+                     <handNote script="textualisNorthern">Textualis.</handNote>
+                  </handDesc>
                   <decoDesc>
                      <summary>
                         <ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 1100:</summary>
-                     <decoNote type="miniature">Miniatures. </decoNote>
+                     <decoNote type="miniature">Miniatures: four coats of arms (fol. 15v), Trinity (Gnadenstuhl) (fol. 17r), the Five Wounds (fol. 22r); Virgin and Child (fol. 23v); St Erasmus (fol. 26r) </decoNote>
                      <decoNote type="border">Borders. </decoNote>
-                     <decoNote type="decInit">Initials. </decoNote>
+                     <decoNote type="decInit">3-line decorated initials. </decoNote>
+                     <decoNote type="flourInit">2-line blue initials flourished in red.</decoNote>
                      <decoNote type="miniature">Miniature of St. John the Baptist from a different MS. pasted in, fol. 2, 15th century, second half.</decoNote>
                   </decoDesc>
+                  <bindingDesc>
+                     <binding notAfter="1900" notBefore="1800">
+                        <p>19th-century binding.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1475" notBefore="1450">15th century, third quarter</origDate>
+                     <origDate calendar="Gregorian" notAfter="1500" notBefore="1485">15th century, late (after 1485 and before 1501)</origDate>
                      <origPlace>
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
+                  <provenance>Written for the use of Sir John Iwardby and his wife: on fol. 16 is 'Pray for John' Jwardby and Sainche his wif, eldest doughter of Nicholas Carru [Carew] of Bedi[n]gton in Surre &#x0026; oon of his heirris &#x0026; for theire children frende &#x0026; welwillers. &#x0026; for the soule of Katerine late wif of the said John' doughter of Edwarde Neuil lord Burgeyne [Abergavenny] &#x0026; for the soulis of Joh'n &#x0026; Edwarde sones of the said Joh'n &#x0026; Katerine &#x0026; for the soulis of the faders moders aliaunces &#x0026; frende of all them aboue rehersid and for all Cristen' (cf. fol. 70v-71r for a Latin version): with four elaborate coats of arms opposite. <persName role="fmo" key="person_1117" >John Iwardby (Iwardeby) (born approximately 1440, died 1525)</persName>, who had landed interests in Hampshire (Farley Chamberlayne) and especially Surrey, married (1) Katherine Neville (2) Sanchia Carew (3) Jane Agmonesham; the present manuscript evidently predates his third marriage and presumably also predates his knighthood in 1501 (<title>Fitznells Cartulary</title>, ed. C. A. F. Meekings and Philip Shearman, Surrey Record Society 26 (1968), p. cxi, 'John II'). Sanchia did not become an heir of Nicholas Carew (d. 1466) until the death of his son Nicholas in 1485 (<title>History of Parliament 1422-1461</title>, III.747).</provenance><!-- see VCH BErks https://www.british-history.ac.uk/vch/berks/vol3/pp417-422 . Sanchea became an heir of Nicholas in about 1485, Purley was part of her portoin. -->
+                  <!-- heraldry, fol. 15v: 
+                  
+                  below: quarterly Iwardby and Carew
+                  -->
+                  <provenance><persName role="fmo" key="person_41970552">Richard Gough, 1735-1809</persName></provenance>
+                  <acquisition when="1809">Bequeathed by him to the Bodleian.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
+                        <source>Description adapted (2025) by Matthew Holford from the following sources, with limited additional description and revised dating:
+                           <listBibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title><ref target="https://catalog.hathitrust.org/Record/000468709">Illuminated Manuscripts in the Bodleian Library, Oxford</ref></title>, III (1973), no. 1100</bibl>
+                              <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 4: Books of Hours</title> (typescript, 1957), <citedRange unit="page" from="173" to="173">p. 173</citedRange>
+                              </bibl>
+                              <bibl>Summary Catalogue (1897)</bibl>
+                           </listBibl>
+                           <listBibl>
                               <bibl facs="aaz0308.gif" type="SC">Summary Catalogue, vol. 4, p. 289</bibl>
                               <bibl facs="aaz0309.gif" type="SC">Summary Catalogue, vol. 4, p. 290</bibl>
                            </listBibl>
@@ -115,6 +176,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-07">Encode all information from printed catalogues; limited additional description.</change>
          <change when="2024-09">Add extent, leaf dimensions and layout from van Dijk, Latin Liturgical Manuscripts in the Bodleian Library, Oxford.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
