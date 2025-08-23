@@ -18,10 +18,10 @@ jobs:
       - name: Checkout current repository
         uses: actions/checkout@v4
         with:
-          ref: main
+          ref: master
           fetch-depth: 0
 
-      - name: Add remote repository for medieval-mss
+      - name: Add remote repository for enabling-digital-research
         run: |
           git remote add enabling-digital-research https://github.com/Digital-Scholarship-Oxford/enabling-digital-research.git
           git fetch enabling-digital-research
@@ -29,7 +29,7 @@ jobs:
       - name: Checkout latest changes from enabling-digital-research
         run: |
           mkdir -p tmp_output
-          git checkout enabling-digital-research/medieval-mss -- tabular_data/output
+          git checkout enabling-digital-research/main -- tabular_data/output
           rsync -a --remove-source-files tabular_data/output/ tabular_data/
           rm -rf tabular_data/output
 
