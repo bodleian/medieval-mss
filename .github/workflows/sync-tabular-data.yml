@@ -36,6 +36,8 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add tabular_data/**
+          git add -u tabular_data/
+          git add tabular_data/*
+          git rm -rf --cached tabular_data/output || true
           git diff --quiet && git diff --staged --quiet || git commit -m "Sync tabular data outputs"
           git push
