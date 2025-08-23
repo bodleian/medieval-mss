@@ -28,9 +28,8 @@ jobs:
 
       - name: Checkout latest changes from enabling-digital-research
         run: |
-          mkdir -p tmp_output
           git checkout enabling-digital-research/main -- tabular_data/output
-          rsync -a --remove-source-files tabular_data/output/ tabular_data/
+          rsync -a tabular_data/output/ tabular_data/
           rm -rf tabular_data/output
 
       - name: Commit pulled changes
@@ -38,5 +37,5 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add tabular_data/**
-          git diff --quiet && git diff --staged --quiet || git commit -m "Sync tabular data outputs (flattened into tabular_data)"
+          git diff --quiet && git diff --staged --quiet || git commit -m "Sync tabular data outputs"
           git push
