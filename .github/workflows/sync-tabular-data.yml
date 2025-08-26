@@ -1,0 +1,43 @@
+name: Sync from Digital-Scholarship-Oxford/enabling-digital-research
+
+on:
+  # The action runs automatically at 09:00 UTC every Monday
+  schedule:
+    - cron: '0 9 * * 1'
+
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout current repository
+        uses: actions/checkout@v4
+        with:
+          ref: master
+          fetch-depth: 0
+
+      - name: Add remote repository for enabling-digital-research
+        run: |
+          git remote add enabling-digital-research https://github.com/Digital-Scholarship-Oxford/enabling-digital-research.git
+          git fetch enabling-digital-research
+
+      - name: Checkout latest changes from enabling-digital-research
+        run: |
+          git checkout enabling-digital-research/main -- tabular_data/output
+          rsync -a tabular_data/output/ tabular_data/
+          rm -rf tabular_data/output
+
+      - name: Commit pulled changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add -u tabular_data/
+          git add tabular_data/*
+          git rm -rf --cached tabular_data/output || true
+          git diff --quiet && git diff --staged --quiet || git commit -m "Sync tabular data outputs"
+          git push
