@@ -4,11 +4,17 @@
          <titleStmt>
             <title>MS. Add. A. 170</title>
             <title type="collection">MSS. Add. (Additional) A</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1905">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2025">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -35,21 +41,42 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_Add_A_170-item1">
-                     <!-- <author key="person_79253969">
-                        Gualterus Anglicus (attrib.)</author>-->
+                     <author key="person_79253969">Gualterus Anglicus (attrib.)</author>
                      <title key="work_10114">Aesopus moralisatus</title>
+                     <incipit>(metrical preface) Vt iuuet et prosit.</incipit>
+                     <explicit>Explicit Liber Esopi . Deo gratias . Amen</explicit>
+                     <note>62 fables in elegiac verse</note>
+                     <note>The distich beginning 'Fine fruor' is found in this manuscript both at the end of 
+                        the 60th and of the 62nd fable, the two supplementary ones being 'De capone et accipitre' and 'De pastore et lupo.'</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
+                  <msItem>
+                     <note>At the beginning there are prescriptions for making various colours and  at the end are some medical recipes</note>
+                  </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+ 
+               <extent source="SC">ii + <measure type="leaf" quantity="20">20</measure> leaves
+                  <dimensions type="binding" unit="in">
+                     <height>8.25</height>
+                     <width>5.75</width>
+                  </dimensions>
+               </extent>
+                        
                      </supportDesc>
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote type="decInit"> Good initial. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 928) <list type="gloss">
+
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 928
+                     </summary>
+                     <decoNote type="decInit"> Good initial<list type="gloss">
                            <head>fol. 1r</head>
                            <label>Type</label>
                            <item>
@@ -57,7 +84,7 @@
                            </item>
                            <label>Subject</label>
                            <item>
-                              <seg type="subject">Floral designs.</seg>
+                              <seg type="subject">Floral designs</seg>
                            </item>
                         </list></decoNote>
                      <decoNote type="drawing">
@@ -69,7 +96,7 @@
                            </item>
                            <label>Subject</label>
                            <item>
-                              <seg type="subject">Human half-figure, emerging from flames, supporting a scroll with catchwords.</seg>
+                              <seg type="subject">Human half-figure, emerging from flames, supporting a scroll with catchwords</seg>
                            </item>
                         </list>
                      </decoNote>
@@ -79,14 +106,25 @@
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1450" notBefore="1400">15th century, first half</origDate>
                      <origPlace>
-                        <country key="place_1000080">Italian</country>
+                        <country key="place_1000080">Italy</country>
                      </origPlace>
                   </origin>
+                  
+                  <provenance>Fol. 18v: 'Iste liber est mei <persName role="fmo">Bertus Nicholai de Rosarmia de Pisis'</persName> (15th century)</provenance>
+                  
+                  <!-- Add authority record -->                  
+
+                  <acquisition when="1859">Purchased by the Bodleian at Sotheby's on 28th March 28th 1859 from the collection of <persName key="person_19743305" role="fmo">Guillaume Libri</persName>. 
+                     No. 12 in the <ref target="https://archive.org/details/CatalogueLibriSothebys/page/n62/mode/1up">sale catalogue</ref>
+                  </acquisition>
+                  
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
+                        <source>
+                           Description adapted (August) by Stewart J. Brookes from the Summary Catalogue (1905)
+                           <listBibl>
                               <bibl facs="aam0082.gif" type="SC">Summary Catalogue, Vol. 5, p. 47</bibl>
                               <bibl facs="aam0083.gif" type="SC">Summary Catalogue, Vol. 5, p. 48</bibl>
                            </listBibl>
@@ -98,6 +136,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-08-08">Description revised to incorporate all the information in the Summary Catalogue (1905)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>
