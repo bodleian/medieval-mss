@@ -21,70 +21,87 @@ jobs:
     steps:
     - name: Check out repository
       uses: actions/checkout@v5
-      with:
-        fetch-depth: 2  # ensure previous commit exists for push diffs
 
-    - name: "Set up Python"
-      uses: actions/setup-python@v5
+    - name: Plan work
+      id: plan
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const event = context.eventName;
+          const owner = context.repo.owner;
+          const repo = context.repo.repo;
+          const isSchedule = (event === 'schedule');
+          let files = [];
+
+          if (!isSchedule) {
+            if (event === 'pull_request') {
+              const pull_number = context.payload.pull_request.number;
+              const per_page = 100;
+              for (let page = 1; ; page++) {
+                const { data } = await github.rest.pulls.listFiles({ owner, repo, pull_number, per_page, page });
+                if (!data || data.length === 0) break;
+                files.push(...data.map(f => f.filename));
+                if (data.length < per_page) break;
+              }
+            } else if (event === 'push') {
+              const before = context.payload.before;
+              const after = context.sha;
+              if (before && before !== after) {
+                const { data } = await github.rest.repos.compareCommits({ owner, repo, base: before, head: after });
+                if (data && Array.isArray(data.files)) {
+                  files.push(...data.files.map(f => f.filename));
+                }
+              } else if (context.payload.head_commit) {
+                const hc = context.payload.head_commit;
+                files.push(...(hc.added || []), ...(hc.modified || []), ...(hc.removed || []));
+              }
+            }
+          }
+
+          const xmlFiles = [...new Set(files)].filter(f => f.toLowerCase().endsWith('.xml'));
+          const count = xmlFiles.length;
+          const shouldRun = isSchedule || count > 0;
+          if (!shouldRun) core.notice('No XML files changed');
+          return { files: xmlFiles, count, isSchedule, shouldRun };
+
+    # Install toolchain only when needed
+    - name: Set up Python
+      if: fromJSON(steps.plan.outputs.result).shouldRun
+      uses: actions/setup-python@v6
       with:
         python-version-file: "pyproject.toml"
 
     - name: Install uv
+      if: fromJSON(steps.plan.outputs.result).shouldRun
       uses: astral-sh/setup-uv@v6
       with:
         enable-cache: true
 
     - name: Install dependencies
+      if: fromJSON(steps.plan.outputs.result).shouldRun
       run: uv sync
 
-    - name: Get changed XML files
-      if: github.event_name != 'schedule'
-      id: changed-xml
+    - name: Validate XML
+      if: fromJSON(steps.plan.outputs.result).shouldRun
       run: |
-        # Determine changed XML files for PR or push
-        if [ "$GITHUB_EVENT_NAME" = "pull_request" ]; then
-          git fetch origin "$GITHUB_BASE_REF" --depth=1
-          base="origin/$GITHUB_BASE_REF"
-          head="$GITHUB_SHA"
-          files=$(git diff --name-only "$base...$head" | grep -E '\\.xml$' || true)
+        if [ "${{ fromJSON(steps.plan.outputs.result).isSchedule }}" = "true" ]; then
+          uv run python processing/validate.py -d collections -j 0
         else
-          # push: compare HEAD^ to HEAD (fetch-depth: 2 ensures HEAD^ exists)
-          if git rev-parse HEAD^ >/dev/null 2>&1; then
-            files=$(git diff --name-only HEAD^ HEAD | grep -E '\\.xml$' || true)
+          uv run python processing/validate.py -j 0 ${{ join(fromJSON(steps.plan.outputs.result).files, ' ') }}
+        fi
+
+    - name: Check entity keys
+      if: fromJSON(steps.plan.outputs.result).shouldRun
+      run: |
+        if [ "${{ fromJSON(steps.plan.outputs.result).isSchedule }}" = "true" ]; then
+          uv run python processing/check_entity_keys.py -d collections
+        else
+          files="${{ join(fromJSON(steps.plan.outputs.result).files, ' ') }}"
+          collection_files=$(echo "$files" | tr ' ' '\n' | grep -E '^collections/' | tr '\n' ' ')
+          if [ -n "$collection_files" ]; then
+            echo "Checking entity keys in manuscript description files: $collection_files"
+            uv run python processing/check_entity_keys.py $collection_files
           else
-            files=""
+            echo "No manuscript description files (collections/) to check for entity keys."
           fi
         fi
-        echo "files=$files" >> "$GITHUB_OUTPUT"
-
-    - name: Validate changed XML files
-      if: github.event_name != 'schedule' && steps.changed-xml.outputs.files != ''
-      run: |
-        uv run python processing/validate.py -j 0 ${{ steps.changed-xml.outputs.files }}
-
-    - name: Check entity keys in changed XML files
-      if: github.event_name != 'schedule' && steps.changed-xml.outputs.files != ''
-      run: |
-        # Entity keys only need to be checked for manuscript descriptions in collections directory
-        # Other XML files (drafts/, authority files) don't contain entity references to validate
-        collection_files=$(echo "${{ steps.changed-xml.outputs.files }}" | tr ' ' '\n' | grep -E '^collections/' | tr '\n' ' ')
-        if [ -n "$collection_files" ]; then
-          echo "Checking entity keys in manuscript description files: $collection_files"
-          uv run python processing/check_entity_keys.py $collection_files
-        else
-          echo "No manuscript description files (collections/) to check for entity keys."
-        fi
-
-    - name: No XML files changed
-      if: github.event_name != 'schedule' && steps.changed-xml.outputs.files == ''
-      run: echo "No XML files to validate or check."
-
-    - name: Validate all XML files (scheduled)
-      if: github.event_name == 'schedule'
-      run: |
-        uv run python processing/validate.py -d collections -j 0
-
-    - name: Check entity keys in all files (scheduled)
-      if: github.event_name == 'schedule'
-      run: |
-        uv run python processing/check_entity_keys.py -d collections
