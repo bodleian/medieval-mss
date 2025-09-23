@@ -1,4 +1,4 @@
-name: Validate XML
+name: Validate XML and Check Entity Keys
 
 on:
   push:
@@ -7,6 +7,8 @@ on:
   pull_request:
     paths:
       - '**.xml'
+  schedule:
+    - cron: '0 3 * * 1'  # Every Monday at 03:00 UTC
 
 permissions:
   contents: read
@@ -19,6 +21,13 @@ jobs:
     steps:
     - name: Check out repository
       uses: actions/checkout@v5
+      with:
+        fetch-depth: 2  # ensure previous commit exists for push diffs
+
+    - name: "Set up Python"
+      uses: actions/setup-python@v5
+      with:
+        python-version-file: "pyproject.toml"
 
     - name: Install uv
       uses: astral-sh/setup-uv@v6
@@ -28,5 +37,54 @@ jobs:
     - name: Install dependencies
       run: uv sync
 
-    - name: Validate XML using Relax NG
-      run: uv run python processing/validate.py
+    - name: Get changed XML files
+      if: github.event_name != 'schedule'
+      id: changed-xml
+      run: |
+        # Determine changed XML files for PR or push
+        if [ "$GITHUB_EVENT_NAME" = "pull_request" ]; then
+          git fetch origin "$GITHUB_BASE_REF" --depth=1
+          base="origin/$GITHUB_BASE_REF"
+          head="$GITHUB_SHA"
+          files=$(git diff --name-only "$base...$head" | grep -E '\\.xml$' || true)
+        else
+          # push: compare HEAD^ to HEAD (fetch-depth: 2 ensures HEAD^ exists)
+          if git rev-parse HEAD^ >/dev/null 2>&1; then
+            files=$(git diff --name-only HEAD^ HEAD | grep -E '\\.xml$' || true)
+          else
+            files=""
+          fi
+        fi
+        echo "files=$files" >> "$GITHUB_OUTPUT"
+
+    - name: Validate changed XML files
+      if: github.event_name != 'schedule' && steps.changed-xml.outputs.files != ''
+      run: |
+        uv run python processing/validate.py -j 0 ${{ steps.changed-xml.outputs.files }}
+
+    - name: Check entity keys in changed XML files
+      if: github.event_name != 'schedule' && steps.changed-xml.outputs.files != ''
+      run: |
+        # Entity keys only need to be checked for manuscript descriptions in collections directory
+        # Other XML files (drafts/, authority files) don't contain entity references to validate
+        collection_files=$(echo "${{ steps.changed-xml.outputs.files }}" | tr ' ' '\n' | grep -E '^collections/' | tr '\n' ' ')
+        if [ -n "$collection_files" ]; then
+          echo "Checking entity keys in manuscript description files: $collection_files"
+          uv run python processing/check_entity_keys.py $collection_files
+        else
+          echo "No manuscript description files (collections/) to check for entity keys."
+        fi
+
+    - name: No XML files changed
+      if: github.event_name != 'schedule' && steps.changed-xml.outputs.files == ''
+      run: echo "No XML files to validate or check."
+
+    - name: Validate all XML files (scheduled)
+      if: github.event_name == 'schedule'
+      run: |
+        uv run python processing/validate.py -d collections -j 0
+
+    - name: Check entity keys in all files (scheduled)
+      if: github.event_name == 'schedule'
+      run: |
+        uv run python processing/check_entity_keys.py -d collections

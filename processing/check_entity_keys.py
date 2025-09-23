@@ -1,38 +1,53 @@
 """
-Verifies that every @key in TEI XML manuscript descriptions
+Verify that every @key in a TEI XML manuscript description
 corresponds to an @xml:id in the authority files.
 """
 
 import argparse
 import logging
+import os
 import re
 import sys
-import xml.etree.ElementTree as ET
+import time
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import cast
 
-
-class GitHubActionsFormatter(logging.Formatter):
-    """Custom logging formatter for GitHub Actions annotations."""
-
-    def format(self, record: logging.LogRecord) -> str:
-        msg = super().format(record)
-        match record.levelno:
-            case logging.ERROR:
-                return f"::error :: {msg}"
-            case logging.WARNING:
-                return f"::warning :: {msg}"
-            case logging.DEBUG:
-                return f"::debug :: {msg}"
-            case _:
-                return msg
+from lxml import etree
 
 
-# Replace the default logging configuration with one supporting GitHub Actions annotations.
-handler = logging.StreamHandler()
-handler.setFormatter(GitHubActionsFormatter(fmt="%(message)s"))
-logging.basicConfig(handlers=[handler], level=logging.INFO, force=True)
+def get_element_context(elem: etree._Element) -> str:
+    """Get a brief XPath-like context for an element to help with debugging."""
+    path_parts = []
+    current: etree._Element | None = elem
+    while current is not None and current.tag is not None:
+        tag = current.tag.split("}")[-1] if "}" in current.tag else current.tag
+        path_parts.append(tag)
+        current = current.getparent()
+        if len(path_parts) >= 3:  # Limit depth for readability
+            break
+    return "/".join(reversed(path_parts))
+
+
+@dataclass(slots=True, frozen=True)
+class ValidationIssue:
+    """Represents a validation issue found in a manuscript description."""
+
+    file: Path
+    message: str
+    line: int | None = None
+    column: int | None = None
+
+
+def _gha_escape_message(s: str) -> str:
+    """Escape message text for GitHub Actions workflow commands."""
+    return s.replace("%", "%25").replace("\r", "%0D").replace("\n", "%0A")
+
+
+def _gha_escape_property(s: str) -> str:
+    """Escape property values for GitHub Actions workflow commands."""
+    return _gha_escape_message(s).replace(":", "%3A").replace(",", "%2C")
+
 
 NS: dict[str, str] = {
     "xml": "http://www.w3.org/XML/1998/namespace",
@@ -50,28 +65,31 @@ class XMLFile:
     tree: object = field(init=False, repr=False)
 
     def __post_init__(self) -> None:
-        """Initialises the tree by parsing the XML file."""
+        """Initializes the tree by parsing the XML file."""
         self.tree = self.read()
 
     def read(self) -> object:
         """Parses the XML file specified by file_path."""
+        logger = logging.getLogger(__name__)
         try:
-            tree = ET.parse(self.file_path)
+            # Use lxml's parser with line number tracking enabled
+            parser = etree.XMLParser()
+            tree = etree.parse(self.file_path, parser)
             if tree.getroot() is None:
                 msg = f"XML file '{self.file_path}' has no root element"
                 raise ValueError(msg)
             return tree
-        except ET.ParseError as err:
+        except etree.XMLSyntaxError as err:
             msg = f"XML parsing error in '{self.file_path}': {err}"
-            logging.error(msg)
+            logger.error(msg)
             raise
         except (OSError, IOError) as err:
             msg = f"File I/O error reading '{self.file_path}': {err}"
-            logging.error(msg)
+            logger.error(msg)
             raise
         except Exception as exc:
             msg = f"Unexpected error reading '{self.file_path}': {exc}"
-            logging.error(msg)
+            logger.error(msg)
             raise
 
 
@@ -80,81 +98,130 @@ class AuthorityFile(XMLFile):
 
     def __init__(self, file_path: Path) -> None:
         super().__init__(file_path)
+        self._validate_tei_document()
         self.keys: set[str] = self.get_keys()
+
+    def _validate_tei_document(self) -> None:
+        """Validate that this is a TEI document."""
+        tree = cast(etree._ElementTree, self.tree)
+        root = tree.getroot()
+        if root.tag != f"{{{NS['tei']}}}TEI":
+            logger = logging.getLogger(__name__)
+            logger.warning(
+                f"Authority file '{self.file_path}' does not appear to be a TEI document (root element: {root.tag})"
+            )
 
     def get_keys(self) -> set[str]:
         """Extracts all xml:id values from allowed TEI elements within the authority file."""
-        allowed_tags: set[str] = {
-            f"{{{NS['tei']}}}{tag}"
-            for tag in ("person", "place", "org", "bibl")
-        }
-        tree = cast(ET.ElementTree, self.tree)
+        tree = cast(etree._ElementTree, self.tree)
+        xpath_expr = "//tei:person[@xml:id] | //tei:place[@xml:id] | //tei:org[@xml:id] | //tei:bibl[@xml:id]"
+        elements = tree.xpath(xpath_expr, namespaces=NS)
         return {
-            elem.attrib[f"{{{NS['xml']}}}id"]
-            for elem in tree.iter()
-            if elem.tag in allowed_tags
-            and elem.attrib.get(f"{{{NS['xml']}}}id")
+            str(elem.attrib[f"{{{NS['xml']}}}id"])
+            for elem in cast(list[etree._Element], elements)
         }
 
 
 class MSDesc(XMLFile):
     """Represents a manuscript description file and provides key validation."""
 
-    def check_keys(self, authority_keys: set[str]) -> bool:
+    def __init__(self, file_path: Path) -> None:
+        super().__init__(file_path)
+        self._validate_tei_document()
+
+    def _validate_tei_document(self) -> None:
+        """Validate that this is a TEI document."""
+        tree = cast(etree._ElementTree, self.tree)
+        root = tree.getroot()
+        if root.tag != f"{{{NS['tei']}}}TEI":
+            logger = logging.getLogger(__name__)
+            logger.warning(
+                f"Manuscript description '{self.file_path}' does not appear to be a TEI document (root element: {root.tag})"
+            )
+
+    def check_keys(self, authority_keys: set[str]) -> list[ValidationIssue]:
         """Validates that every 'key' attribute in the manuscript description is correct."""
-        valid: bool = True
-        tree = cast(ET.ElementTree, self.tree)
-        for elem in tree.iter():
-            if "key" not in elem.attrib:
-                continue
-            key: str = elem.attrib["key"]
+        issues: list[ValidationIssue] = []
+        tree = cast(etree._ElementTree, self.tree)
+        # Use XPath to directly find all elements with key attributes
+        elements_with_keys = tree.xpath("//*[@key]")
+        for elem in cast(list[etree._Element], elements_with_keys):
+            key: str = str(elem.attrib["key"])
+            line_number: int | None = (
+                elem.sourceline
+                if hasattr(elem, "sourceline") and elem.sourceline is not ...
+                else None
+            )
+            column_number: int | None = getattr(elem, "sourcecolumn", None)
             match key:
                 case "":
-                    logging.error(f"Empty key found in '{self.file_path}'.")
-                    valid = False
+                    context = get_element_context(elem)
+                    issues.append(
+                        ValidationIssue(
+                            file=self.file_path,
+                            message=f"Empty key attribute found in {context}",
+                            line=line_number,
+                            column=column_number,
+                        )
+                    )
                 case _ if not KEY_PATTERN.fullmatch(key):
-                    logging.error(
-                        f"Invalid key '{key}' found in '{self.file_path}'."
+                    context = get_element_context(elem)
+                    issues.append(
+                        ValidationIssue(
+                            file=self.file_path,
+                            message=f"Invalid key format '{key}' in {context} (expected pattern: person_123, place_456, etc.)",
+                            line=line_number,
+                            column=column_number,
+                        )
                     )
-                    valid = False
                 case _ if key not in authority_keys:
-                    logging.error(
-                        f"Key '{key}' not found in authority files in '{self.file_path}'."
+                    context = get_element_context(elem)
+                    issues.append(
+                        ValidationIssue(
+                            file=self.file_path,
+                            message=f"Key '{key}' in {context} not found in authority files (persons.xml, places.xml, works.xml)",
+                            line=line_number,
+                            column=column_number,
+                        )
                     )
-                    valid = False
                 case _:
                     # Key is valid.
                     pass
-        return valid
+        return issues
 
 
 class AuthorityKeyValidator:
     """Validates manuscript description files against authority keys."""
 
     def __init__(
-        self, directory_path: Path, authority_paths: list[Path]
+        self,
+        authority_paths: list[Path],
+        directory_path: Path | None = None,
+        file_paths: list[Path] | None = None,
     ) -> None:
-        self.directory_path: Path = directory_path
+        self.directory_path: Path | None = directory_path
+        self.file_paths: list[Path] | None = file_paths
         self.authority_paths: list[Path] = authority_paths
         self.authority_keys: set[str] = self._aggregate_authority_keys()
 
     def _aggregate_authority_keys(self) -> set[str]:
         """Aggregates keys from provided authority files."""
         aggregated: set[str] = set()
+        logger = logging.getLogger(__name__)
         for path in self.authority_paths:
             try:
                 aggregated |= AuthorityFile(path).keys
-                logging.debug(f"Processed authority file: '{path}'")
+                logger.debug(f"Processed authority file: '{path}'")
             except (OSError, IOError) as err:
-                logging.error(
+                logger.error(
                     f"File I/O error with authority file '{path}': {err}"
                 )
-            except ET.ParseError as err:
-                logging.error(
+            except etree.XMLSyntaxError as err:
+                logger.error(
                     f"XML parsing error in authority file '{path}': {err}"
                 )
             except Exception as exc:
-                logging.error(
+                logger.error(
                     f"Unexpected error with authority file '{path}': {exc}"
                 )
         return aggregated
@@ -165,25 +232,88 @@ class AuthorityKeyValidator:
         Returns:
             int: Number of files with key validation errors.
         """
+        start = time.perf_counter()
         error_count: int = 0
-        msdesc_paths: list[Path] = list(self.directory_path.rglob("*.xml"))
+        total_files: int = 0
+        logger = logging.getLogger(__name__)
+        gha = os.getenv("GITHUB_ACTIONS", "").lower() == "true"
+
+        # Determine which files to process
+        if self.file_paths:
+            msdesc_paths: list[Path] = self.file_paths
+        elif self.directory_path:
+            msdesc_paths = list(self.directory_path.rglob("*.xml"))
+        else:
+            logger.error("Neither directory path nor file paths provided.")
+            return 1
+
         if not msdesc_paths:
-            logging.warning(f"No XML files found in '{self.directory_path}'.")
+            if self.directory_path:
+                logger.warning(
+                    f"No XML files found in '{self.directory_path}'."
+                )
+            else:
+                logger.warning("No XML files provided.")
+
         for path in msdesc_paths:
+            total_files += 1
             try:
-                if not MSDesc(path).check_keys(self.authority_keys):
+                issues = MSDesc(path).check_keys(self.authority_keys)
+                if issues:
                     error_count += 1
+                    # Emit GitHub Actions annotations if in GitHub environment
+                    if gha:
+                        for issue in issues:
+                            props: list[str] = [
+                                f"file={_gha_escape_property(str(issue.file))}"
+                            ]
+                            if issue.line is not None:
+                                props.append(f"line={issue.line}")
+                            if issue.column is not None:
+                                props.append(f"col={issue.column}")
+                            props.append(
+                                f"title={_gha_escape_property('Entity key validation')}"
+                            )
+                            print(
+                                f"::error {','.join(props)}::{_gha_escape_message(issue.message)}"
+                            )
+                    # Always log human-readable errors as well
+                    for issue in issues:
+                        logger.error(f"{issue.file}: {issue.message}")
                 else:
-                    logging.debug(f"No issues in '{path}'.")
+                    logger.debug(f"No issues in '{path}'.")
             except (OSError, IOError) as err:
-                logging.error(f"File I/O error processing '{path}': {err}")
+                logger.error(f"File I/O error processing '{path}': {err}")
                 error_count += 1
-            except ET.ParseError as err:
-                logging.error(f"XML parsing error in '{path}': {err}")
+            except etree.XMLSyntaxError as err:
+                logger.error(f"XML parsing error in '{path}': {err}")
                 error_count += 1
             except Exception as exc:
-                logging.error(f"Unexpected error processing '{path}': {exc}")
+                logger.error(f"Unexpected error processing '{path}': {exc}")
                 error_count += 1
+
+        # Report results with timing
+        elapsed = time.perf_counter() - start
+        ok_count = total_files - error_count
+        if error_count == 0:
+            logger.info(
+                f"Validated {total_files} file(s): all OK in {elapsed:.2f}s"
+            )
+            # GitHub Actions success notice
+            if gha:
+                print(
+                    f"::notice title=Entity Key Validation::✅ All {total_files} files passed entity key validation in {elapsed:.2f}s"
+                )
+        else:
+            logger.info(
+                f"Validated {total_files} file(s): {ok_count} OK, {error_count} failed in {elapsed:.2f}s"
+            )
+            # GitHub Actions error summary
+            if gha:
+                print(
+                    f"::error title=Entity Key Validation Summary::❌ {error_count} of {total_files} files failed entity key validation"
+                )
+
         return error_count
 
 
@@ -211,18 +341,40 @@ def parse_arguments() -> argparse.Namespace:
         help="Paths to authority files",
         type=Path,
     )
+    parser.add_argument(
+        "files",
+        nargs="*",
+        help="List of XML files to validate (overrides directory)",
+        type=Path,
+    )
     return parser.parse_args()
 
 
 def main() -> int:
     args: argparse.Namespace = parse_arguments()
-    logging.info("Starting validation of manuscript keys...")
-    validator = AuthorityKeyValidator(args.directory_path, args.authority_paths)
+
+    # Configure logging
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(levelname)s: %(message)s",
+    )
+    logger = logging.getLogger(__name__)
+
+    logger.info("Starting validation of manuscript keys...")
+
+    # Determine whether to use files or directory
+    if args.files:
+        validator = AuthorityKeyValidator(
+            args.authority_paths, file_paths=args.files
+        )
+    else:
+        validator = AuthorityKeyValidator(
+            args.authority_paths, directory_path=args.directory_path
+        )
+
     errors: int = validator.validate_manuscripts()
     if errors:
-        logging.info(f"Validation completed with {errors} error(s).")
-    else:
-        logging.info("Validation completed successfully with no errors.")
+        logger.error(f"{errors} errors found")
     return 1 if errors else 0
 
 
