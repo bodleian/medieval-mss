@@ -380,6 +380,14 @@ def main(argv: list[str] | None = None) -> int:
     logger.info(
         f"Validating {len(xml_files)} file(s) with {workers} worker(s) ..."
     )
+    if args.files:
+        logger.info("Files to be validated:")
+        for f in xml_files:
+            logger.info(f"  {f}")
+    elif args.directory_path:
+        logger.info(
+            f"Validating all .xml files in directory: {args.directory_path}"
+        )
     start = time.perf_counter()
 
     validator = RelaxNGValidator()
