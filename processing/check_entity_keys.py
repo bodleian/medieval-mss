@@ -10,6 +10,7 @@ import sys
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass, field
 from pathlib import Path
+from typing import cast
 
 
 class GitHubActionsFormatter(logging.Formatter):
@@ -41,26 +42,36 @@ NS: dict[str, str] = {
 KEY_PATTERN = re.compile(r"^(?:(?:person)|(?:place)|(?:org)|(?:work))_\d+$")
 
 
-@dataclass(slots=True)
+@dataclass(slots=True, frozen=False)
 class XMLFile:
     """Represents an XML file."""
 
     file_path: Path
-    tree: ET.ElementTree = field(init=False)
+    tree: object = field(init=False, repr=False)
 
     def __post_init__(self) -> None:
         """Initialises the tree by parsing the XML file."""
         self.tree = self.read()
 
-    def read(self) -> ET.ElementTree:
+    def read(self) -> object:
         """Parses the XML file specified by file_path."""
         try:
-            return ET.parse(str(self.file_path))
+            tree = ET.parse(self.file_path)
+            if tree.getroot() is None:
+                msg = f"XML file '{self.file_path}' has no root element"
+                raise ValueError(msg)
+            return tree
         except ET.ParseError as err:
-            logging.error(f"XML parsing error in '{self.file_path}': {err}")
+            msg = f"XML parsing error in '{self.file_path}': {err}"
+            logging.error(msg)
+            raise
+        except (OSError, IOError) as err:
+            msg = f"File I/O error reading '{self.file_path}': {err}"
+            logging.error(msg)
             raise
         except Exception as exc:
-            logging.error(f"Error reading '{self.file_path}': {exc}")
+            msg = f"Unexpected error reading '{self.file_path}': {exc}"
+            logging.error(msg)
             raise
 
 
@@ -77,9 +88,10 @@ class AuthorityFile(XMLFile):
             f"{{{NS['tei']}}}{tag}"
             for tag in ("person", "place", "org", "bibl")
         }
+        tree = cast(ET.ElementTree, self.tree)
         return {
             elem.attrib[f"{{{NS['xml']}}}id"]
-            for elem in self.tree.iter()
+            for elem in tree.iter()
             if elem.tag in allowed_tags
             and elem.attrib.get(f"{{{NS['xml']}}}id")
         }
@@ -91,7 +103,8 @@ class MSDesc(XMLFile):
     def check_keys(self, authority_keys: set[str]) -> bool:
         """Validates that every 'key' attribute in the manuscript description is correct."""
         valid: bool = True
-        for elem in self.tree.iter():
+        tree = cast(ET.ElementTree, self.tree)
+        for elem in tree.iter():
             if "key" not in elem.attrib:
                 continue
             key: str = elem.attrib["key"]
@@ -121,9 +134,9 @@ class AuthorityKeyValidator:
     def __init__(
         self, directory_path: Path, authority_paths: list[Path]
     ) -> None:
-        self.directory_path = directory_path
-        self.authority_paths = authority_paths
-        self.authority_keys = self._aggregate_authority_keys()
+        self.directory_path: Path = directory_path
+        self.authority_paths: list[Path] = authority_paths
+        self.authority_keys: set[str] = self._aggregate_authority_keys()
 
     def _aggregate_authority_keys(self) -> set[str]:
         """Aggregates keys from provided authority files."""
@@ -132,8 +145,18 @@ class AuthorityKeyValidator:
             try:
                 aggregated |= AuthorityFile(path).keys
                 logging.debug(f"Processed authority file: '{path}'")
-            except Exception:
-                logging.error(f"Skipping authority file: '{path}'")
+            except (OSError, IOError) as err:
+                logging.error(
+                    f"File I/O error with authority file '{path}': {err}"
+                )
+            except ET.ParseError as err:
+                logging.error(
+                    f"XML parsing error in authority file '{path}': {err}"
+                )
+            except Exception as exc:
+                logging.error(
+                    f"Unexpected error with authority file '{path}': {exc}"
+                )
         return aggregated
 
     def validate_manuscripts(self) -> int:
@@ -152,8 +175,14 @@ class AuthorityKeyValidator:
                     error_count += 1
                 else:
                     logging.debug(f"No issues in '{path}'.")
+            except (OSError, IOError) as err:
+                logging.error(f"File I/O error processing '{path}': {err}")
+                error_count += 1
+            except ET.ParseError as err:
+                logging.error(f"XML parsing error in '{path}': {err}")
+                error_count += 1
             except Exception as exc:
-                logging.error(f"Error processing '{path}': {exc}")
+                logging.error(f"Unexpected error processing '{path}': {exc}")
                 error_count += 1
         return error_count
 
