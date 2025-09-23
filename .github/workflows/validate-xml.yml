@@ -5,13 +5,15 @@ on:
     paths:
       - '**.xml'
   pull_request:
-    paths:
-      - '**.xml'
+    # Run on all PRs so the required check always reports a status,
+    # even when no XML files changed.
+    types: [opened, synchronize, reopened, ready_for_review]
   schedule:
     - cron: '0 3 * * 1'  # Every Monday at 03:00 UTC
 
 permissions:
   contents: read
+  pull-requests: read
 
 jobs:
   validate-xml:
