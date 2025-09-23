@@ -1,0 +1,39 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Check Entity Keys",
+			"type": "shell",
+			"command": "uv",
+			"args": [
+				"run",
+				"python",
+				"processing/check_entity_keys.py",
+				"-d",
+				"collections",
+				"-a",
+				"persons.xml",
+				"places.xml",
+				"works.xml"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Validate XML Schema",
+			"type": "shell",
+			"command": "uv",
+			"args": [
+				"run",
+				"python",
+				"processing/validate.py",
+				"-d",
+				"collections"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+	]
+}
