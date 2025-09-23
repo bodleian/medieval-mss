@@ -8,23 +8,25 @@ on:
     paths:
       - '**.xml'
 
+permissions:
+  contents: read
+
 jobs:
   validate-xml:
-
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     steps:
     - name: Check out repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
 
-    - name: Set up Python
-      uses: actions/setup-python@v5
+    - name: Install uv
+      uses: astral-sh/setup-uv@v6
       with:
-        python-version: '3.x'
-        cache: 'pip'
+        enable-cache: true
 
     - name: Install dependencies
-      run: pip install -r processing/requirements.txt
+      run: uv sync
 
     - name: Validate XML using Relax NG
-      run: python processing/validate.py
+      run: uv run python processing/validate.py
