@@ -1,18 +1,28 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2973">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2973">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Canon. Liturg. 285</title>
             <title type="collection">MSS. Canon. Liturg. (Canonici Liturgical)</title>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            
             <respStmt xml:id="VD">
                <resp when="1957">Cataloguer</resp>
                <persName>S. J. P. van Dijk</persName>
             </respStmt>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2025">Encoding</resp>
+               <persName>Stewart Brookes</persName>
             </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -41,10 +51,74 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem class="#liturgica" n="1" xml:id="MS_Canon_Liturg_285-item1"><locus from="1r" to="326v" type="inferred"/>
+                  
+                  <msItem class="#liturgica" n="1" xml:id="MS_Canon_Liturg_285-item1">
                      <title key="work_10621" type="desc">Breviary (Benedictine)</title>
+                     
+                     <msItem>
+                        <locus>(fol. 1)</locus>
+                        <title type="desc">Temporale</title>
+                        <note>From the first Sunday in Advent to Holy Saturday, with tables for the ferial antiphons before Christmas (fol. 28)</note>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 109)</locus>
+                        <title key="work_10687" type="desc">Calendar</title>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 116)</locus>
+                        <title type="desc">Ferial psalter</title>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 166)</locus>
+                        <title type="desc">Ferial psalter with canticles</title>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 172)</locus>
+                        <title type="desc">Te deum, Quicumque</title>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 173v)</locus>
+                        <title type="desc">Hymnal</title>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 180)</locus>
+                        <title type="desc">Temporale</title>
+                        <note>From Easter to the last Sunday after Pentecost</note>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 226)</locus>
+                        <title type="desc">Sanctorale</title>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 304)</locus>
+                        <title type="desc">Common of the saints</title>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 321v)</locus>
+                        <title type="desc">Dedication</title>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 324)</locus>
+                        <title type="desc">Office of the Virgin</title>
+                     </msItem>
+                     
+                     <msItem>
+                        <note>Rubrics and kalendar are based on the Ordo breviarii of Haymo of Faversham</note>
+                     </msItem>
+                     
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
@@ -52,7 +126,8 @@
                         <support>parchment</support>
                         <extent resp="#VD">
                            <seg type="leaf"> iii + <measure type="leaf" quantity="326">326 (329) </measure>+ 1 + ii  leaves</seg>
-             .<dimensions type="leaf" unit="mm">
+                           
+                           <dimensions type="leaf" unit="mm">
                               <height>177</height>
                               <width>123</width>
                            </dimensions>
@@ -63,7 +138,7 @@
                         </extent>
                      </supportDesc>
                      <layoutDesc resp="#VD">
-                        <layout columns="2" writtenLines="29">2 col. of 29 lines</layout>
+                        <layout columns="2" writtenLines="29">2 cols of 29 lines</layout>
                      </layoutDesc>
                   </objectDesc>
                </physDesc>
@@ -71,16 +146,24 @@
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1410" notBefore="1400">15th century, early</origDate>
                      <origPlace>
-                        <country key="place_1000080">Italian</country>, <region>North</region>
+                        <country key="place_1000080" resp="#VD">Italian</country>, <settlement key="place_7000457">Florence</settlement>
+                        
                         <!--ORIGINAL: Italian, North-->
+                        
                      </origPlace>
+                     
                   </origin>
+                  <provenance resp="#VD"><orgName role="fmo">Olivetan, Benedictine Congregation of Saint Mary</orgName></provenance>
+                  
+                  <!-- Add authority record -->                  
+                     
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). <listBibl>
+                           Description adapted (October 2025) by Stewart J. Brookes from the Summary Catalogue (1897). Extent, leaf dimensions, layout and additional desciption of the contents from van Dijk (1957)
+                           <listBibl>
                               <bibl facs="aaz0393.gif" type="SC">Summary Catalogue, vol. 4, p. 374</bibl>
                            </listBibl>
                         </source>
@@ -97,7 +180,9 @@
             </msDesc>
          </sourceDesc>
       </fileDesc>
-      <revisionDesc>
+      <revisionDesc>         
+         <change when="2025-10-10">Description revised to incorporate all the information in the Summary Catalogue (1897)</change>
+         <change when="2025-07-10">Description revised to incorporate all the information in the Summary Catalogue (1897)</change>
          <change when="2025-07">Add extent, leaf dimensions and layout from van Dijk, Latin Liturgical Manuscripts in the Bodleian Library, Oxford.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
