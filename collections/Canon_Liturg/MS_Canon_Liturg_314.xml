@@ -4,11 +4,22 @@
          <titleStmt>
             <title>MS. Canon. Liturg. 314</title>
             <title type="collection">MSS. Canon. Liturg. (Canonici Liturgical)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2025">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -35,23 +46,87 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem class="#liturgica" n="1" xml:id="MS_Canon_Liturg_314-item1">
-                     <title key="work_13564" type="desc">Office for baptism</title>
+                  
+                  <msItem n="1" xml:id="MS_Canon_Liturg_314-item1">
+                     <locus>(fols 1-2)</locus>
+                     <title key="work_12559" type="desc">Lectionary</title>
+                     <note>Fragment of a 12th-century lectionary, folio, in double columns</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
+                  <msItem class="#liturgica" n="2" xml:id="MS_Canon_Liturg_314-item2">
+                     <title type="desc">Liturgical texts</title>
+                     
+                     <msItem>
+                        <locus>(fol. 3)</locus>
+                        <title key="work_13564" type="desc">Office for baptism</title>
+                        <rubric>ad chatecuminum faciendum</rubric>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 11)</locus>
+                        <title type="desc">Beginnings of the 4 gospels</title>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 14v)</locus>
+                        <title type="desc">Blessing of the font</title>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 19v)</locus>
+                        <title type="desc">Blessing for baptism</title>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 21v)</locus>
+                        <title key="work_13564" type="desc">Office for baptism</title>
+                        <note>Written by another hand and intended for women</note>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 27)</locus>
+                        <title key="work_13564" type="desc">Office for baptism</title>
+                        <note>For men</note>
+                     </msItem>
+                     
+                     <textLang mainLang="la">Latin</textLang>
+                  </msItem>
+                  
                </msContents>
                <physDesc>
+
                   <objectDesc form="codex">
-                     <supportDesc material="perg">
-                        <support>parchment</support>
-                     </supportDesc>
-                  </objectDesc>
+                           <supportDesc material="perg">
+                              <support>parchment</support>
+                              <extent resp="#VD">
+                                 <seg type="leaf">i + 2 + <measure type="page" quantity="30">30</measure> + iii  fols</seg>
+                                 <dimensions type="leaf" unit="mm">
+                                    <height>200</height>
+                                    <width>143</width>
+                                 </dimensions>
+                                 
+                                 <dimensions type="written" unit="mm">
+                                    <height>130-140</height>
+                                    <width>95-100</width>
+                                 </dimensions>
+                                 
+                              </extent>
+                           </supportDesc>
+                           <layoutDesc resp="#VD">
+                              <layout columns="1" writtenLines="18">1 col. of 18 lines
+                              </layout>
+                              
+                           </layoutDesc>
+                           
+                        </objectDesc>
+                  
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
                      <origPlace>
-                        <country key="place_1000080">Italian</country>
+                        <country key="place_1000080">Italy</country>
                      </origPlace>
                   </origin>
                </history>
@@ -59,7 +134,8 @@
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). <listBibl>
+                           Description adapted (October 2025) by Stewart J. Brookes from the Summary Catalogue (1897). Extent, leaf dimensions, layout and additional desciption of the contents from van Dijk (1957)
+                           <listBibl>
                               <bibl facs="aaz0397.gif" type="SC">Summary Catalogue, vol. 4, p. 378</bibl>
                               <bibl facs="aaz0398.gif" type="SC">Summary Catalogue, vol. 4, p. 379</bibl>
                            </listBibl>
@@ -78,6 +154,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-10-10">Description revised to incorporate all the information in the Summary Catalogue (1897)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
