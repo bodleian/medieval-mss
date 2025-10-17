@@ -1,18 +1,28 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2995">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2995">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Canon. Liturg. 313</title>
             <title type="collection">MSS. Canon. Liturg. (Canonici Liturgical)</title>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            
             <respStmt xml:id="VD">
                <resp when="1957">Cataloguer</resp>
                <persName>S. J. P. van Dijk</persName>
             </respStmt>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2025">Encoding</resp>
+               <persName>Stewart Brookes</persName>
             </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -41,9 +51,40 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem class="#liturgica" n="1" xml:id="MS_Canon_Liturg_313-item1"><locus from="1r" to="25v" type="inferred"/>
+                 
+                  <msItem class="#liturgica" n="1" xml:id="MS_Canon_Liturg_313-item1">
                      <title key="work_12310" type="desc">Hours, offices and mass, including office for the Inventio S. Quintini</title>
+                     
+                     
+                     <msItem>
+                        <locus>(fol. 1)</locus>
+                        <title type="desc">Office of St Quintinus, the martyr of Vermandois</title>
+                     <rubric>... Officium diui Quintini martyris secundum ritum &amp; morem monacharum ordinis sancti Benedicti de obseruantia Casinensis congregationis</rubric>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 15)</locus>
+                        <title type="desc">Lessons for the octave</title>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 20)</locus>
+                        <title type="desc">Lessons for the feast of the Invention of St Quintinus</title>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 24)</locus>
+                        <title type="desc">Mass</title>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 25)</locus>
+                        <title type="desc">6 antiphons for the feast of Sts Cosmas and Damian</title>
+                        <note>Written by another hand</note>
+                     </msItem>
+                     
                      <textLang mainLang="la">Latin</textLang>
+                 
                   </msItem>
                </msContents>
                <physDesc>
@@ -68,19 +109,32 @@
                      </layoutDesc>
                   </objectDesc>
                </physDesc>
+               
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1600" notBefore="1500">16th century</origDate>
                      <origPlace>
-                        <country key="place_1000080">Italian</country>
+                        <country key="place_1000080">Italy</country>
                      </origPlace>
                   </origin>
+                  
+                  <provenance>Congregation of St. Justina of Padua (<orgName key="org_133865391">Montecassino</orgName>), 16th century</provenance>
+                        
+                     <provenance>On the front cover: <persName role="fmo">D[ominae] Laviniæ Ambanellæ</persName> (16th century)</provenance>
+                     
+                  <!-- Add authority record -->                  
+                  
+                  <provenance><persName key="person_2384880" role="fmo">Matteo Luigi Canonici of Venice (1727– <hi rend="italic">c</hi>. 1806)</persName></provenance>
+                  <provenance notAfter="1807" resp="#SC"><persName key="person_446" role="fmo">Giuseppe Canonici, -1807</persName></provenance>
+                  <acquisition when="1817">Bodleian Library: bought in 1817 from Canonici's nephew, Giovanni Perissinotti</acquisition>
+                  
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). <listBibl>
+                           Description adapted (October 2025) by Stewart J. Brookes from the Summary Catalogue (1897). Extent, leaf dimensions, layout and additional desciption of the contents from van Dijk (1957)
+                           <listBibl>
                               <bibl facs="aaz0397.gif" type="SC">Summary Catalogue, vol. 4, p. 378</bibl>
                            </listBibl>
                         </source>
@@ -98,6 +152,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-10-17">Description revised to incorporate all the information in the Summary Catalogue (1897)</change>
          <change when="2025-07">Add extent, leaf dimensions and layout from van Dijk, Latin Liturgical Manuscripts in the Bodleian Library, Oxford.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
