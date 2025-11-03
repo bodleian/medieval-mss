@@ -1,30 +1,107 @@
-name: Validate XML
+name: Validate XML and Check Entity Keys
 
 on:
   push:
-    paths:
-      - '**.xml'
+    branches:
+      - master
   pull_request:
-    paths:
-      - '**.xml'
+    types: [opened, synchronize, reopened, ready_for_review]
+  schedule:
+    - cron: '0 3 * * 1'  # Every Monday at 03:00 UTC
+
+permissions:
+  contents: read
+  pull-requests: read
 
 jobs:
   validate-xml:
-
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     steps:
     - name: Check out repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
 
-    - name: Set up Python
-      uses: actions/setup-python@v5
+    - name: Plan work
+      id: plan
+      uses: actions/github-script@v7
       with:
-        python-version: '3.x'
-        cache: 'pip'
+        script: |
+          const event = context.eventName;
+          const owner = context.repo.owner;
+          const repo = context.repo.repo;
+          const isSchedule = (event === 'schedule');
+          let files = [];
+
+          if (!isSchedule) {
+            if (event === 'pull_request') {
+              const pull_number = context.payload.pull_request.number;
+              const per_page = 100;
+              for (let page = 1; ; page++) {
+                const { data } = await github.rest.pulls.listFiles({ owner, repo, pull_number, per_page, page });
+                if (!data || data.length === 0) break;
+                files.push(...data.map(f => f.filename));
+                if (data.length < per_page) break;
+              }
+            } else if (event === 'push') {
+              const before = context.payload.before;
+              const after = context.sha;
+              if (before && before !== after) {
+                const { data } = await github.rest.repos.compareCommits({ owner, repo, base: before, head: after });
+                if (data && Array.isArray(data.files)) {
+                  files.push(...data.files.map(f => f.filename));
+                }
+              } else if (context.payload.head_commit) {
+                const hc = context.payload.head_commit;
+                files.push(...(hc.added || []), ...(hc.modified || []), ...(hc.removed || []));
+              }
+            }
+          }
+
+          const xmlFiles = [...new Set(files)].filter(f => f.toLowerCase().endsWith('.xml'));
+          const count = xmlFiles.length;
+          const shouldRun = isSchedule || count > 0;
+          if (!shouldRun) core.notice('No XML files changed');
+          return { files: xmlFiles, count, isSchedule, shouldRun };
+
+    # Install toolchain only when needed
+    - name: Set up Python
+      if: fromJSON(steps.plan.outputs.result).shouldRun
+      uses: actions/setup-python@v6
+      with:
+        python-version-file: "pyproject.toml"
+
+    - name: Install uv
+      if: fromJSON(steps.plan.outputs.result).shouldRun
+      uses: astral-sh/setup-uv@v6
+      with:
+        enable-cache: true
 
     - name: Install dependencies
-      run: pip install -r processing/requirements.txt
+      if: fromJSON(steps.plan.outputs.result).shouldRun
+      run: uv sync
 
-    - name: Validate XML using Relax NG
-      run: python processing/validate.py
+    - name: Validate XML
+      if: fromJSON(steps.plan.outputs.result).shouldRun
+      run: |
+        if [ "${{ fromJSON(steps.plan.outputs.result).isSchedule }}" = "true" ]; then
+          uv run python processing/validate.py -d collections -j 0
+        else
+          uv run python processing/validate.py -j 0 ${{ join(fromJSON(steps.plan.outputs.result).files, ' ') }}
+        fi
+
+    - name: Check entity keys
+      if: fromJSON(steps.plan.outputs.result).shouldRun
+      run: |
+        if [ "${{ fromJSON(steps.plan.outputs.result).isSchedule }}" = "true" ]; then
+          uv run python processing/check_entity_keys.py -d collections
+        else
+          files="${{ join(fromJSON(steps.plan.outputs.result).files, ' ') }}"
+          collection_files=$(echo "$files" | tr ' ' '\n' | grep -E '^collections/' | tr '\n' ' ')
+          if [ -n "$collection_files" ]; then
+            echo "Checking entity keys in manuscript description files: $collection_files"
+            uv run python processing/check_entity_keys.py $collection_files
+          else
+            echo "No manuscript description files (collections/) to check for entity keys."
+          fi
+        fi

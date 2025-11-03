@@ -4,11 +4,22 @@
          <titleStmt>
             <title>MS. Canon. Liturg. 249</title>
             <title type="collection">MSS. Canon. Liturg. (Canonici Liturgical)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="VD">
+               <resp when="1957">Cataloguer</resp>
+               <persName>S. J. P. van Dijk</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2025">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -37,29 +48,81 @@
                <msContents>
                   <msItem class="#oratio" n="1" xml:id="MS_Canon_Liturg_249-item1">
                      <title key="work_13942" type="desc">Prayers (private, for a Carthusian monk)</title>
-                     <textLang mainLang="la">Latin</textLang>
-                  </msItem>
-               </msContents>
+                     
+                        <msItem>
+                           <locus>(fol. 86v)</locus>
+                           <title type="desc">Benedictio putei noui</title>
+                           <note>Blessing of a new well</note>
+                        </msItem>
+                        
+                        <msItem>
+                           <locus>(fol. 87r)</locus>
+                           <title type="desc">Benedictio domus noue</title>
+                           <note>Blessing of a new house</note>
+                        </msItem>
+                        
+                        <msItem>
+                           <locus>(fol. 95)</locus>
+                           <title type="desc">Prose Veni sancte spiritus</title>
+                        </msItem>
+                        
+                        <msItem>
+                           <locus>(fol. 96)</locus>
+                           <title type="desc">Series of collects for various intentions</title>
+                        </msItem>
+                        
+                        <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+               </msContents>                     
+                     
                <physDesc>
-                  <objectDesc form="codex">
-                     <supportDesc material="perg">
-                        <support>parchment</support>
-                     </supportDesc>
-                  </objectDesc>
-               </physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="perg">
+                           <support>parchment</support>
+                           <extent resp="#VD">
+                              <seg type="leaf">i + <measure type="page" quantity="132">132</measure> + i  leaves</seg>
+                              <dimensions type="leaf" unit="mm">
+                                 <height>100</height>
+                                 <width>65</width>
+                              </dimensions>
+                              
+                              <dimensions type="written" unit="mm">
+                                 <height>57</height>
+                                 <width>43</width>
+                              </dimensions>
+                              
+                           </extent>
+                        </supportDesc>
+                        <layoutDesc resp="#VD">
+                           <layout columns="1" writtenLines="14">1 col. of 14 lines
+                           </layout>
+                           
+                        </layoutDesc>
+                        
+                     </objectDesc>
+                     
+                  </physDesc>
+                  
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
                      <origPlace>
-                        <country key="place_1000080">Italian</country>
+                        <country key="place_1000080">Italy</country> <settlement>Carignano</settlement>, near <settlement key="place_7005903">Milan</settlement>
+                        
+                  <!-- Add authority record -->                  
+                        
                      </origPlace>
                   </origin>
+                  
+                  <provenance>Monasterium Cartusie extra p<ex>ortam</ex> c<ex>ivitatis</ex> M<ex>edio</ex>l<ex>an</ex>i</provenance>
+                 
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). <listBibl>
+                           Description adapted (October 2025) by Stewart J. Brookes from the Summary Catalogue (1897). Extent, leaf dimensions, layout and additional desciption of the contents from van Dijk (1957)
+                           <listBibl>
                               <bibl facs="aaz0385.gif" type="SC">Summary Catalogue, vol. 4, p. 366</bibl>
                            </listBibl>
                         </source>
@@ -77,6 +140,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-10-03">Description revised to incorporate all the information in the Summary Catalogue (1897)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
