@@ -6,7 +6,7 @@
 #           'noindex' to generate the files and do the checking but not push to Solr
 #           'reuse' to send files previously created to Solr without rebuilding them
 
-SERVER="solr01-qa.bodleian.ox.ac.uk"
+SERVER="localhost"
 
 if [[ ! "`pwd`" == *-mss/processing ]]; then
     echo "This script must be run from the processing folder"
@@ -19,10 +19,10 @@ if [ "$1" == "reuse" ]; then
     if [ $ageofsolrdir -ge 1 ]; then
         echo -n "The solr files are $ageofsolrdir hours old. "
         while true; do
-            read -p "Are you sure you want to send these to the QA Solr server?? [Yes|No] " answer
+            read -p "Are you sure you want to send these to the local Solr server?? [Yes|No] " answer
             case $answer in
                 [Yy]|YES|Yes|yes ) break;;
-                [Nn]|NO|No|no ) echo "Abandoning re-indexing. The QA server has not been updated."; exit 0;;
+                [Nn]|NO|No|no ) echo "Abandoning re-indexing. The local server has not been updated."; exit 0;;
                 * ) echo;;
             esac
         done
