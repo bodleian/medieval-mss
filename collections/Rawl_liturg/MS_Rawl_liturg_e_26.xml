@@ -1,4 +1,5 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8656">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8656">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -20,6 +21,10 @@
             <respStmt xml:id="MLH">
                <resp when="2025">Encoding</resp>
                <persName>Matthew Holford</persName>
+            </respStmt>
+            <respStmt xml:id="FO">
+               <resp when="2025">Cataloguer</resp>
+               <persName>Freya Owen</persName>
             </respStmt>
          </titleStmt>
          <publicationStmt>
@@ -49,34 +54,36 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem class="#liturgica"  xml:id="MS_Rawl_liturg_e_26-item1"><locus from="1r" to="122v" type="inferred"/>
+                  <msItem class="#liturgica" xml:id="MS_Rawl_liturg_e_26-item1">
+                     <locus from="1r" to="122v" type="inferred"/>
                      <title key="work_10561" type="desc">Book of Hours, Use of Rome</title>
-                     <msItem >
+                     <msItem>
                         <locus>(fol. 1)</locus>
                         <note>Calendar in French </note>
                      </msItem>
-                     <msItem >
+                     <msItem>
                         <locus>(fol. 8)</locus>
                         <note>Hours of the Cross and the Holy Ghost (fol. 14)</note>
                      </msItem>
-                     <msItem >
+                     <msItem>
                         <locus>(fol. 23)</locus>
                         <note>Hours of the Virgin </note>
                      </msItem>
-                     <msItem >
+                     <msItem>
                         <locus>(fol. 69)</locus>
-                        <note>Penitential Psalms  with litany (fol. 78v)</note>
+                        <note>Penitential Psalms with litany (fol. 78v)</note>
                      </msItem>
-                     <msItem >
+                     <msItem>
                         <locus>(fol. 84)</locus>
                         <note>Office of the dead, according to the use of Tournai</note>
                      </msItem>
-                     <msItem >
+                     <msItem>
                         <locus>(fol. 118v)</locus>
                         <note>Veni creator, Salve Regina (fol. 119v)</note>
                      </msItem>
-                     <msItem >
-                        <note>Commemorations of St Barbara, Catherine, Nicholas and Christopher (120), including some prayers (121v).</note>
+                     <msItem>
+                        <note>Commemorations of St Barbara, Catherine, Nicholas and Christopher
+                           (120), including some prayers (121v).</note>
                      </msItem>
                      <textLang mainLang="la" otherLangs="frm">Latin, Middle French</textLang>
                   </msItem>
@@ -85,7 +92,12 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                        <extent resp="#VD"> <seg type="leaf"><measure type="laterEndleaf" quantity="1">i</measure> + <measure type="endleaf" quantity="1">1</measure> + <measure type="leaf" quantity="122">122</measure> + <measure type="laterEndleaf" quantity="2">ii</measure></seg> fol.<dimensions type="leaf" unit="mm">
+                        <extent resp="#VD">
+                           <seg type="leaf"><measure type="laterEndleaf" quantity="1">i</measure> +
+                                 <measure type="endleaf" quantity="1">1</measure> + <measure
+                                 type="leaf" quantity="122">122</measure> + <measure
+                                 type="laterEndleaf" quantity="2">ii</measure></seg> fol.<dimensions
+                              type="leaf" unit="mm">
                               <height>201</height>
                               <width>145</width>
                            </dimensions>
@@ -101,11 +113,52 @@
                   </objectDesc>
                   <decoDesc>
                      <summary>
-                        <ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 333, pl. XXVI. Related by James Marrow to the style of the artist dubbed by him the Master of the Tournai Evangelary (<title>Leaves of Gold: Manuscript Illumination from Philadelphia Collections</title> (Philadelphia Museum of Art, 2001), 140 n. 5).
-                     </summary>
-                     <decoNote type="miniature">Good miniatures. </decoNote>
-                     <decoNote type="border">Good borders. </decoNote>
-                     <decoNote type="decInit">Good initials. </decoNote>
+                        <ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and
+                           Alexander</ref> i. 333, pl. XXVI. Related by James Marrow to the style of
+                        the artist dubbed by him the Master of the Tournai Evangelary (<title>Leaves
+                           of Gold: Manuscript Illumination from Philadelphia Collections</title>
+                        (Philadelphia Museum of Art, 2001), 140 n. 5). </summary>
+                     <decoNote type="miniature">Good miniatures. Full page miniatures. <list>
+                           <item>Fol. 7v (Hours of the Cross): Crucifixion with Virgin Mary and St
+                              John the Evangelist, a small skull lies at the bottom of the
+                              cross.</item>
+                           <item> Fol.13v (Hours of the Holy Spirit): Pentecost. Holy Spirit as a
+                              dove descends from a blue orb, Virgin Mary and the twelve disciples
+                              look up. Interior setting with a gold, red, and blue check pattern
+                              background. </item>
+                           <item> Fol.22v (Hours of the Virgin, Matins): Annunciation. Virgin Mary
+                              to left kneeling and reading.</item>
+                           <item> Fol.31v (Hours of the Virgin, Lauds): Visitation.</item>
+                           <item> Fol.41v (Hours of the Virgin, Prime): Nativity. The Virgin Mary
+                              prays over the Christ child lying naked on the ground. Joseph is not
+                              featured. Stable setting with rural background but no ox or ass. In
+                              the background, a small figure walks towards the birth. </item>
+                           <item> Fol.45v (Hours of the Virgin, Terce): Annunciation to the
+                              Shepherds. Angel in the sky holding a banderolle. Two shepherds look
+                              up to the angel, one standing and one lying down. Rural setting with
+                              sheep. </item>
+                           <item> Fol.49v (Hours of the Virgin, Sext): Adoration of the Magi. Christ
+                              Child in Mary’s lap. Two kings kneel to offer gifts; the third king
+                              stands to the side. A crown lies on the floor between the
+                              kings.</item>
+                           <item> Fol.53v (Hours of the Virgin, None): Flight to Egypt. The Virgin
+                              Mary holds Jesus wrapped in white cloth while riding a donkey. Joseph
+                              leads them. Rural setting with castle.</item>
+                           <item> Fol.57v (Hours of the Virgin, Vespers): Massacre of the Innocents.
+                              King Herod sits in his throne with his soldiers to his side. Three
+                              dead babies wrapped in cloth lie on the floor. A woman holds her dead
+                              baby. </item>
+                           <item> Fol.64v (Hours of the Virgin, Compline): Presentation at the
+                              Temple. </item>
+                           <item> Fol.68v: (Penitential Psalms). David in Penitence. David holds his
+                              harp, stands and looks up. Gold lines emerge from the sky. Castle
+                              setting with rural background.</item>
+                           <item> Fol.83v: (Office of the Dead) Raising of Lazarus. A man and woman
+                              to Christ’s side. Castle setting. </item>
+                        </list></decoNote>
+                     <decoNote type="border">Good borders. Stylized acanthus and plant borders at openings with miniatures. Coat of arms on fols. 7v and 14r and a jester or fool on fol. 8r. </decoNote>
+                     <decoNote type="decInit">Good initials. 2- and 4- line decorated initials mainly in gold, blue and red.</decoNote>
+                     <decoNote type="flourInit">Lesser initials gold flourished in blue or blue flourished in red.</decoNote>
                   </decoDesc>
                   <bindingDesc>
                      <binding notBefore="1500" notAfter="1600">
@@ -115,37 +168,53 @@
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1475" notBefore="1450">15th century, third quarter</origDate>
+                     <origDate calendar="Gregorian" notAfter="1475" notBefore="1450">15th century,
+                        third quarter</origDate>
                      <origPlace>
-                        <country key="place_7024097">Flemish</country>, <settlement key="place_7008002">Tournai</settlement>
+                        <country key="place_7024097">Flemish</country>, <settlement
+                           key="place_7008002">Tournai</settlement>
                         <!--ORIGINAL: Flemish, Tournai-->
                      </origPlace>
                   </origin>
-                  <provenance>In the border of fol. 7v is a coat of arms: argent three nails (2 and 1) sable hanging from a column and surmounted by a front-faced helmet or, with mantlings azure and vert.  Binding as in MS. Rawl. liturg. e. 14. On fol. 122v are erased records of births, one on 23 April 1518, written in the same hand as MS. Rawl. liturg. e. 14.</provenance>
+                  <provenance>In the border of fol. 7v is a coat of arms: argent three nails (2 and
+                     1) sable hanging from a column and surmounted by a front-faced helmet or, with
+                     mantlings azure and vert. Binding as in MS. Rawl. liturg. e. 14. On fol. 122v
+                     are erased records of births, one on 23 April 1518, written in the same hand as
+                     MS. Rawl. liturg. e. 14.</provenance>
                   <provenance notAfter="1755" notBefore="1690" resp="#MMM">
-                     <persName key="person_47563478" role="fmo">Richard Rawlinson, 1690–1755</persName> (?)
-                  </provenance>
-                  <acquisition notAfter="1888">Referenced in the Rawlinson collection about 1888 but lacking direct evidence of belonging to the collection.</acquisition>
+                     <persName key="person_47563478" role="fmo">Richard Rawlinson,
+                        1690–1755</persName> (?) </provenance>
+                  <acquisition notAfter="1888">Referenced in the Rawlinson collection about 1888 but
+                     lacking direct evidence of belonging to the collection.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Description adapted (Oct. 2025) from the following sources with additional reference to published literature as cited:
-                           <listBibl>
-                              <bibl>Otto Pächt and J. J. G. Alexander, <title><ref target="https://catalog.hathitrust.org/Record/000468709">Illuminated Manuscripts in the Bodleian Library, Oxford</ref></title>, I (1966), no. 333</bibl>
-                              <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 4: Books of Hours</title> (typescript, 1957), <citedRange unit="page" from="119" to="119">p. 119</citedRange>
+                        <source>Description adapted (Oct. 2025) from the following sources with
+                           additional reference to published literature as cited. Additional
+                           description of decoration by Freya Owen, 2025. <listBibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title><ref
+                                       target="https://catalog.hathitrust.org/Record/000468709"
+                                       >Illuminated Manuscripts in the Bodleian Library,
+                                       Oxford</ref></title>, I (1966), no. 333</bibl>
+                              <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the
+                                    Bodleian Library, Oxford, vol. 4: Books of Hours</title>
+                                 (typescript, 1957), <citedRange unit="page" from="119" to="119">p.
+                                    119</citedRange>
                               </bibl>
                               <bibl>Summary Catalogue (1895)</bibl>
                            </listBibl>
-                            <listBibl>
-                              <bibl facs="aam0904.gif" type="SC">Summary Catalogue, Vol. 5, p. 867</bibl>
+                           <listBibl>
+                              <bibl facs="aam0904.gif" type="SC">Summary Catalogue, Vol. 5, p.
+                                 867</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
                   <surrogates>
                      <bibl subtype="partial" type="digital-facsimile">
-                        <ref target="https://digital.bodleian.ox.ac.uk/objects/a67a2fb5-d830-4d14-828b-d6f20acfedcc/">
+                        <ref
+                           target="https://digital.bodleian.ox.ac.uk/objects/a67a2fb5-d830-4d14-828b-d6f20acfedcc/">
                            <title>Digital Bodleian</title>
                         </ref>
                         <note>(16 images from 35mm slides)</note>
@@ -154,7 +223,9 @@
                   <listBibl type="WRAPPER">
                      <listBibl type="PRINT">
                         <head>Printed descriptions:</head>
-                        <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 4: Books of Hours</title> (typescript, 1957), <citedRange unit="page" from="119" to="119">p. 119</citedRange>
+                        <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian
+                              Library, Oxford, vol. 4: Books of Hours</title> (typescript, 1957),
+                              <citedRange unit="page" from="119" to="119">p. 119</citedRange>
                         </bibl>
                      </listBibl>
                   </listBibl>
@@ -163,14 +234,23 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-12">Freya Owen: additional description of decoration.</change>
          <change when="2025-10">Encode all information from printed catalogues.</change>
-         <change when="2024-09">Add extent, leaf dimensions and layout from van Dijk, Latin Liturgical Manuscripts in the Bodleian Library, Oxford.</change>
+         <change when="2024-09">Add extent, leaf dimensions and layout from van Dijk, Latin
+            Liturgical Manuscripts in the Bodleian Library, Oxford.</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2019-10-31" xml:id="MMM">
-            <persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
+            <persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and
+            acquisition information added using <ref
+               target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb"
+               >https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref>
+            in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping
+               Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
-            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+            <persName>James Cummings</persName> Up-converted the markup using <ref
+               target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl"
+               >https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>
       </revisionDesc>
    </teiHeader>
