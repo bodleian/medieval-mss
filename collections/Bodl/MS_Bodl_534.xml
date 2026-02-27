@@ -1,5 +1,4 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1557">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1557">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -45,7 +44,7 @@
                   <p n="composite">Composite: four parts</p>
                   <objectDesc>
                      <supportDesc>
-                        <extent>ii + 75 leaves
+                        <extent><seg type="leaf"><measure type="laterEndleaf" quantity="2">ii</measure> + <measure type="leaf" quantity="75">75</measure></seg> leaves
                         <dimensions type="binding" unit="in">
                            <height>8</height>
                            <width>6.125</width>
@@ -89,8 +88,8 @@
                   <msContents>
 
                      <msItem class="#virtutes_et_vitia" n="1" xml:id="MS_Bodl_534-part1-item1">
-                        <locus>(fol. 1)</locus>
-                        <author key="person_47" >Alexander of
+                        <locus from="1" to="8" type="inferredEnd">(fol. 1)</locus>
+                        <author key="person_47">Alexander of
                            Stainsby</author>
                         <msItem><title key="work_5475">De septem criminibus</title>
                            <incipit>Septem sunt criminalia peccata</incipit>
@@ -136,7 +135,7 @@
                   </msIdentifier>
                   <msContents>
                      <msItem class="#theologica" n="1" xml:id="MS_Bodl_534-part2-item1">
-                        <locus from="9">(fol. 9)</locus>
+                        <locus from="9" to="20" type="inferredEnd">(fol. 9)</locus>
                         <title key="work_15273" type="desc">Theological manual</title>
                         <note>(imperfect)</note>
                         <note>Part of a short theological manual (or Summa theologica) treating of
@@ -173,7 +172,7 @@
                   <msContents>
                      <textLang mainLang="la">Latin</textLang>
                      <msItem n="3" xml:id="MS_Bodl_534-item-3">
-                        <locus from="21">(fol. 21)</locus>
+                        <locus from="21" to="55" type="inferredEnd">(fol. 21)</locus>
                         <author key="person_100184667">Gregory the Great</author>
                         <title key="work_1862">De cura pastorali</title>
                         <note>(incomplete)</note>
@@ -183,7 +182,7 @@
                            preceded by a list of chapters: the text ends, a leaf being lost,
                            'sollicitus infirmitatis tue'.</note>
                      </msItem>
-                     <msItem xml:id="MS_Bodl_534-item-3a"><locus>(fols. 56-7) </locus>
+                     <msItem xml:id="MS_Bodl_534-item-3a"><locus from="56" to="57">(fols. 56–7)</locus>
                         <title type="desc" key="work_15014">Dictamen</title>
                         <note>Two leaves containing some formulae
                            epistolarum, under the headings narrationes, petitiones, conclusiones,
@@ -220,14 +219,14 @@
                   <msContents>
                      <textLang mainLang="la">Latin</textLang>
                      <msItem n="4" xml:id="MS_Bodl_534-item-4">
-                        <locus from="58">(fol. 58)</locus>
+                        <locus from="58" to="69" type="inferredEnd">(fol. 58)</locus>
                         <author key="person_7386286">Ps.-Augustine</author>
                         <title key="work_3880">De spiritu et anima</title>
                         <note>The shorter form ending 'aliud non sit quam racio', with a list of
                            chapters. </note>
                      </msItem>
                      <msItem xml:id="MS_Bodl_534-item-4a">
-                        <locus>(fol. 70)</locus>
+                        <locus from="70" to="71r" type="inferredEnd">(fol. 70)</locus>
                         <author key="person_66806872">Augustine</author>
                         <title key="work_809">Sermo 350</title>
                         <rubric>Sermo beati Augustini de caritate</rubric>
@@ -237,7 +236,7 @@
                         <note>Then in a different hand some <title type="desc" key="work_15283">theological notes</title>.</note>
                      </msItem>
                      <msItem n="2" xml:id="MS_Bodl_534-part4-item2">
-                        <locus>(fol. 71v) </locus>
+                        <locus from="71v">(fol. 71v)</locus>
                         <author key="person_306415749">Ps.-Bernard</author>
                         <title key="work_3952">Meditationes piissimae</title>
                         <note>(part)</note>
@@ -310,9 +309,7 @@
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
-            <persName>James Cummings</persName> Up-converted the markup using <ref
-               target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl"
-               >https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>
       </revisionDesc>
    </teiHeader>

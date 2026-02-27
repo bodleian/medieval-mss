@@ -1,14 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4480">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4480">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Douce 101</title>
             <title type="collection">MSS. Douce</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+           
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2024">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -37,17 +43,28 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem class="#romances #exempla" n="1" xml:id="MS_Douce_101-item1">
+                     <locus type="inferred" from="1r" to="81v">(fol. 1)</locus>
                      <title key="work_12023">Gesta Romanorum</title>
-                     <note>(extracts)</note>
+                     <incipit>Quidam Rome imperator habuit filiam nomine Lleyk</incipit>
+                     <note>A selection of fifty tales from the <title>Gesta Romanorum</title>, with moralizations</note>
+                     <note>Breaks off abruptly in chapter 50 with the words 'Falco, cum hoc vidisset, cum suis alis magnum sonitum fecit, 
+                        ut leporarium a sompno excitaret'</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                   <msItem n="2" xml:id="MS_Douce_101-item2">
+                     <locus type="inferredEnd" from="82r" to="93v">(fol. 82)</locus>
                      <author key="person_49234321">Odo de Cheriton</author>
                      <title key="work_3362">Parabolae</title>
-                     <note>(extracts)</note>
+                     <incipit>Fabula Moralis. Pulli celebrauerunt capitulum vt eligerent sibi regem</incipit>
+                     <note>A selection of twenty-one fables</note>
+                     <note>In the second fable an English proverb is introduced: 'quia dicitur in communi proverbio, Sylden ys the later Prophete the better'; cf. fol. 84</note>
+                     <note>Ends the last fable about a sinner asking a just man to pray to God for him with 'et odii et aliquem momaris'</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
@@ -62,11 +79,11 @@
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
                   <provenance>
-                     <persName role="fmo" key="person_5714087">Henry Spelman</persName> (?): 'There is reason for supposing that this MS... . belonged to Sir Henry . Spelman', Douce's note.</provenance>
+                     <persName role="fmo" key="person_5714087">Henry Spelman</persName> (?): 'There is reason for supposing that this MS... . belonged to Sir Henry . Spelman', Douce's note</provenance>
                   <provenance notAfter="1834" notBefore="1757" resp="#MMM">
                      <persName key="person_69848690" role="fmo">Francis Douce, 1757–1834</persName>
                   </provenance>
@@ -75,9 +92,15 @@
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). <listBibl>
-                              <bibl facs="aaz0540.gif" type="SC">Summary Catalogue, vol. 4, p. 521</bibl>
+                           <source>
+                              Description adapted (May 2025) by Stewart J. Brookes from the following sources:
+                              <listBibl>
+                                 <bibl>Catalogue of the Printed Books and Manuscripts Bequeathed by Francis Douce, esq. to the Bodleian Library (1840), 
+                                    <ref target="https://archive.org/details/catalogueofprint00bodluoft/page/15/mode/1up">p. 15</ref></bibl>
+                                 <bibl>Summary Catalogue (1897)</bibl>
+                              </listBibl>
+                              <listBibl>
+                                 <bibl facs="aaz0540.gif" type="SC">Summary Catalogue, vol. 4, p. 521</bibl>
                               <bibl facs="aaz0541.gif" type="SC">Summary Catalogue, vol. 4, p. 522</bibl>
                            </listBibl>
                         </source>
@@ -88,6 +111,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-09-21">Description revised to incorporate all the information in the Summary Catalogue (1897) and other printed sources</change>
          <change when="2024-05">Add extent and leaf dimensions from Summary Catalogue.</change>
          <change when="2018-10-14" xml:id="MMM">
             <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>

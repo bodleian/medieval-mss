@@ -107,6 +107,9 @@
          at the bottom of manuscript pages (just before Zotero links, if any) -->
     
     <xsl:template name="Footer">
+       
+        
+        
         <div class="abbreviations">
             <xsl:processing-instruction name="ni"/>
             <h3>Abbreviations</h3>
@@ -114,6 +117,14 @@
             <xsl:processing-instruction name="ni"/>
         </div>
         <xsl:apply-templates select="/TEI/teiHeader/revisionDesc[change][1]"/>
+        
+        <div class="data">
+            <xsl:processing-instruction name="ni"/>
+            <h3>Data</h3>
+            <p>The TEI-XML file for this record can be viewed in a <a href="https://github.com/bodleian/medieval-mss" target="_blank">GitHub repository</a>.</p>
+            <p>Tabular data derived from the TEI-XML files is available in a <a href="https://github.com/digital-Scholarship-Oxford/enabling-digital-research/" target="_blank">GitHub repository</a>.</p>
+            <xsl:processing-instruction name="ni"/>
+        </div>
     </xsl:template>
     
     <xsl:template match="revisionDesc[.//change]">
