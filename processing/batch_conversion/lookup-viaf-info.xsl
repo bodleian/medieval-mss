@@ -316,7 +316,7 @@
                                     <item source="#{ $sourcenoteid }">
                                         <ref>
                                             <xsl:attribute name="target">
-                                                <xsl:text>https://www.wikidata.org/wiki/</xsl:text>
+                                                <xsl:text>https://www.wikidata.org/entity/</xsl:text>
                                                 <xsl:value-of select="$newlinkid"/>
                                             </xsl:attribute>
                                             <title>Wikidata</title>
