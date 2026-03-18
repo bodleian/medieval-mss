@@ -18,4 +18,19 @@ The Python scripts in this project use [uv](https://docs.astral.sh/uv/) for depe
 ```bash
 uv run python processing/validate.py
 uv run python processing/check_entity_keys.py
+uv run authority-identifiers
+```
+
+The shared authority tooling is intended to come from the public [`msDesc/tei-msdesc-authorities`](https://github.com/msDesc/tei-msdesc-authorities) repository via `uv`.
+
+To install development dependencies, including `pytest`, run:
+
+```bash
+uv sync --dev
+```
+
+To run the Python regression tests, use:
+
+```bash
+uv run pytest
 ```
