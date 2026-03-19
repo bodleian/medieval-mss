@@ -1,12 +1,15 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_332">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_332">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Ashmole 357</title>
             <title type="collection">MSS. Ashmole</title>
             <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+               <resp when="1845">Cataloguer</resp>
+               <persName>W. H. Black</persName>
+            </respStmt>
+            <respStmt>
+               <resp when="2026">Cataloguer</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -56,12 +59,29 @@
                   </altIdentifier>
                </msIdentifier>
                <physDesc>
-                  <p n="composite">Composite: fols. 1–178 || fols. 179–216</p>
+                  <p n="composite">Composite: several codicological units.</p>
+                  <objectDesc>
+                     <supportDesc>
+                        <extent><seg type="leaf"><measure type="leaf" quantity="216">216</measure> leaves</seg>
+                           <dimensions unit="mm" type="leaf">
+                              <height quantity="210">c. 210</height>
+                              <width quantity="145">c. 145</width>
+                           </dimensions>
+                        </extent>
+                     </supportDesc>
+                  </objectDesc>
                </physDesc>
+               <history>
+                  <provenance>A composite manuscript assembled in the fifteenth century in England, as shown by leaf signatures.</provenance>
+                  <provenance>'Fuit est et erit tibi si placet optime huius quem cernis codicis possessor Boyleus', fol. 216v, 16th (?) century; underneath 'this is nobodis booke'.</provenance>
+                  <provenance><persName key="person_27215170" role="fmo">Elias Ashmole</persName> (1617–1692)</provenance>
+                  <provenance>Bequeathed by him to the Ashmolean Museum in 1692.</provenance>
+                  <acquisition>Transferred to the Bodleian Library in 1860.</acquisition>
+               </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (W. H. Black, <title>A descriptive, analytical, and critical catalogue of the manuscripts bequeathed unto the University of Oxford by Elias Ashmole Esq....</title>, Quarto Catalogues X, 1845). <listBibl>
+                        <source>Adapted (Jan. 2026) by Matthew Holford from W. H. Black, <title>A descriptive, analytical, and critical catalogue of the manuscripts bequeathed unto the University of Oxford by Elias Ashmole Esq....</title>, Quarto Catalogues X, 1845, with reference to published literature as cited, and limited additional physical description. <listBibl>
                               <bibl facs="aeh0138.gif" type="QUARTO">Quarto Catalogue, col. 266</bibl>
                               <bibl facs="aeh0139.gif" type="QUARTO">Quarto Catalogue, cols. 267–8</bibl>
                               <bibl facs="aaq0475.gif" type="SC">Summary Catalogue, vol. 2, part 2, p. 1116</bibl>
@@ -70,70 +90,41 @@
                         </source>
                      </recordHist>
                   </adminInfo>
+                  <listBibl>
+                     <bibl>David Juste, ‘MS Oxford, Bodleian Library, Ashmole 357’ (update: 29.07.2024), Ptolemaeus Arabus et Latinus. Manuscripts, URL = http://ptolemaeus.badw.de/ms/423.</bibl>
+                  </listBibl>
                </additional>
                <msPart xml:id="MS_Ashmole_357-part1">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Ashmole 357 – Part 1</idno>
+                        <idno type="part">MS. Ashmole 357 – Part 1 (fols. 1-6)</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
+                     
                      <msItem n="1" xml:id="MS_Ashmole_357-part1-item1">
+                        <locus from="1r" to="5r">(fols. 1r-5r)</locus>
                         <author key="person_238554167">Anianus</author>
                         <title key="work_525">Compotus</title>
-                        <note>with commentary</note>
+                        <incipit>Computus est talis proprie dictus Manualis</incipit><explicit>Anno bisexti vult
+                           una superaddi</explicit>  <finalRubric>Explicit compotus.</finalRubric>
+                        <note>The second leaf seems to be lost. </note>
+                        <bibl><title>Le comput manuel de Magister Anianus</title>, ed. David Eugene Smith (Paris, 1928), this ms. pp. 19-20</bibl>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem class="#miscellanea" n="2" xml:id="MS_Ashmole_357-part1-item2">
+                     <msItem n="2">
+                        <locus>(fol. 5r-v)</locus>
+                        <incipit>Cisio Janus episibi vendicat hi. fe. man. mar. am</incipit>
+                        <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     
+                     <msItem class="#miscellanea" n="3" xml:id="MS_Ashmole_357-part1-item3">
+                        <locus>(fol. 6r)</locus>
                         <title key="work_14169" type="desc">Puzzle</title>
+                        <incipit>iij conques voeult a prendre adescanter</incipit>
                         <textLang mainLang="frm">Middle French</textLang>
                      </msItem>
-                     <msItem n="3" xml:id="MS_Ashmole_357-part1-item3">
-                        <author key="person_263751917">Alcabitius</author>
-                        <title key="work_373">Liber introductorius</title>
-                        <textLang mainLang="la">Latin</textLang>
-                     </msItem>
-                     <msItem n="4" xml:id="MS_Ashmole_357-part1-item4">
-                        <author key="person_2241"><!-- not found -->'Hermes'</author>
-                        <title key="work_179">Centiloquium</title>
-                        <note>tr. <persName key="person_67535560" role="trl"> Stephanus de Messana </persName>
-                        </note>
-                        <textLang mainLang="la">Latin</textLang>
-                     </msItem>
-                     <msItem n="5" xml:id="MS_Ashmole_357-part1-item5">
-                        <author key="person_95154093">Razes</author>
-                        <title key="work_4228">Capitula Almansoris</title>
-                        <note>tr. <persName key="person_71106329" role="trl"> Plato of Tivoli </persName>
-                        </note>
-                        <textLang mainLang="la">Latin</textLang>
-                     </msItem>
-                     <msItem n="6" xml:id="MS_Ashmole_357-part1-item6">
-                        <author key="person_97655156">Bethem</author>
-                        <title key="work_1085">Centiloquium</title>
-                        <textLang mainLang="la">Latin</textLang>
-                     </msItem>
-                     <msItem n="7" xml:id="MS_Ashmole_357-part1-item7">
-                        <author key="person_176184097">Euclid</author>
-                        <title key="work_1481">Elements</title>
-                        <note>bk. XI</note>
-                        <textLang mainLang="la">Latin</textLang>
-                     </msItem>
-                     <msItem n="8" xml:id="MS_Ashmole_357-part1-item8">
-                        <author key="person_17614804">Ametus filius Josephi</author>
-                        <title key="work_490">De proportionibus</title>
-                        <textLang mainLang="la">Latin</textLang>
-                     </msItem>
-                     <msItem class="#astrologia_astronomia" n="9" xml:id="MS_Ashmole_357-part1-item9">
-                        <title key="work_10409" type="desc">Astrological treatises.</title>
-                        <textLang mainLang="la">Latin</textLang>
-                     </msItem>
-                     <msItem n="10" xml:id="MS_Ashmole_357-part1-item10">
-                        <author key="person_20109203">Geber</author>
-                        <title key="work_1641">Flores ex Almagesto</title>
-                        <note>tr. <persName key="person_84814786" role="trl"> Gerard of Cremona </persName>
-                        </note>
-                        <textLang mainLang="la">Latin</textLang>
-                     </msItem>
+                     
                   </msContents>
                   <physDesc>
                      <objectDesc form="codex">
@@ -144,27 +135,199 @@
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1360" notBefore="1340">14th century, middle</origDate>
+                        <origDate calendar="Gregorian" notAfter="1410" notBefore="1390">14th century, late, or 15th century, early</origDate>
+                        <origPlace><country key="place_7000084">Germany (?)</country></origPlace>
                      </origin>
                   </history>
+                  
                </msPart>
                <msPart xml:id="MS_Ashmole_357-part2">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Ashmole 357 – Part 2</idno>
+                        <idno type="part">MS. Ashmole 357 – Part 2 (fols. 17-26)</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem n="1" xml:id="MS_Ashmole_357-part2-item1">
-                        <author key="person_2288"><!-- not found in VIAF -->Petrus de Monte Alcino</author>
-                        <title key="work_3623">Iudicia astrologia</title>
+                     
+                     <msItem n="4" xml:id="MS_Ashmole_357-part1-item4">
+                        <locus from="7r" to="26v">(fols. 7r-26v)</locus>
+                        <note>Anianus, Compotus, with commentary</note>
+                        <msItem>
+                           <author key="person_238554167">Anianus</author>
+                           <title key="work_525">Compotus</title>
+                        </msItem>
+                        <msItem>
+                           <title type="desc" key="work_7519">Commentary on Anianus, Compotus</title>
+                        </msItem>
+                        
+                        <incipit>Compotus. Iste est liber compoti Aniani in quo ipse Anianus nobis metrice ostendit
+                           invencionem quinque festorum mobilium secundum cursum solis et lune.</incipit>
+                        <incipit>Quatuor. Actor noster prosequitur intentum de quod iste liber distinguit in iiiior partes siue capitula. In prima parte determinatur de ciclo solari</incipit><!-- same (or similar?) commentary as in the incunabula?-->
+                        <finalRubric>Explicit
+                           Compotus.</finalRubric>
+                        
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem class="#documenta" n="2" xml:id="MS_Ashmole_357-part2-item2">
-                        <title key="work_14896" type="desc">Terrier of land</title>
-                        <textLang mainLang="enm">Middle English (?)</textLang>
-                     </msItem>
                   </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="chart">
+                           <support>paper, quarto (watermark, letter P, type Piccard I.323-485)</support>
+                        </supportDesc>
+                     </objectDesc>
+                     <decoDesc>
+                        <decoNote type="colInit">Plain red initials, other initials touched in red.</decoNote>
+                     </decoDesc>
+                  </physDesc>
+                  <history>
+                     <origin>
+                        <origDate calendar="Gregorian" notAfter="1410" notBefore="1390">14th century, late, or 15th century, early</origDate>
+                        <origPlace><country key="place_7000084">Germany (?)</country></origPlace>
+                     </origin>
+                     <provenance>Annotations in anglicana script, 15th century</provenance>
+                  </history> 
+               </msPart>
+               
+               <msPart xml:id="MS_Ashmole_357-part3">
+                  <msIdentifier>
+                     <altIdentifier type="partial">
+                        <idno type="part">MS. Ashmole 357 – Part 3 (fols. 27-57)</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  <msContents>
+                    
+                    
+                     <msItem n="5" xml:id="MS_Ashmole_357-part1-item5">
+                        <locus from="27r" to="52v">(fols. 27r-52v)</locus>
+                        <author key="person_263751917">Alcabitius</author>
+                        <title key="work_373">Liber introductorius</title>
+                        <rubric>Incipit liber introductorius Abdirasi. i. gloriosi servi Dei qui dicitur Alkabicius ad magisterium Judiciorum astrorum; cum Dei laude et ejus auxilio translatus a Johanne Hispaniensi. Postulata a Domino prolixitate vite Ceiphadala. i. gladij regni.
+</rubric>
+                        <incipit>Postulata a Domino prolixitate vite Ceiphadala. i. gladij
+                           regni</incipit>
+                        <finalRubric>Perfectus est liber introductorius
+                           Abdarir. i. servi gloriosi qui dicitur Alkabist ad magisterium judiciorum astrorum cum
+                           laude Dei et adjutorio. Interpretatus a Johanne Hispalensi.</finalRubric>
+                        <note> After f. 46, four leaves have been cut out, and half of the last line has
+                           been erased to make the words join with the MS. immediately following, which
+                           is a continuation of the same treatise to the end. This latter part is written in a thick letter
+                           with pale ink.</note>
+                        <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     <msItem n="6">
+                        <locus from="53" to="57v">(fols. 53-57v)</locus>
+                        <author key="person_2241">'Hermes'</author>
+                        <title key="work_179">Centiloquium</title>
+                        <note>(tr. <persName key="person_67535560" role="trl"> Stephanus de Messana </persName>)</note>
+                        
+                        <rubric>Incipiunt amphorismi astronomici. Domino Manfredo inclito Regi Cecilie
+                           Stephanus de Messana hos flores de scientijs astronomic domini Hermetis
+                           transtulit. </rubric>
+                        <incipit>Dixit Hermes quod sol et luna post dominum omnium vivencium vita sunt
+                           multorum. Propositio prima.</incipit>
+                        <finalRubric>Explicit tractatus de Judiciis 100
+                           propositionum.</finalRubric><finalRubric>Expliciunt flores domini Hermetis termegesti crisora
+                              theostenes.</finalRubric>
+                        <note> The title 'Hermetis aphorismi astron: interprete Stephano de
+                           Messana' has been written by a more modern hand
+                           at the beginning. </note>
+                        <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     <msItem n="7">
+                        <locus>(fol. 57v)</locus>
+                        <incipit>Omnis numerus cubicus multiplicatus in se</incipit>
+                        <note>De numeris quadratis annotatio </note>
+                        <!--De numeris quadratis annotatio: inc. Omnis numerus cubicus multiplicatus in se. 57b.
+-->                   <textLang mainLang="la">Latin</textLang>
+     
+                     </msItem>
+                     <msItem n="8">
+                        <locus>(fol. 57v)</locus>
+                        <rubric>Isti sunt libri astronomic quos transtulit Gerardus Cremonensis de Arabico in Latinum.</rubric>
+                        <bibl>Extract from the 'commemoratio librorum' (ed. Charles Burnett, ‘The Coherence of the Arabic-Latin Translation Program in Toledo in the Twelfth Century’, <title>Science in Context</title>, 14.1–2 (2001), pp. 249–88, at pp. 276-281, this ms. p. 273), astronomical works only.</bibl>
+                        <!-- ed Burnett, 'Coherence# -->
+                        <!--Isti sunt libri astronomic quos transtulit Gerardus Cremonensis de Arabico in Latinum. Numero duodecim. 57b.
+-->                   <textLang mainLang="la">Latin</textLang>
+     
+                     </msItem>
+                     </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="chart">
+                           <support>paper</support>
+                        </supportDesc>
+                     </objectDesc>
+                     <decoDesc>
+                        <decoNote type="colInit">Plain red initials, other initials touched in red.</decoNote>
+                     </decoDesc>
+                  </physDesc>
+                  <history>
+                     <origin>
+                        <origDate calendar="Gregorian" notAfter="1500" notBefore="1390">14th century, late (fols. 27-46), and 15th century (fols. 47-57)</origDate>
+                        <origPlace><country key="place_7000084">Germany (?)</country></origPlace>
+                     </origin>
+                     <provenance>Annotations in anglicana script, 15th century</provenance>
+                  </history>
+               </msPart>
+               
+               <msPart xml:id="MS_Ashmole_357-part4">
+                  <msIdentifier>
+                     <altIdentifier type="partial">
+                        <idno type="part">MS. Ashmole 357 – Part 4 (fols. 58-70)</idno>
+                     </altIdentifier>
+                  </msIdentifier>
+                  <msContents>
+                     <msItem xml:id="MS_Ashmole_357-part1-item9">
+                       
+                        <author key="person_95154093">Razes</author>
+                        <title key="work_4228">Capitula Almansoris</title>
+                        <note>(tr. <persName key="person_71106329" role="trl"> Plato of Tivoli</persName>)
+                        </note> 
+                       <msItem n="9"> <locus from="58" to="63v">(fols. 58-63v)</locus>
+                        <rubric>Incipit liber amphorismorum Rasis</rubric><rubric>Incipiunt capitula Almansoris.
+                        </rubric>
+                        <incipit>Signorum dispositio est ut dicam</incipit>
+                        <note><!--The former title is superscribed by a hand as antient as the other. -->100 and 36 aphorisms. </note></msItem>
+                        
+                     
+                     <msItem n="10">
+                        <locus from="63v" to="67">(fols. 63v-67)</locus>
+                        <rubric>Incipiunt notabilia Almansoris āna hominis usque ad iʒaaʒ. </rubric>
+                        <incipit>Qui emerit faciat ab aquario in leonem</incipit>
+                        <finalRubric>Hec
+                           almansoris</finalRubric>
+                        <finalRubric>Expliciunt amphorismi de astrorum judicijs</finalRubric>
+                        <note>Ninety-eight aphorisms, the last ones numbered 36-52.</note>
+                        <note>Followed by some notes on the lords of houses in another (English) hand </note>
+                        
+                     </msItem>
+                       <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     
+                     <msItem n="11" xml:id="MS_Ashmole_357-part1-item6">
+                        <locus from="67v" to="69v">(fols. 67v–69v)</locus>
+                        <author key="person_97655156">Bethem</author>
+                        <title key="work_1085">Centiloquium</title>
+                        <rubric>Centiloquium Betem. Nunc inchoabo librum de consuetudinibus et judicijs  
+                           stellarum. </rubric>
+                        <incipit>Primo scias quod planete quando sunt</incipit>
+                        <finalRubric>Explicit centiloquium bethem.</finalRubric>
+                        <note> This tract consists of 100 sentences written continuously (not separately as
+                           art. 9)</note>
+                        
+                        <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     <msItem n="12">
+                        <locus from="70r" to="70r">(fol. 70r)</locus>
+                        <rubric>Secundum Alkabicium in introductorio suo.</rubric>
+                        <note>Notes "de hyleg". Written on a blank leaf by the same hand as
+                           the notes before mentioned. </note>
+                        <!--De hyleg notationes quædam. Secundum Alkabicium in introductory suo. 70.
+        Written on a blank leaf by the same less antient hand as the notes before mentioned.
+--><textLang mainLang="la">Latin</textLang>
+                     
+                     </msItem>
+                     </msContents>
                   <physDesc>
                      <objectDesc form="codex">
                         <supportDesc material="chart">
@@ -174,14 +337,267 @@
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
+                        <origDate calendar="Gregorian" notAfter="1500" notBefore="1450">15th century</origDate>
+                        <origPlace><country key="place_7000084">Germany (?)</country></origPlace>
                      </origin>
+                     <provenance>Annotations in anglicana script, 15th century</provenance>
+                  </history>
+               </msPart><msPart xml:id="MS_Ashmole_357-part5">
+                        <msIdentifier>
+                           <altIdentifier type="partial">
+                              <idno type="part">MS. Ashmole 357 – Part 5 (fols. 71-96)</idno>
+                           </altIdentifier>
+                        </msIdentifier><msContents>
+                     <msItem n="13" xml:id="MS_Ashmole_357-part1-item13">
+                        <locus from="71r" to="75v">(fols. 71r-75v)</locus>
+                        <author key="person_176184097">Euclid</author>
+                        <title key="work_1481">Elements</title>
+                        <note>(bk. XI, def. XI 1-35, tr. <persName role="trl" key="person_296465262">Robert of Ketton (?)</persName>, the 'Adelard II' version)</note>
+                        <rubric>Incipit undecimus Euclidis</rubric>
+                        <incipit>Corpus est quod longitudinem et latitudinem et altitudinem habet</incipit>
+                        <note>With marginal diagrams </note>
+                        <listBibl><bibl><title>Robert of Chester’s Redaction of Euclid’s Elements, the so-called Adelard II Version</title>, ed. H. L. Busard and M. Folkerts (Birkhäuser, 1992)
+                        </bibl></listBibl>
+                        <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     <msItem n="14" xml:id="MS_Ashmole_357-part1-item14">
+                        <locus from="76r" to="90v">(fols. 76r-90v)</locus>
+                        <author key="person_17614804">Ametus filius Josephi</author>
+                        <title key="work_490">De proportionibus</title>
+                        <rubric>Incipit epistola Ameti filii Joseph’ de proportione et de proportionalitate.</rubric>
+                        <incipit>Jam respondi tibi ut scias quod quesivisti</incipit>
+                        <explicit>est sufficiens natura et tutor
+                           bonus</explicit>
+                        <finalRubric>Finit epistola Ameti filij Josep de proporcione et de
+                           proporcionali<supplied>ta</supplied>te.</finalRubric>
+                        <note>With marginal diagrams </note>
+                        
+                        <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     
+                     <msItem n="15">
+                        <locus from="91r" to="96v">(fols. 91r-96v)</locus>
+                        <author key="person_90634457">Alkindus</author>
+                        <title key="work_7518">De aspectibus</title>
+                        <note>(tr. <persName role="trl" key="person_84814786">Gerard of Cremona</persName>) (imperfect)</note>
+                        <rubric>Tractatus de radiis et umbris et aliis ad perspectivam pertinentibus</rubric>
+                        <incipit>Oportet postquam optamus complere artes doctrinales</incipit>
+                        <explicit defective="true">cum tabula transeunte per
+                           lineas u et</explicit>
+                        
+                        <listBibl><bibl><title>Oeuvres philosophiques et scientifiques d’al-Kindī, Volume 1 Optique et la Catoptrique</title>, ed. Roshdi Rashed et al. (Brill, 2021), pp. 437-523 (sig. O), our text ending at p. 493 (ch. xvi line 17).</bibl></listBibl>
+                        <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     </msContents>
+                        <physDesc>
+                           <objectDesc form="codex">
+                              <supportDesc material="mixed">
+                                 <support>mixed (the middle leaves of the first quire, fols. 77-8, are parchment, as are the first and last leaves (fols. 85, 96) of the second quire)</support><!-- TODO -->
+                              </supportDesc>
+                           </objectDesc>
+                           <decoDesc>
+                              <decoNote type="diagram">Diagrams.</decoNote>
+                           </decoDesc>
+                        </physDesc>
+                        <history>
+                           <origin>
+                              <origDate calendar="Gregorian" notAfter="1360" notBefore="1340">14th century, middle</origDate>
+                              <origPlace><country key="place_7002445">England</country></origPlace>
+                           </origin>
+                           <provenance>Fol. 78v, 'Thomas Hollecrofte and though he be lothe where euer that he goethe', 16th century</provenance>
+                        </history>
+                     </msPart><msPart xml:id="MS_Ashmole_357-part6">
+                        <msIdentifier>
+                           <altIdentifier type="partial">
+                              <idno type="part">MS. Ashmole 357 – Part 6 (fols. 97-178)</idno>
+                           </altIdentifier>
+                        </msIdentifier><msContents>
+                   
+                     
+                     <msItem n="16" xml:id="MS_Ashmole_357-part1-item16">
+                        <locus from="97r" to="178v">(fols. 97r-178v)</locus>
+                        <author key="person_20109203">Geber</author>
+                        <title key="work_1641">Flores ex Almagesto</title>
+                        <note>(tr. <persName key="person_84814786" role="trl"> Gerard of Cremona</persName>)
+                        </note>
+                        <rubric>Liber Jeberi continens tractatus novem </rubric>
+                        <incipit>Sciencia species habet, quarum melior post scienciam fidei</incipit>
+                        <explicit>Invenit ergo stellam veneris quando est in longitudine
+                           longir’ orb’ revolutionis elongari</explicit>
+                        <note>  The
+                           number of each of these nine tracts or books is usually noted on the corner
+                           of the leaves; and the MS. ends imperfectly in the last of them. The
+                           catchword is partly cut off. (For further details see Ptolemaeus Arabus et Latinus.)</note>
+                        <note>Begins on a vellum leaf, inserted in the XVth century to fill up the
+                           imperfection of its beginning. Beside the diagrams drawn on the margins and
+                           in the text of this tract, there are some inserted on small schedules, or
+                           pieces of parchment, bound in between the leaves; namely, after f. 110, 114
+                           (this is a large piece of paper having part of the draught of some index on
+                           one side), 118, 165, 169 (paper), and after 173 and 174 are two in each
+                           place.</note>
+                        <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     </msContents>
+                        <physDesc>
+                           <objectDesc form="codex">
+                              <supportDesc material="chart">
+                                 <support>paper (except for fol. 97, a 15th century replacement leaf, and for inserted parchment leaves); for one watermark, axe, cf. Briquet 7496 (1350).</support>
+                              </supportDesc>
+                           </objectDesc>
+                           <decoDesc>
+                              <decoNote type="diagram">Diagrams.</decoNote>
+                           </decoDesc>
+                        </physDesc>
+                        <history>
+                           <origin>
+                              <origDate calendar="Gregorian" notAfter="1360" notBefore="1340">14th century, middle</origDate>
+                              <origPlace><country key="place_7002445">England</country></origPlace>
+                           </origin>
+                           <provenance>Fol. 156v, 'pratinge knaue ... and errante shetten knaue duringe my prenteshede' (16th century)</provenance>
+                        </history>
+                     </msPart><msPart xml:id="MS_Ashmole_357-part7">
+                        <msIdentifier>
+                           <altIdentifier type="partial">
+                              <idno type="part">MS. Ashmole 357 – Part 7 (fols. 179-191)</idno>
+                           </altIdentifier>
+                        </msIdentifier>
+                        <msContents>
+                     <msItem n="17">
+                        <locus from="179r" to="184v">(fols. 179r-184v)</locus>
+                        <author key="person_2288">Petrus de Monte Alcino</author>
+                        <title key="work_3623">Iudicia astrologia (1419-20)</title>
+                        <rubric>Clarissimi astrorumque doctissimi viri Magistri Petri de Monte Alcino
+                           Judicium in anno Domini. 1419º. feliciter incipit. .
+                        </rubric>
+                        <incipit>Philosophorum doctissimus Äristoteles cupiens de moribus et civili scientia
+                           tradere doctrinam in ethicis</incipit>
+                        <finalRubric>Clarissimi astrorumque [etc. as above]: Judicium explicit. Anno domini Millesimo quadringentesimo decimo
+                           nono.</finalRubric>
+                        <note> In the end of a curious prologue, the author calls himself— Ego Petrus quondam
+                           Bernardi de monte alcinoca astrologorum minimus.
+                           The year is 1419–20; the predictions chiefly relate to the Italian states.
+                        </note>
+                        <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     <msItem n="18">
+                        <locus from="185r" to="191r">(fols. 185r-191r)</locus>
+                        <author key="person_2288">Petrus de Monte Alcino</author>
+                        <title key="work_3623">Iudicia astrologia (1421)</title>
+                        <rubric>Judicium ejusdem. </rubric><note>Incomplete (?).</note>
+                        <incipit>Si animadverto. viri hoc nostrum judicium inspecturi</incipit><explicit>Avertat igitur sublimis
+                           Deus a nobis futura mala et demum perducat nos ad felicitatem etemam qui
+                           vivit per infinita secula benedictus. Amen</explicit>
+                        <!--Judicium ejusdem. Anno domini. 1421º, incomplete. Si animadverto. viri hoc nostrum judicium inspecturi. 185—191.
+            The last words are—Avertat igitur sublimis Deus a nobis futura mala et demum perducat nos ad felicitatem etemam qui vivit per infinita secula benedictus. Amen.
+--><textLang mainLang="la">Latin</textLang>
+                     
+                     </msItem>
+                           </msContents>
+                        <physDesc>
+                           <objectDesc form="codex">
+                              <supportDesc material="chart">
+                                 <support>paper</support>
+                              </supportDesc>
+                           </objectDesc>
+                           <decoDesc>
+                              <decoNote type="none">None</decoNote>
+                           </decoDesc>
+                        </physDesc>
+                        <history>
+                           <origin>
+                              <origDate calendar="Gregorian" notAfter="1500" notBefore="1421">15th century (after or c. 1421)</origDate>
+                              <origPlace><country key="place_7002445">England</country></origPlace>
+                           </origin>
+                        </history>
+                     
+                     </msPart><msPart xml:id="MS_Ashmole_357-part8">
+                              <msIdentifier>
+                                 <altIdentifier type="partial">
+                                    <idno type="part">MS. Ashmole 357 – Part 8 (fols. 191-205)</idno>
+                                 </altIdentifier>
+                              </msIdentifier><msContents>
+                     <msItem n="19">
+                        <locus from="192r" to="205v">(fols. 192r-205v)</locus>
+                        <author key="person_2288">Petrus de Monte Alcino</author>
+                        <title key="work_3623">Iudicia astrologia (1430)</title>
+                        <note>Incomplete. </note>
+                           <explicit>per infinita secula seculorum. Amen. Et sic est finis.</explicit>
+                        <note>This MS. is written in a different hand from articles 17 and 18;
+                           namely, in a large running hand, with wide margins. Much old
+                           scribbling is on the last page, and down the margin of f. 195 is written
+                           part of a Latin letter of thanks, without a name. 
+                        </note>
+                        <textLang mainLang="la">Latin</textLang>
+                        
+                        <!-- https://theses.univ-orleans.fr/public/2018ORLE1163_va.pdf#page=837 -->
+                     </msItem>
+                                 </msContents>
+                              <physDesc>
+                                 <objectDesc form="codex">
+                                    <supportDesc material="chart">
+                                       <support>paper</support>
+                                    </supportDesc>
+                                 </objectDesc>
+                                 <decoDesc>
+                                    <decoNote type="none">None</decoNote>
+                                 </decoDesc>
+                              </physDesc>
+                              <history>
+                                 <origin>
+                                    <origDate calendar="Gregorian" notAfter="1500" notBefore="1430">15th century (after or c. 1430)</origDate>
+                                    <origPlace><country key="place_7000084">Germany (?)</country></origPlace>
+                                 </origin>
+                                 <provenance>At the bottom of fol. 205r, written upside down, 15th century, is a note that the writer has spoken with the widow of John Neuport at 'Harestret' about a quire of a book beginning 'Quamuis in libro magistri Alexandri Nequam'</provenance>
+                              </history>
+                           </msPart><msPart xml:id="MS_Ashmole_357-part9">
+                                    <msIdentifier>
+                                       <altIdentifier type="partial">
+                                          <idno type="part">MS. Ashmole 357 – Part 9 (fols. 206-216 )</idno>
+                                       </altIdentifier>
+                                    </msIdentifier><msContents>
+                     <msItem n="20">
+                        <locus from="206r" to="216r">(fols. 206r-216r)</locus>
+                        <title type="desc" key="work_10409">Anonymous astrological prediction for 1448</title><incipit>Mundi parens primus dum sublunaria</incipit>
+                        <note> This MS. seems
+                           to have been the author’s first fair copy, with his corrections. The 4 last
+                           pages are not quite filled, and seem to have been written more hastily than
+                           the rest. There is no title; nor does the author’s name appear in the
+                           prologue: but the writing resembles the first of these three MSS., which
+                           contains artt. 17 and 18. </note>
+                       
+                        <!--Ejusdem (ut videtur) Judicia astrologica ad annum 1448: inc. Mundi parens primus dum sublunaria. 206—216.
+            This MS. seems to have been the author’s first fair copy, with his corrections. The 4 last pages are not quite filled, and seem to have been written more hastily than the rest. There is no title; nor does the author’s name appear in the prologue: but the writing resembles the first of these three MSS., which contains artt. 17 and 18. On the first leaf is written by an antient hand—
+            A short Terrar of parcels amounting to 581 acres; wherein these names occur: Gwylelmus Cowle, 40 acr’. þe kanche in Minikyn marsch, 60 acr’. Hungerford, 12 acres. Cecyly Combe, 16 acres. 216.
+--><textLang mainLang="la">Latin</textLang>
+                     </msItem>                
+                     
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="chart">
+                           <support>paper</support>
+                        </supportDesc>
+                     </objectDesc>
+                     <decoDesc>
+                        <decoNote type="none">None</decoNote>
+                     </decoDesc>
+                  </physDesc>
+                  <history>
+                     <origin>
+                        <origDate calendar="Gregorian" notAfter="1500" notBefore="1448">15th century (after or c. 1448)</origDate>
+                        <origPlace><country key="place_7002445">England</country></origPlace>
+                     </origin>
+                     <provenance>On fol. 216r is added (late 15th/early 16th century?) a list of parcels of land headed 'Wylhoppe', including: 'Gwylelmus Cowle, 40 acr’. þe kanche in Munkyn marsch, 60 acr’. Hungerford,
+                        12 acres. Cecyly Combe, 16 acres et 10 acr’ sicut dicet' and reference to lands called 'neuchyrch hokys'.
+                     </provenance>
                   </history>
                </msPart>
+             
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2026-01">Description revised for publication on Digital Bodleian</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>
