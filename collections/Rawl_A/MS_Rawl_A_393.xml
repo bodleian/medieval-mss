@@ -1,12 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_7942">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_7942">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Rawl. A. 393</title>
             <title type="collection">MSS. Rawl. A (Rawlinson A)</title>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
             <respStmt>
                <resp>Summary description</resp>
                <persName>Elizabeth Solopova</persName>
@@ -21,7 +22,7 @@
                <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>
             </publisher>
             <idno type="msID">MS_Rawl_A_393</idno>
-            <idno type="collection">Rawl A</idno>
+            <idno type="collection">Rawl_A</idno>
             <idno type="catalogue">Western</idno>
          </publicationStmt>
          <sourceDesc>
@@ -33,12 +34,14 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Rawl. A. 393</idno>
+                  <idno type="ieArk">ark:29072/x0th83kx78zk</idno>
+                  <idno type="crArk">ark:29072/x0pn89d642tf</idno>
                   <altIdentifier type="internal">
                      <idno type="SCN">11276</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem class="#medica" n="1" xml:id="MS_Rawl_A_393-item1">
+                  <msItem class="#medica" n="1" xml:id="MS_Rawl_A_393-item1"><locus from="1r" to="89v" type="inferred"/>
                      <title key="work_13213" type="desc">Medical recipes and treatises, copied by <persName key="person_721" role="scr">John Reed</persName>
                      </title>
                      <textLang mainLang="la" otherLangs="en">Latin and English</textLang>
@@ -48,14 +51,26 @@
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
+                        <extent resp="'#DD"><seg type="leaf"><measure type="laterEndleaf" quantity="2">ii</measure> + <measure type="leaf" quantity="89">89</measure> + <measure type="laterEndleaf" quantity="2">ii</measure></seg> fols., foliated i-ii, 2-108 but with many
+      gaps. <dimensions unit="mm" type="leaf">
+                              <height>268</height>
+                              <width>200</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc resp="#DD">
+                        <layout writtenLines="30 50" columns="1">1 col., c. 30-50
+lines, <dimensions unit="mm" type="written">
+                              <height>c. 200</height>
+                              <width>140</width>
+                           </dimensions>
+                        </layout>
+                     </layoutDesc>
                   </objectDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian"
-                               when="1528"
-                               cert="high">1528</origDate>
+                     <origDate calendar="Gregorian" when="1528" cert="high">1528</origDate>
                      <origPlace>
                         <country key="place_7002445">English</country>
                      </origPlace>
@@ -91,6 +106,8 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         
+         <change when="2024-09">Add extent, leaf dimensions and layout from Watson, Dated and Datable.</change>
          <change when="2022-06">Date revised with reference to Watson.</change>
          <change when="2019-10-31" xml:id="MMM">
             <persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>

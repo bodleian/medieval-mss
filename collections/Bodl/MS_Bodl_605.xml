@@ -1,15 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1617">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_1617">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Bodl. 605</title>
             <title type="collection">MSS. Bodl. (Bodley)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2024">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -33,14 +34,18 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Bodl. 605</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0xg94hn903t</idno><idno type="crArk">ark:29072/x0xd07gs06sb</idno><altIdentifier type="internal">
                      <idno type="SCN">2416</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem n="1" xml:id="MS_Bodl_605-item1">
+                  <msItem n="1" xml:id="MS_Bodl_605-item1"><locus from="1r" to="180v" type="inferred"/>
                      <author key="person_61642222">Hugo Ripelinus</author>
                      <title key="work_2164">Compendium ueritatis theologicae</title>
+                     <note>'Compendium theologice veritatis' or as the colophon 'Veritas theologie',
+                        with list of chapters in the seven books and prologue. </note>
+                     <incipit>Veritatis
+                        theologice sublimitas</incipit>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -48,6 +53,11 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent><seg type="leaf"><measure type="laterEndleaf" quantity="5">v</measure> + <measure type="leaf" quantity="180">180</measure></seg> leaves
+                        <dimensions type="binding" unit="in">
+                           <height>8.5</height>
+                           <width>6.125</width>
+                        </dimensions></extent>
                      </supportDesc>
                   </objectDesc>
                </physDesc>
@@ -58,15 +68,13 @@
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
-                  <provenance type="MLGB3_provenance_evidence"
-                              source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5868">
+                  <provenance type="MLGB3_provenance_evidence" source="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5868">
                      <orgName role="fmo" key="org_2142145857037522921207">Windsor, Berkshire, Royal collegiate chapel of St George</orgName>: Pressmark "O [?] v [?]" near top of fol. vi verso facing the first leaf of text.     Usual chain mark. (<ref target="http://mlgb3.bodleian.ox.ac.uk/mlgb/book/5868">MLGB3</ref>: inferred evidence). </provenance>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1922). <listBibl>
+                        <source>Description adapted (2024) from the Summary Catalogue (1922). <listBibl>
                               <bibl facs="aap0378.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 357</bibl>
                            </listBibl>
                         </source>
@@ -87,6 +95,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-11">Description revised to incorporate all information from Summary Catalogue.</change>
          <change when="2021-12-14">Add provenance information from MLGB3.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">

@@ -1,12 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2553">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2553">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Canon. Ital. 12</title>
             <title type="collection">MSS. Canon. Ital. (Canonici Italian)</title>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
             <respStmt>
                <resp>Summary description</resp>
                <persName>Elizabeth Solopova</persName>
@@ -21,7 +22,7 @@
                <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>
             </publisher>
             <idno type="msID">MS_Canon_Ital_12</idno>
-            <idno type="collection">Canon Ital</idno>
+            <idno type="collection">Canon_Ital</idno>
             <idno type="catalogue">Western</idno>
          </publicationStmt>
          <sourceDesc>
@@ -33,12 +34,14 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Canon. Ital. 12</idno>
+                  <idno type="ieArk">ark:29072/x070795822cm</idno>
+                  <idno type="crArk">ark:29072/x0h128nd9357</idno>
                   <altIdentifier type="internal">
                      <idno type="SCN">20064</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem n="1" xml:id="MS_Canon_Ital_12-item1">
+                  <msItem n="1" xml:id="MS_Canon_Ital_12-item1"><locus from="1r" to="80v" type="inferred"/>
                      <author key="person_29576537">Domenico Cavalca</author>
                      <title key="work_1416">Pungilingua</title>
                      <textLang mainLang="it">Italian</textLang>
@@ -48,10 +51,24 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent resp="#DD"><measure type="leaf" quantity="80">80</measure> fols.<dimensions unit="mm" type="leaf">
+                              <height>220</height>
+                              <width>162</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc resp="#DD">
+                        <layout writtenLines="35 40" columns="2">2 cols., c. 35-40 lines, column space <dimensions unit="mm" type="column">
+                              <height min="155" max="165">155–165</height>
+                              <width min="53" max="65">53–65</width>
+                           </dimensions>
+                        </layout>
+                     </layoutDesc>
                   </objectDesc>
                   <decoDesc>
-                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 269, pl. XXIV:</summary><decoNote type="flourInit">Fine penwork borders and initials. Written at <orgName key="org_142884282">Monte Oliveto</orgName> by <persName key="person_349" role="scr">Fra Fortunato</persName> and left to the abbey at his death, fol. 80v.</decoNote>
+                     <summary>
+                        <ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 269, pl. XXIV:</summary>
+                     <decoNote type="flourInit">Fine penwork borders and initials. Written at <orgName key="org_142884282">Monte Oliveto</orgName> by <persName key="person_349" role="scr">Fra Fortunato</persName> and left to the abbey at his death, fol. 80v.</decoNote>
                   </decoDesc>
                </physDesc>
                <history>
@@ -62,6 +79,7 @@
                         <!--ORIGINAL: Italian, Central-->
                      </origPlace>
                   </origin>
+                  <provenance>Contemporary ex libris and emblem of <orgName role="fmo" key="org_142884282">Monte Oliveto Maggiore</orgName>, fol. 1.</provenance>
                   <provenance notAfter="1805" notBefore="1727" resp="#MMM">
                      <persName key="person_2384880" role="fmo">Matteo Luigi Canonici, 1727–1805</persName>
                   </provenance>
@@ -104,6 +122,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-05">Add extent, leaf dimensions and layout from Watson, Dated and Datable.</change>
          <change when="2018-10-14" xml:id="MMM">
             <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>

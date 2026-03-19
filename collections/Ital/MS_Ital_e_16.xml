@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6293">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6293">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -32,13 +29,13 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Ital. e. 16</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0s4655g259r</idno><idno type="crArk">ark:29072/x0s1784k420w</idno><altIdentifier type="internal">
                      <idno type="SCN">Not in SC (late accession)</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
                   <msItem n="1" xml:id="MS_Ital_e_16-item1">
-                     <locus>(fol. 3)</locus>
+                     <locus from="3" to="95" type="inferredEnd">(fol. 3)</locus>
                      <author key="person_2232">Paolo da Trento</author>
                      <title key="work_3441">Spechio de religiosi</title>
                      <rubric>Spechio de religiosi composto dal reverendo padre maestro Paolo da Trento del sacro ordine di confrati heremitani di sancto Augustino sopra li tre vodi dele religione</rubric>
@@ -46,13 +43,13 @@
                      <textLang mainLang="it">Italian</textLang>
                   </msItem>
                   <msItem xml:id="MS_Ital_e_16-item2">
-                     <locus>(fol. 96)</locus>
+                     <locus from="96" to="96" type="inferredEnd">(fol. 96)</locus>
                      <rubric>El modo a fare professione in el ordine di frati heremitani de sancto Augustino</rubric>
                      <note>'Frater Paulus de Tridento' promises obedience 'fratri Augustino priori loci sancti Stephani', i.e. the Augustinian convent of S. Stefano in Venice.</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                   <msItem xml:id="MS_Ital_e_16-item3">
-                     <locus>(fol. 96)</locus>
+                     <locus from="96" to="98" type="inferredEnd">(fol. 96)</locus>
                      <title key="work_13950">Prayers</title>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
@@ -64,7 +61,7 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                        <extent>i (modern paper) + 98 + i (paper) <dimensions type="leaf" unit="mm">
+                        <extent><seg type="leaf"><measure type="laterEndleaf" quantity="1">i (modern paper)</measure> + <measure type="leaf" quantity="98">98</measure> + <measure type="laterEndleaf" quantity="1">i (paper)</measure></seg> <dimensions type="leaf" unit="mm">
                               <height>187</height>
                               <width>127</width>
                            </dimensions>
@@ -84,10 +81,12 @@
                      <handNote>Fine humanistic italic hand with vernacular features.</handNote>
                   </handDesc>
                   <decoDesc>
-                     <decoNote>Fine historiated initials, the first rather badly flaked, perhaps by the '<persName key="person_794" role="art">Maestro de' giuramenti</persName>'<!-- not found in VIAF --> (see G. Mariani Canova, <title>La miniatura veneta del Rinascimento</title>, 1969, p. 80 and tavv. 140–2).</decoNote>
-                     <decoNote>(fol. 1) St. Augustine, writing.</decoNote>
-                     <decoNote>(fol. 2bv) St. Jerome holding a torhc.</decoNote>
-                     <decoNote>Flower borders, on fol. 1 with wreath containing arms of a Barbarigo doge.</decoNote>
+                     <decoNote type="histInit">Fine historiated initials, the first rather badly flaked, perhaps by the '<persName key="person_794" role="art">Maestro de' giuramenti</persName>'<!-- not found in VIAF --> (see G. Mariani Canova, <title>La miniatura veneta del Rinascimento</title>, 1969, p. 80 and tavv. 140–2).
+                        <list><item>(fol. 1) St. Augustine, writing.</item>
+                           <item>(fol. 2bv) St. Jerome holding a torch.</item></list>
+                     </decoNote>
+                     
+                     <decoNote type="border">Flower borders, on fol. 1 with wreath containing arms of a Barbarigo doge.</decoNote>
                   </decoDesc>
                   <bindingDesc>
                      <binding>
@@ -102,7 +101,7 @@
                         <country key="place_1000080">Italian</country>, <settlement key="place_7018159">Venice</settlement> (?)<!--ORIGINAL: Italian, Venice--></origPlace>
                   </origin>
                   <provenance>Presumably the dedication copy.</provenance>
-                  <acquisition>Bought, 1973.</acquisition>
+                  <acquisition when="1973">Bought, 1973.</acquisition>
                </history>
                <additional>
                   <adminInfo>

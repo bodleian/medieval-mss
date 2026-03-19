@@ -10,3 +10,31 @@ For some additional information see the [Wiki](https://github.com/bodleian/medie
 For the TEI schema and guidelines, see the [msDesc repository](https://github.com/msDesc/).
 
 For information on the collections themselves, see the [LibGuide](https://libguides.bodleian.ox.ac.uk/medieval-sc).
+
+## Development
+
+The Python scripts in this project use [uv](https://docs.astral.sh/uv/) for dependency management.
+
+### Local Validation
+
+XML validation happens automatically via GitHub Actions using Java-based tools that align with Oxygen's xml-model validation, including RelaxNG and Schematron validation. To check entity key consistency locally, run:
+
+```bash
+uv run python processing/check_entity_keys.py -d collections
+```
+
+The shared authority tooling is intended to come from the public [`msDesc/tei-msdesc-authorities`](https://github.com/msDesc/tei-msdesc-authorities) repository via `uv`.
+
+### Testing
+
+To install development dependencies, including `pytest`, run:
+
+```bash
+uv sync --dev
+```
+
+To run the Python regression tests, use:
+
+```bash
+uv run pytest
+```

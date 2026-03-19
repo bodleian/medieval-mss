@@ -77,7 +77,7 @@ declare variable $allinstances :=
         let $bibrefs := for $b in $work/tei:bibl return bod:italicizeTitles($b)
         let $repertories := for $n in $work/tei:bibl[@type='repertory'] return normalize-space($n/string())
         let $notes := for $n in $work/tei:note[not(@type=('links','shelfmark','language','subject'))] return bod:italicizeTitles($n)
-        let $subjects := for $ref in $work/tei:term[@ref]/tokenize(@ref, '\s*#')[string-length() gt 0] return normalize-space($worksdoc/tei:TEI/tei:teiHeader/tei:encodingDesc/tei:classDecl/tei:taxonomy/tei:category[@xml:id = $ref][1]/tei:catDesc[1]/string())
+        let $subjects := (for $ref in $work/tei:term[@ref]/tokenize(@ref, '\s*#')[string-length() gt 0] return normalize-space($worksdoc/tei:TEI/tei:teiHeader/tei:encodingDesc/tei:classDecl/tei:taxonomy/tei:category[@xml:id = $ref][1]/tei:catDesc[1]/string()))[string-length(.) gt 0]
         let $lang := $work/tei:textLang
         
         (: Get info in all the instances in the manuscript description files :)
@@ -163,7 +163,7 @@ declare variable $allinstances :=
                 {
                 (: See also links to search for works with the same subjects :)
                 for $subject in $subjects
-                    let $url := concat('/?f[type][]=work;f[wk_subjects_sm][]=', $subject)
+                    let $url := concat('/?f[type][]=work&amp;f[wk_subjects_sm][]=', $subject)
                     let $linktext := concat("Other works with the subject '", $subject, "'")
                     let $link := concat($url, "|", $linktext)
                     order by $subject

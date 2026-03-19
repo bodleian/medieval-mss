@@ -1,12 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_7408">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_7408">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Laud Misc. 620</title>
             <title type="collection">MSS. Laud Misc. (Laud miscellaneous)</title>
+            <respStmt xml:id="DD">
+               <resp when="1984">Cataloguer</resp>
+               <persName>A. G. Watson</persName>
+            </respStmt>
             <respStmt>
                <resp>Summary description</resp>
                <persName>Elizabeth Solopova</persName>
@@ -21,7 +22,7 @@
                <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>
             </publisher>
             <idno type="msID">MS_Laud_Misc_620</idno>
-            <idno type="collection">Laud Misc</idno>
+            <idno type="collection">Laud_Misc</idno>
             <idno type="catalogue">Western</idno>
          </publicationStmt>
          <sourceDesc>
@@ -33,12 +34,14 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Laud Misc. 620</idno>
+                  <idno type="ieArk">ark:29072/x0mc87pq03bk</idno>
+                  <idno type="crArk">ark:29072/x0nz805z59k5</idno>
                   <altIdentifier type="internal">
                      <idno type="SCN">1395</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem n="1" xml:id="MS_Laud_Misc_620-item1">
+                  <msItem n="1" xml:id="MS_Laud_Misc_620-item1"><locus from="1r" to="102v" type="inferred"/>
                      <author key="person_305114889">Johannes de Dondis</author>
                      <title key="work_2555">Tractatus astrarii</title>
                      <textLang mainLang="la">Latin</textLang>
@@ -48,14 +51,33 @@
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
+                        <extent resp="#DD"><seg type="leaf"><measure type="laterEndleaf" quantity="2">ii</measure> + <measure type="leaf" quantity="102">102</measure></seg> fols.<dimensions unit="mm" type="leaf">
+                              <height>345</height>
+                              <width>233</width>
+                           </dimensions>
+                        </extent>
                      </supportDesc>
+                     <layoutDesc resp="#DD">
+                        <layout writtenLines="50" columns="2">2 cols., 50 lines, column space <dimensions unit="mm" type="column">
+                              <height>220</height>
+                              <width>60</width>
+                           </dimensions>
+                        </layout>
+                     </layoutDesc>
                   </objectDesc>
                   <handDesc>
                      <handNote>Written by <persName key="person_640" role="scr"><!-- not found -->Johannes Leyd</persName>, fol. 102.</handNote>
                   </handDesc>
                   <decoDesc>
-                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 954, pl. LXXX:</summary><decoNote type="diagram">Good diagrams by <persName key="person_578" role="art"><!-- not found -->Jacomo Polito, cartolaio</persName>, 1461, fol. 102. </decoNote>
+                     <summary>
+                        <ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 954, pl. LXXX:</summary>
+                     <decoNote type="diagram">Good diagrams by <persName key="person_578" role="art"><!-- not found -->Jacomo Polito, cartolaio</persName>, 1461, fol. 102. </decoNote>
                   </decoDesc>
+                  <bindingDesc>
+                     <binding notBefore="1700" notAfter="1800">
+                        <p>18th-century sprinkled calf rebind.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
                   <origin>
@@ -92,6 +114,8 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-09">Add extent, leaf dimensions and layout from Watson, Dated and Datable.</change>
+         <change when="2024-08">Add binding information from Quarto Catalogue.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
             <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>

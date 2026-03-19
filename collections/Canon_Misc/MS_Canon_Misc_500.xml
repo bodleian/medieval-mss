@@ -1,15 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:id="manuscript_3541" xmlns="http://www.tei-c.org/ns/1.0">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_3541">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Canon. Misc. 500</title>
             <title type="collection">MSS. Canon. Misc. (Canonici Miscellaneous)</title>
+            <respStmt xml:id="SC">
+               <resp when="1854">Cataloguer</resp>
+               <persName>H. O. Coxe</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
             <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+               <resp when="2026">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -21,7 +26,7 @@
                <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>
             </publisher>
             <idno type="msID">MS_Canon_Misc_500</idno>
-            <idno type="collection">Canon Misc</idno>
+            <idno type="collection">Canon_Misc</idno>
             <idno type="catalogue">Western</idno>
          </publicationStmt>
          <sourceDesc>
@@ -33,26 +38,35 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Canon. Misc. 500</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x03r074v7349</idno><idno type="crArk">ark:29072/x0rf55z741j7</idno><altIdentifier type="internal">
                      <idno type="SCN">19976</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
                   <msItem class="#medica" n="1" xml:id="MS_Canon_Misc_500-item1">
-                     <locus>(fols. 1–52)</locus>
+                     <locus from="1" to="52">(fols. 1–52)</locus>
                      <title key="work_12210" type="desc">Herbal</title>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                   <msItem class="#medica" n="2" xml:id="MS_Canon_Misc_500-item2">
-                     <title key="work_13226" type="desc">Medical treatise</title>
+                     <locus>(fol. 53)</locus>
+                     <title key="work_13208" type="desc">Medical recipes</title>
+                     <incipit> A di 19 Augusti; Virtutes primi unguenti infra scripti</incipit>
                      <textLang mainLang="la" otherLangs="it">Latin and Italian</textLang>
                   </msItem>
                   <msItem class="#animalia" n="3" xml:id="MS_Canon_Misc_500-item3">
+                     <locus>(fol. 118)</locus>
                      <title key="work_15450" type="desc">Veterinary treatise</title>
+                     <incipit>Diligens dominus stabulum frequenter intrabit</incipit>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                   <msItem class="#astrologia_astronomia" n="4" xml:id="MS_Canon_Misc_500-item4">
-                     <title key="work_10409" type="desc">Astrological treatise</title>
+                     <locus>(fol. 136)</locus>
+                     <title key="work_7526">Picatrix, books 3 and 4</title>
+                     <rubric>De partibus planetarum existentibus in plantis, animalibus et metallis</rubric><incipit>Postquam in praecedenti libro sumus loquuti de imaginibus et figuris celi</incipit><rubric><note>[bk iv]</note> Incipit liber quartus, in quo ostenditur de proprietatibus spirituum, et de iis, quae necessaria sunt in arte ista, et qualiter eum imaginibus et suffumigationibus illis adjuvantur</rubric><rubric>Caput primum, a quo virtus et fortitudo spirituum procedat et quid sit proprietas spiritualis, et quid sit proprietas corporis sensus, intellectus, animze, necnon differentia in ea</rubric><incipit>Sapientes vero antiqui in hoc sunt concordati</incipit>
+                     <listBibl>
+                        <bibl>ed. D. Pingree, <title>Picatrix ...</title> (London, 1986), sig. C (desc. pp. xxii-xxiii)</bibl>
+                     </listBibl>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -60,6 +74,7 @@
                   <objectDesc form="codex">
                      <supportDesc material="chart">
                         <support>paper</support>
+                        <extent>183 leaves</extent>
                      </supportDesc>
                   </objectDesc>
                   <decoDesc>
@@ -68,11 +83,12 @@
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" when="1500">c. 1500 (?)</origDate>
+                     <origDate calendar="Gregorian" notAfter="1600" notBefore="1490">15th and 16th centuries (fols. 1-52, c. 1500 (?))</origDate>
                      <origPlace>
-                        <country key="place_1000080">Italian</country>
+                        <country key="place_1000080">Italy</country>
                      </origPlace>
                   </origin>
+                  <provenance>'Jos. Columbanus 1710', fol. 1r.</provenance>
                   <provenance notAfter="1805" notBefore="1727" resp="#MMM"><persName key="person_2384880" role="fmo">Matteo Luigi Canonici, 1727–1805</persName></provenance>
                   <provenance notAfter="1807" resp="#MMM"><persName key="person_446" role="fmo">Giuseppe Canonici , -1807</persName></provenance>
                   <acquisition resp="#MMM" when="1817">Purchased by the Bodleian in 1817</acquisition>
@@ -80,7 +96,11 @@
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (1854). Decoration, localization and date follow Pächt and Alexander (1970). <listBibl>
+                        <source>Description adapted (March 2026) from the following sources with additional reference to published literature as cited:
+                           
+                          <listBibl> <bibl>H. O. Coxe, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars tertia codices Græcos et Latinos Canonicianos complectens</title>, Quarto Catalogues III, 1854</bibl>
+                           <bibl>Otto Pächt and J. J. G. Alexander, <title><ref target="https://catalog.hathitrust.org/Record/000468709">Illuminated Manuscripts in the Bodleian Library, Oxford</ref></title>, II (1970), no. 988</bibl></listBibl>
+                           <listBibl>
                               <bibl facs="abz0414.gif" type="QUARTO">Quarto Catalogue, cols. 815–6</bibl>
                               <bibl facs="aaz0428.gif" type="SC">Summary Catalogue, vol. 4, p. 409</bibl>
                            </listBibl>
@@ -94,6 +114,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2026-03">Matthew Holford: incorporate all information from printed catalogues; update description of item 4</change>
          <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>

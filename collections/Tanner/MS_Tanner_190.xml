@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8984">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_8984">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -42,26 +39,37 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Tanner 190</idno>
-                  <altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x03x816n439x</idno><idno type="crArk">ark:29072/x0mk61rg93gp</idno><altIdentifier type="internal">
                      <idno type="SCN">10016</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem n="1" xml:id="MS_Tanner_190-item1">
+                  <msItem n="1" xml:id="MS_Tanner_190-item1"><locus from="1r" to="210v" type="inferred"/>
                      <author key="person_24508798">Marino Sanudo</author>
                      <title key="work_3090">Secreta fidelium Crucis</title>
                      <rubric>Incipiunt secreta facta propter conservacionem fidelium quam propter conversionem seu consumptionem infidelium quamque etiam ad acquirendam et tuendam terram sanctam et alias multas terras, Deo dante, in bono statu pacifico et quieto.</rubric>
-                     <textLang mainLang="la">Latin</textLang>
+                     <listBibl>
+                        <bibl>pr. <title>Gesta Dei per Francos</title>, ed. J. Bongars, II (Hanover, 1611) <ref target="https://books.google.co.uk/books?id=BDtSAAAAcAAJ">1–288</ref>.</bibl>
+                        <bibl>tr. <title>The Book of the Secrets of the Faithful of the Cross: Liber Secretorum Fidelium Crucis,</title> trans. by Peter Lock, Crusade Texts in Translation (Farnham: Ashgate, 2011)</bibl>
+                     </listBibl><textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                        <extent>210 leaves, large quarto</extent>
+                        <extent resp="'#DD"><seg type="leaf"><measure type="laterEndleaf" quantity="2">ii</measure> + <measure type="leaf" quantity="210">210</measure>+<measure type="laterEndleaf" quantity="1">i</measure></seg> fols.<dimensions unit="mm" type="leaf">
+                           <height>280</height>
+                           <width>222</width>
+                        </dimensions>
+                        </extent>
                      </supportDesc>
-                     <layoutDesc>
-                        <layout columns="2">2 cols.</layout>
+                     <layoutDesc resp="#DD">
+                        <layout writtenLines="33" columns="2">2 cols., 33 lines, column space <dimensions unit="mm" type="column">
+                           <height>180</height>
+                           <width>67</width>
+                        </dimensions>
+                        </layout>
                      </layoutDesc>
                   </objectDesc>
                   <decoDesc>
@@ -73,16 +81,13 @@
                   </decoDesc>
                   <bindingDesc>
                      <binding notAfter="1500" notBefore="1400">
-                        <p>15th-century English binding, blind-tooled in calf, by the <persName key="person_3672" role="bnd">'Scales' binder</persName> (N. Barker, 'A register of writs and the Scales binder', <title>The Book Collector</title> 21 (1972), 227-244, 356-79, no. 17 (p. 376)); rebacked, 17th century.</p>
+                        <p>15th-century English binding, blind-tooled in calf, by the <persName key="person_3672" role="bnd">'Scales' binder</persName> (N. Barker, 'A register of writs and the Scales binder', <title>The Book Collector</title> 21 (1972), 227-244, 356-79, no. 17 (p. 376)); rebacked, 17th century. For further discussion see N. Barker, 'Tanner 190 Revisited', in <title>Makers and Users of Medieval Books: Essays in Honour of A.S.G. Edwards</title>, ed. C. M. Meale and D. Pearsall, (2014)  78-88, and the Bodleian Library conservation report of October 2012 (=REFS. CXXXIV.1).</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian"
-                               notAfter="1324"
-                               notBefore="1321"
-                               cert="high">c. 1321–1324</origDate>
+                     <origDate calendar="Gregorian" notAfter="1324" notBefore="1321" cert="high">c. 1321–1324</origDate>
                      <origPlace>
                         <country key="place_1000080">Italian</country>, <settlement key="place_7018159">Venice</settlement>
                         <!--ORIGINAL: Italian, Venice-->
@@ -101,7 +106,12 @@
                      <recordHist>
                         <source>
                            Description adapted (Nov. 2022) from the following sources, with reference to published literature as cited.
-                           <listBibl><bibl>A. Hackman, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars quarta codices viri admodum reverendi Thomæ Tanneri, S.T.P., episcopi Asaphensis, complectens</title>, Quarto Catalogues IV, repr. 1966, with corrections, from the ed. of 1860</bibl><bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, II (1970), no. 118 </bibl></listBibl> <listBibl>
+                           <listBibl>
+                              <bibl>A. Watson, <title>Catalogue of Dated and Datable Manuscripts in Oxford Libraries</title> (1984), <citedRange unit="entry" from="706" to="706">
+                                 <ref target="https://hdl.handle.net/2027/mdp.39015008982863?urlappend=%3Bseq=145">no. 706</ref>
+                              </citedRange>
+                              </bibl>
+                              <bibl>A. Hackman, <title>Catalogi codicum manuscriptorum Bibliothecæ Bodleianæ pars quarta codices viri admodum reverendi Thomæ Tanneri, S.T.P., episcopi Asaphensis, complectens</title>, Quarto Catalogues IV, repr. 1966, with corrections, from the ed. of 1860</bibl><bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, II (1970), no. 118 </bibl></listBibl> <listBibl>
                               <bibl facs="aas0102.gif" type="SC">Summary Catalogue, Vol. 3, p. 87</bibl>
                            </listBibl>
                            <listBibl>
@@ -156,6 +166,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-02">Add further bibliography.</change>
          <change when="2022-11">Revised to include additional information from printed catalogues and reference Barker article.</change>
          <change when="2018-08-15" xml:id="MMM">
             <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
