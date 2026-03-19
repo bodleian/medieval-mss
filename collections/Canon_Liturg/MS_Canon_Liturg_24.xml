@@ -1,18 +1,28 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2928">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2928">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Canon. Liturg. 24</title>
             <title type="collection">MSS. Canon. Liturg. (Canonici Liturgical)</title>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            
             <respStmt xml:id="VD">
                <resp when="1957">Cataloguer</resp>
                <persName>S. J. P. van Dijk</persName>
             </respStmt>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2026">Encoding</resp>
+               <persName>Stewart Brookes</persName>
             </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -41,10 +51,80 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem class="#liturgica" n="1" xml:id="MS_Canon_Liturg_24-item1"><locus from="1r" to="237v" type="inferred"/>
+                  
+                  <msItem class="#liturgica" n="1" xml:id="MS_Canon_Liturg_24-item1">
                      <title key="work_13592" type="desc">Offices connected with Holy Week</title>
+                     <note><p>Including</p></note>
+                     
+                     <msItem>
+                        <locus>(fol. 1)</locus>
+                        <title type="desc">Passion of Palm Sunday</title>
+                        <rubric>Dominica Palmarum in missa: Passio... Iesu Christi...</rubric>
+                        <note>According to the four evangelists</note>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 72v)</locus>
+                        <title type="desc">Prayer in honour of the Five Wounds</title>
+                     </msItem>
+                     
+                     <msItem>
+                        <title type="desc">Prayer of St Thomas Aquinas</title>
+                        <incipit><locus>(fol. 78)</locus> Concede mihi</incipit>
+                        <incipit><locus>(fol. 81)</locus> Creator ineffabilis</incipit>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 82)</locus>
+                        <title type="desc">Prayer of St Augustine</title>
+                        <incipit>O dulcissime domine</incipit>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 91)</locus>
+                        <title type="desc">Verses of St Bernard</title>
+                        <incipit>Illumina oculos</incipit>
+                     </msItem>
+                     
+                     
+                    <msItem>
+                       <locus>(fol. 92v)</locus>
+                       <title type="desc">Litany of the Virgin</title>
+                       <rubric>Letanie beate Marie Virginis</rubric>
+                    </msItem>
+                     
+                     
+                     
+                     <msItem>
+                        <locus>(fol. 97v)</locus>
+                        <title type="desc">Prayer for Holy Communion</title>
+                        <rubric>Modus ad recipiendum Corpus Christi</rubric>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 101)</locus>
+                        <title type="desc">Prayers for matins and lauds of Maundy Thursday</title>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 150v)</locus>
+                        <title type="desc">Prayer for Good Friday</title>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 194)</locus>
+                        <title type="desc">Prayer for Holy Saturday</title>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 231v)</locus>
+                        <title type="desc">Prayers of St Jerome before the cross</title>
+                        <incipit>Creator celi et terre</incipit>
+                     </msItem>
+                    
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
@@ -52,15 +132,18 @@
                         <support>parchment</support>
                         <extent resp="#VD">
                            <seg type="leaf"> i + <measure type="leaf" quantity="237">237</measure> + i  leaves</seg>
-             .<dimensions type="leaf" unit="mm">
+             
+                           <dimensions type="leaf" unit="mm">
                               <height>110</height>
                               <width>75</width>
                            </dimensions>
+                           
                            <dimensions type="written" unit="mm">
                               <height>50</height>
                               <width>35</width>
                            </dimensions>
                         </extent>
+                        
                      </supportDesc>
                      <layoutDesc resp="#VD">
                         <layout columns="1" writtenLines="13">13 lines</layout>
@@ -71,19 +154,30 @@
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
                      <origPlace>
-                        <country key="place_1000080">Italian</country>
+                        <country key="place_1000080">Italy</country>
                      </origPlace>
                   </origin>
+
+                  <provenance><persName key="person_2384880" role="fmo">Matteo Luigi Canonici (1727– <hi rend="italic">c</hi>. 1806)</persName></provenance>
+                  <provenance notAfter="1807" resp="#SC">Following Canonici's death, the collection passed to his brother, <persName key="person_446" role="fmo">Giuseppe Canonici</persName>, and 
+                     then to Canonici's nephew, <persName role="fmo" key="person_431">Giovanni Perissinotti</persName>, in 1807 following Giuseppe Canonici's death</provenance>
+                  <acquisition when="1817">Bought by the Bodleian Library in 1817 from Giovanni Perissinotti. On the purchase, see <ref target="https://digital.bodleian.ox.ac.uk/collections/canonici/">Digital Bodleian</ref></acquisition>
+                  
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
+
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). <listBibl>
+                              Description adapted (January 2026) by Stewart J. Brookes from the Summary Catalogue (1897). 
+                              Extent, leaf dimensions, layout and additional desciption of the contents from van Dijk (1957)
+                              <listBibl>
+                                 
                               <bibl facs="aaz0354.gif" type="SC">Summary Catalogue, vol. 4, p. 335</bibl>
                               <bibl facs="aaz0355.gif" type="SC">Summary Catalogue, vol. 4, p. 336</bibl>
                            </listBibl>
                         </source>
+                        
                      </recordHist>
                   </adminInfo>
                   <listBibl type="WRAPPER">
@@ -98,6 +192,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2026-01-28">Description revised to incorporate all the information in the Summary Catalogue (1897)</change>
          <change when="2025-07">Add extent, leaf dimensions and layout from van Dijk, Latin Liturgical Manuscripts in the Bodleian Library, Oxford.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
