@@ -347,6 +347,12 @@ def parse_arguments() -> argparse.Namespace:
         help="List of XML files to validate (overrides directory)",
         type=Path,
     )
+    parser.add_argument(
+        "--file-list",
+        dest="file_list",
+        help="Path to a newline-delimited file list (overrides directory)",
+        type=Path,
+    )
     return parser.parse_args()
 
 
@@ -363,7 +369,16 @@ def main() -> int:
     logger.info("Starting validation of manuscript keys...")
 
     # Determine whether to use files or directory
-    if args.files:
+    if args.file_list:
+        file_paths = [
+            Path(line.strip())
+            for line in args.file_list.read_text(encoding="utf-8").splitlines()
+            if line.strip()
+        ]
+        validator = AuthorityKeyValidator(
+            args.authority_paths, file_paths=file_paths
+        )
+    elif args.files:
         validator = AuthorityKeyValidator(
             args.authority_paths, file_paths=args.files
         )
