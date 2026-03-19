@@ -1,13 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4754">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4754">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Douce 96</title>
             <title type="collection">MSS. Douce</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2025">Encoding</resp>
+               <persName>Stewart Brookes</persName>
             </respStmt>
          </titleStmt>
          <publicationStmt>
@@ -35,17 +40,39 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem n="1" xml:id="MS_Douce_96-item1">
+                  
+                  <msItem n="1" xml:id="MS_Douce_96-item1"><locus from="1r" to="76v" type="inferred"/>
                      <author key="person_2363">Hugh Oldham<!-- not in VIAF --></author>
                      <title key="work_2109">Tractatus synodalis</title>
+                     <rubric>Tractatus Synodalis</rubric>
+                     <incipit type="prologue">Altissimus de terra creavit medicinam ecclesiasticus</incipit>
+                     
+                     <msItem>
+                        <note>Chapter 1</note>
+                        <incipit>Tractatus synodalis. Quoniam ecclesiastica sacramenta ad salutis remedia sunt divinitus instituta</incipit>
+                     </msItem>
+                     
+                     <msItem>
+                        <note>Chapter 57</note>
+                        <rubric>De confessione et penis dandis et omnibus aliis ad confessionem et confessionem pertinentibus</rubric>
+                        <incipit>Ut quia confessio est curatio vulnerum anime</incipit>
+                     </msItem>
+                     
+                     <explicit>Quod nisi singuli sacerdotes illud addiscant et sciant alioquid, cum super hoc requisiti fuerint, 
+                        tanquam insufficientes repellantur. Explicit finem presenti Synodi</explicit>
+                     <note>Divided into fifty-seven chapters, with a short prologue and a 'kalendare' preceding</note>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
-                        <support>parchment</support><extent>iv + <measure type="leaf" quantity="76">76</measure> leaves
-                           <dimensions type="binding" unit="in"><height>7.875</height><width>6.375</width></dimensions>
+                        <support>parchment</support>
+                        <extent>iv + <measure type="leaf" quantity="76">76</measure> leaves
+                           <dimensions type="binding" unit="in">
+                              <height>7.875</height>
+                              <width>6.375</width></dimensions>
                         </extent>
                      </supportDesc>
                   </objectDesc>
@@ -54,13 +81,26 @@
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1525" notBefore="1500">16th century, first quarter</origDate>
                   </origin>
+                  <provenance>'Iste liber pertenet ad me <persName role="fmo">Harri Recherd John Bodum</persName>' (16th century)</provenance>
+                  
+                  <!-- Add authority record -->                  
+
                   <provenance notAfter="1834" notBefore="1757" resp="#MMM"><persName key="person_69848690" role="fmo">Francis Douce, 1757–1834</persName></provenance>
                   <acquisition resp="#MMM" when="1834">Bequeathed to the Bodleian in 1834</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). <listBibl>
+                        
+                        <source>
+                           Description adapted (May 2025) by Stewart J. Brookes from the following sources:
+                           
+                           <listBibl>
+                              <bibl>Douce Legacy (1984), no. 201</bibl>
+                              <bibl>Summary Catalogue (1897)</bibl>
+                              <bibl>Catalogue of the Printed Books and Manuscripts Bequeathed by Francis Douce, esq. to the Bodleian Library (1840), <ref target="https://archive.org/details/catalogueofprint00bodluoft/page/14/mode/1up">p. 14</ref></bibl>
+                           </listBibl>
+                           <listBibl>
                               <bibl facs="aaz0539.gif" type="SC">Summary Catalogue, vol. 4, p. 520</bibl>
                            </listBibl>
                         </source>
@@ -71,6 +111,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-05-22">Description revised to incorporate all the information in the Summary Catalogue (1897) and other printed sources</change>
          <change when="2024-05">Add extent and leaf dimensions from Summary Catalogue.</change>
          <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>

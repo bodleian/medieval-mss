@@ -1,5 +1,4 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2045">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_2045">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -22,7 +21,7 @@
                <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>
             </publisher>
             <idno type="msID">MS_Canon_Bibl_Lat_30</idno>
-            <idno type="collection">Canon Bibl Lat</idno>
+            <idno type="collection">Canon_Bibl_Lat</idno>
             <idno type="catalogue">Western</idno>
          </publicationStmt>
          <sourceDesc>
@@ -42,7 +41,7 @@
                </msIdentifier>
                <head>Choir Psalter with Gloss; Italy, Florence (?), late 12th or early 13th century</head>
                <msContents>
-                  <msItem class="#liturgica #biblia" n="1" xml:id="MS_Canon_Bibl_Lat_30-item1">
+                  <msItem class="#liturgica #biblia" n="1" xml:id="MS_Canon_Bibl_Lat_30-item1"><locus from="1r" to="236v" type="inferred"/>
                      <title key="work_14130" type="desc">Choir Psalter with gloss</title>
                      <note> Fol. i is a paper fly-leaf. </note>
                      <note>Fol. ii is blank, apart from medieval and modern notes: ‘Cum ego Cato
@@ -59,7 +58,7 @@
                         </note>
                      </msItem>
                      <msItem n="2">
-                        <locus>(fols. 1r–204r)</locus>
+                        <locus from="1r" to="204r">(fols. 1r–204r)</locus>
                         <note> Psalms 1–150 (‘Incipit liber hymnorum uel soliloquiorum. dauid
                            prophetæ de christo.’), laid out as prose, punctuated throughout (some
                            punctuation is added) with punctus elevatus used to mark metrum, punctus
@@ -110,7 +109,7 @@
                         </note>
                      </msItem>
                      <msItem n="4">
-                        <locus>(fols. 224r–227v)</locus>
+                        <locus from="224r" to="227v">(fols. 224r–227v)</locus>
                         <note> Athanasian Creed (Quicumque uult ... ) (‘Fides catholica athanasii
                            episcopi’) with interlinear and marginal gloss, starting ‘Hec ratio fidei
                            catholice traditur et in ueteribus codicibus ...’, top of the first
@@ -118,12 +117,12 @@
                            containing this version of the gloss). </note>
                      </msItem>
                      <msItem n="5">
-                        <locus> (fols. 228r–v)</locus>
+                        <locus from="228r" to="228v">(fols. 228r–v)</locus>
                         <note> Benedicite omnia opera ... without a title or gloss, added in a
                            different, near-contemporary (?) hand. </note>
                      </msItem>
                      <msItem n="6">
-                        <locus>(fols. 228v–232v)</locus>
+                        <locus from="228v" to="232v">(fols. 228v–232v)</locus>
                         <note> Hymns, written as prose, with short rubrics (such as ‘In natiuitatem
                            domini ad uesperam’ or ‘Ad laudes’), added in the same hand as
                            Benedicite: Uenit redemptor gentium (Chevalier, no. 21294); Christe
@@ -149,7 +148,7 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support> parchment; paper fly-leaves</support>
-                        <extent> 236 leaves<dimensions type="leaf" unit="mm">
+                        <extent> <measure type="leaf" quantity="236">236</measure> leaves<dimensions type="leaf" unit="mm">
                               <height quantity="321">c. 321</height>
                               <width>200</width>
                            </dimensions>
@@ -176,8 +175,7 @@
                            containing the marginal gloss. Double vertical and single horizontal
                            bounding lines. Ruled for the text and gloss with 17 lines of text, two
                            lines of interlinear gloss between the lines of text and three lines of
-                           marginal gloss to each line of text. Written space: <dimensions
-                              type="written" unit="mm">
+                           marginal gloss to each line of text. Written space: <dimensions type="written" unit="mm">
                               <height max="193" min="190">c. 190–193</height>
                               <width min="150" max="153">150–153</width>
                            </dimensions>
@@ -228,8 +226,7 @@
                      <origDate calendar="Gregorian" notAfter="1210" notBefore="1190">12th century,
                         late or 13th century, early</origDate>
                      <origPlace cert="low">
-                        <country key="place_1000080">Italian</country>, <settlement
-                           key="place_7000457">Florence</settlement>
+                        <country key="place_1000080">Italian</country>, <settlement key="place_7000457">Florence</settlement>
                         (?)<!--ORIGINAL: Italian, Florence (?)--></origPlace>
                   </origin>
 
@@ -312,16 +309,12 @@
       <revisionDesc>
          <change when="2024-06">Encode full description from Solopova catalogue.</change>
          <change when="2018-10-14" xml:id="MMM">
-            <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref
-               target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb"
-               >https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
+            <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
             in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping
                Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
-            <persName>James Cummings</persName> Up-converted the markup using <ref
-               target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl"
-               >https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>
       </revisionDesc>
    </teiHeader>

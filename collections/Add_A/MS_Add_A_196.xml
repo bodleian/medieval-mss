@@ -4,11 +4,23 @@
          <titleStmt>
             <title>MS. Add. A. 196</title>
             <title type="collection">MSS. Add. (Additional) A</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+          
+            <respStmt xml:id="SC">
+               <resp when="1905">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2025">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+          
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -18,7 +30,7 @@
                <email>specialcollections.enquiries@bodleian.ox.ac.uk</email>
             </publisher>
             <idno type="msID">MS_Add_A_196</idno>
-            <idno type="collection">Add A</idno>
+            <idno type="collection">Add_A</idno>
             <idno type="catalogue">Western</idno>
          </publicationStmt>
          <sourceDesc>
@@ -35,11 +47,16 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem n="1" xml:id="MS_Add_A_196-item1">
                      <author key="person_2353">'Hulderichus Hispanius, episcopus de Toledo'<!-- not found --></author>
                      <title key="work_185">Practica</title>
+                     <rubric>Hulderichus Hispanius, episcopus de Toledo. Ista est Practica sua, &amp; floruit Anº Domini 1420</rubric>
+                     <colophon>Rescriptus fuerat per me anº 1590. TM</colophon>
+                     <note>This is a medical handbook, chiefly precepts and recipes, in Latin as far as fol. 36, and from that point (on the subject of ores) in English</note>
                      <textLang mainLang="en" otherLangs="la">English and Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
@@ -50,33 +67,86 @@
                   <handDesc>
                      <handNote>Written by <persName key="person_9" role="scr">'T.M.'</persName> in 1590 (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 1205)</handNote>
                   </handDesc>
-                  <decoDesc>
-                     <decoNote type="border"> Borders.</decoNote>
-                     <decoNote type="decInit"> Initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 1205) </decoNote>
+                  
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 1205
+                     </summary>
+                     <decoNote type="border">Borders</decoNote>
+                     <decoNote type="decInit">Initials</decoNote>
                   </decoDesc>
+                  
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" when="1590">1590</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
+                        <source>
+                           Description adapted (July 2025) by Stewart J. Brookes from the Summary Catalogue (1905). Decoration, localization and date follow Pächt and Alexander (1973)
+                           <listBibl>
                               <bibl facs="aam0601.gif" type="SC">Summary Catalogue, Vol. 5, p. 566</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
                </additional>
+               
+               <msPart xml:id="Add_A_196">
+                  <msIdentifier>
+                     <altIdentifier>
+                        <idno>MS. Add. A. 196, flyleaves</idno> 
+                     </altIdentifier> 
+                  </msIdentifier>
+                  <msContents>
+                     
+                     <msItem>
+                        <locus>(flyleaves and cover)</locus>
+                        <title type="desc">Theological</title>
+                        
+                        <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     
+                  </msContents>
+                  <physDesc>
+                     <objectDesc form="codex">
+                        <supportDesc material="perg">
+                           <support>Parchment</support>
+                        </supportDesc>
+                        
+                     </objectDesc>
+                     
+                  </physDesc>
+                  
+                  <history>
+                  
+                  <origin>
+                     <origDate notAfter="1300" notBefore="1300" calendar="Gregorian">13th century</origDate>
+                     <origPlace><country key="place_7002445">England</country></origPlace>
+                     
+                  </origin>
+ 
+                  <provenance>Owned by <persName role="fmo">J. Leonard</persName> (18th century?)</provenance>
+                  
+                  <!-- Add authority record -->                  
+
+                  <acquisition when="1878">'bought with some Collections for History of Lichfield (Harwood) of <persName role="fmo">Mrs. H. Smith</persName> of Swindon, Dudley [in Staffordshire], March 78'</acquisition>
+                  
+                  <!-- Add authority record -->                  
+                  
+                  </history>
+               </msPart>
+               
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-07-21">Description revised to incorporate all the information in the Summary Catalogue (1905)</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>

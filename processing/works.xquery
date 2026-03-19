@@ -163,7 +163,7 @@ declare variable $allinstances :=
                 {
                 (: See also links to search for works with the same subjects :)
                 for $subject in $subjects
-                    let $url := concat('/?f[type][]=work;f[wk_subjects_sm][]=', $subject)
+                    let $url := concat('/?f[type][]=work&amp;f[wk_subjects_sm][]=', $subject)
                     let $linktext := concat("Other works with the subject '", $subject, "'")
                     let $link := concat($url, "|", $linktext)
                     order by $subject
