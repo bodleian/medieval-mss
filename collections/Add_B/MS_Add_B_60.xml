@@ -1,12 +1,12 @@
 <?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_90">
    <teiHeader>
+      <!-- TODO: authority records for persons, works -->
       <fileDesc>
          <titleStmt>
             <title>MS. Add. B. 60</title>
             <title type="collection">MSS. Add. (Additional) B</title>
             <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+               <resp when="2025">Cataloguer</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -34,37 +34,306 @@
                      <idno type="SCN">29179</idno>
                   </altIdentifier>
                </msIdentifier>
+               <head>Medical recipes and texts, mostly in Middle English; England, 15th century, second half</head>
                <msContents>
-                  <textLang mainLang="enm" otherLangs="la">Middle English and Latin</textLang>
+                  <summary>The manuscript is a twin of <ref target="https://cudl.lib.cam.ac.uk/view/MS-TRINITY-COLLEGE-O-00008-00035/15">Cambridge, Trinity College, MS O.8.35</ref>, with identical original contents, written by the same scribe, using the same mise-en-page, and with the texts in many cases divided in the same way between quires. Almost all the contents of fols. 1r-83v are also found (not in the same order) in Lambeth Palace Library MS. 444 (mid 15th century).</summary>
+                  <!--<textLang mainLang="enm" otherLangs="la">Middle English and Latin</textLang>-->
+                  
+                  <!-- a twin of Camb. Trinity O.8.35, (same contents, hand, layout), 
+                     first (?and other) texts also in Lambeth 444 
+                  also checked: MMBL; Wellcome cat.
+                  -->
+                  <msItem>
+                     <locus>(fols. iii recto - iv verso)</locus>
+                     <note>Early modern recipes (for bleeding, the stone, cramp, joints, gout and sciatica, a purgative, falling sickness, eyes (?), and bruising) added on paper endleaves. </note><textLang mainLang="en">English</textLang>
+                  </msItem>
                   <msItem class="#medica" n="1" xml:id="MS_Add_B_60-item1">
-                     <title key="work_13220" type="desc">Medical texts</title>
+                     <locus>(fol. 1r-52r)</locus>
+                     <title key="work_7492">A Treatise of All Manner of Infirmities of Man's Body</title>
+                     <rubric>Here begynneth a tretys of al manere of infirmitees of mannys body, both wythinne as touchyng to phisyk, and withoute as touchyng to surgere, from the crowne of the heed to the soole of the foot. And the remedies therwith if god wol. And first we <sic>wol at</sic> heer of the hede, how it shulde be norisshede and kepte et cetera. </rubric>
+                     <incipit>For to make heer to growe. Take withien leues and sethe hem in oyle and hony and anoynte the heede therwith and it shal make the heer to growe and waxe. Another. Take <sic>bees</sic><!-- sic for beans? --> and drie hem in a furneys or in a panne, and make therof a pouder and sethe it in hony and anonynte the pacyent therwith and it shal make the heer to growe. Another. For to make heer to growe after scalles. There is an oynement that is cleped vnguentum Aristotilis, thus it must be made.</incipit>
+                     <explicit>[for the menson] &amp; rest hym wel &amp; tender &amp; ete this pere thus dight last at euene. Another. Take clene whete &amp; sethe it til it be broke &amp; stampe it waterlees. </explicit>
+                     <note>Large recipe collection (over 300 recipes) organized head to toe, but apparently ending incompletely, covering head (including face, eyes, ears, nose, teeth, etc., and 'the infirmytees of mannys heed wythyn' (fol. 7v), fols. 1r-29v, with a recipe for Gratia Dei at fols. 13r-14v and 'dwale', fol. 21v), neck (fols. 29v-30v), breast 'and the spiritualtes withynne the brest' (fols. 30v-39r, with recipes for women's breasts at 37v-39r), stomach (including back, liver, spleen) (fols. 39r-49r), worms, venom and bites (fols. 49r-51r), and ending with flux (fols. 51r-52r). </note>
+                     <note> The text ends thus in all the known manuscripts, but comparison with other collections confirms that the final recipe is incomplete (cf. for example <title>The Liber de Diversis Medicinis</title>, ed. M. S. Ogden, EETS OS 207 (repr. 1969), p. 31/17).</note>
+                     <note>Other manuscripts: Trinity O.8.35 fols. 1r-52r (IMEP 11, O.8.35[2]); Lambeth MS. 444 fols. 128r-142r (imperfect at beginning) (IMEP 13, 444[1]). </note>
+                     <listBibl>
+                        <bibl>eVK 2194, 6541</bibl>
+                        <bibl>eVK 6363 (the dwale recipe, fol. 21v)</bibl>
+                     </listBibl>
+                     <textLang mainLang="enm">Middle English </textLang>
+                  </msItem>
+                  <msItem>
+                     <locus>(fols. 52v-57r)</locus>
+                     <title key="work_7483">The Doom of Urines</title>
+                     <rubric>Ad discernendum vrinam humanam ab vrina mulieris et vrinam bestie ab vrina humana vel muliebri</rubric>
+                     <incipit>Thou shalt vnderstonde that if there be eny trouble in mannys vryne, that troublenes shewith in the myddes of the vryne, and in a wommannys water it doth not so.</incipit>
+                     <explicit>it tokeneth reume in the breste &amp; a wickede stomak &amp; a badde lyuere &amp; badde lunges &amp;c.</explicit>
+                     <note>Lines 199-214, 215 (the heading only is given), 224-336, 338-379 of the text as printed.</note>
+                     <listBibl><bibl>expanded version, ed. M. Teresa Tavormina, EETS O.S. 354 (2019), pp. 30-41, not using the present manuscript; p. xxviii lists 54 manuscripts, including the present one and Lambeth MS. 444, fols. 159r-160Ar (IMEP 13, 444[6]), Trinity O.8.35 fols. 52v-57r (IMEP 11, O.8.35[3]). </bibl><bibl>M. Teresa Tavormina, <title>Uroscopy in Middle English: A Guide to the Texts and Manuscripts</title>, Studies in medieval and renaissance history 3rd ser., 11 (2014), 2.2 (p.25)</bibl>
+                     <bibl>eVK 7534, 7840, 7812, 7773, 1996</bibl>
+                     </listBibl> <textLang mainLang="enm">Middle English </textLang>
+                     <note>The next item follows directly without any break.</note>
+                  </msItem>
+                  <msItem>
+                     <locus>(fols. 57r-59r)</locus>
+                     <title key="work_7493">The Governance of Signs</title>
+                     <incipit>It is for to wite þat euery moneth in the yere, the mone hath his course in the xij. signes. In euery sygne þe mone is ij. days and an half almoost. Also it is for to wite that the signes haue her gouernaunce of euery man &amp; beste in xij. parties of the bodye <gap reason="editorial"/> <locus>(fol. 57v)</locus> Aries gouernyth the heed and the face. Taurus the neck and the knotte of the throte. <gap reason="editorial"/> Piscis only the feet. Also is to for to wite that a medicyne laxatif must be take whan the mone is in Cancre <gap reason="editorial"/> <locus>(fol. 58r)</locus> Also be ware of these days in blood lettyng that is to say in the caniculer days the whiche begynnyn xviij days before Lammas <gap reason="editorial"/> Also it is for to wite <locus>(fol. 58v)</locus> that euery day begnneth atte hye none <gap reason="editorial"/> Firthermore it is for to wite that in the sonne rysynge of euery day is the first houre of euery day to accounte after the planetes </incipit>
+                     <explicit>and thoo that ben coleryke and fleumous stonde in mene bewar.</explicit>
+                     <note><title>Uroscopy in Middle English: A Guide to the Texts and Manuscripts</title>, Appendix A.4 (p. 109) lists six manuscripts, including the present one, Lambeth MS. 444, fols. 158v-159r (IMEP 13, 444[7, with the following item]), and Trinity O.8.35, fols. 57r-59r (IMEP 11, O.8.35[4, with the following item]); but the text in one manuscript (Trinity Cambridge O.7.2a fols. 1r-8r) contains much fuller material on the signs and lacks the additional material found in the other copies.</note><!-- TODO: check if the version in Trin. O. 7. 2A 1r-8r is longer than
+                     Slaon 100 f 36r-37r; Slaone 297 f 115r-116v
+                     -->
+                     <listBibl>
+                        <bibl>eVK 3137, 0876</bibl>
+                     </listBibl> <textLang mainLang="enm">Middle English </textLang>
+                     <!-- cf Trin. O.7.2a -->
+                  </msItem>
+                  <msItem>
+                     <locus>(fols. 59r-65v)</locus>
+                     <title key="work_7494">The Four Elements</title>
+                     <incipit>It is to vnderstonde that euery man is maad of iiij. elementes, is to say that euery man hath iiij. humours like to the iiij. elementes. These ben the iiij. elementes, that is to wyte fire, eyre, water, and erthe. Euery body lyuyng hathe somewhat of hem but not euery body iliche.</incipit>
+                     <explicit>And fro ix of the klock before mydnyght til iij. of the klock after mydnyght regnyth fleume that is colde &amp; moiste and so is that partie of the nyght and after begynneth blood to regne ayen.</explicit>
+                     
+                     <note>On the four humours, the four ages, the four seasons, the four winds, ending with the division of twenty-four hours between the humours.</note>
+                     <note><title>Uroscopy in Middle English</title> 8.2 (pp. 64-6) lists 21 copies containing the full version or extracts; our text belongs to abbreviated version A (8.2.2a, pp. 65-6), with 12 copies listed. For previous discussion see IMEP 17, p. 62 (Caius 336/725 [4]).</note>
+                     <listBibl>
+                        <bibl>eVK 3208</bibl><!-- as Gilbertus Anglicus -->
+                     </listBibl> <textLang mainLang="enm">Middle English </textLang>
+                  </msItem>
+                  <msItem>
+                     <locus>(fol. 65v)</locus>
+                     <incipit>Here folewith the manere of wrytyng of bylles for receytes. A pound is wryton thus lj, j half a pound thus lj s'.</incipit>
+                     <explicit>half an handful thus m. s' or thus m. di. Of eche iliche ana.</explicit>
+                     <note>Lambeth 444, fol. 160A verso (IMEP 13, 444[8]); Trinity O.8.35, fol. 65v (IMEP 11, O.8.35[5], q.v. for other copies)<!-- eVK lists in addition BL, MS. Sloane 100, fol. 31v-->.</note>
+                     <listBibl>
+                        <bibl>eVK 0673</bibl>
+                     </listBibl> <textLang mainLang="enm">Middle English </textLang>
+                  </msItem>
+                  <msItem>
+                     <locus>(fols. 65v-69v)</locus>
+                     <title type="desc" key="work_10338">Astrological lunary</title>
+                     <incipit>Aries hoot and drye. Whan the mone is vnder the signe of Aries that Wether, that signe is mouable, hoot and drye, colerike, of kynde of that fire, than it is good to make what thynge that longith to mevynge, as for to bathen, to be late blood that tyme is for to eschewen for to touche the hed of man with iren</incipit>
+                     <explicit>that signe Piscis makith the feet of man and of womman in his moder wombe, and if eny man or womman be wounded in the feet whan the mone is vndernethe that signe, vnnethe or euere he shal be couered </explicit>
+                     <note>Other manuscripts: Trinity O.8.35, fols. 65v-69v (IMEP 11, O.8.35[6]); Lambeth 444, fols. 160Av-162r (IMEP 13, 444[9]); the version of <title>The Governance of Signs</title> in Trinity Cambridge O.2.7a fols. 1r-8r (see above) is frequently similar in contents and wording.</note>
+                     <listBibl>
+                        <bibl>eVK 8042</bibl>
+                     </listBibl> <textLang mainLang="enm">Middle English </textLang>
+                     <!-- imep index cites Trin. O.8.35, Lamb. 444[9]
+                     ?cf also Trin O.7.2a fols. 1ff, a very similar text but not the same?
+                     -->
+                  </msItem>
+                  <msItem>
+                     <locus>(fols. 69v-70r)</locus>
+                     <title type="desc" key="work_10409">Astrology: prognostication by birth</title>
+                     <incipit>Signum Aquarii dicitur quia sanctus Johannes Baptista baptisatus fuit in flumine Jordani in mense Januarij quem habet Januarius. Qui nascitur in hoc signo negligens erit.</incipit>
+                     <explicit>[Capricorn] Qui in hoc signo nascitur diues &amp; amabilis erit valde.</explicit>
+                     <textLang mainLang="la">Latin</textLang>
+                     <!-- not in eTK -->
+                  </msItem>
+                  <msItem>
+                     <locus>(fols. 70r-83v)</locus>
+                     <title key="work_7495">Digestives Simple and Compound</title>
+                     <rubric>This table tellith of digestiues symple &amp; compound of euery humour, that is to say of colere, fleume, and malencolie. The first chapiter of medicyne symple, digestiues of coler and compouned.</rubric>
+                     <incipit><locus>(fol. 72r)</locus> For sothe somme good frendes whiche trowed me to haue syght of konnynge praiden me <lb/> to opene to hem in <sic>wryrtynge</sic> shortly medicynes digestiues and euacuatiues or voidynge, symple and compound, the whiche leches comounly vseden.</incipit>
+                     <incipit>Medicynes symple digestyues of coler ben these. Violet, roses, endyue</incipit>
+                     <explicit>Compound for the same ben þese. Sirupus rodoun with medicines colinge the reynes the which ben afore said.</explicit>
+                     <note>Treatise on digestive and evacuative medicines. In 29 chapters, preceded by table of contents.</note>
+                     <note>IMEP 17, pp. 62-3 (Caius 336/725 [5]) lists the present manuscript and four others (including Lambeth 444 (IMEP 13, 444[3]) and Trinity O.8.35 (IMEP 11, O.8.35[7-8])).</note>
+                     <listBibl>
+                        <bibl>eVK 7482, 1966, 3572</bibl>
+                     </listBibl> <textLang mainLang="enm">Middle English </textLang>
+                     <!-- Takamiya 33: https://collections.library.yale.edu/catalog/16371220  -->
+                  </msItem>
+                  <msItem>
+                     <locus>(fols. 83v-84r)</locus>
+                     <title type="desc" key="work_13203">Two added recipes for migraine on originally blank leaves</title><!-- not in the Trinity ms -->
+                     <incipit>A noble medycyne for the mygreyne in the hede &amp; for the enpostyme yn the hede <gap reason="editorial"/> Take iiij penny weyght of the rote of pelletre of spayne, j peny weyght of spyknard <gap reason="editorial"/> <note>(second recipes)</note> Another for the same. Take the iuse of syngrene &amp; womannys mylke that noryssheth a knave childe &amp; white wyne</incipit>
+                     <listBibl>
+                        <bibl>eVK 5387</bibl><!-- as Roger de Baron -->
+                     </listBibl> <textLang mainLang="enm">Middle English </textLang>
+                  </msItem>
+                  <msItem>
+                     <locus>(fol. 84v)</locus>
+                     <note>Added notes on originally blank page: two incomplete 16th-century copies of the text on Pisces from fol. 69r, and an incomplete note 'Item that I Jhon Thomas viij gortes'.</note><!-- not in the Trinity ms  -->
+                     <textLang mainLang="en">English</textLang>
+                  </msItem>
+                  <msItem>
+                     <locus>(fols. 85r-86v)</locus>
+                     <rubric>Here folowen the entraailes of man and medicines also for certeyn parties of a mannys body</rubric>
+                     <incipit>The longe holdith two ouer parties of the brest, and it helith or couerith the herte. The stomak is bitwene the ouer nesshe ribbes. The litel wombe is vndernethe the stomak. The gyser or the gyserne is in teh ryght side and he is sprad <sic>for</sic> the nauell to the parte of the wombe</incipit>
+                     <explicit>If the siknesse be in the <sic>bladde</sic>. Of litel mete thou shalt be sone ful, the vryne shal be foule &amp; hoot, &amp; the colour shal palle. Take therefore the rotes of fenel and apum &amp; betonicam &amp; sethe it in wyne &amp; drynke it ix days twies in the day and thou shalt be hool.</explicit>
+                     <note>Medical text on disorders of the internal organs.</note>
+                     <note>Trinity O.8.35, fols. 85r-86v (IMEP 11, O.8.35[9], indexing fols. 85r-112r)</note>
+                     <!-- query where this ends. Mooney treats 112 as end of the Trinity text, but cf. text here on seaons, 84r, and 84v- a separate recipe collection? 
+                       
+                     -->
+                     <listBibl>
+                        <bibl>eVK 6894, 6895</bibl>
+                     </listBibl> <textLang mainLang="enm">Middle English </textLang>
+                  </msItem>
+                  
+                  <msItem>
+                     <locus>(fols. 86v-87r)</locus>
+                     <incipit>Now begynnen the iiij. tymes of the yere. Wynter is moist &amp; colde &amp; like vnto þe ayre &amp; in that tyme waxith the blood. <lb/> And it profitith that tyme thynge that be temporat &amp; euen of complexion as chikens </incipit>
+                     <explicit>And from the myddes of <add>December in to the myddes of</add> Marche is hiemps that is to say wynter.</explicit><!-- note, the same error in Trinity -->
+                     <note>Dietary according to the season.</note>
+                     <note>Trinity O.8.35, fols. 86v-87r (IMEP 11, O.8.35[9], indexing fols. 85r-112r)</note>
+                     <listBibl>
+                        <bibl>eVK 8173</bibl><!-- on seasons.  -->
+                     </listBibl> <textLang mainLang="enm">Middle English </textLang>
+                  </msItem>
+                  <msItem>
+                     <locus>(fols. 87v-112r)</locus>
+                     <title key="work_13203" type="desc">Medical recipes</title>
+                     <rubric>Here folewen now after trew and proued medicynes good and prophetable cures for dyuerse infirmitees, greuaunces and siknesses of mannys or wommannes or childes body</rubric>
+                     <incipit>For the goute, a souerayn medicyn proued. Take a gander of vij yere old of oo coloure that is fatte ... (second recipe) Another good medicyne for the goute. Take culuerfoot and stampe it and ley it vpon the goute ... (third recipe) Another souereyn medicyne for the same. Take walwort a good handful and iiij. vnces of barowes grece</incipit>
+                     <explicit>[laxative] but lete it not lye ther to longe for it wol thanne make hym haue the flyxe.</explicit>
+                     <note>Various recipes (approximately 80), beginning with a group for gout, followed by hemorrhoids, sore breasts, migraine, eyes, burns, flux, stone, to know if a sick man shall live or die, freckles, childbirth, palsy, etc., and including recipes for oleum benedictum, 'methe eglyn', aqua vitae, and 'baume artificial'. Includes recipes 'proued by <sic>on one</sic> Exceter of Brystowe', 'by one John Blake' (both fol. 88v), 'wel proued by John Berkham' (fols. 89v, 98r), 'proued by John Welyngton' (fol. 90v), 'by John Laurence', 'by John Chitterne' (both fol. 91r), 'by oon Snelle' or 'John Snell' or 'Snell of Wynchestre and other dyuerse' (fols. 96r, 98v, 101r), 'by a knyght of Rodys' (fol. 102v).</note> 
+                     <note>Trinity O.8.35, fols. 87v-112r (IMEP 11, O.8.35[9], indexing fols. 85r-112r).</note>
+                     <listBibl>
+                        <bibl>eVK 2322 (prol.), 4684 (recipes), 2022 (metheglin)</bibl>
+                        <!-- perhaps cf. eVK 4972, Sloane 2948 fols. 80v-85r -->
+                     </listBibl> <textLang mainLang="enm">Middle English </textLang>
+                     <note>The following item continues without a break.</note>
+                  </msItem>
+                  <msItem>
+                     <locus>(fol. 112r-121v)</locus>
+                     <title type="desc">On apostemes, etc.</title>
+                     <rubric>Modo aliqua sunt breviter dicenda de quibusdam apostematibus et eorum sygnis atque curis eorundem et medicynis </rubric>
+                     <incipit>Sciendum est primo quod omnia apostemata exteriora que tumescunt siue inflantur siue sint parua siue magna, si magna sint nascuntur a quatuor humoribus peccantibus</incipit>
+                     <explicit>et de eodem fac emplastrum &amp; pone desuper</explicit>
+                     <note>A text on apostemes and cankers followed by related recipes, and recipes for wounds and plasters. Fols. 112r-116r (line 5 from bottom) correspond to the Middle English text in Wellcome Collection MS. fols. 188r-v (and partly in MS. Selden Supra 73, fols. 30r-34v). At fol. 119r is a recipe for Gratia dei followed by notes on cankers and other recipes ('Hic incipit tractatus breuis de emplastris &amp; vnguentibus entraccio cerotis &amp; oleis pertinentibus ad cirurgiam, et primo de gratia dei maiori'). The final rubric, on fol. 121v, is in French.</note>
+                     <note>Trinity O.8.35 fols. 112r-122v</note>
+                     <textLang mainLang="la" otherLangs="xno">Latin with one rubric in French</textLang>
+                     <!-- not in eTK. cf ME version in Seld. Supra 73. The wellcome version diverges from the Latin around f 115v of Trinity O.8.35
+                     no matches in GBooks.
+                     -->
+                  </msItem>
+                  <msItem>
+                     <locus>(fols. 121v-122v)</locus>
+                     <title key="work_13203" type="desc">Medical recipes</title>
+                     <incipit>For bytynge of any hownde. Take the browne brede cromes and blake snayles and bray hem togedyr lyke paste and lay it to þe sore. (second recipe) For to make a precious and souereyn water for thilke eyen that ben faire and clere to se and to loke on and be blynde. Take smalache, redde fenel, rue, verueyne, beteyne, egrimoyne, quintfoyle ... (third recipe) For the dropesye in the vysage or hondes or feet either in eny other parte or membre þat it be, so that it be not withinne the bely, and also though it be in partie within þe body. Take lyuerwort &amp; grynde it smale and streyne oute clene the ius therof </incipit>
+                     <explicit>(last recipe, 'for a webbe or pynne that is in a mannys eye ...') the webbe shal go a way or pynne whethir that it be. This hathe be proued by men and women.</explicit> <textLang mainLang="enm">Middle English </textLang>
+                     <note>Five recipes (the fourth for nosebleeds). Trinity College O.8.35 fols. 122v-124r (IMEP 11, O.8.35[10]).</note> <listBibl>
+                        <bibl>eVK 6058</bibl>
+                     </listBibl>
                   </msItem>
                   <msItem>
                      <locus from="122v" to="124r">(fols. 122v–124r)</locus>
                      <author key="person_22158282">John Lydgate</author>
                      <title key="work_2722">Dietary</title>
-                     <bibl type="repertory"><ref target="https://www.dimev.net/record.php?recID=1356"><title>DIMEV</title> 1356</ref></bibl>
+                     <incipit>For helthe of body covyr for colde thyne hede</incipit>
+                     <explicit>To all indeferente richeste dyatary. Explicit.</explicit>
+                     <note>Written as prose. Added in a different but contemporary hand.</note>
+                     <bibl type="repertory"><ref target="https://www.dimev.net/record.php?recID=1356"><title>DIMEV</title> 1356</ref></bibl> <textLang mainLang="enm">Middle English </textLang>
+                  </msItem>
+                  <msItem>
+                     <locus>(fol. 124v)</locus>
+                     <incipit>To make conserua roseado, take rosewater &amp; annes sede &amp; suger &amp; a lytle lucras &amp; put it in a podynger ... (second recipe) To make conserua rosearo take redde wyne &amp; roses drye or grene &amp; clarefid hony or suger ... (third recipe) To make orynges in seryp, take the rynes or orynges and boyle hem wel in oone water or too</incipit>
+                     <explicit>To kype quynce &amp; wardes al þe yere, take a good pyce of new level bred &amp;c. [breaks off]</explicit>
+                     <note>Five culinary recipes (the fourth for nuts in syrup) added in a contemporary hand.</note>
+                     <listBibl>
+                        <bibl>eVK 5908</bibl>
+                     </listBibl>
+                     <textLang mainLang="enm">Middle English </textLang>
+                  </msItem>
+                  <msItem>
+                     <locus>(fol. 125r)</locus>
+                     <note>Added early-modern recipes (for the weakness of the back) on a previously blank page.</note><textLang mainLang="en">English</textLang>
+                  </msItem>
+
+
+                  <msItem>
+                     <locus>(fols. 125v-126v)</locus>
+                     <incipit>Be thou pacient in thyn aduersite</incipit>
+                     <explicit>Thynkyng when god wyll better may be</explicit>
+                     <colophon>Amen Jhesus Marie filius quod <persName>I. G.</persName></colophon>
+                     <note>Added in a contemporary hand. Preceded by a couplet ('Ihesu for thy precius blod &amp; thy bitter pascion Make my later endyng good &amp; the childe of saluacion')</note>
+                     <listBibl>
+                        <bibl>Kurt Bühler, “Patience in adversity”, <title>Anglia</title> 78 (1960), 417-21.</bibl>
+                        <bibl>DIMEV 780</bibl>
+                        <bibl>NIMEV 478</bibl>
+                     </listBibl>
+                     <textLang mainLang="enm">Middle English</textLang>
+                  </msItem>
+                                    <msItem>
+                     <locus>(fol. 127r)</locus>
+                                       <note>Diagram of Christ's side wound ('hec est vera mensura vulneris Christi'), contemporary addition, with early modern note 'Mendax es'.</note>
+                                       <textLang mainLang="la">Latin</textLang>
+                  </msItem>
+                  <msItem>
+                     <locus>(fol. 127v-129v)</locus>
+                     <note>Early-modern recipes for noli me tangere, gout, 'any kind of ach', 'the French poxe', ulcers and cankers, added on the verso of a former pastedown (fol. 127) and on the paper endleaves of an earlier binding (fols. 128-9).</note>
+                     <textLang mainLang="en">English</textLang>
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent><seg type="leaf">ii + ii + <measure type="leaf" quantity="127">127</measure> + ii + ii leaves</seg>
+                           <dimensions unit="mm" type="leaf">
+                              <height quantity="190">c. 190</height>
+                              <width quantity="150">c. 150</width>
+                           </dimensions>
+                        </extent>
+                        <foliation>i-iv, 1-131</foliation>
+                        <collation mainStructures="8">1(8)-10(8) (fols. 1-80), 11(8-1, but structure unclear) (fols. 81-87) | 12(8)-16(8) 
+                           (fols. 88-127). 
+                           Catchwords survive on fols. 24v, 32v, 40v, 48v, 56v, 64v,
+                        72v, 80v, erased on fol. 88v?, 95v. No surviving leaf signatures.</collation>
                      </supportDesc>
+                     <layoutDesc>
+                        <layout columns="1" writtenLines="22">Frame-ruled (verticals only?) in very fine, barely visible leadpoint; one column of 
+                           typically 22 lines. Written space typically <dimensions unit="mm" type="written">
+                              <height quantity="140">c. 140</height>
+                              <width quantity="95">c. 95</width>
+                           </dimensions></layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <handDesc hands="1">
+                     <handNote script="cursiva">Written in a single mixed hand, predominantly secretary.</handNote>
+                     <handNote>Additions in probably more than one contemporary hand (fols. 122r-124v; fols. 124v, 125v-126v) and in several 16th- and 17th-century hands (fols. iii recto - iv verso, 125v, 127v-129v)</handNote>
+                  </handDesc>
+                  <decoDesc>
+                     <decoNote type="rubrication">Fols. 1r-83v: headings written in a larger module and underlined in red. </decoNote>
+                     <decoNote type="rubrication">Fols. 87r-122v: headings in red. </decoNote>
+                     <decoNote type="plainInit">Fols. 1r-122v: calligraphic initials in red or in the ink of the text.</decoNote>
+                     <decoNote type="colInit">Fol. 122v: 3-line initial in blue.</decoNote>
+                     <decoNote type="diagram">Fol. 127r: Diagram of Christ's side wound.</decoNote>
+                  </decoDesc>
+                  <bindingDesc>
+                     <binding notAfter="1700" notBefore="1600">
+                        <p>17th-century binding of blind-tooled leather over pasteboard, with the panel design on both covers later reworked; 'Treatise on Physic' on the spine.</p>
+                        <p>The left pastedown, fols. i-ii and 130-1, and the right pastedown are separate paper endleaves from the current binding. Fols. iii-iv, 128-129 are separate paper endleaves from an earlier binding. Fol. 127, an integral endleaf, was a pastedown in a further earlier binding of tanned leather.</p>
+                     </binding>
+                  </bindingDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
+                     <origDate calendar="Gregorian" notAfter="1500" notBefore="1450">15th century, second half</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
+                  <provenance>Extensive signs of use including numerous marginal annotations of recipe topics.</provenance>
+                  <provenance>Erased early-modern ownership inscription (?), illegible, fol. iii verso; erased early-modern name (Thomas ...), fol. 126v.</provenance>
+                  <provenance>Possibly first day, lot 74 in the sale of the library of Sir William Hamilton (1730-1803), 8 June 1809 and two following days (<title>Catalogue of the Very Choice and Extremely Valuable Library ...</title>, p. 9).</provenance>
+                  <provenance><persName role="fmo" key="person_120696480">Adam Clarke (1762-1832)</persName>, Irish minister and scholar, MS. 151, in <title><ref target="https://wellcomecollection.org/works/y6ku25hb/items?canvas=100">A historical and descriptive catalogue of the European and Asiatic manuscripts in the library of the late Dr. Adam Clarke, F.S.A., M.R.I.A., etc.</ref></title> (1835) (cf. Madan's note 'No. CLI in some collection' on the pastedown; no such mark apparently extant); no. 120 in his sale (<title>A List of Manuscripts ... Formerly in the Possession of the late Dr. Adam Clarke; On Sale ... by Baynes And Son</title> (London, 1836), p. 11; cutting from the catalogue pasted to fol. i recto.</provenance>
+                  <provenance>'J. H. from J. N. R. March 1841'.</provenance>
+                  <provenance>'Lot 167 in some sale' (Madan's note, left pastedown; evidence for this no longer present)</provenance>
+                  <acquisition when="1880">'Bought from J. E. Cornish, bookseller, 33 Piccadilly, Manchester, 1880' (left pastedown).</acquisition>
+                  <!-- Dr Adam Clarke no. 120 in his sale -
+                  https://www.google.co.uk/books/edition/A_List_of_Manuscripts_English_Irish_Fren/SZnE1MWuty4C?hl=en&gbpv=1&dq=%22a+tretys+of+al+manere+of+infirmitees%22&pg=PA11&printsec=frontcover
+                  and no. 151 in his catalogue 
+                  https://wellcomecollection.org/works/y6ku25hb/items?canvas=100&query=tretys
+                  
+                  
+                  -->
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
+                        <source>Description by Matthew Holford, December 2025. Previously described: <listBibl>
                               <bibl facs="aam0613.gif" type="SC">Summary Catalogue, Vol. 5, p. 578</bibl>
                            </listBibl>
                         </source>
@@ -75,6 +344,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2025-12">Description revised.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>

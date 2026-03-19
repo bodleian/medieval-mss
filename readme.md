@@ -13,9 +13,28 @@ For information on the collections themselves, see the [LibGuide](https://libgui
 
 ## Development
 
-The Python scripts in this project use [uv](https://docs.astral.sh/uv/) for dependency management. To verify the XML files locally, run:
+The Python scripts in this project use [uv](https://docs.astral.sh/uv/) for dependency management.
+
+### Local Validation
+
+XML validation happens automatically via GitHub Actions using Java-based tools that align with Oxygen's xml-model validation, including RelaxNG and Schematron validation. To check entity key consistency locally, run:
 
 ```bash
-uv run python processing/validate.py
-uv run python processing/check_entity_keys.py
+uv run python processing/check_entity_keys.py -d collections
+```
+
+The shared authority tooling is intended to come from the public [`msDesc/tei-msdesc-authorities`](https://github.com/msDesc/tei-msdesc-authorities) repository via `uv`.
+
+### Testing
+
+To install development dependencies, including `pytest`, run:
+
+```bash
+uv sync --dev
+```
+
+To run the Python regression tests, use:
+
+```bash
+uv run pytest
 ```
