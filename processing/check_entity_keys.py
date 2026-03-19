@@ -350,13 +350,17 @@ def parse_arguments() -> argparse.Namespace:
     parser.add_argument(
         "--file-list",
         dest="file_list",
-        help="Path to a newline-delimited file list (overrides directory)",
+        help="Path to a newline-delimited file list (overrides directory and files arguments)",
         type=Path,
     )
     return parser.parse_args()
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser(
+        description=__doc__,
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter,
+    )
     args: argparse.Namespace = parse_arguments()
 
     # Configure logging
@@ -370,11 +374,20 @@ def main() -> int:
 
     # Determine whether to use files or directory
     if args.file_list:
-        file_paths = [
-            Path(line.strip())
-            for line in args.file_list.read_text(encoding="utf-8").splitlines()
-            if line.strip()
-        ]
+        if not args.file_list.exists():
+            parser.error(f"File list '{args.file_list}' does not exist")
+        if not args.file_list.is_file():
+            parser.error(f"File list path '{args.file_list}' is not a file")
+        try:
+            file_paths = [
+                Path(line.strip())
+                for line in args.file_list.read_text(
+                    encoding="utf-8"
+                ).splitlines()
+                if line.strip()
+            ]
+        except (OSError, IOError) as err:
+            parser.error(f"Unable to read file list '{args.file_list}': {err}")
         validator = AuthorityKeyValidator(
             args.authority_paths, file_paths=file_paths
         )
