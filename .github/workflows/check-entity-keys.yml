@@ -4,8 +4,12 @@ on:
   push:
     branches:
       - master
+    paths:
+      - "**.xml"
   pull_request:
     types: [opened, synchronize, reopened, ready_for_review]
+    paths:
+      - "**.xml"
   schedule:
     - cron: "0 3 * * 1" # Every Monday at 03:00 UTC
 
