@@ -6,7 +6,7 @@
 #           'noindex' to generate the files and do the checking but not push to Solr
 #           'reuse' to send files previously created to Solr without rebuilding them
 
-SERVER="solr01-qa.bodleian.ox.ac.uk"
+SERVER="solr901-qa.bodleian.ox.ac.uk"
 
 if [[ ! "`pwd`" == *-mss/processing ]]; then
     echo "This script must be run from the processing folder"
