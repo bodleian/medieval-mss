@@ -4,11 +4,23 @@
          <titleStmt>
             <title>MS. Canon. Liturg. 128</title>
             <title type="collection">MSS. Canon. Liturg. (Canonici Liturgical)</title>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
             </respStmt>
+            
+            <respStmt xml:id="PA">
+               <resp when="1966">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+
+            <respStmt xml:id="SJB">
+               <resp when="2026">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -35,23 +47,63 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
+                  
                   <msItem class="#liturgica" n="1" xml:id="MS_Canon_Liturg_128-item1">
                      <title key="work_10565" type="desc">Book of Hours, Use of Rome</title>
+                     <rubric>... Hore beate Marie secundum Curiam Romanam</rubric>
+                     
+                     <msItem>
+                        <locus>(fol. 74)</locus>
+                        <rubric>Hore de Passione Christ</rubric>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 106)</locus>
+                        <rubric>Officium sancte Crucis paruum</rubric>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 111)</locus>
+                        <title type="desc">Penitential Psalms and Litany</title>
+                     </msItem>
+                     
+                     <msItem>
+                        <locus>(fol. 129)</locus>
+                        <rubric>Hore Defunctorum</rubric>
+                     </msItem>
+                     
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        
+                        <condition>Leaves have been removed, presumably bearing miniatures, before fol. 1 and after fols 24, 34, 39, 44. 73, 80, 1O5, 111O, 128 and perhaps elsewhere
+                        </condition>
+
+               <extent source="SC"><measure type="leaf" quantity="172">172</measure> leaves
+                  <dimensions type="binding" unit="in">
+                     <height>4.625</height>
+                     <width>3.625</width>
+                  </dimensions>
+               </extent>
+                        
                      </supportDesc>
                   </objectDesc>
+
                   <handDesc>
-                     <handNote script="textualisSouthern">Script Southern (?).</handNote>
+                     <handNote script="textualisSouthern">Script Southern (?)</handNote>
                   </handDesc>
-                  <decoDesc>
-                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 349</summary>
-                     <decoNote type="border">Good historiated borders. </decoNote><decoNote type="histInit">Good historiated initials.  
+                 
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 349
+                     </summary>
+                     
+                     <decoNote type="border">Good historiated borders, e.g. <ref target="https://digital.bodleian.ox.ac.uk/objects/5be0bfce-b273-4999-9d81-89da8438dfef/">fol. 74r</ref></decoNote>
+                     <decoNote type="histInit">Good historiated initials
                      </decoNote>
                   </decoDesc>
                </physDesc>
@@ -59,13 +111,21 @@
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1475" notBefore="1450">15th century, third quarter</origDate>
                      <origPlace cert="low">
-                        <country key="place_7024097">Flemish</country> (?)</origPlace>
+                        <country key="place_7024097">Flanders</country> (?)</origPlace>
                   </origin>
+                  
+                  <provenance><persName key="person_2384880" role="fmo">Matteo Luigi Canonici (1727– <hi rend="italic">c</hi>. 1806)</persName></provenance>
+                  <provenance notAfter="1807" resp="#SC">Following Canonici's death, the collection passed to his brother, <persName key="person_446" role="fmo">Giuseppe Canonici</persName>, and 
+                     then to Canonici's nephew, <persName role="fmo" key="person_431">Giovanni Perissinotti</persName>, in 1807 following Giuseppe Canonici's death</provenance>
+                  <acquisition when="1817">Bought by the Bodleian Library in 1817 from Giovanni Perissinotti. On the purchase, see <ref target="https://digital.bodleian.ox.ac.uk/collections/canonici/">Digital Bodleian</ref></acquisition>
+                  
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1966). <listBibl>
+                          <source>
+                           Description adapted (February 2026) by Stewart J. Brookes from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1966) 
+                           <listBibl>
                               <bibl facs="aaz0363.gif" type="SC">Summary Catalogue, vol. 4, p. 344</bibl>
                            </listBibl>
                         </source>
@@ -78,6 +138,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2026-02-24">Description revised to incorporate all the information in the Summary Catalogue (1897) and other sources</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>
