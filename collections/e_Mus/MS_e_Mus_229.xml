@@ -1,4 +1,5 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_9122">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xml:id="manuscript_9122" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -30,36 +31,58 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. e Mus. 229</idno>
-                  <idno type="ieArk">ark:29072/x0tx31qh24gc</idno><idno type="crArk">ark:29072/x0tt44pm415h</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x0tx31qh24gc</idno>
+                  <idno type="crArk">ark:29072/x0tt44pm415h</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">3737</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
                   <msItem class="#computistica #liturgica" n="1" xml:id="MS_e_Mus_229-item1">
+                     <locus>(fol. 1r)</locus>
                      <title key="work_10687" type="desc">Calendar</title>
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
-                  <msItem class="#documenta #legalia" n="2" xml:id="MS_e_Mus_229-item2">
-                     <title key="work_11419">Customs of the Stews in the <orgName key="org_123537181">Bishop of Winchester</orgName>'s liberty in <placeName key="place_7011786">Southwark</placeName>
-                     </title>
+                  <msItem class="#liturgica" n="2" xml:id="MS_e_Mus_229-item2">
+                     <locus>(fol. 13r)</locus>
+                     <title>Gospel pericopes (‘Missus est angelus’)</title>
+                     <textLang mainLang="la">Latin</textLang>
+                     <incipit>Missus est angelus Gabriel…</incipit>
+                  </msItem>
+                  <msItem class="#documenta #legalia" n="3" xml:id="MS_e_Mus_229-item3">
+                     <locus>(fols 14r–38v)</locus>
+                     <title key="work_11419">Customs of the Stews in the <orgName key="org_123537181">Bishop of Winchester</orgName>'s liberty in <placeName key="place_7011786">Southwark</placeName></title>
                      <textLang mainLang="enm" otherLangs="la">Middle English and Latin</textLang>
+                     <note>Written for <persName key="person_1264" role="pat">William Corum</persName>, steward, 1461–1485.</note>
+                     <incipit>This act … was made … in the parliament holden atte Westminster…</incipit>
+                     <explicit>… the ordinaunces made be xii men at the gret lete…</explicit>
+                  </msItem>
+                  <msItem class="#documenta" n="4" xml:id="MS_e_Mus_229-item4">
+                     <locus>(fols 17–18, 36–37)</locus>
+                     <title>Memoranda</title>
+                     <textLang mainLang="enm">Middle English</textLang>
+                     <note>Includes note of a royal writ (10 February, Edward IV) and memorandum beginning <q>Deliveryd on Monday next after Blak Monday</q>. Leaves excised.</note>
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent>iv + 38 leaves</extent>
+                        <measure type="leaf" unit="mm">160 × 120</measure>
+                        <condition>Leaves missing (fols. 17–18, 36–37 cut out); text correspondingly defective.</condition>
                      </supportDesc>
                   </objectDesc>
-                  <decoDesc><summary>Written for <persName key="person_1264" role="pat">William Corum</persName>, the bishop's steward 1461–1485. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 1134)</summary>
-                     <decoNote type="miniature">Miniature (oil painting on parchment, later (?)), let into upper cover. 
-                     </decoNote>
+                  <layoutDesc>
+                     <layout columns="1"/>
+                  </layoutDesc>
+                  <decoDesc>
+                     <summary>Evidence of a painted crucifixion formerly set into the front board; manuscript associated with <persName key="person_1264" role="pat">William Corum</persName>, steward, 1461–1485.</summary>
+                     <decoNote type="miniature">Miniature (oil painting on parchment, later (?)), let into upper cover.</decoNote>
                   </decoDesc>
                   <bindingDesc>
-                     <binding notBefore="1500" notAfter="1600">
-                        <p>Red leather on boards, with sunken panel on front cover from which the
-         contents have been removed and a painting added of Christ crucified (see further no. 3865,
-         p. 148), 16th cent. English work.</p>
+                     <binding contemporary="true">
+                        <p>Red leather on boards, with sunk panel on the front cover from which the contents have been removed and a painting added of Christ crucified; contemporary.</p>
                      </binding>
                   </bindingDesc>
                </physDesc>
@@ -67,9 +90,11 @@
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1500" notBefore="1450">15th century, second half</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>
                      </origPlace>
                   </origin>
+                  <provenance>Owned by <persName key="person_1264" role="pat">William Corum</persName>; scribblings on fol. 38 were apparently written by him.</provenance>
+                  <acquisition when="1689-08">Presented to the Library by Mr John Ledgard of Queen's College, Oxford, in August 1689.</acquisition>
                </history>
                <additional>
                   <adminInfo>
@@ -86,6 +111,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2026-03-26">Updated description against Summary Catalogue, vol. 2 part 2, pp. 741–742.</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
