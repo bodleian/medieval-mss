@@ -27,10 +27,10 @@ jobs:
 
       - name: Validate changed XML
         if: github.event_name != 'schedule'
-        uses: adunning/xml-model-validator@v1
+        uses: adunning/xml-model-validator@v2
         with:
           changed_only: true
 
       - name: Validate full XML set
         if: github.event_name == 'schedule'
-        uses: adunning/xml-model-validator@v1
+        uses: adunning/xml-model-validator@v2
