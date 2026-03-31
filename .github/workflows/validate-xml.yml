@@ -18,6 +18,7 @@ permissions:
 
 jobs:
   validate-xml:
+    if: github.event_name != 'schedule' || github.repository == 'bodleian/medieval-mss'
     runs-on: ubuntu-latest
 
     steps:
