@@ -1,18 +1,31 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_3014">
+<?xml-model href="https://raw.githubussercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_3014">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Canon. Liturg. 330</title>
             <title type="collection">MSS. Canon. Liturg. (Canonici Liturgical)</title>
+            
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            
             <respStmt xml:id="VD">
                <resp when="1957">Cataloguer</resp>
                <persName>S. J. P. van Dijk</persName>
             </respStmt>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
-               <persName>Matthew Holford</persName>
+            
+            <respStmt xml:id="PA">
+               <resp when="1970">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
             </respStmt>
+            
+            <respStmt xml:id="SJB">
+               <resp when="2026">Encoding</resp>
+               <persName>Stewart Brookes</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -41,11 +54,63 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem class="#liturgica" n="1" xml:id="MS_Canon_Liturg_330-item1"><locus from="1r" to="84v" type="inferred"/>
+                  
+                  <msItem class="#liturgica" n="1" xml:id="MS_Canon_Liturg_330-item1">
                      <title key="work_10565" type="desc">Book of Hours, Use of Rome</title>
+                        
+                        <msItem>
+                           <locus from="1">(fol. 1)</locus>
+                           <title type="desc">Matins and Lauds of the Virgin</title>
+                           <rubric>Incipit Matutinus Virginis Marie</rubric>
+                           <note>Some rubrics in Italian</note>
+                        </msItem>
+                        
+                        <msItem>
+                           <locus from="29c">(fol. 29c)</locus>
+                           <title type="desc">Penitential Psalms</title>
+                           <note>With the litany (fol. 39)</note>
+                        </msItem>
+                           
+                           <msItem>
+                              <locus from="39">(fol. 39)</locus>
+                              <title type="desc">Litany</title>
+                           </msItem>
+                        
+                        <msItem>
+                           <locus from="46v">(fol. 46v)</locus>
+                           <title type="desc">Commemorations of the Virgin</title>
+                           <note>Includes commemorations of St John the Baptist, St Nicholas and St Jerome</note>
+                        </msItem>
+                        
+                        <msItem>
+                           <locus from="49">(fol. 49)</locus>
+                           <title type="desc">Nocturn of the Office of the Dead</title>
+                           <rubric>Vigilia Mortuorum</rubric>
+                        </msItem>
+                        
+                        <msItem>
+                           <locus from="57v">(fol. 57v)</locus>
+                           <title type="desc">Hymns in honour of the Holy Ghost</title>
+                           <note>Also includes hymns for Corpus Christi, an apostle and a confessor</note>
+                        </msItem>
+                        
+                        <msItem>
+                           <locus from="61">(fol. 61)</locus>
+                           <title type="desc">Prime, etc., of the Lady Office</title>
+                           <note>Written by another hand; includes commemorations of St Vincent (fol. 83)</note>
+                        </msItem>
+                        
+                        <msItem>
+                           <locus from="84v">(fol. 84v)</locus>
+                           <title type="desc">Commemoration of St Ignatius and prayer</title>
+                           <note>Prayer: Crux domini sit mecum, introduced by an Italian rubric; added by a third hand</note>
+                        </msItem>
+                     
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
+                  
                </msContents>
+               
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
@@ -59,33 +124,55 @@
                               <width>97</width>
                            </dimensions>
                         </extent>
+                        
+                        <condition>Prime to Compline is bound out of order at fols 61-84</condition>
+                        
                      </supportDesc>
+                     
                      <layoutDesc resp="#VD">
                         <layout columns="1" writtenLines="69">69 lines</layout>
                      </layoutDesc>
                   </objectDesc>
-                  <decoDesc>
-                     <decoNote type="decInit">Decoration<p>Fine initials (damaged). (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 235, pl. XXI)</p>
+                  
+                  <decoDesc resp="#PA">
+                     <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> ii. 235, Pl. XXI (<ref target="https://babel.hathitrust.org/cgi/pt?id=uiug.30112018715075&amp;seq=203">fol. 29c. Initial 'D'</ref>)
+                     </summary>
+                     
+                     <decoNote type="decInit">Fine initials (damaged) on   fols 1, 29c and 49
                      </decoNote>
+                     
                   </decoDesc>
+                  
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" notAfter="1450" notBefore="1425">15th century, second quarter</origDate>
                      <origPlace>
-                        <country key="place_1000080">Italian</country>, <region key="place_7009760">Tuscany</region>
+                        <country key="place_1000080">Italy</country>, <region key="place_7009760">Tuscany</region>
                         <!--ORIGINAL: Italian, Tuscany-->
                      </origPlace>
                   </origin>
+                  
+                  <provenance>In the litany (fol. 40v): 'Sancte pater Nicholae'; in the memoria (fol. 47v:) 'Ora pro nobis beate pater Nicholae'</provenance>
+                  
+                  <provenance><persName key="person_2384880" role="fmo">Matteo Luigi Canonici (1727– <hi rend="italic">c</hi>. 1806)</persName></provenance>
+                  <provenance notAfter="1807" resp="#SC">Following Canonici's death, the collection passed to his brother, <persName key="person_446" role="fmo">Giuseppe Canonici</persName>, and 
+                     then to Canonici's nephew, <persName role="fmo" key="person_431">Giovanni Perissinotti</persName>, in 1807 following Giuseppe Canonici's death</provenance>
+                  <acquisition when="1817">Bought by the Bodleian Library in 1817 from Giovanni Perissinotti. On the purchase, see <ref target="https://digital.bodleian.ox.ac.uk/collections/canonici/">Digital Bodleian</ref></acquisition>
+                  
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
+
                         <source>
-                           <ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1970). <listBibl>
+                           Description adapted (January 2026) by Stewart J. Brookes from the Summary Catalogue (1897). Decoration, localization and date follow Pächt and Alexander (1970). 
+                           Extent, leaf dimensions, layout and additional desciption of the contents from van Dijk (1957)
+                           <listBibl>  
                               <bibl facs="aaz0402.gif" type="SC">Summary Catalogue, vol. 4, p. 383</bibl>
                            </listBibl>
                         </source>
+                        
                      </recordHist>
                   </adminInfo>
                   <listBibl type="WRAPPER">
@@ -100,6 +187,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2026-01-28">Description revised to incorporate all the information in the Summary Catalogue (1897)</change>
          <change when="2024-09">Add extent, leaf dimensions and layout from van Dijk, Latin Liturgical Manuscripts in the Bodleian Library, Oxford.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
