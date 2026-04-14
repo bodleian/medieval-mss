@@ -5,32 +5,31 @@ on:
     branches:
       - master
     paths:
-      - "**.xml"
+      - "**/*.xml"
   pull_request:
-    types: [opened, synchronize, reopened, ready_for_review]
     paths:
-      - "**.xml"
+      - "**/*.xml"
   schedule:
-    - cron: "0 3 * * 1" # Every Monday at 03:00 UTC
+    - cron: "0 3 * * 1"
+  workflow_dispatch:
 
 permissions:
   contents: read
-  pull-requests: read
 
 jobs:
   validate-xml:
+    if: github.event_name != 'schedule' || github.repository == 'bodleian/medieval-mss'
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v6
+      - uses: actions/checkout@v6
 
       - name: Validate changed XML
-        if: github.event_name != 'schedule'
-        uses: adunning/xml-model-validator@v1
+        if: github.event_name != 'schedule' && github.event_name != 'workflow_dispatch'
+        uses: adunning/xml-model-validator@v2
         with:
-          changed_only: true
+          changed_files_only: true
 
       - name: Validate full XML set
-        if: github.event_name == 'schedule'
-        uses: adunning/xml-model-validator@v1
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        uses: adunning/xml-model-validator@v2

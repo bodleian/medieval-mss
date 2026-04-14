@@ -2,6 +2,32 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
+			"label": "Validate Current XML File",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"processing/validate_xml.sh",
+				"${file}"
+			],
+			"isBackground": false,
+			"problemMatcher": [
+				{
+					"owner": "xml-model-validator",
+					"fileLocation": [
+						"relative",
+						"${workspaceFolder}"
+					],
+					"pattern": {
+						"regexp": "^ERROR: ([^,]+), line ([0-9]+): (.+)$",
+						"file": 1,
+						"line": 2,
+						"message": 3
+					}
+				}
+			],
+			"group": "test"
+		},
+		{
 			"label": "Check Entity Keys",
 			"type": "shell",
 			"command": "uv",
@@ -10,30 +36,62 @@
 				"python",
 				"processing/check_entity_keys.py",
 				"-d",
-				"collections",
-				"-a",
-				"persons.xml",
-				"places.xml",
-				"works.xml"
-			],
-			"isBackground": false,
-			"problemMatcher": [],
-			"group": "test"
-		},
-		{
-			"label": "Validate XML Schema",
-			"type": "shell",
-			"command": "uv",
-			"args": [
-				"run",
-				"python",
-				"processing/validate.py",
-				"-d",
 				"collections"
 			],
 			"isBackground": false,
 			"problemMatcher": [],
 			"group": "test"
 		},
+		{
+			"label": "Validate XML Files",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"processing/validate_xml.sh"
+			],
+			"isBackground": false,
+			"problemMatcher": [
+				{
+					"owner": "xml-model-validator",
+					"fileLocation": [
+						"relative",
+						"${workspaceFolder}"
+					],
+					"pattern": {
+						"regexp": "^ERROR: ([^,]+), line ([0-9]+): (.+)$",
+						"file": 1,
+						"line": 2,
+						"message": 3
+					}
+				}
+			],
+			"group": "test"
+		},
+		{
+			"label": "Validate Changed XML Models",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"processing/validate_xml.sh",
+				"--changed"
+			],
+			"isBackground": false,
+			"problemMatcher": [
+				{
+					"owner": "xml-model-validator",
+					"fileLocation": [
+						"relative",
+						"${workspaceFolder}"
+					],
+					"pattern": {
+						"regexp": "^ERROR: ([^,]+), line ([0-9]+): (.+)$",
+						"file": 1,
+						"line": 2,
+						"message": 3
+					}
+				}
+			],
+			"group": "test"
+		}
 	]
 }

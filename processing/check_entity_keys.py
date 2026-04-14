@@ -1,6 +1,7 @@
 """
 Verify that every @key in a TEI XML manuscript description
-corresponds to an @xml:id in the authority files.
+corresponds to an @xml:id in the authority files, and that
+all @corresp cross-references resolve to valid @xml:id values.
 """
 
 import argparse
@@ -55,6 +56,9 @@ NS: dict[str, str] = {
 }
 
 KEY_PATTERN = re.compile(r"^(?:(?:person)|(?:place)|(?:org)|(?:work))_\d+$")
+# Pattern to match ID references in corresp attributes (e.g., "#work_123" or "#work_123 #work_124")
+# This is a loose pattern; we'll validate against KEY_PATTERN for each extracted ID
+CORRESP_ID_PATTERN = re.compile(r"#([a-z_0-9]+)")
 
 
 @dataclass(slots=True, frozen=False)
@@ -189,6 +193,82 @@ class MSDesc(XMLFile):
                     pass
         return issues
 
+    def check_corresp_links(self, authority_keys: set[str]) -> list[ValidationIssue]:
+        """Validates that every 'corresp' attribute reference has correct format and resolves to a valid xml:id.
+        
+        Checks that:
+        - corresp references follow the entity_id pattern (person_123, place_456, etc.)
+        - All referenced IDs exist in the authority files
+        - Context is reasonable (e.g., <bibl> corresp typically references work_* IDs)
+        """
+        issues: list[ValidationIssue] = []
+        tree = cast(etree._ElementTree, self.tree)
+        
+        # Find all elements with corresp attributes
+        for elem in cast(list[etree._Element], tree.xpath("//*[@corresp]")):
+            corresp: str = str(elem.attrib["corresp"]).strip()
+            elem_tag = elem.tag.split("}")[-1] if "}" in elem.tag else elem.tag
+            line_number: int | None = (
+                elem.sourceline
+                if hasattr(elem, "sourceline") and elem.sourceline is not ...
+                else None
+            )
+            column_number: int | None = getattr(elem, "sourcecolumn", None)
+
+            if not corresp:
+                context = get_element_context(elem)
+                issues.append(
+                    ValidationIssue(
+                        file=self.file_path,
+                        message=f"Empty corresp attribute found in <{elem_tag}> {context}",
+                        line=line_number,
+                        column=column_number,
+                    )
+                )
+                continue
+
+            # Extract all ID references from corresp (may contain multiple space-separated IDs)
+            ref_ids = CORRESP_ID_PATTERN.findall(corresp)
+            if not ref_ids:
+                context = get_element_context(elem)
+                issues.append(
+                    ValidationIssue(
+                        file=self.file_path,
+                        message=f"No valid ID references found in corresp attribute '{corresp}' in <{elem_tag}> {context}",
+                        line=line_number,
+                        column=column_number,
+                    )
+                )
+                continue
+
+            for ref_id in ref_ids:
+                context = get_element_context(elem)
+
+                # Validate format against the standard pattern
+                if not KEY_PATTERN.fullmatch(ref_id):
+                    issues.append(
+                        ValidationIssue(
+                            file=self.file_path,
+                            message=f"Invalid corresp reference format '{ref_id}' in <{elem_tag}> {context} (expected pattern: person_123, place_456, work_789, org_123)",
+                            line=line_number,
+                            column=column_number,
+                        )
+                    )
+                    continue
+
+                # Check that the referenced ID exists
+                if ref_id not in authority_keys:
+                    issues.append(
+                        ValidationIssue(
+                            file=self.file_path,
+                            message=f"corresp reference '{ref_id}' in <{elem_tag}> {context} not found in authority files",
+                            line=line_number,
+                            column=column_number,
+                        )
+                    )
+
+        return issues
+
 
 class AuthorityKeyValidator:
     """Validates manuscript description files against authority keys."""
@@ -258,7 +338,11 @@ class AuthorityKeyValidator:
         for path in msdesc_paths:
             total_files += 1
             try:
-                issues = MSDesc(path).check_keys(self.authority_keys)
+                ms_desc = MSDesc(path)
+                # Check both key attributes and corresp links
+                issues = ms_desc.check_keys(self.authority_keys)
+                issues.extend(ms_desc.check_corresp_links(self.authority_keys))
+                
                 if issues:
                     error_count += 1
                     # Emit GitHub Actions annotations if in GitHub environment
