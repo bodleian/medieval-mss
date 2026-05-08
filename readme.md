@@ -17,7 +17,19 @@ The Python scripts in this project use [uv](https://docs.astral.sh/uv/) for depe
 
 ### Local Validation
 
-XML validation happens automatically via GitHub Actions using Java-based tools that align with Oxygen's xml-model validation, including RelaxNG and Schematron validation. To check entity key consistency locally, run:
+XML model validation uses the same Java validator as the GitHub Action:
+
+```bash
+sh processing/validate_xml.sh
+```
+
+```bash
+sh processing/validate_xml.sh collections/e_Mus/MS_e_Mus_229.xml
+```
+
+In VS Code, the `Validate Current XML File` task validates the active editor file and surfaces matching diagnostics in the Problems panel.
+
+To check entity key consistency locally, run:
 
 ```bash
 uv run python processing/check_entity_keys.py -d collections
