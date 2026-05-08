@@ -11,14 +11,14 @@
     version="2.0">
     
     
-
+    
     <!-- The stylesheet is a library. It doesn't validate and won't produce HTML on its own. It is called by 
          convert2HTML.xsl and previewManuscript.xsl. Any templates added below will override the templates 
          in msdesc2html.xsl in the consolidated-tei-schema repository, allowing customization of manuscript 
          display for each catalogue. -->
-
-
-
+    
+    
+    
     <!-- For Medieval, notes are sometimes used between items to give context, so this overrides the 
          default in msdesc2html.xsl, which re-orders child elements of msItem for the sake of neatness. -->
     
@@ -102,150 +102,227 @@
         </i>
     </xsl:template>
     
-    <!-- new rules for new elements in binding descriptions (drat 10 Sept. 2023) -->
+    <!-- new rules for new elements in binding descriptions (draft 10 Sept. 2023, rev. Dec. 2025) -->
+    
+    <xsl:template match="bindingDesc">
+        <h3 class="msDesc-heading3">
+            <xsl:copy-of select="bod:standardText('Binding')"/>
+        </h3>
+        <xsl:apply-templates/>
+    </xsl:template>
+    
+    <xsl:template match="binding">
+        <div class="{name()}">
+            
+        <xsl:choose>
+            <xsl:when test="not(preceding-sibling::binding) and following-sibling::binding">
+                <xsl:attribute name="style">
+                    <xsl:text>padding-left:2rem; margin-top:1rem; <!--border-bottom-color:#C0C0C0; border-top:1px #C0C0C0 solid;--></xsl:text>
+                </xsl:attribute>
+            </xsl:when>
+            <xsl:when test="following-sibling::binding or preceding-sibling::binding">
+                <xsl:attribute name="style">
+                    <xsl:text>padding-left:2rem; border-bottom-color:#C0C0C0;</xsl:text>
+                </xsl:attribute>
+            </xsl:when>
+        </xsl:choose>
+        <h3>
+            <xsl:if test="following-sibling::binding or preceding-sibling::binding">
+                <xsl:attribute name="style">
+                    <xsl:text>position:relative; left:-2rem;</xsl:text>
+                </xsl:attribute>
+            </xsl:if>
+            <xsl:apply-templates select="binding/head"/>
+        </h3>
+       
+       
+       
+       
+            <xsl:apply-templates/>
+        </div>
+    </xsl:template>
+    
+    <!-- NB: this is not perfect -->
+    <!--<xsl:template match="binding/head">
+        <h4 class="msDesc-heading2">
+            <xsl:apply-templates/>
+        </h4>
+       
+    </xsl:template>-->
+    <xsl:template match="bindingDesc/summary/dimensions">
+        <div class="{name()}">
+            <span class="tei-label">
+                <xsl:copy-of select="bod:standardText('Dimensions:')"/>
+                <xsl:text> </xsl:text>
+            </span>
+            <xsl:apply-templates/>
+            <xsl:text> </xsl:text><!-- refine this? -->
+        </div>
+    </xsl:template>
+    <xsl:template match="binding/history">
+        <div class="{name()}">
+            <span class="tei-label">
+                <xsl:copy-of select="bod:standardText('Origin:')"/>
+                <xsl:text> </xsl:text>
+            </span>
+            <xsl:apply-templates select="origin/origPlace"/>
+            <xsl:apply-templates select="origin/origDate"/>
+        </div>
+    </xsl:template>
+    
+    
     <xsl:template match="binding/msdesc:endleaves">
-        <p class="{name()}">
+        <div class="{name()}">
             <span class="tei-label">
                 <xsl:copy-of select="bod:standardText('Endleaves:')"/>
                 <xsl:text> </xsl:text>
             </span>
             <xsl:apply-templates/>
-        </p>
+        </div>
     </xsl:template>
     <xsl:template match="binding/history/origin">
-        <p class="{name()}">
+        <div class="{name()}">
             <span class="tei-label">
                 <xsl:copy-of select="bod:standardText('Origin:')"/>
                 <xsl:text> </xsl:text>
             </span>
             <xsl:apply-templates/>
-        </p>
+        </div>
     </xsl:template>
     <xsl:template match="binding/msdesc:sewing">
-        <p class="{name()}">
+        <div class="{name()}">
             <span class="tei-label">
                 <xsl:copy-of select="bod:standardText('Sewing:')"/>
                 <xsl:text> </xsl:text>
             </span>
             <xsl:apply-templates/>
-        </p>
+        </div>
     </xsl:template>
     <xsl:template match="binding/msdesc:boards">
-        <p class="{name()}">
+        <div class="{name()}">
             <span class="tei-label">
                 <xsl:copy-of select="bod:standardText('Boards:')"/>
                 <xsl:text> </xsl:text>
             </span>
             <xsl:apply-templates/>
-        </p>
+        </div>
     </xsl:template>
     <xsl:template match="binding/msdesc:edges">
-        <p class="{name()}">
+        <div class="{name()}">
             <span class="tei-label">
                 <xsl:copy-of select="bod:standardText('Edges:')"/>
                 <xsl:text> </xsl:text>
             </span>
             <xsl:apply-templates/>
-        </p>
+        </div>
     </xsl:template>
     <xsl:template match="binding/msdesc:spine">
-        <p class="{name()}">
+        <div class="{name()}">
             <span class="tei-label">
                 <xsl:copy-of select="bod:standardText('Spine:')"/>
                 <xsl:text> </xsl:text>
             </span>
             <xsl:apply-templates/>
-        </p>
+        </div>
     </xsl:template>
     <xsl:template match="binding/msdesc:endbands">
-        <p class="{name()}">
+        <div class="{name()}">
             <span class="tei-label">
                 <xsl:copy-of select="bod:standardText('Endbands:')"/>
                 <xsl:text> </xsl:text>
             </span>
             <xsl:apply-templates/>
-        </p>
+        </div>
     </xsl:template>
     <xsl:template match="binding/msdesc:covering">
-        <p class="{name()}">
+        <div class="{name()}">
             <span class="tei-label">
                 <xsl:copy-of select="bod:standardText('Covering:')"/>
                 <xsl:text> </xsl:text>
             </span>
             <xsl:apply-templates/>
-        </p>
+        </div>
     </xsl:template>
     <xsl:template match="binding/decoNote">
-        <p class="{name()}">
+        <div class="{name()}">
             <span class="tei-label">
-                <xsl:copy-of select="bod:standardText('Decoration:')"/>
+                <xsl:copy-of select="bod:standardText('Cover decoration:')"/>
                 <xsl:text> </xsl:text>
             </span>
             <xsl:apply-templates/>
-        </p>
+        </div>
     </xsl:template>
     <xsl:template match="binding/msdesc:fastenings">
-        <p class="{name()}">
+        <div class="{name()}">
             <span class="tei-label">
                 <xsl:copy-of select="bod:standardText('Fastening:')"/>
                 <xsl:text> </xsl:text>
             </span>
             <xsl:apply-templates/>
-        </p>
+        </div>
     </xsl:template>
     <xsl:template match="binding/msdesc:furniture">
-        <p class="{name()}">
+        <div class="{name()}">
             <span class="tei-label">
                 <xsl:copy-of select="bod:standardText('Furniture:')"/>
                 <xsl:text> </xsl:text>
             </span>
             <xsl:apply-templates/>
-        </p>
+        </div>
     </xsl:template>
     <xsl:template match="binding/msdesc:tacketing">
-        <p class="{name()}">
+        <div class="{name()}">
             <span class="tei-label">
                 <xsl:copy-of select="bod:standardText('Tacketing:')"/>
                 <xsl:text> </xsl:text>
             </span>
             <xsl:apply-templates/>
-        </p>
+        </div>
     </xsl:template>
-    <xsl:template match="binding/condition">
-        <p class="{name()}">
+    <xsl:template match="binding/msdesc:alterations">
+        <div class="{name()}">
             <span class="tei-label">
                 <xsl:copy-of select="bod:standardText('Alterations or repairs:')"/>
                 <xsl:text> </xsl:text>
             </span>
             <xsl:apply-templates/>
-        </p>
+        </div>
     </xsl:template>
     <xsl:template match="binding/msdesc:bookmarks">
-        <p class="{name()}">
+        <div class="{name()}">
             <span class="tei-label">
                 <xsl:copy-of select="bod:standardText('Bookmarks:')"/>
                 <xsl:text> </xsl:text>
             </span>
             <xsl:apply-templates/>
-        </p>
+        </div>
+    </xsl:template>
+    <xsl:template match="binding/msdesc:curtains">
+        <div class="{name()}">
+            <span class="tei-label">
+                <xsl:copy-of select="bod:standardText('Curtains:')"/>
+                <xsl:text> </xsl:text>
+            </span>
+            <xsl:apply-templates/>
+        </div>
     </xsl:template>
     <xsl:template match="binding/msdesc:chaining">
-        <p class="{name()}">
+        <div class="{name()}">
             <span class="tei-label">
                 <xsl:copy-of select="bod:standardText('Chaining:')"/>
                 <xsl:text> </xsl:text>
             </span>
             <xsl:apply-templates/>
-        </p>
+        </div>
     </xsl:template>
     <xsl:template match="binding/msdesc:labels">
-        <p class="{name()}">
+        <div class="{name()}">
             <span class="tei-label">
                 <xsl:copy-of select="bod:standardText('Titles or labels:')"/>
                 <xsl:text> </xsl:text>
             </span>
             <xsl:apply-templates/>
-        </p>
+        </div>
     </xsl:template>
     
     
@@ -253,9 +330,6 @@
          at the bottom of manuscript pages (just before Zotero links, if any) -->
     
     <xsl:template name="Footer">
-       
-        
-        
         <div class="abbreviations">
             <xsl:processing-instruction name="ni"/>
             <h3>Abbreviations</h3>
@@ -263,14 +337,6 @@
             <xsl:processing-instruction name="ni"/>
         </div>
         <xsl:apply-templates select="/TEI/teiHeader/revisionDesc[change][1]"/>
-        
-        <div class="data">
-            <xsl:processing-instruction name="ni"/>
-            <h3>Data</h3>
-            <p>The TEI-XML file for this record can be viewed in a <a href="https://github.com/bodleian/medieval-mss" target="_blank">GitHub repository</a>.</p>
-            <p>Tabular data derived from the TEI-XML files is available in a <a href="https://github.com/digital-Scholarship-Oxford/enabling-digital-research/" target="_blank">GitHub repository</a>.</p>
-            <xsl:processing-instruction name="ni"/>
-        </div>
     </xsl:template>
     
     <xsl:template match="revisionDesc[.//change]">
@@ -307,6 +373,6 @@
     
     
     <!-- TODO: Add quick links drop-down to header -->
-        
+    
     
 </xsl:stylesheet>
