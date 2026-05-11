@@ -8,9 +8,13 @@
                <resp when="1984">Cataloguer</resp>
                <persName>A. G. Watson</persName>
             </respStmt>
-            <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+            <respStmt xml:id="SC">
+               <resp when="1922">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+               <persName>H. H. E. Craster</persName>
+            </respStmt>
+            <respStmt xml:id="MLH">
+               <resp when="2026">Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -44,22 +48,45 @@
                   <msItem n="1" xml:id="MS_Selden_Supra_93-item1">
                      <author key="person_59077661">Thomas à Kempis</author>
                      <title key="work_4859">Imitatio Christi</title>
-                     <note>(imperfect)</note>
+                     <finalRubric>Explicit Musica ecclesiastica, tres continens partes</finalRubric>
+                     <note>With lists of chapters of parts 2 and 3, but without the fourth book, and wanting a leaf or two at beginning.</note>
+                     <colophon>Scriptus erat liber iste anno Verbi incarnati Ihesu millesimo quadringensimo . lxix°. Et anno ... domini Edwardi ... regis Anglie ... octauo . Eleyson ymas</colophon>
                      <textLang mainLang="la">Latin</textLang>
+                  </msItem><msItem xml:id="MS_Selden_Supra_93-item1a">
+                     <locus>(fol. 135)</locus>
+                     <note>Some prayers and theological notes follow, and near the end a praise of London, 'Turris, campana, pons, flumen, femina, lana, | et decus ecclesie sunt tibi, Londonie . Hec dicta sunt [per] Sigismundum imperatorem <supplied>de</supplied> Londoniis tem<supplied>pore</supplied> Henrici regis quinti', i.e. circa A.D. 1416 (fol. 142). The name of R<supplied>obert</supplied> Bale occurs at fol. 138v.</note> <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
+             
                <physDesc>
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
+                        <extent><seg type="leaf"><measure type="leaf" quantity="140">140</measure> medieval leaves</seg>
+                           <dimensions unit="mm" type="leaf">
+                              <height>153</height>
+                              <width>113</width>
+                           </dimensions> </extent>
                         </supportDesc>
+                     <layoutDesc>
+                        <layout columns="1" writtenLines="23 24">1 col., 23-4 lines., <dimensions unit="mm" type="written">
+                              <height>105</height>
+                              <width>65</width>
+                        </dimensions> </layout>
+                     </layoutDesc>
                   </objectDesc>
+                  <handDesc>
+                     <handNote> Some patristic extracts on fol. 138v end 'per R. Bale' in the hand of the writer of the whole volume, i.e. <persName role="scr" key="person_5173">Robert Bale</persName>, on whom see Anne. F. Sutton, 'Robert Bale, Scrivener and Chronicler of London', <title>English Manuscript Studies</title> 14 (2008), 180-206, with this manuscript noted at pp. 191, 193 and with fol. 138v reproduced as pl. 2</handNote>
+                  </handDesc>
+                  <decoDesc>
+                     <decoNote type="flourInit">Penwork.</decoNote>
+                  </decoDesc>
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" when="1469" cert="high">1469</origDate>
                      <origPlace>
-                        <country key="place_7002445">English</country>
+                        <country key="place_7002445">England</country>, <settlement key="place_7011781">London</settlement>
                      </origPlace>
                   </origin>
                   <provenance notAfter="1654" notBefore="1584" resp="#MMM">
@@ -70,7 +97,15 @@
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
+                        <source>Description adapted (2026) from the following sources, with additional reference to published literature as cited:
+                           <listBibl>
+                              <bibl>A. Watson, <title>Catalogue of Dated and Datable Manuscripts in Oxford Libraries</title> (1984), <citedRange unit="entry" from="702" to="702">
+                                    <ref target="https://hdl.handle.net/2027/mdp.39015008982863?urlappend=%3Bseq=144">no. 702</ref>
+                              </citedRange>
+                              </bibl>
+                              <bibl>Summary Catalogue (1922)</bibl>
+                           </listBibl>
+                           <listBibl>
                               <bibl facs="aap0672.gif" type="SC">Summary Catalogue, Vol. 2 Part 1, p. 651</bibl>
                            </listBibl>
                         </source>
@@ -90,6 +125,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2026-05">Matthew Holford: description revised to incorporate all information from printed catalogues.</change>
          <change when="2024-09">Add extent, leaf dimensions and layout from Watson, Dated and Datable.</change>
          <change when="2019-10-31" xml:id="MMM">
             <persName>Toby Burrows/Mapping Manuscript Migrations</persName>Provenance and acquisition information added using <ref target="https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb">https://github.com/mapping-manuscript-migrations/oxford-tei-updates/blob/master/update_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
