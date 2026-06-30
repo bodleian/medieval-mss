@@ -4,12 +4,9 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:tei="http://www.tei-c.org/ns/1.0"
     xmlns:html="http://www.w3.org/1999/xhtml"
-    xmlns:bod="http://www.bodleian.ox.ac.uk/bdlss"
-    xpath-default-namespace="http://www.tei-c.org/ns/1.0"
-    exclude-result-prefixes="tei html xs bod"
-    version="2.0">
-    
-    
+    xmlns:bod="http://www.bodleian.ox.ac.uk/bdlss" xpath-default-namespace="http://www.tei-c.org/ns/1.0" exclude-result-prefixes="tei html xs bod" version="2.0">
+
+
 
     <!-- The stylesheet is a library. It doesn't validate and won't produce HTML on its own. It is called by 
          convert2HTML.xsl and previewManuscript.xsl. Any templates added below will override the templates 
@@ -20,22 +17,22 @@
 
     <!-- For Medieval, notes are sometimes used between items to give context, so this overrides the 
          default in msdesc2html.xsl, which re-orders child elements of msItem for the sake of neatness. -->
-    
-    <xsl:template name="SubItems">        
+
+    <xsl:template name="SubItems">
         <xsl:apply-templates/>
     </xsl:template>
-    
-    
-    
+
+
+
     <!-- TODO: Move these templates to msdesc2html.xsl if applicable to all catalogues? -->
-    
+
     <xsl:template match="msDesc/msIdentifier/altIdentifier[@type='former' and child::idno[not(@subtype)]]">
         <p>
             <xsl:text>Former shelfmark: </xsl:text>
             <xsl:apply-templates/>
         </p>
     </xsl:template>
-    
+
     <xsl:template match="title[@key]">
         <span>
             <xsl:attribute name="class">
@@ -67,29 +64,29 @@
             <xsl:text>, </xsl:text>
         </xsl:if>
     </xsl:template>
-    
-    
-    
+
+
+
     <!-- This is Medieval notation, do not move this to msdesc2html.xsl -->
-    
+
     <xsl:template match="lb">
         <xsl:text>|</xsl:text>
     </xsl:template>
-    
-    
-    
+
+
+
     <!-- This is an override of the template in msdesc2html.xsl, which outputs a div. Maybe the choice should be based on context? -->
-    
+
     <xsl:template match="formula">
         <span class="formula">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
-    
-    
-    
+
+
+
     <!-- Display lemmata in italic -->
-    
+
     <xsl:template match="incipit/quote | incipit/cit/quote | explicit/quote | explicit/cit/quote">
         <i>
             <xsl:apply-templates/>
@@ -100,33 +97,45 @@
             <xsl:copy/>
         </i>
     </xsl:template>
-    
-    
-    
+
+
+    <!--Issue 956: Display foreign text in italic (following removal of @rend) -->
+
+    <xsl:template match="foreign">
+        <span class="{name()} italic">
+            <xsl:copy-of select="bod:direction(.)"/>
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
+
+
     <!-- Display links to abbreviations and conventions pages, and the most recent change 
          at the bottom of manuscript pages (just before Zotero links, if any) -->
-    
+
     <xsl:template name="Footer">
-       
-        
-        
+
+
+
         <div class="abbreviations">
             <xsl:processing-instruction name="ni"/>
             <h3>Abbreviations</h3>
-            <p>View <a href="https://github.com/bodleian/medieval-mss/wiki/Abbreviations" target="_blank">list of abbreviations</a> and <a href="https://github.com/bodleian/medieval-mss/wiki/Conventions" target="_blank">editorial conventions</a>.</p>
+            <p>View <a href="https://github.com/bodleian/medieval-mss/wiki/Abbreviations" target="_blank">list of abbreviations</a> and <a href="https://github.com/bodleian/medieval-mss/wiki/Conventions" target="_blank">editorial conventions</a>.
+            </p>
             <xsl:processing-instruction name="ni"/>
         </div>
         <xsl:apply-templates select="/TEI/teiHeader/revisionDesc[change][1]"/>
-        
+
         <div class="data">
             <xsl:processing-instruction name="ni"/>
             <h3>Data</h3>
-            <p>The TEI-XML file for this record can be viewed in a <a href="https://github.com/bodleian/medieval-mss" target="_blank">GitHub repository</a>.</p>
-            <p>Tabular data derived from the TEI-XML files is available in a <a href="https://github.com/digital-Scholarship-Oxford/enabling-digital-research/" target="_blank">GitHub repository</a>.</p>
+            <p>The TEI-XML file for this record can be viewed in a <a href="https://github.com/bodleian/medieval-mss" target="_blank">GitHub repository</a>.
+            </p>
+            <p>Tabular data derived from the TEI-XML files is available in a <a href="https://github.com/digital-Scholarship-Oxford/enabling-digital-research/" target="_blank">GitHub repository</a>.
+            </p>
             <xsl:processing-instruction name="ni"/>
         </div>
     </xsl:template>
-    
+
     <xsl:template match="revisionDesc[.//change]">
         <div class="revisionDesc">
             <xsl:processing-instruction name="ni"/>
@@ -147,7 +156,7 @@
             <xsl:processing-instruction name="ni"/>
         </div>
     </xsl:template>
-    
+
     <xsl:template match="change">
         <p class="change">
             <xsl:if test="@when">
@@ -157,10 +166,10 @@
             <xsl:apply-templates/>
         </p>
     </xsl:template>
-    
-    
-    
+
+
+
     <!-- TODO: Add quick links drop-down to header -->
-        
-    
+
+
 </xsl:stylesheet>
