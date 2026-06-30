@@ -118,24 +118,8 @@
     <xsl:template match="binding">
         <div class="{name()}">
             
-        <xsl:choose>
-            <xsl:when test="not(preceding-sibling::binding) and following-sibling::binding">
-                <xsl:attribute name="style">
-                    <xsl:text>padding-left:2rem; margin-top:1rem; <!--border-bottom-color:#C0C0C0; border-top:1px #C0C0C0 solid;--></xsl:text>
-                </xsl:attribute>
-            </xsl:when>
-            <xsl:when test="following-sibling::binding or preceding-sibling::binding">
-                <xsl:attribute name="style">
-                    <xsl:text>padding-left:2rem; border-bottom-color:#C0C0C0;</xsl:text>
-                </xsl:attribute>
-            </xsl:when>
-        </xsl:choose>
+      
         <h3>
-            <xsl:if test="following-sibling::binding or preceding-sibling::binding">
-                <xsl:attribute name="style">
-                    <xsl:text>position:relative; left:-2rem;</xsl:text>
-                </xsl:attribute>
-            </xsl:if>
             <xsl:apply-templates select="binding/head"/>
         </h3>
        
@@ -146,13 +130,7 @@
         </div>
     </xsl:template>
     
-    <!-- NB: this is not perfect -->
-    <!--<xsl:template match="binding/head">
-        <h4 class="msDesc-heading2">
-            <xsl:apply-templates/>
-        </h4>
-       
-    </xsl:template>-->
+    
     <xsl:template match="bindingDesc/summary/dimensions">
         <div class="{name()}">
             <span class="tei-label">
