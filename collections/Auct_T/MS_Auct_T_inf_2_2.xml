@@ -1,4 +1,5 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_866">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_866">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -8,6 +9,7 @@
                <resp>Summary description</resp>
                <persName>Elizabeth Solopova</persName>
                <persName>Matthew Holford</persName>
+               <persName>Peter Toth</persName>
             </respStmt>
          </titleStmt>
          <publicationStmt>
@@ -30,51 +32,209 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Auct. T. inf. 2. 2</idno>
-                  <idno type="ieArk">ark:29072/x01831cm12qf</idno><idno type="crArk">ark:29072/x01544bq29dq</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x01831cm12qf</idno>
+                  <idno type="crArk">ark:29072/x01544bq29dq</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">28645</idno>
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem class="#biblia" n="1" xml:id="MS_Auct_T_inf_2_2-item1"><locus from="1r" to="169v" type="inferred"/>
-                     <title key="work_12096" type="desc">Gospels</title>
-                     <note>The greater part of the Four Gospels, written in sloping uncials: the text of the volume contains Matt. vi. 16-29, vii. 20-viii. 27, xii. 18-xiv. 15, xx. 25-xxi. 19, xxii. 25-xxiii. 13: Mark i. 1-iii. 34, vi. 21-end: Luke: John vi. 14-viii. 3, xv. 24-xix. 6. Much of the remainder is now at St. Petersburg [National Library of Russia, Ф. № 906 / Gr. 33], and the two MSS. together are called Γ of the Gospels, the Oxford part being also called codex Tischendorfianus IV. There are tables of chapters, Ammonian sections and Eusebian canons. Some of the leaves are damaged and inlaid. The colophon attached to St. John's Gospel (at St. Petersburg) states that it was written on Thursday, Nov. 27, the indiction being 8: this is interpreted by Gardthausen (Griech. Paläogr., 1879, p. 404) to be A.D. 844, 889, 934 or 979, and he prefers the latest date. A facsimile of fol. 61r is in the Palaeographical Society's 2nd series, pl. 7.</note>
+                  <msItem class="#biblia" n="1" xml:id="MS_Auct_T_inf_2_2-item1">
+                     <locus from="1r" to="169v" type="inferred"/>
+                     <title key="work_12096" type="desc">Gospels (fragments)</title>
+                     <note>A part of the codex (99 folios) is preserved in Leningrad, GPB gr. 33.
+                        with most of the missing gospel text.</note>
+
+
+                     <msItem n="1">
+                        <locus from="1r" to="1v">(fols. 1r–1v)</locus>
+                        <note>Kephalaia (chapter list) of the Gospel of Matthew.</note>
+                     </msItem>
+
+                     <msItem n="2">
+                        <locus from="2r" to="16v">(fols. 2r–16v)</locus>
+                        <note>Gospel of Matthew: preserving only Mt 6:16–29, 7:26–8:27, 12:18–14:15,
+                           20:25–21:19, and 22:25–23:13.</note>
+                     </msItem>
+
+                     <msItem n="3">
+                        <locus from="17r" to="59v">(fols. 17r–59v)</locus>
+                        <note>Gospel of Mark: preserving only Mk 1:1–3:34 and 6:21 to the
+                           end.</note>
+                     </msItem>
+
+                     <msItem n="4">
+                        <locus from="60r" to="60v">(fols. 60r–60v)</locus>
+                        <note>Kephalaia (chapter list) of the Gospel of Luke.</note>
+                     </msItem>
+
+                     <msItem n="5">
+                        <locus from="61r" to="142v">(fols. 61r–142v)</locus>
+                        <note>Gospel of Luke.</note>
+                     </msItem>
+
+                     <msItem n="6">
+                        <locus from="143r" to="158v">(fols. 143r–158v)</locus>
+                        <note>Gospel of John: preserving only Jn 6:14–8:3 and 15:24–19:6.</note>
+                     </msItem>
+
+                     <note>Prepared for liturgical use by an original hand. </note>
+
+
                      <textLang mainLang="grc">Greek</textLang>
                   </msItem>
                </msContents>
                <physDesc>
                   <objectDesc form="codex">
+
                      <supportDesc material="perg">
-                        <support>parchment</support>
-                        <extent><seg type="leaf"><measure type="laterEndleaf" quantity="3">iii</measure> + <measure type="leaf" quantity="169">169</measure></seg> leaves <dimensions type="binding" unit="in">
-                              <height>12.75</height>
-                              <width>10</width>
-                           </dimensions></extent>
+                        <support>Parchment.</support>
+
+                        <extent>
+                           <measure type="leaf" quantity="169">169</measure> folios <dimensions
+                              type="leaf" unit="mm">
+                              <height>295–300</height>
+                              <width>235</width>
+                           </dimensions>
+                           <note>Fols. i–ii, 1b, 16b, 16c, 16d, 16e, 142b, 142c, 142d, 142e, and
+                              159–160 are modern paper leaves added recently.</note>
+                        </extent>
+                        <collation>
+                           <p>Greek majuscule quire signatures, written by the scribe, apparently
+                              separately for each Gospel, occur at the beginning of each quire on
+                              the recto, immediately beneath the last line of text near the outer
+                              right margin. Only two survive: Ε on fol. 92 and Η on fol. 116.</p>
+                           <p>Collation: 1(1) 3 (ff. 2, 3, 4 = single leaves = fragmentary quires;
+                              4) 8 (12; two quires missing before f. 5 and after f. 12) 4 (6–2: two
+                              leaves missing before f. 15, with loss of text; 16; three quires
+                              missing after f. 16) 8 (24; one quire missing after f. 24, probably
+                              with loss of text) 8 (ff. 25 and 32 = single leaves; 32) 3 × 8 (56) 2
+                              (58) 2 (ff. 59 and 60 = single leaves; 60) 3 × 8 (84) 7 (8–1: one leaf
+                              missing before f. 91, without loss of text; 91) 5 × 8 (131) 11 (ff.
+                              132–142 = damaged single leaves; 142; two quires missing after f. 142)
+                              8 (150) 8 (158; several quires missing before f. 151 and after f.
+                              158).</p>
+                        </collation>
+                        <condition>Fols. 133–142 are shrunk by water and mounted in new parchment
+                           frames. There is water damage on many other leaves, but the remainder of
+                           the manuscript is in good condition</condition>
+
                      </supportDesc>
+                     <layoutDesc>
+
+                        <layout writtenLines="24" columns="1"> Normally one column of 24 lines per
+                           page. Fols. 1r–1v and 60r–60v are written in two columns of 29 lines.
+                              <dimensions type="ruled" unit="mm">
+                              <height>210</height>
+                              <width>130–135</width>
+                           </dimensions> Ruling: Lake I, type 40c. </layout>
+
+                        <layout writtenLines="29" columns="2"> Fols. 1r–1v and 60r–60v. <dimensions
+                              type="ruled" unit="mm">
+                              <height>215</height>
+                              <width>165</width>
+                           </dimensions> Column width 70–75 mm. Ruling: Lake II, type 1e. </layout>
+
+                     </layoutDesc>
+
+
                   </objectDesc>
-                  <handDesc>
-                     <handNote script="uncial">Uncial.</handNote>
+
+
+                  <handDesc hands="3">
+
+                     <handNote xml:id="h1"> The manuscript was copied by a single anonymous scribe
+                        in an upright ogival majuscule, slightly inclined to the left, with broad
+                        shaded strokes, in black ink. The Gospel text is written in this hand. The
+                        same scribe employed a smaller, more slender version of the script for the
+                        kephalaia lists, part of the liturgical annotations in the margins, and some
+                        numerals. </handNote>
+
+                     <handNote xml:id="h2"> The same majuscule, executed in a narrower and smaller
+                        module in red and brownish-red ink, was used for the title of the Gospel of
+                        Mark, marginal kephalaia, part of the liturgical annotations, some marginal
+                        scholia, kephalaia, verse and canon numeration, numerals in the kephalaia
+                        lists, quire signatures, and the rubricated title of the Gospel of Luke.
+                        Numerous initials at or near the beginning of verses, some lightly
+                        ornamented, were likewise executed in this display hand. </handNote>
+
+                     <handNote xml:id="h3"> Liturgical directions in dark-brown minuscule were added
+                        in the eleventh century or later, probably in the late Byzantine period.
+                        Breathings and accents were subsequently reinforced in a heavy hand. </handNote>
+
                   </handDesc>
+                  
+                  <musicNotation>
+                     <p>Ecphonetic notation marks in red ink.</p>
+                  </musicNotation>
+                  
+
                   <decoDesc>
-                     <summary>Hutter iii.16:</summary>
-                     <decoNote type="headpiece">Ornamental headpieces and strips.</decoNote>
-                     <decoNote type="decInit">Decorated initials.</decoNote>
+
+                     <decoNote type="headpiece"> Ornamented headpieces occur at the beginning of the
+                        Gospels on ff. 17r and 61r. </decoNote>
+
+                     <decoNote type="tailpiece"> Decorative closing bands occur at the end of the
+                        kephalaia lists and Gospels on ff. 1v, 59v, 60v, and 142v. </decoNote>
+
+                     <decoNote type="initial"> Numerous red initials occur at or near the beginning
+                        of verses; some are lightly ornamented. </decoNote>
+
+                     <decoNote type="music"> Ecphonetic notation marks in red ink. </decoNote>
+                     
+
+                     <decoNote type="loss"> The ornamental headpiece at the beginning of the Gospel
+                        of Matthew survives in the St Petersburg portion of the codex (NLR, Gr. 33,
+                        f. 1), whereas that introducing the Gospel of John appears to be lost. </decoNote>
+
                   </decoDesc>
+                  
+
+                  <additions>
+                     <p>Fol. 1v contains a Greek pen trial and an Arabic note (أذكرني يا رب إذا أتيت
+                        في ملكوتك) "Remember me, oh Lord, when you enter your kingdom".</p>
+                  </additions>
+                  <bindingDesc>
+                     <binding notBefore="1801" notAfter="1900">
+                        <p>Brown leather binding; the cover is detached.</p>
+                     </binding>
+                  </bindingDesc>
+
+
                </physDesc>
                <history>
                   <origin>
                      <origDate calendar="Gregorian" when="0979">979 (?)</origDate>
                      <origPlace>
-                        <country key="place_7024407">Byzantine</country>
+                        <country key="place_7001519">Levant (?)</country>
                      </origPlace>
+                     <note>The dating is based on Greek scribal notes in the manuscript: on f. 51v
+                        the note reads τελειοστα(ι) αγαπητ(οσ) ὁ χυρ(ι)ος Ματ(θαιος) ὁ
+                        εὐαγγελι(σ)της μην(ι) αὐγούστ(ω) ε̄, while on f. 99r it reads ἐτελείωθη ἡ
+                        δέτος αὐτὴ μηνὶ νοεμβρίῳ ξζ ινδ. η ἡμέρα ε̄, ὥρα β (nach Granström).
+                        Tischendorf proposed AD 844, but Crisci regarded this as impossible; other
+                        proposed dates are AD 889, AD 934 (Sobolevskij-Cereteli), and AD 979, the
+                        last being considered the most probable by Gardthausen and Crisci.</note>
                   </origin>
-                  <acquisition>Brought from the East by Tischendorf in 1853, and sold to the Bodleian for £125.</acquisition>
+                  <provenance>The manuscript was in the library of St Catherine's Monastery in
+                     Sinai. It was described in <bibl> V. N. Beneševič, <title>Catalogus codicum
+                           manuscriptorum graecorum qui in monasterio Sanctae Catharinae in Monte
+                           Sina asservantur</title>, t. I, St Petersburg, 1911, pp. 96-97. no. 78.
+                     </bibl>. At a certain point by the mid-19th century, the manuscript was split
+                     into pieces and the fragments were brought to Europe by Konstantin Tischendorf.
+                     One part was acquired by the Imperial Library in St Petersburg, the other one
+                     by the Bodleian Library in Oxford. </provenance>
+                  <acquisition>Purchased from Konstantin Tischendorf in 1853 for £125.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Description adapted from the Summary Catalogue (1905) with reference to other published literature as cited.<listBibl>
-                              <bibl facs="aam0519.gif" type="SC">Summary Catalogue, Vol. 5, p. 484</bibl>
-                              <bibl facs="aam0520.gif" type="SC">Summary Catalogue, Vol. 5, p. 485</bibl>
+                        <source>Description adapted from the Summary Catalogue (1905) and Hutter III
+                           (1982) with reference to other published literature as cited.<listBibl>
+                              <bibl facs="aam0519.gif" type="SC">Summary Catalogue, Vol. 5, p.
+                                 484</bibl>
+                              <bibl facs="aam0520.gif" type="SC">Summary Catalogue, Vol. 5, p.
+                                 485</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -85,17 +245,82 @@
                            <title>New Testament Virtual Manuscript Room</title></ref>
                         <note>(digitized microfilm)</note>
                      </bibl>
-                     <bibl subtype="partial" type="digital-facsimile"><ref target="https://digital.bodleian.ox.ac.uk/objects/8b5d46f6-ba06-4f4f-96c9-ed85bad1f98c/"><title>Digital Bodleian</title></ref>
+                     <bibl subtype="partial" type="digital-facsimile"><ref
+                           target="https://digital.bodleian.ox.ac.uk/objects/8b5d46f6-ba06-4f4f-96c9-ed85bad1f98c/"
+                              ><title>Digital Bodleian</title></ref>
                         <note>(3 images from 35mm slides)</note>
                      </bibl>
                   </surrogates>
                   <listBibl type="WRAPPER">
                      <listBibl type="PRINT">
-                        <bibl>Irmgard Hutter, <title>Corpus der byzantinischen Miniaturenhandschriften, I-III, Oxford, Bodleian Library</title>, 3 vols. in 4 (Stuttgart, 1977–82), iii, 16 <ref target="https://archive.org/details/hutter-3.2bis-pp.-32-end-mss.-29-197-abb.-112-885/Hutter%203.1%2C%20pp.%201-201%20%28Intr.%3B%20mss.%201-130%29/page/27/mode/1up">[Internet Archive]</ref></bibl>
+                        <bibl>Irmgard Hutter, <title>Corpus der byzantinischen
+                              Miniaturenhandschriften, I-III, Oxford, Bodleian Library</title>, 3
+                           vols. in 4 (Stuttgart, 1977–82), iii, 16 <ref
+                              target="https://archive.org/details/hutter-3.2bis-pp.-32-end-mss.-29-197-abb.-112-885/Hutter%203.1%2C%20pp.%201-201%20%28Intr.%3B%20mss.%201-130%29/page/27/mode/1up"
+                              >[Internet Archive]</ref></bibl>
+                        <bibl>C. von Tischendorf, <title>Anecdota sacra et profana ex Oriente et
+                              Occidente allata sive notitia codicum Graecorum, Arabicorum,
+                              Syriacorum, Copticorum, Hebraicorum, Aethiopicorum, Latinorum, cum
+                              excerptis multis maximam partem Graecis et triginta quinque
+                              scripturarum antiquissimarum speciminibus</title>, Leipzig: J. C.
+                           Hinrichs, 1861, no. 3, pp. 4-5.<ref
+                              target="https://babel.hathitrust.org/cgi/pt?id=chi.42394185&amp;seq=26"
+                              >HathiTrust</ref></bibl>
+
+                        <bibl><title>Palaeographical Society, Facsimiles of Manuscripts and
+                              Inscriptions</title>, Second Series, vol. I, pl. 7.</bibl>
+
+                        <bibl>V. Gardthausen, <title>Griechische Paläographie</title>, 2nd ed., vol.
+                           II, Leipzig: Veit, 1913, pp. 150, 481–482.<ref
+                              target="https://archive.org/details/griechischepalae02gard/page/150/mode/1up"
+                              >[Internet Archive]</ref></bibl>
+
+                        <bibl>C. R. Gregory, <title>Textkritik des Neuen Testaments</title>,
+                           Leipzig: J. C. Hinrichs, 1900–1909, pp. 85–86, siglum Γ.</bibl>
+
+                        <bibl>E. M. Thompson, <title>An Introduction to Greek and Latin
+                              Palaeography</title>, Oxford: Clarendon Press, 1912, p. 214, pl.
+                           51.</bibl>
+
+
+
+                        <bibl>W. H. P. Hatch, <title>The Principal Uncial Manuscripts of the New
+                              Testament</title>, Chicago: University of Chicago Press, 1939, pl.
+                           LXI.</bibl>
+
+                        <bibl>R. Devreesse, <title>Introduction à l'étude des manuscrits
+                              grecs</title>, Paris: Imprimerie nationale and C. Klincksieck, 1954,
+                           pp. 156, 170 n. 2.</bibl>
+
+                        <bibl>E. E. Granstrem, “Каталог греческих рукописей ленинградских хранилищ”
+                           [Katalog grečeskich rukopisej leningradskich chranilišč],
+                              <title>Vizantijskij Vremennik</title> 16 (1959), pp. 216–243, at p.
+                              241.<ref target="http://www.vremennik.biz/opus/BB/16/51706">[Internet
+                              Archive]</ref></bibl>
+
+                        <bibl>K. Aland, <title>Kurzgefasste Liste der griechischen Handschriften des
+                              Neuen Testaments</title>, Arbeiten zur neutestamentlichen
+                           Textforschung 1, Berlin: Walter de Gruyter, 1963, no. 036, siglum Γ, p.
+                           40.</bibl>
+
+                        <bibl>K. Treu, <title>Die griechischen Handschriften des Neuen Testaments in
+                              der UdSSR: Eine systematische Auswertung der Texthandschriften in
+                              Leningrad, Moskau, Kiev, Odessa, Tbilisi und Erevan</title>, Berlin:
+                           Akademie-Verlag, 1966, pp. 41–42.</bibl>
+
+                        <bibl>G. Cavallo, <title>Ricerche sulla maiuscola biblica</title>, Florence:
+                           Le Monnier, 1967, p. 122.</bibl>
+
+                        <bibl>P. Orsini, <title>Studies on Greek and Coptic Majuscule Scripts and
+                              Books</title>, Studies in Manuscript Cultures 15, Berlin/Boston: De
+                           Gruyter, 2019, p. 158 n. 360.</bibl>
+
                      </listBibl>
                      <listBibl type="INTERNET">
                         <head>Online resources:</head>
-                        <bibl><ref target="http://pinakes.irht.cnrs.fr/notices/cote/47259/"><title>Pinakes | Πίνακες: Textes et manuscrits grecs</title></ref></bibl>
+                        <bibl><ref target="http://pinakes.irht.cnrs.fr/notices/cote/47259/"
+                                 ><title>Pinakes | Πίνακες: Textes et manuscrits
+                           grecs</title></ref></bibl>
                      </listBibl>
                   </listBibl>
                </additional>
@@ -103,9 +328,14 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2026-08-13"><persName>Peter Toth</persName>Recatalogued after
+            digitisation.</change>
          <change when="2021-10-19">Added link to NTVMR; added full description from SC.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using
+               <ref
+               target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl"
+               >https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>
    </teiHeader>
    <text>
