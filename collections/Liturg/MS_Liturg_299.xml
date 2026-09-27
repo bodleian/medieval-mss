@@ -1,4 +1,5 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_7717">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_7717">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -9,10 +10,19 @@
                <persName>S. J. P. van Dijk</persName>
             </respStmt>
             <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+               <resp>Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1897">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -44,9 +54,80 @@
                   </altIdentifier>
                </msIdentifier>
                <msContents>
-                  <msItem class="#liturgica" n="1" xml:id="MS_Liturg_299-item1"><locus from="1r" to="87v" type="inferred"/>
+                  <msItem class="#liturgica" xml:id="MS_Liturg_299-item1">
+                     <locus from="1r" to="87v" type="inferred"/>
                      <title key="work_10579" type="desc">Book of Hours, Use of Sarum</title>
-                     <note>Mutilated.</note>
+                     <note>Mutilated. All parts are incomplete. Leaves missing after fols. 7a, 10, 11, 15,
+                        22, 23, 24, 25, 27, 30, 37, 43, 54, 69, 77, 80</note>
+
+                     <msItem>
+
+                        <note>Calendar (fol. 1)</note>
+                     </msItem>
+                     <msItem>
+
+                        <note>Fifteen O’s (fol. 7b)</note>
+                     </msItem>
+                     <msItem>
+
+                        <note>Joys of St John tbe baptist (fol. 11)</note>
+                     </msItem>
+                     <msItem>
+
+                        <note>Office of the Virgin (fol. 12) with the Hours of the Cross worked
+                           in</note>
+                     </msItem>
+                     <msItem>
+
+                        <note>Troped Salve regina (fol. 29v)</note>
+                     </msItem>
+                     <msItem>
+
+                        <note>Paraphrase of the Salve regina (fol. 30v)</note>
+                     </msItem>
+                     <msItem>
+
+                        <note>O intemerata (fol. 33v)</note>
+                     </msItem>
+                     <msItem>
+
+                        <note>Obsecro (fol. 34v)</note>
+                     </msItem>
+                     <msItem>
+
+                        <note>Seven Joys (fol. 36: Virgo templum)</note>
+                     </msItem>
+                     <msItem>
+
+                        <note>Devotions of the Five Wounds (fol. 38) and the Seven Words ('Oracio uenerabilis Bede de Septem Verbis Christi ') (fol.
+                           39v)</note>
+                     </msItem>
+                     <msItem>
+
+                        <note>Salutations (fol. 41: Precor te piissime domine J.C., Ave domine I.C.
+                           verbum, Ave verum, Ave caro, Anima Christi, Domine J.C. qui hanc, Deus
+                           propitius esto michi, etc.)</note>
+                     </msItem>
+                     <msItem>
+
+                        <note>Penitential (fol. 44) and Gradual (fol. 48) Psalms with the litany
+                           (fol. 49v)</note>
+                     </msItem>
+                     <msItem>
+
+                        <note>Office of the dead (fol. 55) and commendation (fol. 70)</note>
+                     </msItem>
+                     <msItem>
+
+                        <note>Psalms of the passion (fol. 78)</note>
+                     </msItem>
+                     <msItem>
+
+                        <note>Psalter of St Jerome (fol. 80v). Additional suffrage pro pestilentia
+                           et fame (fol. 87: Stella celi extirpavit). </note>
+                     </msItem>
+                    
+
                      <textLang mainLang="la">Latin</textLang>
                   </msItem>
                </msContents>
@@ -54,13 +135,16 @@
                   <objectDesc form="codex">
                      <supportDesc material="perg">
                         <support>parchment</support>
-                        <extent resp="#VD"> <seg type="leaf"><measure type="laterEndleaf" quantity="1">i</measure> + <measure type="leaf" quantity="87">87 (88)</measure> + <measure type="laterEndleaf" quantity="1">i</measure></seg> fol.<dimensions type="leaf" unit="mm">
+                        <extent resp="#VD">
+                           <seg type="leaf"><measure type="laterEndleaf" quantity="1">i</measure> +
+                                 <measure type="leaf" quantity="87">87 (88)</measure> + <measure
+                                 type="laterEndleaf" quantity="1">i</measure></seg> fol.<dimensions
+                              type="leaf" unit="mm">
                               <height>212</height>
                               <width>140</width>
                            </dimensions>
                            <dimensions type="written" unit="mm">
                               <height>124</height>
-                              <!-- check: VD says 24! -->
                               <width>70</width>
                            </dimensions>
                         </extent>
@@ -70,44 +154,67 @@
                      </layoutDesc>
                   </objectDesc>
                   <decoDesc>
-                     <decoNote type="decInit">Decoration<p>Initials. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 956)</p>
-                     </decoNote>
+                     <decoNote type="decInit">Initials. (<ref
+                           target="https://catalog.hathitrust.org/Record/000468709">Pächt and
+                           Alexander</ref> iii. 956) </decoNote>
                   </decoDesc>
                </physDesc>
                <history>
                   <origin>
-                     <origDate calendar="Gregorian" notAfter="1450" notBefore="1400">15th century, first half</origDate>
+                     <origDate calendar="Gregorian" notAfter="1450" notBefore="1400">15th century,
+                        first half</origDate>
                      <origPlace>
                         <country key="place_7002445">English</country>
                      </origPlace>
                   </origin>
+                  <provenance>Written for use in the diocese of Lincoln (?). In the calendar are some saints venerated in the Low Countries, the names
+                     of some English saints are wrongly spelt (fols. 50v-51); St. Rumwold is at Nov. 3 in the calendar and st. Wallepaxtus martyr in the litany..</provenance>
+                  <provenance>Extensively annotated in the 16th century in English and Latin, adding
+                     rubrics, running heads, psalm numbers, and additional prayers.</provenance>
+                  <provenance>On fol. 11v are the names of <persName role="sgn">Raphe Faukener</persName> and Thomas (16th century).</provenance>
+                  <acquisition> Part of the liturgical collection created by H. O. Coxe <foreign>c.</foreign> 1877; one of the thirty-five manuscripts of unknown provenance which retains the MS. Liturg. shelfmark (Summary Catalogue 5:843-4), several of which may belong to the Rawlinson collection. </acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
-                              <bibl facs="aam0890.gif" type="SC">Summary Catalogue, Vol. 5, p. 853</bibl>
-                              <bibl facs="aam0891.gif" type="SC">Summary Catalogue, Vol. 5, p. 854</bibl>
+                        <source>Description adapted (2026) from the following sources, with additional description of annotation: 
+                           <listBibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title>Illuminated Manuscripts in the Bodleian Library Oxford</title>, III (1973), no. 956</bibl>
+                              <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 4: Books of Hours</title> (typescript, 1957), <citedRange unit="page" from="186" to="186">p. 186</citedRange>
+                              </bibl>
+                              <bibl>Summary Catalogue (1897)</bibl>
+                           </listBibl>
+                           <listBibl>
+                              <bibl facs="aam0890.gif" type="SC">Summary Catalogue, Vol. 5, p.
+                                 853</bibl>
+                              <bibl facs="aam0891.gif" type="SC">Summary Catalogue, Vol. 5, p.
+                                 854</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
-                  <listBibl type="WRAPPER">
+             <!--     <listBibl type="WRAPPER">
                      <listBibl type="PRINT">
                         <head>Printed descriptions:</head>
-                        <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 4: Books of Hours</title> (typescript, 1957), <citedRange unit="page" from="186" to="186">p. 186</citedRange>
+                        <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian
+                              Library, Oxford, vol. 4: Books of Hours</title> (typescript, 1957),
+                              <citedRange unit="page" from="186" to="186">p. 186</citedRange>
                         </bibl>
                      </listBibl>
-                  </listBibl>
+                  </listBibl>-->
                </additional>
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
-         <change when="2024-09">Add extent, leaf dimensions and layout from van Dijk, Latin Liturgical Manuscripts in the Bodleian Library, Oxford.</change>
+         <change when="2026-09">Incorporate all information from published catalogues.</change>
+         <change when="2024-09">Add extent, leaf dimensions and layout from van Dijk, Latin
+            Liturgical Manuscripts in the Bodleian Library, Oxford.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
-            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+            <persName>James Cummings</persName> Up-converted the markup using <ref
+               target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl"
+               >https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>
       </revisionDesc>
    </teiHeader>
