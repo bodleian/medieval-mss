@@ -1,12 +1,26 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4291">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_4291">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>MS. Digby 172</title>
             <title type="collection">MSS. Digby</title>
             <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+               <resp when="1883">Cataloguer</resp>
+               <persName>W. D. Macray</persName>
+            </respStmt>
+            <respStmt>
+               <resp when="1999">Cataloguer</resp>
+               <persName>R. W. Hunt</persName>
+               <persName>A. G. Watson</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
+            <respStmt>
+               <resp>Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -30,27 +44,52 @@
                   <institution>University of Oxford</institution>
                   <repository>Bodleian Library</repository>
                   <idno type="shelfmark">MS. Digby 172</idno>
-                  <idno type="ieArk">ark:29072/x00g354g243c</idno><idno type="crArk">ark:29072/x0f7623c93rm</idno><altIdentifier type="internal">
+                  <idno type="ieArk">ark:29072/x00g354g243c</idno>
+                  <idno type="crArk">ark:29072/x0f7623c93rm</idno>
+                  <altIdentifier type="internal">
                      <idno type="SCN">1773</idno>
                   </altIdentifier>
                </msIdentifier>
                <physDesc>
-                  <p n="composite">Composite: A || B || fols. 25–54 || D || fols. 71–77 || F || G || H</p>
+                  <p n="composite">Composite</p>
+                  <objectDesc>
+                     <supportDesc>
+                        <extent>158 leaves, small folio</extent>
+                     </supportDesc>
+                  </objectDesc>
                </physDesc>
                <history>
-                  <provenance notAfter="1634" notBefore="1603" resp="#MMM"><persName key="person_49357645" role="fmo">Kenelm Digby, 1603–1665</persName></provenance>
+                  <provenance>In eight sections, all probably <persName role="fmo" key="person_25374986">Thomas Allen</persName>'s. Four
+                     (C, D, F, H) can be identified in his catalogue
+                     and the only one (E) which does not bear evidence
+                     of his ownership has an Oxford connection.</provenance>
+                  <provenance notAfter="1634" notBefore="1603" resp="#MMM"><persName
+                        key="person_49357645" role="fmo">Kenelm Digby,
+                     1603–1665</persName></provenance>
                   <acquisition resp="#MMM" when="1634">Donated to the Bodleian, 1634.</acquisition>
                </history>
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source><ref target="https://medieval.bodleian.ox.ac.uk/about">Summary description</ref> abbreviated from the Quarto Catalogue (W. D. Macray, <title>Bodleian Library Quarto Catalogues IX: Digby Manuscripts</title>, repr. with addenda by R. W. Hunt and A. G. Watson, 1999). Decoration follows Pächt and Alexander (1973). <listBibl>
-                              <bibl facs="abw0099.gif" type="QUARTO">Quarto Catalogue, cols. 179–80</bibl>
-                              <bibl facs="abw0100.gif" type="QUARTO">Quarto Catalogue, cols. 181–2</bibl>
-                              <bibl facs="abw0101.gif" type="QUARTO">Quarto Catalogue, col. 183</bibl>
-                              <bibl facs="abw0254.gif" type="QUARTO">Quarto Catalogue (addenda), p. 77</bibl>
-                              <bibl facs="abw0255.gif" type="QUARTO">Quarto Catalogue (addenda), p. 78</bibl>
-                              <bibl facs="aap0096.gif" type="SC">Summary Catalogue, vol. 2, part 1, p. 75</bibl>
+                        <source><listBibl><bibl>W. D. Macray,
+                              <title>Bodleian Library Quarto Catalogues IX: Digby
+                              Manuscripts</title>, repr. with addenda by R. W. Hunt and A. G.
+                           Watson, 1999).</bibl>
+                           <bibl>Otto Pächt and J. J. G. Alexander, <title><ref target="https://catalog.hathitrust.org/Record/000468709">Illuminated Manuscripts in the Bodleian Library, Oxford</ref></title>, III (1973), no. 561</bibl></listBibl>
+                           
+                            <listBibl>
+                              <bibl facs="abw0099.gif" type="QUARTO">Quarto Catalogue, cols.
+                                 179–80</bibl>
+                              <bibl facs="abw0100.gif" type="QUARTO">Quarto Catalogue, cols.
+                                 181–2</bibl>
+                              <bibl facs="abw0101.gif" type="QUARTO">Quarto Catalogue, col.
+                                 183</bibl>
+                              <bibl facs="abw0254.gif" type="QUARTO">Quarto Catalogue (addenda), p.
+                                 77</bibl>
+                              <bibl facs="abw0255.gif" type="QUARTO">Quarto Catalogue (addenda), p.
+                                 78</bibl>
+                              <bibl facs="aap0096.gif" type="SC">Summary Catalogue, vol. 2, part 1,
+                                 p. 75</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
@@ -58,29 +97,76 @@
                   <listBibl type="WRAPPER">
                      <listBibl type="INTERNET">
                         <head>Online resources:</head>
-                        <bibl><ref target="https://glossen.germ-ling.uni-bamberg.de/manuscripts/13579"><title>BStK Online. Datenbank der althochdeutschen und altsächsischen Glossenhandschriften</title></ref></bibl>
+                        <bibl><ref
+                              target="https://glossen.germ-ling.uni-bamberg.de/manuscripts/13579"
+                                 ><title>BStK Online. Datenbank der althochdeutschen und
+                                 altsächsischen Glossenhandschriften</title></ref><note>(wrongly listed as containing German glosses)</note></bibl>
                      </listBibl>
                   </listBibl>
                </additional>
+               <!-- 
+               <div type="ms" n="172">
+            <msItem n="172" xml:id="MS_Digby_197-item172">
+               <note>[B.N. 10.] Membranaceus. In fol. minori. <locus>(ffol. 158)</locus>. Saecc. xiii-xv. Pro maxima
+                  parte binis columnis exaratus. Art. 3 olim inter codd. T. Allen, ' 237 art. 4, '
+                  162' ' 50 art. 6, '41 ;' art. 9'69;' art. 30, '228;' art. 31, '39' et'52' </note>
+            </msItem>
+            
+           
+            <msItem n="31" xml:id="MS_Digby_197-item31">
+               
+         </div>
+               -->
                <msPart xml:id="MS_Digby_172-part1">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Digby 172 – Part 1</idno>
+                        <idno type="part">MS. Digby 172 – Part A</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
                      <msItem n="1" xml:id="MS_Digby_172-part1-item1">
+                        <locus>(fol. 1)</locus>
                         <author key="person_86734224">Walter Burley</author>
                         <title key="work_4945">De potentiis animae</title>
+                        <incipit>Ut dicit Philosophus secundo de anima, potenciarum anime quibusdam
+                           animatis</incipit>
+                        <explicit>dividitur in duo membra, sicut et appetitus sensitivus</explicit>
+                        <note>For edn. and for the false attribution to Grosseteste which derives
+                           from this manuscript, see note on MS. Digby 104, art. 16. </note>
+                        <listBibl>
+                           <bibl>Weisheipl, 'Repertorium', 202, no. 33</bibl>
+                           <bibl>TK 1617</bibl>
+                        </listBibl>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                      <msItem n="2" xml:id="MS_Digby_172-part1-item2">
+                        <locus>(fol. 6v)</locus>
                         <author key="person_86734224">Walter Burley</author>
                         <title key="work_4946">De principiis naturalibus</title>
+                        <incipit>Sicut fructus est ultimum quod exspectatur ab arbore</incipit>
+                        <explicit>essencialiter ordinate ad hunc effectum</explicit>
+                        <finalRubric> Suppleciones principiorum nature secundum
+                           Egidium</finalRubric>
+                        <note>The ascription to Walter Burley (rather than Giles of Rome) is
+                           accepted by Weisheipl, 'Repertorium', 199, no. 26.</note>
+                        <note>The following texts, listed in the table of contents, are no longer present: 'Quedam exposicio super
+                           Cantica. Peccham super eadem. Questiones ejusdem in Quodlibeta. Exposicio ejusdem
+                           super Trenos. Questiones ejusdem de peccatis capitalibus. Tractatus ejusdem de
+                           preceptis 10. Quedam notabilia super libros quosdam metaphysicae. Speculum
+                           ecclesie et misse. Speculum anime. De symbolo. De Oracione Dominica. Seneca de 4
+                           virtutibus cardinalibus.'</note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
+                     <!-- 
+            <msItem n="2" xml:id="MS_Digby_197-item2">
+               <note>Aegidii de Columna tractatus de principiis naturae. . ' Ezpl. ' — ' Varia
+                  Johannis Peckham aliornmque olim hic subjungebantur, quae in tabula contentorum,
+                  huic parti codicis praemisaa, ita recemdta sunt : </incipit> </note>
+            </msItem>
+                     -->
                   </msContents>
                   <physDesc>
+                     <p><secFol>semper</secFol></p>
                      <objectDesc form="codex">
                         <supportDesc material="perg">
                            <support>parchment</support>
@@ -89,27 +175,40 @@
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1400" notBefore="1300">14th century</origDate>
+                        <origDate calendar="Gregorian" notAfter="1400" notBefore="1300">14th
+                           century</origDate>
                         <origPlace>
-                           <country key="place_7002445">English</country>
+                           <country key="place_7002445">England</country>
                         </origPlace>
                      </origin>
+                     <provenance>On fol. 1 is a note in Allen's hand.</provenance>
                   </history>
                </msPart>
                <msPart xml:id="MS_Digby_172-part2">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Digby 172 – Part 2</idno>
+                        <idno type="part">MS. Digby 172 – Part B</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem n="1" xml:id="MS_Digby_172-part2-item1">
+                     <msItem n="3" xml:id="MS_Digby_172-part2-item1">
+                        <locus>(fol. 12)</locus>
                         <author key="person_171966146">William of St Albans</author>
                         <title key="work_5098">Passio SS. Albani et Amphibali</title>
+                        <rubric>Passio beati Albani, Anglorum prothomartiris, et Sancti Amphibali
+                           sociorum (sic) ejus</rubric>
+                        <incipit type="prologue">Quisquis beatorum martirum gloriosa
+                           certamina</incipit>
+                        <note>One leaf lost at end, ends imperfect 'ut fierent veridici.' </note>
+                        <listBibl>
+                           <bibl>Acta Sanctorum, June, vol. iv, pp. 149-159</bibl>
+                           <bibl>BHL 213</bibl>
+                        </listBibl>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                   </msContents>
                   <physDesc>
+                     <p><secFol>fidem</secFol></p>
                      <objectDesc form="codex">
                         <supportDesc material="perg">
                            <support>parchment</support>
@@ -118,30 +217,69 @@
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th century</origDate>
+                        <origDate calendar="Gregorian" notAfter="1500" notBefore="1400">15th
+                           century</origDate>
                         <origPlace>
-                           <country key="place_7002445">English</country>
+                           <country key="place_7002445">England</country>
                         </origPlace>
                      </origin>
+                     <provenance> On fol. 12 is the Digby/Allen inventory number 'A.237.'
+                     </provenance>
                   </history>
                </msPart>
                <msPart xml:id="MS_Digby_172-part3">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Digby 172 – Part 3</idno>
+                        <idno type="part">MS. Digby 172 – Part C</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem class="#vitae_sanctorum" n="1" xml:id="MS_Digby_172-part3-item1">
+                     <msItem class="#vitae_sanctorum" n="4" xml:id="MS_Digby_172-part3-item1">
+                        <locus>(fol. 25)</locus>
                         <title key="work_12847" type="desc">Life of St. Catherine of Sweden</title>
+                        <rubric>Vita venerabilis domine Katerine, filie beate Birgitte de regno
+                           Swecie, prime Abbatisse in monasterio Wasten in eodem regno sito</rubric>
+                        <incipit>Venerabilis et Deo dilecta Katerina nobilis viri domini Vlphonis
+                           Qudhmarson</incipit>
+                        <explicit>caput de cera offerens in testimonium sue sanitatis.</explicit>
+                        <note>Marginalia in the hand of <persName key="person_2792858">Thomas Gascoigne</persName> (Emden, <title>BRUO</title>).</note>
+                        <listBibl>
+                           <bibl>Acta Sanctorum, March, vol. iii. pp. 505-518</bibl>
+                           <bibl>C. Lauren, <title>Den fornsvenska legenden om den heliga fru Karin</title>
+                              (Folksmalsstudier, 24; Helsingfors &amp; Stockholm, 1973), at 7 et
+                              seq. </bibl>
+                           <bibl>BHL 1710.</bibl>
+                        </listBibl>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem class="#vitae_sanctorum" n="2" xml:id="MS_Digby_172-part3-item2">
+                     <msItem class="#vitae_sanctorum" n="5" xml:id="MS_Digby_172-part3-item2">
+                        <locus>(fol. 43v)</locus>
                         <title key="work_12903" type="desc">Life of St. Petrus Olavi</title>
+                        <rubric>Vita domini Petri Olavi confessoris beate Birgitte</rubric>
+                        <incipit>Venerabilis et Deo dignus Petrus de civitate Skevingie
+                           oriundus.</incipit>
+                        <explicit> superbe loqutus fuerat gladiis interiit inimicorum</explicit>
+                        <note>Followed by a record of another exemplar under seal in the monastery
+                           of Vadstena dated 20 June 1427 'quod Thomas Colyngburne'; a note by
+                           Thomas Gascoigne that the present text was copied from that
+                           exemplar.</note>
+                        <note>Marginal notes by <persName key="person_2792858">Thomas Gascoigne</persName>, including extracts from a book of
+                           the life and miracles of St Bridget of Sweden in the library of Syon
+                           Abbey.</note>
+                        <listBibl>
+                           <bibl>BHL 6758</bibl>
+                        </listBibl>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
+
+
+
+
+
+
                   </msContents>
                   <physDesc>
+                     <p><secFol>mali suam</secFol></p>
                      <objectDesc form="codex">
                         <supportDesc material="perg">
                            <support>parchment</support>
@@ -153,122 +291,471 @@
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1451" notBefore="1427">1427–1451</origDate>
+                        <origDate calendar="Gregorian" notAfter="1451" notBefore="1427"
+                           >1427 × 1451 (?)</origDate>
                         <origPlace>
-                           <country key="place_7002445">English</country>
+                           <country key="place_7002445">England</country>
                         </origPlace>
                      </origin>
+                     <provenance> On fol. 25 are Allen's number '50' (i.e. in the 4° section of his
+                        catalogue) and the Digby/Allen inventory number 'A.162.' </provenance>
                   </history>
                </msPart>
                <msPart xml:id="MS_Digby_172-part4">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Digby 172 – Part 4</idno>
+                        <idno type="part">MS. Digby 172 – Part D</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem class="#mariologica" n="1" xml:id="MS_Digby_172-part4-item1">
+                     <msItem class="#mariologica" n="6" xml:id="MS_Digby_172-part4-item1">
                         <title key="work_15200" type="desc">Treatises on the Virgin Mary.</title>
+
+                        <msItem n="6i" xml:id="MS_Digby_197-item6">
+                           <locus>(fol. 55)</locus>
+                           <note>De Annunciatione: sermon on Rorate celi desuper et nubes
+                              pluant, iterum aperiatur terra et germinet Salvatorem [Es. xlv.
+                              8.]</note>
+                           <incipit>Sacratissimo sermone prescripto sanctus Ysaias</incipit>
+                        </msItem>
+                        <msItem xml:id="MS_Digby_197-item6ia">  <locus>(fol. 55)</locus>
+                           <note>Marginal verse in Middle English and Latin</note>
+                           <listBibl>
+                              <bibl>IMEV 963</bibl>
+                           </listBibl>
+                           <incipit> God send vs þe dew of heuene gratiam spiritus sancti
+                              And reyn fro þe cloudes of heuene per doctrinam divini verbi </incipit>
+                           <explicit>And bring forth a blome of sich feng and sich fuysoun
+                              þat be our bote and our savacioun i iesum filium dei vivi</explicit>
+                           <textLang mainLang="enm" otherLangs="la">Middle English and
+                              Latin</textLang>
+                        </msItem>
+                        <msItem n="6ii" xml:id="MS_Digby_197-item6ii">
+                           <locus>(fol. 60)</locus>
+                           <note>De Assumptione</note>
+                           <rubric>Tractatus de beata Virgine, annunciacionem ei factam
+                              assumpcionemque ejus describens, secundum tenorem versiculi propositi
+                              [Tenuisti manum dexteram, etc. Ps. lxxii. 24], et primo de concepcione
+                              beati filii sui usque ibi, cum gloria suscepisti me</rubric>
+                           <incipit><quote>Tenuisti manum dexteram</quote> ... Quod in persona unigeniti Filii Dei</incipit>
+                           <note>Before
+                              the title (fol. 60), is written, in a hand of s. xiii,
+                              'Singularis desponsacio, singularis conversacio,
+                              singularis exaltacio et remuneracio(?) <lb/> a makeles
+                              womans weddinge, lives ledynge, <add>wemles</add> i love
+                              likynge hap holdyng yt is endeles'; IMEP 3, 54-5.</note>
+                           <textLang mainLang="la" otherLangs="enm">Latin and Middle English </textLang>
+                        </msItem>
+                        <msItem n="6iii" xml:id="MS_Digby_197-item6iii">
+                           <locus>(fol. 64)</locus>
+                           <rubric>Residuum superioris tractatus, quod ad assumpcionem beate
+                              Virginis Marie spectat</rubric>
+                           <incipit>Cum gloria suscepisti me. Sive in pergona sacrosancte Virginis
+                              Marie</incipit>
+                        </msItem>
+                        <msItem n="6iv" xml:id="MS_Digby_197-item6iv">
+                           <locus>(fol. 66v)</locus>
+                           <rubric>Sermo de nativitate beate Virginis</rubric>
+                           <incipit><quote>Orietur stella ex Jacob, etc. [Num. xxiv. 17.]</quote> ... Terram Chaldeorum ac clima eorum</incipit>
+                        </msItem>
+
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
+
+
+
+
+
+
+                     <msItem n="7" xml:id="MS_Digby_197-item7">
+                        <locus>(fol. 68v)</locus> 
+                        <rubric>Sermo de titulo Christi crucifixi secundum
+                              Johannem.</rubric>
+                           <incipit>Jes. Naz. R. Jud. Hunc titulum
+                              multi legerunt, multi etiam lecturi sunt.</incipit>
+                           <explicit> titulus Crucifixi claves vite et mortia baiulantia
+                              oonscriptus eat. Quod scripsi, inquit, scripsi.</explicit>
+                        <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+
+
                   </msContents>
                   <physDesc>
+                     <p><secFol>nisi furentis</secFol></p>
                      <objectDesc form="codex">
                         <supportDesc material="perg">
                            <support>parchment</support>
                         </supportDesc>
+                        <layoutDesc>
+                           <layout topLine="above">Writing is
+                              above top line.</layout>
+                        </layoutDesc>
                      </objectDesc>
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1300" notBefore="1200">13th century</origDate>
+                        <origDate calendar="Gregorian" notAfter="1300" notBefore="1200">13th
+                           century</origDate>
                         <origPlace>
-                           <country key="place_7002445">English</country>
+                           <country key="place_7002445">England</country>
                         </origPlace>
                      </origin>
+                     <provenance>There is
+                        reference to an opinion of 'Lincoln', i.e. Grosseteste,
+                        on fol. 60v. 
+                        On fol. 55 are Allen's number '41' (i.e. in the 4o
+                        section of his catalogue) and the Digby/Allen
+                        inventory number 'A.41.'
+                     </provenance>
                   </history>
                </msPart>
                <msPart xml:id="MS_Digby_172-part5">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Digby 172 – Part 5</idno>
+                        <idno type="part">MS. Digby 172 – Part E</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem n="1" xml:id="MS_Digby_172-part5-item1">
+                     <msItem n="8" xml:id="MS_Digby_172-part5-item1">
+                        <locus>(fol. 71)</locus>
                         <author key="person_4944345">Hugo de Folieto</author>
                         <title key="work_2170">Liber de rota verae et falsae religionis</title>
+                        
+                        <rubric>Liber de duabus rotis</rubric><incipit> Vita viri
+                              religiosi sicut rota volvitur</incipit> 
+                        <!-- proofed to here -->
+                        <explicit> Et hoc iterum de predictis rotis sufficiat, donec de hiis aliquis pociora dicat</explicit><note>Twelve leaves formerly misbound here moved to MS. Digby 168 art. 43</note>
+                        
+                        <note>At the end, in the bottom margin of
+                           fol. 77v, is a table of contents: '<supplied>H</supplied>ic continentur in isto libro Augustinus
+                           de vera et falsa penitentia <lb/> Tractatus optimus
+                           de oracione <lb/> Tractatus de claustrali disciplina <lb/>
+                           <damage>Inno</damage>cencius de contemptu mundi <lb/> Tractatus
+                           qui dicitur scutum Bede et est de virtutibus et
+                           viciis certantibus invicem <lb/> Llber Augustini de
+                           anima optimus <lb/> Tractatus de annunciacione beate
+                           marie assumpcione et nativitate [= arts. 6(i-iv)]
+                           et doctrinale crucis [last two words deleted] <lb/>
+                           Tractatus de titulo quem p<damage>...</damage> supra christi
+                           crucem [ = art. 7] Liber de <damage>...</damage> contemplacionis <lb/>
+                           Liber de <damage>...</damage>cionis.' The whole entry is partly
+                           obscured by an application of galls.</note>
+                        <listBibl><bibl>Bloomfield,
+                              no. 6471</bibl></listBibl>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
+                     
+                     
+                     
                   </msContents>
                   <physDesc>
+                     <p><secFol>libra</secFol></p>
                      <objectDesc form="codex">
                         <supportDesc material="perg">
                            <support>parchment</support>
                         </supportDesc>
                      </objectDesc>
                      <decoDesc>
-                        <decoNote type="diagram">Diagram. (<ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 504)</decoNote>
+                        <decoNote type="diagram">Diagram. (<ref
+                              target="https://catalog.hathitrust.org/Record/000468709">Pächt and
+                              Alexander</ref> iii. 504)</decoNote>
                      </decoDesc>
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1300" notBefore="1250">13th century, second half</origDate>
+                        <origDate calendar="Gregorian" notAfter="1300" notBefore="1250">13th
+                           century, second half</origDate>
                         <origPlace>
-                           <country key="place_7002445">English</country>
+                           <country key="place_7002445">England</country>
                         </origPlace>
                      </origin>
+                     <provenance>On <persName key="person_5187" role="fmo">William Marshall (-1583)</persName> (Martiall), whose name ('Gul.
+                        Mart.') is found on fol. 77v, see Emden, <title>BRUO
+                        1501-1540</title>. This is probably the manuscript owned
+                        by the Oxford bookseller <persName key="person_5188" role="fmo">Garbrand Herkes</persName> referred
+                        to by Bale, <title>Index</title>, 237, 378, as containing works
+                        by Grosseteste and Pecham.
+                        
+                     </provenance>
                   </history>
                </msPart>
                <msPart xml:id="MS_Digby_172-part6">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Digby 172 – Part 6</idno>
+                        <idno type="part">MS. Digby 172 – Part F</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem n="1" xml:id="MS_Digby_172-part6-item1">
-                        <author key="person_2205">Roger of Caen <!-- not found --></author>
+                     <msItem n="9" xml:id="MS_Digby_172-part6-item9">
+                        <locus>(fol. 78)</locus>
+                        <author key="person_2205">Roger of Caen </author>
                         <title key="work_4455">De professione monachorum</title>
+                        <rubric>Versus beati Anselmi, archipresulis Cantuar. de contemptu
+                           mundi</rubric>
+                        <incipit>Quid deceat monachum vel qualis debeat esse.</incipit>
+                        <listBibl><bibl><title>Init</title>. 15778</bibl></listBibl>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem class="#versus" n="2" xml:id="MS_Digby_172-part6-item2">
-                        <title key="work_13886" type="desc">Poems.</title>
+                     
+                     
+                     
+                     
+                     <msItem n="10" xml:id="MS_Digby_197-item10"><locus>(fol. 84)</locus><title key="work_13886" type="desc">Poems</title>
+                        <!--<note>Described by Macray as 'Versus varii; de luxuria, de casibus reservatis, de vii. quaestionibus in
+                           tractatu de penitentia in Decretis, de causis in Decretis, epitaphium in Ganymedem
+                           Crisipolitam, 'versus cujusdam q..etriste ' (ending 'Isti sex versus
+                           proprii sunt Henriolato, Cum sit perversus, sic dic ita de Michiloto') et de
+                           triplici Herode. </note>-->
+                        <note>As follows: 'Luxurie pondus', <title>Init</title>.
+                           10527; verses from Hildebert's <title>Vita beate Marie
+                           Egyptiace</title>, PL 171. 1334A-B, 1323A; 'Post
+                           holocausta', <title>Sent</title>. 22004; 'Post fletum', <title>Sent</title>. 21997;
+                           'Nil magis huic oneri', 'Nil magis ingratum', <title>Sent</title>.
+                           16755. Then follow 'Deditus usure', 6 verses, <title>Init</title>.
+                           4210; 'Rex racione carens', 12 verses, <title>Init</title>. 16762;
+                           verses giving the contents of decretum <title>De penitentia</title>,
+                           'Expiat in prima', <title>Init</title>. 6112; a rubric beg. 'Per
+                           hos versus sequentes intelligi potest quot sunt
+                           cause in decretis et quot quesciones quelibet causa
+                           continet ... ' followed by 6 verses beg. 'Tempora
+                           labuntur vernantibus invida formis', <title>Init</title>. 19123
+                           and <title>Sent</title>. 31201a (only 1 verse); a rubric, 'Per
+                           versus sequentes scitur quot sunt distincciones et
+                           quid docetur in qualibet distinccione', followed by
+                           3 verses beg. 'Ecclesias prima distinccio sacrat et
+                           aras'; 'Hic ego qui iaceo' (pr. by R. Ellis, <title>Anecdota
+                           Oxon.</title>, Classical ser. 1. 5 (Oxford, 1885), and see
+                           B. Smalley, <title>English Friars and Antiquity</title> (Oxford,
+                           1960), 207. The references in <title>Init</title>. 7894, except
+                           that to Ellis, belong to <title>Init</title>. 7895); 'Sanguis rana
+                           culex musce mors pecoris ulcer <lb/> Grando locustarum
+                           genus et nox mors puerorum', cf. <title>Sent</title>. 27492c,
+                           and <title>Init</title>. 17276; 'Fraus tua non tua laus,' 8 verses,
+                           pr. by Ellis, op. cit., 20n; 'Antipas Herodes
+                           Baptistam decapitavit', 3 verses.
+                        </note>
                         <textLang mainLang="la">Latin</textLang>
+                  
                      </msItem>
-                     <msItem n="3" xml:id="MS_Digby_172-part6-item3">
+                     <msItem n="11" xml:id="MS_Digby_197-item11">
+                        <locus>(fol. 84v)</locus>    <author key="person_89474915">Wipo</author><title>Proverbia</title>    <rubric>Incipit Inventum(?) quod habet proverbia centum </rubric><incipit> Pax
+                              Henrico Dei amico. Deo servire est regnare Decet regem discere legem</incipit><explicit>Melius
+                           est supernum concilium quam hujus vite exordium, Superna patria pulcra tenet
+                           atria</explicit>
+                        <note><title>Init</title>. 13898. On the author see
+                           M. Manitius, <title>Geschichte der lateinischen Literatur
+                           des Mittelalters</title>, 2 (Munich, 1923), 318 et seq.
+                        </note>  <textLang mainLang="la">Latin</textLang>
+                        
+                     </msItem>
+                     <msItem n="12" xml:id="MS_Digby_197-item12"><locus>(fol. 85)</locus>
+                        <rubric>De significacione candelarum in die Purificacionis Marie
+                        </rubric>
+                        <incipit>Fert puer intinctus candelam sponsus
+                           uterque <note>(8 verses)</note></incipit>
+                        <incipit>Hanc in honore pie candelam
+                           porto Marie <note>(<title>Init</title>. 7646)</note></incipit> <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     
+                     
+                     <msItem n="13" xml:id="MS_Digby_172-part6-item13">
+                        <locus>(fol. 85)</locus>
                         <author key="person_64013451">Aesop</author>
                         <title key="work_280">Fabulae</title>
+                        <listBibl><bibl>L. Hervieux, <title>Les fabulistes latins</title> (Paris, 1893,
+                              1894), 1. 716 et seq., 2. 513-48</bibl></listBibl>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem n="4" xml:id="MS_Digby_172-part6-item4">
+                     
+                     
+                     <msItem n="14" xml:id="MS_Digby_197-item14"><locus>(fol. 91v, margin)</locus>
+                        <incipit>Clarevallorum Jacobi decimas peciere A domino papa, sed eas non
+                              obtinuere</incipit> 
+                        <note>
+                           <title>Init</title>. 2838. A rather different version is pr. by
+                           M. R. James, <title>Proc. Suffolk Inst. of Archeol. and
+                           Nat. Hist.</title>, 22 (1936), 94. At the foot of fol. 91vb
+                           are verses beg. 'Pondera portat equus', <title>Sent</title>. 21892.</note>   <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     
+                     
+                     <msItem n="15" xml:id="MS_Digby_172-part6-item15">
+                        <locus>(fol. 92)</locus>
                         <author key="person_61907230">Petrus Riga</author>
                         <title key="work_3602">Aurora</title>
-                        <note>(part)</note>
+                        <note>Part: Gen., Exod., Levit.,
+                           Act. Apost., Cant., and Job. </note><note>41 leaves lacking between fols. 108 and 109 according to the medieval foliation.</note>
+                        <rubric>Biblioteca versificata, a
+                           magistro P. canonico Sancti Dionisii Remensis de Veteri et Novo Testamento
+                           exposita</rubric>
+                        <listBibl><bibl>Ed. by P. E. Beichner, (Notre Dame, IN, 1965)</bibl><bibl>
+                              Stegmiiller, <title>Bibl</title>., 6823-5.</bibl></listBibl>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
+                     <!--
                      <msItem class="#theologica" n="5" xml:id="MS_Digby_172-part6-item5">
                         <title key="work_15308" type="desc">Theological texts.</title>
                         <textLang mainLang="la">Latin</textLang>
-                     </msItem>
-                     <msItem n="6" xml:id="MS_Digby_172-part6-item6">
-                        <author key="person_190763522">
-                           <!-- but beware, conflates different things --> Johannes Presbyter</author>
-                        <title key="work_200">Epistola Manueli</title>
+                     </msItem>-->
+                     
+                     
+                     <msItem n="16" xml:id="MS_Digby_197-item16">
+                        <locus>(fol. 121v)</locus>
+                        <rubric>Historia de incarnacione Salvatoris Domini Jesu Christi</rubric>
+                           <incipit>Virgo salutatur, verboque Dei gravidatur.</incipit> 
+                        
+                        
+                        <listBibl><bibl><title>Init</title>. 20551. </bibl></listBibl>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem n="7" xml:id="MS_Digby_172-part6-item7">
+                     <msItem n="17" xml:id="MS_Digby_197-item17"><locus>(fol. 122)</locus>
+                        <rubric>Versus de Sancto Edwardo</rubric><incipit>Anglia, quid meres ?
+                              dabitur tibi rector et heres.</incipit> 
+                        <listBibl><bibl>BHL 1018</bibl></listBibl> <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     <msItem n="18" xml:id="MS_Digby_197-item18"><locus>(fol. 122)</locus>
+                        <msItem><rubric>Oracio peccatoris ad Dei matrem</rubric><incipit>Patrem nata. parens natum.
+                           pia virgo precare <note>(2 verses)</note></incipit></msItem><msItem>
+                              <rubric>Oracio Dei matris ad Filium suum</rubric><incipit>Ecce fides fili contrito corde iacentem <note>(2 verses)</note></incipit></msItem><msItem>
+                        <rubric> Responcio
+                           Filii Dei </rubric><incipit>Parcere cum deceat miseris parere
+                           parenti <note>(2 verses)</note></incipit></msItem>
+                        <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     <msItem n="19" xml:id="MS_Digby_197-item19"><locus>(fol. 122)</locus>
+                        <rubric>De beata Virgine Maria</rubric><incipit>Jesse stirps egregia, lilium
+                           candoris</incipit>   <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     
+                     
+                     
+                     <msItem n="20" xml:id="MS_Digby_197-item20"> <locus>(fol. 122v)</locus> 
+                        <rubric>Item de beata Virgine pro tribulacione mundi</rubric>
+                        <incipit>Inter mundi
+                              turbines per hoc magnum mare Qui sinistris flatibus te scis navigare</incipit> 
+                        <listBibl><bibl><title>Init</title>. 9468</bibl></listBibl>
+                        <textLang mainLang="la">Latin</textLang>
+                        
+                     </msItem>
+                     
+                     <msItem n="21" xml:id="MS_Digby_197-item21">
+                        <locus>(fol. 123)</locus>
+                        <author key="person_8191282">Henricus Abrincensis</author>
+                        <rubric>Henricus, versificator magnus, de beata Virgine</rubric>
+                        <incipit>Ave Maris
+                              stella, vera mellis stilla, Fecunda puella, humilis ancilla.</incipit>
+                        <listBibl><bibl>Pr. <title>Anal. hymn.</title>, 20,
+                              144-7</bibl><bibl>J. C. Russell &amp; J. P. Heironimus,
+                              <title>The Shorter Latin Poems of Master Henry of Avranches</title>
+                              (Medieval Academy of America Studies and
+                              Documents, 1; Cambridge, MA, 1935)</bibl><bibl>
+                              R. W Hunt, 'The collections of a monk of Bardney',
+                              <title>MARS</title>, 5 (1961), 28-42, at 35.</bibl></listBibl>
+                        <textLang mainLang="la">Latin</textLang>
+                        
+                     </msItem>
+                     <msItem n="22" xml:id="MS_Digby_197-item22">
+                        <locus>(fol. 123v)</locus>
+                        <!--<author key="person_35872894">Secundus philosophos</author>-->
+                        <title key="work_7549">Vita et sententiae Secundi philosophi</title>
+                        <rubric>Liber qui dicitur Secundus philosophus</rubric><incipit>Vir prudens et
+                              providus nomine Secundus fuit philosophus qui philosophisatus est omni tempore
+                              silencium servans.</incipit> 
+                        <listBibl><bibl>No. 77 in list in edn., Daly &amp; Suchier, <title>Altercatio</title>,
+                              164 </bibl><bibl> TK 1699, 1423.
+                        </bibl></listBibl>
+                        <textLang mainLang="la">Latin</textLang>
+                        
+                     </msItem>
+                     
+                     
+                     <msItem n="23" xml:id="MS_Digby_172-part6-item23">
+                        <locus>(fol. 124)</locus>
+                        <author key="person_190763522">Johannes
+                           Presbyter</author>
+                        <title key="work_200">Epistola Manueli</title>
+                        <rubric>Epistola Presbiteri Johannis ad Emanuelem gubernatorem Remeon</rubric>
+                        <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     
+                     
+                     <msItem n="24" xml:id="MS_Digby_197-item24">
+                        <locus>(fol. 125v)</locus>
+                        <rubric>Nobilis salutacio beate Mariae</rubric><note>Verse, 103 tetrastichs, with prose salutation. </note>
+                           <incipit> Ave et gaude Maria stella maris, mater misericordie</incipit><incipit>
+                              Bonitatis tocius femina, Sancta virgo, celorum domina</incipit> 
+                        <listBibl><bibl>A version with 98 tetrastichs is pr. in <title>Anal. hymn.</title>,
+                              32. 66 et seq.
+                        </bibl></listBibl> <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     
+                     <msItem n="25" xml:id="MS_Digby_172-part6-item25">
+                        <locus>(fol. 127)</locus>
                         <author key="person_51780608">H. of Sawtry</author>
                         <title key="work_1942">Tractatus de purgatorio S. Patricii</title>
+                        <rubric>Liber de penis purgatorii</rubric>
+                        <note>Followed by 'aliud haut longe ab eodem loco
+                           quoddam valde memorabile ' and 'de sacerdote a
+                           daemone tentato' ending imperfect 'vereucias
+                           vestras non intellexerim. De' </note>
+                        <note>Twenty-two leaves lacking according to the medieval foliation.  </note>
+                        <listBibl><bibl>BHL 6511-6512</bibl></listBibl>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
-                     <msItem n="8" xml:id="MS_Digby_172-part6-item8">
+                     
+                     
+                     
+                     
+                     
+                     <msItem n="26" xml:id="MS_Digby_197-item26">
+                        <locus>(fol. 134)</locus>
+                        <note>End (two chapters) of a text 'de gaudiis celi'</note>
+                        <explicit>Pro eterno igitur et ineffabili gaudio beatorum hereditabunt et
+                           incogitabilem tristiciam omnes qui pro impenitudine reatus sui transituri sunt in
+                           societatem demoniorum. </explicit> <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     <msItem n="27" xml:id="MS_Digby_197-item27">
+                        <locus>(fol. 134)</locus>
+                        <author key="person_22870441">Maurilius of
+                           Rouen (Ps.-Anselm)</author>
+                        <title key="work_7020">Oratio</title>
+                       <incipit>Singularis meriti sola sine
+                           exemplo</incipit>
+                        <note>Not by Anselm. For ascription to Maurilius of
+                           Rouen see H. Barre, <title>Prieres anciennes de l'Occident
+                           a la mere du Sauveur</title> (Paris, 1963), 181 n.
+                        </note> <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     
+                     
+                     <msItem n="28" xml:id="MS_Digby_172-part6-item28">
+                        <locus>(fol. 134v)</locus> 
                         <author key="person_53514732">Simon Islip (?)</author>
                         <title key="work_4555">Speculum regis Edwardi III</title>
+                        <incipit> Domine mi Rex, ex quo respublica tibi committitur</incipit><finalRubric>Explicit Epistola edita ad Dominum E. regem Anglie</finalRubric> 
+                        <listBibl><bibl>MS. D in the edn. by
+                              J. Moisant, 'De speculo regis Edwardi III'
+                              (unpublished thesis, University of Paris, 1891)</bibl><bibl> For
+                              the ascription to William of Pagula see L. E. Boyle,
+                              'William of Pagula and the 'Speculum Regis
+                              Edwardi III", <title>Mediaeval Studies</title>, 32 (1970), 329-36.
+                        </bibl></listBibl>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
+                     
+                     <msItem n="29" xml:id="MS_Digby_197-item29">
+                        <locus>(fol. 141)</locus>
+                        <author key="person_298148103">Thomas Gallus</author>
+                        <title key="work_4798">Commentary on Song of Songs</title>
+                        <rubric>Explanatio super Cantica Canticorum secundum dominum Thomam abbatem S. Andree
+                           Vercellensis</rubric><note>Fragment: beginning only to 3.1</note><incipit>Jer. 9. In hoc glorietur [etc.]. Duplex
+                           hic designatur Dei cognicio</incipit>
+                        <listBibl><bibl>Stegmiiller, <title>Bibl</title>., 8201</bibl></listBibl>
+                        <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     
                   </msContents>
-                  <physDesc>
+                  <physDesc> <p><secFol>O dilectores</secFol></p>
                      <objectDesc form="codex">
                         <supportDesc material="perg">
                            <support>parchment</support>
@@ -277,30 +764,44 @@
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1400" notBefore="1300">14th century</origDate>
+                        <origDate calendar="Gregorian" notAfter="1400" notBefore="1300">14th
+                           century</origDate>
                         <origPlace>
-                           <country key="place_7002445">English</country>
+                           <country key="place_7002445">England</country>
                         </origPlace>
                      </origin>
+                     <provenance>Part of a larger volume with medieval foliation
+                        49-176, lacking 80-120; see Macray's note on art.
+                        15. On fol. 78 is Allen's number '69' (i.e. in the
+                        fo. section of his catalogue</provenance>
                   </history>
                </msPart>
                <msPart xml:id="MS_Digby_172-part7">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Digby 172 – Part 7</idno>
+                        <idno type="part">MS. Digby 172 – Part G</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem class="#commentarii" n="1" xml:id="MS_Digby_172-part7-item1">
-                        <title key="work_11286" type="desc">Commentary on Sidonius, <hi rend="italic">Epistles</hi></title>
+                     <msItem class="#commentarii" n="30" xml:id="MS_Digby_172-part7-item30"><locus>(fol. 143)</locus>
+                        <title key="work_11286" type="desc">Glosses on Sidonius, <hi
+                              rend="italic">Epistles</hi></title>
+                        <note>Ends imperfect in gloss on VIII.16.</note>
                         <bibl type="commentedOn">
                            <author key="person_89203537">Sidonius</author>
                            <title>Epistles</title>
                         </bibl>
-                        <textLang mainLang="la" otherLangs="gmh">Latin with Middle High German</textLang>
+                        <listBibl><bibl>Ed. by T. Hunt, 'The vernacular entries in the
+                              Glossae in Sidonium (MS. Oxford Digby 172)"
+                              <title>Zeitschrift fur Französische Sprache und Literatur</title>, 
+                              89 (1979), 130-50, q.v. for earlier literature. See
+                              also Hunt, <title>Teaching and Learning Latin</title>, 1. 2~7;
+                              Laing, <title>Catalogue</title>, 131; Maaz, <title>Lateinische
+                              Epigrammatik</title>, 6-7. IMEP 3, 75.</bibl></listBibl>
+                        <textLang mainLang="la" otherLangs="xno enm">Latin with some Anglo-Norman and Middle English</textLang>
                      </msItem>
                   </msContents>
-                  <physDesc>
+                  <physDesc> <p><secFol>num solo</secFol></p>
                      <objectDesc form="codex">
                         <supportDesc material="perg">
                            <support>parchment</support>
@@ -309,26 +810,51 @@
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1210" notBefore="1200">13th century, early</origDate>
+                        <origDate calendar="Gregorian" notAfter="1210" notBefore="1200">13th
+                           century, early</origDate>
                         <origPlace>
-                           <country key="place_7002445">English</country>
+                           <country key="place_7002445">England</country>
                         </origPlace>
                      </origin>
+                     <provenance>On fol. 143 is the Digby/Allen
+                        inventory number A.228.</provenance>
                   </history>
                </msPart>
                <msPart xml:id="MS_Digby_172-part8">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Digby 172 – Part 8</idno>
+                        <idno type="part">MS. Digby 172 – Part H</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
-                     <msItem class="#exempla" n="1" xml:id="MS_Digby_172-part8-item1">
+                     <msItem class="#exempla" n="31" xml:id="MS_Digby_172-part8-item31">
+                        <locus>(fol. 151)</locus>
                         <title key="work_11760" type="desc">Exempla</title>
+                        <note>Fifty-two exempla preceded by a note on four reasons why the Sabbath is dedicated to the Virgin Mary. First narrative concerns Jaket and his dead mother; others concern Serlo of Paris, Odo bishop of Paris, the bishop of Carcassone, a French knight called Thomas de Marle visiting Jerusalem, the bishop of Toulouse, Baldwin, a Cisterican monk, Maurice bishop of Paris, and the sale of pears at Paris. Two narratives of 'magistri Jacobi' (de Vitriaco (?)) and one of William archdeacon of Paris.  </note>
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
+                     
+                      <msItem n="32" xml:id="MS_Digby_197-item32">
+                         <locus>(fol. 155v)</locus>
+                        <title type="desc">Sermon on Luc. xiv. 16</title><incipit><quote>Homo quidam fecit cenam ... </quote> Fratres karissimi,
+                           non spe temporalis mercedis sed potius eterne remuneracionis semen inter vos
+                           seminare proposui </incipit><textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     <msItem n="33" xml:id="MS_Digby_197-item33">
+                        <locus>(fol. 156v)</locus> 
+                        <rubric> De lupo</rubric><incipit>Lupus a rapacitate dicitur, unde meretrices lupaa
+                           vocamus.</incipit> <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     <msItem n="34" xml:id="MS_Digby_197-item34">
+                        <locus>(fol.
+                           157, 158)</locus>
+                        <note>On St John Baptist, the eleven apostles, and SS. Paul and Matthias. Final section begins:</note><incipit>Hii sunt triumphatores et amici Dei, doctores
+                           gentium, principes orbis terrarum</incipit><textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                   
                   </msContents>
                   <physDesc>
+                     <p><secFol>dium inferni</secFol></p>
                      <objectDesc form="codex">
                         <supportDesc material="perg">
                            <support>parchment</support>
@@ -337,20 +863,33 @@
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1210" notBefore="1200">13th century, early</origDate>
+                        <origDate calendar="Gregorian" notAfter="1210" notBefore="1200">13th
+                           century, early</origDate>
                         <origPlace>
-                           <country key="place_7002445">English</country>
+                           <country key="place_7002445">England</country>
                         </origPlace>
                      </origin>
+                     <provenance>Probably MS. 4° 52, 'Narraciones aliquot', in Allen's
+                        catalogue.
+                     </provenance>
                   </history>
                </msPart>
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
-         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
+         <change when="2026-10">Matthew Holford: encode full description from Quarto catalogue.</change>
+         <change when="2018-10-14" xml:id="MMM"><persName>Mitch Fraas</persName> Provenance and
+            acquisition information added using <ref
+               target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb"
+               >https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
+            in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping
+               Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
-         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
+         <change when="2017-05-25"><persName>James Cummings</persName> Up-converted the markup using
+               <ref
+               target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl"
+               >https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref></change>
       </revisionDesc>
    </teiHeader>
    <text>
