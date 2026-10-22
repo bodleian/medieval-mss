@@ -86,4 +86,9 @@ if [ ! -s "$file_list" ]; then
   exit 0
 fi
 
-exec java -jar "$JAR_PATH" --file-list "$file_list" -j 0 "$@"
+files_from_flag='--files-from'
+if ! java -jar "$JAR_PATH" --help 2>&1 | grep -q -- '--files-from'; then
+  files_from_flag='--file-list'
+fi
+
+exec java -jar "$JAR_PATH" "$files_from_flag" "$file_list" -j 0 "$@"
