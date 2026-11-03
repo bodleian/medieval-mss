@@ -1,4 +1,5 @@
-<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6309">
+<?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://raw.githubusercontent.com/bodleian/consolidated-tei-schema/master/msdesc.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="manuscript_6309">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -8,9 +9,17 @@
                <resp when="1957">Cataloguer</resp>
                <persName>S. J. P. van Dijk</persName>
             </respStmt>
+            <respStmt xml:id="SC">
+               <resp when="1895">Cataloguer</resp>
+               <persName>Falconer Madan</persName>
+            </respStmt>
+            <respStmt xml:id="PA">
+               <resp when="1973">Cataloguer</resp>
+               <persName>Otto Pächt</persName>
+               <persName>J. J. G. Alexander</persName>
+            </respStmt>
             <respStmt>
-               <resp>Summary description</resp>
-               <persName>Elizabeth Solopova</persName>
+               <resp>Encoding</resp>
                <persName>Matthew Holford</persName>
             </respStmt>
          </titleStmt>
@@ -41,30 +50,45 @@
                   </altIdentifier>
                </msIdentifier>
                <physDesc>
-                  <p n="composite">Composite: fols. 1–30 || fols. 31–111</p><!-- check: really composite? -->
-                  <objectDesc form="codex">
-                     <supportDesc material="perg">
-                        <support>parchment</support>
-                        <extent resp="#VD"><seg type="leaf"><measure type="endleaf" quantity="3">3</measure> + <measure type="leaf" quantity="108">108 (105)</measure> + <measure type="endleaf" quantity="3">3</measure></seg> fol.
-                           <dimensions type="leaf" unit="mm">
-                              <height>171</height>
-                              <width>123</width>
-                           </dimensions>
+                  <p n="composite">Composite: fols. 1–30 are a mid-15th-century English supplement
+                     to fols. 31–111, an early-fifteenth-century Flemish (?) Book of Hours for the
+                     English market.</p>
+                  <objectDesc>
+                     <supportDesc>
+                        <extent resp="#VD"><seg type="leaf"><measure type="endleaf" quantity="3"
+                                 >3</measure> + <measure type="leaf" quantity="108">108
+                                    (105)</measure> + <measure type="endleaf" quantity="3"
+                                       >3</measure></seg> fol. <dimensions type="leaf" unit="mm">
+                                          <height>171</height>
+                                          <width>123</width>
+                                       </dimensions>
                            <dimensions type="written" unit="mm">
                               <height min="108" max="110">108/110</height>
                               <width min="65" max="67">65/67</width>
                            </dimensions>
-                        </extent>
+                        </extent><condition> Two leaves missing after fol.3, 36, 57, 74, and 84; one leaf
+                           after fol.12, 30, 50, 51, and 54</condition>
                      </supportDesc>
-                     <layoutDesc resp="#VD"><layout columns="1" writtenLines="23">23 long lines.</layout></layoutDesc>
+                     <layoutDesc resp="#VD">
+                        <layout columns="1" writtenLines="23">23 long lines.</layout>
+                     </layoutDesc>
+                        
                   </objectDesc>
                   <bindingDesc>
                      <binding contemporary="true">
                         <p>Original (?) binding, sheepskin on boards.</p>
                      </binding>
                   </bindingDesc>
+                  
                </physDesc>
                <history>
+                  <provenance>Offsets of two coats of arms on fol. 4r.</provenance>
+                  <provenance>In the calendar on 7 February is added the obit of Christine
+                     ux[oris] J. Benet</provenance>
+                  <provenance>Additions in English in the calendar, probably all from the first half of the sixteenth century, indicating the
+                     dates of fairs in many places in Yorkshire and the midlands: e.g. Barnsley, 25 Jan. (fair chartered 1514)</provenance>
+                  <provenance>Constable family (?): addition in the calendar of the birth of William Constable at Kinoulton (Notts.), 7 June 1532; and obit (?) of William Constable, 19 April.</provenance>
+                  <provenance>Poem in English added, early 17th century, fol. 1r, on the death of Henry Frederick, prince of Wales in 1612 (beg. 'Tymes greedie hand ...'); not in Folger First Line Index..</provenance>
                   <provenance notAfter="1707" resp="#MMM">
                      <persName key="person_2867" role="fmo">Henry Jones, -1707</persName>
                   </provenance>
@@ -73,38 +97,69 @@
                <additional>
                   <adminInfo>
                      <recordHist>
-                        <source>Summary description by Elizabeth Solopova and Matthew Holford, based on the Summary Catalogue and supplementary sources. <listBibl>
-                              <bibl facs="aas0055.gif" type="SC">Summary Catalogue, Vol. 3, p. 40</bibl>
+                        <source>Description adapted by Matthew Holford (2026) from the following sources:
+                           <listBibl>
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title><ref target="https://catalog.hathitrust.org/Record/000468709">Illuminated Manuscripts in the Bodleian Library, Oxford</ref></title>, III (1973), no. 1006</bibl>
+                              
+                              <bibl>Otto Pächt and J. J. G. Alexander, <title><ref target="https://catalog.hathitrust.org/Record/000468709">Illuminated Manuscripts in the Bodleian Library, Oxford</ref></title>, I (1966), no. 304</bibl>
+                              
+                              <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian
+                                    Library, Oxford, vol. 4: Books of Hours</title> (typescript, 1957),
+                                 <citedRange unit="page" from="188" to="188">p. 188</citedRange>
+                              </bibl>
+                              <bibl>Summary Catalogue (1895)</bibl>
+                           </listBibl>
+                           
+                            <listBibl>
+                              <bibl facs="aas0055.gif" type="SC">Summary Catalogue, Vol. 3, p.
+                                 40</bibl>
                            </listBibl>
                         </source>
                      </recordHist>
                   </adminInfo>
                   <surrogates>
                      <bibl subtype="partial" type="digital-facsimile">
-                        <ref target="https://digital.bodleian.ox.ac.uk/objects/e581d832-0b2f-4a9b-9d0a-afd2e1368ef0/">
+                        <ref
+                           target="https://digital.bodleian.ox.ac.uk/objects/e581d832-0b2f-4a9b-9d0a-afd2e1368ef0/">
                            <title>Digital Bodleian</title>
                         </ref>
                         <note>(4 images from 35mm slides)</note>
                      </bibl>
                   </surrogates>
-                  <listBibl type="WRAPPER">
+                 <!-- <listBibl type="WRAPPER">
                      <listBibl type="PRINT">
                         <head>Printed descriptions:</head>
-                        <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian Library, Oxford, vol. 4: Books of Hours</title> (typescript, 1957), <citedRange unit="page" from="188" to="188">p. 188</citedRange>
+                        <bibl>S. J. P. van Dijk, <title>Latin Liturgical Manuscripts in the Bodleian
+                              Library, Oxford, vol. 4: Books of Hours</title> (typescript, 1957),
+                              <citedRange unit="page" from="188" to="188">p. 188</citedRange>
                         </bibl>
                      </listBibl>
-                  </listBibl>
+                  </listBibl>-->
                </additional>
                <msPart xml:id="MS_Jones_43-part1">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Jones 43 – Part 1</idno>
+                        <idno type="part">MS. Jones 43 – fols. 1-30</idno>
                      </altIdentifier>
                   </msIdentifier>
                   <msContents>
                      <msItem n="1" xml:id="MS_Jones_43-part1-item1">
-                        <title key="work_14086">Psalms and prayers</title>
+                        <title key="work_10579" type="desc">Book of Hours, Use of Sarum</title>
+                        <msItem>
+                           <note>Prose Veni creator and prayers (fol. 4)</note>
+                        </msItem>
+                        <msItem>
+                           <note>Psalter of St Jerome (fol. 11). </note>
+                        </msItem>
+                        <msItem>
+                           <locus>(fol. 23v)</locus>
+                           <rubric>Psalmi de passione domini nostri Ihesu Christi</rubric>
+                        </msItem>
                         <textLang mainLang="la">Latin</textLang>
+                     </msItem>
+                     <msItem>
+                        <note>For 17th-century addition in English on fol. 1r, see above, Provenance.</note>
+                        <textLang mainLang="en">English</textLang>
                      </msItem>
                   </msContents>
                   <physDesc>
@@ -114,7 +169,8 @@
                         </supportDesc>
                      </objectDesc>
                      <decoDesc>
-                        <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> iii. 1006, pl. XCIII</summary>
+                        <summary><ref target="https://catalog.hathitrust.org/Record/000468709">Pächt
+                              and Alexander</ref> iii. 1006, pl. XCIII</summary>
                         <decoNote type="drawing">Good drawing (catchword). </decoNote>
                         <decoNote type="border">Good border. </decoNote>
                         <decoNote type="decInit">Good initials. </decoNote>
@@ -122,7 +178,8 @@
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1460" notBefore="1440">15th century, middle</origDate>
+                        <origDate calendar="Gregorian" notAfter="1460" notBefore="1440">15th
+                           century, middle</origDate>
                         <origPlace>
                            <country key="place_7002445">English</country>
                         </origPlace>
@@ -132,12 +189,63 @@
                <msPart xml:id="MS_Jones_43-part2">
                   <msIdentifier>
                      <altIdentifier type="partial">
-                        <idno type="part">MS. Jones 43 – Part 2</idno>
+                        <idno type="part">MS. Jones 43 – fols. 31–111</idno>
                      </altIdentifier>
                   </msIdentifier>
+               
                   <msContents>
                      <msItem n="1" xml:id="MS_Jones_43-part2-item1">
-                        <title key="work_10579">Book of Hours, Use of Sarum.</title>
+                        <title key="work_10579" type="desc">Book of Hours, Use of Sarum</title>
+                        <msItem>
+                           <note>Kalendar (fol. 31), with additional notes (s. xvi) in English</note>
+                           <textLang mainLang="la" otherLangs="en">Latin and English</textLang>
+                        </msItem>
+                        <msItem>
+                           <note> Office of the Virgin (fol. 37) with the Hours of the Cross worked
+                              in</note>
+                        </msItem>
+                        <msItem>
+                           <note>Troped Salve regina (fol. 56)</note>
+                        </msItem>
+                        <msItem>
+                           <note>Added: Five Joys and prose Stella celi extirpavit (fol. 57)</note>
+                        </msItem>
+                        <msItem>
+                           <note> Paraphrase of the Salve regina (fol. 58)</note>
+                        </msItem>
+                        <msItem>
+                           <note> O intemerata (fol. 60<hi rend="superscript">v</hi>), Obsecro (fol. 61<hi
+                                 rend="superscript">v</hi>)</note>
+                        </msItem>
+                        <msItem>
+                           <note> Seven Joys (fol. 63<hi rend="superscript">v</hi>: Virgo templum)</note>
+                        </msItem>
+                        <msItem>
+                           <note>Devotions to the Five Wounds (fol. 66: Omnibus consideratis) and the
+                              Seven Words (fol. 68: Domine J.C. qui septem verba) and during the
+                              Elevation (fol. 70: Domine J.C. qui hanc, Deus propitius esto michi)</note>
+                        </msItem>
+                        <msItem>
+                           <note>Prayers (fol. 72)</note>
+                        </msItem>
+                        <msItem>
+                           <note> Penitential (fol. 75) and Gradual (fol. 79<hi rend="superscript">v</hi>)
+                              Psalms</note>
+                        </msItem>
+                        <msItem>
+                           <note>Litanies of All Saints (fol. 80<hi rend="superscript">v</hi>) and the
+                              Virgin (fol. 83)</note>
+                        </msItem>
+                        <msItem>
+                           <note>Office of the dead (fol. 85) and commendation (fol. 98<hi rend="superscript"
+                                 >v</hi>)</note>
+                        </msItem>
+                        <msItem>
+                           <note>Additional office of Our Lady’s Compassion (fol. 107<hi
+                                 rend="superscript">v</hi>), to be said after each Hour of the Lady
+                              office (Patris cor virgineum). </note>
+                        </msItem>
+
                         <textLang mainLang="la">Latin</textLang>
                      </msItem>
                   </msContents>
@@ -148,31 +256,46 @@
                         </supportDesc>
                      </objectDesc>
                      <decoDesc>
-                        <summary>Probably written for England. <ref target="https://catalog.hathitrust.org/Record/000468709">Pächt and Alexander</ref> i. 304</summary>
+                        <summary>Probably written for England. (<ref
+                              target="https://catalog.hathitrust.org/Record/000468709">Pächt and
+                              Alexander</ref> i. 304). Illuminated initials and ivy-sprig borders at
+                           the beginning of the Hours of the Lady office and on fols. 66r, 98v. The
+                           others are missing.</summary>
                         <decoNote type="border">Fine border. </decoNote>
                         <decoNote type="decInit">Fine initials. </decoNote>
                      </decoDesc>
+                  
                   </physDesc>
                   <history>
                      <origin>
-                        <origDate calendar="Gregorian" notAfter="1410" notBefore="1400">15th century, beginning</origDate>
+                        <origDate calendar="Gregorian" notAfter="1410" notBefore="1400">15th
+                           century, beginning</origDate>
                         <origPlace>
                            <country key="place_7024097">Flemish</country>
                         </origPlace>
                      </origin>
+                  
                   </history>
                </msPart>
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
-         <change when="2024-09">Add extent, leaf dimensions and layout from van Dijk, Latin Liturgical Manuscripts in the Bodleian Library, Oxford.</change>
+         <change when="2026-06">Matthew Holford: incorporate all information from published descriptions.</change>
+         <change when="2024-09">Add extent, leaf dimensions and layout from van Dijk, Latin
+            Liturgical Manuscripts in the Bodleian Library, Oxford.</change>
          <change when="2022-04-04">Add binding information from Summary Catalogue.</change>
          <change when="2018-08-15" xml:id="MMM">
-            <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb">https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref> in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping Manuscript Migrations</ref> project.</change>
+            <persName>Mitch Fraas</persName> Provenance and acquisition information added using <ref
+               target="https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb"
+               >https://github.com/littlegustv/oxfordupdates/blob/master/test_case_for_oxford_prov.rb</ref>
+            in collaboration with the <ref target="http://mappingmanuscriptmigrations.org/">Mapping
+               Manuscript Migrations</ref> project.</change>
          <change when="2017-07-01">First online publication.</change>
          <change when="2017-05-25">
-            <persName>James Cummings</persName> Up-converted the markup using <ref target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl">https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
+            <persName>James Cummings</persName> Up-converted the markup using <ref
+               target="https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl"
+               >https://github.com/jamescummings/Bodleian-msDesc-ODD/blob/master/convertTolkien2Bodley.xsl</ref>
          </change>
       </revisionDesc>
    </teiHeader>

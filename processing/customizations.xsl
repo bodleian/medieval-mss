@@ -5,37 +5,42 @@
     xmlns:tei="http://www.tei-c.org/ns/1.0"
     xmlns:html="http://www.w3.org/1999/xhtml"
     xmlns:bod="http://www.bodleian.ox.ac.uk/bdlss"
+    xmlns:msdesc="http://www.example.org/ns/msdesc"
     xpath-default-namespace="http://www.tei-c.org/ns/1.0"
-    exclude-result-prefixes="tei html xs bod"
+    exclude-result-prefixes="tei html xs bod msdesc"
     version="2.0">
     
     
+    
+   
+
+
 
     <!-- The stylesheet is a library. It doesn't validate and won't produce HTML on its own. It is called by 
          convert2HTML.xsl and previewManuscript.xsl. Any templates added below will override the templates 
          in msdesc2html.xsl in the consolidated-tei-schema repository, allowing customization of manuscript 
          display for each catalogue. -->
-
-
-
+    
+    
+    
     <!-- For Medieval, notes are sometimes used between items to give context, so this overrides the 
          default in msdesc2html.xsl, which re-orders child elements of msItem for the sake of neatness. -->
-    
-    <xsl:template name="SubItems">        
+
+    <xsl:template name="SubItems">
         <xsl:apply-templates/>
     </xsl:template>
-    
-    
-    
+
+
+
     <!-- TODO: Move these templates to msdesc2html.xsl if applicable to all catalogues? -->
-    
+
     <xsl:template match="msDesc/msIdentifier/altIdentifier[@type='former' and child::idno[not(@subtype)]]">
         <p>
             <xsl:text>Former shelfmark: </xsl:text>
             <xsl:apply-templates/>
         </p>
     </xsl:template>
-    
+
     <xsl:template match="title[@key]">
         <span>
             <xsl:attribute name="class">
@@ -67,29 +72,29 @@
             <xsl:text>, </xsl:text>
         </xsl:if>
     </xsl:template>
-    
-    
-    
+
+
+
     <!-- This is Medieval notation, do not move this to msdesc2html.xsl -->
-    
+
     <xsl:template match="lb">
         <xsl:text>|</xsl:text>
     </xsl:template>
-    
-    
-    
+
+
+
     <!-- This is an override of the template in msdesc2html.xsl, which outputs a div. Maybe the choice should be based on context? -->
-    
+
     <xsl:template match="formula">
         <span class="formula">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
-    
-    
-    
+
+
+
     <!-- Display lemmata in italic -->
-    
+
     <xsl:template match="incipit/quote | incipit/cit/quote | explicit/quote | explicit/cit/quote">
         <i>
             <xsl:apply-templates/>
@@ -101,32 +106,247 @@
         </i>
     </xsl:template>
     
+    <!-- new rules for new elements in binding descriptions (draft 10 Sept. 2023, rev. Dec. 2025) -->
     
+    <xsl:template match="bindingDesc">
+        <h3 class="msDesc-heading3">
+            <xsl:copy-of select="bod:standardText('Binding')"/>
+        </h3>
+        <xsl:apply-templates/>
+    </xsl:template>
     
-    <!-- Display links to abbreviations and conventions pages, and the most recent change 
-         at the bottom of manuscript pages (just before Zotero links, if any) -->
-    
-    <xsl:template name="Footer">
+    <xsl:template match="binding">
+        <div class="{name()}">
+            
+      
+        <h3>
+            <xsl:apply-templates select="binding/head"/>
+        </h3>
        
-        
-        
-        <div class="abbreviations">
-            <xsl:processing-instruction name="ni"/>
-            <h3>Abbreviations</h3>
-            <p>View <a href="https://github.com/bodleian/medieval-mss/wiki/Abbreviations" target="_blank">list of abbreviations</a> and <a href="https://github.com/bodleian/medieval-mss/wiki/Conventions" target="_blank">editorial conventions</a>.</p>
-            <xsl:processing-instruction name="ni"/>
-        </div>
-        <xsl:apply-templates select="/TEI/teiHeader/revisionDesc[change][1]"/>
-        
-        <div class="data">
-            <xsl:processing-instruction name="ni"/>
-            <h3>Data</h3>
-            <p>The TEI-XML file for this record can be viewed in a <a href="https://github.com/bodleian/medieval-mss" target="_blank">GitHub repository</a>.</p>
-            <p>Tabular data derived from the TEI-XML files is available in a <a href="https://github.com/digital-Scholarship-Oxford/enabling-digital-research/" target="_blank">GitHub repository</a>.</p>
-            <xsl:processing-instruction name="ni"/>
+       
+       
+       
+            <xsl:apply-templates/>
         </div>
     </xsl:template>
     
+    
+    <xsl:template match="bindingDesc/summary/dimensions">
+        <div class="{name()}">
+            <span class="tei-label">
+                <xsl:copy-of select="bod:standardText('Dimensions:')"/>
+                <xsl:text> </xsl:text>
+            </span>
+            <xsl:apply-templates/>
+            <xsl:text> </xsl:text><!-- refine this? -->
+        </div>
+    </xsl:template>
+    <xsl:template match="binding/history">
+        <div class="{name()}">
+            <span class="tei-label">
+                <xsl:copy-of select="bod:standardText('Origin:')"/>
+                <xsl:text> </xsl:text>
+            </span>
+            <xsl:apply-templates select="origin/origPlace"/>
+            <xsl:apply-templates select="origin/origDate"/>
+        </div>
+    </xsl:template>
+    
+    
+    <xsl:template match="binding/msdesc:endleaves">
+        <div class="{name()}">
+            <span class="tei-label">
+                <xsl:copy-of select="bod:standardText('Endleaves:')"/>
+                <xsl:text> </xsl:text>
+            </span>
+            <xsl:apply-templates/>
+        </div>
+    </xsl:template>
+    <xsl:template match="binding/history/origin">
+        <div class="{name()}">
+            <span class="tei-label">
+                <xsl:copy-of select="bod:standardText('Origin:')"/>
+                <xsl:text> </xsl:text>
+            </span>
+            <xsl:apply-templates/>
+        </div>
+    </xsl:template>
+    <xsl:template match="binding/msdesc:sewing">
+        <div class="{name()}">
+            <span class="tei-label">
+                <xsl:copy-of select="bod:standardText('Sewing:')"/>
+                <xsl:text> </xsl:text>
+            </span>
+            <xsl:apply-templates/>
+        </div>
+    </xsl:template>
+    <xsl:template match="binding/msdesc:boards">
+        <div class="{name()}">
+            <span class="tei-label">
+                <xsl:copy-of select="bod:standardText('Boards:')"/>
+                <xsl:text> </xsl:text>
+            </span>
+            <xsl:apply-templates/>
+        </div>
+    </xsl:template>
+    <xsl:template match="binding/msdesc:edges">
+        <div class="{name()}">
+            <span class="tei-label">
+                <xsl:copy-of select="bod:standardText('Edges:')"/>
+                <xsl:text> </xsl:text>
+            </span>
+            <xsl:apply-templates/>
+        </div>
+    </xsl:template>
+    <xsl:template match="binding/msdesc:spine">
+        <div class="{name()}">
+            <span class="tei-label">
+                <xsl:copy-of select="bod:standardText('Spine:')"/>
+                <xsl:text> </xsl:text>
+            </span>
+            <xsl:apply-templates/>
+        </div>
+    </xsl:template>
+    <xsl:template match="binding/msdesc:endbands">
+        <div class="{name()}">
+            <span class="tei-label">
+                <xsl:copy-of select="bod:standardText('Endbands:')"/>
+                <xsl:text> </xsl:text>
+            </span>
+            <xsl:apply-templates/>
+        </div>
+    </xsl:template>
+    <xsl:template match="binding/msdesc:covering">
+        <div class="{name()}">
+            <span class="tei-label">
+                <xsl:copy-of select="bod:standardText('Covering:')"/>
+                <xsl:text> </xsl:text>
+            </span>
+            <xsl:apply-templates/>
+        </div>
+    </xsl:template>
+    <xsl:template match="binding/decoNote">
+        <div class="{name()}">
+            <span class="tei-label">
+                <xsl:copy-of select="bod:standardText('Cover decoration:')"/>
+                <xsl:text> </xsl:text>
+            </span>
+            <xsl:apply-templates/>
+        </div>
+    </xsl:template>
+    <xsl:template match="binding/msdesc:fastenings">
+        <div class="{name()}">
+            <span class="tei-label">
+                <xsl:copy-of select="bod:standardText('Fastening:')"/>
+                <xsl:text> </xsl:text>
+            </span>
+            <xsl:apply-templates/>
+        </div>
+    </xsl:template>
+    <xsl:template match="binding/msdesc:furniture">
+        <div class="{name()}">
+            <span class="tei-label">
+                <xsl:copy-of select="bod:standardText('Furniture:')"/>
+                <xsl:text> </xsl:text>
+            </span>
+            <xsl:apply-templates/>
+        </div>
+    </xsl:template>
+    <xsl:template match="binding/msdesc:tacketing">
+        <div class="{name()}">
+            <span class="tei-label">
+                <xsl:copy-of select="bod:standardText('Tacketing:')"/>
+                <xsl:text> </xsl:text>
+            </span>
+            <xsl:apply-templates/>
+        </div>
+    </xsl:template>
+    <xsl:template match="binding/msdesc:alterations">
+        <div class="{name()}">
+            <span class="tei-label">
+                <xsl:copy-of select="bod:standardText('Alterations or repairs:')"/>
+                <xsl:text> </xsl:text>
+            </span>
+            <xsl:apply-templates/>
+        </div>
+    </xsl:template>
+    <xsl:template match="binding/msdesc:bookmarks">
+        <div class="{name()}">
+            <span class="tei-label">
+                <xsl:copy-of select="bod:standardText('Bookmarks:')"/>
+                <xsl:text> </xsl:text>
+            </span>
+            <xsl:apply-templates/>
+        </div>
+    </xsl:template>
+    <xsl:template match="binding/msdesc:curtains">
+        <div class="{name()}">
+            <span class="tei-label">
+                <xsl:copy-of select="bod:standardText('Curtains:')"/>
+                <xsl:text> </xsl:text>
+            </span>
+            <xsl:apply-templates/>
+        </div>
+    </xsl:template>
+    <xsl:template match="binding/msdesc:chaining">
+        <div class="{name()}">
+            <span class="tei-label">
+                <xsl:copy-of select="bod:standardText('Chaining:')"/>
+                <xsl:text> </xsl:text>
+            </span>
+            <xsl:apply-templates/>
+        </div>
+    </xsl:template>
+    <xsl:template match="binding/msdesc:labels">
+        <div class="{name()}">
+            <span class="tei-label">
+                <xsl:copy-of select="bod:standardText('Titles or labels:')"/>
+                <xsl:text> </xsl:text>
+            </span>
+            <xsl:apply-templates/>
+        </div>
+    </xsl:template>
+    
+    
+
+
+    <!--Issue 956: Display foreign text in italic (following removal of @rend) -->
+
+    <xsl:template match="foreign">
+        <span class="{name()} italic">
+            <xsl:copy-of select="bod:direction(.)"/>
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
+
+
+    <!-- Display links to abbreviations and conventions pages, and the most recent change 
+         at the bottom of manuscript pages (just before Zotero links, if any) -->
+
+    <xsl:template name="Footer">
+
+
+
+        <div class="abbreviations">
+            <xsl:processing-instruction name="ni"/>
+            <h3>Abbreviations</h3>
+            <p>View <a href="https://github.com/bodleian/medieval-mss/wiki/Abbreviations" target="_blank">list of abbreviations</a> and <a href="https://github.com/bodleian/medieval-mss/wiki/Conventions" target="_blank">editorial conventions</a>.
+            </p>
+            <xsl:processing-instruction name="ni"/>
+        </div>
+        <xsl:apply-templates select="/TEI/teiHeader/revisionDesc[change][1]"/>
+
+        <div class="data">
+            <xsl:processing-instruction name="ni"/>
+            <h3>Data</h3>
+            <p>The TEI-XML file for this record can be viewed in a <a href="https://github.com/bodleian/medieval-mss" target="_blank">GitHub repository</a>.
+            </p>
+            <p>Tabular data derived from the TEI-XML files is available in a <a href="https://github.com/digital-Scholarship-Oxford/enabling-digital-research/" target="_blank">GitHub repository</a>.
+            </p>
+            <xsl:processing-instruction name="ni"/>
+        </div>
+    </xsl:template>
+
     <xsl:template match="revisionDesc[.//change]">
         <div class="revisionDesc">
             <xsl:processing-instruction name="ni"/>
@@ -147,7 +367,7 @@
             <xsl:processing-instruction name="ni"/>
         </div>
     </xsl:template>
-    
+
     <xsl:template match="change">
         <p class="change">
             <xsl:if test="@when">
@@ -157,10 +377,12 @@
             <xsl:apply-templates/>
         </p>
     </xsl:template>
-    
-    
-    
+
+
+
     <!-- TODO: Add quick links drop-down to header -->
-        
     
+    
+
+
 </xsl:stylesheet>
